@@ -293,6 +293,18 @@ class RepositoryTests(unittest.TestCase):
             "https://lazying.art/lkt/fit-check/",
         )
         self.assertIn("stores and sends nothing automatically", serialized)
+        self.assertEqual(
+            campaign["conversion_readiness"]["mail_routing"],
+            "icloud_mx_confirmed",
+        )
+        self.assertEqual(
+            campaign["conversion_readiness"]["mailbox_monitoring"],
+            "unverified_requires_operator_login",
+        )
+        self.assertIn(
+            "do not promise a response time",
+            campaign["conversion_readiness"]["policy"].casefold(),
+        )
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["lazyblog"]["state"], "published")

@@ -41,6 +41,14 @@
     "commercial_action": "After a positive fit review, accept the fixed USD 250 sprint scope and complete a reviewed Stripe payment request.",
     "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales."
   },
+  "conversion_readiness": {
+    "inbound_address": "contact@lazying.art",
+    "mail_routing": "icloud_mx_confirmed",
+    "delivery_probe": "sent_without_observed_bounce",
+    "mailbox_monitoring": "unverified_requires_operator_login",
+    "checked_at": "2026-08-31T20:46:58Z",
+    "policy": "Mail routing and a non-bouncing test do not prove that the inbox is monitored. Do not promise a response time or treat an email as a qualified lead until the operator has verified mailbox access and the actual inbound request."
+  },
   "channels": {
     "lazyblog": {
       "state": "published",

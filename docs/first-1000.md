@@ -24,6 +24,17 @@ builds a reviewable email draft inside the current browser tab. It stores,
 uploads, and sends nothing automatically; the prospective customer controls the
 final email send.
 
+### Inbox readiness gate
+
+The public `contact@lazying.art` address has iCloud MX routing and accepted a
+controlled delivery test without an observed bounce. That proves routing, not
+operator monitoring: iCloud Mail is not authenticated in the promotion
+browser, so mailbox access remains explicitly unverified. Do not promise a
+response time, mark an email as a qualified lead, or infer a conversion until
+an operator has opened the mailbox and reviewed the actual inbound message.
+Before increasing distribution, verify the inbox login and establish a simple
+fit-check label or folder without copying customer content into this repository.
+
 ## Qualification gate
 
 Before payment, collect only the minimum facts needed to decide fit:

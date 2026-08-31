@@ -30,10 +30,12 @@ The public `contact@lazying.art` address has iCloud MX routing and accepted a
 controlled delivery test without an observed bounce. Authenticated iCloud Mail
 then displayed that exact test subject, and the operator created a dedicated
 `LKT Fit Checks` folder. This verifies routable, reviewable operator access; it
-does not prove that every future message is a qualified lead. Do not promise a
-response time, copy message contents into this repository, or infer a conversion
-until the actual inbound request has been reviewed against the qualification
-gate below.
+does not prove that every future message is a qualified lead. A narrow iCloud
+rule moves only messages whose subject contains the live fit-check contract,
+`Local Knowledge Terminal — free collection fit check`, into that folder. Do
+not promise a response time, copy message contents into this repository, or
+infer a conversion until the actual inbound request has been reviewed against
+the qualification gate below.
 
 ## Qualification gate
 

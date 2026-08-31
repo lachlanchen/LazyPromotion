@@ -47,7 +47,15 @@
     "delivery_probe": "visible_in_authenticated_icloud_mail",
     "mailbox_monitoring": "operator_access_verified_folder_ready",
     "intake_folder": "LKT Fit Checks",
-    "checked_at": "2026-08-31T22:33:02Z",
+    "routing_rule": {
+      "state": "active",
+      "condition": "subject_contains",
+      "value": "Local Knowledge Terminal — free collection fit check",
+      "action": "move_to_folder",
+      "destination": "LKT Fit Checks",
+      "checked_at": "2026-08-31T22:55:16Z"
+    },
+    "checked_at": "2026-08-31T22:55:16Z",
     "policy": "Authenticated access and the visible controlled test prove that the inbox can be reviewed. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
     "payment_request": {
       "state": "live_account_and_fixed_config_verified",

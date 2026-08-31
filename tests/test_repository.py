@@ -364,6 +364,15 @@ class RepositoryTests(unittest.TestCase):
             campaign["conversion_readiness"]["intake_folder"],
             "LKT Fit Checks",
         )
+        routing_rule = campaign["conversion_readiness"]["routing_rule"]
+        self.assertEqual(routing_rule["state"], "active")
+        self.assertEqual(routing_rule["condition"], "subject_contains")
+        self.assertEqual(
+            routing_rule["value"],
+            "Local Knowledge Terminal — free collection fit check",
+        )
+        self.assertEqual(routing_rule["action"], "move_to_folder")
+        self.assertEqual(routing_rule["destination"], "LKT Fit Checks")
         self.assertIn(
             "do not promise a response time",
             campaign["conversion_readiness"]["policy"].casefold(),

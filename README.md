@@ -56,6 +56,9 @@ flowchart LR
   PDF, embedding, vector-database, or knowledge-base signal so the newspaper
   idiom “local rag” is not treated as product demand.
 - Exact approval: changing the draft invalidates its short-lived approval.
+- Exact delivery: Reddit records the matching comment thing IDs before the
+  public click and accepts only a new exact-body ID afterward, for both
+  top-level post comments and replies bound to a specific parent comment.
 - Visible operation: Chrome runs in noVNC and important steps capture local,
   ignored screenshots.
 - Private sessions stay private: credentials, cookies, profiles, candidates,

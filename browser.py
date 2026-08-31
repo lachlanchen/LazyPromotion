@@ -1027,6 +1027,41 @@ def reddit_posted_reply_selector(parent_comment_id: str) -> str:
     )
 
 
+def reddit_comment_records(page: Page) -> list[dict[str, str]]:
+    """Read delivered Reddit comments without including any open composer."""
+    return page.locator("shreddit-comment").evaluate_all(
+        """nodes => nodes.map(node => ({
+          thingid: node.getAttribute('thingid') || '',
+          parentid: node.getAttribute('parentid') || '',
+          body: (node.querySelector(':scope > div[slot="comment"]')?.innerText || '').trim()
+        })).filter(row => row.thingid && row.body)"""
+    )
+
+
+def reddit_delivery_ids(
+    records: list[dict[str, str]],
+    body: str,
+    *,
+    parent_comment_id: str = "",
+) -> set[str]:
+    """Return exact delivered comment IDs at the approved Reddit destination."""
+    expected_body = promotion.compact(body)
+    expected_parent = f"t1_{parent_comment_id}" if parent_comment_id else ""
+    delivered = set()
+    for record in records:
+        thingid = str(record.get("thingid") or "")
+        parentid = str(record.get("parentid") or "")
+        if not re.fullmatch(r"t1_[a-z0-9]+", thingid, flags=re.I):
+            continue
+        if expected_parent and parentid != expected_parent:
+            continue
+        if not expected_parent and parentid.startswith("t1_"):
+            continue
+        if promotion.compact(str(record.get("body") or "")) == expected_body:
+            delivered.add(thingid)
+    return delivered
+
+
 def submit_button(page: Page, platform: str, *, target: Locator | None = None) -> Locator:
     if platform == "reddit":
         if target is None:
@@ -1074,21 +1109,35 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
     button = submit_button(page, candidate["platform"], target=target)
     if not button.is_enabled():
         raise RuntimeError("visible submit button is disabled")
+    prior_reddit_ids = (
+        reddit_delivery_ids(
+            reddit_comment_records(page),
+            draft["body"],
+            parent_comment_id=target_comment_id,
+        )
+        if candidate["platform"] == "reddit" else set()
+    )
     before = page.url
     button.click(no_wait_after=True, timeout=10000)
+    reddit_thing_id = ""
     if candidate["platform"] == "reddit":
-        excerpt = promotion.compact(draft["body"])[:120]
-        parent_comment_id = reddit_comment_id(candidate["source_url"])
-        posted = page.locator(
-            reddit_posted_reply_selector(parent_comment_id)
-        ).filter(has_text=excerpt).first
-        try:
-            posted.wait_for(state="visible", timeout=20000)
-        except Exception as exc:
+        deadline = time.monotonic() + 20.0
+        while time.monotonic() < deadline:
+            delivered = reddit_delivery_ids(
+                reddit_comment_records(page),
+                draft["body"],
+                parent_comment_id=target_comment_id,
+            )
+            new_ids = delivered - prior_reddit_ids
+            if new_ids:
+                reddit_thing_id = sorted(new_ids)[0]
+                break
+            page.wait_for_timeout(250)
+        if not reddit_thing_id:
             raise RuntimeError(
                 "the public click was issued, but Reddit did not show the posted comment; "
                 "do not retry until the destination is inspected manually"
-            ) from exc
+            )
     elif candidate["platform"] == "hackernews":
         excerpt = promotion.compact(draft["body"])[:120]
         posted = page.locator(".commtext").filter(has_text=excerpt).first
@@ -1103,6 +1152,8 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
         page.wait_for_timeout(2500)
     screenshot = evidence(page, f"sent-{candidate['platform']}-{candidate_id}")
     detail = {"url_before": before, "url_after": page.url, "screenshot": screenshot}
+    if reddit_thing_id:
+        detail["reddit_thing_id"] = reddit_thing_id
     promotion.mark_sent(db, draft_id, token, detail)
     return {"ok": True, "state": "sent", "candidate_id": candidate_id, "draft_id": draft_id, **detail}
 

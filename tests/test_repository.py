@@ -232,6 +232,34 @@ class RepositoryTests(unittest.TestCase):
             'shreddit-comment[parentid="t1_comment456"] > div[slot="comment"]',
         )
 
+    def test_reddit_delivery_ids_cover_post_comments_and_exact_replies(self):
+        body = "A useful exact answer."
+        records = [
+            {"thingid": "t1_before", "parentid": "", "body": body},
+            {"thingid": "t1_top", "parentid": "", "body": body},
+            {"thingid": "t1_child", "parentid": "t1_comment456", "body": body},
+            {"thingid": "t1_sibling", "parentid": "t1_other", "body": body},
+            {"thingid": "not-a-thing", "parentid": "", "body": body},
+            {"thingid": "t1_different", "parentid": "", "body": "Different text"},
+        ]
+        self.assertEqual(
+            browser.reddit_delivery_ids(records, body),
+            {"t1_before", "t1_top"},
+        )
+        self.assertEqual(
+            browser.reddit_delivery_ids(
+                records,
+                body,
+                parent_comment_id="comment456",
+            ),
+            {"t1_child"},
+        )
+        prior = {"t1_before"}
+        self.assertEqual(
+            browser.reddit_delivery_ids(records, body) - prior,
+            {"t1_top"},
+        )
+
     def test_reddit_submit_is_bound_to_reviewed_composer(self):
         page = mock.MagicMock()
         target = mock.MagicMock()

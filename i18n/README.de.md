@@ -19,6 +19,8 @@ LazyPromotion ist ein lokaler Social-Discovery-Assistent mit Review-Pflicht. Er 
 - Zuerst helfen: Die konkrete Frage wird beantwortet, bevor ein Projekt genannt wird.
 - Ehrliche Zugehörigkeit: Eigene Links werden mit „Ich pflege…“ oder „Ich habe… gebaut“ offengelegt.
 - Eine Person, eine Entscheidung: keine Massenantworten, unerbetenen Direktnachrichten, automatischen Stimmen, Follows oder Engagement-Schleifen.
+- Crosspost-bewusst: identische Langfassungen desselben Autors werden einem kanonischen Kandidaten zugeordnet; eine bereits beantwortete Kopie hat Vorrang.
+- Standardmäßig aktuell: Quellzeit und Diskussionsumfang werden gespeichert; Beiträge über 30 Tage werden als veraltet markiert und vom Entwurf ausgeschlossen.
 - Exakte Freigabe: Jede Änderung am Entwurf macht die kurzlebige, hashgebundene Freigabe ungültig.
 - Sichtbarer Betrieb: Chrome läuft in noVNC; lokale Screenshots werden von Git ignoriert.
 - Private Sitzungen bleiben privat: Zugangsdaten, Cookies, Profile, Kandidaten, Entwürfe und Freigaben werden nie eingecheckt.

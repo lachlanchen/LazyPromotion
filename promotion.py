@@ -23,15 +23,25 @@ CATALOG_PATH = ROOT / "catalog.json"
 SCHEMA_PATH = ROOT / "schemas" / "reply.json"
 MODEL = "gpt-5.6-sol"
 EFFORT = "low"
+MAX_CANDIDATE_AGE_DAYS = 30
 
 HELP_SIGNALS = {
     "how", "help", "need", "needs", "looking", "recommend", "recommendation",
     "suggest", "suggestion", "anyone", "where", "what", "which", "struggling",
     "problem", "issue", "can't", "cannot", "wish", "advice",
 }
+HELP_PHRASES = {
+    "any way", "can anyone", "can someone", "could anyone", "could someone",
+    "does anyone", "how can i", "how do i", "is there", "looking for",
+    "need a", "need an", "what should i", "where can i", "would anyone",
+}
 SPAM_SIGNALS = {
     "promote your", "drop your link", "giveaway", "follow for follow", "f4f",
     "crypto pump", "buy followers", "growth hack",
+}
+OUT_OF_SCOPE_SIGNALS = {
+    "[for hire]", "[hiring]", "for hire", "hiring", "job opening",
+    "my new tool", "now open to all", "showcase", "we launched",
 }
 
 
@@ -57,6 +67,10 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
           score INTEGER NOT NULL DEFAULT 0,
           rationale TEXT NOT NULL DEFAULT '',
           status TEXT NOT NULL DEFAULT 'discovered',
+          duplicate_of TEXT NOT NULL DEFAULT '',
+          published_at TEXT NOT NULL DEFAULT '',
+          comment_count INTEGER NOT NULL DEFAULT 0,
+          source_score INTEGER NOT NULL DEFAULT 0,
           created_at TEXT NOT NULL,
           updated_at TEXT NOT NULL
         );
@@ -92,6 +106,18 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         );
         """
     )
+    columns = {row[1] for row in db.execute("PRAGMA table_info(candidates)")}
+    migrations = {
+        "duplicate_of": "TEXT NOT NULL DEFAULT ''",
+        "published_at": "TEXT NOT NULL DEFAULT ''",
+        "comment_count": "INTEGER NOT NULL DEFAULT 0",
+        "source_score": "INTEGER NOT NULL DEFAULT 0",
+    }
+    for column, definition in migrations.items():
+        if column not in columns:
+            db.execute(f"ALTER TABLE candidates ADD COLUMN {column} {definition}")
+    refresh_duplicates(db)
+    db.commit()
     return db
 
 
@@ -107,12 +133,72 @@ def normalized(value: str) -> str:
     return re.sub(r"[^a-z0-9+#' -]+", " ", value.casefold())
 
 
+def parse_source_time(value: str) -> datetime | None:
+    value = value.strip()
+    if not value:
+        return None
+    if value.endswith("+0000"):
+        value = f"{value[:-5]}+00:00"
+    if value.endswith("Z"):
+        value = f"{value[:-1]}+00:00"
+    try:
+        parsed = datetime.fromisoformat(value)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def is_stale(published_at: str, *, now: datetime | None = None) -> bool:
+    published = parse_source_time(published_at)
+    if published is None:
+        return False
+    now = now or datetime.now(timezone.utc)
+    return now - published > timedelta(days=MAX_CANDIDATE_AGE_DAYS)
+
+
+def refresh_duplicates(db: sqlite3.Connection) -> None:
+    """Mark exact long-form cross-posts while preserving the replied copy."""
+    db.execute("UPDATE candidates SET status='discovered', duplicate_of='' WHERE status='duplicate'")
+    rows = db.execute(
+        "SELECT id, platform, author, body, status, created_at FROM candidates ORDER BY created_at, id"
+    ).fetchall()
+    groups: dict[tuple[str, str, str], list[sqlite3.Row]] = {}
+    for row in rows:
+        author = normalized(row["author"]).strip()
+        body = normalized(row["body"]).strip()
+        if not author or len(body) < 120:
+            continue
+        groups.setdefault((row["platform"], author, body), []).append(row)
+    for group in groups.values():
+        if len(group) < 2:
+            continue
+        canonical = sorted(
+            group,
+            key=lambda row: (row["status"] != "replied", row["created_at"], row["id"]),
+        )[0]
+        db.execute("UPDATE candidates SET duplicate_of='' WHERE id=?", (canonical["id"],))
+        for row in group:
+            if row["id"] == canonical["id"] or row["status"] not in {"discovered", "duplicate"}:
+                continue
+            db.execute(
+                "UPDATE candidates SET status='duplicate', duplicate_of=? WHERE id=?",
+                (canonical["id"], row["id"]),
+            )
+
+
 def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     catalog = catalog or load_catalog()
     haystack = normalized(body)
     tokens = set(haystack.split())
     intent_hits = sorted(HELP_SIGNALS & tokens)
+    intent_hits.extend(sorted(phrase for phrase in HELP_PHRASES if phrase in haystack))
+    intent_hits = sorted(set(intent_hits))
     spam_hits = sorted(signal for signal in SPAM_SIGNALS if signal in haystack)
+    out_of_scope_hits = sorted(signal for signal in OUT_OF_SCOPE_SIGNALS if signal in haystack)
+    if not intent_hits or spam_hits or out_of_scope_hits:
+        return []
     ranked = []
     for project in catalog["projects"]:
         matches = []
@@ -122,7 +208,13 @@ def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict
                 matches.append(keyword)
         if not matches:
             continue
-        score = min(12, len(set(matches)) * 3) + min(6, len(intent_hits) * 2) - len(spam_hits) * 6
+        context_hits = sorted(
+            context for context in project.get("required_any", [])
+            if normalized(context).strip() in haystack
+        )
+        if project.get("required_any") and not context_hits:
+            continue
+        score = min(12, len(set(matches)) * 3) + min(6, len(intent_hits) * 2)
         ranked.append(
             {
                 "project": project,
@@ -130,6 +222,8 @@ def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict
                 "matches": sorted(set(matches)),
                 "intent_hits": intent_hits,
                 "spam_hits": spam_hits,
+                "out_of_scope_hits": out_of_scope_hits,
+                "context_hits": context_hits,
             }
         )
     return sorted(ranked, key=lambda item: (-item["score"], item["project"]["id"]))
@@ -155,6 +249,9 @@ def ingest_candidate(
     body: str,
     author: str = "",
     query: str = "",
+    published_at: str = "",
+    comment_count: int = 0,
+    source_score: int = 0,
 ) -> dict[str, Any]:
     body = compact(body)
     source_url = source_url.strip()
@@ -177,6 +274,8 @@ def ingest_candidate(
                 "matches": best["matches"],
                 "intent_hits": best["intent_hits"],
                 "spam_hits": best["spam_hits"],
+                "out_of_scope_hits": best["out_of_scope_hits"],
+                "context_hits": best["context_hits"],
             },
             ensure_ascii=False,
             sort_keys=True,
@@ -184,8 +283,9 @@ def ingest_candidate(
     db.execute(
         """
         INSERT INTO candidates
-          (id, platform, source_url, author, body, query, suggested_tool, score, rationale, status, created_at, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'discovered', ?, ?)
+          (id, platform, source_url, author, body, query, suggested_tool, score, rationale,
+           status, duplicate_of, published_at, comment_count, source_score, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'discovered', '', ?, ?, ?, ?, ?)
         ON CONFLICT(source_url) DO UPDATE SET
           author=excluded.author,
           body=excluded.body,
@@ -193,10 +293,22 @@ def ingest_candidate(
           suggested_tool=excluded.suggested_tool,
           score=excluded.score,
           rationale=excluded.rationale,
+          published_at=CASE WHEN excluded.published_at != '' THEN excluded.published_at ELSE candidates.published_at END,
+          comment_count=excluded.comment_count,
+          source_score=excluded.source_score,
           updated_at=excluded.updated_at
         """,
-        (candidate_id, platform, source_url, compact(author), body, compact(query), suggested_tool, score, rationale, now, now),
+        (
+            candidate_id, platform, source_url, compact(author), body, compact(query),
+            suggested_tool, score, rationale, published_at.strip(), max(0, int(comment_count)),
+            int(source_score), now, now,
+        ),
     )
+    current = db.execute("SELECT status, published_at FROM candidates WHERE id=?", (candidate_id,)).fetchone()
+    if current and current["status"] in {"discovered", "stale"}:
+        status = "stale" if is_stale(current["published_at"]) else "discovered"
+        db.execute("UPDATE candidates SET status=? WHERE id=?", (status, candidate_id))
+    refresh_duplicates(db)
     db.execute(
         "INSERT INTO events(candidate_id, kind, detail, created_at) VALUES (?, 'candidate_ingested', ?, ?)",
         (candidate_id, json.dumps({"score": score, "tool": suggested_tool}, sort_keys=True), now),
@@ -356,6 +468,7 @@ def mark_sent(db: sqlite3.Connection, draft_id: str, token: str, detail: dict[st
         "INSERT INTO events(candidate_id, draft_id, kind, detail, created_at) VALUES (?, ?, 'reply_sent', ?, ?)",
         (approval["candidate_id"], draft_id, json.dumps(detail, ensure_ascii=False, sort_keys=True), now),
     )
+    refresh_duplicates(db)
     db.commit()
 
 
@@ -416,6 +529,8 @@ def main() -> int:
         if args.status:
             where.append("status = ?")
             values.append(args.status)
+        else:
+            where.append("status NOT IN ('duplicate', 'stale', 'rejected')")
         values.append(args.limit)
         rows = db.execute(
             f"SELECT * FROM candidates WHERE {' AND '.join(where)} ORDER BY score DESC, created_at DESC LIMIT ?",
@@ -430,6 +545,8 @@ def main() -> int:
         candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (args.candidate_id,)).fetchone())
         if not candidate:
             raise SystemExit(f"candidate not found: {args.candidate_id}")
+        if candidate["status"] in {"duplicate", "stale", "rejected", "replied"}:
+            raise SystemExit(f"candidate status is {candidate['status']}; drafting is not allowed")
         project_id = args.project or candidate["suggested_tool"]
         if not project_id:
             raise SystemExit("candidate has no relevant project; choose --project only after manual review")

@@ -19,6 +19,8 @@ LazyPromotion est un assistant local de découverte sociale avec révision préa
 - Aider d’abord : la réponse traite le besoin concret avant de citer un projet.
 - Affiliation transparente : un lien personnel est accompagné de « je maintiens… » ou « j’ai créé… ».
 - Une personne, une décision : aucun envoi massif, message privé non sollicité, vote, abonnement ou boucle d’engagement automatique.
+- Conscient des publications croisées : les copies longues identiques d’un même auteur sont regroupées derrière un candidat canonique, en privilégiant celle qui a déjà reçu une réponse.
+- Récent par défaut : l’horodatage source et le volume de discussion sont consignés ; tout message de plus de 30 jours devient périmé et ne peut pas être rédigé.
 - Approbation exacte : toute modification du brouillon invalide l’approbation temporaire liée à son empreinte.
 - Opération visible : Chrome tourne dans noVNC et les captures locales sont ignorées par Git.
 - Sessions privées : identifiants, cookies, profils, candidats, brouillons et approbations ne sont jamais versionnés.

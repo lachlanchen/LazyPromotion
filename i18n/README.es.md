@@ -19,6 +19,8 @@ LazyPromotion es un asistente local de descubrimiento social con revisión previ
 - Primero ayudar: la respuesta atiende la necesidad concreta antes de mencionar un proyecto.
 - Afiliación honesta: todo enlace propio incluye una declaración como «mantengo…» o «construí…».
 - Una persona, una decisión: no hay respuestas masivas, mensajes privados no solicitados, votos, seguimientos ni bucles de interacción automáticos.
+- Consciente de publicaciones cruzadas: las copias extensas idénticas del mismo autor se agrupan bajo un candidato canónico, dando prioridad a la copia ya respondida.
+- Reciente por defecto: se registran la fecha de origen y el volumen de conversación; las publicaciones de más de 30 días se marcan como antiguas y no pueden generar borradores.
 - Aprobación exacta: cambiar el borrador invalida la aprobación temporal vinculada a su hash.
 - Operación visible: Chrome funciona en noVNC y las capturas locales quedan ignoradas por Git.
 - Las sesiones siguen privadas: credenciales, cookies, perfiles, candidatos, borradores y aprobaciones nunca entran en el repositorio.

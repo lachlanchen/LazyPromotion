@@ -43,6 +43,10 @@ flowchart LR
   or “I built…”.
 - One person, one decision: no mass replies, unsolicited DMs, automated votes,
   follows, or engagement loops.
+- Cross-post aware: exact long-form copies by the same author collapse behind
+  one canonical candidate, preferring the copy that already received a reply.
+- Fresh by default: source timestamps and discussion counts are recorded, and
+  posts older than 30 days are marked stale and refused by the drafter.
 - Exact approval: changing the draft invalidates its short-lived approval.
 - Visible operation: Chrome runs in noVNC and important steps capture local,
   ignored screenshots.

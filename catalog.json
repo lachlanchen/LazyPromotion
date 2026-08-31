@@ -5,6 +5,10 @@
       "name": "LazyEdit",
       "url": "https://github.com/lachlanchen/LazyEdit",
       "summary": "Local-first video transcription, subtitle processing, metadata, editing, and optional publishing workflow.",
+      "required_any": [
+        "video", "videos", "reel", "reels", "youtube", "instagram", "tiktok",
+        "clip", "footage", "podcast", "audio", "mp4", "srt", "vtt", "video editing"
+      ],
       "keywords": [
         "subtitle", "subtitles", "caption", "captions", "transcribe", "transcription",
         "translate video", "burn subtitles", "cannot understand video", "can't understand video",

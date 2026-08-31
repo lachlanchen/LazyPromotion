@@ -19,6 +19,8 @@ LazyPromotion là trợ lý cục bộ, ưu tiên duyệt trước khi gửi đ�
 - Hữu ích trước: trả lời nhu cầu cụ thể trước khi nhắc đến dự án.
 - Minh bạch quan hệ: liên kết của chính mình luôn kèm lời nói rõ như “tôi duy trì…” hoặc “tôi xây dựng…”.
 - Một người, một quyết định: không trả lời hàng loạt, nhắn tin riêng không được yêu cầu, tự động bình chọn, theo dõi hay tạo vòng lặp tương tác.
+- Nhận biết bài đăng chéo: các bản dài giống hệt của cùng tác giả được gom vào một ứng viên chuẩn, ưu tiên bản đã được trả lời.
+- Mặc định ưu tiên bài mới: thời gian nguồn và quy mô thảo luận được ghi lại; bài quá 30 ngày bị đánh dấu cũ và không được tạo bản nháp.
 - Phê duyệt chính xác: sửa bản nháp sẽ vô hiệu hóa phê duyệt ngắn hạn gắn với hàm băm nội dung.
 - Thao tác hiển thị: Chrome chạy trong noVNC và ảnh bằng chứng cục bộ được Git bỏ qua.
 - Phiên luôn riêng tư: thông tin đăng nhập, cookie, hồ sơ, ứng viên, bản nháp và phê duyệt không vào kho mã.

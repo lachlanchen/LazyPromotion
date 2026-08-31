@@ -43,7 +43,14 @@ def current_page(browser) -> Page:
     return pages[-1] if pages else contexts[0].new_page()
 
 
-def page_for(browser, *, platform: str = "", target_url: str = "", create: bool = True) -> Page:
+def page_for(
+    browser,
+    *,
+    platform: str = "",
+    target_url: str = "",
+    create: bool = True,
+    front: bool = True,
+) -> Page:
     contexts = browser.contexts
     if not contexts:
         raise RuntimeError("CDP browser has no context")
@@ -51,16 +58,18 @@ def page_for(browser, *, platform: str = "", target_url: str = "", create: bool 
     hosts = PLATFORM_HOSTS.get(platform, set())
     target_host = (urlparse(target_url).hostname or "").casefold()
     if target_host:
-        hosts = {target_host}
+        hosts = {*hosts, target_host}
     for page in context.pages:
         if (urlparse(page.url).hostname or "").casefold() in hosts:
-            page.bring_to_front()
+            if front:
+                page.bring_to_front()
             return page
     if not create:
         label = platform or target_url or "requested"
         raise RuntimeError(f"no open {label} page was found")
     page = context.new_page()
-    page.bring_to_front()
+    if front:
+        page.bring_to_front()
     return page
 
 
@@ -101,6 +110,9 @@ def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
           url: n.getAttribute('content-href') || n.getAttribute('permalink') ||
             n.querySelector('a[href*="/comments/"]')?.href || '',
           author: n.getAttribute('author') || '',
+          published_at: n.getAttribute('created-timestamp') || '',
+          comment_count: n.getAttribute('comment-count') || '0',
+          source_score: n.getAttribute('score') || '0',
           body: [n.getAttribute('post-title') || '', n.innerText || ''].join(' ').trim()
         }))""",
         limit,
@@ -109,7 +121,8 @@ def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
         return rows
     return page.locator('a[href*="/comments/"]').evaluate_all(
         """(nodes, limit) => nodes.slice(0, limit).map((a) => ({
-          url: a.href, author: '', body: (a.innerText || a.closest('article')?.innerText || '').trim()
+          url: a.href, author: '', published_at: '', comment_count: '0', source_score: '0',
+          body: (a.innerText || a.closest('article')?.innerText || '').trim()
         }))""",
         limit,
     )
@@ -137,7 +150,14 @@ def extract_instagram(page: Page, limit: int) -> list[dict[str, str]]:
     )
 
 
-def dedupe(rows: list[dict[str, str]], limit: int) -> list[dict[str, str]]:
+def safe_int(value: object) -> int:
+    try:
+        return int(str(value or "0").replace(",", ""))
+    except ValueError:
+        return 0
+
+
+def dedupe(rows: list[dict[str, str]], limit: int) -> list[dict[str, object]]:
     result = []
     seen = set()
     for row in rows:
@@ -146,7 +166,14 @@ def dedupe(rows: list[dict[str, str]], limit: int) -> list[dict[str, str]]:
         if not url or not body or url in seen:
             continue
         seen.add(url)
-        result.append({"url": url, "author": promotion.compact(str(row.get("author") or "")), "body": body})
+        result.append({
+            "url": url,
+            "author": promotion.compact(str(row.get("author") or "")),
+            "body": body,
+            "published_at": str(row.get("published_at") or ""),
+            "comment_count": safe_int(row.get("comment_count")),
+            "source_score": safe_int(row.get("source_score")),
+        })
         if len(result) >= limit:
             break
     return result
@@ -167,7 +194,8 @@ def discover(page: Page, platform: str, query: str, limit: int) -> dict[str, obj
     candidates = [
         promotion.ingest_candidate(
             db, platform=platform, source_url=row["url"], body=row["body"],
-            author=row["author"], query=query,
+            author=row["author"], query=query, published_at=row["published_at"],
+            comment_count=row["comment_count"], source_score=row["source_score"],
         )
         for row in rows
     ]
@@ -201,6 +229,9 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         title = root.get_attribute("post-title") or ""
         author = root.get_attribute("author") or author
         community = root.get_attribute("subreddit-prefixed-name") or ""
+        published_at = root.get_attribute("created-timestamp") or ""
+        comment_count = safe_int(root.get_attribute("comment-count"))
+        source_score = safe_int(root.get_attribute("score"))
         content = root.locator("shreddit-post-text-body").first
         body = content.inner_text() if content.count() else root.inner_text()
         if community.startswith("r/"):
@@ -229,6 +260,9 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         body=full_body,
         author=author,
         query=candidate["query"],
+        published_at=published_at if candidate["platform"] == "reddit" else candidate.get("published_at", ""),
+        comment_count=comment_count if candidate["platform"] == "reddit" else candidate.get("comment_count", 0),
+        source_score=source_score if candidate["platform"] == "reddit" else candidate.get("source_score", 0),
     )
     screenshot = evidence(page, f"inspect-{candidate['platform']}-{candidate_id}")
     return {
@@ -407,8 +441,10 @@ def build_parser() -> argparse.ArgumentParser:
     search.add_argument("--platform", choices=("reddit", "x", "instagram"), required=True)
     search.add_argument("--query", required=True)
     search.add_argument("--limit", type=int, default=12)
+    search.add_argument("--background", action="store_true", help="do not take focus from the active review/login tab")
     inspect = sub.add_parser("inspect")
     inspect.add_argument("candidate_id")
+    inspect.add_argument("--background", action="store_true", help="inspect without taking focus from the active tab")
     prepare = sub.add_parser("prepare")
     prepare.add_argument("candidate_id")
     prepare.add_argument("draft_id")
@@ -436,11 +472,16 @@ def main() -> int:
             wait_ready(page)
             emit({"ok": True, "url": page.url, "title": page.title(), "screenshot": evidence(page, "open")})
         elif args.command == "search":
-            page = page_for(browser, platform=args.platform)
+            page = page_for(browser, platform=args.platform, front=not args.background)
             emit(discover(page, args.platform, args.query, max(1, min(args.limit, 50))))
         elif args.command == "inspect":
             candidate = candidate_destination(args.candidate_id)
-            page = page_for(browser, platform=candidate["platform"], target_url=candidate["source_url"])
+            page = page_for(
+                browser,
+                platform=candidate["platform"],
+                target_url=candidate["source_url"],
+                front=not args.background,
+            )
             emit(inspect_candidate(page, args.candidate_id))
         elif args.command == "prepare":
             candidate = candidate_destination(args.candidate_id)

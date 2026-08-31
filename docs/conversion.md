@@ -9,17 +9,21 @@ be reported separately—none may be inferred from impressions or clicks.
 
 The clearest tool-aligned offer currently published is
 [LazyingArt eInk](https://lazying.art/eink/): a USD 128 / CNY 999 pre-order tied
-to a free local Kindle sender and free LinguaLeaf books. Eight USD 128 orders
-would be USD 1,024 gross. That is a milestone calculation, not a forecast, and
-excludes payment fees, shipping, tax, refunds, and fulfillment costs.
+to a free local Kindle sender and free LinguaLeaf books. Its current public
+order path is an email inquiry, not a payment checkout. Eight confirmed USD 128
+orders would be USD 1,024 gross. That is a milestone calculation, not a
+forecast, and excludes payment fees, shipping, tax, refunds, and fulfillment
+costs.
 
 The campaign sequence is:
 
 1. Show a real multilingual reading page.
 2. Offer the free Kindle sender or public book shelf.
 3. Ask what the reader needs from e-paper hardware.
-4. Present the pre-order only to qualified readers.
-5. Record an order only from confirmed payment or the operator's order ledger.
+4. Present the pre-order inquiry only to qualified readers.
+5. Activate payment only after the exact product, shipping, lead time,
+   cancellation, return, warranty, and support terms have been reviewed.
+6. Record an order only from confirmed payment or the operator's order ledger.
 
 Every campaign link uses a stable `utm_campaign`. Postiz analytics can measure
 channel reach and engagement, while confirmed leads and revenue remain private

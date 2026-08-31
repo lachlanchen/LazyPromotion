@@ -5,6 +5,7 @@
   "source_evidence": {
     "offer_page": "https://lazying.art/eink/",
     "offer_stage": "pre-order",
+    "current_order_mode": "email inquiry; no public payment checkout is active",
     "public_price": "USD 128 / CNY 999",
     "free_kindle_sender": "https://github.com/lachlanchen/Kindle/releases/latest",
     "public_book_shelf": "https://lachlanchen.github.io/LinguaLeaf/website/",
@@ -18,8 +19,8 @@
   },
   "funnel": {
     "free_value": "Use the local Kindle sender or download a LinguaLeaf edition.",
-    "qualified_interest": "Visit the LazyingArt eInk offer page or email an order question.",
-    "commercial_action": "Place a USD 128 / CNY 999 pre-order through the public offer page.",
+    "qualified_interest": "Visit the LazyingArt eInk offer page or send an order question through its email link.",
+    "commercial_action": "Complete a reviewed USD 128 / CNY 999 payment only after fulfillment terms and a live checkout are available.",
     "gross_revenue_milestone": "Eight USD 128 pre-orders equal USD 1,024 gross before fees, shipping, taxes, refunds, and fulfillment costs."
   },
   "channels": {

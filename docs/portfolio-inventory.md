@@ -8,14 +8,14 @@ These are priority paths, not a license to force a mention. LazyPromotion should
 
 | Work | Real need | Best-fit audience | Honest conversion route |
 |---|---|---|---|
-| [LazyingArt eInk](https://lazying.art/eink/) | A dedicated multilingual reader without giving up a free Kindle/KOReader path | Language learners and e-paper readers | Verified public pre-order: $128 / ¥999 |
+| [LazyingArt eInk](https://lazying.art/eink/) | A dedicated multilingual reader without giving up a free Kindle/KOReader path | Language learners and e-paper readers | Public $128 / ¥999 pre-order inquiry; payment checkout awaits fulfillment review |
 | [Figurine](https://buy.lazying.art) | A small multilingual shop for handmade LazyingArt objects and accessories | Existing LazyingArt supporters and gift buyers | Live storefront and checkout |
 | [LazyEdit + AutoPublish](https://studio.lazying.art/) | Subtitles, transcription, highlights, metadata, and repeatable video publishing | Video creators with a concrete editing or publishing bottleneck | Earn trust through a working open-source path; do not imply paid pricing that is not published |
 | [PocketPolyglot + LinguaLeaf](https://learn.lazying.art) | Readable multilingual, interlinear, ruby, pinyin, and furigana books | Language learners, teachers, and readers of Classical Chinese | Free books and builder first; optional eInk pre-order or GitHub Sponsors later |
 | [Susskind archive + LazyLearn](https://github.com/lachlanchen/leonardsusskind) | Searchable lecture notes and a bridge from physics intuition to practice | Independent physics learners | Free educational value; sponsorship is secondary and never the reason for a reply |
 | [Musia + LocalVideoGen](https://fun.lazying.art) | Local-first music localization and controllable video generation | Creators who already have a specific song, stem, or video workflow problem | Find design partners and open-source users before making a commercial claim |
 
-The immediate revenue route is the verified eInk pre-order or an existing Figurine checkout. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
+The immediate revenue route is an eInk order inquiry followed by reviewed payment, or an existing Figurine checkout. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
 
 ## Portfolio at a glance
 

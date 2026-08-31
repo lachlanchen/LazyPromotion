@@ -22,7 +22,8 @@ The campaign sequence is:
 1. Find a current, explicit need involving a private collection, local/offline
    knowledge, citations, or multilingual study.
 2. Answer the stated problem usefully before mentioning any LazyingArt work.
-3. Let the profile or one relevant link lead to the free fit check.
+3. Let the profile or one relevant link lead to the
+   [private-by-design fit check](https://lazying.art/lkt/fit-check/).
 4. Confirm source rights, sample format, language goal, readers, privacy needs,
    and existing hardware.
 5. Request the fixed USD 250 payment through Stripe only after both sides accept
@@ -47,8 +48,10 @@ and are mentioned only when they directly fit the stated need.
 [Local Knowledge Terminal](https://lazying.art/lkt/) publishes the bounded USD
 250 collection-fit sprint for people with one private book or dictionary
 collection. It is a service using the customer's existing machine, not
-ready-to-ship hardware. The free fit check precedes payment. An inquiry is a
-lead at most; it is never recorded as a sale without confirmed payment.
+ready-to-ship hardware. The [free fit check](https://lazying.art/lkt/fit-check/)
+precedes payment and builds a reviewable email draft without automatically
+storing, uploading, or sending the answers. An inquiry is a lead at most; it is
+never recorded as a sale without confirmed payment.
 
 ## Private evidence ledger
 

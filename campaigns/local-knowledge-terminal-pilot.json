@@ -4,13 +4,14 @@
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
     "pilot_page": "https://lazying.art/lkt/",
+    "fit_check": "https://lazying.art/lkt/fit-check/",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
     "website_hero": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
     "instagram_visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
     "offer_stage": "founding collection-fit sprint",
     "public_price": "USD 250",
-    "current_order_mode": "free fit check followed by a reviewed Stripe payment request",
+    "current_order_mode": "private-by-design structured free fit check followed by a reviewed Stripe payment request",
     "included_scope": [
       "one customer-provided collection",
       "one language goal",
@@ -35,7 +36,7 @@
   },
   "funnel": {
     "free_value": "Inspect the public code, tests, architecture, and durable product brief.",
-    "qualified_interest": "Request the free fit check with the collection, language goal, readers, sample format, rights, privacy needs, and existing hardware.",
+    "qualified_interest": "Use https://lazying.art/lkt/fit-check/ to review a local email draft containing the collection, language goal, readers, sample format, rights, privacy needs, and existing hardware; the page stores and sends nothing automatically.",
     "commercial_action": "After a positive fit review, accept the fixed USD 250 sprint scope and complete a reviewed Stripe payment request.",
     "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales."
   },

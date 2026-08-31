@@ -257,6 +257,11 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
         self.assertIn("free fit check", campaign["source_evidence"]["current_order_mode"])
+        self.assertEqual(
+            campaign["source_evidence"]["fit_check"],
+            "https://lazying.art/lkt/fit-check/",
+        )
+        self.assertIn("stores and sends nothing automatically", serialized)
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)

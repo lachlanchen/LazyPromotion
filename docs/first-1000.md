@@ -18,6 +18,12 @@ Hardware, shipping, custom OCR, and production deployment are excluded. The
 customer must have the right to use the source. A free fit check comes first;
 Stripe payment is requested only after both sides accept the scope.
 
+The verified fit-check page is
+<https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
+builds a reviewable email draft inside the current browser tab. It stores,
+uploads, and sends nothing automatically; the prospective customer controls the
+final email send.
+
 ## Qualification gate
 
 Before payment, collect only the minimum facts needed to decide fit:
@@ -38,7 +44,8 @@ payment data, or private corpus text in the promotion repository.
 1. Discover a current need on a channel whose rules allow a helpful response.
 2. Solve the stated problem in the reply; mention LKT only when it materially
    improves the answer and disclose affiliation.
-3. Send qualified readers to the free fit check, never directly to payment.
+3. Send qualified readers to <https://lazying.art/lkt/fit-check/>, never
+   directly to payment.
 4. Record a `qualified_lead` only after a real fit inquiry.
 5. After scope acceptance, use a reviewed Stripe request for USD 250.
 6. Record `sale_confirmed` only after verified payment, using a private receipt

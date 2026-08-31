@@ -156,6 +156,8 @@ rather than repeating the first searches. State,
 logs, candidates, model decisions, screenshots, and the exact draft review
 queue live under ignored `.local/` paths. Instagram portfolio and promotional
 posts are discarded unless the caption contains an explicit request.
+Any remaining triage capacity drains the freshest timestamped request backlog,
+so a transient model failure cannot strand a genuine need indefinitely.
 Continuous mode never approves,
 submits, votes, follows, or sends a direct message.
 

@@ -44,6 +44,10 @@ class PromotionTests(unittest.TestCase):
         body = "With a friend's help I added subtitles in the editor. Not bad."
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_ask_hn_title_is_an_explicit_request_without_question_mark(self):
+        body = "Ask HN: Are third party GGUF models safe in a local production environment"
+        self.assertTrue(promotion.is_help_request(body))
+
     def test_volunteer_opportunity_is_not_a_request_for_a_tool(self):
         body = "Volunteer opportunities: help us add subtitles and branding to our videos."
         self.assertFalse(promotion.is_help_request(body))

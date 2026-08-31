@@ -81,12 +81,45 @@ def review_queue(db) -> list[dict]:
     ]
 
 
+def pending_candidate_ids(db, preferred_ids: list[str], limit: int) -> list[str]:
+    if limit <= 0:
+        return []
+    rows = {
+        row["id"]: dict(row)
+        for row in db.execute(
+            """
+            SELECT * FROM candidates
+            WHERE status='discovered' AND published_at != ''
+            ORDER BY published_at DESC, score DESC, updated_at DESC
+            LIMIT 500
+            """
+        ).fetchall()
+    }
+    ordered = [*preferred_ids, *rows]
+    selected = []
+    for candidate_id in ordered:
+        candidate = rows.get(candidate_id)
+        if not candidate or candidate_id in selected:
+            continue
+        if promotion.compact(candidate["author"]).casefold() in promotion.BOT_AUTHORS:
+            continue
+        if promotion.is_stale(candidate["published_at"]):
+            continue
+        if not promotion.is_help_request(candidate["body"]):
+            continue
+        selected.append(candidate_id)
+        if len(selected) >= limit:
+            break
+    return selected
+
+
 def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) -> dict:
     db = promotion.open_db()
+    selected_ids = pending_candidate_ids(db, candidate_ids, max_triage)
     triaged = []
     drafted = []
     errors = []
-    for candidate_id in candidate_ids[:max_triage]:
+    for candidate_id in selected_ids:
         candidate = promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone())
         if not candidate or candidate["status"] != "discovered":
             continue
@@ -114,7 +147,13 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
             errors.append({"stage": "draft", "candidate_id": candidate_id, "error": str(exc)})
     queue = review_queue(db)
     write_json(QUEUE_PATH, {"updated_at": utc_now(), "count": len(queue), "items": queue})
-    return {"triaged": triaged, "drafted": drafted, "errors": errors, "review_queue_size": len(queue)}
+    return {
+        "selected_candidate_ids": selected_ids,
+        "triaged": triaged,
+        "drafted": drafted,
+        "errors": errors,
+        "review_queue_size": len(queue),
+    }
 
 
 def run_cycle(args, state: dict) -> dict:

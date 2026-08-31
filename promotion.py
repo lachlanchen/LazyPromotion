@@ -225,6 +225,7 @@ def help_request_signals(body: str) -> dict[str, list[str]]:
 def is_help_request(body: str) -> bool:
     signals = help_request_signals(body)
     haystack = normalized(body)
+    ask_hn = haystack.startswith("ask hn ")
     tokens = set(haystack.split())
     strong_tokens = {
         "advice", "can't", "cannot", "issue", "looking", "need", "problem",
@@ -232,11 +233,12 @@ def is_help_request(body: str) -> bool:
     }
     explicit = (
         "?" in body
+        or ask_hn
         or bool(strong_tokens & tokens)
         or any(phrase in haystack for phrase in HELP_PHRASES)
     )
     return bool(
-        signals["intent_hits"] and explicit
+        (signals["intent_hits"] or ask_hn) and explicit
         and not signals["spam_hits"] and not signals["out_of_scope_hits"]
     )
 

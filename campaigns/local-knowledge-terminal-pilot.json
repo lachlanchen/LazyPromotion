@@ -46,16 +46,18 @@
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },
     "x": {
-      "state": "postiz_draft",
-      "content": "Some knowledge should stay in the room. I built LKT to turn private books into cited multilingual cards on an existing machine. I’m opening four $250 collection-fit sprints; the image is a prototype-grounded concept, not shipped hardware. Free fit check: lazying.art/lkt",
+      "state": "postiz_queue",
+      "publish_at": "2026-09-08T01:00:00Z",
+      "content": "Some knowledge should stay in the room. LKT turns private books into cited multilingual cards on your machine. I’m opening four $250 collection-fit sprints; this is a prototype-grounded concept, not shipped hardware. Free fit check: lazying.art/lkt/fit-check",
       "visual": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
-      "policy": "First-party product draft with the generated visual disclosed as a prototype-grounded concept. Keep it unpublished until the exact copy, media, destination, and draft state are visibly reviewed."
+      "policy": "First-party product post with the generated visual disclosed as a prototype-grounded concept. The exact 258-character copy, uploaded media, direct fit-check destination, AI flag, provider settings, and future queue state were visibly reviewed before scheduling."
     },
     "instagram": {
-      "state": "postiz_draft",
-      "content": "Some knowledge should stay in the room.\n\nLocal Knowledge Terminal turns a private book or reviewed dictionary collection into cited multilingual cards on an existing machine. The browser software works today; the image is a concept visual grounded in the current display prototype, not shipped inventory.\n\nI’m opening four founding collection-fit sprints at $250 each. The free fit check comes first. A paid sprint covers one collection, one language goal, and one existing machine, then delivers a data/privacy map, a small browser proof from a representative sample when the source is usable, and a go/no-go recommendation.\n\nHardware, shipping, custom OCR, and production deployment are not included.\n\nIf that matches a real collection you already have, the fit questions are here:\nhttps://lazying.art/lkt/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot\n\n#LocalFirst #KnowledgeManagement #LanguageLearning #RaspberryPi #Privacy",
+      "state": "postiz_queue",
+      "publish_at": "2026-09-08T11:31:00Z",
+      "content": "Some knowledge should stay in the room.\n\nLocal Knowledge Terminal turns a private book or reviewed dictionary collection into cited multilingual cards on an existing machine. The browser software works today; the image is a concept visual grounded in the current display prototype, not shipped inventory.\n\nI’m opening four founding collection-fit sprints at $250 each. The free fit check comes first. A paid sprint covers one collection, one language goal, and one existing machine, then delivers a data/privacy map, a small browser proof from a representative sample when the source is usable, and a go/no-go recommendation.\n\nHardware, shipping, custom OCR, and production deployment are not included.\n\nIf that matches a real collection you already have, the fit questions are here:\nhttps://lazying.art/lkt/fit-check/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot\n\n#LocalFirst #KnowledgeManagement #LanguageLearning #RaspberryPi #Privacy",
       "visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
-      "policy": "Use the reviewed 4:5 concept visual and keep its disclosure in the caption. Never present it as inventory; keep the post unpublished until exact review."
+      "policy": "Use the reviewed uploaded 4:5 concept visual and keep its disclosure in the caption. The exact caption, unshortened direct fit-check URL, provider settings, and future queue state were visibly reviewed before scheduling; never present it as inventory."
     },
     "hackernews": {
       "state": "research_only",

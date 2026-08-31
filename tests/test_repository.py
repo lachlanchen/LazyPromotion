@@ -262,12 +262,25 @@ class RepositoryTests(unittest.TestCase):
             "https://lazying.art/lkt/fit-check/",
         )
         self.assertIn("stores and sends nothing automatically", serialized)
-        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
-        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
+        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
+        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
+        self.assertEqual(
+            campaign["channels"]["x"]["publish_at"], "2026-09-08T01:00:00Z"
+        )
+        self.assertEqual(
+            campaign["channels"]["instagram"]["publish_at"],
+            "2026-09-08T11:31:00Z",
+        )
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
         self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
         self.assertIn(
             "utm_source=instagram", campaign["channels"]["instagram"]["content"]
+        )
+        self.assertIn(
+            "lazying.art/lkt/fit-check", campaign["channels"]["x"]["content"]
+        )
+        self.assertIn(
+            "lazying.art/lkt/fit-check", campaign["channels"]["instagram"]["content"]
         )
         self.assertIn("concept", campaign["channels"]["x"]["content"])
         self.assertIn("not shipped inventory", campaign["channels"]["instagram"]["content"])

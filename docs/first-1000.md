@@ -54,9 +54,10 @@ payment data, or private corpus text in the promotion repository.
    or referral may be shared.
 
 No automated generated comments are posted to Hacker News. Reddit community
-rules are checked before any reply. First-party X and Instagram posts remain
-reviewed drafts until the exact copy, visual, destination, and state are visibly
-confirmed.
+rules are checked before any reply. The first-party LKT X and Instagram posts
+were visibly reviewed and queued for September 8, 2026 at 01:00 and 11:31 UTC;
+their exact copy, uploaded visuals, direct fit-check destinations, provider
+settings, and future state were confirmed before scheduling.
 
 ## How the portfolio contributes
 

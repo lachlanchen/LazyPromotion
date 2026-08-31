@@ -59,6 +59,13 @@ the CLI during the 2026-08-31 validation. Recheck the visible editor after every
 creation because provider transformations can change, and do not infer that a
 URL will be clickable until the platform preview or final composer proves it.
 
+On 2026-09-01, the reviewed LKT X and Instagram items were moved to the Postiz
+queue for 2026-09-08T01:00:00Z and 2026-09-08T11:31:00Z. The operator fetched
+both live provider contracts first, kept the uploaded wide and 4:5 visuals,
+confirmed the concept/not-inventory disclosures, changed both destinations to
+the verified fit-check page, declined URL shortening, and then verified the
+persisted `QUEUE` records. The Wenyan and eInk items remained drafts.
+
 ## Quota and trust policy
 
 - Draft text locally with `gpt-5.6-sol` at low reasoning effort.

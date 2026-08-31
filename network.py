@@ -284,7 +284,7 @@ def sync_private_activity(db) -> None:
         community = community_from_candidate(candidate)
         community_id = f"community:{candidate['platform']}:{community.casefold()}"
         upsert_entity(
-            db, community_id, kind="community", label=community, visibility="public"
+            db, community_id, kind="community", label=community, visibility="private"
         )
         upsert_relationship(
             db, need_id, "found_in", community_id, evidence_url=candidate["source_url"]

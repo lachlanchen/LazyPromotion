@@ -55,6 +55,7 @@ class NetworkTests(unittest.TestCase):
         serialized = json.dumps(snapshot, ensure_ascii=False)
         self.assertNotIn("private-person", serialized)
         self.assertNotIn("That means a lot", serialized)
+        self.assertNotIn("r/example", serialized)
         self.assertNotIn("workspace_checkout", serialized)
         self.assertIn("LazyingArt eInk", serialized)
 

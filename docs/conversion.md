@@ -89,6 +89,6 @@ python signals.py import-json .local/private/search-console-signals.json \
 python signals.py report --source google_search_console
 ```
 
-Demand rows and their graph entities remain private. The sanitized public graph
-excludes subjects, queries, click counts, account evidence paths, and their
-project relationships.
+Demand rows, observed communities, and their graph entities remain private. The
+sanitized public graph excludes subjects, queries, click counts, account
+evidence paths, observed-community names, and their project relationships.

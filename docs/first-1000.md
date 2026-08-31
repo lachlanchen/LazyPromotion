@@ -92,7 +92,11 @@ decision tree is queued for September 1 at 02:00 UTC on the connected Reddit
 account's own profile—not in a third-party community—so people arriving from
 value-only replies can find useful context without a second promotional reply.
 Both use tracked guide links, and the Reddit resource includes an explicit
-maintainer disclosure.
+maintainer disclosure. The public Reddit profile itself now has one restrained
+bio describing the local-first work and one tracked `Free LKT fit check` social
+link pointing directly to the live fit-check page. That owned-profile route is
+not permission to add another promotion, follower request, price claim, or link
+to a community answer that should remain value-only.
 
 The downstream payment path can be checked without creating Stripe objects:
 

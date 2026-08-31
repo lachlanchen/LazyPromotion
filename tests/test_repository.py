@@ -436,6 +436,15 @@ class RepositoryTests(unittest.TestCase):
             campaign["channels"]["reddit"]["profile_guide"]["state"],
             "postiz_queue",
         )
+        profile_route = campaign["channels"]["reddit"]["profile_route"]
+        self.assertEqual(profile_route["state"], "live")
+        self.assertEqual(profile_route["link_label"], "Free LKT fit check")
+        self.assertEqual(
+            profile_route["destination"],
+            "https://lazying.art/lkt/fit-check/?utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot&utm_content=profile_social_link",
+        )
+        self.assertIn("Local Knowledge Terminal", profile_route["bio"])
+        self.assertIn("does not authorize", profile_route["policy"])
         self.assertEqual(
             campaign["channels"]["reddit"]["profile_guide"]["publish_at"],
             "2026-09-01T02:00:00Z",

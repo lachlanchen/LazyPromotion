@@ -97,7 +97,12 @@ def wait_ready(page: Page) -> None:
 
 def search_url(platform: str, query: str, content_kind: str = "posts") -> str:
     if platform == "reddit":
-        return f"https://www.reddit.com/search/?q={quote_plus(query)}&sort=new&type=posts"
+        if content_kind not in {"posts", "comments"}:
+            raise ValueError(f"unsupported Reddit content kind: {content_kind}")
+        return (
+            f"https://www.reddit.com/search/?q={quote_plus(query)}&sort=new"
+            f"&type={content_kind}"
+        )
     if platform == "x":
         return f"https://x.com/search?q={quote_plus(query)}&src=typed_query&f=live"
     if platform == "hackernews":
@@ -256,6 +261,33 @@ def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
     )
 
 
+def extract_reddit_comments(page: Page, limit: int) -> list[dict[str, str]]:
+    return page.locator('[data-testid="search-sdui-comment-unit"]').evaluate_all(
+        """(nodes, limit) => nodes.slice(0, limit).map((n) => {
+          const tracker = n.closest('search-telemetry-tracker[view-events="search/view/comment"]');
+          let context = {};
+          try { context = JSON.parse(tracker?.getAttribute('data-faceplate-tracking-context') || '{}'); }
+          catch (_) {}
+          const contentBox = n.querySelector('[data-testid="search-comment-content"]');
+          const content = contentBox?.querySelector('[id^="search-comment-"][id$="-post-rtjson-content"]');
+          const permalink = contentBox?.querySelector('a[aria-labelledby^="comment-content-"][href*="/comments/"]');
+          const author = contentBox?.querySelector('faceplate-hovercard[data-id="user-hover-card"] a');
+          const time = contentBox?.querySelector('time[datetime]');
+          const score = contentBox?.querySelector('p faceplate-number');
+          return {
+            url: permalink?.href || '',
+            author: (author?.innerText || '').trim(),
+            published_at: time?.getAttribute('datetime') || '',
+            comment_count: '0',
+            source_score: score?.getAttribute('number') || '0',
+            body: (content?.innerText || '').trim(),
+            comment_id: context.comment?.id || ''
+          };
+        }).filter(row => row.url && row.body)""",
+        limit,
+    )
+
+
 def extract_x(page: Page, limit: int) -> list[dict[str, str]]:
     return page.locator('article[data-testid="tweet"]').evaluate_all(
         """(nodes, limit) => nodes.slice(0, limit).map((n) => {
@@ -405,7 +437,7 @@ def discover(
     limit: int,
     content_kind: str = "posts",
 ) -> dict[str, object]:
-    if content_kind != "posts" and platform != "hackernews":
+    if content_kind != "posts" and platform not in {"reddit", "hackernews"}:
         raise ValueError(f"{platform} does not support {content_kind} discovery")
     target = search_url(platform, query, content_kind)
     page.goto(target, wait_until="domcontentloaded", timeout=45000)
@@ -414,7 +446,7 @@ def discover(
     search_destination = page.url
     screenshot = evidence(page, f"search-{platform}-{content_kind}")
     if platform == "reddit":
-        rows = extract_reddit(page, limit)
+        rows = extract_reddit_comments(page, limit) if content_kind == "comments" else extract_reddit(page, limit)
     elif platform == "x":
         rows = extract_x(page, limit)
     elif platform == "hackernews":
@@ -455,17 +487,31 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
     community = ""
     rules_url = ""
     if candidate["platform"] == "reddit":
-        root = page.locator("shreddit-post").first
-        if not root.count():
+        post_root = page.locator("shreddit-post").first
+        if not post_root.count():
             raise RuntimeError("Reddit post root was not found")
-        title = root.get_attribute("post-title") or ""
-        author = root.get_attribute("author") or author
-        community = root.get_attribute("subreddit-prefixed-name") or ""
-        published_at = root.get_attribute("created-timestamp") or ""
-        comment_count = safe_int(root.get_attribute("comment-count"))
-        source_score = safe_int(root.get_attribute("score"))
-        content = root.locator("shreddit-post-text-body").first
-        body = content.inner_text() if content.count() else root.inner_text()
+        comment_id = reddit_comment_id(candidate["source_url"])
+        if comment_id:
+            root = page.locator(f'shreddit-comment[thingid="t1_{comment_id}"]').first
+            if not root.count():
+                raise RuntimeError("Reddit target comment was not found")
+            title = ""
+            author = root.get_attribute("author") or author
+            published_at = root.get_attribute("created") or ""
+            comment_count = 0
+            source_score = safe_int(root.get_attribute("score"))
+            content = root.locator(f"#t1_{comment_id}-comment-rtjson-content").first
+            body = content.inner_text() if content.count() else ""
+        else:
+            root = post_root
+            title = root.get_attribute("post-title") or ""
+            author = root.get_attribute("author") or author
+            published_at = root.get_attribute("created-timestamp") or ""
+            comment_count = safe_int(root.get_attribute("comment-count"))
+            source_score = safe_int(root.get_attribute("score"))
+            content = root.locator("shreddit-post-text-body").first
+            body = content.inner_text() if content.count() else root.inner_text()
+        community = post_root.get_attribute("subreddit-prefixed-name") or ""
         if community.startswith("r/"):
             rules_url = f"https://www.reddit.com/{community}/about/rules/"
     elif candidate["platform"] == "x":
@@ -576,7 +622,9 @@ def run_discovery_cycle(
         }
         try:
             searches = [("posts", query)]
-            if platform == "hackernews":
+            if platform == "reddit":
+                searches.append(("comments", query))
+            elif platform == "hackernews":
                 comment_query = promotion.compact(
                     str(item.get("comment_query") or hackernews_comment_query(query))
                 )
@@ -734,7 +782,19 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
     candidate, draft = load_candidate_and_draft(candidate_id, draft_id)
     page.goto(candidate["source_url"], wait_until="domcontentloaded", timeout=45000)
     wait_ready(page)
-    target = composer(page, candidate["platform"])
+    comment_id = reddit_comment_id(candidate["source_url"]) if candidate["platform"] == "reddit" else ""
+    if comment_id:
+        root = page.locator(f'shreddit-comment[thingid="t1_{comment_id}"]').first
+        if not root.count():
+            raise RuntimeError("Reddit target comment was not found before composer activation")
+        trigger = root.get_by_role("button", name=re.compile(r"^reply$", re.I)).first
+        if not trigger.count():
+            raise RuntimeError("Reddit target comment reply button was not found")
+        trigger.click()
+        page.wait_for_timeout(700)
+        target = composer(page, candidate["platform"], activate=False)
+    else:
+        target = composer(page, candidate["platform"])
     fill_composer(target, draft["body"])
     if composer_text(target) != promotion.compact(draft["body"]):
         raise RuntimeError("visible composer text does not match the reviewed draft")
@@ -759,11 +819,31 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
     }
 
 
+def reddit_destination_ids(url: str) -> tuple[str, str]:
+    parts = [part for part in urlparse(url).path.split("/") if part]
+    try:
+        start = parts.index("comments")
+    except ValueError:
+        return "", ""
+    post_id = parts[start + 1] if len(parts) > start + 1 else ""
+    tail = parts[start + 2:]
+    comment_id = tail[-1] if len(tail) >= 2 else ""
+    return post_id, comment_id
+
+
+def reddit_comment_id(url: str) -> str:
+    return reddit_destination_ids(url)[1]
+
+
 def destination_matches(candidate_url: str, active_url: str, platform: str) -> bool:
     candidate_parsed = urlparse(candidate_url)
     active_parsed = urlparse(active_url)
     if candidate_parsed.hostname != active_parsed.hostname:
         return False
+    if platform == "reddit":
+        candidate_ids = reddit_destination_ids(candidate_url)
+        active_ids = reddit_destination_ids(active_url)
+        return bool(candidate_ids[0] and candidate_ids == active_ids)
     if platform == "hackernews":
         candidate_id = parse_qs(candidate_parsed.query).get("id", [""])[0]
         active_id = parse_qs(active_parsed.query).get("id", [""])[0]

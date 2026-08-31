@@ -144,6 +144,16 @@ class RepositoryTests(unittest.TestCase):
             "hackernews",
         ))
 
+    def test_reddit_comment_search_and_destination_are_exact(self):
+        url = browser.search_url("reddit", "subtitles help", "comments")
+        self.assertIn("type=comments", url)
+        candidate = "https://www.reddit.com/r/example/comments/post123/a_title/comment456/"
+        redirected = "https://www.reddit.com/r/example/comments/post123/comment/comment456/"
+        sibling = "https://www.reddit.com/r/example/comments/post123/comment/other789/"
+        self.assertEqual(browser.reddit_destination_ids(candidate), ("post123", "comment456"))
+        self.assertTrue(browser.destination_matches(candidate, redirected, "reddit"))
+        self.assertFalse(browser.destination_matches(candidate, sibling, "reddit"))
+
     def test_instagram_grid_alt_text_is_canonical_candidate_body(self):
         rows = browser.dedupe(
             [{

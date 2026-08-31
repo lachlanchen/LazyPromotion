@@ -93,6 +93,51 @@ class PromotionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "URL"):
                 promotion.run_codex_draft(candidate, project, value_only=True)
 
+    def test_draft_can_require_exact_community_disclosure_prefix(self):
+        candidate = {
+            "platform": "reddit",
+            "author": "reader",
+            "source_url": "https://www.reddit.com/r/degoogle/comments/example/help/",
+            "body": "What is a simple way to search local PDFs?",
+        }
+        project = promotion.project_by_id("localknowledgeterminal")
+        prefix = "AI-assisted recommendation; I checked the current docs before posting."
+        prompt = promotion.draft_prompt(
+            candidate,
+            project,
+            value_only=True,
+            required_prefix=prefix,
+        )
+        self.assertIn(prefix, prompt)
+        self.assertIn("Begin the reply with this exact text", prompt)
+
+        safe = {
+            "reply": f"{prefix} Start with full-text search and measure the misses.",
+            "why": "Direct answer with the required disclosure.",
+            "confidence": "high",
+            "include_link": False,
+        }
+        with patch("promotion.run_codex_structured", return_value=safe):
+            self.assertEqual(
+                promotion.run_codex_draft(
+                    candidate,
+                    project,
+                    value_only=True,
+                    required_prefix=prefix,
+                ),
+                safe,
+            )
+
+        missing = {**safe, "reply": "Start with full-text search and measure the misses."}
+        with patch("promotion.run_codex_structured", return_value=missing):
+            with self.assertRaisesRegex(ValueError, "required disclosure"):
+                promotion.run_codex_draft(
+                    candidate,
+                    project,
+                    value_only=True,
+                    required_prefix=prefix,
+                )
+
     def test_chinese_wenyan_help_matches_multilingual_reading_projects(self):
         body = "我看不懂文言文，有没有带现代中文和英文的中国历史读本推荐？"
         self.assertTrue(promotion.is_help_request(body))

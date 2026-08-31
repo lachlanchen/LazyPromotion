@@ -141,6 +141,17 @@ project mention inappropriate, use `python promotion.py redraft CANDIDATE_ID
 fails closed if the result names the project or affiliation, contains a URL, or
 sets `include_link=true`. It is a trust-building answer, not a disguised pitch.
 
+When a community also requires a specific disclosure, bind it to generation
+and validation instead of adding it after review:
+
+```bash
+python promotion.py redraft CANDIDATE_ID --value-only \
+  --required-prefix 'AI-assisted recommendation; I checked the current docs before posting.'
+```
+
+The command fails if the generated reply does not begin with the exact reviewed
+prefix, so the stored content hash and later approval cover the disclosure too.
+
 For a bounded read-only model check over the current eligible queue:
 
 ```bash

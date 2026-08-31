@@ -663,6 +663,7 @@ def draft_prompt(
     project: dict[str, Any],
     *,
     value_only: bool = False,
+    required_prefix: str = "",
 ) -> str:
     targeting = ""
     if candidate["platform"] == "instagram" and is_comment_source(
@@ -679,6 +680,14 @@ Community/account policy for this draft:
 - Do not include any URL or call to action. Set include_link=false.
 - You may use the reviewed project context only to avoid incorrect technical
   advice; the final reply must read as an independent peer contribution.
+"""
+    prefix_policy = ""
+    required_prefix = compact(required_prefix)
+    if required_prefix:
+        prefix_policy = f"""
+Community-specific disclosure requirement:
+- Begin the reply with this exact text: {json.dumps(required_prefix, ensure_ascii=False)}
+- Do not paraphrase, omit, or move that disclosure.
 """
     return f"""Draft one genuinely useful public reply to a social-media post.
 
@@ -720,6 +729,7 @@ Requirements:
 {targeting}- Keep the reply compact: <= 500 characters for X, <= 900 elsewhere.
 - This is a draft only. Do not browse, post, message, or take any external action.
 {value_only_policy}
+{prefix_policy}
 """
 
 
@@ -804,14 +814,23 @@ def run_codex_draft(
     project: dict[str, Any],
     *,
     value_only: bool = False,
+    required_prefix: str = "",
 ) -> dict[str, Any]:
     result = run_codex_structured(
-        draft_prompt(candidate, project, value_only=value_only),
+        draft_prompt(
+            candidate,
+            project,
+            value_only=value_only,
+            required_prefix=required_prefix,
+        ),
         SCHEMA_PATH,
         prefix="lazypromotion-draft-",
     )
+    reply = compact(str(result.get("reply") or ""))
+    required_prefix = compact(required_prefix)
+    if required_prefix and not reply.startswith(required_prefix):
+        raise ValueError("draft does not begin with the required disclosure")
     if value_only:
-        reply = compact(str(result.get("reply") or ""))
         normalized_reply = normalized(reply)
         forbidden = {
             normalized(str(project.get("name") or "")),
@@ -1127,9 +1146,11 @@ def build_parser() -> argparse.ArgumentParser:
     draft.add_argument("candidate_id")
     draft.add_argument("--project", default="")
     draft.add_argument("--value-only", action="store_true")
+    draft.add_argument("--required-prefix", default="")
     redraft = sub.add_parser("redraft")
     redraft.add_argument("candidate_id")
     redraft.add_argument("--value-only", action="store_true")
+    redraft.add_argument("--required-prefix", default="")
 
     triage = sub.add_parser("triage")
     triage.add_argument("candidate_id")
@@ -1192,6 +1213,7 @@ def main() -> int:
             candidate,
             project_by_id(project_id),
             value_only=bool(args.value_only),
+            required_prefix=args.required_prefix,
         )
         print_json(save_draft(db, args.candidate_id, result))
     elif args.command == "triage":

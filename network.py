@@ -292,6 +292,41 @@ def sync_private_activity(db) -> None:
         if draft["project_id"]:
             upsert_relationship(db, draft_id, "mentions", f"project:{draft['project_id']}")
 
+    for outcome in db.execute("SELECT * FROM outcomes").fetchall():
+        outcome = dict(outcome)
+        outcome_id = f"outcome:{outcome['id']}"
+        upsert_entity(
+            db,
+            outcome_id,
+            kind="outcome",
+            label=outcome["kind"].replace("_", " "),
+            url=outcome["evidence_url"],
+            visibility="private",
+            metadata={
+                "kind": outcome["kind"],
+                "amount_minor": outcome["amount_minor"],
+                "currency": outcome["currency"],
+                "note": outcome["note"],
+                "occurred_at": outcome["occurred_at"],
+            },
+        )
+        if outcome["candidate_id"]:
+            upsert_relationship(
+                db, outcome_id, "resulted_from", f"need:{outcome['candidate_id']}"
+            )
+        if outcome["draft_id"]:
+            upsert_relationship(
+                db, outcome_id, "resulted_from", f"draft:{outcome['draft_id']}"
+            )
+        if outcome["project_id"]:
+            upsert_relationship(
+                db, outcome_id, "credits", f"project:{outcome['project_id']}"
+            )
+        if outcome["campaign_id"]:
+            upsert_relationship(
+                db, outcome_id, "resulted_from", f"campaign:{outcome['campaign_id']}"
+            )
+
 
 def git_remote(path: Path) -> str:
     result = subprocess.run(

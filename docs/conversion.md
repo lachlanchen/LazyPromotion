@@ -29,3 +29,29 @@ public reply, impression, or GitHub visit as a customer.
 Other live LazyingArt offers may be tested later, but only as separate campaigns
 with their own audience evidence. Mixing unrelated handmade goods into a
 language-tool discussion would weaken trust and conversion quality.
+
+## Private evidence ledger
+
+LazyPromotion keeps replies, leads, and money as different outcome types. A
+positive comment is encouraging evidence, but it is not a lead or revenue. A
+sale, donation, sponsorship, or refund enters the ledger only after a human has
+verified it:
+
+```bash
+python metrics.py report
+
+python metrics.py record \
+  --kind sale_confirmed \
+  --campaign-id eink-multilingual-reading \
+  --project-id lazyingart-eink \
+  --amount 128 \
+  --currency USD \
+  --reference PRIVATE_ORDER_LEDGER_ID \
+  --confirm-verified-outcome
+```
+
+The SQLite ledger is private and ignored by Git. Store only the minimum proof
+needed for an aggregate count or amount. Money outcomes require an order or
+receipt reference for idempotency, but only its SHA-256 hash is stored. Never
+use customer names, email addresses, bank details, card data, Stripe secrets,
+or raw receipts as that reference.

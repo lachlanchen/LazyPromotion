@@ -165,6 +165,23 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         CREATE INDEX IF NOT EXISTS idx_entities_kind ON entities(kind);
         CREATE INDEX IF NOT EXISTS idx_relationships_source ON relationships(source_id, relation);
         CREATE INDEX IF NOT EXISTS idx_relationships_target ON relationships(target_id, relation);
+        CREATE TABLE IF NOT EXISTS outcomes (
+          id TEXT PRIMARY KEY,
+          kind TEXT NOT NULL,
+          candidate_id TEXT NOT NULL DEFAULT '',
+          draft_id TEXT NOT NULL DEFAULT '',
+          campaign_id TEXT NOT NULL DEFAULT '',
+          project_id TEXT NOT NULL DEFAULT '',
+          amount_minor INTEGER NOT NULL DEFAULT 0,
+          currency TEXT NOT NULL DEFAULT '',
+          reference_hash TEXT NOT NULL DEFAULT '',
+          evidence_url TEXT NOT NULL DEFAULT '',
+          note TEXT NOT NULL DEFAULT '',
+          occurred_at TEXT NOT NULL,
+          created_at TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_outcomes_kind ON outcomes(kind, occurred_at);
+        CREATE INDEX IF NOT EXISTS idx_outcomes_candidate ON outcomes(candidate_id);
         """
     )
     columns = {row[1] for row in db.execute("PRAGMA table_info(candidates)")}
@@ -181,6 +198,17 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
     for column, definition in migrations.items():
         if column not in columns:
             db.execute(f"ALTER TABLE candidates ADD COLUMN {column} {definition}")
+    outcome_columns = {row[1] for row in db.execute("PRAGMA table_info(outcomes)")}
+    if "reference_hash" not in outcome_columns:
+        db.execute(
+            "ALTER TABLE outcomes ADD COLUMN reference_hash TEXT NOT NULL DEFAULT ''"
+        )
+    db.execute(
+        """
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_outcomes_reference
+        ON outcomes(kind, reference_hash) WHERE reference_hash != ''
+        """
+    )
     draft_columns = {row[1] for row in db.execute("PRAGMA table_info(drafts)")}
     draft_migrations = {
         "project_id": "TEXT NOT NULL DEFAULT ''",

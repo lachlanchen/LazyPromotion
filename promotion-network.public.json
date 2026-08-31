@@ -91,6 +91,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/adobeillustrator",
+      "kind": "community",
+      "label": "r/AdobeIllustrator",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/advice",
       "kind": "community",
       "label": "r/Advice",
@@ -808,6 +815,13 @@
       "id": "community:reddit:r/languagelearning",
       "kind": "community",
       "label": "r/languagelearning",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/lasercutting",
+      "kind": "community",
+      "label": "r/lasercutting",
       "metadata": {},
       "url": ""
     },

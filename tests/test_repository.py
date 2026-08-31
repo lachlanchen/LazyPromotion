@@ -2,6 +2,9 @@ import json
 import unittest
 from pathlib import Path
 
+import browser
+import promotion
+
 
 ROOT = Path(__file__).resolve().parents[1]
 READMES = [
@@ -56,6 +59,47 @@ class RepositoryTests(unittest.TestCase):
                 self.assertTrue(project["url"].startswith("https://github.com/lachlanchen/"))
                 self.assertTrue(project["summary"].strip())
                 self.assertTrue(project["keywords"])
+
+    def test_discovery_plan_uses_known_projects(self):
+        catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
+        known = {project["id"] for project in catalog["projects"]}
+        plan = json.loads((ROOT / "discovery-plan.json").read_text(encoding="utf-8"))
+        self.assertEqual(plan["version"], 1)
+        self.assertTrue(plan["queries"]["reddit"])
+        for platform, queries in plan["queries"].items():
+            for query in queries:
+                with self.subTest(platform=platform, query=query["query"]):
+                    self.assertIn(query["project_id"], known)
+                    self.assertTrue(query["purpose"])
+
+    def test_public_github_index_covers_owner_source_repositories(self):
+        index = json.loads((ROOT / "github-repos.json").read_text(encoding="utf-8"))
+        self.assertEqual(index["owner"], "lachlanchen")
+        self.assertEqual(index["visibility"], "public")
+        self.assertFalse(index["includes_forks"])
+        self.assertGreaterEqual(len(index["repositories"]), 100)
+        for repo in index["repositories"]:
+            with self.subTest(repo=repo["name"]):
+                self.assertTrue(repo["url"].startswith("https://github.com/lachlanchen/"))
+                self.assertNotIn("private", repo)
+
+    def test_rotating_routes_cover_every_evidence_backed_project(self):
+        project_ids = {project["id"] for project in promotion.load_catalog()["projects"]}
+        for platform in ("reddit", "x", "hackernews"):
+            routes = browser.discovery_queries(platform)
+            with self.subTest(platform=platform):
+                self.assertEqual({route["project_id"] for route in routes}, project_ids)
+
+    def test_hacker_news_item_id_survives_canonicalization(self):
+        rows = browser.dedupe(
+            [{
+                "url": "https://news.ycombinator.com/item?id=12345&utm_source=test",
+                "author": "reader",
+                "body": "Ask HN: How should I solve this?",
+            }],
+            5,
+        )
+        self.assertEqual(rows[0]["url"], "https://news.ycombinator.com/item?id=12345")
 
     def test_private_runtime_paths_are_ignored(self):
         ignored = (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()

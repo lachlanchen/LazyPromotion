@@ -40,6 +40,25 @@ class PromotionTests(unittest.TestCase):
         body = "[HIRING] Need a video editor to add subtitles to short clips"
         self.assertEqual(promotion.rank_projects(body), [])
 
+    def test_incidental_help_word_is_not_a_request(self):
+        body = "With a friend's help I added subtitles in the editor. Not bad."
+        self.assertFalse(promotion.is_help_request(body))
+
+    def test_volunteer_opportunity_is_not_a_request_for_a_tool(self):
+        body = "Volunteer opportunities: help us add subtitles and branding to our videos."
+        self.assertFalse(promotion.is_help_request(body))
+
+    def test_automoderator_candidate_has_no_project_match(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/bot/thread/",
+            author="AutoModerator",
+            body="What video editing software should I use for captions and subtitles?",
+        )
+        self.assertEqual(candidate["score"], 0)
+        self.assertEqual(candidate["suggested_tool"], "")
+
     def test_old_candidate_is_marked_stale(self):
         published = (datetime.now(timezone.utc) - timedelta(days=31)).isoformat()
         candidate = promotion.ingest_candidate(
@@ -113,6 +132,33 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(refreshed["triage_reason"], "")
         self.assertEqual(refreshed["triaged_at"], "")
 
+    def test_short_search_card_does_not_reset_rejected_full_post(self):
+        url = "https://www.reddit.com/r/example/comments/card/help/"
+        full = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url=url,
+            author="reader",
+            body=(
+                "How can I add accurate subtitles to my Instagram video? "
+                "I have tried the built-in editor and need an SRT workflow."
+            ),
+        )
+        promotion.save_triage(
+            self.db,
+            full["id"],
+            {"eligible": False, "confidence": "high", "reason": "Not a fit", "risk_flags": []},
+        )
+        rediscovered = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url=url,
+            author="reader",
+            body="How can I add accurate subtitles to my Instagram video?",
+        )
+        self.assertEqual(rediscovered["status"], "rejected")
+        self.assertIn("SRT workflow", rediscovered["body"])
+
     def test_candidate_ingest_is_idempotent(self):
         one = promotion.ingest_candidate(
             self.db,
@@ -154,6 +200,30 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertEqual(refreshed["status"], "duplicate")
         self.assertEqual(refreshed["duplicate_of"], first["id"])
+
+    def test_rejected_invalid_copy_does_not_hide_live_candidate(self):
+        body = (
+            "I need help choosing a local knowledge base for a small team. "
+            "How should we share context and keep decisions current across machines?"
+        )
+        broken = promotion.ingest_candidate(
+            self.db,
+            platform="hackernews",
+            source_url="https://news.ycombinator.com/item",
+            author="same_author",
+            body=body,
+        )
+        self.db.execute("UPDATE candidates SET status='rejected' WHERE id=?", (broken["id"],))
+        self.db.commit()
+        live = promotion.ingest_candidate(
+            self.db,
+            platform="hackernews",
+            source_url="https://news.ycombinator.com/item?id=12345",
+            author="same_author",
+            body=body,
+        )
+        self.assertEqual(live["status"], "discovered")
+        self.assertEqual(live["duplicate_of"], "")
 
     def test_approval_is_bound_to_exact_content(self):
         candidate = promotion.ingest_candidate(

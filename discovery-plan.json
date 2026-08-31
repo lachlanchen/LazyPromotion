@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "queries": {
+    "reddit": [
+      {
+        "project_id": "lazyedit",
+        "query": "subreddit:VideoEditing \"subtitles\" help",
+        "purpose": "Fresh video-editing questions where subtitle workflow is part of the actual need"
+      },
+      {
+        "project_id": "lazyedit",
+        "query": "subreddit:ContentCreators \"captions\" help",
+        "purpose": "Creators explicitly asking for caption or transcription help"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "subreddit:languagelearning \"parallel text\" recommend",
+        "purpose": "Learners seeking bilingual or parallel reading material"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "subreddit:LearnJapanese \"graded reader\" advice",
+        "purpose": "Japanese learners asking for graded reading resources"
+      },
+      {
+        "project_id": "leonardsusskind",
+        "query": "subreddit:learnphysics \"Susskind\" help",
+        "purpose": "Physics learners asking for help with Susskind material"
+      },
+      {
+        "project_id": "localvideogen",
+        "query": "subreddit:StableDiffusion \"local video generation\" help",
+        "purpose": "People explicitly trying to generate video locally"
+      },
+      {
+        "project_id": "musia",
+        "query": "subreddit:WeAreTheMusicMakers \"AI music\" help",
+        "purpose": "Music creators asking for technical generation or localization help"
+      },
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "subreddit:LocalLLaMA \"local knowledge base\" help",
+        "purpose": "Local-first book-grounded knowledge questions"
+      },
+      {
+        "project_id": "lazyweiqi",
+        "query": "subreddit:baduk \"learn go\" advice",
+        "purpose": "Go learners requesting teaching or analysis resources"
+      },
+      {
+        "project_id": "wordorigins",
+        "query": "subreddit:etymology \"word origin\" question",
+        "purpose": "People asking to explore the relationships behind a word origin"
+      }
+    ],
+    "x": [
+      {
+        "project_id": "lazyedit",
+        "query": "(\"add subtitles\" OR \"need captions\") video (help OR advice) -filter:retweets",
+        "purpose": "Explicit subtitle help requests from video creators"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "\"graded reader\" (recommend OR advice) -filter:retweets",
+        "purpose": "Language learners requesting reading resources"
+      },
+      {
+        "project_id": "leonardsusskind",
+        "query": "\"Susskind\" (help OR notes) -filter:retweets",
+        "purpose": "Physics learners asking for notes or explanations"
+      },
+      {
+        "project_id": "localvideogen",
+        "query": "\"local video generation\" (help OR advice) -filter:retweets",
+        "purpose": "Local AI video workflow questions"
+      },
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "\"local knowledge base\" (help OR advice) -filter:retweets",
+        "purpose": "Private local knowledge workflow questions"
+      },
+      {
+        "project_id": "lazyweiqi",
+        "query": "\"learn Go\" (advice OR resources) -filter:retweets",
+        "purpose": "Go learners seeking teaching resources"
+      }
+    ],
+    "hackernews": [
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "Ask HN local knowledge base",
+        "purpose": "People asking how to build a private or local knowledge workflow"
+      },
+      {
+        "project_id": "localvideogen",
+        "query": "Ask HN local AI video generation",
+        "purpose": "Builders requesting practical local video-generation approaches"
+      },
+      {
+        "project_id": "lazyedit",
+        "query": "Ask HN video subtitles transcription",
+        "purpose": "Video creators asking for caption, transcription, or editing help"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "Ask HN language learning reader",
+        "purpose": "Learners seeking multilingual or parallel reading tools"
+      },
+      {
+        "project_id": "lazygame",
+        "query": "Ask HN learn board games AI",
+        "purpose": "People asking for interactive board-game teaching or analysis"
+      },
+      {
+        "project_id": "musia",
+        "query": "Ask HN local AI music",
+        "purpose": "Music creators asking for local generation or localization workflows"
+      }
+    ],
+    "instagram": []
+  }
+}

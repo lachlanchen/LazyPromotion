@@ -20,6 +20,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent
 DEFAULT_DB = ROOT / ".local" / "lazypromotion.sqlite3"
 CATALOG_PATH = ROOT / "catalog.json"
+GITHUB_CATALOG_PATH = ROOT / "github-repos.json"
 SCHEMA_PATH = ROOT / "schemas" / "reply.json"
 TRIAGE_SCHEMA_PATH = ROOT / "schemas" / "triage.json"
 MODEL = "gpt-5.6-sol"
@@ -34,7 +35,8 @@ HELP_SIGNALS = {
 HELP_PHRASES = {
     "any way", "can anyone", "can someone", "could anyone", "could someone",
     "does anyone", "how can i", "how do i", "is there", "looking for",
-    "need a", "need an", "what should i", "where can i", "would anyone",
+    "help me", "help needed", "need a", "need an", "please help",
+    "what should i", "where can i", "would anyone",
 }
 SPAM_SIGNALS = {
     "promote your", "drop your link", "giveaway", "follow for follow", "f4f",
@@ -42,7 +44,16 @@ SPAM_SIGNALS = {
 }
 OUT_OF_SCOPE_SIGNALS = {
     "[for hire]", "[hiring]", "for hire", "hiring", "job opening",
-    "my new tool", "now open to all", "showcase", "we launched",
+    "my new tool", "now open to all", "showcase", "volunteer opportunities",
+    "we launched",
+}
+BOT_AUTHORS = {"automoderator"}
+GENERIC_REPO_TOPICS = {
+    "ai", "app", "automation", "cli", "code", "codex", "current", "currently",
+    "education", "github", "language",
+    "javascript", "learning", "linux", "model", "multilingual", "open source",
+    "openai", "other", "pull", "python", "react", "research", "that", "tool", "tools",
+    "typescript", "way", "web", "webapp", "website", "workflow", "workflows",
 }
 
 
@@ -131,7 +142,39 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
 
 
 def load_catalog() -> dict[str, Any]:
-    return json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    projects = list(catalog["projects"])
+    if not GITHUB_CATALOG_PATH.exists():
+        return {**catalog, "projects": projects}
+    indexed = json.loads(GITHUB_CATALOG_PATH.read_text(encoding="utf-8"))
+    known_urls = {project["url"].rstrip("/").casefold() for project in projects}
+    for repo in indexed.get("repositories", []):
+        url = str(repo.get("url") or "").rstrip("/")
+        description = compact(str(repo.get("description") or ""))
+        if not url or not description or url.casefold() in known_urls:
+            continue
+        topics = []
+        for value in repo.get("topics", []):
+            topic = normalized(str(value).replace("-", " ")).strip()
+            if topic and topic not in GENERIC_REPO_TOPICS:
+                topics.append(topic)
+        name = compact(str(repo.get("name") or ""))
+        name_keyword = normalized(re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", name)).strip()
+        keywords = sorted(set(topics + ([name_keyword] if name_keyword else [])))
+        if not keywords:
+            continue
+        slug = re.sub(r"[^a-z0-9]+", "-", name.casefold()).strip("-")
+        projects.append({
+            "id": f"github-{slug}",
+            "name": name,
+            "url": url,
+            "summary": description,
+            "keywords": keywords,
+            "required_any": [],
+            "generated": True,
+        })
+        known_urls.add(url.casefold())
+    return {**catalog, "projects": projects}
 
 
 def compact(value: str) -> str:
@@ -167,6 +210,37 @@ def is_stale(published_at: str, *, now: datetime | None = None) -> bool:
     return now - published > timedelta(days=MAX_CANDIDATE_AGE_DAYS)
 
 
+def help_request_signals(body: str) -> dict[str, list[str]]:
+    haystack = normalized(body)
+    tokens = set(haystack.split())
+    intent_hits = sorted(HELP_SIGNALS & tokens)
+    intent_hits.extend(sorted(phrase for phrase in HELP_PHRASES if phrase in haystack))
+    return {
+        "intent_hits": sorted(set(intent_hits)),
+        "spam_hits": sorted(signal for signal in SPAM_SIGNALS if signal in haystack),
+        "out_of_scope_hits": sorted(signal for signal in OUT_OF_SCOPE_SIGNALS if signal in haystack),
+    }
+
+
+def is_help_request(body: str) -> bool:
+    signals = help_request_signals(body)
+    haystack = normalized(body)
+    tokens = set(haystack.split())
+    strong_tokens = {
+        "advice", "can't", "cannot", "issue", "looking", "need", "problem",
+        "recommend", "recommendation", "struggling", "suggestion",
+    }
+    explicit = (
+        "?" in body
+        or bool(strong_tokens & tokens)
+        or any(phrase in haystack for phrase in HELP_PHRASES)
+    )
+    return bool(
+        signals["intent_hits"] and explicit
+        and not signals["spam_hits"] and not signals["out_of_scope_hits"]
+    )
+
+
 def refresh_duplicates(db: sqlite3.Connection) -> None:
     """Mark exact long-form cross-posts while preserving the replied copy."""
     db.execute("UPDATE candidates SET status='discovered', duplicate_of='' WHERE status='duplicate'")
@@ -183,9 +257,17 @@ def refresh_duplicates(db: sqlite3.Connection) -> None:
     for group in groups.values():
         if len(group) < 2:
             continue
+        priority = {
+            "replied": 0,
+            "drafted": 1,
+            "triaged": 1,
+            "discovered": 2,
+            "stale": 3,
+            "rejected": 4,
+        }
         canonical = sorted(
             group,
-            key=lambda row: (row["status"] != "replied", row["created_at"], row["id"]),
+            key=lambda row: (priority.get(row["status"], 3), row["created_at"], row["id"]),
         )[0]
         db.execute("UPDATE candidates SET duplicate_of='' WHERE id=?", (canonical["id"],))
         for row in group:
@@ -200,12 +282,10 @@ def refresh_duplicates(db: sqlite3.Connection) -> None:
 def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     catalog = catalog or load_catalog()
     haystack = normalized(body)
-    tokens = set(haystack.split())
-    intent_hits = sorted(HELP_SIGNALS & tokens)
-    intent_hits.extend(sorted(phrase for phrase in HELP_PHRASES if phrase in haystack))
-    intent_hits = sorted(set(intent_hits))
-    spam_hits = sorted(signal for signal in SPAM_SIGNALS if signal in haystack)
-    out_of_scope_hits = sorted(signal for signal in OUT_OF_SCOPE_SIGNALS if signal in haystack)
+    signals = help_request_signals(body)
+    intent_hits = signals["intent_hits"]
+    spam_hits = signals["spam_hits"]
+    out_of_scope_hits = signals["out_of_scope_hits"]
     if not intent_hits or spam_hits or out_of_scope_hits:
         return []
     ranked = []
@@ -213,17 +293,25 @@ def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict
         matches = []
         for keyword in project["keywords"]:
             needle = normalized(keyword).strip()
-            if needle and needle in haystack:
+            if needle and f" {needle} " in f" {haystack} ":
                 matches.append(keyword)
         if not matches:
             continue
+        if project.get("generated"):
+            strong_matches = [
+                match for match in matches
+                if " " in normalized(match).strip()
+            ]
+            if not strong_matches and len(set(matches)) < 2:
+                continue
         context_hits = sorted(
             context for context in project.get("required_any", [])
             if normalized(context).strip() in haystack
         )
         if project.get("required_any") and not context_hits:
             continue
-        score = min(12, len(set(matches)) * 3) + min(6, len(intent_hits) * 2)
+        curated_bonus = 0 if project.get("generated") else 6
+        score = curated_bonus + min(12, len(set(matches)) * 3) + min(6, len(intent_hits) * 2)
         ranked.append(
             {
                 "project": project,
@@ -268,17 +356,24 @@ def ingest_candidate(
         raise ValueError("source_url must be an absolute HTTP(S) URL")
     if not body:
         raise ValueError("candidate body is empty")
-    ranking = rank_projects(body)
-    best = ranking[0] if ranking else None
     candidate_id = stable_id("cand", f"{platform}\n{source_url}")
     existing = db.execute(
         "SELECT body, status, suggested_tool FROM candidates WHERE id=?",
         (candidate_id,),
     ).fetchone()
+    # Search cards are often title-only while inspection has already stored the
+    # full post. Never let a shorter rediscovery erase richer reviewed context
+    # or repeatedly reset a prior model decision.
+    if existing and len(compact(existing["body"])) > len(body):
+        body = compact(existing["body"])
+    ranking = rank_projects(body)
+    best = ranking[0] if ranking else None
     now = utc_now()
     rationale = ""
     suggested_tool = ""
     score = 0
+    if compact(author).casefold() in BOT_AUTHORS:
+        best = None
     if best:
         suggested_tool = best["project"]["id"]
         score = best["score"]
@@ -382,7 +477,16 @@ Requirements:
 """
 
 
-def triage_prompt(candidate: dict[str, Any], project: dict[str, Any]) -> str:
+def triage_prompt(candidate: dict[str, Any], projects: list[dict[str, Any]]) -> str:
+    project_catalog = [
+        {
+            "id": project["id"],
+            "name": project["name"],
+            "url": project["url"],
+            "summary": project["summary"],
+        }
+        for project in projects
+    ]
     return f"""Review one possible social-media help request for a project maintainer.
 
 Platform: {candidate['platform']}
@@ -393,15 +497,17 @@ Existing comments: {candidate.get('comment_count', 0)}
 Post text:
 {candidate['body']}
 
-Potentially relevant maintained project:
-- Name: {project['name']}
-- URL: {project['url']}
-- Grounded summary: {project['summary']}
+Current deterministic hint: {candidate.get('suggested_tool') or 'none'}
+
+All evidence-backed public projects (choose only an exact id from this list):
+{json.dumps(project_catalog, ensure_ascii=False)}
 
 Return only the JSON object required by the supplied schema.
 
-Mark eligible=true only when the author is clearly asking for help and this
-specific project can address that need without stretching its capabilities.
+Mark eligible=true only when the author is clearly asking for help and one
+specific listed project can address that need without stretching its
+capabilities. Set project_id to that exact id. When no project is directly
+useful, set eligible=false and project_id to an empty string.
 Reject announcements, hiring posts, resolved or saturated discussions, generic
 keyword overlap, unrelated product categories, opportunities that would feel
 like unsolicited advertising, and posts where an affiliation link would not
@@ -448,9 +554,9 @@ def run_codex_draft(candidate: dict[str, Any], project: dict[str, Any]) -> dict[
     )
 
 
-def run_codex_triage(candidate: dict[str, Any], project: dict[str, Any]) -> dict[str, Any]:
+def run_codex_triage(candidate: dict[str, Any], projects: list[dict[str, Any]]) -> dict[str, Any]:
     return run_codex_structured(
-        triage_prompt(candidate, project),
+        triage_prompt(candidate, projects),
         TRIAGE_SCHEMA_PATH,
         prefix="lazypromotion-triage-",
     )
@@ -472,17 +578,28 @@ def save_triage(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any
         raise ValueError("triage eligibility is invalid")
     if not isinstance(result.get("risk_flags"), list):
         raise ValueError("triage risk flags are invalid")
+    project_id = compact(str(result.get("project_id") or ""))
+    if result["eligible"]:
+        if not project_id:
+            project_id = candidate["suggested_tool"]
+        project_by_id(project_id)
+    else:
+        project_id = ""
     flags = sorted({compact(str(flag)) for flag in result["risk_flags"] if compact(str(flag))})
     status = "triaged" if result["eligible"] else "rejected"
     now = utc_now()
     db.execute(
         """
         UPDATE candidates
-        SET status=?, triage_reason=?, triage_confidence=?, triage_risk_flags=?,
-            triaged_at=?, updated_at=?
+        SET status=?, suggested_tool=CASE WHEN ? != '' THEN ? ELSE suggested_tool END,
+            score=CASE WHEN ? != '' AND score < 5 THEN 5 ELSE score END,
+            triage_reason=?, triage_confidence=?, triage_risk_flags=?, triaged_at=?, updated_at=?
         WHERE id=?
         """,
-        (status, reason, confidence, json.dumps(flags, ensure_ascii=False), now, now, candidate_id),
+        (
+            status, project_id, project_id, project_id, reason, confidence,
+            json.dumps(flags, ensure_ascii=False), now, now, candidate_id,
+        ),
     )
     db.execute(
         "INSERT INTO events(candidate_id, kind, detail, created_at) VALUES (?, 'candidate_triaged', ?, ?)",
@@ -493,6 +610,7 @@ def save_triage(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any
                     "eligible": status == "triaged",
                     "confidence": confidence,
                     "risk_flags": flags,
+                    "project_id": project_id,
                     "model": MODEL,
                     "effort": EFFORT,
                 },
@@ -508,12 +626,13 @@ def save_triage(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any
 def triage_candidate(db: sqlite3.Connection, candidate: dict[str, Any]) -> dict[str, Any]:
     if candidate["status"] != "discovered":
         raise ValueError(f"candidate status is {candidate['status']}; triage is not allowed")
-    if int(candidate["score"]) < 5:
-        raise ValueError("candidate did not pass deterministic relevance filtering")
-    project_id = candidate["suggested_tool"]
-    if not project_id:
-        raise ValueError("candidate has no deterministic project match")
-    result = run_codex_triage(candidate, project_by_id(project_id))
+    if compact(candidate.get("author") or "").casefold() in BOT_AUTHORS:
+        raise ValueError("bot-authored candidates are not eligible for model triage")
+    if not is_help_request(candidate["body"]):
+        raise ValueError("candidate is not shaped like a genuine help request")
+    if is_stale(candidate.get("published_at") or ""):
+        raise ValueError("candidate is stale")
+    result = run_codex_triage(candidate, load_catalog()["projects"])
     return save_triage(db, candidate["id"], result)
 
 
@@ -618,7 +737,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("catalog")
 
     ingest = sub.add_parser("ingest")
-    ingest.add_argument("--platform", required=True, choices=("reddit", "x", "instagram"))
+    ingest.add_argument("--platform", required=True, choices=("reddit", "x", "instagram", "hackernews"))
     ingest.add_argument("--url", required=True)
     ingest.add_argument("--body", required=True)
     ingest.add_argument("--author", default="")
@@ -705,7 +824,7 @@ def main() -> int:
             dict(row) for row in db.execute(
                 """
                 SELECT * FROM candidates
-                WHERE status='discovered' AND score >= 5 AND suggested_tool != ''
+                WHERE status='discovered' AND lower(author) NOT IN ('automoderator')
                 ORDER BY published_at DESC, score DESC, created_at DESC
                 LIMIT ?
                 """,

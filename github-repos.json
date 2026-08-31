@@ -1,0 +1,2040 @@
+{
+  "includes_forks": false,
+  "owner": "lachlanchen",
+  "repositories": [
+    {
+      "description": "Prompt is all you need: AAPS turns prompts into structured, verifiable pipelines.",
+      "homepage": "https://aaps.lazying.art",
+      "name": "AAPS",
+      "primary_language": "JavaScript",
+      "topics": [
+        "aaps",
+        "autonomous-agents",
+        "codex",
+        "pipeline",
+        "prompt-engineering"
+      ],
+      "url": "https://github.com/lachlanchen/AAPS"
+    },
+    {
+      "description": "AgentShell: separate Codex and AI CLI accounts across terminals while sharing one real working tree",
+      "homepage": "https://lazying.art",
+      "name": "AgentShell",
+      "primary_language": "PowerShell",
+      "topics": [
+        "account-isolation",
+        "account-management",
+        "agentshell",
+        "ai-agents",
+        "ai-cli",
+        "bash",
+        "claude-code",
+        "cli",
+        "codex-cli",
+        "developer-productivity",
+        "developer-tools",
+        "gemini-cli",
+        "github-copilot",
+        "lazying-art",
+        "multi-account",
+        "session-management",
+        "shell",
+        "terminal",
+        "workflow-automation"
+      ],
+      "url": "https://github.com/lachlanchen/AgentShell"
+    },
+    {
+      "description": "AgInTi focuses on practical workflows and tooling. AgInTi Documentation-first repository scaffold for maintaining one canonical English README and synchronized multilingual documentation, guided by three operating principles: sear creation tools, self-healing tools, and chain of prompt tools. 🧭 Quick Navigation ---...",
+      "homepage": "https://agent.lazying.art",
+      "name": "AgInTi",
+      "primary_language": "Shell",
+      "topics": [
+        "aginti",
+        "documentation",
+        "ecosystem",
+        "i18n",
+        "orchestration",
+        "prompt-chain",
+        "self-healing"
+      ],
+      "url": "https://github.com/lachlanchen/AgInTi"
+    },
+    {
+      "description": "Local-first Chrome/CDP agentic browser with webapp, CLI, Codex exec steering, virtual desktop, and guarded automation.",
+      "homepage": "https://lazying.art",
+      "name": "aginti-browser",
+      "primary_language": "Python",
+      "topics": [
+        "agentic-browser",
+        "agintiflow",
+        "ai-agent",
+        "browser-automation",
+        "cdp",
+        "chrome",
+        "chrome-devtools-protocol",
+        "cli",
+        "codex",
+        "local-first",
+        "npm",
+        "npm-package",
+        "python",
+        "web-automation"
+      ],
+      "url": "https://github.com/lachlanchen/aginti-browser"
+    },
+    {
+      "description": "File-backed laboratory hardware digital twin and control workbench",
+      "homepage": "https://lazying.art",
+      "name": "AgInTi-HardwareConsole",
+      "primary_language": "Python",
+      "topics": [
+        "aginti",
+        "digital-twin",
+        "esp32",
+        "hardware-as-code",
+        "hardware-console",
+        "instrumentation",
+        "laboratory-automation",
+        "open-source",
+        "pyside6",
+        "qt",
+        "sensor-fusion",
+        "stm32"
+      ],
+      "url": "https://github.com/lachlanchen/AgInTi-HardwareConsole"
+    },
+    {
+      "description": "AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design.",
+      "homepage": "https://lazying.art",
+      "name": "AgInTi-LabCanvas",
+      "primary_language": "Python",
+      "topics": [
+        "aginti",
+        "agintiflow",
+        "ai-agents",
+        "app-automation",
+        "biorender",
+        "blender",
+        "cad",
+        "codex",
+        "creative-tools",
+        "experiment-design",
+        "labcanvas",
+        "mcp",
+        "openscad",
+        "paper-figures",
+        "python",
+        "scientific-figures",
+        "unity",
+        "unreal-engine"
+      ],
+      "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
+    },
+    {
+      "description": "AgInTi Spectrometer - high-rate C12880MA acquisition, adaptive exposure, desktop/web visualization, and agent-ready API.",
+      "homepage": "https://lazying.art",
+      "name": "AgInTi-Spectrometer",
+      "primary_language": "Python",
+      "topics": [
+        "c12880ma",
+        "data-acquisition",
+        "hamamatsu",
+        "pyqtgraph",
+        "pyside6",
+        "python",
+        "rest-api",
+        "scientific-instrumentation",
+        "serial",
+        "spectrometer",
+        "spectroscopy",
+        "webapp"
+      ],
+      "url": "https://github.com/lachlanchen/AgInTi-Spectrometer"
+    },
+    {
+      "description": "AI-Wearable focuses on practical workflows and tooling. omi _AI-powered wearable for instant meetings and chats: capture, summarize, and act—hands-free._ Meet Omi, the world’s leading open-source AI wearable that captures conversations, gives summaries, action items and does actions for you. Simply connect Omi to yo...",
+      "homepage": "https://lazying.art",
+      "name": "AI-Wearable",
+      "primary_language": "C",
+      "topics": [
+        "backend",
+        "iot",
+        "mobile-app",
+        "open-source",
+        "plugin-system",
+        "transcription",
+        "voice-assistant",
+        "wearable"
+      ],
+      "url": "https://github.com/lachlanchen/AI-Wearable"
+    },
+    {
+      "description": "Convert AI generated image to vector plot.",
+      "homepage": "https://lazying.art",
+      "name": "aigi2vector",
+      "primary_language": "Shell",
+      "topics": [
+        "aigi2vector",
+        "convert",
+        "generated",
+        "image",
+        "plot",
+        "vector"
+      ],
+      "url": "https://github.com/lachlanchen/aigi2vector"
+    },
+    {
+      "description": "Verified Direct and Astrill service policy workspace for Astrill Lazy Router",
+      "homepage": "https://lachlanchen.github.io/astrill-lazy-policies/",
+      "name": "astrill-lazy-policies",
+      "primary_language": "JavaScript",
+      "topics": [
+        "astrill",
+        "dd-wrt",
+        "github-pages",
+        "networking",
+        "policy-routing",
+        "vpn"
+      ],
+      "url": "https://github.com/lachlanchen/astrill-lazy-policies"
+    },
+    {
+      "description": "Native Ubuntu and DD-WRT companion for safe per-service, website, device, and application routing through Direct or the active Astrill tunnel.",
+      "homepage": "https://lazying.art",
+      "name": "astrill-lazy-router",
+      "primary_language": "Python",
+      "topics": [
+        "astrill",
+        "automation",
+        "dd-wrt",
+        "dns",
+        "firewall",
+        "gtk4",
+        "iptables",
+        "libadwaita",
+        "linux",
+        "networking",
+        "openvpn",
+        "policy-routing",
+        "privacy",
+        "python",
+        "remote-access",
+        "router",
+        "split-tunneling",
+        "ssh",
+        "ubuntu",
+        "vpn"
+      ],
+      "url": "https://github.com/lachlanchen/astrill-lazy-router"
+    },
+    {
+      "description": "Automatic App Development. AutoAppDev 🚀 --- Reusable scripts + guides for building apps step-by-step from screenshots/markdown with Codex as a non-interactive tool. Do not edit content between the markers. 🗂️ Table of Contents - 🚀 Overview - 🧭 Repository Snapshot - 🧭 Philosophy - ✨ Features - 📌 At A Glance - 🖼️ Demo...",
+      "homepage": "https://lazying.art",
+      "name": "AutoAppDev",
+      "primary_language": "Python",
+      "topics": [
+        "app-development",
+        "codex",
+        "postgresql",
+        "prompt-tools",
+        "pwa",
+        "resumable-workflow",
+        "state-machine",
+        "tornado"
+      ],
+      "url": "https://github.com/lachlanchen/AutoAppDev"
+    },
+    {
+      "description": "AutoNovelWriter focuses on practical workflows and tooling. AutoNovelWriter Scratch-like PWA + Tornado backend for controlling an automated novel-writing (and app-dev) pipeline. 🖼️ Demo This repo also vendors AutoAppDev/ as a submodule (reusable auto-development scripts). Localized variants live in i18n/ and are lin...",
+      "homepage": "https://lazying.art",
+      "name": "AutoNovelWriter",
+      "primary_language": "Python",
+      "topics": [
+        "auto-novel",
+        "automation",
+        "content-pipeline",
+        "i18n",
+        "prompt-tools",
+        "pwa",
+        "tornado",
+        "workflow"
+      ],
+      "url": "https://github.com/lachlanchen/AutoNovelWriter"
+    },
+    {
+      "description": "Auto Publish Videos with AI tools.",
+      "homepage": "https://lazying.art",
+      "name": "AutoPublication",
+      "primary_language": "",
+      "topics": [
+        "autopublication",
+        "commit",
+        "paths",
+        "pointer",
+        "queue",
+        "root",
+        "submodule",
+        "submodules",
+        "sync",
+        "transcription"
+      ],
+      "url": "https://github.com/lachlanchen/AutoPublication"
+    },
+    {
+      "description": "AutoPublish focuses on practical workflows and tooling. AutoPublish Script-first, browser-driven multi-platform short-video publishing. Canonical operations manual for setup, runtime, queue mode, and platform automation workflows. Automation toolkit for distributing short-form video content to multiple Chinese and i...",
+      "homepage": "https://studio.lazying.art",
+      "name": "AutoPublish",
+      "primary_language": "Python",
+      "topics": [
+        "autopublish",
+        "browser-automation",
+        "multiplatform",
+        "publishing",
+        "queue",
+        "selenium",
+        "short-video",
+        "workflow"
+      ],
+      "url": "https://github.com/lachlanchen/AutoPublish"
+    },
+    {
+      "description": "This is the file monitoring and synchronisation  system for our AutoPublication system.",
+      "homepage": "https://studio.lazying.art",
+      "name": "AutoPubMonitor",
+      "primary_language": "Python",
+      "topics": [
+        "autopubmonitor",
+        "directories",
+        "environment",
+        "manual",
+        "optional",
+        "publish",
+        "python",
+        "queue",
+        "repository",
+        "video"
+      ],
+      "url": "https://github.com/lachlanchen/AutoPubMonitor"
+    },
+    {
+      "description": "BigMe device connection and file sync workspace",
+      "homepage": "",
+      "name": "BigMe",
+      "primary_language": "Shell",
+      "topics": [],
+      "url": "https://github.com/lachlanchen/BigMe"
+    },
+    {
+      "description": "Verify Python environment and key imports",
+      "homepage": "https://lazying.art",
+      "name": "cellist",
+      "primary_language": "Jupyter Notebook",
+      "topics": [
+        "cellist",
+        "environment",
+        "imports",
+        "key",
+        "python",
+        "verify"
+      ],
+      "url": "https://github.com/lachlanchen/cellist"
+    },
+    {
+      "description": "digiOBSCURA - A DIY Image Sensor and Digital Camera 📷",
+      "homepage": "https://lazying.art",
+      "name": "CustomSensor",
+      "primary_language": "C++",
+      "topics": [
+        "camera",
+        "custom",
+        "digiobscura",
+        "digital",
+        "diy",
+        "image",
+        "sensor"
+      ],
+      "url": "https://github.com/lachlanchen/CustomSensor"
+    },
+    {
+      "description": "Observable contrast from ECA to symmetry, gauge, and real-QEC drift benchmarks: reproducible algorithms, audits, and six working papers.",
+      "homepage": "https://doi.org/10.1109/ISCAS56072.2025.11044249",
+      "name": "discriminative-energy-component-analysis",
+      "primary_language": "Python",
+      "topics": [
+        "change-detection",
+        "computational-chemistry",
+        "condensed-matter",
+        "eigen-component-analysis",
+        "invariant-learning",
+        "lattice-gauge-theory",
+        "machine-learning",
+        "observable-contrast",
+        "optical-coherence",
+        "physics",
+        "qiskit",
+        "quantum-error-correction",
+        "quantum-state-discrimination",
+        "reproducible-research",
+        "robotics",
+        "surface-code",
+        "symmetry",
+        "topological-order",
+        "trace-distance",
+        "wilson-loop"
+      ],
+      "url": "https://github.com/lachlanchen/discriminative-energy-component-analysis"
+    },
+    {
+      "description": "DomainAndIpManager focuses on practical workflows and tooling. DomainAndIpManager A Python toolkit for maintaining curated domain/IP/CIDR list sets, resolving DNS to deterministic IP blocks, deduplicating, and exporting reproducible snapshots for routing and filtering workflows. 🧭 Usage GUI start_gui.sh starts code/...",
+      "homepage": "https://lazying.art",
+      "name": "DomainAndIpManager",
+      "primary_language": "Python",
+      "topics": [
+        "automation",
+        "data-pipeline",
+        "dns",
+        "domain",
+        "export",
+        "gui",
+        "ip-management",
+        "network-policy"
+      ],
+      "url": "https://github.com/lachlanchen/DomainAndIpManager"
+    },
+    {
+      "description": "Eigen-Component Analysis (ECA): A quantum theory-inspired linear model for classification and clustering with interpretable feature-to-class mappings. This implementation provides both supervised (ECA) and unsupervised (UECA) algorithms with scikit-learn compatible API. Based on research published in IEEE ISCAS 2025.",
+      "homepage": "https://lazying.art",
+      "name": "eca",
+      "primary_language": "Jupyter Notebook",
+      "topics": [
+        "analysis",
+        "component",
+        "eca",
+        "eigen",
+        "inspired",
+        "linear",
+        "model",
+        "quantum",
+        "theory"
+      ],
+      "url": "https://github.com/lachlanchen/eca"
+    },
+    {
+      "description": "The repo for the paper Event-assited Holographic Imaging",
+      "homepage": "https://lazying.art",
+      "name": "EventHolography",
+      "primary_language": "",
+      "topics": [
+        "assited",
+        "event",
+        "holographic",
+        "holography",
+        "imaging",
+        "paper",
+        "repo"
+      ],
+      "url": "https://github.com/lachlanchen/EventHolography"
+    },
+    {
+      "description": "Multilingual LazyingArt storefront for handmade notebooks, panda dolls, leather pendants, and AI accessories.",
+      "homepage": "https://buy.lazying.art",
+      "name": "Figurine",
+      "primary_language": "JavaScript",
+      "topics": [
+        "ai-accessories",
+        "ecommerce",
+        "github-pages",
+        "handmade",
+        "i18n",
+        "lazyingart",
+        "product-page",
+        "pwa",
+        "static-site",
+        "stripe"
+      ],
+      "url": "https://github.com/lachlanchen/Figurine"
+    },
+    {
+      "description": "Fujitsu Quaderno research, firmware notes, and mount tooling",
+      "homepage": "https://lazying.art",
+      "name": "FujitsuQuaderno",
+      "primary_language": "Shell",
+      "topics": [
+        "digital-paper",
+        "e-ink",
+        "firmware-analysis",
+        "fujitsu-quaderno",
+        "jailbreak-research",
+        "macos",
+        "mount-tools",
+        "quaderno"
+      ],
+      "url": "https://github.com/lachlanchen/FujitsuQuaderno"
+    },
+    {
+      "description": "A Python subtitle burner that renders Japanese furigana and other ruby annotations (pinyin, romaji, IPA, etc.) directly onto video frames with OpenCV. It is optimized for furigana workflows while remaining flexible for multilingual ruby-style subtitles.",
+      "homepage": "https://studio.lazying.art",
+      "name": "FuriganaSubtitles",
+      "primary_language": "Python",
+      "topics": [
+        "burner",
+        "furigana",
+        "japanese",
+        "other",
+        "python",
+        "renders",
+        "ruby",
+        "subtitle",
+        "subtitles",
+        "that"
+      ],
+      "url": "https://github.com/lachlanchen/FuriganaSubtitles"
+    },
+    {
+      "description": "GaugeHand: a lockable contour-field robotic hand concept for dense-contact grasping",
+      "homepage": "https://lazying.art",
+      "name": "GaugeHand",
+      "primary_language": "TeX",
+      "topics": [
+        "contour-gauge",
+        "dense-contact",
+        "gripper",
+        "hardware-research",
+        "lazying-art",
+        "manipulation",
+        "pin-array",
+        "robotic-hand",
+        "robotics",
+        "soft-robotics",
+        "tactile-sensing"
+      ],
+      "url": "https://github.com/lachlanchen/GaugeHand"
+    },
+    {
+      "description": "Signed companion software releases and setup resources for supported AI glasses",
+      "homepage": "",
+      "name": "GlassAgent-Wearable-Releases",
+      "primary_language": "Shell",
+      "topics": [],
+      "url": "https://github.com/lachlanchen/GlassAgent-Wearable-Releases"
+    },
+    {
+      "description": "An API utilize acquiring JSON format with OpenAI,",
+      "homepage": "https://lazying.art",
+      "name": "grilling_chatgpt",
+      "primary_language": "Python",
+      "topics": [
+        "acquiring",
+        "api",
+        "chatgpt",
+        "format",
+        "grilling",
+        "json",
+        "openai",
+        "utilize"
+      ],
+      "url": "https://github.com/lachlanchen/grilling_chatgpt"
+    },
+    {
+      "description": "Sanitized Sequoia, OpenCore, recovery, and Xcode runbook for an owned development workstation",
+      "homepage": "https://lazying.art",
+      "name": "hackintosh",
+      "primary_language": "Shell",
+      "topics": [
+        "dual-boot",
+        "hackintosh",
+        "intel-hd-530",
+        "macos",
+        "opencore",
+        "recovery",
+        "sequoia",
+        "skylake",
+        "xcode"
+      ],
+      "url": "https://github.com/lachlanchen/hackintosh"
+    },
+    {
+      "description": "How You Got Rich: From Abundance to Fulfillment and Contentment",
+      "homepage": "https://lachlanchen.github.io/HowYouGotRich/",
+      "name": "HowYouGotRich",
+      "primary_language": "TeX",
+      "topics": [
+        "book",
+        "book-website",
+        "business",
+        "economics",
+        "entrepreneurship",
+        "financial-freedom",
+        "financial-literacy",
+        "latex",
+        "lazyingart",
+        "lazylearn",
+        "leadership",
+        "long-form",
+        "pdf-reader",
+        "personal-finance",
+        "school-of-hard-knocks",
+        "source-traceability",
+        "wealth"
+      ],
+      "url": "https://github.com/lachlanchen/HowYouGotRich"
+    },
+    {
+      "description": "HybridImager: open hybrid single-pixel, event, frame, and spectral scientific imaging research workspace",
+      "homepage": "https://lazying.art",
+      "name": "HybridImager",
+      "primary_language": "Python",
+      "topics": [
+        "aginti",
+        "computational-imaging",
+        "event-based-vision",
+        "event-camera",
+        "hybrid-imaging",
+        "hyperspectral-imaging",
+        "imaging",
+        "latex",
+        "lazying-art",
+        "microscopy",
+        "open-hardware",
+        "optics",
+        "pcb-design",
+        "scientific-instrumentation",
+        "single-pixel-imaging"
+      ],
+      "url": "https://github.com/lachlanchen/HybridImager"
+    },
+    {
+      "description": "Research notebook of optics, metasurfaces, computational physics, and  tap‑and‑charge wireless power — Markdown ideas with LaTeX/PDF publications.",
+      "homepage": "https://ideas.onlyideas.art",
+      "name": "IDEAS",
+      "primary_language": "TeX",
+      "topics": [
+        "build",
+        "ideas",
+        "lang",
+        "latex",
+        "metasurfaces",
+        "notes",
+        "publication",
+        "publications",
+        "repository",
+        "title"
+      ],
+      "url": "https://github.com/lachlanchen/IDEAS"
+    },
+    {
+      "description": "IdeasGlass is an AI-first wearable + PWA that captures and streams your ideas in real time.",
+      "homepage": "https://onlyideas.art",
+      "name": "IdeasGlass",
+      "primary_language": "C",
+      "topics": [
+        "ai",
+        "app",
+        "glass",
+        "llm",
+        "wearables"
+      ],
+      "url": "https://github.com/lachlanchen/IdeasGlass"
+    },
+    {
+      "description": "IdeasRobot – a laid‑back sensor hub from The Art of Lazying: a Tornado + PWA   stack that lets your mic-array/camera companion stream audio, visualize wake   angles, and capture sessions from anywhere.",
+      "homepage": "https://robot.lazying.art",
+      "name": "IdeasRobot",
+      "primary_language": "Python",
+      "topics": [
+        "ai",
+        "automation",
+        "lazy",
+        "llm",
+        "robot"
+      ],
+      "url": "https://github.com/lachlanchen/IdeasRobot"
+    },
+    {
+      "description": "Imagized Language Model (ILM)",
+      "homepage": "https://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=%E4%B8%AD",
+      "name": "ImagizedLanguageModel",
+      "primary_language": "Python",
+      "topics": [
+        "diffusion",
+        "etymology",
+        "glyph",
+        "imagized",
+        "ingestion",
+        "language",
+        "model",
+        "modeling",
+        "path",
+        "processed"
+      ],
+      "url": "https://github.com/lachlanchen/ImagizedLanguageModel"
+    },
+    {
+      "description": "Kindle Paperwhite 2 jailbreak and KOReader setup workspace",
+      "homepage": "https://lazying.art",
+      "name": "Kindle",
+      "primary_language": "Python",
+      "topics": [
+        "ebook",
+        "kindle",
+        "kindle-jailbreak",
+        "kindle-paperwhite",
+        "koreader",
+        "kual",
+        "linux-scripts",
+        "mrpi",
+        "paperwhite",
+        "winterbreak2"
+      ],
+      "url": "https://github.com/lachlanchen/Kindle"
+    },
+    {
+      "description": "GUI-first AMD Kria KV260 + Prophesee Metavision lab for event-camera bring-up, custom recording/viewing, PetaLinux tooling, and embedded vision experiments.",
+      "homepage": "https://flow.lazying.art",
+      "name": "kria-metavision-lab",
+      "primary_language": "Python",
+      "topics": [
+        "amd-kria",
+        "computer-vision",
+        "embedded-linux",
+        "event-based-vision",
+        "event-camera",
+        "fpga",
+        "genx320",
+        "gtk",
+        "imx636",
+        "kria",
+        "kv260",
+        "media-controller",
+        "metavision",
+        "neuromorphic-vision",
+        "petalinux",
+        "prophesee",
+        "python",
+        "v4l2",
+        "x11",
+        "zynqmp"
+      ],
+      "url": "https://github.com/lachlanchen/kria-metavision-lab"
+    },
+    {
+      "description": "Config files for my GitHub profile.",
+      "homepage": "https://lazying.art",
+      "name": "lachlanchen",
+      "primary_language": "HTML",
+      "topics": [
+        "automation",
+        "config",
+        "creator",
+        "github-config",
+        "imaging",
+        "lachlanchen",
+        "less",
+        "more",
+        "systems",
+        "workflows"
+      ],
+      "url": "https://github.com/lachlanchen/lachlanchen"
+    },
+    {
+      "description": "LALACHAN generated video archive with per-video transcript pages",
+      "homepage": "https://lachlanchen.github.io/LalaMedias/",
+      "name": "LalaMedias",
+      "primary_language": "HTML",
+      "topics": [
+        "generated-video",
+        "github-pages",
+        "lalachan",
+        "lazyedit",
+        "media-archive",
+        "musia",
+        "static-site",
+        "subtitles"
+      ],
+      "url": "https://github.com/lachlanchen/LalaMedias"
+    },
+    {
+      "description": "Lala Studio: a local GPT-5.6-Sol story-to-video workspace with React, browser production, job monitoring, and LazyEdit publishing",
+      "homepage": "https://lazying.art",
+      "name": "LalaStudio",
+      "primary_language": "TypeScript",
+      "topics": [
+        "ai-video",
+        "codex",
+        "creative-tools",
+        "express",
+        "lazyedit",
+        "lazying-art",
+        "local-first",
+        "playwright",
+        "react",
+        "storytelling",
+        "typescript",
+        "video-generation",
+        "workflow-automation",
+        "xiaoyunque"
+      ],
+      "url": "https://github.com/lachlanchen/LalaStudio"
+    },
+    {
+      "description": "\"Development repository for Lazeal OptiX, a home-use diagnostic device using advanced microscopy and biochemical analysis.\"",
+      "homepage": "https://lazealoptix.com",
+      "name": "lazealoptix",
+      "primary_language": "Jupyter Notebook",
+      "topics": [
+        "biochemical-analysis",
+        "diagnostics",
+        "health-tech",
+        "home-healthcare",
+        "machine-learning",
+        "medical-devices",
+        "microscopy"
+      ],
+      "url": "https://github.com/lachlanchen/lazealoptix"
+    },
+    {
+      "description": "An 11-language, local-first decision teacher for International Chess, Xiangqi, and Shogi.",
+      "homepage": "https://lazying.art",
+      "name": "LazyChess",
+      "primary_language": "TypeScript",
+      "topics": [
+        "chess",
+        "education",
+        "game-teaching",
+        "i18n",
+        "local-first",
+        "pikafish",
+        "react",
+        "shogi",
+        "stockfish",
+        "typescript",
+        "xiangqi"
+      ],
+      "url": "https://github.com/lachlanchen/LazyChess"
+    },
+    {
+      "description": "Research-driven guide to money, wealth, business, finance, economics, and decision-making, with a living book, PDF, site, and refinery.",
+      "homepage": "https://earn.lazying.art",
+      "name": "LazyEarn",
+      "primary_language": "TeX",
+      "topics": [
+        "accounting",
+        "banking",
+        "business",
+        "commerce",
+        "economics",
+        "entrepreneurship",
+        "finance",
+        "investing",
+        "markets",
+        "money",
+        "wealth"
+      ],
+      "url": "https://github.com/lachlanchen/LazyEarn"
+    },
+    {
+      "description": "A lightweight, default-deny reverse edge for safely connecting private compute to public domains.",
+      "homepage": "https://lazying.art",
+      "name": "LazyEdge",
+      "primary_language": "JavaScript",
+      "topics": [
+        "caddy",
+        "cli",
+        "devops",
+        "edge-gateway",
+        "gpu",
+        "local-llm",
+        "nat-traversal",
+        "nodejs",
+        "private-compute",
+        "reverse-proxy",
+        "reverse-tunnel",
+        "self-hosted",
+        "ssh",
+        "zero-trust"
+      ],
+      "url": "https://github.com/lachlanchen/LazyEdge"
+    },
+    {
+      "description": "LazyEdit is a tool to automatically edit videos with AI-assisted auto-caption, auto-transcription, auto-highlight, auto-metadata and auto-subtitles.",
+      "homepage": "https://studio.lazying.art/",
+      "name": "LazyEdit",
+      "primary_language": "Python",
+      "topics": [
+        "environment",
+        "expo",
+        "generation",
+        "lazyedit",
+        "media",
+        "metadata",
+        "optional",
+        "paths",
+        "tmux",
+        "upload"
+      ],
+      "url": "https://github.com/lachlanchen/LazyEdit"
+    },
+    {
+      "description": "Local-first deterministic game-teaching framework with an 11-language UI and LazyWeiqi, LazyChess, LazyPoker, and LazyMahjong submodules.",
+      "homepage": "https://lazying.art",
+      "name": "LazyGame",
+      "primary_language": "TypeScript",
+      "topics": [
+        "accessibility",
+        "chess",
+        "deterministic",
+        "education",
+        "game-ai",
+        "game-framework",
+        "game-teaching",
+        "git-submodules",
+        "go",
+        "i18n",
+        "internationalization",
+        "local-first",
+        "mahjong",
+        "multilingual",
+        "poker",
+        "react",
+        "typescript"
+      ],
+      "url": "https://github.com/lachlanchen/LazyGame"
+    },
+    {
+      "description": "Secure, dependency-light web portal and LazyEdge deployment contracts for privately computed teaching games.",
+      "homepage": "https://game.lazying.art",
+      "name": "LazyGameWeb",
+      "primary_language": "JavaScript",
+      "topics": [
+        "board-games",
+        "chess",
+        "doudizhu",
+        "game-ai",
+        "lazyedge",
+        "lazying-art",
+        "mahjong",
+        "nodejs",
+        "poker",
+        "reverse-tunnel",
+        "security",
+        "self-hosted",
+        "shogi",
+        "teaching-games",
+        "web-portal",
+        "weiqi",
+        "xiangqi",
+        "zero-trust"
+      ],
+      "url": "https://github.com/lachlanchen/LazyGameWeb"
+    },
+    {
+      "description": "Standalone cloud PWA, durable chat BFF, and AgInTi frontend for llm.lazying.art",
+      "homepage": "https://llm.lazying.art",
+      "name": "LazyingAgentWeb",
+      "primary_language": "JavaScript",
+      "topics": [
+        "aginti",
+        "ai-agent",
+        "edge-computing",
+        "katex",
+        "lazying-art",
+        "local-llm",
+        "nodejs",
+        "offline-first",
+        "pwa",
+        "self-hosted",
+        "sqlite"
+      ],
+      "url": "https://github.com/lachlanchen/LazyingAgentWeb"
+    },
+    {
+      "description": "Agent scaffolding to turn big product ideas into small, testable tasks and code.",
+      "homepage": "https://agent.lazying.art",
+      "name": "LazyingArtAgent",
+      "primary_language": "JavaScript",
+      "topics": [
+        "agent",
+        "art",
+        "big",
+        "ideas",
+        "into",
+        "product",
+        "scaffolding",
+        "small",
+        "turn"
+      ],
+      "url": "https://github.com/lachlanchen/LazyingArtAgent"
+    },
+    {
+      "description": "Lazying Art Bot (LAB) — a local-first personal AI assistant you run on your own devices, with   multi-channel chat and tools.",
+      "homepage": "https://lab.lazying.art/",
+      "name": "LazyingArtBot",
+      "primary_language": "TypeScript",
+      "topics": [
+        "auto",
+        "automation",
+        "calendar",
+        "chat",
+        "gateway",
+        "lazyingartbot",
+        "notes",
+        "operations",
+        "personal",
+        "reminders"
+      ],
+      "url": "https://github.com/lachlanchen/LazyingArtBot"
+    },
+    {
+      "description": "The Website of LazyingArt. LazyingArt - Official Website 📌 At a glance 🎨 About LazyingArt LazyingArt is a multilingual AI communication platform and landing-site ecosystem. This repository contains the public website and product pages for LazyingArt, including the flagship EchoMind experience and supporting hardware...",
+      "homepage": "https://lazying.art",
+      "name": "LazyingArtWebsite",
+      "primary_language": "HTML",
+      "topics": [
+        "ecosystem",
+        "github-pages",
+        "i18n",
+        "landing-page",
+        "marketing",
+        "multilingual",
+        "static-site",
+        "website"
+      ],
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite"
+    },
+    {
+      "description": "LazyInvest: dated U.S. sector and stock research notes with multilingual LazyingArt README",
+      "homepage": "https://earn.lazying.art",
+      "name": "LazyInvest",
+      "primary_language": "Python",
+      "topics": [
+        "equities",
+        "finance",
+        "investment-research",
+        "lazying-art",
+        "lazyinvest",
+        "markdown",
+        "market-research",
+        "sector-analysis",
+        "stock-research",
+        "us-stocks",
+        "watchlist"
+      ],
+      "url": "https://github.com/lachlanchen/LazyInvest"
+    },
+    {
+      "description": "Independent daily LazyInvest market research PDF archive",
+      "homepage": "https://earn.lazying.art",
+      "name": "LazyInvestReports",
+      "primary_language": "TeX",
+      "topics": [
+        "codex",
+        "fred",
+        "investment-research",
+        "lazyinvest",
+        "market-research",
+        "pdf-reports",
+        "sec-edgar"
+      ],
+      "url": "https://github.com/lachlanchen/LazyInvestReports"
+    },
+    {
+      "description": "Learn language in a lazy way.",
+      "homepage": "https://lazying.art",
+      "name": "LazyLanguageLearner",
+      "primary_language": "Jupyter Notebook",
+      "topics": [
+        "language",
+        "lazy",
+        "learn",
+        "learner",
+        "way"
+      ],
+      "url": "https://github.com/lachlanchen/LazyLanguageLearner"
+    },
+    {
+      "description": "LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance.",
+      "homepage": "http://learn.lazying.art/",
+      "name": "LazyLearn",
+      "primary_language": "Fortran",
+      "topics": [
+        "chapter",
+        "edition",
+        "figures",
+        "lazylearn",
+        "notebook",
+        "notebooks",
+        "physics",
+        "python",
+        "read",
+        "root"
+      ],
+      "url": "https://github.com/lachlanchen/LazyLearn"
+    },
+    {
+      "description": "LazyMahjong: deterministic Mahjong decision teaching for Riichi, MCR, and Hong Kong with an 11-language app and documentation.",
+      "homepage": "https://lazying.art",
+      "name": "LazyMahjong",
+      "primary_language": "TypeScript",
+      "topics": [
+        "education",
+        "game-teaching",
+        "hong-kong-mahjong",
+        "i18n",
+        "local-first",
+        "mahjong",
+        "mahjong-teaching",
+        "mcr",
+        "multilingual",
+        "react",
+        "riichi",
+        "typescript",
+        "vite"
+      ],
+      "url": "https://github.com/lachlanchen/LazyMahjong"
+    },
+    {
+      "description": "A deterministic, local-first 11-language decision teacher for heads-up Texas Hold'em and bounded Bridge and Guandan lessons.",
+      "homepage": "https://lazying.art",
+      "name": "LazyPoker",
+      "primary_language": "TypeScript",
+      "topics": [
+        "card-games",
+        "contract-bridge",
+        "education",
+        "game-teaching",
+        "guandan",
+        "i18n",
+        "local-first",
+        "multilingual",
+        "poker",
+        "react",
+        "texas-holdem",
+        "typescript"
+      ],
+      "url": "https://github.com/lachlanchen/LazyPoker"
+    },
+    {
+      "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
+      "homepage": "https://lazying.art",
+      "name": "LazyPromotion",
+      "primary_language": "Python",
+      "topics": [
+        "anti-spam",
+        "browser-automation",
+        "chrome-devtools-protocol",
+        "codex",
+        "human-in-the-loop",
+        "instagram",
+        "lazying-art",
+        "model-context-protocol",
+        "novnc",
+        "open-source",
+        "openai",
+        "playwright",
+        "python",
+        "reddit",
+        "social-media",
+        "sqlite",
+        "x"
+      ],
+      "url": "https://github.com/lachlanchen/LazyPromotion"
+    },
+    {
+      "description": "Private AI API gateway for user keys, credits, model routing, and upstream provider aggregation.",
+      "homepage": "https://router.lazying.art",
+      "name": "LazyRouter",
+      "primary_language": "Go",
+      "topics": [
+        "ai-gateway",
+        "api-router",
+        "claude-compatible",
+        "grsai",
+        "llm-proxy",
+        "model-routing",
+        "openai-compatible",
+        "openrouter",
+        "quota-management",
+        "venice-ai"
+      ],
+      "url": "https://github.com/lachlanchen/LazyRouter"
+    },
+    {
+      "description": "Portable LazyingArt agent skills for AgInTiFlow, Codex, Claude, Gemini, Copilot, LazyEdit, AutoPublish, browser automation, books, and publishing workflows.",
+      "homepage": "https://lachlanchen.github.io/LazySkills/",
+      "name": "LazySkills",
+      "primary_language": "Python",
+      "topics": [
+        "aginti",
+        "ai-agents",
+        "autopublish",
+        "browser-automation",
+        "chrome-devtools-protocol",
+        "claude",
+        "codex",
+        "codex-skills",
+        "copilot",
+        "gemini",
+        "lalachan",
+        "lazyedit",
+        "lazyingart",
+        "multilingual",
+        "seedance",
+        "subtitle-correction",
+        "video-generation",
+        "video-publishing",
+        "workflow-automation",
+        "xiaoyunque"
+      ],
+      "url": "https://github.com/lachlanchen/LazySkills"
+    },
+    {
+      "description": "Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON",
+      "homepage": "https://lachlanchen.github.io/LazyTravel/",
+      "name": "LazyTravel",
+      "primary_language": "Python",
+      "topics": [
+        "chinese",
+        "digital-publishing",
+        "english",
+        "japanese",
+        "lanzhou",
+        "latex",
+        "multilingual",
+        "openstreetmap",
+        "travel-guide",
+        "xian"
+      ],
+      "url": "https://github.com/lachlanchen/LazyTravel"
+    },
+    {
+      "description": "Local-first 11-language Weiqi teacher with exact 5×5–19×19 play, game-native shape/influence/territory visualizations, bounded KataGo fast/deep analysis, and non-mutating AI study.",
+      "homepage": "https://lazying.art",
+      "name": "LazyWeiqi",
+      "primary_language": "TypeScript",
+      "topics": [
+        "ai-tutor",
+        "board-game",
+        "education",
+        "fastapi",
+        "fuseki",
+        "game-ai",
+        "go",
+        "go-education",
+        "go-game",
+        "i18n",
+        "joseki",
+        "katago",
+        "local-first",
+        "local-llm",
+        "multilingual",
+        "openai",
+        "react",
+        "visualization",
+        "weiqi"
+      ],
+      "url": "https://github.com/lachlanchen/LazyWeiqi"
+    },
+    {
+      "description": "The lecture notes of Professor Leonard Susskind.",
+      "homepage": "https://lazying.art",
+      "name": "leonardsusskind",
+      "primary_language": "TeX",
+      "topics": [
+        "cosmology",
+        "lazyingart",
+        "lecture-notes",
+        "leonardsusskind",
+        "physics",
+        "quantum-mechanics",
+        "relativity",
+        "video2book"
+      ],
+      "url": "https://github.com/lachlanchen/leonardsusskind"
+    },
+    {
+      "description": "Reverse Engineering of Life.",
+      "homepage": "http://lre.lazying.art/",
+      "name": "LifeReverseEngineering",
+      "primary_language": "HTML",
+      "topics": [
+        "latest",
+        "lifereverseengineering",
+        "outputs",
+        "pages",
+        "report",
+        "root",
+        "self-heal",
+        "single-copy",
+        "stage",
+        "submodules"
+      ],
+      "url": "https://github.com/lachlanchen/LifeReverseEngineering"
+    },
+    {
+      "description": "The website of LightMind Ltd.",
+      "homepage": "https://github.com/LightMind",
+      "name": "LightMind",
+      "primary_language": "HTML",
+      "topics": [
+        "analysis",
+        "development",
+        "encryption",
+        "hardware",
+        "lightmind",
+        "market",
+        "memory",
+        "neuromorphic",
+        "optical",
+        "wearable"
+      ],
+      "url": "https://github.com/lachlanchen/LightMind"
+    },
+    {
+      "description": "",
+      "homepage": "",
+      "name": "lightmind-privacy",
+      "primary_language": "HTML",
+      "topics": [],
+      "url": "https://github.com/lachlanchen/lightmind-privacy"
+    },
+    {
+      "description": "Compressed PDF artifact shelf for PocketPolyglot multilingual pocket books",
+      "homepage": "https://lachlanchen.github.io/LinguaLeaf/website/",
+      "name": "LinguaLeaf",
+      "primary_language": "JavaScript",
+      "topics": [
+        "interlinear",
+        "language-learning",
+        "lingualleaf",
+        "multilingual-books",
+        "pdf",
+        "pocketpolyglot",
+        "xelatex"
+      ],
+      "url": "https://github.com/lachlanchen/LinguaLeaf"
+    },
+    {
+      "description": "Private, book-grounded multilingual knowledge cards on local hardware",
+      "homepage": "https://lazying.art",
+      "name": "LocalKnowledgeTerminal",
+      "primary_language": "Python",
+      "topics": [
+        "e-ink",
+        "etymology",
+        "knowledge-base",
+        "llama-cpp",
+        "local-first",
+        "multilingual",
+        "offline",
+        "python",
+        "qwen",
+        "rag",
+        "raspberry-pi",
+        "sqlite"
+      ],
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+    },
+    {
+      "description": "Private local AI studio for chat, vision, deep research, OpenAI-compatible APIs, and Ghidra/MCP reverse engineering",
+      "homepage": "https://lazying.art",
+      "name": "LocalLLM",
+      "primary_language": "Python",
+      "topics": [
+        "deep-research",
+        "fastapi",
+        "ghidra",
+        "local-llm",
+        "mcp",
+        "ollama",
+        "openai-compatible",
+        "qwen3",
+        "qwen3-vl",
+        "react",
+        "reverse-engineering",
+        "rtx-4090"
+      ],
+      "url": "https://github.com/lachlanchen/LocalLLM"
+    },
+    {
+      "description": "Quality-first local MiniMax H3 video-series generation and loopback API for dual RTX 4090 workstations, with native audio, references, P8/P9 continuity, and preserved artifacts.",
+      "homepage": "https://lazying.art",
+      "name": "LocalVideoGen",
+      "primary_language": "Python",
+      "topics": [
+        "ai-video",
+        "audio-generation",
+        "comfyui",
+        "dual-gpu",
+        "ffmpeg",
+        "image-to-video",
+        "lazying-art",
+        "local-ai",
+        "minimax-h3",
+        "model-offloading",
+        "multi-gpu",
+        "reference-to-video",
+        "rtx-4090",
+        "storyboard",
+        "text-to-video",
+        "video-api",
+        "video-generation",
+        "video-series",
+        "webapp",
+        "world-travel"
+      ],
+      "url": "https://github.com/lachlanchen/LocalVideoGen"
+    },
+    {
+      "description": "Repository of paper Inverse Design of Metasurface for Spectral Imaging",
+      "homepage": "https://lazying.art",
+      "name": "MetasurfaceInverseDeisgn",
+      "primary_language": "Python",
+      "topics": [
+        "deisgn",
+        "design",
+        "imaging",
+        "inverse",
+        "metasurface",
+        "paper",
+        "repository",
+        "spectral"
+      ],
+      "url": "https://github.com/lachlanchen/MetasurfaceInverseDeisgn"
+    },
+    {
+      "description": "A Tornado + PostgreSQL-powered MT5 companion that pulls live OHLC data via the MetaTrader5 API, stores it, and serves   a feature-rich UI with AI-driven tech/basic analysis, STL overlays, and automated periodic trading controls (with   synced prefs, logging, and docs)",
+      "homepage": "http://quant.lazying.art/",
+      "name": "MicroQuant",
+      "primary_language": "HTML",
+      "topics": [
+        "companion",
+        "data",
+        "live",
+        "micro",
+        "ohlc",
+        "postgresql",
+        "powered",
+        "pulls",
+        "quant",
+        "that",
+        "tornado"
+      ],
+      "url": "https://github.com/lachlanchen/MicroQuant"
+    },
+    {
+      "description": "MultilingualWhisper – Enhanced Whisper subtitles with fine‑grained language detection for multilingual videos",
+      "homepage": "https://lazying.art",
+      "name": "MultilingualWhisper",
+      "primary_language": "Python",
+      "topics": [
+        "current",
+        "ffmpeg",
+        "language",
+        "lazyedit",
+        "media",
+        "multilingual",
+        "multilingualwhisper",
+        "openai",
+        "subtitle",
+        "whisper"
+      ],
+      "url": "https://github.com/lachlanchen/MultilingualWhisper"
+    },
+    {
+      "description": "Musia: local-first AI song localization, stem separation, lyrics, beats, chords, and creative music workflows",
+      "homepage": "https://fun.lazying.art",
+      "name": "Musia",
+      "primary_language": "Python",
+      "topics": [
+        "ai-music",
+        "audio-analysis",
+        "beat-tracking",
+        "chord-recognition",
+        "cuda",
+        "demucs",
+        "lazying-art",
+        "lyrics",
+        "music-ai",
+        "python",
+        "singing-voice-synthesis",
+        "song-localization",
+        "source-separation",
+        "whisper"
+      ],
+      "url": "https://github.com/lachlanchen/Musia"
+    },
+    {
+      "description": "nhi_hardware focuses on practical workflows and tooling. NHI Hardware Control and Event Capture 📖 Quick Navigation 🧭 Project at a Glance A hardware-orchestration project for event-camera experiments combining: - EVK5 event camera capture (Prophesee Metavision stack) - FMC4030-based CNC motion control - Arduino seria...",
+      "homepage": "https://lazying.art",
+      "name": "nhi_hardware",
+      "primary_language": "Python",
+      "topics": [
+        "arduino",
+        "cnc",
+        "control",
+        "data-capture",
+        "event-camera",
+        "evk5",
+        "hardware",
+        "python"
+      ],
+      "url": "https://github.com/lachlanchen/nhi_hardware"
+    },
+    {
+      "description": "A local-first control plane that dynamically discovers, explains, previews, and opens every noVNC desktop on a Linux workstation.",
+      "homepage": "https://lazying.art",
+      "name": "novnc-manager",
+      "primary_language": "CSS",
+      "topics": [
+        "desktop-manager",
+        "linux",
+        "novnc",
+        "observability",
+        "python",
+        "remote-desktop",
+        "self-hosted",
+        "systemd",
+        "tmux",
+        "vnc",
+        "websockify",
+        "x11",
+        "xvfb"
+      ],
+      "url": "https://github.com/lachlanchen/novnc-manager"
+    },
+    {
+      "description": "OnlyIdeas: My Amplify Gen 2 starter application",
+      "homepage": "https://lazying.art",
+      "name": "onlyideas-aws",
+      "primary_language": "Vue",
+      "topics": [
+        "amplify",
+        "auth",
+        "authenticated",
+        "authentication",
+        "cognito",
+        "current",
+        "currently",
+        "hosting",
+        "onlyideas",
+        "pull"
+      ],
+      "url": "https://github.com/lachlanchen/onlyideas-aws"
+    },
+    {
+      "description": "onlyideas-react-native focuses on practical workflows and tooling. OnlyIdeas Full Stack App OnlyIdeas is a full-stack application that helps people share and monetize their ideas. It integrates with AWS Amplify for user authentication, data storage (AppSync & DynamoDB), and file hosting (S3). You can run this projec...",
+      "homepage": "https://lazying.art",
+      "name": "onlyideas-react-native",
+      "primary_language": "JavaScript",
+      "topics": [
+        "auth",
+        "aws-amplify",
+        "backend",
+        "creator-platform",
+        "cross-platform",
+        "expo",
+        "mobile",
+        "react-native"
+      ],
+      "url": "https://github.com/lachlanchen/onlyideas-react-native"
+    },
+    {
+      "description": "Self‑calibrated neuromorphic hyperspectral imaging pipeline for event cameras with diffractive  illumination. Includes end‑to‑end tools for RAW segmentation, multi‑window time‑warping compensation, spectral visualization, and hardware control for synchronized event/frame capture and scanning.",
+      "homepage": "https://lazying.art/openhi-kit.html",
+      "name": "OpenHI",
+      "primary_language": "Python",
+      "topics": [
+        "computer-vision",
+        "event-camera",
+        "hyperspectral-imaging",
+        "microscopy",
+        "neuromorphic-computing",
+        "optics",
+        "python",
+        "pytorch"
+      ],
+      "url": "https://github.com/lachlanchen/OpenHI"
+    },
+    {
+      "description": "OrganoidAgent: an end‑to‑end platform for organoid research that unifies foundation vision models and LLMs for segmentation, phenotyping, interpretation, and drug‑response   analysis.",
+      "homepage": "https://lazying.art",
+      "name": "OrganoidAgent",
+      "primary_language": "Python",
+      "topics": [
+        "archive",
+        "dataset",
+        "download",
+        "listing",
+        "optional",
+        "organoidagent",
+        "preview",
+        "previews",
+        "root",
+        "support"
+      ],
+      "url": "https://github.com/lachlanchen/OrganoidAgent"
+    },
+    {
+      "description": "OrganoidIntelligence: brain-organoid-on-chip intelligence, wetware computing, and bioelectronic roadmaps",
+      "homepage": "https://ideas.onlyideas.art",
+      "name": "OrganoidIntelligence",
+      "primary_language": "Python",
+      "topics": [
+        "agintiflow",
+        "biocomputing",
+        "bioelectronics",
+        "brain-on-chip",
+        "brain-organoids",
+        "closed-loop-stimulation",
+        "microelectrode-array",
+        "neurotechnology",
+        "organoid-intelligence",
+        "organoid-on-chip",
+        "organoidintelligence",
+        "wetware-computing"
+      ],
+      "url": "https://github.com/lachlanchen/OrganoidIntelligence"
+    },
+    {
+      "description": "OrganoidVision: bio-hybrid retinal organoids as living event-based imaging sensors",
+      "homepage": "https://ideas.onlyideas.art",
+      "name": "OrganoidVision",
+      "primary_language": "TeX",
+      "topics": [
+        "agintiflow",
+        "bioelectronics",
+        "biohybrid-vision",
+        "event-based-vision",
+        "microfluidics",
+        "neurotechnology",
+        "organoid-on-chip",
+        "organoid-sensors",
+        "organoid-vision",
+        "organoidvision",
+        "retinal-organoids"
+      ],
+      "url": "https://github.com/lachlanchen/OrganoidVision"
+    },
+    {
+      "description": "Codex skill for rigorous academic paper, grant, PDF, DOCX, and LaTeX critique comments",
+      "homepage": "https://lazying.art",
+      "name": "paper-critique-skill",
+      "primary_language": "TeX",
+      "topics": [
+        "academic-writing",
+        "codex-skill",
+        "docx",
+        "grant-review",
+        "latex",
+        "manuscript-review",
+        "pdf",
+        "peer-review",
+        "research-assessment",
+        "reviewer-comments"
+      ],
+      "url": "https://github.com/lachlanchen/paper-critique-skill"
+    },
+    {
+      "description": "Plan-gated LaTeX manuscript revision skill for AI agents, response letters, redlines, and proof corrections.",
+      "homepage": "https://lachlanchen.github.io/paper-revision-skill/",
+      "name": "paper-revision-skill",
+      "primary_language": "Python",
+      "topics": [
+        "academic-writing",
+        "ai-agents",
+        "codex-skill",
+        "i18n",
+        "latex",
+        "latexdiff",
+        "manuscript",
+        "paper-revision",
+        "proof-correction",
+        "research-tools",
+        "response-letter"
+      ],
+      "url": "https://github.com/lachlanchen/paper-revision-skill"
+    },
+    {
+      "description": "PaperAgent is a local-first web workspace for academic writing. It lets you edit LaTeX and code in the browser, run Python or R and compile LaTeX on the backend, and preview PDFs with build logs—all in one place.",
+      "homepage": "https://paper.lazying.art/",
+      "name": "PaperAgent",
+      "primary_language": "JavaScript",
+      "topics": [
+        "codex",
+        "compile",
+        "docker",
+        "latex",
+        "optional",
+        "paperagent",
+        "preview",
+        "python",
+        "shell",
+        "terminal"
+      ],
+      "url": "https://github.com/lachlanchen/PaperAgent"
+    },
+    {
+      "description": "PaperAgentDemo focuses on practical workflows and tooling. PaperAgentDemo A compact, repository-accurate LaTeX paper scaffold centered on latex/main.tex, designed to validate and extend a manuscript workflow with equations, algorithms, tables, glossary/acronyms, references, and PDF build tooling. 🧩 At a Glance 📌 Ove...",
+      "homepage": "https://lazying.art",
+      "name": "PaperAgentDemo",
+      "primary_language": "TeX",
+      "topics": [
+        "demo",
+        "glossary",
+        "latex",
+        "manuscript",
+        "math",
+        "paper-workflow",
+        "research-paper",
+        "templates"
+      ],
+      "url": "https://github.com/lachlanchen/PaperAgentDemo"
+    },
+    {
+      "description": "Build polished multilingual interlinear pocket books from PDF, EPUB, OCR, and TeX with ruby, grammar color, Studio, CLI, and resumable pipelines.",
+      "homepage": "https://learn.lazying.art",
+      "name": "PocketPolyglot",
+      "primary_language": "Python",
+      "topics": [
+        "bilingual-books",
+        "book-publishing",
+        "chinese",
+        "codex",
+        "furigana",
+        "interlinear",
+        "japanese",
+        "language-education",
+        "language-learning",
+        "language-tools",
+        "latex",
+        "multilingual",
+        "ocr",
+        "pdf-to-tex",
+        "pinyin",
+        "pocket-books",
+        "ruby-annotations",
+        "textbook-publishing",
+        "translation",
+        "xelatex"
+      ],
+      "url": "https://github.com/lachlanchen/PocketPolyglot"
+    },
+    {
+      "description": "Repo of paper Event-based Rapid Organoid Imaging",
+      "homepage": "https://lazying.art",
+      "name": "RapidOrganoidImaging",
+      "primary_language": "",
+      "topics": [
+        "current",
+        "currently",
+        "event-based",
+        "imaging",
+        "multilingual",
+        "organoid",
+        "paper",
+        "rapid",
+        "rapidorganoidimaging",
+        "tracked"
+      ],
+      "url": "https://github.com/lachlanchen/RapidOrganoidImaging"
+    },
+    {
+      "description": "Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun.",
+      "homepage": "https://buy.lazying.art",
+      "name": "RaraXiaAndAyaChan",
+      "primary_language": "Python",
+      "topics": [
+        "ai-video",
+        "animation-prompts",
+        "character-series",
+        "chinese-dialogue",
+        "creative-ai",
+        "lightmind",
+        "multilingual",
+        "science-fantasy",
+        "seedance",
+        "storytelling",
+        "xiaoyunque"
+      ],
+      "url": "https://github.com/lachlanchen/RaraXiaAndAyaChan"
+    },
+    {
+      "description": "SHI (势): a multilingual, historically grounded strategy narrative about the shape of power in late Qin China.",
+      "homepage": "https://lachlanchen.github.io/ShiGame/",
+      "name": "ShiGame",
+      "primary_language": "Python",
+      "topics": [
+        "chinese-history",
+        "digital-humanities",
+        "game-development",
+        "historical-strategy",
+        "history-game",
+        "multilingual",
+        "react",
+        "strategy-game",
+        "threejs",
+        "unity",
+        "unreal-engine",
+        "unreal-engine-5"
+      ],
+      "url": "https://github.com/lachlanchen/ShiGame"
+    },
+    {
+      "description": "The repo for the paper Soft Alignment of Event and Frame Data with Unified Implicit Neural Representation",
+      "homepage": "https://lazying.art",
+      "name": "SoftEventFrameAlignment",
+      "primary_language": "",
+      "topics": [
+        "aedat4",
+        "alignment",
+        "event",
+        "frame",
+        "implicit",
+        "main",
+        "soft",
+        "softeventframealignment",
+        "streams",
+        "training"
+      ],
+      "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
+    },
+    {
+      "description": "Control Sora Explore from your phone or desktop—an open-source Selenium + Tornado + PWA stack that reuses your Chrome session to type prompts, attach media, tweak storyboard/settings, and download outputs locally; if it streamlines your workflow, please star the repo and consider sponsoring to support ongoing development.",
+      "homepage": "https://lazying.art",
+      "name": "SoraRemote",
+      "primary_language": "Python",
+      "topics": [
+        "attach",
+        "browser",
+        "chrome",
+        "control",
+        "default",
+        "media",
+        "path",
+        "sora",
+        "soraremote",
+        "storyboard"
+      ],
+      "url": "https://github.com/lachlanchen/SoraRemote"
+    },
+    {
+      "description": "STM32H7 touch-screen board workspace with ST-Link/OpenOCD scripts, wiring notes, framebuffer rendering, and cache-aware persistent display patch source",
+      "homepage": "https://lazying.art",
+      "name": "stm32dev",
+      "primary_language": "C",
+      "topics": [
+        "cortex-m7",
+        "embedded",
+        "embedded-systems",
+        "firmware",
+        "framebuffer",
+        "hardware",
+        "lazyingart",
+        "ltdc",
+        "openocd",
+        "stlink",
+        "stm32",
+        "stm32h7",
+        "swd",
+        "touchscreen"
+      ],
+      "url": "https://github.com/lachlanchen/stm32dev"
+    },
+    {
+      "description": "SyncImagingSystem focuses on practical workflows and tooling. SyncImagingSystem SyncImagingSystem is a Python workspace for synchronized frame-camera and event-camera capture, organized around practical workflows for EVK/DAVIS and Hikrobot/Haikang cameras. 🧭 Quick Navigator 📌 Overview SyncImagingSystem is a Python w...",
+      "homepage": "https://lazying.art",
+      "name": "SyncImagingSystem",
+      "primary_language": "Visual Basic .NET",
+      "topics": [
+        "capture",
+        "event-camera",
+        "frame-camera",
+        "gui",
+        "hardware",
+        "imaging",
+        "python",
+        "synchronization"
+      ],
+      "url": "https://github.com/lachlanchen/SyncImagingSystem"
+    },
+    {
+      "description": "\"The Art of Lazying\" is a repository that promotes strategic laziness for a simplified, productive life, encompassing AI agents, language learning, and vlogs with practical tips and real-life use cases.",
+      "homepage": "https://lazying.art",
+      "name": "the-art-of-lazying",
+      "primary_language": "Shell",
+      "topics": [
+        "automation",
+        "language",
+        "laziness",
+        "lazying",
+        "learning",
+        "openai",
+        "practical",
+        "python",
+        "strategic",
+        "workflows"
+      ],
+      "url": "https://github.com/lachlanchen/the-art-of-lazying"
+    },
+    {
+      "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
+      "homepage": "https://lazying.art",
+      "name": "uu-remote-ubuntu-bridge",
+      "primary_language": "Python",
+      "topics": [
+        "automation",
+        "binary-patching",
+        "freerdp",
+        "gnome",
+        "linux",
+        "netease",
+        "rdp",
+        "remote-desktop",
+        "reverse-engineering",
+        "systemd",
+        "ubuntu",
+        "uu-remote",
+        "wayland",
+        "wine",
+        "xvfb"
+      ],
+      "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
+    },
+    {
+      "description": "Video2Book focuses on practical workflows and tooling. Video2Book by LazyingArt LLC > Video2Book by LazyingArt LLC. Websites: lazying.art and learn.lazying.art. Video2Book is a practical pipeline for turning long-form video collections into durable study material: downloaded media, timestamped transcripts, and trans...",
+      "homepage": "https://learn.lazying.art",
+      "name": "Video2Book",
+      "primary_language": "Python",
+      "topics": [
+        "learning",
+        "lecture",
+        "notes",
+        "pipeline",
+        "subtitles",
+        "tmux",
+        "transcript",
+        "video2book"
+      ],
+      "url": "https://github.com/lachlanchen/Video2Book"
+    },
+    {
+      "description": "Video & image captioning with OpenAI CLIP embeddings + GPT decoder",
+      "homepage": "https://lazying.art",
+      "name": "VideoCaptionerWithClip",
+      "primary_language": "Python",
+      "topics": [
+        "captioning",
+        "clip",
+        "current",
+        "dataset",
+        "inference",
+        "legacy",
+        "model",
+        "training",
+        "video",
+        "videocaptionerwithclip"
+      ],
+      "url": "https://github.com/lachlanchen/VideoCaptionerWithClip"
+    },
+    {
+      "description": "Video captioning tool: extract key‑frames with Katna/OpenCV & generate captions with a ViT+GPT‑2 model.",
+      "homepage": "https://lazying.art",
+      "name": "VideoCaptionerWithVit",
+      "primary_language": "Python",
+      "topics": [
+        "captions",
+        "extraction",
+        "katna",
+        "keyframes",
+        "model",
+        "output",
+        "python",
+        "video",
+        "videocaptionerwithvit",
+        "videos"
+      ],
+      "url": "https://github.com/lachlanchen/VideoCaptionerWithVit"
+    },
+    {
+      "description": "Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC.",
+      "homepage": "https://lazying.art",
+      "name": "WIFI2LAN",
+      "primary_language": "Shell",
+      "topics": [
+        "dnsmasq",
+        "ethernet",
+        "headless",
+        "homelab",
+        "iot",
+        "linux",
+        "nat",
+        "networking",
+        "raspberry-pi",
+        "router",
+        "vnc",
+        "wifi"
+      ],
+      "url": "https://github.com/lachlanchen/WIFI2LAN"
+    },
+    {
+      "description": "Analyze the word's origin and plot in a graph.",
+      "homepage": "https://lazying.art",
+      "name": "WordOrigins",
+      "primary_language": "Jupyter Notebook",
+      "topics": [
+        "analysis",
+        "artifacts",
+        "etymology",
+        "graph",
+        "json",
+        "multilingual",
+        "structured",
+        "support",
+        "word",
+        "wordorigins"
+      ],
+      "url": "https://github.com/lachlanchen/WordOrigins"
+    },
+    {
+      "description": "A Raspberry Pi e‑ink project that curates vocabulary from CSV or OpenAI, adds phonetics and translations, renders themed word cards, and exposes a simple HTTP API to push new words to Waveshare panels.",
+      "homepage": "https://lazying.art",
+      "name": "WordsCardEink",
+      "primary_language": "Python",
+      "topics": [
+        "cache",
+        "hardware",
+        "install",
+        "mode",
+        "openai",
+        "raspberry",
+        "rendering",
+        "word",
+        "words",
+        "wordscardeink"
+      ],
+      "url": "https://github.com/lachlanchen/WordsCardEink"
+    },
+    {
+      "description": "Organoid Segmentation (Web + CLI)",
+      "homepage": "https://lazying.art",
+      "name": "Yinghan",
+      "primary_language": "Python",
+      "topics": [
+        "environment",
+        "json",
+        "mask",
+        "model",
+        "openai",
+        "organoid",
+        "output",
+        "polygon",
+        "segmentation",
+        "yinghan"
+      ],
+      "url": "https://github.com/lachlanchen/Yinghan"
+    }
+  ],
+  "version": 1,
+  "visibility": "public"
+}

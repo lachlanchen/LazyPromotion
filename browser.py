@@ -20,10 +20,12 @@ import promotion
 ROOT = Path(__file__).resolve().parent
 DEFAULT_CDP = "http://127.0.0.1:9436"
 EVIDENCE = ROOT / ".local" / "evidence"
+DISCOVERY_PLAN = ROOT / "discovery-plan.json"
 PLATFORM_HOSTS = {
     "reddit": {"reddit.com", "www.reddit.com"},
     "x": {"x.com", "www.x.com", "twitter.com", "www.twitter.com"},
     "instagram": {"instagram.com", "www.instagram.com"},
+    "hackernews": {"news.ycombinator.com", "hn.algolia.com"},
 }
 
 
@@ -98,10 +100,84 @@ def search_url(platform: str, query: str) -> str:
         return f"https://www.reddit.com/search/?q={quote_plus(query)}&sort=new&type=posts"
     if platform == "x":
         return f"https://x.com/search?q={quote_plus(query)}&src=typed_query&f=live"
+    if platform == "hackernews":
+        return (
+            "https://hn.algolia.com/?dateRange=pastMonth&page=0&prefix=false"
+            f"&query={quote_plus(query)}&sort=byDate&type=story"
+        )
     tag = re.sub(r"[^A-Za-z0-9_]", "", query.lstrip("#").replace(" ", ""))
     if not tag:
         raise ValueError("Instagram discovery requires one hashtag-like query")
     return f"https://www.instagram.com/explore/tags/{tag}/"
+
+
+def load_discovery_plan(path: Path = DISCOVERY_PLAN) -> dict[str, object]:
+    plan = json.loads(path.read_text(encoding="utf-8"))
+    if plan.get("version") != 1 or not isinstance(plan.get("queries"), dict):
+        raise ValueError("discovery plan must contain version 1 and a queries object")
+    known_projects = {project["id"] for project in promotion.load_catalog()["projects"]}
+    for platform in PLATFORM_HOSTS:
+        queries = plan["queries"].get(platform)
+        if not isinstance(queries, list):
+            raise ValueError(f"discovery plan is missing a {platform} query list")
+        for item in queries:
+            if not isinstance(item, dict):
+                raise ValueError(f"{platform} discovery entries must be objects")
+            if item.get("project_id") not in known_projects:
+                raise ValueError(f"unknown project in discovery plan: {item.get('project_id')}")
+            if not promotion.compact(str(item.get("query") or "")):
+                raise ValueError(f"{platform} discovery entry has an empty query")
+            if not promotion.compact(str(item.get("purpose") or "")):
+                raise ValueError(f"{platform} discovery entry has an empty purpose")
+    return plan
+
+
+def automatic_query(platform: str, project: dict[str, object]) -> str:
+    project_name = promotion.normalized(str(project["name"])).strip()
+    keywords = sorted({
+        promotion.normalized(str(keyword)).strip()
+        for keyword in project.get("keywords", [])
+        if promotion.normalized(str(keyword)).strip()
+    })
+    phrases = [keyword for keyword in keywords if " " in keyword and keyword != project_name]
+    if phrases:
+        topic = sorted(phrases, key=lambda value: (abs(len(value.split()) - 2), -len(value), value))[0]
+        need = f'"{topic}"'
+    else:
+        singles = sorted(
+            (keyword for keyword in keywords if keyword != project_name),
+            key=lambda value: (-len(value), value),
+        )
+        need = " ".join(singles[:2])
+    if not need:
+        return ""
+    if platform == "reddit":
+        return f"{need} (help OR advice OR recommend)"
+    if platform == "x":
+        return f"{need} (help OR advice OR recommend) -filter:retweets"
+    if platform == "hackernews":
+        return f"Ask HN {need}"
+    return ""
+
+
+def discovery_queries(platform: str) -> list[dict[str, str]]:
+    plan = load_discovery_plan()
+    planned = [dict(item) for item in plan["queries"][platform]]
+    covered = {item["project_id"] for item in planned}
+    if platform not in {"reddit", "x", "hackernews"}:
+        return planned
+    for project in promotion.load_catalog()["projects"]:
+        if project["id"] in covered:
+            continue
+        query = automatic_query(platform, project)
+        if not query:
+            continue
+        planned.append({
+            "project_id": str(project["id"]),
+            "query": query,
+            "purpose": f"Automatically derived from public GitHub metadata for {project['name']}",
+        })
+    return planned
 
 
 def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
@@ -119,7 +195,29 @@ def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
     )
     if rows:
         return rows
-    return page.locator('a[href*="/comments/"]').evaluate_all(
+    rows = page.locator('[data-testid="search-post-unit"]').evaluate_all(
+        """(nodes, limit) => nodes.slice(0, limit).map((n) => {
+          const tracking = n.querySelector('search-telemetry-tracker[data-faceplate-tracking-context]');
+          let context = {};
+          try { context = JSON.parse(tracking?.getAttribute('data-faceplate-tracking-context') || '{}'); }
+          catch (_) {}
+          const counters = [...n.querySelectorAll('[data-testid="search-counter-row"] faceplate-number')]
+            .map(el => el.getAttribute('number') || '0');
+          const title = n.querySelector('[data-testid="post-title-text"]');
+          return {
+            url: title?.href || n.querySelector('[data-testid="post-title"]')?.href || '',
+            author: context.profile?.name || '',
+            published_at: n.querySelector('time[datetime]')?.getAttribute('datetime') || '',
+            source_score: counters[0] || '0',
+            comment_count: counters[1] || '0',
+            body: (title?.innerText || '').trim()
+          };
+        })""",
+        limit,
+    )
+    if rows:
+        return rows
+    return page.locator('main a[data-testid="post-title-text"][href*="/comments/"]').evaluate_all(
         """(nodes, limit) => nodes.slice(0, limit).map((a) => ({
           url: a.href, author: '', published_at: '', comment_count: '0', source_score: '0',
           body: (a.innerText || a.closest('article')?.innerText || '').trim()
@@ -130,11 +228,20 @@ def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
 
 def extract_x(page: Page, limit: int) -> list[dict[str, str]]:
     return page.locator('article[data-testid="tweet"]').evaluate_all(
-        """(nodes, limit) => nodes.slice(0, limit).map((n) => ({
-          url: n.querySelector('a[href*="/status/"]')?.href || '',
-          author: n.querySelector('[data-testid="User-Name"]')?.innerText || '',
-          body: n.innerText || ''
-        }))""",
+        """(nodes, limit) => nodes.slice(0, limit).map((n) => {
+          const count = (testid) => {
+            const label = n.querySelector(`[data-testid="${testid}"]`)?.getAttribute('aria-label') || '';
+            return label.match(/[\\d,]+/)?.[0] || '0';
+          };
+          return {
+            url: n.querySelector('a[href*="/status/"]')?.href || '',
+            author: n.querySelector('[data-testid="User-Name"]')?.innerText || '',
+            published_at: n.querySelector('time[datetime]')?.getAttribute('datetime') || '',
+            comment_count: count('reply'),
+            source_score: count('like'),
+            body: n.innerText || ''
+          };
+        })""",
         limit,
     )
 
@@ -150,6 +257,30 @@ def extract_instagram(page: Page, limit: int) -> list[dict[str, str]]:
     )
 
 
+def extract_hackernews(page: Page, limit: int) -> list[dict[str, str]]:
+    return page.locator("article.Story").evaluate_all(
+        """(nodes, limit) => nodes.map((n) => {
+          const titleBox = n.querySelector('.Story_title');
+          const title = (titleBox?.innerText || '').trim();
+          const titleLink = [...(titleBox?.querySelectorAll('a') || [])]
+            .find(a => a.href.includes('news.ycombinator.com/item?id='));
+          const meta = n.querySelector('.Story_meta');
+          const metaText = meta?.innerText || '';
+          const author = meta?.querySelector('a[href*="/user?id="]')?.innerText || '';
+          return {
+            url: titleLink?.href || '',
+            author,
+            published_at: '',
+            comment_count: metaText.match(/(\\d+)\\s+comments?/i)?.[1] || '0',
+            source_score: metaText.match(/(\\d+)\\s+points?/i)?.[1] || '0',
+            body: [title, n.querySelector('.Story_comment')?.innerText || ''].join(' ').trim(),
+            is_ask: /^Ask HN:/i.test(title)
+          };
+        }).filter(row => row.is_ask).slice(0, limit)""",
+        limit,
+    )
+
+
 def safe_int(value: object) -> int:
     try:
         return int(str(value or "0").replace(",", ""))
@@ -161,7 +292,11 @@ def dedupe(rows: list[dict[str, str]], limit: int) -> list[dict[str, object]]:
     result = []
     seen = set()
     for row in rows:
-        url = str(row.get("url") or "").split("?")[0]
+        raw_url = str(row.get("url") or "")
+        if re.match(r"^https://news\.ycombinator\.com/item\?id=\d+", raw_url):
+            url = raw_url.split("&", 1)[0]
+        else:
+            url = raw_url.split("?", 1)[0]
         body = promotion.compact(str(row.get("body") or ""))
         if not url or not body or url in seen:
             continue
@@ -187,6 +322,8 @@ def discover(page: Page, platform: str, query: str, limit: int) -> dict[str, obj
         rows = extract_reddit(page, limit)
     elif platform == "x":
         rows = extract_x(page, limit)
+    elif platform == "hackernews":
+        rows = extract_hackernews(page, limit)
     else:
         rows = extract_instagram(page, limit)
     rows = dedupe(rows, limit)
@@ -244,7 +381,7 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         body = root.inner_text()
         name = root.locator('[data-testid="User-Name"]').first
         author = name.inner_text() if name.count() else author
-    else:
+    elif candidate["platform"] == "instagram":
         root = page.locator("article").first
         if not root.count():
             raise RuntimeError("Instagram post root was not found")
@@ -252,6 +389,22 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         body = root.inner_text()
         name = root.locator("header a").first
         author = name.inner_text() if name.count() else author
+    else:
+        root = page.locator(".titleline").first
+        if not root.count():
+            raise RuntimeError("Hacker News story root was not found")
+        title = root.inner_text()
+        body_node = page.locator(".toptext").first
+        body = body_node.inner_text() if body_node.count() else ""
+        name = page.locator(".subtext .hnuser").first
+        author = name.inner_text() if name.count() else author
+        age = page.locator(".subtext .age").first
+        published_at = age.get_attribute("title") or "" if age.count() else ""
+        score = page.locator(".subtext .score").first
+        source_score = safe_int(score.inner_text().split()[0]) if score.count() else 0
+        comment_count = page.locator("tr.comtr").count()
+        community = "Hacker News"
+        rules_url = "https://news.ycombinator.com/newsguidelines.html"
     full_body = promotion.compact(f"{title} {body}")
     updated = promotion.ingest_candidate(
         db,
@@ -260,9 +413,9 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         body=full_body,
         author=author,
         query=candidate["query"],
-        published_at=published_at if candidate["platform"] == "reddit" else candidate.get("published_at", ""),
-        comment_count=comment_count if candidate["platform"] == "reddit" else candidate.get("comment_count", 0),
-        source_score=source_score if candidate["platform"] == "reddit" else candidate.get("source_score", 0),
+        published_at=published_at if candidate["platform"] in {"reddit", "hackernews"} else candidate.get("published_at", ""),
+        comment_count=comment_count if candidate["platform"] in {"reddit", "hackernews"} else candidate.get("comment_count", 0),
+        source_score=source_score if candidate["platform"] in {"reddit", "hackernews"} else candidate.get("source_score", 0),
     )
     screenshot = evidence(page, f"inspect-{candidate['platform']}-{candidate_id}")
     return {
@@ -273,6 +426,109 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         "url": page.url,
         "title": page.title(),
         "screenshot": screenshot,
+    }
+
+
+def hydrate_candidates(page: Page, candidates: list[dict], limit: int) -> list[dict[str, object]]:
+    hydrated = []
+    for candidate in candidates:
+        if len(hydrated) >= limit:
+            break
+        if candidate.get("status") != "discovered" or promotion.is_stale(str(candidate.get("published_at") or "")):
+            continue
+        try:
+            result = inspect_candidate(page, str(candidate["id"]))
+            hydrated.append({"ok": True, "candidate": result["candidate"], "community": result["community"]})
+        except Exception as exc:
+            hydrated.append({"ok": False, "candidate_id": candidate.get("id", ""), "error": str(exc)})
+    return hydrated
+
+
+def run_discovery_cycle(
+    page: Page,
+    platform: str,
+    *,
+    max_queries: int,
+    limit_per_query: int,
+    hydrate_per_query: int,
+    start_query: int = 0,
+) -> dict[str, object]:
+    queue = discovery_queries(platform)
+    if queue:
+        start_query %= len(queue)
+        count = min(max_queries, len(queue))
+        planned = (queue + queue)[start_query:start_query + count]
+    else:
+        start_query = 0
+        planned = []
+    results: list[dict[str, object]] = []
+    eligible_ids: list[str] = []
+    triage_ids: list[str] = []
+    for item in planned:
+        project_id = str(item["project_id"])
+        query = str(item["query"])
+        summary: dict[str, object] = {
+            "project_id": project_id,
+            "query": query,
+            "purpose": item["purpose"],
+        }
+        try:
+            found = discover(page, platform, query, limit_per_query)
+            hydrated = hydrate_candidates(page, found["candidates"], hydrate_per_query)
+            db = promotion.open_db()
+            refreshed = [
+                promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate["id"],)).fetchone())
+                for candidate in found["candidates"]
+            ]
+            matching = [
+                str(candidate["id"])
+                for candidate in refreshed
+                if candidate
+                if candidate.get("status") == "discovered"
+                and int(candidate.get("score") or 0) >= 5
+                and candidate.get("suggested_tool") == project_id
+                and not promotion.is_stale(str(candidate.get("published_at") or ""))
+            ]
+            triageable = [
+                str(candidate["id"])
+                for candidate in refreshed
+                if candidate
+                and candidate.get("status") == "discovered"
+                and promotion.is_help_request(str(candidate.get("body") or ""))
+                and promotion.compact(str(candidate.get("author") or "")).casefold() not in promotion.BOT_AUTHORS
+                and not promotion.is_stale(str(candidate.get("published_at") or ""))
+            ]
+            eligible_ids.extend(candidate_id for candidate_id in matching if candidate_id not in eligible_ids)
+            triage_ids.extend(candidate_id for candidate_id in triageable if candidate_id not in triage_ids)
+            summary.update({
+                "ok": True,
+                "found": found["found"],
+                "hydrated": len(hydrated),
+                "hydrate_errors": [row for row in hydrated if not row["ok"]],
+                "eligible_candidate_ids": matching,
+                "triage_candidate_ids": triageable,
+            })
+        except Exception as exc:
+            summary.update({"ok": False, "error": str(exc)})
+        results.append(summary)
+    note = ""
+    if not planned and platform == "instagram":
+        note = (
+            "Instagram has no configured help-request queries: hashtag feeds mostly expose "
+            "promotional posts, which are not sufficient consent for a project pitch."
+        )
+    return {
+        "ok": all(result["ok"] for result in results),
+        "platform": platform,
+        "available_queries": len(queue),
+        "start_query": start_query,
+        "next_query": (start_query + len(results)) % len(queue) if queue else 0,
+        "queries_run": len(results),
+        "results": results,
+        "eligible_candidate_ids": eligible_ids,
+        "triage_candidate_ids": triage_ids,
+        "next": "Run model triage on eligible candidates; this cycle never drafts or posts.",
+        "note": note,
     }
 
 
@@ -300,6 +556,8 @@ def composer(page: Page, platform: str, *, activate: bool = True) -> Locator:
         ]
     elif platform == "x":
         locators = [page.locator('[data-testid="tweetTextarea_0"]'), page.locator('div[contenteditable="true"][role="textbox"]')]
+    elif platform == "hackernews":
+        locators = [page.locator('form[action="comment"] textarea[name="text"]')]
     else:
         locators = [page.locator('textarea[placeholder*="comment" i]'), page.locator('textarea[aria-label*="comment" i]')]
     try:
@@ -385,6 +643,8 @@ def submit_button(page: Page, platform: str) -> Locator:
         ])
     if platform == "x":
         return visible_first([page.locator('[data-testid="tweetButton"]'), page.locator('[data-testid="tweetButtonInline"]')])
+    if platform == "hackernews":
+        return visible_first([page.locator('form[action="comment"] input[type="submit"]')])
     return visible_first([page.get_by_role("button", name=re.compile(r"^post$", re.I))])
 
 
@@ -422,6 +682,16 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
                 "the public click was issued, but Reddit did not show the posted comment; "
                 "do not retry until the destination is inspected manually"
             ) from exc
+    elif candidate["platform"] == "hackernews":
+        excerpt = promotion.compact(draft["body"])[:120]
+        posted = page.locator(".commtext").filter(has_text=excerpt).first
+        try:
+            posted.wait_for(state="visible", timeout=20000)
+        except Exception as exc:
+            raise RuntimeError(
+                "the public click was issued, but Hacker News did not show the posted comment; "
+                "do not retry until the destination is inspected manually"
+            ) from exc
     else:
         page.wait_for_timeout(2500)
     screenshot = evidence(page, f"sent-{candidate['platform']}-{candidate_id}")
@@ -438,10 +708,18 @@ def build_parser() -> argparse.ArgumentParser:
     opening = sub.add_parser("open")
     opening.add_argument("url")
     search = sub.add_parser("search")
-    search.add_argument("--platform", choices=("reddit", "x", "instagram"), required=True)
+    search.add_argument("--platform", choices=tuple(PLATFORM_HOSTS), required=True)
     search.add_argument("--query", required=True)
     search.add_argument("--limit", type=int, default=12)
+    search.add_argument("--hydrate", type=int, default=0, help="inspect the full body of up to N fresh results")
     search.add_argument("--background", action="store_true", help="do not take focus from the active review/login tab")
+    cycle = sub.add_parser("cycle")
+    cycle.add_argument("--platform", choices=tuple(PLATFORM_HOSTS), required=True)
+    cycle.add_argument("--max-queries", type=int, default=5)
+    cycle.add_argument("--start-query", type=int, default=0)
+    cycle.add_argument("--limit-per-query", type=int, default=12)
+    cycle.add_argument("--hydrate-per-query", type=int, default=3)
+    cycle.add_argument("--background", action="store_true", help="do not take focus from the active review/login tab")
     inspect = sub.add_parser("inspect")
     inspect.add_argument("candidate_id")
     inspect.add_argument("--background", action="store_true", help="inspect without taking focus from the active tab")
@@ -473,7 +751,20 @@ def main() -> int:
             emit({"ok": True, "url": page.url, "title": page.title(), "screenshot": evidence(page, "open")})
         elif args.command == "search":
             page = page_for(browser, platform=args.platform, front=not args.background)
-            emit(discover(page, args.platform, args.query, max(1, min(args.limit, 50))))
+            result = discover(page, args.platform, args.query, max(1, min(args.limit, 50)))
+            if args.hydrate:
+                result["hydrated"] = hydrate_candidates(page, result["candidates"], max(1, min(args.hydrate, 10)))
+            emit(result)
+        elif args.command == "cycle":
+            page = page_for(browser, platform=args.platform, front=not args.background)
+            emit(run_discovery_cycle(
+                page,
+                args.platform,
+                max_queries=max(1, min(args.max_queries, 20)),
+                limit_per_query=max(1, min(args.limit_per_query, 50)),
+                hydrate_per_query=max(0, min(args.hydrate_per_query, 10)),
+                start_query=max(0, args.start_query),
+            ))
         elif args.command == "inspect":
             candidate = candidate_destination(args.candidate_id)
             page = page_for(

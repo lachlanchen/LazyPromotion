@@ -13,7 +13,7 @@
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
 LazyPromotion is a local, review-first social discovery assistant. It searches
-the real Reddit, X, or Instagram web interface in one visible persistent Chrome
+the real Reddit, X, Instagram, or Hacker News web interface in one visible persistent Chrome
 profile, records possible matches in SQLite, drafts one grounded reply with
 `gpt-5.6-sol` at low reasoning effort, and stops before the public send. It is
 for maintainers who want to help people with relevant open-source work without
@@ -61,7 +61,11 @@ flowchart LR
 | --- | --- |
 | [`promotion.py`](promotion.py) | SQLite ledger, project matching, Codex drafting, and hash-bound approvals |
 | [`browser.py`](browser.py) | Playwright/CDP discovery, inspection, composer preparation, and gated send |
+| [`worker.py`](worker.py) | Durable cooldown-based discovery, triage, drafting, and private review queue |
 | [`catalog.json`](catalog.json) | Grounded mapping from real needs to maintained open-source projects |
+| [`github-repos.json`](github-repos.json) | Public-only inventory of every `lachlanchen` source repository |
+| [`sync_github_catalog.py`](sync_github_catalog.py) | Deterministic catalog refresh through the open-source GitHub CLI |
+| [`discovery-plan.json`](discovery-plan.json) | Bounded, project-specific help-request searches for each supported platform |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome stack with a persistent profile |
 | [`schemas/reply.json`](schemas/reply.json) | Bounded structured output contract for reply drafts |
 | [`schemas/triage.json`](schemas/triage.json) | Structured model eligibility decision required before a reply draft |
@@ -74,6 +78,12 @@ The initial catalog includes LazyEdit, AutoPublication, PocketPolyglot,
 LinguaLeaf, LazyLearn, the Leonard Susskind notes archive, Musia,
 LocalVideoGen, vocabulary and word-origin tools, LazyEarn, How You Got Rich,
 LocalKnowledgeTerminal, LazyGame, and LazyWeiqi.
+
+The public GitHub index expands that curated set to every evidence-backed
+source repository under `lachlanchen`. Generated matches require either a
+multiword topic or two distinct topic hits; curated matches retain priority.
+Repositories without a public description or usable topics remain indexed but
+are not suggested until evidence is added.
 
 ## Quick start
 
@@ -96,7 +106,9 @@ ignored project profile. Run a narrow, need-oriented discovery pass:
 python browser.py search \
   --platform reddit \
   --query 'need help add subtitles to video' \
-  --limit 12
+  --limit 12 \
+  --hydrate 5 \
+  --background
 
 python promotion.py list --min-score 5
 python browser.py inspect CANDIDATE_ID
@@ -108,6 +120,46 @@ For a bounded read-only model check over the current eligible queue:
 
 ```bash
 python promotion.py triage-pending --limit 5
+```
+
+Or run a finite set of project-specific Reddit searches from the reviewed plan:
+
+```bash
+python browser.py cycle \
+  --platform reddit \
+  --max-queries 5 \
+  --limit-per-query 12 \
+  --hydrate-per-query 3 \
+  --background
+```
+
+The same bounded cycle supports `reddit`, `x`, and `hackernews`. It only
+searches, records, and inspects candidates; it cannot draft,
+approve, or send a reply. Instagram is intentionally left without automatic
+queries because a promotional hashtag post is not an explicit request for help.
+
+For continuous operation, start the durable worker:
+
+```bash
+scripts/worker.sh start \
+  --interval-minutes 60 \
+  --queries-per-platform 1 \
+  --max-triage 3 \
+  --max-drafts 1
+
+scripts/worker.sh status
+```
+
+Each cycle rotates its cursor through all evidence-backed repositories on
+Reddit, X, and Hacker News rather than repeating the first searches. State,
+logs, candidates, model decisions, screenshots, and the exact draft review
+queue live under ignored `.local/` paths. Continuous mode never approves,
+submits, votes, follows, or sends a direct message.
+
+Refresh the public repository inventory at any time:
+
+```bash
+python sync_github_catalog.py
 ```
 
 Triage and drafting explicitly disable browser MCP access. Those model calls

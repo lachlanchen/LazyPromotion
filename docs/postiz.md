@@ -42,6 +42,13 @@ Use `type=draft` first. Review channel-specific copy and settings in the visible
 Postiz calendar before scheduling or publishing. Public replies to discovered
 individual needs continue through LazyPromotion's exact-content review queue.
 
+Before changing any draft to scheduled state, fetch the live provider contract
+with `postiz integrations:settings INTEGRATION_ID` and honor its `rules` plus
+each field description. Provider-inapplicable settings can be silently ignored,
+so a successful API response is not proof that the intended behavior survived.
+Every media value must be the `.path` returned by `postiz upload`; never pass a
+raw local path or unrelated external URL to a Postiz post.
+
 The live 2026-08-31 MCP handshake returns 13 tools. Its current creation tool
 is named `integrationSchedulePostTool`, despite the public MCP page still using
 the older `schedulePostTool` name. The project allowlist follows the live schema
@@ -58,6 +65,8 @@ URL will be clickable until the platform preview or final composer proves it.
 - Reuse one grounded source package, then adapt the hook and call to action per
   channel instead of posting identical copy everywhere.
 - Batch reviewed schedules in one API call when practical.
+- Treat empty analytics series as no attributable evidence, not zero reach and
+  not a successful campaign.
 - Prefer the public reading shelf for readers and the GitHub pipeline for
   builders; never claim beginner grading, sales, users, or traction without
   evidence.

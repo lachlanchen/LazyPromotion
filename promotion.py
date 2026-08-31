@@ -47,7 +47,8 @@ OUT_OF_SCOPE_SIGNALS = {
     "[for hire]", "[hiring]", "for hire", "hiring", "job opening",
     "my new tool", "now open to all", "showcase", "volunteer opportunities",
     "we launched", "free to try", "link in bio", "follow for more", "save this",
-    "dm me", "i got you", "apply now", "we're hiring", "we are hiring",
+    "dm me", "i got you", "apply now", "can i apply", "how can i apply",
+    "where can i apply", "we're hiring", "we are hiring",
 }
 COMMENT_REQUEST_PHRASES = {
     "any advice", "any recommendations", "any recommendation", "any suggestions",

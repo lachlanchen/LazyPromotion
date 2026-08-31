@@ -40,6 +40,12 @@ class PromotionTests(unittest.TestCase):
         body = "[HIRING] Need a video editor to add subtitles to short clips"
         self.assertEqual(promotion.rank_projects(body), [])
 
+    def test_job_application_comment_is_out_of_scope(self):
+        body = "Sir how can I apply"
+        url = "https://www.instagram.com/p/post123/c/comment456/"
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertFalse(promotion.is_triageable_request("instagram", url, body))
+
     def test_incidental_help_word_is_not_a_request(self):
         body = "With a friend's help I added subtitles in the editor. Not bad."
         self.assertFalse(promotion.is_help_request(body))

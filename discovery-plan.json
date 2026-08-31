@@ -99,6 +99,16 @@
         "project_id": "lazyingart-eink",
         "query": "(eink OR \"e-ink\" OR ereader OR \"e-reader\") (\"language learning\" OR bilingual OR multilingual) (recommend OR advice OR looking)",
         "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "subreddit:ChineseLanguage (reader OR book OR reading) (recommend OR beginner OR help)",
+        "purpose": "Chinese learners asking for useful reading material rather than generic app promotion"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "subreddit:EnglishLearning (bilingual OR parallel) (book OR reader) (recommend OR help)",
+        "purpose": "English learners seeking bilingual or parallel reading editions"
       }
     ],
     "x": [
@@ -146,6 +156,16 @@
         "project_id": "lazyingart-eink",
         "query": "(eink OR \"e-ink\" OR ereader OR \"e-reader\") (\"language learning\" OR bilingual OR multilingual) (recommend OR advice OR looking) -filter:retweets",
         "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "(\"learning Chinese\" OR \"learn Chinese\") (reader OR book OR reading) (recommend OR help) -filter:retweets",
+        "purpose": "Chinese learners asking for reading material"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "(\"learning English\" OR \"learn English\") (bilingual OR parallel) (book OR reader) (recommend OR help) -filter:retweets",
+        "purpose": "English learners seeking bilingual or parallel reading editions"
       }
     ],
     "hackernews": [

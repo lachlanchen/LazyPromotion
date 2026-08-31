@@ -1,0 +1,99 @@
+import json
+import subprocess
+import tempfile
+import unittest
+from pathlib import Path
+
+import network
+import promotion
+
+
+class NetworkTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.db = promotion.open_db(Path(self.tmp.name) / "network.sqlite3")
+
+    def tearDown(self):
+        self.db.close()
+        self.tmp.cleanup()
+
+    def test_graph_connects_private_need_to_public_project(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/ChineseLanguage/comments/example/reader/",
+            author="reader",
+            body="Can anyone recommend a multilingual Classical Chinese reader?",
+        )
+        report = network.sync_graph(self.db)
+        self.assertGreater(report["entities"], 100)
+        match = self.db.execute(
+            """
+            SELECT 1 FROM relationships
+            WHERE source_id=? AND relation='matches' AND target_id=?
+            """,
+            (f"need:{candidate['id']}", f"project:{candidate['suggested_tool']}"),
+        ).fetchone()
+        self.assertIsNotNone(match)
+
+    def test_public_snapshot_excludes_people_drafts_and_local_paths(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/private/thanks/",
+            author="private-person",
+            body="Thank you, this helped me.",
+        )
+        promotion.save_courtesy_draft(
+            self.db,
+            candidate["id"],
+            "That means a lot—thank you.",
+            why="Direct acknowledgement.",
+        )
+        network.sync_graph(self.db)
+        snapshot = network.public_snapshot(self.db)
+        serialized = json.dumps(snapshot, ensure_ascii=False)
+        self.assertNotIn("private-person", serialized)
+        self.assertNotIn("That means a lot", serialized)
+        self.assertNotIn("workspace_checkout", serialized)
+        self.assertIn("LazyingArt eInk", serialized)
+
+    def test_github_repository_has_one_canonical_entity(self):
+        network.sync_graph(self.db)
+        count = self.db.execute(
+            "SELECT COUNT(*) FROM entities WHERE id='repository:lachlanchen/LazyEdit'"
+        ).fetchone()[0]
+        self.assertEqual(count, 1)
+
+    def test_workspace_scan_skips_unreadable_entries(self):
+        parent = Path(self.tmp.name) / "projects"
+        parent.mkdir()
+        (parent / "plain-directory").mkdir()
+        count = network.sync_workspace(self.db, parent)
+        self.assertEqual(count, 0)
+
+    def test_unverified_workspace_remote_stays_private(self):
+        parent = Path(self.tmp.name) / "projects"
+        repo = parent / "private-work"
+        repo.mkdir(parents=True)
+        subprocess.run(["git", "init", "-q", str(repo)], check=True)
+        subprocess.run(
+            [
+                "git", "-C", str(repo), "remote", "add", "origin",
+                "git@github.com:lachlanchen/not-in-public-index.git",
+            ],
+            check=True,
+        )
+        network.sync_graph(self.db)
+        network.sync_workspace(self.db, parent)
+        visibility = self.db.execute(
+            """
+            SELECT visibility FROM entities
+            WHERE id='repository:lachlanchen/not-in-public-index'
+            """
+        ).fetchone()[0]
+        self.assertEqual(visibility, "private")
+
+
+if __name__ == "__main__":
+    unittest.main()

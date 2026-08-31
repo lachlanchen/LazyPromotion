@@ -68,6 +68,24 @@ class WorkerTests(unittest.TestCase):
         self.assertEqual(queued[0]["draft_project_id"], latest["project_id"])
         self.assertEqual(queued[0]["project"]["id"], latest["project_id"])
 
+    def test_review_queue_supports_non_promotional_courtesy_reply(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/thanks/child/",
+            author="reader",
+            body="Thank you, this helped me.",
+        )
+        draft = promotion.save_courtesy_draft(
+            self.db,
+            candidate["id"],
+            "That means a lot—thank you.",
+            why="Direct acknowledgement.",
+        )
+        queued = worker.review_queue(self.db)
+        self.assertEqual(queued[0]["draft_id"], draft["id"])
+        self.assertIsNone(queued[0]["project"])
+
     def test_hacker_news_need_is_research_only(self):
         candidate = promotion.ingest_candidate(
             self.db,

@@ -47,10 +47,10 @@ is named `integrationSchedulePostTool`, despite the public MCP page still using
 the older `schedulePostTool` name. The project allowlist follows the live schema
 and should be rechecked after Postiz upgrades.
 
-Postiz currently removes URLs from X drafts during both CLI creation and UI
-save, including its short-link path. Keep the Postiz X draft as reviewable copy,
-then use the authenticated visible X composer for the final canonical link.
-Instagram draft URLs are preserved normally.
+Postiz preserved the destination text in the X and Instagram drafts created by
+the CLI during the 2026-08-31 validation. Recheck the visible editor after every
+creation because provider transformations can change, and do not infer that a
+URL will be clickable until the platform preview or final composer proves it.
 
 ## Quota and trust policy
 

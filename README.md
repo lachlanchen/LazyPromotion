@@ -66,11 +66,15 @@ flowchart LR
 | [`worker.py`](worker.py) | Durable cooldown-based discovery, triage, drafting, and private review queue |
 | [`catalog.json`](catalog.json) | Grounded mapping from real needs to maintained open-source projects |
 | [`github-repos.json`](github-repos.json) | Public-only inventory of every `lachlanchen` source repository |
+| [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Human-readable map of all public work, grouped by real problem area and honest conversion path |
+| [`inventory.py`](inventory.py) | Deterministically regenerates the public portfolio map from the GitHub index |
 | [`sync_github_catalog.py`](sync_github_catalog.py) | Deterministic catalog refresh through the open-source GitHub CLI |
 | [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
 | [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |
+| [`network.py`](network.py) | Evidence graph connecting needs, projects, repositories, channels, campaigns, drafts, and public proof |
+| [`promotion-network.public.json`](promotion-network.public.json) | Sanitized online graph of public projects, repositories, campaigns, channels, and evidence URLs |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome stack with a persistent profile |
 | [`schemas/reply.json`](schemas/reply.json) | Bounded structured output contract for reply drafts |
 | [`schemas/triage.json`](schemas/triage.json) | Structured model eligibility decision required before a reply draft |
@@ -189,6 +193,15 @@ Refresh the public repository inventory at any time:
 
 ```bash
 python sync_github_catalog.py
+python inventory.py
+```
+
+Refresh the private evidence graph and its sanitized public projection:
+
+```bash
+python network.py sync --workspace
+python network.py report
+python network.py export-public
 ```
 
 Triage and drafting explicitly disable browser MCP access. Those model calls

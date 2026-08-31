@@ -237,6 +237,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(campaign["version"], 1)
         self.assertEqual(campaign["source_evidence"]["offer_stage"], "pre-order")
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 128 / CNY 999")
+        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
+        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
         self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
         self.assertIn("utm_source=instagram", campaign["channels"]["instagram"]["content"])

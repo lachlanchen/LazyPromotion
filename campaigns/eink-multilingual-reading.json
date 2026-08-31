@@ -24,14 +24,15 @@
   },
   "channels": {
     "x": {
-      "state": "review_draft",
+      "state": "postiz_draft",
       "content": "Multilingual reading on e-ink shouldn't begin with buying another device. I built a free local Kindle sender and a shelf of free LinguaLeaf books first. LazyingArt eInk is the optional dedicated reader, now in pre-order at $128 / ¥999: lazying.art/eink",
-      "link_strategy": "Use direct visible X composition because Postiz stripped clickable links from saved X drafts during the 2026-08-31 validation."
+      "draft_validation": "Full copy and destination text were preserved in a visible Postiz draft on 2026-08-31. The draft remains unscheduled and unpublished."
     },
     "instagram": {
-      "state": "review_draft",
+      "state": "postiz_draft",
       "asset_path": "../LazyingArtLanding/eink/assets/lazyingart-eink-hero.png",
-      "content": "A multilingual e-reader should earn its place before you buy it.\n\nThat is why the LazyingArt reading path starts free: a local Kindle sender for KOReader and a public LinguaLeaf shelf with multilingual editions. If that workflow fits and you want dedicated hardware, LazyingArt eInk is now a pre-order at $128 / ¥999.\n\nhttps://lazying.art/eink/?utm_source=instagram&utm_medium=social&utm_campaign=eink_multilingual_reading\n\nI build and maintain these LazyingArt tools. What would your ideal multilingual e-paper reader need to do?\n\n#eink #ereader #languagelearning #multilingual #LinguaLeaf"
+      "content": "A multilingual e-reader should earn its place before you buy it.\n\nThat is why the LazyingArt reading path starts free: a local Kindle sender for KOReader and a public LinguaLeaf shelf with multilingual editions. If that workflow fits and you want dedicated hardware, LazyingArt eInk is now a pre-order at $128 / ¥999.\n\nhttps://lazying.art/eink/?utm_source=instagram&utm_medium=social&utm_campaign=eink_multilingual_reading\n\nI build and maintain these LazyingArt tools. What would your ideal multilingual e-paper reader need to do?\n\n#eink #ereader #languagelearning #multilingual #LinguaLeaf",
+      "draft_validation": "Full copy, destination text, and the 1536×1024 hero asset loaded in a visible Postiz draft on 2026-08-31. The draft remains unscheduled and unpublished."
     },
     "reddit": {
       "state": "needs_exact_need",

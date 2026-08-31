@@ -400,6 +400,36 @@ class PromotionTests(unittest.TestCase):
                 },
             )
 
+    def test_courtesy_draft_needs_no_project_and_cannot_promote(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/thanks/reply/",
+            author="kind-reader",
+            body="Thank you, those notes have really helped me.",
+        )
+        draft = promotion.save_courtesy_draft(
+            self.db,
+            candidate["id"],
+            "That genuinely means a lot—thank you.",
+            why="A direct acknowledgement requested by the account owner.",
+        )
+        self.assertEqual(draft["project_id"], "")
+        self.assertEqual(draft["model"], "human-directed")
+        self.assertEqual(draft["include_link"], 0)
+        with self.assertRaisesRegex(ValueError, "cannot include a promotional link"):
+            promotion.save_draft(
+                self.db,
+                candidate["id"],
+                {
+                    "reply": "Thanks—visit https://example.test",
+                    "why": "not actually a courtesy reply",
+                    "confidence": "high",
+                    "include_link": True,
+                },
+                manual=True,
+            )
+
     def test_instagram_comment_draft_includes_exact_target_mention(self):
         candidate = promotion.ingest_candidate(
             self.db,

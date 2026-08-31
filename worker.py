@@ -15,6 +15,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 import browser as browser_control
+import network
 import promotion
 
 
@@ -87,7 +88,10 @@ def review_queue(db) -> list[dict]:
         {
             **dict(row),
             "include_link": bool(row["include_link"]),
-            "project": promotion.project_by_id(row["draft_project_id"]),
+            "project": (
+                promotion.project_by_id(row["draft_project_id"])
+                if row["draft_project_id"] else None
+            ),
         }
         for row in rows
     ]
@@ -173,6 +177,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
             errors.append({"stage": "draft", "candidate_id": candidate_id, "error": str(exc)})
     queue = review_queue(db)
     write_json(QUEUE_PATH, {"updated_at": utc_now(), "count": len(queue), "items": queue})
+    graph = network.sync_graph(db)
     return {
         "selected_candidate_ids": selected_ids,
         "triaged": triaged,
@@ -180,6 +185,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
         "draft_skipped": draft_skipped,
         "errors": errors,
         "review_queue_size": len(queue),
+        "graph": graph,
     }
 
 

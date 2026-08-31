@@ -141,6 +141,30 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
           detail TEXT NOT NULL DEFAULT '',
           created_at TEXT NOT NULL
         );
+        CREATE TABLE IF NOT EXISTS entities (
+          id TEXT PRIMARY KEY,
+          kind TEXT NOT NULL,
+          label TEXT NOT NULL,
+          url TEXT NOT NULL DEFAULT '',
+          visibility TEXT NOT NULL DEFAULT 'private',
+          metadata_json TEXT NOT NULL DEFAULT '{}',
+          first_seen_at TEXT NOT NULL,
+          last_seen_at TEXT NOT NULL
+        );
+        CREATE TABLE IF NOT EXISTS relationships (
+          id TEXT PRIMARY KEY,
+          source_id TEXT NOT NULL REFERENCES entities(id),
+          relation TEXT NOT NULL,
+          target_id TEXT NOT NULL REFERENCES entities(id),
+          evidence_url TEXT NOT NULL DEFAULT '',
+          confidence REAL NOT NULL DEFAULT 1.0,
+          metadata_json TEXT NOT NULL DEFAULT '{}',
+          first_seen_at TEXT NOT NULL,
+          last_seen_at TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_entities_kind ON entities(kind);
+        CREATE INDEX IF NOT EXISTS idx_relationships_source ON relationships(source_id, relation);
+        CREATE INDEX IF NOT EXISTS idx_relationships_target ON relationships(target_id, relation);
         """
     )
     columns = {row[1] for row in db.execute("PRAGMA table_info(candidates)")}
@@ -792,7 +816,13 @@ def triage_candidate(db: sqlite3.Connection, candidate: dict[str, Any]) -> dict[
     return save_triage(db, candidate["id"], result)
 
 
-def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]) -> dict[str, Any]:
+def save_draft(
+    db: sqlite3.Connection,
+    candidate_id: str,
+    result: dict[str, Any],
+    *,
+    manual: bool = False,
+) -> dict[str, Any]:
     body = compact(str(result["reply"]))
     candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id = ?", (candidate_id,)).fetchone())
     if not candidate:
@@ -802,10 +832,13 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
             "Hacker News prohibits generated or AI-edited comments; "
             "the agent may discover needs there but cannot draft a public reply"
         )
-    project_id = compact(candidate.get("suggested_tool") or "")
-    if not project_id:
+    project_id = "" if manual else compact(candidate.get("suggested_tool") or "")
+    if not manual and not project_id:
         raise ValueError("candidate has no model-reviewed project")
-    project_by_id(project_id)
+    if project_id:
+        project_by_id(project_id)
+    if manual and bool(result.get("include_link")):
+        raise ValueError("courtesy drafts cannot include a promotional link")
     candidate_content_hash = content_hash(compact(candidate["body"]))
     if candidate["platform"] == "instagram" and is_comment_source(
         candidate["platform"], candidate["source_url"], candidate["body"]
@@ -825,6 +858,8 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
         f"{candidate_id}\n{candidate_content_hash}\n{project_id}\n{digest}",
     )
     now = utc_now()
+    draft_model = "human-directed" if manual else MODEL
+    draft_effort = "n/a" if manual else EFFORT
     db.execute(
         """
         INSERT INTO drafts
@@ -840,7 +875,7 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
         (
             draft_id, candidate_id, project_id, candidate_content_hash, body,
             compact(str(result["why"])), str(result["confidence"]),
-            int(bool(result["include_link"])), MODEL, EFFORT, digest, now, now,
+            int(bool(result["include_link"])), draft_model, draft_effort, digest, now, now,
         ),
     )
     db.execute(
@@ -854,10 +889,36 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
     db.execute("UPDATE candidates SET status='drafted', updated_at=? WHERE id=?", (now, candidate_id))
     db.execute(
         "INSERT INTO events(candidate_id, draft_id, kind, detail, created_at) VALUES (?, ?, 'draft_created', ?, ?)",
-        (candidate_id, draft_id, json.dumps({"model": MODEL, "effort": EFFORT}), now),
+        (
+            candidate_id,
+            draft_id,
+            json.dumps({"model": draft_model, "effort": draft_effort}),
+            now,
+        ),
     )
     db.commit()
     return row_dict(db.execute("SELECT * FROM drafts WHERE id = ?", (draft_id,)).fetchone()) or {}
+
+
+def save_courtesy_draft(
+    db: sqlite3.Connection,
+    candidate_id: str,
+    body: str,
+    *,
+    why: str,
+) -> dict[str, Any]:
+    """Save a user-directed, non-promotional reply with the normal safety binding."""
+    return save_draft(
+        db,
+        candidate_id,
+        {
+            "reply": body,
+            "why": why,
+            "confidence": "high",
+            "include_link": False,
+        },
+        manual=True,
+    )
 
 
 def approve_draft(db: sqlite3.Connection, draft_id: str, ttl_minutes: int) -> dict[str, Any]:
@@ -920,7 +981,7 @@ def validate_approval(db: sqlite3.Connection, draft_id: str, token: str) -> dict
         raise ValueError("draft content changed after approval")
     if content_hash(compact(approval["current_candidate_body"])) != approval["candidate_content_hash"]:
         raise ValueError("candidate context changed after approval")
-    if approval["current_project_id"] != approval["project_id"]:
+    if approval["project_id"] and approval["current_project_id"] != approval["project_id"]:
         raise ValueError("candidate project changed after approval")
     return approval
 

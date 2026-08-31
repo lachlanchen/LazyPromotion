@@ -12,11 +12,18 @@ from unittest.mock import patch
 class WorkerTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
+        self.queue_path_patch = patch.object(
+            worker,
+            "QUEUE_PATH",
+            Path(self.tmp.name) / "review-queue.json",
+        )
+        self.queue_path_patch.start()
         self.db = promotion.open_db(Path(self.tmp.name) / "worker.sqlite3")
         self.now = datetime.now(timezone.utc).isoformat()
 
     def tearDown(self):
         self.db.close()
+        self.queue_path_patch.stop()
         self.tmp.cleanup()
 
     def test_pending_queue_prefers_current_fresh_requests_and_drains_backlog(self):
@@ -109,6 +116,10 @@ class WorkerTests(unittest.TestCase):
         draft_model.assert_not_called()
         self.assertEqual(result["drafted"], [])
         self.assertEqual(result["draft_skipped"][0]["candidate_id"], candidate["id"])
+        self.assertEqual(
+            json.loads(worker.QUEUE_PATH.read_text(encoding="utf-8"))["count"],
+            0,
+        )
 
     def test_continuous_reddit_draft_is_value_only_by_default(self):
         candidate = promotion.ingest_candidate(
@@ -142,6 +153,10 @@ class WorkerTests(unittest.TestCase):
         self.assertTrue(draft_model.call_args.kwargs["value_only"])
         self.assertTrue(result["drafted"][0]["value_only"])
         self.assertFalse(worker.review_queue(self.db)[0]["include_link"])
+        self.assertEqual(
+            json.loads(worker.QUEUE_PATH.read_text(encoding="utf-8"))["count"],
+            1,
+        )
 
     def test_failed_discovery_route_is_retried(self):
         self.assertEqual(worker.next_route_cursor(5, {"ok": False, "next_query": 6}), 5)

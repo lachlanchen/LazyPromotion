@@ -69,6 +69,8 @@ flowchart LR
 | [`sync_github_catalog.py`](sync_github_catalog.py) | Deterministic catalog refresh through the open-source GitHub CLI |
 | [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
+| [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
+| [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome stack with a persistent profile |
 | [`schemas/reply.json`](schemas/reply.json) | Bounded structured output contract for reply drafts |
 | [`schemas/triage.json`](schemas/triage.json) | Structured model eligibility decision required before a reply draft |
@@ -145,7 +147,9 @@ python browser.py cycle \
 The same bounded cycle supports `reddit`, `x`, `hackernews`, and `instagram`.
 Each Reddit route checks posts and comments, while each Hacker News route checks
 Ask HN stories and discussion comments. Comment permalinks are hydrated and
-remain the exact reply destination.
+remain the exact research destination. Hacker News is discovery-only: its
+guidelines prohibit generated or AI-edited comments, and LazyPromotion blocks
+drafting, approval, preparation, and sending there.
 It only searches, records, and inspects candidates; it cannot draft, approve,
 or send a reply. Instagram uses a small reviewed hashtag set, inspects both
 captions and exact-permalink comments, and still requires an explicit help
@@ -168,7 +172,8 @@ scripts/worker.sh status
 Each cycle runs one reviewed core route for the highest-value subtitle,
 language-learning, physics, local-media, and knowledge workflows, plus one
 independently rotating long-tail route covering every evidence-backed repository
-on Reddit, X, and Hacker News. Instagram rotates its small reviewed
+on Reddit, X, and Hacker News. HN results inform product research but never
+enter the generated-comment queue. Instagram rotates its small reviewed
 explicit-help hashtag set. Failed routes keep their own lane cursor for retry.
 State,
 logs, candidates, model decisions, screenshots, and the exact draft review

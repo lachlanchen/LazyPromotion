@@ -25,6 +25,13 @@ class PromotionTests(unittest.TestCase):
         ranked = promotion.rank_projects("Looking for a bilingual Japanese reader with furigana for reading practice")
         self.assertEqual(ranked[0]["project"]["id"], "pocketpolyglot")
 
+    def test_multilingual_eink_purchase_need_matches_public_offer(self):
+        ranked = promotion.rank_projects(
+            "Can anyone recommend an e-ink reader for multilingual language learning?"
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "lazyingart-eink")
+        self.assertEqual(ranked[0]["project"]["homepage"], "https://lazying.art/eink/")
+
     def test_chinese_wenyan_help_matches_multilingual_reading_projects(self):
         body = "我看不懂文言文，有没有带现代中文和英文的中国历史读本推荐？"
         self.assertTrue(promotion.is_help_request(body))
@@ -177,6 +184,53 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(refreshed["triage_reason"], "")
         self.assertEqual(refreshed["triaged_at"], "")
 
+    def test_changed_drafted_candidate_invalidates_review_artifact(self):
+        url = "https://www.reddit.com/r/example/comments/expanded/help/"
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url=url,
+            author="reader",
+            body="How can I add subtitles to a video?",
+        )
+        promotion.save_triage(
+            self.db,
+            candidate["id"],
+            {
+                "eligible": True,
+                "project_id": "lazyedit",
+                "confidence": "high",
+                "reason": "Direct subtitle need",
+                "risk_flags": [],
+            },
+        )
+        draft = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {
+                "reply": "Use a reviewed SRT workflow. I maintain LazyEdit.",
+                "why": "direct",
+                "confidence": "high",
+                "include_link": False,
+            },
+        )
+        refreshed = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url=url,
+            author="reader",
+            body=(
+                "How can I add subtitles to a video? I also need to translate the "
+                "captions and review an SRT file before publishing."
+            ),
+        )
+        saved_draft = self.db.execute(
+            "SELECT status FROM drafts WHERE id=?", (draft["id"],)
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "discovered")
+        self.assertEqual(refreshed["triage_reason"], "")
+        self.assertEqual(saved_draft["status"], "superseded")
+
     def test_short_search_card_does_not_reset_rejected_full_post(self):
         url = "https://www.reddit.com/r/example/comments/card/help/"
         full = promotion.ingest_candidate(
@@ -289,6 +343,63 @@ class PromotionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "changed after approval"):
             promotion.validate_approval(self.db, draft["id"], approval["approval_token"])
 
+    def test_approval_is_bound_to_candidate_context_and_project(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/context/test/",
+            body="Looking for a bilingual Japanese reader",
+        )
+        draft = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {
+                "reply": "I maintain a directly relevant reader.",
+                "why": "direct match",
+                "confidence": "high",
+                "include_link": False,
+            },
+        )
+        approval = promotion.approve_draft(self.db, draft["id"], 30)
+        self.db.execute(
+            "UPDATE candidates SET body=body || ' Edited after review.' WHERE id=?",
+            (candidate["id"],),
+        )
+        self.db.commit()
+        with self.assertRaisesRegex(ValueError, "candidate context changed"):
+            promotion.validate_approval(self.db, draft["id"], approval["approval_token"])
+
+    def test_hacker_news_generated_draft_is_blocked(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="hackernews",
+            source_url="https://news.ycombinator.com/item?id=98765",
+            author="asker",
+            body="Ask HN: How should I deploy a private local LLM with GGUF?",
+        )
+        promotion.save_triage(
+            self.db,
+            candidate["id"],
+            {
+                "eligible": True,
+                "project_id": "github-localllm",
+                "confidence": "high",
+                "reason": "Direct local LLM need",
+                "risk_flags": [],
+            },
+        )
+        with self.assertRaisesRegex(ValueError, "prohibits generated or AI-edited"):
+            promotion.save_draft(
+                self.db,
+                candidate["id"],
+                {
+                    "reply": "Generated answer",
+                    "why": "direct",
+                    "confidence": "high",
+                    "include_link": False,
+                },
+            )
+
     def test_instagram_comment_draft_includes_exact_target_mention(self):
         candidate = promotion.ingest_candidate(
             self.db,
@@ -296,6 +407,17 @@ class PromotionTests(unittest.TestCase):
             source_url="https://www.instagram.com/p/post123/c/comment456/",
             author="questioner",
             body="Can someone recommend a reliable way to add subtitles automatically?",
+        )
+        promotion.save_triage(
+            self.db,
+            candidate["id"],
+            {
+                "eligible": True,
+                "project_id": "lazyedit",
+                "confidence": "high",
+                "reason": "Direct subtitle need",
+                "risk_flags": [],
+            },
         )
         draft = promotion.save_draft(
             self.db,

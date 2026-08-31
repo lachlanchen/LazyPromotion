@@ -27,6 +27,7 @@ TRIAGE_SCHEMA_PATH = ROOT / "schemas" / "triage.json"
 MODEL = "gpt-5.6-sol"
 EFFORT = "low"
 MAX_CANDIDATE_AGE_DAYS = 30
+AI_COMMENT_BLOCKED_PLATFORMS = {"hackernews"}
 
 HELP_SIGNALS = {
     "how", "help", "need", "needs", "looking", "recommend", "recommendation",
@@ -111,6 +112,8 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         CREATE TABLE IF NOT EXISTS drafts (
           id TEXT PRIMARY KEY,
           candidate_id TEXT NOT NULL REFERENCES candidates(id),
+          project_id TEXT NOT NULL DEFAULT '',
+          candidate_content_hash TEXT NOT NULL DEFAULT '',
           body TEXT NOT NULL,
           why TEXT NOT NULL DEFAULT '',
           confidence TEXT NOT NULL DEFAULT 'low',
@@ -154,6 +157,69 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
     for column, definition in migrations.items():
         if column not in columns:
             db.execute(f"ALTER TABLE candidates ADD COLUMN {column} {definition}")
+    draft_columns = {row[1] for row in db.execute("PRAGMA table_info(drafts)")}
+    draft_migrations = {
+        "project_id": "TEXT NOT NULL DEFAULT ''",
+        "candidate_content_hash": "TEXT NOT NULL DEFAULT ''",
+    }
+    unbound_active_candidates = []
+    if not set(draft_migrations).issubset(draft_columns):
+        unbound_active_candidates = [
+            row[0]
+            for row in db.execute(
+                """
+                SELECT DISTINCT candidate_id FROM drafts
+                WHERE status IN ('draft', 'prepared', 'approved')
+                """
+            )
+        ]
+    for column, definition in draft_migrations.items():
+        if column not in draft_columns:
+            db.execute(f"ALTER TABLE drafts ADD COLUMN {column} {definition}")
+    # Legacy drafts were not bound to the candidate text and project used to
+    # generate them. Historical rows can be annotated for reporting, but an
+    # active draft cannot be reviewed safely without that immutable evidence.
+    for row in db.execute(
+        """
+        SELECT d.id, c.suggested_tool, c.body
+        FROM drafts d JOIN candidates c ON c.id=d.candidate_id
+        WHERE d.project_id='' OR d.candidate_content_hash=''
+        """
+    ).fetchall():
+        db.execute(
+            """
+            UPDATE drafts SET project_id=?, candidate_content_hash=? WHERE id=?
+            """,
+            (row[1], content_hash(compact(row[2])), row[0]),
+        )
+    if unbound_active_candidates:
+        placeholders = ",".join("?" for _ in unbound_active_candidates)
+        now = utc_now()
+        db.execute(
+            f"""
+            UPDATE drafts SET status='superseded', updated_at=?
+            WHERE candidate_id IN ({placeholders})
+              AND status IN ('draft', 'prepared', 'approved')
+            """,
+            (now, *unbound_active_candidates),
+        )
+        db.execute(
+            f"""
+            UPDATE candidates
+            SET status='discovered', triage_reason='', triage_confidence='',
+                triage_risk_flags='[]', triaged_at='', updated_at=?
+            WHERE id IN ({placeholders}) AND status != 'replied'
+            """,
+            (now, *unbound_active_candidates),
+        )
+        for candidate_id in unbound_active_candidates:
+            db.execute(
+                """
+                INSERT INTO events(candidate_id, kind, detail, created_at)
+                VALUES (?, 'draft_invalidated', ?, ?)
+                """,
+                (candidate_id, "legacy draft lacked immutable evidence binding", now),
+            )
     refresh_duplicates(db)
     db.commit()
     return db
@@ -473,7 +539,22 @@ def ingest_candidate(
     triage_input_changed = existing and (
         compact(existing["body"]) != body or existing["suggested_tool"] != suggested_tool
     )
-    if triage_input_changed and existing["status"] in {"triaged", "rejected"}:
+    if triage_input_changed and existing["status"] in {"triaged", "rejected", "drafted"}:
+        if existing["status"] == "drafted":
+            db.execute(
+                """
+                UPDATE drafts SET status='superseded', updated_at=?
+                WHERE candidate_id=? AND status IN ('draft', 'prepared', 'approved')
+                """,
+                (now, candidate_id),
+            )
+            db.execute(
+                """
+                INSERT INTO events(candidate_id, kind, detail, created_at)
+                VALUES (?, 'draft_invalidated', ?, ?)
+                """,
+                (candidate_id, "candidate text or matched project changed", now),
+            )
         db.execute(
             """
             UPDATE candidates
@@ -532,11 +613,20 @@ Requirements:
 - Sound like a thoughtful peer, not a marketer. Be specific and natural.
 - Mention this maintained project only when it is directly useful.
 - Explicitly disclose affiliation in plain language, e.g. “I maintain…” or “I built…”.
+- Keep affiliation and the project mention to one quiet sentence. Let the account
+  profile carry the broader LazyingArt story; do not stack a project link, a
+  profile pitch, and a brand pitch in the reply.
 - Use at most one project link. Do not ask for stars, follows, votes, or DMs.
+- Do not use teaser copy, engagement bait, “check it out,” “happy to help,” or a
+  needy call to action. The useful answer should still feel complete if the
+  affiliation sentence is removed.
 - Do not invent capabilities, traction, users, benchmarks, endorsements, or personal experience.
 - Do not repeat the post back to its author or use generic praise.
+- Prefer plain sentences and concrete advice. Avoid headings, slogan-like
+  fragments, canned marketing rhythm, and excessive colons or em dashes.
 - If a term in the post is ambiguous or may be a typo, do not silently assign it a specific meaning.
-- If the match is weak, omit the link and say so through include_link=false.
+- If the match is weak, the community discourages self-promotion, or the profile
+  is enough context, omit the link and say so through include_link=false.
 {targeting}- Keep the reply compact: <= 500 characters for X, <= 900 elsewhere.
 - This is a draft only. Do not browse, post, message, or take any external action.
 """
@@ -707,6 +797,16 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
     candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id = ?", (candidate_id,)).fetchone())
     if not candidate:
         raise ValueError(f"candidate not found: {candidate_id}")
+    if candidate["platform"] in AI_COMMENT_BLOCKED_PLATFORMS:
+        raise ValueError(
+            "Hacker News prohibits generated or AI-edited comments; "
+            "the agent may discover needs there but cannot draft a public reply"
+        )
+    project_id = compact(candidate.get("suggested_tool") or "")
+    if not project_id:
+        raise ValueError("candidate has no model-reviewed project")
+    project_by_id(project_id)
+    candidate_content_hash = content_hash(compact(candidate["body"]))
     if candidate["platform"] == "instagram" and is_comment_source(
         candidate["platform"], candidate["source_url"], candidate["body"]
     ):
@@ -720,19 +820,26 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
     if len(body) > limit:
         raise ValueError(f"draft is {len(body)} characters; platform safety limit is {limit}")
     digest = content_hash(body)
-    draft_id = stable_id("draft", f"{candidate_id}\n{digest}")
+    draft_id = stable_id(
+        "draft",
+        f"{candidate_id}\n{candidate_content_hash}\n{project_id}\n{digest}",
+    )
     now = utc_now()
     db.execute(
         """
         INSERT INTO drafts
-          (id, candidate_id, body, why, confidence, include_link, model, effort, content_hash, status, created_at, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'draft', ?, ?)
+          (id, candidate_id, project_id, candidate_content_hash, body, why,
+           confidence, include_link, model, effort, content_hash, status, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'draft', ?, ?)
         ON CONFLICT(id) DO UPDATE SET
           why=excluded.why, confidence=excluded.confidence, include_link=excluded.include_link,
-          updated_at=excluded.updated_at
+          project_id=excluded.project_id,
+          candidate_content_hash=excluded.candidate_content_hash,
+          status='draft', updated_at=excluded.updated_at
         """,
         (
-            draft_id, candidate_id, body, compact(str(result["why"])), str(result["confidence"]),
+            draft_id, candidate_id, project_id, candidate_content_hash, body,
+            compact(str(result["why"])), str(result["confidence"]),
             int(bool(result["include_link"])), MODEL, EFFORT, digest, now, now,
         ),
     )
@@ -754,9 +861,20 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
 
 
 def approve_draft(db: sqlite3.Connection, draft_id: str, ttl_minutes: int) -> dict[str, Any]:
-    draft = row_dict(db.execute("SELECT * FROM drafts WHERE id = ?", (draft_id,)).fetchone())
+    draft = row_dict(
+        db.execute(
+            """
+            SELECT d.*, c.platform FROM drafts d
+            JOIN candidates c ON c.id=d.candidate_id
+            WHERE d.id=?
+            """,
+            (draft_id,),
+        ).fetchone()
+    )
     if not draft:
         raise ValueError(f"draft not found: {draft_id}")
+    if draft["platform"] in AI_COMMENT_BLOCKED_PLATFORMS:
+        raise ValueError("Hacker News prohibits generated or AI-edited comments")
     if draft["status"] not in {"draft", "prepared"}:
         raise ValueError(f"draft status is {draft['status']}; approval is not allowed")
     token = f"approve_{secrets.token_urlsafe(18)}"
@@ -777,8 +895,13 @@ def approve_draft(db: sqlite3.Connection, draft_id: str, ttl_minutes: int) -> di
 def validate_approval(db: sqlite3.Connection, draft_id: str, token: str) -> dict[str, Any]:
     row = db.execute(
         """
-        SELECT a.*, d.body, d.status AS draft_status, d.candidate_id, d.content_hash AS current_hash
-        FROM approvals a JOIN drafts d ON d.id=a.draft_id
+        SELECT a.*, d.body, d.status AS draft_status, d.candidate_id,
+               d.content_hash AS current_hash, d.project_id,
+               d.candidate_content_hash, c.body AS current_candidate_body,
+               c.suggested_tool AS current_project_id
+        FROM approvals a
+        JOIN drafts d ON d.id=a.draft_id
+        JOIN candidates c ON c.id=d.candidate_id
         WHERE a.token=? AND a.draft_id=?
         """,
         (token, draft_id),
@@ -795,6 +918,10 @@ def validate_approval(db: sqlite3.Connection, draft_id: str, token: str) -> dict
         raise ValueError("approval token has expired")
     if approval["content_hash"] != approval["current_hash"] or content_hash(approval["body"]) != approval["current_hash"]:
         raise ValueError("draft content changed after approval")
+    if content_hash(compact(approval["current_candidate_body"])) != approval["candidate_content_hash"]:
+        raise ValueError("candidate context changed after approval")
+    if approval["current_project_id"] != approval["project_id"]:
+        raise ValueError("candidate project changed after approval")
     return approval
 
 

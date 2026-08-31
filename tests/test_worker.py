@@ -6,6 +6,7 @@ from pathlib import Path
 
 import promotion
 import worker
+from unittest.mock import patch
 
 
 class WorkerTests(unittest.TestCase):
@@ -64,6 +65,32 @@ class WorkerTests(unittest.TestCase):
         )
         queued = worker.review_queue(self.db)
         self.assertEqual([item["draft_id"] for item in queued], [latest["id"]])
+        self.assertEqual(queued[0]["draft_project_id"], latest["project_id"])
+        self.assertEqual(queued[0]["project"]["id"], latest["project_id"])
+
+    def test_hacker_news_need_is_research_only(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="hackernews",
+            source_url="https://news.ycombinator.com/item?id=777",
+            author="reader",
+            body="Ask HN: How should I run a private local LLM with GGUF?",
+            published_at=self.now,
+        )
+        accepted = {
+            "eligible": True,
+            "project_id": "github-localllm",
+            "confidence": "high",
+            "reason": "Direct local LLM need",
+            "risk_flags": [],
+        }
+        with patch("promotion.open_db", return_value=self.db), patch(
+            "promotion.run_codex_triage", return_value=accepted
+        ), patch("promotion.run_codex_draft") as draft_model:
+            result = worker.run_models([candidate["id"]], max_triage=1, max_drafts=1)
+        draft_model.assert_not_called()
+        self.assertEqual(result["drafted"], [])
+        self.assertEqual(result["draft_skipped"][0]["candidate_id"], candidate["id"])
 
     def test_failed_discovery_route_is_retried(self):
         self.assertEqual(worker.next_route_cursor(5, {"ok": False, "next_query": 6}), 5)

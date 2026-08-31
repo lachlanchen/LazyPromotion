@@ -230,6 +230,32 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
+    def test_eink_campaign_has_a_truthful_measurable_offer(self):
+        path = ROOT / "campaigns" / "eink-multilingual-reading.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        serialized = path.read_text(encoding="utf-8")
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["source_evidence"]["offer_stage"], "pre-order")
+        self.assertEqual(campaign["source_evidence"]["public_price"], "USD 128 / CNY 999")
+        self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
+        self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
+        self.assertIn("utm_source=instagram", campaign["channels"]["instagram"]["content"])
+        self.assertEqual(campaign["channels"]["hackernews"]["state"], "research_only")
+        self.assertNotIn("integration_id", serialized.casefold())
+        self.assertNotIn("post_id", serialized.casefold())
+
+    def test_reply_prompt_uses_quiet_profile_led_promotion(self):
+        candidate = {
+            "platform": "reddit",
+            "author": "reader",
+            "source_url": "https://www.reddit.com/r/example/comments/voice/help/",
+            "body": "How can I add subtitles to this video?",
+        }
+        prompt = promotion.draft_prompt(candidate, promotion.project_by_id("lazyedit"))
+        self.assertIn("Let the account\n  profile carry", prompt)
+        self.assertIn("Do not ask for stars, follows, votes, or DMs", prompt)
+        self.assertIn("Prefer no reply", (ROOT / "docs" / "voice.md").read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()

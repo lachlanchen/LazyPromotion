@@ -72,6 +72,7 @@ def review_queue(db) -> list[dict]:
     rows = db.execute(
         """
         SELECT d.id AS draft_id, d.body AS reply, d.why, d.confidence,
+               d.project_id AS draft_project_id,
                d.include_link, d.status AS draft_status, d.created_at,
                c.id AS candidate_id, c.platform, c.source_url, c.author,
                c.body AS source_body, c.suggested_tool, c.triage_reason,
@@ -86,7 +87,7 @@ def review_queue(db) -> list[dict]:
         {
             **dict(row),
             "include_link": bool(row["include_link"]),
-            "project": promotion.project_by_id(row["suggested_tool"]),
+            "project": promotion.project_by_id(row["draft_project_id"]),
         }
         for row in rows
     ]
@@ -136,6 +137,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
     selected_ids = pending_candidate_ids(db, candidate_ids, max_triage)
     triaged = []
     drafted = []
+    draft_skipped = []
     errors = []
     for candidate_id in selected_ids:
         candidate = promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone())
@@ -157,6 +159,12 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
         candidate = promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone())
         if not candidate or candidate["status"] != "triaged":
             continue
+        if candidate["platform"] in promotion.AI_COMMENT_BLOCKED_PLATFORMS:
+            draft_skipped.append({
+                "candidate_id": candidate_id,
+                "reason": "platform prohibits generated or AI-edited comments",
+            })
+            continue
         try:
             result = promotion.run_codex_draft(candidate, promotion.project_by_id(candidate["suggested_tool"]))
             draft = promotion.save_draft(db, candidate_id, result)
@@ -169,6 +177,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
         "selected_candidate_ids": selected_ids,
         "triaged": triaged,
         "drafted": drafted,
+        "draft_skipped": draft_skipped,
         "errors": errors,
         "review_queue_size": len(queue),
     }

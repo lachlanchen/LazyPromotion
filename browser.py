@@ -883,6 +883,8 @@ def load_candidate_and_draft(candidate_id: str, draft_id: str) -> tuple[dict, di
 
 def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, object]:
     candidate, draft = load_candidate_and_draft(candidate_id, draft_id)
+    if candidate["platform"] in promotion.AI_COMMENT_BLOCKED_PLATFORMS:
+        raise ValueError("Hacker News prohibits generated or AI-edited comments")
     page.goto(candidate["source_url"], wait_until="domcontentloaded", timeout=45000)
     wait_ready(page)
     comment_id = reddit_comment_id(candidate["source_url"]) if candidate["platform"] == "reddit" else ""
@@ -991,6 +993,8 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
     if not confirm:
         raise ValueError("send requires --confirm-public-write")
     candidate, draft = load_candidate_and_draft(candidate_id, draft_id)
+    if candidate["platform"] in promotion.AI_COMMENT_BLOCKED_PLATFORMS:
+        raise ValueError("Hacker News prohibits generated or AI-edited comments")
     db = promotion.open_db()
     promotion.validate_approval(db, draft_id, token)
     if not destination_matches(candidate["source_url"], page.url, candidate["platform"]):

@@ -22,6 +22,12 @@ spam whether it is automated or manual.
 - [Reddit User Actions requirements](https://developers.reddit.com/docs/capabilities/server/userActions)
 - [Reddit spam policy](https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam)
 
+Hacker News is deliberately discovery-only. Its current guidelines say not to
+post generated or AI-edited comments, so the model worker may classify a need
+for product research but cannot create, approve, prepare, or send an HN reply.
+
+- [Hacker News Guidelines](https://news.ycombinator.com/newsguidelines.html)
+
 The drafter uses `gpt-5.6-sol` with `reasoning.effort=low`, the exact requested
 combination. OpenAI's current model documentation lists `low` as supported and
 recommends it for latency-sensitive workloads:

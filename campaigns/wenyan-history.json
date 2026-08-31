@@ -40,8 +40,8 @@
       "policy": "Do not place a generic promotional post. Use an exact help request or a community that explicitly allows project sharing after checking its current rules and flair."
     },
     "hackernews": {
-      "state": "needs_exact_need",
-      "policy": "Use direct browser replies only when an exact current request is approved; Postiz does not support Hacker News."
+      "state": "research_only",
+      "policy": "Hacker News prohibits generated or AI-edited comments. Use discoveries only as product research; do not draft or send an agent-authored reply."
     }
   }
 }

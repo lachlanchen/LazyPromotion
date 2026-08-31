@@ -94,6 +94,11 @@
         "project_id": "wordorigins",
         "query": "subreddit:etymology \"word origin\" question",
         "purpose": "People asking to explore the relationships behind a word origin"
+      },
+      {
+        "project_id": "lazyingart-eink",
+        "query": "(eink OR \"e-ink\" OR ereader OR \"e-reader\") (\"language learning\" OR bilingual OR multilingual) (recommend OR advice OR looking)",
+        "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use"
       }
     ],
     "x": [
@@ -136,6 +141,11 @@
         "project_id": "lazyweiqi",
         "query": "(weiqi OR baduk OR \"Go board game\") (advice OR resources OR tutor) -filter:retweets",
         "purpose": "Board-game Go learners seeking teaching resources without matching the programming language"
+      },
+      {
+        "project_id": "lazyingart-eink",
+        "query": "(eink OR \"e-ink\" OR ereader OR \"e-reader\") (\"language learning\" OR bilingual OR multilingual) (recommend OR advice OR looking) -filter:retweets",
+        "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use"
       }
     ],
     "hackernews": [
@@ -186,6 +196,12 @@
         "query": "Ask HN local AI music",
         "comment_query": "music generation",
         "purpose": "Music creators asking for local generation or localization workflows"
+      },
+      {
+        "project_id": "lazyingart-eink",
+        "query": "Ask HN multilingual e-reader",
+        "comment_query": "e-reader language learning",
+        "purpose": "Discovery-only research into multilingual e-paper reading needs; no generated HN comments"
       }
     ],
     "instagram": [

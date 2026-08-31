@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent
 DEFAULT_DB = ROOT / ".local" / "lazypromotion.sqlite3"
 CATALOG_PATH = ROOT / "catalog.json"
 SCHEMA_PATH = ROOT / "schemas" / "reply.json"
+TRIAGE_SCHEMA_PATH = ROOT / "schemas" / "triage.json"
 MODEL = "gpt-5.6-sol"
 EFFORT = "low"
 MAX_CANDIDATE_AGE_DAYS = 30
@@ -71,6 +72,10 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
           published_at TEXT NOT NULL DEFAULT '',
           comment_count INTEGER NOT NULL DEFAULT 0,
           source_score INTEGER NOT NULL DEFAULT 0,
+          triage_reason TEXT NOT NULL DEFAULT '',
+          triage_confidence TEXT NOT NULL DEFAULT '',
+          triage_risk_flags TEXT NOT NULL DEFAULT '[]',
+          triaged_at TEXT NOT NULL DEFAULT '',
           created_at TEXT NOT NULL,
           updated_at TEXT NOT NULL
         );
@@ -112,6 +117,10 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         "published_at": "TEXT NOT NULL DEFAULT ''",
         "comment_count": "INTEGER NOT NULL DEFAULT 0",
         "source_score": "INTEGER NOT NULL DEFAULT 0",
+        "triage_reason": "TEXT NOT NULL DEFAULT ''",
+        "triage_confidence": "TEXT NOT NULL DEFAULT ''",
+        "triage_risk_flags": "TEXT NOT NULL DEFAULT '[]'",
+        "triaged_at": "TEXT NOT NULL DEFAULT ''",
     }
     for column, definition in migrations.items():
         if column not in columns:
@@ -262,6 +271,10 @@ def ingest_candidate(
     ranking = rank_projects(body)
     best = ranking[0] if ranking else None
     candidate_id = stable_id("cand", f"{platform}\n{source_url}")
+    existing = db.execute(
+        "SELECT body, status, suggested_tool FROM candidates WHERE id=?",
+        (candidate_id,),
+    ).fetchone()
     now = utc_now()
     rationale = ""
     suggested_tool = ""
@@ -305,6 +318,20 @@ def ingest_candidate(
         ),
     )
     current = db.execute("SELECT status, published_at FROM candidates WHERE id=?", (candidate_id,)).fetchone()
+    triage_input_changed = existing and (
+        compact(existing["body"]) != body or existing["suggested_tool"] != suggested_tool
+    )
+    if triage_input_changed and existing["status"] in {"triaged", "rejected"}:
+        db.execute(
+            """
+            UPDATE candidates
+            SET status='discovered', triage_reason='', triage_confidence='',
+                triage_risk_flags='[]', triaged_at=''
+            WHERE id=?
+            """,
+            (candidate_id,),
+        )
+        current = db.execute("SELECT status, published_at FROM candidates WHERE id=?", (candidate_id,)).fetchone()
     if current and current["status"] in {"discovered", "stale"}:
         status = "stale" if is_stale(current["published_at"]) else "discovered"
         db.execute("UPDATE candidates SET status=? WHERE id=?", (status, candidate_id))
@@ -355,20 +382,50 @@ Requirements:
 """
 
 
-def run_codex_draft(candidate: dict[str, Any], project: dict[str, Any]) -> dict[str, Any]:
-    with tempfile.TemporaryDirectory(prefix="lazypromotion-draft-") as tmp:
-        output = Path(tmp) / "reply.json"
+def triage_prompt(candidate: dict[str, Any], project: dict[str, Any]) -> str:
+    return f"""Review one possible social-media help request for a project maintainer.
+
+Platform: {candidate['platform']}
+Post URL: {candidate['source_url']}
+Author: {candidate['author'] or 'unknown'}
+Published at: {candidate.get('published_at') or 'unknown'}
+Existing comments: {candidate.get('comment_count', 0)}
+Post text:
+{candidate['body']}
+
+Potentially relevant maintained project:
+- Name: {project['name']}
+- URL: {project['url']}
+- Grounded summary: {project['summary']}
+
+Return only the JSON object required by the supplied schema.
+
+Mark eligible=true only when the author is clearly asking for help and this
+specific project can address that need without stretching its capabilities.
+Reject announcements, hiring posts, resolved or saturated discussions, generic
+keyword overlap, unrelated product categories, opportunities that would feel
+like unsolicited advertising, and posts where an affiliation link would not
+add genuine value. A useful answer must be possible before mentioning the
+project, and affiliation must be disclosed. Do not browse, draft a reply,
+navigate, post, vote, follow, or message anyone.
+"""
+
+
+def run_codex_structured(prompt: str, schema: Path, *, prefix: str) -> dict[str, Any]:
+    with tempfile.TemporaryDirectory(prefix=prefix) as tmp:
+        output = Path(tmp) / "result.json"
         command = [
             "codex", "exec", "--ephemeral", "--json", "--model", MODEL,
             "-c", f'model_reasoning_effort="{EFFORT}"',
+            "-c", "mcp_servers.lazypromotion_browser.enabled=false",
             "--sandbox", "read-only", "--skip-git-repo-check",
-            "--output-schema", str(SCHEMA_PATH),
+            "--output-schema", str(schema),
             "--output-last-message", str(output),
             "-C", str(ROOT), "-",
         ]
         completed = subprocess.run(
             command,
-            input=draft_prompt(candidate, project),
+            input=prompt,
             text=True,
             capture_output=True,
             timeout=900,
@@ -377,10 +434,87 @@ def run_codex_draft(candidate: dict[str, Any], project: dict[str, Any]) -> dict[
         )
         if completed.returncode != 0:
             tail = compact(completed.stderr[-2000:] or completed.stdout[-2000:])
-            raise RuntimeError(f"Codex drafting failed ({completed.returncode}): {tail}")
+            raise RuntimeError(f"Codex structured check failed ({completed.returncode}): {tail}")
         if not output.exists():
-            raise RuntimeError("Codex completed without writing the structured reply")
+            raise RuntimeError("Codex completed without writing the structured result")
         return json.loads(output.read_text(encoding="utf-8"))
+
+
+def run_codex_draft(candidate: dict[str, Any], project: dict[str, Any]) -> dict[str, Any]:
+    return run_codex_structured(
+        draft_prompt(candidate, project),
+        SCHEMA_PATH,
+        prefix="lazypromotion-draft-",
+    )
+
+
+def run_codex_triage(candidate: dict[str, Any], project: dict[str, Any]) -> dict[str, Any]:
+    return run_codex_structured(
+        triage_prompt(candidate, project),
+        TRIAGE_SCHEMA_PATH,
+        prefix="lazypromotion-triage-",
+    )
+
+
+def save_triage(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]) -> dict[str, Any]:
+    candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone())
+    if not candidate:
+        raise ValueError(f"candidate not found: {candidate_id}")
+    if candidate["status"] != "discovered":
+        raise ValueError(f"candidate status is {candidate['status']}; triage is not allowed")
+    confidence = str(result["confidence"])
+    if confidence not in {"low", "medium", "high"}:
+        raise ValueError("triage confidence is invalid")
+    reason = compact(str(result["reason"]))
+    if not reason:
+        raise ValueError("triage reason is empty")
+    if not isinstance(result["eligible"], bool):
+        raise ValueError("triage eligibility is invalid")
+    if not isinstance(result.get("risk_flags"), list):
+        raise ValueError("triage risk flags are invalid")
+    flags = sorted({compact(str(flag)) for flag in result["risk_flags"] if compact(str(flag))})
+    status = "triaged" if result["eligible"] else "rejected"
+    now = utc_now()
+    db.execute(
+        """
+        UPDATE candidates
+        SET status=?, triage_reason=?, triage_confidence=?, triage_risk_flags=?,
+            triaged_at=?, updated_at=?
+        WHERE id=?
+        """,
+        (status, reason, confidence, json.dumps(flags, ensure_ascii=False), now, now, candidate_id),
+    )
+    db.execute(
+        "INSERT INTO events(candidate_id, kind, detail, created_at) VALUES (?, 'candidate_triaged', ?, ?)",
+        (
+            candidate_id,
+            json.dumps(
+                {
+                    "eligible": status == "triaged",
+                    "confidence": confidence,
+                    "risk_flags": flags,
+                    "model": MODEL,
+                    "effort": EFFORT,
+                },
+                sort_keys=True,
+            ),
+            now,
+        ),
+    )
+    db.commit()
+    return row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone()) or {}
+
+
+def triage_candidate(db: sqlite3.Connection, candidate: dict[str, Any]) -> dict[str, Any]:
+    if candidate["status"] != "discovered":
+        raise ValueError(f"candidate status is {candidate['status']}; triage is not allowed")
+    if int(candidate["score"]) < 5:
+        raise ValueError("candidate did not pass deterministic relevance filtering")
+    project_id = candidate["suggested_tool"]
+    if not project_id:
+        raise ValueError("candidate has no deterministic project match")
+    result = run_codex_triage(candidate, project_by_id(project_id))
+    return save_triage(db, candidate["id"], result)
 
 
 def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]) -> dict[str, Any]:
@@ -502,6 +636,12 @@ def build_parser() -> argparse.ArgumentParser:
     draft.add_argument("candidate_id")
     draft.add_argument("--project", default="")
 
+    triage = sub.add_parser("triage")
+    triage.add_argument("candidate_id")
+
+    triage_pending = sub.add_parser("triage-pending")
+    triage_pending.add_argument("--limit", type=int, default=5)
+
     approve = sub.add_parser("approve")
     approve.add_argument("draft_id")
     approve.add_argument("--ttl-minutes", type=int, default=30)
@@ -545,13 +685,46 @@ def main() -> int:
         candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (args.candidate_id,)).fetchone())
         if not candidate:
             raise SystemExit(f"candidate not found: {args.candidate_id}")
-        if candidate["status"] in {"duplicate", "stale", "rejected", "replied"}:
-            raise SystemExit(f"candidate status is {candidate['status']}; drafting is not allowed")
+        if candidate["status"] != "triaged":
+            raise SystemExit(f"candidate status is {candidate['status']}; model triage is required before drafting")
         project_id = args.project or candidate["suggested_tool"]
         if not project_id:
             raise SystemExit("candidate has no relevant project; choose --project only after manual review")
+        if project_id != candidate["suggested_tool"]:
+            raise SystemExit("draft project differs from the model-triaged project")
         result = run_codex_draft(candidate, project_by_id(project_id))
         print_json(save_draft(db, args.candidate_id, result))
+    elif args.command == "triage":
+        candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (args.candidate_id,)).fetchone())
+        if not candidate:
+            raise SystemExit(f"candidate not found: {args.candidate_id}")
+        print_json(triage_candidate(db, candidate))
+    elif args.command == "triage-pending":
+        limit = max(1, min(args.limit, 10))
+        candidates = [
+            dict(row) for row in db.execute(
+                """
+                SELECT * FROM candidates
+                WHERE status='discovered' AND score >= 5 AND suggested_tool != ''
+                ORDER BY published_at DESC, score DESC, created_at DESC
+                LIMIT ?
+                """,
+                (limit,),
+            ).fetchall()
+        ]
+        results = []
+        for candidate in candidates:
+            try:
+                results.append({"ok": True, "candidate": triage_candidate(db, candidate)})
+            except Exception as exc:
+                now = utc_now()
+                db.execute(
+                    "INSERT INTO events(candidate_id, kind, detail, created_at) VALUES (?, 'triage_failed', ?, ?)",
+                    (candidate["id"], compact(str(exc)), now),
+                )
+                db.commit()
+                results.append({"ok": False, "candidate_id": candidate["id"], "error": str(exc)})
+        print_json({"model": MODEL, "effort": EFFORT, "processed": len(results), "results": results})
     elif args.command == "approve":
         if not (1 <= args.ttl_minutes <= 1440):
             raise SystemExit("--ttl-minutes must be between 1 and 1440")

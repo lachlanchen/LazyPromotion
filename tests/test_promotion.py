@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
@@ -54,6 +55,63 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(candidate["status"], "stale")
         self.assertEqual(candidate["comment_count"], 13)
         self.assertEqual(candidate["source_score"], 23)
+
+    def test_model_triage_decision_controls_candidate_status(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/triage/help/",
+            author="reader",
+            body="How can I add accurate subtitles to my Instagram video?",
+        )
+        triaged = promotion.save_triage(
+            self.db,
+            candidate["id"],
+            {"eligible": True, "confidence": "high", "reason": "Direct video subtitle need", "risk_flags": []},
+        )
+        self.assertEqual(triaged["status"], "triaged")
+        self.assertEqual(triaged["triage_confidence"], "high")
+
+    def test_rejected_triage_is_not_reviewable(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/reject/help/",
+            author="reader",
+            body="How can I add accurate subtitles to my Instagram video?",
+        )
+        rejected = promotion.save_triage(
+            self.db,
+            candidate["id"],
+            {"eligible": False, "confidence": "high", "reason": "Already resolved", "risk_flags": ["resolved"]},
+        )
+        self.assertEqual(rejected["status"], "rejected")
+        self.assertEqual(json.loads(rejected["triage_risk_flags"]), ["resolved"])
+
+    def test_changed_candidate_resets_model_triage(self):
+        url = "https://www.reddit.com/r/example/comments/edited/help/"
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url=url,
+            author="reader",
+            body="How can I add accurate subtitles to my Instagram video?",
+        )
+        promotion.save_triage(
+            self.db,
+            candidate["id"],
+            {"eligible": True, "confidence": "high", "reason": "Direct need", "risk_flags": []},
+        )
+        refreshed = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url=url,
+            author="reader",
+            body="How can I add accurate subtitles to my longer Instagram video and review an SRT file?",
+        )
+        self.assertEqual(refreshed["status"], "discovered")
+        self.assertEqual(refreshed["triage_reason"], "")
+        self.assertEqual(refreshed["triaged_at"], "")
 
     def test_candidate_ingest_is_idempotent(self):
         one = promotion.ingest_candidate(

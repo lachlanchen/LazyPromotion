@@ -29,8 +29,10 @@ turning community conversations into bulk marketing.
 flowchart LR
     A[Visible web search] --> B[Local SQLite candidate]
     B --> C[Deterministic relevance score]
-    C -->|clear need| D[gpt-5.6-sol / low draft]
+    C -->|clear need| T[gpt-5.6-sol / low eligibility check]
     C -->|weak match| X[Skip]
+    T -->|eligible| D[gpt-5.6-sol / low draft]
+    T -->|reject| X
     D --> E[Human reads exact text and destination]
     E --> F[Prepare visible composer]
     F --> G[Short-lived content-hash approval]
@@ -62,6 +64,7 @@ flowchart LR
 | [`catalog.json`](catalog.json) | Grounded mapping from real needs to maintained open-source projects |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome stack with a persistent profile |
 | [`schemas/reply.json`](schemas/reply.json) | Bounded structured output contract for reply drafts |
+| [`schemas/triage.json`](schemas/triage.json) | Structured model eligibility decision required before a reply draft |
 | [`docs/open-source-evaluation.md`](docs/open-source-evaluation.md) | Review of Postiz, Mixpost, Postmill, SocialCrabs, Steadfast, and Playwright |
 | [`.codex/config.toml`](.codex/config.toml) | Optional pinned Playwright MCP attachment to the same CDP browser |
 | [`docs/mcp-browser.md`](docs/mcp-browser.md) | MCP setup, trust boundary, verification, and direct-controller fallback |
@@ -97,8 +100,19 @@ python browser.py search \
 
 python promotion.py list --min-score 5
 python browser.py inspect CANDIDATE_ID
+python promotion.py triage CANDIDATE_ID
 python promotion.py draft CANDIDATE_ID
 ```
+
+For a bounded read-only model check over the current eligible queue:
+
+```bash
+python promotion.py triage-pending --limit 5
+```
+
+Triage and drafting explicitly disable browser MCP access. Those model calls
+can classify or write local structured output only; they cannot navigate,
+click, or publish.
 
 Prepare a reviewed draft without sending it:
 

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["eligible", "confidence", "reason", "risk_flags"],
+  "properties": {
+    "eligible": {"type": "boolean"},
+    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+    "reason": {"type": "string", "minLength": 1, "maxLength": 600},
+    "risk_flags": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {"type": "string", "minLength": 1, "maxLength": 80}
+    }
+  }
+}

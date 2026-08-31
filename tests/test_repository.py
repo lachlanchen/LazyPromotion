@@ -35,6 +35,7 @@ class RepositoryTests(unittest.TestCase):
                 self.assertIn("buy.stripe.com/", body)
                 self.assertIn("CITATION.cff", body)
                 self.assertIn("@software{chen_lazypromotion_2026", body)
+                self.assertIn("python promotion.py triage CANDIDATE_ID", body)
 
     def test_readme_language_links_resolve(self):
         for path in READMES:

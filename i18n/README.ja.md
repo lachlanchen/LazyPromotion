@@ -55,6 +55,7 @@ noVNC で手動ログインし、明確なニーズを対象に小さく検索�
 python browser.py search --platform reddit --query 'need help add subtitles to video' --limit 12
 python promotion.py list --min-score 5
 python browser.py inspect CANDIDATE_ID
+python promotion.py triage CANDIDATE_ID
 python promotion.py draft CANDIDATE_ID
 python browser.py prepare CANDIDATE_ID DRAFT_ID
 ```

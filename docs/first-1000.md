@@ -24,6 +24,13 @@ builds a reviewable email draft inside the current browser tab. It stores,
 uploads, and sends nothing automatically; the prospective customer controls the
 final email send.
 
+Prospective customers can inspect a
+[complete sample fit report](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
+before sharing any material. It applies the three deliverables to LKT's own
+documented reference collection, including measured record and index counts and
+explicit no-go boundaries. It is project-owned evidence—not a customer result,
+testimonial, benchmark, sale, or claim of a paid engagement.
+
 ### Inbox readiness gate
 
 The public `contact@lazying.art` address has iCloud MX routing and accepted a
@@ -71,8 +78,8 @@ payment data, or private corpus text in the promotion repository.
    and let the successful WordPress sitemap registered in Search Console carry
    future discovery. Manual URL indexing is an optional acceleration, not a
    substitute for the sitemap.
-5. Send qualified readers to <https://lazying.art/lkt/fit-check/>, never
-   directly to payment.
+5. Let qualified readers inspect the public sample report, then send them to
+   <https://lazying.art/lkt/fit-check/>, never directly to payment.
 6. Record a `qualified_lead` only after a real fit inquiry.
 7. After scope acceptance, use a reviewed Stripe request for USD 250.
 8. Record `sale_confirmed` only after verified payment, using a private receipt

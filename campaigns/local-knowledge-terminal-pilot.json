@@ -8,6 +8,7 @@
     "practical_guide": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
+    "sample_fit_report": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
     "website_hero": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
     "instagram_visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
     "offer_stage": "founding collection-fit sprint",
@@ -32,11 +33,12 @@
       "The public repository has no detected software license; describe it as public code, not open source, until the owner selects a license.",
       "Ask about the collection, language goal, intended readers, rights, privacy needs, sample format, and existing hardware before requesting payment.",
       "The generated product hero is a concept visual grounded in the current prototype and interface; never present it as shipped inventory.",
+      "The sample fit report applies the format to LKT's own documented reference collection. It is not a customer result, testimonial, benchmark, sale, or paid engagement.",
       "A useful technical answer must stand on its own before mentioning the pilot page."
     ]
   },
   "funnel": {
-    "free_value": "Inspect the public code, tests, architecture, and durable product brief.",
+    "free_value": "Inspect the public code, tests, architecture, durable product brief, and project-owned sample fit report before sharing customer material.",
     "qualified_interest": "Use https://lazying.art/lkt/fit-check/ to review a local email draft containing the collection, language goal, readers, sample format, rights, privacy needs, and existing hardware; the page stores and sends nothing automatically.",
     "commercial_action": "After a positive fit review, accept the fixed USD 250 sprint scope and complete a reviewed Stripe payment request.",
     "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales."

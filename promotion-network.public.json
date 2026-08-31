@@ -4910,6 +4910,13 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {
+      "id": "url:08da0dd4fa5a19c9",
+      "kind": "web_resource",
+      "label": "sample fit report",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md"
+    },
+    {
       "id": "url:9d1733477761da4f",
       "kind": "web_resource",
       "label": "website hero",
@@ -5055,6 +5062,14 @@
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:08da0dd4fa5a19c9"
     },
     {
       "confidence": 1.0,

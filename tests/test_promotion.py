@@ -77,6 +77,8 @@ class PromotionTests(unittest.TestCase):
         self.assertIn('"reply_url": "https://lazying.art/lkt/fit-check/"', prompt)
         self.assertIn("private-by-design collection-fit service", prompt)
         self.assertIn("not a finished RAG application", prompt)
+        self.assertIn("docs/sample-fit-report.md", prompt)
+        self.assertIn("not a customer result", prompt)
 
     def test_value_only_draft_policy_forbids_project_and_links(self):
         candidate = {

@@ -17,6 +17,12 @@ deployment are excluded. Four confirmed USD 250 payments would be USD 1,000
 gross. That is a milestone calculation, not a forecast, and excludes payment
 fees, tax, refunds, and delivery costs.
 
+A [complete sample fit
+report](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
+shows the three deliverables using LKT's own documented reference collection.
+It is measured project-owned evidence, not a customer result, testimonial,
+benchmark, sale, or paid-engagement claim.
+
 The campaign sequence is:
 
 1. Find a current, explicit need involving a private collection, local/offline
@@ -25,7 +31,7 @@ The campaign sequence is:
 3. For a reusable problem, publish the complete answer as a searchable
    LazyBlog guide with one tracked fit-check link at the end; rely on the
    registered WordPress sitemap for repeat discovery.
-4. Let the profile or one relevant link lead to the
+4. Let the profile or one relevant link lead to the public sample report and
    [private-by-design fit check](https://lazying.art/lkt/fit-check/).
 5. Confirm source rights, sample format, language goal, readers, privacy needs,
    and existing hardware.

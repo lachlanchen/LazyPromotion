@@ -375,6 +375,17 @@ class RepositoryTests(unittest.TestCase):
             campaign["source_evidence"]["fit_check"],
             "https://lazying.art/lkt/fit-check/",
         )
+        self.assertEqual(
+            campaign["source_evidence"]["sample_fit_report"],
+            "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
+        )
+        self.assertIn("not a customer result", serialized)
+        self.assertTrue(
+            any(
+                "not a customer result" in limit.casefold()
+                for limit in campaign["source_evidence"]["limits"]
+            )
+        )
         self.assertIn("stores and sends nothing automatically", serialized)
         self.assertEqual(
             campaign["conversion_readiness"]["mail_routing"],

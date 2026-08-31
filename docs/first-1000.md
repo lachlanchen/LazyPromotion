@@ -33,9 +33,13 @@ then displayed that exact test subject, and the operator created a dedicated
 does not prove that every future message is a qualified lead. A narrow iCloud
 rule moves only messages whose subject contains the live fit-check contract,
 `Local Knowledge Terminal — free collection fit check`, into that folder. Do
-not promise a response time, copy message contents into this repository, or
-infer a conversion until the actual inbound request has been reviewed against
-the qualification gate below.
+not assume that configuration alone proves delivery: an end-to-end controlled
+probe started from a clear destination folder, used the exact live subject and
+no customer data, received Gmail's sent acknowledgement, and then appeared
+automatically inside `LKT Fit Checks`. This proves the narrow routing path, not
+a response SLA or sale. Do not promise a response time, copy message contents
+into this repository, or infer a conversion until the actual inbound request
+has been reviewed against the qualification gate below.
 
 ## Qualification gate
 

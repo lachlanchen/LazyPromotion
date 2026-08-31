@@ -373,6 +373,14 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(routing_rule["action"], "move_to_folder")
         self.assertEqual(routing_rule["destination"], "LKT Fit Checks")
+        self.assertEqual(
+            routing_rule["runtime_probe"],
+            "exact_subject_delivered_to_destination",
+        )
+        self.assertRegex(
+            routing_rule["runtime_probe_checked_at"],
+            r"^2026-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$",
+        )
         self.assertIn(
             "do not promise a response time",
             campaign["conversion_readiness"]["policy"].casefold(),

@@ -53,10 +53,12 @@
       "value": "Local Knowledge Terminal — free collection fit check",
       "action": "move_to_folder",
       "destination": "LKT Fit Checks",
-      "checked_at": "2026-08-31T22:55:16Z"
+      "checked_at": "2026-08-31T22:55:16Z",
+      "runtime_probe": "exact_subject_delivered_to_destination",
+      "runtime_probe_checked_at": "2026-08-31T23:01:18Z"
     },
-    "checked_at": "2026-08-31T22:55:16Z",
-    "policy": "Authenticated access and the visible controlled test prove that the inbox can be reviewed. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
+    "checked_at": "2026-08-31T23:01:18Z",
+    "policy": "Authenticated access and the controlled exact-subject runtime probe prove that the inbox can be reviewed and the intake rule can route a message to its destination. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
     "payment_request": {
       "state": "live_account_and_fixed_config_verified",
       "checked_at": "2026-08-31T20:51:23Z",

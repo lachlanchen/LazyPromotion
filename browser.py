@@ -10,7 +10,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import quote_plus, urlparse
+from urllib.parse import parse_qs, quote_plus, urlparse
 
 from playwright.sync_api import Locator, Page, sync_playwright
 
@@ -95,20 +95,29 @@ def wait_ready(page: Page) -> None:
     page.wait_for_timeout(2500)
 
 
-def search_url(platform: str, query: str) -> str:
+def search_url(platform: str, query: str, content_kind: str = "posts") -> str:
     if platform == "reddit":
         return f"https://www.reddit.com/search/?q={quote_plus(query)}&sort=new&type=posts"
     if platform == "x":
         return f"https://x.com/search?q={quote_plus(query)}&src=typed_query&f=live"
     if platform == "hackernews":
+        if content_kind not in {"posts", "comments"}:
+            raise ValueError(f"unsupported Hacker News content kind: {content_kind}")
+        result_type = "story" if content_kind == "posts" else "comment"
         return (
             "https://hn.algolia.com/?dateRange=pastMonth&page=0&prefix=false"
-            f"&query={quote_plus(query)}&sort=byDate&type=story"
+            f"&query={quote_plus(query)}&sort=byDate&type={result_type}"
         )
     tag = re.sub(r"[^A-Za-z0-9_]", "", query.lstrip("#").replace(" ", ""))
     if not tag:
         raise ValueError("Instagram discovery requires one hashtag-like query")
     return f"https://www.instagram.com/explore/tags/{tag}/"
+
+
+def hackernews_comment_query(query: str) -> str:
+    """Turn an Ask HN story query into a topic query for discussion comments."""
+    topic = re.sub(r"^Ask\s+HN:?\s*", "", query, flags=re.I).strip()
+    return topic or query
 
 
 def load_discovery_plan(path: Path = DISCOVERY_PLAN) -> dict[str, object]:
@@ -137,6 +146,8 @@ def load_discovery_plan(path: Path = DISCOVERY_PLAN) -> dict[str, object]:
                 raise ValueError(f"{platform} discovery entry has an empty query")
             if not promotion.compact(str(item.get("purpose") or "")):
                 raise ValueError(f"{platform} discovery entry has an empty purpose")
+            if "comment_query" in item and not promotion.compact(str(item["comment_query"])):
+                raise ValueError(f"{platform} discovery entry has an empty comment query")
     return plan
 
 
@@ -312,7 +323,25 @@ def hydrate_instagram_rows(page: Page, rows: list[dict[str, str]], limit: int) -
     return hydrated
 
 
-def extract_hackernews(page: Page, limit: int) -> list[dict[str, str]]:
+def extract_hackernews(page: Page, limit: int, content_kind: str = "posts") -> list[dict[str, str]]:
+    if content_kind == "comments":
+        return page.locator("article.Story").evaluate_all(
+            """(nodes, limit) => nodes.map((n) => {
+              const meta = n.querySelector('.Story_meta');
+              const metaText = meta?.innerText || '';
+              const permalink = [...(meta?.querySelectorAll('a') || [])]
+                .find(a => /^https:\/\/news\.ycombinator\.com\/item\?id=\d+/.test(a.href));
+              return {
+                url: permalink?.href || '',
+                author: meta?.querySelector('a[href*="/user?id="]')?.innerText || '',
+                published_at: '',
+                comment_count: metaText.match(/(\d+)\s+comments?/i)?.[1] || '0',
+                source_score: '0',
+                body: (n.querySelector('.Story_comment')?.innerText || '').trim()
+              };
+            }).filter(row => row.url && row.body).slice(0, limit)""",
+            limit,
+        )
     return page.locator("article.Story").evaluate_all(
         """(nodes, limit) => nodes.map((n) => {
           const titleBox = n.querySelector('.Story_title');
@@ -369,19 +398,27 @@ def dedupe(rows: list[dict[str, str]], limit: int) -> list[dict[str, object]]:
     return result
 
 
-def discover(page: Page, platform: str, query: str, limit: int) -> dict[str, object]:
-    target = search_url(platform, query)
+def discover(
+    page: Page,
+    platform: str,
+    query: str,
+    limit: int,
+    content_kind: str = "posts",
+) -> dict[str, object]:
+    if content_kind != "posts" and platform != "hackernews":
+        raise ValueError(f"{platform} does not support {content_kind} discovery")
+    target = search_url(platform, query, content_kind)
     page.goto(target, wait_until="domcontentloaded", timeout=45000)
     wait_ready(page)
     search_title = page.title()
     search_destination = page.url
-    screenshot = evidence(page, f"search-{platform}")
+    screenshot = evidence(page, f"search-{platform}-{content_kind}")
     if platform == "reddit":
         rows = extract_reddit(page, limit)
     elif platform == "x":
         rows = extract_x(page, limit)
     elif platform == "hackernews":
-        rows = extract_hackernews(page, limit)
+        rows = extract_hackernews(page, limit, content_kind)
     else:
         rows = hydrate_instagram_rows(page, extract_instagram(page, limit), limit)
     rows = dedupe(rows, limit)
@@ -397,6 +434,7 @@ def discover(page: Page, platform: str, query: str, limit: int) -> dict[str, obj
     return {
         "ok": True,
         "platform": platform,
+        "content_kind": content_kind,
         "query": query,
         "url": search_destination,
         "title": search_title,
@@ -445,18 +483,27 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         author = data["author"] or author
         published_at = data["published_at"]
     else:
-        root = page.locator(".titleline").first
-        if not root.count():
-            raise RuntimeError("Hacker News story root was not found")
-        title = root.inner_text()
-        body_node = page.locator(".toptext").first
-        body = body_node.inner_text() if body_node.count() else ""
-        name = page.locator(".subtext .hnuser").first
+        story_root = page.locator(".titleline").first
+        if story_root.count():
+            title = story_root.inner_text()
+            body_node = page.locator(".toptext").first
+            body = body_node.inner_text() if body_node.count() else ""
+            name = page.locator(".subtext .hnuser").first
+            age = page.locator(".subtext .age").first
+            score = page.locator(".subtext .score").first
+            source_score = safe_int(score.inner_text().split()[0]) if score.count() else 0
+        else:
+            comment_root = page.locator("table.fatitem tr.athing").first
+            if not comment_root.count():
+                raise RuntimeError("Hacker News story or comment root was not found")
+            title = ""
+            body_node = comment_root.locator(".commtext").first
+            body = body_node.inner_text() if body_node.count() else ""
+            name = comment_root.locator(".hnuser").first
+            age = comment_root.locator(".age").first
+            source_score = 0
         author = name.inner_text() if name.count() else author
-        age = page.locator(".subtext .age").first
-        published_at = age.get_attribute("title") or "" if age.count() else ""
-        score = page.locator(".subtext .score").first
-        source_score = safe_int(score.inner_text().split()[0]) if score.count() else 0
+        published_at = (age.get_attribute("title") or "") if age.count() else ""
         comment_count = page.locator("tr.comtr").count()
         community = "Hacker News"
         rules_url = "https://news.ycombinator.com/newsguidelines.html"
@@ -528,12 +575,30 @@ def run_discovery_cycle(
             "purpose": item["purpose"],
         }
         try:
-            found = discover(page, platform, query, limit_per_query)
-            hydrated = hydrate_candidates(page, found["candidates"], hydrate_per_query)
+            searches = [("posts", query)]
+            if platform == "hackernews":
+                comment_query = promotion.compact(
+                    str(item.get("comment_query") or hackernews_comment_query(query))
+                )
+                searches.append(("comments", comment_query))
+            discoveries = [
+                discover(page, platform, search_query, limit_per_query, content_kind)
+                for content_kind, search_query in searches
+            ]
+            found_candidates = [
+                candidate
+                for found in discoveries
+                for candidate in found["candidates"]
+            ]
+            hydrated = [
+                item
+                for found in discoveries
+                for item in hydrate_candidates(page, found["candidates"], hydrate_per_query)
+            ]
             db = promotion.open_db()
             refreshed = [
                 promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate["id"],)).fetchone())
-                for candidate in found["candidates"]
+                for candidate in found_candidates
             ]
             matching = [
                 str(candidate["id"])
@@ -557,7 +622,11 @@ def run_discovery_cycle(
             triage_ids.extend(candidate_id for candidate_id in triageable if candidate_id not in triage_ids)
             summary.update({
                 "ok": True,
-                "found": found["found"],
+                "found": len(found_candidates),
+                "found_by_kind": {
+                    str(found["content_kind"]): int(found["found"])
+                    for found in discoveries
+                },
                 "hydrated": len(hydrated),
                 "hydrate_errors": [row for row in hydrated if not row["ok"]],
                 "eligible_candidate_ids": matching,
@@ -690,6 +759,20 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
     }
 
 
+def destination_matches(candidate_url: str, active_url: str, platform: str) -> bool:
+    candidate_parsed = urlparse(candidate_url)
+    active_parsed = urlparse(active_url)
+    if candidate_parsed.hostname != active_parsed.hostname:
+        return False
+    if platform == "hackernews":
+        candidate_id = parse_qs(candidate_parsed.query).get("id", [""])[0]
+        active_id = parse_qs(active_parsed.query).get("id", [""])[0]
+        return bool(candidate_id and candidate_id == active_id)
+    candidate_base = candidate_url.split("?", 1)[0].rstrip("/")
+    active_base = active_url.split("?", 1)[0].rstrip("/")
+    return active_base == candidate_base or active_base.startswith(f"{candidate_base}/")
+
+
 def submit_button(page: Page, platform: str) -> Locator:
     if platform == "reddit":
         return visible_first([
@@ -709,7 +792,7 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
     candidate, draft = load_candidate_and_draft(candidate_id, draft_id)
     db = promotion.open_db()
     promotion.validate_approval(db, draft_id, token)
-    if candidate["source_url"].split("?")[0] not in page.url.split("?")[0]:
+    if not destination_matches(candidate["source_url"], page.url, candidate["platform"]):
         raise RuntimeError("the active tab is not the approved candidate page; run prepare again")
     target = composer(page, candidate["platform"])
     if composer_text(target) != promotion.compact(draft["body"]):
@@ -767,6 +850,7 @@ def build_parser() -> argparse.ArgumentParser:
     search.add_argument("--query", required=True)
     search.add_argument("--limit", type=int, default=12)
     search.add_argument("--hydrate", type=int, default=0, help="inspect the full body of up to N fresh results")
+    search.add_argument("--kind", choices=("posts", "comments"), default="posts")
     search.add_argument("--background", action="store_true", help="do not take focus from the active review/login tab")
     cycle = sub.add_parser("cycle")
     cycle.add_argument("--platform", choices=tuple(PLATFORM_HOSTS), required=True)
@@ -806,7 +890,9 @@ def main() -> int:
             emit({"ok": True, "url": page.url, "title": page.title(), "screenshot": evidence(page, "open")})
         elif args.command == "search":
             page = page_for(browser, platform=args.platform, front=not args.background)
-            result = discover(page, args.platform, args.query, max(1, min(args.limit, 50)))
+            result = discover(
+                page, args.platform, args.query, max(1, min(args.limit, 50)), args.kind
+            )
             if args.hydrate:
                 result["hydrated"] = hydrate_candidates(page, result["candidates"], max(1, min(args.hydrate, 10)))
             emit(result)

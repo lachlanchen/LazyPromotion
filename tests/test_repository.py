@@ -74,6 +74,9 @@ class RepositoryTests(unittest.TestCase):
                 with self.subTest(platform=platform, query=query["query"]):
                     self.assertIn(query["project_id"], known)
                     self.assertTrue(query["purpose"])
+                    if "comment_query" in query:
+                        self.assertEqual(platform, "hackernews")
+                        self.assertTrue(query["comment_query"].strip())
 
     def test_x_go_route_is_qualified_as_the_board_game(self):
         route = next(
@@ -125,6 +128,21 @@ class RepositoryTests(unittest.TestCase):
             5,
         )
         self.assertEqual(rows[0]["url"], "https://news.ycombinator.com/item?id=12345")
+
+    def test_hacker_news_comment_search_and_destination_are_exact(self):
+        url = browser.search_url("hackernews", "video subtitles", "comments")
+        self.assertIn("type=comment", url)
+        self.assertEqual(browser.hackernews_comment_query("Ask HN video subtitles"), "video subtitles")
+        self.assertTrue(browser.destination_matches(
+            "https://news.ycombinator.com/item?id=12345",
+            "https://news.ycombinator.com/item?id=12345",
+            "hackernews",
+        ))
+        self.assertFalse(browser.destination_matches(
+            "https://news.ycombinator.com/item?id=12345",
+            "https://news.ycombinator.com/item?id=67890",
+            "hackernews",
+        ))
 
     def test_instagram_grid_alt_text_is_canonical_candidate_body(self):
         rows = browser.dedupe(

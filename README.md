@@ -138,6 +138,8 @@ python browser.py cycle \
 ```
 
 The same bounded cycle supports `reddit`, `x`, `hackernews`, and `instagram`.
+Each Hacker News route checks both Ask HN stories and discussion comments;
+comment permalinks are hydrated and remain the exact reply destination.
 It only searches, records, and inspects candidates; it cannot draft, approve,
 or send a reply. Instagram uses a small reviewed hashtag set and still requires
 an explicit help request in the caption before model triage.

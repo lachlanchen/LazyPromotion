@@ -122,31 +122,37 @@
       {
         "project_id": "localknowledgeterminal",
         "query": "Ask HN local knowledge base",
+        "comment_query": "knowledge base",
         "purpose": "People asking how to build a private or local knowledge workflow"
       },
       {
         "project_id": "localvideogen",
         "query": "Ask HN local AI video generation",
+        "comment_query": "video generation",
         "purpose": "Builders requesting practical local video-generation approaches"
       },
       {
         "project_id": "lazyedit",
         "query": "Ask HN video subtitles transcription",
+        "comment_query": "subtitles",
         "purpose": "Video creators asking for caption, transcription, or editing help"
       },
       {
         "project_id": "pocketpolyglot",
         "query": "Ask HN language learning reader",
+        "comment_query": "language learning",
         "purpose": "Learners seeking multilingual or parallel reading tools"
       },
       {
         "project_id": "lazygame",
         "query": "Ask HN learn board games AI",
+        "comment_query": "board game",
         "purpose": "People asking for interactive board-game teaching or analysis"
       },
       {
         "project_id": "musia",
         "query": "Ask HN local AI music",
+        "comment_query": "music generation",
         "purpose": "Music creators asking for local generation or localization workflows"
       }
     ],

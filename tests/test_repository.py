@@ -305,6 +305,15 @@ class RepositoryTests(unittest.TestCase):
             "do not promise a response time",
             campaign["conversion_readiness"]["policy"].casefold(),
         )
+        payment_request = campaign["conversion_readiness"]["payment_request"]
+        self.assertEqual(
+            payment_request["state"], "live_account_and_fixed_config_verified"
+        )
+        self.assertEqual(payment_request["price"], "USD 250")
+        self.assertEqual(payment_request["quantity"], 1)
+        self.assertFalse(payment_request["public_export"])
+        self.assertFalse(payment_request["mutates_stripe"])
+        self.assertIn("free fit check", payment_request["policy"])
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["lazyblog"]["state"], "published")

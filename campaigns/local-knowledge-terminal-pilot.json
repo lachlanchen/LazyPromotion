@@ -47,7 +47,22 @@
     "delivery_probe": "sent_without_observed_bounce",
     "mailbox_monitoring": "unverified_requires_operator_login",
     "checked_at": "2026-08-31T20:46:58Z",
-    "policy": "Mail routing and a non-bouncing test do not prove that the inbox is monitored. Do not promise a response time or treat an email as a qualified lead until the operator has verified mailbox access and the actual inbound request."
+    "policy": "Mail routing and a non-bouncing test do not prove that the inbox is monitored. Do not promise a response time or treat an email as a qualified lead until the operator has verified mailbox access and the actual inbound request.",
+    "payment_request": {
+      "state": "live_account_and_fixed_config_verified",
+      "checked_at": "2026-08-31T20:51:23Z",
+      "price": "USD 250",
+      "quantity": 1,
+      "public_export": false,
+      "mutates_stripe": false,
+      "account_checks": [
+        "authenticated",
+        "charges enabled",
+        "payouts enabled",
+        "details submitted"
+      ],
+      "policy": "Readiness does not authorize a payment request. A real customer must pass the free fit check, accept the written scope, and receive reviewed delivery, cancellation, refund, tax, and support terms before the separately guarded Stripe creation command is run."
+    }
   },
   "channels": {
     "lazyblog": {

@@ -51,6 +51,10 @@ flowchart LR
   posts older than 30 days are marked stale and refused by the drafter.
 - Comment-aware intent: replies must contain a direct request phrase; rhetorical
   questions, advice, service pitches, and engagement calls are filtered first.
+- Ambiguity-aware matching: a catalog keyword may declare required technical
+  context; for example, `local RAG` must occur with an LLM, retrieval, document,
+  PDF, embedding, vector-database, or knowledge-base signal so the newspaper
+  idiom “local rag” is not treated as product demand.
 - Exact approval: changing the draft invalidates its short-lived approval.
 - Visible operation: Chrome runs in noVNC and important steps capture local,
   ignored screenshots.

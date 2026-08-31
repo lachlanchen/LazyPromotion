@@ -45,6 +45,20 @@ class PromotionTests(unittest.TestCase):
             "https://lazying.art/lkt/fit-check/",
         )
 
+    def test_local_rag_keyword_requires_technical_context(self):
+        technical = promotion.rank_projects(
+            "I need help with a local RAG setup for an LLM."
+        )
+        self.assertEqual(technical[0]["project"]["id"], "localknowledgeterminal")
+
+        newspaper = promotion.rank_projects(
+            "I recommend the pizza place; our local rag of a newspaper reviewed it."
+        )
+        self.assertNotIn(
+            "localknowledgeterminal",
+            {item["project"]["id"] for item in newspaper},
+        )
+
     def test_triage_sees_reviewed_offer_context_and_boundary(self):
         project = promotion.project_by_id("localknowledgeterminal")
         prompt = promotion.triage_prompt(

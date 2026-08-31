@@ -488,9 +488,21 @@ def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict
     ranked = []
     for project in catalog["projects"]:
         matches = []
+        keyword_context_any = {
+            normalized(str(keyword)).strip(): [
+                normalized(str(context)).strip() for context in contexts
+            ]
+            for keyword, contexts in project.get("keyword_context_any", {}).items()
+        }
         for keyword in project["keywords"]:
             needle = normalized(keyword).strip()
             if needle and keyword_present(needle, haystack):
+                required_context = keyword_context_any.get(needle, [])
+                if required_context and not any(
+                    context and keyword_present(context, haystack)
+                    for context in required_context
+                ):
+                    continue
                 matches.append(keyword)
         if not matches:
             continue

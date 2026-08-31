@@ -304,6 +304,26 @@ class RepositoryTests(unittest.TestCase):
             campaign["channels"]["lazyblog"]["conversion_url"],
         )
         self.assertEqual(
+            campaign["channels"]["reddit"]["profile_guide"]["state"],
+            "postiz_queue",
+        )
+        self.assertEqual(
+            campaign["channels"]["reddit"]["profile_guide"]["publish_at"],
+            "2026-09-01T02:00:00Z",
+        )
+        self.assertEqual(
+            campaign["channels"]["reddit"]["profile_guide"]["scope"],
+            "own_profile",
+        )
+        self.assertIn(
+            "utm_source=reddit",
+            campaign["channels"]["reddit"]["profile_guide"]["destination"],
+        )
+        self.assertIn(
+            "Disclosure: I maintain",
+            campaign["channels"]["reddit"]["profile_guide"]["content"],
+        )
+        self.assertEqual(
             campaign["channels"]["x"]["publish_at"], "2026-09-08T01:00:00Z"
         )
         self.assertEqual(

@@ -69,6 +69,14 @@ were visibly reviewed and queued for September 8, 2026 at 01:00 and 11:31 UTC;
 their exact copy, uploaded visuals, direct fit-check destinations, provider
 settings, and future state were confirmed before scheduling.
 
+The confidential-PDF guide also has two value-first distribution assets. A
+concise X pointer is queued for September 1 at 14:00 UTC. A longer standalone
+decision tree is queued for September 1 at 02:00 UTC on the connected Reddit
+account's own profile—not in a third-party community—so people arriving from
+value-only replies can find useful context without a second promotional reply.
+Both use tracked guide links, and the Reddit resource includes an explicit
+maintainer disclosure.
+
 ## How the portfolio contributes
 
 The portfolio is evidence and implementation leverage, not a list of calls to

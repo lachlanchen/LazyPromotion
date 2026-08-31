@@ -66,6 +66,14 @@ confirmed the concept/not-inventory disclosures, changed both destinations to
 the verified fit-check page, declined URL shortening, and then verified the
 persisted `QUEUE` records. The Wenyan and eInk items remained drafts.
 
+The same review pattern was used for a value-first LKT guide post to the
+connected Reddit account's own profile. The live provider contract and profile
+restrictions confirmed normal text and link posts were allowed without flair.
+The exact destination, title, standalone technical steps, maintainer
+disclosure, 2026-09-01T02:00:00Z time, protocol-less tracked URL, and refreshed
+calendar state were reviewed before and after moving the item to `QUEUE`. This
+is a first-party profile resource, not an automated community submission.
+
 ## Quota and trust policy
 
 - Draft text locally with `gpt-5.6-sol` at low reasoning effort.

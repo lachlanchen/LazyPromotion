@@ -56,6 +56,15 @@
     },
     "reddit": {
       "state": "needs_exact_need",
+      "profile_guide": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-01T02:00:00Z",
+        "scope": "own_profile",
+        "title": "A small decision tree for searching confidential PDFs locally",
+        "content": "If the collection fits on one machine, I’d start smaller than a full RAG stack:\n\n1. Extract text (pdftotext for searchable PDFs; OCR only the scanned files).\n2. Store the document path, page number, and text in SQLite FTS5, or index it with Recoll.\n3. Test 20–30 real questions and record the misses.\n4. Add embeddings only when misses come from vocabulary or paraphrase rather than bad extraction.\n5. Keep every result tied to a file and page so it can be checked.\n\nThat is often enough for a 12 GB laptop and keeps confidential documents local. I wrote a longer walkthrough with commands and tradeoffs here:\nblog.lazying.art/?p=3619&utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot\n\nDisclosure: I maintain the guide and the related Local Knowledge Terminal project.",
+        "destination": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html?utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot",
+        "policy": "First-party profile resource only, not a community submission or generated reply. The complete standalone steps, maintainer disclosure, exact profile destination, title, schedule, protocol-less tracked URL, provider settings, and queue state were visibly reviewed."
+      },
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },
     "x": {

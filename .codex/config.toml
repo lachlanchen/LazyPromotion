@@ -16,3 +16,29 @@ startup_timeout_sec = 60
 tool_timeout_sec = 60
 default_tools_approval_mode = "writes"
 disabled_tools = ["browser_close", "browser_install"]
+
+# Operator-only Postiz access. Keep disabled during ordinary discovery and
+# enable through scripts/postiz-codex.sh, which reads the official CLI's private
+# OAuth store without duplicating the credential in this repository.
+[mcp_servers.postiz]
+url = "https://api.postiz.com/mcp"
+bearer_token_env_var = "POSTIZ_API_KEY"
+enabled = false
+required = false
+startup_timeout_sec = 30
+tool_timeout_sec = 60
+enabled_tools = [
+  "integrationList",
+  "integrationSchema",
+  "triggerTool",
+  "integrationSchedulePostTool",
+  "postsListTool",
+  "postSettingsTool",
+]
+default_tools_approval_mode = "prompt"
+
+[mcp_servers.postiz.tools.integrationSchedulePostTool]
+approval_mode = "prompt"
+
+[mcp_servers.postiz.tools.postSettingsTool]
+approval_mode = "prompt"

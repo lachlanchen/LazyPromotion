@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "id": "wenyan-history",
+  "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
+  "source_evidence": {
+    "pipeline": "https://github.com/lachlanchen/PocketPolyglot",
+    "public_shelf": "https://lachlanchen.github.io/LinguaLeaf/website/",
+    "asset_repository": "https://github.com/lachlanchen/LinguaLeaf",
+    "asset_path": "assets/max-language-previews/zizhi-tongjian-part-03.png",
+    "edition_format": "文言文 main text with English, modern Japanese, and modern Chinese"
+  },
+  "baseline_2026_08_31": {
+    "instagram": {
+      "views_30d": 294,
+      "reach_30d": 74,
+      "likes_30d": 7,
+      "shares_30d": 1
+    },
+    "x": {
+      "postiz_history": "empty"
+    },
+    "reddit": {
+      "postiz_history": "empty"
+    }
+  },
+  "channels": {
+    "x": {
+      "state": "postiz_draft",
+      "publish_date_placeholder_utc": "2026-09-02T01:00:00Z",
+      "content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I built a free public edition with 文言文 + English + modern Japanese + modern Chinese, in color and B&W. Search “LinguaLeaf” on GitHub to read it.",
+      "link_strategy": "Postiz strips links from X drafts as of 2026-08-31; use direct visible X composition for a clickable canonical shelf URL after review."
+    },
+    "instagram": {
+      "state": "postiz_draft",
+      "publish_date_placeholder_utc": "2026-09-03T11:30:00Z",
+      "content": "Some books are difficult because the language is distant—not because the ideas are.\n\nI’ve been building a reading shelf for Chinese classics where 文言文 sits beside English, modern Japanese, and modern Chinese. It includes multilingual editions of 資治通鑑, 漢書, 後漢書, 三國志裴松之注, and 春秋左氏傳, in color and black-and-white formats.\n\nMade with PocketPolyglot; the finished books live in the public LinguaLeaf shelf:\nhttps://lachlanchen.github.io/LinguaLeaf/website/?utm_source=instagram&utm_medium=social&utm_campaign=wenyan_history\n\nWhich history would you open first?\n\n#文言文 #ClassicalChinese #ChineseHistory #LanguageLearning #DigitalHumanities"
+    },
+    "reddit": {
+      "state": "needs_community_fit",
+      "policy": "Do not place a generic promotional post. Use an exact help request or a community that explicitly allows project sharing after checking its current rules and flair."
+    },
+    "hackernews": {
+      "state": "needs_exact_need",
+      "policy": "Use direct browser replies only when an exact current request is approved; Postiz does not support Hacker News."
+    }
+  }
+}

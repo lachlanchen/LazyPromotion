@@ -217,6 +217,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(".local/", ignored)
         self.assertIn("handoff/", ignored)
 
+    def test_wenyan_campaign_is_reviewable_and_contains_no_private_ids(self):
+        path = ROOT / "campaigns" / "wenyan-history.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        serialized = path.read_text(encoding="utf-8")
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
+        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
+        self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
+        self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
+        self.assertIn("utm_source=instagram", campaign["channels"]["instagram"]["content"])
+        self.assertNotIn("integration_id", serialized.casefold())
+        self.assertNotIn("post_id", serialized.casefold())
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -68,12 +68,15 @@ flowchart LR
 | [`github-repos.json`](github-repos.json) | Public-only inventory of every `lachlanchen` source repository |
 | [`sync_github_catalog.py`](sync_github_catalog.py) | Deterministic catalog refresh through the open-source GitHub CLI |
 | [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
+| [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome stack with a persistent profile |
 | [`schemas/reply.json`](schemas/reply.json) | Bounded structured output contract for reply drafts |
 | [`schemas/triage.json`](schemas/triage.json) | Structured model eligibility decision required before a reply draft |
 | [`docs/open-source-evaluation.md`](docs/open-source-evaluation.md) | Review of Postiz, Mixpost, Postmill, SocialCrabs, Steadfast, and Playwright |
-| [`.codex/config.toml`](.codex/config.toml) | Optional pinned Playwright MCP attachment to the same CDP browser |
+| [`scripts/postiz-codex.sh`](scripts/postiz-codex.sh) | Operator-only launcher for the official Postiz MCP using the CLI's private OAuth store |
+| [`.codex/config.toml`](.codex/config.toml) | Optional pinned Playwright and review-gated Postiz MCP attachments |
 | [`docs/mcp-browser.md`](docs/mcp-browser.md) | MCP setup, trust boundary, verification, and direct-controller fallback |
+| [`docs/postiz.md`](docs/postiz.md) | Official CLI/MCP setup, quota policy, and draft-first operating contract |
 | [`tests/`](tests/) | Matching, idempotency, and exact-content approval tests |
 
 The initial catalog includes LazyEdit, AutoPublication, PocketPolyglot,
@@ -233,6 +236,11 @@ For agents that speak MCP, the repository also provides an optional, pinned
 [Playwright MCP attachment](docs/mcp-browser.md). It reuses the same Chrome CDP
 endpoint, disables browser close/install tools, prompts for browser mutations,
 and leaves `browser.py` as the guarded public-send path.
+
+The official Postiz CLI and remote MCP are available through the
+[operator integration](docs/postiz.md). The OAuth credential stays in Postiz's
+private CLI store, model subprocesses cannot access the scheduler, and Postiz
+AI media tools remain disabled to preserve paid quota.
 
 The design follows Reddit's current requirements that user actions be explicit
 and separate, and that repeated unsolicited engagement is spam even when done

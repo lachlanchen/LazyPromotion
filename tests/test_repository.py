@@ -72,6 +72,12 @@ class RepositoryTests(unittest.TestCase):
                 self.assertTrue(project["url"].startswith("https://github.com/lachlanchen/"))
                 self.assertTrue(project["summary"].strip())
                 self.assertTrue(project["keywords"])
+        by_id = {project["id"]: project for project in projects}
+        self.assertIn("文言文", by_id["pocketpolyglot"]["keywords"])
+        self.assertEqual(
+            by_id["lingualleaf"]["homepage"],
+            "https://lachlanchen.github.io/LinguaLeaf/website/",
+        )
 
     def test_discovery_plan_uses_known_projects(self):
         known = {project["id"] for project in promotion.load_catalog()["projects"]}
@@ -130,6 +136,24 @@ class RepositoryTests(unittest.TestCase):
             routes = browser.discovery_queries(platform)
             with self.subTest(platform=platform):
                 self.assertEqual({route["project_id"] for route in routes}, project_ids)
+
+    def test_discovery_lanes_keep_reviewed_routes_frequent_and_long_tail_complete(self):
+        project_ids = {project["id"] for project in promotion.load_catalog()["projects"]}
+        for platform in ("reddit", "x", "hackernews"):
+            lanes = browser.discovery_query_lanes(platform)
+            with self.subTest(platform=platform):
+                self.assertTrue(lanes["core"])
+                self.assertTrue(lanes["long_tail"])
+                core_ids = {route["project_id"] for route in lanes["core"]}
+                tail_ids = {route["project_id"] for route in lanes["long_tail"]}
+                self.assertFalse(core_ids & tail_ids)
+                self.assertEqual(core_ids | tail_ids, project_ids)
+
+        instagram = browser.discovery_query_lanes("instagram")
+        self.assertEqual(len(instagram["core"]), 5)
+        self.assertIn("classicalchinese", {route["query"] for route in instagram["core"]})
+        self.assertIn("chinesehistory", {route["query"] for route in instagram["core"]})
+        self.assertEqual(instagram["long_tail"], [])
 
     def test_hacker_news_item_id_survives_canonicalization(self):
         rows = browser.dedupe(

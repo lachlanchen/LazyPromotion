@@ -38,6 +38,9 @@ HELP_PHRASES = {
     "does anyone", "how can i", "how do i", "is there", "looking for",
     "help me", "help needed", "need a", "need an", "please help",
     "what should i", "where can i", "would anyone",
+    "怎么", "怎麼", "如何", "有没有", "有沒有", "哪里", "哪裡", "求助",
+    "推荐", "推薦", "想学", "想學", "需要", "看不懂", "读不懂", "讀不懂",
+    "どうやって", "おすすめ", "教えて", "困って", "読めない", "分からない",
 }
 SPAM_SIGNALS = {
     "promote your", "drop your link", "giveaway", "follow for follow", "f4f",
@@ -58,6 +61,9 @@ COMMENT_REQUEST_PHRASES = {
     "is there a tool", "is there an app", "is there a way", "looking for",
     "my issue", "my problem", "need help", "please help", "what can i",
     "what should i", "where can i", "which should i", "why can't i",
+    "怎么", "怎麼", "如何", "有没有", "有沒有", "哪里", "哪裡", "求助",
+    "推荐", "推薦", "想学", "想學", "需要", "看不懂", "读不懂", "讀不懂",
+    "どうやって", "おすすめ", "教えて", "困って", "読めない", "分からない",
 }
 BOT_AUTHORS = {"automoderator"}
 GENERIC_REPO_TOPICS = {
@@ -194,7 +200,19 @@ def compact(value: str) -> str:
 
 
 def normalized(value: str) -> str:
-    return re.sub(r"[^a-z0-9+#' -]+", " ", value.casefold())
+    folded = value.casefold()
+    preserved = "".join(
+        character if character.isalnum() or character in "+#' -" else " "
+        for character in folded
+    )
+    return re.sub(r"\s+", " ", preserved)
+
+
+def keyword_present(needle: str, haystack: str) -> bool:
+    """Match ASCII keywords by token boundary and CJK keywords by substring."""
+    if any(character.isalnum() and not character.isascii() for character in needle):
+        return needle in haystack
+    return f" {needle} " in f" {haystack} "
 
 
 def parse_source_time(value: str) -> datetime | None:
@@ -332,7 +350,7 @@ def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict
         matches = []
         for keyword in project["keywords"]:
             needle = normalized(keyword).strip()
-            if needle and f" {needle} " in f" {haystack} ":
+            if needle and keyword_present(needle, haystack):
                 matches.append(keyword)
         if not matches:
             continue
@@ -503,6 +521,7 @@ Post text:
 Relevant maintained project:
 - Name: {project['name']}
 - URL: {project['url']}
+{f"- Public homepage: {project['homepage']}" if project.get('homepage') else ""}
 - Evidence-grounded summary: {project['summary']}
 {f"- Additional reviewed context: {project['reply_context']}" if project.get('reply_context') else ""}
 
@@ -570,6 +589,7 @@ def run_codex_structured(prompt: str, schema: Path, *, prefix: str) -> dict[str,
             "codex", "exec", "--ephemeral", "--json", "--model", MODEL,
             "-c", f'model_reasoning_effort="{EFFORT}"',
             "-c", "mcp_servers.lazypromotion_browser.enabled=false",
+            "-c", "mcp_servers.postiz.enabled=false",
             "--sandbox", "read-only", "--skip-git-repo-check",
             "--output-schema", str(schema),
             "--output-last-message", str(output),

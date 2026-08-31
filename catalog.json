@@ -30,20 +30,27 @@
       "name": "PocketPolyglot",
       "url": "https://github.com/lachlanchen/PocketPolyglot",
       "homepage": "https://learn.lazying.art",
-      "summary": "A Studio, CLI, and reproducible TeX pipeline for multilingual interlinear pocket books.",
+      "summary": "A Studio, CLI, and reproducible TeX pipeline for multilingual interlinear pocket books, including Wenyan/Classical Chinese with English, modern Japanese, and modern Chinese support.",
+      "reply_context": "For Classical Chinese, use the user-facing label 文言文 and the maximum-language format: 文言文 main text with English, readable modern Japanese, and modern Chinese. PocketPolyglot is the production pipeline; point readers who want finished public books to the related LinguaLeaf shelf.",
       "keywords": [
         "language learning", "learn japanese", "learn chinese", "interlinear", "bilingual book",
-        "multilingual book", "furigana", "pinyin", "ruby text", "parallel text", "reading practice"
+        "multilingual book", "furigana", "pinyin", "ruby text", "parallel text", "reading practice",
+        "classical chinese", "wenyan", "wenyanwen", "文言文", "古代汉语", "古代漢語",
+        "chinese history", "中国历史", "中國歷史"
       ]
     },
     {
       "id": "lingualleaf",
       "name": "LinguaLeaf",
       "url": "https://github.com/lachlanchen/LinguaLeaf",
-      "summary": "A public shelf of generated multilingual reading editions from PocketPolyglot.",
+      "homepage": "https://lachlanchen.github.io/LinguaLeaf/website/",
+      "summary": "A public shelf of hundreds of generated multilingual PocketPolyglot editions, including Chinese classics and history in color, black-and-white, and large-font formats.",
+      "reply_context": "The public shelf includes evidence-backed Chinese-history and Classical Chinese works such as 史記三家注, 漢書, 後漢書, 三國志裴松之注, 資治通鑑, and 春秋左氏傳. Do not claim that every shelf title is graded for beginners; describe them as multilingual reading editions.",
       "keywords": [
         "language books", "bilingual reading", "multilingual reading", "japanese reader",
-        "chinese reader", "parallel reading", "graded reader"
+        "chinese reader", "parallel reading", "graded reader", "classical chinese reader",
+        "chinese history reader", "wenyan reader", "文言文", "史记", "史記", "汉书", "漢書",
+        "三国志", "三國志", "资治通鉴", "資治通鑑", "左传", "左傳"
       ]
     },
     {

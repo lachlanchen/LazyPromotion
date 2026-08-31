@@ -154,6 +154,7 @@ For continuous operation, start the durable worker:
 ```bash
 scripts/worker.sh start \
   --interval-minutes 60 \
+  --core-queries-per-platform 1 \
   --queries-per-platform 1 \
   --max-triage 3 \
   --max-drafts 1
@@ -161,9 +162,12 @@ scripts/worker.sh start \
 scripts/worker.sh status
 ```
 
-Each cycle rotates its cursor through all evidence-backed repositories on
-Reddit, X, and Hacker News, plus a small explicit-help hashtag set on Instagram,
-rather than repeating the first searches. State,
+Each cycle runs one reviewed core route for the highest-value subtitle,
+language-learning, physics, local-media, and knowledge workflows, plus one
+independently rotating long-tail route covering every evidence-backed repository
+on Reddit, X, and Hacker News. Instagram rotates its small reviewed
+explicit-help hashtag set. Failed routes keep their own lane cursor for retry.
+State,
 logs, candidates, model decisions, screenshots, and the exact draft review
 queue live under ignored `.local/` paths. Instagram portfolio and promotional
 posts or comments are discarded unless their own text contains an explicit

@@ -25,6 +25,18 @@ class PromotionTests(unittest.TestCase):
         ranked = promotion.rank_projects("Looking for a bilingual Japanese reader with furigana for reading practice")
         self.assertEqual(ranked[0]["project"]["id"], "pocketpolyglot")
 
+    def test_chinese_wenyan_help_matches_multilingual_reading_projects(self):
+        body = "我看不懂文言文，有没有带现代中文和英文的中国历史读本推荐？"
+        self.assertTrue(promotion.is_help_request(body))
+        ranked = promotion.rank_projects(body)
+        self.assertTrue(ranked)
+        self.assertIn(ranked[0]["project"]["id"], {"pocketpolyglot", "lingualleaf"})
+        self.assertTrue({"文言文", "中国历史"} & set(ranked[0]["matches"]))
+
+    def test_japanese_help_intent_is_recognized(self):
+        body = "漢文が読めないので、現代語訳つきの中国史の本をおすすめしてください。"
+        self.assertTrue(promotion.is_help_request(body))
+
     def test_irrelevant_post_has_no_match(self):
         self.assertEqual(promotion.rank_projects("Lovely weather at the beach today"), [])
 

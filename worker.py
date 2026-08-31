@@ -44,10 +44,21 @@ def write_json(path: Path, payload: object) -> None:
 
 def load_state(path: Path = STATE_PATH) -> dict:
     if not path.exists():
-        return {"version": 1, "cycles": 0, "cursors": {platform: 0 for platform in DEFAULT_PLATFORMS}}
+        return {
+            "version": 1,
+            "cycles": 0,
+            "cursors": {platform: 0 for platform in DEFAULT_PLATFORMS},
+            "core_cursors": {platform: 0 for platform in DEFAULT_PLATFORMS},
+        }
     state = json.loads(path.read_text(encoding="utf-8"))
     if state.get("version") != 1 or not isinstance(state.get("cursors"), dict):
         raise ValueError("worker state is invalid")
+    core_cursors = state.setdefault("core_cursors", {})
+    if not isinstance(core_cursors, dict):
+        raise ValueError("worker core cursor state is invalid")
+    for platform in DEFAULT_PLATFORMS:
+        state["cursors"].setdefault(platform, 0)
+        core_cursors.setdefault(platform, 0)
     return state
 
 
@@ -169,39 +180,79 @@ def run_cycle(args, state: dict) -> dict:
     with sync_playwright() as playwright:
         connected = playwright.chromium.connect_over_cdp(args.cdp)
         for platform in args.platforms:
-            cursor = max(0, int(state["cursors"].get(platform, 0)))
             try:
                 page = browser_control.page_for(connected, platform=platform, front=False)
-                result = browser_control.run_discovery_cycle(
-                    page,
-                    platform,
-                    max_queries=args.queries_per_platform,
-                    limit_per_query=args.limit_per_query,
-                    hydrate_per_query=args.hydrate_per_query,
-                    start_query=cursor,
-                )
-                # Retry a transiently failed route next cycle. Advancing here would
-                # otherwise postpone it until the full (100+ route) rotation wraps.
-                state["cursors"][platform] = next_route_cursor(cursor, result)
-                for candidate_id in result["triage_candidate_ids"]:
-                    if candidate_id not in discovered:
-                        discovered.append(candidate_id)
+                lanes = browser_control.discovery_query_lanes(platform)
+                lane_specs = []
+                if args.core_queries_per_platform and lanes["core"]:
+                    lane_specs.append((
+                        "core",
+                        "core_cursors",
+                        args.core_queries_per_platform,
+                        lanes["core"],
+                    ))
+                if args.queries_per_platform and lanes["long_tail"]:
+                    lane_specs.append((
+                        "long_tail",
+                        "cursors",
+                        args.queries_per_platform,
+                        lanes["long_tail"],
+                    ))
+                lane_results = []
+                eligible_ids = []
+                triage_ids = []
+                for lane_name, cursor_key, max_queries, lane_queries in lane_specs:
+                    cursor = max(0, int(state[cursor_key].get(platform, 0)))
+                    result = browser_control.run_discovery_cycle(
+                        page,
+                        platform,
+                        max_queries=max_queries,
+                        limit_per_query=args.limit_per_query,
+                        hydrate_per_query=args.hydrate_per_query,
+                        start_query=cursor,
+                        queries=lane_queries,
+                    )
+                    # Retry a transiently failed route next cycle. Advancing here
+                    # would postpone it until its entire lane wraps.
+                    state[cursor_key][platform] = next_route_cursor(cursor, result)
+                    lane_results.append({"lane": lane_name, **result})
+                    for candidate_id in result["eligible_candidate_ids"]:
+                        if candidate_id not in eligible_ids:
+                            eligible_ids.append(candidate_id)
+                    for candidate_id in result["triage_candidate_ids"]:
+                        if candidate_id not in triage_ids:
+                            triage_ids.append(candidate_id)
+                        if candidate_id not in discovered:
+                            discovered.append(candidate_id)
                 platform_results.append({
                     "platform": platform,
-                    "ok": result["ok"],
-                    "queries_run": result["queries_run"],
+                    "ok": all(result["ok"] for result in lane_results),
+                    "queries_run": sum(int(result["queries_run"]) for result in lane_results),
                     "next_query": state["cursors"][platform],
-                    "available_queries": result["available_queries"],
-                    "eligible_candidate_ids": result["eligible_candidate_ids"],
-                    "triage_candidate_ids": result["triage_candidate_ids"],
+                    "next_core_query": state["core_cursors"][platform],
+                    "available_queries": sum(len(items) for items in lanes.values()),
+                    "core_available_queries": len(lanes["core"]),
+                    "long_tail_available_queries": len(lanes["long_tail"]),
+                    "eligible_candidate_ids": eligible_ids,
+                    "triage_candidate_ids": triage_ids,
+                    "lanes": [
+                        {
+                            "lane": result["lane"],
+                            "ok": result["ok"],
+                            "queries_run": result["queries_run"],
+                            "available_queries": result["available_queries"],
+                        }
+                        for result in lane_results
+                    ],
                     "query_errors": [
                         {
+                            "lane": result["lane"],
                             "project_id": query_result["project_id"],
                             "query": query_result["query"],
                             "error": query_result.get("error", "unknown discovery error"),
                         }
-                        for query_result in result["results"]
-                        if not query_result["ok"]
+                        for result in lane_results
+                        for query_result in result["results"] if not query_result["ok"]
                     ],
                 })
             except Exception as exc:
@@ -232,6 +283,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--cdp", default=browser_control.DEFAULT_CDP)
     parser.add_argument("--platforms", nargs="+", choices=DEFAULT_PLATFORMS, default=list(DEFAULT_PLATFORMS))
     parser.add_argument("--queries-per-platform", type=int, default=1)
+    parser.add_argument(
+        "--core-queries-per-platform",
+        type=int,
+        default=1,
+        help="reviewed high-yield routes to run per platform in addition to long-tail coverage",
+    )
     parser.add_argument("--limit-per-query", type=int, default=10)
     parser.add_argument("--hydrate-per-query", type=int, default=2)
     parser.add_argument("--max-triage", type=int, default=3)
@@ -246,8 +303,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> int:
     args = build_parser().parse_args()
-    if args.queries_per_platform < 1 or args.limit_per_query < 1:
-        raise SystemExit("query limits must be positive")
+    if args.queries_per_platform < 0 or args.core_queries_per_platform < 0 or args.limit_per_query < 1:
+        raise SystemExit("query limits cannot be negative and result limits must be positive")
+    if not args.queries_per_platform and not args.core_queries_per_platform:
+        raise SystemExit("at least one core or long-tail query must be enabled")
     if args.hydrate_per_query < 0 or args.max_triage < 0 or args.max_drafts < 0:
         raise SystemExit("hydrate/model limits cannot be negative")
     if args.interval_minutes < 1 and not args.once:

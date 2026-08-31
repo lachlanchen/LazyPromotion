@@ -51,9 +51,19 @@
         "purpose": "Learners seeking bilingual or parallel reading material"
       },
       {
+        "project_id": "pocketpolyglot",
+        "query": "(\"Classical Chinese\" OR wenyan OR wenyanwen) (help OR reader OR translation)",
+        "purpose": "Classical Chinese learners asking for an aligned multilingual reading format"
+      },
+      {
         "project_id": "lingualleaf",
         "query": "subreddit:LearnJapanese \"graded reader\" advice",
         "purpose": "Japanese learners asking for graded reading resources"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "\"Chinese history\" (book OR reader) (recommend OR bilingual OR translation)",
+        "purpose": "Readers seeking accessible multilingual editions of Chinese history"
       },
       {
         "project_id": "leonardsusskind",
@@ -96,6 +106,16 @@
         "project_id": "pocketpolyglot",
         "query": "\"graded reader\" (recommend OR advice) -filter:retweets",
         "purpose": "Language learners requesting reading resources"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "(\"Classical Chinese\" OR wenyan OR wenyanwen) (help OR reader OR translation) -filter:retweets",
+        "purpose": "Classical Chinese learners asking for an aligned multilingual reading format"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "\"Chinese history\" (book OR reader) (recommend OR bilingual OR translation) -filter:retweets",
+        "purpose": "Readers seeking accessible multilingual editions of Chinese history"
       },
       {
         "project_id": "leonardsusskind",
@@ -144,6 +164,18 @@
         "purpose": "Learners seeking multilingual or parallel reading tools"
       },
       {
+        "project_id": "pocketpolyglot",
+        "query": "Ask HN Classical Chinese reader",
+        "comment_query": "Classical Chinese",
+        "purpose": "Learners seeking tools or editions for reading Classical Chinese"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "Ask HN Chinese history books",
+        "comment_query": "Chinese history",
+        "purpose": "Readers asking for accessible Chinese-history books or translations"
+      },
+      {
         "project_id": "lazygame",
         "query": "Ask HN learn board games AI",
         "comment_query": "board game",
@@ -171,6 +203,16 @@
         "project_id": "lingualleaf",
         "query": "learnjapanese",
         "purpose": "Japanese-learning captions with an explicit resource question"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "classicalchinese",
+        "purpose": "Classical Chinese captions whose own text explicitly asks for reading help"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "chinesehistory",
+        "purpose": "Chinese-history captions whose own text explicitly asks for a reading recommendation"
       }
     ]
   }

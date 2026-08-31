@@ -228,6 +228,14 @@ def discovery_queries(platform: str) -> list[dict[str, str]]:
     return planned
 
 
+def discovery_query_lanes(platform: str) -> dict[str, list[dict[str, str]]]:
+    """Split reviewed high-yield routes from generated repository coverage."""
+    plan = load_discovery_plan()
+    core = [dict(item) for item in plan["queries"][platform]]
+    all_queries = discovery_queries(platform)
+    return {"core": core, "long_tail": all_queries[len(core):]}
+
+
 def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
     rows = page.locator("shreddit-post").evaluate_all(
         """(nodes, limit) => nodes.slice(0, limit).map((n) => ({
@@ -690,8 +698,9 @@ def run_discovery_cycle(
     limit_per_query: int,
     hydrate_per_query: int,
     start_query: int = 0,
+    queries: list[dict[str, str]] | None = None,
 ) -> dict[str, object]:
-    queue = discovery_queries(platform)
+    queue = discovery_queries(platform) if queries is None else queries
     if queue:
         start_query %= len(queue)
         count = min(max_queries, len(queue))

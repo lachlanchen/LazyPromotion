@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -67,6 +68,17 @@ class WorkerTests(unittest.TestCase):
     def test_failed_discovery_route_is_retried(self):
         self.assertEqual(worker.next_route_cursor(5, {"ok": False, "next_query": 6}), 5)
         self.assertEqual(worker.next_route_cursor(5, {"ok": True, "next_query": 6}), 6)
+
+    def test_legacy_state_gains_independent_core_cursors(self):
+        path = Path(self.tmp.name) / "legacy-state.json"
+        path.write_text(
+            json.dumps({"version": 1, "cycles": 4, "cursors": {"reddit": 7}}),
+            encoding="utf-8",
+        )
+        state = worker.load_state(path)
+        self.assertEqual(state["cursors"]["reddit"], 7)
+        self.assertEqual(state["core_cursors"]["reddit"], 0)
+        self.assertEqual(set(state["core_cursors"]), set(worker.DEFAULT_PLATFORMS))
 
 
 if __name__ == "__main__":

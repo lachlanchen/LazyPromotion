@@ -73,6 +73,7 @@ flowchart LR
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
 | [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger |
+| [`signals.py`](signals.py) | Private first-party demand signals kept distinct from leads, orders, and revenue |
 | [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |
 | [`network.py`](network.py) | Evidence graph connecting needs, projects, repositories, channels, campaigns, drafts, and public proof |
 | [`promotion-network.public.json`](promotion-network.public.json) | Sanitized online graph of public projects, repositories, campaigns, channels, and evidence URLs |
@@ -270,7 +271,7 @@ before every public reply.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py worker.py network.py inventory.py metrics.py
+python -m py_compile promotion.py browser.py worker.py network.py inventory.py metrics.py signals.py
 bash -n scripts/desktop.sh
 git diff --check
 ```

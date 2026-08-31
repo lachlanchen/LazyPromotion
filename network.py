@@ -228,6 +228,38 @@ def community_from_candidate(candidate: dict) -> str:
 
 
 def sync_private_activity(db) -> None:
+    for signal in db.execute("SELECT * FROM demand_signals").fetchall():
+        signal = dict(signal)
+        signal_entity = f"signal:{signal['id']}"
+        upsert_entity(
+            db,
+            signal_entity,
+            kind="demand_signal",
+            label=signal["subject"],
+            url=signal["url"],
+            visibility="private",
+            metadata={
+                "source": signal["source"],
+                "signal_kind": signal["signal_kind"],
+                "metric": signal["metric"],
+                "value": signal["value"],
+                "delta_value": signal["delta_value"],
+                "delta_unit": signal["delta_unit"],
+                "period": signal["period"],
+                "observed_at": signal["observed_at"],
+            },
+        )
+        if signal["project_id"]:
+            project_id = f"project:{signal['project_id']}"
+            if db.execute("SELECT 1 FROM entities WHERE id=?", (project_id,)).fetchone():
+                upsert_relationship(
+                    db,
+                    signal_entity,
+                    "indicates_interest_in",
+                    project_id,
+                    evidence_url=signal["url"],
+                )
+
     for candidate in db.execute("SELECT * FROM candidates").fetchall():
         candidate = dict(candidate)
         need_id = f"need:{candidate['id']}"

@@ -105,6 +105,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/alwayswhy",
+      "kind": "community",
+      "label": "r/AlwaysWhy",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/anthropic",
       "kind": "community",
       "label": "r/Anthropic",
@@ -154,6 +161,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/cshortdramas",
+      "kind": "community",
+      "label": "r/CShortDramas",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/capcut",
       "kind": "community",
       "label": "r/CapCut",
@@ -164,6 +178,20 @@
       "id": "community:reddit:r/chatgpt",
       "kind": "community",
       "label": "r/ChatGPT",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/chinesebl",
+      "kind": "community",
+      "label": "r/ChineseBL",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/chineselanguage",
+      "kind": "community",
+      "label": "r/ChineseLanguage",
       "metadata": {},
       "url": ""
     },
@@ -189,6 +217,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/dorjechangbuddhaiii__",
+      "kind": "community",
+      "label": "r/DorjeChangBuddhaIII__",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/ece",
       "kind": "community",
       "label": "r/ECE",
@@ -196,9 +231,30 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/earlychina",
+      "kind": "community",
+      "label": "r/EarlyChina",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/emptycontinents",
+      "kind": "community",
+      "label": "r/EmptyContinents",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/ethnic_qarsherskiyans",
       "kind": "community",
       "label": "r/Ethnic_Qarsherskiyans",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/faithstoryai",
+      "kind": "community",
+      "label": "r/FaithStoryAI",
       "metadata": {},
       "url": ""
     },
@@ -269,6 +325,13 @@
       "id": "community:reddit:r/helpmefindagame",
       "kind": "community",
       "label": "r/Helpmefindagame",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/holyshithistory",
+      "kind": "community",
+      "label": "r/HolyShitHistory",
       "metadata": {},
       "url": ""
     },
@@ -385,9 +448,30 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/modaozushi",
+      "kind": "community",
+      "label": "r/MoDaoZuShi",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/nimby_rails",
       "kind": "community",
       "label": "r/NIMBY_Rails",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/observability",
+      "kind": "community",
+      "label": "r/Observability",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/openai",
+      "kind": "community",
+      "label": "r/OpenAI",
       "metadata": {},
       "url": ""
     },
@@ -402,6 +486,13 @@
       "id": "community:reddit:r/pakistanitech",
       "kind": "community",
       "label": "r/PakistaniTech",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/phd",
+      "kind": "community",
+      "label": "r/PhD",
       "metadata": {},
       "url": ""
     },
@@ -437,6 +528,13 @@
       "id": "community:reddit:r/portugalexpats",
       "kind": "community",
       "label": "r/PortugalExpats",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/protonvpn",
+      "kind": "community",
+      "label": "r/ProtonVPN",
       "metadata": {},
       "url": ""
     },
@@ -539,6 +637,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/tailscale",
+      "kind": "community",
+      "label": "r/Tailscale",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/theanatomyoffaith",
       "kind": "community",
       "label": "r/TheAnatomyOfFaith",
@@ -553,6 +658,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/unifi",
+      "kind": "community",
+      "label": "r/UNIFI",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/ubiquiti",
       "kind": "community",
       "label": "r/Ubiquiti",
@@ -560,9 +672,23 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/ugreennasync",
+      "kind": "community",
+      "label": "r/UgreenNASync",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/uniuk",
       "kind": "community",
       "label": "r/UniUK",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/valkohq",
+      "kind": "community",
+      "label": "r/ValkoHQ",
       "metadata": {},
       "url": ""
     },
@@ -623,6 +749,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/youjosenki",
+      "kind": "community",
+      "label": "r/YoujoSenki",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/abusiverelationships",
       "kind": "community",
       "label": "r/abusiverelationships",
@@ -654,6 +787,13 @@
       "id": "community:reddit:r/antiai",
       "kind": "community",
       "label": "r/antiai",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/asklinguistics",
+      "kind": "community",
+      "label": "r/asklinguistics",
       "metadata": {},
       "url": ""
     },
@@ -714,9 +854,23 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/conorthography",
+      "kind": "community",
+      "label": "r/conorthography",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/cpp_questions",
       "kind": "community",
       "label": "r/cpp_questions",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/cybersecurity",
+      "kind": "community",
+      "label": "r/cybersecurity",
       "metadata": {},
       "url": ""
     },
@@ -791,6 +945,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/homelab",
+      "kind": "community",
+      "label": "r/homelab",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/japanese",
       "kind": "community",
       "label": "r/japanese",
@@ -822,6 +983,13 @@
       "id": "community:reddit:r/lasercutting",
       "kind": "community",
       "label": "r/lasercutting",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/learndutch",
+      "kind": "community",
+      "label": "r/learndutch",
       "metadata": {},
       "url": ""
     },
@@ -868,9 +1036,23 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/networking",
+      "kind": "community",
+      "label": "r/networking",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/parentsofteens",
       "kind": "community",
       "label": "r/parentsofteens",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/personalfinanceindia",
+      "kind": "community",
+      "label": "r/personalfinanceindia",
       "metadata": {},
       "url": ""
     },
@@ -938,9 +1120,23 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/science",
+      "kind": "community",
+      "label": "r/science",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/sidehustleindia",
       "kind": "community",
       "label": "r/sidehustleIndia",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/singaporejobs",
+      "kind": "community",
+      "label": "r/singaporejobs",
       "metadata": {},
       "url": ""
     },
@@ -959,6 +1155,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/story",
+      "kind": "community",
+      "label": "r/story",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/tarantulas",
       "kind": "community",
       "label": "r/tarantulas",
@@ -973,6 +1176,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/tellerstech",
+      "kind": "community",
+      "label": "r/tellerstech",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/terrariums",
       "kind": "community",
       "label": "r/terrariums",
@@ -983,6 +1193,13 @@
       "id": "community:reddit:r/tokyoirl",
       "kind": "community",
       "label": "r/tokyoirl",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/translator",
+      "kind": "community",
+      "label": "r/translator",
       "metadata": {},
       "url": ""
     },
@@ -1025,6 +1242,13 @@
       "id": "community:reddit:r/wordspire",
       "kind": "community",
       "label": "r/wordspire",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/workday",
+      "kind": "community",
+      "label": "r/workday",
       "metadata": {},
       "url": ""
     },

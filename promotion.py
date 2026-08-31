@@ -182,6 +182,28 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         );
         CREATE INDEX IF NOT EXISTS idx_outcomes_kind ON outcomes(kind, occurred_at);
         CREATE INDEX IF NOT EXISTS idx_outcomes_candidate ON outcomes(candidate_id);
+        CREATE TABLE IF NOT EXISTS demand_signals (
+          id TEXT PRIMARY KEY,
+          source TEXT NOT NULL,
+          signal_kind TEXT NOT NULL,
+          subject TEXT NOT NULL,
+          url TEXT NOT NULL DEFAULT '',
+          project_id TEXT NOT NULL DEFAULT '',
+          metric TEXT NOT NULL,
+          value REAL NOT NULL,
+          delta_value REAL,
+          delta_unit TEXT NOT NULL DEFAULT '',
+          period TEXT NOT NULL,
+          observed_at TEXT NOT NULL,
+          evidence_path TEXT NOT NULL DEFAULT '',
+          metadata_json TEXT NOT NULL DEFAULT '{}',
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_demand_signals_source
+        ON demand_signals(source, period, signal_kind);
+        CREATE INDEX IF NOT EXISTS idx_demand_signals_project
+        ON demand_signals(project_id, metric, value);
         """
     )
     columns = {row[1] for row in db.execute("PRAGMA table_info(candidates)")}

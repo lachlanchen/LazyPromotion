@@ -55,3 +55,20 @@ needed for an aggregate count or amount. Money outcomes require an order or
 receipt reference for idempotency, but only its SHA-256 hash is stored. Never
 use customer names, email addresses, bank details, card data, Stripe secrets,
 or raw receipts as that reference.
+
+## Private demand evidence
+
+Search Console and similar first-party analytics answer a different question:
+what people are already trying to find. They may prioritize a useful page or
+offer, but they are not a lead or revenue. Import a private, versioned JSON
+snapshot only with an explicit data acknowledgement:
+
+```bash
+python signals.py import-json .local/private/search-console-signals.json \
+  --confirm-private-first-party-data
+python signals.py report --source google_search_console
+```
+
+Demand rows and their graph entities remain private. The sanitized public graph
+excludes subjects, queries, click counts, account evidence paths, and their
+project relationships.

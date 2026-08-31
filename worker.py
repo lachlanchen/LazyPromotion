@@ -105,7 +105,9 @@ def pending_candidate_ids(db, preferred_ids: list[str], limit: int) -> list[str]
             continue
         if promotion.is_stale(candidate["published_at"]):
             continue
-        if not promotion.is_help_request(candidate["body"]):
+        if not promotion.is_triageable_request(
+            candidate["platform"], candidate["source_url"], candidate["body"]
+        ):
             continue
         selected.append(candidate_id)
         if len(selected) >= limit:

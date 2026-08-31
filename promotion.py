@@ -15,6 +15,7 @@ import tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parent
@@ -45,7 +46,17 @@ SPAM_SIGNALS = {
 OUT_OF_SCOPE_SIGNALS = {
     "[for hire]", "[hiring]", "for hire", "hiring", "job opening",
     "my new tool", "now open to all", "showcase", "volunteer opportunities",
-    "we launched",
+    "we launched", "free to try", "link in bio", "follow for more", "save this",
+    "dm me", "i got you", "apply now", "we're hiring", "we are hiring",
+}
+COMMENT_REQUEST_PHRASES = {
+    "any advice", "any recommendations", "any recommendation", "any suggestions",
+    "can anyone", "can someone", "could anyone", "could someone", "does anyone",
+    "does anyone know", "has anyone", "help me", "help needed", "how can i",
+    "how do i", "i can't", "i cannot", "i need", "i'm looking", "i am looking",
+    "is there a tool", "is there an app", "is there a way", "looking for",
+    "my issue", "my problem", "need help", "please help", "what can i",
+    "what should i", "where can i", "which should i", "why can't i",
 }
 BOT_AUTHORS = {"automoderator"}
 GENERIC_REPO_TOPICS = {
@@ -241,6 +252,28 @@ def is_help_request(body: str) -> bool:
         (signals["intent_hits"] or ask_hn) and explicit
         and not signals["spam_hits"] and not signals["out_of_scope_hits"]
     )
+
+
+def is_comment_source(platform: str, source_url: str, body: str) -> bool:
+    if platform == "hackernews":
+        return not normalized(body).strip().startswith("ask hn ")
+    if platform != "reddit":
+        return False
+    parts = [part for part in urlparse(source_url).path.split("/") if part]
+    try:
+        start = parts.index("comments")
+    except ValueError:
+        return False
+    return len(parts[start + 2:]) >= 2
+
+
+def is_triageable_request(platform: str, source_url: str, body: str) -> bool:
+    if not is_help_request(body):
+        return False
+    if not is_comment_source(platform, source_url, body):
+        return True
+    haystack = normalized(body)
+    return any(phrase in haystack for phrase in COMMENT_REQUEST_PHRASES)
 
 
 def refresh_duplicates(db: sqlite3.Connection) -> None:

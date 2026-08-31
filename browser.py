@@ -662,7 +662,11 @@ def run_discovery_cycle(
                 for candidate in refreshed
                 if candidate
                 and candidate.get("status") == "discovered"
-                and promotion.is_help_request(str(candidate.get("body") or ""))
+                and promotion.is_triageable_request(
+                    str(candidate.get("platform") or ""),
+                    str(candidate.get("source_url") or ""),
+                    str(candidate.get("body") or ""),
+                )
                 and promotion.compact(str(candidate.get("author") or "")).casefold() not in promotion.BOT_AUTHORS
                 and not promotion.is_stale(str(candidate.get("published_at") or ""))
             ]

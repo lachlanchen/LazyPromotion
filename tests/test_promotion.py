@@ -44,6 +44,23 @@ class PromotionTests(unittest.TestCase):
         body = "With a friend's help I added subtitles in the editor. Not bad."
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_promotional_caption_is_not_a_help_request(self):
+        body = "Need a video editor? I got you. DM me and follow for more."
+        self.assertFalse(promotion.is_help_request(body))
+
+    def test_rhetorical_comment_is_not_a_triageable_request(self):
+        body = "Why does it need a camera? I could understand subtitles, but why a camera?"
+        url = "https://www.reddit.com/r/example/comments/post123/title/comment456/"
+        self.assertTrue(promotion.is_help_request(body))
+        self.assertTrue(promotion.is_comment_source("reddit", url, body))
+        self.assertFalse(promotion.is_triageable_request("reddit", url, body))
+
+    def test_direct_comment_request_is_triageable(self):
+        body = "Does anyone know a reliable way to add subtitles automatically?"
+        url = "https://news.ycombinator.com/item?id=12345"
+        self.assertTrue(promotion.is_comment_source("hackernews", url, body))
+        self.assertTrue(promotion.is_triageable_request("hackernews", url, body))
+
     def test_ask_hn_title_is_an_explicit_request_without_question_mark(self):
         body = "Ask HN: Are third party GGUF models safe in a local production environment"
         self.assertTrue(promotion.is_help_request(body))

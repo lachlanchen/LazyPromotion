@@ -49,6 +49,8 @@ flowchart LR
   one canonical candidate, preferring the copy that already received a reply.
 - Fresh by default: source timestamps and discussion counts are recorded, and
   posts older than 30 days are marked stale and refused by the drafter.
+- Comment-aware intent: replies must contain a direct request phrase; rhetorical
+  questions, advice, service pitches, and engagement calls are filtered first.
 - Exact approval: changing the draft invalidates its short-lived approval.
 - Visible operation: Chrome runs in noVNC and important steps capture local,
   ignored screenshots.

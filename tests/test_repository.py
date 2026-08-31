@@ -213,6 +213,47 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(browser.reddit_destination_ids(candidate), ("post123", "comment456"))
         self.assertTrue(browser.destination_matches(candidate, redirected, "reddit"))
         self.assertFalse(browser.destination_matches(candidate, sibling, "reddit"))
+        self.assertEqual(
+            browser.reddit_posted_reply_selector("comment456"),
+            'shreddit-comment[parentid="t1_comment456"] > div[slot="comment"]',
+        )
+
+    def test_reddit_submit_is_bound_to_reviewed_composer(self):
+        page = mock.MagicMock()
+        target = mock.MagicMock()
+        host = mock.MagicMock()
+        button_group = mock.MagicMock()
+        button = mock.MagicMock()
+        target.locator.return_value = host
+        host.locator.return_value = button_group
+        button_group.count.return_value = 1
+        button_group.nth.return_value = button
+        button.is_visible.return_value = True
+
+        self.assertIs(browser.submit_button(page, "reddit", target=target), button)
+        target.locator.assert_called_once_with("xpath=ancestor::shreddit-composer[1]")
+        host.locator.assert_called_once_with('button[type="submit"]')
+        page.get_by_role.assert_not_called()
+
+    def test_reddit_composer_is_bound_to_target_comment_id(self):
+        page = mock.MagicMock()
+        group = mock.MagicMock()
+        item = mock.MagicMock()
+        page.locator.return_value = group
+        group.count.return_value = 1
+        group.nth.return_value = item
+        item.is_visible.return_value = True
+
+        self.assertIs(browser.reddit_comment_composer(page, "p636j6g"), item)
+        page.locator.assert_has_calls([
+            mock.call(
+                'shreddit-composer[aria-describedby="comment-composer-message-t1_p636j6g"] '
+                '[contenteditable="true"][role="textbox"]'
+            ),
+            mock.call(
+                'shreddit-composer[aria-describedby="comment-composer-message-t1_p636j6g"] textarea'
+            ),
+        ])
 
     def test_instagram_grid_alt_text_is_canonical_candidate_body(self):
         rows = browser.dedupe(

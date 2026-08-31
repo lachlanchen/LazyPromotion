@@ -475,6 +475,52 @@ class PromotionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "candidate context changed"):
             promotion.validate_approval(self.db, draft["id"], approval["approval_token"])
 
+    def test_unverified_send_can_be_reopened_without_reusing_approval(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/post/help/comment/",
+            body="How can I add accurate subtitles to a short video?",
+        )
+        draft = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {
+                "reply": "Start by transcribing a clean audio track.",
+                "why": "Direct answer.",
+                "confidence": "high",
+                "include_link": False,
+            },
+        )
+        approval = promotion.approve_draft(self.db, draft["id"], 30)
+        promotion.mark_sent(
+            self.db,
+            draft["id"],
+            approval["approval_token"],
+            {"screenshot": "before.png"},
+        )
+
+        recovered = promotion.reopen_unverified_send(
+            self.db,
+            draft["id"],
+            reason="submit acknowledgement matched composer text instead of a posted comment",
+            evidence="after.png",
+        )
+        self.assertEqual(recovered["draft_status"], "prepared")
+        self.assertFalse(recovered["previous_approval_reusable"])
+        live_draft = self.db.execute(
+            "SELECT status FROM drafts WHERE id=?", (draft["id"],)
+        ).fetchone()
+        live_candidate = self.db.execute(
+            "SELECT status FROM candidates WHERE id=?", (candidate["id"],)
+        ).fetchone()
+        self.assertEqual(live_draft["status"], "prepared")
+        self.assertEqual(live_candidate["status"], "drafted")
+        with self.assertRaisesRegex(ValueError, "already used"):
+            promotion.validate_approval(self.db, draft["id"], approval["approval_token"])
+        replacement = promotion.approve_draft(self.db, draft["id"], 30)
+        self.assertNotEqual(replacement["approval_token"], approval["approval_token"])
+
     def test_hacker_news_generated_draft_is_blocked(self):
         candidate = promotion.ingest_candidate(
             self.db,

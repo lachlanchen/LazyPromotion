@@ -1116,6 +1116,63 @@ def mark_sent(db: sqlite3.Connection, draft_id: str, token: str, detail: dict[st
     db.commit()
 
 
+def reopen_unverified_send(
+    db: sqlite3.Connection,
+    draft_id: str,
+    *,
+    reason: str,
+    evidence: str,
+) -> dict[str, Any]:
+    """Reopen a falsely acknowledged send without erasing its audit trail."""
+    reason = compact(reason)
+    evidence = compact(evidence)
+    if not reason or not evidence:
+        raise ValueError("recovery requires a reason and evidence")
+    row = row_dict(
+        db.execute(
+            """
+            SELECT d.id, d.status AS draft_status, d.candidate_id,
+                   c.status AS candidate_status
+            FROM drafts d
+            JOIN candidates c ON c.id=d.candidate_id
+            WHERE d.id=?
+            """,
+            (draft_id,),
+        ).fetchone()
+    )
+    if not row:
+        raise ValueError(f"draft not found: {draft_id}")
+    if row["draft_status"] != "sent" or row["candidate_status"] != "replied":
+        raise ValueError("only a sent/replied pair can be reopened")
+    now = utc_now()
+    db.execute("UPDATE drafts SET status='prepared', updated_at=? WHERE id=?", (now, draft_id))
+    db.execute(
+        "UPDATE candidates SET status='drafted', updated_at=? WHERE id=?",
+        (now, row["candidate_id"]),
+    )
+    db.execute(
+        """
+        INSERT INTO events(candidate_id, draft_id, kind, detail, created_at)
+        VALUES (?, ?, 'reply_send_reopened', ?, ?)
+        """,
+        (
+            row["candidate_id"],
+            draft_id,
+            json.dumps({"reason": reason, "evidence": evidence}, ensure_ascii=False, sort_keys=True),
+            now,
+        ),
+    )
+    refresh_duplicates(db)
+    db.commit()
+    return {
+        "candidate_id": row["candidate_id"],
+        "draft_id": draft_id,
+        "draft_status": "prepared",
+        "candidate_status": "drafted",
+        "previous_approval_reusable": False,
+    }
+
+
 def print_json(value: Any) -> None:
     print(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True))
 
@@ -1162,6 +1219,11 @@ def build_parser() -> argparse.ArgumentParser:
     approve.add_argument("draft_id")
     approve.add_argument("--ttl-minutes", type=int, default=30)
     approve.add_argument("--confirm-reviewed-exact-content", action="store_true", required=True)
+    reopen = sub.add_parser("reopen-unverified-send")
+    reopen.add_argument("draft_id")
+    reopen.add_argument("--reason", required=True)
+    reopen.add_argument("--evidence", required=True)
+    reopen.add_argument("--confirm-no-public-reply-observed", action="store_true", required=True)
     return parser
 
 
@@ -1251,6 +1313,15 @@ def main() -> int:
         if not (1 <= args.ttl_minutes <= 1440):
             raise SystemExit("--ttl-minutes must be between 1 and 1440")
         print_json(approve_draft(db, args.draft_id, args.ttl_minutes))
+    elif args.command == "reopen-unverified-send":
+        print_json(
+            reopen_unverified_send(
+                db,
+                args.draft_id,
+                reason=args.reason,
+                evidence=args.evidence,
+            )
+        )
     return 0
 
 

@@ -278,6 +278,20 @@ python browser.py send CANDIDATE_ID DRAFT_ID \
   --confirm-public-write
 ```
 
+For Reddit comment replies, the send path binds both the composer and submit
+button to the reviewed parent comment ID. It marks delivery only after the
+exact reply appears in a real child-comment body; text still sitting in a
+composer cannot satisfy the check. If a platform click has an ambiguous result,
+inspect the destination before retrying. A confirmed false acknowledgement can
+be reopened without erasing its event history or reusing its approval:
+
+```bash
+python promotion.py reopen-unverified-send DRAFT_ID \
+  --reason 'The reviewed destination shows no public reply.' \
+  --evidence '.local/evidence/POST_CLICK_SCREENSHOT.png' \
+  --confirm-no-public-reply-observed
+```
+
 ## Runtime isolation
 
 The default launcher uses display `:116`, VNC `127.0.0.1:5936`, noVNC

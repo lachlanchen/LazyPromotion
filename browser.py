@@ -897,7 +897,7 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
             raise RuntimeError("Reddit target comment reply button was not found")
         trigger.click()
         page.wait_for_timeout(700)
-        target = composer(page, candidate["platform"], activate=False)
+        target = reddit_comment_composer(page, comment_id)
     elif candidate["platform"] == "instagram" and instagram_comment_id(candidate["source_url"]):
         target_comment_id = instagram_comment_id(candidate["source_url"])
         anchor = page.locator(f'a[href*="/c/{target_comment_id}/"]').first
@@ -954,6 +954,16 @@ def reddit_comment_id(url: str) -> str:
     return reddit_destination_ids(url)[1]
 
 
+def reddit_comment_composer(page: Page, comment_id: str) -> Locator:
+    if not re.fullmatch(r"[a-z0-9]+", comment_id, flags=re.I):
+        raise ValueError("invalid Reddit comment id")
+    host = f'shreddit-composer[aria-describedby="comment-composer-message-t1_{comment_id}"]'
+    return visible_first([
+        page.locator(f'{host} [contenteditable="true"][role="textbox"]'),
+        page.locator(f"{host} textarea"),
+    ])
+
+
 def destination_matches(candidate_url: str, active_url: str, platform: str) -> bool:
     candidate_parsed = urlparse(candidate_url)
     active_parsed = urlparse(active_url)
@@ -976,12 +986,21 @@ def destination_matches(candidate_url: str, active_url: str, platform: str) -> b
     return active_base == candidate_base or active_base.startswith(f"{candidate_base}/")
 
 
-def submit_button(page: Page, platform: str) -> Locator:
+def reddit_posted_reply_selector(parent_comment_id: str) -> str:
+    if not re.fullmatch(r"[a-z0-9]+", parent_comment_id, flags=re.I):
+        raise ValueError("invalid Reddit parent comment id")
+    return (
+        f'shreddit-comment[parentid="t1_{parent_comment_id}"] '
+        '> div[slot="comment"]'
+    )
+
+
+def submit_button(page: Page, platform: str, *, target: Locator | None = None) -> Locator:
     if platform == "reddit":
-        return visible_first([
-            page.get_by_role("button", name=re.compile(r"^(comment|reply)$", re.I)),
-            page.locator('button[type="submit"]'),
-        ])
+        if target is None:
+            raise ValueError("Reddit submit requires the exact reviewed composer")
+        host = target.locator("xpath=ancestor::shreddit-composer[1]")
+        return visible_first([host.locator('button[type="submit"]')])
     if platform == "x":
         return visible_first([page.locator('[data-testid="tweetButton"]'), page.locator('[data-testid="tweetButtonInline"]')])
     if platform == "hackernews":
@@ -999,7 +1018,14 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
     promotion.validate_approval(db, draft_id, token)
     if not destination_matches(candidate["source_url"], page.url, candidate["platform"]):
         raise RuntimeError("the active tab is not the approved candidate page; run prepare again")
-    target = composer(page, candidate["platform"])
+    target_comment_id = (
+        reddit_comment_id(candidate["source_url"])
+        if candidate["platform"] == "reddit" else ""
+    )
+    target = (
+        reddit_comment_composer(page, target_comment_id)
+        if target_comment_id else composer(page, candidate["platform"])
+    )
     if composer_text(target) != promotion.compact(draft["body"]):
         raise RuntimeError("visible composer differs from the approved draft")
     # Rich-text editors can leave link or formatting popovers above the submit
@@ -1007,17 +1033,23 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
     # composer before the one public click.
     page.keyboard.press("Escape")
     page.wait_for_timeout(250)
-    target = composer(page, candidate["platform"], activate=False)
+    target = (
+        reddit_comment_composer(page, target_comment_id)
+        if target_comment_id else composer(page, candidate["platform"], activate=False)
+    )
     if composer_text(target) != promotion.compact(draft["body"]):
         raise RuntimeError("visible composer changed while dismissing editor popovers")
-    button = submit_button(page, candidate["platform"])
+    button = submit_button(page, candidate["platform"], target=target)
     if not button.is_enabled():
         raise RuntimeError("visible submit button is disabled")
     before = page.url
     button.click(no_wait_after=True, timeout=10000)
     if candidate["platform"] == "reddit":
         excerpt = promotion.compact(draft["body"])[:120]
-        posted = page.locator("shreddit-comment").filter(has_text=excerpt).first
+        parent_comment_id = reddit_comment_id(candidate["source_url"])
+        posted = page.locator(
+            reddit_posted_reply_selector(parent_comment_id)
+        ).filter(has_text=excerpt).first
         try:
             posted.wait_for(state="visible", timeout=20000)
         except Exception as exc:

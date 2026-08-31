@@ -1,6 +1,8 @@
 import json
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import browser
 import promotion
@@ -25,6 +27,17 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
+    def test_screenshot_failure_does_not_discard_discovery(self):
+        class BrokenPage:
+            def screenshot(self, **kwargs):
+                raise TimeoutError("renderer timeout")
+
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(browser, "EVIDENCE", Path(tmp)):
+            self.assertEqual(browser.evidence(BrokenPage(), "test-failure"), "")
+            failures = list(Path(tmp).glob("*.error.txt"))
+            self.assertEqual(len(failures), 1)
+            self.assertIn("renderer timeout", failures[0].read_text(encoding="utf-8"))
+
     def test_all_eleven_readmes_have_shared_public_panels(self):
         self.assertEqual(len(READMES), 11)
         for path in READMES:

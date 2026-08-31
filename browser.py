@@ -86,7 +86,20 @@ def candidate_destination(candidate_id: str) -> dict:
 def evidence(page: Page, operation: str) -> str:
     EVIDENCE.mkdir(parents=True, exist_ok=True)
     path = EVIDENCE / f"{stamp()}-{re.sub(r'[^a-z0-9-]+', '-', operation.casefold()).strip('-')}.png"
-    page.screenshot(path=str(path), full_page=False)
+    try:
+        page.screenshot(
+            path=str(path),
+            full_page=False,
+            animations="disabled",
+            caret="hide",
+            timeout=10000,
+        )
+    except Exception as exc:
+        # Screenshots are valuable evidence, but discovery is still useful when
+        # a graphics-heavy page or CDP renderer cannot capture one in time.
+        failure = path.with_suffix(".error.txt")
+        failure.write_text(promotion.compact(str(exc))[:2000], encoding="utf-8")
+        return ""
     return str(path)
 
 

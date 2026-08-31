@@ -1290,7 +1290,15 @@
           "knowledge cards",
           "multilingual knowledge",
           "offline study",
-          "local learning"
+          "local learning",
+          "local rag",
+          "offline rag",
+          "private documents",
+          "confidential documents",
+          "document search",
+          "pdf collection",
+          "book collection",
+          "text collection"
         ],
         "summary": "Private, book-grounded multilingual knowledge cards designed for local hardware."
       },
@@ -4818,6 +4826,13 @@
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
+      "id": "url:d873c4adf4afccff",
+      "kind": "web_resource",
+      "label": "fit check",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/fit-check/"
+    },
+    {
       "id": "url:0a22d3dea25aca44",
       "kind": "web_resource",
       "label": "free kindle sender",
@@ -4991,7 +5006,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
@@ -5011,7 +5026,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
@@ -5048,6 +5063,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:c48afb0dbeb7ee89"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/fit-check/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:d873c4adf4afccff"
     },
     {
       "confidence": 1.0,

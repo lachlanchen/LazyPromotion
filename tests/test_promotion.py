@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 import promotion
 
@@ -31,6 +32,66 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertEqual(ranked[0]["project"]["id"], "lazyingart-eink")
         self.assertEqual(ranked[0]["project"]["homepage"], "https://lazying.art/eink/")
+
+    def test_private_local_rag_fit_request_matches_bounded_lkt_service(self):
+        ranked = promotion.rank_projects(
+            "What is the best local RAG for confidential text logs and a PDF collection? "
+            "I need simple document search on a CPU-only machine."
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "localknowledgeterminal")
+        self.assertIn("not a finished RAG application", ranked[0]["project"]["reply_context"])
+        self.assertEqual(
+            ranked[0]["project"]["reply_url"],
+            "https://lazying.art/lkt/fit-check/",
+        )
+
+    def test_triage_sees_reviewed_offer_context_and_boundary(self):
+        project = promotion.project_by_id("localknowledgeterminal")
+        prompt = promotion.triage_prompt(
+            {
+                "platform": "reddit",
+                "source_url": "https://www.reddit.com/r/Rag/comments/example/help/",
+                "author": "reader",
+                "published_at": datetime.now(timezone.utc).isoformat(),
+                "comment_count": 2,
+                "body": "Can someone recommend a private local workflow for my PDFs?",
+                "suggested_tool": "localknowledgeterminal",
+            },
+            [project],
+        )
+        self.assertIn("reviewed_context", prompt)
+        self.assertIn('"reply_url": "https://lazying.art/lkt/fit-check/"', prompt)
+        self.assertIn("private-by-design collection-fit service", prompt)
+        self.assertIn("not a finished RAG application", prompt)
+
+    def test_value_only_draft_policy_forbids_project_and_links(self):
+        candidate = {
+            "platform": "reddit",
+            "author": "reader",
+            "source_url": "https://www.reddit.com/r/Rag/comments/example/help/",
+            "body": "What is a simple way to search local PDFs?",
+        }
+        project = promotion.project_by_id("localknowledgeterminal")
+        prompt = promotion.draft_prompt(candidate, project, value_only=True)
+        self.assertIn("Provide value only", prompt)
+        self.assertIn("Set include_link=false", prompt)
+
+        safe = {
+            "reply": "Start with full-text search and measure misses before adding embeddings.",
+            "why": "Direct answer.",
+            "confidence": "high",
+            "include_link": False,
+        }
+        with patch("promotion.run_codex_structured", return_value=safe):
+            self.assertEqual(
+                promotion.run_codex_draft(candidate, project, value_only=True),
+                safe,
+            )
+
+        unsafe = {**safe, "reply": "I maintain LocalKnowledgeTerminal: https://example.com"}
+        with patch("promotion.run_codex_structured", return_value=unsafe):
+            with self.assertRaisesRegex(ValueError, "URL"):
+                promotion.run_codex_draft(candidate, project, value_only=True)
 
     def test_chinese_wenyan_help_matches_multilingual_reading_projects(self):
         body = "我看不懂文言文，有没有带现代中文和英文的中国历史读本推荐？"

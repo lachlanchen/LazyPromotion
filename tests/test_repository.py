@@ -171,6 +171,13 @@ class RepositoryTests(unittest.TestCase):
                 self.assertTrue(any(term in combined for term in ("offline", "local")))
                 self.assertTrue(any(term in combined for term in ("pdf", "book", "document")))
 
+        reddit = browser.discovery_query_lanes("reddit")["core"]
+        self.assertTrue(any(
+            route["project_id"] == "localknowledgeterminal"
+            and "subreddit:rag" in route["query"].casefold()
+            for route in reddit
+        ))
+
     def test_hacker_news_item_id_survives_canonicalization(self):
         rows = browser.dedupe(
             [{
@@ -273,6 +280,10 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
         self.assertIn("free fit check", campaign["source_evidence"]["current_order_mode"])
+        self.assertEqual(
+            promotion.project_by_id("localknowledgeterminal")["reply_url"],
+            campaign["source_evidence"]["fit_check"],
+        )
         self.assertEqual(
             campaign["source_evidence"]["fit_check"],
             "https://lazying.art/lkt/fit-check/",

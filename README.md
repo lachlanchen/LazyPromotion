@@ -134,6 +134,12 @@ If newly reviewed project evidence materially improves an unsent draft, create
 a replacement with `python promotion.py redraft CANDIDATE_ID`. The older draft
 is marked superseded and any approval bound to it becomes unusable.
 
+When community rules or the account's contribution history make another
+project mention inappropriate, use `python promotion.py redraft CANDIDATE_ID
+--value-only`. That mode still uses reviewed context to avoid bad advice, but
+fails closed if the result names the project or affiliation, contains a URL, or
+sets `include_link=true`. It is a trust-building answer, not a disguised pitch.
+
 For a bounded read-only model check over the current eligible queue:
 
 ```bash
@@ -177,10 +183,11 @@ scripts/worker.sh status
 ```
 
 Each cycle runs one reviewed core route. Distinct high-intent LKT searches for
-private documents, offline retrieval, and multilingual knowledge recur in at
-least one of every five core slots, while subtitle, language-learning, physics,
-and local-media routes remain in rotation. One independently rotating long-tail
-route still covers every evidence-backed repository on Reddit, X, and Hacker
+private documents, offline retrieval, lightweight RAG, and multilingual
+knowledge recur in at least one of every five core slots, while subtitle,
+language-learning, physics, and local-media routes remain in rotation. One
+independently rotating long-tail route still covers every evidence-backed
+repository on Reddit, X, and Hacker
 News without increasing the configured per-cycle query or model budget. HN
 results inform product research but never enter the generated-comment queue.
 Instagram rotates its small reviewed
@@ -194,6 +201,12 @@ Any remaining triage capacity drains the freshest timestamped request backlog,
 so a transient model failure cannot strand a genuine need indefinitely.
 Continuous mode never approves,
 submits, votes, follows, or sends a direct message.
+
+The triage model receives reviewed per-project offer context as well as the
+repository summary. This matters for LKT: it may identify a request for a
+bounded collection-fit assessment, but it must not claim that the repository is
+an off-the-shelf RAG application. The resulting reply still has to answer the
+technical question before any disclosed fit-check mention.
 
 Refresh the public repository inventory at any time:
 

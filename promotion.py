@@ -658,13 +658,28 @@ def project_by_id(project_id: str) -> dict[str, Any]:
     raise ValueError(f"unknown project: {project_id}")
 
 
-def draft_prompt(candidate: dict[str, Any], project: dict[str, Any]) -> str:
+def draft_prompt(
+    candidate: dict[str, Any],
+    project: dict[str, Any],
+    *,
+    value_only: bool = False,
+) -> str:
     targeting = ""
     if candidate["platform"] == "instagram" and is_comment_source(
         candidate["platform"], candidate["source_url"], candidate["body"]
     ) and compact(candidate.get("author") or ""):
         username = compact(candidate["author"]).lstrip("@")
         targeting = f"- Begin the reply with @{username} so the reviewed text targets the exact comment.\n"
+    value_only_policy = ""
+    if value_only:
+        value_only_policy = """
+Community/account policy for this draft:
+- Provide value only. Do not name, mention, link, or allude to the maintained
+  project, its maintainer, LazyingArt, the profile, a fit check, or any offer.
+- Do not include any URL or call to action. Set include_link=false.
+- You may use the reviewed project context only to avoid incorrect technical
+  advice; the final reply must read as an independent peer contribution.
+"""
     return f"""Draft one genuinely useful public reply to a social-media post.
 
 Platform: {candidate['platform']}
@@ -677,6 +692,7 @@ Relevant maintained project:
 - Name: {project['name']}
 - URL: {project['url']}
 {f"- Public homepage: {project['homepage']}" if project.get('homepage') else ""}
+{f"- Preferred reply destination: {project['reply_url']}" if project.get('reply_url') else ""}
 - Evidence-grounded summary: {project['summary']}
 {f"- Additional reviewed context: {project['reply_context']}" if project.get('reply_context') else ""}
 
@@ -703,6 +719,7 @@ Requirements:
   is enough context, omit the link and say so through include_link=false.
 {targeting}- Keep the reply compact: <= 500 characters for X, <= 900 elsewhere.
 - This is a draft only. Do not browse, post, message, or take any external action.
+{value_only_policy}
 """
 
 
@@ -713,6 +730,12 @@ def triage_prompt(candidate: dict[str, Any], projects: list[dict[str, Any]]) -> 
             "name": project["name"],
             "url": project["url"],
             "summary": project["summary"],
+            **({"homepage": project["homepage"]} if project.get("homepage") else {}),
+            **({"reply_url": project["reply_url"]} if project.get("reply_url") else {}),
+            **(
+                {"reviewed_context": project["reply_context"]}
+                if project.get("reply_context") else {}
+            ),
         }
         for project in projects
     ]
@@ -776,12 +799,36 @@ def run_codex_structured(prompt: str, schema: Path, *, prefix: str) -> dict[str,
         return json.loads(output.read_text(encoding="utf-8"))
 
 
-def run_codex_draft(candidate: dict[str, Any], project: dict[str, Any]) -> dict[str, Any]:
-    return run_codex_structured(
-        draft_prompt(candidate, project),
+def run_codex_draft(
+    candidate: dict[str, Any],
+    project: dict[str, Any],
+    *,
+    value_only: bool = False,
+) -> dict[str, Any]:
+    result = run_codex_structured(
+        draft_prompt(candidate, project, value_only=value_only),
         SCHEMA_PATH,
         prefix="lazypromotion-draft-",
     )
+    if value_only:
+        reply = compact(str(result.get("reply") or ""))
+        normalized_reply = normalized(reply)
+        forbidden = {
+            normalized(str(project.get("name") or "")),
+            "lazyingart",
+            "lazying art",
+            "fit check",
+            "i maintain",
+            "i built",
+            "my project",
+        }
+        if bool(result.get("include_link")):
+            raise ValueError("value-only draft cannot include a link")
+        if re.search(r"(?:https?://|www\.)", reply, flags=re.I):
+            raise ValueError("value-only draft cannot contain a URL")
+        if any(phrase and phrase in normalized_reply for phrase in forbidden):
+            raise ValueError("value-only draft cannot mention the project or affiliation")
+    return result
 
 
 def run_codex_triage(candidate: dict[str, Any], projects: list[dict[str, Any]]) -> dict[str, Any]:
@@ -1079,8 +1126,10 @@ def build_parser() -> argparse.ArgumentParser:
     draft = sub.add_parser("draft")
     draft.add_argument("candidate_id")
     draft.add_argument("--project", default="")
+    draft.add_argument("--value-only", action="store_true")
     redraft = sub.add_parser("redraft")
     redraft.add_argument("candidate_id")
+    redraft.add_argument("--value-only", action="store_true")
 
     triage = sub.add_parser("triage")
     triage.add_argument("candidate_id")
@@ -1139,7 +1188,11 @@ def main() -> int:
             raise SystemExit("candidate has no relevant project; choose --project only after manual review")
         if project_id != candidate["suggested_tool"]:
             raise SystemExit("draft project differs from the model-triaged project")
-        result = run_codex_draft(candidate, project_by_id(project_id))
+        result = run_codex_draft(
+            candidate,
+            project_by_id(project_id),
+            value_only=bool(args.value_only),
+        )
         print_json(save_draft(db, args.candidate_id, result))
     elif args.command == "triage":
         candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (args.candidate_id,)).fetchone())

@@ -151,10 +151,14 @@
       "name": "LocalKnowledgeTerminal",
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
       "homepage": "https://lazying.art/lkt/",
+      "reply_url": "https://lazying.art/lkt/fit-check/",
       "summary": "Private, book-grounded multilingual knowledge cards designed for local hardware.",
+      "reply_context": "The current public offer is a private-by-design collection-fit service, not a finished RAG application or ready-to-ship device. The free fit check at https://lazying.art/lkt/fit-check/ covers one customer-provided collection, one language goal, intended readers, source rights, privacy needs, sample format, and the customer's existing machine. If the collection is suitable and both sides accept the boundary, the fixed USD 250 founding sprint delivers a written data/privacy/citation map, a small browser proof from a representative sample when usable, and a go/no-go recommendation. Hardware, shipping, custom OCR, and production deployment are excluded. Give useful low-resource technical guidance first; mention the fit check only when the person is genuinely deciding how to handle a bounded private PDF, book, document, or text collection. Never imply that LocalKnowledgeTerminal already provides an off-the-shelf RAG system.",
       "keywords": [
         "local knowledge base", "private knowledge base", "book grounded", "book-grounded",
-        "knowledge cards", "multilingual knowledge", "offline study", "local learning"
+        "knowledge cards", "multilingual knowledge", "offline study", "local learning",
+        "local rag", "offline rag", "private documents", "confidential documents",
+        "document search", "pdf collection", "book collection", "text collection"
       ]
     },
     {

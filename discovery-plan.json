@@ -101,6 +101,11 @@
         "purpose": "Local-first book-grounded knowledge questions"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "subreddit:Rag (confidential OR private OR offline) (PDF OR documents OR logs) (recommend OR help OR best)",
+        "purpose": "People asking for a simple local workflow over a bounded confidential text or PDF collection"
+      },
+      {
         "project_id": "lazyweiqi",
         "query": "subreddit:baduk \"learn go\" advice",
         "purpose": "Go learners requesting teaching or analysis resources"

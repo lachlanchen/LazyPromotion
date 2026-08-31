@@ -247,14 +247,50 @@ def extract_x(page: Page, limit: int) -> list[dict[str, str]]:
 
 
 def extract_instagram(page: Page, limit: int) -> list[dict[str, str]]:
-    return page.locator("article").evaluate_all(
-        """(nodes, limit) => nodes.slice(0, limit).map((n) => ({
-          url: n.querySelector('a[href*="/p/"], a[href*="/reel/"]')?.href || '',
-          author: n.querySelector('header a')?.innerText || '',
-          body: n.innerText || ''
+    return page.locator('a[href*="/p/"], a[href*="/reel/"]').evaluate_all(
+        """(nodes, limit) => nodes.slice(0, limit * 4).map((a) => ({
+          url: a.href || '',
+          author: '',
+          published_at: '',
+          comment_count: '0',
+          source_score: '0',
+          body: (a.querySelector('img[alt]')?.getAttribute('alt') || a.innerText || '').trim()
         }))""",
         limit,
     )
+
+
+def instagram_post_data(page: Page) -> dict[str, str]:
+    post_time = page.locator("main time[datetime]").first
+    if not post_time.count():
+        raise RuntimeError("Instagram post timestamp was not found")
+    data = post_time.evaluate(
+        """(time) => {
+          const container = time.parentElement?.parentElement?.parentElement;
+          const profile = [...(container?.querySelectorAll('a[href^="/"]') || [])]
+            .find(a => /^\/[A-Za-z0-9._]+\/$/.test(a.getAttribute('href') || ''));
+          return {
+            author: (profile?.innerText || '').trim(),
+            body: (container?.innerText || '').trim(),
+            published_at: time.getAttribute('datetime') || ''
+          };
+        }"""
+    )
+    if not promotion.compact(str(data.get("body") or "")):
+        raise RuntimeError("Instagram post caption was not found")
+    return data
+
+
+def hydrate_instagram_rows(page: Page, rows: list[dict[str, str]], limit: int) -> list[dict[str, str]]:
+    hydrated = []
+    for row in rows[:limit]:
+        try:
+            page.goto(row["url"], wait_until="domcontentloaded", timeout=45000)
+            wait_ready(page)
+            hydrated.append({**row, **instagram_post_data(page)})
+        except Exception:
+            continue
+    return hydrated
 
 
 def extract_hackernews(page: Page, limit: int) -> list[dict[str, str]]:
@@ -318,6 +354,9 @@ def discover(page: Page, platform: str, query: str, limit: int) -> dict[str, obj
     target = search_url(platform, query)
     page.goto(target, wait_until="domcontentloaded", timeout=45000)
     wait_ready(page)
+    search_title = page.title()
+    search_destination = page.url
+    screenshot = evidence(page, f"search-{platform}")
     if platform == "reddit":
         rows = extract_reddit(page, limit)
     elif platform == "x":
@@ -325,7 +364,7 @@ def discover(page: Page, platform: str, query: str, limit: int) -> dict[str, obj
     elif platform == "hackernews":
         rows = extract_hackernews(page, limit)
     else:
-        rows = extract_instagram(page, limit)
+        rows = hydrate_instagram_rows(page, extract_instagram(page, limit), limit)
     rows = dedupe(rows, limit)
     db = promotion.open_db()
     candidates = [
@@ -336,13 +375,12 @@ def discover(page: Page, platform: str, query: str, limit: int) -> dict[str, obj
         )
         for row in rows
     ]
-    screenshot = evidence(page, f"search-{platform}")
     return {
         "ok": True,
         "platform": platform,
         "query": query,
-        "url": page.url,
-        "title": page.title(),
+        "url": search_destination,
+        "title": search_title,
         "found": len(candidates),
         "candidates": candidates,
         "screenshot": screenshot,
@@ -382,13 +420,11 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         name = root.locator('[data-testid="User-Name"]').first
         author = name.inner_text() if name.count() else author
     elif candidate["platform"] == "instagram":
-        root = page.locator("article").first
-        if not root.count():
-            raise RuntimeError("Instagram post root was not found")
         title = ""
-        body = root.inner_text()
-        name = root.locator("header a").first
-        author = name.inner_text() if name.count() else author
+        data = instagram_post_data(page)
+        body = data["body"]
+        author = data["author"] or author
+        published_at = data["published_at"]
     else:
         root = page.locator(".titleline").first
         if not root.count():
@@ -413,7 +449,7 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         body=full_body,
         author=author,
         query=candidate["query"],
-        published_at=published_at if candidate["platform"] in {"reddit", "hackernews"} else candidate.get("published_at", ""),
+        published_at=published_at if candidate["platform"] in {"reddit", "instagram", "hackernews"} else candidate.get("published_at", ""),
         comment_count=comment_count if candidate["platform"] in {"reddit", "hackernews"} else candidate.get("comment_count", 0),
         source_score=source_score if candidate["platform"] in {"reddit", "hackernews"} else candidate.get("source_score", 0),
     )

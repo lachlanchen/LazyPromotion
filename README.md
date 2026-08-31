@@ -133,10 +133,10 @@ python browser.py cycle \
   --background
 ```
 
-The same bounded cycle supports `reddit`, `x`, and `hackernews`. It only
-searches, records, and inspects candidates; it cannot draft,
-approve, or send a reply. Instagram is intentionally left without automatic
-queries because a promotional hashtag post is not an explicit request for help.
+The same bounded cycle supports `reddit`, `x`, `hackernews`, and `instagram`.
+It only searches, records, and inspects candidates; it cannot draft, approve,
+or send a reply. Instagram uses a small reviewed hashtag set and still requires
+an explicit help request in the caption before model triage.
 
 For continuous operation, start the durable worker:
 
@@ -151,9 +151,12 @@ scripts/worker.sh status
 ```
 
 Each cycle rotates its cursor through all evidence-backed repositories on
-Reddit, X, and Hacker News rather than repeating the first searches. State,
+Reddit, X, and Hacker News, plus a small explicit-help hashtag set on Instagram,
+rather than repeating the first searches. State,
 logs, candidates, model decisions, screenshots, and the exact draft review
-queue live under ignored `.local/` paths. Continuous mode never approves,
+queue live under ignored `.local/` paths. Instagram portfolio and promotional
+posts are discarded unless the caption contains an explicit request.
+Continuous mode never approves,
 submits, votes, follows, or sends a direct message.
 
 Refresh the public repository inventory at any time:

@@ -117,6 +117,22 @@
         "purpose": "Music creators asking for local generation or localization workflows"
       }
     ],
-    "instagram": []
+    "instagram": [
+      {
+        "project_id": "lazyedit",
+        "query": "videoeditinghelp",
+        "purpose": "Captions that explicitly request video-editing help; ordinary portfolio posts are rejected"
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "languagelearninghelp",
+        "purpose": "Language learners explicitly asking for reading or study help"
+      },
+      {
+        "project_id": "lingualleaf",
+        "query": "learnjapanese",
+        "purpose": "Japanese-learning captions with an explicit resource question"
+      }
+    ]
   }
 }

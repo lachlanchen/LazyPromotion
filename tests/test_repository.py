@@ -101,6 +101,18 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(rows[0]["url"], "https://news.ycombinator.com/item?id=12345")
 
+    def test_instagram_grid_alt_text_is_canonical_candidate_body(self):
+        rows = browser.dedupe(
+            [{
+                "url": "https://www.instagram.com/p/example/?img_index=1",
+                "author": "",
+                "body": "Can someone recommend a bilingual Japanese reader?",
+            }],
+            5,
+        )
+        self.assertEqual(rows[0]["url"], "https://www.instagram.com/p/example/")
+        self.assertTrue(promotion.is_help_request(rows[0]["body"]))
+
     def test_private_runtime_paths_are_ignored(self):
         ignored = (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()
         self.assertIn(".local/", ignored)

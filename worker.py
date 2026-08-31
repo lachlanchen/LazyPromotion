@@ -24,7 +24,7 @@ STATE_PATH = RUNTIME / "worker-state.json"
 QUEUE_PATH = RUNTIME / "review-queue.json"
 LOG_PATH = RUNTIME / "worker.jsonl"
 LOCK_PATH = RUNTIME / "worker.lock"
-DEFAULT_PLATFORMS = ("reddit", "x", "hackernews")
+DEFAULT_PLATFORMS = ("reddit", "x", "hackernews", "instagram")
 STOP = False
 
 

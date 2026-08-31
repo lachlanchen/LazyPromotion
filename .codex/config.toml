@@ -1,0 +1,18 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+[mcp_servers.lazypromotion_browser]
+command = "npx"
+args = [
+  "--yes",
+  "@playwright/mcp@0.0.79",
+  "--cdp-endpoint=http://127.0.0.1:9436",
+  "--cdp-timeout=15000",
+  "--codegen=none",
+  "--image-responses=omit",
+  "--output-dir=.local/mcp-output",
+]
+required = false
+startup_timeout_sec = 60
+tool_timeout_sec = 60
+default_tools_approval_mode = "writes"
+disabled_tools = ["browser_close", "browser_install"]

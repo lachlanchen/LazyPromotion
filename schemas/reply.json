@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["reply", "why", "confidence", "include_link"],
+  "properties": {
+    "reply": {"type": "string", "minLength": 1, "maxLength": 1400},
+    "why": {"type": "string", "minLength": 1, "maxLength": 500},
+    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+    "include_link": {"type": "boolean"}
+  }
+}

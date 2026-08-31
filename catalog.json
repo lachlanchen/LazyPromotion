@@ -1,0 +1,159 @@
+{
+  "projects": [
+    {
+      "id": "lazyedit",
+      "name": "LazyEdit",
+      "url": "https://github.com/lachlanchen/LazyEdit",
+      "summary": "Local-first video transcription, subtitle processing, metadata, editing, and optional publishing workflow.",
+      "keywords": [
+        "subtitle", "subtitles", "caption", "captions", "transcribe", "transcription",
+        "translate video", "burn subtitles", "cannot understand video", "can't understand video",
+        "video editing", "youtube workflow", "instagram workflow"
+      ]
+    },
+    {
+      "id": "autopublication",
+      "name": "AutoPublication",
+      "url": "https://github.com/lachlanchen/AutoPublication",
+      "summary": "Optional automation for publishing prepared media to supported social platforms.",
+      "keywords": [
+        "auto publish", "autopublish", "schedule video", "publish video", "cross post",
+        "cross-post", "social scheduler", "youtube upload", "instagram upload"
+      ]
+    },
+    {
+      "id": "pocketpolyglot",
+      "name": "PocketPolyglot",
+      "url": "https://github.com/lachlanchen/PocketPolyglot",
+      "homepage": "https://learn.lazying.art",
+      "summary": "A Studio, CLI, and reproducible TeX pipeline for multilingual interlinear pocket books.",
+      "keywords": [
+        "language learning", "learn japanese", "learn chinese", "interlinear", "bilingual book",
+        "multilingual book", "furigana", "pinyin", "ruby text", "parallel text", "reading practice"
+      ]
+    },
+    {
+      "id": "lingualleaf",
+      "name": "LinguaLeaf",
+      "url": "https://github.com/lachlanchen/LinguaLeaf",
+      "summary": "A public shelf of generated multilingual reading editions from PocketPolyglot.",
+      "keywords": [
+        "language books", "bilingual reading", "multilingual reading", "japanese reader",
+        "chinese reader", "parallel reading", "graded reader"
+      ]
+    },
+    {
+      "id": "lazylearn",
+      "name": "LazyLearn",
+      "url": "https://github.com/lachlanchen/LazyLearn",
+      "homepage": "https://learn.lazying.art",
+      "summary": "A reproducible slow-learning workspace for physics, chemistry, biomedicine, finance, and course notes.",
+      "keywords": [
+        "study physics", "learn physics", "computational physics", "course notes", "lecture notes",
+        "study history", "learning log", "self study", "self-study"
+      ]
+    },
+    {
+      "id": "leonardsusskind",
+      "name": "Leonard Susskind lecture notes",
+      "url": "https://github.com/lachlanchen/leonardsusskind",
+      "summary": "A maintained archive of Theoretical Minimum lecture transcripts, subtitles, notes, TeX, and PDFs.",
+      "reply_context": "Useful prerequisite guidance: be comfortable with single-variable calculus and introductory Newtonian mechanics; add multivariable/vector calculus and ordinary differential equations as needed, and linear algebra before or during quantum mechanics. The series is strongest as an intuition-building companion, not a replacement for exercises and a full textbook. A common sequence is Classical Mechanics, Quantum Mechanics, Special Relativity, General Relativity, Cosmology, then Statistical Mechanics.",
+      "keywords": [
+        "leonard susskind", "susskind", "theoretical minimum", "quantum mechanics notes",
+        "classical mechanics notes", "general relativity notes", "physics lecture notes"
+      ]
+    },
+    {
+      "id": "musia",
+      "name": "Musia",
+      "url": "https://github.com/lachlanchen/Musia",
+      "summary": "Local workflows for original music generation, review, correction, and publication handoff.",
+      "keywords": [
+        "music generation", "generate music", "ai song", "song generation", "lyrics to song",
+        "local music", "music video soundtrack"
+      ]
+    },
+    {
+      "id": "localvideogen",
+      "name": "LocalVideoGen",
+      "url": "https://github.com/lachlanchen/LocalVideoGen",
+      "summary": "A local MiniMax H3 video-series workflow and loopback API with native audio, references, continuity controls, and preserved artifacts.",
+      "keywords": [
+        "video generation", "generate video", "ai video", "local video", "image to video",
+        "text to video", "music video", "video storyboard"
+      ]
+    },
+    {
+      "id": "wordscard",
+      "name": "WordsCardEink",
+      "url": "https://github.com/lachlanchen/WordsCardEink",
+      "summary": "A Raspberry Pi e-ink vocabulary-card system with curated words, phonetics, translations, themes, and a small HTTP API.",
+      "keywords": [
+        "vocabulary card", "word card", "flash card", "flashcard", "eink vocabulary",
+        "e-ink vocabulary", "ipa phonetics", "learn vocabulary"
+      ]
+    },
+    {
+      "id": "wordorigins",
+      "name": "WordOrigins",
+      "url": "https://github.com/lachlanchen/WordOrigins",
+      "summary": "A tool for analyzing a word's origin and plotting its relationships as a graph.",
+      "keywords": [
+        "etymology", "word origin", "word origins", "origin of words", "vocabulary history"
+      ]
+    },
+    {
+      "id": "localknowledgeterminal",
+      "name": "LocalKnowledgeTerminal",
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "summary": "Private, book-grounded multilingual knowledge cards designed for local hardware.",
+      "keywords": [
+        "local knowledge base", "private knowledge base", "book grounded", "book-grounded",
+        "knowledge cards", "multilingual knowledge", "offline study", "local learning"
+      ]
+    },
+    {
+      "id": "lazyearn",
+      "name": "LazyEarn",
+      "url": "https://github.com/lachlanchen/LazyEarn",
+      "homepage": "https://earn.lazying.art",
+      "summary": "An open learning shelf about finance, entrepreneurship, wealth, and fulfillment.",
+      "keywords": [
+        "learn finance", "financial markets notes", "entrepreneurship notes", "wealth research",
+        "business course notes", "investment learning"
+      ]
+    },
+    {
+      "id": "howyougotrich",
+      "name": "How You Got Rich",
+      "url": "https://github.com/lachlanchen/HowYouGotRich",
+      "homepage": "https://earn.lazying.art/howyougotrich/",
+      "summary": "A source-traceable book built from interviews about wealth, fulfillment, and contentment.",
+      "keywords": [
+        "how people got rich", "wealth interviews", "financial freedom stories",
+        "wealth and happiness", "millionaire interviews"
+      ]
+    },
+    {
+      "id": "lazygame",
+      "name": "LazyGame",
+      "url": "https://github.com/lachlanchen/LazyGame",
+      "summary": "A local-first framework for deterministic, evidence-aware game teaching.",
+      "keywords": [
+        "learn board games", "game teaching", "game tutor", "explain game moves",
+        "deterministic game", "board game framework"
+      ]
+    },
+    {
+      "id": "lazyweiqi",
+      "name": "LazyWeiqi / Path of Influence",
+      "url": "https://github.com/lachlanchen/LazyWeiqi",
+      "summary": "A local-first Go/Weiqi teaching application with exact rules and evidence-aware explanations.",
+      "keywords": [
+        "learn go", "learn weiqi", "go tutor", "weiqi tutor", "baduk", "go game analysis",
+        "explain go moves", "katago teaching"
+      ]
+    }
+  ]
+}

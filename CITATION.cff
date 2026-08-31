@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use LazyPromotion, please cite this repository."
+type: software
+title: "LazyPromotion: Review-First Social Discovery and Reply Assistance"
+version: 0.1.0
+date-released: 2026-08-31
+abstract: "A local, visible-browser assistant for relevance-first social discovery, grounded reply drafting, and exact-content human approval."
+authors:
+  - family-names: Chen
+    given-names: Lachlan
+    alias: lachlanchen
+repository-code: "https://github.com/lachlanchen/LazyPromotion"
+url: "https://lazying.art"
+keywords:
+  - social media
+  - browser automation
+  - human in the loop
+  - Playwright
+  - Chrome DevTools Protocol
+  - open source

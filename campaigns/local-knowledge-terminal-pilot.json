@@ -63,6 +63,13 @@
       "publish_at": "2026-09-08T01:00:00Z",
       "content": "Some knowledge should stay in the room. LKT turns private books into cited multilingual cards on your machine. I’m opening four $250 collection-fit sprints; this is a prototype-grounded concept, not shipped hardware. Free fit check: lazying.art/lkt/fit-check",
       "visual": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
+      "guide_post": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-01T14:00:00Z",
+        "content": "12 GB, no GPU, confidential PDFs? Start with text extraction + full-text search. Keep path/page evidence. Add embeddings only for measured misses. Guide: blog.lazying.art/?p=3619&utm_source=x&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot",
+        "destination": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html?utm_source=x&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot",
+        "policy": "Value-first first-party distribution for the complete practical guide. The exact 253-character copy, protocol-less Postiz-safe tracked URL, account, time, AI flag, open-reply setting, and queue state were visibly reviewed."
+      },
       "policy": "First-party product post with the generated visual disclosed as a prototype-grounded concept. The exact 258-character copy, uploaded media, direct fit-check destination, AI flag, provider settings, and future queue state were visibly reviewed before scheduling."
     },
     "instagram": {

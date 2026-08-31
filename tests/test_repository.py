@@ -307,6 +307,20 @@ class RepositoryTests(unittest.TestCase):
             campaign["channels"]["x"]["publish_at"], "2026-09-08T01:00:00Z"
         )
         self.assertEqual(
+            campaign["channels"]["x"]["guide_post"]["publish_at"],
+            "2026-09-01T14:00:00Z",
+        )
+        self.assertEqual(
+            campaign["channels"]["x"]["guide_post"]["state"], "postiz_queue"
+        )
+        self.assertIn(
+            "utm_campaign=local_knowledge_terminal_pilot",
+            campaign["channels"]["x"]["guide_post"]["destination"],
+        )
+        self.assertLessEqual(
+            len(campaign["channels"]["x"]["guide_post"]["content"]), 280
+        )
+        self.assertEqual(
             campaign["channels"]["instagram"]["publish_at"],
             "2026-09-08T11:31:00Z",
         )

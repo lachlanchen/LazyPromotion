@@ -41,16 +41,26 @@ payment data, or private corpus text in the promotion repository.
 
 ## Repeatable promotion loop
 
-1. Discover a current need on a channel whose rules allow a helpful response.
-2. Solve the stated problem in the reply; mention LKT only when it materially
-   improves the answer and disclose affiliation.
-3. Send qualified readers to <https://lazying.art/lkt/fit-check/>, never
+1. Discover one current, specific problem involving private documents, local
+   search, citations, or multilingual reading.
+2. Give the person a useful standalone answer. On communities with strict
+   self-promotion norms, keep the reply value-only and let the profile do the
+   quiet discovery work.
+3. When the problem is reusable, turn the answer into one owned, searchable
+   guide. Put the complete solution first and one tracked fit-check link last.
+   The first proved example is [the confidential-PDF search
+   guide](https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html).
+4. Publish the guide through LazyBlog, verify its translations and boundaries,
+   and let the successful WordPress sitemap registered in Search Console carry
+   future discovery. Manual URL indexing is an optional acceleration, not a
+   substitute for the sitemap.
+5. Send qualified readers to <https://lazying.art/lkt/fit-check/>, never
    directly to payment.
-4. Record a `qualified_lead` only after a real fit inquiry.
-5. After scope acceptance, use a reviewed Stripe request for USD 250.
-6. Record `sale_confirmed` only after verified payment, using a private receipt
+6. Record a `qualified_lead` only after a real fit inquiry.
+7. After scope acceptance, use a reviewed Stripe request for USD 250.
+8. Record `sale_confirmed` only after verified payment, using a private receipt
    reference whose hash enters the ledger.
-7. Deliver the sprint, then ask—without pressure—whether an anonymized outcome
+9. Deliver the sprint, then ask—without pressure—whether an anonymized outcome
    or referral may be shared.
 
 No automated generated comments are posted to Hacker News. Reddit community

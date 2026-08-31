@@ -22,13 +22,16 @@ The campaign sequence is:
 1. Find a current, explicit need involving a private collection, local/offline
    knowledge, citations, or multilingual study.
 2. Answer the stated problem usefully before mentioning any LazyingArt work.
-3. Let the profile or one relevant link lead to the
+3. For a reusable problem, publish the complete answer as a searchable
+   LazyBlog guide with one tracked fit-check link at the end; rely on the
+   registered WordPress sitemap for repeat discovery.
+4. Let the profile or one relevant link lead to the
    [private-by-design fit check](https://lazying.art/lkt/fit-check/).
-4. Confirm source rights, sample format, language goal, readers, privacy needs,
+5. Confirm source rights, sample format, language goal, readers, privacy needs,
    and existing hardware.
-5. Request the fixed USD 250 payment through Stripe only after both sides accept
+6. Request the fixed USD 250 payment through Stripe only after both sides accept
    the bounded scope.
-6. Deliver the map, representative browser proof when feasible, and go/no-go
+7. Deliver the map, representative browser proof when feasible, and go/no-go
    recommendation; record a sale only from confirmed payment.
 
 Every campaign link uses a stable `utm_campaign`. Postiz analytics can measure

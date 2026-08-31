@@ -207,7 +207,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
 def run_cycle(args, state: dict) -> dict:
     discovered: list[str] = []
     platform_results = []
-    with sync_playwright() as playwright:
+    with browser_control.browser_operation_lock(), sync_playwright() as playwright:
         connected = playwright.chromium.connect_over_cdp(args.cdp)
         for platform in args.platforms:
             try:

@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import re
 import sys
 import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, quote_plus, urlparse
@@ -20,6 +22,7 @@ import promotion
 ROOT = Path(__file__).resolve().parent
 DEFAULT_CDP = "http://127.0.0.1:9436"
 EVIDENCE = ROOT / ".local" / "evidence"
+BROWSER_LOCK_PATH = ROOT / ".local" / "runtime" / "browser-operation.lock"
 DISCOVERY_PLAN = ROOT / "discovery-plan.json"
 PLATFORM_HOSTS = {
     "reddit": {"reddit.com", "www.reddit.com"},
@@ -27,6 +30,35 @@ PLATFORM_HOSTS = {
     "instagram": {"instagram.com", "www.instagram.com"},
     "hackernews": {"news.ycombinator.com", "hn.algolia.com"},
 }
+
+
+@contextmanager
+def browser_operation_lock(
+    *,
+    timeout_seconds: float = 900.0,
+    poll_seconds: float = 0.2,
+):
+    """Serialize all automation against the single shared CDP browser stack."""
+    if timeout_seconds < 0 or poll_seconds <= 0:
+        raise ValueError("browser lock timing must be positive")
+    BROWSER_LOCK_PATH.parent.mkdir(parents=True, exist_ok=True)
+    stream = BROWSER_LOCK_PATH.open("a+", encoding="utf-8")
+    deadline = time.monotonic() + timeout_seconds
+    try:
+        while True:
+            try:
+                fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.monotonic() >= deadline:
+                    raise RuntimeError("timed out waiting for the shared browser operation lock")
+                time.sleep(min(poll_seconds, max(0.0, deadline - time.monotonic())))
+        yield
+    finally:
+        try:
+            fcntl.flock(stream, fcntl.LOCK_UN)
+        finally:
+            stream.close()
 
 
 def stamp() -> str:
@@ -1112,7 +1144,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> int:
     args = build_parser().parse_args()
-    with sync_playwright() as playwright:
+    with browser_operation_lock(), sync_playwright() as playwright:
         browser = playwright.chromium.connect_over_cdp(args.cdp)
         if args.command == "status":
             tabs = [

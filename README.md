@@ -300,6 +300,11 @@ The default launcher uses display `:116`, VNC `127.0.0.1:5936`, noVNC
 unknown occupied ports and removes only a stale display lock that matches its
 own recorded Xvfb PID.
 
+The continuous worker and every `browser.py` command also share one filesystem
+operation lock. A manual inspection, composer review, or send therefore waits
+for an active discovery pass to release the platform tabs instead of racing it
+on the same CDP page.
+
 Reuse the one project-owned desktop during review, then stop it when nobody is
 waiting:
 

@@ -27,6 +27,20 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
+    def test_browser_operations_are_serialized_across_clients(self):
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(
+            browser, "BROWSER_LOCK_PATH", Path(tmp) / "browser-operation.lock"
+        ):
+            with browser.browser_operation_lock(timeout_seconds=0.1, poll_seconds=0.01):
+                with self.assertRaisesRegex(RuntimeError, "shared browser operation lock"):
+                    with browser.browser_operation_lock(
+                        timeout_seconds=0.03,
+                        poll_seconds=0.01,
+                    ):
+                        pass
+            with browser.browser_operation_lock(timeout_seconds=0.1, poll_seconds=0.01):
+                pass
+
     def test_screenshot_failure_does_not_discard_discovery(self):
         class BrokenPage:
             def screenshot(self, **kwargs):

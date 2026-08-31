@@ -257,6 +257,9 @@ def is_help_request(body: str) -> bool:
 def is_comment_source(platform: str, source_url: str, body: str) -> bool:
     if platform == "hackernews":
         return not normalized(body).strip().startswith("ask hn ")
+    if platform == "instagram":
+        parts = [part for part in urlparse(source_url).path.split("/") if part]
+        return "c" in parts and parts.index("c") + 1 < len(parts)
     if platform != "reddit":
         return False
     parts = [part for part in urlparse(source_url).path.split("/") if part]
@@ -482,6 +485,12 @@ def project_by_id(project_id: str) -> dict[str, Any]:
 
 
 def draft_prompt(candidate: dict[str, Any], project: dict[str, Any]) -> str:
+    targeting = ""
+    if candidate["platform"] == "instagram" and is_comment_source(
+        candidate["platform"], candidate["source_url"], candidate["body"]
+    ) and compact(candidate.get("author") or ""):
+        username = compact(candidate["author"]).lstrip("@")
+        targeting = f"- Begin the reply with @{username} so the reviewed text targets the exact comment.\n"
     return f"""Draft one genuinely useful public reply to a social-media post.
 
 Platform: {candidate['platform']}
@@ -508,7 +517,7 @@ Requirements:
 - Do not repeat the post back to its author or use generic praise.
 - If a term in the post is ambiguous or may be a typo, do not silently assign it a specific meaning.
 - If the match is weak, omit the link and say so through include_link=false.
-- Keep the reply compact: <= 500 characters for X, <= 900 elsewhere.
+{targeting}- Keep the reply compact: <= 500 characters for X, <= 900 elsewhere.
 - This is a draft only. Do not browse, post, message, or take any external action.
 """
 
@@ -677,6 +686,15 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
     candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id = ?", (candidate_id,)).fetchone())
     if not candidate:
         raise ValueError(f"candidate not found: {candidate_id}")
+    if candidate["platform"] == "instagram" and is_comment_source(
+        candidate["platform"], candidate["source_url"], candidate["body"]
+    ):
+        username = compact(candidate.get("author") or "").lstrip("@")
+        if not username:
+            raise ValueError("Instagram comment drafts require a known target author")
+        mention = f"@{username}"
+        if not re.match(rf"^{re.escape(mention)}(?:\s|[,.:;!?])", body, flags=re.I):
+            body = compact(f"{mention} {body}")
     limit = 500 if candidate["platform"] == "x" else 1400
     if len(body) > limit:
         raise ValueError(f"draft is {len(body)} characters; platform safety limit is {limit}")

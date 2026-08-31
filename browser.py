@@ -322,8 +322,65 @@ def extract_instagram(page: Page, limit: int) -> list[dict[str, str]]:
     )
 
 
+def instagram_destination_ids(url: str) -> tuple[str, str]:
+    parts = [part for part in urlparse(url).path.split("/") if part]
+    if len(parts) < 2 or parts[0] not in {"p", "reel"}:
+        return "", ""
+    shortcode = parts[1]
+    try:
+        comment_start = parts.index("c", 2)
+    except ValueError:
+        return shortcode, ""
+    comment_id = parts[comment_start + 1] if len(parts) > comment_start + 1 else ""
+    return shortcode, comment_id
+
+
+def instagram_comment_id(url: str) -> str:
+    return instagram_destination_ids(url)[1]
+
+
+def extract_instagram_comments(page: Page, limit: int) -> list[dict[str, str]]:
+    return page.locator('a[href*="/c/"]').evaluate_all(
+        """(anchors, limit) => anchors.map((anchor) => {
+          let root = anchor;
+          const isCommentRoot = (node) => {
+            const hasReply = [...node.querySelectorAll('[role="button"], button')]
+              .some(button => (button.innerText || '').trim() === 'Reply');
+            const hasProfile = [...node.querySelectorAll('a[href^="/"]')]
+              .some(link => /^\/[A-Za-z0-9._]+\/$/.test(link.getAttribute('href') || ''));
+            const hasBody = [...node.querySelectorAll('span[dir="auto"]')]
+              .some(span => !span.querySelector('span') && !span.closest('a'));
+            return hasReply && hasProfile && hasBody;
+          };
+          while (root && !isCommentRoot(root)) {
+            root = root.parentElement;
+          }
+          if (!root) return null;
+          const profile = [...root.querySelectorAll('a[href^="/"]')]
+            .find(link => /^\/[A-Za-z0-9._]+\/$/.test(link.getAttribute('href') || ''));
+          const author = (profile?.innerText || '').trim();
+          const time = anchor.querySelector('time[datetime]');
+          const bodyParts = [...root.querySelectorAll('span[dir="auto"]')]
+            .filter(span => !span.querySelector('span') && !span.closest('a'))
+            .map(span => (span.innerText || '').trim())
+            .filter(text => text && text !== 'Reply' && text !== author);
+          const body = bodyParts.sort((a, b) => b.length - a.length)[0] || '';
+          return {
+            url: anchor.href || '',
+            author,
+            published_at: time?.getAttribute('datetime') || '',
+            comment_count: '0',
+            source_score: '0',
+            source_kind: 'comment',
+            body
+          };
+        }).filter(row => row && row.url && row.author && row.body).slice(0, limit)""",
+        limit,
+    )
+
+
 def instagram_post_data(page: Page) -> dict[str, str]:
-    post_time = page.locator("main time[datetime]").first
+    post_time = page.locator("time[datetime]").first
     if not post_time.count():
         raise RuntimeError("Instagram post timestamp was not found")
     data = post_time.evaluate(
@@ -344,15 +401,19 @@ def instagram_post_data(page: Page) -> dict[str, str]:
 
 
 def hydrate_instagram_rows(page: Page, rows: list[dict[str, str]], limit: int) -> list[dict[str, str]]:
-    hydrated = []
+    posts = []
+    comments = []
     for row in rows[:limit]:
         try:
             page.goto(row["url"], wait_until="domcontentloaded", timeout=45000)
             wait_ready(page)
-            hydrated.append({**row, **instagram_post_data(page)})
+            posts.append({**row, **instagram_post_data(page), "source_kind": "post"})
+            comments.extend(extract_instagram_comments(page, limit))
         except Exception:
             continue
-    return hydrated
+    # Comment questions carry more explicit consent than parent captions, so
+    # preserve them first when the per-query candidate limit is applied.
+    return comments + posts
 
 
 def extract_hackernews(page: Page, limit: int, content_kind: str = "posts") -> list[dict[str, str]]:
@@ -424,6 +485,7 @@ def dedupe(rows: list[dict[str, str]], limit: int) -> list[dict[str, object]]:
             "published_at": str(row.get("published_at") or ""),
             "comment_count": safe_int(row.get("comment_count")),
             "source_score": safe_int(row.get("source_score")),
+            "source_kind": str(row.get("source_kind") or "post"),
         })
         if len(result) >= limit:
             break
@@ -452,7 +514,8 @@ def discover(
     elif platform == "hackernews":
         rows = extract_hackernews(page, limit, content_kind)
     else:
-        rows = hydrate_instagram_rows(page, extract_instagram(page, limit), limit)
+        grid_rows = dedupe(extract_instagram(page, limit), limit)
+        rows = hydrate_instagram_rows(page, grid_rows, limit)
     rows = dedupe(rows, limit)
     db = promotion.open_db()
     candidates = [
@@ -471,6 +534,10 @@ def discover(
         "url": search_destination,
         "title": search_title,
         "found": len(candidates),
+        "found_by_source_kind": {
+            kind: sum(1 for row in rows if row["source_kind"] == kind)
+            for kind in sorted({str(row["source_kind"]) for row in rows})
+        },
         "candidates": candidates,
         "screenshot": screenshot,
     }
@@ -524,7 +591,17 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
         author = name.inner_text() if name.count() else author
     elif candidate["platform"] == "instagram":
         title = ""
-        data = instagram_post_data(page)
+        comment_id = instagram_comment_id(candidate["source_url"])
+        if comment_id:
+            rows = extract_instagram_comments(page, 100)
+            data = next(
+                (row for row in rows if instagram_comment_id(row["url"]) == comment_id),
+                None,
+            )
+            if not data:
+                raise RuntimeError("Instagram target comment was not found")
+        else:
+            data = instagram_post_data(page)
         body = data["body"]
         author = data["author"] or author
         published_at = data["published_at"]
@@ -797,6 +874,20 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
         trigger.click()
         page.wait_for_timeout(700)
         target = composer(page, candidate["platform"], activate=False)
+    elif candidate["platform"] == "instagram" and instagram_comment_id(candidate["source_url"]):
+        target_comment_id = instagram_comment_id(candidate["source_url"])
+        anchor = page.locator(f'a[href*="/c/{target_comment_id}/"]').first
+        if not anchor.count():
+            raise RuntimeError("Instagram target comment was not found before composer activation")
+        root = anchor.locator(
+            'xpath=ancestor::div[.//*[@role="button" and normalize-space(.)="Reply"]][1]'
+        )
+        trigger = root.get_by_role("button", name="Reply", exact=True).first
+        if not trigger.count():
+            raise RuntimeError("Instagram target comment reply button was not found")
+        trigger.click()
+        page.wait_for_timeout(700)
+        target = composer(page, candidate["platform"], activate=False)
     else:
         target = composer(page, candidate["platform"])
     fill_composer(target, draft["body"])
@@ -852,6 +943,10 @@ def destination_matches(candidate_url: str, active_url: str, platform: str) -> b
         candidate_id = parse_qs(candidate_parsed.query).get("id", [""])[0]
         active_id = parse_qs(active_parsed.query).get("id", [""])[0]
         return bool(candidate_id and candidate_id == active_id)
+    if platform == "instagram":
+        candidate_ids = instagram_destination_ids(candidate_url)
+        active_ids = instagram_destination_ids(active_url)
+        return bool(candidate_ids[0] and candidate_ids == active_ids)
     candidate_base = candidate_url.split("?", 1)[0].rstrip("/")
     active_base = active_url.split("?", 1)[0].rstrip("/")
     return active_base == candidate_base or active_base.startswith(f"{candidate_base}/")

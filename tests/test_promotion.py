@@ -61,6 +61,12 @@ class PromotionTests(unittest.TestCase):
         self.assertTrue(promotion.is_comment_source("hackernews", url, body))
         self.assertTrue(promotion.is_triageable_request("hackernews", url, body))
 
+    def test_direct_instagram_comment_request_is_triageable(self):
+        body = "Can someone recommend a reliable way to add subtitles automatically?"
+        url = "https://www.instagram.com/p/post123/c/comment456/"
+        self.assertTrue(promotion.is_comment_source("instagram", url, body))
+        self.assertTrue(promotion.is_triageable_request("instagram", url, body))
+
     def test_ask_hn_title_is_an_explicit_request_without_question_mark(self):
         body = "Ask HN: Are third party GGUF models safe in a local production environment"
         self.assertTrue(promotion.is_help_request(body))
@@ -264,6 +270,28 @@ class PromotionTests(unittest.TestCase):
         self.db.commit()
         with self.assertRaisesRegex(ValueError, "changed after approval"):
             promotion.validate_approval(self.db, draft["id"], approval["approval_token"])
+
+    def test_instagram_comment_draft_includes_exact_target_mention(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="instagram",
+            source_url="https://www.instagram.com/p/post123/c/comment456/",
+            author="questioner",
+            body="Can someone recommend a reliable way to add subtitles automatically?",
+        )
+        draft = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {"reply": "A useful answer", "why": "direct", "confidence": "high", "include_link": False},
+        )
+        self.assertEqual(draft["body"], "@questioner A useful answer")
+
+        revised = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {"reply": "@questioner, Another useful answer", "why": "direct", "confidence": "high", "include_link": False},
+        )
+        self.assertEqual(revised["body"], "@questioner, Another useful answer")
 
     def test_new_draft_supersedes_old_approval(self):
         candidate = promotion.ingest_candidate(

@@ -144,8 +144,10 @@ Each Reddit route checks posts and comments, while each Hacker News route checks
 Ask HN stories and discussion comments. Comment permalinks are hydrated and
 remain the exact reply destination.
 It only searches, records, and inspects candidates; it cannot draft, approve,
-or send a reply. Instagram uses a small reviewed hashtag set and still requires
-an explicit help request in the caption before model triage.
+or send a reply. Instagram uses a small reviewed hashtag set, inspects both
+captions and exact-permalink comments, and still requires an explicit help
+request before model triage. A comment draft keeps the reviewed `@username`
+target and the per-comment Reply action is revalidated before preparation.
 
 For continuous operation, start the durable worker:
 
@@ -164,7 +166,8 @@ Reddit, X, and Hacker News, plus a small explicit-help hashtag set on Instagram,
 rather than repeating the first searches. State,
 logs, candidates, model decisions, screenshots, and the exact draft review
 queue live under ignored `.local/` paths. Instagram portfolio and promotional
-posts are discarded unless the caption contains an explicit request.
+posts or comments are discarded unless their own text contains an explicit
+request.
 Any remaining triage capacity drains the freshest timestamped request backlog,
 so a transient model failure cannot strand a genuine need indefinitely.
 Continuous mode never approves,

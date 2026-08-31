@@ -166,6 +166,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(rows[0]["url"], "https://www.instagram.com/p/example/")
         self.assertTrue(promotion.is_help_request(rows[0]["body"]))
 
+    def test_instagram_comment_destination_is_exact(self):
+        candidate = "https://www.instagram.com/p/post123/c/comment456/"
+        sibling = "https://www.instagram.com/p/post123/c/comment789/"
+        parent = "https://www.instagram.com/p/post123/"
+        self.assertEqual(browser.instagram_destination_ids(candidate), ("post123", "comment456"))
+        self.assertTrue(browser.destination_matches(candidate, candidate, "instagram"))
+        self.assertFalse(browser.destination_matches(candidate, sibling, "instagram"))
+        self.assertFalse(browser.destination_matches(candidate, parent, "instagram"))
+
     def test_private_runtime_paths_are_ignored(self):
         ignored = (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()
         self.assertIn(".local/", ignored)

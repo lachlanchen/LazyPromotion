@@ -113,6 +113,11 @@ def pending_candidate_ids(db, preferred_ids: list[str], limit: int) -> list[str]
     return selected
 
 
+def next_route_cursor(current: int, result: dict) -> int:
+    """Keep a failed discovery route at the head of the next cycle."""
+    return int(result["next_query"]) if result["ok"] else current
+
+
 def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) -> dict:
     db = promotion.open_db()
     selected_ids = pending_candidate_ids(db, candidate_ids, max_triage)
@@ -173,7 +178,9 @@ def run_cycle(args, state: dict) -> dict:
                     hydrate_per_query=args.hydrate_per_query,
                     start_query=cursor,
                 )
-                state["cursors"][platform] = result["next_query"]
+                # Retry a transiently failed route next cycle. Advancing here would
+                # otherwise postpone it until the full (100+ route) rotation wraps.
+                state["cursors"][platform] = next_route_cursor(cursor, result)
                 for candidate_id in result["triage_candidate_ids"]:
                     if candidate_id not in discovered:
                         discovered.append(candidate_id)
@@ -181,10 +188,19 @@ def run_cycle(args, state: dict) -> dict:
                     "platform": platform,
                     "ok": result["ok"],
                     "queries_run": result["queries_run"],
-                    "next_query": result["next_query"],
+                    "next_query": state["cursors"][platform],
                     "available_queries": result["available_queries"],
                     "eligible_candidate_ids": result["eligible_candidate_ids"],
                     "triage_candidate_ids": result["triage_candidate_ids"],
+                    "query_errors": [
+                        {
+                            "project_id": query_result["project_id"],
+                            "query": query_result["query"],
+                            "error": query_result.get("error", "unknown discovery error"),
+                        }
+                        for query_result in result["results"]
+                        if not query_result["ok"]
+                    ],
                 })
             except Exception as exc:
                 platform_results.append({"platform": platform, "ok": False, "error": str(exc)})

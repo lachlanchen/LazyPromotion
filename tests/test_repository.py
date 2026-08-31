@@ -72,6 +72,15 @@ class RepositoryTests(unittest.TestCase):
                     self.assertIn(query["project_id"], known)
                     self.assertTrue(query["purpose"])
 
+    def test_x_go_route_is_qualified_as_the_board_game(self):
+        route = next(
+            item for item in browser.discovery_queries("x")
+            if item["project_id"] == "lazyweiqi"
+        )
+        query = route["query"].casefold()
+        self.assertTrue(any(term in query for term in ("weiqi", "baduk", "board game")))
+        self.assertNotEqual(query, '"learn go" (advice or resources) -filter:retweets')
+
     def test_public_github_index_covers_owner_source_repositories(self):
         index = json.loads((ROOT / "github-repos.json").read_text(encoding="utf-8"))
         self.assertEqual(index["owner"], "lachlanchen")

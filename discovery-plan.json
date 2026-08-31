@@ -81,8 +81,8 @@
       },
       {
         "project_id": "lazyweiqi",
-        "query": "\"learn Go\" (advice OR resources) -filter:retweets",
-        "purpose": "Go learners seeking teaching resources"
+        "query": "(weiqi OR baduk OR \"Go board game\") (advice OR resources OR tutor) -filter:retweets",
+        "purpose": "Board-game Go learners seeking teaching resources without matching the programming language"
       }
     ],
     "hackernews": [

@@ -64,6 +64,10 @@ class WorkerTests(unittest.TestCase):
         queued = worker.review_queue(self.db)
         self.assertEqual([item["draft_id"] for item in queued], [latest["id"]])
 
+    def test_failed_discovery_route_is_retried(self):
+        self.assertEqual(worker.next_route_cursor(5, {"ok": False, "next_query": 6}), 5)
+        self.assertEqual(worker.next_route_cursor(5, {"ok": True, "next_query": 6}), 6)
+
 
 if __name__ == "__main__":
     unittest.main()

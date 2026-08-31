@@ -67,7 +67,7 @@ def review_queue(db) -> list[dict]:
                c.triage_confidence, c.comment_count, c.source_score
         FROM drafts d
         JOIN candidates c ON c.id=d.candidate_id
-        WHERE d.status != 'sent' AND c.status != 'replied'
+        WHERE d.status IN ('draft', 'prepared', 'approved') AND c.status != 'replied'
         ORDER BY d.created_at DESC
         """
     ).fetchall()

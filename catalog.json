@@ -89,6 +89,21 @@
       ]
     },
     {
+      "id": "github-localllm",
+      "name": "LocalLLM",
+      "url": "https://github.com/lachlanchen/LocalLLM",
+      "summary": "A private local AI studio with Ollama plus a source-revision-pinned, project-local llama.cpp CUDA recipe for direct GGUF and compatible multimodal-projector experiments.",
+      "reply_context": "The maintained references/llama-cpp.md recipe pins llama.cpp release b10327 at commit 69bf6437914596fbbc4caf09a7ac16f2acdd1a94, verifies the installed server revision, accepts an explicit standalone GGUF and optional LOCALLLM_LLAMA_CPP_MMPROJ, and warns that a projector from another model or revision is not interchangeable. It is a reproducible example, not proof that an arbitrary third-party model/projector pair is safe or compatible.",
+      "required_any": [
+        "local ai", "local llm", "llama.cpp", "llama cpp", "gguf", "mmproj",
+        "multimodal projector", "vision model", "ollama", "qwen"
+      ],
+      "keywords": [
+        "local llm", "llama.cpp", "llama cpp", "gguf", "mmproj",
+        "multimodal projector", "vision model", "ollama", "qwen3 vl"
+      ]
+    },
+    {
       "id": "wordscard",
       "name": "WordsCardEink",
       "url": "https://github.com/lachlanchen/WordsCardEink",

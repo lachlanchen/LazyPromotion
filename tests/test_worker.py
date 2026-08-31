@@ -44,6 +44,26 @@ class WorkerTests(unittest.TestCase):
         selected = worker.pending_candidate_ids(self.db, [current["id"]], 2)
         self.assertEqual(selected, [current["id"], backlog["id"]])
 
+    def test_review_queue_only_contains_latest_unsent_draft(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/review/help/",
+            body="Looking for a bilingual Japanese reader",
+        )
+        promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {"reply": "First answer", "why": "first", "confidence": "high", "include_link": False},
+        )
+        latest = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {"reply": "Improved answer", "why": "second", "confidence": "high", "include_link": False},
+        )
+        queued = worker.review_queue(self.db)
+        self.assertEqual([item["draft_id"] for item in queued], [latest["id"]])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -473,6 +473,7 @@ Requirements:
 - Use at most one project link. Do not ask for stars, follows, votes, or DMs.
 - Do not invent capabilities, traction, users, benchmarks, endorsements, or personal experience.
 - Do not repeat the post back to its author or use generic praise.
+- If a term in the post is ambiguous or may be a typo, do not silently assign it a specific meaning.
 - If the match is weak, omit the link and say so through include_link=false.
 - Keep the reply compact: <= 500 characters for X, <= 900 elsewhere.
 - This is a draft only. Do not browse, post, message, or take any external action.
@@ -663,6 +664,14 @@ def save_draft(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any]
             int(bool(result["include_link"])), MODEL, EFFORT, digest, now, now,
         ),
     )
+    db.execute(
+        """
+        UPDATE drafts
+        SET status='superseded', updated_at=?
+        WHERE candidate_id=? AND id != ? AND status IN ('draft', 'prepared', 'approved')
+        """,
+        (now, candidate_id, draft_id),
+    )
     db.execute("UPDATE candidates SET status='drafted', updated_at=? WHERE id=?", (now, candidate_id))
     db.execute(
         "INSERT INTO events(candidate_id, draft_id, kind, detail, created_at) VALUES (?, ?, 'draft_created', ?, ?)",
@@ -676,6 +685,8 @@ def approve_draft(db: sqlite3.Connection, draft_id: str, ttl_minutes: int) -> di
     draft = row_dict(db.execute("SELECT * FROM drafts WHERE id = ?", (draft_id,)).fetchone())
     if not draft:
         raise ValueError(f"draft not found: {draft_id}")
+    if draft["status"] not in {"draft", "prepared"}:
+        raise ValueError(f"draft status is {draft['status']}; approval is not allowed")
     token = f"approve_{secrets.token_urlsafe(18)}"
     now_dt = datetime.now(timezone.utc).replace(microsecond=0)
     expires = now_dt + timedelta(minutes=ttl_minutes)
@@ -705,6 +716,8 @@ def validate_approval(db: sqlite3.Connection, draft_id: str, token: str) -> dict
         raise ValueError("approval token does not match this draft")
     if approval["used_at"]:
         raise ValueError("approval token was already used")
+    if approval["draft_status"] != "approved":
+        raise ValueError(f"draft status is {approval['draft_status']}; approval is no longer active")
     expires = datetime.fromisoformat(approval["expires_at"].replace("Z", "+00:00"))
     if datetime.now(timezone.utc) >= expires:
         raise ValueError("approval token has expired")
@@ -756,6 +769,8 @@ def build_parser() -> argparse.ArgumentParser:
     draft = sub.add_parser("draft")
     draft.add_argument("candidate_id")
     draft.add_argument("--project", default="")
+    redraft = sub.add_parser("redraft")
+    redraft.add_argument("candidate_id")
 
     triage = sub.add_parser("triage")
     triage.add_argument("candidate_id")
@@ -802,13 +817,14 @@ def main() -> int:
         candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (args.id,)).fetchone())
         draft = row_dict(db.execute("SELECT * FROM drafts WHERE id=?", (args.id,)).fetchone())
         print_json(candidate or draft or {"error": "not found", "id": args.id})
-    elif args.command == "draft":
+    elif args.command in {"draft", "redraft"}:
         candidate = row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (args.candidate_id,)).fetchone())
         if not candidate:
             raise SystemExit(f"candidate not found: {args.candidate_id}")
-        if candidate["status"] != "triaged":
-            raise SystemExit(f"candidate status is {candidate['status']}; model triage is required before drafting")
-        project_id = args.project or candidate["suggested_tool"]
+        allowed = {"triaged"} if args.command == "draft" else {"drafted"}
+        if candidate["status"] not in allowed:
+            raise SystemExit(f"candidate status is {candidate['status']}; {args.command} is not allowed")
+        project_id = getattr(args, "project", "") or candidate["suggested_tool"]
         if not project_id:
             raise SystemExit("candidate has no relevant project; choose --project only after manual review")
         if project_id != candidate["suggested_tool"]:

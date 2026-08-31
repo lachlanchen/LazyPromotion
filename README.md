@@ -116,6 +116,10 @@ python promotion.py triage CANDIDATE_ID
 python promotion.py draft CANDIDATE_ID
 ```
 
+If newly reviewed project evidence materially improves an unsent draft, create
+a replacement with `python promotion.py redraft CANDIDATE_ID`. The older draft
+is marked superseded and any approval bound to it becomes unusable.
+
 For a bounded read-only model check over the current eligible queue:
 
 ```bash

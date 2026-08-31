@@ -248,6 +248,30 @@ class PromotionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "changed after approval"):
             promotion.validate_approval(self.db, draft["id"], approval["approval_token"])
 
+    def test_new_draft_supersedes_old_approval(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/revision/test/",
+            body="Looking for a bilingual Japanese reader",
+        )
+        first = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {"reply": "First reviewed answer", "why": "first", "confidence": "high", "include_link": False},
+        )
+        approval = promotion.approve_draft(self.db, first["id"], 30)
+        second = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {"reply": "Improved reviewed answer", "why": "second", "confidence": "high", "include_link": False},
+        )
+        old = self.db.execute("SELECT status FROM drafts WHERE id=?", (first["id"],)).fetchone()
+        self.assertEqual(old["status"], "superseded")
+        self.assertEqual(second["status"], "draft")
+        with self.assertRaisesRegex(ValueError, "no longer active"):
+            promotion.validate_approval(self.db, first["id"], approval["approval_token"])
+
 
 if __name__ == "__main__":
     unittest.main()

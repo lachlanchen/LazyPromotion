@@ -103,7 +103,7 @@ PRIORITIES = [
         "work": "LazyingArt eInk",
         "need": "A dedicated multilingual reader without giving up a free Kindle/KOReader path",
         "audience": "Language learners and e-paper readers",
-        "route": "Verified public pre-order: $128 / ¥999",
+        "route": "Public $128 / ¥999 pre-order inquiry; payment checkout awaits fulfillment review",
         "url": "https://lazying.art/eink/",
     },
     {
@@ -133,6 +133,13 @@ PRIORITIES = [
         "audience": "Independent physics learners",
         "route": "Free educational value; sponsorship is secondary and never the reason for a reply",
         "url": "https://github.com/lachlanchen/leonardsusskind",
+    },
+    {
+        "work": "Local Knowledge Terminal",
+        "need": "Private, cited multilingual cards from a bounded book or dictionary collection",
+        "audience": "Educators, language labs, libraries, exhibits, and private researchers",
+        "route": "Fit-first pilot inquiry; no public price or ready-to-ship hardware claim",
+        "url": "https://lazying.art/lkt/",
     },
     {
         "work": "Musia + LocalVideoGen",
@@ -215,8 +222,9 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The immediate revenue route is the verified eInk pre-order or an existing "
-            "Figurine checkout. Open-source replies should optimize for a solved problem, "
+            "The immediate revenue route is an eInk order inquiry followed by reviewed "
+            "payment, a fit-first Local Knowledge Terminal pilot, or an existing Figurine "
+            "checkout. Open-source replies should optimize for a solved problem, "
             "not for extracting a donation. GitHub Sponsors and donations remain quiet "
             "secondary support routes on the project/profile pages.",
             "",

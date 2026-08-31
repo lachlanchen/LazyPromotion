@@ -11,6 +11,16 @@
       "url": ""
     },
     {
+      "id": "campaign:local-knowledge-terminal-pilot",
+      "kind": "campaign",
+      "label": "local-knowledge-terminal-pilot",
+      "metadata": {
+        "objective": "Find one bounded private-knowledge use case where the current Local Knowledge Terminal can genuinely help, then invite a fit-first pilot inquiry without implying an off-the-shelf product.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:wenyan-history",
       "kind": "campaign",
       "label": "wenyan-history",
@@ -108,6 +118,13 @@
       "id": "community:reddit:r/alwayswhy",
       "kind": "community",
       "label": "r/AlwaysWhy",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/amneziavpn",
+      "kind": "community",
+      "label": "r/AmneziaVPN",
       "metadata": {},
       "url": ""
     },
@@ -455,6 +472,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/morpheapp",
+      "kind": "community",
+      "label": "r/MorpheApp",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/nimby_rails",
       "kind": "community",
       "label": "r/NIMBY_Rails",
@@ -518,6 +542,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/plex",
+      "kind": "community",
+      "label": "r/PleX",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/pokemoninvesting",
       "kind": "community",
       "label": "r/PokemonInvesting",
@@ -539,6 +570,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/recommandedvpn",
+      "kind": "community",
+      "label": "r/RecommandedVPN",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/robloxevade",
       "kind": "community",
       "label": "r/RobloxEvade",
@@ -549,6 +587,13 @@
       "id": "community:reddit:r/rockbottomgame",
       "kind": "community",
       "label": "r/RockBottomGame",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/rockstarsupport",
+      "kind": "community",
+      "label": "r/RockstarSupport",
       "metadata": {},
       "url": ""
     },
@@ -658,6 +703,20 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/tivimate",
+      "kind": "community",
+      "label": "r/TiviMate",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/torrenting",
+      "kind": "community",
+      "label": "r/Torrenting",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/unifi",
       "kind": "community",
       "label": "r/UNIFI",
@@ -682,6 +741,27 @@
       "id": "community:reddit:r/uniuk",
       "kind": "community",
       "label": "r/UniUK",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/vpn",
+      "kind": "community",
+      "label": "r/VPN",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/vpnadvice_",
+      "kind": "community",
+      "label": "r/VPNAdvice_",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/vpnfortorrenting",
+      "kind": "community",
+      "label": "r/VPNforTorrenting",
       "metadata": {},
       "url": ""
     },
@@ -1043,6 +1123,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/paloaltonetworks",
+      "kind": "community",
+      "label": "r/paloaltonetworks",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/parentsofteens",
       "kind": "community",
       "label": "r/parentsofteens",
@@ -1127,6 +1214,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/selfhosted",
+      "kind": "community",
+      "label": "r/selfhosted",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/sidehustleindia",
       "kind": "community",
       "label": "r/sidehustleIndia",
@@ -1197,6 +1291,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/torrents",
+      "kind": "community",
+      "label": "r/torrents",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/translator",
       "kind": "community",
       "label": "r/translator",
@@ -1228,6 +1329,13 @@
       "id": "community:reddit:r/videography",
       "kind": "community",
       "label": "r/videography",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/vinteduk",
+      "kind": "community",
+      "label": "r/vintedUK",
       "metadata": {},
       "url": ""
     },
@@ -4822,7 +4930,7 @@
       "label": "LocalKnowledgeTerminal",
       "metadata": {
         "description": "Private, book-grounded multilingual knowledge cards on local hardware",
-        "homepage": "https://lazying.art",
+        "homepage": "https://lazying.art/lkt/",
         "topics": [
           "e-ink",
           "etymology",
@@ -6054,6 +6162,13 @@
       "url": "https://lazying.art/eink/"
     },
     {
+      "id": "url:c48afb0dbeb7ee89",
+      "kind": "web_resource",
+      "label": "pilot page",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/"
+    },
+    {
       "id": "url:e6fb5bef94e3ec0c",
       "kind": "web_resource",
       "label": "pipeline",
@@ -6061,11 +6176,25 @@
       "url": "https://github.com/lachlanchen/PocketPolyglot"
     },
     {
+      "id": "url:8a87167432f94090",
+      "kind": "web_resource",
+      "label": "product brief",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md"
+    },
+    {
       "id": "url:43d56bb572f1ca4a",
       "kind": "web_resource",
       "label": "public shelf",
       "metadata": {},
       "url": "https://lachlanchen.github.io/LinguaLeaf/website/"
+    },
+    {
+      "id": "url:d9c92d269df40406",
+      "kind": "web_resource",
+      "label": "repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     }
   ],
   "relationships": [
@@ -6148,6 +6277,78 @@
       "relation": "uses_evidence",
       "source": "campaign:eink-multilingual-reading",
       "target": "url:43d56bb572f1ca4a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "draft_required"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "needs_exact_need"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "draft_required"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:8a87167432f94090"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:c48afb0dbeb7ee89"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:d9c92d269df40406"
     },
     {
       "confidence": 1.0,
@@ -7060,6 +7261,14 @@
       "relation": "backed_by",
       "source": "project:localknowledgeterminal",
       "target": "repository:lachlanchen/LocalKnowledgeTerminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/",
+      "metadata": {},
+      "relation": "has_homepage",
+      "source": "project:localknowledgeterminal",
+      "target": "url:c48afb0dbeb7ee89"
     },
     {
       "confidence": 1.0,

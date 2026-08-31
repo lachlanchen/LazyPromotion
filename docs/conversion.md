@@ -34,6 +34,16 @@ Other live LazyingArt offers may be tested later, but only as separate campaigns
 with their own audience evidence. Mixing unrelated handmade goods into a
 language-tool discussion would weaken trust and conversion quality.
 
+## Fit-first pilot path
+
+[Local Knowledge Terminal](https://lazying.art/lkt/) now has a separate pilot
+inquiry page for people with one bounded private book or dictionary collection.
+It has no public price and is not presented as ready-to-ship hardware. The
+commercial path begins only after checking the collection, languages, intended
+readers, privacy requirements, and existing hardware against the current public
+code and product brief. An inquiry is a lead at most; it is never recorded as a
+sale without confirmed payment.
+
 ## Private evidence ledger
 
 LazyPromotion keeps replies, leads, and money as different outcome types. A

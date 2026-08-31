@@ -237,6 +237,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(campaign["version"], 1)
         self.assertEqual(campaign["source_evidence"]["offer_stage"], "pre-order")
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 128 / CNY 999")
+        self.assertIn("email inquiry", campaign["source_evidence"]["current_order_mode"])
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
@@ -245,6 +246,18 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(campaign["channels"]["hackernews"]["state"], "research_only")
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
+
+    def test_lkt_campaign_is_fit_first_and_never_invents_a_sale(self):
+        path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        serialized = path.read_text(encoding="utf-8").casefold()
+        self.assertEqual(campaign["source_evidence"]["offer_stage"], "pilot inquiry")
+        self.assertEqual(campaign["source_evidence"]["public_price"], "none")
+        self.assertEqual(campaign["channels"]["hackernews"]["state"], "research_only")
+        self.assertIn("no detected software license", serialized)
+        self.assertIn("confirmed payment", serialized)
+        self.assertNotIn("integration_id", serialized)
+        self.assertNotIn("post_id", serialized)
 
     def test_reply_prompt_uses_quiet_profile_led_promotion(self):
         candidate = {

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "id": "local-knowledge-terminal-pilot",
+  "objective": "Find one bounded private-knowledge use case where the current Local Knowledge Terminal can genuinely help, then invite a fit-first pilot inquiry without implying an off-the-shelf product.",
+  "source_evidence": {
+    "pilot_page": "https://lazying.art/lkt/",
+    "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
+    "offer_stage": "pilot inquiry",
+    "public_price": "none",
+    "limits": [
+      "Do not call the hardware ready to ship or imply that a standard kit is available.",
+      "Do not quote a price, delivery date, support term, license, corpus entitlement, model benchmark, or hardware specification that is not on current first-party evidence.",
+      "The public repository has no detected software license; describe it as public code, not open source, until the owner selects a license.",
+      "Ask about the collection, languages, intended readers, privacy needs, and existing hardware before discussing scope.",
+      "A useful technical answer must stand on its own before mentioning the pilot page."
+    ]
+  },
+  "funnel": {
+    "free_value": "Inspect the public code, tests, architecture, and durable product brief.",
+    "qualified_interest": "Visit the pilot page or send a bounded use-case inquiry.",
+    "commercial_action": "Agree on a reviewed scope and price only after the current software is shown to fit the collection and hardware.",
+    "gross_revenue_milestone": "Record revenue only after confirmed payment; page visits and inquiries are not sales."
+  },
+  "channels": {
+    "reddit": {
+      "state": "needs_exact_need",
+      "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
+    },
+    "x": {
+      "state": "draft_required",
+      "policy": "A future first-party product post may show the real word-card or word-origin interface and ask for one bounded pilot use case. It must remain unscheduled until exact review."
+    },
+    "instagram": {
+      "state": "draft_required",
+      "policy": "Use only the real current interface images. Describe the working software and pilot boundary; do not present a hardware mockup as inventory."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Hacker News prohibits generated or AI-edited comments. Discover needs only; do not create or send agent-authored replies."
+    }
+  }
+}

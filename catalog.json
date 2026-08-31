@@ -150,6 +150,7 @@
       "id": "localknowledgeterminal",
       "name": "LocalKnowledgeTerminal",
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "homepage": "https://lazying.art/lkt/",
       "summary": "Private, book-grounded multilingual knowledge cards designed for local hardware.",
       "keywords": [
         "local knowledge base", "private knowledge base", "book grounded", "book-grounded",

@@ -39,6 +39,17 @@ class InventoryTests(unittest.TestCase):
         self.assertNotIn("candidate_", body)
         self.assertNotIn("draft_", body)
 
+    def test_generated_priority_routes_preserve_commercial_boundaries(self):
+        body = inventory.render(inventory.load_index())
+        priority = body.split("## Portfolio at a glance", 1)[0]
+        self.assertIn(
+            "Public $128 / ¥999 pre-order inquiry; payment checkout awaits fulfillment review",
+            priority,
+        )
+        self.assertIn("[Local Knowledge Terminal](https://lazying.art/lkt/)", priority)
+        self.assertIn("no public price or ready-to-ship hardware claim", priority)
+        self.assertNotIn("Verified public pre-order", priority)
+
 
 if __name__ == "__main__":
     unittest.main()

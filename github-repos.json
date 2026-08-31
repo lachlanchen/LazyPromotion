@@ -1316,7 +1316,7 @@
     },
     {
       "description": "Private, book-grounded multilingual knowledge cards on local hardware",
-      "homepage": "https://lazying.art",
+      "homepage": "https://lazying.art/lkt/",
       "name": "LocalKnowledgeTerminal",
       "primary_language": "Python",
       "topics": [

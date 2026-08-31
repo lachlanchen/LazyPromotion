@@ -155,6 +155,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("chinesehistory", {route["query"] for route in instagram["core"]})
         self.assertEqual(instagram["long_tail"], [])
 
+    def test_primary_lkt_offer_has_frequent_distinct_need_routes(self):
+        for platform in ("reddit", "x", "hackernews"):
+            core = browser.discovery_query_lanes(platform)["core"]
+            routes = [
+                route for route in core
+                if route["project_id"] == "localknowledgeterminal"
+            ]
+            with self.subTest(platform=platform):
+                self.assertGreaterEqual(len(routes), 4)
+                self.assertGreaterEqual(len(routes) * 5, len(core))
+                self.assertEqual(len({route["query"] for route in routes}), len(routes))
+                combined = " ".join(route["query"].casefold() for route in routes)
+                self.assertIn("private", combined)
+                self.assertTrue(any(term in combined for term in ("offline", "local")))
+                self.assertTrue(any(term in combined for term in ("pdf", "book", "document")))
+
     def test_hacker_news_item_id_survives_canonicalization(self):
         rows = browser.dedupe(
             [{

@@ -176,11 +176,14 @@ scripts/worker.sh start \
 scripts/worker.sh status
 ```
 
-Each cycle runs one reviewed core route for the highest-value subtitle,
-language-learning, physics, local-media, and knowledge workflows, plus one
-independently rotating long-tail route covering every evidence-backed repository
-on Reddit, X, and Hacker News. HN results inform product research but never
-enter the generated-comment queue. Instagram rotates its small reviewed
+Each cycle runs one reviewed core route. Distinct high-intent LKT searches for
+private documents, offline retrieval, and multilingual knowledge recur in at
+least one of every five core slots, while subtitle, language-learning, physics,
+and local-media routes remain in rotation. One independently rotating long-tail
+route still covers every evidence-backed repository on Reddit, X, and Hacker
+News without increasing the configured per-cycle query or model budget. HN
+results inform product research but never enter the generated-comment queue.
+Instagram rotates its small reviewed
 explicit-help hashtag set. Failed routes keep their own lane cursor for retry.
 State,
 logs, candidates, model decisions, screenshots, and the exact draft review

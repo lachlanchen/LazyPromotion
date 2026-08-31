@@ -36,6 +36,11 @@
   "queries": {
     "reddit": [
       {
+        "project_id": "localknowledgeterminal",
+        "query": "subreddit:selfhosted (\"private knowledge base\" OR \"document search\") (help OR recommend)",
+        "purpose": "Self-hosters asking for a bounded private-document search or knowledge workflow"
+      },
+      {
         "project_id": "lazyedit",
         "query": "subreddit:VideoEditing \"subtitles\" help",
         "purpose": "Fresh video-editing questions where subtitle workflow is part of the actual need"
@@ -51,6 +56,11 @@
         "purpose": "Learners seeking bilingual or parallel reading material"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "subreddit:PKMS (offline OR private) (multilingual OR citations) (recommend OR help)",
+        "purpose": "Personal-knowledge users asking for private, cited, or multilingual local workflows"
+      },
+      {
         "project_id": "pocketpolyglot",
         "query": "(\"Classical Chinese\" OR wenyan OR wenyanwen) (help OR reader OR translation)",
         "purpose": "Classical Chinese learners asking for an aligned multilingual reading format"
@@ -59,6 +69,11 @@
         "project_id": "lingualleaf",
         "query": "subreddit:LearnJapanese \"graded reader\" advice",
         "purpose": "Japanese learners asking for graded reading resources"
+      },
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "subreddit:LocalLLaMA (PDF OR books) (\"offline RAG\" OR \"local RAG\") (help OR advice)",
+        "purpose": "Local-model users asking how to make a bounded PDF or book collection searchable without cloud upload"
       },
       {
         "project_id": "lingualleaf",
@@ -113,6 +128,11 @@
     ],
     "x": [
       {
+        "project_id": "localknowledgeterminal",
+        "query": "(\"private knowledge base\" OR \"offline RAG\") (help OR recommend) -filter:retweets",
+        "purpose": "Explicit requests for private knowledge or offline retrieval workflows"
+      },
+      {
         "project_id": "lazyedit",
         "query": "(\"add subtitles\" OR \"need captions\") video (help OR advice) -filter:retweets",
         "purpose": "Explicit subtitle help requests from video creators"
@@ -128,6 +148,11 @@
         "purpose": "Classical Chinese learners asking for an aligned multilingual reading format"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "(\"search my PDFs\" OR \"chat with PDFs\") (local OR private) (help OR advice) -filter:retweets",
+        "purpose": "People asking for a local or private workflow over an existing PDF collection"
+      },
+      {
         "project_id": "lingualleaf",
         "query": "\"Chinese history\" (book OR reader) (recommend OR bilingual OR translation) -filter:retweets",
         "purpose": "Readers seeking accessible multilingual editions of Chinese history"
@@ -136,6 +161,11 @@
         "project_id": "leonardsusskind",
         "query": "\"Susskind\" (help OR notes) -filter:retweets",
         "purpose": "Physics learners asking for notes or explanations"
+      },
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "(\"multilingual knowledge base\" OR \"bilingual knowledge base\") (help OR recommend) -filter:retweets",
+        "purpose": "Explicit requests for multilingual private-knowledge workflows"
       },
       {
         "project_id": "localvideogen",
@@ -188,6 +218,12 @@
         "purpose": "Video creators asking for caption, transcription, or editing help"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "Ask HN private document search",
+        "comment_query": "private document search",
+        "purpose": "Discovery-only research into private document-search needs"
+      },
+      {
         "project_id": "pocketpolyglot",
         "query": "Ask HN language learning reader",
         "comment_query": "language learning",
@@ -206,6 +242,12 @@
         "purpose": "Readers asking for accessible Chinese-history books or translations"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "Ask HN offline RAG PDFs",
+        "comment_query": "offline RAG",
+        "purpose": "Discovery-only research into local retrieval over private PDF collections"
+      },
+      {
         "project_id": "lazygame",
         "query": "Ask HN learn board games AI",
         "comment_query": "board game",
@@ -222,6 +264,12 @@
         "query": "Ask HN multilingual e-reader",
         "comment_query": "e-reader language learning",
         "purpose": "Discovery-only research into multilingual e-paper reading needs; no generated HN comments"
+      },
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "Ask HN multilingual knowledge base",
+        "comment_query": "multilingual knowledge base",
+        "purpose": "Discovery-only research into multilingual private-knowledge needs"
       }
     ],
     "instagram": [

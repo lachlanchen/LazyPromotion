@@ -110,6 +110,39 @@ class WorkerTests(unittest.TestCase):
         self.assertEqual(result["drafted"], [])
         self.assertEqual(result["draft_skipped"][0]["candidate_id"], candidate["id"])
 
+    def test_continuous_reddit_draft_is_value_only_by_default(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/value/help/",
+            author="reader",
+            body="Can someone recommend a private local RAG workflow for my PDF collection?",
+            published_at=self.now,
+        )
+        accepted = {
+            "eligible": True,
+            "project_id": "localknowledgeterminal",
+            "confidence": "high",
+            "reason": "Exact bounded private collection need",
+            "risk_flags": [],
+        }
+        value_only_reply = {
+            "reply": "Start with full-text search and measure misses before adding embeddings.",
+            "why": "Useful independent answer.",
+            "confidence": "high",
+            "include_link": False,
+        }
+        with patch("promotion.open_db", return_value=self.db), patch(
+            "promotion.run_codex_triage", return_value=accepted
+        ), patch(
+            "promotion.run_codex_draft", return_value=value_only_reply
+        ) as draft_model:
+            result = worker.run_models([candidate["id"]], max_triage=1, max_drafts=1)
+        draft_model.assert_called_once()
+        self.assertTrue(draft_model.call_args.kwargs["value_only"])
+        self.assertTrue(result["drafted"][0]["value_only"])
+        self.assertFalse(worker.review_queue(self.db)[0]["include_link"])
+
     def test_failed_discovery_route_is_retried(self):
         self.assertEqual(worker.next_route_cursor(5, {"ok": False, "next_query": 6}), 5)
         self.assertEqual(worker.next_route_cursor(5, {"ok": True, "next_query": 6}), 6)

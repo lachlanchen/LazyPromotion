@@ -201,6 +201,10 @@ Any remaining triage capacity drains the freshest timestamped request backlog,
 so a transient model failure cannot strand a genuine need indefinitely.
 Continuous mode never approves,
 submits, votes, follows, or sends a direct message.
+It also generates Reddit drafts in value-only mode by default. A project mention
+requires an explicit normal redraft after reviewing the live community rules,
+the account's contribution history, and the exact destination. Direct
+first-party X and Instagram campaign posts remain separate from this safeguard.
 
 The triage model receives reviewed per-project offer context as well as the
 repository summary. This matters for LKT: it may identify a request for a

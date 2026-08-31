@@ -26,6 +26,12 @@ QUEUE_PATH = RUNTIME / "review-queue.json"
 LOG_PATH = RUNTIME / "worker.jsonl"
 LOCK_PATH = RUNTIME / "worker.lock"
 DEFAULT_PLATFORMS = ("reddit", "x", "hackernews", "instagram")
+# Reddit communities commonly condition or limit self-promotion, and the
+# account's contribution mix must be checked live before any project mention.
+# Continuous mode therefore drafts value-only Reddit answers. An operator may
+# explicitly redraft without this restriction after reviewing the exact rules,
+# destination, account history, and contribution itself.
+VALUE_ONLY_DRAFT_PLATFORMS = frozenset({"reddit"})
 STOP = False
 
 
@@ -170,9 +176,18 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
             })
             continue
         try:
-            result = promotion.run_codex_draft(candidate, promotion.project_by_id(candidate["suggested_tool"]))
+            value_only = candidate["platform"] in VALUE_ONLY_DRAFT_PLATFORMS
+            result = promotion.run_codex_draft(
+                candidate,
+                promotion.project_by_id(candidate["suggested_tool"]),
+                value_only=value_only,
+            )
             draft = promotion.save_draft(db, candidate_id, result)
-            drafted.append({"candidate_id": candidate_id, "draft_id": draft["id"]})
+            drafted.append({
+                "candidate_id": candidate_id,
+                "draft_id": draft["id"],
+                "value_only": value_only,
+            })
         except Exception as exc:
             errors.append({"stage": "draft", "candidate_id": candidate_id, "error": str(exc)})
     queue = review_queue(db)

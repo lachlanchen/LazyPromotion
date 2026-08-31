@@ -354,7 +354,15 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(
             campaign["conversion_readiness"]["mailbox_monitoring"],
-            "unverified_requires_operator_login",
+            "operator_access_verified_folder_ready",
+        )
+        self.assertEqual(
+            campaign["conversion_readiness"]["delivery_probe"],
+            "visible_in_authenticated_icloud_mail",
+        )
+        self.assertEqual(
+            campaign["conversion_readiness"]["intake_folder"],
+            "LKT Fit Checks",
         )
         self.assertIn(
             "do not promise a response time",

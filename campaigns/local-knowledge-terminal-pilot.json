@@ -44,10 +44,11 @@
   "conversion_readiness": {
     "inbound_address": "contact@lazying.art",
     "mail_routing": "icloud_mx_confirmed",
-    "delivery_probe": "sent_without_observed_bounce",
-    "mailbox_monitoring": "unverified_requires_operator_login",
-    "checked_at": "2026-08-31T20:46:58Z",
-    "policy": "Mail routing and a non-bouncing test do not prove that the inbox is monitored. Do not promise a response time or treat an email as a qualified lead until the operator has verified mailbox access and the actual inbound request.",
+    "delivery_probe": "visible_in_authenticated_icloud_mail",
+    "mailbox_monitoring": "operator_access_verified_folder_ready",
+    "intake_folder": "LKT Fit Checks",
+    "checked_at": "2026-08-31T22:33:02Z",
+    "policy": "Authenticated access and the visible controlled test prove that the inbox can be reviewed. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
     "payment_request": {
       "state": "live_account_and_fixed_config_verified",
       "checked_at": "2026-08-31T20:51:23Z",

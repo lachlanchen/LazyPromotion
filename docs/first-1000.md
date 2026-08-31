@@ -27,13 +27,13 @@ final email send.
 ### Inbox readiness gate
 
 The public `contact@lazying.art` address has iCloud MX routing and accepted a
-controlled delivery test without an observed bounce. That proves routing, not
-operator monitoring: iCloud Mail is not authenticated in the promotion
-browser, so mailbox access remains explicitly unverified. Do not promise a
-response time, mark an email as a qualified lead, or infer a conversion until
-an operator has opened the mailbox and reviewed the actual inbound message.
-Before increasing distribution, verify the inbox login and establish a simple
-fit-check label or folder without copying customer content into this repository.
+controlled delivery test without an observed bounce. Authenticated iCloud Mail
+then displayed that exact test subject, and the operator created a dedicated
+`LKT Fit Checks` folder. This verifies routable, reviewable operator access; it
+does not prove that every future message is a qualified lead. Do not promise a
+response time, copy message contents into this repository, or infer a conversion
+until the actual inbound request has been reviewed against the qualification
+gate below.
 
 ## Qualification gate
 

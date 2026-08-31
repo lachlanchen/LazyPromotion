@@ -257,6 +257,15 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
         self.assertIn("free fit check", campaign["source_evidence"]["current_order_mode"])
+        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
+        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
+        self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
+        self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
+        self.assertIn(
+            "utm_source=instagram", campaign["channels"]["instagram"]["content"]
+        )
+        self.assertIn("concept", campaign["channels"]["x"]["content"])
+        self.assertIn("not shipped inventory", campaign["channels"]["instagram"]["content"])
         self.assertEqual(campaign["channels"]["hackernews"]["state"], "research_only")
         self.assertIn("no detected software license", serialized)
         self.assertIn("four confirmed usd 250 payments", serialized)

@@ -143,6 +143,27 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/askhistorians",
+      "kind": "community",
+      "label": "r/AskHistorians",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/askhistory",
+      "kind": "community",
+      "label": "r/AskHistory",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/askreddit",
+      "kind": "community",
+      "label": "r/AskReddit",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/asthma",
       "kind": "community",
       "label": "r/Asthma",
@@ -206,6 +227,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/chinesehistory",
+      "kind": "community",
+      "label": "r/ChineseHistory",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/chineselanguage",
       "kind": "community",
       "label": "r/ChineseLanguage",
@@ -216,6 +244,27 @@
       "id": "community:reddit:r/christianity",
       "kind": "community",
       "label": "r/Christianity",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/claudecode",
+      "kind": "community",
+      "label": "r/ClaudeCode",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/claudeworkflows",
+      "kind": "community",
+      "label": "r/ClaudeWorkflows",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/codexautomation",
+      "kind": "community",
+      "label": "r/CodexAutomation",
       "metadata": {},
       "url": ""
     },
@@ -272,6 +321,13 @@
       "id": "community:reddit:r/faithstoryai",
       "kind": "community",
       "label": "r/FaithStoryAI",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/fantasy",
+      "kind": "community",
+      "label": "r/Fantasy",
       "metadata": {},
       "url": ""
     },
@@ -423,9 +479,23 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/luciferstar",
+      "kind": "community",
+      "label": "r/LUCIFERSTAR",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/laptopdealsindia",
       "kind": "community",
       "label": "r/LaptopDealsIndia",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/latestagecapitalism",
+      "kind": "community",
+      "label": "r/LateStageCapitalism",
       "metadata": {},
       "url": ""
     },
@@ -461,6 +531,13 @@
       "id": "community:reddit:r/localllama",
       "kind": "community",
       "label": "r/LocalLLaMA",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/losalamos",
+      "kind": "community",
+      "label": "r/LosAlamos",
       "metadata": {},
       "url": ""
     },
@@ -927,6 +1004,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/classicliterature",
+      "kind": "community",
+      "label": "r/classicliterature",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/classifiedsph",
       "kind": "community",
       "label": "r/classifiedsph",
@@ -965,6 +1049,20 @@
       "id": "community:reddit:r/deepweb",
       "kind": "community",
       "label": "r/deepweb",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/developersindia",
+      "kind": "community",
+      "label": "r/developersIndia",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/dsa",
+      "kind": "community",
+      "label": "r/dsa",
       "metadata": {},
       "url": ""
     },
@@ -1011,6 +1109,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/hermesagent",
+      "kind": "community",
+      "label": "r/hermesagent",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/holofractico",
       "kind": "community",
       "label": "r/holofractico",
@@ -1032,6 +1137,13 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/innioasis",
+      "kind": "community",
+      "label": "r/innioasis",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/japanese",
       "kind": "community",
       "label": "r/japanese",
@@ -1042,6 +1154,13 @@
       "id": "community:reddit:r/jenova_ai",
       "kind": "community",
       "label": "r/jenova_ai",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/jobsearchhacks",
+      "kind": "community",
+      "label": "r/jobsearchhacks",
       "metadata": {},
       "url": ""
     },
@@ -1249,9 +1368,30 @@
       "url": ""
     },
     {
+      "id": "community:reddit:r/softwaretesting",
+      "kind": "community",
+      "label": "r/softwaretesting",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/steammachine",
+      "kind": "community",
+      "label": "r/steammachine",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "community:reddit:r/story",
       "kind": "community",
       "label": "r/story",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/suggestmeabook",
+      "kind": "community",
+      "label": "r/suggestmeabook",
       "metadata": {},
       "url": ""
     },
@@ -1343,6 +1483,13 @@
       "id": "community:reddit:r/weddingplanning",
       "kind": "community",
       "label": "r/weddingplanning",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "community:reddit:r/wherewindsmeet_",
+      "kind": "community",
+      "label": "r/wherewindsmeet_",
       "metadata": {},
       "url": ""
     },
@@ -6155,6 +6302,13 @@
       "url": "https://github.com/lachlanchen/LazyingArtLanding"
     },
     {
+      "id": "url:0bb69e434c76a028",
+      "kind": "web_resource",
+      "label": "instagram visual",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png"
+    },
+    {
       "id": "url:0c3f0c1551c48c93",
       "kind": "web_resource",
       "label": "offer page",
@@ -6195,6 +6349,13 @@
       "label": "repository",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+    },
+    {
+      "id": "url:9d1733477761da4f",
+      "kind": "web_resource",
+      "label": "website hero",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png"
     }
   ],
   "relationships": [
@@ -6300,7 +6461,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "draft_required"
+        "state": "postiz_draft"
       },
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
@@ -6320,11 +6481,19 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "draft_required"
+        "state": "postiz_draft"
       },
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:0bb69e434c76a028"
     },
     {
       "confidence": 1.0,
@@ -6333,6 +6502,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:8a87167432f94090"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:9d1733477761da4f"
     },
     {
       "confidence": 1.0,

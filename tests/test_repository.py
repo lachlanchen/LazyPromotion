@@ -281,6 +281,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
         self.assertIn("free fit check", campaign["source_evidence"]["current_order_mode"])
         self.assertEqual(
+            campaign["source_evidence"]["practical_guide"],
+            "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+        )
+        self.assertEqual(
             promotion.project_by_id("localknowledgeterminal")["reply_url"],
             campaign["source_evidence"]["fit_check"],
         )
@@ -291,6 +295,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("stores and sends nothing automatically", serialized)
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
+        self.assertEqual(campaign["channels"]["lazyblog"]["state"], "published")
+        self.assertEqual(
+            sorted(campaign["channels"]["lazyblog"]["translations"]), ["ja", "zh"]
+        )
+        self.assertIn(
+            "utm_source=lazyblog",
+            campaign["channels"]["lazyblog"]["conversion_url"],
+        )
         self.assertEqual(
             campaign["channels"]["x"]["publish_at"], "2026-09-08T01:00:00Z"
         )

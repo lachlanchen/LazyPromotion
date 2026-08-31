@@ -5,6 +5,7 @@
   "source_evidence": {
     "pilot_page": "https://lazying.art/lkt/",
     "fit_check": "https://lazying.art/lkt/fit-check/",
+    "practical_guide": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
     "website_hero": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
@@ -41,6 +42,18 @@
     "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales."
   },
   "channels": {
+    "lazyblog": {
+      "state": "published",
+      "published_at": "2026-08-31T19:27:53Z",
+      "url": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+      "source_language": "en",
+      "translations": [
+        "ja",
+        "zh"
+      ],
+      "conversion_url": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=confidential_pdf_search",
+      "policy": "Lead with a complete privacy-first search recipe grounded in official documentation. Mention the free fit check and bounded USD 250 sprint only after the practical answer, with exclusions and source-rights requirements intact."
+    },
     "reddit": {
       "state": "needs_exact_need",
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."

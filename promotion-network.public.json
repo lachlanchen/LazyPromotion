@@ -45,6 +45,13 @@
       "url": ""
     },
     {
+      "id": "channel:lazyblog",
+      "kind": "channel",
+      "label": "lazyblog",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "channel:reddit",
       "kind": "channel",
       "label": "reddit",
@@ -4875,6 +4882,13 @@
       "url": "https://github.com/lachlanchen/PocketPolyglot"
     },
     {
+      "id": "url:a40ef1650eb94f9f",
+      "kind": "web_resource",
+      "label": "practical guide",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html"
+    },
+    {
       "id": "url:8a87167432f94090",
       "kind": "web_resource",
       "label": "product brief",
@@ -5016,6 +5030,16 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
+        "state": "published"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
         "state": "needs_exact_need"
       },
       "relation": "targets",
@@ -5055,6 +5079,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:9d1733477761da4f"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:a40ef1650eb94f9f"
     },
     {
       "confidence": 1.0,

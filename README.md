@@ -65,7 +65,7 @@ flowchart LR
 | [`catalog.json`](catalog.json) | Grounded mapping from real needs to maintained open-source projects |
 | [`github-repos.json`](github-repos.json) | Public-only inventory of every `lachlanchen` source repository |
 | [`sync_github_catalog.py`](sync_github_catalog.py) | Deterministic catalog refresh through the open-source GitHub CLI |
-| [`discovery-plan.json`](discovery-plan.json) | Bounded, project-specific help-request searches for each supported platform |
+| [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome stack with a persistent profile |
 | [`schemas/reply.json`](schemas/reply.json) | Bounded structured output contract for reply drafts |
 | [`schemas/triage.json`](schemas/triage.json) | Structured model eligibility decision required before a reply draft |

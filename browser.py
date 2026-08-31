@@ -116,6 +116,14 @@ def load_discovery_plan(path: Path = DISCOVERY_PLAN) -> dict[str, object]:
     if plan.get("version") != 1 or not isinstance(plan.get("queries"), dict):
         raise ValueError("discovery plan must contain version 1 and a queries object")
     known_projects = {project["id"] for project in promotion.load_catalog()["projects"]}
+    project_topics = plan.get("project_topics", {})
+    if not isinstance(project_topics, dict):
+        raise ValueError("discovery plan project_topics must be an object")
+    for project_id, topic in project_topics.items():
+        if project_id not in known_projects:
+            raise ValueError(f"unknown project topic override: {project_id}")
+        if not promotion.compact(str(topic)):
+            raise ValueError(f"empty project topic override: {project_id}")
     for platform in PLATFORM_HOSTS:
         queries = plan["queries"].get(platform)
         if not isinstance(queries, list):
@@ -132,7 +140,17 @@ def load_discovery_plan(path: Path = DISCOVERY_PLAN) -> dict[str, object]:
     return plan
 
 
-def automatic_query(platform: str, project: dict[str, object]) -> str:
+def automatic_query(platform: str, project: dict[str, object], topic_override: str = "") -> str:
+    overridden = promotion.normalized(topic_override).strip()
+    if overridden:
+        need = f'"{overridden}"' if " " in overridden else overridden
+        if platform == "reddit":
+            return f"{need} (help OR advice OR recommend)"
+        if platform == "x":
+            return f"{need} (help OR advice OR recommend) -filter:retweets"
+        if platform == "hackernews":
+            return f"Ask HN {need}"
+        return ""
     project_name = promotion.normalized(str(project["name"])).strip()
     keywords = sorted({
         promotion.normalized(str(keyword)).strip()
@@ -164,12 +182,13 @@ def discovery_queries(platform: str) -> list[dict[str, str]]:
     plan = load_discovery_plan()
     planned = [dict(item) for item in plan["queries"][platform]]
     covered = {item["project_id"] for item in planned}
+    project_topics = plan.get("project_topics", {})
     if platform not in {"reddit", "x", "hackernews"}:
         return planned
     for project in promotion.load_catalog()["projects"]:
         if project["id"] in covered:
             continue
-        query = automatic_query(platform, project)
+        query = automatic_query(platform, project, str(project_topics.get(project["id"], "")))
         if not query:
             continue
         planned.append({

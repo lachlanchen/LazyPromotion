@@ -61,11 +61,14 @@ class RepositoryTests(unittest.TestCase):
                 self.assertTrue(project["keywords"])
 
     def test_discovery_plan_uses_known_projects(self):
-        catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
-        known = {project["id"] for project in catalog["projects"]}
+        known = {project["id"] for project in promotion.load_catalog()["projects"]}
         plan = json.loads((ROOT / "discovery-plan.json").read_text(encoding="utf-8"))
         self.assertEqual(plan["version"], 1)
         self.assertTrue(plan["queries"]["reddit"])
+        for project_id, topic in plan["project_topics"].items():
+            with self.subTest(project_topic=project_id):
+                self.assertIn(project_id, known)
+                self.assertTrue(topic.strip())
         for platform, queries in plan["queries"].items():
             for query in queries:
                 with self.subTest(platform=platform, query=query["query"]):
@@ -80,6 +83,19 @@ class RepositoryTests(unittest.TestCase):
         query = route["query"].casefold()
         self.assertTrue(any(term in query for term in ("weiqi", "baduk", "board game")))
         self.assertNotEqual(query, '"learn go" (advice or resources) -filter:retweets')
+
+    def test_generated_brand_routes_use_need_oriented_topic_overrides(self):
+        expected = {
+            "github-cellist": "python environment import verification",
+            "github-glassagent-wearable-releases": "ai glasses setup",
+            "github-microquant": "metatrader5 ohlc analysis",
+            "github-yinghan": "organoid segmentation",
+        }
+        for platform in ("reddit", "x", "hackernews"):
+            routes = {route["project_id"]: route["query"] for route in browser.discovery_queries(platform)}
+            for project_id, topic in expected.items():
+                with self.subTest(platform=platform, project=project_id):
+                    self.assertIn(f'"{topic}"', routes[project_id])
 
     def test_public_github_index_covers_owner_source_repositories(self):
         index = json.loads((ROOT / "github-repos.json").read_text(encoding="utf-8"))

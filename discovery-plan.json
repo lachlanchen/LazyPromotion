@@ -1,5 +1,38 @@
 {
   "version": 1,
+  "project_topics": {
+    "github-aigi2vector": "image to vector conversion",
+    "github-autopubmonitor": "publication file monitoring",
+    "github-bigme": "bigme device file sync",
+    "github-cellist": "python environment import verification",
+    "github-customsensor": "diy image sensor",
+    "github-eca": "interpretable classification clustering",
+    "github-eventholography": "event assisted holographic imaging",
+    "github-glassagent-wearable-releases": "ai glasses setup",
+    "github-grilling-chatgpt": "openai json api",
+    "github-ideas": "metasurface research ideas",
+    "github-ideasglass": "wearable idea capture",
+    "github-ideasrobot": "microphone array sensor hub",
+    "github-imagizedlanguagemodel": "glyph language modeling",
+    "github-kindle": "kindle paperwhite jailbreak",
+    "github-lazyingartagent": "product idea task decomposition",
+    "github-lazyingartbot": "local personal ai assistant",
+    "github-lazylanguagelearner": "easy language learning",
+    "github-lifereverseengineering": "reverse engineering life",
+    "github-lightmind": "neuromorphic optical hardware",
+    "github-metasurfaceinversedeisgn": "metasurface inverse design",
+    "github-microquant": "metatrader5 ohlc analysis",
+    "github-onlyideas-aws": "aws amplify authentication",
+    "github-organoidagent": "organoid segmentation phenotyping",
+    "github-organoidintelligence": "brain organoid computing",
+    "github-paperagent": "local latex writing workspace",
+    "github-soraremote": "remote sora workflow",
+    "github-the-art-of-lazying": "strategic laziness productivity",
+    "github-video2book": "video to study material",
+    "github-videocaptionerwithclip": "clip video captioning",
+    "github-videocaptionerwithvit": "vit video captioning",
+    "github-yinghan": "organoid segmentation"
+  },
   "queries": {
     "reddit": [
       {

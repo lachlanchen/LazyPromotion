@@ -74,6 +74,7 @@ flowchart LR
 | [`docs/first-1000.md`](docs/first-1000.md) | One repeatable USD 250 LKT collection-fit sprint and its truthful four-sale milestone |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
 | [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger |
+| [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT Stripe path |
 | [`signals.py`](signals.py) | Private first-party demand signals kept distinct from leads, orders, and revenue |
 | [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |
 | [`network.py`](network.py) | Evidence graph connecting needs, projects, repositories, channels, campaigns, drafts, and public proof |
@@ -230,6 +231,23 @@ python network.py export-public
 Triage and drafting explicitly disable browser MCP access. Those model calls
 can classify or write local structured output only; they cannot navigate,
 click, or publish.
+
+Verify the downstream LKT payment path without creating any Stripe object:
+
+```bash
+python payment_readiness.py
+
+python payment_readiness.py \
+  --check-account \
+  --confirm-private-financial-read
+```
+
+The first command validates the sibling Stripe helper's fixed USD 250 config,
+review checklist, private key file permissions, and key mode without network
+access. The second performs one read-only Stripe account lookup and prints only
+readiness booleans—never the key or account identifier. Neither command creates
+a Product, Price, Payment Link, charge, or payout. A real fit check and accepted
+written scope remain mandatory before the separately guarded creation command.
 
 Prepare a reviewed draft without sending it:
 

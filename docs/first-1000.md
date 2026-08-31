@@ -88,6 +88,18 @@ value-only replies can find useful context without a second promotional reply.
 Both use tracked guide links, and the Reddit resource includes an explicit
 maintainer disclosure.
 
+The downstream payment path can be checked without creating Stripe objects:
+
+```bash
+python payment_readiness.py
+python payment_readiness.py --check-account --confirm-private-financial-read
+```
+
+The report is secret-sanitized and does not expose an account identifier. Even
+when live account readiness is true, the per-customer fit check, accepted
+written scope, and full fulfillment review remain mandatory; the check never
+creates or sends a payment link.
+
 ## How the portfolio contributes
 
 The portfolio is evidence and implementation leverage, not a list of calls to

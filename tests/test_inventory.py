@@ -47,7 +47,11 @@ class InventoryTests(unittest.TestCase):
             priority,
         )
         self.assertIn("[Local Knowledge Terminal](https://lazying.art/lkt/)", priority)
-        self.assertIn("no public price or ready-to-ship hardware claim", priority)
+        self.assertIn(
+            "USD 250 collection-fit sprint after a free fit check; existing hardware only",
+            priority,
+        )
+        self.assertIn("four confirmed USD 250", priority)
         self.assertNotIn("Verified public pre-order", priority)
 
 

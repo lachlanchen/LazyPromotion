@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent
 CAMPAIGNS = ROOT / "campaigns"
 USD_GOAL_MINOR = 100_000
 EINK_USD_MINOR = 12_800
+LKT_SPRINT_USD_MINOR = 25_000
 
 OUTCOME_KINDS = {
     "reply_received",
@@ -200,6 +201,9 @@ def funnel_report(db) -> dict:
             "confirmed_minor": usd_gross,
             "progress_percent": round(100 * usd_gross / USD_GOAL_MINOR, 2),
             "remaining_minor": remaining,
+            "additional_250_usd_sprints_needed": math.ceil(
+                remaining / LKT_SPRINT_USD_MINOR
+            ),
             "additional_128_usd_orders_needed": math.ceil(remaining / EINK_USD_MINOR),
         },
     }

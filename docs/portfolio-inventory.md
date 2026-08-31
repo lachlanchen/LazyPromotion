@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **104 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-08-31. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **104 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-01. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
 
 ## Where promotion should start
 
@@ -13,10 +13,10 @@ These are priority paths, not a license to force a mention. LazyPromotion should
 | [LazyEdit + AutoPublish](https://studio.lazying.art/) | Subtitles, transcription, highlights, metadata, and repeatable video publishing | Video creators with a concrete editing or publishing bottleneck | Earn trust through a working open-source path; do not imply paid pricing that is not published |
 | [PocketPolyglot + LinguaLeaf](https://learn.lazying.art) | Readable multilingual, interlinear, ruby, pinyin, and furigana books | Language learners, teachers, and readers of Classical Chinese | Free books and builder first; optional eInk pre-order or GitHub Sponsors later |
 | [Susskind archive + LazyLearn](https://github.com/lachlanchen/leonardsusskind) | Searchable lecture notes and a bridge from physics intuition to practice | Independent physics learners | Free educational value; sponsorship is secondary and never the reason for a reply |
-| [Local Knowledge Terminal](https://lazying.art/lkt/) | Private, cited multilingual cards from a bounded book or dictionary collection | Educators, language labs, libraries, exhibits, and private researchers | Fit-first pilot inquiry; no public price or ready-to-ship hardware claim |
+| [Local Knowledge Terminal](https://lazying.art/lkt/) | Private, cited multilingual cards from a bounded book or dictionary collection | Educators, language labs, libraries, exhibits, and private researchers | USD 250 collection-fit sprint after a free fit check; existing hardware only |
 | [Musia + LocalVideoGen](https://fun.lazying.art) | Local-first music localization and controllable video generation | Creators who already have a specific song, stem, or video workflow problem | Find design partners and open-source users before making a commercial claim |
 
-The immediate revenue route is an eInk order inquiry followed by reviewed payment, a fit-first Local Knowledge Terminal pilot, or an existing Figurine checkout. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
+The single first-USD-1,000 route is four confirmed USD 250 Local Knowledge Terminal collection-fit sprints. The eInk inquiry and Figurine checkout remain separate offers, not competing calls to action. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
 
 ## Portfolio at a glance
 

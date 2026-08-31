@@ -7,42 +7,48 @@ be reported separately—none may be inferred from impressions or clicks.
 
 ## First USD 1,000 path
 
-The clearest tool-aligned offer currently published is
-[LazyingArt eInk](https://lazying.art/eink/): a USD 128 / CNY 999 pre-order tied
-to a free local Kindle sender and free LinguaLeaf books. Its current public
-order path is an email inquiry, not a payment checkout. Eight confirmed USD 128
-orders would be USD 1,024 gross. That is a milestone calculation, not a
-forecast, and excludes payment fees, shipping, tax, refunds, and fulfillment
-costs.
+The single primary offer is the
+[Local Knowledge Terminal collection-fit sprint](https://lazying.art/lkt/): a
+fixed USD 250 service for one customer-provided collection, one language goal,
+and one existing machine. It includes a written data/privacy map, a small
+browser proof from a representative sample when the source is usable, and a
+go/no-go recommendation. Hardware, shipping, custom OCR, and a production
+deployment are excluded. Four confirmed USD 250 payments would be USD 1,000
+gross. That is a milestone calculation, not a forecast, and excludes payment
+fees, tax, refunds, and delivery costs.
 
 The campaign sequence is:
 
-1. Show a real multilingual reading page.
-2. Offer the free Kindle sender or public book shelf.
-3. Ask what the reader needs from e-paper hardware.
-4. Present the pre-order inquiry only to qualified readers.
-5. Activate payment only after the exact product, shipping, lead time,
-   cancellation, return, warranty, and support terms have been reviewed.
-6. Record an order only from confirmed payment or the operator's order ledger.
+1. Find a current, explicit need involving a private collection, local/offline
+   knowledge, citations, or multilingual study.
+2. Answer the stated problem usefully before mentioning any LazyingArt work.
+3. Let the profile or one relevant link lead to the free fit check.
+4. Confirm source rights, sample format, language goal, readers, privacy needs,
+   and existing hardware.
+5. Request the fixed USD 250 payment through Stripe only after both sides accept
+   the bounded scope.
+6. Deliver the map, representative browser proof when feasible, and go/no-go
+   recommendation; record a sale only from confirmed payment.
 
 Every campaign link uses a stable `utm_campaign`. Postiz analytics can measure
 channel reach and engagement, while confirmed leads and revenue remain private
 operator records. The agent never fabricates conversions and never treats a
 public reply, impression, or GitHub visit as a customer.
 
-Other live LazyingArt offers may be tested later, but only as separate campaigns
-with their own audience evidence. Mixing unrelated handmade goods into a
-language-tool discussion would weaken trust and conversion quality.
+The rest of the portfolio supplies proof and implementation components rather
+than competing calls to action. PocketPolyglot, LinguaLeaf, WordsCardEink, and
+WordOrigins strengthen the multilingual pipeline; BLOG and Search Console show
+existing demand; LazyPromotion finds needs and keeps the evidence ledger;
+LazyEdge can support a later deployment. Other offers remain separate campaigns
+and are mentioned only when they directly fit the stated need.
 
 ## Fit-first pilot path
 
-[Local Knowledge Terminal](https://lazying.art/lkt/) now has a separate pilot
-inquiry page for people with one bounded private book or dictionary collection.
-It has no public price and is not presented as ready-to-ship hardware. The
-commercial path begins only after checking the collection, languages, intended
-readers, privacy requirements, and existing hardware against the current public
-code and product brief. An inquiry is a lead at most; it is never recorded as a
-sale without confirmed payment.
+[Local Knowledge Terminal](https://lazying.art/lkt/) publishes the bounded USD
+250 collection-fit sprint for people with one private book or dictionary
+collection. It is a service using the customer's existing machine, not
+ready-to-ship hardware. The free fit check precedes payment. An inquiry is a
+lead at most; it is never recorded as a sale without confirmed payment.
 
 ## Private evidence ledger
 

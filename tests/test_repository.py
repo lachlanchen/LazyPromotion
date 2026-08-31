@@ -251,10 +251,15 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["source_evidence"]["offer_stage"], "pilot inquiry")
-        self.assertEqual(campaign["source_evidence"]["public_price"], "none")
+        self.assertEqual(
+            campaign["source_evidence"]["offer_stage"],
+            "founding collection-fit sprint",
+        )
+        self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
+        self.assertIn("free fit check", campaign["source_evidence"]["current_order_mode"])
         self.assertEqual(campaign["channels"]["hackernews"]["state"], "research_only")
         self.assertIn("no detected software license", serialized)
+        self.assertIn("four confirmed usd 250 payments", serialized)
         self.assertIn("confirmed payment", serialized)
         self.assertNotIn("integration_id", serialized)
         self.assertNotIn("post_id", serialized)

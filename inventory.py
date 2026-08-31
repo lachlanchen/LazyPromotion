@@ -138,7 +138,7 @@ PRIORITIES = [
         "work": "Local Knowledge Terminal",
         "need": "Private, cited multilingual cards from a bounded book or dictionary collection",
         "audience": "Educators, language labs, libraries, exhibits, and private researchers",
-        "route": "Fit-first pilot inquiry; no public price or ready-to-ship hardware claim",
+        "route": "USD 250 collection-fit sprint after a free fit check; existing hardware only",
         "url": "https://lazying.art/lkt/",
     },
     {
@@ -222,9 +222,10 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The immediate revenue route is an eInk order inquiry followed by reviewed "
-            "payment, a fit-first Local Knowledge Terminal pilot, or an existing Figurine "
-            "checkout. Open-source replies should optimize for a solved problem, "
+            "The single first-USD-1,000 route is four confirmed USD 250 Local Knowledge "
+            "Terminal collection-fit sprints. The eInk inquiry and Figurine checkout remain "
+            "separate offers, not competing calls to action. Open-source replies should "
+            "optimize for a solved problem, "
             "not for extracting a donation. GitHub Sponsors and donations remain quiet "
             "secondary support routes on the project/profile pages.",
             "",

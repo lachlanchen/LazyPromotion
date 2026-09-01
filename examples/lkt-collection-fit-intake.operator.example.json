@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "artifact_id": "lkt-operator-fit-summary-template",
+  "prepared_on": "2026-09-01",
+  "input_classification": "sanitized_metadata_only",
+  "source_status": "operator_prepared_fit_summary",
+  "collection": {
+    "format": "searchable_pdf",
+    "bounded": true,
+    "approximate_items": 2400,
+    "language_goal": {
+      "goal": "multilingual_search",
+      "source_language": "en",
+      "output_language": "zh"
+    },
+    "intended_readers": "small_internal_team"
+  },
+  "rights": {
+    "status": "confirmed",
+    "basis": "owner_controlled"
+  },
+  "privacy": {
+    "processing_boundary": "local_only",
+    "sample_payload_included": false,
+    "sensitive_identifiers_included": false
+  },
+  "existing_machine": {
+    "available": true,
+    "memory_gib": 16,
+    "accelerator": "none"
+  },
+  "requested_scope": {
+    "browser_proof": true,
+    "custom_ocr": false,
+    "hardware_or_shipping": false,
+    "production_deployment": false,
+    "uptime_or_sla": false
+  },
+  "citation": {
+    "stable_source_id_available": true,
+    "page_or_locator_available": true,
+    "content_fingerprint_allowed": true
+  },
+  "proof_plan": {
+    "representative_items": 12,
+    "review_questions": 20,
+    "browser_cards": 2
+  }
+}

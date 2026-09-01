@@ -74,7 +74,12 @@ RIGHTS_STATUSES = {"confirmed", "unconfirmed", "blocked"}
 RIGHTS_BASES = {"owner_controlled", "licensed", "public_domain", "unknown"}
 PRIVACY_BOUNDARIES = {"local_only", "approved_private_environment", "unresolved"}
 ACCELERATORS = {"none", "integrated", "discrete"}
-SOURCE_STATUSES = {"sanitized_hypothetical", "project_owned_public_example"}
+INPUT_CLASSIFICATIONS = {"sanitized_example_only", "sanitized_metadata_only"}
+SOURCE_STATUSES = {
+    "sanitized_hypothetical",
+    "project_owned_public_example",
+    "operator_prepared_fit_summary",
+}
 
 
 class IntakeValidationError(ValueError):
@@ -146,9 +151,18 @@ def validate_intake(intake: Any) -> dict[str, Any]:
         date.fromisoformat(root["prepared_on"])
     except ValueError as exc:
         raise IntakeValidationError("prepared_on must be a real ISO date") from exc
-    if root["input_classification"] != "sanitized_example_only":
-        raise IntakeValidationError("input_classification must be sanitized_example_only")
-    _require_choice(root["source_status"], "source_status", SOURCE_STATUSES)
+    classification = _require_choice(
+        root["input_classification"], "input_classification", INPUT_CLASSIFICATIONS
+    )
+    source_status = _require_choice(root["source_status"], "source_status", SOURCE_STATUSES)
+    if classification == "sanitized_metadata_only" and source_status != "operator_prepared_fit_summary":
+        raise IntakeValidationError(
+            "sanitized_metadata_only requires source_status operator_prepared_fit_summary"
+        )
+    if classification == "sanitized_example_only" and source_status == "operator_prepared_fit_summary":
+        raise IntakeValidationError(
+            "operator_prepared_fit_summary requires input_classification sanitized_metadata_only"
+        )
 
     collection = _require_object(root["collection"], "collection")
     _require_exact_fields(collection, NESTED_FIELDS["collection"], "collection")
@@ -304,9 +318,14 @@ def render_delivery_packet(intake: dict[str, Any]) -> str:
     if citation["content_fingerprint_allowed"]:
         locator += " + content fingerprint"
 
+    if intake["source_status"] == "operator_prepared_fit_summary":
+        truth_status = "OPERATOR-PREPARED FIT SUMMARY; METADATA DECLARATIONS ONLY."
+    else:
+        truth_status = "SANITIZED PLANNING PACKET; NOT A CUSTOMER RESULT."
+
     return f"""# LKT collection-fit delivery packet
 
-> **TRUTH STATUS — SANITIZED PLANNING PACKET; NOT A CUSTOMER RESULT.**
+> **TRUTH STATUS — {truth_status}**
 >
 > **DATA BOUNDARY —** The input passed the metadata-only structure and declaration checks. It declares that no source payload or sensitive identifier is included; the generator cannot independently prove de-identification.
 >
@@ -360,7 +379,7 @@ authorized source (never supplied to this intake generator)
 - The proof operator must keep the source and generated index inside that boundary.
 - Generated context must be labelled separately from retrieved source facts.
 - Citation fields are deterministic payloads; a model must not invent or rewrite them.
-- This repository receives only the sanitized intake and the resulting metadata-only packet.
+- This generator processes only the declared sanitized metadata and emits a metadata-only packet; it does not copy source material into the repository.
 
 ## Representative-proof plan
 

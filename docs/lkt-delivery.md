@@ -19,6 +19,19 @@ python lkt_delivery.py examples/lkt-collection-fit-intake.example.json \
   --output /tmp/lkt-delivery-packet.md
 ```
 
+For an operator-prepared, metadata-only fit summary, copy the second template
+to an approved private delivery location and sanitize it there:
+
+```bash
+python lkt_delivery.py \
+  /approved/private/location/lkt-sanitized-fit-summary.json \
+  --output /approved/private/location/lkt-delivery-packet.md
+```
+
+[`examples/lkt-collection-fit-intake.operator.example.json`](../examples/lkt-collection-fit-intake.operator.example.json)
+shows that contract without containing real customer data. Do not commit a
+real fulfillment input or packet to this repository.
+
 Omit `--output` to print the packet. The same valid JSON always renders the
 same Markdown; the program has no network calls, timestamps, random values, or
 model calls.
@@ -40,12 +53,19 @@ and a 32 KiB metadata limit.
 
 The privacy fields `sample_payload_included` and
 `sensitive_identifiers_included` must both be `false`.
-`input_classification` must be `sanitized_example_only`. Unknown fields fail
-closed; there is intentionally nowhere to store free-form descriptions,
-customer names, contact details, source content, file locations, URLs, or
-commercial status. These structural checks cannot prove that an operator did
-not encode identifying information in an otherwise valid slug or category, so
-human sanitization before the file reaches this tool remains mandatory.
+Use `sanitized_example_only` with `sanitized_hypothetical` or
+`project_owned_public_example` for demonstrations. Use
+`sanitized_metadata_only` with `operator_prepared_fit_summary` for the
+operator-prepared summary that drives a real fulfillment workflow. The latter
+does not assert that a fit inquiry, payment, or proof exists; it says only who
+prepared the sanitized metadata.
+
+Unknown fields fail closed; there is intentionally nowhere to store free-form
+descriptions, customer names, contact details, source content, file locations,
+URLs, or commercial status. These structural checks cannot prove that an
+operator did not encode identifying information in an otherwise valid slug or
+category, so human sanitization before the file reaches this tool remains
+mandatory.
 
 Fit failures are different from privacy failures:
 
@@ -63,8 +83,10 @@ performance succeeded.
 
 ## Safe operating sequence
 
-1. Create a new sanitized JSON record from categories only. Keep the real
-   inquiry and all source material outside this repository.
+1. In the approved private delivery location, create a new
+   `sanitized_metadata_only` JSON record from categories only. Keep the real
+   inquiry and all source material outside this repository and outside the
+   renderer input.
 2. Render and human-review the packet.
 3. If it is a go, select and handle the representative source set only inside
    the separately approved execution environment. Never add that set to the

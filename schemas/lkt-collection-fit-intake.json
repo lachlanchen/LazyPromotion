@@ -23,9 +23,15 @@
     "schema_version": {"const": 1},
     "artifact_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"},
     "prepared_on": {"type": "string", "format": "date"},
-    "input_classification": {"const": "sanitized_example_only"},
+    "input_classification": {
+      "enum": ["sanitized_example_only", "sanitized_metadata_only"]
+    },
     "source_status": {
-      "enum": ["sanitized_hypothetical", "project_owned_public_example"]
+      "enum": [
+        "sanitized_hypothetical",
+        "project_owned_public_example",
+        "operator_prepared_fit_summary"
+      ]
     },
     "collection": {
       "type": "object",
@@ -113,5 +119,23 @@
         "browser_cards": {"type": "integer", "minimum": 1, "maximum": 3}
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"input_classification": {"const": "sanitized_metadata_only"}}
+      },
+      "then": {
+        "properties": {"source_status": {"const": "operator_prepared_fit_summary"}}
+      }
+    },
+    {
+      "if": {
+        "properties": {"source_status": {"const": "operator_prepared_fit_summary"}}
+      },
+      "then": {
+        "properties": {"input_classification": {"const": "sanitized_metadata_only"}}
+      }
+    }
+  ]
 }

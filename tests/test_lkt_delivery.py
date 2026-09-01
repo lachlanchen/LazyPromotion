@@ -11,6 +11,7 @@ import lkt_delivery
 
 ROOT = Path(__file__).resolve().parents[1]
 EXAMPLE = ROOT / "examples" / "lkt-collection-fit-intake.example.json"
+OPERATOR_EXAMPLE = ROOT / "examples" / "lkt-collection-fit-intake.operator.example.json"
 
 
 def example_intake() -> dict:
@@ -34,6 +35,34 @@ class LktDeliveryTests(unittest.TestCase):
         self.assertIn("## Fixed exclusions", first)
         self.assertIn("GO TO REPRESENTATIVE-PROOF PLAN", first)
         self.assertIn("19,119", first)
+
+    def test_operator_prepared_metadata_path_can_drive_real_fulfillment_safely(self):
+        intake = lkt_delivery.load_intake(OPERATOR_EXAMPLE)
+        packet = lkt_delivery.render_delivery_packet(intake)
+
+        self.assertEqual(intake["input_classification"], "sanitized_metadata_only")
+        self.assertEqual(intake["source_status"], "operator_prepared_fit_summary")
+        self.assertIn("OPERATOR-PREPARED FIT SUMMARY; METADATA DECLARATIONS ONLY", packet)
+        self.assertIn("cannot independently prove de-identification", packet)
+        self.assertIn("Every representative-proof step below is planned", packet)
+        self.assertIn("Commercial outcomes are outside this packet", packet)
+        self.assertIn("**GO TO REPRESENTATIVE-PROOF PLAN**", packet)
+        self.assertNotIn("NOT A CUSTOMER RESULT", packet)
+
+    def test_classification_and_source_status_pairing_fails_closed(self):
+        intake = example_intake()
+        intake["input_classification"] = "sanitized_metadata_only"
+        with self.assertRaisesRegex(
+            lkt_delivery.IntakeValidationError, "operator_prepared_fit_summary"
+        ):
+            lkt_delivery.validate_intake(intake)
+
+        intake = example_intake()
+        intake["source_status"] = "operator_prepared_fit_summary"
+        with self.assertRaisesRegex(
+            lkt_delivery.IntakeValidationError, "sanitized_metadata_only"
+        ):
+            lkt_delivery.validate_intake(intake)
 
     def test_unconfirmed_rights_render_no_go_without_hiding_the_reason(self):
         intake = example_intake()
@@ -109,10 +138,22 @@ class LktDeliveryTests(unittest.TestCase):
         schema = json.loads(
             (ROOT / "schemas" / "lkt-collection-fit-intake.json").read_text(encoding="utf-8")
         )
-        serialized = json.dumps(schema)
         self.assertFalse(schema["additionalProperties"])
-        for forbidden in ("email", "name", "source_excerpt", "source_path", "payment", "lead"):
-            self.assertNotIn(f'"{forbidden}"', serialized)
+        for path in (EXAMPLE, OPERATOR_EXAMPLE):
+            with self.subTest(path=path.name):
+                lkt_delivery.load_intake(path)
+                serialized = json.dumps(
+                    {"schema": schema, "example": json.loads(path.read_text(encoding="utf-8"))}
+                )
+                for forbidden in (
+                    "email",
+                    "name",
+                    "source_excerpt",
+                    "source_path",
+                    "payment",
+                    "lead",
+                ):
+                    self.assertNotIn(f'"{forbidden}"', serialized)
 
 
 if __name__ == "__main__":

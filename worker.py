@@ -172,6 +172,11 @@ def connect_browser(playwright, endpoint: str):
             return playwright.chromium.connect_over_cdp(
                 endpoint,
                 timeout=CDP_ATTACH_TIMEOUT_MS,
+                # This is a persistent, user-visible signed-in browser. Avoid
+                # applying Playwright's emulation defaults to every existing
+                # page during attachment; besides preserving the desktop, this
+                # prevents slow handshakes on service-heavy platform tabs.
+                no_defaults=True,
             )
         except Exception:
             if attempt + 1 >= CDP_ATTACH_ATTEMPTS:

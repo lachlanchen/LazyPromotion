@@ -102,7 +102,11 @@ def read_folder_counts(
 ) -> tuple[int, int]:
     """Read only the exact folder's aggregate status from visible iCloud Mail."""
     with browser.browser_operation_lock(), sync_playwright() as playwright:
-        connected = playwright.chromium.connect_over_cdp(cdp)
+        connected = playwright.chromium.connect_over_cdp(
+            cdp,
+            timeout=30_000,
+            no_defaults=True,
+        )
         pages = [page for context in connected.contexts for page in context.pages]
         page = next((item for item in pages if "icloud.com/mail" in item.url), None)
         if page is None:

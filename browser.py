@@ -1255,7 +1255,11 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     with browser_operation_lock(), sync_playwright() as playwright:
-        browser = playwright.chromium.connect_over_cdp(args.cdp)
+        browser = playwright.chromium.connect_over_cdp(
+            args.cdp,
+            timeout=30_000,
+            no_defaults=True,
+        )
         if args.command == "status":
             tabs = [
                 {"url": page.url, "title": page.title()}

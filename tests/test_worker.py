@@ -239,10 +239,12 @@ class WorkerTests(unittest.TestCase):
                 call(
                     "http://127.0.0.1:9436",
                     timeout=worker.CDP_ATTACH_TIMEOUT_MS,
+                    no_defaults=True,
                 ),
                 call(
                     "http://127.0.0.1:9436",
                     timeout=worker.CDP_ATTACH_TIMEOUT_MS,
+                    no_defaults=True,
                 ),
             ],
         )

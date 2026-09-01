@@ -69,6 +69,22 @@ zero non-read network requests. The operator did not click the mail link. This
 is conversion-path readiness evidence, not a fit inquiry, qualified lead, or
 sale.
 
+The first-party search-discovery gate was also checked through Search Console's
+visible URL Inspection and Sitemaps screens on September 2, 2026. The sample
+report was already indexed. The LKT landing page and fit-check page were each
+unknown to Google, so each received exactly one accepted indexing request; an
+accepted priority-crawl request does not prove that either page has been
+indexed. The root `https://lazying.art/sitemap.xml` was absent from the submitted
+list, then submitted once and confirmed with status `Success` and seven
+discovered pages. Do not resubmit those URLs merely to seek higher priority;
+recheck their status in a later observation window.
+
+The same demand review deliberately left posts `1970` and `2994` without an LKT
+commercial CTA. The former answers MetaTrader terminal-integration questions;
+the latter packages a source-code repository for model context. Neither is the
+bounded private book, dictionary, PDF, or document collection covered by the
+current USD 250 sprint. Traffic overlap alone is not product fit.
+
 `python owned_monitor.py once` checks the official Postiz publication records
 and analytics without changing a post. It stores only hashed post identities in
 the ignored local database; raw Postiz and integration IDs remain in memory.

@@ -20,6 +20,7 @@ BLOCKED_STATES = {
     "rebuild_first",
     "clarification_first",
     "terms_conflict_review",
+    "migration_first",
 }
 REQUIRED_PRIVATE_FIELDS = {
     "accepted": bool,

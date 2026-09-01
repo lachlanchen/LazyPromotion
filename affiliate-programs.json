@@ -74,15 +74,15 @@
     {
       "id": "waveshare",
       "name": "Waveshare",
-      "priority": 3,
-      "state": "apply_first",
+      "priority": 13,
+      "state": "migration_first",
       "official_urls": {
         "program": "https://www.waveshare.com/join_affiliate.html",
         "terms": "https://www.waveshare.com/join_affiliate.html",
         "application": "https://www.waveshare.com/join_affiliate.html"
       },
       "public_economics": "2% base commission; at least 72 hours of link tracking; the public page states a USD 5 PayPal threshold.",
-      "unknowns": ["Confirm the exact product, region, commission approval, returns, and payout deductions before activation."],
+      "unknowns": ["The demonstrated 7.3-inch e-Paper (F) is discontinued and the official page recommends the (E) replacement. Demonstrate the replacement driver, interface board, power, image pipeline, and Raspberry Pi 5 behavior before a purchase CTA."],
       "conversion_event": "An attributed official-store order is received, completed, reviewed, and approved.",
       "direct_url": "https://www.waveshare.com/",
       "permitted_link_hosts": ["waveshare.com"],
@@ -90,18 +90,18 @@
         {
           "asset": "BLOG post 3096 and EinkWordsGPT",
           "placement": "Archived Raspberry Pi 5 plus 7.3-inch seven-color e-paper build",
-          "reason": "The demonstrated build names the maker and hardware; the current LKT e-ink adapter remains unavailable."
+          "reason": "The demonstrated build names the maker and discontinued (F) hardware; the suggested (E) replacement is not yet proven, and the current LKT e-ink adapter remains unavailable."
         }
       ],
-      "application_pitch": "LazyingArt maintains an archived Raspberry Pi/e-paper word-card build and a current multilingual knowledge-terminal project. I will refer only from an exact build page, require readers to verify model and interface compatibility, and never impersonate Waveshare or use hidden, automated, or misleading links.",
+      "application_pitch": "LazyingArt maintains an archived Raspberry Pi/e-paper word-card build. Before promoting a current product, I will publish a verified migration from the discontinued 7.3-inch (F) panel to the recommended replacement, identify the exact interface and driver, and never imply that current LKT e-ink output is implemented.",
       "disclosure": "Affiliate disclosure: LazyingArt may receive a commission from an approved Waveshare order made through this link.",
-      "activation_gates": ["accepted", "exact_hardware_verified", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "activation_gates": ["replacement_migration_demonstrated", "exact_hardware_verified", "accepted", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
       "forbidden_actions": ["simulated purchases", "hidden links", "intrusive pop-ups", "official-site impersonation", "search-engine direct-link submission", "third-party seller steering"]
     },
     {
       "id": "postiz",
       "name": "Postiz",
-      "priority": 4,
+      "priority": 3,
       "state": "apply_first",
       "official_urls": {
         "program": "https://partners.dub.co/postiz/apply",
@@ -128,7 +128,7 @@
     {
       "id": "kobo",
       "name": "Rakuten Kobo",
-      "priority": 5,
+      "priority": 4,
       "state": "apply_second",
       "official_urls": {
         "program": "https://www.kobo.com/gb/en/p/affiliate",
@@ -155,7 +155,7 @@
     {
       "id": "proton",
       "name": "Proton",
-      "priority": 6,
+      "priority": 5,
       "state": "apply_second",
       "official_urls": {
         "program": "https://proton.me/partners/affiliates",
@@ -182,7 +182,7 @@
     {
       "id": "elevenlabs",
       "name": "ElevenLabs",
-      "priority": 7,
+      "priority": 6,
       "state": "apply_second",
       "official_urls": {
         "program": "https://elevenlabs.io/affiliates",
@@ -209,7 +209,7 @@
     {
       "id": "digitalocean",
       "name": "DigitalOcean",
-      "priority": 8,
+      "priority": 7,
       "state": "rebuild_first",
       "official_urls": {
         "program": "https://www.digitalocean.com/affiliates",
@@ -236,7 +236,7 @@
     {
       "id": "adobe",
       "name": "Adobe",
-      "priority": 9,
+      "priority": 8,
       "state": "apply_second",
       "official_urls": {
         "program": "https://www.adobe.com/affiliates.html",
@@ -263,7 +263,7 @@
     {
       "id": "runway",
       "name": "Runway",
-      "priority": 10,
+      "priority": 12,
       "state": "pilot_only",
       "official_urls": {
         "program": "https://affiliates.runwayml.com/",
@@ -290,7 +290,7 @@
     {
       "id": "envato",
       "name": "Envato",
-      "priority": 11,
+      "priority": 9,
       "state": "apply_second",
       "official_urls": {
         "program": "https://www.envato.com/affiliates",
@@ -317,7 +317,7 @@
     {
       "id": "coursera",
       "name": "Coursera",
-      "priority": 12,
+      "priority": 10,
       "state": "contextual_only",
       "official_urls": {
         "program": "https://www.coursera.org/about/affiliates",
@@ -344,7 +344,7 @@
     {
       "id": "wise",
       "name": "Wise",
-      "priority": 13,
+      "priority": 11,
       "state": "clarification_first",
       "official_urls": {
         "program": "https://wise.com/partners/affiliates",

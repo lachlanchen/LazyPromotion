@@ -20,7 +20,8 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.assertGreaterEqual(len(self.by_id), 17)
         self.assertEqual(self.by_id["lingq"]["priority"], 1)
         self.assertEqual(self.by_id["bookshop"]["priority"], 2)
-        self.assertEqual(self.by_id["waveshare"]["priority"], 3)
+        self.assertEqual(self.by_id["postiz"]["priority"], 3)
+        self.assertEqual(self.by_id["waveshare"]["state"], "migration_first")
         self.assertEqual(self.by_id["tradingview"]["state"], "hold")
         self.assertEqual(self.by_id["amazon-us"]["state"], "delay")
         self.assertEqual(self.by_id["distrokid"]["state"], "conditional")
@@ -82,6 +83,7 @@ class AffiliatePortfolioTests(unittest.TestCase):
             "digitalocean",
             "wise",
             "skrill",
+            "waveshare",
         ):
             program = self.by_id[program_id]
             private = {

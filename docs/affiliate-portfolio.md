@@ -13,19 +13,17 @@ links on one generic page:
 
 1. **LingQ** beside the Japanese grammar/practice guide in BLOG post 1752;
 2. **Bookshop.org** beside the exact book discussed in BLOG post 1498; and
-3. **Waveshare** beside the exact archived e-paper build in BLOG post 3096.
+3. **Postiz** beside a firsthand review-first CLI/MCP tutorial.
 
-Postiz is the fourth application because LazyingArt can demonstrate its real
-review-first CLI/MCP workflow. Kobo follows with the PocketPolyglot e-reader
-comparison. These placements should each use one stable placement ID and a
-nearby disclosure, preserve a plain official URL, and be measured separately.
+Kobo follows with the PocketPolyglot e-reader comparison. These placements
+should each use one stable placement ID and a nearby disclosure, preserve a
+plain official URL, and be measured separately.
 
 This order is about fit, not the largest advertised percentage. Bookshop is a
 better first book route than Amazon because the content has exact book intent
-and the public program offers stronger book economics. Waveshare is weak as a
-general revenue source but unusually strong as an exact, demonstrated hardware
-match. Amazon stays delayed until three genuine qualifying sales within its
-application review window are plausible.
+and the public program offers stronger book economics. Amazon stays delayed
+until three genuine qualifying sales within its application review window are
+plausible.
 
 ## Tomorrow's operator checklist
 
@@ -35,7 +33,6 @@ For each program, start with its sanitized packet:
 python affiliate.py list
 python affiliate.py packet lingq
 python affiliate.py packet bookshop
-python affiliate.py packet waveshare
 python affiliate.py packet postiz
 ```
 
@@ -88,6 +85,10 @@ with `affiliate_commission_received`; a verified clawback uses
   master and document the real workflow.
 - **DigitalOcean requires a rebuilt source page.** BLOG post 1569 must become a
   current provider-neutral deployment guide before any CTA.
+- **Waveshare requires a replacement migration.** The exact 7.3-inch e-Paper
+  (F) used by the archived code is discontinued. Its product page recommends
+  the (E) replacement, but the replacement driver and Raspberry Pi 5 workflow
+  must be demonstrated before a purchase CTA.
 - **Skrill requires written policy clarification.** Its public terms restrict
   disparagement and distinguish a US route. Confirm that neutral due diligence
   and the operator's eligibility are accepted before applying; the historical

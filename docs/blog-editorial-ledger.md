@@ -4,9 +4,9 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `069be0a`
+Verified BLOG commit: `ed21c82`
 
-Campaign range: `3b45351^..069be0a`
+Campaign range: `3b45351^..ed21c82`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **85 posts** have completed this protocol:
+As of the verified commit, **88 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 56, 89, 95, 99, 107, 109, 150, 164, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
+`7, 9, 10, 26, 29, 56, 89, 95, 99, 107, 109, 150, 164, 184, 202, 206, 208, 211, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -29,7 +29,7 @@ As of the verified commit, **85 posts** have completed this protocol:
 - Replaced them with lawful recovery, trial/evaluation, installation, import, payment-risk, marketplace, and source-verification workflows.
 - Preserved dated historical context without continuing dead downloads or presenting old claims as current.
 
-Posts: `7, 26, 56, 89, 95, 99, 109, 150, 184, 202, 236, 247, 271, 351, 454, 466, 946, 949, 951, 1582, 1943, 1972, 1982, 2670, 2922, 2972`.
+Posts: `7, 26, 56, 89, 95, 99, 109, 150, 184, 202, 206, 208, 211, 236, 247, 271, 351, 454, 466, 946, 949, 951, 1582, 1943, 1972, 1982, 2670, 2922, 2972`.
 
 ### Financial-method audits
 
@@ -44,7 +44,7 @@ Posts: `1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 - Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, PyQt, Vim, Git, Raspberry Pi GPIO, native-extension, and table-of-contents notes around current diagnostics, official sources, executable checks, rollback, electrical safety, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `7, 9, 10, 26, 29, 107, 164, 184, 271, 351, 433, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 3114`.
+Posts: `7, 9, 10, 26, 29, 107, 164, 184, 206, 208, 211, 271, 351, 433, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 3114`.
 
 ### Literary and learning resources
 
@@ -123,6 +123,9 @@ Posts: `1562, 2936, 3125`.
 | `c8bbcd4` | 95 | Moneybookers-to-Skrill identity guide with obsolete exchange, referral, and verification advice redacted |
 | `e807452` | 109 | Replaced obsolete AlertPay signup funnel with a DOJ-evidenced Payza history and victim-safety notice |
 | `069be0a` | 164 | Semantic and accessible HTML superscript/subscript guide validated by W3C Nu Checker |
+| `9e0ef4d` | 211 | Replaced obsolete reader-specific buttons with a standards-first RSS/Atom discovery, validation, and migration guide |
+| `8417b0a` | 206 | Rollback-safe WordPress/MySQL credential-rotation and database-connection diagnostic guide |
+| `ed21c82` | 208 | Historical 114la provenance plus a bounded, least-privilege PHP/MySQL credential-rotation guide |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

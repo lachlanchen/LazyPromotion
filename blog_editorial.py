@@ -26,6 +26,12 @@ CATEGORY_LIST = re.compile(r"^Posts: `([^`]+)`\.$", re.MULTILINE)
 SCALAR = re.compile(r"^(?P<key>[A-Za-z_][A-Za-z0-9_]*):\s*(?P<value>.*?)\s*$")
 HEADING = re.compile(r"^(#{1,6})\s+\S")
 FENCE = re.compile(r"^\s*(`{3,}|~{3,})([^`]*)$")
+ORDERED_ITEM = re.compile(r"^(\s*)\d+[.)]\s+\S")
+UNORDERED_ITEM = re.compile(r"^(\s*)[-+*]\s+\S")
+TASK_ITEM = re.compile(r"^(\s*)[-+*]\s+\[[ xX]\]\s+\S")
+TABLE_ROW = re.compile(r"^\s*\|.*\|\s*$")
+BLOCKQUOTE = re.compile(r"^(\s*(?:>\s*)+)\S")
+MARKDOWN_URL = re.compile(r"(?:\]\(|<)(https?://[^)>\s]+)")
 
 
 class EditorialValidationError(ValueError):
@@ -100,9 +106,13 @@ def _required(metadata: dict[str, str], key: str, path: Path) -> str:
     return value
 
 
-def _structural_signature(body: str, path: Path) -> tuple[tuple[int, ...], tuple[str, ...]]:
+def _structural_signature(
+    body: str, path: Path
+) -> tuple[tuple[int, ...], tuple[str, ...], tuple[str, ...], tuple[str, ...]]:
     headings: list[int] = []
     fences: list[str] = []
+    blocks: list[str] = []
+    urls: list[str] = []
     active_fence: tuple[str, int] | None = None
     for line in body.splitlines():
         fence = FENCE.match(line)
@@ -118,11 +128,23 @@ def _structural_signature(body: str, path: Path) -> tuple[tuple[int, ...], tuple
             heading = HEADING.match(line)
             if heading:
                 headings.append(len(heading.group(1)))
+                blocks.append(f"h{len(heading.group(1))}")
+            elif task := TASK_ITEM.match(line):
+                blocks.append(f"task:{len(task.group(1))}")
+            elif ordered := ORDERED_ITEM.match(line):
+                blocks.append(f"ol:{len(ordered.group(1))}")
+            elif unordered := UNORDERED_ITEM.match(line):
+                blocks.append(f"ul:{len(unordered.group(1))}")
+            elif TABLE_ROW.match(line):
+                blocks.append("table")
+            elif quote := BLOCKQUOTE.match(line):
+                blocks.append(f"quote:{quote.group(1).count('>')}")
+            urls.extend(MARKDOWN_URL.findall(line))
     if active_fence is not None:
         raise EditorialValidationError(f"{path}: unbalanced fenced code block")
     if 1 in headings:
         raise EditorialValidationError(f"{path}: body H1 found outside a fenced archive")
-    return tuple(headings), tuple(fences)
+    return tuple(headings), tuple(fences), tuple(blocks), tuple(urls)
 
 
 def _check_trailing_whitespace(document: MarkdownDocument) -> None:
@@ -184,7 +206,7 @@ def validate_post(blog_root: Path, post_id: int) -> dict[str, object]:
         signature = _structural_signature(document.body, document.path)
         if signature != source_signature:
             raise EditorialValidationError(
-                f"{document.path}: heading levels or fence languages differ from source"
+                f"{document.path}: Markdown blocks, fence languages, or links differ from source"
             )
 
     manifest_path = post_dir / "lazyblog.json"
@@ -199,6 +221,8 @@ def validate_post(blog_root: Path, post_id: int) -> dict[str, object]:
         "translations": list(languages),
         "headings": len(source_signature[0]),
         "fences": len(source_signature[1]),
+        "blocks": len(source_signature[2]),
+        "links": len(source_signature[3]),
         "files": 4,
     }
 

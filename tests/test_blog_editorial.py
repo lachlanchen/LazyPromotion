@@ -41,7 +41,8 @@ class BlogEditorialTests(unittest.TestCase):
                 "source_language: 'zh'\n"
             )
             (post_dir / "post.md").write_text(
-                f"---\n{common}title: '答案'\n---\n\n## 步骤\n\n```bash\nprintf ok\n```\n",
+                f"---\n{common}title: '答案'\n---\n\n## 步骤\n\n"
+                "- [资料](https://example.test/source)\n\n```bash\nprintf ok\n```\n",
                 encoding="utf-8",
             )
             for language, title, heading in (
@@ -50,7 +51,8 @@ class BlogEditorialTests(unittest.TestCase):
             ):
                 (translations / f"{language}.md").write_text(
                     f"---\n{common}language: '{language}'\ntitle: '{title}'\n---\n\n"
-                    f"## {heading}\n\n```bash\nprintf ok\n```\n",
+                    f"## {heading}\n\n- [Source](https://example.test/source)\n\n"
+                    "```bash\nprintf ok\n```\n",
                     encoding="utf-8",
                 )
             (post_dir / "lazyblog.json").write_text(
@@ -59,6 +61,7 @@ class BlogEditorialTests(unittest.TestCase):
             result = blog_editorial.validate_post(root, 42)
             self.assertEqual(result["translations"], ["en", "ja"])
             self.assertEqual(result["files"], 4)
+            self.assertEqual(result["links"], 1)
 
     def test_post_rejects_structure_drift_and_body_h1(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -86,6 +89,40 @@ class BlogEditorialTests(unittest.TestCase):
             )
             with self.assertRaisesRegex(
                 blog_editorial.EditorialValidationError, "body H1"
+            ):
+                blog_editorial.validate_post(root, 42)
+
+    def test_post_rejects_list_or_link_drift(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            post_dir = root / "content" / "posts" / "42"
+            translations = post_dir / "translations"
+            translations.mkdir(parents=True)
+            common = (
+                "id: '42'\nslug: 'answer'\ndate: '2026-09-01T00:00:00'\n"
+                "status: 'publish'\nlink: 'https://example.test/42'\n"
+                "source_language: 'zh'\n"
+            )
+            (post_dir / "post.md").write_text(
+                f"---\n{common}title: '答案'\n---\n\n## 步骤\n\n"
+                "- [资料](https://example.test/source)\n",
+                encoding="utf-8",
+            )
+            (translations / "en.md").write_text(
+                f"---\n{common}language: 'en'\ntitle: 'Answer'\n---\n\n## Steps\n\n"
+                "1. [Source](https://example.test/other)\n",
+                encoding="utf-8",
+            )
+            (translations / "ja.md").write_text(
+                f"---\n{common}language: 'ja'\ntitle: '答え'\n---\n\n## 手順\n\n"
+                "- [資料](https://example.test/source)\n",
+                encoding="utf-8",
+            )
+            (post_dir / "lazyblog.json").write_text(
+                json.dumps({"post_id": 42}), encoding="utf-8"
+            )
+            with self.assertRaisesRegex(
+                blog_editorial.EditorialValidationError, "Markdown blocks"
             ):
                 blog_editorial.validate_post(root, 42)
 

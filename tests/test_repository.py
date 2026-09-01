@@ -41,7 +41,7 @@ class RepositoryTests(unittest.TestCase):
             with browser.browser_operation_lock(timeout_seconds=0.1, poll_seconds=0.01):
                 pass
 
-    def test_desktop_restores_one_full_screen_review_workspace(self):
+    def test_desktop_restores_one_maximized_review_workspace(self):
         script = (ROOT / "scripts" / "desktop.sh").read_text(encoding="utf-8")
         self.assertIn('DISPLAY_WIDTH=1920', script)
         self.assertIn('DISPLAY_HEIGHT=1080', script)
@@ -55,9 +55,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('viewer.window', script)
         self.assertIn('register-viewer', script)
         self.assertIn('refresh_registered_viewers', script)
-        self.assertIn('fullscreen_firefox_viewer', script)
+        self.assertIn('maximize_firefox_viewer', script)
         self.assertIn('wmctrl -ir "$window_id" -b remove,fullscreen', script)
-        self.assertIn('wmctrl -ir "$window_id" -b add,fullscreen', script)
+        self.assertIn('wmctrl -ir "$window_id" -b add,maximized_vert,maximized_horz', script)
+        self.assertNotIn('wmctrl -ir "$window_id" -b add,fullscreen', script)
         self.assertNotIn('AFFILIATE_NOVNC_PORT', script)
         self.assertNotIn('CAMPAIGN_NOVNC_PORT', script)
         self.assertIn('resize=scale', script)

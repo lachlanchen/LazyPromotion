@@ -279,39 +279,32 @@ navigate_firefox_viewer() {
   sleep 0.5
 }
 
-fullscreen_firefox_viewer() {
+maximize_firefox_viewer() {
   local window_id="$1"
   local tries=0
-  local width height key value
-  local current_x current_y current_width current_height
+  local state
   valid_firefox_viewer "$window_id" || return 1
   command -v wmctrl >/dev/null 2>&1 || {
-    printf 'wmctrl is required to fullscreen the registered Firefox viewer.\n' >&2
+    printf 'wmctrl is required to maximize the registered Firefox viewer.\n' >&2
     return 1
   }
-  DISPLAY="$VIEWER_DISPLAY" wmctrl -ir "$window_id" -b add,fullscreen
+  # Fullscreen covers GNOME's panel and dock. Let the window manager maximize
+  # the viewer inside the current work area instead, which also adapts safely
+  # when an RDP/VNC session changes resolution.
+  DISPLAY="$VIEWER_DISPLAY" wmctrl -ir "$window_id" -b remove,fullscreen
+  DISPLAY="$VIEWER_DISPLAY" wmctrl -ir "$window_id" -b add,maximized_vert,maximized_horz
   DISPLAY="$VIEWER_DISPLAY" wmctrl -ia "$window_id"
   while (( tries < 20 )); do
-    current_x=""
-    current_y=""
-    current_width=""
-    current_height=""
-    while IFS='=' read -r key value; do
-      case "$key" in
-        X) current_x="$value" ;;
-        Y) current_y="$value" ;;
-        WIDTH) current_width="$value" ;;
-        HEIGHT) current_height="$value" ;;
-      esac
-    done < <(DISPLAY="$VIEWER_DISPLAY" xdotool getwindowgeometry --shell "$window_id" 2>/dev/null || true)
-    read -r width height < <(DISPLAY="$VIEWER_DISPLAY" xdotool getdisplaygeometry)
-    if [[ "$current_x" == 0 && "$current_y" == 0 && "$current_width" == "$width" && "$current_height" == "$height" ]]; then
+    state="$(DISPLAY="$VIEWER_DISPLAY" xprop -id "$window_id" _NET_WM_STATE 2>/dev/null || true)"
+    if [[ "$state" != *'_NET_WM_STATE_FULLSCREEN'* \
+      && "$state" == *'_NET_WM_STATE_MAXIMIZED_VERT'* \
+      && "$state" == *'_NET_WM_STATE_MAXIMIZED_HORZ'* ]]; then
       return 0
     fi
     tries=$((tries + 1))
     sleep 0.1
   done
-  printf 'The registered Firefox viewer did not reach full-screen geometry.\n' >&2
+  printf 'The registered Firefox viewer did not maximize inside the desktop work area.\n' >&2
   return 1
 }
 
@@ -321,7 +314,7 @@ refresh_registered_viewers() {
   local window_id
   window_id="$(<"$viewer_file")"
   navigate_firefox_viewer "$window_id" "$NOVNC_URL"
-  fullscreen_firefox_viewer "$window_id"
+  maximize_firefox_viewer "$window_id"
 }
 
 register_viewer() {

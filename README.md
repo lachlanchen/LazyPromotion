@@ -333,8 +333,10 @@ fitted to the full desktop and can be selected normally instead of being clipped
 into overlapping lanes. CDP stays on `127.0.0.1:9436` and the tmux session is
 `lazypromotion-browser`. All services bind to loopback. The launcher refuses
 unknown occupied ports and removes only a stale display lock that matches its
-own recorded Xvfb PID. Register one full-screen Firefox viewer once and `start`
-or `restart` will reload only that exact client after the stack is healthy.
+own recorded Xvfb PID. Register one Firefox viewer once and `start` or `restart`
+will reload only that exact client after the stack is healthy. The host viewer is
+maximized inside GNOME's current work area rather than made full-screen, so the
+desktop panel and dock stay visible and resolution changes remain safe.
 An ignored, URL-only workspace snapshot in `.local/runtime/workspace.urls`
 restores allowlisted review tabs without committing cookies or browser-profile
 data; baseline and exact-URL duplicates are removed after Chrome settles.

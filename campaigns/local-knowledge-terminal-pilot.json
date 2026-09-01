@@ -62,6 +62,21 @@
     },
     "checked_at": "2026-08-31T23:01:18Z",
     "policy": "Authenticated access and the controlled exact-subject runtime probe prove that the inbox can be reviewed and the intake rule can route a message to its destination. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
+    "attribution_bridge": {
+      "state": "live",
+      "checked_at": "2026-09-01T01:19:12Z",
+      "plugin_version": "0.4.12",
+      "source": "https://github.com/lazyingart/lazyblog-translations/blob/main/assets/utm-bridge.js",
+      "destination_scope": "https://lazying.art/lkt/fit-check/",
+      "allowlisted_parameters": [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content"
+      ],
+      "verified_path": "reddit_profile_guide_to_lazyblog_to_fit_check_to_local_email_review",
+      "policy": "Forward only validated campaign fields from the current first-party blog page to the exact HTTPS LKT fit-check destination. Do not forward arbitrary query parameters, touch third-party links, send a form, or infer a lead from a reviewed local draft."
+    },
     "payment_request": {
       "state": "live_account_and_fixed_config_verified",
       "checked_at": "2026-08-31T20:51:23Z",
@@ -110,7 +125,7 @@
         "title": "A small decision tree for searching confidential PDFs locally",
         "content": "If the collection fits on one machine, I’d start smaller than a full RAG stack:\n\n1. Extract text (pdftotext for searchable PDFs; OCR only the scanned files).\n2. Store the document path, page number, and text in SQLite FTS5, or index it with Recoll.\n3. Test 20–30 real questions and record the misses.\n4. Add embeddings only when misses come from vocabulary or paraphrase rather than bad extraction.\n5. Keep every result tied to a file and page so it can be checked.\n\nThat is often enough for a 12 GB laptop and keeps confidential documents local. I wrote a longer walkthrough with commands and tradeoffs here:\nblog.lazying.art/?p=3619&utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot\n\nDisclosure: I maintain the guide and the related Local Knowledge Terminal project.",
         "destination": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html?utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot",
-        "policy": "First-party profile resource only, not a community submission or generated reply. The complete standalone steps, maintainer disclosure, exact profile destination, title, schedule, protocol-less tracked URL, provider settings, and queue state were visibly reviewed."
+        "policy": "First-party profile resource only, not a community submission or generated reply. The complete standalone steps, maintainer disclosure, exact profile destination, title, schedule, protocol-less tracked URL, provider settings, and queue state were visibly reviewed. The live allowlisted blog bridge preserves Reddit attribution through the fit-check email review without forwarding arbitrary parameters."
       },
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },

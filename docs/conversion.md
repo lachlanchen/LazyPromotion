@@ -47,6 +47,13 @@ Every campaign link uses a stable `utm_campaign`. Postiz analytics can measure
 channel reach and engagement, while confirmed leads and revenue remain private
 operator records. The agent never fabricates conversions and never treats a
 public reply, impression, or GitHub visit as a customer.
+The live LazyBlog bridge preserves an originating Reddit or X campaign when a
+reader continues to the LKT fit check. It forwards only `utm_source`,
+`utm_medium`, `utm_campaign`, and `utm_content`, validates their characters and
+length, and changes only the exact HTTPS `lazying.art/lkt/fit-check/`
+destination. Organic blog readers retain the article's normal `lazyblog`
+attribution. The reviewed local email draft includes the resulting fields; it
+still sends nothing automatically.
 
 `python owned_monitor.py once` checks the official Postiz publication records
 and analytics without changing a post. It stores only hashed post identities in

@@ -454,6 +454,19 @@ class RepositoryTests(unittest.TestCase):
             "do not promise a response time",
             campaign["conversion_readiness"]["policy"].casefold(),
         )
+        attribution = campaign["conversion_readiness"]["attribution_bridge"]
+        self.assertEqual(attribution["state"], "live")
+        self.assertEqual(attribution["plugin_version"], "0.4.12")
+        self.assertEqual(
+            attribution["destination_scope"],
+            "https://lazying.art/lkt/fit-check/",
+        )
+        self.assertEqual(
+            attribution["allowlisted_parameters"],
+            ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
+        )
+        self.assertIn("send a form", attribution["policy"])
+        self.assertIn("do not forward arbitrary", attribution["policy"].casefold())
         payment_request = campaign["conversion_readiness"]["payment_request"]
         self.assertEqual(
             payment_request["state"], "live_account_and_fixed_config_verified"

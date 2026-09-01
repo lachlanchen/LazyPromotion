@@ -4,9 +4,9 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `9b60ad2`
+Verified BLOG commit: `c8bbcd4`
 
-Campaign range: `3b45351^..9b60ad2`
+Campaign range: `3b45351^..c8bbcd4`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **82 posts** have completed this protocol:
+As of the verified commit, **83 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 56, 89, 99, 107, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
+`7, 9, 10, 26, 29, 56, 89, 95, 99, 107, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -29,7 +29,7 @@ As of the verified commit, **82 posts** have completed this protocol:
 - Replaced them with lawful recovery, trial/evaluation, installation, import, payment-risk, marketplace, and source-verification workflows.
 - Preserved dated historical context without continuing dead downloads or presenting old claims as current.
 
-Posts: `7, 26, 56, 89, 99, 150, 184, 202, 236, 247, 271, 351, 454, 466, 946, 949, 951, 1582, 1943, 1972, 1982, 2670, 2922, 2972`.
+Posts: `7, 26, 56, 89, 95, 99, 150, 184, 202, 236, 247, 271, 351, 454, 466, 946, 949, 951, 1582, 1943, 1972, 1982, 2670, 2922, 2972`.
 
 ### Financial-method audits
 
@@ -120,6 +120,7 @@ Posts: `1562, 2936, 3125`.
 | `3a2da95` | 107 | NUL-safe FFmpeg MP3-to-MP4 batching with verification and atomic output publication |
 | `6100b0c` | 7 | Demo-first MT4 platform guide with broker/contact redactions and explicit trading-risk boundaries |
 | `9b60ad2` | 89 | Current PayPal account and scam-safety guide with obsolete referral and false-contact advice removed |
+| `c8bbcd4` | 95 | Moneybookers-to-Skrill identity guide with obsolete exchange, referral, and verification advice redacted |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

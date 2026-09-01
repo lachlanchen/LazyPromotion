@@ -69,7 +69,7 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 
 ## 运行隔离
 
-默认在一个 3840×1080 显示器（`:116`）上放置两个互不重叠的 1920×1080 Chrome 区域，并共享同一个持久化配置。noVNC 在 `6138` 提供推广区域、在 `6137` 提供联盟区域、在 `6136` 提供全景；CDP 保持为 `127.0.0.1:9436`，会话名为 `lazypromotion-browser`。所有服务只绑定回环地址；启动器拒绝占用中的未知端口，只清理由自身记录证明已经失效的显示锁。
+默认使用一个 1920×1080 显示器（`:116`）、一个 VNC 端口 `5936` 和一个 noVNC 端口 `6136`。所有推广与联盟标签页保存在同一个持久化 Chrome 配置中；恢复出的每个 Chrome 窗口都会铺满桌面，可正常切换，不再被裁成相互干扰的区域。CDP 保持为 `127.0.0.1:9436`，会话名为 `lazypromotion-browser`。所有服务只绑定回环地址；启动器拒绝占用中的未知端口，只清理由自身记录证明已经失效的显示锁。
 
 ```bash
 scripts/desktop.sh status

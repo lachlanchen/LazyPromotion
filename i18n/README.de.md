@@ -69,7 +69,7 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 
 ## Laufzeit-Isolation
 
-Standardmäßig wird ein 3840×1080-Display (`:116`) mit zwei getrennten 1920×1080-Chrome-Bereichen verwendet, die dasselbe dauerhafte Profil teilen. noVNC stellt den Kampagnenbereich auf `6138`, den Affiliate-Bereich auf `6137` und die Gesamtansicht auf `6136` bereit; CDP bleibt auf `127.0.0.1:9436` und die Sitzung heißt `lazypromotion-browser`. Alle Dienste binden nur an Loopback. Der Launcher verweigert unbekannte belegte Ports und entfernt ausschließlich eigene, nachweislich veraltete Display-Sperren.
+Standardmäßig werden ein 1920×1080-Display (`:116`), ein VNC-Port `5936` und ein einzelner noVNC-Port `6136` verwendet. Alle Kampagnen- und Affiliate-Tabs bleiben im selben dauerhaften Chrome-Profil; jedes wiederhergestellte Chrome-Fenster füllt den Desktop und lässt sich normal auswählen, ohne störende Ausschnittbereiche. CDP bleibt auf `127.0.0.1:9436` und die Sitzung heißt `lazypromotion-browser`. Alle Dienste binden nur an Loopback. Der Launcher verweigert unbekannte belegte Ports und entfernt ausschließlich eigene, nachweislich veraltete Display-Sperren.
 
 ```bash
 scripts/desktop.sh status

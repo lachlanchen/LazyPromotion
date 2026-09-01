@@ -41,23 +41,34 @@ class RepositoryTests(unittest.TestCase):
             with browser.browser_operation_lock(timeout_seconds=0.1, poll_seconds=0.01):
                 pass
 
-    def test_desktop_restores_two_small_review_workspaces(self):
+    def test_desktop_restores_one_full_screen_review_workspace(self):
         script = (ROOT / "scripts" / "desktop.sh").read_text(encoding="utf-8")
-        self.assertIn('DISPLAY_WIDTH=3840', script)
-        self.assertIn('LANE_WIDTH=1920', script)
+        self.assertIn('DISPLAY_WIDTH=1920', script)
+        self.assertIn('DISPLAY_HEIGHT=1080', script)
         self.assertIn('https://www.icloud.com/mail/', script)
         self.assertIn('https://platform.postiz.com/launches', script)
         self.assertIn('https://www.lingq.com/settings/referrals', script)
         self.assertIn('https://bookshop.org/affiliates/profile/introduction', script)
         self.assertIn('https://partners.dub.co/postiz/apply', script)
         self.assertIn('restore_browser_workspace', script)
-        self.assertIn('campaign.window', script)
-        self.assertIn('affiliate.window', script)
-        self.assertIn('campaign-viewer.window', script)
-        self.assertIn('affiliate-viewer.window', script)
-        self.assertIn('register-viewers', script)
+        self.assertIn('main.window', script)
+        self.assertIn('viewer.window', script)
+        self.assertIn('register-viewer', script)
         self.assertIn('refresh_registered_viewers', script)
-        self.assertNotIn('normal_index % 2', script)
+        self.assertNotIn('AFFILIATE_NOVNC_PORT', script)
+        self.assertNotIn('CAMPAIGN_NOVNC_PORT', script)
+        self.assertIn('resize=scale', script)
+        self.assertIn('reconnect=0', script)
+        self.assertIn('wait_process_exit', script)
+        self.assertIn('wait_reserved_runtime_release', script)
+        self.assertIn("#{pane_pid}", script)
+        self.assertIn('save_browser_workspace', script)
+        self.assertIn('workspace.urls', script)
+        self.assertIn('access_token', script)
+        self.assertIn('workspace_url_is_baseline', script)
+        self.assertIn('wait_cdp_pages_stable', script)
+        self.assertIn('deduplicate_browser_tabs', script)
+        self.assertIn('close_redundant_reddit_home', script)
 
     def test_screenshot_failure_does_not_discard_discovery(self):
         class BrokenPage:

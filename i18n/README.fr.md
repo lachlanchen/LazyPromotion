@@ -69,7 +69,7 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 
 ## Isolation de l’exécution
 
-La configuration par défaut utilise un écran 3840×1080 (`:116`) avec deux zones Chrome indépendantes de 1920×1080 partageant un seul profil persistant. noVNC publie la zone campagnes sur `6138`, la zone affiliation sur `6137` et la vue complète sur `6136` ; CDP reste sur `127.0.0.1:9436` et la session est `lazypromotion-browser`. Tous les services restent sur loopback. Le lanceur refuse les ports occupés inconnus et ne nettoie qu’un verrou obsolète qui lui appartient.
+La configuration par défaut utilise un écran 1920×1080 (`:116`), un port VNC `5936` et un seul noVNC sur `6136`. Tous les onglets de campagne et d’affiliation restent dans le même profil Chrome persistant ; chaque fenêtre restaurée occupe tout le bureau et peut être sélectionnée normalement, sans zones découpées qui se chevauchent. CDP reste sur `127.0.0.1:9436` et la session est `lazypromotion-browser`. Tous les services restent sur loopback. Le lanceur refuse les ports occupés inconnus et ne nettoie qu’un verrou obsolète qui lui appartient.
 
 ```bash
 scripts/desktop.sh status

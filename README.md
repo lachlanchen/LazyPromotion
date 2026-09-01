@@ -319,22 +319,21 @@ python promotion.py reopen-unverified-send DRAFT_ID \
 
 ## Runtime isolation
 
-The default launcher uses one 3840×1080 display (`:116`) with two non-overlapping
-1920×1080 Chrome lanes that share one persistent profile. noVNC `6138` exports
-the campaign lane, `6137` exports the affiliate lane, and `6136` provides the
-full-width overview; VNC uses `5938`, `5937`, and `5936` respectively. CDP stays
-on `127.0.0.1:9436` and the tmux session is `lazypromotion-browser`. All services
-bind to loopback. The launcher refuses unknown occupied ports and removes only
-a stale display lock that matches its own recorded Xvfb PID. It restores one
-small campaign/intake workspace and one small affiliate-review workspace,
-records their exact window IDs, and continuously pins those IDs to their named
-lanes so focus changes cannot swap the views or expose obscured black blocks.
-When two full-screen Firefox viewer windows are registered once, `start` and
-`restart` also reload those exact clients after the stack is healthy; unrelated
-Firefox windows are never touched.
+The default launcher uses one 1920×1080 display (`:116`), one VNC endpoint on
+`5936`, and one noVNC endpoint on `6136`. Chrome keeps every campaign and
+affiliate tab in the same persistent profile; every restored Chrome window is
+fitted to the full desktop and can be selected normally instead of being clipped
+into overlapping lanes. CDP stays on `127.0.0.1:9436` and the tmux session is
+`lazypromotion-browser`. All services bind to loopback. The launcher refuses
+unknown occupied ports and removes only a stale display lock that matches its
+own recorded Xvfb PID. Register one full-screen Firefox viewer once and `start`
+or `restart` will reload only that exact client after the stack is healthy.
+An ignored, URL-only workspace snapshot in `.local/runtime/workspace.urls`
+restores allowlisted review tabs without committing cookies or browser-profile
+data; baseline and exact-URL duplicates are removed after Chrome settles.
 
 ```bash
-scripts/desktop.sh register-viewers CAMPAIGN_FIREFOX_WINDOW_ID AFFILIATE_FIREFOX_WINDOW_ID
+scripts/desktop.sh register-viewer FIREFOX_WINDOW_ID
 ```
 
 The continuous worker and every `browser.py` command also share one filesystem

@@ -6,15 +6,10 @@ RUNTIME_DIR="$PROJECT_ROOT/.local/runtime"
 PROFILE_DIR="$PROJECT_ROOT/.local/browser/profile"
 DISPLAY_ID=116
 DISPLAY_NAME=":$DISPLAY_ID"
-DISPLAY_WIDTH=3840
+DISPLAY_WIDTH=1920
 DISPLAY_HEIGHT=1080
-LANE_WIDTH=1920
 VNC_PORT=5936
 NOVNC_PORT=6136
-AFFILIATE_VNC_PORT=5937
-AFFILIATE_NOVNC_PORT=6137
-CAMPAIGN_VNC_PORT=5938
-CAMPAIGN_NOVNC_PORT=6138
 CDP_PORT=9436
 START_URL="${LAZYPROMOTION_START_URL:-https://www.reddit.com/}"
 CAMPAIGN_HOME_URL="${LAZYPROMOTION_CAMPAIGN_HOME_URL:-https://platform.postiz.com/launches}"
@@ -23,9 +18,7 @@ LINGQ_AFFILIATE_URL="https://www.lingq.com/settings/referrals"
 BOOKSHOP_AFFILIATE_URL="https://bookshop.org/affiliates/profile/introduction"
 POSTIZ_AFFILIATE_URL="https://partners.dub.co/postiz/apply"
 VIEWER_DISPLAY="${LAZYPROMOTION_VIEWER_DISPLAY:-:11}"
-NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
-AFFILIATE_NOVNC_URL="http://127.0.0.1:$AFFILIATE_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$AFFILIATE_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
-CAMPAIGN_NOVNC_URL="http://127.0.0.1:$CAMPAIGN_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$CAMPAIGN_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
+NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=0"
 TMUX_SESSION="lazypromotion-browser"
 
 pid_alive() {
@@ -72,6 +65,108 @@ cdp_has_url() {
     | jq -e --arg needle "$needle" 'any(.[]; (.url // "") | contains($needle))' >/dev/null
 }
 
+cdp_has_exact_url() {
+  local url="$1"
+  curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/list" \
+    | jq -e --arg url "$url" 'any(.[]; (.url // "") == $url)' >/dev/null
+}
+
+wait_cdp_pages_stable() {
+  local tries=0
+  local stable=0
+  local previous=""
+  local signature=""
+  while (( tries < 40 )); do
+    signature="$(curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/list" 2>/dev/null \
+      | jq -c '[.[] | select(.type == "page") | {id, url}] | sort_by(.id)' 2>/dev/null || true)"
+    if [[ -n "$signature" && "$signature" == "$previous" ]]; then
+      stable=$((stable + 1))
+      (( stable >= 3 )) && return 0
+    else
+      stable=0
+      previous="$signature"
+    fi
+    tries=$((tries + 1))
+    sleep 0.25
+  done
+  return 0
+}
+
+workspace_url_allowed() {
+  [[ ! "$1" =~ [\?\&](token|access_token|auth|authorization|session|key|secret|code)= ]] || return 1
+  case "$1" in
+    https://www.reddit.com/*|https://old.reddit.com/*|https://x.com/*|https://www.instagram.com/*|\
+    https://hn.algolia.com/*|https://search.google.com/*|https://platform.postiz.com/*|\
+    https://www.icloud.com/*|https://www.lingq.com/*|https://bookshop.org/*|\
+    https://partners.dub.co/*|https://contra.com/*|https://www.datacamp.com/*|\
+    https://github.com/*)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+workspace_url_is_baseline() {
+  case "$1" in
+    "$START_URL"|https://www.reddit.com/|https://www.icloud.com/mail/*|\
+    https://platform.postiz.com/launches*|https://www.lingq.com/*|\
+    https://bookshop.org/affiliates/profile/*|https://partners.dub.co/postiz/*)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+deduplicate_browser_tabs() {
+  local target_id
+  while IFS= read -r target_id; do
+    [[ -n "$target_id" ]] || continue
+    curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/close/$target_id" >/dev/null || true
+  done < <(
+    curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/list" \
+      | jq -r '[.[] | select(.type == "page" and (.url // "" | startswith("https://")))]
+        | sort_by(.url) | group_by(.url)[] | select(length > 1) | .[1:][] | .id'
+  )
+}
+
+close_redundant_reddit_home() {
+  local target_id
+  if ! curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/list" \
+    | jq -e 'any(.[]; .type == "page" and (.url // "" | startswith("https://www.reddit.com/")) and .url != "https://www.reddit.com/")' \
+      >/dev/null; then
+    return 0
+  fi
+  while IFS= read -r target_id; do
+    [[ -n "$target_id" ]] || continue
+    curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/close/$target_id" >/dev/null || true
+  done < <(
+    curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/list" \
+      | jq -r '.[] | select(.type == "page" and .url == "https://www.reddit.com/") | .id'
+  )
+}
+
+save_browser_workspace() {
+  local workspace_file="$RUNTIME_DIR/workspace.urls"
+  local candidate_file="$RUNTIME_DIR/workspace.urls.candidate"
+  local url
+  curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/list" \
+    | jq -r '[.[] | select(.type == "page") | .url // "" | select(startswith("https://"))] | unique[]' \
+    >"$candidate_file" || {
+      rm -f -- "$candidate_file"
+      return 0
+    }
+  : >"$workspace_file"
+  while IFS= read -r url; do
+    workspace_url_allowed "$url" || continue
+    workspace_url_is_baseline "$url" || printf '%s\n' "$url" >>"$workspace_file"
+  done <"$candidate_file"
+  rm -f -- "$candidate_file"
+}
+
 open_urls_in_window() {
   local window_id="$1"
   shift
@@ -85,75 +180,36 @@ open_urls_in_window() {
 restore_browser_workspace() {
   local chrome_pid="$1"
   local tries=0
-  local window_id title
-  local campaign_window=""
-  local affiliate_window=""
+  local window_id
+  local url
   local -a windows=()
-  local -a campaign_urls=()
-  local -a affiliate_urls=()
+  local -a missing_urls=()
 
   until mapfile -t windows < <(normal_window_ids "$chrome_pid") && (( ${#windows[@]} > 0 )); do
     tries=$((tries + 1))
-    (( tries < 80 )) || return 1
+    (( tries < 40 )) || return 1
     sleep 0.25
   done
+  wait_cdp_pages_stable
 
-  # Reuse restored windows where possible. The active title gives us a stable
-  # campaign/affiliate classification without reading page content.
-  for window_id in "${windows[@]}"; do
-    title="$(window_title "$window_id")"
-    if [[ -z "$campaign_window" && "$title" =~ (iCloud|Postiz|Reddit|Instagram|Search|GitHub|Insights) ]]; then
-      campaign_window="$window_id"
-    fi
-    if [[ -z "$affiliate_window" && "$title" =~ (Affiliate|Referral|Partner) ]]; then
-      affiliate_window="$window_id"
-    fi
-  done
-  [[ -n "$campaign_window" ]] || campaign_window="${windows[0]}"
-  if [[ "$affiliate_window" == "$campaign_window" ]]; then
-    affiliate_window=""
+  window_id="${windows[0]}"
+  cdp_has_url 'www.icloud.com/mail' || missing_urls+=("$INBOX_URL")
+  cdp_has_url 'platform.postiz.com/launches' || missing_urls+=("$CAMPAIGN_HOME_URL")
+  cdp_has_url 'lingq.com/settings/referrals' || missing_urls+=("$LINGQ_AFFILIATE_URL")
+  cdp_has_url 'bookshop.org/affiliates/profile' || missing_urls+=("$BOOKSHOP_AFFILIATE_URL")
+  cdp_has_url 'partners.dub.co/postiz' || missing_urls+=("$POSTIZ_AFFILIATE_URL")
+  if [[ -f "$RUNTIME_DIR/workspace.urls" ]]; then
+    while IFS= read -r url; do
+      workspace_url_allowed "$url" || continue
+      cdp_has_exact_url "$url" || missing_urls+=("$url")
+    done <"$RUNTIME_DIR/workspace.urls"
   fi
-  if [[ -z "$affiliate_window" ]]; then
-    for window_id in "${windows[@]}"; do
-      if [[ "$window_id" != "$campaign_window" ]]; then
-        affiliate_window="$window_id"
-        break
-      fi
-    done
-  fi
-
-  cdp_has_url 'www.icloud.com/mail' || campaign_urls+=("$INBOX_URL")
-  cdp_has_url 'platform.postiz.com/launches' || campaign_urls+=("$CAMPAIGN_HOME_URL")
-  open_urls_in_window "$campaign_window" "${campaign_urls[@]}" || return 1
-
-  cdp_has_url 'lingq.com/settings/referrals' || affiliate_urls+=("$LINGQ_AFFILIATE_URL")
-  cdp_has_url 'bookshop.org/affiliates/profile' || affiliate_urls+=("$BOOKSHOP_AFFILIATE_URL")
-  cdp_has_url 'partners.dub.co/postiz' || affiliate_urls+=("$POSTIZ_AFFILIATE_URL")
-  if [[ -z "$affiliate_window" ]]; then
-    DISPLAY="$DISPLAY_NAME" /opt/google/chrome/chrome \
-      --user-data-dir="$PROFILE_DIR" --new-window \
-      "${affiliate_urls[@]:-$LINGQ_AFFILIATE_URL}" \
-      >>"$RUNTIME_DIR/workspace.log" 2>&1 || return 1
-    tries=0
-    until (( ${#windows[@]} >= 2 )); do
-      mapfile -t windows < <(normal_window_ids "$chrome_pid")
-      tries=$((tries + 1))
-      (( tries < 80 )) || return 1
-      sleep 0.25
-    done
-    for window_id in "${windows[@]}"; do
-      if [[ "$window_id" != "$campaign_window" ]]; then
-        affiliate_window="$window_id"
-        break
-      fi
-    done
-  else
-    open_urls_in_window "$affiliate_window" "${affiliate_urls[@]}" || return 1
-  fi
-
-  [[ -n "$campaign_window" && -n "$affiliate_window" ]] || return 1
-  printf '%s\n' "$campaign_window" >"$RUNTIME_DIR/campaign.window"
-  printf '%s\n' "$affiliate_window" >"$RUNTIME_DIR/affiliate.window"
+  open_urls_in_window "$window_id" "${missing_urls[@]}" || return 1
+  wait_cdp_pages_stable
+  deduplicate_browser_tabs
+  close_redundant_reddit_home
+  wait_cdp_pages_stable
+  printf '%s\n' "$window_id" >"$RUNTIME_DIR/main.window"
 }
 
 clean_owned_stale_display() {
@@ -173,19 +229,17 @@ clean_owned_stale_display() {
 fit_window_loop() {
   local chrome_pid="$1"
   local display_name="$2"
-  local campaign_window="$3"
-  local affiliate_window="$4"
+  local window_id
+  local -a windows=()
   export DISPLAY="$display_name"
+  export DISPLAY_NAME="$display_name"
   while kill -0 "$chrome_pid" 2>/dev/null; do
     read -r width height < <(xdotool getdisplaygeometry)
-    local lane_width=$(( width / 2 ))
-    # Pin each exported browser window to its named lane. Re-enumerating by
-    # stacking order swaps the views whenever focus changes and can expose an
-    # obscured window as black blocks through x11vnc.
-    xdotool windowmove --sync "$campaign_window" 0 0 >/dev/null 2>&1 || true
-    xdotool windowsize --sync "$campaign_window" "$lane_width" "$height" >/dev/null 2>&1 || true
-    xdotool windowmove --sync "$affiliate_window" "$lane_width" 0 >/dev/null 2>&1 || true
-    xdotool windowsize --sync "$affiliate_window" "$lane_width" "$height" >/dev/null 2>&1 || true
+    mapfile -t windows < <(normal_window_ids "$chrome_pid")
+    for window_id in "${windows[@]}"; do
+      xdotool windowmove --sync "$window_id" 0 0 >/dev/null 2>&1 || true
+      xdotool windowsize --sync "$window_id" "$width" "$height" >/dev/null 2>&1 || true
+    done
     sleep 2
   done
 }
@@ -208,51 +262,37 @@ navigate_firefox_viewer() {
 }
 
 refresh_registered_viewers() {
-  local campaign_file="$RUNTIME_DIR/campaign-viewer.window"
-  local affiliate_file="$RUNTIME_DIR/affiliate-viewer.window"
-  [[ -f "$campaign_file" && -f "$affiliate_file" ]] || return 0
-  local campaign_viewer affiliate_viewer
-  campaign_viewer="$(<"$campaign_file")"
-  affiliate_viewer="$(<"$affiliate_file")"
-  navigate_firefox_viewer "$campaign_viewer" "$CAMPAIGN_NOVNC_URL" || return 1
-  navigate_firefox_viewer "$affiliate_viewer" "$AFFILIATE_NOVNC_URL" || return 1
+  local viewer_file="$RUNTIME_DIR/viewer.window"
+  [[ -f "$viewer_file" ]] || return 0
+  navigate_firefox_viewer "$(<"$viewer_file")" "$NOVNC_URL"
 }
 
-register_viewers() {
-  local campaign_viewer="${1:-}"
-  local affiliate_viewer="${2:-}"
-  [[ -n "$campaign_viewer" && -n "$affiliate_viewer" && "$campaign_viewer" != "$affiliate_viewer" ]] || {
-    printf 'Usage: %s register-viewers CAMPAIGN_FIREFOX_WINDOW AFFILIATE_FIREFOX_WINDOW\n' "$0" >&2
+register_viewer() {
+  local viewer="${1:-}"
+  [[ -n "$viewer" ]] || {
+    printf 'Usage: %s register-viewer FIREFOX_WINDOW\n' "$0" >&2
     return 2
   }
-  valid_firefox_viewer "$campaign_viewer" || {
-    printf 'Campaign viewer is not a live Firefox noVNC window on %s.\n' "$VIEWER_DISPLAY" >&2
+  valid_firefox_viewer "$viewer" || {
+    printf 'Viewer is not a live Firefox noVNC window on %s.\n' "$VIEWER_DISPLAY" >&2
     return 1
   }
-  valid_firefox_viewer "$affiliate_viewer" || {
-    printf 'Affiliate viewer is not a live Firefox noVNC window on %s.\n' "$VIEWER_DISPLAY" >&2
-    return 1
-  }
-  printf '%s\n' "$campaign_viewer" >"$RUNTIME_DIR/campaign-viewer.window"
-  printf '%s\n' "$affiliate_viewer" >"$RUNTIME_DIR/affiliate-viewer.window"
+  printf '%s\n' "$viewer" >"$RUNTIME_DIR/viewer.window"
   refresh_registered_viewers
   write_handoff
 }
 
 write_handoff() {
   {
-    printf 'Current noVNC URL: %s\n' "$CAMPAIGN_NOVNC_URL"
-    printf 'Affiliate noVNC URL: %s\n' "$AFFILIATE_NOVNC_URL"
-    printf 'Overview noVNC URL: %s\n' "$NOVNC_URL"
+    printf 'Current noVNC URL: %s\n' "$NOVNC_URL"
     printf 'X display: %s\n' "$DISPLAY_NAME"
     printf 'VNC: 127.0.0.1:%s\n' "$VNC_PORT"
     printf 'CDP: http://127.0.0.1:%s\n' "$CDP_PORT"
     printf 'Profile: %s\n' "$PROFILE_DIR"
     printf 'tmux session: %s\n' "$TMUX_SESSION"
     printf 'Owned PID files: %s/*.pid\n' "$RUNTIME_DIR"
-    if [[ -f "$RUNTIME_DIR/campaign-viewer.window" && -f "$RUNTIME_DIR/affiliate-viewer.window" ]]; then
-      printf 'Campaign Firefox viewer: %s on %s\n' "$(<"$RUNTIME_DIR/campaign-viewer.window")" "$VIEWER_DISPLAY"
-      printf 'Affiliate Firefox viewer: %s on %s\n' "$(<"$RUNTIME_DIR/affiliate-viewer.window")" "$VIEWER_DISPLAY"
+    if [[ -f "$RUNTIME_DIR/viewer.window" ]]; then
+      printf 'Firefox viewer: %s on %s\n' "$(<"$RUNTIME_DIR/viewer.window")" "$VIEWER_DISPLAY"
     fi
   } >"$RUNTIME_DIR/handoff.txt"
 }
@@ -263,10 +303,6 @@ status() {
     "xvfb.pid|Xvfb $DISPLAY_NAME" \
     "x11vnc.pid|rfbport $VNC_PORT" \
     "novnc.pid|$NOVNC_PORT" \
-    "affiliate-x11vnc.pid|rfbport $AFFILIATE_VNC_PORT" \
-    "affiliate-novnc.pid|$AFFILIATE_NOVNC_PORT" \
-    "campaign-x11vnc.pid|rfbport $CAMPAIGN_VNC_PORT" \
-    "campaign-novnc.pid|$CAMPAIGN_NOVNC_PORT" \
     "chrome.pid|$PROFILE_DIR" \
     "fit.pid|fit_window_loop"; do
     IFS='|' read -r file marker <<<"$spec"
@@ -278,21 +314,28 @@ status() {
     fi
   done
   printf 'noVNC %s\n' "$NOVNC_URL"
-  printf 'affiliate noVNC %s\n' "$AFFILIATE_NOVNC_URL"
-  printf 'campaign noVNC %s\n' "$CAMPAIGN_NOVNC_URL"
   printf 'CDP http://127.0.0.1:%s\n' "$CDP_PORT"
   return "$ok"
 }
 
 start_stack() {
   mkdir -p "$RUNTIME_DIR" "$PROFILE_DIR"
+  rm -f -- \
+    "$RUNTIME_DIR/affiliate-novnc.pid" \
+    "$RUNTIME_DIR/affiliate-x11vnc.pid" \
+    "$RUNTIME_DIR/campaign-novnc.pid" \
+    "$RUNTIME_DIR/campaign-x11vnc.pid" \
+    "$RUNTIME_DIR/affiliate.window" \
+    "$RUNTIME_DIR/campaign.window" \
+    "$RUNTIME_DIR/affiliate-viewer.window" \
+    "$RUNTIME_DIR/campaign-viewer.window"
   if status >/dev/null 2>&1; then
     status
     return 0
   fi
   stop_stack >/dev/null 2>&1 || true
   clean_owned_stale_display
-  if ss -ltn | grep -Eq ":($VNC_PORT|$NOVNC_PORT|$AFFILIATE_VNC_PORT|$AFFILIATE_NOVNC_PORT|$CAMPAIGN_VNC_PORT|$CAMPAIGN_NOVNC_PORT|$CDP_PORT)\\b"; then
+  if ss -ltn | grep -Eq ":($VNC_PORT|$NOVNC_PORT|$CDP_PORT)\\b"; then
     printf 'One or more LazyPromotion ports are already occupied; refusing to reuse unknown listeners.\n' >&2
     exit 1
   fi
@@ -324,33 +367,13 @@ start_stack() {
     >"$RUNTIME_DIR/novnc.log" 2>&1 &
   printf '%s\n' "$!" >"$RUNTIME_DIR/novnc.pid"
 
-  nohup x11vnc -display "$DISPLAY_NAME" -clip "${LANE_WIDTH}x${DISPLAY_HEIGHT}+${LANE_WIDTH}+0" \
-    -localhost -nopw -forever -nevershared -noxdamage \
-    -rfbport "$AFFILIATE_VNC_PORT" -o "$RUNTIME_DIR/affiliate-x11vnc.log" \
-    >"$RUNTIME_DIR/affiliate-x11vnc.stdout.log" 2>&1 &
-  printf '%s\n' "$!" >"$RUNTIME_DIR/affiliate-x11vnc.pid"
-
-  nohup websockify --web=/usr/share/novnc "127.0.0.1:$AFFILIATE_NOVNC_PORT" "127.0.0.1:$AFFILIATE_VNC_PORT" \
-    >"$RUNTIME_DIR/affiliate-novnc.log" 2>&1 &
-  printf '%s\n' "$!" >"$RUNTIME_DIR/affiliate-novnc.pid"
-
-  nohup x11vnc -display "$DISPLAY_NAME" -clip "${LANE_WIDTH}x${DISPLAY_HEIGHT}+0+0" \
-    -localhost -nopw -forever -nevershared -noxdamage \
-    -rfbport "$CAMPAIGN_VNC_PORT" -o "$RUNTIME_DIR/campaign-x11vnc.log" \
-    >"$RUNTIME_DIR/campaign-x11vnc.stdout.log" 2>&1 &
-  printf '%s\n' "$!" >"$RUNTIME_DIR/campaign-x11vnc.pid"
-
-  nohup websockify --web=/usr/share/novnc "127.0.0.1:$CAMPAIGN_NOVNC_PORT" "127.0.0.1:$CAMPAIGN_VNC_PORT" \
-    >"$RUNTIME_DIR/campaign-novnc.log" 2>&1 &
-  printf '%s\n' "$!" >"$RUNTIME_DIR/campaign-novnc.pid"
-
   DISPLAY="$DISPLAY_NAME" nohup /opt/google/chrome/chrome \
     --user-data-dir="$PROFILE_DIR" \
     --remote-debugging-address=127.0.0.1 \
     --remote-debugging-port="$CDP_PORT" \
     --remote-allow-origins="http://127.0.0.1:$CDP_PORT" \
     --window-position=0,0 \
-    --window-size="$LANE_WIDTH,$DISPLAY_HEIGHT" \
+    --window-size="$DISPLAY_WIDTH,$DISPLAY_HEIGHT" \
     --no-first-run \
     --no-default-browser-check \
     --disable-dev-shm-usage \
@@ -365,15 +388,10 @@ start_stack() {
     printf 'Browser started, but one or more review workspace tabs could not be restored.\n' >&2
     return 1
   fi
-  local campaign_window affiliate_window
-  campaign_window="$(<"$RUNTIME_DIR/campaign.window")"
-  affiliate_window="$(<"$RUNTIME_DIR/affiliate.window")"
-  nohup bash -c "$(declare -f fit_window_loop); fit_window_loop '$chrome_pid' '$DISPLAY_NAME' '$campaign_window' '$affiliate_window'" \
+  nohup bash -c "$(declare -f normal_window_ids); $(declare -f fit_window_loop); fit_window_loop '$chrome_pid' '$DISPLAY_NAME'" \
     >"$RUNTIME_DIR/fit.log" 2>&1 &
   printf '%s\n' "$!" >"$RUNTIME_DIR/fit.pid"
   wait_http "http://127.0.0.1:$NOVNC_PORT/vnc.html"
-  wait_http "http://127.0.0.1:$AFFILIATE_NOVNC_PORT/vnc.html"
-  wait_http "http://127.0.0.1:$CAMPAIGN_NOVNC_PORT/vnc.html"
   write_handoff
   status
 }
@@ -399,19 +417,43 @@ stop_one() {
 }
 
 stop_stack() {
+  if pid_alive "$RUNTIME_DIR/chrome.pid" "$PROFILE_DIR"; then
+    save_browser_workspace
+  fi
   stop_one "fit.pid" "fit_window_loop" || true
   stop_one "chrome.pid" "$PROFILE_DIR" || true
-  stop_one "campaign-novnc.pid" "$CAMPAIGN_NOVNC_PORT" || true
-  stop_one "campaign-x11vnc.pid" "rfbport $CAMPAIGN_VNC_PORT" || true
-  stop_one "affiliate-novnc.pid" "$AFFILIATE_NOVNC_PORT" || true
-  stop_one "affiliate-x11vnc.pid" "rfbport $AFFILIATE_VNC_PORT" || true
   stop_one "novnc.pid" "$NOVNC_PORT" || true
   stop_one "x11vnc.pid" "rfbport $VNC_PORT" || true
   stop_one "xvfb.pid" "Xvfb $DISPLAY_NAME" || true
 }
 
+wait_process_exit() {
+  local pid="$1"
+  local tries=0
+  local state=""
+  [[ "$pid" =~ ^[0-9]+$ ]] || return 0
+  while kill -0 "$pid" 2>/dev/null; do
+    [[ -r "/proc/$pid/stat" ]] && state="$(awk '{print $3}' "/proc/$pid/stat")"
+    [[ "$state" == "Z" ]] && return 0
+    tries=$((tries + 1))
+    (( tries < 40 )) || return 1
+    sleep 0.25
+  done
+}
+
+wait_reserved_runtime_release() {
+  local tries=0
+  while ss -ltnH | grep -Eq ":($VNC_PORT|$NOVNC_PORT|$CDP_PORT|5937|5938|6137|6138)\\b" \
+    || [[ -e "/tmp/.X${DISPLAY_ID}-lock" || -S "/tmp/.X11-unix/X${DISPLAY_ID}" ]]; do
+    tries=$((tries + 1))
+    (( tries < 80 )) || return 1
+    sleep 0.25
+  done
+}
+
 serve() {
-  trap 'stop_stack' EXIT HUP INT TERM
+  trap 'stop_stack' EXIT
+  trap 'exit 0' HUP INT TERM
   start_stack
   while pid_alive "$RUNTIME_DIR/chrome.pid" "$PROFILE_DIR"; do
     sleep 2
@@ -421,14 +463,16 @@ serve() {
 start() {
   if status >/dev/null 2>&1; then
     status
-    refresh_registered_viewers || printf 'The stack is healthy, but registered Firefox viewers could not be refreshed.\n' >&2
+    refresh_registered_viewers || printf 'The stack is healthy, but the registered Firefox viewer could not be refreshed.\n' >&2
     return 0
   fi
   if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
     printf 'Owned tmux session %s exists but the stack is unhealthy; run stop before relaunch.\n' "$TMUX_SESSION" >&2
     exit 1
   fi
-  tmux new-session -d -s "$TMUX_SESSION" "exec '$PROJECT_ROOT/scripts/desktop.sh' _serve"
+  : >"$RUNTIME_DIR/supervisor.log"
+  tmux new-session -d -s "$TMUX_SESSION" \
+    "exec '$PROJECT_ROOT/scripts/desktop.sh' _serve >>'$RUNTIME_DIR/supervisor.log' 2>&1"
   local tries=0
   until status >/dev/null 2>&1; do
     tries=$((tries + 1))
@@ -444,14 +488,30 @@ start() {
     sleep 0.25
   done
   status
-  refresh_registered_viewers || printf 'The stack started, but registered Firefox viewers could not be refreshed.\n' >&2
+  refresh_registered_viewers || printf 'The stack started, but the registered Firefox viewer could not be refreshed.\n' >&2
 }
 
 stop() {
-  stop_stack
+  local supervisor_pid=""
   if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
+    supervisor_pid="$(tmux list-panes -t "$TMUX_SESSION" -F '#{pane_pid}' 2>/dev/null | head -n 1)"
+  fi
+  stop_stack
+  if ! wait_process_exit "$supervisor_pid"; then
+    if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
+      tmux kill-session -t "$TMUX_SESSION"
+    fi
+    wait_process_exit "$supervisor_pid" || {
+      printf 'Timed out waiting for the old LazyPromotion supervisor to exit.\n' >&2
+      return 1
+    }
+  elif tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
     tmux kill-session -t "$TMUX_SESSION"
   fi
+  wait_reserved_runtime_release || {
+    printf 'Timed out waiting for LazyPromotion runtime ports or display to be released.\n' >&2
+    return 1
+  }
   status || true
 }
 
@@ -459,8 +519,8 @@ case "${1:-status}" in
   start) start ;;
   stop) stop ;;
   restart) stop; start ;;
-  register-viewers) register_viewers "${2:-}" "${3:-}" ;;
+  register-viewer|register-viewers) register_viewer "${2:-}" ;;
   status) status ;;
   _serve) serve ;;
-  *) printf 'Usage: %s {start|stop|restart|status|register-viewers}\n' "$0" >&2; exit 2 ;;
+  *) printf 'Usage: %s {start|stop|restart|status|register-viewer}\n' "$0" >&2; exit 2 ;;
 esac

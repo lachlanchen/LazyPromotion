@@ -4,9 +4,9 @@ Last verified: 2026-09-02 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `330d73c`
+Verified BLOG commit: `3ca71b7`
 
-Campaign range: `3b45351^..330d73c`
+Campaign range: `3b45351^..3ca71b7`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -20,9 +20,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **145 posts** have completed this protocol:
+As of the verified commit, **146 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3772`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772`
 
 ### Safety and historical corrections
 
@@ -30,7 +30,7 @@ As of the verified commit, **145 posts** have completed this protocol:
 - Replaced them with lawful recovery, trial/evaluation, installation, import, payment-risk, marketplace, and source-verification workflows.
 - Preserved dated historical context without continuing dead downloads or presenting old claims as current.
 
-Posts: `7, 26, 31, 56, 89, 95, 99, 109, 113, 143, 150, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 717, 724, 946, 949, 951, 1081, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1379, 1565, 1582, 1943, 1972, 1982, 2013, 2670, 2922, 2972, 2996, 3087, 3096`.
+Posts: `7, 26, 31, 56, 89, 95, 99, 109, 113, 143, 150, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 717, 724, 946, 949, 951, 1081, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1379, 1565, 1582, 1943, 1972, 1982, 2013, 2670, 2922, 2972, 2996, 3087, 3096, 3616`.
 
 ### Financial-method audits
 
@@ -53,7 +53,7 @@ Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 
 - Separated every later editorial addition from the archived writing.
 - Added edition cards, quotation audits, close-reading prompts, translation ledgers, evidence levels, and public-domain or institutional research routes without inventing biography or authorial intent.
 
-Posts: `933, 1498, 1562, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1947, 1959, 1986, 1994, 2002, 2010`.
+Posts: `933, 1498, 1562, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1947, 1959, 1986, 1994, 2002, 2010, 3616`.
 
 ### Navigation and practical checklists
 
@@ -74,6 +74,12 @@ Posts: `281, 936, 1562, 2936, 3125`.
   that Ubuntu's packaged FFmpeg is normally sufficient.
 - Post `2972` showed 14 clicks but received no commercial CTA because no
   LazyingArt offer was a truthful match for its payment-failure search intent.
+- Post `3616` showed 3 clicks and 24 impressions, but its four full-text
+  *Snow Country* PDF routes had no documented redistribution permission for
+  both the Japanese text and Chinese translation. The source and English/Japanese
+  editions now describe the typesetting prototype and lawful access; the four
+  exact release assets were removed and independently returned HTTP 404. No
+  sales, donation, or affiliate CTA was added.
 - The production sidebar now retains only Recent Posts. Seven legacy or
   non-contextual widgets—Meta, broker text/banner, adult-humor image, archives,
   recent comments, and the full category tree—were moved to WordPress's
@@ -209,6 +215,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `5c11840` | 2180 | Improved XGBoost indexing copy without changing its technical boundary |
 | `9d1fc70` | 3167 | Put the project-owned LKT sample report before the private fit check and paid scope |
 | `330d73c` | 3114 | Added an owner-disclosed LazyEdit route and removed duplicate body titles |
+| `3ca71b7` | 3616 | Withdrew uncleared full-text PDFs and published a multilingual lawful-access notice |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

@@ -503,10 +503,20 @@ class RepositoryTests(unittest.TestCase):
             "utm_source=instagram", campaign["channels"]["instagram"]["content"]
         )
         self.assertIn(
-            "lazying.art/lkt/fit-check", campaign["channels"]["x"]["content"]
+            "lazying.art/lkt/sample-report", campaign["channels"]["x"]["content"]
         )
         self.assertIn(
-            "lazying.art/lkt/fit-check", campaign["channels"]["instagram"]["content"]
+            "lazying.art/lkt/sample-report",
+            campaign["channels"]["instagram"]["content"],
+        )
+        self.assertEqual(len(campaign["channels"]["x"]["content"]), 273)
+        self.assertIn(
+            "19,119 structured records",
+            campaign["channels"]["instagram"]["content"],
+        )
+        self.assertIn(
+            "not a customer result or testimonial",
+            campaign["channels"]["instagram"]["content"],
         )
         self.assertIn("concept", campaign["channels"]["x"]["content"])
         self.assertIn("not shipped inventory", campaign["channels"]["instagram"]["content"])

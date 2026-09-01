@@ -62,9 +62,14 @@ URL will be clickable until the platform preview or final composer proves it.
 On 2026-09-01, the reviewed LKT X and Instagram items were moved to the Postiz
 queue for 2026-09-08T01:00:00Z and 2026-09-08T11:31:00Z. The operator fetched
 both live provider contracts first, kept the uploaded wide and 4:5 visuals,
-confirmed the concept/not-inventory disclosures, changed both destinations to
-the verified fit-check page, declined URL shortening, and then verified the
-persisted `QUEUE` records. The Wenyan and eInk items remained drafts.
+confirmed the concept/not-inventory disclosures, and then updated both product
+posts to lead with the first-party sample report instead of asking readers to
+start with the fit check. The Instagram caption includes the measured
+project-owned example and its explicit non-customer-result boundary; the
+operator retained the original lazying.art URL rather than accepting a
+shortlink. A fresh record and visible-calendar review confirmed the exact copy,
+uploaded media, provider settings, unchanged times, and persisted `QUEUE`
+state. The Wenyan and eInk items remained drafts.
 
 The same review pattern was used for a value-first LKT guide post to the
 connected Reddit account's own profile. The live provider contract and profile

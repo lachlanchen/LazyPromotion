@@ -81,8 +81,8 @@
     },
     "fit_check_smoke": {
       "state": "live_review_panel_verified",
-      "checked_at": "2026-09-01T17:21:35Z",
-      "website_commit": "6bf0b6a",
+      "checked_at": "2026-09-01T21:27:38Z",
+      "website_commit": "8541e9c",
       "destination": "contact@lazying.art",
       "subject": "Local Knowledge Terminal — free collection fit check",
       "price": "USD 250",
@@ -92,11 +92,16 @@
         "utm_campaign",
         "utm_content"
       ],
+      "visible_recipient": true,
+      "copy_fallback": true,
+      "next_steps_visible": true,
+      "source_files_requested_before_fit": false,
+      "payment_before_scope_acceptance": false,
       "automatic_submission": false,
       "network_mutations": 0,
       "customer_data_used": false,
       "lead_or_sale_observed": false,
-      "policy": "The synthetic visible-browser smoke test stopped at the local review panel. It did not click the mail link, open a composer, send a message, or create a customer outcome."
+      "policy": "The synthetic visible-browser smoke test stopped at the local review panel. It visibly named the recipient, offered a copy fallback, said not to send source files yet, and kept Stripe after a positive fit check and written scope acceptance. It did not click the mail link, open a composer, send a message, or create a customer outcome."
     },
     "attribution_bridge": {
       "state": "live",
@@ -124,7 +129,7 @@
     },
     "payment_request": {
       "state": "live_account_and_fixed_config_verified",
-      "checked_at": "2026-08-31T20:51:23Z",
+      "checked_at": "2026-09-01T21:27:38Z",
       "price": "USD 250",
       "quantity": 1,
       "public_export": false,

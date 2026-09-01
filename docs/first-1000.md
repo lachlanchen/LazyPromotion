@@ -26,10 +26,12 @@ final email send.
 
 A live visible-browser smoke test on September 2, 2026 used synthetic,
 non-customer answers and stopped at that review panel. It verified the exact
-`USD 250` wording, intended address and subject, and all four allowlisted UTM
-fields with no non-read network request or additional page. The mail action was
-not clicked. This proves only that the review-first path is ready; it is not a
-lead, sale, or revenue event.
+`USD 250` wording, visible recipient and subject, copy fallback, and all four
+allowlisted UTM fields with no non-read network request or additional page. The
+live next-step panel says not to send source files before the fit decision and
+keeps Stripe after written scope acceptance. The mail action was not clicked.
+This proves only that the review-first path is ready; it is not a lead, sale, or
+revenue event. The checked deployment is LazyingArtWebsite commit `8541e9c`.
 
 Prospective customers can inspect a
 [complete sample fit report](https://lazying.art/lkt/sample-report/)

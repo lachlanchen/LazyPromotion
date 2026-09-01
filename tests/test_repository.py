@@ -615,7 +615,12 @@ class RepositoryTests(unittest.TestCase):
         smoke = campaign["conversion_readiness"]["fit_check_smoke"]
         self.assertEqual(smoke["state"], "live_review_panel_verified")
         self.assertEqual(smoke["price"], "USD 250")
-        self.assertEqual(smoke["website_commit"], "6bf0b6a")
+        self.assertEqual(smoke["website_commit"], "8541e9c")
+        self.assertTrue(smoke["visible_recipient"])
+        self.assertTrue(smoke["copy_fallback"])
+        self.assertTrue(smoke["next_steps_visible"])
+        self.assertFalse(smoke["source_files_requested_before_fit"])
+        self.assertFalse(smoke["payment_before_scope_acceptance"])
         self.assertEqual(smoke["network_mutations"], 0)
         self.assertFalse(smoke["automatic_submission"])
         self.assertFalse(smoke["customer_data_used"])

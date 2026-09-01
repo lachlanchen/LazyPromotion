@@ -62,12 +62,16 @@ full article → sample report → fit check path without submitting the form. T
 bridge never copies the extra query fields used for cache-bypassed verification.
 
 The deployed fit-check contract was rechecked in a visible browser on September
-2, 2026 with synthetic, non-customer answers. The review panel used the explicit
-`USD 250` currency label, addressed the draft to `contact@lazying.art`, retained
-all four allowlisted attribution fields, opened no additional page, and caused
-zero non-read network requests. The operator did not click the mail link. This
-is conversion-path readiness evidence, not a fit inquiry, qualified lead, or
-sale.
+2, 2026 with synthetic, non-customer answers. The review panel uses the explicit
+`USD 250` currency label, visibly names `contact@lazying.art`, offers a copy
+fallback for devices without a configured email app, retains all four
+allowlisted attribution fields, and explains what happens next. It explicitly
+says not to send source files before the fit decision and keeps Stripe after a
+positive fit check and written scope acceptance. The form opened no additional
+page and caused zero non-read network requests. The operator did not click the
+mail link. This is conversion-path readiness evidence, not a fit inquiry,
+qualified lead, or sale. The verified public deployment is LazyingArtWebsite
+commit `8541e9c`.
 
 The first-party search-discovery gate was also checked through Search Console's
 visible URL Inspection and Sitemaps screens on September 2, 2026. The sample

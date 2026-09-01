@@ -377,6 +377,10 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(
             campaign["source_evidence"]["sample_fit_report"],
+            "https://lazying.art/lkt/sample-report/",
+        )
+        self.assertEqual(
+            campaign["source_evidence"]["sample_fit_report_source"],
             "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
         )
         self.assertIn("not a customer result", serialized)

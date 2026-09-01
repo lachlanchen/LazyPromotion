@@ -25,11 +25,14 @@ uploads, and sends nothing automatically; the prospective customer controls the
 final email send.
 
 Prospective customers can inspect a
-[complete sample fit report](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
+[complete sample fit report](https://lazying.art/lkt/sample-report/)
 before sharing any material. It applies the three deliverables to LKT's own
 documented reference collection, including measured record and index counts and
 explicit no-go boundaries. It is project-owned evidence—not a customer result,
 testimonial, benchmark, sale, or claim of a paid engagement.
+The [source report and corpus
+ledger](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
+remain public for reproducibility.
 
 ### Inbox readiness gate
 

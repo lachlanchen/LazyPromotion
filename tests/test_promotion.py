@@ -77,6 +77,7 @@ class PromotionTests(unittest.TestCase):
         self.assertIn('"reply_url": "https://lazying.art/lkt/fit-check/"', prompt)
         self.assertIn("private-by-design collection-fit service", prompt)
         self.assertIn("not a finished RAG application", prompt)
+        self.assertIn("https://lazying.art/lkt/sample-report/", prompt)
         self.assertIn("docs/sample-fit-report.md", prompt)
         self.assertIn("not a customer result", prompt)
 

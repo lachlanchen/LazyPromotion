@@ -18,10 +18,13 @@ gross. That is a milestone calculation, not a forecast, and excludes payment
 fees, tax, refunds, and delivery costs.
 
 A [complete sample fit
-report](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
+report](https://lazying.art/lkt/sample-report/)
 shows the three deliverables using LKT's own documented reference collection.
 It is measured project-owned evidence, not a customer result, testimonial,
 benchmark, sale, or paid-engagement claim.
+Its [source report and corpus
+ledger](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
+remain public for reproducibility.
 
 The campaign sequence is:
 

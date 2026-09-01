@@ -4910,9 +4910,16 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {
-      "id": "url:08da0dd4fa5a19c9",
+      "id": "url:3f9d0326fb664513",
       "kind": "web_resource",
       "label": "sample fit report",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/sample-report/"
+    },
+    {
+      "id": "url:08da0dd4fa5a19c9",
+      "kind": "web_resource",
+      "label": "sample fit report source",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md"
     },
@@ -5078,6 +5085,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:0bb69e434c76a028"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/sample-report/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:3f9d0326fb664513"
     },
     {
       "confidence": 1.0,

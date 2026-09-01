@@ -126,6 +126,52 @@ class BlogEditorialTests(unittest.TestCase):
             ):
                 blog_editorial.validate_post(root, 42)
 
+    def test_post_allows_trailing_space_only_in_exact_source_archive(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            post_dir = root / "content" / "posts" / "42"
+            translations = post_dir / "translations"
+            source_export = root / "out" / "posts" / "source" / "index.md"
+            translations.mkdir(parents=True)
+            source_export.parent.mkdir(parents=True)
+            common = (
+                "id: '42'\nslug: 'answer'\ndate: '2026-09-01T00:00:00'\n"
+                "status: 'publish'\nlink: 'https://example.test/42'\n"
+                "source_language: 'zh'\n"
+            )
+            source_export.write_text(
+                "---\nid: '42'\ntitle: 'Old'\n---\n\nold line  \n",
+                encoding="utf-8",
+            )
+            for path, language, title, heading in (
+                (post_dir / "post.md", "", "答案", "步骤"),
+                (translations / "en.md", "en", "Answer", "Steps"),
+                (translations / "ja.md", "ja", "答え", "手順"),
+            ):
+                language_line = f"language: '{language}'\n" if language else ""
+                path.write_text(
+                    f"---\n{common}{language_line}title: '{title}'\n---\n\n"
+                    f"## {heading}\n\n~~~text\n\nold line  \n~~~\n",
+                    encoding="utf-8",
+                )
+            (post_dir / "lazyblog.json").write_text(
+                json.dumps(
+                    {"post_id": 42, "source_export": "out/posts/source/index.md"}
+                ),
+                encoding="utf-8",
+            )
+            self.assertEqual(blog_editorial.validate_post(root, 42)["files"], 4)
+
+            source = post_dir / "post.md"
+            source.write_text(
+                source.read_text(encoding="utf-8").replace("## 步骤", "## 步骤  "),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(
+                blog_editorial.EditorialValidationError, "trailing whitespace"
+            ):
+                blog_editorial.validate_post(root, 42)
+
 
 if __name__ == "__main__":
     unittest.main()

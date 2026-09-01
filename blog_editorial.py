@@ -147,9 +147,41 @@ def _structural_signature(
     return tuple(headings), tuple(fences), tuple(blocks), tuple(urls)
 
 
-def _check_trailing_whitespace(document: MarkdownDocument) -> None:
-    lines = document.path.read_text(encoding="utf-8").splitlines()
-    bad = [index for index, line in enumerate(lines, start=1) if line.rstrip() != line]
+def _exact_text_archive_ranges(text: str, source_body: str) -> list[tuple[int, int]]:
+    """Return payload ranges for text fences that exactly preserve source_body."""
+    ranges: list[tuple[int, int]] = []
+    active: tuple[str, int, str, int] | None = None
+    offset = 0
+    for raw_line in text.splitlines(keepends=True):
+        line = raw_line.rstrip("\r\n")
+        fence = FENCE.match(line)
+        if fence:
+            marker = fence.group(1)
+            if active is None:
+                active = (marker[0], len(marker), fence.group(2).strip(), offset + len(raw_line))
+            elif marker[0] == active[0] and len(marker) >= active[1]:
+                _, _, language, payload_start = active
+                if language == "text" and text[payload_start:offset] == source_body:
+                    ranges.append((payload_start, offset))
+                active = None
+        offset += len(raw_line)
+    return ranges
+
+
+def _check_trailing_whitespace(
+    document: MarkdownDocument, source_body: str = ""
+) -> None:
+    text = document.path.read_text(encoding="utf-8")
+    allowed = _exact_text_archive_ranges(text, source_body) if source_body else []
+    bad: list[int] = []
+    offset = 0
+    for index, raw_line in enumerate(text.splitlines(keepends=True), start=1):
+        line = raw_line.rstrip("\r\n")
+        if line.rstrip() != line:
+            content_end = offset + len(line)
+            if not any(start <= offset and content_end <= end for start, end in allowed):
+                bad.append(index)
+        offset += len(raw_line)
     if bad:
         raise EditorialValidationError(
             f"{document.path}: trailing whitespace on lines {bad[:8]}"
@@ -172,6 +204,17 @@ def expected_translation_languages(source_language: str) -> tuple[str, str]:
 
 def validate_post(blog_root: Path, post_id: int) -> dict[str, object]:
     post_dir = blog_root / "content" / "posts" / str(post_id)
+    manifest_path = post_dir / "lazyblog.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("post_id") != post_id:
+        raise EditorialValidationError(
+            f"{manifest_path}: post_id differs from requested post"
+        )
+    source_export = str(manifest.get("source_export") or "").strip()
+    source_export_body = ""
+    if source_export:
+        source_export_body = read_document(blog_root / source_export).body
+
     source = read_document(post_dir / "post.md")
     source_language = _required(source.metadata, "source_language", source.path)
     languages = expected_translation_languages(source_language)
@@ -195,7 +238,7 @@ def validate_post(blog_root: Path, post_id: int) -> dict[str, object]:
     source_signature = _structural_signature(source.body, source.path)
     for document in documents:
         _required(document.metadata, "title", document.path)
-        _check_trailing_whitespace(document)
+        _check_trailing_whitespace(document, source_export_body)
         identity = tuple(
             _required(document.metadata, key, document.path) for key in identity_keys
         )
@@ -209,12 +252,6 @@ def validate_post(blog_root: Path, post_id: int) -> dict[str, object]:
                 f"{document.path}: Markdown blocks, fence languages, or links differ from source"
             )
 
-    manifest_path = post_dir / "lazyblog.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    if manifest.get("post_id") != post_id:
-        raise EditorialValidationError(
-            f"{manifest_path}: post_id differs from requested post"
-        )
     return {
         "post_id": post_id,
         "source_language": source_language,

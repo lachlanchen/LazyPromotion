@@ -4,9 +4,9 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `65c100e`
+Verified BLOG commit: `07d6b7e`
 
-Campaign range: `3b45351^..65c100e`
+Campaign range: `3b45351^..07d6b7e`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **122 posts** have completed this protocol:
+As of the verified commit, **127 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 933, 946, 949, 951, 963, 1276, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2670, 2922, 2936, 2972, 3114, 3125`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1276, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2670, 2922, 2936, 2972, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -29,7 +29,7 @@ As of the verified commit, **122 posts** have completed this protocol:
 - Replaced them with lawful recovery, trial/evaluation, installation, import, payment-risk, marketplace, and source-verification workflows.
 - Preserved dated historical context without continuing dead downloads or presenting old claims as current.
 
-Posts: `7, 26, 31, 56, 89, 95, 99, 109, 113, 143, 150, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 717, 724, 946, 949, 951, 1276, 1582, 1943, 1972, 1982, 2013, 2670, 2922, 2972`.
+Posts: `7, 26, 31, 56, 89, 95, 99, 109, 113, 143, 150, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 717, 724, 946, 949, 951, 1081, 1276, 1582, 1943, 1972, 1982, 2013, 2670, 2922, 2972`.
 
 ### Financial-method audits
 
@@ -44,7 +44,7 @@ Posts: `690, 1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 - Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, PyQt, Vim, Git, Raspberry Pi GPIO, native-extension, and table-of-contents notes around current diagnostics, official sources, executable checks, rollback, electrical safety, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 472, 476, 484, 488, 527, 560, 573, 697, 701, 717, 724, 731, 736, 740, 963, 1276, 1526, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 2013, 3114`.
+Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 472, 476, 484, 488, 527, 560, 573, 697, 701, 717, 724, 731, 736, 740, 754, 944, 963, 1081, 1086, 1276, 1526, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 2013, 3114`.
 
 ### Literary and learning resources
 
@@ -59,7 +59,7 @@ Posts: `933, 1498, 1562, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1
 - Replaced a social placeholder with a verified channel directory.
 - Expanded the car-rental checklist, archive manifesto, and rights-respecting film-discovery shell into durable reader routes.
 
-Posts: `281, 1562, 2936, 3125`.
+Posts: `281, 936, 1562, 2936, 3125`.
 
 ## Commit trail for the latest batch
 
@@ -162,6 +162,11 @@ Posts: `281, 1562, 2936, 3125`.
 | `a6d73ee` | 731 | Windows Vim/Neovim encoding diagnosis across bytes, decoding, terminal, font, and rollback layers |
 | `419e995` | 740 | Safe cross-platform directory copying with staging, metadata verification, and stop conditions |
 | `65c100e` | 963 | Standards-based C declarator reading with strict compile checks and ABI boundaries |
+| `0cc2d77` | 754 | Privacy-aware Vim/Neovim command-history recovery with isolated no-state rehearsal |
+| `5792136` | 944 | Support-matrix-first VMware module diagnosis across build trees, toolchains, and Secure Boot |
+| `7bb1632` | 936 | Destination-neutral long-trip packing checklist with rule owners and privacy boundaries |
+| `29d4362` | 1086 | Safe Ubuntu script launching through reviewed permissions and a validated Desktop Entry |
+| `07d6b7e` | 1081 | Replaced abandoned Flash installation steps with lawful retirement, migration, and preservation boundaries |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

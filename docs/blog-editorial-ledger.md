@@ -4,9 +4,9 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `b88a400`
+Verified BLOG commit: `f3ea961`
 
-Campaign range: `3b45351^..b88a400`
+Campaign range: `3b45351^..f3ea961`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **62 posts** have completed this protocol:
+As of the verified commit, **70 posts** have completed this protocol:
 
-`10, 56, 99, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1947, 1959, 1986, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
+`10, 56, 99, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1947, 1959, 1986, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -44,7 +44,7 @@ Posts: `1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 - Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, PyQt, Vim, Git, Raspberry Pi GPIO, native-extension, and table-of-contents notes around current diagnostics, official sources, executable checks, rollback, electrical safety, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `10, 184, 271, 351, 433, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 3114`.
+Posts: `10, 184, 271, 351, 433, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 3114`.
 
 ### Literary and learning resources
 
@@ -98,6 +98,15 @@ Posts: `1562, 2936, 3125`.
 | `8bdac0c` | 1887 | WordPress customization security, testing, and rollback guide |
 | `8f948d8` | 1876 | Vim tab pages, buffers, sessions, mappings, and indentation |
 | `b88a400` | 1881 | Safe Raspberry Pi GPIO and measured CPython extension workflow |
+| `7088a4a` | 1912 | Least-privilege Raspberry Pi GPIO access without unsafe `/dev/mem` permission changes |
+| `8a4ba95` | 1909 | WSL Chinese glyph, encoding, locale, and terminal diagnosis |
+| `158ed2e` | 1898 | PyQt5 Ubuntu `xcb` failure classification and repair workflow |
+| `14e1744` | 1900 | Reproducible Windows CPython native-extension build workflow |
+| `79ac605` | 1933 | Bounded, reset-tolerant Raspberry Pi–Arduino serial protocol |
+| `f5ae566` | 1922 | Observable two-remote Git replication with partial-failure handling |
+| `c0d07b0` | 1925 | Rollback-safe PyQt Designer and `uic.exe` diagnosis |
+| `14a99f2` | 1925 | Localized-title correction after live WordPress verification |
+| `f3ea961` | 1929 | Current QtAgg/PyQt5 interactive 3D embedding and test boundary |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

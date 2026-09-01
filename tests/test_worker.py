@@ -83,6 +83,37 @@ class WorkerTests(unittest.TestCase):
         self.assertEqual(result["errors"][0]["stage"], "triage")
         self.assertEqual(worker.pending_candidate_ids(self.db, [], 1), [candidate["id"]])
 
+    def test_current_non_request_is_withdrawn_before_model_quota(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="hackernews",
+            source_url="https://news.ycombinator.com/item?id=opinion",
+            author="reader",
+            body=(
+                "AI music has a quality problem. AI can't perform live, but "
+                "nothing consequential has shifted."
+            ),
+            published_at=self.now,
+        )
+        promotion.mark_triage_requested(self.db, [candidate["id"]])
+        with patch("promotion.open_db", return_value=self.db), patch(
+            "promotion.run_codex_triage"
+        ) as triage_model:
+            result = worker.run_models([candidate["id"]], max_triage=1, max_drafts=0)
+        triage_model.assert_not_called()
+        refreshed = self.db.execute(
+            "SELECT triage_requested_at FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(refreshed["triage_requested_at"], "")
+        self.assertEqual(
+            result["triage_requests_withdrawn"],
+            [{
+                "candidate_id": candidate["id"],
+                "reason": "current evidence is not an explicit request",
+            }],
+        )
+
     def test_review_queue_only_contains_latest_unsent_draft(self):
         candidate = promotion.ingest_candidate(
             self.db,

@@ -51,6 +51,10 @@ flowchart LR
   posts older than 30 days are marked stale and refused by the drafter.
 - Comment-aware intent: replies must contain a direct request phrase; rhetorical
   questions, advice, service pitches, and engagement calls are filtered first.
+- Request-shaped, not keyword-shaped: isolated words such as “problem,”
+  “needs,” or “looking” do not qualify by themselves. Job listings,
+  self-announced tests, quoted request language, and X replies without a direct
+  ask are screened before model triage.
 - Ambiguity-aware matching: a catalog keyword may declare required technical
   context; for example, `local RAG` must occur with an LLM, retrieval, document,
   PDF, embedding, vector-database, or knowledge-base signal so the newspaper
@@ -235,7 +239,10 @@ request.
 Any remaining triage capacity drains only the freshest timestamped requests
 that previously passed a reviewed route. A durable admission marker lets a
 transient model failure retry without allowing filtered search noise into the
-model backlog.
+model backlog. Before each model pass, the worker rechecks admitted candidates
+against the current deterministic gate and withdraws obsolete or false-positive
+admissions with a sanitized local event. They remain private discovery evidence
+but consume no retry quota.
 Continuous mode never approves,
 submits, votes, follows, or sends a direct message.
 It also generates Reddit drafts in value-only mode by default. A project mention

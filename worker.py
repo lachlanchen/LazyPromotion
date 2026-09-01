@@ -181,6 +181,7 @@ def connect_browser(playwright, endpoint: str):
 
 def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) -> dict:
     db = promotion.open_db()
+    withdrawn = promotion.withdraw_untriageable_requests(db)
     selected_ids = pending_candidate_ids(db, candidate_ids, max_triage)
     triaged = []
     drafted = []
@@ -231,6 +232,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
     write_json(QUEUE_PATH, {"updated_at": utc_now(), "count": len(queue), "items": queue})
     graph = network.sync_graph(db)
     return {
+        "triage_requests_withdrawn": withdrawn,
         "selected_candidate_ids": selected_ids,
         "triaged": triaged,
         "drafted": drafted,

@@ -49,10 +49,13 @@ SPAM_SIGNALS = {
 }
 OUT_OF_SCOPE_SIGNALS = {
     "[for hire]", "[hiring]", "for hire", "hiring", "job opening",
+    "full-time", "full time", "résumé/cv", "resume/cv", "technologies:",
+    "willing to relocate",
     "my new tool", "now open to all", "showcase", "volunteer opportunities",
     "we launched", "free to try", "link in bio", "follow for more", "save this",
     "dm me", "i got you", "apply now", "can i apply", "how can i apply",
     "where can i apply", "we're hiring", "we are hiring",
+    "want to publish your own article", "upgrade to premium",
 }
 COMMENT_REQUEST_PHRASES = {
     "any advice", "any recommendations", "any recommendation", "any suggestions",
@@ -67,8 +70,9 @@ COMMENT_REQUEST_PHRASES = {
     "どうやって", "おすすめ", "教えて", "困って", "読めない", "分からない",
 }
 SELF_SOLUTION_PHRASES = {
-    "i built", "i created", "i launched", "my new tool", "my new app",
-    "we built", "we created", "we launched", "our new tool", "our new app",
+    "i built", "i created", "i launched", "i tested", "my new tool", "my new app",
+    "we built", "we created", "we launched", "we tested", "our new tool", "our new app",
+    "free tutoring is available",
 }
 BOT_AUTHORS = {"automoderator"}
 GENERIC_REPO_TOPICS = {
@@ -390,17 +394,28 @@ def help_request_signals(body: str) -> dict[str, list[str]]:
     haystack = normalized(body)
     tokens = set(haystack.split())
     intent_hits = sorted(HELP_SIGNALS & tokens)
-    intent_hits.extend(sorted(phrase for phrase in HELP_PHRASES if phrase in haystack))
+    intent_hits.extend(sorted(
+        phrase for phrase in HELP_PHRASES
+        if keyword_present(normalized(phrase).strip(), haystack)
+    ))
     direct_request_hits = sorted(
-        phrase for phrase in COMMENT_REQUEST_PHRASES if phrase in haystack
+        phrase for phrase in COMMENT_REQUEST_PHRASES
+        if keyword_present(normalized(phrase).strip(), haystack)
     )
     self_solution_hits = sorted(
-        phrase for phrase in SELF_SOLUTION_PHRASES if phrase in haystack
+        phrase for phrase in SELF_SOLUTION_PHRASES
+        if keyword_present(normalized(phrase).strip(), haystack)
     )
     return {
         "intent_hits": sorted(set(intent_hits)),
-        "spam_hits": sorted(signal for signal in SPAM_SIGNALS if signal in haystack),
-        "out_of_scope_hits": sorted(signal for signal in OUT_OF_SCOPE_SIGNALS if signal in haystack),
+        "spam_hits": sorted(
+            signal for signal in SPAM_SIGNALS
+            if keyword_present(normalized(signal).strip(), haystack)
+        ),
+        "out_of_scope_hits": sorted(
+            signal for signal in OUT_OF_SCOPE_SIGNALS
+            if keyword_present(normalized(signal).strip(), haystack)
+        ),
         "existing_solution_hits": (
             self_solution_hits if self_solution_hits and not direct_request_hits else []
         ),
@@ -411,16 +426,18 @@ def is_help_request(body: str) -> bool:
     signals = help_request_signals(body)
     haystack = normalized(body)
     ask_hn = haystack.startswith("ask hn ")
-    tokens = set(haystack.split())
-    strong_tokens = {
-        "advice", "can't", "cannot", "issue", "looking", "need", "problem",
-        "recommend", "recommendation", "struggling", "suggestion",
-    }
+    direct_request = any(
+        keyword_present(normalized(phrase).strip(), haystack)
+        for phrase in COMMENT_REQUEST_PHRASES
+    )
     explicit = (
         "?" in body
         or ask_hn
-        or bool(strong_tokens & tokens)
-        or any(phrase in haystack for phrase in HELP_PHRASES)
+        or direct_request
+        or any(
+            keyword_present(normalized(phrase).strip(), haystack)
+            for phrase in HELP_PHRASES
+        )
     )
     return bool(
         (signals["intent_hits"] or ask_hn) and explicit
@@ -432,6 +449,8 @@ def is_help_request(body: str) -> bool:
 def is_comment_source(platform: str, source_url: str, body: str) -> bool:
     if platform == "hackernews":
         return not normalized(body).strip().startswith("ask hn ")
+    if platform == "x":
+        return bool(re.search(r"(?:^| )replying to [a-z0-9_]", normalized(body)))
     if platform == "instagram":
         parts = [part for part in urlparse(source_url).path.split("/") if part]
         return "c" in parts and parts.index("c") + 1 < len(parts)
@@ -450,8 +469,13 @@ def is_triageable_request(platform: str, source_url: str, body: str) -> bool:
         return False
     if not is_comment_source(platform, source_url, body):
         return True
-    haystack = normalized(body)
-    return any(phrase in haystack for phrase in COMMENT_REQUEST_PHRASES)
+    unquoted = re.sub(r'"[^"\n]*"|“[^”\n]*”', " ", body)
+    haystack = normalized(unquoted)
+    request_windows = compact(f"{haystack[:600]} {haystack[-300:]}")
+    return any(
+        keyword_present(normalized(phrase).strip(), request_windows)
+        for phrase in COMMENT_REQUEST_PHRASES if phrase != "looking for"
+    )
 
 
 def refresh_duplicates(db: sqlite3.Connection) -> None:
@@ -716,6 +740,43 @@ def mark_triage_requested(
         requested.append(candidate_id)
     db.commit()
     return requested
+
+
+def withdraw_untriageable_requests(db: sqlite3.Connection) -> list[dict[str, str]]:
+    """Remove retry admission when current evidence no longer shows a safe request."""
+    rows = db.execute(
+        """
+        SELECT id, platform, source_url, author, body, published_at
+        FROM candidates
+        WHERE status='discovered' AND triage_requested_at != ''
+        """
+    ).fetchall()
+    withdrawn: list[dict[str, str]] = []
+    now = utc_now()
+    for row in rows:
+        reason = ""
+        if compact(row["author"]).casefold() in BOT_AUTHORS:
+            reason = "automated author"
+        elif is_stale(row["published_at"]):
+            reason = "source became stale"
+        elif not is_triageable_request(row["platform"], row["source_url"], row["body"]):
+            reason = "current evidence is not an explicit request"
+        if not reason:
+            continue
+        db.execute(
+            "UPDATE candidates SET triage_requested_at='' WHERE id=?",
+            (row["id"],),
+        )
+        db.execute(
+            """
+            INSERT INTO events(candidate_id, kind, detail, created_at)
+            VALUES (?, 'triage_request_withdrawn', ?, ?)
+            """,
+            (row["id"], reason, now),
+        )
+        withdrawn.append({"candidate_id": row["id"], "reason": reason})
+    db.commit()
+    return withdrawn
 
 
 def project_by_id(project_id: str) -> dict[str, Any]:

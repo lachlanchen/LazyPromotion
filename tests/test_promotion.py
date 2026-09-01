@@ -196,6 +196,32 @@ class PromotionTests(unittest.TestCase):
         body = "Need a video editor? I got you. DM me and follow for more."
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_opinion_using_problem_word_does_not_spend_triage_quota(self):
+        body = (
+            "AI music has a short-term quality problem. AI can't play an "
+            "instrument live, but listeners already ignore it and nothing "
+            "consequential has shifted."
+        )
+        self.assertFalse(promotion.is_help_request(body))
+
+    def test_promotional_needs_language_is_not_a_request(self):
+        body = (
+            "Intelligence needs tools to become useful. We launched a visual "
+            "agent platform that turns analysis into action."
+        )
+        self.assertFalse(promotion.is_help_request(body))
+
+    def test_hiring_listing_with_question_is_out_of_scope(self):
+        body = (
+            "InfoHawk | Software Engineer | Full-time | Technologies: Python, "
+            "Playwright. Can you adapt scrapers when sources change?"
+        )
+        self.assertFalse(promotion.is_help_request(body))
+
+    def test_direct_first_person_request_without_question_mark_is_kept(self):
+        body = "I need help searching my private PDF collection offline"
+        self.assertTrue(promotion.is_help_request(body))
+
     def test_existing_solution_announcement_does_not_spend_triage_quota(self):
         body = (
             "I created a private document search tool. You don't need to wait; "
@@ -205,6 +231,13 @@ class PromotionTests(unittest.TestCase):
         self.assertIn("i created", signals["existing_solution_hits"])
         self.assertFalse(promotion.is_help_request(body))
         self.assertEqual(promotion.rank_projects(body), [])
+
+    def test_tested_product_caption_without_unresolved_request_is_filtered(self):
+        body = (
+            "What happens when you ask AI to make a product video? I tested "
+            "three tools and published the results below."
+        )
+        self.assertFalse(promotion.is_help_request(body))
 
     def test_builder_with_direct_unresolved_request_can_still_be_triaged(self):
         body = (
@@ -226,6 +259,33 @@ class PromotionTests(unittest.TestCase):
         url = "https://news.ycombinator.com/item?id=12345"
         self.assertTrue(promotion.is_comment_source("hackernews", url, body))
         self.assertTrue(promotion.is_triageable_request("hackernews", url, body))
+
+    def test_x_reply_requires_a_direct_request(self):
+        url = "https://x.com/example/status/12345"
+        commentary = "Replying to @someone: what an interesting use of generated video?"
+        request = "Replying to @someone: can someone recommend a caption workflow?"
+        self.assertTrue(promotion.is_comment_source("x", url, commentary))
+        self.assertFalse(promotion.is_triageable_request("x", url, commentary))
+        self.assertTrue(promotion.is_triageable_request("x", url, request))
+
+    def test_long_advice_comment_does_not_match_embedded_request_language(self):
+        body = (
+            "Here is the design advice I promised. "
+            + ("Explain each step and its tradeoffs. " * 40)
+            + 'Ask "how do I get this result," then break it into processes.'
+        )
+        url = "https://www.reddit.com/r/example/comments/post123/title/comment456/"
+        self.assertTrue(promotion.is_help_request(body))
+        self.assertFalse(promotion.is_triageable_request("reddit", url, body))
+
+    def test_contextual_comment_with_request_at_end_is_kept(self):
+        body = (
+            "I have a private research collection with several formats. "
+            + ("The files contain technical names and citations. " * 20)
+            + "Can someone recommend a reliable offline search workflow?"
+        )
+        url = "https://www.reddit.com/r/example/comments/post123/title/comment789/"
+        self.assertTrue(promotion.is_triageable_request("reddit", url, body))
 
     def test_direct_instagram_comment_request_is_triageable(self):
         body = "Can someone recommend a reliable way to add subtitles automatically?"

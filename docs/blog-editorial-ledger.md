@@ -4,9 +4,9 @@ Last verified: 2026-09-02 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `7900a93`
+Verified BLOG commit: `bf33693`
 
-Campaign range: `3b45351^..7900a93`
+Campaign range: `3b45351^..bf33693`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -182,6 +182,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `4d52d66` | 3087 | Secure davfs2/WebDAV mounting with fail-closed secrets, fstab, and rollback controls |
 | `328d9af` | 3096 | Discontinued e-paper prototype audit with migration-first hardware and affiliate boundaries |
 | `7900a93` | 1752 | Predicate-aware Japanese particle lesson with exercises and an untracked LingQ practice route |
+| `bf33693` | 1498 | Edition-aware Pólya note with lawful access, regional untracked Bookshop routes, and no-commission disclosure |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

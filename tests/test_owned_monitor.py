@@ -131,6 +131,32 @@ class OwnedMonitorTests(unittest.TestCase):
         )
         self.assertTrue(report["posts"][0]["needs_release_connection"])
 
+    def test_queue_to_published_requires_visible_release_verification(self):
+        queued = FakePostiz(posts=[post()])
+        self.run_monitor(queued)
+
+        published = post(state="PUBLISHED")
+        published["releaseURL"] = "https://x.com/lazyingart/status/456"
+        current = FakePostiz(posts=[published], post_metrics=[[]])
+        report = self.run_monitor(current)
+        alert = next(
+            item for item in report["alerts"]
+            if item["kind"] == "publication_observed"
+        )
+        self.assertEqual(alert["release_url"], published["releaseURL"])
+        self.assertIn("visible browser", alert["action"])
+        self.assertNotIn("private-post", json.dumps(report))
+
+    def test_published_without_release_url_is_not_delivery_proof(self):
+        published = post(state="PUBLISHED")
+        published["releaseId"] = "provider-release"
+        fake = FakePostiz(posts=[published], post_metrics=[[]])
+        report = self.run_monitor(fake)
+        alert = next(
+            item for item in report["alerts"] if item["kind"] == "release_url_missing"
+        )
+        self.assertIn("do not reconnect or resubmit", alert["action"])
+
     def test_campaign_routes_match_postiz_html_without_private_ids(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(

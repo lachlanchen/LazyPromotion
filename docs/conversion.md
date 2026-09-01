@@ -55,6 +55,10 @@ An increase in comments or replies produces a visible-browser review alert, not
 a lead, and never sends an automatic response. A persistent operator can use
 `python owned_monitor.py loop --interval-minutes 15`; the lock allows only one
 copy and the latest sanitized status stays in `.local/owned-monitor-status.json`.
+The first observed transition from queued to published also creates a visible
+release-verification alert. A published state without a public release URL is
+unresolved evidence: inspect Postiz and the provider, and never reconnect or
+resubmit until the exact public item is identified.
 
 The rest of the portfolio supplies proof and implementation components rather
 than competing calls to action. PocketPolyglot, LinguaLeaf, WordsCardEink, and

@@ -372,12 +372,39 @@ def monitor_once(
                         "action": "Inspect the provider error and visible calendar before any retry.",
                     }
                 )
+            if (
+                previous
+                and str(previous.get("state") or "").upper() in PENDING_STATES
+                and is_published
+                and state not in FAILED_STATES
+            ):
+                alerts.append(
+                    {
+                        "kind": "publication_observed",
+                        **public_summary,
+                        "action": (
+                            "Open the exact release URL in the visible browser and verify "
+                            "the tracked destination; do not reply automatically."
+                        ),
+                    }
+                )
             if needs_connection:
                 alerts.append(
                     {
                         "kind": "release_connection_required",
                         **public_summary,
                         "action": "Review provider content before explicitly connecting a release ID.",
+                    }
+                )
+            elif is_published and not release_url:
+                alerts.append(
+                    {
+                        "kind": "release_url_missing",
+                        **public_summary,
+                        "action": (
+                            "Inspect the published item in Postiz and the provider visibly; "
+                            "do not reconnect or resubmit until the exact release is identified."
+                        ),
                     }
                 )
             if comments > previous_comments or replies > previous_replies:

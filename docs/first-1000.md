@@ -43,6 +43,16 @@ The [source report and corpus
 ledger](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
 remain public for reproducibility.
 
+The public LinguaLeaf shelf now provides a restrained owned-media bridge for
+readers who have a private collection of their own. Its `Private collections`
+navigation link opens the project-owned sample report with a dedicated
+`lingualleaf / owned_shelf` attribution and does not skip ahead to the fit check
+or payment. A visible browser test followed the deployed link, preserved all
+four allowlisted campaign fields, and reached the exact sample-report page.
+LinguaLeaf `main` commit `8f604cb` and Pages commit `eba9e98` carry the route.
+The same preflight corrected the shelf's earlier blanket format claim: each card
+now describes only the formats available for that title.
+
 ### Inbox readiness gate
 
 The public `contact@lazying.art` address has iCloud MX routing and accepted a

@@ -323,7 +323,10 @@ the campaign lane, `6137` exports the affiliate lane, and `6136` provides the
 full-width overview; VNC uses `5938`, `5937`, and `5936` respectively. CDP stays
 on `127.0.0.1:9436` and the tmux session is `lazypromotion-browser`. All services
 bind to loopback. The launcher refuses unknown occupied ports and removes only
-a stale display lock that matches its own recorded Xvfb PID.
+a stale display lock that matches its own recorded Xvfb PID. It restores one
+small campaign/intake workspace and one small affiliate-review workspace,
+records their exact window IDs, and continuously pins those IDs to their named
+lanes so focus changes cannot swap the views or expose obscured black blocks.
 
 The continuous worker and every `browser.py` command also share one filesystem
 operation lock. A manual inspection, composer review, or send therefore waits

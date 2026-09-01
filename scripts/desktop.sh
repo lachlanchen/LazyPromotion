@@ -17,6 +17,11 @@ CAMPAIGN_VNC_PORT=5938
 CAMPAIGN_NOVNC_PORT=6138
 CDP_PORT=9436
 START_URL="${LAZYPROMOTION_START_URL:-https://www.reddit.com/}"
+CAMPAIGN_HOME_URL="${LAZYPROMOTION_CAMPAIGN_HOME_URL:-https://platform.postiz.com/launches}"
+INBOX_URL="${LAZYPROMOTION_INBOX_URL:-https://www.icloud.com/mail/}"
+LINGQ_AFFILIATE_URL="https://www.lingq.com/settings/referrals"
+BOOKSHOP_AFFILIATE_URL="https://bookshop.org/affiliates/profile/introduction"
+POSTIZ_AFFILIATE_URL="https://partners.dub.co/postiz/apply"
 NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
 AFFILIATE_NOVNC_URL="http://127.0.0.1:$AFFILIATE_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$AFFILIATE_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
 CAMPAIGN_NOVNC_URL="http://127.0.0.1:$CAMPAIGN_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$CAMPAIGN_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
@@ -45,6 +50,111 @@ wait_http() {
   done
 }
 
+normal_window_ids() {
+  local chrome_pid="$1"
+  local window_id
+  while read -r window_id; do
+    [[ -n "$window_id" ]] || continue
+    if DISPLAY="$DISPLAY_NAME" xprop -id "$window_id" _NET_WM_WINDOW_TYPE 2>/dev/null | grep -q '_NET_WM_WINDOW_TYPE_NORMAL'; then
+      printf '%s\n' "$window_id"
+    fi
+  done < <(DISPLAY="$DISPLAY_NAME" xdotool search --onlyvisible --pid "$chrome_pid" 2>/dev/null || true)
+}
+
+window_title() {
+  DISPLAY="$DISPLAY_NAME" xdotool getwindowname "$1" 2>/dev/null || true
+}
+
+cdp_has_url() {
+  local needle="$1"
+  curl --fail --silent "http://127.0.0.1:$CDP_PORT/json/list" \
+    | jq -e --arg needle "$needle" 'any(.[]; (.url // "") | contains($needle))' >/dev/null
+}
+
+open_urls_in_window() {
+  local window_id="$1"
+  shift
+  (( $# > 0 )) || return 0
+  DISPLAY="$DISPLAY_NAME" xdotool windowfocus --sync "$window_id" >/dev/null 2>&1 || true
+  DISPLAY="$DISPLAY_NAME" /opt/google/chrome/chrome \
+    --user-data-dir="$PROFILE_DIR" \
+    "$@" >>"$RUNTIME_DIR/workspace.log" 2>&1
+}
+
+restore_browser_workspace() {
+  local chrome_pid="$1"
+  local tries=0
+  local window_id title
+  local campaign_window=""
+  local affiliate_window=""
+  local -a windows=()
+  local -a campaign_urls=()
+  local -a affiliate_urls=()
+
+  until mapfile -t windows < <(normal_window_ids "$chrome_pid") && (( ${#windows[@]} > 0 )); do
+    tries=$((tries + 1))
+    (( tries < 80 )) || return 1
+    sleep 0.25
+  done
+
+  # Reuse restored windows where possible. The active title gives us a stable
+  # campaign/affiliate classification without reading page content.
+  for window_id in "${windows[@]}"; do
+    title="$(window_title "$window_id")"
+    if [[ -z "$campaign_window" && "$title" =~ (iCloud|Postiz|Reddit|Instagram|Search|GitHub|Insights) ]]; then
+      campaign_window="$window_id"
+    fi
+    if [[ -z "$affiliate_window" && "$title" =~ (Affiliate|Referral|Partner) ]]; then
+      affiliate_window="$window_id"
+    fi
+  done
+  [[ -n "$campaign_window" ]] || campaign_window="${windows[0]}"
+  if [[ "$affiliate_window" == "$campaign_window" ]]; then
+    affiliate_window=""
+  fi
+  if [[ -z "$affiliate_window" ]]; then
+    for window_id in "${windows[@]}"; do
+      if [[ "$window_id" != "$campaign_window" ]]; then
+        affiliate_window="$window_id"
+        break
+      fi
+    done
+  fi
+
+  cdp_has_url 'www.icloud.com/mail' || campaign_urls+=("$INBOX_URL")
+  cdp_has_url 'platform.postiz.com/launches' || campaign_urls+=("$CAMPAIGN_HOME_URL")
+  open_urls_in_window "$campaign_window" "${campaign_urls[@]}" || return 1
+
+  cdp_has_url 'lingq.com/settings/referrals' || affiliate_urls+=("$LINGQ_AFFILIATE_URL")
+  cdp_has_url 'bookshop.org/affiliates/profile' || affiliate_urls+=("$BOOKSHOP_AFFILIATE_URL")
+  cdp_has_url 'partners.dub.co/postiz' || affiliate_urls+=("$POSTIZ_AFFILIATE_URL")
+  if [[ -z "$affiliate_window" ]]; then
+    DISPLAY="$DISPLAY_NAME" /opt/google/chrome/chrome \
+      --user-data-dir="$PROFILE_DIR" --new-window \
+      "${affiliate_urls[@]:-$LINGQ_AFFILIATE_URL}" \
+      >>"$RUNTIME_DIR/workspace.log" 2>&1 || return 1
+    tries=0
+    until (( ${#windows[@]} >= 2 )); do
+      mapfile -t windows < <(normal_window_ids "$chrome_pid")
+      tries=$((tries + 1))
+      (( tries < 80 )) || return 1
+      sleep 0.25
+    done
+    for window_id in "${windows[@]}"; do
+      if [[ "$window_id" != "$campaign_window" ]]; then
+        affiliate_window="$window_id"
+        break
+      fi
+    done
+  else
+    open_urls_in_window "$affiliate_window" "${affiliate_urls[@]}" || return 1
+  fi
+
+  [[ -n "$campaign_window" && -n "$affiliate_window" ]] || return 1
+  printf '%s\n' "$campaign_window" >"$RUNTIME_DIR/campaign.window"
+  printf '%s\n' "$affiliate_window" >"$RUNTIME_DIR/affiliate.window"
+}
+
 clean_owned_stale_display() {
   local lock="/tmp/.X${DISPLAY_ID}-lock"
   local socket="/tmp/.X11-unix/X${DISPLAY_ID}"
@@ -62,24 +172,19 @@ clean_owned_stale_display() {
 fit_window_loop() {
   local chrome_pid="$1"
   local display_name="$2"
+  local campaign_window="$3"
+  local affiliate_window="$4"
   export DISPLAY="$display_name"
   while kill -0 "$chrome_pid" 2>/dev/null; do
     read -r width height < <(xdotool getdisplaygeometry)
     local lane_width=$(( width / 2 ))
-    local normal_index=0
-    while read -r window_id; do
-      [[ -n "$window_id" ]] || continue
-      if ! xprop -id "$window_id" _NET_WM_WINDOW_TYPE 2>/dev/null | grep -q '_NET_WM_WINDOW_TYPE_NORMAL'; then
-        continue
-      fi
-      # Each exported browser window gets a non-overlapping full-size lane.
-      # The dedicated x11vnc streams clip the root display instead of polling
-      # obscured window pixmaps, which otherwise render as black blocks.
-      local lane_x=$(( (normal_index % 2) * lane_width ))
-      xdotool windowmove --sync "$window_id" "$lane_x" 0 >/dev/null 2>&1 || true
-      xdotool windowsize --sync "$window_id" "$lane_width" "$height" >/dev/null 2>&1 || true
-      normal_index=$((normal_index + 1))
-    done < <(xdotool search --onlyvisible --pid "$chrome_pid" 2>/dev/null || true)
+    # Pin each exported browser window to its named lane. Re-enumerating by
+    # stacking order swaps the views whenever focus changes and can expose an
+    # obscured window as black blocks through x11vnc.
+    xdotool windowmove --sync "$campaign_window" 0 0 >/dev/null 2>&1 || true
+    xdotool windowsize --sync "$campaign_window" "$lane_width" "$height" >/dev/null 2>&1 || true
+    xdotool windowmove --sync "$affiliate_window" "$lane_width" 0 >/dev/null 2>&1 || true
+    xdotool windowsize --sync "$affiliate_window" "$lane_width" "$height" >/dev/null 2>&1 || true
     sleep 2
   done
 }
@@ -108,7 +213,8 @@ status() {
     "affiliate-novnc.pid|$AFFILIATE_NOVNC_PORT" \
     "campaign-x11vnc.pid|rfbport $CAMPAIGN_VNC_PORT" \
     "campaign-novnc.pid|$CAMPAIGN_NOVNC_PORT" \
-    "chrome.pid|$PROFILE_DIR"; do
+    "chrome.pid|$PROFILE_DIR" \
+    "fit.pid|fit_window_loop"; do
     IFS='|' read -r file marker <<<"$spec"
     if pid_alive "$RUNTIME_DIR/$file" "$marker"; then
       printf '%s running pid=%s\n' "${file%.pid}" "$(<"$RUNTIME_DIR/$file")"
@@ -197,13 +303,20 @@ start_stack() {
     --password-store=basic \
     --new-window "$START_URL" \
     >"$RUNTIME_DIR/chrome.log" 2>&1 &
-  printf '%s\n' "$!" >"$RUNTIME_DIR/chrome.pid"
-
-  nohup bash -c "$(declare -f fit_window_loop); fit_window_loop '$!' '$DISPLAY_NAME'" \
-    >"$RUNTIME_DIR/fit.log" 2>&1 &
-  printf '%s\n' "$!" >"$RUNTIME_DIR/fit.pid"
+  local chrome_pid="$!"
+  printf '%s\n' "$chrome_pid" >"$RUNTIME_DIR/chrome.pid"
 
   wait_http "http://127.0.0.1:$CDP_PORT/json/version"
+  if ! restore_browser_workspace "$chrome_pid"; then
+    printf 'Browser started, but one or more review workspace tabs could not be restored.\n' >&2
+    return 1
+  fi
+  local campaign_window affiliate_window
+  campaign_window="$(<"$RUNTIME_DIR/campaign.window")"
+  affiliate_window="$(<"$RUNTIME_DIR/affiliate.window")"
+  nohup bash -c "$(declare -f fit_window_loop); fit_window_loop '$chrome_pid' '$DISPLAY_NAME' '$campaign_window' '$affiliate_window'" \
+    >"$RUNTIME_DIR/fit.log" 2>&1 &
+  printf '%s\n' "$!" >"$RUNTIME_DIR/fit.pid"
   wait_http "http://127.0.0.1:$NOVNC_PORT/vnc.html"
   wait_http "http://127.0.0.1:$AFFILIATE_NOVNC_PORT/vnc.html"
   wait_http "http://127.0.0.1:$CAMPAIGN_NOVNC_PORT/vnc.html"

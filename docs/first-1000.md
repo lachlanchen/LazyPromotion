@@ -24,6 +24,13 @@ builds a reviewable email draft inside the current browser tab. It stores,
 uploads, and sends nothing automatically; the prospective customer controls the
 final email send.
 
+A live visible-browser smoke test on September 2, 2026 used synthetic,
+non-customer answers and stopped at that review panel. It verified the exact
+`USD 250` wording, intended address and subject, and all four allowlisted UTM
+fields with no non-read network request or additional page. The mail action was
+not clicked. This proves only that the review-first path is ready; it is not a
+lead, sale, or revenue event.
+
 Prospective customers can inspect a
 [complete sample fit report](https://lazying.art/lkt/sample-report/)
 before sharing any material. It applies the three deliverables to LKT's own
@@ -55,6 +62,10 @@ has been reviewed against the qualification gate below.
 folder's aggregate message and unread counts. The one controlled probe is its
 baseline. It never opens mail or persists message metadata; an increased count
 is only a prompt for visible review, not a qualified lead or sale.
+The single project-owned desktop now restores the inbox and campaign tabs after
+an owned restart and pins its campaign and affiliate browser windows to separate
+full-size noVNC lanes, preventing focus-order swaps from interrupting the
+aggregate monitor.
 
 ## Qualification gate
 

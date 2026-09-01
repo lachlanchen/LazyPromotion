@@ -41,6 +41,20 @@ class RepositoryTests(unittest.TestCase):
             with browser.browser_operation_lock(timeout_seconds=0.1, poll_seconds=0.01):
                 pass
 
+    def test_desktop_restores_two_small_review_workspaces(self):
+        script = (ROOT / "scripts" / "desktop.sh").read_text(encoding="utf-8")
+        self.assertIn('DISPLAY_WIDTH=3840', script)
+        self.assertIn('LANE_WIDTH=1920', script)
+        self.assertIn('https://www.icloud.com/mail/', script)
+        self.assertIn('https://platform.postiz.com/launches', script)
+        self.assertIn('https://www.lingq.com/settings/referrals', script)
+        self.assertIn('https://bookshop.org/affiliates/profile/introduction', script)
+        self.assertIn('https://partners.dub.co/postiz/apply', script)
+        self.assertIn('restore_browser_workspace', script)
+        self.assertIn('campaign.window', script)
+        self.assertIn('affiliate.window', script)
+        self.assertNotIn('normal_index % 2', script)
+
     def test_screenshot_failure_does_not_discard_discovery(self):
         class BrokenPage:
             def screenshot(self, **kwargs):
@@ -499,6 +513,10 @@ class RepositoryTests(unittest.TestCase):
             "founding collection-fit sprint",
         )
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
+        currency = campaign["source_evidence"]["currency_contract"]
+        self.assertEqual(currency["state"], "live")
+        self.assertEqual(currency["exact_price"], "USD 250")
+        self.assertEqual(currency["website_commit"], "6bf0b6a")
         self.assertIn("free fit check", campaign["source_evidence"]["current_order_mode"])
         self.assertEqual(
             campaign["source_evidence"]["practical_guide"],
@@ -565,6 +583,20 @@ class RepositoryTests(unittest.TestCase):
             "do not promise a response time",
             campaign["conversion_readiness"]["policy"].casefold(),
         )
+        monitor = campaign["conversion_readiness"]["aggregate_monitor"]
+        self.assertEqual(monitor["state"], "healthy")
+        self.assertFalse(monitor["message_content_opened"])
+        self.assertFalse(monitor["message_metadata_persisted"])
+        self.assertFalse(monitor["automatic_reply"])
+        self.assertFalse(monitor["lead_or_sale_observed"])
+        smoke = campaign["conversion_readiness"]["fit_check_smoke"]
+        self.assertEqual(smoke["state"], "live_review_panel_verified")
+        self.assertEqual(smoke["price"], "USD 250")
+        self.assertEqual(smoke["website_commit"], "6bf0b6a")
+        self.assertEqual(smoke["network_mutations"], 0)
+        self.assertFalse(smoke["automatic_submission"])
+        self.assertFalse(smoke["customer_data_used"])
+        self.assertFalse(smoke["lead_or_sale_observed"])
         attribution = campaign["conversion_readiness"]["attribution_bridge"]
         self.assertEqual(attribution["state"], "live")
         self.assertEqual(attribution["plugin_version"], "0.4.13")

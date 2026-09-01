@@ -61,6 +61,14 @@ keeps the original campaign fields. A live Reddit-profile click verified the
 full article → sample report → fit check path without submitting the form. The
 bridge never copies the extra query fields used for cache-bypassed verification.
 
+The deployed fit-check contract was rechecked in a visible browser on September
+2, 2026 with synthetic, non-customer answers. The review panel used the explicit
+`USD 250` currency label, addressed the draft to `contact@lazying.art`, retained
+all four allowlisted attribution fields, opened no additional page, and caused
+zero non-read network requests. The operator did not click the mail link. This
+is conversion-path readiness evidence, not a fit inquiry, qualified lead, or
+sale.
+
 `python owned_monitor.py once` checks the official Postiz publication records
 and analytics without changing a post. It stores only hashed post identities in
 the ignored local database; raw Postiz and integration IDs remain in memory.
@@ -81,6 +89,9 @@ qualified lead or sale—and the operator must inspect only that folder visibly
 before recording any funnel outcome. Continuous mode uses
 `python inbound_monitor.py loop --interval-minutes 15` and shares the browser
 operation lock with discovery so it cannot race another CDP controller.
+The project desktop restores the authenticated inbox tab after an owned stack
+restart, while the monitor continues to read only the dedicated folder's
+aggregate counts and never opens message content.
 
 The rest of the portfolio supplies proof and implementation components rather
 than competing calls to action. PocketPolyglot, LinguaLeaf, WordsCardEink, and

@@ -32,10 +32,10 @@ The campaign sequence is:
    knowledge, citations, or multilingual study.
 2. Answer the stated problem usefully before mentioning any LazyingArt work.
 3. For a reusable problem, publish the complete answer as a searchable
-   LazyBlog guide with one tracked fit-check link at the end; rely on the
-   registered WordPress sitemap for repeat discovery.
-4. Let the profile or one relevant link lead to the public sample report and
-   [private-by-design fit check](https://lazying.art/lkt/fit-check/).
+   LazyBlog guide, then offer the tracked sample report before the fit check;
+   rely on the registered WordPress sitemap for repeat discovery.
+4. Let the profile or one relevant link lead through the public sample report
+   to the [private-by-design fit check](https://lazying.art/lkt/fit-check/).
 5. Confirm source rights, sample format, language goal, readers, privacy needs,
    and existing hardware.
 6. Request the fixed USD 250 payment through Stripe only after both sides accept
@@ -48,16 +48,18 @@ channel reach and engagement, while confirmed leads and revenue remain private
 operator records. The agent never fabricates conversions and never treats a
 public reply, impression, or GitHub visit as a customer.
 The live LazyBlog bridge preserves an originating Reddit or X campaign when a
-reader continues to the LKT fit check. It forwards only `utm_source`,
-`utm_medium`, `utm_campaign`, and `utm_content`, validates their characters and
-length, and changes only the exact HTTPS `lazying.art/lkt/fit-check/`
-destination. Organic blog readers retain the article's normal `lazyblog`
-attribution. The reviewed local email draft includes the resulting fields; it
-still sends nothing automatically.
+reader continues to the sample report or directly to the LKT fit check. It
+forwards only `utm_source`, `utm_medium`, `utm_campaign`, and `utm_content`,
+validates their characters and length, and changes only the exact HTTPS
+`lazying.art/lkt/sample-report/` and `lazying.art/lkt/fit-check/` destinations.
+Organic blog readers retain the article's normal `lazyblog` attribution. The
+reviewed local email draft includes the resulting fields; it still sends
+nothing automatically.
 The same allowlist runs on the first-party LKT offer and sample-report pages,
-so an Instagram or X visitor who reviews the evidence before continuing keeps
-the original campaign fields. The bridge never copies the extra query fields
-used for cache-bypassed verification.
+so a Reddit, Instagram, or X visitor who reviews the evidence before continuing
+keeps the original campaign fields. A live Reddit-profile click verified the
+full article → sample report → fit check path without submitting the form. The
+bridge never copies the extra query fields used for cache-bypassed verification.
 
 `python owned_monitor.py once` checks the official Postiz publication records
 and analytics without changing a post. It stores only hashed post identities in

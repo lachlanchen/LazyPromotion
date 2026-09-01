@@ -81,7 +81,8 @@ payment data, or private corpus text in the promotion repository.
    self-promotion norms, keep the reply value-only and let the profile do the
    quiet discovery work.
 3. When the problem is reusable, turn the answer into one owned, searchable
-   guide. Put the complete solution first and one tracked fit-check link last.
+   guide. Put the complete solution first, then the tracked sample report and
+   fit check.
    The first proved example is [the confidential-PDF search
    guide](https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html).
 4. Publish the guide through LazyBlog, verify its translations and boundaries,
@@ -113,9 +114,11 @@ value-only replies can find useful context without a second promotional reply.
 Postiz and the public provider page independently confirmed the exact release.
 Reddit initially rendered the scheduled protocol-less destination as plain
 text; a visible provider-side edit added only the `https://` prefix. The exact
-public anchor then resolved to the canonical guide and preserved the originating
-Reddit attribution through the fit-check page. The resource retains an explicit
-maintainer disclosure. The public Reddit profile itself now has one restrained
+public anchor then resolved to the canonical guide. The live article offered
+the project-owned sample report before the commercial action; its real CTA click
+preserved the originating Reddit attribution through the complete, empty
+fit-check form. The resource retains an explicit maintainer disclosure. The
+public Reddit profile itself now has one restrained
 bio describing the local-first work and one tracked `Free LKT fit check` social
 link pointing directly to the live fit-check page. That owned-profile route is
 not permission to add another promotion, follower request, price claim, or link

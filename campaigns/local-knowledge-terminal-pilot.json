@@ -64,12 +64,15 @@
     "policy": "Authenticated access and the controlled exact-subject runtime probe prove that the inbox can be reviewed and the intake rule can route a message to its destination. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
     "attribution_bridge": {
       "state": "live",
-      "checked_at": "2026-09-01T01:19:12Z",
-      "plugin_version": "0.4.12",
+      "checked_at": "2026-09-01T02:33:18Z",
+      "plugin_version": "0.4.13",
       "lazyblog_source": "https://github.com/lazyingart/lazyblog-translations/blob/main/assets/utm-bridge.js",
       "website_source": "https://github.com/lachlanchen/LazyingArtWebsite/blob/main/lkt/attribution-bridge.js",
       "website_commit": "17e85ef",
-      "destination_scope": "https://lazying.art/lkt/fit-check/",
+      "destination_scope": [
+        "https://lazying.art/lkt/sample-report/",
+        "https://lazying.art/lkt/fit-check/"
+      ],
       "allowlisted_parameters": [
         "utm_source",
         "utm_medium",
@@ -77,10 +80,11 @@
         "utm_content"
       ],
       "verified_paths": [
+        "reddit_profile_guide_to_lazyblog_to_sample_report_to_fit_check",
         "reddit_profile_guide_to_lazyblog_to_fit_check_to_local_email_review",
         "instagram_product_to_sample_report_to_fit_check"
       ],
-      "policy": "Forward only validated campaign fields from the current first-party blog page to the exact HTTPS LKT fit-check destination. Do not forward arbitrary query parameters, touch third-party links, send a form, or infer a lead from a reviewed local draft."
+      "policy": "The LazyBlog bridge forwards only validated campaign fields to the exact HTTPS LKT sample-report or fit-check destinations. The first-party LKT bridge then preserves the same fields from the sample report to the exact fit-check destination. Do not forward arbitrary query parameters, touch third-party links, send a form, or infer a lead from a page visit or reviewed local draft."
     },
     "payment_request": {
       "state": "live_account_and_fixed_config_verified",
@@ -108,8 +112,9 @@
         "ja",
         "zh"
       ],
+      "evidence_url": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=confidential_pdf_sample_report",
       "conversion_url": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=confidential_pdf_search",
-      "policy": "Lead with a complete privacy-first search recipe grounded in official documentation. Mention the free fit check and bounded USD 250 sprint only after the practical answer, with exclusions and source-rights requirements intact."
+      "policy": "Lead with a complete privacy-first search recipe grounded in official documentation. Let readers inspect the project-owned sample report before the free fit check and bounded USD 250 sprint, with the non-customer-result boundary, exclusions, and source-rights requirements intact."
     },
     "reddit": {
       "state": "needs_exact_need",
@@ -138,11 +143,11 @@
           "provider_record": "Postiz independently reported the exact item as PUBLISHED with the same Reddit release URL and no comments or replies.",
           "public_post": "One exact post by Ok-Perception1122 contains the reviewed title, all five standalone steps, 12 GB boundary, and maintainer disclosure.",
           "link_repair": "Reddit rendered the scheduled protocol-less URL as plain text. The visible Reddit editor changed only that URL by adding the https:// prefix, after which it rendered as one clickable anchor.",
-          "actual_click_path": "The public Reddit anchor resolved to the canonical LazyBlog article with reddit/profile/local_knowledge_terminal_pilot attribution; the live article CTA retained those fields through the LKT fit-check page.",
+          "actual_click_path": "The public Reddit anchor resolved to the canonical LazyBlog article with reddit/profile/local_knowledge_terminal_pilot attribution. The live article's sample-report link retained those fields plus its own content marker; the report showed the project-owned evidence boundary, and its real CTA click retained all four fields through the complete LKT fit-check page.",
           "automatic_form_submission": false,
           "lead_or_sale_observed": false
         },
-        "policy": "First-party profile resource only, not a community submission or generated reply. The published post and actual click path were visibly verified. A provider-side one-prefix repair made the tracked URL clickable without changing the technical answer or disclosure. The live allowlisted blog bridge preserves Reddit attribution through the fit-check page without forwarding arbitrary parameters or sending a form."
+        "policy": "First-party profile resource only, not a community submission or generated reply. The published post and actual evidence-first click path were visibly verified. A provider-side one-prefix repair made the tracked URL clickable without changing the technical answer or disclosure. The live allowlisted bridges preserve Reddit attribution from the article through the sample report to the fit-check page without forwarding arbitrary parameters or sending a form."
       },
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },

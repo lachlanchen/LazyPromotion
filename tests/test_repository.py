@@ -468,10 +468,13 @@ class RepositoryTests(unittest.TestCase):
         )
         attribution = campaign["conversion_readiness"]["attribution_bridge"]
         self.assertEqual(attribution["state"], "live")
-        self.assertEqual(attribution["plugin_version"], "0.4.12")
+        self.assertEqual(attribution["plugin_version"], "0.4.13")
         self.assertEqual(
             attribution["destination_scope"],
-            "https://lazying.art/lkt/fit-check/",
+            [
+                "https://lazying.art/lkt/sample-report/",
+                "https://lazying.art/lkt/fit-check/",
+            ],
         )
         self.assertEqual(
             attribution["allowlisted_parameters"],
@@ -481,6 +484,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(
             attribution["verified_paths"],
             [
+                "reddit_profile_guide_to_lazyblog_to_sample_report_to_fit_check",
                 "reddit_profile_guide_to_lazyblog_to_fit_check_to_local_email_review",
                 "instagram_product_to_sample_report_to_fit_check",
             ],
@@ -505,6 +509,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(
             "utm_source=lazyblog",
             campaign["channels"]["lazyblog"]["conversion_url"],
+        )
+        self.assertIn(
+            "lazying.art/lkt/sample-report",
+            campaign["channels"]["lazyblog"]["evidence_url"],
+        )
+        self.assertIn(
+            "utm_content=confidential_pdf_sample_report",
+            campaign["channels"]["lazyblog"]["evidence_url"],
         )
         self.assertEqual(
             campaign["channels"]["reddit"]["profile_guide"]["state"],

@@ -54,6 +54,10 @@ length, and changes only the exact HTTPS `lazying.art/lkt/fit-check/`
 destination. Organic blog readers retain the article's normal `lazyblog`
 attribution. The reviewed local email draft includes the resulting fields; it
 still sends nothing automatically.
+The same allowlist runs on the first-party LKT offer and sample-report pages,
+so an Instagram or X visitor who reviews the evidence before continuing keeps
+the original campaign fields. The bridge never copies the extra query fields
+used for cache-bypassed verification.
 
 `python owned_monitor.py once` checks the official Postiz publication records
 and analytics without changing a post. It stores only hashed post identities in

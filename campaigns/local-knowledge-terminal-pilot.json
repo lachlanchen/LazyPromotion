@@ -66,7 +66,9 @@
       "state": "live",
       "checked_at": "2026-09-01T01:19:12Z",
       "plugin_version": "0.4.12",
-      "source": "https://github.com/lazyingart/lazyblog-translations/blob/main/assets/utm-bridge.js",
+      "lazyblog_source": "https://github.com/lazyingart/lazyblog-translations/blob/main/assets/utm-bridge.js",
+      "website_source": "https://github.com/lachlanchen/LazyingArtWebsite/blob/main/lkt/attribution-bridge.js",
+      "website_commit": "17e85ef",
       "destination_scope": "https://lazying.art/lkt/fit-check/",
       "allowlisted_parameters": [
         "utm_source",
@@ -74,7 +76,10 @@
         "utm_campaign",
         "utm_content"
       ],
-      "verified_path": "reddit_profile_guide_to_lazyblog_to_fit_check_to_local_email_review",
+      "verified_paths": [
+        "reddit_profile_guide_to_lazyblog_to_fit_check_to_local_email_review",
+        "instagram_product_to_sample_report_to_fit_check"
+      ],
       "policy": "Forward only validated campaign fields from the current first-party blog page to the exact HTTPS LKT fit-check destination. Do not forward arbitrary query parameters, touch third-party links, send a form, or infer a lead from a reviewed local draft."
     },
     "payment_request": {

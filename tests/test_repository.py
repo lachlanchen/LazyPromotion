@@ -465,6 +465,14 @@ class RepositoryTests(unittest.TestCase):
             attribution["allowlisted_parameters"],
             ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
         )
+        self.assertEqual(attribution["website_commit"], "17e85ef")
+        self.assertEqual(
+            attribution["verified_paths"],
+            [
+                "reddit_profile_guide_to_lazyblog_to_fit_check_to_local_email_review",
+                "instagram_product_to_sample_report_to_fit_check",
+            ],
+        )
         self.assertIn("send a form", attribution["policy"])
         self.assertIn("do not forward arbitrary", attribution["policy"].casefold())
         payment_request = campaign["conversion_readiness"]["payment_request"]

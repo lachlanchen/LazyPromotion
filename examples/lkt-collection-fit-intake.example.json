@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "artifact_id": "lkt-public-reference-example",
+  "prepared_on": "2026-09-01",
+  "input_classification": "sanitized_example_only",
+  "source_status": "project_owned_public_example",
+  "collection": {
+    "format": "structured_jsonl",
+    "bounded": true,
+    "approximate_items": 19119,
+    "language_goal": {
+      "goal": "multilingual_cards",
+      "source_language": "en",
+      "output_language": "ja"
+    },
+    "intended_readers": "public_demo"
+  },
+  "rights": {
+    "status": "confirmed",
+    "basis": "owner_controlled"
+  },
+  "privacy": {
+    "processing_boundary": "local_only",
+    "sample_payload_included": false,
+    "sensitive_identifiers_included": false
+  },
+  "existing_machine": {
+    "available": true,
+    "memory_gib": 8,
+    "accelerator": "none"
+  },
+  "requested_scope": {
+    "browser_proof": true,
+    "custom_ocr": false,
+    "hardware_or_shipping": false,
+    "production_deployment": false,
+    "uptime_or_sla": false
+  },
+  "citation": {
+    "stable_source_id_available": true,
+    "page_or_locator_available": true,
+    "content_fingerprint_allowed": true
+  },
+  "proof_plan": {
+    "representative_items": 12,
+    "review_questions": 20,
+    "browser_cards": 2
+  }
+}

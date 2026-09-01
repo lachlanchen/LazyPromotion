@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lazying.art/schemas/lkt-collection-fit-intake.json",
+  "title": "Sanitized LKT collection-fit intake",
+  "description": "Metadata-only planning input. Customer data, source content, paths, URLs, contact details, and commercial state have no accepted fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "prepared_on",
+    "input_classification",
+    "source_status",
+    "collection",
+    "rights",
+    "privacy",
+    "existing_machine",
+    "requested_scope",
+    "citation",
+    "proof_plan"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "artifact_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"},
+    "prepared_on": {"type": "string", "format": "date"},
+    "input_classification": {"const": "sanitized_example_only"},
+    "source_status": {
+      "enum": ["sanitized_hypothetical", "project_owned_public_example"]
+    },
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "bounded", "approximate_items", "language_goal", "intended_readers"],
+      "properties": {
+        "format": {
+          "enum": ["structured_jsonl", "searchable_pdf", "plain_text", "mixed_text", "image_only_pdf"]
+        },
+        "bounded": {"type": "boolean"},
+        "approximate_items": {"type": "integer", "minimum": 1, "maximum": 10000000},
+        "language_goal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["goal", "source_language", "output_language"],
+          "properties": {
+            "goal": {
+              "enum": ["exact_search", "lexical_search", "multilingual_search", "multilingual_cards"]
+            },
+            "source_language": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Z][a-z]{3})?(-[A-Z]{2}|-[0-9]{3})?$"},
+            "output_language": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Z][a-z]{3})?(-[A-Z]{2}|-[0-9]{3})?$"}
+          }
+        },
+        "intended_readers": {"enum": ["individual_reader", "small_internal_team", "public_demo"]}
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "basis"],
+      "properties": {
+        "status": {"enum": ["confirmed", "unconfirmed", "blocked"]},
+        "basis": {"enum": ["owner_controlled", "licensed", "public_domain", "unknown"]}
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["processing_boundary", "sample_payload_included", "sensitive_identifiers_included"],
+      "properties": {
+        "processing_boundary": {"enum": ["local_only", "approved_private_environment", "unresolved"]},
+        "sample_payload_included": {"const": false},
+        "sensitive_identifiers_included": {"const": false}
+      }
+    },
+    "existing_machine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["available", "memory_gib", "accelerator"],
+      "properties": {
+        "available": {"type": "boolean"},
+        "memory_gib": {"type": "integer", "minimum": 1, "maximum": 1024},
+        "accelerator": {"enum": ["none", "integrated", "discrete"]}
+      }
+    },
+    "requested_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["browser_proof", "custom_ocr", "hardware_or_shipping", "production_deployment", "uptime_or_sla"],
+      "properties": {
+        "browser_proof": {"type": "boolean"},
+        "custom_ocr": {"type": "boolean"},
+        "hardware_or_shipping": {"type": "boolean"},
+        "production_deployment": {"type": "boolean"},
+        "uptime_or_sla": {"type": "boolean"}
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stable_source_id_available", "page_or_locator_available", "content_fingerprint_allowed"],
+      "properties": {
+        "stable_source_id_available": {"type": "boolean"},
+        "page_or_locator_available": {"type": "boolean"},
+        "content_fingerprint_allowed": {"type": "boolean"}
+      }
+    },
+    "proof_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["representative_items", "review_questions", "browser_cards"],
+      "properties": {
+        "representative_items": {"type": "integer", "minimum": 1, "maximum": 50},
+        "review_questions": {"type": "integer", "minimum": 5, "maximum": 30},
+        "browser_cards": {"type": "integer", "minimum": 1, "maximum": 3}
+      }
+    }
+  }
+}

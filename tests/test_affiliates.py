@@ -52,6 +52,24 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.assertIn("self-referral", program["forbidden_actions"])
         self.assertIn("Record only the accepted Impact offer", program["public_economics"])
 
+    def test_postiz_application_packet_leaves_legal_and_identity_steps_to_operator(self):
+        program = self.by_id["postiz"]
+        packet = program["application_form_packet"]
+        self.assertEqual(packet["website_or_social_channel"], "https://lazying.art/")
+        self.assertEqual(packet["promotion_plan"], program["application_pitch"])
+        self.assertIn("ordinary, untracked Postiz links", packet["additional_comments"])
+        self.assertEqual(packet["submit_state"], "not_submitted")
+        self.assertEqual(
+            set(packet["operator_only_fields"]),
+            {
+                "name",
+                "email",
+                "account login or registration",
+                "program terms review and acceptance",
+                "final submission",
+            },
+        )
+
     def test_private_read_is_explicit_and_missing_record_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             with self.assertRaisesRegex(affiliate.RegistryError, "private read"):

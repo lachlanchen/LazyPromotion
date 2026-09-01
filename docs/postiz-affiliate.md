@@ -34,6 +34,15 @@ Checked on 2026-09-01:
 The program may therefore produce recurring commission, but 30% is a reward
 rate—not a conversion rate, payout guarantee, or revenue forecast.
 
+The application was inspected again in the visible project browser on
+2026-09-02. It was logged out and unsubmitted. The non-sensitive website,
+promotion-plan, and additional-comments fields were preloaded from the public
+application packet, but name and email remain empty, the terms box remains
+unchecked, and `Continue` was not selected. The operator must review those
+answers, sign in or register, supply the correct identity, review and accept the
+program terms, and submit once. This checkpoint is preparation only; it is not
+an application, acceptance, referral URL, or revenue event.
+
 ## Useful-first angle
 
 The audience is narrow: open-source maintainers, solo builders, and small teams
@@ -169,3 +178,10 @@ under the intended LazyingArt business identity, and finish the payout/KYC
 route. After approval, place only the issued referral URL and a checked date in
 the ignored private config. No agent should register, accept legal terms,
 perform identity verification, or publish the link on the operator's behalf.
+
+The reusable non-sensitive answers are stored under
+`application_form_packet` in `affiliate-programs.json`. The fields listed under
+`operator_only_fields` deliberately have no saved values. The application is
+currently open in the single project noVNC desktop with the safe fields
+preloaded; inspect the full answers before entering identity data or accepting
+the terms.

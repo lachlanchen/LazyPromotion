@@ -125,6 +125,19 @@
         "reason": "The repository documents the tested integration and preserves the operational evidence behind the public tutorial."
       }
       ],
+      "application_form_packet": {
+        "website_or_social_channel": "https://lazying.art/",
+        "promotion_plan": "I run LazyingArt and maintain the open-source LazyPromotion project. I plan to promote Postiz through firsthand CLI/MCP tutorials, review-first publishing case studies, and an honest managed-versus-self-hosted comparison for solo builders and small teams. Links will appear only on relevant owned pages with a prominent affiliate disclosure. I will not use unsolicited messages, automated community replies, fake engagement, or undisclosed bots.",
+        "additional_comments": "A live English tutorial with Chinese and Japanese translations already documents my review-first Postiz CLI/MCP workflow. It currently uses ordinary, untracked Postiz links and states that no affiliate commission is earned. I will add a disclosed referral link only after approval and a terms, destination, attribution, and payout review.",
+        "operator_only_fields": [
+          "name",
+          "email",
+          "account login or registration",
+          "program terms review and acceptance",
+          "final submission"
+        ],
+        "submit_state": "not_submitted"
+      },
       "application_pitch": "I run LazyingArt and maintain the open-source LazyPromotion project. I plan to promote Postiz through firsthand CLI/MCP tutorials, review-first publishing case studies, and an honest managed-versus-self-hosted comparison for solo builders and small teams. Links will appear only on relevant owned pages with a prominent affiliate disclosure. I will not use unsolicited messages, automated community replies, fake engagement, or undisclosed bots.",
       "disclosure": "Affiliate disclosure: I use Postiz and may earn a commission if you buy a subscription through this link.",
       "activation_gates": ["accepted", "controlling_terms_reviewed", "issued_link_present", "destination_tested", "attribution_tested_without_purchase", "payout_ready", "placement_reviewed"],

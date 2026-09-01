@@ -69,7 +69,7 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 
 ## Aislamiento de ejecución
 
-Por defecto se usan la pantalla `:116`, VNC `127.0.0.1:5936`, noVNC `127.0.0.1:6136`, CDP `127.0.0.1:9436` y la sesión `lazypromotion-browser`. Todo se enlaza a loopback; el lanzador rechaza puertos desconocidos ocupados y solo limpia bloqueos obsoletos propios.
+La configuración predeterminada usa una pantalla de 3840×1080 (`:116`) con dos zonas Chrome independientes de 1920×1080 que comparten un único perfil persistente. noVNC publica la zona de campañas en `6138`, la de afiliados en `6137` y la vista completa en `6136`; CDP permanece en `127.0.0.1:9436` y la sesión es `lazypromotion-browser`. Todo se enlaza a loopback; el lanzador rechaza puertos desconocidos ocupados y solo limpia bloqueos obsoletos propios.
 
 ```bash
 scripts/desktop.sh status

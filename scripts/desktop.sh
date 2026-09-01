@@ -6,11 +6,20 @@ RUNTIME_DIR="$PROJECT_ROOT/.local/runtime"
 PROFILE_DIR="$PROJECT_ROOT/.local/browser/profile"
 DISPLAY_ID=116
 DISPLAY_NAME=":$DISPLAY_ID"
+DISPLAY_WIDTH=3840
+DISPLAY_HEIGHT=1080
+LANE_WIDTH=1920
 VNC_PORT=5936
 NOVNC_PORT=6136
+AFFILIATE_VNC_PORT=5937
+AFFILIATE_NOVNC_PORT=6137
+CAMPAIGN_VNC_PORT=5938
+CAMPAIGN_NOVNC_PORT=6138
 CDP_PORT=9436
 START_URL="${LAZYPROMOTION_START_URL:-https://www.reddit.com/}"
-NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=0"
+NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
+AFFILIATE_NOVNC_URL="http://127.0.0.1:$AFFILIATE_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$AFFILIATE_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
+CAMPAIGN_NOVNC_URL="http://127.0.0.1:$CAMPAIGN_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$CAMPAIGN_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
 TMUX_SESSION="lazypromotion-browser"
 
 pid_alive() {
@@ -56,23 +65,19 @@ fit_window_loop() {
   export DISPLAY="$display_name"
   while kill -0 "$chrome_pid" 2>/dev/null; do
     read -r width height < <(xdotool getdisplaygeometry)
+    local lane_width=$(( width / 2 ))
     local normal_index=0
     while read -r window_id; do
       [[ -n "$window_id" ]] || continue
       if ! xprop -id "$window_id" _NET_WM_WINDOW_TYPE 2>/dev/null | grep -q '_NET_WM_WINDOW_TYPE_NORMAL'; then
         continue
       fi
-      if (( normal_index == 0 )); then
-        xdotool windowmove --sync "$window_id" 0 0 >/dev/null 2>&1 || true
-        xdotool windowsize --sync "$window_id" "$width" "$height" >/dev/null 2>&1 || true
-      else
-        local dialog_width=720
-        local dialog_height=820
-        local dialog_x=$(( (width - dialog_width) / 2 ))
-        local dialog_y=$(( (height - dialog_height) / 2 ))
-        xdotool windowmove --sync "$window_id" "$dialog_x" "$dialog_y" >/dev/null 2>&1 || true
-        xdotool windowsize --sync "$window_id" "$dialog_width" "$dialog_height" >/dev/null 2>&1 || true
-      fi
+      # Each exported browser window gets a non-overlapping full-size lane.
+      # The dedicated x11vnc streams clip the root display instead of polling
+      # obscured window pixmaps, which otherwise render as black blocks.
+      local lane_x=$(( (normal_index % 2) * lane_width ))
+      xdotool windowmove --sync "$window_id" "$lane_x" 0 >/dev/null 2>&1 || true
+      xdotool windowsize --sync "$window_id" "$lane_width" "$height" >/dev/null 2>&1 || true
       normal_index=$((normal_index + 1))
     done < <(xdotool search --onlyvisible --pid "$chrome_pid" 2>/dev/null || true)
     sleep 2
@@ -81,7 +86,9 @@ fit_window_loop() {
 
 write_handoff() {
   {
-    printf 'noVNC URL: %s\n' "$NOVNC_URL"
+    printf 'Current noVNC URL: %s\n' "$CAMPAIGN_NOVNC_URL"
+    printf 'Affiliate noVNC URL: %s\n' "$AFFILIATE_NOVNC_URL"
+    printf 'Overview noVNC URL: %s\n' "$NOVNC_URL"
     printf 'X display: %s\n' "$DISPLAY_NAME"
     printf 'VNC: 127.0.0.1:%s\n' "$VNC_PORT"
     printf 'CDP: http://127.0.0.1:%s\n' "$CDP_PORT"
@@ -93,7 +100,15 @@ write_handoff() {
 
 status() {
   local ok=0
-  for spec in "xvfb.pid|Xvfb $DISPLAY_NAME" "x11vnc.pid|rfbport $VNC_PORT" "novnc.pid|$NOVNC_PORT" "chrome.pid|$PROFILE_DIR"; do
+  for spec in \
+    "xvfb.pid|Xvfb $DISPLAY_NAME" \
+    "x11vnc.pid|rfbport $VNC_PORT" \
+    "novnc.pid|$NOVNC_PORT" \
+    "affiliate-x11vnc.pid|rfbport $AFFILIATE_VNC_PORT" \
+    "affiliate-novnc.pid|$AFFILIATE_NOVNC_PORT" \
+    "campaign-x11vnc.pid|rfbport $CAMPAIGN_VNC_PORT" \
+    "campaign-novnc.pid|$CAMPAIGN_NOVNC_PORT" \
+    "chrome.pid|$PROFILE_DIR"; do
     IFS='|' read -r file marker <<<"$spec"
     if pid_alive "$RUNTIME_DIR/$file" "$marker"; then
       printf '%s running pid=%s\n' "${file%.pid}" "$(<"$RUNTIME_DIR/$file")"
@@ -103,6 +118,8 @@ status() {
     fi
   done
   printf 'noVNC %s\n' "$NOVNC_URL"
+  printf 'affiliate noVNC %s\n' "$AFFILIATE_NOVNC_URL"
+  printf 'campaign noVNC %s\n' "$CAMPAIGN_NOVNC_URL"
   printf 'CDP http://127.0.0.1:%s\n' "$CDP_PORT"
   return "$ok"
 }
@@ -115,7 +132,7 @@ start_stack() {
   fi
   stop_stack >/dev/null 2>&1 || true
   clean_owned_stale_display
-  if ss -ltn | grep -Eq ":($VNC_PORT|$NOVNC_PORT|$CDP_PORT)\\b"; then
+  if ss -ltn | grep -Eq ":($VNC_PORT|$NOVNC_PORT|$AFFILIATE_VNC_PORT|$AFFILIATE_NOVNC_PORT|$CAMPAIGN_VNC_PORT|$CAMPAIGN_NOVNC_PORT|$CDP_PORT)\\b"; then
     printf 'One or more LazyPromotion ports are already occupied; refusing to reuse unknown listeners.\n' >&2
     exit 1
   fi
@@ -124,7 +141,7 @@ start_stack() {
     exit 1
   fi
 
-  nohup Xvfb "$DISPLAY_NAME" -screen 0 1440x1000x24 -nolisten tcp -ac -noreset \
+  nohup Xvfb "$DISPLAY_NAME" -screen 0 "${DISPLAY_WIDTH}x${DISPLAY_HEIGHT}x24" -nolisten tcp -ac -noreset \
     >"$RUNTIME_DIR/xvfb.log" 2>&1 &
   printf '%s\n' "$!" >"$RUNTIME_DIR/xvfb.pid"
 
@@ -138,7 +155,7 @@ start_stack() {
     sleep 0.25
   done
 
-  nohup x11vnc -display "$DISPLAY_NAME" -localhost -nopw -forever -nevershared \
+  nohup x11vnc -display "$DISPLAY_NAME" -localhost -nopw -forever -nevershared -noxdamage \
     -rfbport "$VNC_PORT" -o "$RUNTIME_DIR/x11vnc.log" \
     >"$RUNTIME_DIR/x11vnc.stdout.log" 2>&1 &
   printf '%s\n' "$!" >"$RUNTIME_DIR/x11vnc.pid"
@@ -147,13 +164,33 @@ start_stack() {
     >"$RUNTIME_DIR/novnc.log" 2>&1 &
   printf '%s\n' "$!" >"$RUNTIME_DIR/novnc.pid"
 
+  nohup x11vnc -display "$DISPLAY_NAME" -clip "${LANE_WIDTH}x${DISPLAY_HEIGHT}+${LANE_WIDTH}+0" \
+    -localhost -nopw -forever -nevershared -noxdamage \
+    -rfbport "$AFFILIATE_VNC_PORT" -o "$RUNTIME_DIR/affiliate-x11vnc.log" \
+    >"$RUNTIME_DIR/affiliate-x11vnc.stdout.log" 2>&1 &
+  printf '%s\n' "$!" >"$RUNTIME_DIR/affiliate-x11vnc.pid"
+
+  nohup websockify --web=/usr/share/novnc "127.0.0.1:$AFFILIATE_NOVNC_PORT" "127.0.0.1:$AFFILIATE_VNC_PORT" \
+    >"$RUNTIME_DIR/affiliate-novnc.log" 2>&1 &
+  printf '%s\n' "$!" >"$RUNTIME_DIR/affiliate-novnc.pid"
+
+  nohup x11vnc -display "$DISPLAY_NAME" -clip "${LANE_WIDTH}x${DISPLAY_HEIGHT}+0+0" \
+    -localhost -nopw -forever -nevershared -noxdamage \
+    -rfbport "$CAMPAIGN_VNC_PORT" -o "$RUNTIME_DIR/campaign-x11vnc.log" \
+    >"$RUNTIME_DIR/campaign-x11vnc.stdout.log" 2>&1 &
+  printf '%s\n' "$!" >"$RUNTIME_DIR/campaign-x11vnc.pid"
+
+  nohup websockify --web=/usr/share/novnc "127.0.0.1:$CAMPAIGN_NOVNC_PORT" "127.0.0.1:$CAMPAIGN_VNC_PORT" \
+    >"$RUNTIME_DIR/campaign-novnc.log" 2>&1 &
+  printf '%s\n' "$!" >"$RUNTIME_DIR/campaign-novnc.pid"
+
   DISPLAY="$DISPLAY_NAME" nohup /opt/google/chrome/chrome \
     --user-data-dir="$PROFILE_DIR" \
     --remote-debugging-address=127.0.0.1 \
     --remote-debugging-port="$CDP_PORT" \
     --remote-allow-origins="http://127.0.0.1:$CDP_PORT" \
     --window-position=0,0 \
-    --window-size=1440,1000 \
+    --window-size="$LANE_WIDTH,$DISPLAY_HEIGHT" \
     --no-first-run \
     --no-default-browser-check \
     --disable-dev-shm-usage \
@@ -168,6 +205,8 @@ start_stack() {
 
   wait_http "http://127.0.0.1:$CDP_PORT/json/version"
   wait_http "http://127.0.0.1:$NOVNC_PORT/vnc.html"
+  wait_http "http://127.0.0.1:$AFFILIATE_NOVNC_PORT/vnc.html"
+  wait_http "http://127.0.0.1:$CAMPAIGN_NOVNC_PORT/vnc.html"
   write_handoff
   status
 }
@@ -195,6 +234,10 @@ stop_one() {
 stop_stack() {
   stop_one "fit.pid" "fit_window_loop" || true
   stop_one "chrome.pid" "$PROFILE_DIR" || true
+  stop_one "campaign-novnc.pid" "$CAMPAIGN_NOVNC_PORT" || true
+  stop_one "campaign-x11vnc.pid" "rfbport $CAMPAIGN_VNC_PORT" || true
+  stop_one "affiliate-novnc.pid" "$AFFILIATE_NOVNC_PORT" || true
+  stop_one "affiliate-x11vnc.pid" "rfbport $AFFILIATE_VNC_PORT" || true
   stop_one "novnc.pid" "$NOVNC_PORT" || true
   stop_one "x11vnc.pid" "rfbport $VNC_PORT" || true
   stop_one "xvfb.pid" "Xvfb $DISPLAY_NAME" || true

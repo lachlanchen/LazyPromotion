@@ -317,11 +317,13 @@ python promotion.py reopen-unverified-send DRAFT_ID \
 
 ## Runtime isolation
 
-The default launcher uses display `:116`, VNC `127.0.0.1:5936`, noVNC
-`127.0.0.1:6136`, CDP `127.0.0.1:9436`, and the tmux session
-`lazypromotion-browser`. All services bind to loopback. The launcher refuses
-unknown occupied ports and removes only a stale display lock that matches its
-own recorded Xvfb PID.
+The default launcher uses one 3840×1080 display (`:116`) with two non-overlapping
+1920×1080 Chrome lanes that share one persistent profile. noVNC `6138` exports
+the campaign lane, `6137` exports the affiliate lane, and `6136` provides the
+full-width overview; VNC uses `5938`, `5937`, and `5936` respectively. CDP stays
+on `127.0.0.1:9436` and the tmux session is `lazypromotion-browser`. All services
+bind to loopback. The launcher refuses unknown occupied ports and removes only
+a stale display lock that matches its own recorded Xvfb PID.
 
 The continuous worker and every `browser.py` command also share one filesystem
 operation lock. A manual inspection, composer review, or send therefore waits

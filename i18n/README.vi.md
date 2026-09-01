@@ -69,7 +69,7 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 
 ## Cách ly môi trường chạy
 
-Mặc định dùng màn hình `:116`, VNC `127.0.0.1:5936`, noVNC `127.0.0.1:6136`, CDP `127.0.0.1:9436` và phiên `lazypromotion-browser`. Mọi dịch vụ chỉ liên kết với loopback; trình khởi chạy từ chối cổng lạ đang bị chiếm và chỉ dọn khóa màn hình cũ được chứng minh là của chính nó.
+Cấu hình mặc định dùng một màn hình 3840×1080 (`:116`) với hai vùng Chrome 1920×1080 độc lập cùng chia sẻ một hồ sơ bền vững. noVNC cung cấp vùng chiến dịch trên `6138`, vùng liên kết trên `6137` và toàn cảnh trên `6136`; CDP giữ ở `127.0.0.1:9436` và phiên là `lazypromotion-browser`. Mọi dịch vụ chỉ liên kết với loopback; trình khởi chạy từ chối cổng lạ đang bị chiếm và chỉ dọn khóa màn hình cũ được chứng minh là của chính nó.
 
 ```bash
 scripts/desktop.sh status

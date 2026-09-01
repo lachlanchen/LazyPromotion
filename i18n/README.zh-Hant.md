@@ -69,7 +69,7 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 
 ## 執行隔離
 
-預設使用顯示器 `:116`、VNC `127.0.0.1:5936`、noVNC `127.0.0.1:6136`、CDP `127.0.0.1:9436` 與工作階段 `lazypromotion-browser`。所有服務只綁定回環位址；啟動器拒絕被未知程序占用的連接埠，只清理由自身記錄證明已失效的顯示鎖。
+預設在一個 3840×1080 顯示器（`:116`）上放置兩個互不重疊的 1920×1080 Chrome 區域，並共用同一個持久化設定檔。noVNC 在 `6138` 提供推廣區域、在 `6137` 提供聯盟區域、在 `6136` 提供全景；CDP 維持在 `127.0.0.1:9436`，工作階段為 `lazypromotion-browser`。所有服務只綁定回環位址；啟動器拒絕被未知程序占用的連接埠，只清理由自身記錄證明已失效的顯示鎖。
 
 ```bash
 scripts/desktop.sh status

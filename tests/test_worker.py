@@ -6,7 +6,7 @@ from pathlib import Path
 
 import promotion
 import worker
-from unittest.mock import patch
+from unittest.mock import MagicMock, call, patch
 
 
 class WorkerTests(unittest.TestCase):
@@ -191,6 +191,31 @@ class WorkerTests(unittest.TestCase):
     def test_failed_discovery_route_is_retried(self):
         self.assertEqual(worker.next_route_cursor(5, {"ok": False, "next_query": 6}), 5)
         self.assertEqual(worker.next_route_cursor(5, {"ok": True, "next_query": 6}), 6)
+
+    def test_cdp_attach_retries_one_transient_handshake_failure(self):
+        connected = object()
+        playwright = MagicMock()
+        playwright.chromium.connect_over_cdp.side_effect = [
+            RuntimeError("transient attach failure"),
+            connected,
+        ]
+        with patch("worker.time.sleep") as sleep:
+            result = worker.connect_browser(playwright, "http://127.0.0.1:9436")
+        self.assertIs(result, connected)
+        self.assertEqual(
+            playwright.chromium.connect_over_cdp.call_args_list,
+            [
+                call(
+                    "http://127.0.0.1:9436",
+                    timeout=worker.CDP_ATTACH_TIMEOUT_MS,
+                ),
+                call(
+                    "http://127.0.0.1:9436",
+                    timeout=worker.CDP_ATTACH_TIMEOUT_MS,
+                ),
+            ],
+        )
+        sleep.assert_called_once_with(worker.CDP_ATTACH_RETRY_SECONDS)
 
     def test_legacy_state_gains_independent_core_cursors(self):
         path = Path(self.tmp.name) / "legacy-state.json"

@@ -32,6 +32,9 @@ DEFAULT_PLATFORMS = ("reddit", "x", "hackernews", "instagram")
 # explicitly redraft without this restriction after reviewing the exact rules,
 # destination, account history, and contribution itself.
 VALUE_ONLY_DRAFT_PLATFORMS = frozenset({"reddit"})
+CDP_ATTACH_TIMEOUT_MS = 30_000
+CDP_ATTACH_ATTEMPTS = 2
+CDP_ATTACH_RETRY_SECONDS = 3.0
 STOP = False
 
 
@@ -162,6 +165,20 @@ def next_route_cursor(current: int, result: dict) -> int:
     return int(result["next_query"]) if result["ok"] else current
 
 
+def connect_browser(playwright, endpoint: str):
+    """Bound CDP attachment time and retry one transient handshake failure."""
+    for attempt in range(CDP_ATTACH_ATTEMPTS):
+        try:
+            return playwright.chromium.connect_over_cdp(
+                endpoint,
+                timeout=CDP_ATTACH_TIMEOUT_MS,
+            )
+        except Exception:
+            if attempt + 1 >= CDP_ATTACH_ATTEMPTS:
+                raise
+            time.sleep(CDP_ATTACH_RETRY_SECONDS)
+
+
 def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) -> dict:
     db = promotion.open_db()
     selected_ids = pending_candidate_ids(db, candidate_ids, max_triage)
@@ -228,7 +245,7 @@ def run_cycle(args, state: dict) -> dict:
     discovered: list[str] = []
     platform_results = []
     with browser_control.browser_operation_lock(), sync_playwright() as playwright:
-        connected = playwright.chromium.connect_over_cdp(args.cdp)
+        connected = connect_browser(playwright, args.cdp)
         for platform in args.platforms:
             try:
                 page = browser_control.page_for(connected, platform=platform, front=False)
@@ -373,8 +390,25 @@ def main() -> int:
     signal.signal(signal.SIGINT, stop_handler)
     state = load_state(args.state)
     while not STOP:
-        result = run_cycle(args, state)
-        print(json.dumps({"at": utc_now(), **result}, ensure_ascii=False, sort_keys=True), flush=True)
+        try:
+            result = run_cycle(args, state)
+        except Exception as exc:
+            failure = {
+                "kind": "cycle_error",
+                "error_type": type(exc).__name__,
+                "error": str(exc),
+                "next": "Continuous mode will retry after the configured interval.",
+            }
+            log_event(failure)
+            print(
+                json.dumps({"at": utc_now(), **failure}, ensure_ascii=False, sort_keys=True),
+                flush=True,
+            )
+            if args.once:
+                raise
+            result = None
+        else:
+            print(json.dumps({"at": utc_now(), **result}, ensure_ascii=False, sort_keys=True), flush=True)
         if args.once or (args.max_cycles and state["cycles"] >= args.max_cycles):
             break
         remaining = args.interval_minutes * 60

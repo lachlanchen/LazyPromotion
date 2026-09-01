@@ -374,12 +374,24 @@
       "priority": 14,
       "state": "terms_conflict_review",
       "official_urls": {
-        "program": "https://affiliates.skrill.com/",
+        "program": "https://www.skrill.com/en/earn-money/",
         "terms": "https://affiliates.skrill.com/terms_and_conditions.asp",
-        "application": "https://affiliates.skrill.com/registration.asp"
+        "application": "https://affiliates.skrill.com/registration.asp",
+        "contact": "https://affiliates.skrill.com/contact.asp"
       },
-      "public_economics": "The December 2023 public terms state 20% of defined Fee Revenue from referred accounts, 10% of sub-affiliate commission, and a USD 5 rollover threshold; only the controlling accepted terms govern.",
-      "unknowns": ["The public terms restrict disparagement and distinguish a Skrill USA affiliate route. Obtain written confirmation that LazyingArt's neutral due-diligence format and operator eligibility are accepted before applying."],
+      "public_economics": "The current public page advertises up to 20% lifetime commission. The currently published December 2023 global terms attached to the application define a 20% Fee Revenue share, 10% of sub-affiliate commission, a referral cookie lasting up to 30 days, payment within 30 days after month-end or another frequency determined by Paysafe, and a USD 5 rollover threshold. Rates may change with 30 days' notice, and reversals or set-off may apply; only accepted terms govern.",
+      "unknowns": [
+        "Obtain written confirmation that BLOG post 1379 can be pre-approved as Approved Media and that its neutral, source-cited due-diligence format is permitted under the non-disparagement rule.",
+        "Confirm the correct global or USA route from the operator's personal residency and verified Customer Account; a US LLC does not itself establish USA-program eligibility.",
+        "Confirm restricted countries, approved media and destination, the accepted commission schedule, and payout eligibility."
+      ],
+      "clarification_request": "Before I apply or place or reactivate any referral link, please confirm in writing whether the current version of BLOG post 1379 can be pre-approved as Approved Media. It is a neutral, source-cited due-diligence guide that discusses fees, verification, jurisdictional limits, and risks without unsupported claims or disparagement. Please also confirm whether the global or USA programme applies based on the operator's personal residence and the country of the verified Customer Account when the publisher is a US LLC, and identify the permitted destination countries and any other media restrictions that apply.",
+      "approval_media": {
+        "asset": "BLOG post 1379",
+        "url": "https://blog.lazying.art/html/securities-forex/internet-bank/1379/skrill-%e7%94%b5%e5%ad%90%e9%92%b1%e5%8c%85%e6%b3%a8%e5%86%8c%e3%80%81%e9%aa%8c%e8%af%81%e3%80%81%e6%b7%bb%e5%8a%a0%e9%93%b6%e8%a1%8c%e5%8d%a1%e3%80%81%e5%ad%98%e9%92%b1%e5%92%8c%e5%8f%96%e9%92%b1.html",
+        "version": "modified 2026-09-01T23:27:58+08:00",
+        "channels": ["owned blog only"]
+      },
       "conversion_event": "An attributed eligible user completes the accepted offer's qualifying action and a commission is received.",
       "direct_url": "https://www.skrill.com/",
       "permitted_link_hosts": ["skrill.com", "affiliates.skrill.com", "paysafe.com"],
@@ -393,7 +405,7 @@
       "application_pitch": "LazyingArt maintains a current, neutral Skrill due-diligence guide and will use only a newly issued, privately tested link after reviewing the accepted terms. I will disclose the relationship, avoid guaranteed savings or income claims, and never revive the historical referral identifier.",
       "disclosure": "Affiliate disclosure: LazyingArt may receive a commission if you complete an eligible Skrill action through this link.",
       "activation_gates": ["neutral_review_permission_confirmed_in_writing", "operator_eligibility_confirmed", "accepted", "current_offer_reviewed", "historical_link_remains_inert", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
-      "forbidden_actions": ["old referral identifiers", "guaranteed savings", "income claims", "unsupported-country claims", "unreviewed financial advice"]
+      "forbidden_actions": ["old referral identifiers", "social-media promotion of Paysafe or Skrill", "UK cryptocurrency promotion", "unapproved media or destinations", "guaranteed savings", "income claims", "unsupported-country claims", "unreviewed financial advice"]
     },
     {
       "id": "distrokid",

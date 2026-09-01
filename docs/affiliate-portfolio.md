@@ -90,9 +90,17 @@ with `affiliate_commission_received`; a verified clawback uses
   the (E) replacement, but the replacement driver and Raspberry Pi 5 workflow
   must be demonstrated before a purchase CTA.
 - **Skrill requires written policy clarification.** Its public terms restrict
-  disparagement and distinguish a US route. Confirm that neutral due diligence
-  and the operator's eligibility are accepted before applying; the historical
-  identifier in BLOG post 1379 remains inert regardless.
+  disparagement and distinguish a global route from a US route. The public
+  application has no free-text policy field, but the official contact page lists
+  `affiliates@paysafe.com`. Before accepting the application terms, use
+  `python affiliate.py packet skrill` to prepare the clarification request for
+  operator review and send it through that official contact route. Confirm that
+  BLOG post 1379 is accepted as Approved Media, that the global/USA route matches
+  the operator's personal residency and verified Customer Account, and that
+  payout eligibility is established before placing any CTA. Approval is scoped
+  to the exact owned blog version; the terms separately prohibit promoting
+  Skrill or Paysafe on social-media sites. The historical identifier remains
+  inert regardless.
 - **Temu, generic broker offers, coupon programs, and unrelated marketplace
   links are excluded.** There is no strong demonstrated asset-to-buyer match,
   and the trust cost is higher than the likely first-sale value.

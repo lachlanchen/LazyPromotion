@@ -99,6 +99,34 @@ class AffiliatePortfolioTests(unittest.TestCase):
                 failures = affiliate.readiness(program, private)
                 self.assertIn(f"public state is {program['state']}", failures)
 
+    def test_skrill_packet_preserves_clarification_gate(self):
+        program = self.by_id["skrill"]
+        self.assertEqual(program["state"], "terms_conflict_review")
+        self.assertEqual(
+            program["official_urls"]["terms"],
+            "https://affiliates.skrill.com/terms_and_conditions.asp",
+        )
+        self.assertIn("up to 30 days", program["public_economics"])
+        self.assertIn("neutral, source-cited", program["clarification_request"])
+        self.assertIn(
+            "neutral_review_permission_confirmed_in_writing",
+            program["activation_gates"],
+        )
+        self.assertNotIn("paysafeaffiliates.com", program["permitted_link_hosts"])
+        self.assertIn(
+            "social-media promotion of Paysafe or Skrill",
+            program["forbidden_actions"],
+        )
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            affiliate.print_packet(program)
+        rendered = output.getvalue()
+        self.assertIn("Written clarification request:", rendered)
+        self.assertIn("global or USA programme", rendered)
+        self.assertIn("Official contact: https://affiliates.skrill.com/contact.asp", rendered)
+        self.assertIn("Exact media submitted for approval:", rendered)
+        self.assertIn("Channels: owned blog only", rendered)
+
     def test_wrong_or_plain_destination_fails(self):
         program = self.by_id["postiz"]
         base = {

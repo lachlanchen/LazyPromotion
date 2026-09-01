@@ -80,6 +80,9 @@ def validate_registry(data: dict) -> None:
         for key in ("program", "terms", "application"):
             if not _valid_https(urls.get(key, "")):
                 raise RegistryError(f"{program_id}: invalid official {key} URL")
+        for key, value in urls.items():
+            if not _valid_https(value):
+                raise RegistryError(f"{program_id}: invalid official {key} URL")
         if not _valid_https(program.get("direct_url", "")):
             raise RegistryError(f"{program_id}: invalid direct URL")
         if not program.get("permitted_link_hosts"):
@@ -88,6 +91,23 @@ def validate_registry(data: dict) -> None:
             raise RegistryError(f"{program_id}: matches and activation gates are required")
         if not program.get("disclosure") or not program.get("forbidden_actions"):
             raise RegistryError(f"{program_id}: disclosure and forbidden actions are required")
+        if program.get("state") == "terms_conflict_review":
+            if not isinstance(program.get("clarification_request"), str) or not program["clarification_request"].strip():
+                raise RegistryError(f"{program_id}: terms conflict requires a written clarification request")
+            if "neutral_review_permission_confirmed_in_writing" not in program["activation_gates"]:
+                raise RegistryError(f"{program_id}: terms conflict requires a written-permission activation gate")
+        approval_media = program.get("approval_media")
+        if approval_media is not None:
+            if not isinstance(approval_media, dict) or not _valid_https(approval_media.get("url", "")):
+                raise RegistryError(f"{program_id}: approval media must include an official HTTPS URL")
+            for key in ("asset", "version"):
+                if not isinstance(approval_media.get(key), str) or not approval_media[key].strip():
+                    raise RegistryError(f"{program_id}: approval media requires {key}")
+            channels = approval_media.get("channels")
+            if not isinstance(channels, list) or not channels or not all(
+                isinstance(channel, str) and channel.strip() for channel in channels
+            ):
+                raise RegistryError(f"{program_id}: approval media requires named channels")
         serialized = json.dumps(program, sort_keys=True).casefold()
         for forbidden_key in ("issued_url", "referral_code", "affiliate_id", "tracking_id"):
             if f'"{forbidden_key}"' in serialized:
@@ -153,10 +173,20 @@ def print_packet(program: dict) -> None:
     print(f"Application: {program['official_urls']['application']}")
     print(f"Program evidence: {program['official_urls']['program']}")
     print(f"Terms to review: {program['official_urls']['terms']}")
+    if program["official_urls"].get("contact"):
+        print(f"Official contact: {program['official_urls']['contact']}")
     print(f"Public economics: {program['public_economics']}")
     print(f"Conversion: {program['conversion_event']}")
     print("\nApplication answer:")
     print(program["application_pitch"])
+    if program.get("clarification_request"):
+        print("\nWritten clarification request:")
+        print(program["clarification_request"])
+    if program.get("approval_media"):
+        media = program["approval_media"]
+        print("\nExact media submitted for approval:")
+        print(f"- {media['asset']} ({media['version']}): {media['url']}")
+        print(f"- Channels: {', '.join(media['channels'])}")
     print("\nExact matches:")
     for match in program["matches"]:
         print(f"- {match['asset']} — {match['placement']}: {match['reason']}")

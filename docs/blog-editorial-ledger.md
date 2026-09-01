@@ -4,13 +4,13 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `e7c42de`
+Verified BLOG commit: `b88a400`
 
-Campaign range: `3b45351^..e7c42de`
+Campaign range: `3b45351^..b88a400`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
-1. Chinese source plus complete English and Japanese editions pass structural review.
+1. The source-language edition plus both translated editions pass structural review.
 2. `blogctl doctor`, media inspection, and a live-push dry run pass.
 3. Referral, tracking, privacy, unsafe-download, quotation, JSON, and diff checks appropriate to the post pass.
 4. The source and both translations are pushed to WordPress.
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **52 posts** have completed this protocol:
+As of the verified commit, **62 posts** have completed this protocol:
 
-`10, 56, 99, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1947, 1959, 1986, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
+`10, 56, 99, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1947, 1959, 1986, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -41,10 +41,10 @@ Posts: `1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 
 ### Reproducible technical guides
 
-- Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, and table-of-contents notes around current diagnostics, official sources, validation, rollback, and security boundaries.
+- Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, PyQt, Vim, Git, Raspberry Pi GPIO, native-extension, and table-of-contents notes around current diagnostics, official sources, executable checks, rollback, electrical safety, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `10, 184, 271, 351, 433, 1635, 1832, 3114`.
+Posts: `10, 184, 271, 351, 433, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 3114`.
 
 ### Literary and learning resources
 
@@ -88,6 +88,16 @@ Posts: `1562, 2936, 3125`.
 | `4c3cd4d` | 1832 | Current WSLg and headless Chrome installation guide |
 | `dda09b1` | 1781 | Brückner monologue identity and historical-boundary audit |
 | `e7c42de` | 1788 | Andersen magic-lantern form and historical-claim audit |
+| `97cf90b` | 1852 | Current Raspberry Pi PyQt installation and display diagnosis |
+| `9f63997` | 1849 | Safe Vim paste modes, clipboard boundaries, and troubleshooting |
+| `dfe8821` | 1868 | Completed PyQt text editor with safe file handling and tests |
+| `6a4ce86` | 1835 | Practical PyQt application workflow and maintained examples |
+| `e5af357` | 1842 | Secure Raspberry Pi Git server, hooks, and systemd operations |
+| `95a71d4` | 1865 | Reproducible Git collaboration and protected-branch workflow |
+| `63a398a` | 1870 | GPIO Zero mock testing with an explicit real-hardware gate |
+| `8bdac0c` | 1887 | WordPress customization security, testing, and rollback guide |
+| `8f948d8` | 1876 | Vim tab pages, buffers, sessions, mappings, and indentation |
+| `b88a400` | 1881 | Safe Raspberry Pi GPIO and measured CPython extension workflow |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

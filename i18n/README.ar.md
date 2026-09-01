@@ -38,7 +38,7 @@ LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجت
 
 ## بداية سريعة
 
-يتطلب Linux وPython 3.10+ وChrome وPlaywright لـ Python وXvfb وx11vnc وnoVNC/websockify و`tmux` وواجهة Codex CLI مسجّلًا دخولها.
+يتطلب Linux وPython 3.10+ وChrome وPlaywright لـ Python وXvfb وx11vnc و`wmctrl` وnoVNC/websockify و`tmux` وواجهة Codex CLI مسجّلًا دخولها.
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

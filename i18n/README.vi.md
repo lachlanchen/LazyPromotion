@@ -38,7 +38,7 @@ LazyPromotion là trợ lý cục bộ, ưu tiên duyệt trước khi gửi đ�
 
 ## Bắt đầu nhanh
 
-Cần Linux, Python 3.10+, Chrome, Playwright cho Python, Xvfb, x11vnc, noVNC/websockify, `tmux` và Codex CLI đã đăng nhập.
+Cần Linux, Python 3.10+, Chrome, Playwright cho Python, Xvfb, x11vnc, `wmctrl`, noVNC/websockify, `tmux` và Codex CLI đã đăng nhập.
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

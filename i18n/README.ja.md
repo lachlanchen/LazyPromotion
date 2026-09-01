@@ -38,7 +38,7 @@ LazyPromotion は、ローカルで動くレビュー優先のソーシャル需
 
 ## クイックスタート
 
-Linux、Python 3.10+、Chrome、Python 版 Playwright、Xvfb、x11vnc、noVNC/websockify、`tmux`、ログイン済み Codex CLI が必要です。
+Linux、Python 3.10+、Chrome、Python 版 Playwright、Xvfb、x11vnc、`wmctrl`、noVNC/websockify、`tmux`、ログイン済み Codex CLI が必要です。
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

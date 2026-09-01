@@ -38,7 +38,7 @@ LazyPromotion — локальный помощник для поиска зап
 
 ## Быстрый старт
 
-Нужны Linux, Python 3.10+, Chrome, Playwright для Python, Xvfb, x11vnc, noVNC/websockify, `tmux` и авторизованная CLI Codex.
+Нужны Linux, Python 3.10+, Chrome, Playwright для Python, Xvfb, x11vnc, `wmctrl`, noVNC/websockify, `tmux` и авторизованная CLI Codex.
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

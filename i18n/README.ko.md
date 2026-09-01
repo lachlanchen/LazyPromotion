@@ -38,7 +38,7 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 
 ## 빠른 시작
 
-Linux, Python 3.10+, Chrome, Python용 Playwright, Xvfb, x11vnc, noVNC/websockify, `tmux`, 로그인된 Codex CLI가 필요합니다.
+Linux, Python 3.10+, Chrome, Python용 Playwright, Xvfb, x11vnc, `wmctrl`, noVNC/websockify, `tmux`, 로그인된 Codex CLI가 필요합니다.
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

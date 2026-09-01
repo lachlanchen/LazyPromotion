@@ -38,7 +38,7 @@ LazyPromotion 是一款本地运行、先审后发的社交需求发现助手。
 
 ## 快速开始
 
-需要 Linux、Python 3.10+、Chrome、Playwright for Python、Xvfb、x11vnc、noVNC/websockify、`tmux`，以及已登录的 Codex CLI。
+需要 Linux、Python 3.10+、Chrome、Playwright for Python、Xvfb、x11vnc、`wmctrl`、noVNC/websockify、`tmux`，以及已登录的 Codex CLI。
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

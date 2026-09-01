@@ -130,7 +130,7 @@ are not suggested until evidence is added.
 ## Quick start
 
 Prerequisites: Linux, Python 3.10+, Chrome, Playwright for Python, Xvfb,
-x11vnc, noVNC/websockify, `tmux`, and an authenticated Codex CLI for drafting.
+x11vnc, `wmctrl`, noVNC/websockify, `tmux`, and an authenticated Codex CLI for drafting.
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

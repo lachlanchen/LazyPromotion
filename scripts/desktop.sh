@@ -254,17 +254,74 @@ valid_firefox_viewer() {
 navigate_firefox_viewer() {
   local window_id="$1"
   local url="$2"
+  local tries=0
+  local state
   valid_firefox_viewer "$window_id" || return 1
+  command -v wmctrl >/dev/null 2>&1 || {
+    printf 'wmctrl is required to safely refresh the registered Firefox viewer.\n' >&2
+    return 1
+  }
+  DISPLAY="$VIEWER_DISPLAY" wmctrl -ir "$window_id" -b remove,fullscreen
+  while (( tries < 20 )); do
+    state="$(DISPLAY="$VIEWER_DISPLAY" xprop -id "$window_id" _NET_WM_STATE 2>/dev/null || true)"
+    [[ "$state" != *'_NET_WM_STATE_FULLSCREEN'* ]] && break
+    tries=$((tries + 1))
+    sleep 0.1
+  done
+  [[ "$state" != *'_NET_WM_STATE_FULLSCREEN'* ]] || {
+    printf 'The registered Firefox viewer did not leave fullscreen before navigation.\n' >&2
+    return 1
+  }
   printf '%s' "$url" | DISPLAY="$VIEWER_DISPLAY" xclip -selection clipboard
   DISPLAY="$VIEWER_DISPLAY" xdotool windowactivate --sync "$window_id"
   sleep 0.5
   DISPLAY="$VIEWER_DISPLAY" xdotool key --clearmodifiers ctrl+l ctrl+v Return
+  sleep 0.5
+}
+
+fullscreen_firefox_viewer() {
+  local window_id="$1"
+  local tries=0
+  local width height key value
+  local current_x current_y current_width current_height
+  valid_firefox_viewer "$window_id" || return 1
+  command -v wmctrl >/dev/null 2>&1 || {
+    printf 'wmctrl is required to fullscreen the registered Firefox viewer.\n' >&2
+    return 1
+  }
+  DISPLAY="$VIEWER_DISPLAY" wmctrl -ir "$window_id" -b add,fullscreen
+  DISPLAY="$VIEWER_DISPLAY" wmctrl -ia "$window_id"
+  while (( tries < 20 )); do
+    current_x=""
+    current_y=""
+    current_width=""
+    current_height=""
+    while IFS='=' read -r key value; do
+      case "$key" in
+        X) current_x="$value" ;;
+        Y) current_y="$value" ;;
+        WIDTH) current_width="$value" ;;
+        HEIGHT) current_height="$value" ;;
+      esac
+    done < <(DISPLAY="$VIEWER_DISPLAY" xdotool getwindowgeometry --shell "$window_id" 2>/dev/null || true)
+    read -r width height < <(DISPLAY="$VIEWER_DISPLAY" xdotool getdisplaygeometry)
+    if [[ "$current_x" == 0 && "$current_y" == 0 && "$current_width" == "$width" && "$current_height" == "$height" ]]; then
+      return 0
+    fi
+    tries=$((tries + 1))
+    sleep 0.1
+  done
+  printf 'The registered Firefox viewer did not reach full-screen geometry.\n' >&2
+  return 1
 }
 
 refresh_registered_viewers() {
   local viewer_file="$RUNTIME_DIR/viewer.window"
   [[ -f "$viewer_file" ]] || return 0
-  navigate_firefox_viewer "$(<"$viewer_file")" "$NOVNC_URL"
+  local window_id
+  window_id="$(<"$viewer_file")"
+  navigate_firefox_viewer "$window_id" "$NOVNC_URL"
+  fullscreen_firefox_viewer "$window_id"
 }
 
 register_viewer() {

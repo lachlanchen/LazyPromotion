@@ -38,7 +38,7 @@ LazyPromotion es un asistente local de descubrimiento social con revisión previ
 
 ## Inicio rápido
 
-Requiere Linux, Python 3.10+, Chrome, Playwright para Python, Xvfb, x11vnc, noVNC/websockify, `tmux` y una CLI de Codex autenticada.
+Requiere Linux, Python 3.10+, Chrome, Playwright para Python, Xvfb, x11vnc, `wmctrl`, noVNC/websockify, `tmux` y una CLI de Codex autenticada.
 
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git

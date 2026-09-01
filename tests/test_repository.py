@@ -374,6 +374,47 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
+    def test_postiz_affiliate_campaign_starts_at_zero_and_requires_disclosure(self):
+        path = ROOT / "campaigns" / "postiz-affiliate-pilot.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        serialized = path.read_text(encoding="utf-8").casefold()
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["state"], "pre_application")
+        self.assertEqual(
+            campaign["source_evidence"]["program_page"],
+            "https://partners.dub.co/postiz",
+        )
+        self.assertEqual(
+            campaign["source_evidence"]["public_reward_claim"],
+            "Earn 30% per sale for the customer's lifetime.",
+        )
+        baseline = campaign["zero_baseline_2026_09_01"]
+        self.assertFalse(baseline["affiliate_url_issued"])
+        for key in (
+            "useful_assets_published",
+            "tracked_outbound_clicks",
+            "signups_or_trials",
+            "paid_referrals_confirmed",
+            "commission_pending_minor",
+            "commission_received_minor",
+            "commission_reversed_minor",
+        ):
+            self.assertEqual(baseline[key], 0)
+        self.assertIn("may earn a commission", campaign["disclosures"]["blog"])
+        self.assertIn("received commission", campaign["funnel"]["truth_policy"])
+        self.assertIn(
+            "affiliate_commission_received",
+            campaign["acceptance_criteria"]["success"],
+        )
+        self.assertEqual(campaign["channels"]["hackernews"]["state"], "research_only")
+        self.assertEqual(
+            campaign["channels"]["reddit"]["state"],
+            "value_only_community_replies",
+        )
+        self.assertNotIn('"affiliate_url":', serialized)
+        self.assertNotIn("integration_id", serialized)
+        self.assertNotIn("post_id", serialized)
+
     def test_eink_campaign_has_a_truthful_measurable_offer(self):
         path = ROOT / "campaigns" / "eink-multilingual-reading.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))

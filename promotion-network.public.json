@@ -21,6 +21,16 @@
       "url": ""
     },
     {
+      "id": "campaign:postiz-affiliate-pilot",
+      "kind": "campaign",
+      "label": "postiz-affiliate-pilot",
+      "metadata": {
+        "objective": "Test whether a small set of useful, firsthand Postiz guides can generate verified affiliate referrals and received commission without displacing the primary Local Knowledge Terminal offer or encouraging bulk promotion.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:wenyan-history",
       "kind": "campaign",
       "label": "wenyan-history",
@@ -28,6 +38,13 @@
         "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
         "version": 1
       },
+      "url": ""
+    },
+    {
+      "id": "channel:github",
+      "kind": "channel",
+      "label": "github",
+      "metadata": {},
       "url": ""
     },
     {
@@ -4826,11 +4843,25 @@
       "url": "https://learn.lazying.art"
     },
     {
+      "id": "url:ebcdbdd3fa4acc0b",
+      "kind": "web_resource",
+      "label": "application page",
+      "metadata": {},
+      "url": "https://partners.dub.co/postiz/apply"
+    },
+    {
       "id": "url:cf97b4ba4b498557",
       "kind": "web_resource",
       "label": "asset repository",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LinguaLeaf"
+    },
+    {
+      "id": "url:b77fdcc9720dc9c0",
+      "kind": "web_resource",
+      "label": "dub partner terms",
+      "metadata": {},
+      "url": "https://dub.co/legal/partners"
     },
     {
       "id": "url:d873c4adf4afccff",
@@ -4845,6 +4876,13 @@
       "label": "free kindle sender",
       "metadata": {},
       "url": "https://github.com/lachlanchen/Kindle/releases/latest"
+    },
+    {
+      "id": "url:629fbc85930fb3aa",
+      "kind": "web_resource",
+      "label": "ftc affiliate guidance",
+      "metadata": {},
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
     },
     {
       "id": "url:2384ab616d067b14",
@@ -4882,6 +4920,27 @@
       "url": "https://github.com/lachlanchen/PocketPolyglot"
     },
     {
+      "id": "url:48c59c10cbfd3332",
+      "kind": "web_resource",
+      "label": "postiz public api",
+      "metadata": {},
+      "url": "https://docs.postiz.com/public-api/introduction"
+    },
+    {
+      "id": "url:63daa2753f23acef",
+      "kind": "web_resource",
+      "label": "postiz repository",
+      "metadata": {},
+      "url": "https://github.com/gitroomhq/postiz-app"
+    },
+    {
+      "id": "url:784339cbec8dc7b8",
+      "kind": "web_resource",
+      "label": "postiz terms",
+      "metadata": {},
+      "url": "https://postiz.com/terms-of-service"
+    },
+    {
       "id": "url:a40ef1650eb94f9f",
       "kind": "web_resource",
       "label": "practical guide",
@@ -4894,6 +4953,13 @@
       "label": "product brief",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md"
+    },
+    {
+      "id": "url:75c9f7d2578872a2",
+      "kind": "web_resource",
+      "label": "program page",
+      "metadata": {},
+      "url": "https://partners.dub.co/postiz"
     },
     {
       "id": "url:43d56bb572f1ca4a",
@@ -5141,6 +5207,122 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "documentation_only_if_directly_relevant"
+      },
+      "relation": "targets",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "channel:github"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "planned_after_activation"
+      },
+      "relation": "targets",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "planned_after_activation"
+      },
+      "relation": "targets",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "value_only_community_replies"
+      },
+      "relation": "targets",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "planned_after_activation"
+      },
+      "relation": "targets",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://docs.postiz.com/public-api/introduction",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "url:48c59c10cbfd3332"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "url:629fbc85930fb3aa"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/gitroomhq/postiz-app",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "url:63daa2753f23acef"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://partners.dub.co/postiz",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "url:75c9f7d2578872a2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://postiz.com/terms-of-service",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "url:784339cbec8dc7b8"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://dub.co/legal/partners",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "url:b77fdcc9720dc9c0"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://partners.dub.co/postiz/apply",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:postiz-affiliate-pilot",
+      "target": "url:ebcdbdd3fa4acc0b"
     },
     {
       "confidence": 1.0,

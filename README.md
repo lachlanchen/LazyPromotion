@@ -85,7 +85,7 @@ flowchart LR
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
 | [`docs/first-1000.md`](docs/first-1000.md) | One repeatable USD 250 LKT collection-fit sprint and its truthful four-sale milestone |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
-| [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger |
+| [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger, including received affiliate commission and reversals |
 | [`owned_monitor.py`](owned_monitor.py) | Read-only Postiz publication/engagement monitor that requires visible release verification, creates review alerts, stores no raw provider IDs, and never calls engagement a lead |
 | [`inbound_monitor.py`](inbound_monitor.py) | Read-only iCloud intake monitor that records only the dedicated LKT folder's aggregate counts and never opens or persists mail content |
 | [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT Stripe path |
@@ -103,6 +103,7 @@ flowchart LR
 | [`.codex/config.toml`](.codex/config.toml) | Optional pinned Playwright and review-gated Postiz MCP attachments |
 | [`docs/mcp-browser.md`](docs/mcp-browser.md) | MCP setup, trust boundary, verification, and direct-controller fallback |
 | [`docs/postiz.md`](docs/postiz.md) | Official CLI/MCP setup, quota policy, and draft-first operating contract |
+| [`docs/postiz-affiliate.md`](docs/postiz-affiliate.md) | Zero-baseline Postiz affiliate experiment, disclosures, evidence gates, funnel metrics, and stop rules |
 | [`tests/`](tests/) | Matching, idempotency, and exact-content approval tests |
 
 The initial catalog includes LazyEdit, AutoPublication, PocketPolyglot,

@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "id": "postiz-affiliate-pilot",
+  "objective": "Test whether a small set of useful, firsthand Postiz guides can generate verified affiliate referrals and received commission without displacing the primary Local Knowledge Terminal offer or encouraging bulk promotion.",
+  "state": "pre_application",
+  "checked_at": "2026-09-01",
+  "source_evidence": {
+    "program_page": "https://partners.dub.co/postiz",
+    "application_page": "https://partners.dub.co/postiz/apply",
+    "postiz_terms": "https://postiz.com/terms-of-service",
+    "dub_partner_terms": "https://dub.co/legal/partners",
+    "postiz_repository": "https://github.com/gitroomhq/postiz-app",
+    "postiz_public_api": "https://docs.postiz.com/public-api/introduction",
+    "ftc_affiliate_guidance": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "public_reward_claim": "Earn 30% per sale for the customer's lifetime.",
+    "evidence_boundaries": [
+      "The Postiz-branded Dub page currently states the public reward claim; it does not prove approval, clicks, referrals, payout eligibility, or income for LazyingArt.",
+      "Do not restate the reward as guaranteed monthly income or as forever for the affiliate. The public wording is tied to each customer's lifetime and program terms may change.",
+      "Do not claim a fixed seven-day trial. That detail is not stated on the current public program page and must be verified in the accepted program dashboard before use.",
+      "Cookie duration, attribution rules, payout threshold, reversal policy, excluded countries, self-referral rules, trademark bidding, and approved promotion methods remain unknown until the operator reviews the accepted program terms.",
+      "Dub says commission is payable only after the client has paid Dub, a valid payout method and identity verification may be required, and pending or processed dashboard amounts are not cash received.",
+      "The referral URL has not been issued or verified. Never fabricate one, publish the generic application URL as if it were a referral link, or commit a private dashboard identifier."
+    ]
+  },
+  "hypothesis": {
+    "statement": "A real Postiz user can help open-source maintainers, solo builders, and small teams choose and operate a review-first scheduler; if a clearly disclosed referral link appears only after that useful material, some qualified readers may subscribe without reducing trust.",
+    "primary_audience": [
+      "open-source maintainers publishing to two or more social platforms",
+      "solo builders who need a reviewable calendar instead of automatic engagement",
+      "small teams comparing Postiz cloud service with self-hosting"
+    ],
+    "explicit_needs": [
+      "schedule different copy and media safely across X, Instagram, and Reddit",
+      "connect an agent through the official CLI, API, or MCP without exposing credentials",
+      "understand provider-specific media, settings, analytics, and release-verification pitfalls",
+      "decide whether managed Postiz or the open-source repository is the better operational fit"
+    ],
+    "not_a_fit": [
+      "an unrelated individual help request",
+      "a community that forbids affiliate links or self-promotion",
+      "a reader who needs only one platform and no scheduling workflow",
+      "any claim based only on a commission percentage rather than a demonstrated Postiz use case"
+    ]
+  },
+  "useful_content_plan": {
+    "asset_limit_per_cycle": 3,
+    "cycle_days": 30,
+    "assets": [
+      "A reproducible review-first Postiz CLI and MCP setup guide using only official documentation and the operator's verified workflow.",
+      "A provider-pitfall checklist covering media upload, live settings discovery, drafts, public release verification, and analytics boundaries.",
+      "A candid managed-versus-self-hosted decision guide grounded in the official Postiz repository, including who should not pay for the managed service."
+    ],
+    "editorial_policy": [
+      "The standalone answer comes before the referral link.",
+      "State firsthand observations narrowly and keep screenshots, dates, and public evidence reviewable.",
+      "Include real limitations and a free or self-hosted path where it fits.",
+      "Do not use copied praise, invented testimonials, earnings projections, urgency, repeated unsolicited replies, or direct messages.",
+      "Create channel-specific drafts and require visible human review before scheduling or publishing."
+    ]
+  },
+  "disclosures": {
+    "blog": "Affiliate disclosure: I use Postiz and may earn a commission if you subscribe through this link. The guide and its limitations come first.",
+    "short_social": "Ad/affiliate: I use Postiz and may earn a commission if you subscribe through this link.",
+    "video_audio_and_visual": "Affiliate disclosure: I may earn a commission if you subscribe through my Postiz link.",
+    "placement_policy": "Put the disclosure with the recommendation and before or next to the link, above any collapsed text. Do not rely on a profile disclosure, an ambiguous 'affiliate link' label, a hashtag cluster, or a platform disclosure control alone."
+  },
+  "funnel": {
+    "sequence": [
+      "useful asset visibly published",
+      "Dub-tracked outbound click",
+      "Dub-reported signup or trial if that exact event exists",
+      "Dub-confirmed paid referral",
+      "commission pending or processing",
+      "commission received in the connected payout account",
+      "commission reversal if applicable"
+    ],
+    "attribution_policy": "Use only the exact referral URL issued by Dub. Add channel parameters or aliases only when the accepted program contract or dashboard explicitly supports them. Never place a referral URL in public source code, tests, or a community reply merely to improve attribution.",
+    "truth_policy": "Clicks, signups, trials, paid referrals, pending commission, and received commission are distinct. Only received commission enters confirmed gross revenue; a later reversal reduces net revenue.",
+    "private_tracking": {
+      "aggregate_source": "dub_partners",
+      "aggregate_import": "Use signals.py only for dated aggregate clicks and signup/trial counts copied from the authenticated Dub dashboard, with evidence under .local/evidence/.",
+      "referral_outcome": "Record affiliate_referral_confirmed with the campaign ID and a private Dub conversion reference; only its SHA-256 hash is retained.",
+      "money_outcomes": "Record affiliate_commission_received only after payout receipt is verified. Record affiliate_commission_reversed for a verified clawback or reversal.",
+      "privacy": "Do not store referred customer names, emails, subscription details, bank data, payout credentials, raw dashboard exports, or referral identifiers in Git."
+    }
+  },
+  "zero_baseline_2026_09_01": {
+    "state": "administrative_zero_before_application",
+    "affiliate_url_issued": false,
+    "useful_assets_published": 0,
+    "tracked_outbound_clicks": 0,
+    "signups_or_trials": 0,
+    "paid_referrals_confirmed": 0,
+    "commission_pending_minor": 0,
+    "commission_received_minor": 0,
+    "commission_reversed_minor": 0,
+    "currency": "USD",
+    "interpretation": "These zeroes describe an experiment that has not started; they are not authenticated Dub analytics."
+  },
+  "acceptance_criteria": {
+    "activation_gate": [
+      "The operator has one Dub partner account and the Postiz application is accepted.",
+      "The operator has reviewed and privately recorded the exact program terms, approved methods, payout threshold, attribution window, reversal rules, and trial wording.",
+      "A valid payout method and any required business or identity verification are complete.",
+      "The exact Dub-issued referral URL resolves to Postiz and a private test confirms attribution without making a purchase.",
+      "Every asset has a clear disclosure, a useful standalone result, and a dated evidence package."
+    ],
+    "continue_after_one_cycle": "Continue for one more capped cycle if there is at least one confirmed paid referral, or at least 25 verified outbound clicks and one dashboard-reported signup or trial. Treat this as experiment evidence, not a revenue forecast.",
+    "success": "The experiment proves an income channel only after at least one affiliate_commission_received outcome is verified. A paid referral or pending commission alone is not income."
+  },
+  "stop_criteria": [
+    "Do not activate if Postiz rejects the application, the exact terms cannot be reviewed, the payout route cannot be completed, or the terms conflict with clear disclosure and useful-first content.",
+    "Pause immediately if a disclosure is hidden or truncated, a destination changes, a program term changes materially, a platform rule disallows the placement, or a reader reports deceptive or spam-like promotion.",
+    "Stop distribution after three useful assets and 30 days if there are fewer than 25 verified outbound clicks; improve the underlying content or audience evidence before another test.",
+    "Stop the offer-audience route after 50 verified outbound clicks with zero dashboard-reported signups or trials.",
+    "Deprioritize the experiment after two capped cycles and at least 100 verified outbound clicks with zero confirmed paid referrals.",
+    "Remove or replace the referral destination if it no longer resolves to the reviewed Postiz offer."
+  ],
+  "channels": {
+    "lazyblog": {
+      "state": "planned_after_activation",
+      "policy": "Best primary channel: publish complete searchable tutorials with the disclosure beside the eventual referral link and preserve a non-affiliate official URL for readers who prefer it."
+    },
+    "x": {
+      "state": "planned_after_activation",
+      "policy": "First-party account only. Summarize one useful finding, disclose the affiliate relationship in visible copy, and link to the full guide rather than repeating a bare referral link."
+    },
+    "instagram": {
+      "state": "planned_after_activation",
+      "policy": "First-party account only. Put the disclosure before collapsed caption text and in both audio and visual form for video; do not publish until the exact provider preview is reviewed."
+    },
+    "reddit": {
+      "state": "value_only_community_replies",
+      "policy": "Do not place the affiliate link in generated or individualized community replies. A genuinely relevant owned-profile guide may link to the disclosed LazyBlog article after current Reddit rules and the exact public rendering are checked."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Hacker News prohibits generated or AI-edited comments. Use needs as product research only and do not publish agent-authored affiliate promotion."
+    },
+    "github": {
+      "state": "documentation_only_if_directly_relevant",
+      "policy": "Do not add referral links across unrelated repositories. A relevant Postiz integration guide may include one disclosed referral link only after activation and maintainer review."
+    }
+  }
+}

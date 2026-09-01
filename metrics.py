@@ -23,6 +23,9 @@ EINK_USD_MINOR = 12_800
 LKT_SPRINT_USD_MINOR = 25_000
 
 OUTCOME_KINDS = {
+    "affiliate_commission_received",
+    "affiliate_commission_reversed",
+    "affiliate_referral_confirmed",
     "reply_received",
     "qualified_lead",
     "checkout_started",
@@ -31,8 +34,15 @@ OUTCOME_KINDS = {
     "sponsor_received",
     "refund_confirmed",
 }
-REVENUE_KINDS = {"sale_confirmed", "donation_received", "sponsor_received"}
-MONEY_KINDS = REVENUE_KINDS | {"refund_confirmed"}
+REVENUE_KINDS = {
+    "affiliate_commission_received",
+    "sale_confirmed",
+    "donation_received",
+    "sponsor_received",
+}
+REVERSAL_KINDS = {"affiliate_commission_reversed", "refund_confirmed"}
+MONEY_KINDS = REVENUE_KINDS | REVERSAL_KINDS
+REFERENCE_KINDS = MONEY_KINDS | {"affiliate_referral_confirmed"}
 
 
 def money_to_minor(value: str) -> int:
@@ -101,14 +111,6 @@ def record_outcome(
         amount_minor = money_to_minor(amount)
         if len(currency) != 3 or not currency.isalpha():
             raise ValueError("money outcomes require a three-letter currency code")
-        if not reference:
-            raise ValueError("money outcomes require a private order or receipt reference")
-        reference_hash = hashlib.sha256(reference.encode("utf-8")).hexdigest()
-        if db.execute(
-            "SELECT 1 FROM outcomes WHERE kind=? AND reference_hash=?",
-            (kind, reference_hash),
-        ).fetchone():
-            raise ValueError("this outcome reference was already recorded")
     else:
         try:
             non_money_amount = Decimal(amount)
@@ -117,6 +119,21 @@ def record_outcome(
         if non_money_amount != 0 or currency:
             raise ValueError("non-money outcomes cannot record an amount or currency")
         amount_minor = 0
+
+    if kind in REFERENCE_KINDS:
+        if not reference:
+            if kind == "affiliate_referral_confirmed":
+                raise ValueError(
+                    "confirmed affiliate referrals require a private conversion reference"
+                )
+            raise ValueError("money outcomes require a private order or receipt reference")
+        reference_hash = hashlib.sha256(reference.encode("utf-8")).hexdigest()
+        if db.execute(
+            "SELECT 1 FROM outcomes WHERE kind=? AND reference_hash=?",
+            (kind, reference_hash),
+        ).fetchone():
+            raise ValueError("this outcome reference was already recorded")
+    else:
         reference_hash = ""
         if candidate_id and db.execute(
             "SELECT 1 FROM outcomes WHERE kind=? AND candidate_id=?",
@@ -176,16 +193,19 @@ def funnel_report(db) -> dict:
     outcomes = Counter(row[0] for row in db.execute("SELECT kind FROM outcomes"))
     gross_by_currency: dict[str, int] = defaultdict(int)
     refunds_by_currency: dict[str, int] = defaultdict(int)
+    reversals_by_currency: dict[str, int] = defaultdict(int)
     for kind, amount_minor, currency in db.execute(
         "SELECT kind, amount_minor, currency FROM outcomes WHERE currency != ''"
     ):
         if kind in REVENUE_KINDS:
             gross_by_currency[currency] += amount_minor
-        elif kind == "refund_confirmed":
-            refunds_by_currency[currency] += amount_minor
+        elif kind in REVERSAL_KINDS:
+            reversals_by_currency[currency] += amount_minor
+            if kind == "refund_confirmed":
+                refunds_by_currency[currency] += amount_minor
     net_by_currency = {
-        currency: gross_by_currency[currency] - refunds_by_currency[currency]
-        for currency in sorted(set(gross_by_currency) | set(refunds_by_currency))
+        currency: gross_by_currency[currency] - reversals_by_currency[currency]
+        for currency in sorted(set(gross_by_currency) | set(reversals_by_currency))
     }
     usd_gross = gross_by_currency.get("USD", 0)
     remaining = max(0, USD_GOAL_MINOR - usd_gross)
@@ -195,6 +215,7 @@ def funnel_report(db) -> dict:
         "outcomes": dict(sorted(outcomes.items())),
         "gross_revenue_minor_by_currency": dict(sorted(gross_by_currency.items())),
         "refunds_minor_by_currency": dict(sorted(refunds_by_currency.items())),
+        "reversals_minor_by_currency": dict(sorted(reversals_by_currency.items())),
         "net_revenue_minor_by_currency": net_by_currency,
         "usd_1000_gross_goal": {
             "target_minor": USD_GOAL_MINOR,
@@ -225,7 +246,10 @@ def main() -> int:
     record.add_argument(
         "--reference",
         default="",
-        help="private order/receipt reference; only its SHA-256 hash is stored",
+        help=(
+            "private order, receipt, payout, reversal, or affiliate conversion "
+            "reference; only its SHA-256 hash is stored"
+        ),
     )
     record.add_argument("--evidence-url", default="")
     record.add_argument("--note", default="")

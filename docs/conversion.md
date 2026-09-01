@@ -89,6 +89,23 @@ existing demand; LazyPromotion finds needs and keeps the evidence ledger;
 LazyEdge can support a later deployment. Other offers remain separate campaigns
 and are mentioned only when they directly fit the stated need.
 
+## Secondary experiment: Postiz affiliate
+
+The [Postiz affiliate experiment](postiz-affiliate.md) is a capped secondary
+route for readers who already need reviewed multi-platform scheduling. The
+Postiz-branded Dub page currently advertises 30% per sale for the customer's
+lifetime, but that percentage is not income evidence. No referral URL, paid
+referral, or commission was verified at the 2026-09-01 zero baseline.
+
+Lead with firsthand CLI/MCP guidance, provider pitfalls, and an honest
+managed-versus-self-hosted decision. Put a clear commission disclosure beside
+any eventual Dub-issued link. Keep Reddit community replies value-only and
+Hacker News research-only. Aggregate dashboard clicks and signup/trial counts
+remain private signals; record a paid referral separately, and count money
+only after an `affiliate_commission_received` outcome is verified. This route
+does not displace the fixed USD 250 LKT sprint unless received commission and
+the experiment's acceptance criteria justify more work.
+
 ## Fit-first pilot path
 
 [Local Knowledge Terminal](https://lazying.art/lkt/) publishes the bounded USD

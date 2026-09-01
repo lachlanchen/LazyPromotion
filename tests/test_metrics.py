@@ -95,6 +95,48 @@ class MetricsTests(unittest.TestCase):
                 reference="private-receipt-001",
             )
 
+    def test_affiliate_referral_is_not_revenue_and_requires_private_reference(self):
+        with self.assertRaisesRegex(ValueError, "private conversion reference"):
+            metrics.record_outcome(
+                self.db,
+                kind="affiliate_referral_confirmed",
+                campaign_id="postiz-affiliate-pilot",
+            )
+        result = metrics.record_outcome(
+            self.db,
+            kind="affiliate_referral_confirmed",
+            campaign_id="postiz-affiliate-pilot",
+            reference="private-dub-conversion-001",
+        )
+        self.assertNotIn("private-dub-conversion-001", str(result))
+        report = metrics.funnel_report(self.db)
+        self.assertEqual(report["outcomes"]["affiliate_referral_confirmed"], 1)
+        self.assertEqual(report["gross_revenue_minor_by_currency"], {})
+
+    def test_received_affiliate_commission_is_revenue_and_reversal_reduces_net(self):
+        metrics.record_outcome(
+            self.db,
+            kind="affiliate_commission_received",
+            campaign_id="postiz-affiliate-pilot",
+            amount="30",
+            currency="usd",
+            reference="private-dub-payout-001",
+        )
+        metrics.record_outcome(
+            self.db,
+            kind="affiliate_commission_reversed",
+            campaign_id="postiz-affiliate-pilot",
+            amount="6",
+            currency="USD",
+            reference="private-dub-reversal-001",
+        )
+        report = metrics.funnel_report(self.db)
+        self.assertEqual(report["gross_revenue_minor_by_currency"]["USD"], 3_000)
+        self.assertEqual(report["reversals_minor_by_currency"]["USD"], 600)
+        self.assertEqual(report["refunds_minor_by_currency"], {})
+        self.assertEqual(report["net_revenue_minor_by_currency"]["USD"], 2_400)
+        self.assertEqual(report["usd_1000_gross_goal"]["progress_percent"], 3.0)
+
     def test_outcome_stays_private_in_graph_export(self):
         outcome = metrics.record_outcome(
             self.db,

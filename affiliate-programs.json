@@ -95,7 +95,7 @@
       ],
       "application_pitch": "LazyingArt maintains an archived Raspberry Pi/e-paper word-card build. Before promoting a current product, I will publish a verified migration from the discontinued 7.3-inch (F) panel to the recommended replacement, identify the exact interface and driver, and never imply that current LKT e-ink output is implemented.",
       "disclosure": "Affiliate disclosure: LazyingArt may receive a commission from an approved Waveshare order made through this link.",
-      "activation_gates": ["replacement_migration_demonstrated", "exact_hardware_verified", "accepted", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "activation_gates": ["source_repository_security_review_complete", "replacement_migration_demonstrated", "exact_hardware_verified", "accepted", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
       "forbidden_actions": ["simulated purchases", "hidden links", "intrusive pop-ups", "official-site impersonation", "search-engine direct-link submission", "third-party seller steering"]
     },
     {

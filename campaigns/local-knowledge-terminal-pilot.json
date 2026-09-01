@@ -155,7 +155,34 @@
       ],
       "evidence_url": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=confidential_pdf_sample_report",
       "conversion_url": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=confidential_pdf_search",
-      "policy": "Lead with a complete privacy-first search recipe grounded in official documentation. Let readers inspect the project-owned sample report before the free fit check and bounded USD 250 sprint, with the non-customer-result boundary, exclusions, and source-rights requirements intact."
+      "policy": "Lead with a complete privacy-first search recipe grounded in official documentation. Let readers inspect the project-owned sample report before the free fit check and bounded USD 250 sprint, with the non-customer-result boundary, exclusions, and source-rights requirements intact.",
+      "demand_response": {
+        "state": "published_and_multilingual_verified",
+        "checked_at": "2026-09-01T21:46:08Z",
+        "source_channel": "hackernews_research_only",
+        "source_url": "https://news.ycombinator.com/item?id=49447891",
+        "need": "Work with an internal university research corpus offline, decide where a small language model can help in RAG, and keep retrieved evidence within a limited context budget.",
+        "action": "Expanded the existing owned guide with a measurable context-budget experiment and a bounded comparison of a small model as query rewriter, reranker, or answer generator.",
+        "languages_verified": [
+          "en",
+          "zh",
+          "ja"
+        ],
+        "primary_sources": [
+          "https://arxiv.org/abs/2005.11401",
+          "https://aclanthology.org/2024.tacl-1.9/",
+          "https://arxiv.org/abs/2305.14283"
+        ],
+        "verified_links_per_language": {
+          "primary_sources": 3,
+          "lkt_fit_check": 1
+        },
+        "blog_commit": "1631e82",
+        "public_reply_sent": false,
+        "direct_message_sent": false,
+        "lead_or_sale_observed": false,
+        "policy": "The source question established a reusable need but Hacker News remains research-only. The owned guide may answer that need for search visitors; it does not authorize an agent-authored HN comment or prove engagement, a lead, a sale, or revenue."
+      }
     },
     "reddit": {
       "state": "needs_exact_need",

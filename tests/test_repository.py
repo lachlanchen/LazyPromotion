@@ -677,6 +677,28 @@ class RepositoryTests(unittest.TestCase):
             "utm_content=confidential_pdf_sample_report",
             campaign["channels"]["lazyblog"]["evidence_url"],
         )
+        demand_response = campaign["channels"]["lazyblog"]["demand_response"]
+        self.assertEqual(
+            demand_response["state"], "published_and_multilingual_verified"
+        )
+        self.assertEqual(
+            demand_response["source_channel"], "hackernews_research_only"
+        )
+        self.assertEqual(
+            demand_response["languages_verified"], ["en", "zh", "ja"]
+        )
+        self.assertEqual(len(demand_response["primary_sources"]), 3)
+        self.assertEqual(
+            demand_response["verified_links_per_language"]["primary_sources"], 3
+        )
+        self.assertEqual(
+            demand_response["verified_links_per_language"]["lkt_fit_check"], 1
+        )
+        self.assertEqual(demand_response["blog_commit"], "1631e82")
+        self.assertFalse(demand_response["public_reply_sent"])
+        self.assertFalse(demand_response["direct_message_sent"])
+        self.assertFalse(demand_response["lead_or_sale_observed"])
+        self.assertIn("research-only", demand_response["policy"])
         self.assertEqual(
             campaign["channels"]["reddit"]["profile_guide"]["state"],
             "published",

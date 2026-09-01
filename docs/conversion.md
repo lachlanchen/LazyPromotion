@@ -83,6 +83,19 @@ list, then submitted once and confirmed with status `Success` and seven
 discovered pages. Do not resubmit those URLs merely to seek higher priority;
 recheck their status in a later observation window.
 
+On September 2, 2026, one fresh Hacker News question exposed a reusable need:
+keeping an internal university research corpus offline while deciding whether
+a small language model should rewrite queries or generate the final answer
+under a limited context budget. Hacker News remains research-only, so no
+agent-authored comment or direct message was sent. Instead, the existing owned
+guide was expanded with a measurable retrieve-deduplicate-rerank experiment,
+source identifiers, an abstention boundary, and a comparison of the small-model
+roles. The English, Simplified Chinese, and Japanese versions were each checked
+through their visible language controls; every version links once to the RAG,
+Lost in the Middle, and query-rewriting papers and once to the LKT fit check.
+The deployed source is LazyBlog commit `1631e82`. This is an owned response
+asset, not evidence of public engagement, a lead, a sale, or revenue.
+
 The same demand review deliberately left posts `1970` and `2994` without an LKT
 commercial CTA. The former answers MetaTrader terminal-integration questions;
 the latter packages a source-code repository for model context. Neither is the

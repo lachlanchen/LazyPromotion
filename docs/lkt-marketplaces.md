@@ -78,6 +78,12 @@ The Contra draft preserves the public offer exactly:
 - a small browser proof from a usable representative sample; and
 - a written go/no-go recommendation.
 
+The first portfolio or media item should be the public
+[sample fit report](https://lazying.art/lkt/sample-report/), when the live
+editor permits that link or attachment. It lets a buyer inspect the three
+bounded deliverables and their evidence limits before the inquiry or fit-check
+step. The concept cover remains supporting media, not the proof itself.
+
 Hardware, shipping, custom OCR, and production deployment remain excluded. A
 buyer must confirm source rights before material is accepted. The public sample
 report is project-owned evidence, not a customer result, testimonial,

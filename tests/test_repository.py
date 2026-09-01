@@ -767,7 +767,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "marketplace-channels.json"
         packet = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(packet["version"], 1)
+        self.assertEqual(packet["version"], 2)
         self.assertEqual(packet["offer"]["public_price"], "USD 250")
         self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
         self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
@@ -787,6 +787,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not a customer result", listing["cover_asset"]["evidence_boundary"].casefold())
         self.assertIn("custom OCR", listing["description"])
         self.assertIn("source material", " ".join(listing["requirements"]))
+        self.assertIn("first portfolio", listing["evidence"][0].casefold())
+        self.assertIn("lazying.art/lkt/sample-report", listing["evidence"][0])
         self.assertIn("pending payout", listing["revenue_policy"])
         self.assertNotIn("confirmed customer", serialized)
         self.assertNotIn("received usd", serialized)

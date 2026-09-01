@@ -92,9 +92,15 @@ The same review pattern was used for a value-first LKT guide post to the
 connected Reddit account's own profile. The live provider contract and profile
 restrictions confirmed normal text and link posts were allowed without flair.
 The exact destination, title, standalone technical steps, maintainer
-disclosure, 2026-09-01T02:00:00Z time, protocol-less tracked URL, and refreshed
-calendar state were reviewed before and after moving the item to `QUEUE`. This
-is a first-party profile resource, not an automated community submission.
+disclosure, and 2026-09-01T02:00:00Z time were reviewed before scheduling.
+Postiz later reported the item as `PUBLISHED` with the exact public Reddit URL.
+The provider page showed one matching post by the correct account. Reddit had
+rendered the scheduled protocol-less destination as plain text, so the visible
+editor was used to add only the `https://` prefix. The repaired anchor was then
+clicked through the canonical LazyBlog article to the LKT fit-check page, with
+the Reddit campaign fields intact and no form submission. The original Postiz
+copy remains a route-matching alias for read-only monitoring. This is a
+first-party profile resource, not an automated community submission.
 
 ## Quota and trust policy
 

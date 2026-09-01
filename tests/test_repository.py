@@ -496,7 +496,11 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(
             campaign["channels"]["reddit"]["profile_guide"]["state"],
-            "postiz_queue",
+            "published",
+        )
+        self.assertEqual(
+            campaign["channels"]["reddit"]["profile_guide"]["url"],
+            "https://www.reddit.com/r/u_Ok-Perception1122/comments/1w3ydel/a_small_decision_tree_for_searching_confidential/",
         )
         profile_route = campaign["channels"]["reddit"]["profile_route"]
         self.assertEqual(profile_route["state"], "live")
@@ -522,6 +526,24 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(
             "Disclosure: I maintain",
             campaign["channels"]["reddit"]["profile_guide"]["content"],
+        )
+        self.assertIn(
+            "https://blog.lazying.art/",
+            campaign["channels"]["reddit"]["profile_guide"]["content"],
+        )
+        self.assertIn(
+            "blog.lazying.art/",
+            campaign["channels"]["reddit"]["profile_guide"]["postiz_content"],
+        )
+        self.assertFalse(
+            campaign["channels"]["reddit"]["profile_guide"]["verification"][
+                "automatic_form_submission"
+            ]
+        )
+        self.assertFalse(
+            campaign["channels"]["reddit"]["profile_guide"]["verification"][
+                "lead_or_sale_observed"
+            ]
         )
         self.assertEqual(
             campaign["channels"]["x"]["publish_at"], "2026-09-08T01:00:00Z"

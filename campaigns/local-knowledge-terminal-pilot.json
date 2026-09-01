@@ -124,13 +124,25 @@
         "policy": "Owned-profile context only. Keep community replies useful and compliant on their own; the profile route does not authorize adding a second promotion, follower request, price claim, or link where community rules or fit do not support one."
       },
       "profile_guide": {
-        "state": "postiz_queue",
+        "state": "published",
         "publish_at": "2026-09-01T02:00:00Z",
+        "published_at": "2026-09-01T02:00:00Z",
+        "checked_at": "2026-09-01T02:08:47Z",
         "scope": "own_profile",
         "title": "A small decision tree for searching confidential PDFs locally",
-        "content": "If the collection fits on one machine, I’d start smaller than a full RAG stack:\n\n1. Extract text (pdftotext for searchable PDFs; OCR only the scanned files).\n2. Store the document path, page number, and text in SQLite FTS5, or index it with Recoll.\n3. Test 20–30 real questions and record the misses.\n4. Add embeddings only when misses come from vocabulary or paraphrase rather than bad extraction.\n5. Keep every result tied to a file and page so it can be checked.\n\nThat is often enough for a 12 GB laptop and keeps confidential documents local. I wrote a longer walkthrough with commands and tradeoffs here:\nblog.lazying.art/?p=3619&utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot\n\nDisclosure: I maintain the guide and the related Local Knowledge Terminal project.",
+        "url": "https://www.reddit.com/r/u_Ok-Perception1122/comments/1w3ydel/a_small_decision_tree_for_searching_confidential/",
+        "content": "If the collection fits on one machine, I’d start smaller than a full RAG stack:\n\n1. Extract text (pdftotext for searchable PDFs; OCR only the scanned files).\n2. Store the document path, page number, and text in SQLite FTS5, or index it with Recoll.\n3. Test 20–30 real questions and record the misses.\n4. Add embeddings only when misses come from vocabulary or paraphrase rather than bad extraction.\n5. Keep every result tied to a file and page so it can be checked.\n\nThat is often enough for a 12 GB laptop and keeps confidential documents local. I wrote a longer walkthrough with commands and tradeoffs here:\nhttps://blog.lazying.art/?p=3619&utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot\n\nDisclosure: I maintain the guide and the related Local Knowledge Terminal project.",
+        "postiz_content": "If the collection fits on one machine, I’d start smaller than a full RAG stack:\n\n1. Extract text (pdftotext for searchable PDFs; OCR only the scanned files).\n2. Store the document path, page number, and text in SQLite FTS5, or index it with Recoll.\n3. Test 20–30 real questions and record the misses.\n4. Add embeddings only when misses come from vocabulary or paraphrase rather than bad extraction.\n5. Keep every result tied to a file and page so it can be checked.\n\nThat is often enough for a 12 GB laptop and keeps confidential documents local. I wrote a longer walkthrough with commands and tradeoffs here:\nblog.lazying.art/?p=3619&utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot\n\nDisclosure: I maintain the guide and the related Local Knowledge Terminal project.",
         "destination": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html?utm_source=reddit&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot",
-        "policy": "First-party profile resource only, not a community submission or generated reply. The complete standalone steps, maintainer disclosure, exact profile destination, title, schedule, protocol-less tracked URL, provider settings, and queue state were visibly reviewed. The live allowlisted blog bridge preserves Reddit attribution through the fit-check email review without forwarding arbitrary parameters."
+        "verification": {
+          "provider_record": "Postiz independently reported the exact item as PUBLISHED with the same Reddit release URL and no comments or replies.",
+          "public_post": "One exact post by Ok-Perception1122 contains the reviewed title, all five standalone steps, 12 GB boundary, and maintainer disclosure.",
+          "link_repair": "Reddit rendered the scheduled protocol-less URL as plain text. The visible Reddit editor changed only that URL by adding the https:// prefix, after which it rendered as one clickable anchor.",
+          "actual_click_path": "The public Reddit anchor resolved to the canonical LazyBlog article with reddit/profile/local_knowledge_terminal_pilot attribution; the live article CTA retained those fields through the LKT fit-check page.",
+          "automatic_form_submission": false,
+          "lead_or_sale_observed": false
+        },
+        "policy": "First-party profile resource only, not a community submission or generated reply. The published post and actual click path were visibly verified. A provider-side one-prefix repair made the tracked URL clickable without changing the technical answer or disclosure. The live allowlisted blog bridge preserves Reddit attribution through the fit-check page without forwarding arbitrary parameters or sending a form."
       },
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },

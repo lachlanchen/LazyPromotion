@@ -124,10 +124,17 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
             if not provider or not isinstance(channel, dict):
                 continue
             candidates = [("product", channel.get("content"))]
+            if channel.get("postiz_content"):
+                candidates.append(("product", channel.get("postiz_content")))
             candidates.extend(
                 (name, value.get("content"))
                 for name, value in channel.items()
                 if isinstance(value, dict) and value.get("content")
+            )
+            candidates.extend(
+                (name, value.get("postiz_content"))
+                for name, value in channel.items()
+                if isinstance(value, dict) and value.get("postiz_content")
             )
             for route, content in candidates:
                 normalized = canonical_text(str(content or ""))

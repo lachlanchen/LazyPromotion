@@ -106,11 +106,15 @@ The report retains the narrower fit-check action, so the path remains
 `public evidence → local fit check → reviewed scope → payment`.
 
 The confidential-PDF guide also has two value-first distribution assets. A
-concise X pointer is queued for September 1 at 14:00 UTC. A longer standalone
-decision tree is queued for September 1 at 02:00 UTC on the connected Reddit
+concise X pointer is queued for September 1 at 14:00 UTC. The longer standalone
+decision tree was published on September 1 at 02:00 UTC on the connected Reddit
 account's own profile—not in a third-party community—so people arriving from
 value-only replies can find useful context without a second promotional reply.
-Both use tracked guide links, and the Reddit resource includes an explicit
+Postiz and the public provider page independently confirmed the exact release.
+Reddit initially rendered the scheduled protocol-less destination as plain
+text; a visible provider-side edit added only the `https://` prefix. The exact
+public anchor then resolved to the canonical guide and preserved the originating
+Reddit attribution through the fit-check page. The resource retains an explicit
 maintainer disclosure. The public Reddit profile itself now has one restrained
 bio describing the local-first work and one tracked `Free LKT fit check` social
 link pointing directly to the live fit-check page. That owned-profile route is

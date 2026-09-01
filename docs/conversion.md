@@ -48,6 +48,14 @@ channel reach and engagement, while confirmed leads and revenue remain private
 operator records. The agent never fabricates conversions and never treats a
 public reply, impression, or GitHub visit as a customer.
 
+`python owned_monitor.py once` checks the official Postiz publication records
+and analytics without changing a post. It stores only hashed post identities in
+the ignored local database; raw Postiz and integration IDs remain in memory.
+An increase in comments or replies produces a visible-browser review alert, not
+a lead, and never sends an automatic response. A persistent operator can use
+`python owned_monitor.py loop --interval-minutes 15`; the lock allows only one
+copy and the latest sanitized status stays in `.local/owned-monitor-status.json`.
+
 The rest of the portfolio supplies proof and implementation components rather
 than competing calls to action. PocketPolyglot, LinguaLeaf, WordsCardEink, and
 WordOrigins strengthen the multilingual pipeline; BLOG and Search Console show

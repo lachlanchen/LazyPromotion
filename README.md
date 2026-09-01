@@ -81,6 +81,7 @@ flowchart LR
 | [`docs/first-1000.md`](docs/first-1000.md) | One repeatable USD 250 LKT collection-fit sprint and its truthful four-sale milestone |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
 | [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger |
+| [`owned_monitor.py`](owned_monitor.py) | Read-only Postiz publication/engagement monitor that creates review alerts without storing raw provider IDs or calling engagement a lead |
 | [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT Stripe path |
 | [`signals.py`](signals.py) | Private first-party demand signals kept distinct from leads, orders, and revenue |
 | [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |

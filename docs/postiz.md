@@ -71,6 +71,23 @@ shortlink. A fresh record and visible-calendar review confirmed the exact copy,
 uploaded media, provider settings, unchanged times, and persisted `QUEUE`
 state. The Wenyan and eInk items remained drafts.
 
+## Owned-post observation
+
+The read-only owned-post monitor uses the official CLI to notice publication
+failures and increases in post-level comments or replies:
+
+```bash
+python owned_monitor.py once
+python owned_monitor.py loop --interval-minutes 15
+```
+
+It matches campaign routes from normalized public copy, persists only a hashed
+post identity, and never writes raw Postiz or integration IDs. Account-level
+analytics remain reach evidence only. A post-level increase creates an operator
+alert to inspect the public response in the visible browser; it is not a lead
+and the monitor cannot reply. Missing release IDs and overdue queue states also
+require visible review before any connecting or retry action.
+
 The same review pattern was used for a value-first LKT guide post to the
 connected Reddit account's own profile. The live provider contract and profile
 restrictions confirmed normal text and link posts were allowed without flair.

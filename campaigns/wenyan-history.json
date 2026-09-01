@@ -7,7 +7,12 @@
     "public_shelf": "https://lachlanchen.github.io/LinguaLeaf/website/",
     "asset_repository": "https://github.com/lachlanchen/LinguaLeaf",
     "asset_path": "assets/max-language-previews/zizhi-tongjian-part-03.png",
-    "edition_format": "文言文 main text with English, modern Japanese, and modern Chinese"
+    "edition_format": "文言文 main text with English, modern Japanese, and modern Chinese",
+    "verified_at": "2026-09-02",
+    "format_inventory": {
+      "zizhi_tongjian": "six black-and-white parts; no color link on the public shelf",
+      "other_named_histories": "color and black-and-white availability varies by title"
+    }
   },
   "baseline_2026_08_31": {
     "instagram": {
@@ -27,13 +32,13 @@
     "x": {
       "state": "postiz_draft",
       "publish_date_placeholder_utc": "2026-09-02T01:00:00Z",
-      "content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I built a free public edition with 文言文 + English + modern Japanese + modern Chinese, in color and B&W. Search “LinguaLeaf” on GitHub to read it.",
-      "link_strategy": "Postiz strips links from X drafts as of 2026-08-31; use direct visible X composition for a clickable canonical shelf URL after review."
+      "content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I made six free B&W parts with 文言文 beside English, modern Japanese, and modern Chinese. Read them here: https://lachlanchen.github.io/LinguaLeaf/website/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
+      "link_strategy": "Use the tracked canonical shelf URL. Recheck the live X preview and destination immediately before any future scheduling."
     },
     "instagram": {
       "state": "postiz_draft",
       "publish_date_placeholder_utc": "2026-09-03T11:30:00Z",
-      "content": "Some books are difficult because the language is distant—not because the ideas are.\n\nI’ve been building a reading shelf for Chinese classics where 文言文 sits beside English, modern Japanese, and modern Chinese. It includes multilingual editions of 資治通鑑, 漢書, 後漢書, 三國志裴松之注, and 春秋左氏傳, in color and black-and-white formats.\n\nMade with PocketPolyglot; the finished books live in the public LinguaLeaf shelf:\nhttps://lachlanchen.github.io/LinguaLeaf/website/?utm_source=instagram&utm_medium=social&utm_campaign=wenyan_history\n\nWhich history would you open first?\n\n#文言文 #ClassicalChinese #ChineseHistory #LanguageLearning #DigitalHumanities"
+      "content": "Some books are difficult because the language is distant—not because the ideas are.\n\nI’ve been building a free reading shelf where 文言文 sits beside English, modern Japanese, and modern Chinese. It includes 資治通鑑, 漢書, 後漢書, 三國志裴松之注, and 春秋左氏傳. Formats vary by title: 資治通鑑 currently has six black-and-white parts; several other histories offer both color and black-and-white readers.\n\nMade with PocketPolyglot:\nhttps://lachlanchen.github.io/LinguaLeaf/website/?utm_source=instagram&utm_medium=social&utm_campaign=wenyan_history\n\nWhich history would you open first?\n\n#文言文 #ClassicalChinese #ChineseHistory #LanguageLearning #DigitalHumanities"
     },
     "reddit": {
       "state": "needs_community_fit",

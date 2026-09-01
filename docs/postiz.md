@@ -69,7 +69,18 @@ project-owned example and its explicit non-customer-result boundary; the
 operator retained the original lazying.art URL rather than accepting a
 shortlink. A fresh record and visible-calendar review confirmed the exact copy,
 uploaded media, provider settings, unchanged times, and persisted `QUEUE`
-state. The Wenyan and eInk items remained drafts.
+state. At that review point, the Wenyan and eInk items remained drafts.
+
+On 2026-09-02, a publication preflight caught a format mismatch after the two
+Wenyan items had subsequently entered the queue. The X copy said the
+`資治通鑑` edition was available in both color and black-and-white, while the
+live canonical shelf exposed six black-and-white parts and no color link. The
+Instagram copy could also be read as promising both formats for every named
+history, although availability varies by title. The operator moved only those
+two unpublished items from `QUEUE` back to `DRAFT`; no release existed and no
+post was deleted. The tracked campaign source now states the exact current
+inventory and uses a direct, campaign-tagged shelf URL. Any future scheduling
+still requires a fresh visible preview and destination check.
 
 ## Owned-post observation
 

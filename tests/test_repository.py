@@ -457,7 +457,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
         self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
+        self.assertIn("six free B&W parts", campaign["channels"]["x"]["content"])
+        self.assertIn("utm_source=x", campaign["channels"]["x"]["content"])
+        self.assertNotIn("in color and B&W", campaign["channels"]["x"]["content"])
+        self.assertIn(
+            "Formats vary by title",
+            campaign["channels"]["instagram"]["content"],
+        )
+        self.assertIn(
+            "six black-and-white parts",
+            campaign["channels"]["instagram"]["content"],
+        )
         self.assertIn("utm_source=instagram", campaign["channels"]["instagram"]["content"])
+        self.assertIn(
+            "no color link",
+            campaign["source_evidence"]["format_inventory"]["zizhi_tongjian"],
+        )
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 

@@ -4,9 +4,9 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `f3ea961`
+Verified BLOG commit: `f532e96`
 
-Campaign range: `3b45351^..f3ea961`
+Campaign range: `3b45351^..f532e96`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -106,6 +106,7 @@ Posts: `1562, 2936, 3125`.
 | `f5ae566` | 1922 | Observable two-remote Git replication with partial-failure handling |
 | `c0d07b0` | 1925 | Rollback-safe PyQt Designer and `uic.exe` diagnosis |
 | `14a99f2` | 1925 | Localized-title correction after live WordPress verification |
+| `f532e96` | 1925 | Recorded the final corrected-translation sync timestamp |
 | `f3ea961` | 1929 | Current QtAgg/PyQt5 interactive 3D embedding and test boundary |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.

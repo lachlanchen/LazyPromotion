@@ -10,6 +10,14 @@ listing was published.
 The machine-readable evidence and listing packet are in
 [`marketplace-channels.json`](../marketplace-channels.json).
 
+The prepared 1672×941 cover is served from the public LKT site as
+[`lkt-collection-fit-service-cover-v1.png`](https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png).
+It says “software service · hardware not included” in the image itself. Treat
+it as a project-owned, AI-assisted concept grounded in the documented LKT
+prototype and interface—not as a customer result, testimonial, benchmark,
+shipped hardware product, or evidence of paid work. Recheck the live crop and
+media rules in Contra's editor before upload.
+
 ## Why Contra leads
 
 Contra's current service guide supports a service name, cover image, tags,

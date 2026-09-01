@@ -782,6 +782,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("80%", channels[2]["economics"])
         listing = packet["contra_listing_packet"]
         self.assertEqual(listing["state"], "draft_only_not_registered_or_published")
+        self.assertEqual(listing["cover_asset"]["dimensions"], "1672x941")
+        self.assertIn("hardware not included", listing["cover_asset"]["required_disclosure"].casefold())
+        self.assertIn("not a customer result", listing["cover_asset"]["evidence_boundary"].casefold())
         self.assertIn("custom OCR", listing["description"])
         self.assertIn("source material", " ".join(listing["requirements"]))
         self.assertIn("pending payout", listing["revenue_policy"])

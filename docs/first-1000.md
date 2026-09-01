@@ -186,6 +186,8 @@ operator completes registration and identity/payout setup and explicitly
 selects every delivery, revision, sample, cancellation, refund, and support
 commitment. Upwork and Fiverr remain deferred. A marketplace inquiry, contract,
 balance, or pending payout does not change the received-revenue total.
+The prepared cover is explicitly labeled as a software service with hardware
+excluded and remains project-owned concept material, not customer evidence.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Run `python metrics.py report` for the private aggregate. After a verified USD

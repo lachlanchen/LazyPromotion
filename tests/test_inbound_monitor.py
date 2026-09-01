@@ -34,6 +34,10 @@ class InboundMonitorTests(unittest.TestCase):
             inbound_monitor.parse_folder_status("12 Messages, 0 unread"),
             (12, 0),
         )
+        self.assertEqual(
+            inbound_monitor.parse_folder_status("1 Message"),
+            (1, 0),
+        )
 
     def test_first_observation_is_baseline_not_a_lead(self):
         report = self.record(1, 1, "2026-09-01T01:00:00Z")

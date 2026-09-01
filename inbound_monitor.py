@@ -26,7 +26,7 @@ LOG_PATH = RUNTIME / "inbound-monitor.jsonl"
 LOCK_PATH = RUNTIME / "inbound-monitor.lock"
 FOLDER_NAME = "LKT Fit Checks"
 STATUS_RE = re.compile(
-    r"^\s*(\d+)\s+Messages?\s*,\s*(\d+)\s+unread\s*$",
+    r"^\s*(\d+)\s+Messages?(?:\s*,\s*(\d+)\s+unread)?\s*$",
     re.IGNORECASE,
 )
 
@@ -44,7 +44,8 @@ def parse_folder_status(value: str) -> tuple[int, int]:
     match = STATUS_RE.fullmatch(str(value or ""))
     if not match:
         raise ValueError("iCloud did not expose the expected folder count status")
-    return int(match.group(1)), int(match.group(2))
+    # iCloud omits the unread clause entirely when its value is zero.
+    return int(match.group(1)), int(match.group(2) or 0)
 
 
 def atomic_write_json(path: Path, payload: dict) -> None:

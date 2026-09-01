@@ -4,9 +4,9 @@ Last verified: 2026-09-02 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `328d9af`
+Verified BLOG commit: `7900a93`
 
-Campaign range: `3b45351^..328d9af`
+Campaign range: `3b45351^..7900a93`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **141 posts** have completed this protocol:
+As of the verified commit, **142 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -52,7 +52,7 @@ Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 
 - Separated every later editorial addition from the archived writing.
 - Added edition cards, quotation audits, close-reading prompts, translation ledgers, evidence levels, and public-domain or institutional research routes without inventing biography or authorial intent.
 
-Posts: `933, 1498, 1562, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1947, 1959, 1986, 1994, 2002, 2010`.
+Posts: `933, 1498, 1562, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1947, 1959, 1986, 1994, 2002, 2010`.
 
 ### Navigation and practical checklists
 
@@ -181,6 +181,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `04255c6` | 2996 | Official GMS/certification verification replacing untrusted Google-services installers |
 | `4d52d66` | 3087 | Secure davfs2/WebDAV mounting with fail-closed secrets, fstab, and rollback controls |
 | `328d9af` | 3096 | Discontinued e-paper prototype audit with migration-first hardware and affiliate boundaries |
+| `7900a93` | 1752 | Predicate-aware Japanese particle lesson with exercises and an untracked LingQ practice route |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

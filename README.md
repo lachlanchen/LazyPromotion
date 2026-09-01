@@ -87,6 +87,7 @@ flowchart LR
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
 | [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger |
 | [`owned_monitor.py`](owned_monitor.py) | Read-only Postiz publication/engagement monitor that requires visible release verification, creates review alerts, stores no raw provider IDs, and never calls engagement a lead |
+| [`inbound_monitor.py`](inbound_monitor.py) | Read-only iCloud intake monitor that records only the dedicated LKT folder's aggregate counts and never opens or persists mail content |
 | [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT Stripe path |
 | [`signals.py`](signals.py) | Private first-party demand signals kept distinct from leads, orders, and revenue |
 | [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |

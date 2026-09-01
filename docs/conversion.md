@@ -60,6 +60,15 @@ release-verification alert. A published state without a public release URL is
 unresolved evidence: inspect Postiz and the provider, and never reconnect or
 resubmit until the exact public item is identified.
 
+`python inbound_monitor.py once` reads only the aggregate message and unread
+counts exposed for the dedicated `LKT Fit Checks` iCloud folder. It does not
+open mail or persist a sender, subject, address, or body. The controlled routing
+probe is the initial baseline. A later increase creates a review alert—not a
+qualified lead or sale—and the operator must inspect only that folder visibly
+before recording any funnel outcome. Continuous mode uses
+`python inbound_monitor.py loop --interval-minutes 15` and shares the browser
+operation lock with discovery so it cannot race another CDP controller.
+
 The rest of the portfolio supplies proof and implementation components rather
 than competing calls to action. PocketPolyglot, LinguaLeaf, WordsCardEink, and
 WordOrigins strengthen the multilingual pipeline; BLOG and Search Console show

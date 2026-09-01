@@ -51,6 +51,11 @@ a response SLA or sale. Do not promise a response time, copy message contents
 into this repository, or infer a conversion until the actual inbound request
 has been reviewed against the qualification gate below.
 
+`python inbound_monitor.py loop --interval-minutes 15` records only the exact
+folder's aggregate message and unread counts. The one controlled probe is its
+baseline. It never opens mail or persists message metadata; an increased count
+is only a prompt for visible review, not a qualified lead or sale.
+
 ## Qualification gate
 
 Before payment, collect only the minimum facts needed to decide fit:
@@ -111,6 +116,13 @@ bio describing the local-first work and one tracked `Free LKT fit check` social
 link pointing directly to the live fit-check page. That owned-profile route is
 not permission to add another promotion, follower request, price claim, or link
 to a community answer that should remain value-only.
+
+The deployed first-party bridges preserve the originating Reddit, X, or
+Instagram attribution when a reader moves from LazyBlog, the LKT offer, or the
+sample report into the fit check. They forward only four validated UTM fields
+to the exact first-party destination. The reviewed local email draft includes
+those fields, while organic readers retain the normal page attribution and no
+form is sent automatically.
 
 The downstream payment path can be checked without creating Stripe objects:
 

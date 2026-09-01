@@ -4,9 +4,9 @@ Last verified: 2026-09-02 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `fb747ce`
+Verified BLOG commit: `330d73c`
 
-Campaign range: `3b45351^..fb747ce`
+Campaign range: `3b45351^..330d73c`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -15,13 +15,14 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 3. Referral, tracking, privacy, unsafe-download, quotation, JSON, and diff checks appropriate to the post pass.
 4. The source and both translations are pushed to WordPress.
 5. The live REST response confirms the source title/status and both translated titles.
-6. Exactly the post's four files are committed and pushed to `origin/main`.
+6. The post's source, manifest, and translations—plus its declared lazypub input
+   archive when that workflow is used—are committed and pushed to `origin/main`.
 
 ## Live and pushed posts
 
-As of the verified commit, **142 posts** have completed this protocol:
+As of the verified commit, **145 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3772`
 
 ### Safety and historical corrections
 
@@ -60,6 +61,25 @@ Posts: `933, 1498, 1562, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1
 - Expanded the car-rental checklist, archive manifesto, and rights-respecting film-discovery shell into durable reader routes.
 
 Posts: `281, 936, 1562, 2936, 3125`.
+
+### Evidence-led conversion and presentation follow-up
+
+- Search Console's visible 28-day report on 2026-09-02 showed 131 clicks and
+  6.46K impressions across the property. Post `3167` was the leading article
+  with 25 clicks; its LKT section now presents the project-owned sample report
+  before the browser-local fit check and optional paid scope.
+- Post `3114` showed 12 clicks from 1.33K impressions, 0.9% CTR, and average
+  position 9.1. It now routes readers with an actual FFmpeg workflow need to
+  the owner-disclosed open-source LazyEdit source and Studio page, while stating
+  that Ubuntu's packaged FFmpeg is normally sufficient.
+- Post `2972` showed 14 clicks but received no commercial CTA because no
+  LazyingArt offer was a truthful match for its payment-failure search intent.
+- The production sidebar now retains only Recent Posts. Seven legacy or
+  non-contextual widgets—Meta, broker text/banner, adult-humor image, archives,
+  recent comments, and the full category tree—were moved to WordPress's
+  recoverable inactive area. A live rendered-page check confirmed their absence.
+- Search impressions, clicks, and outbound visits remain attention signals, not
+  leads, customers, commissions, or revenue.
 
 ## Commit trail for the latest batch
 
@@ -184,6 +204,11 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `7900a93` | 1752 | Predicate-aware Japanese particle lesson with exercises and an untracked LingQ practice route |
 | `bf33693` | 1498 | Edition-aware Pólya note with lawful access, regional untracked Bookshop routes, and no-commission disclosure |
 | `fb747ce` | 1498 | Stable first-party publisher history replacing an intermittently unavailable archive reference |
+| `8c555c3` | 3772 | Published the tested review-first Postiz CLI/MCP workflow without a referral claim |
+| `3329325` | 2180 | Added a non-affiliate, environment-pinned XGBoost practice route |
+| `5c11840` | 2180 | Improved XGBoost indexing copy without changing its technical boundary |
+| `9d1fc70` | 3167 | Put the project-owned LKT sample report before the private fit check and paid scope |
+| `330d73c` | 3114 | Added an owner-disclosed LazyEdit route and removed duplicate body titles |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

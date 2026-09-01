@@ -74,7 +74,7 @@
     {
       "id": "waveshare",
       "name": "Waveshare",
-      "priority": 13,
+      "priority": 14,
       "state": "migration_first",
       "official_urls": {
         "program": "https://www.waveshare.com/join_affiliate.html",
@@ -131,9 +131,39 @@
       "forbidden_actions": ["unsolicited messages", "automated community replies", "fake engagement", "undisclosed bots", "platform-rule violations"]
     },
     {
+      "id": "datacamp",
+      "name": "DataCamp",
+      "priority": 4,
+      "state": "apply_first",
+      "official_urls": {
+        "program": "https://www.datacamp.com/affiliates",
+        "terms": "https://www.datacamp.com/affiliates/terms-and-conditions",
+        "application": "https://www.datacamp.com/affiliates",
+        "matched_course": "https://www.datacamp.com/courses/extreme-gradient-boosting-with-xgboost"
+      },
+      "public_economics": "The public program page advertises 15-20% of annual subscriptions and 50-80% of the first monthly payment, with a category-dependent 7-30 day cookie. The controlling public terms permit dashboard-controlled ranges of 7.5-25% for the first year of an annual Individual Plan and 15-80% for the first month of a monthly Individual Plan. Record only the accepted Impact offer as authoritative.",
+      "unknowns": [
+        "Confirm the accepted Impact rate, affiliate category and cookie window, eligible Individual Plans, entity and geography eligibility, tax and currency setup, payment route, refunds, chargebacks, and current dashboard terms before activation."
+      ],
+      "conversion_event": "A new attributed individual purchases an eligible Individual Plan within the accepted cookie window, the payment completes successfully without refund or chargeback, and the commission later clears under the Impact offer.",
+      "direct_url": "https://www.datacamp.com/courses/extreme-gradient-boosting-with-xgboost",
+      "permitted_link_hosts": ["datacamp.com", "impact.com", "impactradius.com"],
+      "matches": [
+        {
+          "asset": "BLOG post 2180",
+          "placement": "From boosting to XGBoost mathematical and implementation tutorial",
+          "reason": "The maintained English guide and its Japanese and Chinese translations already derive gradient boosting and XGBoost and include a reproducible Python check. The matched course continues with classification, regression, tuning, and scikit-learn pipelines, so it answers a real next-practice need rather than interrupting an unrelated page."
+        }
+      ],
+      "application_pitch": "LazyingArt publishes a maintained, multilingual boosting-to-XGBoost tutorial with equations and a reproducible Python check. I will place one clearly disclosed DataCamp link only in a practice-next section beside the exact XGBoost course and an ordinary non-affiliate course link. I will not use brand-keyword ads, coupons, spam, self-referrals, cookie stuffing, cloaking, doorway pages, rebates, or disguised commercial recommendations.",
+      "disclosure": "Affiliate disclosure: if you purchase an eligible DataCamp subscription through this link, LazyingArt may earn a commission at no extra cost to you. The adjacent plain course link is non-affiliate.",
+      "activation_gates": ["accepted", "impact_offer_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["self-referral", "brand-keyword ads", "spam", "false coupons", "rebates or kickbacks", "cookie stuffing", "cloaking", "doorway pages", "disguised commercial recommendations"]
+    },
+    {
       "id": "kobo",
       "name": "Rakuten Kobo",
-      "priority": 4,
+      "priority": 5,
       "state": "apply_second",
       "official_urls": {
         "program": "https://www.kobo.com/gb/en/p/affiliate",
@@ -160,7 +190,7 @@
     {
       "id": "proton",
       "name": "Proton",
-      "priority": 5,
+      "priority": 6,
       "state": "apply_second",
       "official_urls": {
         "program": "https://proton.me/partners/affiliates",
@@ -187,7 +217,7 @@
     {
       "id": "elevenlabs",
       "name": "ElevenLabs",
-      "priority": 6,
+      "priority": 7,
       "state": "apply_second",
       "official_urls": {
         "program": "https://elevenlabs.io/affiliates",
@@ -214,7 +244,7 @@
     {
       "id": "digitalocean",
       "name": "DigitalOcean",
-      "priority": 7,
+      "priority": 8,
       "state": "rebuild_first",
       "official_urls": {
         "program": "https://www.digitalocean.com/affiliates",
@@ -241,7 +271,7 @@
     {
       "id": "adobe",
       "name": "Adobe",
-      "priority": 8,
+      "priority": 9,
       "state": "apply_second",
       "official_urls": {
         "program": "https://www.adobe.com/affiliates.html",
@@ -268,7 +298,7 @@
     {
       "id": "runway",
       "name": "Runway",
-      "priority": 12,
+      "priority": 13,
       "state": "pilot_only",
       "official_urls": {
         "program": "https://affiliates.runwayml.com/",
@@ -295,7 +325,7 @@
     {
       "id": "envato",
       "name": "Envato",
-      "priority": 9,
+      "priority": 10,
       "state": "apply_second",
       "official_urls": {
         "program": "https://www.envato.com/affiliates",
@@ -322,7 +352,7 @@
     {
       "id": "coursera",
       "name": "Coursera",
-      "priority": 10,
+      "priority": 11,
       "state": "contextual_only",
       "official_urls": {
         "program": "https://www.coursera.org/about/affiliates",
@@ -349,7 +379,7 @@
     {
       "id": "wise",
       "name": "Wise",
-      "priority": 11,
+      "priority": 12,
       "state": "clarification_first",
       "official_urls": {
         "program": "https://wise.com/partners/affiliates",
@@ -376,7 +406,7 @@
     {
       "id": "skrill",
       "name": "Skrill / Paysafe Affiliates",
-      "priority": 14,
+      "priority": 15,
       "state": "terms_conflict_review",
       "official_urls": {
         "program": "https://www.skrill.com/en/earn-money/",
@@ -415,7 +445,7 @@
     {
       "id": "distrokid",
       "name": "DistroKid",
-      "priority": 15,
+      "priority": 16,
       "state": "conditional",
       "official_urls": {
         "program": "https://distrokid.com/affiliate/",
@@ -442,7 +472,7 @@
     {
       "id": "amazon-us",
       "name": "Amazon Associates US",
-      "priority": 16,
+      "priority": 17,
       "state": "delay",
       "official_urls": {
         "program": "https://affiliate-program.amazon.com/",
@@ -469,7 +499,7 @@
     {
       "id": "tradingview",
       "name": "TradingView",
-      "priority": 17,
+      "priority": 18,
       "state": "hold",
       "official_urls": {
         "program": "https://www.tradingview.com/partner-program/",

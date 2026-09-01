@@ -8,13 +8,17 @@ issued link, referral code, account ID, cookie, or payout detail.
 
 ## Execution order
 
-The first useful experiment is three different buyer intents rather than three
-links on one generic page:
+The first useful experiments cover four distinct buyer intents rather than
+putting several links on one generic page:
 
 1. **LingQ** beside the Japanese grammar/practice guide in BLOG post 1752;
 2. **Bookshop.org** beside the exact book discussed in BLOG post 1498; and
 3. **Postiz** beside a firsthand review-first CLI/MCP tutorial.
 
+**DataCamp** is the fourth route, beside the maintained boosting-to-XGBoost
+tutorial in BLOG post 2180. Its exact course match is stronger than adding a
+generic course catalog: the owned page derives the method, while the matched
+course continues with classification, regression, tuning, and pipelines.
 Kobo follows with the PocketPolyglot e-reader comparison. These placements
 should each use one stable placement ID and a nearby disclosure, preserve a
 plain official URL, and be measured separately.
@@ -34,6 +38,7 @@ python affiliate.py list
 python affiliate.py packet lingq
 python affiliate.py packet bookshop
 python affiliate.py packet postiz
+python affiliate.py packet datacamp
 ```
 
 Then, in the visible shared browser profile:
@@ -104,6 +109,31 @@ with `affiliate_commission_received`; a verified clawback uses
 - **Temu, generic broker offers, coupon programs, and unrelated marketplace
   links are excluded.** There is no strong demonstrated asset-to-buyer match,
   and the trust cost is higher than the likely first-sale value.
+
+## Incremental quality screen
+
+The 2026-09-02 expansion audit added only DataCamp. Four otherwise credible
+programs remain outside the activation order:
+
+- [Preply](https://lp.preply.com/affiliate/) is deferred because its public
+  page omits the controlling Impact rate, attribution, geography, payout, and
+  channel rules. Reconsider it beside the Japanese practice guide only after
+  the complete accepted contract is reviewable.
+- [Kinsta](https://kinsta.com/docs/service-information/affiliate-program/) is
+  deferred until BLOG post 1568 becomes a current, provider-neutral managed
+  WordPress versus self-hosted migration guide. Existing troubleshooting pages
+  are not a buyer-shaped hosting comparison.
+- [Seeed Studio](https://www.seeedstudio.com/blog/affiliate-program/) is
+  deferred until an exact Seeed component is owned or otherwise available,
+  tested, and documented in a reproducible BOM. Generic hardware links are not
+  enough.
+- [B&H Photo Video](https://affiliates.bhphotovideo.com/Agreement.htm) is
+  rejected for this cycle because official payout documents conflict and no
+  public attribution window or current international payout matrix was found.
+
+No new financial-product program was admitted. Wise, Skrill, and TradingView
+retain their existing high-risk gates; none may use trading-profit,
+investment-return, or guaranteed-savings claims.
 
 ## Revalidation
 

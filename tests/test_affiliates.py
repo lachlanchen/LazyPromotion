@@ -17,10 +17,12 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.by_id = {program["id"]: program for program in self.registry["programs"]}
 
     def test_portfolio_has_contextual_programs_and_safe_states(self):
-        self.assertGreaterEqual(len(self.by_id), 17)
+        self.assertGreaterEqual(len(self.by_id), 18)
         self.assertEqual(self.by_id["lingq"]["priority"], 1)
         self.assertEqual(self.by_id["bookshop"]["priority"], 2)
         self.assertEqual(self.by_id["postiz"]["priority"], 3)
+        self.assertEqual(self.by_id["datacamp"]["priority"], 4)
+        self.assertEqual(self.by_id["datacamp"]["state"], "apply_first")
         self.assertEqual(self.by_id["waveshare"]["state"], "migration_first")
         self.assertEqual(self.by_id["tradingview"]["state"], "hold")
         self.assertEqual(self.by_id["amazon-us"]["state"], "delay")
@@ -41,6 +43,14 @@ class AffiliatePortfolioTests(unittest.TestCase):
     def test_only_received_commission_is_revenue(self):
         self.assertEqual(self.registry["revenue_event"], "affiliate_commission_received")
         self.assertIn("not revenue", self.registry["policy"].casefold())
+
+    def test_datacamp_requires_accepted_offer_and_exact_course_match(self):
+        program = self.by_id["datacamp"]
+        self.assertIn("impact_offer_reviewed", program["activation_gates"])
+        self.assertIn("BLOG post 2180", program["matches"][0]["asset"])
+        self.assertIn("non-affiliate", program["disclosure"])
+        self.assertIn("self-referral", program["forbidden_actions"])
+        self.assertIn("Record only the accepted Impact offer", program["public_economics"])
 
     def test_private_read_is_explicit_and_missing_record_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:

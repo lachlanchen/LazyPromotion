@@ -248,6 +248,34 @@ class RepositoryTests(unittest.TestCase):
                     route,
                 ))
 
+    def test_eink_routes_require_multilingual_purchase_intent(self):
+        for platform in ("reddit", "x"):
+            routes = [
+                route for route in browser.discovery_query_lanes(platform)["core"]
+                if route["project_id"] == "lazyingart-eink"
+            ]
+            with self.subTest(platform=platform):
+                self.assertEqual(len(routes), 1)
+                route = routes[0]
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertTrue(browser.route_body_qualified(
+                    "I want to buy an e-ink reader for learning Chinese. Which "
+                    "one has good bilingual dictionary support?",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "E-readers are fantastic for language learning; I recommend a Kobo.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I need help choosing an e-reader for black-and-white comics.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I launched my new multilingual e-ink reading app today.",
+                    route,
+                ))
+
     def test_hacker_news_item_id_survives_canonicalization(self):
         rows = browser.dedupe(
             [{

@@ -135,7 +135,13 @@
       {
         "project_id": "lazyingart-eink",
         "query": "(eink OR \"e-ink\" OR ereader OR \"e-reader\") (\"language learning\" OR bilingual OR multilingual) (recommend OR advice OR looking)",
-        "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use"
+        "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use",
+        "required_body_groups": [
+          ["eink", "e-ink", "ereader", "e-reader", "kindle", "kobo"],
+          ["language learning", "learn a language", "learning chinese", "learning japanese", "bilingual", "multilingual", "dictionary", "translation", "vocabulary"],
+          ["looking for", "what should", "which", "can anyone recommend", "does anyone recommend", "need help", "advice", "should i", "trying to choose", "want to buy"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool"]
       },
       {
         "project_id": "pocketpolyglot",
@@ -224,7 +230,13 @@
       {
         "project_id": "lazyingart-eink",
         "query": "(eink OR \"e-ink\" OR ereader OR \"e-reader\") (\"language learning\" OR bilingual OR multilingual) (recommend OR advice OR looking) -filter:retweets",
-        "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use"
+        "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use",
+        "required_body_groups": [
+          ["eink", "e-ink", "ereader", "e-reader", "kindle", "kobo"],
+          ["language learning", "learn a language", "learning chinese", "learning japanese", "bilingual", "multilingual", "dictionary", "translation", "vocabulary"],
+          ["looking for", "what should", "which", "can anyone recommend", "does anyone recommend", "need help", "advice", "should i", "trying to choose", "want to buy"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool"]
       },
       {
         "project_id": "pocketpolyglot",

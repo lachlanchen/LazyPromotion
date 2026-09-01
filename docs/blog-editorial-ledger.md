@@ -4,9 +4,9 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `a6f89ac`
+Verified BLOG commit: `e7c42de`
 
-Campaign range: `3b45351^..a6f89ac`
+Campaign range: `3b45351^..e7c42de`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **43 posts** have completed this protocol:
+As of the verified commit, **52 posts** have completed this protocol:
 
-`10, 56, 99, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1798, 1799, 1947, 1959, 1986, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
+`10, 56, 99, 150, 184, 202, 236, 247, 271, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1947, 1959, 1986, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -44,7 +44,7 @@ Posts: `1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 - Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, and table-of-contents notes around current diagnostics, official sources, validation, rollback, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `10, 184, 271, 351, 433, 1635, 3114`.
+Posts: `10, 184, 271, 351, 433, 1635, 1832, 3114`.
 
 ### Literary and learning resources
 
@@ -52,7 +52,7 @@ Posts: `10, 184, 271, 351, 433, 1635, 3114`.
 - Separated every later editorial addition from the archived writing.
 - Added edition cards, quotation audits, close-reading prompts, translation ledgers, evidence levels, and public-domain or institutional research routes without inventing biography or authorial intent.
 
-Posts: `933, 1498, 1562, 1764, 1768, 1775, 1798, 1799, 1947, 1959, 1986, 2010`.
+Posts: `933, 1498, 1562, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1947, 1959, 1986, 2010`.
 
 ### Navigation and practical checklists
 
@@ -79,6 +79,15 @@ Posts: `1562, 2936, 3125`.
 | `e873a1b` | 1775 | Luxemburg prison-letter textual audit |
 | `4ee6d29` | 1947 | Versioned Gibran freedom/leadership note |
 | `a6f89ac` | 1768 | Hesse *Bauernhaus* quotation and edition audit |
+| `5e187d1` | 1801 | Preserved and annotated Čapek Sweet Umbria note |
+| `57826af` | 1811 | Preserved and annotated Čapek Seville note |
+| `63d4093` | 1822 | Plastic-bag kite archive and evidence-led reading guide |
+| `5b4ec5a` | 1814 | Preserved and annotated Čapek Dutch pastoral note |
+| `77758f2` | 1805 | Preserved and annotated Čapek Edinburgh note |
+| `66c9f2a` | 1778 | Nexø examination excerpt identity and edition audit |
+| `4c3cd4d` | 1832 | Current WSLg and headless Chrome installation guide |
+| `dda09b1` | 1781 | Brückner monologue identity and historical-boundary audit |
+| `e7c42de` | 1788 | Andersen magic-lantern form and historical-claim audit |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

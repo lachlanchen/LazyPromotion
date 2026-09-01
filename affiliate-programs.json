@@ -15,9 +15,9 @@
         "terms": "https://www.lingq.com/terms/",
         "application": "https://www.lingq.com/settings/referrals"
       },
-      "public_economics": "20% of payments by an attributed user while that user remains active; the public page says registration establishes continuing attribution.",
+      "public_economics": "20% of payments by an attributed user while that user remains active; the public page says registration establishes continuing attribution and that cash-out is requested through LingQ for PayPal payment.",
       "unknowns": [
-        "Confirm current eligible payment types, reversals, tax treatment, and cash-out rules inside the account before activation."
+        "The public page does not state a cash-out threshold, payment timing, eligible payment types, reversal treatment, or tax handling. Confirm them inside the account before activation."
       ],
       "conversion_event": "An attributed new user registers and later makes an eligible payment.",
       "direct_url": "https://www.lingq.com/",

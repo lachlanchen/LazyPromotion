@@ -179,6 +179,22 @@ def print_packet(program: dict) -> None:
     print(f"Conversion: {program['conversion_event']}")
     print("\nApplication answer:")
     print(program["application_pitch"])
+    form_packet = program.get("application_form_packet")
+    if form_packet:
+        print("\nPrepared non-sensitive application fields:")
+        labels = {
+            "website_or_social_channel": "Website / social channel",
+            "promotion_plan": "Promotion plan",
+            "additional_comments": "Additional comments",
+        }
+        for key, label in labels.items():
+            value = form_packet.get(key)
+            if value:
+                print(f"- {label}: {value}")
+        print("\nOperator-only application steps:")
+        for field in form_packet.get("operator_only_fields", []):
+            print(f"- {field}")
+        print(f"Submission state: {form_packet.get('submit_state', 'unknown')}")
     if program.get("clarification_request"):
         print("\nWritten clarification request:")
         print(program["clarification_request"])

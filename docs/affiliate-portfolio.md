@@ -23,6 +23,23 @@ Kobo follows with the PocketPolyglot e-reader comparison. These placements
 should each use one stable placement ID and a nearby disclosure, preserve a
 plain official URL, and be measured separately.
 
+### Evidence-weighted allocation
+
+The current Search Console top-content window does not include any of the four
+affiliate-matched pages. Their editorial readiness is therefore not evidence of
+buyer demand. Keep application work bounded to the existing four operator
+packets, do not create more affiliate articles or placements merely because a
+public commission percentage looks attractive, and keep the USD 250 LKT path
+primary while its owned physics entry pages have demonstrated discovery.
+
+The official program pages were rechecked on 2026-09-02. LingQ still states 20%
+of attributed-user payments while the user remains active and describes PayPal
+cash-out by request; Bookshop.org still advertises 10% and its support page
+describes a 48-hour last-touch window; Postiz still advertises 30% per sale for
+the customer's lifetime; and DataCamp still publishes category-dependent
+commission ranges and a 7–30 day cookie. These are public offer descriptions,
+not LazyingArt's accepted terms, conversion rates, or expected income.
+
 This order is about fit, not the largest advertised percentage. Bookshop is a
 better first book route than Amazon because the content has exact book intent
 and the public program offers stronger book economics. Amazon stays delayed

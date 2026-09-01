@@ -69,6 +69,20 @@ class AffiliatePortfolioTests(unittest.TestCase):
                 "final submission",
             },
         )
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            affiliate.print_packet(program)
+        rendered = output.getvalue()
+        self.assertIn("Prepared non-sensitive application fields:", rendered)
+        self.assertIn("Website / social channel: https://lazying.art/", rendered)
+        self.assertIn("Operator-only application steps:", rendered)
+        self.assertIn("program terms review and acceptance", rendered)
+        self.assertIn("Submission state: not_submitted", rendered)
+
+    def test_lingq_packet_preserves_public_cash_out_boundary(self):
+        program = self.by_id["lingq"]
+        self.assertIn("PayPal", program["public_economics"])
+        self.assertIn("does not state a cash-out threshold", program["unknowns"][0])
 
     def test_private_read_is_explicit_and_missing_record_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -68,6 +68,12 @@ Posts: `281, 936, 1562, 2936, 3125`.
   6.46K impressions across the property. Post `3167` was the leading article
   with 25 clicks; its LKT section now presents the project-owned sample report
   before the browser-local fit check and optional paid scope.
+- The same report showed 22 clicks, up 47%, for the Classical Mechanics Reader.
+  That owned page previously ended at PDF and source links. LazyLearn commits
+  `03ba09e` and `fa61690` added and deployed one cache-safe, sample-report-first
+  LKT path below the reader. A visible production check found no direct fit-check
+  or payment link and retained the public/free archive boundary. The 22 clicks
+  justify prioritization only; they are not a lead or sale.
 - Post `3114` showed 12 clicks from 1.33K impressions, 0.9% CTR, and average
   position 9.1. It now routes readers with an actual FFmpeg workflow need to
   the owner-disclosed open-source LazyEdit source and Studio page, while stating

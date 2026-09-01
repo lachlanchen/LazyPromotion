@@ -83,6 +83,16 @@ list, then submitted once and confirmed with status `Success` and seven
 discovered pages. Do not resubmit those URLs merely to seek higher priority;
 recheck their status in a later observation window.
 
+The same visible 28-day report showed the Classical Mechanics Reader as the
+second-ranked page with 22 clicks, up 47%. The live reader previously ended at
+PDF and source links. LazyLearn commits `03ba09e` and `fa61690` now add one
+tracked, cache-safe route to the complete LKT sample fit report beneath the
+reader. The panel keeps the archive public and free, labels the report as
+project-owned rather than a customer result, and contains no direct fit-check
+or payment link. A successful Pages build plus a visible production render
+verified the exact route and styling. Search clicks justified closing this
+owned conversion dead end; they remain attention evidence, not a lead or sale.
+
 On September 2, 2026, one fresh Hacker News question exposed a reusable need:
 keeping an internal university research corpus offline while deciding whether
 a small language model should rewrite queries or generate the final answer

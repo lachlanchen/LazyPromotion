@@ -62,10 +62,11 @@ has been reviewed against the qualification gate below.
 folder's aggregate message and unread counts. The one controlled probe is its
 baseline. It never opens mail or persists message metadata; an increased count
 is only a prompt for visible review, not a qualified lead or sale.
-The single project-owned desktop now restores the inbox and campaign tabs after
-an owned restart and pins its campaign and affiliate browser windows to separate
-full-size noVNC lanes, preventing focus-order swaps from interrupting the
-aggregate monitor.
+The single project-owned desktop now restores the inbox, campaign, and affiliate
+tabs in one persistent Chrome profile after an owned restart. Each restored
+Chrome window is fitted to the full 1920×1080 desktop, while the aggregate
+monitor continues through loopback CDP without depending on the viewer's current
+tab.
 
 ## Qualification gate
 

@@ -652,7 +652,9 @@ def inspect_candidate(page: Page, candidate_id: str) -> dict[str, object]:
             title = ""
             author = root.get_attribute("author") or author
             published_at = root.get_attribute("created") or ""
-            comment_count = 0
+            comment_count = reddit_direct_reply_count(
+                reddit_comment_records(page), comment_id
+            )
             source_score = safe_int(root.get_attribute("score"))
             content = root.locator(f"#t1_{comment_id}-comment-rtjson-content").first
             body = content.inner_text() if content.count() else ""
@@ -1074,6 +1076,24 @@ def reddit_comment_records(page: Page) -> list[dict[str, str]]:
           parentid: node.getAttribute('parentid') || '',
           body: (node.querySelector(':scope > div[slot="comment"]')?.innerText || '').trim()
         })).filter(row => row.thingid && row.body)"""
+    )
+
+
+def reddit_direct_reply_count(
+    records: list[dict[str, str]], parent_comment_id: str
+) -> int:
+    """Count only delivered direct replies to one exact Reddit comment."""
+    if not re.fullmatch(r"[a-z0-9]+", parent_comment_id, flags=re.I):
+        raise ValueError("invalid Reddit parent comment id")
+    expected_parent = f"t1_{parent_comment_id}"
+    return sum(
+        1
+        for record in records
+        if str(record.get("parentid") or "") == expected_parent
+        and re.fullmatch(
+            r"t1_[a-z0-9]+", str(record.get("thingid") or ""), flags=re.I
+        )
+        and promotion.compact(str(record.get("body") or ""))
     )
 
 

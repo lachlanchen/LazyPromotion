@@ -286,6 +286,18 @@ class RepositoryTests(unittest.TestCase):
             {"t1_top"},
         )
 
+    def test_reddit_direct_reply_count_excludes_siblings_and_empty_shells(self):
+        records = [
+            {"thingid": "t1_child1", "parentid": "t1_comment456", "body": "One"},
+            {"thingid": "t1_child2", "parentid": "t1_comment456", "body": "Two"},
+            {"thingid": "t1_empty", "parentid": "t1_comment456", "body": ""},
+            {"thingid": "t1_sibling", "parentid": "t1_other", "body": "Other"},
+            {"thingid": "invalid", "parentid": "t1_comment456", "body": "Bad"},
+        ]
+        self.assertEqual(browser.reddit_direct_reply_count(records, "comment456"), 2)
+        with self.assertRaisesRegex(ValueError, "invalid Reddit parent comment id"):
+            browser.reddit_direct_reply_count(records, "../bad")
+
     def test_reddit_submit_is_bound_to_reviewed_composer(self):
         page = mock.MagicMock()
         target = mock.MagicMock()

@@ -327,6 +327,13 @@ a stale display lock that matches its own recorded Xvfb PID. It restores one
 small campaign/intake workspace and one small affiliate-review workspace,
 records their exact window IDs, and continuously pins those IDs to their named
 lanes so focus changes cannot swap the views or expose obscured black blocks.
+When two full-screen Firefox viewer windows are registered once, `start` and
+`restart` also reload those exact clients after the stack is healthy; unrelated
+Firefox windows are never touched.
+
+```bash
+scripts/desktop.sh register-viewers CAMPAIGN_FIREFOX_WINDOW_ID AFFILIATE_FIREFOX_WINDOW_ID
+```
 
 The continuous worker and every `browser.py` command also share one filesystem
 operation lock. A manual inspection, composer review, or send therefore waits

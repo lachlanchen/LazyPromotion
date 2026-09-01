@@ -22,6 +22,7 @@ INBOX_URL="${LAZYPROMOTION_INBOX_URL:-https://www.icloud.com/mail/}"
 LINGQ_AFFILIATE_URL="https://www.lingq.com/settings/referrals"
 BOOKSHOP_AFFILIATE_URL="https://bookshop.org/affiliates/profile/introduction"
 POSTIZ_AFFILIATE_URL="https://partners.dub.co/postiz/apply"
+VIEWER_DISPLAY="${LAZYPROMOTION_VIEWER_DISPLAY:-:11}"
 NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
 AFFILIATE_NOVNC_URL="http://127.0.0.1:$AFFILIATE_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$AFFILIATE_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
 CAMPAIGN_NOVNC_URL="http://127.0.0.1:$CAMPAIGN_NOVNC_PORT/vnc.html?host=127.0.0.1&port=$CAMPAIGN_NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=1"
@@ -189,6 +190,55 @@ fit_window_loop() {
   done
 }
 
+valid_firefox_viewer() {
+  local window_id="$1"
+  local properties
+  properties="$(DISPLAY="$VIEWER_DISPLAY" xprop -id "$window_id" WM_CLASS _NET_WM_NAME 2>/dev/null || true)"
+  [[ "$properties" == *'firefox'* && "$properties" == *'noVNC'* ]]
+}
+
+navigate_firefox_viewer() {
+  local window_id="$1"
+  local url="$2"
+  valid_firefox_viewer "$window_id" || return 1
+  printf '%s' "$url" | DISPLAY="$VIEWER_DISPLAY" xclip -selection clipboard
+  DISPLAY="$VIEWER_DISPLAY" xdotool windowactivate --sync "$window_id"
+  sleep 0.5
+  DISPLAY="$VIEWER_DISPLAY" xdotool key --clearmodifiers ctrl+l ctrl+v Return
+}
+
+refresh_registered_viewers() {
+  local campaign_file="$RUNTIME_DIR/campaign-viewer.window"
+  local affiliate_file="$RUNTIME_DIR/affiliate-viewer.window"
+  [[ -f "$campaign_file" && -f "$affiliate_file" ]] || return 0
+  local campaign_viewer affiliate_viewer
+  campaign_viewer="$(<"$campaign_file")"
+  affiliate_viewer="$(<"$affiliate_file")"
+  navigate_firefox_viewer "$campaign_viewer" "$CAMPAIGN_NOVNC_URL" || return 1
+  navigate_firefox_viewer "$affiliate_viewer" "$AFFILIATE_NOVNC_URL" || return 1
+}
+
+register_viewers() {
+  local campaign_viewer="${1:-}"
+  local affiliate_viewer="${2:-}"
+  [[ -n "$campaign_viewer" && -n "$affiliate_viewer" && "$campaign_viewer" != "$affiliate_viewer" ]] || {
+    printf 'Usage: %s register-viewers CAMPAIGN_FIREFOX_WINDOW AFFILIATE_FIREFOX_WINDOW\n' "$0" >&2
+    return 2
+  }
+  valid_firefox_viewer "$campaign_viewer" || {
+    printf 'Campaign viewer is not a live Firefox noVNC window on %s.\n' "$VIEWER_DISPLAY" >&2
+    return 1
+  }
+  valid_firefox_viewer "$affiliate_viewer" || {
+    printf 'Affiliate viewer is not a live Firefox noVNC window on %s.\n' "$VIEWER_DISPLAY" >&2
+    return 1
+  }
+  printf '%s\n' "$campaign_viewer" >"$RUNTIME_DIR/campaign-viewer.window"
+  printf '%s\n' "$affiliate_viewer" >"$RUNTIME_DIR/affiliate-viewer.window"
+  refresh_registered_viewers
+  write_handoff
+}
+
 write_handoff() {
   {
     printf 'Current noVNC URL: %s\n' "$CAMPAIGN_NOVNC_URL"
@@ -200,6 +250,10 @@ write_handoff() {
     printf 'Profile: %s\n' "$PROFILE_DIR"
     printf 'tmux session: %s\n' "$TMUX_SESSION"
     printf 'Owned PID files: %s/*.pid\n' "$RUNTIME_DIR"
+    if [[ -f "$RUNTIME_DIR/campaign-viewer.window" && -f "$RUNTIME_DIR/affiliate-viewer.window" ]]; then
+      printf 'Campaign Firefox viewer: %s on %s\n' "$(<"$RUNTIME_DIR/campaign-viewer.window")" "$VIEWER_DISPLAY"
+      printf 'Affiliate Firefox viewer: %s on %s\n' "$(<"$RUNTIME_DIR/affiliate-viewer.window")" "$VIEWER_DISPLAY"
+    fi
   } >"$RUNTIME_DIR/handoff.txt"
 }
 
@@ -367,6 +421,7 @@ serve() {
 start() {
   if status >/dev/null 2>&1; then
     status
+    refresh_registered_viewers || printf 'The stack is healthy, but registered Firefox viewers could not be refreshed.\n' >&2
     return 0
   fi
   if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
@@ -389,6 +444,7 @@ start() {
     sleep 0.25
   done
   status
+  refresh_registered_viewers || printf 'The stack started, but registered Firefox viewers could not be refreshed.\n' >&2
 }
 
 stop() {
@@ -403,7 +459,8 @@ case "${1:-status}" in
   start) start ;;
   stop) stop ;;
   restart) stop; start ;;
+  register-viewers) register_viewers "${2:-}" "${3:-}" ;;
   status) status ;;
   _serve) serve ;;
-  *) printf 'Usage: %s {start|stop|restart|status}\n' "$0" >&2; exit 2 ;;
+  *) printf 'Usage: %s {start|stop|restart|status|register-viewers}\n' "$0" >&2; exit 2 ;;
 esac

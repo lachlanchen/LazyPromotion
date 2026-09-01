@@ -53,6 +53,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('restore_browser_workspace', script)
         self.assertIn('campaign.window', script)
         self.assertIn('affiliate.window', script)
+        self.assertIn('campaign-viewer.window', script)
+        self.assertIn('affiliate-viewer.window', script)
+        self.assertIn('register-viewers', script)
+        self.assertIn('refresh_registered_viewers', script)
         self.assertNotIn('normal_index % 2', script)
 
     def test_screenshot_failure_does_not_discard_discovery(self):

@@ -66,6 +66,10 @@ COMMENT_REQUEST_PHRASES = {
     "推荐", "推薦", "想学", "想學", "需要", "看不懂", "读不懂", "讀不懂",
     "どうやって", "おすすめ", "教えて", "困って", "読めない", "分からない",
 }
+SELF_SOLUTION_PHRASES = {
+    "i built", "i created", "i launched", "my new tool", "my new app",
+    "we built", "we created", "we launched", "our new tool", "our new app",
+}
 BOT_AUTHORS = {"automoderator"}
 GENERIC_REPO_TOPICS = {
     "ai", "app", "automation", "cli", "code", "codex", "current", "currently",
@@ -106,6 +110,7 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
           triage_confidence TEXT NOT NULL DEFAULT '',
           triage_risk_flags TEXT NOT NULL DEFAULT '[]',
           triaged_at TEXT NOT NULL DEFAULT '',
+          triage_requested_at TEXT NOT NULL DEFAULT '',
           created_at TEXT NOT NULL,
           updated_at TEXT NOT NULL
         );
@@ -216,6 +221,7 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         "triage_confidence": "TEXT NOT NULL DEFAULT ''",
         "triage_risk_flags": "TEXT NOT NULL DEFAULT '[]'",
         "triaged_at": "TEXT NOT NULL DEFAULT ''",
+        "triage_requested_at": "TEXT NOT NULL DEFAULT ''",
     }
     for column, definition in migrations.items():
         if column not in columns:
@@ -385,10 +391,19 @@ def help_request_signals(body: str) -> dict[str, list[str]]:
     tokens = set(haystack.split())
     intent_hits = sorted(HELP_SIGNALS & tokens)
     intent_hits.extend(sorted(phrase for phrase in HELP_PHRASES if phrase in haystack))
+    direct_request_hits = sorted(
+        phrase for phrase in COMMENT_REQUEST_PHRASES if phrase in haystack
+    )
+    self_solution_hits = sorted(
+        phrase for phrase in SELF_SOLUTION_PHRASES if phrase in haystack
+    )
     return {
         "intent_hits": sorted(set(intent_hits)),
         "spam_hits": sorted(signal for signal in SPAM_SIGNALS if signal in haystack),
         "out_of_scope_hits": sorted(signal for signal in OUT_OF_SCOPE_SIGNALS if signal in haystack),
+        "existing_solution_hits": (
+            self_solution_hits if self_solution_hits and not direct_request_hits else []
+        ),
     }
 
 
@@ -410,6 +425,7 @@ def is_help_request(body: str) -> bool:
     return bool(
         (signals["intent_hits"] or ask_hn) and explicit
         and not signals["spam_hits"] and not signals["out_of_scope_hits"]
+        and not signals["existing_solution_hits"]
     )
 
 
@@ -483,7 +499,8 @@ def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict
     intent_hits = signals["intent_hits"]
     spam_hits = signals["spam_hits"]
     out_of_scope_hits = signals["out_of_scope_hits"]
-    if not intent_hits or spam_hits or out_of_scope_hits:
+    existing_solution_hits = signals["existing_solution_hits"]
+    if not intent_hits or spam_hits or out_of_scope_hits or existing_solution_hits:
         return []
     ranked = []
     for project in catalog["projects"]:
@@ -625,6 +642,13 @@ def ingest_candidate(
     triage_input_changed = existing and (
         compact(existing["body"]) != body or existing["suggested_tool"] != suggested_tool
     )
+    if triage_input_changed:
+        # A route admitted the earlier text, not this newly hydrated or changed
+        # version. Require the current evidence to pass the route again.
+        db.execute(
+            "UPDATE candidates SET triage_requested_at='' WHERE id=?",
+            (candidate_id,),
+        )
     if triage_input_changed and existing["status"] in {"triaged", "rejected", "drafted"}:
         if existing["status"] == "drafted":
             db.execute(
@@ -661,6 +685,37 @@ def ingest_candidate(
     )
     db.commit()
     return row_dict(db.execute("SELECT * FROM candidates WHERE id = ?", (candidate_id,)).fetchone()) or {}
+
+
+def mark_triage_requested(
+    db: sqlite3.Connection,
+    candidate_ids: list[str],
+) -> list[str]:
+    """Admit reviewed, discovered candidates to the retryable model queue."""
+    requested = []
+    now = utc_now()
+    for candidate_id in dict.fromkeys(candidate_ids):
+        row = db.execute(
+            "SELECT status, triage_requested_at FROM candidates WHERE id=?",
+            (candidate_id,),
+        ).fetchone()
+        if not row or row["status"] != "discovered":
+            continue
+        if not row["triage_requested_at"]:
+            db.execute(
+                "UPDATE candidates SET triage_requested_at=? WHERE id=?",
+                (now, candidate_id),
+            )
+            db.execute(
+                """
+                INSERT INTO events(candidate_id, kind, detail, created_at)
+                VALUES (?, 'triage_requested', 'reviewed discovery route admission', ?)
+                """,
+                (candidate_id, now),
+            )
+        requested.append(candidate_id)
+    db.commit()
+    return requested
 
 
 def project_by_id(project_id: str) -> dict[str, Any]:
@@ -1301,7 +1356,8 @@ def main() -> int:
             dict(row) for row in db.execute(
                 """
                 SELECT * FROM candidates
-                WHERE status='discovered' AND lower(author) NOT IN ('automoderator')
+                WHERE status='discovered' AND triage_requested_at != ''
+                  AND lower(author) NOT IN ('automoderator')
                 ORDER BY published_at DESC, score DESC, created_at DESC
                 LIMIT ?
                 """,

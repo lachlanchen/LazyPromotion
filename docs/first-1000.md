@@ -69,7 +69,9 @@ payment data, or private corpus text in the promotion repository.
 ## Repeatable promotion loop
 
 1. Discover one current, specific problem involving private documents, local
-   search, citations, or multilingual reading.
+   search, citations, or multilingual reading. Buyer-intent routes require the
+   hydrated body—not only search syntax—to prove ownership, a search task, and
+   a local/privacy constraint before spending model quota.
 2. Give the person a useful standalone answer. On communities with strict
    self-promotion norms, keep the reply value-only and let the profile do the
    quiet discovery work.

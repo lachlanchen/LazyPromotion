@@ -35,6 +35,7 @@ class WorkerTests(unittest.TestCase):
             body="Ask HN: How should I build a private local knowledge base",
             published_at=self.now,
         )
+        promotion.mark_triage_requested(self.db, [backlog["id"]])
         current = promotion.ingest_candidate(
             self.db,
             platform="reddit",
@@ -52,6 +53,35 @@ class WorkerTests(unittest.TestCase):
         )
         selected = worker.pending_candidate_ids(self.db, [current["id"]], 2)
         self.assertEqual(selected, [current["id"], backlog["id"]])
+
+    def test_filtered_discovery_does_not_enter_model_backlog(self):
+        filtered = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/filtered/help/",
+            author="reader",
+            body="Can someone recommend private local search for my PDF collection?",
+            published_at=self.now,
+        )
+        self.assertEqual(filtered["triage_requested_at"], "")
+        self.assertEqual(worker.pending_candidate_ids(self.db, [], 1), [])
+
+    def test_model_failure_remains_retryable_only_after_route_admission(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/retry/help/",
+            author="reader",
+            body="Can someone recommend private local search for my PDF collection?",
+            published_at=self.now,
+        )
+        promotion.mark_triage_requested(self.db, [candidate["id"]])
+        with patch("promotion.open_db", return_value=self.db), patch(
+            "promotion.run_codex_triage", side_effect=RuntimeError("temporary model failure")
+        ):
+            result = worker.run_models([candidate["id"]], max_triage=1, max_drafts=0)
+        self.assertEqual(result["errors"][0]["stage"], "triage")
+        self.assertEqual(worker.pending_candidate_ids(self.db, [], 1), [candidate["id"]])
 
     def test_review_queue_only_contains_latest_unsent_draft(self):
         candidate = promotion.ingest_candidate(

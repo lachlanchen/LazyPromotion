@@ -61,6 +61,18 @@ MCP convenience never bypasses the review contract:
 5. Use `promotion.py approve` and `browser.py send`; never ask a generic MCP
    click/type tool to perform the public send.
 
+Search syntax is not treated as evidence that a result matches. Reviewed
+high-intent routes may define `required_body_groups`; after the full body is
+hydrated, each group must contribute a distinct signal such as ownership,
+document-search intent, and local/privacy need. `excluded_body_any` prevents a
+self-announced tool from consuming model quota on a buyer-intent route. The
+general help detector makes the same distinction, while still allowing a
+builder who states a direct unresolved request.
+Only candidates that pass these gates receive the durable model-triage
+admission marker. Failed model calls can retry from that admitted backlog;
+unqualified search results remain available as private research evidence but
+cannot consume later model capacity.
+
 ## Verification and fallback
 
 Check the package and advertised CDP option without launching another browser:

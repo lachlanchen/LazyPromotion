@@ -55,6 +55,11 @@ flowchart LR
   context; for example, `local RAG` must occur with an LLM, retrieval, document,
   PDF, embedding, vector-database, or knowledge-base signal so the newspaper
   idiom “local rag” is not treated as product demand.
+- Evidence-gated routes: high-intent searches can require separate ownership,
+  task, and privacy/local signal groups in the hydrated body. Search-engine
+  Boolean leakage therefore cannot spend model quota on unrelated results, and
+  self-announced tools are excluded unless the author states a direct unresolved
+  request.
 - Exact approval: changing the draft invalidates its short-lived approval.
 - Exact delivery: Reddit records the matching comment thing IDs before the
   public click and accepts only a new exact-body ID afterward, for both
@@ -217,8 +222,10 @@ logs, candidates, model decisions, screenshots, and the exact draft review
 queue live under ignored `.local/` paths. Instagram portfolio and promotional
 posts or comments are discarded unless their own text contains an explicit
 request.
-Any remaining triage capacity drains the freshest timestamped request backlog,
-so a transient model failure cannot strand a genuine need indefinitely.
+Any remaining triage capacity drains only the freshest timestamped requests
+that previously passed a reviewed route. A durable admission marker lets a
+transient model failure retry without allowing filtered search noise into the
+model backlog.
 Continuous mode never approves,
 submits, votes, follows, or sends a direct message.
 It also generates Reddit drafts in value-only mode by default. A project mention

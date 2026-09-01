@@ -106,18 +106,38 @@ def review_queue(db) -> list[dict]:
 def pending_candidate_ids(db, preferred_ids: list[str], limit: int) -> list[str]:
     if limit <= 0:
         return []
-    rows = {
+    preferred_ids = list(dict.fromkeys(preferred_ids))
+    rows = {}
+    if preferred_ids:
+        placeholders = ",".join("?" for _ in preferred_ids)
+        rows.update({
+            row["id"]: dict(row)
+            for row in db.execute(
+                f"""
+                SELECT * FROM candidates
+                WHERE status='discovered' AND published_at != ''
+                  AND id IN ({placeholders})
+                """,
+                preferred_ids,
+            ).fetchall()
+        })
+    rows.update({
         row["id"]: dict(row)
         for row in db.execute(
             """
             SELECT * FROM candidates
             WHERE status='discovered' AND published_at != ''
+              AND triage_requested_at != ''
             ORDER BY published_at DESC, score DESC, updated_at DESC
             LIMIT 500
             """
         ).fetchall()
-    }
-    ordered = [*preferred_ids, *rows]
+    })
+    retryable = [
+        candidate_id for candidate_id, candidate in rows.items()
+        if candidate.get("triage_requested_at")
+    ]
+    ordered = [*preferred_ids, *retryable]
     selected = []
     for candidate_id in ordered:
         candidate = rows.get(candidate_id)

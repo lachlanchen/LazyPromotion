@@ -198,6 +198,23 @@ def load_discovery_plan(path: Path = DISCOVERY_PLAN) -> dict[str, object]:
                 raise ValueError(f"{platform} discovery entry has an empty purpose")
             if "comment_query" in item and not promotion.compact(str(item["comment_query"])):
                 raise ValueError(f"{platform} discovery entry has an empty comment query")
+            groups = item.get("required_body_groups", [])
+            if not isinstance(groups, list) or any(
+                not isinstance(group, list)
+                or not group
+                or any(not promotion.compact(str(value)) for value in group)
+                for group in groups
+            ):
+                raise ValueError(
+                    f"{platform} discovery entry has invalid required body groups"
+                )
+            excluded = item.get("excluded_body_any", [])
+            if not isinstance(excluded, list) or any(
+                not promotion.compact(str(value)) for value in excluded
+            ):
+                raise ValueError(
+                    f"{platform} discovery entry has invalid body exclusions"
+                )
     return plan
 
 
@@ -266,6 +283,23 @@ def discovery_query_lanes(platform: str) -> dict[str, list[dict[str, str]]]:
     core = [dict(item) for item in plan["queries"][platform]]
     all_queries = discovery_queries(platform)
     return {"core": core, "long_tail": all_queries[len(core):]}
+
+
+def route_body_qualified(body: str, route: dict[str, object]) -> bool:
+    """Apply reviewed evidence gates after a search result has been hydrated."""
+    haystack = promotion.normalized(body)
+    groups = route.get("required_body_groups", [])
+    for group in groups if isinstance(groups, list) else []:
+        if not any(
+            promotion.keyword_present(promotion.normalized(str(term)).strip(), haystack)
+            for term in group
+        ):
+            return False
+    excluded = route.get("excluded_body_any", [])
+    return not any(
+        promotion.keyword_present(promotion.normalized(str(term)).strip(), haystack)
+        for term in excluded if promotion.normalized(str(term)).strip()
+    )
 
 
 def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
@@ -779,10 +813,13 @@ def run_discovery_cycle(
                 promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate["id"],)).fetchone())
                 for candidate in found_candidates
             ]
+            route_qualified = [
+                candidate for candidate in refreshed
+                if candidate and route_body_qualified(str(candidate.get("body") or ""), item)
+            ]
             matching = [
                 str(candidate["id"])
-                for candidate in refreshed
-                if candidate
+                for candidate in route_qualified
                 if candidate.get("status") == "discovered"
                 and int(candidate.get("score") or 0) >= 5
                 and candidate.get("suggested_tool") == project_id
@@ -790,9 +827,8 @@ def run_discovery_cycle(
             ]
             triageable = [
                 str(candidate["id"])
-                for candidate in refreshed
-                if candidate
-                and candidate.get("status") == "discovered"
+                for candidate in route_qualified
+                if candidate.get("status") == "discovered"
                 and promotion.is_triageable_request(
                     str(candidate.get("platform") or ""),
                     str(candidate.get("source_url") or ""),
@@ -801,6 +837,7 @@ def run_discovery_cycle(
                 and promotion.compact(str(candidate.get("author") or "")).casefold() not in promotion.BOT_AUTHORS
                 and not promotion.is_stale(str(candidate.get("published_at") or ""))
             ]
+            promotion.mark_triage_requested(db, triageable)
             eligible_ids.extend(candidate_id for candidate_id in matching if candidate_id not in eligible_ids)
             triage_ids.extend(candidate_id for candidate_id in triageable if candidate_id not in triage_ids)
             summary.update({
@@ -811,6 +848,8 @@ def run_discovery_cycle(
                     for found in discoveries
                 },
                 "hydrated": len(hydrated),
+                "route_qualified": len(route_qualified),
+                "route_filtered": len(refreshed) - len(route_qualified),
                 "hydrate_errors": [row for row in hydrated if not row["ok"]],
                 "eligible_candidate_ids": matching,
                 "triage_candidate_ids": triageable,

@@ -196,6 +196,24 @@ class PromotionTests(unittest.TestCase):
         body = "Need a video editor? I got you. DM me and follow for more."
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_existing_solution_announcement_does_not_spend_triage_quota(self):
+        body = (
+            "I created a private document search tool. You don't need to wait; "
+            "my tool searches local meeting PDFs and I linked it below."
+        )
+        signals = promotion.help_request_signals(body)
+        self.assertIn("i created", signals["existing_solution_hits"])
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
+    def test_builder_with_direct_unresolved_request_can_still_be_triaged(self):
+        body = (
+            "I built a rough local PDF index, but I need help with citations. "
+            "Can someone recommend a reliable design?"
+        )
+        self.assertEqual(promotion.help_request_signals(body)["existing_solution_hits"], [])
+        self.assertTrue(promotion.is_help_request(body))
+
     def test_rhetorical_comment_is_not_a_triageable_request(self):
         body = "Why does it need a camera? I could understand subtitles, but why a camera?"
         url = "https://www.reddit.com/r/example/comments/post123/title/comment456/"
@@ -291,6 +309,7 @@ class PromotionTests(unittest.TestCase):
             author="reader",
             body="How can I add accurate subtitles to my Instagram video?",
         )
+        promotion.mark_triage_requested(self.db, [candidate["id"]])
         promotion.save_triage(
             self.db,
             candidate["id"],
@@ -306,6 +325,7 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(refreshed["status"], "discovered")
         self.assertEqual(refreshed["triage_reason"], "")
         self.assertEqual(refreshed["triaged_at"], "")
+        self.assertEqual(refreshed["triage_requested_at"], "")
 
     def test_changed_drafted_candidate_invalidates_review_artifact(self):
         url = "https://www.reddit.com/r/example/comments/expanded/help/"

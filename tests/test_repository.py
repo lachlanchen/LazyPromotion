@@ -192,6 +192,32 @@ class RepositoryTests(unittest.TestCase):
             for route in reddit
         ))
 
+    def test_primary_lkt_offer_has_owned_collection_evidence_gates(self):
+        for platform in ("reddit", "x"):
+            routes = [
+                route for route in browser.discovery_query_lanes(platform)["core"]
+                if "owned-collection buyer intent" in route["purpose"].casefold()
+            ]
+            with self.subTest(platform=platform):
+                self.assertEqual(len(routes), 1)
+                route = routes[0]
+                self.assertEqual(route["project_id"], "localknowledgeterminal")
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertIn("i built", route["excluded_body_any"])
+                self.assertTrue(browser.route_body_qualified(
+                    "I have PDFs from my own collection. What should I use to "
+                    "search them locally without cloud upload?",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I built a private local PDF search tool and launched it today.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I have a private photo collection and need editing advice.",
+                    route,
+                ))
+
     def test_hacker_news_item_id_survives_canonicalization(self):
         rows = browser.dedupe(
             [{

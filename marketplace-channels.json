@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "checked_at": "2026-09-02",
+  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint where buyers already look for bounded technical services, without weakening the free fit check, privacy gate, or received-revenue accounting.",
+  "offer": {
+    "campaign_id": "local-knowledge-terminal-pilot",
+    "public_price": "USD 250",
+    "gross_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before platform and payout fees, taxes, refunds, and delivery costs.",
+    "public_page": "https://lazying.art/lkt/",
+    "sample_report": "https://lazying.art/lkt/sample-report/",
+    "fit_check": "https://lazying.art/lkt/fit-check/",
+    "scope_policy": "The marketplace route must preserve one collection, one language goal, one existing machine, the three published deliverables, and the existing exclusions. It must not invent a turnaround time, revision allowance, file limit, support term, benchmark, or customer result."
+  },
+  "channels": [
+    {
+      "rank": 1,
+      "id": "contra",
+      "state": "operator_registration_required",
+      "official_sources": {
+        "services": "https://help.contra.com/en/articles/9322412-how-to-add-services-to-your-contra-profile",
+        "fees": "https://help.contra.com/en/articles/9322934-fees-overview",
+        "pricing": "https://contra.com/pricing",
+        "identity": "https://help.contra.com/en/articles/9322955-how-to-verify-your-identity-on-contra",
+        "business_payout": "https://help.contra.com/en/articles/9708313-setting-up-payouts-with-business-credentials",
+        "terms": "https://contra.com/policies/terms"
+      },
+      "economics": "At a USD 250 service price, the current Free plan charges the client a USD 15 Contra platform fee plus the applicable payment-processing fee. The independent keeps the USD 250 service amount before payout-processor or currency-conversion fees, taxes, refunds, and delivery costs. Verify the live checkout before quoting any client total.",
+      "fit": "Best first route. Contra Services supports a one-time price, requirements, examples, and an inquiry before the work is contracted, which preserves the free collection-fit discussion.",
+      "activation_gates": [
+        "The operator registers once, reviews and accepts the current terms, and confirms the intended LazyingArt business identity.",
+        "The operator completes Persona identity verification and a supported payout route; no agent submits identity or bank information.",
+        "The live service editor is checked for current tags, media rules, fee display, contract flow, cancellation terms, and any required schedule or revision fields.",
+        "Any turnaround time, revision allowance, concurrent-work limit, sample size, cancellation term, or support promise is selected explicitly before publication.",
+        "The public sample report is used only as project-owned evidence, never as a customer result or testimonial.",
+        "Inquiry, proposal, contract, payment, revisions, and delivery evidence stay in the platform workflow when its rules require that.",
+        "The final listing preview preserves the source-rights, privacy, custom-OCR, hardware, and production-deployment boundaries."
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "upwork_project_catalog",
+      "state": "defer_until_listing_commitments_selected",
+      "official_sources": {
+        "project_catalog": "https://support.upwork.com/hc/en-us/articles/360057397533-How-to-create-a-project-in-Project-Catalog",
+        "freelancer_fee": "https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee",
+        "identity": "https://support.upwork.com/hc/en-us/articles/360001176427-How-to-verify-your-identity-as-a-freelancer",
+        "payout": "https://support.upwork.com/hc/en-us/articles/211060918-How-to-get-paid-on-Upwork",
+        "circumvention": "https://support.upwork.com/hc/en-us/articles/360052511133-Circumvention-and-why-it-s-against-the-rules"
+      },
+      "economics": "The freelancer fee is currently 0% to 15% per contract and is shown before proposal or offer acceptance. A USD 250 contract therefore produces USD 212.50 to USD 250 before payout fees, taxes, refunds, and delivery costs; four marketplace sales do not guarantee USD 1,000 net.",
+      "fit": "Strong fixed-scope mechanics and work-sample support, but Project Catalog requires explicit delivery days and revisions and reviews every listing. Use only after those operating commitments are selected."
+    },
+    {
+      "rank": 3,
+      "id": "fiverr",
+      "state": "defer_until_scope_is_proven",
+      "official_sources": {
+        "gig_creation": "https://help.fiverr.com/hc/en-us/articles/360010451397-Creating-a-Gig",
+        "earnings": "https://help.fiverr.com/hc/en-us/articles/9234443621137-Your-earnings-page",
+        "identity": "https://help.fiverr.com/hc/en-us/articles/6348992414097-Verifying-your-identity-as-a-new-freelancer",
+        "off_platform": "https://help.fiverr.com/hc/en-us/articles/38829943256465-Community-Standards-Off-platform-policy"
+      },
+      "economics": "Fiverr currently pays a freelancer 80% of the completed purchase amount. A USD 250 order produces USD 200 before payout fees, taxes, refunds, and delivery costs, so five completed unreversed orders would be needed to reach USD 1,000 before those costs.",
+      "fit": "Weakest first route. A directly orderable Gig is less compatible with the mandatory free fit check and sensitive collection scoping. Reconsider only after repeated deliveries make the scope safe to purchase without a pre-sale ambiguity."
+    }
+  ],
+  "contra_listing_packet": {
+    "state": "draft_only_not_registered_or_published",
+    "title": "Private Document Collection-Fit Sprint",
+    "one_line": "A bounded decision sprint for one authorized PDF, book, dictionary, or text collection that should stay on an existing local machine.",
+    "description": "Trying to decide whether a private collection belongs in a local, cited knowledge workflow? The free fit discussion first checks the collection, intended use, language goal, readers, source rights, privacy constraints, sample format, and existing machine. If the fit and written scope are accepted, the fixed USD 250 sprint covers one collection, one language goal, and one existing machine. You receive a written data, citation, and privacy map; a small browser proof from a usable representative sample; and a written go/no-go recommendation. Hardware, shipping, custom OCR, and production deployment are excluded.",
+    "requirements": [
+      "Describe the collection and the task a reader should be able to perform; do not attach confidential source material during the first inquiry.",
+      "State the language goal and intended readers.",
+      "Confirm that you have the right to use the material.",
+      "Describe the format and approximate size, including whether PDFs are searchable text or scanned images.",
+      "Describe the existing machine and any offline or privacy constraint."
+    ],
+    "evidence": [
+      "Use the public sample fit report as a portfolio example only when the live platform permits the link or attachment.",
+      "Label every interface or generated product image as project-owned proof or a prototype-grounded concept.",
+      "Do not use the existing Reddit acknowledgement as a testimonial; it concerns a separate free educational archive."
+    ],
+    "operator_decisions_before_publish": [
+      "turnaround time",
+      "revision allowance",
+      "maximum concurrent sprints",
+      "representative sample handling and size",
+      "cancellation and refund terms",
+      "support boundary",
+      "exact live Contra role, tool, and industry tags"
+    ],
+    "revenue_policy": "A listing view, inquiry, proposal, signed contract, platform balance, or pending payout is not received revenue. Record the sale and money only after the platform payment and private evidence meet the existing metrics gates."
+  }
+}

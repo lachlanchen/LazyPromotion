@@ -179,6 +179,14 @@ The operational funnel is:
 
 `helpful interaction → fit inquiry → qualified lead → scope accepted → Stripe payment → delivered sprint`
 
+A complementary buyer-intent route is prepared in the [LKT marketplace
+packet](lkt-marketplaces.md). Contra Services ranks first because its inquiry
+flow can preserve the free fit check. The listing remains a draft until the
+operator completes registration and identity/payout setup and explicitly
+selects every delivery, revision, sample, cancellation, refund, and support
+commitment. Upwork and Fiverr remain deferred. A marketplace inquiry, contract,
+balance, or pending payout does not change the received-revenue total.
+
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it with the campaign `local-knowledge-terminal-pilot` and

@@ -84,6 +84,8 @@ flowchart LR
 | [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
 | [`docs/first-1000.md`](docs/first-1000.md) | One repeatable USD 250 LKT collection-fit sprint and its truthful four-sale milestone |
+| [`docs/lkt-marketplaces.md`](docs/lkt-marketplaces.md) | Evidence-backed Contra-first service-listing route, exact offer copy, operator gates, and marketplace fee boundaries |
+| [`marketplace-channels.json`](marketplace-channels.json) | Current Contra, Upwork, and Fiverr comparison plus a fail-closed LKT listing packet |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
 | [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger, including received affiliate commission and reversals |
 | [`affiliate-programs.json`](affiliate-programs.json) | Public, priority-ordered affiliate candidates matched to exact LazyingArt assets, official evidence, disclosures, prohibited actions, and fail-closed gates |

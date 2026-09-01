@@ -763,6 +763,33 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized)
         self.assertNotIn("post_id", serialized)
 
+    def test_lkt_marketplace_packet_preserves_fit_and_revenue_gates(self):
+        path = ROOT / "marketplace-channels.json"
+        packet = json.loads(path.read_text(encoding="utf-8"))
+        serialized = path.read_text(encoding="utf-8").casefold()
+        self.assertEqual(packet["version"], 1)
+        self.assertEqual(packet["offer"]["public_price"], "USD 250")
+        self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
+        self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
+        channels = sorted(packet["channels"], key=lambda row: row["rank"])
+        self.assertEqual(
+            [row["id"] for row in channels],
+            ["contra", "upwork_project_catalog", "fiverr"],
+        )
+        self.assertEqual(channels[0]["state"], "operator_registration_required")
+        self.assertIn("usd 15", channels[0]["economics"].casefold())
+        self.assertIn("0% to 15%", channels[1]["economics"])
+        self.assertIn("80%", channels[2]["economics"])
+        listing = packet["contra_listing_packet"]
+        self.assertEqual(listing["state"], "draft_only_not_registered_or_published")
+        self.assertIn("custom OCR", listing["description"])
+        self.assertIn("source material", " ".join(listing["requirements"]))
+        self.assertIn("pending payout", listing["revenue_policy"])
+        self.assertNotIn("confirmed customer", serialized)
+        self.assertNotIn("received usd", serialized)
+        self.assertNotIn("account_id", serialized)
+        self.assertNotIn("payout_id", serialized)
+
     def test_reply_prompt_uses_quiet_profile_led_promotion(self):
         candidate = {
             "platform": "reddit",

@@ -1,8 +1,11 @@
 # LazyBlog editorial polish ledger
 
-Last verified: 2026-09-01 (Asia/Hong_Kong)  
-BLOG repository: `lachlanchen/LazyBlog`  
-Verified BLOG commit: `a6f89ac`  
+Last verified: 2026-09-01 (Asia/Hong_Kong)
+
+BLOG repository: `lachlanchen/LazyBlog`
+
+Verified BLOG commit: `a6f89ac`
+
 Campaign range: `3b45351^..a6f89ac`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:

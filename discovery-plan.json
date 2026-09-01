@@ -74,7 +74,13 @@
       {
         "project_id": "pocketpolyglot",
         "query": "(\"Classical Chinese\" OR wenyan OR wenyanwen) (help OR reader OR translation)",
-        "purpose": "Classical Chinese learners asking for an aligned multilingual reading format"
+        "purpose": "Classical Chinese learners asking for an aligned multilingual reading format",
+        "required_body_groups": [
+          ["classical chinese", "wenyan", "wenyanwen", "文言文"],
+          ["reader", "reading", "book", "edition", "parallel text", "bilingual", "translation", "resource", "learn", "study"],
+          ["help", "recommend", "looking for", "need", "what should", "which", "where can", "anyone know", "does anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool"]
       },
       {
         "project_id": "lingualleaf",
@@ -172,7 +178,13 @@
       {
         "project_id": "pocketpolyglot",
         "query": "(\"Classical Chinese\" OR wenyan OR wenyanwen) (help OR reader OR translation) -filter:retweets",
-        "purpose": "Classical Chinese learners asking for an aligned multilingual reading format"
+        "purpose": "Classical Chinese learners asking for an aligned multilingual reading format",
+        "required_body_groups": [
+          ["classical chinese", "wenyan", "wenyanwen", "文言文"],
+          ["reader", "reading", "book", "edition", "parallel text", "bilingual", "translation", "resource", "learn", "study"],
+          ["help", "recommend", "looking for", "need", "what should", "which", "where can", "anyone know", "does anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool"]
       },
       {
         "project_id": "localknowledgeterminal",

@@ -218,6 +218,36 @@ class RepositoryTests(unittest.TestCase):
                     route,
                 ))
 
+    def test_classical_chinese_routes_require_a_reader_request(self):
+        for platform in ("reddit", "x"):
+            routes = [
+                route for route in browser.discovery_query_lanes(platform)["core"]
+                if route["project_id"] == "pocketpolyglot"
+                and "Classical Chinese learners" in route["purpose"]
+            ]
+            with self.subTest(platform=platform):
+                self.assertEqual(len(routes), 1)
+                route = routes[0]
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertIn("i built", route["excluded_body_any"])
+                self.assertTrue(browser.route_body_qualified(
+                    "I am studying Classical Chinese and need a bilingual reader. "
+                    "Which edition would you recommend?",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I built a Classical Chinese translation app and launched it today.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "Classical Chinese was important across East Asia.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I need help choosing a bilingual French reader.",
+                    route,
+                ))
+
     def test_hacker_news_item_id_survives_canonicalization(self):
         rows = browser.dedupe(
             [{

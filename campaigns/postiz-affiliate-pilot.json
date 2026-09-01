@@ -45,6 +45,20 @@
   "useful_content_plan": {
     "asset_limit_per_cycle": 3,
     "cycle_days": 30,
+    "published_assets": [
+      {
+        "published_at": "2026-09-02",
+        "language": "en",
+        "translations": [
+          "zh",
+          "ja"
+        ],
+        "title": "Postiz CLI and MCP: A Review-First Social Scheduling Workflow",
+        "url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
+        "tracking": "ordinary untracked links only",
+        "verification": "Public page returned HTTP 200; the exact title, primary sources, commercial boundary, and translation records were verified."
+      }
+    ],
     "assets": [
       "A reproducible review-first Postiz CLI and MCP setup guide using only official documentation and the operator's verified workflow.",
       "A provider-pitfall checklist covering media upload, live settings discovery, drafts, public release verification, and analytics boundaries.",
@@ -96,6 +110,19 @@
     "commission_reversed_minor": 0,
     "currency": "USD",
     "interpretation": "These zeroes describe an experiment that has not started; they are not authenticated Dub analytics."
+  },
+  "current_checkpoint_2026_09_02": {
+    "state": "one_useful_asset_live_before_application",
+    "affiliate_url_issued": false,
+    "useful_assets_published": 1,
+    "tracked_outbound_clicks": 0,
+    "signups_or_trials": 0,
+    "paid_referrals_confirmed": 0,
+    "commission_pending_minor": 0,
+    "commission_received_minor": 0,
+    "commission_reversed_minor": 0,
+    "currency": "USD",
+    "interpretation": "The owned tutorial is a verified publication milestone, not authenticated affiliate analytics or revenue. Its links remain untracked until every activation gate passes."
   },
   "acceptance_criteria": {
     "activation_gate": [

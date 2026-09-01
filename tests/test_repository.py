@@ -476,6 +476,14 @@ class RepositoryTests(unittest.TestCase):
             "commission_reversed_minor",
         ):
             self.assertEqual(baseline[key], 0)
+        checkpoint = campaign["current_checkpoint_2026_09_02"]
+        self.assertEqual(checkpoint["useful_assets_published"], 1)
+        self.assertFalse(checkpoint["affiliate_url_issued"])
+        self.assertEqual(checkpoint["commission_received_minor"], 0)
+        published = campaign["useful_content_plan"]["published_assets"]
+        self.assertEqual(len(published), 1)
+        self.assertEqual(published[0]["tracking"], "ordinary untracked links only")
+        self.assertTrue(published[0]["url"].startswith("https://blog.lazying.art/"))
         self.assertIn("may earn a commission", campaign["disclosures"]["blog"])
         self.assertIn("received commission", campaign["funnel"]["truth_policy"])
         self.assertIn(

@@ -113,12 +113,17 @@
       "conversion_event": "An attributed customer completes an eligible payment after the trial and the program confirms the referral.",
       "direct_url": "https://postiz.com/",
       "permitted_link_hosts": ["dub.co", "postiz.com"],
-      "matches": [
-        {
-          "asset": "docs/postiz.md and docs/open-source-evaluation.md",
-          "placement": "Firsthand review-first CLI/MCP tutorial and managed-versus-self-hosted comparison",
-          "reason": "LazyingArt already uses the product and can teach a real workflow, including who should self-host instead."
-        }
+    "matches": [
+      {
+        "asset": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
+        "placement": "Firsthand review-first CLI/MCP tutorial and managed-versus-self-hosted comparison",
+        "reason": "The live English guide with Chinese and Japanese translations teaches a real workflow, includes who should self-host instead, and currently uses ordinary untracked links only."
+      },
+      {
+        "asset": "docs/postiz.md and docs/open-source-evaluation.md",
+        "placement": "Technical implementation and open-source evaluation",
+        "reason": "The repository documents the tested integration and preserves the operational evidence behind the public tutorial."
+      }
       ],
       "application_pitch": "I run LazyingArt and maintain the open-source LazyPromotion project. I plan to promote Postiz through firsthand CLI/MCP tutorials, review-first publishing case studies, and an honest managed-versus-self-hosted comparison for solo builders and small teams. Links will appear only on relevant owned pages with a prominent affiliate disclosure. I will not use unsolicited messages, automated community replies, fake engagement, or undisclosed bots.",
       "disclosure": "Affiliate disclosure: I use Postiz and may earn a commission if you buy a subscription through this link.",

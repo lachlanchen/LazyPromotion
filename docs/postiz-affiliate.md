@@ -52,6 +52,13 @@ the link only after the answer, show free and self-hosted paths where they fit,
 and state real limitations. Do not scatter a bare referral link across social
 profiles, repositories, comments, or direct messages.
 
+The first asset is now live: [Postiz CLI and MCP: A Review-First Social
+Scheduling Workflow](https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html).
+It was published on 2026-09-02 in English with Chinese and Japanese
+translations. The page uses ordinary, untracked Postiz links and explicitly
+states that it earns no Postiz affiliate commission. This counts as one useful
+owned asset, not a click, referral, commission, or revenue event.
+
 ## Disclosure templates
 
 Blog or article:
@@ -84,6 +91,10 @@ The truthful funnel is:
 The 2026-09-01 baseline is an administrative zero: no application acceptance,
 referral URL, affiliate content, tracked click, referral, or commission has been
 verified. It is not an authenticated Dub analytics snapshot.
+
+At the 2026-09-02 checkpoint, one useful owned asset is publicly verifiable,
+while the referral URL, authenticated affiliate analytics, referrals,
+commissions, and received revenue remain zero.
 
 Keep dated aggregate clicks and signup or trial counts in a private
 `signals.py` snapshot. For example, after visibly reading the Dub dashboard,

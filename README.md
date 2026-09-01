@@ -86,6 +86,9 @@ flowchart LR
 | [`docs/first-1000.md`](docs/first-1000.md) | One repeatable USD 250 LKT collection-fit sprint and its truthful four-sale milestone |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
 | [`metrics.py`](metrics.py) | Private, evidence-gated funnel and confirmed gross-revenue ledger, including received affiliate commission and reversals |
+| [`affiliate-programs.json`](affiliate-programs.json) | Public, priority-ordered affiliate candidates matched to exact LazyingArt assets, official evidence, disclosures, prohibited actions, and fail-closed gates |
+| [`affiliate.py`](affiliate.py) | Sanitized application packets and explicit, secret-suppressing readiness checks over ignored private link records |
+| [`docs/affiliate-portfolio.md`](docs/affiliate-portfolio.md) | Contextual affiliate execution order, operator checklist, revenue semantics, holds, and revalidation contract |
 | [`blog_editorial.py`](blog_editorial.py) | Static count, identity, language, Markdown-structure, and manifest checks for the LazyBlog editorial ledger and four-file post bundles |
 | [`owned_monitor.py`](owned_monitor.py) | Read-only Postiz publication/engagement monitor that requires visible release verification, creates review alerts, stores no raw provider IDs, and never calls engagement a lead |
 | [`inbound_monitor.py`](inbound_monitor.py) | Read-only iCloud intake monitor that records only the dedicated LKT folder's aggregate counts and never opens or persists mail content |

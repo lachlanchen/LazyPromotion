@@ -1,0 +1,480 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-02",
+  "currency": "USD",
+  "revenue_event": "affiliate_commission_received",
+  "policy": "A program is only a candidate until LazyingArt is accepted, the exact current terms and payout route are reviewed, the issued link is privately tested, and a useful first-party page carries a nearby disclosure. A click, signup, pending commission, or referral is not revenue.",
+  "programs": [
+    {
+      "id": "lingq",
+      "name": "LingQ",
+      "priority": 1,
+      "state": "apply_first",
+      "official_urls": {
+        "program": "https://www.lingq.com/referral-affiliate-program/",
+        "terms": "https://www.lingq.com/terms/",
+        "application": "https://www.lingq.com/settings/referrals"
+      },
+      "public_economics": "20% of payments by an attributed user while that user remains active; the public page says registration establishes continuing attribution.",
+      "unknowns": [
+        "Confirm current eligible payment types, reversals, tax treatment, and cash-out rules inside the account before activation."
+      ],
+      "conversion_event": "An attributed new user registers and later makes an eligible payment.",
+      "direct_url": "https://www.lingq.com/",
+      "permitted_link_hosts": ["lingq.com"],
+      "matches": [
+        {
+          "asset": "BLOG post 1752",
+          "placement": "Japanese grammar and practice guide",
+          "reason": "A reader who wants listening and reading practice after the explanation has a concrete next step."
+        },
+        {
+          "asset": "PocketPolyglot-public",
+          "placement": "Kokoro interlinear reading workflow",
+          "reason": "The workflow demonstrates multilingual reading; it must not upload material without clear import rights."
+        }
+      ],
+      "application_pitch": "LazyingArt publishes multilingual reading and language-learning workflows grounded in PocketPolyglot and LinguaLeaf. I will use one clearly disclosed link only in relevant first-party guides, describe who LingQ fits and does not fit, and avoid spam, bots, scraped content, or brand-keyword advertising.",
+      "disclosure": "Affiliate disclosure: if you register through this link and later purchase a plan, LazyingArt may receive a commission at no extra cost to you.",
+      "activation_gates": ["accepted", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["spam", "bots", "cookie stuffing", "brand-keyword ads", "uploading content without rights"]
+    },
+    {
+      "id": "bookshop",
+      "name": "Bookshop.org",
+      "priority": 2,
+      "state": "apply_first",
+      "official_urls": {
+        "program": "https://bookshop.org/affiliates/profile/introduction",
+        "terms": "https://support.bookshop.org/en/support/solutions/articles/65000191390-can-you-explain-bookshop-org-s-affiliate-program-",
+        "application": "https://bookshop.org/affiliates/profile/introduction"
+      },
+      "public_economics": "The US program publicly advertises 10% for ordinary affiliates, with a 48-hour last-touch attribution window.",
+      "unknowns": ["Confirm LazyingArt's eligible storefront and accepted rate before placing a link."],
+      "conversion_event": "A qualifying reader purchases a book in the eligible storefront within the reviewed attribution window.",
+      "direct_url": "https://bookshop.org/",
+      "permitted_link_hosts": ["bookshop.org"],
+      "matches": [
+        {
+          "asset": "BLOG post 1498",
+          "placement": "How to Solve It reading note",
+          "reason": "The exact book is a natural companion to the existing reading note."
+        },
+        {
+          "asset": "BLOG post 3167",
+          "placement": "Classical mechanics learning path",
+          "reason": "A conventional exercise text can fill the practice gap identified by the guide."
+        }
+      ],
+      "application_pitch": "LazyingArt publishes specific reading notes and open educational archives. I will link only the exact edition or curated book discussed by a useful first-party article, disclose the relationship beside the link, and preserve a plain non-affiliate route.",
+      "disclosure": "Disclosure: LazyingArt is a Bookshop.org affiliate and may earn a commission if you click through and buy.",
+      "activation_gates": ["accepted", "storefront_eligibility_confirmed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["undisclosed links", "unavailable-region claims", "unverified price claims", "unrelated book lists"]
+    },
+    {
+      "id": "waveshare",
+      "name": "Waveshare",
+      "priority": 3,
+      "state": "apply_first",
+      "official_urls": {
+        "program": "https://www.waveshare.com/join_affiliate.html",
+        "terms": "https://www.waveshare.com/join_affiliate.html",
+        "application": "https://www.waveshare.com/join_affiliate.html"
+      },
+      "public_economics": "2% base commission; at least 72 hours of link tracking; the public page states a USD 5 PayPal threshold.",
+      "unknowns": ["Confirm the exact product, region, commission approval, returns, and payout deductions before activation."],
+      "conversion_event": "An attributed official-store order is received, completed, reviewed, and approved.",
+      "direct_url": "https://www.waveshare.com/",
+      "permitted_link_hosts": ["waveshare.com"],
+      "matches": [
+        {
+          "asset": "BLOG post 3096 and EinkWordsGPT",
+          "placement": "Archived Raspberry Pi 5 plus 7.3-inch seven-color e-paper build",
+          "reason": "The demonstrated build names the maker and hardware; the current LKT e-ink adapter remains unavailable."
+        }
+      ],
+      "application_pitch": "LazyingArt maintains an archived Raspberry Pi/e-paper word-card build and a current multilingual knowledge-terminal project. I will refer only from an exact build page, require readers to verify model and interface compatibility, and never impersonate Waveshare or use hidden, automated, or misleading links.",
+      "disclosure": "Affiliate disclosure: LazyingArt may receive a commission from an approved Waveshare order made through this link.",
+      "activation_gates": ["accepted", "exact_hardware_verified", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["simulated purchases", "hidden links", "intrusive pop-ups", "official-site impersonation", "search-engine direct-link submission", "third-party seller steering"]
+    },
+    {
+      "id": "postiz",
+      "name": "Postiz",
+      "priority": 4,
+      "state": "apply_first",
+      "official_urls": {
+        "program": "https://partners.dub.co/postiz/apply",
+        "terms": "https://postiz.com/terms-of-service",
+        "application": "https://partners.dub.co/postiz/apply"
+      },
+      "public_economics": "The Postiz-branded Dub page publicly advertises 30% per sale for the referred customer's lifetime.",
+      "unknowns": ["Cookie duration, eligible plans, reversals, payout threshold, and controlling affiliate terms require accepted-dashboard review."],
+      "conversion_event": "An attributed customer completes an eligible payment after the trial and the program confirms the referral.",
+      "direct_url": "https://postiz.com/",
+      "permitted_link_hosts": ["dub.co", "postiz.com"],
+      "matches": [
+        {
+          "asset": "docs/postiz.md and docs/open-source-evaluation.md",
+          "placement": "Firsthand review-first CLI/MCP tutorial and managed-versus-self-hosted comparison",
+          "reason": "LazyingArt already uses the product and can teach a real workflow, including who should self-host instead."
+        }
+      ],
+      "application_pitch": "I run LazyingArt and maintain the open-source LazyPromotion project. I plan to promote Postiz through firsthand CLI/MCP tutorials, review-first publishing case studies, and an honest managed-versus-self-hosted comparison for solo builders and small teams. Links will appear only on relevant owned pages with a prominent affiliate disclosure. I will not use unsolicited messages, automated community replies, fake engagement, or undisclosed bots.",
+      "disclosure": "Affiliate disclosure: I use Postiz and may earn a commission if you buy a subscription through this link.",
+      "activation_gates": ["accepted", "controlling_terms_reviewed", "issued_link_present", "destination_tested", "attribution_tested_without_purchase", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["unsolicited messages", "automated community replies", "fake engagement", "undisclosed bots", "platform-rule violations"]
+    },
+    {
+      "id": "kobo",
+      "name": "Rakuten Kobo",
+      "priority": 5,
+      "state": "apply_second",
+      "official_urls": {
+        "program": "https://www.kobo.com/gb/en/p/affiliate",
+        "terms": "https://rakutenadvertising.com/legal-notices/affiliate-network-policies/",
+        "application": "https://www.kobo.com/gb/en/p/affiliate"
+      },
+      "public_economics": "Up to 5% on eligible ebooks, audiobooks, and devices; up to 10% on accessories; 14-day tracking.",
+      "unknowns": ["Accepted Kobo offer, region, exact SKU rate, network payment method, and advertiser funding control the result."],
+      "conversion_event": "A qualifying purchase or subscription is attributed within the accepted offer's window.",
+      "direct_url": "https://www.kobo.com/",
+      "permitted_link_hosts": ["kobo.com", "rakutenadvertising.com", "linksynergy.com"],
+      "matches": [
+        {
+          "asset": "PocketPolyglot-public",
+          "placement": "Color versus black-and-white multilingual e-reader edition guide",
+          "reason": "Readers can compare devices for their own files; PocketPolyglot PDFs are not represented as Kobo products."
+        }
+      ],
+      "application_pitch": "LazyingArt publishes multilingual, rights-aware reading workflows and e-reader-ready PocketPolyglot editions. I will provide device and format comparisons with regional caveats, current disclosures, and no implication that Kobo sells LazyingArt PDFs.",
+      "disclosure": "Affiliate disclosure: LazyingArt may earn a commission from an eligible Kobo purchase through this link, at no extra cost to you.",
+      "activation_gates": ["accepted", "regional_offer_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["artificial traffic", "misleading claims", "fabricated reviews", "fabricated urgency", "unverified prices"]
+    },
+    {
+      "id": "proton",
+      "name": "Proton",
+      "priority": 6,
+      "state": "apply_second",
+      "official_urls": {
+        "program": "https://proton.me/partners/affiliates",
+        "terms": "https://proton.me/partners/affiliates",
+        "application": "https://proton.me/partners/affiliates"
+      },
+      "public_economics": "The public program currently lists product-dependent new-sale and renewal percentages; exact eligible products and payout terms require account review.",
+      "unknowns": ["Confirm the accepted product schedule, country eligibility, payout minimum, renewal definition, and reversals."],
+      "conversion_event": "A new eligible customer completes a qualifying paid purchase and the network approves it.",
+      "direct_url": "https://proton.me/",
+      "permitted_link_hosts": ["proton.me"],
+      "matches": [
+        {
+          "asset": "BLOG posts 1141 and 1143",
+          "placement": "Privacy and mail workflow companion",
+          "reason": "Use a current product comparison; never mislabel Proton Drive as a WebDAV provider."
+        }
+      ],
+      "application_pitch": "LazyingArt publishes privacy-conscious self-hosting and email workflows. I will use one disclosed comparison link on audited first-party guides, send paid traffic only to my own explanatory page if ever approved, and make no unsupported protocol or security claims.",
+      "disclosure": "Affiliate disclosure: LazyingArt may earn a commission if you purchase an eligible Proton plan through this link.",
+      "activation_gates": ["accepted", "product_schedule_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["spam", "deceptive claims", "cookie stuffing", "brand-keyword ads", "direct affiliate-link paid traffic"]
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "priority": 7,
+      "state": "apply_second",
+      "official_urls": {
+        "program": "https://elevenlabs.io/affiliates",
+        "terms": "https://elevenlabs.io/affiliates",
+        "application": "https://elevenlabs.io/affiliates"
+      },
+      "public_economics": "The public page advertises plan-dependent commission for the first 12 months and a 90-day signup attribution window.",
+      "unknowns": ["Confirm eligible plans, the current PartnerStack offer, delayed commission availability, reversals, and payout terms."],
+      "conversion_event": "An attributed new subscriber makes an eligible paid purchase and the commission clears.",
+      "direct_url": "https://elevenlabs.io/",
+      "permitted_link_hosts": ["elevenlabs.io", "partnerstack.com"],
+      "matches": [
+        {
+          "asset": "LocalVideoGen and Musia",
+          "placement": "Consent-cleared narration comparison using owned text and voice rights",
+          "reason": "A real local-versus-cloud voice workflow can expose quality and control trade-offs."
+        }
+      ],
+      "application_pitch": "LazyingArt builds local video and original-music workflows. I will publish consent-cleared, rights-owned voice comparisons with audio and visual disclosures, document limitations, and avoid synthetic celebrity voices, fake coupons, paid-media promotion, or implied endorsement.",
+      "disclosure": "Affiliate disclosure: LazyingArt may earn a commission if you purchase ElevenLabs through this link; the demonstration uses consent-cleared material.",
+      "activation_gates": ["accepted", "rights_cleared_demo", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "audio_visual_disclosure_reviewed"],
+      "forbidden_actions": ["self-referral", "paid-media promotion", "brand-keyword ads", "fake coupons", "implied endorsement", "voice use without consent"]
+    },
+    {
+      "id": "digitalocean",
+      "name": "DigitalOcean",
+      "priority": 8,
+      "state": "rebuild_first",
+      "official_urls": {
+        "program": "https://www.digitalocean.com/affiliates",
+        "terms": "https://www.digitalocean.com/legal/affiliate-program-agreement",
+        "application": "https://www.digitalocean.com/affiliates"
+      },
+      "public_economics": "The public page advertises 10% of a referred new paying user's monthly spend for 12 months.",
+      "unknowns": ["The program page and its current network CTA have differed; resolve the controlling network and terms before applying."],
+      "conversion_event": "A new attributed user becomes eligible and incurs qualifying paid usage that clears review.",
+      "direct_url": "https://www.digitalocean.com/",
+      "permitted_link_hosts": ["digitalocean.com", "awin1.com", "ui.awin.com", "cj.com"],
+      "matches": [
+        {
+          "asset": "BLOG post 1569 and LazyEdge",
+          "placement": "Provider-neutral small-server deployment and reverse-tunnel guide",
+          "reason": "Rebuild the outdated personal-server article before any CTA; keep LazyEdge provider-neutral."
+        }
+      ],
+      "application_pitch": "LazyingArt maintains LazyEdge and practical deployment notes for small self-hosted services. I will first rebuild the outdated server guide, then place one disclosed comparison link only where DigitalOcean is a real fit, with cost and vendor-neutral alternatives.",
+      "disclosure": "Affiliate disclosure: LazyingArt may earn a commission from eligible DigitalOcean usage started through this link.",
+      "activation_gates": ["source_page_rebuilt", "accepted", "controlling_network_resolved", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["outdated setup advice", "hidden referral links", "guaranteed cost claims", "vendor lock-in claims", "unsolicited promotion"]
+    },
+    {
+      "id": "adobe",
+      "name": "Adobe",
+      "priority": 9,
+      "state": "apply_second",
+      "official_urls": {
+        "program": "https://www.adobe.com/affiliates.html",
+        "terms": "https://www.adobe.com/affiliates.html",
+        "application": "https://www.adobe.com/affiliates.html"
+      },
+      "public_economics": "The public page lists subscription-model commissions and a 30-day attribution window; exact product and country schedules control.",
+      "unknowns": ["Confirm Impact offer, region, eligible SKUs, renewals, reversals, and payout route."],
+      "conversion_event": "An attributed visitor purchases an eligible Adobe subscription or product under the accepted offer.",
+      "direct_url": "https://www.adobe.com/",
+      "permitted_link_hosts": ["adobe.com", "impact.com", "impactradius.com"],
+      "matches": [
+        {
+          "asset": "LocalVideoGen",
+          "placement": "Local generation to Premiere Pro or After Effects finishing workflow",
+          "reason": "A real export and finishing tutorial can compare the local pipeline with a commercial editor."
+        }
+      ],
+      "application_pitch": "LazyingArt maintains a local video-generation pipeline and will publish an exact export-to-finishing tutorial, including free and local alternatives. Links will be disclosed and attached only to demonstrated workflows without income or productivity guarantees.",
+      "disclosure": "Affiliate disclosure: LazyingArt may earn a commission from an eligible Adobe purchase made through this link.",
+      "activation_gates": ["accepted", "demonstrated_workflow", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["unverified pricing", "income claims", "fake discounts", "brand impersonation", "unrelated creative-software lists"]
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "priority": 10,
+      "state": "pilot_only",
+      "official_urls": {
+        "program": "https://affiliates.runwayml.com/",
+        "terms": "https://runwayml.com/terms-of-use/",
+        "application": "https://affiliates.runwayml.com/"
+      },
+      "public_economics": "No rate is committed from the public login portal; the exact current pilot offer must be reviewed after acceptance.",
+      "unknowns": ["Confirm that the pilot remains open, current reward, code, audience discount, eligible plans, region, and pilot end date."],
+      "conversion_event": "A new attributed customer completes an eligible paid subscription during the accepted pilot.",
+      "direct_url": "https://runwayml.com/",
+      "permitted_link_hosts": ["runwayml.com"],
+      "matches": [
+        {
+          "asset": "LocalVideoGen and LALACHAN",
+          "placement": "Identical-storyboard local-versus-cloud generation comparison",
+          "reason": "Only publish after both actual outputs exist and limitations are visible."
+        }
+      ],
+      "application_pitch": "LazyingArt produces original AI-video workflows and can publish an identical-storyboard comparison against a local pipeline. I will use actual owned outputs, disclose the relationship, and avoid claims before the comparison is reproducible.",
+      "disclosure": "Affiliate disclosure: LazyingArt may receive a reward if a new customer subscribes to an eligible Runway plan through this link.",
+      "activation_gates": ["pilot_open_confirmed", "accepted", "paired_outputs_complete", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["undemonstrated claims", "rights-uncleared media", "fake discounts", "fabricated output comparisons"]
+    },
+    {
+      "id": "envato",
+      "name": "Envato",
+      "priority": 11,
+      "state": "apply_second",
+      "official_urls": {
+        "program": "https://www.envato.com/affiliates",
+        "terms": "https://help.market.envato.com/hc/en-us/articles/42293429394329-Envato-s-Affiliate-Program-Terms",
+        "application": "https://www.envato.com/affiliates"
+      },
+      "public_economics": "Product-family commissions and attribution windows vary across Envato Market, Elements, and Placeit.",
+      "unknowns": ["Select one product family and confirm its current Impact offer, attribution, licensing, reversals, and payout terms."],
+      "conversion_event": "An attributed visitor makes an eligible purchase or subscription that clears the accepted offer.",
+      "direct_url": "https://envato.com/",
+      "permitted_link_hosts": ["envato.com", "themeforest.net", "elements.envato.com", "placeit.net", "impact.com", "impactradius.com"],
+      "matches": [
+        {
+          "asset": "LocalVideoGen and LazyEdit",
+          "placement": "Exact licensed template or asset used in a reproducible editing tutorial",
+          "reason": "Name the actual license and asset; never redistribute it or use it as generative-model input unless licensed."
+        }
+      ],
+      "application_pitch": "LazyingArt maintains video generation and editing tools. I will promote only exact assets used in reproducible tutorials, state the license boundary, preserve alternatives, and never redistribute licensed files or feed them into generative systems without permission.",
+      "disclosure": "Affiliate disclosure: LazyingArt may earn a commission if you buy an eligible Envato product through this link.",
+      "activation_gates": ["product_family_selected", "accepted", "asset_license_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["asset redistribution", "unlicensed generative input", "self-referral", "spam", "brand-keyword ads"]
+    },
+    {
+      "id": "coursera",
+      "name": "Coursera",
+      "priority": 12,
+      "state": "contextual_only",
+      "official_urls": {
+        "program": "https://www.coursera.org/about/affiliates",
+        "terms": "https://www.coursera.org/about/terms",
+        "application": "https://www.coursera.org/about/affiliates"
+      },
+      "public_economics": "The public page advertises 15–45% on eligible purchases with 30-day last-qualified-click attribution; offer eligibility varies.",
+      "unknowns": ["Confirm exact course or subscription eligibility in the accepted Impact offer; the public exclusions are not sufficient for a generic claim."],
+      "conversion_event": "A reader makes an eligible purchase within the accepted offer's attribution window.",
+      "direct_url": "https://www.coursera.org/",
+      "permitted_link_hosts": ["coursera.org", "impact.com", "impactradius.com"],
+      "matches": [
+        {
+          "asset": "BLOG post 3167",
+          "placement": "One exact prerequisite course for a demonstrated algebra, calculus, vector, or ODE gap",
+          "reason": "The course syllabus must actually fill the stated gap; no Susskind association is implied."
+        }
+      ],
+      "application_pitch": "LazyingArt maintains an open Leonard Susskind lecture archive and a prerequisite-first learning guide. I will link only a specific course whose current syllabus fills a named gap, disclose the relationship, and make no completion, certificate, career, or outcome promise.",
+      "disclosure": "Affiliate disclosure: LazyingArt may earn a commission from an eligible Coursera purchase made through this link.",
+      "activation_gates": ["specific_course_selected", "syllabus_verified", "accepted", "sku_eligibility_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["career promises", "completion promises", "certificate promises", "learning-outcome guarantees", "implied Susskind affiliation"]
+    },
+    {
+      "id": "wise",
+      "name": "Wise",
+      "priority": 13,
+      "state": "clarification_first",
+      "official_urls": {
+        "program": "https://wise.com/partners/affiliates",
+        "terms": "https://wise.com/help/articles/2977956/wise-affiliate-programme",
+        "application": "https://wise.com/partners/affiliates"
+      },
+      "public_economics": "Economics and attribution vary by accepted Partnerize offer, market, and customer type.",
+      "unknowns": ["Confirm US-company eligibility, country support, qualifying customer definition, reward, attribution, payout route, and paid-media rules."],
+      "conversion_event": "An attributed eligible customer completes the accepted offer's qualifying action and the reward clears.",
+      "direct_url": "https://wise.com/",
+      "permitted_link_hosts": ["wise.com", "partnerize.com", "prf.hn"],
+      "matches": [
+        {
+          "asset": "New LazyingArt LLC cross-border operations case study",
+          "placement": "Firsthand comparison of actual supported business payment routes",
+          "reason": "Build new current evidence; do not repurpose obsolete Skrill or Payza material."
+        }
+      ],
+      "application_pitch": "LazyingArt LLC will publish a firsthand, country-specific business payment comparison using only actually supported routes and current fees. Any referral will be disclosed on the explanatory page, with no fake free-transfer claim or direct paid-ad link.",
+      "disclosure": "Affiliate disclosure: LazyingArt may receive a reward if you complete an eligible Wise action through this link.",
+      "activation_gates": ["current_case_study_complete", "accepted", "offer_economics_reviewed", "country_support_verified", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["fake free-transfer claims", "unsupported-country claims", "direct paid-ad affiliate links", "brand-keyword ads", "obsolete payment advice"]
+    },
+    {
+      "id": "skrill",
+      "name": "Skrill / Paysafe Affiliates",
+      "priority": 14,
+      "state": "terms_conflict_review",
+      "official_urls": {
+        "program": "https://affiliates.skrill.com/",
+        "terms": "https://affiliates.skrill.com/terms_and_conditions.asp",
+        "application": "https://affiliates.skrill.com/registration.asp"
+      },
+      "public_economics": "The December 2023 public terms state 20% of defined Fee Revenue from referred accounts, 10% of sub-affiliate commission, and a USD 5 rollover threshold; only the controlling accepted terms govern.",
+      "unknowns": ["The public terms restrict disparagement and distinguish a Skrill USA affiliate route. Obtain written confirmation that LazyingArt's neutral due-diligence format and operator eligibility are accepted before applying."],
+      "conversion_event": "An attributed eligible user completes the accepted offer's qualifying action and a commission is received.",
+      "direct_url": "https://www.skrill.com/",
+      "permitted_link_hosts": ["skrill.com", "affiliates.skrill.com", "paysafe.com"],
+      "matches": [
+        {
+          "asset": "BLOG post 1379",
+          "placement": "Current neutral due-diligence guide after a new account-level review",
+          "reason": "The historical referral ID is intentionally inert and must never be revived as proof of current attribution."
+        }
+      ],
+      "application_pitch": "LazyingArt maintains a current, neutral Skrill due-diligence guide and will use only a newly issued, privately tested link after reviewing the accepted terms. I will disclose the relationship, avoid guaranteed savings or income claims, and never revive the historical referral identifier.",
+      "disclosure": "Affiliate disclosure: LazyingArt may receive a commission if you complete an eligible Skrill action through this link.",
+      "activation_gates": ["neutral_review_permission_confirmed_in_writing", "operator_eligibility_confirmed", "accepted", "current_offer_reviewed", "historical_link_remains_inert", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["old referral identifiers", "guaranteed savings", "income claims", "unsupported-country claims", "unreviewed financial advice"]
+    },
+    {
+      "id": "distrokid",
+      "name": "DistroKid",
+      "priority": 15,
+      "state": "conditional",
+      "official_urls": {
+        "program": "https://distrokid.com/affiliate/",
+        "terms": "https://distrokid.com/terms/",
+        "application": "https://distrokid.com/affiliate/"
+      },
+      "public_economics": "No public rate is committed; the exact affiliate or member-referral offer must be reviewed after rights-cleared distribution exists.",
+      "unknowns": ["Confirm whether the operator is eligible for the affiliate program or only a member referral, current reward, customer discount, attribution, and payout."],
+      "conversion_event": "A new attributed user completes an eligible paid signup and the reward clears.",
+      "direct_url": "https://distrokid.com/",
+      "permitted_link_hosts": ["distrokid.com"],
+      "matches": [
+        {
+          "asset": "Musia",
+          "placement": "Firsthand distribution diary for one wholly rights-cleared original master",
+          "reason": "No CTA until LazyingArt has actually completed the distribution workflow."
+        }
+      ],
+      "application_pitch": "LazyingArt creates original music in Musia. After a wholly rights-cleared master is genuinely distributed, I will publish a factual distribution diary with costs, limitations, alternatives, and a nearby disclosure.",
+      "disclosure": "Affiliate disclosure: LazyingArt may receive a reward if you join an eligible DistroKid plan through this link.",
+      "activation_gates": ["rights_cleared_master_distributed", "accepted", "offer_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["undistributed workflow claims", "rights-uncleared music", "royalty guarantees", "streaming-income claims"]
+    },
+    {
+      "id": "amazon-us",
+      "name": "Amazon Associates US",
+      "priority": 16,
+      "state": "delay",
+      "official_urls": {
+        "program": "https://affiliate-program.amazon.com/",
+        "terms": "https://affiliate-program.amazon.com/help/operating/agreement/",
+        "application": "https://affiliate-program.amazon.com/"
+      },
+      "public_economics": "Category-dependent rates and normally a 24-hour session; the assigned category and current operating agreement control.",
+      "unknowns": ["Apply only when three organic qualifying sales in 180 days are plausible and all registered sites and disclosures are ready."],
+      "conversion_event": "A qualifying attributed product is purchased and dispatched under the current operating agreement.",
+      "direct_url": "https://www.amazon.com/",
+      "permitted_link_hosts": ["amazon.com", "amzn.to"],
+      "matches": [
+        {
+          "asset": "BLOG posts 1498, 3096, and 3167",
+          "placement": "Exact editions or verified build components only",
+          "reason": "Bookshop is preferable for books and Waveshare for the exact panel; Amazon remains broad fallback coverage."
+        }
+      ],
+      "application_pitch": "LazyingArt publishes original book notes and exact hardware build guides. I will register every used site, link only exact relevant products, use the required Associate disclosure, avoid manually cached prices, and never ask friends or related parties to purchase.",
+      "disclosure": "As an Amazon Associate I earn from qualifying purchases.",
+      "activation_gates": ["three_sales_plausible", "registered_sites_ready", "accepted", "operating_agreement_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["self purchases", "friend or related-party purchases", "incentives", "automatic redirects", "stale manual prices", "direct paid-ad referrals", "trademark bidding"]
+    },
+    {
+      "id": "tradingview",
+      "name": "TradingView",
+      "priority": 17,
+      "state": "hold",
+      "official_urls": {
+        "program": "https://www.tradingview.com/partner-program/",
+        "terms": "https://www.tradingview.com/policies/",
+        "application": "https://www.tradingview.com/partner-program/"
+      },
+      "public_economics": "HOLD: public reward descriptions have conflicted, so no rate or attribution claim is approved.",
+      "unknowns": ["Obtain written clarification of current economics and confirm that the proposed content and data use comply with current terms."],
+      "conversion_event": "None while on hold.",
+      "direct_url": "https://www.tradingview.com/",
+      "permitted_link_hosts": ["tradingview.com"],
+      "matches": [
+        {
+          "asset": "microquant",
+          "placement": "Human charting comparison only after written clarification",
+          "reason": "Never represent TradingView as a MicroQuant data source, execution venue, webhook, or automated-decision input."
+        }
+      ],
+      "application_pitch": "No application is authorized while the economics and proposed use remain unresolved.",
+      "disclosure": "No affiliate link may be placed while this program is on hold.",
+      "activation_gates": ["written_economics_clarification", "data_use_boundary_confirmed", "terms_reviewed", "human_charting_page_reviewed"],
+      "forbidden_actions": ["affiliate activation while on hold", "machine-driven market-data use", "automated trading claims", "algorithmic-decision use", "risk-processing claims"]
+    }
+  ]
+}

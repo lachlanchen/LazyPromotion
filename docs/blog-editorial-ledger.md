@@ -4,9 +4,9 @@ Last verified: 2026-09-01 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `af9d7ce`
+Verified BLOG commit: `bab9898`
 
-Campaign range: `3b45351^..af9d7ce`
+Campaign range: `3b45351^..bab9898`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -19,9 +19,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **97 posts** have completed this protocol:
+As of the verified commit, **100 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 433, 454, 466, 933, 946, 949, 951, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2670, 2922, 2936, 2972, 3114, 3125`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 433, 454, 466, 933, 946, 949, 951, 1276, 1371, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1582, 1632, 1635, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2670, 2922, 2936, 2972, 3114, 3125`
 
 ### Safety and historical corrections
 
@@ -29,7 +29,7 @@ As of the verified commit, **97 posts** have completed this protocol:
 - Replaced them with lawful recovery, trial/evaluation, installation, import, payment-risk, marketplace, and source-verification workflows.
 - Preserved dated historical context without continuing dead downloads or presenting old claims as current.
 
-Posts: `7, 26, 31, 56, 89, 95, 99, 109, 113, 143, 150, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 454, 466, 946, 949, 951, 1582, 1943, 1972, 1982, 2670, 2922, 2972`.
+Posts: `7, 26, 31, 56, 89, 95, 99, 109, 113, 143, 150, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 454, 466, 946, 949, 951, 1276, 1582, 1943, 1972, 1982, 2013, 2670, 2922, 2972`.
 
 ### Financial-method audits
 
@@ -44,7 +44,7 @@ Posts: `1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 - Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, PyQt, Vim, Git, Raspberry Pi GPIO, native-extension, and table-of-contents notes around current diagnostics, official sources, executable checks, rollback, electrical safety, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 433, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 3114`.
+Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 433, 1276, 1526, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 2013, 3114`.
 
 ### Literary and learning resources
 
@@ -135,6 +135,9 @@ Posts: `281, 1562, 2936, 3125`.
 | `3a74938` | 265 | Direct moderated WordPress commenter links replacing an open redirect and core-file edits |
 | `e6a5371` | 274 | Rollback-safe WordPress migration from the obsolete Sina SAE referral and install workflow |
 | `af9d7ce` | 281 | Disclosed title-based reconstruction for lawful film and television discovery and provenance |
+| `05aa93b` | 1276 | Current WebRTC camera-preview diagnosis with secure-context, permission, embedding, and privacy boundaries |
+| `70f5653` | 1526 | Reproducible PDF initial-view preferences with pikepdf validation and viewer-control limits |
+| `bab9898` | 2013 | Evidence-first Ubuntu/NVIDIA login recovery replacing the obsolete Bumblebee PPA recipe |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

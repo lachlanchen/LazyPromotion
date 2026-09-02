@@ -22,8 +22,16 @@
       ],
       "blog_commits": [
         "162b59f",
-        "3220572"
+        "3220572",
+        "7bf8e57",
+        "24d6afa"
       ],
+      "conversion_path": {
+        "sample_report": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=card_dedup&utm_content=collection_readiness",
+        "fit_check": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=card_dedup&utm_content=collection_readiness",
+        "verified_at": "2026-09-02T01:20:07Z",
+        "automatic_form_submission": false
+      },
       "policy": "The article solves the design problem before mentioning any owned work. It cites three public repositories only as architectural patterns and explicitly says none is a finished cross-upload deduplicator."
     },
     "x": {

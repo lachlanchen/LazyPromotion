@@ -223,6 +223,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `330d73c` | 3114 | Added an owner-disclosed LazyEdit route and removed duplicate body titles |
 | `3ca71b7` | 3616 | Withdrew uncleared full-text PDFs and published a multilingual lawful-access notice |
 | `3220572` | 3782 | Published a source-aware study-card deduplication guide in English, Traditional Chinese, and Japanese |
+| `24d6afa` | 3782 | Added one exact-fit path from the complete guide to the LKT sample report and preserved attribution through the fit check |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

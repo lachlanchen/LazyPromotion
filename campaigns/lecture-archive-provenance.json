@@ -3,6 +3,30 @@
   "version": 1,
   "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
   "channels": {
+    "lazyblog": {
+      "state": "published",
+      "published_at": "2026-09-02T00:31:37Z",
+      "url": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
+      "source_language": "en",
+      "translations": [
+        "ja",
+        "zh"
+      ],
+      "need": "Help a lecture-first learner turn the opening ideas of state, evolution, reversibility, phase space, and vectors into derivations and exercises they can reproduce.",
+      "evidence": [
+        "https://www.youtube.com/watch?v=ApUFtLCrU90",
+        "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/resources/assignments/",
+        "https://openstax.org/books/university-physics-volume-1/pages/4-introduction",
+        "https://github.com/lachlanchen/leonardsusskind"
+      ],
+      "blog_commits": [
+        "d95f337",
+        "c3232db"
+      ],
+      "public_reply_sent": false,
+      "lead_or_sale_observed": false,
+      "policy": "The article is a complete educational answer first. The archive appears only as a quiet study aid after the official lecture and independent exercises; no service, donation, hardware, or unrelated portfolio pitch was added."
+    },
     "x": {
       "state": "postiz_queue",
       "publish_at": "2026-09-03T02:00:00Z",

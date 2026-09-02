@@ -222,6 +222,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `9d1fc70` | 3167 | Put the project-owned LKT sample report before the private fit check and paid scope |
 | `330d73c` | 3114 | Added an owner-disclosed LazyEdit route and removed duplicate body titles |
 | `3ca71b7` | 3616 | Withdrew uncleared full-text PDFs and published a multilingual lawful-access notice |
+| `3220572` | 3782 | Published a source-aware study-card deduplication guide in English, Traditional Chinese, and Japanese |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

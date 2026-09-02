@@ -1,0 +1,84 @@
+{
+  "id": "cross-source-card-dedup",
+  "version": 1,
+  "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
+  "source_need": {
+    "captured_at": "2026-09-02T01:00:00Z",
+    "url": "https://github.com/2anki/2anki.net/issues/4243",
+    "problem": "A later lecture-transcript upload can generate cards already created from an earlier chapter upload, because upload-local comparison cannot see the established collection.",
+    "engagement": "research_only",
+    "policy": "The issue is evidence of a real need, not a promotion surface. No issue reply, mention, or project pitch was made."
+  },
+  "channels": {
+    "lazyblog": {
+      "state": "published",
+      "published_at": "2026-09-02T01:10:36Z",
+      "url": "https://blog.lazying.art/html/algorithms-data-structures/3782/deduplicate-study-cards-chapters-lecture-transcripts.html",
+      "post_id": 3782,
+      "source_language": "en",
+      "translations": [
+        "zh",
+        "ja"
+      ],
+      "blog_commits": [
+        "162b59f",
+        "3220572"
+      ],
+      "policy": "The article solves the design problem before mentioning any owned work. It cites three public repositories only as architectural patterns and explicitly says none is a finished cross-upload deduplicator."
+    },
+    "x": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-07T02:00:00Z",
+      "content": "Duplicate cards can be a data-model problem: a chapter and lecture repeat one fact, but each import creates a new note. Keep one fact, attach both source spans, and update the same Anki note. Design: blog.lazying.art/?p=3782&utm_source=x&utm_campaign=card_dedup",
+      "destination": "https://blog.lazying.art/html/algorithms-data-structures/3782/deduplicate-study-cards-chapters-lecture-transcripts.html?utm_source=x&utm_medium=social&utm_campaign=card_dedup",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "policy": "One first-party technical note, scheduled after the current lecture and offer posts. No result, user, or revenue claim."
+    },
+    "reddit": {
+      "state": "postiz_queue",
+      "scope": "own_profile",
+      "publish_at": "2026-09-07T04:00:00Z",
+      "title": "One fact, two sources: avoiding duplicate study cards",
+      "content": "If a textbook chapter and a lecture transcript state the same fact, generating a fresh note from each upload splits the learner's review history.\n\nA safer model:\n\n1. Keep the original front and back.\n2. Normalize a separate matching projection.\n3. Use an exact key for retries and formatting differences.\n4. Use fuzzy search only to shortlist paraphrases.\n5. Attach page and timestamp evidence to one accepted fact.\n6. Update the same Anki note instead of exporting a new one.\n\nI wrote out the SQLite schema, transaction boundary, deletion semantics, and test cases here:\nhttps://blog.lazying.art/?p=3782&utm_source=reddit&utm_medium=profile&utm_campaign=card_dedup\n\nDisclosure: I maintain the linked guide and the public project patterns it references.",
+      "destination": "https://blog.lazying.art/html/algorithms-data-structures/3782/deduplicate-study-cards-chapters-lecture-transcripts.html?utm_source=reddit&utm_medium=profile&utm_campaign=card_dedup",
+      "settings": {
+        "subreddit": "/r/u_Ok-Perception1122",
+        "type": "self",
+        "is_flair_required": false
+      },
+      "policy": "First-party profile resource only. It is not a generated reply in a community thread and contains a concise maintainer disclosure."
+    },
+    "instagram": {
+      "state": "not_scheduled",
+      "policy": "Do not turn a database design article into a generic graphic. Wait for a real, rights-cleared before-and-after study artifact."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Do not post agent-authored comments or submit the article without an independently relevant discussion."
+    }
+  },
+  "source_evidence": {
+    "timestamped_source_pattern": "https://github.com/lachlanchen/Video2Book/blob/main/subtitles2notes/generate_course_notes.py#L609-L647",
+    "course_hierarchy_pattern": "https://github.com/lachlanchen/leonardsusskind/blob/main/README.md#L150-L162",
+    "knowledge_identity_pattern": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14",
+    "limits": [
+      "The public repositories demonstrate source, hierarchy, and knowledge-identity patterns; they do not implement the complete deduplication workflow described in the article.",
+      "Fuzzy similarity creates review candidates only until labeled tests support a safer decision boundary.",
+      "No public issue reply, direct message, automated community comment, or customer claim was created."
+    ]
+  },
+  "funnel": {
+    "state": "attention",
+    "helpful_interaction_observed": false,
+    "fit_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

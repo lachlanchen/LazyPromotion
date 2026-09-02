@@ -217,7 +217,23 @@
         },
         "policy": "First-party profile resource only, not a community submission or generated reply. The published post and actual evidence-first click path were visibly verified. A provider-side one-prefix repair made the tracked URL clickable without changing the technical answer or disclosure. The live allowlisted bridges preserve Reddit attribution from the article through the sample report to the fit-check page without forwarding arbitrary parameters or sending a form."
       },
-      "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
+    "community_reply": {
+      "state": "live",
+      "checked_at": "2026-09-02T01:16:15Z",
+      "thread": "https://www.reddit.com/r/degoogle/comments/1vz7y6x/self_hosted/",
+      "url": "https://www.reddit.com/r/degoogle/comments/1vz7y6x/self_hosted/p72g6b4/",
+      "need": "Choose a local search tool for a private PDF and book collection on Arch Linux.",
+      "content": "AI-assisted recommendation; I checked the current Arch, Recoll, and Typesense docs before posting. Start with Recoll on Arch. It indexes PDF text locally, has a desktop UI and browser interface, and is much less setup than Typesense. Install Poppler so it can extract text; for scanned PDFs, OCR them first with OCRmyPDF/Tesseract. Typesense is useful if you want to build your own search UI, but it does not extract PDFs by itself—you need a pipeline that extracts text, splits it into chunks, adds metadata, and optionally creates embeddings. For a personal library, I’d try Recoll first and only move to Typesense if typo-tolerant or semantic retrieval is worth maintaining that pipeline.",
+      "community_rules": {
+        "ai_disclosure_required": true,
+        "developer_prefix_required_for_affiliated_project_links": true,
+        "affiliate_links_forbidden": true
+      },
+      "linked_owned_asset": false,
+      "lead_or_sale_observed": false,
+      "policy": "The response stands alone and follows the community's AI-disclosure rule. It recommends the smallest suitable open-source tool and does not mention LKT, add a second pitch, or infer a lead from the visible vote."
+    },
+    "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },
     "x": {
       "state": "postiz_queue",

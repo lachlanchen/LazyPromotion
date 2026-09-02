@@ -1,0 +1,38 @@
+{
+  "id": "lecture-archive-provenance",
+  "version": 1,
+  "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
+  "channels": {
+    "x": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-03T02:00:00Z",
+      "content": "Own a lecture archive? Keep timestamps, speaker turns, slide references, corrections and source rights before turning it into a book. That provenance layer makes notes, translation and search easier to trust. One example: https://github.com/lachlanchen/leonardsusskind",
+      "postiz_content": "Own a lecture archive? Keep timestamps, speaker turns, slide references, corrections and source rights before turning it into a book. That provenance layer makes notes, translation and search easier to trust. One example:",
+      "destination": "https://github.com/lachlanchen/leonardsusskind",
+      "policy": "A useful first-party note about preserving provenance. The linked repository is a maintained format example, not customer proof or an offer to resell lecture content."
+    },
+    "reddit": {
+      "state": "needs_exact_need",
+      "policy": "Reply only when a current course or archive owner asks how to preserve or repurpose material they control. Solve the question in the reply; link only where the community permits it."
+    },
+    "instagram": {
+      "state": "needs_rights_cleared_demonstration",
+      "policy": "Do not make a generic graphic. Show a real project-owned or openly licensed source-to-study transformation if one becomes available."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Use current archive and course-production questions for research only; do not post agent-authored comments."
+    }
+  },
+  "source_evidence": {
+    "format_example": "https://github.com/lachlanchen/leonardsusskind",
+    "conversion_pipeline": "https://github.com/lachlanchen/Video2Book",
+    "multilingual_pipeline": "https://github.com/lachlanchen/PocketPolyglot",
+    "knowledge_pipeline": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "limits": [
+      "Use only customer-owned, public-domain, or clearly licensed recordings, slides, transcripts, translations, and images.",
+      "The Susskind archive demonstrates a maintained study format; it is not a customer result or content offered for resale.",
+      "Do not promise automated accuracy, publication, hosting, or delivery terms before a bounded sample is reviewed."
+    ]
+  }
+}

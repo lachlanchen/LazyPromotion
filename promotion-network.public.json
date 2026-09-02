@@ -11,6 +11,16 @@
       "url": ""
     },
     {
+      "id": "campaign:lecture-archive-provenance",
+      "kind": "campaign",
+      "label": "lecture-archive-provenance",
+      "metadata": {
+        "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:local-knowledge-terminal-pilot",
       "kind": "campaign",
       "label": "local-knowledge-terminal-pilot",
@@ -5221,6 +5231,13 @@
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
+      "id": "url:6c61657175e6875a",
+      "kind": "web_resource",
+      "label": "conversion pipeline",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/Video2Book"
+    },
+    {
       "id": "url:8945a53cc57c5704",
       "kind": "web_resource",
       "label": "doi.org",
@@ -5240,6 +5257,13 @@
       "label": "fit check",
       "metadata": {},
       "url": "https://lazying.art/lkt/fit-check/"
+    },
+    {
+      "id": "url:b5905affb9e9343e",
+      "kind": "web_resource",
+      "label": "format example",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
       "id": "url:0a22d3dea25aca44",
@@ -5319,13 +5343,6 @@
       "url": "https://github.com/lachlanchen/WordOrigins"
     },
     {
-      "id": "url:6c61657175e6875a",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/Video2Book"
-    },
-    {
       "id": "url:8c31df37ee870928",
       "kind": "web_resource",
       "label": "github.com",
@@ -5345,13 +5362,6 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/paper-revision-skill"
-    },
-    {
-      "id": "url:b5905affb9e9343e",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
       "id": "url:c5ba05aea8ba9414",
@@ -5588,6 +5598,110 @@
       "relation": "uses_evidence",
       "source": "campaign:eink-multilingual-reading",
       "target": "url:43d56bb572f1ca4a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "project:github-video2book"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "project:leonardsusskind"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "needs_rights_cleared_demonstration"
+      },
+      "relation": "targets",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "needs_exact_need"
+      },
+      "relation": "targets",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "url:b5905affb9e9343e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "url:e6fb5bef94e3ec0c"
     },
     {
       "confidence": 1.0,

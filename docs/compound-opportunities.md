@@ -9,7 +9,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | Opportunity | State | Buyer need | First bounded test | Score / 5 |
 |---|---|---|---|---:|
 | [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Reach people already deciding how to handle a bounded private collection and show the project-owned sample report before the fit check | 4.65 |
-| [Scientific manuscript workbench audit](#scientific-manuscript-workbench) | candidate | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Publish a synthetic case study and interview researchers who have an active build or response-letter problem | 4.10 |
+| [Scientific manuscript workbench audit](#scientific-manuscript-workbench) | evidence-building | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Turn the clean-build audit into a rights-cleared old/new redline sample before activating a paid listing | 4.10 |
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
 | [Multilingual video accessibility package](#multilingual-video-accessibility) | candidate | Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline | Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems | 4.00 |
 | [Private local-AI workstation deployment](#local-ai-workstation-deployment) | candidate | Install and operate a pinned local model stack with a usable web client and guarded remote access | Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit | 3.95 |
@@ -52,7 +52,7 @@ Gates:
 
 ### Scientific manuscript workbench audit
 
-**State:** candidate
+**State:** evidence-building
 
 **Buyer:** A research group with an existing LaTeX manuscript, figures, code, and revision deadline
 
@@ -62,18 +62,22 @@ Gates:
 
 **First deliverable:** A fixed-scope private build and provenance audit with issue ledger, reproducible PDF build, and prioritized revision plan
 
-**First demand test:** Publish a synthetic case study and interview researchers who have an active build or response-letter problem
+**First demand test:** A source-backed latexdiff guide and project-owned clean-build audit are public. The next proof is a rights-cleared old/new sample that exercises a pinned redline toolchain; no paid listing is active yet.
 
 Evidence:
 
 - <https://github.com/lachlanchen/paper-revision-skill>
 - <https://github.com/lachlanchen/PaperAgentDemo>
+- <https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html>
+- <https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf>
+- <https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft>
 
 Gates:
 
 - Set confidentiality, retention, authorship, and no-guaranteed-acceptance terms
 - Do not upload manuscripts or review correspondence without explicit authorization
 - Add clear repository licenses before packaging reusable code
+- Pin and test `latexdiff`; the current checked workstation toolchain builds the two-page PaperAgentDemo PDF but does not include `latexdiff`
 
 ### Review-first agent workflow kit
 

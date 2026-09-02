@@ -1,0 +1,104 @@
+{
+  "id": "latex-redline-build",
+  "version": 1,
+  "objective": "Help researchers produce an editor-readable LaTeX redline when the baseline and revised manuscripts compile but the generated latexdiff file does not.",
+  "source_needs": [
+    {
+      "captured_at": "2026-09-02T01:50:00Z",
+      "url": "https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf",
+      "problem": "A journal requested a track-changes file, but the latexdiff output fails even though both manuscript versions compile.",
+      "engagement": "research_only"
+    },
+    {
+      "captured_at": "2026-09-02T01:50:00Z",
+      "url": "https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft",
+      "problem": "Generic LaTeX linters do not cover a journal-specific submission guide, so issues appear one revision round at a time.",
+      "engagement": "research_only"
+    }
+  ],
+  "channels": {
+    "lazyblog": {
+      "state": "published",
+      "published_at": "2026-09-02T01:52:09Z",
+      "url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html",
+      "post_id": 3784,
+      "source_language": "en",
+      "translations": [
+        "zh",
+        "ja"
+      ],
+      "blog_commit": "3b18ea0",
+      "policy": "The guide answers the build problem before mentioning the maintained revision workflow. It does not claim a customer result, successful journal submission, or paid delivery."
+    },
+    "x": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-09T02:00:00Z",
+      "content": "Both LaTeX versions compile, but the latexdiff file does not. Treat the redline as a third build: freeze both source trees, flatten inputs, compile separately, and fix the first real error. Guide: blog.lazying.art/?p=3784&utm_source=x&utm_campaign=latex_redline",
+      "postiz_content": "Both LaTeX versions compile, but the latexdiff file does not. Treat the redline as a third build: freeze both source trees, flatten inputs, compile separately, and fix the first real error. Guide: blog.lazying.art/?p=3784&utm_source=x&utm_campaign=latex_redline",
+      "destination": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html?utm_source=x&utm_campaign=latex_redline",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "policy": "One first-party technical guide, scheduled after the current offer queue. No sale, acceptance, turnaround, or customer claim."
+    },
+    "tex_stackexchange": {
+      "state": "research_only",
+      "policy": "Do not place a commercial pitch or affiliated project link into the cited questions. A future answer must be a complete technical answer and disclose affiliation where relevant."
+    },
+    "reddit": {
+      "state": "needs_exact_need",
+      "policy": "Reply only to a current manuscript-build question where the answer can stand alone and community rules permit an affiliated reference."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Do not submit agent-authored comments or the article without an independently relevant discussion."
+    }
+  },
+  "project_owned_audit": {
+    "repository": "https://github.com/lachlanchen/PaperAgentDemo",
+    "source_sha256": "c0df839c767616ffb138504a834e6ed47cd3859bb33483ab19213f534a88b516",
+    "build_command": "latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex",
+    "toolchain": {
+      "latexmk": "4.83",
+      "pdftex": "3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+      "latexdiff": "not installed in the checked toolchain"
+    },
+    "result": {
+      "build_succeeded": true,
+      "pages": 2,
+      "page_size": "A4",
+      "final_unresolved_references": 0,
+      "remaining_warnings": [
+        "Two h float specifiers were changed to ht."
+      ]
+    },
+    "limits": [
+      "The repository has no distinct manuscript baseline, so it cannot yet demonstrate a meaningful redline.",
+      "The sample manuscript contains illustrative content and is not evidence for any scientific result.",
+      "The repository has no detected root license, so third-party reuse terms remain unspecified.",
+      "This is a project-owned build audit, not a customer result, testimonial, or paid delivery."
+    ]
+  },
+  "activation_gate": {
+    "state": "evidence_building",
+    "not_yet_offered_for_payment": true,
+    "required_before_paid_listing": [
+      "A rights-cleared old/new sample that exercises latexdiff and produces a reproducible redline PDF.",
+      "A pinned redline toolchain and checked build script.",
+      "Non-confidential intake, retention, deletion, cancellation, refund, revision, and support boundaries.",
+      "A marketplace or owned fit-check path that does not request manuscript files before scope acceptance."
+    ]
+  },
+  "funnel": {
+    "state": "attention",
+    "helpful_interaction_observed": false,
+    "fit_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

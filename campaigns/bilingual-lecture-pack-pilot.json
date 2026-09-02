@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "id": "bilingual-lecture-pack-pilot",
+  "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
+  "source_evidence": {
+    "offer": "https://lazying.art/lecture-pack/",
+    "fit_check": "https://lazying.art/lecture-pack/fit-check/",
+    "working_article": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
+    "transcript_to_book_pipeline": "https://github.com/lachlanchen/Video2Book",
+    "lecture_archive_format": "https://github.com/lachlanchen/leonardsusskind",
+    "aligned_book_pipeline": "https://github.com/lachlanchen/PocketPolyglot",
+    "subtitle_pipeline": "https://github.com/lachlanchen/LazyEdit",
+    "offer_stage": "founding bilingual lecture pack",
+    "public_price": "USD 250",
+    "included_scope": [
+      "one customer-owned or qualifying openly licensed English lecture up to 20 minutes",
+      "one primary speaker",
+      "one target language: Traditional Chinese or Japanese",
+      "timestamped English Markdown transcript and SRT with uncertainties marked",
+      "one target-language SRT",
+      "an editable bilingual source and A5 pocket study PDF",
+      "one customer-selected 30–45 second captioned preview clip",
+      "a source and rights manifest",
+      "one consolidated pass of up to ten timing, transcription, or terminology corrections"
+    ],
+    "excluded_scope": [
+      "rights clearance or URL-only platform downloads",
+      "confidential or regulated material",
+      "multiple-speaker diarization or audio restoration",
+      "additional languages, certified translation, or certified accessibility",
+      "custom illustration, dubbing, or generated footage",
+      "full-course work, hosting, LMS or social posting, or unlimited revisions"
+    ],
+    "limits": [
+      "Public availability is not permission to make a commercial derivative. Require customer ownership or an exact license that permits the requested translation and reuse.",
+      "The public repositories and Classical Mechanics article demonstrate a workflow and output format, not a paid customer result, lecturer endorsement, translation certification, or sales lift.",
+      "Do not request a source file, create a Stripe payment request, or begin delivery until the metadata-only fit check and written scope are accepted.",
+      "Mark unresolved recognition, terminology, equation, timing, and translation uncertainties for customer subject review."
+    ]
+  },
+  "funnel": {
+    "free_value": "A complete multilingual Classical Mechanics lesson plus public transcript, subtitle, book, and archive workflows that a buyer can inspect before enquiring.",
+    "qualified_interest": "Use the metadata-only fit check to review source ownership, duration, speaker count, audio, target language, learner, terminology, excerpt rights, and intended distribution.",
+    "commercial_action": "After a positive fit review, accept one exact USD 250 scope, receive a reviewed Stripe payment request, and then arrange a private source-file transfer.",
+    "revenue_policy": "Count revenue only after confirmed payment; visits, fit-check drafts, emails, likes, queued posts, and source transfers are not sales."
+  },
+  "conversion_readiness": {
+    "state": "live_metadata_fit_check",
+    "checked_at": "2026-09-02T00:46:29Z",
+    "website_commits": [
+      "83b1d7a",
+      "24e48c3"
+    ],
+    "blog_commits": [
+      "d95f337",
+      "c3232db",
+      "2737036",
+      "38d3301"
+    ],
+    "fit_check": {
+      "automatic_submission": false,
+      "source_upload_requested": false,
+      "visible_recipient": "contact@lazying.art",
+      "copy_fallback": true,
+      "attribution_fields": [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content"
+      ],
+      "network_mutations_in_synthetic_review": 0,
+      "customer_data_used": false,
+      "lead_or_sale_observed": false
+    },
+    "payment": {
+      "state": "not_requested",
+      "policy": "The public price is fixed, but a real Stripe request still requires a qualified buyer, accepted written scope, and reviewed delivery, correction, cancellation, refund, tax, and support terms."
+    }
+  },
+  "channels": {
+    "lazyblog": {
+      "state": "published",
+      "published_at": "2026-09-02T00:52:38Z",
+      "url": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
+      "source_language": "en",
+      "translations": [
+        "ja",
+        "zh"
+      ],
+      "route": "A single exact-fit sentence follows the complete lesson and public archive link; no donation, hardware, LKT, or unrelated portfolio pitch was added."
+    },
+    "x": {
+      "state": "needs_reviewed_educational_post",
+      "policy": "Show a real source-to-study transformation and the fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
+    },
+    "instagram": {
+      "state": "needs_rights_cleared_demonstration",
+      "policy": "Use only a project-owned or clearly licensed before/after demonstration; do not publish a generic generated product claim."
+    },
+    "reddit": {
+      "state": "needs_exact_need",
+      "policy": "Answer only a current rights-cleared lecture, subtitle, or study-material question where the community permits it. The reply must solve the immediate problem without requiring a link."
+    },
+    "github_issues": {
+      "state": "research_only",
+      "policy": "Use open issues as problem evidence, not as a place to advertise the service."
+    }
+  }
+}

@@ -90,8 +90,18 @@
       "route": "A single exact-fit sentence follows the complete lesson and public archive link; no donation, hardware, LKT, or unrelated portfolio pitch was added."
     },
     "x": {
-      "state": "needs_reviewed_educational_post",
-      "policy": "Show a real source-to-study transformation and the fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
+      "state": "postiz_queue",
+      "publish_at": "2026-09-05T02:00:00Z",
+      "content": "Turning one lecture into a bilingual study pack is mostly source work: timestamps, uncertain words, terminology, rights, and a correction pass. I made that into a bounded pilot: lazying.art/lecture-pack/?utm_source=x&utm_campaign=lecture_pack",
+      "postiz_content": "Turning one lecture into a bilingual study pack is mostly source work: timestamps, uncertain words, terminology, rights, and a correction pass. I made that into a bounded pilot: lazying.art/lecture-pack/?utm_source=x&utm_campaign=lecture_pack",
+      "destination": "https://lazying.art/lecture-pack/?utm_source=x&utm_campaign=lecture_pack",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "policy": "The reviewed 242-character post leads with the source-work lesson, uses the protocol-less first-party destination that Postiz preserved, and carries the live fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
     },
     "instagram": {
       "state": "needs_rights_cleared_demonstration",

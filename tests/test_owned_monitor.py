@@ -199,6 +199,22 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], "lecture-archive-provenance")
         self.assertEqual(route["route"], "product")
 
+    def test_bilingual_lecture_pack_queue_keeps_protocol_less_destination(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "bilingual-lecture-pack-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        channel = campaign["channels"]["x"]
+        self.assertEqual(channel["state"], "postiz_queue")
+        self.assertIn("lazying.art/lecture-pack/", channel["postiz_content"])
+        self.assertNotIn("https://", channel["postiz_content"])
+        route = owned_monitor.route_for_post(
+            "x", channel["postiz_content"], owned_monitor.route_index()
+        )
+        self.assertEqual(route["campaign_id"], "bilingual-lecture-pack-pilot")
+        self.assertEqual(route["route"], "product")
+
     def test_live_sample_report_posts_match_the_lkt_campaign(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(

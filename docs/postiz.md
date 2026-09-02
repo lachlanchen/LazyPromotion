@@ -59,6 +59,15 @@ the CLI during the 2026-08-31 validation. Recheck the visible editor after every
 creation because provider transformations can change, and do not infer that a
 URL will be clickable until the platform preview or final composer proves it.
 
+On 2026-09-02, Postiz stripped both a bare GitHub URL and its protocol-less
+variant from an unpublished X item. The reviewed replacement used the owned
+`blog.lazying.art/?p=3167&...` route, which remained intact and resolved to the
+canonical article with campaign attribution. The two broken unpublished drafts
+were deleted only after the replacement was visibly queued; no published post
+was removed. Prefer a verified owned route when a provider removes a direct
+repository destination, and always compare the stored content with the source
+campaign before leaving an item in the queue.
+
 On 2026-09-01, the reviewed LKT X and Instagram items were moved to the Postiz
 queue for 2026-09-08T01:00:00Z and 2026-09-08T11:31:00Z. The operator fetched
 both live provider contracts first, kept the uploaded wide and 4:5 visuals,

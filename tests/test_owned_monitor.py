@@ -184,15 +184,17 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], "local-knowledge-terminal-pilot")
         self.assertEqual(route["route"], "profile_guide")
 
-    def test_lecture_archive_queue_matches_postiz_link_stripped_copy(self):
+    def test_lecture_archive_queue_matches_verified_owned_route(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "lecture-archive-provenance.json").read_text(
                 encoding="utf-8"
             )
         )
         channel = campaign["channels"]["x"]
-        self.assertIn("github.com/lachlanchen/leonardsusskind", channel["content"])
-        self.assertNotIn("github.com", channel["postiz_content"])
+        self.assertEqual(channel["content"], channel["postiz_content"])
+        self.assertIn("blog.lazying.art/?p=3167", channel["postiz_content"])
+        self.assertIn("utm_campaign=lecture_archive", channel["destination"])
+        self.assertIn("two superseded unpublished drafts", channel["repair"]["outcome"])
         route = owned_monitor.route_for_post(
             "x", channel["postiz_content"], owned_monitor.route_index()
         )

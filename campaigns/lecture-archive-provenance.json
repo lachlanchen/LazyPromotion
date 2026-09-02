@@ -30,10 +30,21 @@
     "x": {
       "state": "postiz_queue",
       "publish_at": "2026-09-03T02:00:00Z",
-      "content": "Own a lecture archive? Keep timestamps, speaker turns, slide references, corrections and source rights before turning it into a book. That provenance layer makes notes, translation and search easier to trust. One example: https://github.com/lachlanchen/leonardsusskind",
-      "postiz_content": "Own a lecture archive? Keep timestamps, speaker turns, slide references, corrections and source rights before turning it into a book. That provenance layer makes notes, translation and search easier to trust. One example:",
-      "destination": "https://github.com/lachlanchen/leonardsusskind",
-      "policy": "A useful first-party note about preserving provenance. The linked repository is a maintained format example, not customer proof or an offer to resell lecture content."
+      "content": "Keep timestamps, speaker turns, slide references, corrections and source rights before turning a lecture archive into a book. That provenance makes notes, translation and search easier to trust. Example: blog.lazying.art/?p=3167&utm_source=x&utm_campaign=lecture_archive",
+      "postiz_content": "Keep timestamps, speaker turns, slide references, corrections and source rights before turning a lecture archive into a book. That provenance makes notes, translation and search easier to trust. Example: blog.lazying.art/?p=3167&utm_source=x&utm_campaign=lecture_archive",
+      "destination": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html?utm_source=x&utm_campaign=lecture_archive",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "repair": {
+        "reviewed_at": "2026-09-02T01:40:00Z",
+        "reason": "Postiz stripped the bare and protocol-less GitHub destinations from two unpublished variants.",
+        "outcome": "One replacement with the preserved owned route is queued; the two superseded unpublished drafts were deleted and are not recoverable in Postiz. No published content was removed."
+      },
+      "policy": "A useful first-party note about preserving provenance. The linked article documents a maintained archive format; it is not customer proof or an offer to resell lecture content."
     },
     "reddit": {
       "state": "needs_exact_need",

@@ -224,6 +224,21 @@
       "publish_at": "2026-09-08T01:00:00Z",
       "content": "Some knowledge should stay in the room. LKT turns private books into cited multilingual cards on your machine. I’m opening four $250 collection-fit sprints; this is a prototype-grounded concept, not shipped hardware. Inspect the sample report: lazying.art/lkt/sample-report",
       "visual": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
+      "sample_report_post": {
+        "state": "published_and_link_verified",
+        "published_at": "2026-09-01T23:48:17Z",
+        "url": "https://twitter.com/lazyingart/status/2094935495788945567",
+        "content": "Before building local RAG for a private PDF collection, try the boring path first: clean extraction, SQLite/FTS, visible citations, and a written failure boundary. Here’s a concrete sample: https://lazying.art/lkt/sample-report/",
+        "postiz_content": "Before building local RAG for a private PDF collection, try the boring path first: clean extraction, SQLite/FTS, visible citations, and a written failure boundary. Here’s a concrete sample:",
+        "rendering_repair": {
+          "state": "verified_live",
+          "reason": "Postiz omitted the final URL from the rendered X post.",
+          "reply_url": "https://x.com/lazyingart/status/2094942330940019052",
+          "reply_content": "The sample report is here: https://lazying.art/lkt/sample-report/",
+          "verification": "The visible X reply renders one lazying.art sample-report card. The repair was submitted once and then verified; it was not retried."
+        },
+        "policy": "First-party evidence note. The repair adds only the missing destination and makes no new product or revenue claim."
+      },
       "guide_post": {
         "state": "postiz_queue",
         "publish_at": "2026-09-01T14:00:00Z",
@@ -238,6 +253,13 @@
       "publish_at": "2026-09-08T11:31:00Z",
       "content": "Some knowledge should stay in the room.\n\nLocal Knowledge Terminal turns a private book or reviewed dictionary collection into cited multilingual cards on an existing machine. The browser software works today; the image is a concept visual grounded in the current display prototype, not shipped inventory.\n\nI’m opening four founding collection-fit sprints at $250 each. Before sharing any material, you can inspect a measured example using LKT’s own documented reference collection: 19,119 structured records, a data/privacy map, two browser proofs, and a written go/no-go boundary.\n\nIt is project-owned evidence—not a customer result or testimonial. Hardware, shipping, custom OCR, and production deployment are not included.\n\nRead the sample report first:\nhttps://lazying.art/lkt/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=product_sample_report\n\n#LocalFirst #KnowledgeManagement #LanguageLearning #RaspberryPi #Privacy",
       "visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
+      "sample_report_post": {
+        "state": "published_and_visibly_verified",
+        "published_at": "2026-09-01T23:53:19Z",
+        "url": "https://www.instagram.com/p/Dcw4xSzj1F8/",
+        "content": "Most private-document projects start by choosing a vector database. I’d start earlier:\n\nCan you extract the text cleanly? Can every answer point back to a stable record? Can the system say “not enough evidence”?\n\nI turned that into a small collection-fit process. The public sample shows the data map, citation boundary, browser proof, and go/no-go.\n\nlazying.art/lkt/sample-report/\n\n#LocalAI #KnowledgeManagement",
+        "policy": "A concise first-party demonstration using the project-owned service cover. The caption makes no customer-result or performance claim."
+      },
       "policy": "Use the reviewed uploaded 4:5 concept visual and keep its disclosure in the caption. The exact caption, measured project-owned evidence, customer-result boundary, unshortened first-party sample-report URL, provider settings, unchanged schedule, and queue state were visibly reviewed after the update; never present the image as inventory."
     },
     "hackernews": {

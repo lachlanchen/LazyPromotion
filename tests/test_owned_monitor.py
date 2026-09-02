@@ -199,6 +199,27 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], "lecture-archive-provenance")
         self.assertEqual(route["route"], "product")
 
+    def test_live_sample_report_posts_match_the_lkt_campaign(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        routes = owned_monitor.route_index()
+        x_post = campaign["channels"]["x"]["sample_report_post"]
+        x_route = owned_monitor.route_for_post("x", x_post["postiz_content"], routes)
+        self.assertEqual(x_route["campaign_id"], "local-knowledge-terminal-pilot")
+        self.assertEqual(x_route["route"], "sample_report_post")
+
+        instagram_post = campaign["channels"]["instagram"]["sample_report_post"]
+        instagram_route = owned_monitor.route_for_post(
+            "instagram-standalone", instagram_post["content"], routes
+        )
+        self.assertEqual(
+            instagram_route["campaign_id"], "local-knowledge-terminal-pilot"
+        )
+        self.assertEqual(instagram_route["route"], "sample_report_post")
+
 
 if __name__ == "__main__":
     unittest.main()

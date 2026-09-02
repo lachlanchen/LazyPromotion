@@ -66,6 +66,28 @@ class NetworkTests(unittest.TestCase):
         ).fetchone()[0]
         self.assertEqual(count, 1)
 
+    def test_public_opportunity_combines_multiple_public_projects(self):
+        network.sync_graph(self.db)
+        opportunity_id = "opportunity:creator-media-library"
+        entity = self.db.execute(
+            "SELECT visibility FROM entities WHERE id=?", (opportunity_id,)
+        ).fetchone()
+        self.assertEqual(entity[0], "public")
+        targets = self.db.execute(
+            """
+            SELECT target_id FROM relationships
+            WHERE source_id=? AND relation='combines'
+            ORDER BY target_id
+            """,
+            (opportunity_id,),
+        ).fetchall()
+        self.assertEqual(len(targets), 4)
+        self.assertTrue(all(row[0].startswith("project:") for row in targets))
+
+        snapshot = json.dumps(network.public_snapshot(self.db), ensure_ascii=False)
+        self.assertIn("Creator media library website", snapshot)
+        self.assertIn("LalaMedias", snapshot)
+
     def test_workspace_scan_skips_unreadable_entries(self):
         parent = Path(self.tmp.name) / "projects"
         parent.mkdir()

@@ -84,6 +84,9 @@ flowchart LR
 | [`github-repos.json`](github-repos.json) | Public-only inventory of every `lachlanchen` source repository |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Human-readable map of all public work, grouped by real problem area and honest conversion path |
 | [`inventory.py`](inventory.py) | Deterministically regenerates the public portfolio map from the GitHub index |
+| [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of public code, books, knowledge systems, and media with bounded first tests |
+| [`opportunities.py`](opportunities.py) | Validates, scores, and renders the compound-opportunity registry |
+| [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked research queue across the public portfolio, with proof and delivery gates |
 | [`sync_github_catalog.py`](sync_github_catalog.py) | Deterministic catalog refresh through the open-source GitHub CLI |
 | [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |

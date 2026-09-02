@@ -1,0 +1,286 @@
+{
+  "version": 1,
+  "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
+  "opportunities": [
+    {
+      "id": "private-collection-intelligence",
+      "title": "Private collection intelligence",
+      "state": "active",
+      "buyer": "A researcher, educator, small lab, or specialist team with one bounded private document collection",
+      "need": "Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot",
+      "projects": ["LocalKnowledgeTerminal", "LocalLLM", "LazyEdge", "LazyingAgentWeb"],
+      "first_deliverable": "The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes",
+      "first_test": "Reach people already deciding how to handle a bounded private collection and show the project-owned sample report before the fit check",
+      "proof": [
+        "https://lazying.art/lkt/sample-report/",
+        "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+      ],
+      "gates": [
+        "The customer must have sufficient rights to use the collection",
+        "Private source files and customer data never enter the promotion repository",
+        "Do not imply that production deployment or managed access is included in the USD 250 sprint"
+      ],
+      "scores": {"buyer_pain": 5, "proof": 5, "delivery_readiness": 5, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "lecture-to-study-library",
+      "title": "Lecture-to-study library",
+      "state": "candidate",
+      "buyer": "A course creator, teacher, research group, or conference owner with recordings they control",
+      "need": "Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search",
+      "projects": ["Video2Book", "MultilingualWhisper", "LazyEdit", "PocketPolyglot", "LocalKnowledgeTerminal"],
+      "first_deliverable": "One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof",
+      "first_test": "Interview owners of existing course archives and offer one short sample from customer-owned or openly licensed media",
+      "proof": [
+        "https://github.com/lachlanchen/Video2Book",
+        "https://github.com/lachlanchen/leonardsusskind"
+      ],
+      "gates": [
+        "Use only customer-owned, licensed, or clearly open educational media",
+        "The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale",
+        "Define transcript correction and translation acceptance criteria before pricing"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 4, "delivery_readiness": 3, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "multilingual-video-accessibility",
+      "title": "Multilingual video accessibility package",
+      "state": "candidate",
+      "buyer": "An educator or creator who owns a video and needs accurate multilingual access",
+      "need": "Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline",
+      "projects": ["LazyEdit", "MultilingualWhisper", "FuriganaSubtitles", "AutoPublish"],
+      "first_deliverable": "One customer-owned video with corrected source subtitles, one reviewed translation, and a captioned master plus subtitle files",
+      "first_test": "Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems",
+      "proof": [
+        "https://github.com/lachlanchen/LazyEdit",
+        "https://github.com/lachlanchen/FuriganaSubtitles"
+      ],
+      "gates": [
+        "The customer must control the media and any music",
+        "Publishing is optional and separately reviewed",
+        "Human language review is required before claiming subtitle accuracy"
+      ],
+      "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "etymology-learning-deck",
+      "title": "Cited etymology learning deck",
+      "state": "candidate",
+      "buyer": "A language teacher, curriculum creator, or advanced vocabulary learner",
+      "need": "Learn words through meanings, roots, affixes, pronunciations, translations, and provenance rather than isolated flashcards",
+      "projects": ["WordOrigins", "LocalKnowledgeTerminal", "PocketPolyglot", "WordsCardEink"],
+      "first_deliverable": "A digital-first, rights-cleared themed deck with browser cards, source notes, and printable export; e-paper is optional",
+      "first_test": "Publish a small deck from openly licensed lexical sources and ask teachers which theme they would actually use",
+      "proof": [
+        "https://github.com/lachlanchen/WordOrigins",
+        "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md"
+      ],
+      "gates": [
+        "Keep source-specific licenses and attribution with every exported subset",
+        "Review generated etymology and morphology before publication",
+        "Do not make hardware a dependency of the first product"
+      ],
+      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "classical-chinese-history-classroom",
+      "title": "Classical Chinese history classroom pack",
+      "state": "gated",
+      "buyer": "A Chinese-language or history teacher seeking source-aware, multilingual classroom material",
+      "need": "Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice",
+      "projects": ["PocketPolyglot", "ShiGame", "LazyGame", "RaraXiaAndAyaChan"],
+      "first_deliverable": "One short public-domain passage with reviewed alignment, teacher notes, vocabulary cards, and a bounded classroom activity",
+      "first_test": "Show one rights-cleared lesson to teachers before producing a larger collection",
+      "proof": [
+        "https://github.com/lachlanchen/PocketPolyglot",
+        "https://github.com/lachlanchen/ShiGame"
+      ],
+      "gates": [
+        "Verify the exact source edition, translation, annotations, images, fonts, and media rights",
+        "Do not monetize or broadly promote the existing LinguaLeaf shelf until its title-level rights ledger is complete",
+        "Historical explanations require source review and must distinguish evidence from dramatization"
+      ],
+      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 2, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "scientific-manuscript-workbench",
+      "title": "Scientific manuscript workbench audit",
+      "state": "candidate",
+      "buyer": "A research group with an existing LaTeX manuscript, figures, code, and revision deadline",
+      "need": "Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material",
+      "projects": ["PaperAgent", "paper-revision-skill", "paper-critique-skill", "AgInTi-LabCanvas"],
+      "first_deliverable": "A fixed-scope private build and provenance audit with issue ledger, reproducible PDF build, and prioritized revision plan",
+      "first_test": "Publish a synthetic case study and interview researchers who have an active build or response-letter problem",
+      "proof": [
+        "https://github.com/lachlanchen/paper-revision-skill",
+        "https://github.com/lachlanchen/PaperAgentDemo"
+      ],
+      "gates": [
+        "Set confidentiality, retention, authorship, and no-guaranteed-acceptance terms",
+        "Do not upload manuscripts or review correspondence without explicit authorization",
+        "Add clear repository licenses before packaging reusable code"
+      ],
+      "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "local-ai-workstation-deployment",
+      "title": "Private local-AI workstation deployment",
+      "state": "candidate",
+      "buyer": "A technical small team that owns suitable compute and needs a private, maintainable local model endpoint",
+      "need": "Install and operate a pinned local model stack with a usable web client and guarded remote access",
+      "projects": ["LocalLLM", "LazyEdge", "LazyingAgentWeb", "aginti-browser", "novnc-manager"],
+      "first_deliverable": "A compatibility audit and single-machine deployment plan before any implementation or managed-support scope",
+      "first_test": "Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit",
+      "proof": [
+        "https://github.com/lachlanchen/LocalLLM",
+        "https://github.com/lachlanchen/LazyEdge"
+      ],
+      "gates": [
+        "Hardware, model, driver, security, uptime, and remote-access support boundaries must be written",
+        "Never expose an unauthenticated model endpoint",
+        "Model licenses and geographic restrictions must be checked per deployment"
+      ],
+      "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 1, "repeatability": 5}
+    },
+    {
+      "id": "agent-workflow-kit",
+      "title": "Review-first agent workflow kit",
+      "state": "candidate",
+      "buyer": "A developer or small team coordinating several AI coding and browser workflows",
+      "need": "Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts",
+      "projects": ["AAPS", "LazySkills", "AgentShell", "aginti-browser", "LazyPromotion"],
+      "first_deliverable": "A small workflow audit plus one tested, portable skill or AAPS pipeline for a recurring internal task",
+      "first_test": "Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time",
+      "proof": [
+        "https://github.com/lachlanchen/AAPS",
+        "https://github.com/lachlanchen/LazySkills"
+      ],
+      "gates": [
+        "Do not automate unsolicited engagement or bypass account verification",
+        "Separate credentials and private session state from portable workflow code",
+        "Use explicit human gates for external writes, payments, and irreversible actions"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 4, "delivery_readiness": 4, "low_support": 3, "repeatability": 5}
+    },
+    {
+      "id": "creator-library-refinery",
+      "title": "Creator library refinery",
+      "state": "candidate",
+      "buyer": "A creator with an owned archive of long videos, transcripts, drafts, and clips",
+      "need": "Turn an existing archive into searchable source material, polished articles, clips, and multilingual derivatives without losing provenance",
+      "projects": ["Video2Book", "LazyEdit", "LocalKnowledgeTerminal", "AutoPublish", "LalaStudio"],
+      "first_deliverable": "One archive map and one source-linked article or clip package from customer-owned material",
+      "first_test": "Use one LazyingArt-owned archive as the case study, then approach creators whose existing catalog is underused",
+      "proof": [
+        "https://github.com/lachlanchen/LalaMedias",
+        "https://github.com/lachlanchen/Video2Book"
+      ],
+      "gates": [
+        "The creator must own or license every input and destination asset",
+        "Generated clips and summaries require editorial review",
+        "Publishing and platform access remain separate reviewed actions"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 4, "delivery_readiness": 3, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "song-to-language-lesson",
+      "title": "Song-to-language lesson",
+      "state": "candidate",
+      "buyer": "A language teacher, independent artist, or course creator who controls an original song",
+      "need": "Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes",
+      "projects": ["Musia", "PocketPolyglot", "LazyEdit", "MultilingualWhisper"],
+      "first_deliverable": "One rights-cleared song packaged as a browser lesson with reviewed lyrics, one translation, timed playback, vocabulary cards, and a printable companion",
+      "first_test": "Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material",
+      "proof": [
+        "https://github.com/lachlanchen/Musia",
+        "https://github.com/lachlanchen/PocketPolyglot"
+      ],
+      "gates": [
+        "The creator must control the composition, recording, lyrics, artwork, and translations used in the lesson",
+        "A fluent reviewer must approve lyrics, translation, and pronunciation guidance",
+        "Do not promise automatic publication, streaming distribution, or learning outcomes"
+      ],
+      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "creator-media-library",
+      "title": "Creator media library website",
+      "state": "candidate",
+      "buyer": "An independent creator with an owned catalog scattered across audio, video, lyrics, captions, and social platforms",
+      "need": "Give an existing catalog a durable, searchable home with reliable metadata and language access instead of depending on a platform feed",
+      "projects": ["Musia", "LalaMedias", "LazyEdit", "LalaStudio"],
+      "first_deliverable": "A static three-item media library proof using customer-owned assets, corrected metadata, captions or lyrics, and a portable export",
+      "first_test": "Use a small LazyingArt-owned catalog as the demonstration, then ask creators with an existing back catalog whether they would pay to have three items organized",
+      "proof": [
+        "https://github.com/lachlanchen/LalaMedias",
+        "https://github.com/lachlanchen/LazyEdit"
+      ],
+      "gates": [
+        "Verify ownership or licenses for every recording, image, lyric, subtitle, font, and translation",
+        "Hosting, domain setup, analytics, social publishing, and ongoing catalog maintenance are separate scopes",
+        "Keep the first proof static and portable so it does not create an open-ended support obligation"
+      ],
+      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 4, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "explainable-game-classroom",
+      "title": "Explainable game classroom bundle",
+      "state": "candidate",
+      "buyer": "A club, teacher, parent, or curriculum creator teaching strategy games across languages",
+      "need": "Teach decisions with exact rules and visible reasoning instead of opaque move recommendations",
+      "projects": ["LazyGame", "LazyWeiqi", "LazyChess", "LazyMahjong", "LazyPoker"],
+      "first_deliverable": "A downloadable lesson sequence for one game, one level, and one language pair",
+      "first_test": "Let one teacher or club use a short lesson pack and observe where explanation or setup fails",
+      "proof": [
+        "https://github.com/lachlanchen/LazyGame",
+        "https://games.lazying.art"
+      ],
+      "gates": [
+        "Choose one game and learner level before packaging",
+        "Verify rules, engines, fonts, accessibility, age/privacy terms, and trademark boundaries",
+        "Do not claim learning outcomes without classroom evidence"
+      ],
+      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "openhi-reproducibility-session",
+      "title": "OpenHI reproducibility and kit qualification",
+      "state": "gated",
+      "buyer": "A computational-imaging laboratory evaluating event-based hyperspectral imaging",
+      "need": "Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time",
+      "projects": ["OpenHI", "AgInTi-LabCanvas", "AgInTi-HardwareConsole", "nhi_hardware"],
+      "first_deliverable": "A paid or research-partner reproducibility session and written compatibility or kit-qualification report",
+      "first_test": "Interview existing repository users and kit inquiries before increasing traffic or changing checkout",
+      "proof": [
+        "https://github.com/lachlanchen/OpenHI",
+        "https://doi.org/10.1364/OE.505380"
+      ],
+      "gates": [
+        "Audit the exact SKU, inventory, price, lead time, calibration, shipping, tax, return, warranty, and support terms",
+        "Keep scientific claims tied to the paper and reproducible evidence",
+        "Proprietary SDK, dataset, and component licenses must be checked"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 3, "low_support": 1, "repeatability": 3}
+    },
+    {
+      "id": "source-aware-money-workbook",
+      "title": "Source-aware money and decision workbook",
+      "state": "gated",
+      "buyer": "A reader seeking a multilingual, evidence-linked way to study business, money, and fulfillment",
+      "need": "Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises",
+      "projects": ["HowYouGotRich", "LazyEarn", "PocketPolyglot", "LocalKnowledgeTerminal"],
+      "first_deliverable": "An original workbook and source companion built only from cleared or newly written material",
+      "first_test": "Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone",
+      "proof": [
+        "https://github.com/lachlanchen/HowYouGotRich",
+        "https://github.com/lachlanchen/LazyEarn"
+      ],
+      "gates": [
+        "No personalized financial advice, performance promises, or implied endorsement",
+        "Verify interview, figure, quotation, and translation permissions",
+        "Date changing financial facts and link to primary sources"
+      ],
+      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 2, "low_support": 4, "repeatability": 4}
+    }
+  ]
+}

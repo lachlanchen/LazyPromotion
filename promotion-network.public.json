@@ -83,6 +83,370 @@
       "url": ""
     },
     {
+      "id": "opportunity:etymology-learning-deck",
+      "kind": "opportunity",
+      "label": "Cited etymology learning deck",
+      "metadata": {
+        "buyer": "A language teacher, curriculum creator, or advanced vocabulary learner",
+        "first_deliverable": "A digital-first, rights-cleared themed deck with browser cards, source notes, and printable export; e-paper is optional",
+        "first_test": "Publish a small deck from openly licensed lexical sources and ask teachers which theme they would actually use",
+        "gates": [
+          "Keep source-specific licenses and attribution with every exported subset",
+          "Review generated etymology and morphology before publication",
+          "Do not make hardware a dependency of the first product"
+        ],
+        "need": "Learn words through meanings, roots, affixes, pronunciations, translations, and provenance rather than isolated flashcards",
+        "scores": {
+          "buyer_pain": 3,
+          "delivery_readiness": 3,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 3.5
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:classical-chinese-history-classroom",
+      "kind": "opportunity",
+      "label": "Classical Chinese history classroom pack",
+      "metadata": {
+        "buyer": "A Chinese-language or history teacher seeking source-aware, multilingual classroom material",
+        "first_deliverable": "One short public-domain passage with reviewed alignment, teacher notes, vocabulary cards, and a bounded classroom activity",
+        "first_test": "Show one rights-cleared lesson to teachers before producing a larger collection",
+        "gates": [
+          "Verify the exact source edition, translation, annotations, images, fonts, and media rights",
+          "Do not monetize or broadly promote the existing LinguaLeaf shelf until its title-level rights ledger is complete",
+          "Historical explanations require source review and must distinguish evidence from dramatization"
+        ],
+        "need": "Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice",
+        "scores": {
+          "buyer_pain": 3,
+          "delivery_readiness": 2,
+          "low_support": 3,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "gated",
+        "weighted_score": 3.2
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:creator-library-refinery",
+      "kind": "opportunity",
+      "label": "Creator library refinery",
+      "metadata": {
+        "buyer": "A creator with an owned archive of long videos, transcripts, drafts, and clips",
+        "first_deliverable": "One archive map and one source-linked article or clip package from customer-owned material",
+        "first_test": "Use one LazyingArt-owned archive as the case study, then approach creators whose existing catalog is underused",
+        "gates": [
+          "The creator must own or license every input and destination asset",
+          "Generated clips and summaries require editorial review",
+          "Publishing and platform access remain separate reviewed actions"
+        ],
+        "need": "Turn an existing archive into searchable source material, polished articles, clips, and multilingual derivatives without losing provenance",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 3,
+          "low_support": 3,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 3.7
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:creator-media-library",
+      "kind": "opportunity",
+      "label": "Creator media library website",
+      "metadata": {
+        "buyer": "An independent creator with an owned catalog scattered across audio, video, lyrics, captions, and social platforms",
+        "first_deliverable": "A static three-item media library proof using customer-owned assets, corrected metadata, captions or lyrics, and a portable export",
+        "first_test": "Use a small LazyingArt-owned catalog as the demonstration, then ask creators with an existing back catalog whether they would pay to have three items organized",
+        "gates": [
+          "Verify ownership or licenses for every recording, image, lyric, subtitle, font, and translation",
+          "Hosting, domain setup, analytics, social publishing, and ongoing catalog maintenance are separate scopes",
+          "Keep the first proof static and portable so it does not create an open-ended support obligation"
+        ],
+        "need": "Give an existing catalog a durable, searchable home with reliable metadata and language access instead of depending on a platform feed",
+        "scores": {
+          "buyer_pain": 3,
+          "delivery_readiness": 4,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 3.7
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:explainable-game-classroom",
+      "kind": "opportunity",
+      "label": "Explainable game classroom bundle",
+      "metadata": {
+        "buyer": "A club, teacher, parent, or curriculum creator teaching strategy games across languages",
+        "first_deliverable": "A downloadable lesson sequence for one game, one level, and one language pair",
+        "first_test": "Let one teacher or club use a short lesson pack and observe where explanation or setup fails",
+        "gates": [
+          "Choose one game and learner level before packaging",
+          "Verify rules, engines, fonts, accessibility, age/privacy terms, and trademark boundaries",
+          "Do not claim learning outcomes without classroom evidence"
+        ],
+        "need": "Teach decisions with exact rules and visible reasoning instead of opaque move recommendations",
+        "scores": {
+          "buyer_pain": 3,
+          "delivery_readiness": 3,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 3.5
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:lecture-to-study-library",
+      "kind": "opportunity",
+      "label": "Lecture-to-study library",
+      "metadata": {
+        "buyer": "A course creator, teacher, research group, or conference owner with recordings they control",
+        "first_deliverable": "One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof",
+        "first_test": "Interview owners of existing course archives and offer one short sample from customer-owned or openly licensed media",
+        "gates": [
+          "Use only customer-owned, licensed, or clearly open educational media",
+          "The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale",
+          "Define transcript correction and translation acceptance criteria before pricing"
+        ],
+        "need": "Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 3,
+          "low_support": 3,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 3.7
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:multilingual-video-accessibility",
+      "kind": "opportunity",
+      "label": "Multilingual video accessibility package",
+      "metadata": {
+        "buyer": "An educator or creator who owns a video and needs accurate multilingual access",
+        "first_deliverable": "One customer-owned video with corrected source subtitles, one reviewed translation, and a captioned master plus subtitle files",
+        "first_test": "Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems",
+        "gates": [
+          "The customer must control the media and any music",
+          "Publishing is optional and separately reviewed",
+          "Human language review is required before claiming subtitle accuracy"
+        ],
+        "need": "Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline",
+        "scores": {
+          "buyer_pain": 5,
+          "delivery_readiness": 3,
+          "low_support": 3,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 4.0
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:openhi-reproducibility-session",
+      "kind": "opportunity",
+      "label": "OpenHI reproducibility and kit qualification",
+      "metadata": {
+        "buyer": "A computational-imaging laboratory evaluating event-based hyperspectral imaging",
+        "first_deliverable": "A paid or research-partner reproducibility session and written compatibility or kit-qualification report",
+        "first_test": "Interview existing repository users and kit inquiries before increasing traffic or changing checkout",
+        "gates": [
+          "Audit the exact SKU, inventory, price, lead time, calibration, shipping, tax, return, warranty, and support terms",
+          "Keep scientific claims tied to the paper and reproducible evidence",
+          "Proprietary SDK, dataset, and component licenses must be checked"
+        ],
+        "need": "Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 3,
+          "low_support": 1,
+          "proof": 5,
+          "repeatability": 3
+        },
+        "state": "gated",
+        "weighted_score": 3.6
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:private-collection-intelligence",
+      "kind": "opportunity",
+      "label": "Private collection intelligence",
+      "metadata": {
+        "buyer": "A researcher, educator, small lab, or specialist team with one bounded private document collection",
+        "first_deliverable": "The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes",
+        "first_test": "Reach people already deciding how to handle a bounded private collection and show the project-owned sample report before the fit check",
+        "gates": [
+          "The customer must have sufficient rights to use the collection",
+          "Private source files and customer data never enter the promotion repository",
+          "Do not imply that production deployment or managed access is included in the USD 250 sprint"
+        ],
+        "need": "Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot",
+        "scores": {
+          "buyer_pain": 5,
+          "delivery_readiness": 5,
+          "low_support": 3,
+          "proof": 5,
+          "repeatability": 4
+        },
+        "state": "active",
+        "weighted_score": 4.65
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:local-ai-workstation-deployment",
+      "kind": "opportunity",
+      "label": "Private local-AI workstation deployment",
+      "metadata": {
+        "buyer": "A technical small team that owns suitable compute and needs a private, maintainable local model endpoint",
+        "first_deliverable": "A compatibility audit and single-machine deployment plan before any implementation or managed-support scope",
+        "first_test": "Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit",
+        "gates": [
+          "Hardware, model, driver, security, uptime, and remote-access support boundaries must be written",
+          "Never expose an unauthenticated model endpoint",
+          "Model licenses and geographic restrictions must be checked per deployment"
+        ],
+        "need": "Install and operate a pinned local model stack with a usable web client and guarded remote access",
+        "scores": {
+          "buyer_pain": 5,
+          "delivery_readiness": 3,
+          "low_support": 1,
+          "proof": 4,
+          "repeatability": 5
+        },
+        "state": "candidate",
+        "weighted_score": 3.95
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:agent-workflow-kit",
+      "kind": "opportunity",
+      "label": "Review-first agent workflow kit",
+      "metadata": {
+        "buyer": "A developer or small team coordinating several AI coding and browser workflows",
+        "first_deliverable": "A small workflow audit plus one tested, portable skill or AAPS pipeline for a recurring internal task",
+        "first_test": "Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time",
+        "gates": [
+          "Do not automate unsolicited engagement or bypass account verification",
+          "Separate credentials and private session state from portable workflow code",
+          "Use explicit human gates for external writes, payments, and irreversible actions"
+        ],
+        "need": "Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 4,
+          "low_support": 3,
+          "proof": 4,
+          "repeatability": 5
+        },
+        "state": "candidate",
+        "weighted_score": 4.05
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:scientific-manuscript-workbench",
+      "kind": "opportunity",
+      "label": "Scientific manuscript workbench audit",
+      "metadata": {
+        "buyer": "A research group with an existing LaTeX manuscript, figures, code, and revision deadline",
+        "first_deliverable": "A fixed-scope private build and provenance audit with issue ledger, reproducible PDF build, and prioritized revision plan",
+        "first_test": "Publish a synthetic case study and interview researchers who have an active build or response-letter problem",
+        "gates": [
+          "Set confidentiality, retention, authorship, and no-guaranteed-acceptance terms",
+          "Do not upload manuscripts or review correspondence without explicit authorization",
+          "Add clear repository licenses before packaging reusable code"
+        ],
+        "need": "Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material",
+        "scores": {
+          "buyer_pain": 5,
+          "delivery_readiness": 3,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 4.1
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:song-to-language-lesson",
+      "kind": "opportunity",
+      "label": "Song-to-language lesson",
+      "metadata": {
+        "buyer": "A language teacher, independent artist, or course creator who controls an original song",
+        "first_deliverable": "One rights-cleared song packaged as a browser lesson with reviewed lyrics, one translation, timed playback, vocabulary cards, and a printable companion",
+        "first_test": "Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material",
+        "gates": [
+          "The creator must control the composition, recording, lyrics, artwork, and translations used in the lesson",
+          "A fluent reviewer must approve lyrics, translation, and pronunciation guidance",
+          "Do not promise automatic publication, streaming distribution, or learning outcomes"
+        ],
+        "need": "Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes",
+        "scores": {
+          "buyer_pain": 3,
+          "delivery_readiness": 3,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "candidate",
+        "weighted_score": 3.5
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:source-aware-money-workbook",
+      "kind": "opportunity",
+      "label": "Source-aware money and decision workbook",
+      "metadata": {
+        "buyer": "A reader seeking a multilingual, evidence-linked way to study business, money, and fulfillment",
+        "first_deliverable": "An original workbook and source companion built only from cleared or newly written material",
+        "first_test": "Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone",
+        "gates": [
+          "No personalized financial advice, performance promises, or implied endorsement",
+          "Verify interview, figure, quotation, and translation permissions",
+          "Date changing financial facts and link to primary sources"
+        ],
+        "need": "Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises",
+        "scores": {
+          "buyer_pain": 3,
+          "delivery_readiness": 2,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "gated",
+        "weighted_score": 3.3
+      },
+      "url": ""
+    },
+    {
       "id": "project:github-aaps",
       "kind": "project",
       "label": "AAPS",
@@ -4857,6 +5221,13 @@
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
+      "id": "url:8945a53cc57c5704",
+      "kind": "web_resource",
+      "label": "doi.org",
+      "metadata": {},
+      "url": "https://doi.org/10.1364/OE.505380"
+    },
+    {
       "id": "url:b77fdcc9720dc9c0",
       "kind": "web_resource",
       "label": "dub partner terms",
@@ -4883,6 +5254,146 @@
       "label": "ftc affiliate guidance",
       "metadata": {},
       "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "url:b32b390edf243a1e",
+      "kind": "web_resource",
+      "label": "games.lazying.art",
+      "metadata": {},
+      "url": "https://games.lazying.art"
+    },
+    {
+      "id": "url:1257abe5602afa5a",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/Musia"
+    },
+    {
+      "id": "url:1b702463589d4de7",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md"
+    },
+    {
+      "id": "url:20b8a70d7770dd09",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/HowYouGotRich"
+    },
+    {
+      "id": "url:254e8d3f44063bc8",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/PaperAgentDemo"
+    },
+    {
+      "id": "url:265444c2e249d3e1",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LalaMedias"
+    },
+    {
+      "id": "url:3ac773bf58cf86d3",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalLLM"
+    },
+    {
+      "id": "url:45192426591114fc",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyEdge"
+    },
+    {
+      "id": "url:4e9793cff914e3b1",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/WordOrigins"
+    },
+    {
+      "id": "url:6c61657175e6875a",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/Video2Book"
+    },
+    {
+      "id": "url:8c31df37ee870928",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyEarn"
+    },
+    {
+      "id": "url:90dd533df880bbcd",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyEdit"
+    },
+    {
+      "id": "url:9a48729df2afb4b3",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/paper-revision-skill"
+    },
+    {
+      "id": "url:b5905affb9e9343e",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/leonardsusskind"
+    },
+    {
+      "id": "url:c5ba05aea8ba9414",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/OpenHI"
+    },
+    {
+      "id": "url:d68b6d7a397bec40",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyGame"
+    },
+    {
+      "id": "url:d7c65b7ccadb8cbb",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/ShiGame"
+    },
+    {
+      "id": "url:dba0de94184137c3",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/AAPS"
+    },
+    {
+      "id": "url:e540c1271c5ffbf8",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazySkills"
+    },
+    {
+      "id": "url:f214c0e6352b80fd",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/FuriganaSubtitles"
     },
     {
       "id": "url:2384ab616d067b14",
@@ -5403,6 +5914,718 @@
       "relation": "uses_evidence",
       "source": "campaign:wenyan-history",
       "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AAPS",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:agent-workflow-kit",
+      "target": "project:github-aaps"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AgentShell",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:agent-workflow-kit",
+      "target": "project:github-agentshell"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/aginti-browser",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:agent-workflow-kit",
+      "target": "project:github-aginti-browser"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:agent-workflow-kit",
+      "target": "project:github-lazypromotion"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazySkills",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:agent-workflow-kit",
+      "target": "project:github-lazyskills"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AAPS",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:agent-workflow-kit",
+      "target": "url:dba0de94184137c3"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazySkills",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:agent-workflow-kit",
+      "target": "url:e540c1271c5ffbf8"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/RaraXiaAndAyaChan",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "project:github-raraxiaandayachan"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/ShiGame",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "project:github-shigame"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyGame",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "project:lazygame"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/ShiGame",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "url:d7c65b7ccadb8cbb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AutoPublish",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-library-refinery",
+      "target": "project:github-autopublish"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaStudio",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-library-refinery",
+      "target": "project:github-lalastudio"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-library-refinery",
+      "target": "project:github-video2book"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-library-refinery",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-library-refinery",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaMedias",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:creator-library-refinery",
+      "target": "url:265444c2e249d3e1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:creator-library-refinery",
+      "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaMedias",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-media-library",
+      "target": "project:github-lalamedias"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaStudio",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-media-library",
+      "target": "project:github-lalastudio"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-media-library",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Musia",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-media-library",
+      "target": "project:musia"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaMedias",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:creator-media-library",
+      "target": "url:265444c2e249d3e1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:creator-media-library",
+      "target": "url:90dd533df880bbcd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:etymology-learning-deck",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:etymology-learning-deck",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/WordOrigins",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:etymology-learning-deck",
+      "target": "project:wordorigins"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/WordsCardEink",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:etymology-learning-deck",
+      "target": "project:wordscard"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:etymology-learning-deck",
+      "target": "url:1b702463589d4de7"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/WordOrigins",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:etymology-learning-deck",
+      "target": "url:4e9793cff914e3b1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyChess",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:explainable-game-classroom",
+      "target": "project:github-lazychess"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyMahjong",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:explainable-game-classroom",
+      "target": "project:github-lazymahjong"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPoker",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:explainable-game-classroom",
+      "target": "project:github-lazypoker"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyGame",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:explainable-game-classroom",
+      "target": "project:lazygame"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyWeiqi",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:explainable-game-classroom",
+      "target": "project:lazyweiqi"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://games.lazying.art",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:explainable-game-classroom",
+      "target": "url:b32b390edf243a1e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyGame",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:explainable-game-classroom",
+      "target": "url:d68b6d7a397bec40"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "project:github-multilingualwhisper"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "project:github-video2book"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:b5905affb9e9343e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/aginti-browser",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "project:github-aginti-browser"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "project:github-lazyedge"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingAgentWeb",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "project:github-lazyingagentweb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalLLM",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "project:github-localllm"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/novnc-manager",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "project:github-novnc-manager"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalLLM",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "url:3ac773bf58cf86d3"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "url:45192426591114fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AutoPublish",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:multilingual-video-accessibility",
+      "target": "project:github-autopublish"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/FuriganaSubtitles",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:multilingual-video-accessibility",
+      "target": "project:github-furiganasubtitles"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:multilingual-video-accessibility",
+      "target": "project:github-multilingualwhisper"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:multilingual-video-accessibility",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:multilingual-video-accessibility",
+      "target": "url:90dd533df880bbcd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/FuriganaSubtitles",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:multilingual-video-accessibility",
+      "target": "url:f214c0e6352b80fd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AgInTi-HardwareConsole",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:openhi-reproducibility-session",
+      "target": "project:github-aginti-hardwareconsole"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AgInTi-LabCanvas",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:openhi-reproducibility-session",
+      "target": "project:github-aginti-labcanvas"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/nhi_hardware",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:openhi-reproducibility-session",
+      "target": "project:github-nhi-hardware"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/OpenHI",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:openhi-reproducibility-session",
+      "target": "project:github-openhi"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://doi.org/10.1364/OE.505380",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:openhi-reproducibility-session",
+      "target": "url:8945a53cc57c5704"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/OpenHI",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:openhi-reproducibility-session",
+      "target": "url:c5ba05aea8ba9414"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "project:github-lazyedge"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingAgentWeb",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "project:github-lazyingagentweb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalLLM",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "project:github-localllm"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/sample-report/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "url:3f9d0326fb664513"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AgInTi-LabCanvas",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "project:github-aginti-labcanvas"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/paper-critique-skill",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "project:github-paper-critique-skill"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/paper-revision-skill",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "project:github-paper-revision-skill"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PaperAgent",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "project:github-paperagent"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PaperAgentDemo",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:254e8d3f44063bc8"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/paper-revision-skill",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:9a48729df2afb4b3"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:song-to-language-lesson",
+      "target": "project:github-multilingualwhisper"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:song-to-language-lesson",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Musia",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:song-to-language-lesson",
+      "target": "project:musia"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:song-to-language-lesson",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Musia",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:song-to-language-lesson",
+      "target": "url:1257abe5602afa5a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:song-to-language-lesson",
+      "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/HowYouGotRich",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:source-aware-money-workbook",
+      "target": "project:howyougotrich"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEarn",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:source-aware-money-workbook",
+      "target": "project:lazyearn"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:source-aware-money-workbook",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:source-aware-money-workbook",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/HowYouGotRich",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:source-aware-money-workbook",
+      "target": "url:20b8a70d7770dd09"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEarn",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:source-aware-money-workbook",
+      "target": "url:8c31df37ee870928"
     },
     {
       "confidence": 1.0,

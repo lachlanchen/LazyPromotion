@@ -123,11 +123,11 @@ payment data, or private corpus text in the promotion repository.
    or referral may be shared.
 
 No automated generated comments are posted to Hacker News. Reddit community
-rules are checked before any reply. The first-party LKT X and Instagram posts
-were visibly reviewed and queued for September 8, 2026 at 01:00 and 11:31 UTC;
-their exact copy, uploaded visuals, sample-report-first destinations, provider
-settings, unchanged times, and queue state were confirmed after the update.
-The report retains the narrower fit-check action, so the path remains
+rules are checked before any reply. The first-party LKT posts are live on
+[X](https://twitter.com/lazyingart/status/2094935495788945567) and
+[Instagram](https://www.instagram.com/p/Dcw4xSzj1F8/). They show the concrete
+sample-report path rather than a portfolio dump. The report retains the narrower
+fit-check action, so the path remains
 `public evidence → local fit check → reviewed scope → payment`.
 
 The confidential-PDF guide also has two value-first distribution assets. A
@@ -185,6 +185,12 @@ action:
 Every other repository remains searchable in the public inventory and may be
 matched to a separate real need. It should not be inserted into the LKT sprint
 pitch merely to promote more projects.
+
+The [compound opportunity map](compound-opportunities.md) combines the public
+portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
+media, research tooling, games, and local AI. LKT remains the active revenue
+route; a candidate advances only after a current need and a small first test are
+found.
 
 ## Truthful measurement
 

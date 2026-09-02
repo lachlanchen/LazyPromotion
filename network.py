@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import promotion
+import opportunities
 
 
 ROOT = Path(__file__).resolve().parent
@@ -166,6 +167,45 @@ def sync_public_sources(db) -> dict[str, str]:
         project_id = project_by_url.get(repo["url"].rstrip("/").casefold())
         if project_id:
             upsert_relationship(db, project_id, "backed_by", repo_id, evidence_url=repo["url"])
+
+    for item in opportunities.load_registry()["opportunities"]:
+        opportunity_id = f"opportunity:{item['id']}"
+        upsert_entity(
+            db,
+            opportunity_id,
+            kind="opportunity",
+            label=item["title"],
+            visibility="public",
+            metadata={
+                "state": item["state"],
+                "buyer": item["buyer"],
+                "need": item["need"],
+                "first_deliverable": item["first_deliverable"],
+                "first_test": item["first_test"],
+                "gates": item["gates"],
+                "scores": item["scores"],
+                "weighted_score": opportunities.weighted_score(item),
+            },
+        )
+        for project_name in item["projects"]:
+            project_url = f"https://github.com/lachlanchen/{project_name}"
+            project_id = project_by_url[project_url.casefold()]
+            upsert_relationship(
+                db,
+                opportunity_id,
+                "combines",
+                project_id,
+                evidence_url=project_url,
+            )
+        for proof_url in item["proof"]:
+            resource_id = url_entity(db, proof_url)
+            upsert_relationship(
+                db,
+                opportunity_id,
+                "uses_evidence",
+                resource_id,
+                evidence_url=proof_url,
+            )
 
     verified_public_repositories.update(
         entity_id

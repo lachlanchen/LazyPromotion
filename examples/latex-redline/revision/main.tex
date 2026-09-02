@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper]{article}
+
+\ifdefined\pdfinfoomitdate\pdfinfoomitdate=1\fi
+\ifdefined\pdftrailerid\pdftrailerid{}\fi
+\ifdefined\pdfsuppressptexinfo\pdfsuppressptexinfo=-1\fi
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\title{A Synthetic Note on Reproducible LaTeX Revision}
+\author{LazyingArt project-owned sample}
+\date{2 September 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This synthetic document tests a small, reproducible LaTeX revision. It treats
+the editor-readable redline as a third build, not as an incidental view of the
+clean manuscript. It contains no customer material and makes no scientific
+claim.
+\end{abstract}
+
+\section{Method}
+
+A manuscript revision should freeze complete old and revised source trees and
+build each one independently. It should then generate the redline from those
+exact snapshots. The checked revision state is represented by
+
+\begin{equation}
+  R = (S_{\mathrm{old}}, S_{\mathrm{new}}, D),
+  \label{eq:build-state}
+\end{equation}
+
+where the two $S$ terms are named source snapshots and $D$ is the generated
+diff source. Each source is compiled with the same engine and dependency set.
+
+\begin{table}[ht]
+  \centering
+  \caption{Artifacts checked in the revision workflow.}
+  \label{tab:artifacts}
+  \begin{tabular}{ll}
+    \toprule
+    Artifact & Check \\
+    \midrule
+    Baseline & Builds independently \\
+    Revision & Builds independently \\
+    Redline & Builds from the accepted snapshots \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Verification}
+
+The final review checks the clean revised PDF for locations and the redline PDF
+for visible changes. Build commands, source hashes, tool versions, warnings,
+and unresolved issues remain in the accompanying manifest.
+
+\section{Conclusion}
+
+A successful clean build is necessary but not sufficient. The two source
+snapshots in \eqref{eq:build-state} remain separate and independently buildable.
+The three-part state keeps both accepted source trees and their generated
+redline connected without silently overwriting either source.
+
+\end{document}

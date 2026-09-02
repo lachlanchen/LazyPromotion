@@ -80,16 +80,37 @@
       "The sample manuscript contains illustrative content and is not evidence for any scientific result.",
       "The repository has no detected root license, so third-party reuse terms remain unspecified.",
       "This is a project-owned build audit, not a customer result, testimonial, or paid delivery."
-    ]
+    ],
+    "redline_sample": {
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
+      "state": "verified_project_owned_synthetic_sample",
+      "latexdiff": "1.4.0 at 57d0ec532c41eb73645804d7f67667336da8bd01",
+      "builds": [
+        "baseline",
+        "revision",
+        "redline"
+      ],
+      "final_latex_errors": 0,
+      "final_undefined_references": 0,
+      "final_overfull_or_underfull_boxes": 0,
+      "consecutive_build_manifest_match": true,
+      "visually_reviewed": true,
+      "policy": "A one-page synthetic proof of the three-build path. It is not representative evidence for a complex customer manuscript or journal submission."
+    }
   },
   "activation_gate": {
     "state": "evidence_building",
     "not_yet_offered_for_payment": true,
     "required_before_paid_listing": [
-      "A rights-cleared old/new sample that exercises latexdiff and produces a reproducible redline PDF.",
-      "A pinned redline toolchain and checked build script.",
+      "A representative rights-cleared sample with figures, bibliography, math, and a response-location trace; the current one-page sample proves only the minimal three-build path.",
       "Non-confidential intake, retention, deletion, cancellation, refund, revision, and support boundaries.",
       "A marketplace or owned fit-check path that does not request manuscript files before scope acceptance."
+    ],
+    "completed": [
+      "Pinned latexdiff 1.4.0 and recorded its source commit and SHA-256.",
+      "Built project-owned baseline, revision, and redline PDFs with clean final logs.",
+      "Verified identical source and PDF hashes across consecutive builds.",
+      "Visually inspected all three one-page PDFs."
     ]
   },
   "funnel": {

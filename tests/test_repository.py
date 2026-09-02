@@ -1,3 +1,4 @@
+import hashlib
 import json
 import tempfile
 import unittest
@@ -852,6 +853,34 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("received usd", serialized)
         self.assertNotIn("account_id", serialized)
         self.assertNotIn("payout_id", serialized)
+
+    def test_latex_redline_sample_matches_its_public_manifest(self):
+        sample = ROOT / "examples" / "latex-redline"
+        artifacts = sample / "artifacts"
+        manifest = json.loads((artifacts / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["toolchain"]["latexdiff_tag"], "1.4.0")
+        self.assertEqual(
+            manifest["toolchain"]["latexdiff_commit"],
+            "57d0ec532c41eb73645804d7f67667336da8bd01",
+        )
+        for name, path in {
+            "baseline": sample / "baseline" / "main.tex",
+            "revision": sample / "revision" / "main.tex",
+        }.items():
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            self.assertEqual(digest, manifest["source_sha256"][name])
+        for name in ("baseline", "revision", "redline"):
+            pdf = artifacts / f"{name}.pdf"
+            self.assertTrue(pdf.read_bytes().startswith(b"%PDF-"))
+            digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
+            self.assertEqual(digest, manifest["pdf_sha256"][name])
+        self.assertEqual(manifest["verification"]["final_latex_errors"], 0)
+        self.assertEqual(manifest["verification"]["final_undefined_references"], 0)
+        for log in artifacts.glob("*-final.log"):
+            content = log.read_text(encoding="utf-8", errors="replace")
+            self.assertNotIn("LaTeX Error", content)
+            self.assertNotIn("There were undefined references", content)
+            self.assertNotIn("Overfull", content)
 
     def test_reply_prompt_uses_quiet_profile_led_promotion(self):
         candidate = {

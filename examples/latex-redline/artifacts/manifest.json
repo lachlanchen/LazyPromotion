@@ -1,0 +1,27 @@
+{
+  "sample": "project-owned synthetic LaTeX revision",
+  "evidence_boundary": "Not a customer result, scientific result, journal submission, or paid delivery.",
+  "toolchain": {
+    "latexdiff_tag": "1.4.0",
+    "latexdiff_commit": "57d0ec532c41eb73645804d7f67667336da8bd01",
+    "latexdiff_sha256": "bbf7567f48ae6d52887ebce0a390eac0718508b5e1e3ee158bffd4280dca8723",
+    "pdftex": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+    "latexmk": "4.83"
+  },
+  "source_sha256": {
+    "baseline": "ef4169a27032c0c063ffa2d0ce82880f0c9840b9edda50be0fd985a113835637",
+    "revision": "c3e1bf6204b98af9855ec62c80f0931c62da187f35fbe80c253e5c90de7977e6"
+  },
+  "pdf_sha256": {
+    "baseline": "50fee7eee42567991a5c07d7d2f202a6650355c26982c794a6311bf9c3f70ed8",
+    "revision": "a4deac1fe4177b8e66b20e9c1df2f5b9f49eb9bfebe7cfea2c1db2fd00cd08d2",
+    "redline": "52bedcef9d7ecbb10329f07eb52383f98b8917ccfd4fa7c85af1bd4af1c670d2"
+  },
+  "verification": {
+    "baseline_build": "passed",
+    "revision_build": "passed",
+    "redline_build": "passed",
+    "final_undefined_references": 0,
+    "final_latex_errors": 0
+  }
+}

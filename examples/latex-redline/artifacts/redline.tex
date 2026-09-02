@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper]{article}
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL /home/lachlan/ProjectsLFS/LazyPromotion/examples/latex-redline/baseline/main.tex   Wed Sep  2 10:04:51 2026
+%DIF ADD /home/lachlan/ProjectsLFS/LazyPromotion/examples/latex-redline/revision/main.tex   Wed Sep  2 10:05:34 2026
+
+\ifdefined\pdfinfoomitdate\pdfinfoomitdate=1\fi
+\ifdefined\pdftrailerid\pdftrailerid{}\fi
+\ifdefined\pdfsuppressptexinfo\pdfsuppressptexinfo=-1\fi
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\title{A Synthetic Note on Reproducible LaTeX Revision}
+\author{LazyingArt project-owned sample}
+\date{2 September 2026}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}} %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+%DIF AMSMATHULEM PREAMBLE %DIF PREAMBLE
+\makeatletter %DIF PREAMBLE
+\let\sout@orig\sout %DIF PREAMBLE
+\renewcommand{\sout}[1]{\ifmmode\text{\sout@orig{\ensuremath{#1}}}\else\sout@orig{#1}\fi} %DIF PREAMBLE
+\makeatother %DIF PREAMBLE
+%DIF COLORLISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}[1][]{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}[1][]{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+\lstset{extendedchars=\true,inputencoding=utf8}
+
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This synthetic document tests a small, reproducible LaTeX revision. It \DIFaddbegin \DIFadd{treats
+the editor-readable redline as a third build, not as an incidental view of the
+clean manuscript. It }\DIFaddend contains no customer material and makes no scientific
+claim.
+\end{abstract}
+
+\section{Method}
+
+A manuscript revision should freeze complete old and revised source trees and
+build each one independently. \DIFdelbegin \DIFdel{The checked comparison }\DIFdelend \DIFaddbegin \DIFadd{It should then generate the redline from those
+exact snapshots. The checked revision }\DIFaddend state is represented by
+
+\begin{equation}
+  R = (S_{\mathrm{old}}, S_{\mathrm{new}}\DIFaddbegin \DIFadd{, D}\DIFaddend ),
+  \label{eq:build-state}
+\end{equation}
+
+where the two $S$ terms are named source snapshots \DIFaddbegin \DIFadd{and $D$ is the generated
+diff source. Each source is }\DIFaddend compiled with the same engine and dependency set.
+
+\begin{table}[ht]
+  \centering
+  \caption{Artifacts checked in the revision workflow.}
+  \label{tab:artifacts}
+  \begin{tabular}{ll}
+    \toprule
+    Artifact & Check \\
+    \midrule
+    Baseline & Builds \DIFaddbeginFL \DIFaddFL{independently }\DIFaddendFL \\
+    Revision & Builds \DIFaddbeginFL \DIFaddFL{independently }\DIFaddendFL \\
+    \DIFaddbeginFL \DIFaddFL{Redline }& \DIFaddFL{Builds from the accepted snapshots }\\
+    \DIFaddendFL \bottomrule
+  \end{tabular}
+\end{table}
+
+\DIFaddbegin \section{\DIFadd{Verification}}
+
+\DIFadd{The final review checks the clean revised PDF for locations and the redline PDF
+for visible changes. Build commands, source hashes, tool versions, warnings,
+and unresolved issues remain in the accompanying manifest.
+}
+
+\DIFaddend \section{Conclusion}
+
+A successful clean build is necessary but not sufficient. The two source
+snapshots in \eqref{eq:build-state} remain separate and independently buildable\DIFaddbegin \DIFadd{.
+The three-part state keeps both accepted source trees and their generated
+redline connected without silently overwriting either source}\DIFaddend .
+
+\end{document}

@@ -1,0 +1,61 @@
+{
+  "id": "bilingual-pocket-editions",
+  "version": 1,
+  "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
+  "source_need": {
+    "captured_at": "2026-09-02T01:22:45Z",
+    "url": "https://www.reddit.com/r/ebooks/comments/1vtuejx/a_bilingual_study_edition_of_the_dhammapada_max/",
+    "problem": "An independent bilingual-book creator explicitly asked for feedback on a fixed A4, parallel-column study edition intended to support their work.",
+    "rights_boundary": "The response discusses layout and metadata only. It does not assess or grant rights in the source edition or translation."
+  },
+  "channels": {
+    "reddit": {
+      "state": "helpful_reply_live",
+      "checked_at": "2026-09-02T01:30:11Z",
+      "url": "https://www.reddit.com/r/ebooks/comments/1vtuejx/comment/p7al3y4/",
+      "content": "From the layout you describe, I’d test one spread at 100% on a 6–8 inch screen before committing to fixed A4. Two columns can look clean on desktop but become tiny on an e-reader; facing pages or alternating English/Spanish blocks may travel better. Verse numbers should be identical, visible anchors in both languages, so a reader can move between the text and your reflections without losing the pair. I’d also put the exact English edition, your Spanish-translation credit, and the rights basis on the copyright page, then offer a reflowable EPUB beside the fixed PDF if you can. That would preserve the designed edition while giving Kobo/Kindle readers control over type size.",
+      "linked_owned_asset": false,
+      "promotional_claim": false,
+      "rules_checked": [
+        "Be courteous.",
+        "Do not share pirated or infringing material.",
+        "Do not use referral links."
+      ],
+      "verification": {
+        "visible_public_body": true,
+        "evidence": ".local/evidence/20260902T013011Z-open.png",
+        "duplicate_retry": false,
+        "guard_reconciled_after_live_dom_check": true
+      },
+      "lead_or_sale_observed": false,
+      "policy": "The creator asked for feedback, so the reply gives concrete reading and production checks without mentioning an owned project or asking for contact."
+    },
+    "x": {
+      "state": "not_scheduled",
+      "policy": "Wait for a project-owned before-and-after layout artifact rather than turning another creator's request into content."
+    },
+    "instagram": {
+      "state": "not_scheduled",
+      "policy": "Use only rights-cleared project-owned book pages if this theme is demonstrated visually."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Do not post agent-authored comments."
+    }
+  },
+  "source_evidence": {
+    "book_pipeline": "https://github.com/lachlanchen/PocketPolyglot",
+    "public_shelf": "https://lachlanchen.github.io/LinguaLeaf/website/",
+    "classical_chinese_work": "https://github.com/lachlanchen/zhjpbook",
+    "limits": [
+      "These projects demonstrate aligned multilingual layout and provenance work; they are not customer proof for the creator in the source thread.",
+      "Do not advertise a paid pocket-edition service until input limits, rights review, translation review, output formats, corrections, and commercial terms are bounded.",
+      "A public reply and vote are not a lead, sale, endorsement, or permission to pitch."
+    ]
+  },
+  "offer_state": {
+    "status": "not_activated",
+    "reason": "The current evidence supports the problem and a useful production pattern, but not yet a separate paid offer or price.",
+    "received_revenue_usd": 0
+  }
+}

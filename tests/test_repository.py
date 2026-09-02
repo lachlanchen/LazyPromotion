@@ -346,6 +346,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(browser.destination_matches(candidate, sibling, "reddit"))
         self.assertEqual(
             browser.reddit_posted_reply_selector("comment456"),
+            'shreddit-comment[parentid="t1_comment456"] > details div[slot="comment"], '
             'shreddit-comment[parentid="t1_comment456"] > div[slot="comment"]',
         )
 

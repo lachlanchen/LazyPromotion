@@ -1064,6 +1064,8 @@ def reddit_posted_reply_selector(parent_comment_id: str) -> str:
         raise ValueError("invalid Reddit parent comment id")
     return (
         f'shreddit-comment[parentid="t1_{parent_comment_id}"] '
+        '> details div[slot="comment"], '
+        f'shreddit-comment[parentid="t1_{parent_comment_id}"] '
         '> div[slot="comment"]'
     )
 
@@ -1074,7 +1076,11 @@ def reddit_comment_records(page: Page) -> list[dict[str, str]]:
         """nodes => nodes.map(node => ({
           thingid: node.getAttribute('thingid') || '',
           parentid: node.getAttribute('parentid') || '',
-          body: (node.querySelector(':scope > div[slot="comment"]')?.innerText || '').trim()
+          body: (
+            node.querySelector(':scope > details div[slot="comment"]')?.innerText ||
+            node.querySelector(':scope > div[slot="comment"]')?.innerText ||
+            ''
+          ).trim()
         })).filter(row => row.thingid && row.body)"""
     )
 

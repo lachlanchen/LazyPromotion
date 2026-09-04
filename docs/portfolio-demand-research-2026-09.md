@@ -109,6 +109,7 @@ a complete customer delivery or permission to reuse third-party lectures.
 | Real-time local translation for mixed-language media | MultilingualWhisper + LazyEdit + FuriganaSubtitles | Measured latency, VRAM, long-audio, and language-pair tests | Current requests need real-time or hour-long performance that the portfolio has not publicly measured |
 | Passage-aligned Classical Chinese with readings, glosses, and provenance | PocketPolyglot + LinguaLeaf + zhjpbook + LKT graph | One title-level rights-cleared lesson whose gloss and history edges expose sources and uncertainty | Learner demand is strong, but buying power and title-level reuse rights are unresolved |
 | Multilingual etymology collections with trustworthy relationships | WordOrigins + LKT graph + LinguaLeaf + WordsCardEink | A small openly licensed deck with source, locator, relation type, uncertainty, and correction history on every edge | Existing tools are plentiful; accuracy and provenance—not another pretty graph—must be demonstrated first |
+| Reproducible event/frame alignment code | SoftEventFrameAlignment | A minimal licensed release with declared dependencies, a synthetic example, smoke tests, and consistent time units | A reader asked for the code, but public `main` currently contains documentation only; authorship, data rights, and runtime failures must be resolved before claiming availability |
 
 ## Evidence used
 
@@ -121,6 +122,7 @@ a complete customer delivery or permission to reuse third-party lectures.
 - [A current lecture-notes request](https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/) validates the transcript → summary → later search requirement, but the learner prefers free software and already accepted another recommendation.
 - [An English-only Classical Chinese beginner](https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/) wants affordable guidance and glyph origins, while experienced readers warn that unsupported generated explanations can be confidently wrong.
 - [An Analects learning project](https://www.reddit.com/r/ChineseLanguage/comments/1vkx5ss/the_analects_for_learners_15920_definitions/) is evidence that passage-specific glosses, readings, aligned text, and removable annotations are useful; it is another creator's work, not a place to pitch.
+- [A SoftEventFrameAlignment reader](https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1) asked for the implementation. The maintainer response corrected the README's current overclaim and promised only an eventual minimal release, without pretending the unpublished code was available. The issue is a real reproducibility need, not a sale.
 - Search Console's visible 28-day view on 2026-09-05 showed 135 clicks. The
   Susskind archive article led with 28 clicks and the Classical Mechanics Reader
   had 25. That is owned discovery evidence for the lecture route, but the PDF-led

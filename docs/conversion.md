@@ -68,6 +68,16 @@ the paid boundaries to inspectable code, books, and media. The existing
 11-language profile header and support panel remain intact. Profile traffic is
 attention only, never a lead or received revenue by itself.
 
+The public [Selected Work shelf](https://lazying.art/work/) now gives the wider
+portfolio one readable route without turning the homepage into a repository
+dump. It groups inspectable work by the problem it helps solve: multilingual
+books and provenance, source-to-study media, reproducible research artifacts,
+and agent or scientific-instrument tooling. Only the three delivery-ready USD
+250 sprints receive commercial next steps. LazyingArtWebsite commit `85e7649`
+is deployed, and Search Console accepted one priority crawl request on
+September 5. The shelf and crawl request are discovery infrastructure, not a
+visit, inquiry, lead, or sale.
+
 The [source-first bilingual lecture
 guide](https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html)
 is now live in English, Traditional Chinese, and Japanese. It gives the full

@@ -662,6 +662,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
+        self.assertEqual(campaign["version"], 6)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -698,6 +699,11 @@ class RepositoryTests(unittest.TestCase):
             promotion.project_by_id("localknowledgeterminal")["reply_url"],
             campaign["source_evidence"]["fit_check"],
         )
+        discovery = campaign["search_discovery"]
+        self.assertEqual(discovery["current_state"], "url_is_on_google")
+        self.assertTrue(discovery["indexed"])
+        self.assertFalse(discovery["traffic_observed"])
+        self.assertIn("not ranking", discovery["policy"])
         self.assertEqual(
             campaign["source_evidence"]["fit_check"],
             "https://lazying.art/lkt/fit-check/",
@@ -1161,7 +1167,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["version"], 6)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1205,13 +1211,14 @@ class RepositoryTests(unittest.TestCase):
         discovery = campaign["search_discovery"]
         self.assertEqual(discovery["initial_state"], "url_unknown_to_google")
         self.assertEqual(
-            discovery["request_state"],
+            discovery["historical_request_state"],
             "accepted_priority_crawl_request",
         )
-        self.assertFalse(discovery["indexed"])
+        self.assertEqual(discovery["current_state"], "url_is_on_google")
+        self.assertTrue(discovery["indexed"])
         self.assertFalse(discovery["traffic_observed"])
         self.assertIn("Do not resubmit", discovery["policy"])
-        self.assertIn("not indexing", discovery["policy"])
+        self.assertIn("not ranking", discovery["policy"])
 
         payment = campaign["payment_readiness"]
         self.assertEqual(payment["state"], "ready_for_reviewed_live_request")
@@ -1294,7 +1301,16 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
+        discovery = campaign["search_discovery"]
+        self.assertEqual(
+            discovery["initial_state"],
+            "discovered_currently_not_indexed",
+        )
+        self.assertEqual(discovery["request_state"], "accepted_priority_crawl_request")
+        self.assertFalse(discovery["indexed"])
+        self.assertFalse(discovery["traffic_observed"])
+        self.assertIn("not indexing", discovery["policy"])
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")
         self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")

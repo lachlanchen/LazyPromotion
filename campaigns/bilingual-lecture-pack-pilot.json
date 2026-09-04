@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -103,6 +103,15 @@
       "state": "not_requested",
       "policy": "The public price is fixed, but a real Stripe request still requires a qualified buyer, accepted written scope, and reviewed delivery, correction, cancellation, refund, tax, and support terms."
     }
+  },
+  "search_discovery": {
+    "checked_at": "2026-09-04T19:36:36Z",
+    "url": "https://lazying.art/lecture-pack/",
+    "initial_state": "discovered_currently_not_indexed",
+    "request_state": "accepted_priority_crawl_request",
+    "indexed": false,
+    "traffic_observed": false,
+    "policy": "The visible URL Inspection result reported Discovered - currently not indexed, and one crawl request was accepted. That request is not indexing, ranking, traffic, a lead, or revenue; do not resubmit it merely to seek higher priority."
   },
   "channels": {
     "github_profile": {

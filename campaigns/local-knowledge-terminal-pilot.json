@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -140,6 +140,16 @@
     "commercial_action": "After a positive fit review, accept the fixed USD 250 sprint scope and complete a reviewed Stripe payment request.",
     "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales.",
     "verified_received_gross_usd": 0
+  },
+  "search_discovery": {
+    "checked_at": "2026-09-04T19:36:36Z",
+    "url": "https://lazying.art/lkt/",
+    "initial_state": "url_unknown_to_google",
+    "historical_request_state": "accepted_priority_crawl_request",
+    "current_state": "url_is_on_google",
+    "indexed": true,
+    "traffic_observed": false,
+    "policy": "The visible URL Inspection result now reports that the page is on Google. Indexing is not ranking, traffic, a lead, or revenue. Do not resubmit the URL merely to seek higher priority."
   },
   "conversion_readiness": {
     "inbound_address": "contact@lazying.art",

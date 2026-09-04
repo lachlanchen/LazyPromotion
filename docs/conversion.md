@@ -37,9 +37,9 @@ LKT. A payment request remains blocked until a real fit check and written scope
 are accepted.
 
 The manuscript landing page was unknown to Google when inspected on September
-4, 2026. One indexing request passed the live-page check and entered Google's
-priority crawl queue. That does not prove indexing or traffic. Do not resubmit
-the URL; observe it again after Google has had time to crawl.
+4, 2026, and one indexing request entered Google's priority crawl queue. A
+later visible URL Inspection check on September 5 reported that the page is on
+Google. That proves neither ranking, traffic, a lead, nor revenue.
 
 ## One homepage, three focused routes
 
@@ -166,14 +166,15 @@ sale, or revenue. The receiver never replies or qualifies automatically, and
 the `contact@lazying.art` email fallback remains available.
 
 The first-party search-discovery gate was also checked through Search Console's
-visible URL Inspection and Sitemaps screens on September 2, 2026. The sample
-report was already indexed. The LKT landing page and fit-check page were each
-unknown to Google, so each received exactly one accepted indexing request; an
-accepted priority-crawl request does not prove that either page has been
-indexed. The root `https://lazying.art/sitemap.xml` was absent from the submitted
-list, then submitted once and confirmed with status `Success` and seven
-discovered pages. Do not resubmit those URLs merely to seek higher priority;
-recheck their status in a later observation window.
+visible URL Inspection and Sitemaps screens. On September 2, the sample report
+was already indexed; the LKT landing page and fit-check page were unknown to
+Google, so each received one accepted indexing request. On September 5, a
+visible recheck reported that the LKT landing page is on Google. The Manuscript
+Sprint page is also on Google. The Lecture Pack page was discovered but not yet
+indexed, so it received one accepted crawl request. The root
+`https://lazying.art/sitemap.xml` remains successfully submitted. Do not
+resubmit these URLs merely to seek higher priority: indexing and accepted crawl
+requests prove neither ranking, traffic, leads, nor revenue.
 
 The same visible 28-day report showed the Classical Mechanics Reader as the
 second-ranked page with 22 clicks, up 47%. The live reader previously ended at

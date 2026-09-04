@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 14
+        "version": 15
       },
       "url": ""
     },
@@ -173,6 +173,13 @@
       "id": "channel:linkedin",
       "kind": "channel",
       "label": "linkedin",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:linkedin_practical_guide",
+      "kind": "channel",
+      "label": "linkedin_practical_guide",
       "metadata": {},
       "url": ""
     },
@@ -6224,6 +6231,16 @@
       "relation": "targets",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:linkedin_practical_guide"
     },
     {
       "confidence": 1.0,

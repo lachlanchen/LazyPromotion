@@ -1307,7 +1307,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 14)
+        self.assertEqual(campaign["version"], 15)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1327,6 +1327,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(linkedin["shortlink"])
         self.assertTrue(linkedin["verification"]["stored_text_exact"])
         self.assertIn("not leads or revenue", linkedin["policy"])
+
+        guide = campaign["channels"]["linkedin_practical_guide"]
+        self.assertEqual(guide["state"], "postiz_queue")
+        self.assertEqual(guide["publish_at"], "2026-09-24T02:00:00Z")
+        self.assertEqual(guide["content"], guide["postiz_content"])
+        self.assertIn("turn-lecture-into-bilingual-subtitles-study-guide", guide["destination"])
+        self.assertIn("utm_source=linkedin", guide["destination"])
+        self.assertFalse(guide["shortlink"])
+        self.assertTrue(guide["verification"]["visible_editor_reviewed"])
+        self.assertTrue(
+            guide["verification"]["stored_text_exact_after_html_normalization"]
+        )
+        self.assertIn("not leads or revenue", guide["policy"])
 
     def test_bilingual_lecture_youtube_proof_is_reviewed_before_one_publish(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"

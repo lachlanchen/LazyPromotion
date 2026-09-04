@@ -75,7 +75,10 @@ method first—source ledger, transcript correction, segment alignment,
 subtitle/book derivation, evidence-linked concepts, and seek-back QA—then ends
 with one tracked lecture-pack link. It uses Video2Book, LazyEdit,
 PocketPolyglot, LKT, the project-owned timed-text sample, and the free Susskind
-archive as inspectable evidence. Publication is discovery, not a lead or sale.
+archive as inspectable evidence. One value-first LinkedIn note is queued for
+September 24 after the existing Postiz calendar; it leads to the complete
+article rather than directly to payment. Publication and queueing are
+discovery, not a lead or sale.
 
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)

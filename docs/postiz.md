@@ -117,6 +117,16 @@ timestamp-first workflow, links to project-owned proof, keeps the original
 campaign URL, and states the fixed USD 250 rights-cleared scope. The read-only
 monitor confirmed the exact text, time, provider, and `QUEUE` state.
 
+Later that day, the complete source-first lecture guide was published on
+LazyBlog and one separate LinkedIn note was visibly reviewed for
+2026-09-24T02:00:00Z, after the existing campaign calendar. The note teaches
+why transcripts, translations, subtitles, and study books should derive from
+stable timed segments, then links to the full English/Traditional
+Chinese/Japanese article. The original tracked URL was retained without a
+shortlink. A provider read confirmed `QUEUE`, the exact time, and the exact
+text after normalizing Postiz's paragraph HTML. No provider ID is stored in
+Git, and the queued note is not a lead or sale.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

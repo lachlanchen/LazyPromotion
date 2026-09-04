@@ -1,0 +1,31 @@
+{
+  "change_control": "Issue a new version and recode every passage; never silently edit this frozen codebook.",
+  "codes": [
+    {
+      "definition": "The policy commits to making an official resource available to the public without an account or access fee.",
+      "exclusion_rule": "Exclude staff-only access, undefined future access, and access that requires an account or fee.",
+      "id": "PUBLIC_ACCESS",
+      "inclusion_rule": "Apply when the text expressly provides public access and states either no fee or no account barrier.",
+      "label": "Public access commitment"
+    },
+    {
+      "definition": "The policy names at least two implementation stages and gives a date or deadline for each stage.",
+      "exclusion_rule": "Exclude a single deadline, an undated aspiration, or an ordering of steps without dates.",
+      "id": "PHASED_IMPLEMENTATION",
+      "inclusion_rule": "Apply when a pilot or interim stage and a complete stage each have an explicit date.",
+      "label": "Phased implementation schedule"
+    },
+    {
+      "definition": "A reviewer outside the implementing department examines decisions and reports findings.",
+      "exclusion_rule": "Exclude internal quality checks and external advice that includes no review of decisions.",
+      "id": "INDEPENDENT_REVIEW",
+      "inclusion_rule": "Apply when the text identifies an external reviewer, a review object, and a reporting duty.",
+      "label": "Independent review mechanism"
+    }
+  ],
+  "frozen": true,
+  "frozen_on": "2026-09-05",
+  "schema_version": 1,
+  "unit_of_analysis": "one synthetic policy passage",
+  "version": "1.0.0"
+}

@@ -1,0 +1,73 @@
+{
+  "annotations": [
+    {
+      "ambiguity": {
+        "flag": false,
+        "note": "Both the no-fee and no-account conditions are explicit."
+      },
+      "applied_codes": [
+        "PUBLIC_ACCESS"
+      ],
+      "evidence": [
+        {
+          "excerpt": "The city archive shall provide free online access to final meeting minutes.",
+          "locator": "P-001:S-01"
+        },
+        {
+          "excerpt": "Documents must remain downloadable without an account.",
+          "locator": "P-001:S-02"
+        }
+      ],
+      "passage_id": "P-001",
+      "primary_code": "PUBLIC_ACCESS",
+      "rationale": "The passage expressly removes both the price and account barriers to public access."
+    },
+    {
+      "ambiguity": {
+        "flag": true,
+        "note": "The final-stage date is explicit, but delivery depends on later funding approval."
+      },
+      "applied_codes": [
+        "PHASED_IMPLEMENTATION"
+      ],
+      "evidence": [
+        {
+          "excerpt": "The department will publish a pilot register by 30 June 2031.",
+          "locator": "P-002:S-01"
+        },
+        {
+          "excerpt": "A complete register is scheduled for 31 December 2031, subject to approved funding.",
+          "locator": "P-002:S-02"
+        }
+      ],
+      "passage_id": "P-002",
+      "primary_code": "PHASED_IMPLEMENTATION",
+      "rationale": "The text dates both a pilot stage and a complete stage, while making the latter conditional."
+    },
+    {
+      "ambiguity": {
+        "flag": false,
+        "note": "The reviewer, review object, frequency, and reporting duty are all stated."
+      },
+      "applied_codes": [
+        "INDEPENDENT_REVIEW"
+      ],
+      "evidence": [
+        {
+          "excerpt": "An external reviewer selected by the civic panel shall audit a sample of decisions each year.",
+          "locator": "P-003:S-01"
+        },
+        {
+          "excerpt": "The reviewer shall publish a summary that names no individual applicants.",
+          "locator": "P-003:S-02"
+        }
+      ],
+      "passage_id": "P-003",
+      "primary_code": "INDEPENDENT_REVIEW",
+      "rationale": "An external reviewer must inspect decisions annually and publish a privacy-preserving summary."
+    }
+  ],
+  "annotation_method": "Hand-authored reference decisions under the frozen codebook.",
+  "codebook_version": "1.0.0",
+  "schema_version": 1
+}

@@ -1,0 +1,30 @@
+{
+  "artifact_sha256": {
+    "report.md": "1f646cd2c3b298ee91a8f58bdcd742d011ebfb6fc3526f52df826ccd6a9a37e9"
+  },
+  "boundary": "Project-owned synthetic workflow proof; not a customer result, benchmark, offer, revenue claim, or analysis of client or copyrighted text.",
+  "builder": "auditable-policy-coding-v1",
+  "inputs": {
+    "client_data_used": false,
+    "copyrighted_source_text_used": false,
+    "model_calls_used": false,
+    "network_used": false,
+    "synthetic_passages": true
+  },
+  "manifest_self_hashed": false,
+  "schema_version": 1,
+  "source_sha256": {
+    "build.py": "615e7b26b9afc137a32382d3c2644c321e70e5cbf5781a864153b8fa30c8e6a6",
+    "inputs/classifications.json": "3129277e9d2cf4cb3572db656836f5b73589dc64a64d0dbd44aa63aa89aa3689",
+    "inputs/codebook.json": "111c70b0f37d9fc403012220e697c87e0dadd575ab8e7ee6d9d6b9218b6a2a9c",
+    "inputs/passages.json": "dc5361d2a0cc4d28412c61b1f8182fbef6a4a5a7029a30f5cc01f3e385b10b08"
+  },
+  "verification": {
+    "ambiguity_flags": 1,
+    "annotation_count": 3,
+    "code_count": 3,
+    "evidence_excerpt_count": 6,
+    "exact_excerpt_matches": 6,
+    "passage_count": 3
+  }
+}

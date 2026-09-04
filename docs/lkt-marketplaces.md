@@ -75,8 +75,11 @@ The Contra draft preserves the public offer exactly:
 - one language goal;
 - one existing machine;
 - a written data, citation, and privacy map;
-- a small browser proof from a usable representative sample; and
-- a written go/no-go recommendation.
+- evaluation of an agreed representative sample capped at 12 source units and
+  20 test questions;
+- up to two cited browser cards when the material is usable;
+- a written go/no-go recommendation; and
+- one factual correction pass.
 
 The first portfolio or media item should be the public
 [sample fit report](https://lazying.art/lkt/sample-report/), when the live

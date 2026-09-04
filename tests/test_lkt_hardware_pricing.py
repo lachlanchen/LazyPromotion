@@ -1,5 +1,6 @@
 import json
 import unittest
+from pathlib import Path
 
 import lkt_hardware_pricing
 
@@ -53,6 +54,14 @@ class LktHardwarePricingTests(unittest.TestCase):
     def test_invalid_rates_fail_closed(self):
         with self.assertRaisesRegex(ValueError, "leave no room"):
             self.report(payment_fee_percent="20", target_margin_percent="80")
+
+    def test_documented_device_floor_stays_non_public(self):
+        body = (Path(__file__).parents[1] / "docs" / "lkt-hardware-pricing.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Do not advertise the earlier USD 498 device idea", body)
+        self.assertIn("USD 798 is therefore a **proposed internal floor**", body)
+        self.assertIn("minimum 25%-margin price is USD 768.56", body)
 
 
 if __name__ == "__main__":

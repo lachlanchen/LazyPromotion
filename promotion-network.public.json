@@ -1,6 +1,16 @@
 {
   "entities": [
     {
+      "id": "campaign:auditable-policy-content-coding",
+      "kind": "campaign",
+      "label": "auditable-policy-content-coding",
+      "metadata": {
+        "objective": "Win and deliver a current USD 600 textbook content-coding contract by showing exact, source-linked coding discipline rather than making an unsupported research claim.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:bilingual-lecture-pack-pilot",
       "kind": "campaign",
       "label": "bilingual-lecture-pack-pilot",
@@ -5701,25 +5711,11 @@
       "url": "https://lazying.art/lkt/passage-graph/"
     },
     {
-      "id": "url:d873c4adf4afccff",
-      "kind": "web_resource",
-      "label": "passage provenance proof youtube demo description destinations 2",
-      "metadata": {},
-      "url": "https://lazying.art/lkt/fit-check/"
-    },
-    {
       "id": "url:642c155f64b240e7",
       "kind": "web_resource",
       "label": "passage provenance proof youtube demo url",
       "metadata": {},
       "url": "https://www.youtube.com/watch?v=UuVa-DaSAvI"
-    },
-    {
-      "id": "url:c48afb0dbeb7ee89",
-      "kind": "web_resource",
-      "label": "pilot page",
-      "metadata": {},
-      "url": "https://lazying.art/lkt/"
     },
     {
       "id": "url:e6fb5bef94e3ec0c",
@@ -5792,13 +5788,6 @@
       "url": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html"
     },
     {
-      "id": "url:3f9d0326fb664513",
-      "kind": "web_resource",
-      "label": "sample fit report",
-      "metadata": {},
-      "url": "https://lazying.art/lkt/sample-report/"
-    },
-    {
       "id": "url:08da0dd4fa5a19c9",
       "kind": "web_resource",
       "label": "sample fit report source",
@@ -5811,6 +5800,27 @@
       "label": "search demand article",
       "metadata": {},
       "url": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html"
+    },
+    {
+      "id": "url:c48afb0dbeb7ee89",
+      "kind": "web_resource",
+      "label": "service scope contract live routes verified 1",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/"
+    },
+    {
+      "id": "url:d873c4adf4afccff",
+      "kind": "web_resource",
+      "label": "service scope contract live routes verified 2",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/fit-check/"
+    },
+    {
+      "id": "url:3f9d0326fb664513",
+      "kind": "web_resource",
+      "label": "service scope contract live routes verified 3",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/sample-report/"
     },
     {
       "id": "url:90dd533df880bbcd",
@@ -5905,6 +5915,36 @@
     }
   ],
   "relationships": [
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_planned"
+      },
+      "relation": "targets",
+      "source": "campaign:auditable-policy-content-coding",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_planned"
+      },
+      "relation": "targets",
+      "source": "campaign:auditable-policy-content-coding",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "application_prepared_login_required"
+      },
+      "relation": "targets",
+      "source": "campaign:auditable-policy-content-coding",
+      "target": "channel:upwork"
+    },
     {
       "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LalaMedias",

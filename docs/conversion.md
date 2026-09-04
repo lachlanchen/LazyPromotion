@@ -10,12 +10,15 @@ be reported separately—none may be inferred from impressions or clicks.
 The primary offer remains the
 [Local Knowledge Terminal collection-fit sprint](https://lazying.art/lkt/): a
 fixed USD 250 service for one customer-provided collection, one language goal,
-and one existing machine. It includes a written data/privacy map, a small
-browser proof from a representative sample when the source is usable, and a
-go/no-go recommendation. Hardware, shipping, custom OCR, and a production
-deployment are excluded. Four confirmed USD 250 payments would be USD 1,000
-gross. That is a milestone calculation, not a forecast, and excludes payment
-fees, tax, refunds, and delivery costs.
+and one existing machine. It includes a written data/privacy/citation map, an
+agreed sample capped at 12 source units and 20 test questions, up to two cited
+browser cards when the material is usable, a go/no-go recommendation, and one
+factual correction pass. The written scope defines the source unit—for example,
+a passage, record, or representative page—before payment. Hardware, shipping,
+custom OCR, bulk conversion,
+production deployment, and ongoing support are excluded. Four confirmed USD
+250 payments would be USD 1,000 gross. That is a milestone calculation, not a
+forecast, and excludes payment fees, tax, refunds, and delivery costs.
 
 The active secondary route is the [Manuscript Build & Redline
 Sprint](https://lazying.art/manuscript-sprint/): USD 250 for one LaTeX

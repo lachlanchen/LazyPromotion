@@ -1,0 +1,49 @@
+{
+  "boundary": "Wholly synthetic project-owned passages; no client or copyrighted source text.",
+  "passages": [
+    {
+      "id": "P-001",
+      "segments": [
+        {
+          "locator": "P-001:S-01",
+          "text": "The city archive shall provide free online access to final meeting minutes."
+        },
+        {
+          "locator": "P-001:S-02",
+          "text": "Documents must remain downloadable without an account."
+        }
+      ],
+      "title": "Archive access rule"
+    },
+    {
+      "id": "P-002",
+      "segments": [
+        {
+          "locator": "P-002:S-01",
+          "text": "The department will publish a pilot register by 30 June 2031."
+        },
+        {
+          "locator": "P-002:S-02",
+          "text": "A complete register is scheduled for 31 December 2031, subject to approved funding."
+        }
+      ],
+      "title": "Register rollout rule"
+    },
+    {
+      "id": "P-003",
+      "segments": [
+        {
+          "locator": "P-003:S-01",
+          "text": "An external reviewer selected by the civic panel shall audit a sample of decisions each year."
+        },
+        {
+          "locator": "P-003:S-02",
+          "text": "The reviewer shall publish a summary that names no individual applicants."
+        }
+      ],
+      "title": "Annual review rule"
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": true
+}

@@ -7,16 +7,30 @@ and reproducible project-owned proof. The milestone is any four confirmed USD
 250 payments across these three routes, or USD 1,000 gross before fees, tax,
 refunds, and delivery costs. It is a target, not a revenue promise.
 
+A current buyer-intent contract can shorten the route without changing those
+offers. An Upwork listing requests source-linked coding of 21 policy-text files
+and validation of 193 passages for USD 600. A wholly synthetic, reproducible
+[auditable content-coding sample](../examples/auditable-policy-coding/) now
+shows the exact-excerpt, locator, rationale, codebook, and ambiguity discipline
+needed for that work. The application is prepared but not submitted because
+the project browser is not authenticated as a freelancer. No Connects were
+spent, and the listing is not a lead, contract, payment, or revenue.
+
 ## Fixed scope
 
 One sprint covers one customer-provided collection, one language goal, and one
 existing machine. It delivers:
 
 1. a written data, citation, and privacy map;
-2. a small browser proof from a representative sample when the source is usable;
+2. evaluation of an agreed representative sample capped at 12 source units and
+   20 test questions, with up to two cited browser cards when the source is
+   usable; and
 3. a clear go/no-go recommendation and the boundary of any larger deployment.
 
-Hardware, shipping, custom OCR, and production deployment are excluded. The
+The written scope defines the source unit—for example, a passage, record, or
+representative page—before payment. One factual correction pass is included.
+Hardware, shipping, custom OCR, bulk
+conversion, production deployment, and ongoing support are excluded. The
 customer must have the right to use the source. A free fit check comes first;
 Stripe payment is requested only after both sides accept the scope.
 

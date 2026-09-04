@@ -1,0 +1,51 @@
+{
+  "id": "auditable-policy-content-coding",
+  "version": 1,
+  "objective": "Win and deliver a current USD 600 textbook content-coding contract by showing exact, source-linked coding discipline rather than making an unsupported research claim.",
+  "source_need": {
+    "captured_on": "2026-09-05",
+    "posted_on": "2026-08-31",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Content-coding-policy-texts-three-questions-each-plus-short-validation-pass_~022094173981642613860/",
+    "budget": "USD 600 fixed price in two milestones: USD 450 for Part 1 and USD 150 for Part 2",
+    "scope": "Independently code 21 supplied policy-text excerpt files against three dropdown questions each, retain the deciding sentence and one-line rationale, then validate 193 supplied passages against the same fixed codebook.",
+    "delivery_window": "Three weeks after receiving the files, with a longer schedule available for discussion before contracting.",
+    "activity_when_checked": "20 to 50 proposals, 0 interviewing, 0 invites sent",
+    "client_history_when_checked": "USD 3.1K total spent and 11 hires",
+    "policy": "The public listing is buyer-intent evidence only. It is not a lead, contract, sale, payment, or received revenue. Client files must remain outside Git."
+  },
+  "owned_proof": {
+    "state": "built_and_reproducible",
+    "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/auditable-policy-coding",
+    "description": "Three wholly synthetic passages, one frozen codebook, exact deciding excerpts and locators, one-line rationales, ambiguity flags, a deterministic report, and a hashed manifest.",
+    "limits": [
+      "The example uses no client text or copyrighted source text.",
+      "It is a workflow proof, not customer work, a benchmark, policy expertise, a completed contract, or a revenue claim.",
+      "A client-supplied codebook remains authoritative; ambiguity must be flagged rather than resolved by invention."
+    ]
+  },
+  "channels": {
+    "upwork": {
+      "state": "application_prepared_login_required",
+      "application_submitted": false,
+      "connects_spent": 0,
+      "proposal_link": "",
+      "policy": "The project browser currently exposes the public listing without an authenticated freelancer account. Do not create an account, accept platform terms, buy or spend Connects, or claim an application until the exact platform action is reviewed."
+    },
+    "lazyblog": {
+      "state": "not_planned",
+      "policy": "Do not turn one marketplace listing into a generic promotional article. The reproducible GitHub sample is the relevant proof."
+    },
+    "reddit": {
+      "state": "not_planned",
+      "policy": "Do not seek or contact the buyer outside Upwork."
+    }
+  },
+  "funnel": {
+    "state": "buyer_intent_identified",
+    "application_submitted": false,
+    "interview_observed": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

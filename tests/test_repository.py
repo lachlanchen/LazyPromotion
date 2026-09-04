@@ -576,6 +576,24 @@ class RepositoryTests(unittest.TestCase):
             "founding collection-fit sprint",
         )
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
+        included_scope = campaign["source_evidence"]["included_scope"]
+        self.assertIn(
+            "an agreed representative sample capped at 12 source units and 20 test questions",
+            included_scope,
+        )
+        self.assertIn(
+            "up to two cited browser cards when the material is usable",
+            included_scope,
+        )
+        self.assertIn("one factual correction pass", included_scope)
+        excluded_scope = campaign["source_evidence"]["excluded_scope"]
+        self.assertIn("bulk conversion", excluded_scope)
+        self.assertIn("ongoing support", excluded_scope)
+        scope_contract = campaign["source_evidence"]["service_scope_contract"]
+        self.assertEqual(scope_contract["state"], "live_verified")
+        self.assertEqual(scope_contract["sample_cap"], "12 agreed source units and 20 test questions")
+        self.assertEqual(len(scope_contract["live_routes_verified"]), 3)
+        self.assertIn("larger sample", scope_contract["policy"])
         currency = campaign["source_evidence"]["currency_contract"]
         self.assertEqual(currency["state"], "live")
         self.assertEqual(currency["exact_price"], "USD 250")
@@ -1022,6 +1040,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("received usd", serialized)
         self.assertNotIn("account_id", serialized)
         self.assertNotIn("payout_id", serialized)
+
+    def test_policy_coding_campaign_has_real_demand_and_synthetic_proof(self):
+        path = ROOT / "campaigns" / "auditable-policy-content-coding.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(campaign["version"], 1)
+        self.assertIn("USD 600", campaign["source_need"]["budget"])
+        self.assertIn("193", campaign["source_need"]["scope"])
+        self.assertEqual(campaign["owned_proof"]["state"], "built_and_reproducible")
+        self.assertIn("auditable-policy-coding", campaign["owned_proof"]["url"])
+        upwork = campaign["channels"]["upwork"]
+        self.assertEqual(upwork["state"], "application_prepared_login_required")
+        self.assertFalse(upwork["application_submitted"])
+        self.assertEqual(upwork["connects_spent"], 0)
+        self.assertFalse(campaign["funnel"]["payment_confirmed"])
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
 
     def test_manuscript_sprint_is_bounded_live_and_fit_first(self):
         path = ROOT / "campaigns" / "manuscript-sprint-pilot.json"

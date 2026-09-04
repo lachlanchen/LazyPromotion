@@ -10,6 +10,7 @@ added USD 30 to 8 GB products, and the official April notice added a further
 USD 50 to 8 GB Raspberry Pi 4 and 5 variants. Revalidate the exact approved-
 reseller quote before every hardware batch:
 
+- <https://pip-assets.raspberrypi.com/categories/892-raspberry-pi-5/documents/RP-008348-DS-4-raspberry-pi-5-product-brief.pdf>
 - <https://www.raspberrypi.com/news/more-memory-driven-price-rises/>
 - <https://www.raspberrypi.com/news/a-new-3gb-raspberry-pi-4-for-83-75-and-more-memory-driven-price-increases/>
 
@@ -51,11 +52,30 @@ and the shipping, tax, cancellation, return, warranty, and support terms have
 actually been reviewed. A passing calculation is still not evidence of demand,
 inventory, a sale, or received revenue.
 
+## Working device floor, not a public offer
+
+Do not advertise the earlier USD 498 device idea. If the base device really
+costs CNY 2,500, USD 498 leaves too little room for storage, enclosure, power,
+cooling, assembly, packaging, support and returns, shipping, or payment fees.
+
+The current internal planning case uses CNY 2,500 at CNY 6.5 per USD, USD 150
+for all other variable costs, a conservative 5.4% + USD 0.30 payment-fee
+assumption, and a 25% contribution-margin target. Under those assumptions:
+
+- total variable cost is USD 534.62;
+- the minimum 25%-margin price is USD 768.56;
+- USD 798 leaves USD 220 contribution, or 27.57%.
+
+USD 798 is therefore a **proposed internal floor**, not an active price. Keep
+the public device line quote-only until the complete landed BOM and fulfillment
+terms are confirmed. Shipping, duties, and tax must either be included in that
+calculation or quoted separately before payment.
+
 ## Offer ladder
 
 1. Keep the free metadata-only fit check.
 2. Keep the founding USD 250 collection-fit sprint for an existing machine.
-3. Keep a supplied device quote-only until the exact build and fulfillment
-   contract pass the gates above.
+3. Keep a supplied device quote-only; use USD 798 only as a proposed internal
+   floor until the exact build and fulfillment contract pass the gates above.
 4. State the service and hardware as separate line items. Never imply that USD
    250 buys the device or that a device quote includes unbounded collection work.

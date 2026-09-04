@@ -90,19 +90,39 @@
       "calculator": "https://github.com/lachlanchen/LazyPromotion/blob/main/lkt_hardware_pricing.py",
       "policy": "The USD 250 offer is an existing-machine service. A supplied device remains a separate quote until its complete landed bill of materials and shipping, tax, return, warranty, and support terms pass the pricing gates."
     },
+    "service_scope_contract": {
+      "state": "live_verified",
+      "checked_on": "2026-09-05",
+      "website_commit": "65628d033b660abf2cb7438d55ee2e6d9c2d983c",
+      "repository_commit": "83f262abc3ebb2281a06b3ffaa50a17fe613b38d",
+      "sample_cap": "12 agreed source units and 20 test questions",
+      "browser_proof_cap": "up to two cited browser cards when usable",
+      "correction_allowance": "one factual correction pass",
+      "source_unit_contract": "The written scope defines one source unit, such as a passage, record, or representative page, before payment.",
+      "live_routes_verified": [
+        "https://lazying.art/lkt/",
+        "https://lazying.art/lkt/fit-check/",
+        "https://lazying.art/lkt/sample-report/"
+      ],
+      "policy": "The founding USD 250 price is sustainable only inside this exact work cap. Any larger sample, additional language, bulk conversion, custom OCR, production deployment, or ongoing support needs a separate scope."
+    },
     "current_order_mode": "live encrypted direct free fit check with contact@ email fallback, followed by human review and a separately reviewed Stripe payment request",
     "included_scope": [
       "one customer-provided collection",
       "one language goal",
       "one existing machine",
-      "a written data and privacy map",
-      "a small browser proof from a representative sample when usable",
-      "a go/no-go recommendation for a larger deployment"
+      "a written data, citation, and privacy map",
+      "an agreed representative sample capped at 12 source units and 20 test questions",
+      "up to two cited browser cards when the material is usable",
+      "a go/no-go recommendation for a larger deployment",
+      "one factual correction pass"
     ],
     "excluded_scope": [
       "hardware and shipping",
       "custom OCR",
-      "production deployment"
+      "bulk conversion",
+      "production deployment",
+      "ongoing support"
     ],
     "limits": [
       "Do not call the hardware ready to ship or imply that a standard kit is available.",

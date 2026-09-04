@@ -1,6 +1,6 @@
 {
   "id": "scientific-pdf-integrity",
-  "version": 1,
+  "version": 2,
   "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
   "source_needs": [
     {
@@ -56,6 +56,15 @@
         "release_present": false
       },
       "policy": "One spaced first-party technical note after the existing queue. No thread, media, customer result, or direct reply; publication and destination still require post-release verification."
+    },
+    "website": {
+      "state": "live",
+      "verified_at": "2026-09-04T10:37:33Z",
+      "source": "https://lazying.art/lkt/",
+      "destination": "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html?utm_source=lkt&utm_medium=website&utm_campaign=scientific_pdf_integrity&utm_content=research_use_case",
+      "placement": "Private research use-case card",
+      "website_commit": "063226f",
+      "policy": "A single contextual guide link helps research-library visitors evaluate their collection before the fit check. It is an attention route, not a lead or customer result."
     },
     "reddit": {
       "state": "research_only",

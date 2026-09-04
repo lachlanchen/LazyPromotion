@@ -96,7 +96,7 @@
       "label": "scientific-pdf-integrity",
       "metadata": {
         "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -163,6 +163,13 @@
       "id": "channel:upwork",
       "kind": "channel",
       "label": "upwork",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:website",
+      "kind": "channel",
+      "label": "website",
       "metadata": {},
       "url": ""
     },
@@ -6644,6 +6651,16 @@
       "relation": "targets",
       "source": "campaign:scientific-pdf-integrity",
       "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live"
+      },
+      "relation": "targets",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "channel:website"
     },
     {
       "confidence": 1.0,

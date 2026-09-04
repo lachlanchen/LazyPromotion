@@ -22,6 +22,30 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(ranked[0]["project"]["id"], "lazyedit")
         self.assertGreaterEqual(ranked[0]["score"], 5)
 
+    def test_rights_cleared_lecture_package_matches_video2book(self):
+        ranked = promotion.rank_projects(
+            "I own a 15 minute lecture recording and need a bilingual study guide "
+            "from the video with timestamped subtitles. What workflow should I use?"
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "video2book")
+        self.assertEqual(
+            ranked[0]["project"]["homepage"],
+            "https://lazying.art/lecture-pack/",
+        )
+        self.assertIn("rights-cleared English lecture", ranked[0]["project"]["reply_context"])
+
+    def test_latex_build_and_redline_need_matches_paperagent(self):
+        ranked = promotion.rank_projects(
+            "I need help making my LaTeX manuscript compile in Overleaf and producing "
+            "a clean latexdiff redline for the journal."
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "paperagent")
+        self.assertEqual(
+            ranked[0]["project"]["reply_url"],
+            "https://lazying.art/manuscript-sprint/fit-check/",
+        )
+        self.assertIn("does not include ghostwriting", ranked[0]["project"]["reply_context"])
+
     def test_language_reader_matches_pocketpolyglot(self):
         ranked = promotion.rank_projects("Looking for a bilingual Japanese reader with furigana for reading practice")
         self.assertEqual(ranked[0]["project"]["id"], "pocketpolyglot")

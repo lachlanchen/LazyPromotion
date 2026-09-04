@@ -115,6 +115,8 @@ class RepositoryTests(unittest.TestCase):
         ids = [project["id"] for project in projects]
         self.assertEqual(len(ids), len(set(ids)))
         self.assertIn("localknowledgeterminal", ids)
+        self.assertIn("video2book", ids)
+        self.assertIn("paperagent", ids)
         for project in projects:
             with self.subTest(project=project["id"]):
                 self.assertTrue(project["url"].startswith("https://github.com/lachlanchen/"))
@@ -125,6 +127,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(
             by_id["lingualleaf"]["homepage"],
             "https://lachlanchen.github.io/LinguaLeaf/website/",
+        )
+        self.assertEqual(
+            by_id["video2book"]["homepage"],
+            "https://lazying.art/lecture-pack/",
+        )
+        self.assertEqual(
+            by_id["paperagent"]["homepage"],
+            "https://lazying.art/manuscript-sprint/",
         )
 
     def test_discovery_plan_uses_known_projects(self):

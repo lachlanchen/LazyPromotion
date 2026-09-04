@@ -25,10 +25,10 @@
     "github-onlyideas-aws": "aws amplify authentication",
     "github-organoidagent": "organoid segmentation phenotyping",
     "github-organoidintelligence": "brain organoid computing",
-    "github-paperagent": "local latex writing workspace",
+    "paperagent": "local latex writing workspace",
     "github-soraremote": "remote sora workflow",
     "github-the-art-of-lazying": "strategic laziness productivity",
-    "github-video2book": "video to study material",
+    "video2book": "video to study material",
     "github-videocaptionerwithclip": "clip video captioning",
     "github-videocaptionerwithvit": "vit video captioning",
     "github-yinghan": "organoid segmentation"

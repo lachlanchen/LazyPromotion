@@ -16,6 +16,44 @@
       ]
     },
     {
+      "id": "video2book",
+      "name": "Video2Book",
+      "url": "https://github.com/lachlanchen/Video2Book",
+      "homepage": "https://lazying.art/lecture-pack/",
+      "reply_url": "https://lazying.art/lecture-pack/fit-check/",
+      "summary": "A reproducible pipeline that turns rights-cleared video or audio into timestamped transcripts, subtitles, structured notes, PDFs, EPUBs, and multilingual pocket study editions.",
+      "reply_context": "Use Video2Book when someone needs a reviewable learning package from material they own or may lawfully reuse, not merely a generic video edit. The live Bilingual Lecture Pack is a founding USD 250 service for one rights-cleared English lecture up to 20 minutes, one primary speaker, and either Traditional Chinese or Japanese. It includes reviewed source and translated subtitle files, an editable bilingual source, an A5 study PDF, a 30–45 second captioned preview, a source-rights manifest, and one bounded corrections pass. It excludes rights clearance, platform downloads, extra languages, certified translation, dubbing, full-course work, hosting, publishing, and unlimited revisions. Mention the fit check only when the person is choosing a bounded paid workflow; otherwise answer with the public pipeline alone.",
+      "required_any": [
+        "video", "lecture", "lesson", "course", "webinar", "recording", "podcast", "audio", "subtitle", "transcript"
+      ],
+      "keywords": [
+        "video to book", "video into book", "video to study material", "lecture to notes",
+        "lecture notes from video", "course notes from video", "transcript to book",
+        "video transcript", "study guide from video", "bilingual study guide",
+        "bilingual subtitles", "timestamped subtitles",
+        "multilingual course", "localize course", "subtitle translation",
+        "video knowledge base", "lecture knowledge base"
+      ]
+    },
+    {
+      "id": "paperagent",
+      "name": "PaperAgent",
+      "url": "https://github.com/lachlanchen/PaperAgent",
+      "homepage": "https://lazying.art/manuscript-sprint/",
+      "reply_url": "https://lazying.art/manuscript-sprint/fit-check/",
+      "summary": "A reproducible LaTeX manuscript workflow for clean builds, issue ledgers, baseline-to-revision redlines, figures, tables, references, and submission-template checks.",
+      "reply_context": "Use PaperAgent for a concrete LaTeX, Overleaf, build, reference, or redline problem. The live Manuscript Build & Redline Sprint is a founding USD 250 service for one LaTeX manuscript up to 7,500 words, one target template, a supplied baseline and revision, three clean builds, an issue ledger, a reproducible redline, and one pass of up to ten consolidated build or formatting corrections. It does not include ghostwriting, new claims, literature review, statistical analysis, peer-review response drafting, submission access, or publication promises. Answer the technical question first and mention the fit check only when the author is genuinely deciding whether to outsource that bounded scope.",
+      "required_any": [
+        "manuscript", "paper", "latex", "tex", "overleaf", "journal", "preprint", "thesis", "bibtex", "latexdiff"
+      ],
+      "keywords": [
+        "latex manuscript", "overleaf", "latexdiff", "latex redline", "tracked changes",
+        "docx to latex", "docx to overleaf", "bibtex", "reproducible manuscript",
+        "paper revision", "manuscript build", "latex build", "latex error",
+        "journal template", "submission template"
+      ]
+    },
+    {
       "id": "autopublication",
       "name": "AutoPublication",
       "url": "https://github.com/lachlanchen/AutoPublication",

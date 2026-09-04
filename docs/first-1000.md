@@ -18,6 +18,10 @@ Hardware, shipping, custom OCR, and production deployment are excluded. The
 customer must have the right to use the source. A free fit check comes first;
 Stripe payment is requested only after both sides accept the scope.
 
+This USD 250 service price is not a device price. A supplied LKT terminal stays
+quote-only and separate until its complete landed BOM and fulfillment terms
+pass the [`lkt-hardware-pricing.md`](lkt-hardware-pricing.md) gates.
+
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
 builds a reviewable email draft inside the current browser tab. It stores,

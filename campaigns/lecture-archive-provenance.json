@@ -28,8 +28,12 @@
       "policy": "The article is a complete educational answer first. The archive appears only as a quiet study aid after the official lecture and independent exercises; no service, donation, hardware, or unrelated portfolio pitch was added."
     },
     "x": {
-      "state": "postiz_queue",
+      "state": "published",
       "publish_at": "2026-09-03T02:00:00Z",
+      "release_url": "https://twitter.com/lazyingart/status/2095334123997130921",
+      "observed_at": "2026-09-04T08:10:41Z",
+      "comments": 0,
+      "replies": 0,
       "content": "Keep timestamps, speaker turns, slide references, corrections and source rights before turning a lecture archive into a book. That provenance makes notes, translation and search easier to trust. Example: blog.lazying.art/?p=3167&utm_source=x&utm_campaign=lecture_archive",
       "postiz_content": "Keep timestamps, speaker turns, slide references, corrections and source rights before turning a lecture archive into a book. That provenance makes notes, translation and search easier to trust. Example: blog.lazying.art/?p=3167&utm_source=x&utm_campaign=lecture_archive",
       "destination": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html?utm_source=x&utm_campaign=lecture_archive",
@@ -39,6 +43,20 @@
         "made_with_ai": true,
         "paid_partnership": false
       },
+      "study_post": {
+        "state": "postiz_draft",
+        "publish_at": "2026-09-11T02:00:00Z",
+        "content": "Watching a physics lecture can feel clearer than your own understanding. Afterward, close the notes, rebuild one result in your own symbols, then solve two textbook problems. Susskind Lecture 1 study page: blog.lazying.art/?p=1625&utm_source=x&utm_campaign=susskind_study",
+        "destination": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html?utm_source=x&utm_campaign=susskind_study",
+        "settings": {
+          "who_can_reply_post": "everyone",
+          "post_type": "post",
+          "made_with_ai": true,
+          "paid_partnership": false
+        },
+        "visible_review_pending": true,
+        "policy": "A complete study habit comes first. The owned page supplies derivations, short checks, official and independent practice sources, the free archive, and only then the exact-fit lecture-pack route. Do not present repository stars as a learning result or sales proof. The exact-content Postiz draft preserves its destination and live X settings, but stays unpublished until the web calendar is visibly reviewed."
+      },
       "repair": {
         "reviewed_at": "2026-09-02T01:40:00Z",
         "reason": "Postiz stripped the bare and protocol-less GitHub destinations from two unpublished variants.",
@@ -47,8 +65,15 @@
       "policy": "A useful first-party note about preserving provenance. The linked article documents a maintained archive format; it is not customer proof or an offer to resell lecture content."
     },
     "reddit": {
-      "state": "needs_exact_need",
-      "policy": "Reply only when a current course or archive owner asks how to preserve or repurpose material they control. Solve the question in the reply; link only where the community permits it."
+      "state": "helpful_reply_acknowledged",
+      "source_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/susskinds_lectures_and_books_prerequisites/",
+      "helpful_comment_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/comment/p6y1teh/",
+      "reader_acknowledgement_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/comment/p6z24h0/",
+      "maintainer_thanks_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/comment/p7qnpna/",
+      "observed_at": "2026-09-04T08:23:51Z",
+      "outcome": "The learner said the exact archive had already helped their study journey. A single warm thank-you was posted with no additional link, offer, or request.",
+      "lead_or_sale_observed": false,
+      "policy": "Treat the acknowledgement as evidence that the free archive is useful, not as a lead, testimonial licence, or permission for another pitch. Future replies still require a current exact need and a standalone useful answer."
     },
     "instagram": {
       "state": "needs_rights_cleared_demonstration",

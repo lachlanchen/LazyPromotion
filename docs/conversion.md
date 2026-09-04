@@ -170,6 +170,16 @@ precedes payment and builds a reviewable email draft without automatically
 storing, uploading, or sending the answers. An inquiry is a lead at most; it is
 never recorded as a sale without confirmed payment.
 
+### Hardware is a separate quote
+
+The USD 250 sprint remains valid because it uses the customer's existing
+machine. A Raspberry Pi or assembled LKT device is never included at that
+price. Before quoting supplied hardware, run the read-only economics check in
+[`lkt-hardware-pricing.md`](lkt-hardware-pricing.md), confirm the full landed
+BOM, and review shipping, tax, cancellation, return, warranty, and support
+terms. Keep the service and device as separate line items and do not activate a
+hardware checkout from an incomplete cost estimate.
+
 ## Private evidence ledger
 
 LazyPromotion keeps replies, leads, and money as different outcome types. A

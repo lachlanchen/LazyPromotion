@@ -601,6 +601,53 @@ class RepositoryTests(unittest.TestCase):
             campaign["source_evidence"]["sample_fit_report_source"],
             "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
         )
+        provenance = campaign["source_evidence"]["passage_provenance_proof"]
+        self.assertEqual(provenance["state"], "live_verified")
+        self.assertEqual(
+            provenance["viewer"], "https://lazying.art/lkt/passage-graph/"
+        )
+        self.assertEqual(
+            provenance["source_commit"],
+            "02334df74094a3ad75cf9073a7096794db79a5f4",
+        )
+        self.assertEqual(
+            provenance["website_commit"],
+            "b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb",
+        )
+        self.assertEqual(
+            provenance["artifact_sha256"],
+            "801dfb0f3edb0c7aaf54c644352e5bd6a647914c0d2b9e350c4cd4c116106ef9",
+        )
+        self.assertEqual(
+            provenance["projection_hash"],
+            "e30d01ab3579fef5aa2eade0f1b3d153af0f9d60079c5fc904934df8dfee6240",
+        )
+        self.assertEqual(
+            provenance["counts"],
+            {"nodes": 8, "reviewed_edges": 8, "exact_unit_evidence_records": 3},
+        )
+        self.assertEqual(
+            provenance["not_claimed"],
+            [
+                "automatic extraction",
+                "full-book ingestion",
+                "customer result",
+                "translation benchmark",
+            ],
+        )
+        demand = campaign["source_evidence"]["textbook_graph_demand_signal"]
+        self.assertEqual(demand["state"], "research_only")
+        self.assertEqual(demand["community_state"], "restricted")
+        self.assertFalse(demand["public_reply_sent"])
+        self.assertFalse(demand["direct_message_sent"])
+        self.assertFalse(demand["lead_or_sale_observed"])
+        self.assertIn("not permission to contact", demand["policy"])
+        self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
+        direct_intake = campaign["conversion_readiness"]["encrypted_direct_intake"]
+        self.assertEqual(direct_intake["state"], "in_development_not_live")
+        self.assertEqual(
+            direct_intake["current_live_path"], "local_reviewable_email_draft"
+        )
         self.assertIn("not a customer result", serialized)
         self.assertTrue(
             any(

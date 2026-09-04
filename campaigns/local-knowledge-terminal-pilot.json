@@ -10,6 +10,42 @@
     "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
     "sample_fit_report": "https://lazying.art/lkt/sample-report/",
     "sample_fit_report_source": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
+    "passage_provenance_proof": {
+      "state": "live_verified",
+      "checked_on": "2026-09-04",
+      "viewer": "https://lazying.art/lkt/passage-graph/",
+      "website_commit": "b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb",
+      "artifact": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/02334df74094a3ad75cf9073a7096794db79a5f4/examples/artifacts/pocketpolyglot-passage-graph.json",
+      "source_commit": "02334df74094a3ad75cf9073a7096794db79a5f4",
+      "artifact_sha256": "801dfb0f3edb0c7aaf54c644352e5bd6a647914c0d2b9e350c4cd4c116106ef9",
+      "projection_hash": "e30d01ab3579fef5aa2eade0f1b3d153af0f9d60079c5fc904934df8dfee6240",
+      "counts": {
+        "nodes": 8,
+        "reviewed_edges": 8,
+        "exact_unit_evidence_records": 3
+      },
+      "supported_copy": "This hand-reviewed sample turns one project-owned aligned passage into a small concept graph. Every reviewed relation resolves to the exact passage unit, excerpt, and source-file hash.",
+      "not_claimed": [
+        "automatic extraction",
+        "full-book ingestion",
+        "customer result",
+        "translation benchmark"
+      ],
+      "policy": "Use this live project-owned sample to strengthen qualification and let a prospective buyer inspect one provenance contract before the fit check. It is proof of the bounded hand-reviewed sample only, not a sale or evidence about an untested collection."
+    },
+    "textbook_graph_demand_signal": {
+      "state": "research_only",
+      "observed_on": "2026-09-04",
+      "source": "https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/",
+      "community": "r/KnowledgeGraph",
+      "community_state": "restricted",
+      "need": "A teacher with many textbooks wants chapters and subchapters connected to syllabus concepts, 8–10 entry points, and student-traversable nodes linked from assignments.",
+      "fit": "The live passage proof can show the provenance contract during qualification, but it does not demonstrate textbook-scale extraction or ingestion.",
+      "public_reply_sent": false,
+      "direct_message_sent": false,
+      "lead_or_sale_observed": false,
+      "policy": "This is a public product-research signal only. A restricted community comment is not permission to contact the author, post, or treat the author as a lead."
+    },
     "website_hero": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
     "instagram_visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
     "offer_stage": "founding collection-fit sprint",
@@ -56,7 +92,8 @@
     "free_value": "Inspect the public code, tests, architecture, durable product brief, and project-owned sample fit report before sharing customer material.",
     "qualified_interest": "Use https://lazying.art/lkt/fit-check/ to review a local email draft containing the collection, language goal, readers, sample format, rights, privacy needs, and existing hardware; the page stores and sends nothing automatically.",
     "commercial_action": "After a positive fit review, accept the fixed USD 250 sprint scope and complete a reviewed Stripe payment request.",
-    "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales."
+    "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales.",
+    "verified_received_gross_usd": 0
   },
   "conversion_readiness": {
     "inbound_address": "contact@lazying.art",
@@ -109,6 +146,11 @@
       "customer_data_used": false,
       "lead_or_sale_observed": false,
       "policy": "The synthetic visible-browser smoke test stopped at the local review panel. It visibly named the recipient, offered a copy fallback, said not to send source files yet, and kept Stripe after a positive fit check and written scope acceptance. It did not click the mail link, open a composer, send a message, or create a customer outcome."
+    },
+    "encrypted_direct_intake": {
+      "state": "in_development_not_live",
+      "current_live_path": "local_reviewable_email_draft",
+      "policy": "Do not describe encrypted direct intake as available. The live fit check still prepares a local reviewable email draft and sends nothing automatically."
     },
     "attribution_bridge": {
       "state": "live",

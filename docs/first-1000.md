@@ -75,6 +75,10 @@ keeps Stripe after written scope acceptance. The mail action was not clicked.
 This proves only that the review-first path is ready; it is not a lead, sale, or
 revenue event. The checked deployment is LazyingArtWebsite commit `8541e9c`.
 
+Encrypted direct intake remains in development and is not live. The current
+public fit check still prepares a local reviewable email draft and sends nothing
+automatically.
+
 Prospective customers can inspect a
 [complete sample fit report](https://lazying.art/lkt/sample-report/)
 before sharing any material. It applies the three deliverables to LKT's own
@@ -84,6 +88,27 @@ testimonial, benchmark, sale, or claim of a paid engagement.
 The [source report and corpus
 ledger](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
 remain public for reproducibility.
+
+Prospective buyers can also inspect the live [passage provenance
+graph](https://lazying.art/lkt/passage-graph/). This hand-reviewed sample turns
+one project-owned aligned passage into a small concept graph. Every reviewed
+relation resolves to the exact passage unit, excerpt, and source-file hash.
+The pinned LKT artifact at commit
+`02334df74094a3ad75cf9073a7096794db79a5f4` has 8 nodes, 8 reviewed edges,
+and 3 exact-unit evidence records, with artifact SHA-256
+`801dfb0f3edb0c7aaf54c644352e5bd6a647914c0d2b9e350c4cd4c116106ef9`
+and projection hash
+`e30d01ab3579fef5aa2eade0f1b3d153af0f9d60079c5fc904934df8dfee6240`.
+The live viewer is LazyingArtWebsite commit
+`b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb`. This improves the evidence a
+buyer can inspect before the fit check; it is not automatic extraction,
+full-book ingestion, a customer result, a translation benchmark, or a sale.
+
+A [teacher's textbook-network request](https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/)
+describes chapters and subchapters connected to syllabus concepts, 8–10 entry
+points, and student-traversable nodes linked from assignments. That is a useful
+qualification signal, but `r/KnowledgeGraph` is Restricted. The comment is
+research-only evidence, not permission to contact the author or claim a lead.
 
 The public LinguaLeaf shelf now provides a restrained owned-media bridge for
 readers who have a private collection of their own. Its `Private collections`
@@ -251,6 +276,7 @@ The prepared cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
+Verified received gross revenue for this goal remains **USD 0**.
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced
 the sale; never put the raw Stripe receipt in Git.

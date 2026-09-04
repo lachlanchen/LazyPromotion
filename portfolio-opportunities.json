@@ -10,17 +10,21 @@
       "need": "Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot",
       "projects": ["LocalKnowledgeTerminal", "LocalLLM", "LazyEdge", "LazyingAgentWeb"],
       "first_deliverable": "The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes",
-      "first_test": "Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index",
+      "first_test": "Use the live passage-provenance proof and the scientific collection sample to qualify one representative source for text survival, structure, concepts, provenance, and a small retrieval eval before recommending any full re-index",
       "proof": [
         "https://lazying.art/lkt/sample-report/",
+        "https://lazying.art/lkt/passage-graph/",
         "https://github.com/lachlanchen/LocalKnowledgeTerminal",
         "https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/",
-        "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/"
+        "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/",
+        "https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/"
       ],
       "gates": [
         "The customer must have sufficient rights to use the collection",
         "Private source files and customer data never enter the promotion repository",
-        "Do not imply that production deployment or managed access is included in the USD 250 sprint"
+        "Do not imply that production deployment or managed access is included in the USD 250 sprint",
+        "The passage proof is hand-reviewed and project-owned; do not describe it as automatic extraction, full-book ingestion, a customer result, or a translation benchmark",
+        "Treat the restricted r/KnowledgeGraph comment as research only, not permission to contact its author or claim a lead"
       ],
       "scores": {"buyer_pain": 5, "proof": 5, "delivery_readiness": 5, "low_support": 3, "repeatability": 4}
     },

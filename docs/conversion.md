@@ -47,6 +47,27 @@ Its [source report and corpus
 ledger](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
 remain public for reproducibility.
 
+The live [passage provenance graph](https://lazying.art/lkt/passage-graph/)
+adds a narrower inspectable proof. This hand-reviewed sample turns one
+project-owned aligned passage into a small concept graph. Every reviewed
+relation resolves to the exact passage unit, excerpt, and source-file hash.
+The pinned LKT artifact at commit
+`02334df74094a3ad75cf9073a7096794db79a5f4` contains 8 nodes, 8 reviewed
+edges, and 3 exact-unit evidence records; its artifact SHA-256 is
+`801dfb0f3edb0c7aaf54c644352e5bd6a647914c0d2b9e350c4cd4c116106ef9`
+and its graph projection hash is
+`e30d01ab3579fef5aa2eade0f1b3d153af0f9d60079c5fc904934df8dfee6240`.
+LazyingArtWebsite commit
+`b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb` publishes the integrity-checking
+viewer. This strengthens qualification only; it is not automatic extraction,
+full-book ingestion, a customer result, a translation benchmark, or a sale.
+
+A [teacher's public textbook-network request](https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/)
+asks for chapters and subchapters connected to syllabus concepts, 8–10 entry
+points, and student-traversable nodes linked from assignments. It validates a
+specific qualification problem, not a customer. `r/KnowledgeGraph` is
+Restricted, so no contact, post, or lead claim follows from the comment.
+
 The campaign sequence is:
 
 1. Find a current, explicit need involving a private collection, local/offline
@@ -93,6 +114,10 @@ page and caused zero non-read network requests. The operator did not click the
 mail link. This is conversion-path readiness evidence, not a fit inquiry,
 qualified lead, or sale. The verified public deployment is LazyingArtWebsite
 commit `8541e9c`.
+
+Encrypted direct intake is still in development and is not live. Until it has
+been deployed and verified, the current fit check remains the local reviewable
+email-draft flow described above and sends nothing automatically.
 
 The first-party search-discovery gate was also checked through Search Console's
 visible URL Inspection and Sitemaps screens on September 2, 2026. The sample

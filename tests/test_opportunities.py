@@ -29,6 +29,12 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("## Opportunity contracts", body)
         self.assertIn("### Private collection intelligence", body)
         self.assertIn("### Manuscript build and redline sprint", body)
+        self.assertIn("https://lazying.art/lkt/passage-graph/", body)
+        self.assertIn(
+            "https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/",
+            body,
+        )
+        self.assertIn("hand-reviewed and project-owned", body)
         self.assertIn("https://lazying.art/manuscript-sprint/", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)

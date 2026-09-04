@@ -38,6 +38,21 @@ table/equation/translation weaknesses, and explicit GO/NO-GO boundaries. This
 closes the format-specific proof gap only; it does not validate a real large
 collection, OCR, semantic retrieval, or a knowledge graph.
 
+A separate [textbook-network request](https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/)
+comes from a teacher with many textbooks who wants chapters and subchapters
+connected to syllabus concepts, 8–10 entry points, and student-traversable
+nodes linked from assignments. The signal is unusually close to LKT's
+qualification questions, but `r/KnowledgeGraph` is Restricted: this is product
+research, not permission to contact the author or claim a lead.
+
+The live [passage provenance graph](https://lazying.art/lkt/passage-graph/)
+now supplies the smallest honest proof for that conversation: This
+hand-reviewed sample turns one project-owned aligned passage into a small
+concept graph. Every reviewed relation resolves to the exact passage unit,
+excerpt, and source-file hash. It strengthens LKT qualification; it does not
+show automatic extraction, full-book ingestion, a customer result, or a
+translation benchmark.
+
 ### 2. Manuscript Build & Redline Sprint — USD 250
 
 A current hourly [DOCX-to-Overleaf conversion
@@ -65,6 +80,7 @@ private until handling and scope are agreed.
 
 | Need observed now | Portfolio combination | Small next proof | Why it is not the first sales route |
 |---|---|---|---|
+| Textbook chapters and syllabus concepts → 8–10 entry points → student-traversable assignment nodes | LocalKnowledgeTerminal + PocketPolyglot | Use the live one-passage provenance graph during a fit check, then test only one rights-cleared representative textbook sample | The public teacher signal is research-only and the current proof is hand-reviewed at passage scale, not full-book extraction |
 | Video URL → transcript → important timestamps → searchable knowledge base | Video2Book + MultilingualWhisper + LocalKnowledgeTerminal | One owned lecture with source-linked transcript, concepts, subtitles, and search | The public request is clear, but it is product feedback rather than a buyer; the live pack is still capped at 20 minutes |
 | Real-time local translation for mixed-language media | MultilingualWhisper + LazyEdit + FuriganaSubtitles | Measured latency, VRAM, long-audio, and language-pair tests | Current requests need real-time or hour-long performance that the portfolio has not publicly measured |
 | Passage-aligned Classical Chinese with readings, glosses, and provenance | PocketPolyglot + LinguaLeaf + zhjpbook + LKT graph | One title-level rights-cleared lesson whose gloss and history edges expose sources and uncertainty | Learner demand is strong, but buying power and title-level reuse rights are unresolved |
@@ -75,6 +91,7 @@ private until handling and scope are agreed.
 - [A current academic editing job](https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/) asks for three submission-ready manuscripts, a reviewable redline, formatting work, and confidentiality at USD 200 fixed.
 - [A 300-PDF local RAG owner](https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/) describes multilingual books, limited hardware, shallow retrieval, cross-document connections, and grounded citations.
 - [A 17,000-paper local RAG discussion](https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/) repeatedly raises parsing, document versions, tables, formulas, metadata, evaluation, and citation graphs.
+- [A teacher's textbook-network request](https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/) asks for chapter and subchapter structure, syllabus concepts, 8–10 entry points, and traversable nodes from assignments. `r/KnowledgeGraph` is Restricted, so it remains research-only evidence rather than a contact or lead.
 - [Hermes Agent issue #12885](https://github.com/NousResearch/hermes-agent/issues/12885) describes the daily friction of extracting subtitles, translating them, finding important timestamps, and storing video knowledge; maintainers currently label it low priority.
 - [A current lecture-notes request](https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/) validates the transcript → summary → later search requirement, but the learner prefers free software and already accepted another recommendation.
 - [An English-only Classical Chinese beginner](https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/) wants affordable guidance and glyph origins, while experienced readers warn that unsupported generated explanations can be confidently wrong.

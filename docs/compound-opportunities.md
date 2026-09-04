@@ -8,7 +8,7 @@ This map combines existing public code, books, knowledge systems, and media into
 
 | Opportunity | State | Buyer need | First bounded test | Score / 5 |
 |---|---|---|---|---:|
-| [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index | 4.65 |
+| [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Use the live passage-provenance proof and the scientific collection sample to qualify one representative source for text survival, structure, concepts, provenance, and a small retrieval eval before recommending any full re-index | 4.65 |
 | [Manuscript build and redline sprint](#scientific-manuscript-workbench) | active | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed | 4.30 |
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
 | [Multilingual video accessibility package](#multilingual-video-accessibility) | candidate | Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline | Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems | 4.00 |
@@ -37,20 +37,24 @@ This map combines existing public code, books, knowledge systems, and media into
 
 **First deliverable:** The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes
 
-**First demand test:** Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index
+**First demand test:** Use the live passage-provenance proof and the scientific collection sample to qualify one representative source for text survival, structure, concepts, provenance, and a small retrieval eval before recommending any full re-index
 
 Evidence:
 
 - <https://lazying.art/lkt/sample-report/>
+- <https://lazying.art/lkt/passage-graph/>
 - <https://github.com/lachlanchen/LocalKnowledgeTerminal>
 - <https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/>
 - <https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/>
+- <https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/>
 
 Gates:
 
 - The customer must have sufficient rights to use the collection
 - Private source files and customer data never enter the promotion repository
 - Do not imply that production deployment or managed access is included in the USD 250 sprint
+- The passage proof is hand-reviewed and project-owned; do not describe it as automatic extraction, full-book ingestion, a customer result, or a translation benchmark
+- Treat the restricted r/KnowledgeGraph comment as research only, not permission to contact its author or claim a lead
 
 ### Manuscript build and redline sprint
 

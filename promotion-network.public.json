@@ -422,11 +422,13 @@
       "metadata": {
         "buyer": "A researcher, educator, small lab, or specialist team with one bounded private document collection",
         "first_deliverable": "The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes",
-        "first_test": "Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index",
+        "first_test": "Use the live passage-provenance proof and the scientific collection sample to qualify one representative source for text survival, structure, concepts, provenance, and a small retrieval eval before recommending any full re-index",
         "gates": [
           "The customer must have sufficient rights to use the collection",
           "Private source files and customer data never enter the promotion repository",
-          "Do not imply that production deployment or managed access is included in the USD 250 sprint"
+          "Do not imply that production deployment or managed access is included in the USD 250 sprint",
+          "The passage proof is hand-reviewed and project-owned; do not describe it as automatic extraction, full-book ingestion, a customer result, or a translation benchmark",
+          "Treat the restricted r/KnowledgeGraph comment as research only, not permission to contact its author or claim a lead"
         ],
         "need": "Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot",
         "scores": {
@@ -5642,6 +5644,20 @@
       "url": "https://lazying.art/wenyan/"
     },
     {
+      "id": "url:44752e26757961b2",
+      "kind": "web_resource",
+      "label": "passage provenance proof artifact",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/02334df74094a3ad75cf9073a7096794db79a5f4/examples/artifacts/pocketpolyglot-passage-graph.json"
+    },
+    {
+      "id": "url:1c57cb81d6efe0d4",
+      "kind": "web_resource",
+      "label": "passage provenance proof viewer",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/passage-graph/"
+    },
+    {
       "id": "url:c48afb0dbeb7ee89",
       "kind": "web_resource",
       "label": "pilot page",
@@ -5759,6 +5775,13 @@
       "label": "tex.stackexchange.com",
       "metadata": {},
       "url": "https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft"
+    },
+    {
+      "id": "url:2dcaa1958ba3ae23",
+      "kind": "web_resource",
+      "label": "textbook graph demand signal source",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/"
     },
     {
       "id": "url:567e450aca1b1cd2",
@@ -6461,11 +6484,35 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/passage-graph/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:1c57cb81d6efe0d4"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:2dcaa1958ba3ae23"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/sample-report/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:3f9d0326fb664513"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/02334df74094a3ad75cf9073a7096794db79a5f4/examples/artifacts/pocketpolyglot-passage-graph.json",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:44752e26757961b2"
     },
     {
       "confidence": 1.0,
@@ -7466,6 +7513,22 @@
       "relation": "combines",
       "source": "opportunity:private-collection-intelligence",
       "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/passage-graph/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "url:1c57cb81d6efe0d4"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "url:2dcaa1958ba3ae23"
     },
     {
       "confidence": 1.0,

@@ -78,7 +78,10 @@ PocketPolyglot, LKT, the project-owned timed-text sample, and the free Susskind
 archive as inspectable evidence. One value-first LinkedIn note is queued for
 September 24 after the existing Postiz calendar; it leads to the complete
 article rather than directly to payment. Publication and queueing are
-discovery, not a lead or sale.
+discovery, not a lead or sale. Search Console initially reported the new URL as
+unknown to Google, then accepted one priority crawl request on September 5.
+That request is not indexing, ranking, traffic, or revenue and must not be
+resubmitted merely to seek priority.
 
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)

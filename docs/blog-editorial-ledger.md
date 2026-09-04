@@ -70,7 +70,10 @@ Posts: `281, 936, 1562, 2936, 3125`.
   joins Video2Book, LazyEdit, PocketPolyglot, LKT, the project-owned media
   proof, and the free Susskind archive before one restrained USD 250 offer
   link. All three language routes and the destination returned HTTP 200.
-  Publication is not a lead or sale.
+  Search Console reported the new URL as unknown to Google and accepted one
+  priority crawl request; this does not prove indexing or traffic and should
+  not be resubmitted merely to seek priority. Publication is not a lead or
+  sale.
 - Post `3791` turns a current multilingual OCR need into a complete English,
   Simplified Chinese, and Japanese evaluation guide. It separates character
   accuracy from reading order, preserves source and layout evidence, and ends

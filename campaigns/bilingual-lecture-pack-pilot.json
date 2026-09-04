@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -164,6 +164,12 @@
         "commit": "d070282",
         "route": "A complete source-first guide connects Video2Book, LazyEdit, PocketPolyglot, LKT, the project-owned timed-text proof, and the free Susskind archive before one restrained lecture-pack link.",
         "verification": "The English, Japanese, and Traditional Chinese routes returned HTTP 200 with their reviewed titles and the exact live offer boundary.",
+        "search_discovery": {
+          "checked_at": "2026-09-04T20:23:54Z",
+          "initial_state": "unknown_to_google",
+          "request_state": "accepted_priority_crawl_request",
+          "indexed": false
+        },
         "policy": "Publication is an owned discovery asset, not a lead, customer result, sale, or revenue."
       }
     },

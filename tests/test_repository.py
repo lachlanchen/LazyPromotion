@@ -1307,7 +1307,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1340,6 +1340,13 @@ class RepositoryTests(unittest.TestCase):
             guide["verification"]["stored_text_exact_after_html_normalization"]
         )
         self.assertIn("not leads or revenue", guide["policy"])
+
+        blog_guide = campaign["channels"]["lazyblog"]["practical_workflow_guide"]
+        self.assertEqual(
+            blog_guide["search_discovery"]["request_state"],
+            "accepted_priority_crawl_request",
+        )
+        self.assertFalse(blog_guide["search_discovery"]["indexed"])
 
     def test_bilingual_lecture_youtube_proof_is_reviewed_before_one_publish(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"

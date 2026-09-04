@@ -1,8 +1,10 @@
-# First USD 1,000: one repeatable offer
+# First USD 1,000: two focused USD 250 routes
 
-The primary offer is the **Local Knowledge Terminal collection-fit sprint** at
-**USD 250**. The milestone is four confirmed payments, or USD 1,000 gross before
-fees, tax, refunds, and delivery costs. It is a target and operating constraint,
+The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
+at **USD 250**. A second active route is the **Manuscript Build & Redline Sprint**
+at **USD 250**, supported by a current paid-demand signal and a reproducible
+project-owned sample. The milestone is any four confirmed USD 250 payments, or
+USD 1,000 gross before fees, tax, refunds, and delivery costs. It is a target,
 not a revenue promise.
 
 ## Fixed scope
@@ -21,6 +23,25 @@ Stripe payment is requested only after both sides accept the scope.
 This USD 250 service price is not a device price. A supplied LKT terminal stays
 quote-only and separate until its complete landed BOM and fulfillment terms
 pass the [`lkt-hardware-pricing.md`](lkt-hardware-pricing.md) gates.
+
+## Active secondary route: manuscript build and redline
+
+The live [Manuscript Build & Redline Sprint](https://lazying.art/manuscript-sprint/)
+covers one LaTeX manuscript up to 7,500 words, one named target template, a
+clean revision build, an issue ledger, and a reproducible redline from a
+customer-supplied baseline. The [free fit
+check](https://lazying.art/manuscript-sprint/fit-check/) asks only for the source
+shape, template, deadline, rights, and handling constraints; it does not upload
+the manuscript or request payment.
+
+The route is active because a current marketplace listing asks for
+claim-preserving academic editing, figure and table compliance, a reviewable
+redline, and confidentiality at a nearby fixed budget, while the public
+[synthetic three-build sample](https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline)
+already proves the minimal build path. It still excludes ghostwriting, new
+claims, statistical analysis, submission credentials, and publication
+guarantees. Each exact source tree must pass a fit review before scope or
+payment.
 
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
@@ -214,5 +235,5 @@ excluded and remains project-owned concept material, not customer evidence.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Run `python metrics.py report` for the private aggregate. After a verified USD
-250 payment, record it with the campaign `local-knowledge-terminal-pilot` and
-project `localknowledgeterminal`; never put the raw Stripe receipt in Git.
+250 payment, record it under the campaign and project that actually produced
+the sale; never put the raw Stripe receipt in Git.

@@ -1,11 +1,51 @@
 {
   "entities": [
     {
+      "id": "campaign:bilingual-lecture-pack-pilot",
+      "kind": "campaign",
+      "label": "bilingual-lecture-pack-pilot",
+      "metadata": {
+        "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:bilingual-pocket-editions",
+      "kind": "campaign",
+      "label": "bilingual-pocket-editions",
+      "metadata": {
+        "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:cross-source-card-dedup",
+      "kind": "campaign",
+      "label": "cross-source-card-dedup",
+      "metadata": {
+        "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:eink-multilingual-reading",
       "kind": "campaign",
       "label": "eink-multilingual-reading",
       "metadata": {
         "objective": "Earn qualified multilingual-reader visits and pre-order conversations by proving useful free paths before presenting the optional LazyingArt eInk hardware.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:latex-redline-build",
+      "kind": "campaign",
+      "label": "latex-redline-build",
+      "metadata": {
+        "objective": "Help researchers produce an editor-readable LaTeX redline when the baseline and revised manuscripts compile but the generated latexdiff file does not.",
         "version": 1
       },
       "url": ""
@@ -26,6 +66,16 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:manuscript-sprint-pilot",
+      "kind": "campaign",
+      "label": "manuscript-sprint-pilot",
+      "metadata": {
+        "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
         "version": 1
       },
       "url": ""
@@ -58,6 +108,13 @@
       "url": ""
     },
     {
+      "id": "channel:github_issues",
+      "kind": "channel",
+      "label": "github_issues",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "channel:hackernews",
       "kind": "channel",
       "label": "hackernews",
@@ -82,6 +139,20 @@
       "id": "channel:reddit",
       "kind": "channel",
       "label": "reddit",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:tex_stackexchange",
+      "kind": "channel",
+      "label": "tex_stackexchange",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:upwork",
+      "kind": "channel",
+      "label": "upwork",
       "metadata": {},
       "url": ""
     },
@@ -229,7 +300,7 @@
       "metadata": {
         "buyer": "A course creator, teacher, research group, or conference owner with recordings they control",
         "first_deliverable": "One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof",
-        "first_test": "Interview owners of existing course archives and offer one short sample from customer-owned or openly licensed media",
+        "first_test": "Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet",
         "gates": [
           "Use only customer-owned, licensed, or clearly open educational media",
           "The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale",
@@ -245,6 +316,33 @@
         },
         "state": "candidate",
         "weighted_score": 3.7
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:scientific-manuscript-workbench",
+      "kind": "opportunity",
+      "label": "Manuscript build and redline sprint",
+      "metadata": {
+        "buyer": "A research group with an existing LaTeX manuscript, figures, code, and revision deadline",
+        "first_deliverable": "The live fixed USD 250 sprint for one LaTeX manuscript up to 7,500 words, one target template, a clean revision build, issue ledger, and reproducible redline from a supplied baseline",
+        "first_test": "Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed",
+        "gates": [
+          "Agree confidentiality, transfer, retention, deletion, permitted automation, revisions, cancellation, refund, and support terms before source transfer or payment",
+          "Do not upload manuscripts, review correspondence, or customer data without explicit authorization",
+          "Exclude ghostwriting, new claims, statistical analysis, portal submission, and publication guarantees",
+          "Qualify the exact manuscript because the public synthetic redline proves the minimal three-build path, not every package, template, table, or figure combination"
+        ],
+        "need": "Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material",
+        "scores": {
+          "buyer_pain": 5,
+          "delivery_readiness": 4,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "active",
+        "weighted_score": 4.3
       },
       "url": ""
     },
@@ -307,7 +405,7 @@
       "metadata": {
         "buyer": "A researcher, educator, small lab, or specialist team with one bounded private document collection",
         "first_deliverable": "The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes",
-        "first_test": "Reach people already deciding how to handle a bounded private collection and show the project-owned sample report before the fit check",
+        "first_test": "Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index",
         "gates": [
           "The customer must have sufficient rights to use the collection",
           "Private source files and customer data never enter the promotion repository",
@@ -375,32 +473,6 @@
         },
         "state": "candidate",
         "weighted_score": 4.05
-      },
-      "url": ""
-    },
-    {
-      "id": "opportunity:scientific-manuscript-workbench",
-      "kind": "opportunity",
-      "label": "Scientific manuscript workbench audit",
-      "metadata": {
-        "buyer": "A research group with an existing LaTeX manuscript, figures, code, and revision deadline",
-        "first_deliverable": "A fixed-scope private build and provenance audit with issue ledger, reproducible PDF build, and prioritized revision plan",
-        "first_test": "Publish a synthetic case study and interview researchers who have an active build or response-letter problem",
-        "gates": [
-          "Set confidentiality, retention, authorship, and no-guaranteed-acceptance terms",
-          "Do not upload manuscripts or review correspondence without explicit authorization",
-          "Add clear repository licenses before packaging reusable code"
-        ],
-        "need": "Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material",
-        "scores": {
-          "buyer_pain": 5,
-          "delivery_readiness": 3,
-          "low_support": 4,
-          "proof": 4,
-          "repeatability": 4
-        },
-        "state": "candidate",
-        "weighted_score": 4.1
       },
       "url": ""
     },
@@ -1564,15 +1636,20 @@
       "metadata": {
         "generated": true,
         "keywords": [
+          "ai tools",
           "ecosystem",
           "github pages",
           "i18n",
           "landing page",
+          "language learning",
+          "lazying art",
           "lazying art website",
+          "local first",
           "marketing",
+          "product showcase",
           "static site"
         ],
-        "summary": "The Website of LazyingArt. LazyingArt - Official Website 📌 At a glance 🎨 About LazyingArt LazyingArt is a multilingual AI communication platform and landing-site ecosystem. This repository contains the public website and product pages for LazyingArt, including the flagship EchoMind experience and supporting hardware..."
+        "summary": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes."
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -3925,15 +4002,20 @@
       "kind": "repository",
       "label": "LazyingArtWebsite",
       "metadata": {
-        "description": "The Website of LazyingArt. LazyingArt - Official Website 📌 At a glance 🎨 About LazyingArt LazyingArt is a multilingual AI communication platform and landing-site ecosystem. This repository contains the public website and product pages for LazyingArt, including the flagship EchoMind experience and supporting hardware...",
+        "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
         "topics": [
+          "ai-tools",
           "ecosystem",
           "github-pages",
           "i18n",
           "landing-page",
+          "language-learning",
+          "lazying-art",
+          "local-first",
           "marketing",
           "multilingual",
+          "product-showcase",
           "static-site",
           "website"
         ],
@@ -3995,8 +4077,12 @@
         "description": "Compressed PDF artifact shelf for PocketPolyglot multilingual pocket books",
         "homepage": "https://lachlanchen.github.io/LinguaLeaf/website/",
         "topics": [
+          "chinese-history",
+          "classical-chinese",
+          "digital-humanities",
           "interlinear",
           "language-learning",
+          "lazying-art",
           "lingualleaf",
           "multilingual-books",
           "pdf",
@@ -5231,11 +5317,32 @@
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
+      "id": "url:6629092a3af8f0e5",
+      "kind": "web_resource",
+      "label": "blog.lazying.art",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html"
+    },
+    {
+      "id": "url:4cc1345b764a38aa",
+      "kind": "web_resource",
+      "label": "classical chinese work",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/zhjpbook"
+    },
+    {
       "id": "url:6c61657175e6875a",
       "kind": "web_resource",
       "label": "conversion pipeline",
       "metadata": {},
       "url": "https://github.com/lachlanchen/Video2Book"
+    },
+    {
+      "id": "url:aa198f9562d200f2",
+      "kind": "web_resource",
+      "label": "course hierarchy pattern",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/leonardsusskind/blob/main/README.md#L150-L162"
     },
     {
       "id": "url:8945a53cc57c5704",
@@ -5250,6 +5357,13 @@
       "label": "dub partner terms",
       "metadata": {},
       "url": "https://dub.co/legal/partners"
+    },
+    {
+      "id": "url:bc9f5affabab7f69",
+      "kind": "web_resource",
+      "label": "fit check",
+      "metadata": {},
+      "url": "https://lazying.art/lecture-pack/fit-check/"
     },
     {
       "id": "url:d873c4adf4afccff",
@@ -5336,6 +5450,13 @@
       "url": "https://github.com/lachlanchen/LazyEdge"
     },
     {
+      "id": "url:47ebc35a4aa8e893",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/NousResearch/hermes-agent/issues/12885"
+    },
+    {
       "id": "url:4e9793cff914e3b1",
       "kind": "web_resource",
       "label": "github.com",
@@ -5343,18 +5464,18 @@
       "url": "https://github.com/lachlanchen/WordOrigins"
     },
     {
+      "id": "url:6b2db2d76f97f682",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline"
+    },
+    {
       "id": "url:8c31df37ee870928",
       "kind": "web_resource",
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyEarn"
-    },
-    {
-      "id": "url:90dd533df880bbcd",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyEdit"
     },
     {
       "id": "url:9a48729df2afb4b3",
@@ -5418,6 +5539,34 @@
       "label": "instagram visual",
       "metadata": {},
       "url": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png"
+    },
+    {
+      "id": "url:cda7d5ffff95cf24",
+      "kind": "web_resource",
+      "label": "knowledge identity pattern",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
+    },
+    {
+      "id": "url:273db0ceb258a5af",
+      "kind": "web_resource",
+      "label": "lazying.art",
+      "metadata": {},
+      "url": "https://lazying.art/manuscript-sprint/"
+    },
+    {
+      "id": "url:ab38f07eba1541a7",
+      "kind": "web_resource",
+      "label": "lazying.art",
+      "metadata": {},
+      "url": "https://lazying.art/manuscript-sprint/fit-check/"
+    },
+    {
+      "id": "url:593c601822a24f73",
+      "kind": "web_resource",
+      "label": "offer",
+      "metadata": {},
+      "url": "https://lazying.art/lecture-pack/"
     },
     {
       "id": "url:0c3f0c1551c48c93",
@@ -5511,14 +5660,375 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md"
     },
     {
+      "id": "url:90dd533df880bbcd",
+      "kind": "web_resource",
+      "label": "subtitle pipeline",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyEdit"
+    },
+    {
+      "id": "url:1b32d792d65f5fdb",
+      "kind": "web_resource",
+      "label": "tex.stackexchange.com",
+      "metadata": {},
+      "url": "https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf"
+    },
+    {
+      "id": "url:391802d9bde83c67",
+      "kind": "web_resource",
+      "label": "tex.stackexchange.com",
+      "metadata": {},
+      "url": "https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft"
+    },
+    {
+      "id": "url:567e450aca1b1cd2",
+      "kind": "web_resource",
+      "label": "timestamped source pattern",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/Video2Book/blob/main/subtitles2notes/generate_course_notes.py#L609-L647"
+    },
+    {
       "id": "url:9d1733477761da4f",
       "kind": "web_resource",
       "label": "website hero",
       "metadata": {},
       "url": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png"
+    },
+    {
+      "id": "url:7e283e17c9101ab8",
+      "kind": "web_resource",
+      "label": "working article",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html"
+    },
+    {
+      "id": "url:2a9f5af30427584b",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/ChineseLanguage/comments/1vkx5ss/the_analects_for_learners_15920_definitions/"
+    },
+    {
+      "id": "url:7f9069ec37cf1b43",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/"
+    },
+    {
+      "id": "url:8c315ed8a2b4c34c",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/"
+    },
+    {
+      "id": "url:e619addef00aff79",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/"
+    },
+    {
+      "id": "url:e825afa655971560",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/"
+    },
+    {
+      "id": "url:69f6c24d845f2558",
+      "kind": "web_resource",
+      "label": "www.upwork.com",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/"
     }
   ],
   "relationships": [
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "project:github-video2book"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "project:leonardsusskind"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:github_issues"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "needs_rights_cleared_demonstration"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "needs_exact_need"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:593c601822a24f73"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:7e283e17c9101ab8"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:90dd533df880bbcd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:b5905affb9e9343e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/fit-check/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:bc9f5affabab7f69"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_scheduled"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "helpful_reply_live"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_scheduled"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lachlanchen.github.io/LinguaLeaf/website/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "url:43d56bb572f1ca4a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/zhjpbook",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "url:4cc1345b764a38aa"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_scheduled"
+      },
+      "relation": "targets",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published"
+      },
+      "relation": "targets",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book/blob/main/subtitles2notes/generate_course_notes.py#L609-L647",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "url:567e450aca1b1cd2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind/blob/main/README.md#L150-L162",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "url:aa198f9562d200f2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:cross-source-card-dedup",
+      "target": "url:cda7d5ffff95cf24"
+    },
     {
       "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyingArtLanding",
@@ -5601,6 +6111,56 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:latex-redline-build",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published"
+      },
+      "relation": "targets",
+      "source": "campaign:latex-redline-build",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "needs_exact_need"
+      },
+      "relation": "targets",
+      "source": "campaign:latex-redline-build",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:latex-redline-build",
+      "target": "channel:tex_stackexchange"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:latex-redline-build",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/Video2Book",
       "metadata": {},
       "relation": "promotes",
@@ -5655,7 +6215,17 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "needs_exact_need"
+        "state": "published"
+      },
+      "relation": "targets",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "helpful_reply_acknowledged"
       },
       "relation": "targets",
       "source": "campaign:lecture-archive-provenance",
@@ -5665,7 +6235,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "published"
       },
       "relation": "targets",
       "source": "campaign:lecture-archive-provenance",
@@ -5832,6 +6402,56 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published"
+      },
+      "relation": "targets",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "needs_exact_need"
+      },
+      "relation": "targets",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_applied"
+      },
+      "relation": "targets",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "channel:upwork"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "covered_by_existing_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "channel:x"
     },
     {
       "confidence": 1.0,
@@ -6119,6 +6739,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/ChineseLanguage/comments/1vkx5ss/the_analects_for_learners_15920_definitions/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "url:2a9f5af30427584b"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/ShiGame",
       "metadata": {},
       "relation": "uses_evidence",
@@ -6132,6 +6760,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:classical-chinese-history-classroom",
       "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:classical-chinese-history-classroom",
+      "target": "url:e825afa655971560"
     },
     {
       "confidence": 1.0,
@@ -6383,11 +7019,27 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/NousResearch/hermes-agent/issues/12885",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:47ebc35a4aa8e893"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/Video2Book",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "opportunity:lecture-to-study-library",
       "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:7f9069ec37cf1b43"
     },
     {
       "confidence": 1.0,
@@ -6591,11 +7243,27 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "url:8c315ed8a2b4c34c"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "opportunity:private-collection-intelligence",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-collection-intelligence",
+      "target": "url:e619addef00aff79"
     },
     {
       "confidence": 1.0,
@@ -6631,6 +7299,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:1b32d792d65f5fdb"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/PaperAgentDemo",
       "metadata": {},
       "relation": "uses_evidence",
@@ -6639,11 +7315,59 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/manuscript-sprint/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:273db0ceb258a5af"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:391802d9bde83c67"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:6629092a3af8f0e5"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:69f6c24d845f2558"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:6b2db2d76f97f682"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/paper-revision-skill",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "opportunity:scientific-manuscript-workbench",
       "target": "url:9a48729df2afb4b3"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/manuscript-sprint/fit-check/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:scientific-manuscript-workbench",
+      "target": "url:ab38f07eba1541a7"
     },
     {
       "confidence": 1.0,

@@ -12,7 +12,7 @@ class OpportunityTests(unittest.TestCase):
         self.assertGreaterEqual(len(payload["opportunities"]), 10)
         self.assertEqual(
             [item["id"] for item in payload["opportunities"] if item["state"] == "active"],
-            ["private-collection-intelligence"],
+            ["private-collection-intelligence", "scientific-manuscript-workbench"],
         )
         self.assertEqual(
             [
@@ -20,7 +20,7 @@ class OpportunityTests(unittest.TestCase):
                 for item in payload["opportunities"]
                 if item["state"] == "evidence-building"
             ],
-            ["scientific-manuscript-workbench"],
+            [],
         )
 
     def test_renderer_keeps_scores_directional_and_gates_visible(self):
@@ -28,6 +28,8 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("not market validation", body)
         self.assertIn("## Opportunity contracts", body)
         self.assertIn("### Private collection intelligence", body)
+        self.assertIn("### Manuscript build and redline sprint", body)
+        self.assertIn("https://lazying.art/manuscript-sprint/", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)
 

@@ -10,10 +10,12 @@
       "need": "Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot",
       "projects": ["LocalKnowledgeTerminal", "LocalLLM", "LazyEdge", "LazyingAgentWeb"],
       "first_deliverable": "The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes",
-      "first_test": "Reach people already deciding how to handle a bounded private collection and show the project-owned sample report before the fit check",
+      "first_test": "Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index",
       "proof": [
         "https://lazying.art/lkt/sample-report/",
-        "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+        "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+        "https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/",
+        "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/"
       ],
       "gates": [
         "The customer must have sufficient rights to use the collection",
@@ -30,10 +32,12 @@
       "need": "Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search",
       "projects": ["Video2Book", "MultilingualWhisper", "LazyEdit", "PocketPolyglot", "LocalKnowledgeTerminal"],
       "first_deliverable": "One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof",
-      "first_test": "Interview owners of existing course archives and offer one short sample from customer-owned or openly licensed media",
+      "first_test": "Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet",
       "proof": [
         "https://github.com/lachlanchen/Video2Book",
-        "https://github.com/lachlanchen/leonardsusskind"
+        "https://github.com/lachlanchen/leonardsusskind",
+        "https://github.com/NousResearch/hermes-agent/issues/12885",
+        "https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/"
       ],
       "gates": [
         "Use only customer-owned, licensed, or clearly open educational media",
@@ -93,7 +97,9 @@
       "first_test": "Show one rights-cleared lesson to teachers before producing a larger collection",
       "proof": [
         "https://github.com/lachlanchen/PocketPolyglot",
-        "https://github.com/lachlanchen/ShiGame"
+        "https://github.com/lachlanchen/ShiGame",
+        "https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/",
+        "https://www.reddit.com/r/ChineseLanguage/comments/1vkx5ss/the_analects_for_learners_15920_definitions/"
       ],
       "gates": [
         "Verify the exact source edition, translation, annotations, images, fonts, and media rights",
@@ -104,27 +110,31 @@
     },
     {
       "id": "scientific-manuscript-workbench",
-      "title": "Scientific manuscript workbench audit",
-      "state": "evidence-building",
+      "title": "Manuscript build and redline sprint",
+      "state": "active",
       "buyer": "A research group with an existing LaTeX manuscript, figures, code, and revision deadline",
       "need": "Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material",
       "projects": ["PaperAgent", "paper-revision-skill", "paper-critique-skill", "AgInTi-LabCanvas"],
-      "first_deliverable": "A fixed-scope private build and provenance audit with issue ledger, reproducible PDF build, and prioritized revision plan",
-      "first_test": "A source-backed latexdiff guide and project-owned clean-build audit are public. The next proof is a rights-cleared old/new sample that exercises a pinned redline toolchain; no paid listing is active yet.",
+      "first_deliverable": "The live fixed USD 250 sprint for one LaTeX manuscript up to 7,500 words, one target template, a clean revision build, issue ledger, and reproducible redline from a supplied baseline",
+      "first_test": "Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed",
       "proof": [
+        "https://lazying.art/manuscript-sprint/",
+        "https://lazying.art/manuscript-sprint/fit-check/",
         "https://github.com/lachlanchen/paper-revision-skill",
         "https://github.com/lachlanchen/PaperAgentDemo",
+        "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
         "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html",
+        "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/",
         "https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf",
         "https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft"
       ],
       "gates": [
-        "Set confidentiality, retention, authorship, and no-guaranteed-acceptance terms",
-        "Do not upload manuscripts or review correspondence without explicit authorization",
-        "Add clear repository licenses before packaging reusable code",
-        "Pin and test `latexdiff`; the current checked workstation toolchain builds the two-page PaperAgentDemo PDF but does not include `latexdiff`"
+        "Agree confidentiality, transfer, retention, deletion, permitted automation, revisions, cancellation, refund, and support terms before source transfer or payment",
+        "Do not upload manuscripts, review correspondence, or customer data without explicit authorization",
+        "Exclude ghostwriting, new claims, statistical analysis, portal submission, and publication guarantees",
+        "Qualify the exact manuscript because the public synthetic redline proves the minimal three-build path, not every package, template, table, or figure combination"
       ],
-      "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 4}
+      "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 4, "low_support": 4, "repeatability": 4}
     },
     {
       "id": "local-ai-workstation-deployment",

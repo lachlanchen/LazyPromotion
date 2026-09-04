@@ -10,6 +10,12 @@
       "engagement": "research_only"
     },
     {
+      "captured_at": "2026-09-04T08:30:00Z",
+      "url": "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/",
+      "problem": "A current USD 200 fixed-price listing requests claim-preserving academic editing, APA references, figure and table formatting, a reviewable redline, and confidentiality for three papers.",
+      "engagement": "marketplace_rules_required"
+    },
+    {
       "captured_at": "2026-09-02T01:50:00Z",
       "url": "https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft",
       "problem": "Generic LaTeX linters do not cover a journal-specific submission guide, so issues appear one revision round at a time.",
@@ -29,9 +35,11 @@
       ],
       "blog_commits": [
         "3b18ea0",
-        "f8efbf7"
+        "f8efbf7",
+        "2bd127f"
       ],
-      "policy": "The guide answers the build problem before mentioning the maintained revision workflow. It does not claim a customer result, successful journal submission, or paid delivery."
+      "offer_url": "https://lazying.art/manuscript-sprint/",
+      "policy": "The guide answers the build problem before one concise link to the maintained USD 250 fit-check route. It does not claim a customer result, successful journal submission, or paid delivery."
     },
     "x": {
       "state": "postiz_queue",
@@ -103,18 +111,22 @@
     }
   },
   "activation_gate": {
-    "state": "evidence_building",
-    "not_yet_offered_for_payment": true,
-    "required_before_paid_listing": [
-      "A representative rights-cleared sample with figures, bibliography, math, and a response-location trace; the current one-page sample proves only the minimal three-build path.",
-      "Non-confidential intake, retention, deletion, cancellation, refund, revision, and support boundaries.",
-      "A marketplace or owned fit-check path that does not request manuscript files before scope acceptance."
+    "state": "active_owned_offer",
+    "not_yet_offered_for_payment": false,
+    "live_offer": "https://lazying.art/manuscript-sprint/",
+    "live_fit_check": "https://lazying.art/manuscript-sprint/fit-check/",
+    "required_before_each_payment": [
+      "A real fit inquiry that identifies the manuscript shape, target template, deadline, source rights, and handling constraints without sending the manuscript.",
+      "Written agreement on confidentiality, transfer, retention, permitted automation, deliverables, revisions, cancellation, refund, and support.",
+      "Qualification of the exact source and package stack because the public synthetic sample proves only the minimal three-build path."
     ],
     "completed": [
       "Pinned latexdiff 1.4.0 and recorded its source commit and SHA-256.",
       "Built project-owned baseline, revision, and redline PDFs with clean final logs.",
       "Verified identical source and PDF hashes across consecutive builds.",
-      "Visually inspected all three one-page PDFs."
+      "Visually inspected all three one-page PDFs.",
+      "Published the bounded USD 250 offer and no-upload fit check.",
+      "Verified the live review panel, allowlisted attribution, and zero non-read network requests with synthetic data."
     ]
   },
   "funnel": {

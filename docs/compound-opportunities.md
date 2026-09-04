@@ -8,14 +8,14 @@ This map combines existing public code, books, knowledge systems, and media into
 
 | Opportunity | State | Buyer need | First bounded test | Score / 5 |
 |---|---|---|---|---:|
-| [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Reach people already deciding how to handle a bounded private collection and show the project-owned sample report before the fit check | 4.65 |
-| [Scientific manuscript workbench audit](#scientific-manuscript-workbench) | evidence-building | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | A source-backed latexdiff guide and project-owned clean-build audit are public. The next proof is a rights-cleared old/new sample that exercises a pinned redline toolchain; no paid listing is active yet. | 4.10 |
+| [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index | 4.65 |
+| [Manuscript build and redline sprint](#scientific-manuscript-workbench) | active | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed | 4.30 |
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
 | [Multilingual video accessibility package](#multilingual-video-accessibility) | candidate | Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline | Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems | 4.00 |
 | [Private local-AI workstation deployment](#local-ai-workstation-deployment) | candidate | Install and operate a pinned local model stack with a usable web client and guarded remote access | Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit | 3.95 |
 | [Creator library refinery](#creator-library-refinery) | candidate | Turn an existing archive into searchable source material, polished articles, clips, and multilingual derivatives without losing provenance | Use one LazyingArt-owned archive as the case study, then approach creators whose existing catalog is underused | 3.70 |
 | [Creator media library website](#creator-media-library) | candidate | Give an existing catalog a durable, searchable home with reliable metadata and language access instead of depending on a platform feed | Use a small LazyingArt-owned catalog as the demonstration, then ask creators with an existing back catalog whether they would pay to have three items organized | 3.70 |
-| [Lecture-to-study library](#lecture-to-study-library) | candidate | Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search | Interview owners of existing course archives and offer one short sample from customer-owned or openly licensed media | 3.70 |
+| [Lecture-to-study library](#lecture-to-study-library) | candidate | Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search | Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet | 3.70 |
 | [OpenHI reproducibility and kit qualification](#openhi-reproducibility-session) | gated | Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time | Interview existing repository users and kit inquiries before increasing traffic or changing checkout | 3.60 |
 | [Cited etymology learning deck](#etymology-learning-deck) | candidate | Learn words through meanings, roots, affixes, pronunciations, translations, and provenance rather than isolated flashcards | Publish a small deck from openly licensed lexical sources and ask teachers which theme they would actually use | 3.50 |
 | [Explainable game classroom bundle](#explainable-game-classroom) | candidate | Teach decisions with exact rules and visible reasoning instead of opaque move recommendations | Let one teacher or club use a short lesson pack and observe where explanation or setup fails | 3.50 |
@@ -37,12 +37,14 @@ This map combines existing public code, books, knowledge systems, and media into
 
 **First deliverable:** The existing free fit check and fixed USD 250 LKT collection-fit sprint; implementation and managed access remain separate future scopes
 
-**First demand test:** Reach people already deciding how to handle a bounded private collection and show the project-owned sample report before the fit check
+**First demand test:** Use the existing sprint as a scientific collection integrity check: inspect one representative sample for text survival, metadata, versions, provenance, and a small retrieval eval before recommending any full re-index
 
 Evidence:
 
 - <https://lazying.art/lkt/sample-report/>
 - <https://github.com/lachlanchen/LocalKnowledgeTerminal>
+- <https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/>
+- <https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/>
 
 Gates:
 
@@ -50,9 +52,9 @@ Gates:
 - Private source files and customer data never enter the promotion repository
 - Do not imply that production deployment or managed access is included in the USD 250 sprint
 
-### Scientific manuscript workbench audit
+### Manuscript build and redline sprint
 
-**State:** evidence-building
+**State:** active
 
 **Buyer:** A research group with an existing LaTeX manuscript, figures, code, and revision deadline
 
@@ -60,24 +62,28 @@ Gates:
 
 **Existing work:** [PaperAgent](https://github.com/lachlanchen/PaperAgent), [paper-revision-skill](https://github.com/lachlanchen/paper-revision-skill), [paper-critique-skill](https://github.com/lachlanchen/paper-critique-skill), [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas)
 
-**First deliverable:** A fixed-scope private build and provenance audit with issue ledger, reproducible PDF build, and prioritized revision plan
+**First deliverable:** The live fixed USD 250 sprint for one LaTeX manuscript up to 7,500 words, one target template, a clean revision build, issue ledger, and reproducible redline from a supplied baseline
 
-**First demand test:** A source-backed latexdiff guide and project-owned clean-build audit are public. The next proof is a rights-cleared old/new sample that exercises a pinned redline toolchain; no paid listing is active yet.
+**First demand test:** Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed
 
 Evidence:
 
+- <https://lazying.art/manuscript-sprint/>
+- <https://lazying.art/manuscript-sprint/fit-check/>
 - <https://github.com/lachlanchen/paper-revision-skill>
 - <https://github.com/lachlanchen/PaperAgentDemo>
+- <https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline>
 - <https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html>
+- <https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/>
 - <https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf>
 - <https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft>
 
 Gates:
 
-- Set confidentiality, retention, authorship, and no-guaranteed-acceptance terms
-- Do not upload manuscripts or review correspondence without explicit authorization
-- Add clear repository licenses before packaging reusable code
-- Pin and test `latexdiff`; the current checked workstation toolchain builds the two-page PaperAgentDemo PDF but does not include `latexdiff`
+- Agree confidentiality, transfer, retention, deletion, permitted automation, revisions, cancellation, refund, and support terms before source transfer or payment
+- Do not upload manuscripts, review correspondence, or customer data without explicit authorization
+- Exclude ghostwriting, new claims, statistical analysis, portal submission, and publication guarantees
+- Qualify the exact manuscript because the public synthetic redline proves the minimal three-build path, not every package, template, table, or figure combination
 
 ### Review-first agent workflow kit
 
@@ -216,12 +222,14 @@ Gates:
 
 **First deliverable:** One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof
 
-**First demand test:** Interview owners of existing course archives and offer one short sample from customer-owned or openly licensed media
+**First demand test:** Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet
 
 Evidence:
 
 - <https://github.com/lachlanchen/Video2Book>
 - <https://github.com/lachlanchen/leonardsusskind>
+- <https://github.com/NousResearch/hermes-agent/issues/12885>
+- <https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/>
 
 Gates:
 
@@ -372,6 +380,8 @@ Evidence:
 
 - <https://github.com/lachlanchen/PocketPolyglot>
 - <https://github.com/lachlanchen/ShiGame>
+- <https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/>
+- <https://www.reddit.com/r/ChineseLanguage/comments/1vkx5ss/the_analects_for_learners_15920_definitions/>
 
 Gates:
 

@@ -1,0 +1,79 @@
+{
+  "id": "manuscript-sprint-pilot",
+  "version": 1,
+  "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
+  "source_needs": [
+    {
+      "captured_at": "2026-09-04T08:30:00Z",
+      "url": "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/",
+      "problem": "A current USD 200 fixed-price job asks for three submission-ready manuscripts, tracked changes or redline, figure and table formatting, claim-preserving edits, and confidentiality.",
+      "engagement": "marketplace_rules_required"
+    },
+    {
+      "captured_at": "2026-09-04T08:30:00Z",
+      "url": "https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf",
+      "problem": "An editor-required redline fails even though both LaTeX source versions compile independently.",
+      "engagement": "research_only"
+    }
+  ],
+  "offer": {
+    "state": "live",
+    "url": "https://lazying.art/manuscript-sprint/",
+    "fit_check": "https://lazying.art/manuscript-sprint/fit-check/",
+    "website_commit": "a5dae7d",
+    "price": "USD 250",
+    "scope": "One LaTeX manuscript up to 7,500 words, one target template, one supplied baseline and revision, a clean build, issue ledger, reproducible redline, and one pass of up to ten consolidated build or formatting corrections.",
+    "excluded": [
+      "ghostwriting or new scientific claims",
+      "literature review or statistical analysis",
+      "peer-review response drafting",
+      "submission portal access",
+      "publication or acceptance guarantees"
+    ]
+  },
+  "channels": {
+    "lazyblog": {
+      "state": "published",
+      "url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html",
+      "blog_commit": "2bd127f",
+      "content": "A complete latexdiff repair guide leads naturally to the free fit check after solving the technical problem.",
+      "policy": "The article uses one concise maintainer-owned offer sentence after the complete guide; no customer, turnaround, or publication claim."
+    },
+    "x": {
+      "state": "covered_by_existing_queue",
+      "publish_at": "2026-09-09T02:00:00Z",
+      "existing_campaign_id": "latex-redline-build",
+      "existing_post_role": "The queued technical guide now leads to the manuscript sprint after fully answering the redline build problem.",
+      "policy": "Keep the existing guide post. Do not add a second manuscript promotion to the current queue."
+    },
+    "upwork": {
+      "state": "not_applied",
+      "policy": "Before a proposal, inspect the live job, account eligibility, Connects cost, pre-contract communication rules, and client scope. Keep communication and payment on Upwork."
+    },
+    "reddit": {
+      "state": "needs_exact_need",
+      "policy": "Only answer a current build problem with a complete technical response and follow the community's promotion rules."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Do not post agent-authored or AI-edited comments."
+    }
+  },
+  "fit_check_smoke": {
+    "state": "live_review_panel_verified",
+    "checked_at": "2026-09-04T09:16:00Z",
+    "customer_data_used": false,
+    "automatic_submission": false,
+    "network_mutations": 0,
+    "attribution_fields": ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
+    "payment_before_scope_acceptance": false
+  },
+  "funnel": {
+    "state": "attention",
+    "fit_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

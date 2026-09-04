@@ -854,6 +854,40 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("account_id", serialized)
         self.assertNotIn("payout_id", serialized)
 
+    def test_manuscript_sprint_is_bounded_live_and_fit_first(self):
+        path = ROOT / "campaigns" / "manuscript-sprint-pilot.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        serialized = path.read_text(encoding="utf-8").casefold()
+
+        self.assertEqual(campaign["version"], 1)
+        offer = campaign["offer"]
+        self.assertEqual(offer["state"], "live")
+        self.assertEqual(offer["price"], "USD 250")
+        self.assertEqual(offer["url"], "https://lazying.art/manuscript-sprint/")
+        self.assertEqual(
+            offer["fit_check"],
+            "https://lazying.art/manuscript-sprint/fit-check/",
+        )
+        self.assertIn("7,500 words", offer["scope"])
+        exclusions = " ".join(offer["excluded"]).casefold()
+        self.assertIn("ghostwriting", exclusions)
+        self.assertIn("publication or acceptance guarantees", exclusions)
+
+        smoke = campaign["fit_check_smoke"]
+        self.assertFalse(smoke["automatic_submission"])
+        self.assertEqual(smoke["network_mutations"], 0)
+        self.assertFalse(smoke["payment_before_scope_acceptance"])
+        self.assertFalse(campaign["funnel"]["payment_confirmed"])
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+
+        x_channel = campaign["channels"]["x"]
+        self.assertEqual(x_channel["state"], "covered_by_existing_queue")
+        self.assertEqual(x_channel["existing_campaign_id"], "latex-redline-build")
+        self.assertNotIn("content", x_channel)
+        self.assertNotIn("postiz_content", x_channel)
+        self.assertNotIn("integration_id", serialized)
+        self.assertNotIn("post_id", serialized)
+
     def test_latex_redline_sample_matches_its_public_manifest(self):
         sample = ROOT / "examples" / "latex-redline"
         artifacts = sample / "artifacts"

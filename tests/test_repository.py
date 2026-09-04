@@ -168,6 +168,7 @@ class RepositoryTests(unittest.TestCase):
         expected = {
             "github-cellist": "python environment import verification",
             "github-glassagent-wearable-releases": "ai glasses setup",
+            "github-l-and-n": "l n pronunciation",
             "github-microquant": "metatrader5 ohlc analysis",
             "github-yinghan": "organoid segmentation",
         }

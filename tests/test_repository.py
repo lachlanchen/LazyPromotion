@@ -1061,12 +1061,21 @@ class RepositoryTests(unittest.TestCase):
     def test_policy_coding_campaign_has_real_demand_and_synthetic_proof(self):
         path = ROOT / "campaigns" / "auditable-policy-content-coding.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertIn("USD 600", campaign["source_need"]["budget"])
         self.assertIn("193", campaign["source_need"]["scope"])
         self.assertEqual(campaign["owned_proof"]["state"], "built_and_reproducible")
         self.assertIn("auditable-policy-coding", campaign["owned_proof"]["url"])
         upwork = campaign["channels"]["upwork"]
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["visible_review"]["provider"], "linkedin")
+        self.assertTrue(linkedin["visible_review"]["original_url_preserved"])
+        self.assertIn("synthetic text", linkedin["policy"])
+        self.assertEqual(
+            linkedin["content_sha256"],
+            "f78244ce298b6a9975eed56b72463b4ebe91b80a98fe45d0b82e406df0c55efb",
+        )
         self.assertEqual(upwork["state"], "application_prepared_login_required")
         self.assertFalse(upwork["application_submitted"])
         self.assertEqual(upwork["connects_spent"], 0)

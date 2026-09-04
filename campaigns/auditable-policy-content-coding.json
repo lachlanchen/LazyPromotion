@@ -1,6 +1,6 @@
 {
   "id": "auditable-policy-content-coding",
-  "version": 1,
+  "version": 2,
   "objective": "Win and deliver a current USD 600 textbook content-coding contract by showing exact, source-linked coding discipline rather than making an unsupported research claim.",
   "source_need": {
     "captured_on": "2026-09-05",
@@ -24,6 +24,21 @@
     ]
   },
   "channels": {
+    "linkedin": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-05T01:20:00Z",
+      "content": "Policy coding becomes much easier to review when every answer carries its evidence.\n\nI made a tiny synthetic example with three passages and a frozen codebook. For each question it records the exact source locator, deciding excerpt, selected code, one-line rationale, and an ambiguity flag. A deterministic manifest makes the sample reproducible.\n\nIt is small on purpose: a reviewer can disagree with a code and point to the exact sentence instead of debating an opaque score.\n\nSample and builder:\nhttps://github.com/lachlanchen/LazyPromotion/tree/main/examples/auditable-policy-coding\n\n#ContentAnalysis #ResearchMethods #DataQuality #OpenSource",
+      "destination": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/auditable-policy-coding",
+      "content_sha256": "f78244ce298b6a9975eed56b72463b4ebe91b80a98fe45d0b82e406df0c55efb",
+      "visible_review": {
+        "checked_at": "2026-09-05T02:06:45+08:00",
+        "provider": "linkedin",
+        "state_rechecked_after_schedule": "QUEUE",
+        "original_url_preserved": true,
+        "release_present": false
+      },
+      "policy": "First-party open-source workflow proof using only synthetic text. It does not claim client work, policy expertise, a contract, a sale, or revenue."
+    },
     "upwork": {
       "state": "application_prepared_login_required",
       "application_submitted": false,

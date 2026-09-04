@@ -6,7 +6,7 @@
       "label": "auditable-policy-content-coding",
       "metadata": {
         "objective": "Win and deliver a current USD 600 textbook content-coding contract by showing exact, source-linked coding discipline rather than making an unsupported research claim.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -5945,6 +5945,16 @@
       "relation": "targets",
       "source": "campaign:auditable-policy-content-coding",
       "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:auditable-policy-content-coding",
+      "target": "channel:linkedin"
     },
     {
       "confidence": 1.0,

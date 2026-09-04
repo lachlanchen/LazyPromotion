@@ -12,7 +12,11 @@ class OpportunityTests(unittest.TestCase):
         self.assertGreaterEqual(len(payload["opportunities"]), 10)
         self.assertEqual(
             [item["id"] for item in payload["opportunities"] if item["state"] == "active"],
-            ["private-collection-intelligence", "scientific-manuscript-workbench"],
+            [
+                "private-collection-intelligence",
+                "lecture-to-study-library",
+                "scientific-manuscript-workbench",
+            ],
         )
         self.assertEqual(
             [
@@ -36,6 +40,8 @@ class OpportunityTests(unittest.TestCase):
         )
         self.assertIn("hand-reviewed and project-owned", body)
         self.assertIn("https://lazying.art/manuscript-sprint/", body)
+        self.assertIn("https://lazying.art/lecture-pack/", body)
+        self.assertIn("the three active USD 250 routes", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)
 

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -31,13 +31,16 @@
     {
       "id": "lecture-to-study-library",
       "title": "Lecture-to-study library",
-      "state": "candidate",
+      "state": "active",
       "buyer": "A course creator, teacher, research group, or conference owner with recordings they control",
-      "need": "Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search",
+      "need": "Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest",
       "projects": ["Video2Book", "MultilingualWhisper", "LazyEdit", "PocketPolyglot", "LocalKnowledgeTerminal"],
-      "first_deliverable": "One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof",
-      "first_test": "Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet",
+      "first_deliverable": "The live fixed USD 250 Bilingual Lecture Pack for one rights-cleared English lecture up to 20 minutes, one primary speaker, one target language, transcript and subtitle files, editable bilingual source, A5 study PDF, short captioned preview, source-rights manifest, and one bounded corrections pass",
+      "first_test": "Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases",
       "proof": [
+        "https://lazying.art/lecture-pack/",
+        "https://lazying.art/lecture-pack/fit-check/",
+        "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
         "https://github.com/lachlanchen/Video2Book",
         "https://github.com/lachlanchen/leonardsusskind",
         "https://github.com/NousResearch/hermes-agent/issues/12885",
@@ -46,9 +49,10 @@
       "gates": [
         "Use only customer-owned, licensed, or clearly open educational media",
         "The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale",
-        "Define transcript correction and translation acceptance criteria before pricing"
+        "Treat the 30.5-second project-owned sample as process evidence, not proof of a complete 20-minute customer delivery",
+        "Define transcript correction and translation acceptance criteria during the fit review"
       ],
-      "scores": {"buyer_pain": 4, "proof": 4, "delivery_readiness": 3, "low_support": 3, "repeatability": 4}
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 4, "low_support": 3, "repeatability": 4}
     },
     {
       "id": "multilingual-video-accessibility",

@@ -66,7 +66,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -330,23 +330,24 @@
       "label": "Lecture-to-study library",
       "metadata": {
         "buyer": "A course creator, teacher, research group, or conference owner with recordings they control",
-        "first_deliverable": "One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof",
-        "first_test": "Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet",
+        "first_deliverable": "The live fixed USD 250 Bilingual Lecture Pack for one rights-cleared English lecture up to 20 minutes, one primary speaker, one target language, transcript and subtitle files, editable bilingual source, A5 study PDF, short captioned preview, source-rights manifest, and one bounded corrections pass",
+        "first_test": "Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases",
         "gates": [
           "Use only customer-owned, licensed, or clearly open educational media",
           "The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale",
-          "Define transcript correction and translation acceptance criteria before pricing"
+          "Treat the 30.5-second project-owned sample as process evidence, not proof of a complete 20-minute customer delivery",
+          "Define transcript correction and translation acceptance criteria during the fit review"
         ],
-        "need": "Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search",
+        "need": "Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest",
         "scores": {
           "buyer_pain": 4,
-          "delivery_readiness": 3,
+          "delivery_readiness": 4,
           "low_support": 3,
-          "proof": 4,
+          "proof": 5,
           "repeatability": 4
         },
-        "state": "candidate",
-        "weighted_score": 3.7
+        "state": "active",
+        "weighted_score": 4.15
       },
       "url": ""
     },
@@ -6516,7 +6517,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "needs_exact_need"
+        "state": "helpful_value_only_reply_live"
       },
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
@@ -7432,6 +7433,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:593c601822a24f73"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/Video2Book",
       "metadata": {},
       "relation": "uses_evidence",
@@ -7448,11 +7457,27 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:95067a4d090bc3c1"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "opportunity:lecture-to-study-library",
       "target": "url:b5905affb9e9343e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/fit-check/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:bc9f5affabab7f69"
     },
     {
       "confidence": 1.0,

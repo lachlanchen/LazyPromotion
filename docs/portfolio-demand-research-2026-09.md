@@ -1,6 +1,6 @@
 # Current needs matched to the LazyingArt portfolio
 
-Updated: 2026-09-04
+Updated: 2026-09-05
 
 The current public inventory contains 104 non-archived source repositories.
 The useful question is not how to promote all of them. It is which combinations
@@ -76,12 +76,36 @@ ledger, and redline from a supplied baseline. Its [fit
 check](https://lazying.art/manuscript-sprint/fit-check/) keeps the manuscript
 private until handling and scope are agreed.
 
+### 3. Bilingual Lecture Pack — USD 250
+
+A current USD 600 video-automation brief asks for a Whisper transcript,
+rule-based cuts, voiceover, burned and SRT captions, review output,
+documentation, and source handoff. That full request is broader than the public
+evidence, but it confirms that transcript-to-review workflows have paid demand.
+Current subtitle and localization briefs repeat the need for accurate timing,
+natural translation, and revision.
+
+The [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) keeps the offer
+inside the demonstrated boundary: one rights-cleared English lecture up to 20
+minutes, one speaker, one target language, transcript and SRT, translated SRT,
+editable bilingual source, A5 PDF, a short preview, a rights manifest, and one
+bounded corrections pass. The [free fit
+check](https://lazying.art/lecture-pack/fit-check/) asks for metadata before any
+source transfer or payment.
+
+The [project-owned working
+sample](https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html)
+has 15 aligned lines in Japanese, English, and Chinese, 45 searchable strings,
+click-to-time navigation, five checked concept pointers, and subtitle exports.
+Video2Book, PocketPolyglot, LazyEdit, LKT, and the Susskind archive provide the
+reusable book, media, and provenance components. The proof is 30.5 seconds—not
+a complete customer delivery or permission to reuse third-party lectures.
+
 ## What should stay in evidence-building
 
 | Need observed now | Portfolio combination | Small next proof | Why it is not the first sales route |
 |---|---|---|---|
 | Textbook chapters and syllabus concepts → 8–10 entry points → student-traversable assignment nodes | LocalKnowledgeTerminal + PocketPolyglot | Use the live one-passage provenance graph during a fit check, then test only one rights-cleared representative textbook sample | The public teacher signal is research-only and the current proof is hand-reviewed at passage scale, not full-book extraction |
-| Video URL → transcript → important timestamps → searchable knowledge base | Video2Book + MultilingualWhisper + LocalKnowledgeTerminal | One owned lecture with source-linked transcript, concepts, subtitles, and search | The public request is clear, but it is product feedback rather than a buyer; the live pack is still capped at 20 minutes |
 | Real-time local translation for mixed-language media | MultilingualWhisper + LazyEdit + FuriganaSubtitles | Measured latency, VRAM, long-audio, and language-pair tests | Current requests need real-time or hour-long performance that the portfolio has not publicly measured |
 | Passage-aligned Classical Chinese with readings, glosses, and provenance | PocketPolyglot + LinguaLeaf + zhjpbook + LKT graph | One title-level rights-cleared lesson whose gloss and history edges expose sources and uncertainty | Learner demand is strong, but buying power and title-level reuse rights are unresolved |
 | Multilingual etymology collections with trustworthy relationships | WordOrigins + LKT graph + LinguaLeaf + WordsCardEink | A small openly licensed deck with source, locator, relation type, uncertainty, and correction history on every edge | Existing tools are plentiful; accuracy and provenance—not another pretty graph—must be demonstrated first |
@@ -89,6 +113,7 @@ private until handling and scope are agreed.
 ## Evidence used
 
 - [A current academic editing job](https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/) asks for three submission-ready manuscripts, a reviewable redline, formatting work, and confidentiality at USD 200 fixed.
+- [A current video-pipeline job](https://www.upwork.com/freelance-jobs/apply/Powered-Video-Editing-Automation-Pipeline-n8n-Claude-API-Whisper-ElevenLabs_~022095316142519641867/) asks for Whisper transcription, cuts, voiceover, captions, review output, documentation, and source handoff at USD 600 fixed. It supports the workflow need but is broader than the bounded lecture-pack evidence.
 - [A 300-PDF local RAG owner](https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/) describes multilingual books, limited hardware, shallow retrieval, cross-document connections, and grounded citations.
 - [A 17,000-paper local RAG discussion](https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/) repeatedly raises parsing, document versions, tables, formulas, metadata, evaluation, and citation graphs.
 - [A teacher's textbook-network request](https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/) asks for chapter and subchapter structure, syllabus concepts, 8–10 entry points, and traversable nodes from assignments. `r/KnowledgeGraph` is Restricted, so it remains research-only evidence rather than a contact or lead.
@@ -96,6 +121,10 @@ private until handling and scope are agreed.
 - [A current lecture-notes request](https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/) validates the transcript → summary → later search requirement, but the learner prefers free software and already accepted another recommendation.
 - [An English-only Classical Chinese beginner](https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/) wants affordable guidance and glyph origins, while experienced readers warn that unsupported generated explanations can be confidently wrong.
 - [An Analects learning project](https://www.reddit.com/r/ChineseLanguage/comments/1vkx5ss/the_analects_for_learners_15920_definitions/) is evidence that passage-specific glosses, readings, aligned text, and removable annotations are useful; it is another creator's work, not a place to pitch.
+- Search Console's visible 28-day view on 2026-09-05 showed 135 clicks. The
+  Susskind archive article led with 28 clicks and the Classical Mechanics Reader
+  had 25. That is owned discovery evidence for the lecture route, but the PDF-led
+  queries still indicate free-resource intent rather than a lead or sale.
 
 ## Operating decision
 

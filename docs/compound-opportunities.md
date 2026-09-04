@@ -10,12 +10,12 @@ This map combines existing public code, books, knowledge systems, and media into
 |---|---|---|---|---:|
 | [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Use the live passage-provenance proof and the scientific collection sample to qualify one representative source for text survival, structure, concepts, provenance, and a small retrieval eval before recommending any full re-index | 4.65 |
 | [Manuscript build and redline sprint](#scientific-manuscript-workbench) | active | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed | 4.30 |
+| [Lecture-to-study library](#lecture-to-study-library) | active | Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest | Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases | 4.15 |
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
 | [Multilingual video accessibility package](#multilingual-video-accessibility) | candidate | Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline | Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems | 4.00 |
 | [Private local-AI workstation deployment](#local-ai-workstation-deployment) | candidate | Install and operate a pinned local model stack with a usable web client and guarded remote access | Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit | 3.95 |
 | [Creator library refinery](#creator-library-refinery) | candidate | Turn an existing archive into searchable source material, polished articles, clips, and multilingual derivatives without losing provenance | Use one LazyingArt-owned archive as the case study, then approach creators whose existing catalog is underused | 3.70 |
 | [Creator media library website](#creator-media-library) | candidate | Give an existing catalog a durable, searchable home with reliable metadata and language access instead of depending on a platform feed | Use a small LazyingArt-owned catalog as the demonstration, then ask creators with an existing back catalog whether they would pay to have three items organized | 3.70 |
-| [Lecture-to-study library](#lecture-to-study-library) | candidate | Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search | Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet | 3.70 |
 | [OpenHI reproducibility and kit qualification](#openhi-reproducibility-session) | gated | Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time | Interview existing repository users and kit inquiries before increasing traffic or changing checkout | 3.60 |
 | [Cited etymology learning deck](#etymology-learning-deck) | candidate | Learn words through meanings, roots, affixes, pronunciations, translations, and provenance rather than isolated flashcards | Publish a small deck from openly licensed lexical sources and ask teachers which theme they would actually use | 3.50 |
 | [Explainable game classroom bundle](#explainable-game-classroom) | candidate | Teach decisions with exact rules and visible reasoning instead of opaque move recommendations | Let one teacher or club use a short lesson pack and observe where explanation or setup fails | 3.50 |
@@ -88,6 +88,37 @@ Gates:
 - Do not upload manuscripts, review correspondence, or customer data without explicit authorization
 - Exclude ghostwriting, new claims, statistical analysis, portal submission, and publication guarantees
 - Qualify the exact manuscript because the public synthetic redline proves the minimal three-build path, not every package, template, table, or figure combination
+
+### Lecture-to-study library
+
+**State:** active
+
+**Buyer:** A course creator, teacher, research group, or conference owner with recordings they control
+
+**Need:** Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest
+
+**Existing work:** [Video2Book](https://github.com/lachlanchen/Video2Book), [MultilingualWhisper](https://github.com/lachlanchen/MultilingualWhisper), [LazyEdit](https://github.com/lachlanchen/LazyEdit), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal)
+
+**First deliverable:** The live fixed USD 250 Bilingual Lecture Pack for one rights-cleared English lecture up to 20 minutes, one primary speaker, one target language, transcript and subtitle files, editable bilingual source, A5 study PDF, short captioned preview, source-rights manifest, and one bounded corrections pass
+
+**First demand test:** Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases
+
+Evidence:
+
+- <https://lazying.art/lecture-pack/>
+- <https://lazying.art/lecture-pack/fit-check/>
+- <https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html>
+- <https://github.com/lachlanchen/Video2Book>
+- <https://github.com/lachlanchen/leonardsusskind>
+- <https://github.com/NousResearch/hermes-agent/issues/12885>
+- <https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/>
+
+Gates:
+
+- Use only customer-owned, licensed, or clearly open educational media
+- The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale
+- Treat the 30.5-second project-owned sample as process evidence, not proof of a complete 20-minute customer delivery
+- Define transcript correction and translation acceptance criteria during the fit review
 
 ### Review-first agent workflow kit
 
@@ -213,33 +244,6 @@ Gates:
 - Verify ownership or licenses for every recording, image, lyric, subtitle, font, and translation
 - Hosting, domain setup, analytics, social publishing, and ongoing catalog maintenance are separate scopes
 - Keep the first proof static and portable so it does not create an open-ended support obligation
-
-### Lecture-to-study library
-
-**State:** candidate
-
-**Buyer:** A course creator, teacher, research group, or conference owner with recordings they control
-
-**Need:** Convert a video archive into transcripts, structured notes, multilingual reading editions, and cited local search
-
-**Existing work:** [Video2Book](https://github.com/lachlanchen/Video2Book), [MultilingualWhisper](https://github.com/lachlanchen/MultilingualWhisper), [LazyEdit](https://github.com/lachlanchen/LazyEdit), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal)
-
-**First deliverable:** One rights-cleared recording converted into a reviewed transcript, compact study chapter, provenance map, and small cited search proof
-
-**First demand test:** Keep the live 20-minute Bilingual Lecture Pack narrow while building one owned demonstration of timestamped transcript, structured notes, searchable concepts, and subtitles; do not claim the hour-long or real-time cases yet
-
-Evidence:
-
-- <https://github.com/lachlanchen/Video2Book>
-- <https://github.com/lachlanchen/leonardsusskind>
-- <https://github.com/NousResearch/hermes-agent/issues/12885>
-- <https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/>
-
-Gates:
-
-- Use only customer-owned, licensed, or clearly open educational media
-- The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale
-- Define transcript correction and translation acceptance criteria before pricing
 
 ### OpenHI reproducibility and kit qualification
 
@@ -395,4 +399,4 @@ Gates:
 
 ## Interpretation
 
-The active LKT route remains the shortest path to a paid result because it already has an exact scope, public proof, fit check, and price. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.
+LKT, manuscript redline, and the bilingual lecture pack are the three active USD 250 routes because each has an exact scope, public proof, fit check, and price. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.

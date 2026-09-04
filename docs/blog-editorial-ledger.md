@@ -64,6 +64,12 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
 
+- Search Console's visible 28-day report on 2026-09-05 showed 135 clicks. The
+  Susskind archive article led with 28 clicks, up 17%, and the Classical
+  Mechanics Reader had 25 clicks, up 67%. This supports the quiet, exact-fit
+  Bilingual Lecture Pack bridge already present on those pages. The dominant
+  PDF and lecture-note queries still indicate free-resource intent; the counts
+  are not leads, customers, or revenue.
 - Search Console's visible 28-day report on 2026-09-02 showed 131 clicks and
   6.46K impressions across the property. Post `3167` was the leading article
   with 25 clicks; its LKT section now presents the project-owned sample report

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -303,7 +303,7 @@
       }
     },
     "reddit": {
-      "state": "needs_exact_need",
+      "state": "helpful_value_only_reply_live",
       "profile_route": {
         "state": "live",
         "checked_at": "2026-08-31T23:32:59Z",
@@ -335,23 +335,38 @@
         },
         "policy": "First-party profile resource only, not a community submission or generated reply. The published post and actual evidence-first click path were visibly verified. A provider-side one-prefix repair made the tracked URL clickable without changing the technical answer or disclosure. The live allowlisted bridges preserve Reddit attribution from the article through the sample report to the fit-check page without forwarding arbitrary parameters or sending a form."
       },
-    "community_reply": {
-      "state": "live",
-      "checked_at": "2026-09-02T01:16:15Z",
-      "thread": "https://www.reddit.com/r/degoogle/comments/1vz7y6x/self_hosted/",
-      "url": "https://www.reddit.com/r/degoogle/comments/1vz7y6x/self_hosted/p72g6b4/",
-      "need": "Choose a local search tool for a private PDF and book collection on Arch Linux.",
-      "content": "AI-assisted recommendation; I checked the current Arch, Recoll, and Typesense docs before posting. Start with Recoll on Arch. It indexes PDF text locally, has a desktop UI and browser interface, and is much less setup than Typesense. Install Poppler so it can extract text; for scanned PDFs, OCR them first with OCRmyPDF/Tesseract. Typesense is useful if you want to build your own search UI, but it does not extract PDFs by itself—you need a pipeline that extracts text, splits it into chunks, adds metadata, and optionally creates embeddings. For a personal library, I’d try Recoll first and only move to Typesense if typo-tolerant or semantic retrieval is worth maintaining that pipeline.",
-      "community_rules": {
-        "ai_disclosure_required": true,
-        "developer_prefix_required_for_affiliated_project_links": true,
-        "affiliate_links_forbidden": true
+      "community_reply": {
+        "state": "live",
+        "checked_at": "2026-09-02T01:16:15Z",
+        "thread": "https://www.reddit.com/r/degoogle/comments/1vz7y6x/self_hosted/",
+        "url": "https://www.reddit.com/r/degoogle/comments/1vz7y6x/self_hosted/p72g6b4/",
+        "need": "Choose a local search tool for a private PDF and book collection on Arch Linux.",
+        "content": "AI-assisted recommendation; I checked the current Arch, Recoll, and Typesense docs before posting. Start with Recoll on Arch. It indexes PDF text locally, has a desktop UI and browser interface, and is much less setup than Typesense. Install Poppler so it can extract text; for scanned PDFs, OCR them first with OCRmyPDF/Tesseract. Typesense is useful if you want to build your own search UI, but it does not extract PDFs by itself—you need a pipeline that extracts text, splits it into chunks, adds metadata, and optionally creates embeddings. For a personal library, I’d try Recoll first and only move to Typesense if typo-tolerant or semantic retrieval is worth maintaining that pipeline.",
+        "community_rules": {
+          "ai_disclosure_required": true,
+          "developer_prefix_required_for_affiliated_project_links": true,
+          "affiliate_links_forbidden": true
+        },
+        "linked_owned_asset": false,
+        "lead_or_sale_observed": false,
+        "policy": "The response stands alone and follows the community's AI-disclosure rule. It recommends the smallest suitable open-source tool and does not mention LKT, add a second pitch, or infer a lead from the visible vote."
       },
-      "linked_owned_asset": false,
-      "lead_or_sale_observed": false,
-      "policy": "The response stands alone and follows the community's AI-disclosure rule. It recommends the smallest suitable open-source tool and does not mention LKT, add a second pitch, or infer a lead from the visible vote."
-    },
-    "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
+      "ocr_value_reply": {
+        "state": "live",
+        "checked_at": "2026-09-04T16:33:30Z",
+        "thread": "https://www.reddit.com/r/Rag/comments/1vdaiio/multilingual_ocr/",
+        "url": "https://www.reddit.com/r/Rag/comments/1vdaiio/comment/p7t3ka9/",
+        "need": "Reduce OCR errors across roughly 1,000 English, Arabic, and Urdu religious books before RAG ingestion.",
+        "action": "Recommended a stratified ground-truth set, separate character-error and reading-order scoring, page-type routing, low-confidence review, and preservation of the source image, raw OCR, layout, and normalized text.",
+        "community_rules": {
+          "limited_self_promotion": true,
+          "services_routed_elsewhere": true
+        },
+        "linked_owned_asset": false,
+        "lead_or_sale_observed": false,
+        "policy": "Value-only community answer with no LazyingArt mention or link. The profile may provide quiet context, but the public reply is not a lead, customer result, or permission for follow-up promotion."
+      },
+      "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },
     "x": {
       "state": "postiz_queue",

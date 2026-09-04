@@ -1,11 +1,11 @@
-# First USD 1,000: two focused USD 250 routes
+# First USD 1,000: three focused USD 250 routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
-at **USD 250**. A second active route is the **Manuscript Build & Redline Sprint**
-at **USD 250**, supported by a current paid-demand signal and a reproducible
-project-owned sample. The milestone is any four confirmed USD 250 payments, or
-USD 1,000 gross before fees, tax, refunds, and delivery costs. It is a target,
-not a revenue promise.
+at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
+Pack** are also active at **USD 250**, each with a fixed scope, free fit check,
+and reproducible project-owned proof. The milestone is any four confirmed USD
+250 payments across these three routes, or USD 1,000 gross before fees, tax,
+refunds, and delivery costs. It is a target, not a revenue promise.
 
 ## Fixed scope
 
@@ -59,6 +59,26 @@ payment.
 The exact manuscript fit-check subject is routed into the same dedicated
 aggregate-only intake folder used by LKT. The routing rule and a fresh folder
 count were verified visibly without opening or persisting any message content.
+
+## Active secondary route: bilingual lecture pack
+
+The live [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) covers one
+customer-owned or qualifying openly licensed English lecture up to 20 minutes,
+one primary speaker, and one target language: Traditional Chinese or Japanese.
+It delivers a timestamped English transcript and SRT, a target-language SRT,
+editable bilingual source, an A5 study PDF, one customer-selected 30–45 second
+captioned preview, a rights manifest, and one bounded corrections pass. Its
+[free fit check](https://lazying.art/lecture-pack/fit-check/) collects metadata
+only and requests neither a source file nor payment.
+
+The public [project-owned multilingual
+sample](https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html)
+contains 15 aligned Japanese, English, and Chinese lines, 45 searchable strings,
+click-to-time navigation, five checked concept pointers, subtitle exports, and
+a source manifest. The Susskind archive, Video2Book, PocketPolyglot, LazyEdit,
+and LKT supply the surrounding book, transcript, caption, and provenance
+workflows. They prove a format and process, not resale rights, lecturer
+endorsement, a complete 20-minute customer delivery, or a customer result.
 
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
@@ -258,6 +278,9 @@ action:
 
 - LocalKnowledgeTerminal is the offer and delivery core.
 - PocketPolyglot and LinguaLeaf support multilingual source preparation.
+- Video2Book, LazyEdit, and the Susskind-format archive support the bounded
+  lecture-pack route.
+- PaperAgent and paper-revision-skill support the manuscript route.
 - WordsCardEink and WordOrigins supply proven card and graph patterns.
 - BLOG and Search Console reveal existing educational demand.
 - LazyPromotion finds explicit needs and keeps the private funnel ledger.
@@ -272,9 +295,9 @@ pitch merely to promote more projects.
 
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
-media, research tooling, games, and local AI. LKT remains the active revenue
-route; a candidate advances only after a current need and a small first test are
-found.
+media, research tooling, games, and local AI. LKT, manuscript redline, and the
+bilingual lecture pack are the active revenue routes; a candidate advances only
+after a current need and a small first test are found.
 
 ## Truthful measurement
 

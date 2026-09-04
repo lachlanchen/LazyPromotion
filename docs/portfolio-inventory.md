@@ -16,7 +16,13 @@ These are priority paths, not a license to force a mention. LazyPromotion should
 | [Local Knowledge Terminal](https://lazying.art/lkt/) | Private, cited multilingual cards from a bounded book or dictionary collection | Educators, language labs, libraries, exhibits, and private researchers | USD 250 collection-fit sprint after a free fit check; existing hardware only |
 | [Musia + LocalVideoGen](https://fun.lazying.art) | Local-first music localization and controllable video generation | Creators who already have a specific song, stem, or video workflow problem | Find design partners and open-source users before making a commercial claim |
 
-The single first-USD-1,000 route is four confirmed USD 250 Local Knowledge Terminal collection-fit sprints. The eInk inquiry and Figurine checkout remain separate offers, not competing calls to action. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
+The first-USD-1,000 route is four confirmed USD 250 payments across three
+bounded services: Local Knowledge Terminal collection-fit, Manuscript Build &
+Redline, and the Bilingual Lecture Pack. The eInk inquiry and Figurine checkout
+remain separate offers, not competing calls to action. Open-source replies
+should optimize for a solved problem, not for extracting a donation. GitHub
+Sponsors and donations remain quiet secondary support routes on the
+project/profile pages.
 
 ## Portfolio at a glance
 

@@ -126,10 +126,10 @@ def render(payload: dict) -> str:
             "## Interpretation",
             "",
             (
-                "The active LKT route remains the shortest path to a paid result because it "
-                "already has an exact scope, public proof, fit check, and price. Candidate and "
-                "gated opportunities should advance only after a current explicit need, a "
-                "rights-safe sample, and a written delivery boundary exist."
+                "LKT, manuscript redline, and the bilingual lecture pack are the three active "
+                "USD 250 routes because each has an exact scope, public proof, fit check, and "
+                "price. Candidate and gated opportunities should advance only after a current "
+                "explicit need, a rights-safe sample, and a written delivery boundary exist."
             ),
             "",
         ]

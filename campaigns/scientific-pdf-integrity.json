@@ -1,6 +1,6 @@
 {
   "id": "scientific-pdf-integrity",
-  "version": 3,
+  "version": 4,
   "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
   "source_needs": [
     {
@@ -28,6 +28,8 @@
         "zh"
       ],
       "blog_commit": "cc4857a",
+      "proof_update_commit": "839f614",
+      "proof_link_verified_at": "2026-09-04T11:08:06Z",
       "content": "A complete collection-integrity workflow covers source ledgers, version families, extraction classes, page-level citation contracts, lexical baselines, provenance-bearing graph edges, incremental updates, and an owner-defined acceptance boundary before one quiet LKT fit-check route.",
       "sample_report": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=scientific_pdf_integrity",
       "fit_check": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=scientific_pdf_integrity",
@@ -64,6 +66,9 @@
       "destination": "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html?utm_source=lkt&utm_medium=website&utm_campaign=scientific_pdf_integrity&utm_content=research_use_case",
       "placement": "Private research use-case card",
       "website_commit": "063226f",
+      "sample_report": "https://lazying.art/lkt/sample-report/",
+      "sample_report_commit": "3422d01",
+      "sample_report_verified_at": "2026-09-04T11:08:06Z",
       "policy": "A single contextual guide link helps research-library visitors evaluate their collection before the fit check. It is an attention route, not a lead or customer result."
     },
     "reddit": {

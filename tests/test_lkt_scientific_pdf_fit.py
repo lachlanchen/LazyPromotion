@@ -114,7 +114,7 @@ class ScientificPdfFitSampleTests(unittest.TestCase):
             (ROOT / "campaigns" / "scientific-pdf-integrity.json").read_text(encoding="utf-8")
         )
         sample = campaign["source_evidence"]["executed_synthetic_sample"]
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(
             campaign["source_evidence"]["executed_sample"],
             "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lkt-scientific-pdf-fit",
@@ -126,6 +126,8 @@ class ScientificPdfFitSampleTests(unittest.TestCase):
         self.assertFalse(sample["network_used"])
         self.assertFalse(sample["customer_data_used"])
         self.assertIn("not a benchmark", sample["boundary"].casefold())
+        self.assertEqual(campaign["channels"]["lazyblog"]["proof_update_commit"], "839f614")
+        self.assertEqual(campaign["channels"]["website"]["sample_report_commit"], "3422d01")
         self.assertEqual(campaign["funnel"]["state"], "attention")
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)

@@ -96,7 +96,7 @@
       "label": "scientific-pdf-integrity",
       "metadata": {
         "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },

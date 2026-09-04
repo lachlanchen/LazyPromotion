@@ -458,16 +458,17 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "wenyan-history.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8")
-        self.assertEqual(campaign["version"], 1)
-        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
-        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
+        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
+        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
         self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
-        self.assertIn("six free B&W parts", campaign["channels"]["x"]["content"])
+        self.assertIn("six black-and-white parts", campaign["channels"]["x"]["content"])
         self.assertIn("utm_source=x", campaign["channels"]["x"]["content"])
+        self.assertNotIn("https://", campaign["channels"]["x"]["content"])
         self.assertNotIn("in color and B&W", campaign["channels"]["x"]["content"])
         self.assertIn(
-            "Formats vary by title",
+            "Each of the other named histories has color and black-and-white editions",
             campaign["channels"]["instagram"]["content"],
         )
         self.assertIn(
@@ -478,6 +479,24 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(
             "no color link",
             campaign["source_evidence"]["format_inventory"]["zizhi_tongjian"],
+        )
+        self.assertEqual(
+            campaign["source_evidence"]["owned_guide"],
+            "https://lazying.art/wenyan/",
+        )
+        self.assertTrue(campaign["channels"]["x"]["visible_review"]["stored_text_exact"])
+        self.assertTrue(
+            campaign["channels"]["instagram"]["visible_review"][
+                "stored_text_normalized_exact"
+            ]
+        )
+        self.assertEqual(
+            campaign["channels"]["x"]["content"],
+            campaign["channels"]["x"]["postiz_content"],
+        )
+        self.assertEqual(
+            campaign["channels"]["instagram"]["content"],
+            campaign["channels"]["instagram"]["postiz_content"],
         )
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())

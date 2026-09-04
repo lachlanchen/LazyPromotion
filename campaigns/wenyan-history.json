@@ -1,17 +1,22 @@
 {
-  "version": 1,
+  "version": 3,
   "id": "wenyan-history",
   "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
   "source_evidence": {
     "pipeline": "https://github.com/lachlanchen/PocketPolyglot",
     "public_shelf": "https://lachlanchen.github.io/LinguaLeaf/website/",
+    "owned_guide": "https://lazying.art/wenyan/",
+    "owned_guide_commit": "48c0976",
     "asset_repository": "https://github.com/lachlanchen/LinguaLeaf",
     "asset_path": "assets/max-language-previews/zizhi-tongjian-part-03.png",
     "edition_format": "文言文 main text with English, modern Japanese, and modern Chinese",
-    "verified_at": "2026-09-02",
+    "verified_at": "2026-09-04",
     "format_inventory": {
       "zizhi_tongjian": "six black-and-white parts; no color link on the public shelf",
-      "other_named_histories": "color and black-and-white availability varies by title"
+      "han_shu": "one color and one black-and-white edition",
+      "hou_han_shu": "three parts, each in color and black-and-white",
+      "sanguozhi_pei_zhu": "one color and one black-and-white edition",
+      "zuozhuan": "one color and one black-and-white edition"
     }
   },
   "baseline_2026_08_31": {
@@ -30,15 +35,52 @@
   },
   "channels": {
     "x": {
-      "state": "postiz_draft",
-      "publish_date_placeholder_utc": "2026-09-02T01:00:00Z",
-      "content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I made six free B&W parts with 文言文 beside English, modern Japanese, and modern Chinese. Read them here: https://lachlanchen.github.io/LinguaLeaf/website/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
-      "link_strategy": "Use the tracked canonical shelf URL. Recheck the live X preview and destination immediately before any future scheduling."
+      "state": "postiz_queue",
+      "publish_at": "2026-09-10T02:00:00Z",
+      "content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I built a shelf with six black-and-white parts, placing 文言文 beside English, modern Japanese, and modern Chinese. Start here: lazying.art/wenyan/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
+      "postiz_content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I built a shelf with six black-and-white parts, placing 文言文 beside English, modern Japanese, and modern Chinese. Start here: lazying.art/wenyan/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
+      "destination": "https://lazying.art/wenyan/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
+      "visual": "https://raw.githubusercontent.com/lachlanchen/LinguaLeaf/main/assets/max-language-previews/zizhi-tongjian-part-03.png",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "visible_review": {
+        "checked_at": "2026-09-04T12:45:00Z",
+        "stored_text_exact": true,
+        "character_count": 266,
+        "provider_limit": 280,
+        "media_visible": true,
+        "date_and_time_visible": true,
+        "state_rechecked_after_schedule": "QUEUE",
+        "release_present": false
+      },
+      "policy": "A first-party reading guide with one project-owned cover preview. Postiz preserved the exact 266-character copy only with the tracked owned-domain URL written without a scheme; the full destination is recorded separately. Do not claim rights clearance, customer results, or sales."
     },
     "instagram": {
-      "state": "postiz_draft",
-      "publish_date_placeholder_utc": "2026-09-03T11:30:00Z",
-      "content": "Some books are difficult because the language is distant—not because the ideas are.\n\nI’ve been building a free reading shelf where 文言文 sits beside English, modern Japanese, and modern Chinese. It includes 資治通鑑, 漢書, 後漢書, 三國志裴松之注, and 春秋左氏傳. Formats vary by title: 資治通鑑 currently has six black-and-white parts; several other histories offer both color and black-and-white readers.\n\nMade with PocketPolyglot:\nhttps://lachlanchen.github.io/LinguaLeaf/website/?utm_source=instagram&utm_medium=social&utm_campaign=wenyan_history\n\nWhich history would you open first?\n\n#文言文 #ClassicalChinese #ChineseHistory #LanguageLearning #DigitalHumanities"
+      "state": "postiz_queue",
+      "publish_at": "2026-09-12T12:00:00Z",
+      "content": "Some books are difficult because the language is distant—not because the ideas are.\n\nI’ve been building a reading shelf where 文言文 sits beside English, modern Japanese, and modern Chinese. It includes 資治通鑑, 漢書, 後漢書, 三國志裴松之注, and 春秋左氏傳. 資治通鑑 has six black-and-white parts. Each of the other named histories has color and black-and-white editions.\n\nExplore the shelf:\nhttps://lazying.art/wenyan/?utm_source=instagram&utm_medium=social&utm_campaign=wenyan_history\n\nWhich history would you open first?\n\n#文言文 #ClassicalChinese #ChineseHistory #LanguageLearning #DigitalHumanities",
+      "postiz_content": "Some books are difficult because the language is distant—not because the ideas are.\n\nI’ve been building a reading shelf where 文言文 sits beside English, modern Japanese, and modern Chinese. It includes 資治通鑑, 漢書, 後漢書, 三國志裴松之注, and 春秋左氏傳. 資治通鑑 has six black-and-white parts. Each of the other named histories has color and black-and-white editions.\n\nExplore the shelf:\nhttps://lazying.art/wenyan/?utm_source=instagram&utm_medium=social&utm_campaign=wenyan_history\n\nWhich history would you open first?\n\n#文言文 #ClassicalChinese #ChineseHistory #LanguageLearning #DigitalHumanities",
+      "destination": "https://lazying.art/wenyan/?utm_source=instagram&utm_medium=social&utm_campaign=wenyan_history",
+      "visual": "https://raw.githubusercontent.com/lachlanchen/LinguaLeaf/main/assets/max-language-previews/zizhi-tongjian-part-03.png",
+      "media_sha256": "eae80a2811eb3d229f3cce3ca352211a64174dff1dc6fe66468d4fbf50388498",
+      "settings": {
+        "post_type": "post"
+      },
+      "visible_review": {
+        "checked_at": "2026-09-04T12:47:00Z",
+        "stored_text_normalized_exact": true,
+        "character_count": 573,
+        "provider_limit": 2200,
+        "media_visible": true,
+        "date_and_time_visible": true,
+        "state_rechecked_after_schedule": "QUEUE",
+        "release_present": false
+      },
+      "policy": "A first-party reading-shelf introduction with one project-owned cover preview. The caption states only the title-level formats verified from the live manifest and does not call the editions rights-cleared, openly licensed, or free to redistribute."
     },
     "reddit": {
       "state": "needs_community_fit",

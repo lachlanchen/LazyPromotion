@@ -106,7 +106,7 @@
       "label": "wenyan-history",
       "metadata": {
         "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
-        "version": 1
+        "version": 3
       },
       "url": ""
     },
@@ -5635,6 +5635,13 @@
       "url": "https://lazying.art/eink/"
     },
     {
+      "id": "url:05e1df8fa511ac01",
+      "kind": "web_resource",
+      "label": "owned guide",
+      "metadata": {},
+      "url": "https://lazying.art/wenyan/"
+    },
+    {
       "id": "url:c48afb0dbeb7ee89",
       "kind": "web_resource",
       "label": "pilot page",
@@ -6818,7 +6825,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:wenyan-history",
@@ -6838,11 +6845,19 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:wenyan-history",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/wenyan/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:wenyan-history",
+      "target": "url:05e1df8fa511ac01"
     },
     {
       "confidence": 1.0,

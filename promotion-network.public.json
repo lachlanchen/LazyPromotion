@@ -5392,6 +5392,34 @@
       "url": "https://dub.co/legal/partners"
     },
     {
+      "id": "url:6c8849ea580ef993",
+      "kind": "web_resource",
+      "label": "encrypted intake sources backend commit",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/myblog/commit/bcf0e22debc4bf2d87af17768782708d0e0a3860"
+    },
+    {
+      "id": "url:91a35c7c8125b8ac",
+      "kind": "web_resource",
+      "label": "encrypted intake sources endpoint",
+      "metadata": {},
+      "url": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check"
+    },
+    {
+      "id": "url:89cdf4a9c572a26b",
+      "kind": "web_resource",
+      "label": "encrypted intake sources frontend commit",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689"
+    },
+    {
+      "id": "url:28250394f2d239a9",
+      "kind": "web_resource",
+      "label": "encrypted intake sources receiver commit",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69"
+    },
+    {
       "id": "url:265444c2e249d3e1",
       "kind": "web_resource",
       "label": "executed media sample repository",
@@ -6492,6 +6520,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:28250394f2d239a9"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -6516,11 +6552,35 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/myblog/commit/bcf0e22debc4bf2d87af17768782708d0e0a3860",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:6c8849ea580ef993"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:89cdf4a9c572a26b"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:8a87167432f94090"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:91a35c7c8125b8ac"
     },
     {
       "confidence": 1.0,

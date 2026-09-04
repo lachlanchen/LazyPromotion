@@ -53,6 +53,17 @@ class NetworkTests(unittest.TestCase):
             list(network.source_evidence_urls(evidence)),
         )
 
+    def test_live_encrypted_intake_sources_enter_public_graph(self):
+        network.sync_graph(self.db)
+        snapshot = json.dumps(network.public_snapshot(self.db), ensure_ascii=False)
+        self.assertIn(
+            "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+            snapshot,
+        )
+        self.assertIn("bcf0e22debc4bf2d87af17768782708d0e0a3860", snapshot)
+        self.assertIn("f31d7f0b0f2673f116af9490a36c103a5e099689", snapshot)
+        self.assertIn("7d7e40058ae37c468bb4156bfc74b2042d61db69", snapshot)
+
     def test_public_snapshot_excludes_people_drafts_and_local_paths(self):
         candidate = promotion.ingest_candidate(
             self.db,

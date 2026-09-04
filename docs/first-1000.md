@@ -62,11 +62,13 @@ count were verified visibly without opening or persisting any message content.
 
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
-builds a reviewable email draft inside the current browser tab. It stores,
-uploads, and sends nothing automatically; the prospective customer controls the
-final email send.
+shows a review gate inside the current browser tab. The prospective customer
+must explicitly submit the encrypted request or choose the
+`contact@lazying.art` email fallback. Inquiry content is stored only as an
+encrypted envelope outside the webroot; the operational rate and idempotency
+state contains no inquiry content.
 
-A live visible-browser smoke test on September 2, 2026 used synthetic,
+A historical visible-browser smoke test on September 2, 2026 used synthetic,
 non-customer answers and stopped at that review panel. It verified the exact
 `USD 250` wording, visible recipient and subject, copy fallback, and all four
 allowlisted UTM fields with no non-read network request or additional page. The
@@ -75,9 +77,23 @@ keeps Stripe after written scope acceptance. The mail action was not clicked.
 This proves only that the review-first path is ready; it is not a lead, sale, or
 revenue event. The checked deployment is LazyingArtWebsite commit `8541e9c`.
 
-Encrypted direct intake remains in development and is not live. The current
-public fit check still prepares a local reviewable email draft and sends nothing
-automatically.
+Encrypted direct intake is now live. The verified components are myblog backend
+commit `bcf0e22debc4bf2d87af17768782708d0e0a3860`, LazyingArtWebsite frontend
+commit `f31d7f0b0f2673f116af9490a36c103a5e099689`, and LazyPromotion receiver
+commit `7d7e40058ae37c468bb4156bfc74b2042d61db69`. Allowed-origin OPTIONS returned
+the exact ACAO, foreign-origin OPTIONS returned none, and a malformed allowed
+POST failed with HTTP 400.
+
+An explicitly labeled synthetic request then completed through the visible live
+page with reference `cc078babd1b32b0c08e796e88886201f`. The receiver
+authenticated and decrypted it, saved private mode-`0600` copies, verified the
+saved record, and deleted only the unchanged remote envelope. Its synthetic
+local payload artifacts were removed; the remote spool is empty. The 15-minute
+`lazypromotion-lkt-inbox` loop is healthy at `no_pending`, and sanitized status
+contains receipt, time, and state only. The private screenshot remains outside
+Git. This proves the synthetic intake route, not a customer inquiry, qualified
+lead, customer outcome, sale, or revenue; there is no automatic reply or
+qualification.
 
 Prospective customers can inspect a
 [complete sample fit report](https://lazying.art/lkt/sample-report/)
@@ -218,9 +234,10 @@ to a community answer that should remain value-only.
 The deployed first-party bridges preserve the originating Reddit, X, or
 Instagram attribution when a reader moves from LazyBlog, the LKT offer, or the
 sample report into the fit check. They forward only four validated UTM fields
-to the exact first-party destination. The reviewed local email draft includes
-those fields, while organic readers retain the normal page attribution and no
-form is sent automatically.
+to the exact first-party destination. The browser review includes those fields,
+while organic readers retain the normal page attribution; nothing is submitted
+until the visitor explicitly sends the encrypted request or uses the email
+fallback.
 
 The downstream payment path can be checked without creating Stripe objects:
 

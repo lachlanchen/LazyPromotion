@@ -5,6 +5,12 @@
   "source_evidence": {
     "pilot_page": "https://lazying.art/lkt/",
     "fit_check": "https://lazying.art/lkt/fit-check/",
+    "encrypted_intake_sources": {
+      "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+      "backend_commit": "https://github.com/lachlanchen/myblog/commit/bcf0e22debc4bf2d87af17768782708d0e0a3860",
+      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689",
+      "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69"
+    },
     "practical_guide": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
@@ -64,7 +70,7 @@
       "calculator": "https://github.com/lachlanchen/LazyPromotion/blob/main/lkt_hardware_pricing.py",
       "policy": "The USD 250 offer is an existing-machine service. A supplied device remains a separate quote until its complete landed bill of materials and shipping, tax, return, warranty, and support terms pass the pricing gates."
     },
-    "current_order_mode": "private-by-design structured free fit check followed by a reviewed Stripe payment request",
+    "current_order_mode": "live encrypted direct free fit check with contact@ email fallback, followed by human review and a separately reviewed Stripe payment request",
     "included_scope": [
       "one customer-provided collection",
       "one language goal",
@@ -90,7 +96,7 @@
   },
   "funnel": {
     "free_value": "Inspect the public code, tests, architecture, durable product brief, and project-owned sample fit report before sharing customer material.",
-    "qualified_interest": "Use https://lazying.art/lkt/fit-check/ to review a local email draft containing the collection, language goal, readers, sample format, rights, privacy needs, and existing hardware; the page stores and sends nothing automatically.",
+    "qualified_interest": "Use https://lazying.art/lkt/fit-check/ to review the collection, language goal, readers, sample format, rights, privacy needs, and existing hardware, then explicitly submit an encrypted request or use the contact@ email fallback. Submission starts human review only; it does not qualify a lead or create a payment.",
     "commercial_action": "After a positive fit review, accept the fixed USD 250 sprint scope and complete a reviewed Stripe payment request.",
     "gross_revenue_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, taxes, refunds, and delivery costs. Record revenue only after confirmed payment; page visits and inquiries are not sales.",
     "verified_received_gross_usd": 0
@@ -124,7 +130,9 @@
       "policy": "The monitor reads only aggregate counts from the dedicated folder. A count change is a review alert, not a qualified lead, sale, or reason to reply automatically."
     },
     "fit_check_smoke": {
-      "state": "live_review_panel_verified",
+      "state": "historical_local_review_panel_verified",
+      "historical": true,
+      "superseded_by": "encrypted_direct_intake.live_verification",
       "checked_at": "2026-09-01T21:27:38Z",
       "website_commit": "8541e9c",
       "destination": "contact@lazying.art",
@@ -145,12 +153,53 @@
       "network_mutations": 0,
       "customer_data_used": false,
       "lead_or_sale_observed": false,
-      "policy": "The synthetic visible-browser smoke test stopped at the local review panel. It visibly named the recipient, offered a copy fallback, said not to send source files yet, and kept Stripe after a positive fit check and written scope acceptance. It did not click the mail link, open a composer, send a message, or create a customer outcome."
+      "policy": "This September 1 synthetic visible-browser smoke test predates encrypted direct submission and is retained as historical review-gate evidence. It stopped at the local review panel, named the recipient, offered a copy fallback, said not to send source files yet, and kept Stripe after fit and scope acceptance. It did not click the mail link, send a message, or create a customer outcome."
     },
     "encrypted_direct_intake": {
-      "state": "in_development_not_live",
-      "current_live_path": "local_reviewable_email_draft",
-      "policy": "Do not describe encrypted direct intake as available. The live fit check still prepares a local reviewable email draft and sends nothing automatically."
+      "state": "live_verified",
+      "checked_on": "2026-09-04",
+      "current_live_path": "encrypted_direct_intake_with_email_fallback",
+      "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+      "backend_source": "https://github.com/lachlanchen/myblog/commit/bcf0e22debc4bf2d87af17768782708d0e0a3860",
+      "frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689",
+      "receiver_source": "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69",
+      "transport_verification": {
+        "allowed_options_exact_acao": true,
+        "foreign_options_acao_present": false,
+        "malformed_allowed_post_status": 400,
+        "inquiry_content_storage": "encrypted_envelope_outside_webroot",
+        "operational_state": "rate counters and HMAC-derived idempotency state contain no inquiry content"
+      },
+      "live_verification": {
+        "state": "synthetic_browser_round_trip_verified",
+        "explicitly_labeled_synthetic": true,
+        "visible_success_reference": "cc078babd1b32b0c08e796e88886201f",
+        "frontend_review_gate_verified": true,
+        "receiver_authenticated_decrypted_and_saved": true,
+        "private_copy_mode": "0600",
+        "remote_envelope_deleted_only_after_unchanged_verification": true,
+        "synthetic_local_payload_artifacts_removed": true,
+        "remote_spool_empty": true,
+        "private_screenshot_retained_outside_git": true,
+        "earlier_endpoint_probe_receipt": "d10ad62060dbe7e8b33f87c4908f1826"
+      },
+      "receiver_runtime": {
+        "state": "healthy",
+        "session": "lazypromotion-lkt-inbox",
+        "interval_minutes": 15,
+        "latest_state": "no_pending"
+      },
+      "sanitized_status_fields": [
+        "receipt",
+        "time",
+        "state"
+      ],
+      "email_fallback": "contact@lazying.art",
+      "automatic_reply": false,
+      "automatic_qualification": false,
+      "lead_or_sale_observed": false,
+      "verified_received_gross_usd": 0,
+      "policy": "The labeled synthetic browser round trip verifies encrypted submission, authenticated receiver processing, private mode-0600 persistence, and delete-after-unchanged remote cleanup. It is operational evidence only, not a customer inquiry, qualified lead, customer outcome, sale, or revenue. Never publish keys, receiver configuration, private paths, inquiry content, or private screenshots."
     },
     "attribution_bridge": {
       "state": "live",

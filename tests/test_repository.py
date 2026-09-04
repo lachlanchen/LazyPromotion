@@ -593,6 +593,23 @@ class RepositoryTests(unittest.TestCase):
             campaign["source_evidence"]["fit_check"],
             "https://lazying.art/lkt/fit-check/",
         )
+        intake_sources = campaign["source_evidence"]["encrypted_intake_sources"]
+        self.assertEqual(
+            intake_sources["endpoint"],
+            "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+        )
+        self.assertEqual(
+            intake_sources["backend_commit"],
+            "https://github.com/lachlanchen/myblog/commit/bcf0e22debc4bf2d87af17768782708d0e0a3860",
+        )
+        self.assertEqual(
+            intake_sources["frontend_commit"],
+            "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689",
+        )
+        self.assertEqual(
+            intake_sources["receiver_commit"],
+            "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69",
+        )
         self.assertEqual(
             campaign["source_evidence"]["sample_fit_report"],
             "https://lazying.art/lkt/sample-report/",
@@ -644,10 +661,76 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not permission to contact", demand["policy"])
         self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
         direct_intake = campaign["conversion_readiness"]["encrypted_direct_intake"]
-        self.assertEqual(direct_intake["state"], "in_development_not_live")
+        self.assertEqual(direct_intake["state"], "live_verified")
         self.assertEqual(
-            direct_intake["current_live_path"], "local_reviewable_email_draft"
+            direct_intake["current_live_path"],
+            "encrypted_direct_intake_with_email_fallback",
         )
+        self.assertEqual(
+            direct_intake["endpoint"],
+            "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+        )
+        self.assertIn(
+            "bcf0e22debc4bf2d87af17768782708d0e0a3860",
+            direct_intake["backend_source"],
+        )
+        self.assertIn(
+            "f31d7f0b0f2673f116af9490a36c103a5e099689",
+            direct_intake["frontend_source"],
+        )
+        self.assertIn(
+            "7d7e40058ae37c468bb4156bfc74b2042d61db69",
+            direct_intake["receiver_source"],
+        )
+        transport = direct_intake["transport_verification"]
+        self.assertTrue(transport["allowed_options_exact_acao"])
+        self.assertFalse(transport["foreign_options_acao_present"])
+        self.assertEqual(transport["malformed_allowed_post_status"], 400)
+        self.assertEqual(
+            transport["inquiry_content_storage"],
+            "encrypted_envelope_outside_webroot",
+        )
+        self.assertIn("no inquiry content", transport["operational_state"])
+        live_verification = direct_intake["live_verification"]
+        self.assertEqual(
+            live_verification["state"], "synthetic_browser_round_trip_verified"
+        )
+        self.assertTrue(live_verification["explicitly_labeled_synthetic"])
+        self.assertEqual(
+            live_verification["visible_success_reference"],
+            "cc078babd1b32b0c08e796e88886201f",
+        )
+        self.assertTrue(
+            live_verification["receiver_authenticated_decrypted_and_saved"]
+        )
+        self.assertEqual(live_verification["private_copy_mode"], "0600")
+        self.assertTrue(
+            live_verification[
+                "remote_envelope_deleted_only_after_unchanged_verification"
+            ]
+        )
+        self.assertTrue(live_verification["synthetic_local_payload_artifacts_removed"])
+        self.assertTrue(live_verification["remote_spool_empty"])
+        self.assertEqual(
+            direct_intake["receiver_runtime"],
+            {
+                "state": "healthy",
+                "session": "lazypromotion-lkt-inbox",
+                "interval_minutes": 15,
+                "latest_state": "no_pending",
+            },
+        )
+        self.assertEqual(
+            direct_intake["sanitized_status_fields"], ["receipt", "time", "state"]
+        )
+        self.assertFalse(direct_intake["automatic_reply"])
+        self.assertFalse(direct_intake["automatic_qualification"])
+        self.assertFalse(direct_intake["lead_or_sale_observed"])
+        self.assertEqual(direct_intake["verified_received_gross_usd"], 0)
+        serialized_intake = json.dumps(direct_intake).casefold()
+        self.assertNotIn("private.pem", serialized_intake)
+        self.assertNotIn("ssh_key", serialized_intake)
+        self.assertNotIn(".local/", serialized_intake)
         self.assertIn("not a customer result", serialized)
         self.assertTrue(
             any(
@@ -655,7 +738,7 @@ class RepositoryTests(unittest.TestCase):
                 for limit in campaign["source_evidence"]["limits"]
             )
         )
-        self.assertIn("stores and sends nothing automatically", serialized)
+        self.assertIn("explicitly submit an encrypted request", serialized)
         self.assertEqual(
             campaign["conversion_readiness"]["mail_routing"],
             "icloud_mx_confirmed",
@@ -700,7 +783,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(monitor["automatic_reply"])
         self.assertFalse(monitor["lead_or_sale_observed"])
         smoke = campaign["conversion_readiness"]["fit_check_smoke"]
-        self.assertEqual(smoke["state"], "live_review_panel_verified")
+        self.assertEqual(smoke["state"], "historical_local_review_panel_verified")
+        self.assertTrue(smoke["historical"])
+        self.assertEqual(
+            smoke["superseded_by"], "encrypted_direct_intake.live_verification"
+        )
         self.assertEqual(smoke["price"], "USD 250")
         self.assertEqual(smoke["website_commit"], "8541e9c")
         self.assertTrue(smoke["visible_recipient"])

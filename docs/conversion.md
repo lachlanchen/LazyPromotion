@@ -95,29 +95,48 @@ forwards only `utm_source`, `utm_medium`, `utm_campaign`, and `utm_content`,
 validates their characters and length, and changes only the exact HTTPS
 `lazying.art/lkt/sample-report/` and `lazying.art/lkt/fit-check/` destinations.
 Organic blog readers retain the article's normal `lazyblog` attribution. The
-reviewed local email draft includes the resulting fields; it still sends
-nothing automatically.
+browser review includes the resulting fields; nothing is submitted until the
+visitor explicitly sends an encrypted request or chooses the email fallback.
 The same allowlist runs on the first-party LKT offer and sample-report pages,
 so a Reddit, Instagram, or X visitor who reviews the evidence before continuing
 keeps the original campaign fields. A live Reddit-profile click verified the
 full article → sample report → fit check path without submitting the form. The
 bridge never copies the extra query fields used for cache-bypassed verification.
 
-The deployed fit-check contract was rechecked in a visible browser on September
-2, 2026 with synthetic, non-customer answers. The review panel uses the explicit
-`USD 250` currency label, visibly names `contact@lazying.art`, offers a copy
-fallback for devices without a configured email app, retains all four
-allowlisted attribution fields, and explains what happens next. It explicitly
-says not to send source files before the fit decision and keeps Stripe after a
+The earlier fit-check contract was checked in a visible browser on September 2,
+2026 with synthetic, non-customer answers. This historical review-gate test
+predates encrypted direct submission. The panel used the explicit
+`USD 250` currency label, visibly named `contact@lazying.art`, offered a copy
+fallback for devices without a configured email app, retained all four
+allowlisted attribution fields, and explained what happens next. It explicitly
+said not to send source files before the fit decision and kept Stripe after a
 positive fit check and written scope acceptance. The form opened no additional
 page and caused zero non-read network requests. The operator did not click the
 mail link. This is conversion-path readiness evidence, not a fit inquiry,
 qualified lead, or sale. The verified public deployment is LazyingArtWebsite
 commit `8541e9c`.
 
-Encrypted direct intake is still in development and is not live. Until it has
-been deployed and verified, the current fit check remains the local reviewable
-email-draft flow described above and sends nothing automatically.
+Encrypted direct intake is now live. The backend is pinned at myblog commit
+`bcf0e22debc4bf2d87af17768782708d0e0a3860`, the frontend at
+LazyingArtWebsite commit `f31d7f0b0f2673f116af9490a36c103a5e099689`,
+and the receiver at LazyPromotion commit
+`7d7e40058ae37c468bb4156bfc74b2042d61db69`. Live preflight verified that the
+allowed OPTIONS request receives the exact ACAO, a foreign origin receives no
+ACAO, and a malformed allowed POST fails with HTTP 400.
+
+The primary live proof used an explicitly labeled synthetic request submitted
+through the visible fit-check page. Reference
+`cc078babd1b32b0c08e796e88886201f` was accepted, authenticated, decrypted,
+saved in private mode `0600`, verified, and then its unchanged encrypted remote
+envelope was deleted. Synthetic local payload artifacts were removed, the
+remote spool is empty, and the 15-minute `lazypromotion-lkt-inbox` receiver is
+healthy with state `no_pending`. Inquiry content is stored only as an encrypted
+envelope outside the webroot; operational rate and idempotency state contains
+no inquiry content, and sanitized receiver status contains receipt, time, and
+state only. The private visual evidence remains outside Git. This synthetic
+verification is not a customer inquiry, qualification, lead, customer outcome,
+sale, or revenue. The receiver never replies or qualifies automatically, and
+the `contact@lazying.art` email fallback remains available.
 
 The first-party search-discovery gate was also checked through Search Console's
 visible URL Inspection and Sitemaps screens on September 2, 2026. The sample
@@ -215,9 +234,11 @@ the experiment's acceptance criteria justify more work.
 250 collection-fit sprint for people with one private book or dictionary
 collection. It is a service using the customer's existing machine, not
 ready-to-ship hardware. The [free fit check](https://lazying.art/lkt/fit-check/)
-precedes payment and builds a reviewable email draft without automatically
-storing, uploading, or sending the answers. An inquiry is a lead at most; it is
-never recorded as a sale without confirmed payment.
+precedes payment and presents a review gate before an explicit encrypted
+submission; `contact@lazying.art` remains the email fallback. Inquiry content
+is stored only as an encrypted envelope outside the webroot. A received inquiry still
+requires human review and is never recorded as a qualified lead or sale without
+the corresponding evidence and confirmed payment.
 
 ### Hardware is a separate quote
 

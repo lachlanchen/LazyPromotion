@@ -30,6 +30,14 @@ library. The clearest current signals are a multilingual 300-PDF owner reporting
 shallow retrieval and a scientific-library builder asking how to design for
 17,000 PDFs.
 
+The [synthetic scientific-PDF mini-sprint](../examples/lkt-scientific-pdf-fit/)
+now supplies the missing executed proof without using customer or third-party
+content. It records one duplicate, a v1/v2 family, multilingual extraction, 20
+fixed lexical questions, one vocabulary miss, page-resolvable citations, known
+table/equation/translation weaknesses, and explicit GO/NO-GO boundaries. This
+closes the format-specific proof gap only; it does not validate a real large
+collection, OCR, semantic retrieval, or a knowledge graph.
+
 ### 2. Manuscript Build & Redline Sprint — USD 250
 
 A current USD 200 marketplace listing asks for claim-preserving academic edits,

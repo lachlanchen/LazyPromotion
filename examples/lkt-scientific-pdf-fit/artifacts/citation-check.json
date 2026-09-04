@@ -1,0 +1,17 @@
+{
+  "accepted_results_checked": 16,
+  "all_pages_within_source_bounds": true,
+  "all_source_hashes_resolve": true,
+  "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, or paid delivery.",
+  "missing_provenance_fields": 0,
+  "passed": true,
+  "required_fields": [
+    "document_id",
+    "version_id",
+    "pdf_page",
+    "printed_page",
+    "snippet",
+    "extraction_method",
+    "source_sha256"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "boundary": "Fixed project-owned synthetic questions; not a benchmark or customer evaluation set.",
+  "questions": [
+    {"id": "q01", "query": "amber drift coefficient", "terms": ["amber", "drift"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v1", "pdf_page": 1}},
+    {"id": "q02", "query": "cobalt drift coefficient", "terms": ["cobalt", "drift"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v2", "pdf_page": 1}},
+    {"id": "q03", "query": "18 minute calibration interval", "terms": ["18", "minutes", "calibration", "interval"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v1", "pdf_page": 2}},
+    {"id": "q04", "query": "12 minute calibration interval", "terms": ["12", "minutes", "calibration", "interval"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v2", "pdf_page": 2}},
+    {"id": "q05", "query": "240 Hz sampling rate", "terms": ["240", "Hz", "sampling", "rate"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v1", "pdf_page": 2}},
+    {"id": "q06", "query": "480 Hz sampling rate", "terms": ["480", "Hz", "sampling", "rate"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v2", "pdf_page": 2}},
+    {"id": "q07", "query": "humidity coupling was not tested", "terms": ["humidity", "coupling", "not", "tested"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v1", "pdf_page": 3}},
+    {"id": "q08", "query": "humidity measured but not modeled", "terms": ["humidity", "measured", "not", "modeled"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v2", "pdf_page": 3}},
+    {"id": "q09", "query": "temperature range 18 to 24", "terms": ["temperature", "18", "24"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v1", "pdf_page": 3}},
+    {"id": "q10", "query": "temperature range 16 to 28", "terms": ["temperature", "16", "28"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v2", "pdf_page": 3}},
+    {"id": "q11", "query": "跨语言光谱索引", "terms": ["跨语言光谱索引保留原始文字与出处"], "expected": {"document_id": "cross-language-spectral-index", "version_id": "v1", "pdf_page": 1}},
+    {"id": "q12", "query": "多言語スペクトル索引", "terms": ["多言語スペクトル索引は原文と出典を保持する"], "expected": {"document_id": "cross-language-spectral-index", "version_id": "v1", "pdf_page": 1}},
+    {"id": "q13", "query": "alias preserving graph", "terms": ["alias", "preserving", "graph"], "expected": {"document_id": "cross-language-spectral-index", "version_id": "v1", "pdf_page": 2}},
+    {"id": "q14", "query": "original script label", "terms": ["original", "script", "label"], "expected": {"document_id": "cross-language-spectral-index", "version_id": "v1", "pdf_page": 2}},
+    {"id": "q15", "query": "observed inferred reviewed", "terms": ["observed", "inferred", "reviewed"], "expected": {"document_id": "cross-language-spectral-index", "version_id": "v1", "pdf_page": 3}},
+    {"id": "q16", "query": "offline rebuild source ledger", "terms": ["rebuild", "source", "ledger"], "expected": {"document_id": "cross-language-spectral-index", "version_id": "v1", "pdf_page": 3}},
+    {"id": "q17", "query": "instrument warm-up procedure", "terms": ["instrument", "warm", "procedure"], "expected": {"document_id": "adaptive-prism-calibration", "version_id": "v2", "pdf_page": 1}, "intended_lexical_miss": true},
+    {"id": "q18", "query": "clinical trial endpoint", "terms": ["clinical", "trial", "endpoint"], "expected": null},
+    {"id": "q19", "query": "protein folding assay", "terms": ["protein", "folding", "assay"], "expected": null},
+    {"id": "q20", "query": "satellite rainfall atlas", "terms": ["satellite", "rainfall", "atlas"], "expected": null}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "artifact_sha256": {
+    "browser-card.html": "61532f1ea6e547819a45b66028c5cfa50702f30fdb531c526b3b753b117a0612",
+    "citation-check.json": "724d63a150190c440befe0b245c5b630b49f2fddb1a866fc6de805aca2b1b2eb",
+    "extraction-ledger.json": "da0e96410c71662d1dde67863df6b125fbe4f775f59ea4ce3a44c7774afd90cf",
+    "fit-report.md": "1d6fb6b2a0fbb7c6c72e5bc8b1bfb2ddfe72eb1ea744ae2269f10063705443eb",
+    "paper-a-v1-copy.pdf": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+    "paper-a-v1.pdf": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+    "paper-a-v2.pdf": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+    "paper-b-multilingual.pdf": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+    "retrieval-ledger.json": "04802a50be2f4535a0cbd27b4c6d5e496caf2a1482c3155fb9c4c4369b1fada7",
+    "source-ledger.json": "42bb2b6e053d80fdf2d43499dbeb46124670e91a3d1b0cfd61132838103cbfe6"
+  },
+  "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, or paid delivery.",
+  "manifest_self_hashed": false,
+  "source_sha256": {
+    "build.py": "97d07ca9e49865017d9d1650dd35e94fdc99bbacb9592a25b9f77013f64ade7b",
+    "collection.json": "39c34fc382ef5d2490ddf027429ebb0c5ead5e8709fc23fed153e4d7555226ad",
+    "questions.json": "c87398d4891f04ab4dc4d98ee45502a2cd7c72b6f4e1584b25a2550877326eb0",
+    "source/paper-a-v1.tex": "4bd5b0cd1a275e5e61a69ca8e5ca1a6c4ce63dc17786c31f1fe965dc7a411684",
+    "source/paper-a-v2.tex": "6f2433ac55b24a0c8afef43c88580edac7042fd8250ff7e33779bb2d9e86a954",
+    "source/paper-b-multilingual.tex": "ca7ebda9d4acc5debdd26a95c6ab955319c1d71c597284cf8076b585f29b2d07"
+  },
+  "toolchain": {
+    "pdfinfo": "pdfinfo version 24.02.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+    "pdftotext": "pdftotext version 24.02.0",
+    "pipeline": "lkt-scientific-pdf-fit-v1",
+    "sqlite": "3.45.3"
+  },
+  "verification": {
+    "adaptive_prism_versions": [
+      "v1",
+      "v2"
+    ],
+    "citation_check": "passed",
+    "customer_data_used": false,
+    "exact_duplicate_groups": 1,
+    "expected_no_match": 3,
+    "fixed_questions": 20,
+    "hits": 16,
+    "multilingual_source": true,
+    "network_used": false,
+    "recorded_misses": 1
+  }
+}

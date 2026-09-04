@@ -1,0 +1,64 @@
+{
+  "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, or paid delivery.",
+  "sources": [
+    {
+      "input_id": "prism-v1",
+      "document_id": "adaptive-prism-calibration",
+      "version_id": "v1",
+      "version_family": "adaptive-prism-calibration",
+      "source": "source/paper-a-v1.tex",
+      "output": "paper-a-v1.pdf",
+      "duplicate_of": null,
+      "languages": ["en"],
+      "document_classes": ["born-digital", "equation-heavy", "table-heavy"],
+      "declared_weaknesses": [
+        "plain-text extraction linearizes mathematical notation",
+        "plain-text extraction cannot prove table cell reading order"
+      ]
+    },
+    {
+      "input_id": "prism-v1-copy",
+      "document_id": "adaptive-prism-calibration",
+      "version_id": "v1",
+      "version_family": "adaptive-prism-calibration",
+      "source": "source/paper-a-v1.tex",
+      "output": "paper-a-v1-copy.pdf",
+      "duplicate_of": "prism-v1",
+      "languages": ["en"],
+      "document_classes": ["born-digital", "exact-duplicate"],
+      "declared_weaknesses": [
+        "an exact duplicate must be retained in the source ledger but excluded from retrieval"
+      ]
+    },
+    {
+      "input_id": "prism-v2",
+      "document_id": "adaptive-prism-calibration",
+      "version_id": "v2",
+      "version_family": "adaptive-prism-calibration",
+      "source": "source/paper-a-v2.tex",
+      "output": "paper-a-v2.pdf",
+      "duplicate_of": null,
+      "languages": ["en"],
+      "document_classes": ["born-digital", "equation-heavy", "table-heavy"],
+      "declared_weaknesses": [
+        "plain-text extraction linearizes mathematical notation",
+        "version-family detection is declared metadata rather than semantic proof"
+      ]
+    },
+    {
+      "input_id": "spectral-multilingual-v1",
+      "document_id": "cross-language-spectral-index",
+      "version_id": "v1",
+      "version_family": "cross-language-spectral-index",
+      "source": "source/paper-b-multilingual.tex",
+      "output": "paper-b-multilingual.pdf",
+      "duplicate_of": null,
+      "languages": ["en", "zh-Hans", "ja"],
+      "document_classes": ["born-digital", "multilingual", "non-Latin"],
+      "declared_weaknesses": [
+        "character extraction does not prove translation correctness",
+        "plain text loses typography, ruby, layout, and some relationship cues"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, or paid delivery.",
+  "documents": [
+    {
+      "bytes": 62416,
+      "document_id": "adaptive-prism-calibration",
+      "duplicate_of": null,
+      "input_id": "prism-v1",
+      "languages": [
+        "en"
+      ],
+      "page_count": 3,
+      "rights": "project-owned synthetic source",
+      "source_file": "paper-a-v1.pdf",
+      "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+      "source_tex_sha256": "4bd5b0cd1a275e5e61a69ca8e5ca1a6c4ce63dc17786c31f1fe965dc7a411684",
+      "version_family": "adaptive-prism-calibration",
+      "version_id": "v1"
+    },
+    {
+      "bytes": 62416,
+      "document_id": "adaptive-prism-calibration",
+      "duplicate_of": "prism-v1",
+      "input_id": "prism-v1-copy",
+      "languages": [
+        "en"
+      ],
+      "page_count": 3,
+      "rights": "project-owned synthetic source",
+      "source_file": "paper-a-v1-copy.pdf",
+      "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+      "source_tex_sha256": "4bd5b0cd1a275e5e61a69ca8e5ca1a6c4ce63dc17786c31f1fe965dc7a411684",
+      "version_family": "adaptive-prism-calibration",
+      "version_id": "v1"
+    },
+    {
+      "bytes": 71248,
+      "document_id": "adaptive-prism-calibration",
+      "duplicate_of": null,
+      "input_id": "prism-v2",
+      "languages": [
+        "en"
+      ],
+      "page_count": 3,
+      "rights": "project-owned synthetic source",
+      "source_file": "paper-a-v2.pdf",
+      "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+      "source_tex_sha256": "6f2433ac55b24a0c8afef43c88580edac7042fd8250ff7e33779bb2d9e86a954",
+      "version_family": "adaptive-prism-calibration",
+      "version_id": "v2"
+    },
+    {
+      "bytes": 182403,
+      "document_id": "cross-language-spectral-index",
+      "duplicate_of": null,
+      "input_id": "spectral-multilingual-v1",
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "page_count": 3,
+      "rights": "project-owned synthetic source",
+      "source_file": "paper-b-multilingual.pdf",
+      "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+      "source_tex_sha256": "ca7ebda9d4acc5debdd26a95c6ab955319c1d71c597284cf8076b585f29b2d07",
+      "version_family": "cross-language-spectral-index",
+      "version_id": "v1"
+    }
+  ],
+  "exact_duplicate_groups": [
+    [
+      "prism-v1",
+      "prism-v1-copy"
+    ]
+  ],
+  "version_families": {
+    "adaptive-prism-calibration": [
+      "v1",
+      "v2"
+    ],
+    "cross-language-spectral-index": [
+      "v1"
+    ]
+  }
+}

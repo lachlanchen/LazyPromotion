@@ -1,0 +1,104 @@
+{
+  "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, or paid delivery.",
+  "documents": [
+    {
+      "declared_weaknesses": [
+        "plain-text extraction linearizes mathematical notation",
+        "plain-text extraction cannot prove table cell reading order"
+      ],
+      "document_classes": [
+        "born-digital",
+        "equation-heavy",
+        "table-heavy"
+      ],
+      "document_id": "adaptive-prism-calibration",
+      "input_id": "prism-v1",
+      "page_character_counts": [
+        824,
+        691,
+        415
+      ],
+      "page_count": 3,
+      "page_text_sha256": [
+        "5969968e3c14499f8f99fce2d03bed78961748c221b344188bb7c79ef88049e8",
+        "0e4516a19bdabf4402d731d2583baef03fdd507fbd702962fb0b0b9a70ea53e9",
+        "a27bd41a7c49d0834468c660ce91c54859659e4c3a59f9468768c1d795913065"
+      ],
+      "version_id": "v1"
+    },
+    {
+      "declared_weaknesses": [
+        "an exact duplicate must be retained in the source ledger but excluded from retrieval"
+      ],
+      "document_classes": [
+        "born-digital",
+        "exact-duplicate"
+      ],
+      "document_id": "adaptive-prism-calibration",
+      "input_id": "prism-v1-copy",
+      "page_character_counts": [
+        824,
+        691,
+        415
+      ],
+      "page_count": 3,
+      "page_text_sha256": [
+        "5969968e3c14499f8f99fce2d03bed78961748c221b344188bb7c79ef88049e8",
+        "0e4516a19bdabf4402d731d2583baef03fdd507fbd702962fb0b0b9a70ea53e9",
+        "a27bd41a7c49d0834468c660ce91c54859659e4c3a59f9468768c1d795913065"
+      ],
+      "version_id": "v1"
+    },
+    {
+      "declared_weaknesses": [
+        "plain-text extraction linearizes mathematical notation",
+        "version-family detection is declared metadata rather than semantic proof"
+      ],
+      "document_classes": [
+        "born-digital",
+        "equation-heavy",
+        "table-heavy"
+      ],
+      "document_id": "adaptive-prism-calibration",
+      "input_id": "prism-v2",
+      "page_character_counts": [
+        857,
+        736,
+        429
+      ],
+      "page_count": 3,
+      "page_text_sha256": [
+        "40b1f347cfc43d6d72acf9aa8e24d48c144f9a624c3c4f25ea996439b1e53147",
+        "334df774c45347d0349761c058e9ec5e9d898ff451664e9a1110313aede6f847",
+        "78cba88a3c75ac25f96781bd97c0d1a6f75676068d2ad9c59331f778129e74ec"
+      ],
+      "version_id": "v2"
+    },
+    {
+      "declared_weaknesses": [
+        "character extraction does not prove translation correctness",
+        "plain text loses typography, ruby, layout, and some relationship cues"
+      ],
+      "document_classes": [
+        "born-digital",
+        "multilingual",
+        "non-Latin"
+      ],
+      "document_id": "cross-language-spectral-index",
+      "input_id": "spectral-multilingual-v1",
+      "page_character_counts": [
+        714,
+        431,
+        463
+      ],
+      "page_count": 3,
+      "page_text_sha256": [
+        "4944b93d87b3cd27de820cd58842eef0be48532f74375a1d96e01ee2d1c3bc2d",
+        "e551a7b00c7324ab74b2929f927a97d075c64931730ebd653ec33b474891ce2b",
+        "f69f749a2d8b72be6a69a8f56c365c2c8c9356f4bcfb9589ec9a82ccdc97218c"
+      ],
+      "version_id": "v1"
+    }
+  ],
+  "method": "pdftotext -layout"
+}

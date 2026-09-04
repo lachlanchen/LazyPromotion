@@ -27,9 +27,15 @@ pass the [`lkt-hardware-pricing.md`](lkt-hardware-pricing.md) gates.
 The [scientific-PDF integrity guide](https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html)
 now gives owners of collections ranging from hundreds to tens of thousands of
 papers a complete, source-linked way to test versions, extraction, citations,
-retrieval, and graph provenance before the fit check. Its single X note is
-queued for 2026-09-14, after the existing campaigns. Publication, clicks, and
-replies remain attention evidence until a real request passes qualification.
+retrieval, and graph provenance before the fit check. The
+[reproducible scientific-PDF mini-sprint](../examples/lkt-scientific-pdf-fit/)
+executes that bounded shape on four project-owned synthetic inputs: one exact
+duplicate, one retained v1/v2 family, one English/Chinese/Japanese source, 20
+fixed lexical questions, a deliberate vocabulary miss, checkable page
+citations, and a static browser card. It is not a benchmark, customer result,
+or claim about a large collection. Its single X note is queued for 2026-09-14,
+after the existing campaigns. Publication, clicks, and replies remain attention
+evidence until a real request passes qualification.
 
 ## Active secondary route: manuscript build and redline
 

@@ -1,0 +1,549 @@
+{
+  "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, or paid delivery.",
+  "questions": [
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 1,
+        "printed_page": 1,
+        "snippet": "…or paid delivery. Abstract This synthetic study describes a prism-lattice sensor and its amber drift coe cient. Thermal sta- bilization precedes every measurement. The record is deliberately small so that extraction, version identity, retrieval, and page citations can be inspected by hand. Purpose Version 1 establishes a local lexical baseline. It does not…",
+        "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 1,
+        "version_id": "v1"
+      },
+      "id": "q01",
+      "intended_lexical_miss": false,
+      "query": "amber drift coefficient",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "snippet": "…or paid delivery. Abstract This synthetic study describes a prism-lattice sensor and its amber drift coe cient. Thermal sta- bilization precedes every measurement. The record is deliberately small so that extraction, version identity, retrieval, and page citations can be inspected by hand. Purpose Version 1 establishes a local lexical baseline. It does not…",
+          "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 1,
+        "printed_page": 1,
+        "snippet": "…elivery. Abstract This corrected synthetic study describes a prism-lattice sensor and its cobalt drift coe cient. Ther- mal stabilization precedes every measurement. Version 2 is retained beside Version 1 so a collection ledger can expose rather than silently collapse related versions. Purpose Version 2 changes declared settings without overwriting the earli…",
+        "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+        "version_id": "v2"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 1,
+        "version_id": "v2"
+      },
+      "id": "q02",
+      "intended_lexical_miss": false,
+      "query": "cobalt drift coefficient",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "snippet": "…elivery. Abstract This corrected synthetic study describes a prism-lattice sensor and its cobalt drift coe cient. Ther- mal stabilization precedes every measurement. Version 2 is retained beside Version 1 so a collection ledger can expose rather than silently collapse related versions. Purpose Version 2 changes declared settings without overwriting the earli…",
+          "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+          "version_id": "v2"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 2,
+        "printed_page": 2,
+        "snippet": "Calibration method The response model is r(t) = gs(t) + b. The symbols may be linearized by a PDF text extractor, so the equation must be checked against the source page rather than trusted as plain text alone. Setting Version 1 value Calibration interval 18 minutes Sampling rate 240 Hz Reference wavelength 532 nm The table is intentionally simple, but extra…",
+        "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 2,
+        "version_id": "v1"
+      },
+      "id": "q03",
+      "intended_lexical_miss": false,
+      "query": "18 minute calibration interval",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "snippet": "Calibration method The response model is r(t) = gs(t) + b. The symbols may be linearized by a PDF text extractor, so the equation must be checked against the source page rather than trusted as plain text alone. Setting Version 1 value Calibration interval 18 minutes Sampling rate 240 Hz Reference wavelength 532 nm The table is intentionally simple, but extra…",
+          "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 2,
+        "printed_page": 2,
+        "snippet": "Corrected calibration method The revised response model is r(t) = g2 s(t) + b2 . The symbols may be linearized by a PDF text extractor, so the equation must be checked against the source page rather than trusted as plain text alone. Setting Version 2 value Calibration interval 12 minutes Sampling rate 480 Hz Reference wavelength 532 nm Version 2 supersedes t…",
+        "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+        "version_id": "v2"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 2,
+        "version_id": "v2"
+      },
+      "id": "q04",
+      "intended_lexical_miss": false,
+      "query": "12 minute calibration interval",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "snippet": "Corrected calibration method The revised response model is r(t) = g2 s(t) + b2 . The symbols may be linearized by a PDF text extractor, so the equation must be checked against the source page rather than trusted as plain text alone. Setting Version 2 value Calibration interval 12 minutes Sampling rate 480 Hz Reference wavelength 532 nm Version 2 supersedes t…",
+          "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+          "version_id": "v2"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 2,
+        "printed_page": 2,
+        "snippet": "…than trusted as plain text alone. Setting Version 1 value Calibration interval 18 minutes Sampling rate 240 Hz Reference wavelength 532 nm The table is intentionally simple, but extracted reading order is still an explicit weakness of the plain-text baseline. 2",
+        "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 2,
+        "version_id": "v1"
+      },
+      "id": "q05",
+      "intended_lexical_miss": false,
+      "query": "240 Hz sampling rate",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "snippet": "…than trusted as plain text alone. Setting Version 1 value Calibration interval 18 minutes Sampling rate 240 Hz Reference wavelength 532 nm The table is intentionally simple, but extracted reading order is still an explicit weakness of the plain-text baseline. 2",
+          "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 2,
+        "printed_page": 2,
+        "snippet": "…than trusted as plain text alone. Setting Version 2 value Calibration interval 12 minutes Sampling rate 480 Hz Reference wavelength 532 nm Version 2 supersedes the interval table in Version 1. Extracted table reading order remains an explicit weakness of the plain-text baseline. 2",
+        "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+        "version_id": "v2"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 2,
+        "version_id": "v2"
+      },
+      "id": "q06",
+      "intended_lexical_miss": false,
+      "query": "480 Hz sampling rate",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "snippet": "…than trusted as plain text alone. Setting Version 2 value Calibration interval 12 minutes Sampling rate 480 Hz Reference wavelength 532 nm Version 2 supersedes the interval table in Version 1. Extracted table reading order remains an explicit weakness of the plain-text baseline. 2",
+          "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+          "version_id": "v2"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 3,
+        "printed_page": 3,
+        "snippet": "Limits and decision The declared temperature range is 18 to 24 degrees Celsius. Humidity coupling was not tested. Local calibration reduces spectral drift only inside this ctional setup. Version 1 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production deployment. 3",
+        "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 3,
+        "version_id": "v1"
+      },
+      "id": "q07",
+      "intended_lexical_miss": false,
+      "query": "humidity coupling was not tested",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "snippet": "Limits and decision The declared temperature range is 18 to 24 degrees Celsius. Humidity coupling was not tested. Local calibration reduces spectral drift only inside this ctional setup. Version 1 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production deployment. 3",
+          "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 3,
+        "printed_page": 3,
+        "snippet": "Limits and decision The declared temperature range is 16 to 28 degrees Celsius. Humidity coupling was measured but not modeled. Local calibration reduces spectral drift only inside this ctional setup. Version 2 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production dep…",
+        "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+        "version_id": "v2"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 3,
+        "version_id": "v2"
+      },
+      "id": "q08",
+      "intended_lexical_miss": false,
+      "query": "humidity measured but not modeled",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "snippet": "Limits and decision The declared temperature range is 16 to 28 degrees Celsius. Humidity coupling was measured but not modeled. Local calibration reduces spectral drift only inside this ctional setup. Version 2 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production dep…",
+          "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+          "version_id": "v2"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 3,
+        "printed_page": 3,
+        "snippet": "Limits and decision The declared temperature range is 18 to 24 degrees Celsius. Humidity coupling was not tested. Local calibration reduces spectral drift only inside this ctional setup. Version 1 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production deployment. 3",
+        "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 3,
+        "version_id": "v1"
+      },
+      "id": "q09",
+      "intended_lexical_miss": false,
+      "query": "temperature range 18 to 24",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "snippet": "Limits and decision The declared temperature range is 18 to 24 degrees Celsius. Humidity coupling was not tested. Local calibration reduces spectral drift only inside this ctional setup. Version 1 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production deployment. 3",
+          "source_sha256": "ee5bda9474d3c03a914769af7f18036e958782832187e0b69820e83c0b5c05de",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "adaptive-prism-calibration",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 3,
+        "printed_page": 3,
+        "snippet": "Limits and decision The declared temperature range is 16 to 28 degrees Celsius. Humidity coupling was measured but not modeled. Local calibration reduces spectral drift only inside this ctional setup. Version 2 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production dep…",
+        "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+        "version_id": "v2"
+      },
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 3,
+        "version_id": "v2"
+      },
+      "id": "q10",
+      "intended_lexical_miss": false,
+      "query": "temperature range 16 to 28",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "adaptive-prism-calibration",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "snippet": "Limits and decision The declared temperature range is 16 to 28 degrees Celsius. Humidity coupling was measured but not modeled. Local calibration reduces spectral drift only inside this ctional setup. Version 2 is suitable for a bounded extraction and citation demonstration. It is not evidence for OCR, semantic retrieval, a knowledge graph, or production dep…",
+          "source_sha256": "0affb0a4ad05be0175c6723c7385c4ef7507ae2ece3dcfe32c226b4f16d03cfa",
+          "version_id": "v2"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "cross-language-spectral-index",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 1,
+        "printed_page": 1,
+        "snippet": "…cross-language spectral index preserves each original label before adding an alias. 中文标签：跨语言光谱索引保留原始文字与出处。 日本語ラベル：多言語スペクトル索引は原文と出典を保持する。 These strings test whether a born-digital extraction path retains non-Latin text. They do not establish translation quality for a real collection. 1",
+        "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "cross-language-spectral-index",
+        "pdf_page": 1,
+        "version_id": "v1"
+      },
+      "id": "q11",
+      "intended_lexical_miss": false,
+      "query": "跨语言光谱索引",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "cross-language-spectral-index",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "snippet": "…cross-language spectral index preserves each original label before adding an alias. 中文标签：跨语言光谱索引保留原始文字与出处。 日本語ラベル：多言語スペクトル索引は原文と出典を保持する。 These strings test whether a born-digital extraction path retains non-Latin text. They do not establish translation quality for a real collection. 1",
+          "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "cross-language-spectral-index",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 1,
+        "printed_page": 1,
+        "snippet": "…index preserves each original label before adding an alias. 中文标签：跨语言光谱索引保留原始文字与出处。 日本語ラベル：多言語スペクトル索引は原文と出典を保持する。 These strings test whether a born-digital extraction path retains non-Latin text. They do not establish translation quality for a real collection. 1",
+        "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "cross-language-spectral-index",
+        "pdf_page": 1,
+        "version_id": "v1"
+      },
+      "id": "q12",
+      "intended_lexical_miss": false,
+      "query": "多言語スペクトル索引",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "cross-language-spectral-index",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "snippet": "…index preserves each original label before adding an alias. 中文标签：跨语言光谱索引保留原始文字与出处。 日本語ラベル：多言語スペクトル索引は原文と出典を保持する。 These strings test whether a born-digital extraction path retains non-Latin text. They do not establish translation quality for a real collection. 1",
+          "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "cross-language-spectral-index",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 2,
+        "printed_page": 2,
+        "snippet": "Alias and provenance method An alias-preserving graph keeps the original script label, the normalized search form, and the human- reviewed relationship as separate elds. 关系字段：原始标签、检索别名、人工复核状态。 関係フィールド：原文ラベル、検索別名、人手確認状態。 Plain-text extraction can retain characters while losing typography, reading order, ruby, or the intended relationship between adjacent labe…",
+        "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "cross-language-spectral-index",
+        "pdf_page": 2,
+        "version_id": "v1"
+      },
+      "id": "q13",
+      "intended_lexical_miss": false,
+      "query": "alias preserving graph",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "cross-language-spectral-index",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "snippet": "Alias and provenance method An alias-preserving graph keeps the original script label, the normalized search form, and the human- reviewed relationship as separate elds. 关系字段：原始标签、检索别名、人工复核状态。 関係フィールド：原文ラベル、検索別名、人手確認状態。 Plain-text extraction can retain characters while losing typography, reading order, ruby, or the intended relationship between adjacent labe…",
+          "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "cross-language-spectral-index",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 2,
+        "printed_page": 2,
+        "snippet": "Alias and provenance method An alias-preserving graph keeps the original script label, the normalized search form, and the human- reviewed relationship as separate elds. 关系字段：原始标签、检索别名、人工复核状态。 関係フィールド：原文ラベル、検索別名、人手確認状態。 Plain-text extraction can retain characters while losing typography, reading order, ruby, or the intended relationship between adjacent labe…",
+        "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "cross-language-spectral-index",
+        "pdf_page": 2,
+        "version_id": "v1"
+      },
+      "id": "q14",
+      "intended_lexical_miss": false,
+      "query": "original script label",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "cross-language-spectral-index",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "snippet": "Alias and provenance method An alias-preserving graph keeps the original script label, the normalized search form, and the human- reviewed relationship as separate elds. 关系字段：原始标签、检索别名、人工复核状态。 関係フィールド：原文ラベル、検索別名、人手確認状態。 Plain-text extraction can retain characters while losing typography, reading order, ruby, or the intended relationship between adjacent labe…",
+          "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "cross-language-spectral-index",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 3,
+        "printed_page": 3,
+        "snippet": "Review states and o ine boundary Provenance edge states are observed, inferred, and reviewed. Inferred edges must never be rendered as if they came directly from a source passage. An o ine rebuild uses only the source ledger, extracted pages, xed lexical settings, and the saved question set. This synthetic note supports a bounded multilingual extraction chec…",
+        "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "cross-language-spectral-index",
+        "pdf_page": 3,
+        "version_id": "v1"
+      },
+      "id": "q15",
+      "intended_lexical_miss": false,
+      "query": "observed inferred reviewed",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "cross-language-spectral-index",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "snippet": "Review states and o ine boundary Provenance edge states are observed, inferred, and reviewed. Inferred edges must never be rendered as if they came directly from a source passage. An o ine rebuild uses only the source ledger, extracted pages, xed lexical settings, and the saved question set. This synthetic note supports a bounded multilingual extraction chec…",
+          "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": {
+        "document_id": "cross-language-spectral-index",
+        "extraction_method": "pdftotext -layout",
+        "pdf_page": 3,
+        "printed_page": 3,
+        "snippet": "…rred, and reviewed. Inferred edges must never be rendered as if they came directly from a source passage. An o ine rebuild uses only the source ledger, extracted pages, xed lexical settings, and the saved question set. This synthetic note supports a bounded multilingual extraction check, not a whole-collection knowledge graph. 3",
+        "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+        "version_id": "v1"
+      },
+      "expected": {
+        "document_id": "cross-language-spectral-index",
+        "pdf_page": 3,
+        "version_id": "v1"
+      },
+      "id": "q16",
+      "intended_lexical_miss": false,
+      "query": "offline rebuild source ledger",
+      "status": "hit",
+      "top_results": [
+        {
+          "document_id": "cross-language-spectral-index",
+          "extraction_method": "pdftotext -layout",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "snippet": "…rred, and reviewed. Inferred edges must never be rendered as if they came directly from a source passage. An o ine rebuild uses only the source ledger, extracted pages, xed lexical settings, and the saved question set. This synthetic note supports a bounded multilingual extraction check, not a whole-collection knowledge graph. 3",
+          "source_sha256": "599387178812a531e41d08c07542ff998a204e5655e438a2ff20197574bc6178",
+          "version_id": "v1"
+        }
+      ]
+    },
+    {
+      "accepted_result": null,
+      "expected": {
+        "document_id": "adaptive-prism-calibration",
+        "pdf_page": 1,
+        "version_id": "v2"
+      },
+      "id": "q17",
+      "intended_lexical_miss": true,
+      "query": "instrument warm-up procedure",
+      "status": "miss",
+      "top_results": []
+    },
+    {
+      "accepted_result": null,
+      "expected": null,
+      "id": "q18",
+      "intended_lexical_miss": false,
+      "query": "clinical trial endpoint",
+      "status": "expected_no_match",
+      "top_results": []
+    },
+    {
+      "accepted_result": null,
+      "expected": null,
+      "id": "q19",
+      "intended_lexical_miss": false,
+      "query": "protein folding assay",
+      "status": "expected_no_match",
+      "top_results": []
+    },
+    {
+      "accepted_result": null,
+      "expected": null,
+      "id": "q20",
+      "intended_lexical_miss": false,
+      "query": "satellite rainfall atlas",
+      "status": "expected_no_match",
+      "top_results": []
+    }
+  ],
+  "summary": {
+    "expected_hits": 17,
+    "expected_no_match": 3,
+    "hits": 16,
+    "misses": 1,
+    "questions": 20,
+    "unexpected_matches": 0
+  }
+}

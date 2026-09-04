@@ -1,6 +1,6 @@
 {
   "id": "scientific-pdf-integrity",
-  "version": 2,
+  "version": 3,
   "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
   "source_needs": [
     {
@@ -86,6 +86,30 @@
   },
   "source_evidence": {
     "project": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "executed_sample": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lkt-scientific-pdf-fit",
+    "executed_synthetic_sample": {
+      "state": "built_and_reproducible",
+      "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, paid delivery, or claim about a 300- or 17,000-PDF collection.",
+      "inputs": 4,
+      "exact_duplicate_groups": 1,
+      "version_family": [
+        "v1",
+        "v2"
+      ],
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "fixed_questions": 20,
+      "accepted_hits": 16,
+      "recorded_lexical_misses": 1,
+      "expected_no_match_checks": 3,
+      "citation_check": "passed",
+      "network_used": false,
+      "customer_data_used": false,
+      "scope": "Local born-digital PDF compilation and extraction, exact duplicate and declared version-family evidence, SQLite FTS5 baseline, page-resolvable citation payloads, static browser card, and GO/NO-GO report only."
+    },
     "crossref_rest_api": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
     "pymupdf_text_recipes": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html",
     "grobid_introduction": "https://grobid.readthedocs.io/en/latest/Introduction/",
@@ -93,7 +117,8 @@
     "limits": [
       "The two public needs justify a reusable owned guide; they do not authorize unsolicited promotion in those discussions.",
       "The article describes an integrity-test method, not a benchmark result for either cited collection.",
-      "The public LKT report is project-owned evidence, not a customer outcome or testimonial."
+      "The public LKT report is project-owned evidence, not a customer outcome or testimonial.",
+      "The executed synthetic sample proves only its fixed local inputs and lexical checks; it does not establish OCR, semantic retrieval, graph quality, large-collection performance, or a paid delivery."
     ]
   },
   "funnel": {

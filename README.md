@@ -105,6 +105,7 @@ flowchart LR
 | [`lkt_hardware_pricing.py`](lkt_hardware_pricing.py) | Read-only supplied-device margin check that keeps hardware separate from the USD 250 collection-fit service |
 | [`lkt_delivery.py`](lkt_delivery.py) | Deterministic metadata-only LKT sprint preflight and truth-safe Markdown delivery-packet renderer |
 | [`docs/lkt-delivery.md`](docs/lkt-delivery.md) | Sanitized intake contract, go/no-go behavior, and customer-data-free delivery workflow |
+| [`examples/lkt-scientific-pdf-fit/`](examples/lkt-scientific-pdf-fit/) | Reproducible project-owned synthetic PDF mini-sprint with duplicate/version evidence, multilingual extraction, 20 fixed queries, page citations, and a static browser card |
 | [`signals.py`](signals.py) | Private first-party demand signals kept distinct from leads, orders, and revenue |
 | [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |
 | [`network.py`](network.py) | Evidence graph connecting needs, projects, repositories, channels, campaigns, drafts, and public proof |

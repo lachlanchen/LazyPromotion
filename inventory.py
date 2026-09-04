@@ -43,7 +43,7 @@ CATEGORIES = OrderedDict(
             {
                 "BigMe", "FujitsuQuaderno", "ImagizedLanguageModel", "Kindle",
                 "LazyLanguageLearner", "LazyLearn", "LazyTravel", "leonardsusskind",
-                "LinguaLeaf", "LocalKnowledgeTerminal", "PocketPolyglot",
+                "L-and-N", "LinguaLeaf", "LocalKnowledgeTerminal", "PocketPolyglot",
                 "the-art-of-lazying", "Video2Book", "WordOrigins", "WordsCardEink",
             },
         ),
@@ -86,8 +86,8 @@ CATEGORIES = OrderedDict(
             "Infrastructure, networking, and workstation operations",
             {
                 "astrill-lazy-policies", "astrill-lazy-router", "DomainAndIpManager",
-                "hackintosh", "LazyEdge", "LazyRouter", "uu-remote-ubuntu-bridge",
-                "WIFI2LAN",
+                "hackintosh", "kvm-qemu-workstation", "LazyEdge", "LazyRouter",
+                "uu-remote-ubuntu-bridge", "WIFI2LAN",
             },
         ),
         (
@@ -140,6 +140,20 @@ PRIORITIES = [
         "audience": "Educators, language labs, libraries, exhibits, and private researchers",
         "route": "USD 250 collection-fit sprint after a free fit check; existing hardware only",
         "url": "https://lazying.art/lkt/",
+    },
+    {
+        "work": "PaperAgent + paper-revision-skill",
+        "need": "A clean LaTeX build and reviewable redline without changing the author's claims",
+        "audience": "Researchers and small academic teams with a fixed manuscript problem",
+        "route": "USD 250 Manuscript Build & Redline sprint after a free fit check",
+        "url": "https://lazying.art/manuscript-sprint/",
+    },
+    {
+        "work": "Video2Book + LazyEdit + PocketPolyglot",
+        "need": "A rights-cleared lecture turned into timed bilingual subtitles and a pocket study book",
+        "audience": "Independent educators and course creators with one owned English lecture",
+        "route": "USD 250 Bilingual Lecture Pack after a metadata-only free fit check",
+        "url": "https://lazying.art/lecture-pack/",
     },
     {
         "work": "Musia + LocalVideoGen",
@@ -222,12 +236,13 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The single first-USD-1,000 route is four confirmed USD 250 Local Knowledge "
-            "Terminal collection-fit sprints. The eInk inquiry and Figurine checkout remain "
-            "separate offers, not competing calls to action. Open-source replies should "
-            "optimize for a solved problem, "
-            "not for extracting a donation. GitHub Sponsors and donations remain quiet "
-            "secondary support routes on the project/profile pages.",
+            "The first-USD-1,000 route is four confirmed USD 250 payments across three "
+            "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
+            "Redline, and the Bilingual Lecture Pack. The eInk inquiry and Figurine checkout "
+            "remain separate offers, not competing calls to action. Open-source replies "
+            "should optimize for a solved problem, not for extracting a donation. GitHub "
+            "Sponsors and donations remain quiet secondary support routes on the "
+            "project/profile pages.",
             "",
             "## Portfolio at a glance",
             "",

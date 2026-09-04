@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **104 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-04. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **106 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-05. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
 
 ## Where promotion should start
 
@@ -14,15 +14,11 @@ These are priority paths, not a license to force a mention. LazyPromotion should
 | [PocketPolyglot + LinguaLeaf](https://learn.lazying.art) | Readable multilingual, interlinear, ruby, pinyin, and furigana books | Language learners, teachers, and readers of Classical Chinese | Free books and builder first; optional eInk pre-order or GitHub Sponsors later |
 | [Susskind archive + LazyLearn](https://github.com/lachlanchen/leonardsusskind) | Searchable lecture notes and a bridge from physics intuition to practice | Independent physics learners | Free educational value; sponsorship is secondary and never the reason for a reply |
 | [Local Knowledge Terminal](https://lazying.art/lkt/) | Private, cited multilingual cards from a bounded book or dictionary collection | Educators, language labs, libraries, exhibits, and private researchers | USD 250 collection-fit sprint after a free fit check; existing hardware only |
+| [PaperAgent + paper-revision-skill](https://lazying.art/manuscript-sprint/) | A clean LaTeX build and reviewable redline without changing the author's claims | Researchers and small academic teams with a fixed manuscript problem | USD 250 Manuscript Build & Redline sprint after a free fit check |
+| [Video2Book + LazyEdit + PocketPolyglot](https://lazying.art/lecture-pack/) | A rights-cleared lecture turned into timed bilingual subtitles and a pocket study book | Independent educators and course creators with one owned English lecture | USD 250 Bilingual Lecture Pack after a metadata-only free fit check |
 | [Musia + LocalVideoGen](https://fun.lazying.art) | Local-first music localization and controllable video generation | Creators who already have a specific song, stem, or video workflow problem | Find design partners and open-source users before making a commercial claim |
 
-The first-USD-1,000 route is four confirmed USD 250 payments across three
-bounded services: Local Knowledge Terminal collection-fit, Manuscript Build &
-Redline, and the Bilingual Lecture Pack. The eInk inquiry and Figurine checkout
-remain separate offers, not competing calls to action. Open-source replies
-should optimize for a solved problem, not for extracting a donation. GitHub
-Sponsors and donations remain quiet secondary support routes on the
-project/profile pages.
+The first-USD-1,000 route is four confirmed USD 250 payments across three bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & Redline, and the Bilingual Lecture Pack. The eInk inquiry and Figurine checkout remain separate offers, not competing calls to action. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
 
 ## Portfolio at a glance
 
@@ -30,12 +26,12 @@ project/profile pages.
 |---|---:|
 | [Agentic automation and developer tools](#agentic-automation-and-developer-tools) | 20 |
 | [Media, music, storytelling, and publishing](#media-music-storytelling-and-publishing) | 14 |
-| [Languages, books, reading, and learning](#languages-books-reading-and-learning) | 15 |
+| [Languages, books, reading, and learning](#languages-books-reading-and-learning) | 16 |
 | [Scientific imaging, optics, and research](#scientific-imaging-optics-and-research) | 23 |
 | [Hardware, wearables, and robotics](#hardware-wearables-and-robotics) | 7 |
 | [Games and interactive learning](#games-and-interactive-learning) | 7 |
 | [Finance, business, commerce, and creator platforms](#finance-business-commerce-and-creator-platforms) | 8 |
-| [Infrastructure, networking, and workstation operations](#infrastructure-networking-and-workstation-operations) | 8 |
+| [Infrastructure, networking, and workstation operations](#infrastructure-networking-and-workstation-operations) | 9 |
 | [LazyingArt identity and public web surfaces](#lazyingart-identity-and-public-web-surfaces) | 2 |
 
 ## Complete public repository inventory
@@ -92,6 +88,7 @@ project/profile pages.
 | [FujitsuQuaderno](https://github.com/lachlanchen/FujitsuQuaderno) | Fujitsu Quaderno research, firmware notes, and mount tooling | Shell | [Open](https://lazying.art) |
 | [ImagizedLanguageModel](https://github.com/lachlanchen/ImagizedLanguageModel) | Imagized Language Model (ILM) | Python | [Open](https://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=%E4%B8%AD) |
 | [Kindle](https://github.com/lachlanchen/Kindle) | Kindle Paperwhite 2 jailbreak and KOReader setup workspace | Python | [Open](https://lazying.art) |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. | TypeScript | [Open](https://l-and-n.lazying.art) |
 | [LazyLanguageLearner](https://github.com/lachlanchen/LazyLanguageLearner) | Learn language in a lazy way. | Jupyter Notebook | [Open](https://lazying.art) |
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. | Fortran | [Open](http://learn.lazying.art/) |
 | [LazyTravel](https://github.com/lachlanchen/LazyTravel) | Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON | Python | [Open](https://lachlanchen.github.io/LazyTravel/) |
@@ -177,6 +174,7 @@ project/profile pages.
 | [astrill-lazy-router](https://github.com/lachlanchen/astrill-lazy-router) | Native Ubuntu and DD-WRT companion for safe per-service, website, device, and application routing through Direct or the active Astrill tunnel. | Python | [Open](https://lazying.art) |
 | [DomainAndIpManager](https://github.com/lachlanchen/DomainAndIpManager) | DomainAndIpManager focuses on practical workflows and tooling. DomainAndIpManager A Python toolkit for maintaining curated domain/IP/CIDR list sets, resolving DNS to deterministic IP blocks, deduplicating, and exporting reproducible snapshots for routing and filtering workflows. 🧭 Usage GUI start_gui.sh starts code/... | Python | [Open](https://lazying.art) |
 | [hackintosh](https://github.com/lachlanchen/hackintosh) | Sanitized Sequoia, OpenCore, recovery, and Xcode runbook for an owned development workstation | Shell | [Open](https://lazying.art) |
+| [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. | Shell | [Open](https://lazying.art) |
 | [LazyEdge](https://github.com/lachlanchen/LazyEdge) | A lightweight, default-deny reverse edge for safely connecting private compute to public domains. | JavaScript | [Open](https://lazying.art) |
 | [LazyRouter](https://github.com/lachlanchen/LazyRouter) | Private AI API gateway for user keys, credits, model routing, and upstream provider aggregation. | Go | [Open](https://router.lazying.art) |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. | Python | [Open](https://lazying.art) |

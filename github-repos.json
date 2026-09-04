@@ -719,6 +719,55 @@
       "url": "https://github.com/lachlanchen/kria-metavision-lab"
     },
     {
+      "description": "Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations.",
+      "homepage": "https://lazying.art",
+      "name": "kvm-qemu-workstation",
+      "primary_language": "Shell",
+      "topics": [
+        "bash",
+        "kvm",
+        "lazying-art",
+        "macos",
+        "novnc",
+        "ovmf",
+        "powershell",
+        "qemu",
+        "tiny11",
+        "tpm",
+        "virtualization",
+        "windows-11"
+      ],
+      "url": "https://github.com/lachlanchen/kvm-qemu-workstation"
+    },
+    {
+      "description": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
+      "homepage": "https://l-and-n.lazying.art",
+      "name": "L-and-N",
+      "primary_language": "TypeScript",
+      "topics": [
+        "android",
+        "cantonese",
+        "capacitor",
+        "chinese-learning",
+        "english-learning",
+        "gpt-sovits",
+        "ios",
+        "language-learning",
+        "lazying-art",
+        "mandarin",
+        "minimal-pairs",
+        "phonetics",
+        "pronunciation",
+        "pwa",
+        "react",
+        "speech-recognition",
+        "speech-training",
+        "watchos",
+        "whisper"
+      ],
+      "url": "https://github.com/lachlanchen/L-and-N"
+    },
+    {
       "description": "Config files for my GitHub profile.",
       "homepage": "https://lazying.art",
       "name": "lachlanchen",

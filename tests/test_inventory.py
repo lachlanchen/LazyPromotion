@@ -10,7 +10,7 @@ class InventoryTests(unittest.TestCase):
         payload = inventory.load_index()
         body = inventory.render(payload)
         complete_inventory = body.split("## Complete public repository inventory", 1)[1]
-        self.assertEqual(len(payload["repositories"]), 104)
+        self.assertEqual(len(payload["repositories"]), 106)
         for repo in payload["repositories"]:
             marker = f"]({repo['url']})"
             with self.subTest(repo=repo["name"]):

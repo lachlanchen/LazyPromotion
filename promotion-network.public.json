@@ -1174,6 +1174,37 @@
       "url": "https://github.com/lachlanchen/Kindle"
     },
     {
+      "id": "project:github-l-and-n",
+      "kind": "project",
+      "label": "L-and-N",
+      "metadata": {
+        "generated": true,
+        "keywords": [
+          "android",
+          "cantonese",
+          "capacitor",
+          "chinese learning",
+          "english learning",
+          "gpt sovits",
+          "ios",
+          "l-and-n",
+          "language learning",
+          "lazying art",
+          "mandarin",
+          "minimal pairs",
+          "phonetics",
+          "pronunciation",
+          "pwa",
+          "speech recognition",
+          "speech training",
+          "watchos",
+          "whisper"
+        ],
+        "summary": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS."
+      },
+      "url": "https://github.com/lachlanchen/L-and-N"
+    },
+    {
       "id": "project:github-lalamedias",
       "kind": "project",
       "label": "LalaMedias",
@@ -2656,6 +2687,31 @@
       "url": "https://github.com/lachlanchen/kria-metavision-lab"
     },
     {
+      "id": "project:github-kvm-qemu-workstation",
+      "kind": "project",
+      "label": "kvm-qemu-workstation",
+      "metadata": {
+        "generated": true,
+        "keywords": [
+          "bash",
+          "kvm",
+          "kvm-qemu-workstation",
+          "lazying art",
+          "macos",
+          "novnc",
+          "ovmf",
+          "powershell",
+          "qemu",
+          "tiny11",
+          "tpm",
+          "virtualization",
+          "windows 11"
+        ],
+        "summary": "Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations."
+      },
+      "url": "https://github.com/lachlanchen/kvm-qemu-workstation"
+    },
+    {
       "id": "project:github-lachlanchen",
       "kind": "project",
       "label": "lachlanchen",
@@ -3516,6 +3572,38 @@
         "updated_at": ""
       },
       "url": "https://github.com/lachlanchen/Kindle"
+    },
+    {
+      "id": "repository:lachlanchen/L-and-N",
+      "kind": "repository",
+      "label": "L-and-N",
+      "metadata": {
+        "description": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
+        "homepage": "https://l-and-n.lazying.art",
+        "topics": [
+          "android",
+          "cantonese",
+          "capacitor",
+          "chinese-learning",
+          "english-learning",
+          "gpt-sovits",
+          "ios",
+          "language-learning",
+          "lazying-art",
+          "mandarin",
+          "minimal-pairs",
+          "phonetics",
+          "pronunciation",
+          "pwa",
+          "react",
+          "speech-recognition",
+          "speech-training",
+          "watchos",
+          "whisper"
+        ],
+        "updated_at": ""
+      },
+      "url": "https://github.com/lachlanchen/L-and-N"
     },
     {
       "id": "repository:lachlanchen/LalaMedias",
@@ -5068,6 +5156,31 @@
         "updated_at": ""
       },
       "url": "https://github.com/lachlanchen/kria-metavision-lab"
+    },
+    {
+      "id": "repository:lachlanchen/kvm-qemu-workstation",
+      "kind": "repository",
+      "label": "kvm-qemu-workstation",
+      "metadata": {
+        "description": "Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations.",
+        "homepage": "https://lazying.art",
+        "topics": [
+          "bash",
+          "kvm",
+          "lazying-art",
+          "macos",
+          "novnc",
+          "ovmf",
+          "powershell",
+          "qemu",
+          "tiny11",
+          "tpm",
+          "virtualization",
+          "windows-11"
+        ],
+        "updated_at": ""
+      },
+      "url": "https://github.com/lachlanchen/kvm-qemu-workstation"
     },
     {
       "id": "repository:lachlanchen/lachlanchen",
@@ -8412,6 +8525,22 @@
       "relation": "backed_by",
       "source": "project:github-kria-metavision-lab",
       "target": "repository:lachlanchen/kria-metavision-lab"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/kvm-qemu-workstation",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:github-kvm-qemu-workstation",
+      "target": "repository:lachlanchen/kvm-qemu-workstation"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:github-l-and-n",
+      "target": "repository:lachlanchen/L-and-N"
     },
     {
       "confidence": 1.0,

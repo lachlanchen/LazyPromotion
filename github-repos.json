@@ -45,7 +45,7 @@
       "url": "https://github.com/lachlanchen/AgentShell"
     },
     {
-      "description": "AgInTi focuses on practical workflows and tooling. AgInTi Documentation-first repository scaffold for maintaining one canonical English README and synchronized multilingual documentation, guided by three operating principles: sear creation tools, self-healing tools, and chain of prompt tools. 🧭 Quick Navigation ---...",
+      "description": "Documentation-first AgInTi scaffold for canonical multilingual READMEs and traceable self-creation, self-healing, and prompt-tool workflows.",
       "homepage": "https://agent.lazying.art",
       "name": "AgInTi",
       "primary_language": "Shell",
@@ -246,7 +246,7 @@
       "url": "https://github.com/lachlanchen/AutoAppDev"
     },
     {
-      "description": "AutoNovelWriter focuses on practical workflows and tooling. AutoNovelWriter Scratch-like PWA + Tornado backend for controlling an automated novel-writing (and app-dev) pipeline. 🖼️ Demo This repo also vendors AutoAppDev/ as a submodule (reusable auto-development scripts). Localized variants live in i18n/ and are lin...",
+      "description": "Scratch-like PWA and Tornado backend for a resumable novel-writing and app-development pipeline with persisted execution state.",
       "homepage": "https://lazying.art",
       "name": "AutoNovelWriter",
       "primary_language": "Python",
@@ -386,7 +386,7 @@
       "url": "https://github.com/lachlanchen/discriminative-energy-component-analysis"
     },
     {
-      "description": "DomainAndIpManager focuses on practical workflows and tooling. DomainAndIpManager A Python toolkit for maintaining curated domain/IP/CIDR list sets, resolving DNS to deterministic IP blocks, deduplicating, and exporting reproducible snapshots for routing and filtering workflows. 🧭 Usage GUI start_gui.sh starts code/...",
+      "description": "Python CLI and local GUI for curated domain, IP, and CIDR sets with DNS resolution, deterministic deduplication, and reproducible exports.",
       "homepage": "https://lazying.art",
       "name": "DomainAndIpManager",
       "primary_language": "Python",
@@ -421,7 +421,7 @@
       "url": "https://github.com/lachlanchen/eca"
     },
     {
-      "description": "The repo for the paper Event-assited Holographic Imaging",
+      "description": "Documentation-first materials for the early-stage Event-assisted Holographic Imaging research project; no executable package yet.",
       "homepage": "https://lazying.art",
       "name": "EventHolography",
       "primary_language": "",
@@ -1537,7 +1537,7 @@
       "url": "https://github.com/lachlanchen/Musia"
     },
     {
-      "description": "nhi_hardware focuses on practical workflows and tooling. NHI Hardware Control and Event Capture 📖 Quick Navigation 🧭 Project at a Glance A hardware-orchestration project for event-camera experiments combining: - EVK5 event camera capture (Prophesee Metavision stack) - FMC4030-based CNC motion control - Arduino seria...",
+      "description": "Experimental hardware orchestration for synchronized event/frame capture, FMC4030 CNC motion, Arduino lighting, and a Tornado trigger UI.",
       "homepage": "https://lazying.art",
       "name": "nhi_hardware",
       "primary_language": "Python",
@@ -1595,7 +1595,7 @@
       "url": "https://github.com/lachlanchen/onlyideas-aws"
     },
     {
-      "description": "onlyideas-react-native focuses on practical workflows and tooling. OnlyIdeas Full Stack App OnlyIdeas is a full-stack application that helps people share and monetize their ideas. It integrates with AWS Amplify for user authentication, data storage (AppSync & DynamoDB), and file hosting (S3). You can run this projec...",
+      "description": "Prototype Expo and React Native creator app with AWS Amplify authentication, GraphQL data, S3 media, and iOS, Android, and web targets.",
       "homepage": "https://lazying.art",
       "name": "onlyideas-react-native",
       "primary_language": "JavaScript",
@@ -1916,7 +1916,7 @@
       "url": "https://github.com/lachlanchen/stm32dev"
     },
     {
-      "description": "SyncImagingSystem focuses on practical workflows and tooling. SyncImagingSystem SyncImagingSystem is a Python workspace for synchronized frame-camera and event-camera capture, organized around practical workflows for EVK/DAVIS and Hikrobot/Haikang cameras. 🧭 Quick Navigator 📌 Overview SyncImagingSystem is a Python w...",
+      "description": "Windows-focused Python workspace for synchronized Hikrobot frame-camera and EVK or DAVIS event-camera capture and recording.",
       "homepage": "https://lazying.art",
       "name": "SyncImagingSystem",
       "primary_language": "Visual Basic .NET",

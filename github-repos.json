@@ -906,21 +906,29 @@
       "url": "https://github.com/lachlanchen/LazyEdge"
     },
     {
-      "description": "LazyEdit is a tool to automatically edit videos with AI-assisted auto-caption, auto-transcription, auto-highlight, auto-metadata and auto-subtitles.",
+      "description": "Local-first AI-assisted video workflow for transcription, multilingual subtitles, captions, metadata, generation, and reviewed publishing.",
       "homepage": "https://studio.lazying.art/",
       "name": "LazyEdit",
       "primary_language": "Python",
       "topics": [
-        "environment",
-        "expo",
-        "generation",
-        "lazyedit",
-        "media",
-        "metadata",
-        "optional",
-        "paths",
-        "tmux",
-        "upload"
+        "ai-video-editing",
+        "automatic-subtitles",
+        "captioning",
+        "ffmpeg",
+        "instagram",
+        "local-first",
+        "media-processing",
+        "multilingual",
+        "open-source",
+        "publishing-automation",
+        "python",
+        "speech-to-text",
+        "subtitles",
+        "transcription",
+        "video-editing",
+        "video-processing",
+        "whisper",
+        "youtube"
       ],
       "url": "https://github.com/lachlanchen/LazyEdit"
     },
@@ -1290,19 +1298,25 @@
       "url": "https://github.com/lachlanchen/LazyWeiqi"
     },
     {
-      "description": "The lecture notes of Professor Leonard Susskind.",
-      "homepage": "https://lazying.art",
+      "description": "Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures.",
+      "homepage": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
       "name": "leonardsusskind",
       "primary_language": "TeX",
       "topics": [
+        "classical-mechanics",
         "cosmology",
+        "education",
+        "general-relativity",
         "lazyingart",
         "lecture-notes",
-        "leonardsusskind",
+        "leonard-susskind",
         "physics",
+        "quantum-field-theory",
         "quantum-mechanics",
         "relativity",
-        "video2book"
+        "string-theory",
+        "theoretical-minimum",
+        "transcripts"
       ],
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
@@ -1719,16 +1733,20 @@
       "name": "PaperAgent",
       "primary_language": "JavaScript",
       "topics": [
+        "academic-writing",
         "codex",
-        "compile",
         "docker",
         "latex",
-        "optional",
-        "paperagent",
-        "preview",
+        "local-first",
+        "paper-writing",
+        "pdf",
         "python",
-        "shell",
-        "terminal"
+        "reproducible-research",
+        "scientific-writing",
+        "terminal",
+        "tornado",
+        "web-ide",
+        "websocket"
       ],
       "url": "https://github.com/lachlanchen/PaperAgent"
     },
@@ -1960,19 +1978,27 @@
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
     {
-      "description": "Video2Book focuses on practical workflows and tooling. Video2Book by LazyingArt LLC > Video2Book by LazyingArt LLC. Websites: lazying.art and learn.lazying.art. Video2Book is a practical pipeline for turning long-form video collections into durable study material: downloaded media, timestamped transcripts, and trans...",
+      "description": "Turn long-form videos into timestamped transcripts, lecture notes, multilingual study material, and compiled books with a reproducible local pipeline.",
       "homepage": "https://learn.lazying.art",
       "name": "Video2Book",
       "primary_language": "Python",
       "topics": [
-        "learning",
-        "lecture",
-        "notes",
-        "pipeline",
+        "audio-transcription",
+        "book-generation",
+        "education",
+        "ffmpeg",
+        "language-learning",
+        "latex",
+        "lecture-notes",
+        "local-first",
+        "multilingual",
+        "open-source",
+        "pdf",
         "subtitles",
-        "tmux",
-        "transcript",
-        "video2book"
+        "transcription",
+        "video-to-text",
+        "whisper",
+        "xelatex"
       ],
       "url": "https://github.com/lachlanchen/Video2Book"
     },

@@ -70,7 +70,7 @@
           ["subtitle", "caption", "transcript", "bilingual", "translation", "translate"],
           ["help", "need", "looking for", "hire", "editor", "how can", "recommend"]
         ],
-        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+        "excluded_body_any": ["i built", "i created", "i made", "i've been working on", "we built", "we created", "my editor", "my tool", "my app", "my service", "our service", "for hire", "available for work", "written with ai", "starting at $"]
       },
       {
         "project_id": "paperagent",
@@ -81,7 +81,7 @@
           ["latexdiff", "redline", "compile", "build", "formatting", "template", "bibtex", "citation"],
           ["help", "need", "looking for", "hire", "editor", "how do", "anyone"]
         ],
-        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+        "excluded_body_any": ["i built", "i created", "i made", "i've been working on", "we built", "we created", "my editor", "my tool", "my app", "my service", "our service", "for hire", "available for work", "written with ai", "starting at $"]
       },
       {
         "project_id": "pocketpolyglot",
@@ -207,7 +207,7 @@
           ["subtitle", "caption", "transcript", "bilingual", "translation", "translate"],
           ["help", "need", "looking for", "hire", "editor", "how can", "recommend"]
         ],
-        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+        "excluded_body_any": ["i built", "i created", "i made", "i've been working on", "we built", "we created", "my editor", "my tool", "my app", "my service", "our service", "for hire", "available for work", "written with ai", "starting at $"]
       },
       {
         "project_id": "paperagent",
@@ -218,7 +218,7 @@
           ["latexdiff", "redline", "compile", "build", "formatting", "template", "bibtex", "citation"],
           ["help", "need", "looking for", "hire", "editor", "how do", "anyone"]
         ],
-        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+        "excluded_body_any": ["i built", "i created", "i made", "i've been working on", "we built", "we created", "my editor", "my tool", "my app", "my service", "our service", "for hire", "available for work", "written with ai", "starting at $"]
       },
       {
         "project_id": "pocketpolyglot",

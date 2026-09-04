@@ -291,6 +291,10 @@ class RepositoryTests(unittest.TestCase):
                     "I built my service for automatic lecture subtitles.",
                     lecture,
                 ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I made my app for course video transcripts and am available for work.",
+                    lecture,
+                ))
             with self.subTest(platform=platform, offer="manuscript"):
                 self.assertTrue(browser.route_body_qualified(
                     "My LaTeX manuscript fails to compile in Overleaf. I need help "
@@ -299,6 +303,10 @@ class RepositoryTests(unittest.TestCase):
                 ))
                 self.assertFalse(browser.route_body_qualified(
                     "I am available for work and offer a LaTeX manuscript service.",
+                    manuscript,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "Written with AI. My editor compiles your LaTeX thesis and shows a redline.",
                     manuscript,
                 ))
 

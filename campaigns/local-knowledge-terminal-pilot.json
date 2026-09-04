@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -282,6 +282,14 @@
     }
   },
   "channels": {
+    "homepage": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-05",
+      "website_commit": "99c04611eacf6e5dd080058b2de5b575011b61d0",
+      "destination": "https://lazying.art/lkt/?utm_source=lazyingart&utm_medium=website&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_chooser",
+      "role": "One of three fixed-scope USD 250 service choices shown immediately below the main banner. The tracked link leads to the offer and public proof before the free fit check.",
+      "policy": "The homepage separates the existing-machine service from supplied hardware and does not ask for a source upload or payment before scope acceptance. Publication is not a lead or sale."
+    },
     "lazyblog": {
       "state": "published",
       "published_at": "2026-08-31T19:27:53Z",

@@ -41,6 +41,21 @@ The manuscript landing page was unknown to Google when inspected on September
 priority crawl queue. That does not prove indexing or traffic. Do not resubmit
 the URL; observe it again after Google has had time to crawl.
 
+## One homepage, three focused routes
+
+The LazyingArt homepage now presents the three active USD 250 sprints directly
+below its main banner: collection fit, manuscript build and redline, and a
+bilingual lecture pack. Each tracked link leads to the full offer and public
+proof before any free fit check. The panel is available in all 13 homepage
+languages and states the shared boundary in one sentence: no source upload or
+payment before both sides accept the scope.
+
+LazyingArtWebsite commit `99c04611eacf6e5dd080058b2de5b575011b61d0`
+was deployed and checked in the shared project browser on September 5, 2026.
+The three resulting routes preserve separate `utm_campaign` values and use the
+common `service_chooser` content marker. This fixes owned-site discoverability;
+it does not establish a visit, fit inquiry, qualified buyer, or sale.
+
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)
 shows the three deliverables using LKT's own documented reference collection.

@@ -1103,7 +1103,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1123,6 +1123,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(smoke["payment_before_scope_acceptance"])
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+
+        homepage = campaign["channels"]["homepage"]
+        self.assertEqual(homepage["state"], "live_and_verified")
+        self.assertIn("utm_campaign=manuscript_sprint_pilot", homepage["destination"])
+        self.assertIn("not a lead or sale", homepage["policy"].casefold())
 
         routing = campaign["intake_routing"]
         self.assertEqual(routing["state"], "active")
@@ -1188,6 +1193,25 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("postiz_content", x_channel)
         self.assertNotIn("integration_id", serialized)
         self.assertNotIn("post_id", serialized)
+
+    def test_homepage_routes_all_active_sprints_without_inflating_revenue(self):
+        expected = {
+            "local-knowledge-terminal-pilot.json": "local_knowledge_terminal_pilot",
+            "manuscript-sprint-pilot.json": "manuscript_sprint_pilot",
+            "bilingual-lecture-pack-pilot.json": "bilingual_lecture_pack_pilot",
+        }
+
+        for filename, campaign_name in expected.items():
+            campaign = json.loads((ROOT / "campaigns" / filename).read_text(encoding="utf-8"))
+            homepage = campaign["channels"]["homepage"]
+            self.assertEqual(homepage["state"], "live_and_verified")
+            self.assertEqual(
+                homepage["website_commit"],
+                "99c04611eacf6e5dd080058b2de5b575011b61d0",
+            )
+            self.assertIn(f"utm_campaign={campaign_name}", homepage["destination"])
+            self.assertIn("utm_content=service_chooser", homepage["destination"])
+            self.assertIn("not a lead or sale", homepage["policy"].casefold())
 
     def test_latex_redline_sample_matches_its_public_manifest(self):
         sample = ROOT / "examples" / "latex-redline"

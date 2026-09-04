@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 3,
+  "version": 4,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -38,6 +38,14 @@
     ]
   },
   "channels": {
+    "homepage": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-05",
+      "website_commit": "99c04611eacf6e5dd080058b2de5b575011b61d0",
+      "destination": "https://lazying.art/manuscript-sprint/?utm_source=lazyingart&utm_medium=website&utm_campaign=manuscript_sprint_pilot&utm_content=service_chooser",
+      "role": "One of three fixed-scope USD 250 service choices shown immediately below the main banner. The tracked link leads to the offer and public redline proof before the free fit check.",
+      "policy": "The homepage says the sprint improves build and revision traceability without changing claims. Publication is not a lead or sale."
+    },
     "lazyblog": {
       "state": "published",
       "url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html",

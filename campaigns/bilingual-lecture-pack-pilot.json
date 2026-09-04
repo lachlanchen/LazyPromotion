@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -60,7 +60,7 @@
   },
   "conversion_readiness": {
     "state": "live_metadata_fit_check",
-    "checked_at": "2026-09-04T11:27:05Z",
+    "checked_at": "2026-09-04T11:39:34Z",
     "website_commits": [
       "83b1d7a",
       "24e48c3",
@@ -122,8 +122,18 @@
       "policy": "The reviewed 242-character post leads with the source-work lesson, uses the protocol-less first-party destination that Postiz preserved, and carries the live fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
     },
     "instagram": {
-      "state": "needs_rights_cleared_demonstration",
-      "policy": "Use only a project-owned or clearly licensed before/after demonstration; do not publish a generic generated product claim."
+      "state": "postiz_queue",
+      "publish_at": "2026-09-11T12:00:00Z",
+      "content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 45 searchable lines in Japanese, English, and Chinese. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
+      "postiz_content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 45 searchable lines in Japanese, English, and Chinese. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
+      "destination": "https://lazying.art/lecture-pack/",
+      "proof_url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
+      "media_source": "https://github.com/lachlanchen/LalaMedias/releases/download/media-v1/aginti-autonomous-lab-ai-glasses-2b85b0d9.mp4",
+      "media_sha256": "2b85b0d95538a571893fb1ea2ea2123a4e7e1535bf92953f884181ae608aadeb",
+      "settings": {
+        "post_type": "post"
+      },
+      "policy": "The attached video is the project-owned demonstration documented by the public source manifest. The caption describes only the working proof and bounded pilot; it does not claim scientific validity, customer results, or rights to unrelated media."
     },
     "reddit": {
       "state": "needs_exact_need",

@@ -234,6 +234,20 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], "bilingual-lecture-pack-pilot")
         self.assertEqual(route["route"], "product")
 
+        instagram = campaign["channels"]["instagram"]
+        self.assertEqual(instagram["state"], "postiz_queue")
+        self.assertEqual(instagram["settings"]["post_type"], "post")
+        self.assertEqual(64, len(instagram["media_sha256"]))
+        instagram_route = owned_monitor.route_for_post(
+            "instagram-standalone",
+            instagram["postiz_content"],
+            owned_monitor.route_index(),
+        )
+        self.assertEqual(
+            instagram_route["campaign_id"], "bilingual-lecture-pack-pilot"
+        )
+        self.assertEqual(instagram_route["route"], "product")
+
     def test_live_sample_report_posts_match_the_lkt_campaign(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(

@@ -153,7 +153,7 @@
       "url": "https://github.com/lachlanchen/AgInTi-Spectrometer"
     },
     {
-      "description": "AI-Wearable focuses on practical workflows and tooling. omi _AI-powered wearable for instant meetings and chats: capture, summarize, and act—hands-free._ Meet Omi, the world’s leading open-source AI wearable that captures conversations, gives summaries, action items and does actions for you. Simply connect Omi to yo...",
+      "description": "Open-source AI wearable stack for hands-free conversation capture, summaries, action items, and extensible device and app integrations.",
       "homepage": "https://lazying.art",
       "name": "AI-Wearable",
       "primary_language": "C",
@@ -319,10 +319,19 @@
     },
     {
       "description": "BigMe device connection and file sync workspace",
-      "homepage": "",
+      "homepage": "https://learn.lazying.art",
       "name": "BigMe",
       "primary_language": "Shell",
-      "topics": [],
+      "topics": [
+        "adb",
+        "android",
+        "bigme",
+        "ebook-reader",
+        "eink",
+        "file-sync",
+        "macos",
+        "shell"
+      ],
       "url": "https://github.com/lachlanchen/BigMe"
     },
     {
@@ -513,10 +522,20 @@
     },
     {
       "description": "Signed companion software releases and setup resources for supported AI glasses",
-      "homepage": "",
+      "homepage": "https://lachlanchen.github.io/GlassAgent-Wearable-Releases/",
       "name": "GlassAgent-Wearable-Releases",
       "primary_language": "Shell",
-      "topics": [],
+      "topics": [
+        "ai-glasses",
+        "android",
+        "companion-app",
+        "cryptographic-signatures",
+        "ecdsa",
+        "release-management",
+        "secure-updates",
+        "software-supply-chain",
+        "wearable"
+      ],
       "url": "https://github.com/lachlanchen/GlassAgent-Wearable-Releases"
     },
     {
@@ -1359,11 +1378,19 @@
       "url": "https://github.com/lachlanchen/LightMind"
     },
     {
-      "description": "",
-      "homepage": "",
+      "description": "Public privacy notice for the local-first LightMind companion test build for supported Rokid glasses.",
+      "homepage": "https://lachlanchen.github.io/lightmind-privacy/",
       "name": "lightmind-privacy",
       "primary_language": "HTML",
-      "topics": [],
+      "topics": [
+        "android",
+        "local-first",
+        "privacy",
+        "privacy-notice",
+        "rokid",
+        "smart-glasses",
+        "wearable"
+      ],
       "url": "https://github.com/lachlanchen/lightmind-privacy"
     },
     {

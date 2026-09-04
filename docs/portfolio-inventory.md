@@ -84,7 +84,7 @@ The first-USD-1,000 route is four confirmed USD 250 payments across three bounde
 
 | Repository | What its public metadata says | Language | Public surface |
 |---|---|---|---|
-| [BigMe](https://github.com/lachlanchen/BigMe) | BigMe device connection and file sync workspace | Shell | Repository only |
+| [BigMe](https://github.com/lachlanchen/BigMe) | BigMe device connection and file sync workspace | Shell | [Open](https://learn.lazying.art) |
 | [FujitsuQuaderno](https://github.com/lachlanchen/FujitsuQuaderno) | Fujitsu Quaderno research, firmware notes, and mount tooling | Shell | [Open](https://lazying.art) |
 | [ImagizedLanguageModel](https://github.com/lachlanchen/ImagizedLanguageModel) | Imagized Language Model (ILM) | Python | [Open](https://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=%E4%B8%AD) |
 | [Kindle](https://github.com/lachlanchen/Kindle) | Kindle Paperwhite 2 jailbreak and KOReader setup workspace | Python | [Open](https://lazying.art) |
@@ -117,7 +117,7 @@ The first-USD-1,000 route is four confirmed USD 250 payments across three bounde
 | [lazealoptix](https://github.com/lachlanchen/lazealoptix) | "Development repository for Lazeal OptiX, a home-use diagnostic device using advanced microscopy and biochemical analysis." | Jupyter Notebook | [Open](https://lazealoptix.com) |
 | [LifeReverseEngineering](https://github.com/lachlanchen/LifeReverseEngineering) | Reverse Engineering of Life. | HTML | [Open](http://lre.lazying.art/) |
 | [LightMind](https://github.com/lachlanchen/LightMind) | The website of LightMind Ltd. | HTML | [Open](https://github.com/LightMind) |
-| [lightmind-privacy](https://github.com/lachlanchen/lightmind-privacy) | No public description yet | HTML | Repository only |
+| [lightmind-privacy](https://github.com/lachlanchen/lightmind-privacy) | Public privacy notice for the local-first LightMind companion test build for supported Rokid glasses. | HTML | [Open](https://lachlanchen.github.io/lightmind-privacy/) |
 | [MetasurfaceInverseDeisgn](https://github.com/lachlanchen/MetasurfaceInverseDeisgn) | Repository of paper Inverse Design of Metasurface for Spectral Imaging | Python | [Open](https://lazying.art) |
 | [nhi_hardware](https://github.com/lachlanchen/nhi_hardware) | Experimental hardware orchestration for synchronized event/frame capture, FMC4030 CNC motion, Arduino lighting, and a Tornado trigger UI. | Python | [Open](https://lazying.art) |
 | [OpenHI](https://github.com/lachlanchen/OpenHI) | Self‑calibrated neuromorphic hyperspectral imaging pipeline for event cameras with diffractive illumination. Includes end‑to‑end tools for RAW segmentation, multi‑window time‑warping compensation, spectral visualization, and hardware control for synchronized event/frame capture and scanning. | Python | [Open](https://lazying.art/openhi-kit.html) |
@@ -134,9 +134,9 @@ The first-USD-1,000 route is four confirmed USD 250 payments across three bounde
 | Repository | What its public metadata says | Language | Public surface |
 |---|---|---|---|
 | [AgInTi-HardwareConsole](https://github.com/lachlanchen/AgInTi-HardwareConsole) | File-backed laboratory hardware digital twin and control workbench | Python | [Open](https://lazying.art) |
-| [AI-Wearable](https://github.com/lachlanchen/AI-Wearable) | AI-Wearable focuses on practical workflows and tooling. omi _AI-powered wearable for instant meetings and chats: capture, summarize, and act—hands-free._ Meet Omi, the world’s leading open-source AI wearable that captures conversations, gives summaries, action items and does actions for you. Simply connect Omi to yo... | C | [Open](https://lazying.art) |
+| [AI-Wearable](https://github.com/lachlanchen/AI-Wearable) | Open-source AI wearable stack for hands-free conversation capture, summaries, action items, and extensible device and app integrations. | C | [Open](https://lazying.art) |
 | [GaugeHand](https://github.com/lachlanchen/GaugeHand) | GaugeHand: a lockable contour-field robotic hand concept for dense-contact grasping | TeX | [Open](https://lazying.art) |
-| [GlassAgent-Wearable-Releases](https://github.com/lachlanchen/GlassAgent-Wearable-Releases) | Signed companion software releases and setup resources for supported AI glasses | Shell | Repository only |
+| [GlassAgent-Wearable-Releases](https://github.com/lachlanchen/GlassAgent-Wearable-Releases) | Signed companion software releases and setup resources for supported AI glasses | Shell | [Open](https://lachlanchen.github.io/GlassAgent-Wearable-Releases/) |
 | [IdeasGlass](https://github.com/lachlanchen/IdeasGlass) | IdeasGlass is an AI-first wearable + PWA that captures and streams your ideas in real time. | C | [Open](https://onlyideas.art) |
 | [IdeasRobot](https://github.com/lachlanchen/IdeasRobot) | IdeasRobot – a laid‑back sensor hub from The Art of Lazying: a Tornado + PWA stack that lets your mic-array/camera companion stream audio, visualize wake angles, and capture sessions from anywhere. | Python | [Open](https://robot.lazying.art) |
 | [stm32dev](https://github.com/lachlanchen/stm32dev) | STM32H7 touch-screen board workspace with ST-Link/OpenOCD scripts, wiring notes, framebuffer rendering, and cache-aware persistent display patch source | C | [Open](https://lazying.art) |

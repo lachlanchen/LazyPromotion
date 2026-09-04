@@ -1328,7 +1328,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(linkedin["verification"]["stored_text_exact"])
         self.assertIn("not leads or revenue", linkedin["policy"])
 
-        guide = campaign["channels"]["linkedin_practical_guide"]
+        guide = linkedin["practical_guide"]
         self.assertEqual(guide["state"], "postiz_queue")
         self.assertEqual(guide["publish_at"], "2026-09-24T02:00:00Z")
         self.assertEqual(guide["content"], guide["postiz_content"])

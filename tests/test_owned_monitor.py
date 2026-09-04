@@ -261,6 +261,13 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(linkedin_route["campaign_id"], "bilingual-lecture-pack-pilot")
         self.assertEqual(linkedin_route["route"], "product")
 
+        practical_guide = linkedin["practical_guide"]
+        guide_route = owned_monitor.route_for_post(
+            "linkedin", practical_guide["postiz_content"], owned_monitor.route_index()
+        )
+        self.assertEqual(guide_route["campaign_id"], "bilingual-lecture-pack-pilot")
+        self.assertEqual(guide_route["route"], "practical_guide")
+
         youtube = campaign["channels"]["youtube"]
         self.assertEqual(youtube["state"], "postiz_queue")
         self.assertEqual(youtube["content"], youtube["postiz_content"])

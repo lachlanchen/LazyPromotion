@@ -878,7 +878,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -947,6 +947,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(upwork["connects_cost_visible"])
         self.assertIn("three manuscripts", upwork["scope_gap"])
         self.assertIn("Before proposing", upwork["proposal_draft"])
+        lead = upwork["best_current_lead"]
+        self.assertEqual(lead["title"], "Conversion: Docx to Overleaf Format")
+        self.assertIn("BibTeX", lead["scope"])
+        self.assertIn("representative section", lead["proposal_draft"])
+        self.assertIn("years", " ".join(lead["missing_submission_facts"]))
+        self.assertIn("hourly rate", " ".join(lead["missing_submission_facts"]))
         self.assertIn("private draft", upwork["policy"].casefold())
         self.assertIn("keep communication and payment on upwork", upwork["policy"].casefold())
 

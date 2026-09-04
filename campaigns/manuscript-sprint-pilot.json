@@ -1,8 +1,14 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 2,
+  "version": 3,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
+    {
+      "captured_at": "2026-09-04T13:00:00Z",
+      "url": "https://www.upwork.com/freelance-jobs/apply/Conversion-Docx-to-Overleaf-Format_~022095244364454574979/",
+      "problem": "A current hourly job asks for a DOCX manuscript to be rebuilt as a clean compiling Overleaf project, preserving headings, tables, figures, captions, and footnotes while converting APA references and in-text citations to BibTeX.",
+      "engagement": "marketplace_login_and_personal_claims_required"
+    },
     {
       "captured_at": "2026-09-04T08:30:00Z",
       "url": "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/",
@@ -48,14 +54,31 @@
     },
     "upwork": {
       "state": "not_applied",
-      "checked_at": "2026-09-04T10:41:00Z",
+      "checked_at": "2026-09-04T13:00:00Z",
       "listing_visible": true,
       "project_browser_account_state": "logged_out",
       "apply_control_visible": false,
       "connects_cost_visible": false,
+      "best_current_lead": {
+        "title": "Conversion: Docx to Overleaf Format",
+        "url": "https://www.upwork.com/freelance-jobs/apply/Conversion-Docx-to-Overleaf-Format_~022095244364454574979/",
+        "posted": "2026-09-02",
+        "public_budget": "hourly rate requested but not specified",
+        "client_history": "USD 1.2K spent across 26 hires",
+        "activity": "20–50 proposals, two interviewing, last viewed 17 hours before the check",
+        "scope": "DOCX structure, headings, tables, figures, captions, footnotes, target template, APA citations, reference list, BibTeX links, and a clean compile",
+        "fit": "High technical fit for the public PaperAgent and reproducible LaTeX build/redline workflow, subject to the actual manuscript and target template.",
+        "scope_gap": "Word or page count, template, package restrictions, table and figure counts, reference quality, deadline, and accepted rate are not public.",
+        "proposal_draft": "Your conversion needs more than moving text into a template: the structure, tables, figures, footnotes, references, and in-text citations all need to survive a clean compile. I would first compile the supplied target template, map the DOCX structure, convert a representative section with one table, figure, footnote, and reference, then complete the manuscript and deliver a clean Overleaf project with an issue ledger. I maintain a public LaTeX build and redline workflow that I can share as process evidence. Before quoting the work, what are the manuscript's page or word count, target template, approximate table and figure count, deadline, and current reference format?",
+        "missing_submission_facts": [
+          "truthful years of direct LaTeX or Overleaf experience",
+          "hourly rate",
+          "visible Connects cost and freelancer fee after login"
+        ]
+      },
       "scope_gap": "The public brief asks for three manuscripts at USD 200, while the LazyingArt offer is one LaTeX manuscript up to 7,500 words at USD 250. Source format, manuscript lengths, target templates, and supplied baselines are not visible.",
       "proposal_draft": "Your brief is specific about preserving the authors' claims and producing a reviewable redline. I work with a reproducible three-build path: the supplied baseline, the revised source, and the redline, plus an issue ledger for template, figure, table, reference, and build problems. Before proposing a fixed scope for all three papers, could you share the approximate word count and source format of each manuscript, the target journals or templates, and whether a baseline for tracked changes already exists? I would keep scientific claims unchanged and would not need submission-account access.",
-      "policy": "This is a private draft, not a proposal. Do not apply until the project browser is logged in, the live job remains open, the Connects cost and freelancer fee are visible, the proposal complies with current pre-contract rules, and the source-format scope fits. Keep communication and payment on Upwork."
+      "policy": "These are private drafts, not proposals. Do not apply until the project browser is logged in, the live job remains open, the Connects cost and freelancer fee are visible, required personal experience and rate claims are truthful, the proposal complies with current pre-contract rules, and the source-format scope fits. Keep communication and payment on Upwork."
     },
     "reddit": {
       "state": "needs_exact_need",

@@ -40,6 +40,15 @@ collection, OCR, semantic retrieval, or a knowledge graph.
 
 ### 2. Manuscript Build & Redline Sprint — USD 250
 
+A current hourly [DOCX-to-Overleaf conversion
+request](https://www.upwork.com/freelance-jobs/apply/Conversion-Docx-to-Overleaf-Format_~022095244364454574979/)
+asks for a clean compiling template, preserved headings, tables, figures,
+captions and footnotes, plus APA-to-BibTeX conversion with linked citations.
+It is the closest current marketplace match, but the account is logged out and
+the brief omits the manuscript size, template, table and figure count, rate,
+and Connects cost. A private proposal outline is recorded without inventing
+years of experience or a rate.
+
 A current USD 200 marketplace listing asks for claim-preserving academic edits,
 figure and table compliance, tracked changes or a redline, and confidentiality.
 Other current listings cluster around LaTeX finalization and journal formatting.

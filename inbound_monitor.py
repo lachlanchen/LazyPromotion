@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Monitor the dedicated LKT intake folder without opening or copying mail."""
+"""Monitor the dedicated paid-sprint intake folder without opening or copying mail."""
 
 from __future__ import annotations
 
@@ -273,9 +273,9 @@ def read_folder_counts(
             raise RuntimeError("iCloud did not expose the folder aggregate status")
         payload = evaluated.get("result", {}).get("value")
         if not isinstance(payload, dict) or not payload.get("folderFound"):
-            raise RuntimeError("the dedicated LKT intake folder is unavailable")
+            raise RuntimeError("the dedicated intake folder is unavailable")
         if not payload.get("folderSelected"):
-            raise RuntimeError("the dedicated LKT intake folder is not selected")
+            raise RuntimeError("the dedicated intake folder is not selected")
         return parse_folder_status(payload.get("status"))
 
 

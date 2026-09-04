@@ -880,6 +880,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
 
+        routing = campaign["intake_routing"]
+        self.assertEqual(routing["state"], "active")
+        self.assertEqual(routing["condition"], "subject_contains")
+        self.assertEqual(
+            routing["value"],
+            "Manuscript Build & Redline Sprint — free fit check",
+        )
+        self.assertEqual(routing["destination"], "LKT Fit Checks")
+        self.assertEqual(
+            routing["runtime_probe"],
+            "rule_visible_and_folder_counts_read_without_error",
+        )
+        self.assertFalse(routing["message_content_opened"])
+        self.assertFalse(routing["customer_data_persisted"])
+
         x_channel = campaign["channels"]["x"]
         self.assertEqual(x_channel["state"], "covered_by_existing_queue")
         self.assertEqual(x_channel["existing_campaign_id"], "latex-redline-build")

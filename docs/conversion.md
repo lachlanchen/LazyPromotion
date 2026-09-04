@@ -7,7 +7,7 @@ be reported separately—none may be inferred from impressions or clicks.
 
 ## First USD 1,000 path
 
-The single primary offer is the
+The primary offer remains the
 [Local Knowledge Terminal collection-fit sprint](https://lazying.art/lkt/): a
 fixed USD 250 service for one customer-provided collection, one language goal,
 and one existing machine. It includes a written data/privacy map, a small
@@ -16,6 +16,15 @@ go/no-go recommendation. Hardware, shipping, custom OCR, and a production
 deployment are excluded. Four confirmed USD 250 payments would be USD 1,000
 gross. That is a milestone calculation, not a forecast, and excludes payment
 fees, tax, refunds, and delivery costs.
+
+The active secondary route is the [Manuscript Build & Redline
+Sprint](https://lazying.art/manuscript-sprint/): USD 250 for one LaTeX
+manuscript up to 7,500 words, one target template, a clean build, issue ledger,
+and reproducible redline from a supplied baseline. Its [free fit
+check](https://lazying.art/manuscript-sprint/fit-check/) precedes source transfer
+and payment. Ghostwriting, new claims, statistical analysis, submission access,
+and publication guarantees are excluded. Any four confirmed USD 250 payments
+across the two routes would reach the same USD 1,000 gross milestone.
 
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)
@@ -125,7 +134,8 @@ unresolved evidence: inspect Postiz and the provider, and never reconnect or
 resubmit until the exact public item is identified.
 
 `python inbound_monitor.py once` reads only the aggregate message and unread
-counts exposed for the dedicated `LKT Fit Checks` iCloud folder. It does not
+counts exposed for the dedicated `LKT Fit Checks` iCloud folder. Exact-subject
+rules currently route both LKT and manuscript-sprint fit checks there. It does not
 focus a tab, navigate, click a folder, open mail, or persist a sender, subject,
 address, or body. The dedicated folder must already be selected in the restored
 iCloud tab; otherwise the monitor fails closed. The controlled routing

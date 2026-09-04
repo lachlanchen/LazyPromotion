@@ -100,7 +100,7 @@ flowchart LR
 | [`docs/affiliate-portfolio.md`](docs/affiliate-portfolio.md) | Contextual affiliate execution order, operator checklist, revenue semantics, holds, and revalidation contract |
 | [`blog_editorial.py`](blog_editorial.py) | Static count, identity, language, Markdown-structure, and manifest checks for the LazyBlog editorial ledger and four-file post bundles |
 | [`owned_monitor.py`](owned_monitor.py) | Read-only Postiz publication/engagement monitor that requires visible release verification, creates review alerts, stores no raw provider IDs, and never calls engagement a lead |
-| [`inbound_monitor.py`](inbound_monitor.py) | Read-only iCloud intake monitor that records only the dedicated LKT folder's aggregate counts and never opens or persists mail content |
+| [`inbound_monitor.py`](inbound_monitor.py) | Read-only iCloud intake monitor that records only the dedicated paid-sprint folder's aggregate counts and never opens or persists mail content |
 | [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT Stripe path |
 | [`lkt_hardware_pricing.py`](lkt_hardware_pricing.py) | Read-only supplied-device margin check that keeps hardware separate from the USD 250 collection-fit service |
 | [`lkt_delivery.py`](lkt_delivery.py) | Deterministic metadata-only LKT sprint preflight and truth-safe Markdown delivery-packet renderer |

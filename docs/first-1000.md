@@ -43,6 +43,10 @@ claims, statistical analysis, submission credentials, and publication
 guarantees. Each exact source tree must pass a fit review before scope or
 payment.
 
+The exact manuscript fit-check subject is routed into the same dedicated
+aggregate-only intake folder used by LKT. The routing rule and a fresh folder
+count were verified visibly without opening or persisting any message content.
+
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
 builds a reviewable email draft inside the current browser tab. It stores,

@@ -68,6 +68,19 @@
     "attribution_fields": ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
     "payment_before_scope_acceptance": false
   },
+  "intake_routing": {
+    "state": "active",
+    "checked_at": "2026-09-04T09:36:58Z",
+    "rule_name": "Manuscript Sprint Intake",
+    "condition": "subject_contains",
+    "value": "Manuscript Build & Redline Sprint — free fit check",
+    "action": "move_to_folder",
+    "destination": "LKT Fit Checks",
+    "aggregate_monitor": "inbound_monitor.py",
+    "runtime_probe": "rule_visible_and_folder_counts_read_without_error",
+    "message_content_opened": false,
+    "customer_data_persisted": false
+  },
   "funnel": {
     "state": "attention",
     "fit_inquiry_observed": false,

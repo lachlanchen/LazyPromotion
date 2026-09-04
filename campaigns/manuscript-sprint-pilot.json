@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 1,
+  "version": 2,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -48,7 +48,14 @@
     },
     "upwork": {
       "state": "not_applied",
-      "policy": "Before a proposal, inspect the live job, account eligibility, Connects cost, pre-contract communication rules, and client scope. Keep communication and payment on Upwork."
+      "checked_at": "2026-09-04T10:41:00Z",
+      "listing_visible": true,
+      "project_browser_account_state": "logged_out",
+      "apply_control_visible": false,
+      "connects_cost_visible": false,
+      "scope_gap": "The public brief asks for three manuscripts at USD 200, while the LazyingArt offer is one LaTeX manuscript up to 7,500 words at USD 250. Source format, manuscript lengths, target templates, and supplied baselines are not visible.",
+      "proposal_draft": "Your brief is specific about preserving the authors' claims and producing a reviewable redline. I work with a reproducible three-build path: the supplied baseline, the revised source, and the redline, plus an issue ledger for template, figure, table, reference, and build problems. Before proposing a fixed scope for all three papers, could you share the approximate word count and source format of each manuscript, the target journals or templates, and whether a baseline for tracked changes already exists? I would keep scientific claims unchanged and would not need submission-account access.",
+      "policy": "This is a private draft, not a proposal. Do not apply until the project browser is logged in, the live job remains open, the Connects cost and freelancer fee are visible, the proposal complies with current pre-contract rules, and the source-format scope fits. Keep communication and payment on Upwork."
     },
     "reddit": {
       "state": "needs_exact_need",

@@ -859,7 +859,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -920,6 +920,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(payment["stripe_objects_created"])
         self.assertFalse(payment["public_payment_link"])
         self.assertIn("real buyer", payment["remaining_gate"])
+
+        upwork = campaign["channels"]["upwork"]
+        self.assertEqual(upwork["state"], "not_applied")
+        self.assertEqual(upwork["project_browser_account_state"], "logged_out")
+        self.assertFalse(upwork["apply_control_visible"])
+        self.assertFalse(upwork["connects_cost_visible"])
+        self.assertIn("three manuscripts", upwork["scope_gap"])
+        self.assertIn("Before proposing", upwork["proposal_draft"])
+        self.assertIn("private draft", upwork["policy"].casefold())
+        self.assertIn("keep communication and payment on upwork", upwork["policy"].casefold())
 
         x_channel = campaign["channels"]["x"]
         self.assertEqual(x_channel["state"], "covered_by_existing_queue")

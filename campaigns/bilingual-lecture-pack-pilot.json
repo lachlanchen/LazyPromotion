@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 5,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -10,6 +10,7 @@
       "url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
       "repository": "https://github.com/lachlanchen/LalaMedias",
       "commit": "c56c27e",
+      "conversion_bridge_commit": "ae7cdcd",
       "source": "project-created 30-second science short; no customer or third-party lecture media",
       "verified_outputs": [
         "15 timestamped lines aligned across Japanese, English, and Chinese",
@@ -60,15 +61,20 @@
   },
   "conversion_readiness": {
     "state": "live_metadata_fit_check",
-    "checked_at": "2026-09-04T11:39:34Z",
+    "checked_at": "2026-09-04T11:48:49Z",
     "website_commits": [
       "83b1d7a",
       "24e48c3",
       "4efb6c4"
     ],
     "proof_commits": [
-      "c56c27e"
+      "c56c27e",
+      "ae7cdcd"
     ],
+    "repository_bridge_commits": {
+      "LalaMedias": "ae7cdcd",
+      "Video2Book": "25db95d"
+    },
     "blog_commits": [
       "d95f337",
       "c3232db",

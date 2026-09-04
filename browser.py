@@ -302,6 +302,20 @@ def route_body_qualified(body: str, route: dict[str, object]) -> bool:
     )
 
 
+def candidate_context_ready(
+    platform: str,
+    candidate: dict[str, object],
+    hydrated_ids: set[str],
+) -> bool:
+    """Keep title-only Reddit search cards out of model review."""
+    if platform != "reddit":
+        return True
+    source_url = str(candidate.get("source_url") or "")
+    if reddit_comment_id(source_url):
+        return True
+    return str(candidate.get("id") or "") in hydrated_ids
+
+
 def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
     rows = page.locator("shreddit-post").evaluate_all(
         """(nodes, limit) => nodes.slice(0, limit).map((n) => ({
@@ -810,14 +824,23 @@ def run_discovery_cycle(
                 for found in discoveries
                 for item in hydrate_candidates(page, found["candidates"], hydrate_per_query)
             ]
+            hydrated_ids = {
+                str(row["candidate"]["id"])
+                for row in hydrated
+                if row.get("ok") and isinstance(row.get("candidate"), dict)
+            }
             db = promotion.open_db()
             refreshed = [
                 promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate["id"],)).fetchone())
                 for candidate in found_candidates
             ]
-            route_qualified = [
+            context_ready = [
                 candidate for candidate in refreshed
-                if candidate and route_body_qualified(str(candidate.get("body") or ""), item)
+                if candidate and candidate_context_ready(platform, candidate, hydrated_ids)
+            ]
+            route_qualified = [
+                candidate for candidate in context_ready
+                if route_body_qualified(str(candidate.get("body") or ""), item)
             ]
             matching = [
                 str(candidate["id"])
@@ -850,8 +873,9 @@ def run_discovery_cycle(
                     for found in discoveries
                 },
                 "hydrated": len(hydrated),
+                "context_deferred": len(refreshed) - len(context_ready),
                 "route_qualified": len(route_qualified),
-                "route_filtered": len(refreshed) - len(route_qualified),
+                "route_filtered": len(context_ready) - len(route_qualified),
                 "hydrate_errors": [row for row in hydrated if not row["ok"]],
                 "eligible_candidate_ids": matching,
                 "triage_candidate_ids": triageable,

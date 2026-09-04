@@ -351,6 +351,22 @@ class RepositoryTests(unittest.TestCase):
             'shreddit-comment[parentid="t1_comment456"] > div[slot="comment"]',
         )
 
+    def test_reddit_post_search_card_requires_full_body_hydration(self):
+        post = {
+            "id": "cand_post",
+            "source_url": "https://www.reddit.com/r/example/comments/post123/help/",
+        }
+        comment = {
+            "id": "cand_comment",
+            "source_url": "https://www.reddit.com/r/example/comments/post123/help/comment456/",
+        }
+        self.assertFalse(browser.candidate_context_ready("reddit", post, set()))
+        self.assertTrue(
+            browser.candidate_context_ready("reddit", post, {"cand_post"})
+        )
+        self.assertTrue(browser.candidate_context_ready("reddit", comment, set()))
+        self.assertTrue(browser.candidate_context_ready("x", post, set()))
+
     def test_reddit_delivery_ids_cover_post_comments_and_exact_replies(self):
         body = "A useful exact answer."
         records = [

@@ -137,8 +137,10 @@ def source_evidence_urls(value, path: tuple[str, ...] = ()):
 def sync_public_sources(db) -> dict[str, str]:
     projects = promotion.load_catalog()["projects"]
     project_by_url = {}
+    active_project_ids = set()
     for project in projects:
         entity_id = f"project:{project['id']}"
+        active_project_ids.add(entity_id)
         upsert_entity(
             db,
             entity_id,
@@ -160,6 +162,19 @@ def sync_public_sources(db) -> dict[str, str]:
             upsert_relationship(
                 db, entity_id, "has_homepage", homepage, evidence_url=project["homepage"]
             )
+
+    # Catalog curation can replace a generated project id with a stable, richer
+    # one for the same repository. Keep old ids available to private history,
+    # but never export stale aliases as if they were current public projects.
+    placeholders = ", ".join("?" for _ in active_project_ids)
+    db.execute(
+        f"""
+        UPDATE entities
+        SET visibility='private'
+        WHERE kind='project' AND id NOT IN ({placeholders})
+        """,
+        tuple(sorted(active_project_ids)),
+    )
 
     github = json.loads((ROOT / "github-repos.json").read_text(encoding="utf-8"))
     verified_public_repositories = set()

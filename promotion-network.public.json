@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 7
+        "version": 8
       },
       "url": ""
     },
@@ -76,7 +76,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },
@@ -86,7 +86,7 @@
       "label": "manuscript-sprint-pilot",
       "metadata": {
         "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },
@@ -138,6 +138,13 @@
       "id": "channel:hackernews",
       "kind": "channel",
       "label": "hackernews",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:homepage",
+      "kind": "channel",
+      "label": "homepage",
       "metadata": {},
       "url": ""
     },
@@ -2044,23 +2051,29 @@
       "url": "https://github.com/lachlanchen/OrganoidVision"
     },
     {
-      "id": "project:github-paperagent",
+      "id": "project:paperagent",
       "kind": "project",
       "label": "PaperAgent",
       "metadata": {
-        "generated": true,
+        "generated": false,
         "keywords": [
-          "compile",
-          "docker",
-          "latex",
-          "optional",
-          "paper agent",
-          "paperagent",
-          "preview",
-          "shell",
-          "terminal"
+          "latex manuscript",
+          "overleaf",
+          "latexdiff",
+          "latex redline",
+          "tracked changes",
+          "docx to latex",
+          "docx to overleaf",
+          "bibtex",
+          "reproducible manuscript",
+          "paper revision",
+          "manuscript build",
+          "latex build",
+          "latex error",
+          "journal template",
+          "submission template"
         ],
-        "summary": "PaperAgent is a local-first web workspace for academic writing. It lets you edit LaTeX and code in the browser, run Python or R and compile LaTeX on the backend, and preview PDFs with build logs—all in one place."
+        "summary": "A reproducible LaTeX manuscript workflow for clean builds, issue ledgers, baseline-to-revision redlines, figures, tables, references, and submission-template checks."
       },
       "url": "https://github.com/lachlanchen/PaperAgent"
     },
@@ -2250,22 +2263,31 @@
       "url": "https://github.com/lachlanchen/SyncImagingSystem"
     },
     {
-      "id": "project:github-video2book",
+      "id": "project:video2book",
       "kind": "project",
       "label": "Video2Book",
       "metadata": {
-        "generated": true,
+        "generated": false,
         "keywords": [
-          "lecture",
-          "notes",
-          "pipeline",
-          "subtitles",
-          "tmux",
-          "transcript",
-          "video2 book",
-          "video2book"
+          "video to book",
+          "video into book",
+          "video to study material",
+          "lecture to notes",
+          "lecture notes from video",
+          "course notes from video",
+          "transcript to book",
+          "video transcript",
+          "study guide from video",
+          "bilingual study guide",
+          "bilingual subtitles",
+          "timestamped subtitles",
+          "multilingual course",
+          "localize course",
+          "subtitle translation",
+          "video knowledge base",
+          "lecture knowledge base"
         ],
-        "summary": "Video2Book focuses on practical workflows and tooling. Video2Book by LazyingArt LLC > Video2Book by LazyingArt LLC. Websites: lazying.art and learn.lazying.art. Video2Book is a practical pipeline for turning long-form video collections into durable study material: downloaded media, timestamped transcripts, and trans..."
+        "summary": "A reproducible pipeline that turns rights-cleared video or audio into timestamped transcripts, subtitles, structured notes, PDFs, EPUBs, and multilingual pocket study editions."
       },
       "url": "https://github.com/lachlanchen/Video2Book"
     },
@@ -5986,14 +6008,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/Video2Book",
-      "metadata": {},
-      "relation": "promotes",
-      "source": "campaign:bilingual-lecture-pack-pilot",
-      "target": "project:github-video2book"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyEdit",
       "metadata": {},
       "relation": "promotes",
@@ -6018,6 +6032,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "project:video2book"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
         "state": "research_only"
@@ -6025,6 +6047,16 @@
       "relation": "targets",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "channel:github_issues"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:homepage"
     },
     {
       "confidence": 1.0,
@@ -6424,14 +6456,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/Video2Book",
-      "metadata": {},
-      "relation": "promotes",
-      "source": "campaign:lecture-archive-provenance",
-      "target": "project:github-video2book"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
       "metadata": {},
       "relation": "promotes",
@@ -6453,6 +6477,14 @@
       "relation": "promotes",
       "source": "campaign:lecture-archive-provenance",
       "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "project:video2book"
     },
     {
       "confidence": 1.0,
@@ -6553,6 +6585,16 @@
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:homepage"
     },
     {
       "confidence": 1.0,
@@ -6775,6 +6817,16 @@
       "relation": "targets",
       "source": "campaign:manuscript-sprint-pilot",
       "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "channel:homepage"
     },
     {
       "confidence": 1.0,
@@ -7290,14 +7342,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/Video2Book",
-      "metadata": {},
-      "relation": "combines",
-      "source": "opportunity:creator-library-refinery",
-      "target": "project:github-video2book"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyEdit",
       "metadata": {},
       "relation": "combines",
@@ -7311,6 +7355,14 @@
       "relation": "combines",
       "source": "opportunity:creator-library-refinery",
       "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:creator-library-refinery",
+      "target": "project:video2book"
     },
     {
       "confidence": 1.0,
@@ -7490,14 +7542,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/Video2Book",
-      "metadata": {},
-      "relation": "combines",
-      "source": "opportunity:lecture-to-study-library",
-      "target": "project:github-video2book"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyEdit",
       "metadata": {},
       "relation": "combines",
@@ -7519,6 +7563,14 @@
       "relation": "combines",
       "source": "opportunity:lecture-to-study-library",
       "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "project:video2book"
     },
     {
       "confidence": 1.0,
@@ -7838,7 +7890,7 @@
       "metadata": {},
       "relation": "combines",
       "source": "opportunity:scientific-manuscript-workbench",
-      "target": "project:github-paperagent"
+      "target": "project:paperagent"
     },
     {
       "confidence": 1.0,
@@ -8594,14 +8646,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/PaperAgent",
-      "metadata": {},
-      "relation": "backed_by",
-      "source": "project:github-paperagent",
-      "target": "repository:lachlanchen/PaperAgent"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/PaperAgentDemo",
       "metadata": {},
       "relation": "backed_by",
@@ -8679,14 +8723,6 @@
       "relation": "backed_by",
       "source": "project:github-uu-remote-ubuntu-bridge",
       "target": "repository:lachlanchen/uu-remote-ubuntu-bridge"
-    },
-    {
-      "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/Video2Book",
-      "metadata": {},
-      "relation": "backed_by",
-      "source": "project:github-video2book",
-      "target": "repository:lachlanchen/Video2Book"
     },
     {
       "confidence": 1.0,
@@ -8866,6 +8902,22 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PaperAgent",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:paperagent",
+      "target": "repository:lachlanchen/PaperAgent"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/manuscript-sprint/",
+      "metadata": {},
+      "relation": "has_homepage",
+      "source": "project:paperagent",
+      "target": "url:273db0ceb258a5af"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
       "metadata": {},
       "relation": "backed_by",
@@ -8879,6 +8931,22 @@
       "relation": "has_homepage",
       "source": "project:pocketpolyglot",
       "target": "url:da47483d2dac0ccb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:video2book",
+      "target": "repository:lachlanchen/Video2Book"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/",
+      "metadata": {},
+      "relation": "has_homepage",
+      "source": "project:video2book",
+      "target": "url:593c601822a24f73"
     },
     {
       "confidence": 1.0,

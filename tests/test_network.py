@@ -94,6 +94,37 @@ class NetworkTests(unittest.TestCase):
         ).fetchone()[0]
         self.assertEqual(count, 1)
 
+    def test_public_projects_exactly_follow_current_catalog(self):
+        network.upsert_entity(
+            self.db,
+            "project:obsolete-generated-alias",
+            kind="project",
+            label="Obsolete alias",
+            url="https://github.com/lachlanchen/Video2Book",
+            visibility="public",
+        )
+        network.sync_graph(self.db)
+
+        expected = {
+            f"project:{project['id']}"
+            for project in promotion.load_catalog()["projects"]
+        }
+        snapshot = network.public_snapshot(self.db)
+        actual = {
+            entity["id"]
+            for entity in snapshot["entities"]
+            if entity["kind"] == "project"
+        }
+
+        self.assertEqual(actual, expected)
+        self.assertIn("project:video2book", actual)
+        self.assertIn("project:paperagent", actual)
+        self.assertNotIn("project:obsolete-generated-alias", actual)
+        visibility = self.db.execute(
+            "SELECT visibility FROM entities WHERE id='project:obsolete-generated-alias'"
+        ).fetchone()[0]
+        self.assertEqual(visibility, "private")
+
     def test_public_opportunity_combines_multiple_public_projects(self):
         network.sync_graph(self.db)
         opportunity_id = "opportunity:creator-media-library"

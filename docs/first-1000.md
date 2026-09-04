@@ -28,6 +28,13 @@ The [scientific-PDF integrity guide](https://blog.lazying.art/html/computer_inte
 now gives owners of collections ranging from hundreds to tens of thousands of
 papers a complete, source-linked way to test versions, extraction, citations,
 retrieval, and graph provenance before the fit check. The
+[multilingual OCR evaluation
+guide](https://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html)
+does the same for English, Arabic, Urdu, mixed-direction pages, and difficult
+book scans: build a small ground-truth set, score text and reading order
+separately, route page classes, and preserve the evidence chain before indexing.
+It answers an observed need without claiming that the fixed sprint includes
+custom OCR or a full-library conversion. The
 [reproducible scientific-PDF mini-sprint](../examples/lkt-scientific-pdf-fit/)
 executes that bounded shape on four project-owned synthetic inputs: one exact
 duplicate, one retained v1/v2 family, one English/Chinese/Japanese source, 20

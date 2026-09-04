@@ -300,6 +300,35 @@
         "direct_message_sent": false,
         "lead_or_sale_observed": false,
         "policy": "The source question established a reusable need but Hacker News remains research-only. The owned guide may answer that need for search visitors; it does not authorize an agent-authored HN comment or prove engagement, a lead, a sale, or revenue."
+      },
+      "multilingual_ocr_guide": {
+        "state": "published_and_multilingual_verified",
+        "published_at": "2026-09-04T16:53:18Z",
+        "checked_on": "2026-09-05",
+        "wordpress_id": 3791,
+        "url": "https://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html",
+        "source_need": "https://www.reddit.com/r/Rag/comments/1vdaiio/multilingual_ocr/",
+        "need": "Evaluate OCR routes for roughly 1,000 English, Arabic, and Urdu books before retrieval and RAG ingestion.",
+        "languages_verified": [
+          "en",
+          "zh",
+          "ja"
+        ],
+        "primary_sources": [
+          "https://tesseract-ocr.github.io/tessdoc/ImproveQuality.html",
+          "https://ocrmypdf.readthedocs.io/en/latest/advanced.html",
+          "https://www.loc.gov/standards/alto/",
+          "https://www.w3.org/TR/charmod-norm/",
+          "https://ocr-d.de/en/spec/ocrd_eval.html",
+          "https://github.com/jitsi/jiwer"
+        ],
+        "outcome": "A reproducible 60-page evaluation method covering stratified sampling, ground truth, character error, reading order, controlled preprocessing, page-class routing, provenance, and retrieval checks.",
+        "evidence_url": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=multilingual_ocr",
+        "conversion_url": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=multilingual_ocr",
+        "blog_commit": "2906a8c",
+        "public_reply_linked_owned_asset": false,
+        "lead_or_sale_observed": false,
+        "policy": "The article answers the observed need in full before offering the project-owned sample report and free fit check. The fixed sprint evaluates a representative sample; custom OCR and full-library conversion remain excluded. Publication and the earlier value-only Reddit reply are not a lead, customer result, sale, or revenue."
       }
     },
     "reddit": {

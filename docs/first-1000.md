@@ -258,6 +258,10 @@ payment data, or private corpus text in the promotion repository.
    fit check.
    The first proved example is [the confidential-PDF search
    guide](https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html).
+   A current question from someone with clean Markdown project notes exposed a
+   useful gap, so the same page now includes a verified QMD path: lexical search
+   first, embeddings only for measured misses, and source files retained even
+   when an MCP-connected agent is used.
 4. Publish the guide through LazyBlog, verify its translations and boundaries,
    and let the successful WordPress sitemap registered in Search Console carry
    future discovery. Manual URL indexing is an optional acceleration, not a

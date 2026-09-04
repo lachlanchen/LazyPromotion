@@ -38,6 +38,16 @@ This USD 250 service price is not a device price. A supplied LKT terminal stays
 quote-only and separate until its complete landed BOM and fulfillment terms
 pass the [`lkt-hardware-pricing.md`](lkt-hardware-pricing.md) gates.
 
+The main LazyingArt site now exposes the curated [selected-work
+shelf](https://lazying.art/work/) in all 13 site languages, so the books, code,
+media, research workflows, and three fixed-scope services have one quiet path
+from the homepage. LazyingArtWebsite commit `d589cda` also replaces an
+unsupported audience count with verifiable portfolio facts, removes an
+unverified discount and dead footer links, and gates Robot, eInk, and OpenHI
+checkout behind an availability conversation until fulfillment terms exist.
+The deployed page and all 12 website contracts passed. This improves trust and
+qualification; it is not a lead, order, sponsorship, or revenue.
+
 The [scientific-PDF integrity guide](https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html)
 now gives owners of collections ranging from hundreds to tens of thousands of
 papers a complete, source-linked way to test versions, extraction, citations,

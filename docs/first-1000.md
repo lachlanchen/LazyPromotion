@@ -48,6 +48,12 @@ checkout behind an availability conversation until fulfillment terms exist.
 The deployed page and all 12 website contracts passed. This improves trust and
 qualification; it is not a lead, order, sponsorship, or revenue.
 
+Search Console URL inspection on 2026-09-05 independently reported the LKT,
+Manuscript Build & Redline, and Bilingual Lecture Pack landing pages as indexed
+and eligible to appear in Google Search. None needed another indexing request.
+That verifies discoverability only; it does not establish a query impression,
+lead, customer, or revenue event.
+
 The [scientific-PDF integrity guide](https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html)
 now gives owners of collections ranging from hundreds to tens of thousands of
 papers a complete, source-linked way to test versions, extraction, citations,

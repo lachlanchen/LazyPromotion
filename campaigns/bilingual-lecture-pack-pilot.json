@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -61,7 +61,7 @@
   },
   "conversion_readiness": {
     "state": "live_metadata_fit_check",
-    "checked_at": "2026-09-04T11:48:49Z",
+    "checked_at": "2026-09-04T11:58:49Z",
     "website_commits": [
       "83b1d7a",
       "24e48c3",
@@ -73,7 +73,8 @@
     ],
     "repository_bridge_commits": {
       "LalaMedias": "ae7cdcd",
-      "Video2Book": "25db95d"
+      "Video2Book": "25db95d",
+      "PocketPolyglot": "a437cbf"
     },
     "blog_commits": [
       "d95f337",

@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -7,6 +7,7 @@
     "fit_check": "https://lazying.art/lecture-pack/fit-check/",
     "working_article": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
     "search_demand_article": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
+    "practical_workflow_guide": "https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html",
     "executed_media_sample": {
       "url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
       "repository": "https://github.com/lachlanchen/LalaMedias",
@@ -82,7 +83,8 @@
       "c3232db",
       "2737036",
       "38d3301",
-      "1d0932b"
+      "1d0932b",
+      "d070282"
     ],
     "fit_check": {
       "automatic_submission": false,
@@ -150,6 +152,19 @@
         ],
         "commit": "1d0932b",
         "route": "The archive article keeps its study value first, removes unrelated notebook and LKT pitches, and offers one concise lecture-specific next step after the public Video2Book workflow."
+      },
+      "practical_workflow_guide": {
+        "post_id": 3792,
+        "url": "https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html",
+        "source_language": "en",
+        "translations": [
+          "ja",
+          "zh-hant"
+        ],
+        "commit": "d070282",
+        "route": "A complete source-first guide connects Video2Book, LazyEdit, PocketPolyglot, LKT, the project-owned timed-text proof, and the free Susskind archive before one restrained lecture-pack link.",
+        "verification": "The English, Japanese, and Traditional Chinese routes returned HTTP 200 with their reviewed titles and the exact live offer boundary.",
+        "policy": "Publication is an owned discovery asset, not a lead, customer result, sale, or revenue."
       }
     },
     "x": {

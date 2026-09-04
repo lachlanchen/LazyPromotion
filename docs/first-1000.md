@@ -101,6 +101,15 @@ and LKT supply the surrounding book, transcript, caption, and provenance
 workflows. They prove a format and process, not resale rights, lecturer
 endorsement, a complete 20-minute customer delivery, or a customer result.
 
+The [practical source-first
+guide](https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html)
+now connects those code, book, media, and knowledge-graph parts in one useful
+workflow: preserve the recording, correct its transcript, align stable timed
+segments, derive subtitle and pocket-book formats, keep concepts linked to
+exact seconds, and test by seeking backward. It is live in English,
+Traditional Chinese, and Japanese and ends with one bounded offer link.
+Publication is not a lead or sale.
+
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
 shows a review gate inside the current browser tab. The prospective customer

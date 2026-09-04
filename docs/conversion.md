@@ -26,8 +26,11 @@ manuscript up to 7,500 words, one target template, a clean build, issue ledger,
 and reproducible redline from a supplied baseline. Its [free fit
 check](https://lazying.art/manuscript-sprint/fit-check/) precedes source transfer
 and payment. Ghostwriting, new claims, statistical analysis, submission access,
-and publication guarantees are excluded. Any four confirmed USD 250 payments
-across the two routes would reach the same USD 1,000 gross milestone.
+and publication guarantees are excluded. The third route is the fixed USD 250
+[Bilingual Lecture Pack](https://lazying.art/lecture-pack/) for one
+rights-cleared English lecture up to 20 minutes and one target language. Any
+four confirmed USD 250 payments across the three routes would reach the same
+USD 1,000 gross milestone.
 
 `python payment_readiness.py --offer manuscript` verifies the sibling Stripe
 plan, exact USD 250 price, fixed quantity, fulfillment checklist, and private
@@ -64,6 +67,15 @@ LinguaLeaf, the Leonard Susskind archive, and LazyEdit so visitors can connect
 the paid boundaries to inspectable code, books, and media. The existing
 11-language profile header and support panel remain intact. Profile traffic is
 attention only, never a lead or received revenue by itself.
+
+The [source-first bilingual lecture
+guide](https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html)
+is now live in English, Traditional Chinese, and Japanese. It gives the full
+method first—source ledger, transcript correction, segment alignment,
+subtitle/book derivation, evidence-linked concepts, and seek-back QA—then ends
+with one tracked lecture-pack link. It uses Video2Book, LazyEdit,
+PocketPolyglot, LKT, the project-owned timed-text sample, and the free Susskind
+archive as inspectable evidence. Publication is discovery, not a lead or sale.
 
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)

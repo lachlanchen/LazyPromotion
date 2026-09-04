@@ -2,6 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import inbound_monitor
 
@@ -59,6 +60,145 @@ class InboundMonitorTests(unittest.TestCase):
     def test_invalid_counts_fail_closed(self):
         with self.assertRaises(ValueError):
             self.record(1, 2, "2026-09-01T01:00:00Z")
+
+    def test_selects_only_the_icloud_mail_page_target(self):
+        targets = [
+            {
+                "type": "iframe",
+                "url": "https://www-mail.icloud-sandbox.com/applications/mail2-message/current/",
+                "webSocketDebuggerUrl": "ws://message",
+            },
+            {
+                "type": "page",
+                "url": "https://www.icloud.com/mail/",
+                "webSocketDebuggerUrl": "ws://mail",
+            },
+        ]
+        self.assertEqual(
+            inbound_monitor.icloud_mail_target(targets)["webSocketDebuggerUrl"],
+            "ws://mail",
+        )
+
+    def test_finds_mail_app_frame_but_not_message_body_frame(self):
+        tree = {
+            "frame": {"id": "root", "url": "https://www.icloud.com/mail/"},
+            "childFrames": [
+                {
+                    "frame": {
+                        "id": "message",
+                        "url": "https://www-mail.icloud-sandbox.com/applications/mail2-message/current/",
+                    }
+                },
+                {
+                    "frame": {
+                        "id": "mail-app",
+                        "url": "https://www.icloud.com/applications/mail2/current/",
+                    }
+                },
+            ],
+        }
+        self.assertEqual(inbound_monitor.find_mail_app_frame(tree)["id"], "mail-app")
+
+    def test_reads_aggregate_counts_without_focus_click_or_navigation(self):
+        class FakeConnection:
+            def __init__(self):
+                self.calls = []
+
+            def command(self, method, params=None):
+                self.calls.append((method, params or {}))
+                if method == "Page.getFrameTree":
+                    return {
+                        "frameTree": {
+                            "frame": {"id": "root", "url": "https://www.icloud.com/mail/"},
+                            "childFrames": [
+                                {
+                                    "frame": {
+                                        "id": "mail-app",
+                                        "url": "https://www.icloud.com/applications/mail2/current/",
+                                    }
+                                }
+                            ],
+                        }
+                    }
+                if method == "Page.createIsolatedWorld":
+                    return {"executionContextId": 17}
+                return {
+                    "result": {
+                        "value": {
+                            "folderFound": True,
+                            "folderSelected": True,
+                            "status": "3 Messages, 1 unread",
+                        }
+                    }
+                }
+
+        fake = FakeConnection()
+        target = {
+            "type": "page",
+            "url": "https://www.icloud.com/mail/",
+            "webSocketDebuggerUrl": "ws://mail",
+        }
+        manager = mock.MagicMock()
+        manager.__enter__.return_value = fake
+        with (
+            mock.patch.object(inbound_monitor, "load_cdp_targets", return_value=[target]),
+            mock.patch.object(inbound_monitor, "open_cdp_target", return_value=manager),
+            mock.patch.object(inbound_monitor.browser, "browser_operation_lock", return_value=mock.MagicMock()),
+        ):
+            self.assertEqual(inbound_monitor.read_folder_counts(), (3, 1))
+
+        self.assertEqual(
+            [method for method, _ in fake.calls],
+            ["Page.getFrameTree", "Page.createIsolatedWorld", "Runtime.evaluate"],
+        )
+        self.assertFalse(
+            {"Page.bringToFront", "Page.navigate", "Input.dispatchMouseEvent"}
+            & {method for method, _ in fake.calls}
+        )
+
+    def test_unselected_folder_fails_closed(self):
+        class FakeConnection:
+            def command(self, method, params=None):
+                if method == "Page.getFrameTree":
+                    return {
+                        "frameTree": {
+                            "frame": {"id": "root", "url": "https://www.icloud.com/mail/"},
+                            "childFrames": [
+                                {
+                                    "frame": {
+                                        "id": "mail-app",
+                                        "url": "https://www.icloud.com/applications/mail2/current/",
+                                    }
+                                }
+                            ],
+                        }
+                    }
+                if method == "Page.createIsolatedWorld":
+                    return {"executionContextId": 17}
+                return {
+                    "result": {
+                        "value": {
+                            "folderFound": True,
+                            "folderSelected": False,
+                            "status": None,
+                        }
+                    }
+                }
+
+        manager = mock.MagicMock()
+        manager.__enter__.return_value = FakeConnection()
+        target = {
+            "type": "page",
+            "url": "https://www.icloud.com/mail/",
+            "webSocketDebuggerUrl": "ws://mail",
+        }
+        with (
+            mock.patch.object(inbound_monitor, "load_cdp_targets", return_value=[target]),
+            mock.patch.object(inbound_monitor, "open_cdp_target", return_value=manager),
+            mock.patch.object(inbound_monitor.browser, "browser_operation_lock", return_value=mock.MagicMock()),
+            self.assertRaisesRegex(RuntimeError, "not selected"),
+        ):
+            inbound_monitor.read_folder_counts()
 
 
 if __name__ == "__main__":

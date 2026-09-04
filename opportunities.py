@@ -26,7 +26,7 @@ WEIGHTS = {
     "low_support": 0.10,
     "repeatability": 0.15,
 }
-STATES = {"active", "candidate", "gated"}
+STATES = {"active", "candidate", "evidence-building", "gated"}
 
 
 def load_registry(path: Path = REGISTRY, github_path: Path = GITHUB) -> dict:

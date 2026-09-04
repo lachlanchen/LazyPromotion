@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **104 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-01. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **104 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-04. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
 
 ## Where promotion should start
 
@@ -181,7 +181,7 @@ The single first-USD-1,000 route is four confirmed USD 250 Local Knowledge Termi
 | Repository | What its public metadata says | Language | Public surface |
 |---|---|---|---|
 | [lachlanchen](https://github.com/lachlanchen/lachlanchen) | Config files for my GitHub profile. | HTML | [Open](https://lazying.art) |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | The Website of LazyingArt. LazyingArt - Official Website 📌 At a glance 🎨 About LazyingArt LazyingArt is a multilingual AI communication platform and landing-site ecosystem. This repository contains the public website and product pages for LazyingArt, including the flagship EchoMind experience and supporting hardware... | HTML | [Open](https://lazying.art) |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. | HTML | [Open](https://lazying.art) |
 
 ## Maintenance and interpretation
 

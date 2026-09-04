@@ -986,17 +986,22 @@
       "url": "https://github.com/lachlanchen/LazyingArtBot"
     },
     {
-      "description": "The Website of LazyingArt. LazyingArt - Official Website 📌 At a glance 🎨 About LazyingArt LazyingArt is a multilingual AI communication platform and landing-site ecosystem. This repository contains the public website and product pages for LazyingArt, including the flagship EchoMind experience and supporting hardware...",
+      "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
       "topics": [
+        "ai-tools",
         "ecosystem",
         "github-pages",
         "i18n",
         "landing-page",
+        "language-learning",
+        "lazying-art",
+        "local-first",
         "marketing",
         "multilingual",
+        "product-showcase",
         "static-site",
         "website"
       ],
@@ -1304,8 +1309,12 @@
       "name": "LinguaLeaf",
       "primary_language": "JavaScript",
       "topics": [
+        "chinese-history",
+        "classical-chinese",
+        "digital-humanities",
         "interlinear",
         "language-learning",
+        "lazying-art",
         "lingualleaf",
         "multilingual-books",
         "pdf",

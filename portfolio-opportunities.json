@@ -105,20 +105,24 @@
     {
       "id": "scientific-manuscript-workbench",
       "title": "Scientific manuscript workbench audit",
-      "state": "candidate",
+      "state": "evidence-building",
       "buyer": "A research group with an existing LaTeX manuscript, figures, code, and revision deadline",
       "need": "Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material",
       "projects": ["PaperAgent", "paper-revision-skill", "paper-critique-skill", "AgInTi-LabCanvas"],
       "first_deliverable": "A fixed-scope private build and provenance audit with issue ledger, reproducible PDF build, and prioritized revision plan",
-      "first_test": "Publish a synthetic case study and interview researchers who have an active build or response-letter problem",
+      "first_test": "A source-backed latexdiff guide and project-owned clean-build audit are public. The next proof is a rights-cleared old/new sample that exercises a pinned redline toolchain; no paid listing is active yet.",
       "proof": [
         "https://github.com/lachlanchen/paper-revision-skill",
-        "https://github.com/lachlanchen/PaperAgentDemo"
+        "https://github.com/lachlanchen/PaperAgentDemo",
+        "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html",
+        "https://tex.stackexchange.com/questions/765514/compiling-latexdiff-in-overleaf",
+        "https://tex.stackexchange.com/questions/765886/is-there-a-tool-that-checks-a-manuscript-against-the-journal-of-statistical-soft"
       ],
       "gates": [
         "Set confidentiality, retention, authorship, and no-guaranteed-acceptance terms",
         "Do not upload manuscripts or review correspondence without explicit authorization",
-        "Add clear repository licenses before packaging reusable code"
+        "Add clear repository licenses before packaging reusable code",
+        "Pin and test `latexdiff`; the current checked workstation toolchain builds the two-page PaperAgentDemo PDF but does not include `latexdiff`"
       ],
       "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 4}
     },

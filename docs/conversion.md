@@ -126,7 +126,9 @@ resubmit until the exact public item is identified.
 
 `python inbound_monitor.py once` reads only the aggregate message and unread
 counts exposed for the dedicated `LKT Fit Checks` iCloud folder. It does not
-open mail or persist a sender, subject, address, or body. The controlled routing
+focus a tab, navigate, click a folder, open mail, or persist a sender, subject,
+address, or body. The dedicated folder must already be selected in the restored
+iCloud tab; otherwise the monitor fails closed. The controlled routing
 probe is the initial baseline. A later increase creates a review alert—not a
 qualified lead or sale—and the operator must inspect only that folder visibly
 before recording any funnel outcome. Continuous mode uses

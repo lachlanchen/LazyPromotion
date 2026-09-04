@@ -14,6 +14,14 @@ class OpportunityTests(unittest.TestCase):
             [item["id"] for item in payload["opportunities"] if item["state"] == "active"],
             ["private-collection-intelligence"],
         )
+        self.assertEqual(
+            [
+                item["id"]
+                for item in payload["opportunities"]
+                if item["state"] == "evidence-building"
+            ],
+            ["scientific-manuscript-workbench"],
+        )
 
     def test_renderer_keeps_scores_directional_and_gates_visible(self):
         body = opportunities.render(opportunities.load_registry())

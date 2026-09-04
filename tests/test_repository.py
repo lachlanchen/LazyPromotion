@@ -458,7 +458,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "wenyan-history.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8")
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
@@ -484,6 +484,15 @@ class RepositoryTests(unittest.TestCase):
             campaign["source_evidence"]["owned_guide"],
             "https://lazying.art/wenyan/",
         )
+        guwen = campaign["source_evidence"]["guwen_guanzhi_evidence"]
+        self.assertEqual(guwen["state"], "structurally_verified_not_semantically_certified")
+        self.assertEqual(guwen["fresh_read_only_gate"]["errors"], 0)
+        self.assertEqual(guwen["fresh_read_only_gate"]["assembled_units"], 19502)
+        self.assertEqual(
+            sorted(guwen["fresh_read_only_gate"]["color_variants_checked"]),
+            ["blackwhite", "color"],
+        )
+        self.assertIn("does not certify translation accuracy", guwen["policy"])
         self.assertTrue(campaign["channels"]["x"]["visible_review"]["stored_text_exact"])
         self.assertTrue(
             campaign["channels"]["instagram"]["visible_review"][

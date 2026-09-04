@@ -116,7 +116,7 @@
       "label": "wenyan-history",
       "metadata": {
         "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },
@@ -5627,6 +5627,20 @@
       "url": "https://grobid.readthedocs.io/en/latest/Introduction/"
     },
     {
+      "id": "url:f75e957442aee504",
+      "kind": "web_resource",
+      "label": "guwen guanzhi evidence public shelf folder",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LinguaLeaf/tree/main/docs/library/color/01-Chinese-Classics/04-Poetry-and-Prose"
+    },
+    {
+      "id": "url:239a6a4f5cfeae2e",
+      "kind": "web_resource",
+      "label": "guwen guanzhi evidence source",
+      "metadata": {},
+      "url": "https://zh.wikisource.org/wiki/%E5%8F%A4%E6%96%87%E8%A7%80%E6%AD%A2"
+    },
+    {
       "id": "url:a71a4b9504cbc9fa",
       "kind": "web_resource",
       "label": "hardware contract calculator",
@@ -7073,6 +7087,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://zh.wikisource.org/wiki/%E5%8F%A4%E6%96%87%E8%A7%80%E6%AD%A2",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:wenyan-history",
+      "target": "url:239a6a4f5cfeae2e"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lachlanchen.github.io/LinguaLeaf/website/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -7094,6 +7116,14 @@
       "relation": "uses_evidence",
       "source": "campaign:wenyan-history",
       "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LinguaLeaf/tree/main/docs/library/color/01-Chinese-Classics/04-Poetry-and-Prose",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:wenyan-history",
+      "target": "url:f75e957442aee504"
     },
     {
       "confidence": 1.0,

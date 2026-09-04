@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "wenyan-history",
   "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
   "source_evidence": {
@@ -17,6 +17,28 @@
       "hou_han_shu": "three parts, each in color and black-and-white",
       "sanguozhi_pei_zhu": "one color and one black-and-white edition",
       "zuozhuan": "one color and one black-and-white edition"
+    },
+    "guwen_guanzhi_evidence": {
+      "state": "structurally_verified_not_semantically_certified",
+      "checked_on": "2026-09-05",
+      "source": "https://zh.wikisource.org/wiki/%E5%8F%A4%E6%96%87%E8%A7%80%E6%AD%A2",
+      "rights_record": "Public-domain historical text with a Wikisource CC BY-SA contribution layer; attribution and share-alike duties must be carried before redistribution.",
+      "public_shelf_folder": "https://github.com/lachlanchen/LinguaLeaf/tree/main/docs/library/color/01-Chinese-Classics/04-Poetry-and-Prose",
+      "fresh_read_only_gate": {
+        "mode": "quadrilingual_wenyan_main",
+        "source_layer": "wenyan",
+        "assembled_units": 19502,
+        "outline_entries_per_variant": 225,
+        "color_variants_checked": [
+          "color",
+          "blackwhite"
+        ],
+        "errors": 0,
+        "review_items": 0,
+        "warnings": 0
+      },
+      "stale_report_explanation": "An older pre-finalization report ran the trilingual validator against the quadrilingual schema and saw only one PDF variant. It is incompatible and is not current quality evidence.",
+      "policy": "The fresh gate verifies schema, source coverage, outline parity, both color modes, and layout-overflow checks. It does not certify translation accuracy, scholarly interpretation, or unrestricted reuse of a modern transcription or translation."
     }
   },
   "baseline_2026_08_31": {

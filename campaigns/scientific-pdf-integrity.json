@@ -1,0 +1,90 @@
+{
+  "id": "scientific-pdf-integrity",
+  "version": 1,
+  "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
+  "source_needs": [
+    {
+      "captured_at": "2026-09-04T08:30:00Z",
+      "url": "https://www.reddit.com/r/Rag/comments/1tyd87d/local_rag_over_300_pdfs_anythingllm_ollama/",
+      "problem": "A multilingual collection of more than 300 PDFs needs a fully local retrieval design rather than another unmeasured stack recommendation.",
+      "engagement": "research_only"
+    },
+    {
+      "captured_at": "2026-09-04T08:30:00Z",
+      "url": "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/",
+      "problem": "A scientific collection of roughly 17,000 PDFs needs local ingestion, reliable citations, and a design that can be maintained as the library changes.",
+      "engagement": "research_only"
+    }
+  ],
+  "channels": {
+    "lazyblog": {
+      "state": "published_and_multilingual_verified",
+      "published_at": "2026-09-04T10:07:01Z",
+      "url": "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html",
+      "post_id": 3788,
+      "source_language": "en",
+      "translations": [
+        "ja",
+        "zh"
+      ],
+      "blog_commit": "cc4857a",
+      "content": "A complete collection-integrity workflow covers source ledgers, version families, extraction classes, page-level citation contracts, lexical baselines, provenance-bearing graph edges, incremental updates, and an owner-defined acceptance boundary before one quiet LKT fit-check route.",
+      "sample_report": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=scientific_pdf_integrity",
+      "fit_check": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=scientific_pdf_integrity",
+      "policy": "The guide solves the collection-design problem before mentioning the maintained LKT offer. It makes no whole-collection accuracy, customer-result, turnaround, lead, or revenue claim."
+    },
+    "x": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-14T02:00:00Z",
+      "content": "17,000 research PDFs can become a library—or a confident way to retrieve the wrong paper. Test versions, extraction, page citations, and real queries before embeddings or a graph. blog.lazying.art/?p=3788&utm_source=x&utm_medium=social&utm_campaign=scientific_pdf",
+      "postiz_content": "17,000 research PDFs can become a library—or a confident way to retrieve the wrong paper. Test versions, extraction, page citations, and real queries before embeddings or a graph. blog.lazying.art/?p=3788&utm_source=x&utm_medium=social&utm_campaign=scientific_pdf",
+      "destination": "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html?utm_source=x&utm_medium=social&utm_campaign=scientific_pdf",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "visible_review": {
+        "checked_at": "2026-09-04T10:18:00Z",
+        "stored_text_exact": true,
+        "character_count": 263,
+        "provider_limit": 280,
+        "date_and_time_visible": true,
+        "settings_visible": true,
+        "state_rechecked_after_schedule": "QUEUE",
+        "release_present": false
+      },
+      "policy": "One spaced first-party technical note after the existing queue. No thread, media, customer result, or direct reply; publication and destination still require post-release verification."
+    },
+    "reddit": {
+      "state": "research_only",
+      "policy": "Do not convert the observed requests into promotional replies. Answer a future active need only when a standalone technical response is welcome under the community rules."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Do not submit agent-authored or AI-edited comments."
+    }
+  },
+  "source_evidence": {
+    "project": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "crossref_rest_api": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+    "pymupdf_text_recipes": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html",
+    "grobid_introduction": "https://grobid.readthedocs.io/en/latest/Introduction/",
+    "beir_paper": "https://arxiv.org/abs/2104.08663",
+    "limits": [
+      "The two public needs justify a reusable owned guide; they do not authorize unsolicited promotion in those discussions.",
+      "The article describes an integrity-test method, not a benchmark result for either cited collection.",
+      "The public LKT report is project-owned evidence, not a customer outcome or testimonial."
+    ]
+  },
+  "funnel": {
+    "state": "attention",
+    "helpful_interaction_observed": false,
+    "fit_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

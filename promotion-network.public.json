@@ -91,6 +91,16 @@
       "url": ""
     },
     {
+      "id": "campaign:scientific-pdf-integrity",
+      "kind": "campaign",
+      "label": "scientific-pdf-integrity",
+      "metadata": {
+        "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:wenyan-history",
       "kind": "campaign",
       "label": "wenyan-history",
@@ -5317,6 +5327,13 @@
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
+      "id": "url:a6139fe39dbb0e57",
+      "kind": "web_resource",
+      "label": "beir paper",
+      "metadata": {},
+      "url": "https://arxiv.org/abs/2104.08663"
+    },
+    {
       "id": "url:6629092a3af8f0e5",
       "kind": "web_resource",
       "label": "blog.lazying.art",
@@ -5343,6 +5360,13 @@
       "label": "course hierarchy pattern",
       "metadata": {},
       "url": "https://github.com/lachlanchen/leonardsusskind/blob/main/README.md#L150-L162"
+    },
+    {
+      "id": "url:2fd3901a10e605bf",
+      "kind": "web_resource",
+      "label": "crossref rest api",
+      "metadata": {},
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
     },
     {
       "id": "url:8945a53cc57c5704",
@@ -5527,6 +5551,13 @@
       "url": "https://github.com/lachlanchen/FuriganaSubtitles"
     },
     {
+      "id": "url:a3057dd0b4d29747",
+      "kind": "web_resource",
+      "label": "grobid introduction",
+      "metadata": {},
+      "url": "https://grobid.readthedocs.io/en/latest/Introduction/"
+    },
+    {
       "id": "url:2384ab616d067b14",
       "kind": "web_resource",
       "label": "hero asset repository",
@@ -5632,6 +5663,13 @@
       "url": "https://partners.dub.co/postiz"
     },
     {
+      "id": "url:d9c92d269df40406",
+      "kind": "web_resource",
+      "label": "project",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+    },
+    {
       "id": "url:43d56bb572f1ca4a",
       "kind": "web_resource",
       "label": "public shelf",
@@ -5639,11 +5677,11 @@
       "url": "https://lachlanchen.github.io/LinguaLeaf/website/"
     },
     {
-      "id": "url:d9c92d269df40406",
+      "id": "url:9c9f050d46c099aa",
       "kind": "web_resource",
-      "label": "repository",
+      "label": "pymupdf text recipes",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+      "url": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html"
     },
     {
       "id": "url:3f9d0326fb664513",
@@ -6568,6 +6606,94 @@
       "relation": "uses_evidence",
       "source": "campaign:postiz-affiliate-pilot",
       "target": "url:ebcdbdd3fa4acc0b"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published_and_multilingual_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:2fd3901a10e605bf"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:9c9f050d46c099aa"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://grobid.readthedocs.io/en/latest/Introduction/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:a3057dd0b4d29747"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://arxiv.org/abs/2104.08663",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:a6139fe39dbb0e57"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:d9c92d269df40406"
     },
     {
       "confidence": 1.0,

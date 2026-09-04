@@ -873,6 +873,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(demand_response["direct_message_sent"])
         self.assertFalse(demand_response["lead_or_sale_observed"])
         self.assertIn("research-only", demand_response["policy"])
+        ocr_guide = campaign["channels"]["lazyblog"]["multilingual_ocr_guide"]
+        self.assertEqual(
+            ocr_guide["state"], "published_and_multilingual_verified"
+        )
+        self.assertEqual(ocr_guide["wordpress_id"], 3791)
+        self.assertEqual(ocr_guide["languages_verified"], ["en", "zh", "ja"])
+        self.assertEqual(len(ocr_guide["primary_sources"]), 6)
+        self.assertFalse(ocr_guide["public_reply_linked_owned_asset"])
+        self.assertFalse(ocr_guide["lead_or_sale_observed"])
+        linkedin_ocr = campaign["channels"]["linkedin"][
+            "multilingual_ocr_guide_post"
+        ]
+        self.assertEqual(linkedin_ocr["state"], "postiz_queue")
+        self.assertEqual(linkedin_ocr["publish_at"], "2026-09-22T02:00:00Z")
+        self.assertFalse(linkedin_ocr["shortlink"])
+        self.assertIn("not full-library OCR", linkedin_ocr["content"])
         self.assertEqual(
             campaign["channels"]["reddit"]["profile_guide"]["state"],
             "published",

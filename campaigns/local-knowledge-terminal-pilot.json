@@ -460,6 +460,15 @@
     },
     "linkedin": {
       "state": "postiz_queue",
+      "multilingual_ocr_guide_post": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-22T02:00:00Z",
+        "content": "Before running OCR across 1,000 multilingual books, test 60 pages that represent the real archive: clean English, Arabic, Urdu or Nastaliq, mixed RTL/LTR text, damaged scans, tables, and parallel text.\n\nScore character accuracy and reading order separately. Keep every result tied to its source page. Route each page class to the workflow that actually works, then decide whether the collection is ready for RAG.\n\nThe test set, manifest, and go/no-go checklist:\nhttps://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html?utm_source=linkedin&utm_medium=social&utm_campaign=multilingual_ocr\n\nThe guide also explains the boundary of my optional USD 250 collection-fit sprint: representative-sample evaluation, not full-library OCR or ingestion.",
+        "destination": "https://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html?utm_source=linkedin&utm_medium=social&utm_campaign=multilingual_ocr",
+        "reviewed_on": "2026-09-05",
+        "shortlink": false,
+        "policy": "A first-party, value-led LinkedIn post for collection owners. The visible Postiz preview retained the full original URL, exact USD 250 boundary, representative-sample scope, LinkedIn account, and September 22 10:00 HKT schedule before queuing. It is not a full-library OCR offer, customer result, lead, sale, or revenue."
+      },
       "passage_provenance_post": {
         "state": "postiz_queue",
         "publish_at": "2026-09-18T02:00:00Z",

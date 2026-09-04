@@ -90,6 +90,23 @@
     "traffic_observed": false,
     "policy": "An accepted request is not indexing, ranking, traffic, a lead, or revenue. Do not resubmit; recheck after Google has had time to crawl."
   },
+  "payment_readiness": {
+    "checked_at": "2026-09-04T09:49:24Z",
+    "helper_commit": "01c8917",
+    "state": "ready_for_reviewed_live_request",
+    "price": "USD 250",
+    "quantity": 1,
+    "fulfillment_review_notes": 8,
+    "private_key_file_mode": "600",
+    "live_key_format_valid": true,
+    "account_authenticated": true,
+    "charges_enabled": true,
+    "payouts_enabled": true,
+    "details_submitted": true,
+    "stripe_objects_created": false,
+    "public_payment_link": false,
+    "remaining_gate": "A real buyer must pass the free fit check and accept the exact written scope and handling terms before the reviewed Stripe creation command is considered."
+  },
   "funnel": {
     "state": "attention",
     "fit_inquiry_observed": false,

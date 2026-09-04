@@ -23,6 +23,13 @@ def valid_config() -> dict:
     }
 
 
+def valid_manuscript_config() -> dict:
+    config = valid_config()
+    config["slug"] = "manuscript-build-redline-sprint"
+    config["fulfillmentReviewNotes"].append("review 7")
+    return config
+
+
 class FakeResponse:
     def __init__(self, payload: dict):
         self.payload = payload
@@ -38,9 +45,15 @@ class FakeResponse:
 
 
 class PaymentReadinessTests(unittest.TestCase):
-    def helper(self, root: Path, config: dict | None = None) -> Path:
+    def helper(
+        self,
+        root: Path,
+        config: dict | None = None,
+        *,
+        config_name: str = "local-knowledge-terminal-sprint.json",
+    ) -> Path:
         (root / "config").mkdir()
-        (root / "config" / "local-knowledge-terminal-sprint.json").write_text(
+        (root / "config" / config_name).write_text(
             json.dumps(config or valid_config()), encoding="utf-8"
         )
         env = root / ".env"
@@ -58,6 +71,27 @@ class PaymentReadinessTests(unittest.TestCase):
         self.assertFalse(report["account_checked"])
         self.assertNotIn("sk_live_private_test_value", serialized)
         self.assertFalse(report["mutates_stripe"])
+
+    def test_manuscript_report_uses_its_exact_guarded_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            helper = self.helper(
+                Path(tmp),
+                valid_manuscript_config(),
+                config_name="manuscript-build-redline-sprint.json",
+            )
+            report = payment_readiness.build_report(helper, offer="manuscript")
+        serialized = json.dumps(report)
+        self.assertEqual(report["offer"], "manuscript")
+        self.assertEqual(report["config"]["offer"], "manuscript")
+        self.assertEqual(
+            report["config"]["product_slug"],
+            "manuscript-build-redline-sprint",
+        )
+        self.assertEqual(report["config"]["display_price"], "USD 250")
+        self.assertEqual(report["config"]["fulfillment_review_notes"], 8)
+        self.assertTrue(report["local_live_configuration_ready"])
+        self.assertFalse(report["mutates_stripe"])
+        self.assertNotIn("sk_live_private_test_value", serialized)
 
     def test_wrong_amount_fails_closed(self):
         config = valid_config()

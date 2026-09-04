@@ -26,6 +26,13 @@ and payment. Ghostwriting, new claims, statistical analysis, submission access,
 and publication guarantees are excluded. Any four confirmed USD 250 payments
 across the two routes would reach the same USD 1,000 gross milestone.
 
+`python payment_readiness.py --offer manuscript` verifies the sibling Stripe
+plan, exact USD 250 price, fixed quantity, fulfillment checklist, and private
+key posture without contacting Stripe or creating an object. The optional
+read-only account check uses the same explicit private-financial-read gate as
+LKT. A payment request remains blocked until a real fit check and written scope
+are accepted.
+
 The manuscript landing page was unknown to Google when inspected on September
 4, 2026. One indexing request passed the live-page check and entered Google's
 priority crawl queue. That does not prove indexing or traffic. Do not resubmit

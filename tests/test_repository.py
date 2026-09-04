@@ -906,6 +906,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("Do not resubmit", discovery["policy"])
         self.assertIn("not indexing", discovery["policy"])
 
+        payment = campaign["payment_readiness"]
+        self.assertEqual(payment["state"], "ready_for_reviewed_live_request")
+        self.assertEqual(payment["price"], "USD 250")
+        self.assertEqual(payment["quantity"], 1)
+        self.assertEqual(payment["fulfillment_review_notes"], 8)
+        self.assertEqual(payment["private_key_file_mode"], "600")
+        self.assertTrue(payment["live_key_format_valid"])
+        self.assertTrue(payment["account_authenticated"])
+        self.assertTrue(payment["charges_enabled"])
+        self.assertTrue(payment["payouts_enabled"])
+        self.assertTrue(payment["details_submitted"])
+        self.assertFalse(payment["stripe_objects_created"])
+        self.assertFalse(payment["public_payment_link"])
+        self.assertIn("real buyer", payment["remaining_gate"])
+
         x_channel = campaign["channels"]["x"]
         self.assertEqual(x_channel["state"], "covered_by_existing_queue")
         self.assertEqual(x_channel["existing_campaign_id"], "latex-redline-build")

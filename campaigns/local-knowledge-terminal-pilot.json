@@ -23,6 +23,24 @@
       "website_commit": "b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb",
       "social_preview_commit": "b7ea9cdf363a33552a38a52ad3bc790b51ab05e8",
       "social_preview": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
+      "youtube_demo": {
+        "state": "published_and_verified",
+        "checked_on": "2026-09-05",
+        "published_at": "2026-09-04T16:08:29Z",
+        "url": "https://www.youtube.com/watch?v=UuVa-DaSAvI",
+        "title": "Local Knowledge Terminal: Traceable Multilingual Source Graph",
+        "duration_seconds": 26,
+        "dimensions": "1920x1080",
+        "video_sha256": "ae20068055ddd08e7d2fef518977124a6c5e6805256028d10379006cc7a627ed",
+        "package_sha256": "6d2826b08ed099282e2f43391190d5b1321273b154467c86cd9595d75febd9a4",
+        "description_destinations": [
+          "https://lazying.art/lkt/passage-graph/",
+          "https://lazying.art/lkt/fit-check/"
+        ],
+        "verification": "YouTube Studio and an unauthenticated public probe independently confirmed public visibility, 26-second 1920x1080 playback, the reviewed title, the project-owned thumbnail, and both owned description links.",
+        "recovery": "The first remote queue vanished during an AutoPublish restart before an upload appeared in YouTube Studio. After an exact-title history check found no upload or draft, the operator stopped only the stale local waiter and requeued the same verified ZIP once for YouTube. The recovery job completed without rebuilding or creating a duplicate.",
+        "policy": "First-party project demonstration. It shows only the live hand-reviewed passage sample and the separate USD 250 existing-machine sprint; it is not a customer result, automatic-extraction benchmark, hardware offer, or full-book claim."
+      },
       "artifact": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/02334df74094a3ad75cf9073a7096794db79a5f4/examples/artifacts/pocketpolyglot-passage-graph.json",
       "source_commit": "02334df74094a3ad75cf9073a7096794db79a5f4",
       "artifact_sha256": "801dfb0f3edb0c7aaf54c644352e5bd6a647914c0d2b9e350c4cd4c116106ef9",
@@ -410,9 +428,19 @@
       "policy": "Use LinkedIn for professional proof and bounded buyer qualification, not a generic portfolio dump."
     },
     "youtube": {
-      "state": "connected_not_used_for_static_proof",
-      "checked_on": "2026-09-04",
-      "policy": "The Postiz YouTube integration is active. Do not force a static social image into a video channel; publish only after a useful first-party demo video, title, description, thumbnail, rights review, and visible preview exist."
+      "state": "published_and_verified",
+      "checked_on": "2026-09-05",
+      "passage_provenance_demo": {
+        "state": "published_and_verified",
+        "published_at": "2026-09-04T16:08:29Z",
+        "url": "https://www.youtube.com/watch?v=UuVa-DaSAvI",
+        "title": "Local Knowledge Terminal: Traceable Multilingual Source Graph",
+        "destination": "https://lazying.art/lkt/passage-graph/",
+        "fit_check": "https://lazying.art/lkt/fit-check/",
+        "visual": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
+        "policy": "The reviewed 26-second video demonstrates the public project-owned graph in use. A post-publish Studio correction restored the exact reviewed title and two URLs after browser typing mangled them; public playback and metadata were then checked again."
+      },
+      "policy": "Use YouTube for compact first-party demonstrations with a reviewed video, title, description, thumbnail, rights boundary, and useful owned destination. The Postiz integration remains active for future reviewed scheduling, while this video used the existing LazyEdit and AutoPublish video workflow."
     },
     "hackernews": {
       "state": "research_only",

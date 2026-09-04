@@ -103,7 +103,13 @@ three previews showed the project-owned image and exact bounded proof; the
 provider records then independently reported `QUEUE` for
 2026-09-16T02:00:00Z, 2026-09-17T12:00:00Z, and 2026-09-18T02:00:00Z. No
 provider IDs are stored in Git. The newly connected YouTube channel was not used
-for this static proof because it has no reviewed demo video yet.
+for a static-image post. Instead, a 26-second first-party walkthrough was
+rendered and inspected through the established LazyEdit video workflow, then
+published and publicly verified at
+<https://www.youtube.com/watch?v=UuVa-DaSAvI>. Its title, thumbnail, public
+visibility, playback, and both LKT links were checked after release. Postiz
+remains the reviewed scheduler for future channel posts; it did not submit this
+video.
 
 ## Owned-post observation
 

@@ -146,6 +146,13 @@
       "url": ""
     },
     {
+      "id": "channel:linkedin",
+      "kind": "channel",
+      "label": "linkedin",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "channel:reddit",
       "kind": "channel",
       "label": "reddit",
@@ -177,6 +184,13 @@
       "id": "channel:x",
       "kind": "channel",
       "label": "x",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:youtube",
+      "kind": "channel",
+      "label": "youtube",
       "metadata": {},
       "url": ""
     },
@@ -5448,13 +5462,6 @@
       "url": "https://lazying.art/lecture-pack/fit-check/"
     },
     {
-      "id": "url:d873c4adf4afccff",
-      "kind": "web_resource",
-      "label": "fit check",
-      "metadata": {},
-      "url": "https://lazying.art/lkt/fit-check/"
-    },
-    {
       "id": "url:b5905affb9e9343e",
       "kind": "web_resource",
       "label": "format example",
@@ -5679,11 +5686,32 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/02334df74094a3ad75cf9073a7096794db79a5f4/examples/artifacts/pocketpolyglot-passage-graph.json"
     },
     {
+      "id": "url:d538df28a3543975",
+      "kind": "web_resource",
+      "label": "passage provenance proof social preview",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png"
+    },
+    {
       "id": "url:1c57cb81d6efe0d4",
       "kind": "web_resource",
-      "label": "passage provenance proof viewer",
+      "label": "passage provenance proof youtube demo description destinations 1",
       "metadata": {},
       "url": "https://lazying.art/lkt/passage-graph/"
+    },
+    {
+      "id": "url:d873c4adf4afccff",
+      "kind": "web_resource",
+      "label": "passage provenance proof youtube demo description destinations 2",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/fit-check/"
+    },
+    {
+      "id": "url:642c155f64b240e7",
+      "kind": "web_resource",
+      "label": "passage provenance proof youtube demo url",
+      "metadata": {},
+      "url": "https://www.youtube.com/watch?v=UuVa-DaSAvI"
     },
     {
       "id": "url:c48afb0dbeb7ee89",
@@ -6478,6 +6506,16 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
         "state": "needs_exact_need"
       },
       "relation": "targets",
@@ -6493,6 +6531,16 @@
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:youtube"
     },
     {
       "confidence": 1.0,
@@ -6549,6 +6597,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:44752e26757961b2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.youtube.com/watch?v=UuVa-DaSAvI",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:642c155f64b240e7"
     },
     {
       "confidence": 1.0,
@@ -6613,6 +6669,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:c48afb0dbeb7ee89"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:d538df28a3543975"
     },
     {
       "confidence": 1.0,

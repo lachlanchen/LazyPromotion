@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 6,
+  "version": 7,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -70,28 +70,37 @@
     },
     "upwork": {
       "state": "not_applied",
-      "checked_at": "2026-09-04T13:00:00Z",
+      "checked_at": "2026-09-04T19:48:39Z",
       "listing_visible": true,
       "project_browser_account_state": "logged_out",
       "apply_control_visible": false,
       "connects_cost_visible": false,
       "best_current_lead": {
-        "title": "Conversion: Docx to Overleaf Format",
-        "url": "https://www.upwork.com/freelance-jobs/apply/Conversion-Docx-to-Overleaf-Format_~022095244364454574979/",
-        "posted": "2026-09-02",
-        "public_budget": "hourly rate requested but not specified",
-        "client_history": "USD 1.2K spent across 26 hires",
-        "activity": "20–50 proposals, two interviewing, last viewed 17 hours before the check",
-        "scope": "DOCX structure, headings, tables, figures, captions, footnotes, target template, APA citations, reference list, BibTeX links, and a clean compile",
-        "fit": "High technical fit for the public PaperAgent and reproducible LaTeX build/redline workflow, subject to the actual manuscript and target template.",
-        "scope_gap": "Word or page count, template, package restrictions, table and figure counts, reference quality, deadline, and accepted rate are not public.",
-        "proposal_draft": "Your conversion needs more than moving text into a template: the structure, tables, figures, footnotes, references, and in-text citations all need to survive a clean compile. I would first compile the supplied target template, map the DOCX structure, convert a representative section with one table, figure, footnote, and reference, then complete the manuscript and deliver a clean Overleaf project with an issue ledger. I maintain a public LaTeX build and redline workflow that I can share as process evidence. Before quoting the work, what are the manuscript's page or word count, target template, approximate table and figure count, deadline, and current reference format?",
+        "title": "Academic Editor Needed",
+        "url": "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/",
+        "posted": "2026-09-03",
+        "public_budget": "USD 200 fixed price",
+        "activity": "15–20 proposals, one interviewing, one invite sent, last viewed the day before the check",
+        "scope": "Three submission-ready manuscripts; claim-preserving language and clarity editing; APA references; figure and table formatting; tracked changes or a reviewable redline; confidentiality.",
+        "fit": "The requested reviewable redline and claim-preserving editing closely match the public three-build sample and bounded Manuscript Sprint workflow.",
+        "scope_gap": "Source formats, word counts, target journals or templates, figure and table counts, supplied baselines, and the deadline are not public. The listing prefers psychology, behavioral-economics, or decision-sciences experience that the public process sample does not prove.",
+        "evidence": [
+          "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
+          "https://github.com/lachlanchen/paper-revision-skill"
+        ],
         "missing_submission_facts": [
-          "truthful years of direct LaTeX or Overleaf experience",
-          "hourly rate",
+          "truthful domain and academic-editing experience",
+          "typical turnaround after exact manuscript scope is known",
+          "exact bid for the three-paper scope",
           "visible Connects cost and freelancer fee after login"
         ]
       },
+      "secondary_lead": {
+        "title": "Conversion: Docx to Overleaf Format",
+        "url": "https://www.upwork.com/freelance-jobs/apply/Conversion-Docx-to-Overleaf-Format_~022095244364454574979/",
+        "fit": "High technical fit for PaperAgent, subject to manuscript size, target template, reference quality, deadline, and accepted hourly rate."
+      },
+      "application_packet": "prepared_in_ignored_private_storage",
       "scope_gap": "The public brief asks for three manuscripts at USD 200, while the LazyingArt offer is one LaTeX manuscript up to 7,500 words at USD 250. Source format, manuscript lengths, target templates, and supplied baselines are not visible.",
       "proposal_draft": "Your brief is specific about preserving the authors' claims and producing a reviewable redline. I work with a reproducible three-build path: the supplied baseline, the revised source, and the redline, plus an issue ledger for template, figure, table, reference, and build problems. Before proposing a fixed scope for all three papers, could you share the approximate word count and source format of each manuscript, the target journals or templates, and whether a baseline for tracked changes already exists? I would keep scientific claims unchanged and would not need submission-account access.",
       "policy": "These are private drafts, not proposals. Do not apply until the project browser is logged in, the live job remains open, the Connects cost and freelancer fee are visible, required personal experience and rate claims are truthful, the proposal complies with current pre-contract rules, and the source-format scope fits. Keep communication and payment on Upwork."

@@ -1168,7 +1168,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 6)
+        self.assertEqual(campaign["version"], 7)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1244,11 +1244,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("three manuscripts", upwork["scope_gap"])
         self.assertIn("Before proposing", upwork["proposal_draft"])
         lead = upwork["best_current_lead"]
-        self.assertEqual(lead["title"], "Conversion: Docx to Overleaf Format")
-        self.assertIn("BibTeX", lead["scope"])
-        self.assertIn("representative section", lead["proposal_draft"])
-        self.assertIn("years", " ".join(lead["missing_submission_facts"]))
-        self.assertIn("hourly rate", " ".join(lead["missing_submission_facts"]))
+        self.assertEqual(lead["title"], "Academic Editor Needed")
+        self.assertIn("APA references", lead["scope"])
+        self.assertIn("latex-redline", lead["evidence"][0])
+        self.assertIn("domain", " ".join(lead["missing_submission_facts"]))
+        self.assertIn("exact bid", " ".join(lead["missing_submission_facts"]))
+        self.assertEqual(
+            upwork["secondary_lead"]["title"],
+            "Conversion: Docx to Overleaf Format",
+        )
+        self.assertEqual(upwork["application_packet"], "prepared_in_ignored_private_storage")
         self.assertIn("private draft", upwork["policy"].casefold())
         self.assertIn("keep communication and payment on upwork", upwork["policy"].casefold())
 

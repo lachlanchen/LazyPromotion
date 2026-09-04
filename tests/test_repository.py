@@ -458,7 +458,15 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "wenyan-history.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8")
-        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(campaign["version"], 5)
+        bridge = campaign["channels"]["owned_conversion_bridge"]
+        self.assertEqual(bridge["state"], "live_verified")
+        self.assertEqual(
+            bridge["website_commit"],
+            "6e6a2a79bca7ddc0a164f6a2b27b912bed7609cb",
+        )
+        self.assertEqual(bridge["attribution"]["utm_source"], "wenyan")
+        self.assertIn("not a lead or revenue", bridge["policy"])
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)

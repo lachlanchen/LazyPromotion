@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "id": "wenyan-history",
   "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
   "source_evidence": {
@@ -56,6 +56,22 @@
     }
   },
   "channels": {
+    "owned_conversion_bridge": {
+      "state": "live_verified",
+      "verified_at": "2026-09-05",
+      "website_commit": "6e6a2a79bca7ddc0a164f6a2b27b912bed7609cb",
+      "entry": "https://lazying.art/wenyan/",
+      "proof": "https://lazying.art/lkt/passage-graph/",
+      "fit_check": "https://lazying.art/lkt/fit-check/",
+      "tested_path": "wenyan guide -> source-linked passage graph -> empty collection fit check",
+      "attribution": {
+        "utm_source": "wenyan",
+        "utm_medium": "owned_guide",
+        "utm_campaign": "wenyan_history",
+        "utm_content": "passage_graph"
+      },
+      "policy": "The bridge offers relevant proof before an optional fit check. A completed browser path is evidence of a working owned journey, not a lead or revenue."
+    },
     "x": {
       "state": "postiz_queue",
       "publish_at": "2026-09-10T02:00:00Z",

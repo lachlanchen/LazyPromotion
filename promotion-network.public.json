@@ -116,7 +116,7 @@
       "label": "wenyan-history",
       "metadata": {
         "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
-        "version": 4
+        "version": 5
       },
       "url": ""
     },
@@ -159,6 +159,13 @@
       "id": "channel:linkedin",
       "kind": "channel",
       "label": "linkedin",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:owned_conversion_bridge",
+      "kind": "channel",
+      "label": "owned_conversion_bridge",
       "metadata": {},
       "url": ""
     },
@@ -7056,6 +7063,16 @@
       "relation": "targets",
       "source": "campaign:wenyan-history",
       "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:wenyan-history",
+      "target": "channel:owned_conversion_bridge"
     },
     {
       "confidence": 1.0,

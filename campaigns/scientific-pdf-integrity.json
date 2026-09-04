@@ -66,6 +66,15 @@
       "policy": "Do not submit agent-authored or AI-edited comments."
     }
   },
+  "search_discovery": {
+    "checked_at": "2026-09-04T10:23:00Z",
+    "url": "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html",
+    "initial_state": "url_unknown_to_google",
+    "request_state": "accepted_priority_crawl_request",
+    "indexed": false,
+    "traffic_observed": false,
+    "policy": "The accepted request is not indexing, ranking, traffic, a lead, or revenue. Do not resubmit it; recheck after Google has had time to crawl."
+  },
   "source_evidence": {
     "project": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "crossref_rest_api": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",

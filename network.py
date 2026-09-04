@@ -118,6 +118,22 @@ def repository_entity(db, url: str, *, label: str) -> str:
     )
 
 
+def source_evidence_urls(value, path: tuple[str, ...] = ()):
+    """Yield public URLs nested anywhere inside committed campaign evidence."""
+
+    if isinstance(value, str):
+        if value.startswith(("https://", "http://")):
+            yield " ".join(path).replace("_", " "), value
+        return
+    if isinstance(value, dict):
+        for key, child in value.items():
+            yield from source_evidence_urls(child, (*path, str(key)))
+        return
+    if isinstance(value, list):
+        for index, child in enumerate(value):
+            yield from source_evidence_urls(child, (*path, str(index + 1)))
+
+
 def sync_public_sources(db) -> dict[str, str]:
     projects = promotion.load_catalog()["projects"]
     project_by_url = {}
@@ -245,17 +261,16 @@ def sync_public_sources(db) -> dict[str, str]:
                 channel_id,
                 metadata={"state": details.get("state", "")},
             )
-        for key, value in campaign.get("source_evidence", {}).items():
-            if isinstance(value, str) and value.startswith(("https://", "http://")):
-                resource_id = url_entity(db, value, label=key.replace("_", " "))
+        for label, value in source_evidence_urls(campaign.get("source_evidence", {})):
+            resource_id = url_entity(db, value, label=label)
+            upsert_relationship(
+                db, campaign_id, "uses_evidence", resource_id, evidence_url=value
+            )
+            project_id = project_by_url.get(value.rstrip("/").casefold())
+            if project_id:
                 upsert_relationship(
-                    db, campaign_id, "uses_evidence", resource_id, evidence_url=value
+                    db, campaign_id, "promotes", project_id, evidence_url=value
                 )
-                project_id = project_by_url.get(value.rstrip("/").casefold())
-                if project_id:
-                    upsert_relationship(
-                        db, campaign_id, "promotes", project_id, evidence_url=value
-                    )
     return project_by_url
 
 

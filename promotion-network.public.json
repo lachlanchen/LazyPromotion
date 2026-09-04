@@ -6,7 +6,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -5390,6 +5390,20 @@
       "url": "https://dub.co/legal/partners"
     },
     {
+      "id": "url:265444c2e249d3e1",
+      "kind": "web_resource",
+      "label": "executed media sample repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LalaMedias"
+    },
+    {
+      "id": "url:95067a4d090bc3c1",
+      "kind": "web_resource",
+      "label": "executed media sample url",
+      "metadata": {},
+      "url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html"
+    },
+    {
       "id": "url:c0b61b50de5ce1dc",
       "kind": "web_resource",
       "label": "executed sample",
@@ -5465,13 +5479,6 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/PaperAgentDemo"
-    },
-    {
-      "id": "url:265444c2e249d3e1",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/LalaMedias"
     },
     {
       "id": "url:3ac773bf58cf86d3",
@@ -5799,6 +5806,14 @@
   "relationships": [
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaMedias",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "project:github-lalamedias"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/Video2Book",
       "metadata": {},
       "relation": "promotes",
@@ -5881,6 +5896,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaMedias",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:265444c2e249d3e1"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lecture-pack/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -5910,6 +5933,14 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "url:90dd533df880bbcd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:95067a4d090bc3c1"
     },
     {
       "confidence": 1.0,

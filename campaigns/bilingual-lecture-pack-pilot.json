@@ -1,11 +1,25 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
     "offer": "https://lazying.art/lecture-pack/",
     "fit_check": "https://lazying.art/lecture-pack/fit-check/",
     "working_article": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
+    "executed_media_sample": {
+      "url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
+      "repository": "https://github.com/lachlanchen/LalaMedias",
+      "commit": "c56c27e",
+      "source": "project-created 30-second science short; no customer or third-party lecture media",
+      "verified_outputs": [
+        "15 timestamped lines aligned across Japanese, English, and Chinese",
+        "45 searchable strings with click-to-seek timestamps",
+        "five transcript-checked concept pointers with exact segment edges",
+        "English and Japanese WebVTT exports",
+        "source and rights manifest with the canonical media SHA-256"
+      ],
+      "claim_boundary": "This is a reproducible project-owned process demonstration, not an automated LKT import, scientific finding, customer result, or proof of rights to unrelated media."
+    },
     "transcript_to_book_pipeline": "https://github.com/lachlanchen/Video2Book",
     "lecture_archive_format": "https://github.com/lachlanchen/leonardsusskind",
     "aligned_book_pipeline": "https://github.com/lachlanchen/PocketPolyglot",
@@ -39,17 +53,21 @@
     ]
   },
   "funnel": {
-    "free_value": "A complete multilingual Classical Mechanics lesson plus public transcript, subtitle, book, and archive workflows that a buyer can inspect before enquiring.",
+    "free_value": "A searchable project-owned multilingual video with exact timestamp evidence, subtitle exports, and a source manifest, plus a complete Classical Mechanics lesson and public transcript-to-book workflows that a buyer can inspect before enquiring.",
     "qualified_interest": "Use the metadata-only fit check to review source ownership, duration, speaker count, audio, target language, learner, terminology, excerpt rights, and intended distribution.",
     "commercial_action": "After a positive fit review, accept one exact USD 250 scope, receive a reviewed Stripe payment request, and then arrange a private source-file transfer.",
     "revenue_policy": "Count revenue only after confirmed payment; visits, fit-check drafts, emails, likes, queued posts, and source transfers are not sales."
   },
   "conversion_readiness": {
     "state": "live_metadata_fit_check",
-    "checked_at": "2026-09-02T00:46:29Z",
+    "checked_at": "2026-09-04T11:27:05Z",
     "website_commits": [
       "83b1d7a",
-      "24e48c3"
+      "24e48c3",
+      "4efb6c4"
+    ],
+    "proof_commits": [
+      "c56c27e"
     ],
     "blog_commits": [
       "d95f337",

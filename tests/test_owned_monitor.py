@@ -220,6 +220,10 @@ class OwnedMonitorTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
+        sample = campaign["source_evidence"]["executed_media_sample"]
+        self.assertIn("LalaMedias/videos/", sample["url"])
+        self.assertIn("45 searchable strings", "\n".join(sample["verified_outputs"]))
+        self.assertIn("not an automated LKT import", sample["claim_boundary"])
         channel = campaign["channels"]["x"]
         self.assertEqual(channel["state"], "postiz_queue")
         self.assertIn("lazying.art/lecture-pack/", channel["postiz_content"])

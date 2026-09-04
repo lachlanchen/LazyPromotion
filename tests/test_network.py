@@ -36,6 +36,23 @@ class NetworkTests(unittest.TestCase):
         ).fetchone()
         self.assertIsNotNone(match)
 
+    def test_nested_campaign_evidence_urls_are_discovered(self):
+        evidence = {
+            "offer": "https://lazying.art/lecture-pack/",
+            "executed_sample": {
+                "url": "https://example.test/proof",
+                "outputs": ["not a URL", "https://example.test/export.vtt"],
+            },
+        }
+        self.assertEqual(
+            [
+                ("offer", "https://lazying.art/lecture-pack/"),
+                ("executed sample url", "https://example.test/proof"),
+                ("executed sample outputs 2", "https://example.test/export.vtt"),
+            ],
+            list(network.source_evidence_urls(evidence)),
+        )
+
     def test_public_snapshot_excludes_people_drafts_and_local_paths(self):
         candidate = promotion.ingest_candidate(
             self.db,

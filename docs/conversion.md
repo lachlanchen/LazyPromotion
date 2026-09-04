@@ -56,6 +56,15 @@ The three resulting routes preserve separate `utm_campaign` values and use the
 common `service_chooser` content marker. This fixes owned-site discoverability;
 it does not establish a visit, fit inquiry, qualified buyer, or sale.
 
+The public GitHub profile at commit
+`76bb98a8e6dde319c50dca94ecdbb9dfca0ae7a6` now uses the same three-offer
+structure with separate `github/profile` attribution. Its selected work leads
+with Local Knowledge Terminal, PaperAgent, Video2Book, PocketPolyglot,
+LinguaLeaf, the Leonard Susskind archive, and LazyEdit so visitors can connect
+the paid boundaries to inspectable code, books, and media. The existing
+11-language profile header and support panel remain intact. Profile traffic is
+attention only, never a lead or received revenue by itself.
+
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)
 shows the three deliverables using LKT's own documented reference collection.

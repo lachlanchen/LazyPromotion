@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -282,6 +282,14 @@
     }
   },
   "channels": {
+    "github_profile": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-05",
+      "profile_commit": "76bb98a8e6dde319c50dca94ecdbb9dfca0ae7a6",
+      "destination": "https://lazying.art/lkt/?utm_source=github&utm_medium=profile&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_chooser",
+      "role": "The public profile now presents the collection-fit sprint alongside the related LKT, book, media, and research repositories.",
+      "policy": "The route sends readers to the offer and public proof before the free fit check. A profile view or click is not a lead or sale."
+    },
     "homepage": {
       "state": "live_and_verified",
       "checked_on": "2026-09-05",

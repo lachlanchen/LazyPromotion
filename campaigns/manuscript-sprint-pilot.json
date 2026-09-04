@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 4,
+  "version": 5,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -38,6 +38,14 @@
     ]
   },
   "channels": {
+    "github_profile": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-05",
+      "profile_commit": "76bb98a8e6dde319c50dca94ecdbb9dfca0ae7a6",
+      "destination": "https://lazying.art/manuscript-sprint/?utm_source=github&utm_medium=profile&utm_campaign=manuscript_sprint_pilot&utm_content=service_chooser",
+      "role": "The public profile connects the bounded manuscript sprint to PaperAgent and its reproducible LaTeX workflow.",
+      "policy": "The route sends readers to the offer and public proof before the free fit check. A profile view or click is not a lead or sale."
+    },
     "homepage": {
       "state": "live_and_verified",
       "checked_on": "2026-09-05",

@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -105,6 +105,14 @@
     }
   },
   "channels": {
+    "github_profile": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-05",
+      "profile_commit": "76bb98a8e6dde319c50dca94ecdbb9dfca0ae7a6",
+      "destination": "https://lazying.art/lecture-pack/?utm_source=github&utm_medium=profile&utm_campaign=bilingual_lecture_pack_pilot&utm_content=service_chooser",
+      "role": "The public profile connects the bounded lecture pack to Video2Book, PocketPolyglot, LinguaLeaf, Leonard Susskind materials, and LazyEdit.",
+      "policy": "The route sends readers to the offer and working proof before the free fit check. A profile view or click is not a lead or sale."
+    },
     "homepage": {
       "state": "live_and_verified",
       "checked_on": "2026-09-05",

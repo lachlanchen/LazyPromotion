@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 8
+        "version": 9
       },
       "url": ""
     },
@@ -76,7 +76,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 4
+        "version": 5
       },
       "url": ""
     },
@@ -86,7 +86,7 @@
       "label": "manuscript-sprint-pilot",
       "metadata": {
         "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
-        "version": 4
+        "version": 5
       },
       "url": ""
     },
@@ -131,6 +131,13 @@
       "id": "channel:github_issues",
       "kind": "channel",
       "label": "github_issues",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:github_profile",
+      "kind": "channel",
+      "label": "github_profile",
       "metadata": {},
       "url": ""
     },
@@ -6056,6 +6063,16 @@
       },
       "relation": "targets",
       "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:github_profile"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "channel:homepage"
     },
     {
@@ -6580,6 +6597,16 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
+        "state": "live_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:github_profile"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
         "state": "research_only"
       },
       "relation": "targets",
@@ -6807,6 +6834,16 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "channel:github_profile"
     },
     {
       "confidence": 1.0,

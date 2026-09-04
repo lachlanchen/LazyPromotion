@@ -1113,7 +1113,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(campaign["version"], 5)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1222,6 +1222,26 @@ class RepositoryTests(unittest.TestCase):
             self.assertIn(f"utm_campaign={campaign_name}", homepage["destination"])
             self.assertIn("utm_content=service_chooser", homepage["destination"])
             self.assertIn("not a lead or sale", homepage["policy"].casefold())
+
+    def test_github_profile_routes_all_active_sprints_to_public_proof_first(self):
+        expected = {
+            "local-knowledge-terminal-pilot.json": "local_knowledge_terminal_pilot",
+            "manuscript-sprint-pilot.json": "manuscript_sprint_pilot",
+            "bilingual-lecture-pack-pilot.json": "bilingual_lecture_pack_pilot",
+        }
+
+        for filename, campaign_name in expected.items():
+            campaign = json.loads((ROOT / "campaigns" / filename).read_text(encoding="utf-8"))
+            profile = campaign["channels"]["github_profile"]
+            self.assertEqual(profile["state"], "live_and_verified")
+            self.assertEqual(
+                profile["profile_commit"],
+                "76bb98a8e6dde319c50dca94ecdbb9dfca0ae7a6",
+            )
+            self.assertIn("utm_source=github", profile["destination"])
+            self.assertIn("utm_medium=profile", profile["destination"])
+            self.assertIn(f"utm_campaign={campaign_name}", profile["destination"])
+            self.assertIn("not a lead or sale", profile["policy"].casefold())
 
     def test_latex_redline_sample_matches_its_public_manifest(self):
         sample = ROOT / "examples" / "latex-redline"

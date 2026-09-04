@@ -66,7 +66,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -5579,6 +5579,13 @@
       "url": "https://grobid.readthedocs.io/en/latest/Introduction/"
     },
     {
+      "id": "url:a71a4b9504cbc9fa",
+      "kind": "web_resource",
+      "label": "hardware contract calculator",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/blob/main/lkt_hardware_pricing.py"
+    },
+    {
       "id": "url:2384ab616d067b14",
       "kind": "web_resource",
       "label": "hero asset repository",
@@ -6476,6 +6483,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:a40ef1650eb94f9f"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/blob/main/lkt_hardware_pricing.py",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:a71a4b9504cbc9fa"
     },
     {
       "confidence": 1.0,

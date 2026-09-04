@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -20,6 +20,13 @@
       "website_commit": "6bf0b6a",
       "exact_price": "USD 250",
       "policy": "Use the explicit USD currency label on the offer, fit-check disclosure, and generated review draft; do not rely on an ambiguous dollar symbol."
+    },
+    "hardware_contract": {
+      "state": "quote_only_and_separate",
+      "checked_at": "2026-09-04T12:20:24Z",
+      "website_commit": "be725c6",
+      "calculator": "https://github.com/lachlanchen/LazyPromotion/blob/main/lkt_hardware_pricing.py",
+      "policy": "The USD 250 offer is an existing-machine service. A supplied device remains a separate quote until its complete landed bill of materials and shipping, tax, return, warranty, and support terms pass the pricing gates."
     },
     "current_order_mode": "private-by-design structured free fit check followed by a reviewed Stripe payment request",
     "included_scope": [

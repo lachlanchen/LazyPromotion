@@ -111,6 +111,12 @@ visibility, playback, and both LKT links were checked after release. Postiz
 remains the reviewed scheduler for future channel posts; it did not submit this
 video.
 
+On 2026-09-05, a LinkedIn post for the Bilingual Lecture Pack was visibly
+reviewed and queued for 2026-09-15T02:00:00Z. It leads with the practical
+timestamp-first workflow, links to project-owned proof, keeps the original
+campaign URL, and states the fixed USD 250 rights-cleared scope. The read-only
+monitor confirmed the exact text, time, provider, and `QUEUE` state.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

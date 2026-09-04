@@ -1243,6 +1243,21 @@ class RepositoryTests(unittest.TestCase):
             self.assertIn(f"utm_campaign={campaign_name}", profile["destination"])
             self.assertIn("not a lead or sale", profile["policy"].casefold())
 
+    def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
+        path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(campaign["version"], 10)
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")
+        self.assertEqual(linkedin["content"], linkedin["postiz_content"])
+        self.assertIn("fixed USD 250 pack", linkedin["content"])
+        self.assertIn("rights-cleared English lecture up to 20 minutes", linkedin["content"])
+        self.assertIn("utm_source=linkedin", linkedin["destination"])
+        self.assertFalse(linkedin["shortlink"])
+        self.assertTrue(linkedin["verification"]["stored_text_exact"])
+        self.assertIn("not leads or revenue", linkedin["policy"])
+
     def test_latex_redline_sample_matches_its_public_manifest(self):
         sample = ROOT / "examples" / "latex-redline"
         artifacts = sample / "artifacts"

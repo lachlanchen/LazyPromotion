@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -170,6 +170,22 @@
         "post_type": "post"
       },
       "policy": "The attached video is the project-owned demonstration documented by the public source manifest. The caption describes only the working proof and bounded pilot; it does not claim scientific validity, customer results, or rights to unrelated media."
+    },
+    "linkedin": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-15T02:00:00Z",
+      "content": "A lecture becomes much easier to reuse once every line is tied to time.\n\nI made a small, checkable workflow: correct the source transcript, mark uncertain words, align one target language, export SRT/VTT, and turn the same source into a pocket study PDF. The public proof lets you search Japanese, English, and Chinese and jump to the exact second.\n\nI’m testing the workflow as a fixed USD 250 pack for one rights-cleared English lecture up to 20 minutes. The scope and working proof are here:\nhttps://lazying.art/lecture-pack/?utm_source=linkedin&utm_medium=social&utm_campaign=bilingual_lecture_pack_pilot&utm_content=lecture_pack_proof\n\n#CourseCreation #Localization #Subtitles #DigitalLearning",
+      "postiz_content": "A lecture becomes much easier to reuse once every line is tied to time.\n\nI made a small, checkable workflow: correct the source transcript, mark uncertain words, align one target language, export SRT/VTT, and turn the same source into a pocket study PDF. The public proof lets you search Japanese, English, and Chinese and jump to the exact second.\n\nI’m testing the workflow as a fixed USD 250 pack for one rights-cleared English lecture up to 20 minutes. The scope and working proof are here:\nhttps://lazying.art/lecture-pack/?utm_source=linkedin&utm_medium=social&utm_campaign=bilingual_lecture_pack_pilot&utm_content=lecture_pack_proof\n\n#CourseCreation #Localization #Subtitles #DigitalLearning",
+      "destination": "https://lazying.art/lecture-pack/?utm_source=linkedin&utm_medium=social&utm_campaign=bilingual_lecture_pack_pilot&utm_content=lecture_pack_proof",
+      "reviewed_on": "2026-09-05",
+      "shortlink": false,
+      "verification": {
+        "stored_state": "QUEUE",
+        "stored_content_sha256": "bed12b3e8c3e93752ba9fd1cb475bc181b34180276445798f2fb7e5147ca7c17",
+        "stored_time_exact": true,
+        "stored_text_exact": true
+      },
+      "policy": "The post teaches the timestamp-first workflow, links to project-owned proof, and states the fixed rights-cleared scope. Queueing, views, and clicks are not leads or revenue."
     },
     "reddit": {
       "state": "needs_exact_need",

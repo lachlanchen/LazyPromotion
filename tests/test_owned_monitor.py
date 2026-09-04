@@ -247,6 +247,20 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(instagram_route["campaign_id"], "bilingual-lecture-pack-pilot")
         self.assertEqual(instagram_route["route"], "product")
 
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")
+        self.assertFalse(linkedin["shortlink"])
+        self.assertEqual(
+            owned_monitor.content_hash(linkedin["postiz_content"]),
+            "bed12b3e8c3e93752ba9fd1cb475bc181b34180276445798f2fb7e5147ca7c17",
+        )
+        linkedin_route = owned_monitor.route_for_post(
+            "linkedin", linkedin["postiz_content"], owned_monitor.route_index()
+        )
+        self.assertEqual(linkedin_route["campaign_id"], "bilingual-lecture-pack-pilot")
+        self.assertEqual(linkedin_route["route"], "product")
+
     def test_live_sample_report_posts_match_the_lkt_campaign(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(

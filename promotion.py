@@ -246,8 +246,9 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         "project_id": "TEXT NOT NULL DEFAULT ''",
         "candidate_content_hash": "TEXT NOT NULL DEFAULT ''",
     }
+    draft_schema_changed = not set(draft_migrations).issubset(draft_columns)
     unbound_active_candidates = []
-    if not set(draft_migrations).issubset(draft_columns):
+    if draft_schema_changed:
         unbound_active_candidates = [
             row[0]
             for row in db.execute(
@@ -261,21 +262,22 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
         if column not in draft_columns:
             db.execute(f"ALTER TABLE drafts ADD COLUMN {column} {definition}")
     # Legacy drafts were not bound to the candidate text and project used to
-    # generate them. Historical rows can be annotated for reporting, but an
-    # active draft cannot be reviewed safely without that immutable evidence.
-    for row in db.execute(
-        """
-        SELECT d.id, c.suggested_tool, c.body
-        FROM drafts d JOIN candidates c ON c.id=d.candidate_id
-        WHERE d.project_id='' OR d.candidate_content_hash=''
-        """
-    ).fetchall():
-        db.execute(
+    # generate them. Run this backfill only while adding the columns: an empty
+    # project_id is intentional for current value-only courtesy drafts.
+    if draft_schema_changed:
+        for row in db.execute(
             """
-            UPDATE drafts SET project_id=?, candidate_content_hash=? WHERE id=?
-            """,
-            (row[1], content_hash(compact(row[2])), row[0]),
-        )
+            SELECT d.id, c.suggested_tool, c.body
+            FROM drafts d JOIN candidates c ON c.id=d.candidate_id
+            WHERE d.project_id='' OR d.candidate_content_hash=''
+            """
+        ).fetchall():
+            db.execute(
+                """
+                UPDATE drafts SET project_id=?, candidate_content_hash=? WHERE id=?
+                """,
+                (row[1], content_hash(compact(row[2])), row[0]),
+            )
     if unbound_active_candidates:
         placeholders = ",".join("?" for _ in unbound_active_candidates)
         now = utc_now()

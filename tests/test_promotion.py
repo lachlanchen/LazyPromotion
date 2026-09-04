@@ -666,6 +666,12 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(draft["project_id"], "")
         self.assertEqual(draft["model"], "human-directed")
         self.assertEqual(draft["include_link"], 0)
+        self.db.close()
+        self.db = promotion.open_db(Path(self.tmp.name) / "test.sqlite3")
+        reopened = self.db.execute(
+            "SELECT project_id FROM drafts WHERE id=?", (draft["id"],)
+        ).fetchone()
+        self.assertEqual(reopened[0], "")
         with self.assertRaisesRegex(ValueError, "cannot include a promotional link"):
             promotion.save_draft(
                 self.db,

@@ -895,6 +895,17 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(routing["message_content_opened"])
         self.assertFalse(routing["customer_data_persisted"])
 
+        discovery = campaign["search_discovery"]
+        self.assertEqual(discovery["initial_state"], "url_unknown_to_google")
+        self.assertEqual(
+            discovery["request_state"],
+            "accepted_priority_crawl_request",
+        )
+        self.assertFalse(discovery["indexed"])
+        self.assertFalse(discovery["traffic_observed"])
+        self.assertIn("Do not resubmit", discovery["policy"])
+        self.assertIn("not indexing", discovery["policy"])
+
         x_channel = campaign["channels"]["x"]
         self.assertEqual(x_channel["state"], "covered_by_existing_queue")
         self.assertEqual(x_channel["existing_campaign_id"], "latex-redline-build")

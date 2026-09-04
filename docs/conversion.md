@@ -26,6 +26,11 @@ and payment. Ghostwriting, new claims, statistical analysis, submission access,
 and publication guarantees are excluded. Any four confirmed USD 250 payments
 across the two routes would reach the same USD 1,000 gross milestone.
 
+The manuscript landing page was unknown to Google when inspected on September
+4, 2026. One indexing request passed the live-page check and entered Google's
+priority crawl queue. That does not prove indexing or traffic. Do not resubmit
+the URL; observe it again after Google has had time to crawl.
+
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)
 shows the three deliverables using LKT's own documented reference collection.

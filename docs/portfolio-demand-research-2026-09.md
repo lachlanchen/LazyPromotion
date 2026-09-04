@@ -135,3 +135,12 @@ to the new manuscript fit check, so another announcement would be repetitive.
 Use community discussions as product evidence unless a fresh question can be
 answered completely and the local rules permit an affiliated link. Traffic,
 stars, replies, applications, and pending balances remain evidence—not revenue.
+
+Open-source maintenance is also brand work. A contributor's FreeRDP runtime
+repair for `uu-remote-ubuntu-bridge` passed the target repository check and the
+current-main local suite, then merged as
+[PR #10](https://github.com/lachlanchen/uu-remote-ubuntu-bridge/pull/10) with
+author credit. Two exact, conflicting LabCanvas draft duplicates were closed as
+superseded only after confirming that their useful Windows work was already
+selectively integrated and credited on current `master`. These actions improve
+project trust and contributor experience; they are not leads or revenue.

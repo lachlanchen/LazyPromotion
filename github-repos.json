@@ -282,7 +282,7 @@
       "url": "https://github.com/lachlanchen/AutoPublication"
     },
     {
-      "description": "AutoPublish focuses on practical workflows and tooling. AutoPublish Script-first, browser-driven multi-platform short-video publishing. Canonical operations manual for setup, runtime, queue mode, and platform automation workflows. Automation toolkit for distributing short-form video content to multiple Chinese and i...",
+      "description": "Script-first browser automation for publishing short video through a local watcher or queue to Chinese and international creator platforms.",
       "homepage": "https://studio.lazying.art",
       "name": "AutoPublish",
       "primary_language": "Python",
@@ -1751,8 +1751,8 @@
       "url": "https://github.com/lachlanchen/PaperAgent"
     },
     {
-      "description": "PaperAgentDemo focuses on practical workflows and tooling. PaperAgentDemo A compact, repository-accurate LaTeX paper scaffold centered on latex/main.tex, designed to validate and extend a manuscript workflow with equations, algorithms, tables, glossary/acronyms, references, and PDF build tooling. 🧩 At a Glance 📌 Ove...",
-      "homepage": "https://lazying.art",
+      "description": "Compact LaTeX research-paper scaffold with equations, algorithms, tables, glossaries, citations, and reproducible PDF build commands.",
+      "homepage": "https://lazying.art/manuscript-sprint/",
       "name": "PaperAgentDemo",
       "primary_language": "TeX",
       "topics": [
@@ -1857,21 +1857,19 @@
       "url": "https://github.com/lachlanchen/ShiGame"
     },
     {
-      "description": "The repo for the paper Soft Alignment of Event and Frame Data with Unified Implicit Neural Representation",
+      "description": "Paper documentation for soft alignment of event-camera and frame-camera data with a unified implicit neural representation; public code release is pending.",
       "homepage": "https://lazying.art",
       "name": "SoftEventFrameAlignment",
       "primary_language": "",
       "topics": [
-        "aedat4",
-        "alignment",
-        "event",
-        "frame",
-        "implicit",
-        "main",
-        "soft",
-        "softeventframealignment",
-        "streams",
-        "training"
+        "computer-vision",
+        "event-camera",
+        "frame-camera",
+        "implicit-neural-representation",
+        "multimodal-alignment",
+        "neuromorphic-vision",
+        "research-paper",
+        "soft-alignment"
       ],
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
     },

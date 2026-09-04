@@ -1,11 +1,12 @@
 {
-  "version": 6,
+  "version": 7,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
     "offer": "https://lazying.art/lecture-pack/",
     "fit_check": "https://lazying.art/lecture-pack/fit-check/",
     "working_article": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
+    "search_demand_article": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
     "executed_media_sample": {
       "url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
       "repository": "https://github.com/lachlanchen/LalaMedias",
@@ -61,7 +62,7 @@
   },
   "conversion_readiness": {
     "state": "live_metadata_fit_check",
-    "checked_at": "2026-09-04T11:58:49Z",
+    "checked_at": "2026-09-04T12:13:58Z",
     "website_commits": [
       "83b1d7a",
       "24e48c3",
@@ -80,7 +81,8 @@
       "d95f337",
       "c3232db",
       "2737036",
-      "38d3301"
+      "38d3301",
+      "1d0932b"
     ],
     "fit_check": {
       "automatic_submission": false,
@@ -112,7 +114,17 @@
         "ja",
         "zh"
       ],
-      "route": "A single exact-fit sentence follows the complete lesson and public archive link; no donation, hardware, LKT, or unrelated portfolio pitch was added."
+      "route": "A single exact-fit sentence follows the complete lesson and public archive link; no donation, hardware, LKT, or unrelated portfolio pitch was added.",
+      "search_demand_page": {
+        "url": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
+        "source_language": "en",
+        "translations": [
+          "ja",
+          "zh"
+        ],
+        "commit": "1d0932b",
+        "route": "The archive article keeps its study value first, removes unrelated notebook and LKT pitches, and offers one concise lecture-specific next step after the public Video2Book workflow."
+      }
     },
     "x": {
       "state": "postiz_queue",

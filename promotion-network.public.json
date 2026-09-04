@@ -6,7 +6,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 6
+        "version": 7
       },
       "url": ""
     },
@@ -5719,6 +5719,13 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md"
     },
     {
+      "id": "url:315fa682fc7b8dac",
+      "kind": "web_resource",
+      "label": "search demand article",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html"
+    },
+    {
       "id": "url:90dd533df880bbcd",
       "kind": "web_resource",
       "label": "subtitle pipeline",
@@ -5901,6 +5908,14 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "url:265444c2e249d3e1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:315fa682fc7b8dac"
     },
     {
       "confidence": 1.0,

@@ -685,6 +685,50 @@ class PromotionTests(unittest.TestCase):
                 manual=True,
             )
 
+    def test_live_review_can_reject_an_unsent_draft_and_invalidate_approval(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/current/help/",
+            author="learner",
+            body="Can someone recommend a path for learning embedded systems?",
+        )
+        promotion.save_triage(
+            self.db,
+            candidate["id"],
+            {
+                "eligible": True,
+                "project_id": "github-stm32dev",
+                "confidence": "medium",
+                "reason": "The project may provide a relevant example.",
+                "risk_flags": ["live comments not yet reviewed"],
+            },
+        )
+        draft = promotion.save_draft(
+            self.db,
+            candidate["id"],
+            {
+                "reply": "Start with GPIO, UART, timers, and a debugger.",
+                "why": "A compact learning sequence.",
+                "confidence": "medium",
+                "include_link": False,
+            },
+        )
+        approval = promotion.approve_draft(self.db, draft["id"], 30)
+        result = promotion.reject_draft_after_review(
+            self.db,
+            draft["id"],
+            reason="Existing replies already give the same progression.",
+            evidence="https://www.reddit.com/r/example/comments/current/help/",
+        )
+        self.assertEqual(result["draft_status"], "superseded")
+        self.assertEqual(result["candidate_status"], "rejected")
+        self.assertFalse(result["public_write"])
+        with self.assertRaisesRegex(ValueError, "status is superseded"):
+            promotion.validate_approval(
+                self.db, draft["id"], approval["approval_token"]
+            )
+
     def test_instagram_comment_draft_includes_exact_target_mention(self):
         candidate = promotion.ingest_candidate(
             self.db,

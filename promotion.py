@@ -1303,6 +1303,76 @@ def reopen_unverified_send(
     }
 
 
+def reject_draft_after_review(
+    db: sqlite3.Connection,
+    draft_id: str,
+    *,
+    reason: str,
+    evidence: str,
+) -> dict[str, Any]:
+    """Remove a draft from review when the live conversation makes it unsuitable."""
+    reason = compact(reason)
+    evidence = compact(evidence)
+    if not reason or not evidence:
+        raise ValueError("draft rejection requires a reason and live-review evidence")
+    row = row_dict(
+        db.execute(
+            """
+            SELECT d.id, d.status AS draft_status, d.candidate_id,
+                   c.status AS candidate_status
+            FROM drafts d
+            JOIN candidates c ON c.id=d.candidate_id
+            WHERE d.id=?
+            """,
+            (draft_id,),
+        ).fetchone()
+    )
+    if not row:
+        raise ValueError(f"draft not found: {draft_id}")
+    if row["draft_status"] not in {"draft", "prepared", "approved"}:
+        raise ValueError("only an active unsent draft can be rejected after review")
+    if row["candidate_status"] == "replied":
+        raise ValueError("a replied candidate cannot be rejected as unsent")
+    now = utc_now()
+    db.execute(
+        "UPDATE drafts SET status='superseded', updated_at=? WHERE id=?",
+        (now, draft_id),
+    )
+    db.execute(
+        """
+        UPDATE candidates
+        SET status='rejected', triage_reason=?, updated_at=?
+        WHERE id=?
+        """,
+        (reason, now, row["candidate_id"]),
+    )
+    db.execute(
+        """
+        INSERT INTO events(candidate_id, draft_id, kind, detail, created_at)
+        VALUES (?, ?, 'draft_rejected_after_review', ?, ?)
+        """,
+        (
+            row["candidate_id"],
+            draft_id,
+            json.dumps(
+                {"reason": reason, "evidence": evidence},
+                ensure_ascii=False,
+                sort_keys=True,
+            ),
+            now,
+        ),
+    )
+    refresh_duplicates(db)
+    db.commit()
+    return {
+        "candidate_id": row["candidate_id"],
+        "draft_id": draft_id,
+        "draft_status": "superseded",
+        "candidate_status": "rejected",
+        "public_write": False,
+    }
+
+
 def print_json(value: Any) -> None:
     print(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True))
 
@@ -1354,6 +1424,11 @@ def build_parser() -> argparse.ArgumentParser:
     reopen.add_argument("--reason", required=True)
     reopen.add_argument("--evidence", required=True)
     reopen.add_argument("--confirm-no-public-reply-observed", action="store_true", required=True)
+    reject = sub.add_parser("reject-draft")
+    reject.add_argument("draft_id")
+    reject.add_argument("--reason", required=True)
+    reject.add_argument("--evidence", required=True)
+    reject.add_argument("--confirm-reviewed-live-context", action="store_true", required=True)
     return parser
 
 
@@ -1447,6 +1522,15 @@ def main() -> int:
     elif args.command == "reopen-unverified-send":
         print_json(
             reopen_unverified_send(
+                db,
+                args.draft_id,
+                reason=args.reason,
+                evidence=args.evidence,
+            )
+        )
+    elif args.command == "reject-draft":
+        print_json(
+            reject_draft_after_review(
                 db,
                 args.draft_id,
                 reason=args.reason,

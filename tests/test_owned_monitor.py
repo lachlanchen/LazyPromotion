@@ -9,10 +9,20 @@ import owned_monitor
 
 
 class FakePostiz:
-    def __init__(self, *, posts, post_metrics=None, platform_metrics=None):
+    def __init__(
+        self,
+        *,
+        posts,
+        post_metrics=None,
+        platform_metrics=None,
+        integrations=None,
+    ):
         self.posts = posts
         self.post_metrics = list(post_metrics or [])
         self.platform_metrics = platform_metrics or []
+        self.integrations = integrations or [
+            {"id": "private-integration", "identifier": "x"}
+        ]
         self.commands = []
 
     @staticmethod
@@ -27,9 +37,7 @@ class FakePostiz:
         if action == "auth:status":
             return self.result("Credentials are valid. 1 integration connected.")
         if action == "integrations:list":
-            return self.result(
-                [{"id": "private-integration", "identifier": "x"}]
-            )
+            return self.result(self.integrations)
         if action == "posts:list":
             return self.result({"posts": self.posts})
         if action == "analytics:platform":
@@ -114,9 +122,7 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertFalse(report["policy"]["automatic_public_reply"])
 
     def test_overdue_queue_requires_review_without_retry(self):
-        fake = FakePostiz(
-            posts=[post(publish_at="2026-08-31T23:00:00Z")]
-        )
+        fake = FakePostiz(posts=[post(publish_at="2026-08-31T23:00:00Z")])
         report = self.run_monitor(fake)
         self.assertEqual(report["alerts"][0]["kind"], "publication_overdue")
         self.assertIn("do not resubmit", report["alerts"][0]["action"])
@@ -126,9 +132,7 @@ class OwnedMonitorTests(unittest.TestCase):
         missing["releaseId"] = "missing"
         fake = FakePostiz(posts=[missing], post_metrics=[{"missing": True}])
         report = self.run_monitor(fake)
-        self.assertEqual(
-            report["alerts"][0]["kind"], "release_connection_required"
-        )
+        self.assertEqual(report["alerts"][0]["kind"], "release_connection_required")
         self.assertTrue(report["posts"][0]["needs_release_connection"])
 
     def test_queue_to_published_requires_visible_release_verification(self):
@@ -140,8 +144,7 @@ class OwnedMonitorTests(unittest.TestCase):
         current = FakePostiz(posts=[published], post_metrics=[[]])
         report = self.run_monitor(current)
         alert = next(
-            item for item in report["alerts"]
-            if item["kind"] == "publication_observed"
+            item for item in report["alerts"] if item["kind"] == "publication_observed"
         )
         self.assertEqual(alert["release_url"], published["releaseURL"])
         self.assertIn("visible browser", alert["action"])
@@ -177,9 +180,7 @@ class OwnedMonitorTests(unittest.TestCase):
             )
         )
         content = campaign["channels"]["x"]["postiz_content"]
-        route = owned_monitor.route_for_post(
-            "x", content, owned_monitor.route_index()
-        )
+        route = owned_monitor.route_for_post("x", content, owned_monitor.route_index())
         self.assertEqual(route["campaign_id"], "latex-redline-build")
         self.assertEqual(route["route"], "product")
 
@@ -243,9 +244,7 @@ class OwnedMonitorTests(unittest.TestCase):
             instagram["postiz_content"],
             owned_monitor.route_index(),
         )
-        self.assertEqual(
-            instagram_route["campaign_id"], "bilingual-lecture-pack-pilot"
-        )
+        self.assertEqual(instagram_route["campaign_id"], "bilingual-lecture-pack-pilot")
         self.assertEqual(instagram_route["route"], "product")
 
     def test_live_sample_report_posts_match_the_lkt_campaign(self):
@@ -268,6 +267,38 @@ class OwnedMonitorTests(unittest.TestCase):
             instagram_route["campaign_id"], "local-knowledge-terminal-pilot"
         )
         self.assertEqual(instagram_route["route"], "sample_report_post")
+
+    def test_linkedin_post_is_observed_and_matches_reviewed_campaign_route(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        content = campaign["channels"]["linkedin"]["passage_provenance_post"]["content"]
+        linkedin_post = post(
+            post_id="private-linkedin-post",
+            publish_at="2026-09-18T02:00:00Z",
+        )
+        linkedin_post["content"] = content
+        linkedin_post["integration"] = {"providerIdentifier": "linkedin"}
+        fake = FakePostiz(
+            posts=[linkedin_post],
+            integrations=[
+                {"id": "private-linkedin-integration", "identifier": "linkedin"}
+            ],
+        )
+
+        report = self.run_monitor(fake)
+
+        self.assertEqual(report["summary"]["queued"], 1)
+        self.assertEqual(report["posts"][0]["provider"], "linkedin")
+        self.assertEqual(
+            report["posts"][0]["campaign_id"], "local-knowledge-terminal-pilot"
+        )
+        self.assertEqual(report["posts"][0]["route"], "passage_provenance_post")
+        serialized = json.dumps(report)
+        self.assertNotIn("private-linkedin-post", serialized)
+        self.assertNotIn("private-linkedin-integration", serialized)
 
 
 if __name__ == "__main__":

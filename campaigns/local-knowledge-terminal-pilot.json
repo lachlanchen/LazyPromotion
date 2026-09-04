@@ -21,6 +21,8 @@
       "checked_on": "2026-09-04",
       "viewer": "https://lazying.art/lkt/passage-graph/",
       "website_commit": "b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb",
+      "social_preview_commit": "b7ea9cdf363a33552a38a52ad3bc790b51ab05e8",
+      "social_preview": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
       "artifact": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/02334df74094a3ad75cf9073a7096794db79a5f4/examples/artifacts/pocketpolyglot-passage-graph.json",
       "source_commit": "02334df74094a3ad75cf9073a7096794db79a5f4",
       "artifact_sha256": "801dfb0f3edb0c7aaf54c644352e5bd6a647914c0d2b9e350c4cd4c116106ef9",
@@ -360,6 +362,15 @@
         "destination": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html?utm_source=x&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot",
         "policy": "Value-first first-party distribution for the complete practical guide. The exact 253-character copy, protocol-less Postiz-safe tracked URL, account, time, AI flag, open-reply setting, and queue state were visibly reviewed."
       },
+      "passage_provenance_post": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-16T02:00:00Z",
+        "content": "Most knowledge-graph demos show the graph and hide the evidence. I made a tiny one from a single Chinese passage: 8 nodes, 8 hand-reviewed relations, and every edge opens the exact source unit and hash. Inspect it: lazying.art/lkt/passage-graph/",
+        "destination": "https://lazying.art/lkt/passage-graph/",
+        "visual": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
+        "reviewed_on": "2026-09-04",
+        "policy": "The visible Postiz preview showed the real project-owned passage viewer capture, exact bounded counts, and owned destination. Postiz removed the protocol URL from the first X draft; the reviewed editor replacement uses the retained protocol-less owned route. The corrected 245-character preview, open-reply setting, AI flag, media, time, and QUEUE state were verified before scheduling."
+      },
       "policy": "First-party product post with the generated visual disclosed as a prototype-grounded concept. The exact 273-character copy, uploaded media, first-party sample-report destination, AI flag, open-reply setting, provider settings, unchanged schedule, and queue state were visibly reviewed after the update."
     },
     "instagram": {
@@ -374,7 +385,34 @@
         "content": "Most private-document projects start by choosing a vector database. I’d start earlier:\n\nCan you extract the text cleanly? Can every answer point back to a stable record? Can the system say “not enough evidence”?\n\nI turned that into a small collection-fit process. The public sample shows the data map, citation boundary, browser proof, and go/no-go.\n\nlazying.art/lkt/sample-report/\n\n#LocalAI #KnowledgeManagement",
         "policy": "A concise first-party demonstration using the project-owned service cover. The caption makes no customer-result or performance claim."
       },
+      "passage_provenance_post": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-17T12:00:00Z",
+        "content": "Most knowledge-graph demos show the graph and hide the evidence.\n\nI wanted the opposite. This small example starts with one aligned Chinese–Japanese–English passage. It has 8 nodes and 8 hand-reviewed relations. Select one and you can inspect the exact passage unit, excerpt, source commit, and file hash behind it.\n\nIt’s deliberately small enough to check yourself.\n\nExplore the graph:\nhttps://lazying.art/lkt/passage-graph/?utm_source=instagram&utm_medium=social&utm_campaign=lkt_provenance&utm_content=graph_proof\n\n#KnowledgeGraph #DigitalHumanities #LocalAI #Multilingual #Provenance",
+        "destination": "https://lazying.art/lkt/passage-graph/?utm_source=instagram&utm_medium=social&utm_campaign=lkt_provenance&utm_content=graph_proof",
+        "visual": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
+        "reviewed_on": "2026-09-04",
+        "policy": "The exact caption, unshortened destination, real project-owned page capture, Instagram post setting, time, and QUEUE state were visibly reviewed. The caption claims only the hand-reviewed sample and does not imply automatic extraction, a customer result, or a full-book benchmark."
+      },
       "policy": "Use the reviewed uploaded 4:5 concept visual and keep its disclosure in the caption. The exact caption, measured project-owned evidence, customer-result boundary, unshortened first-party sample-report URL, provider settings, unchanged schedule, and queue state were visibly reviewed after the update; never present the image as inventory."
+    },
+    "linkedin": {
+      "state": "postiz_queue",
+      "passage_provenance_post": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-18T02:00:00Z",
+        "content": "Knowledge graphs are easy to demo and hard to trust.\n\nI built a deliberately small example from one project-owned Chinese passage: 8 nodes and 8 hand-reviewed relations. Select any relation and you can inspect its exact source unit, excerpt, source commit, and file hash.\n\nThat evidence chain matters more than graph size when material is multilingual, private, or likely to be revised.\n\nInteractive proof:\nhttps://lazying.art/lkt/passage-graph/?utm_source=linkedin&utm_medium=social&utm_campaign=lkt_provenance&utm_content=graph_proof\n\nI’m opening four $250 collection-fit sprints for people with a real corpus and an existing machine; the fit check is linked from the page.",
+        "destination": "https://lazying.art/lkt/passage-graph/?utm_source=linkedin&utm_medium=social&utm_campaign=lkt_provenance&utm_content=graph_proof",
+        "visual": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
+        "reviewed_on": "2026-09-04",
+        "policy": "The LinkedIn-specific copy leads with the trust problem, shows the bounded evidence chain, states the exact service price and existing-machine boundary, and links to the interactive proof. The visible preview, image, destination, settings, time, and QUEUE state were verified before scheduling."
+      },
+      "policy": "Use LinkedIn for professional proof and bounded buyer qualification, not a generic portfolio dump."
+    },
+    "youtube": {
+      "state": "connected_not_used_for_static_proof",
+      "checked_on": "2026-09-04",
+      "policy": "The Postiz YouTube integration is active. Do not force a static social image into a video channel; publish only after a useful first-party demo video, title, description, thumbnail, rights review, and visible preview exist."
     },
     "hackernews": {
       "state": "research_only",

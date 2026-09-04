@@ -34,7 +34,7 @@ LOCK_PATH = RUNTIME / "owned-monitor.lock"
 
 PENDING_STATES = frozenset({"DRAFT", "QUEUE"})
 FAILED_STATES = frozenset({"ERROR", "FAILED"})
-PROVIDERS = frozenset({"x", "instagram-standalone", "reddit"})
+PROVIDERS = frozenset({"x", "instagram-standalone", "linkedin", "youtube", "reddit"})
 Runner = Callable[[list[str]], Any]
 
 
@@ -113,6 +113,8 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
     providers = {
         "x": "x",
         "instagram": "instagram-standalone",
+        "linkedin": "linkedin",
+        "youtube": "youtube",
         "reddit": "reddit",
     }
     routes: dict[tuple[str, str], dict] = {}
@@ -246,13 +248,21 @@ def append_log(path: Path, payload: dict) -> None:
 def _integration_rows(payload: Any) -> list[dict]:
     if isinstance(payload, dict):
         payload = payload.get("integrations") or payload.get("output") or []
-    return [row for row in payload if isinstance(row, dict)] if isinstance(payload, list) else []
+    return (
+        [row for row in payload if isinstance(row, dict)]
+        if isinstance(payload, list)
+        else []
+    )
 
 
 def _post_rows(payload: Any) -> list[dict]:
     if isinstance(payload, dict):
         payload = payload.get("posts") or payload.get("output") or []
-    return [row for row in payload if isinstance(row, dict)] if isinstance(payload, list) else []
+    return (
+        [row for row in payload if isinstance(row, dict)]
+        if isinstance(payload, list)
+        else []
+    )
 
 
 def _provider(row: dict) -> str:
@@ -277,15 +287,11 @@ def monitor_once(
     checked_at = now.replace(microsecond=0).isoformat().replace("+00:00", "Z")
     verify_auth(runner=runner)
 
-    integrations = _integration_rows(
-        run_postiz(["integrations:list"], runner=runner)
-    )
+    integrations = _integration_rows(run_postiz(["integrations:list"], runner=runner))
     integration_ids: dict[str, str] = {}
     for integration in integrations:
         provider = str(
-            integration.get("identifier")
-            or integration.get("providerIdentifier")
-            or ""
+            integration.get("identifier") or integration.get("providerIdentifier") or ""
         )
         if provider in PROVIDERS and integration.get("id"):
             integration_ids[provider] = str(integration["id"])
@@ -363,7 +369,11 @@ def monitor_once(
             observed.append(public_summary)
 
             published_at = parse_time(publish_at)
-            if state == "QUEUE" and published_at and published_at < now - timedelta(minutes=20):
+            if (
+                state == "QUEUE"
+                and published_at
+                and published_at < now - timedelta(minutes=20)
+            ):
                 alerts.append(
                     {
                         "kind": "publication_overdue",

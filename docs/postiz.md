@@ -1,8 +1,9 @@
 # Postiz operator integration
 
 LazyPromotion uses Postiz for reviewed campaign drafts and scheduling across X,
-Instagram, and Reddit. Hacker News remains a direct-browser channel because it
-is not a Postiz integration.
+Instagram, LinkedIn, and Reddit. YouTube is connected for reviewed first-party
+videos. Hacker News remains a direct-browser channel because it is not a Postiz
+integration.
 
 ## Components
 
@@ -90,6 +91,19 @@ two unpublished items from `QUEUE` back to `DRAFT`; no release existed and no
 post was deleted. The tracked campaign source now states the exact current
 inventory and uses a direct, campaign-tagged shelf URL. Any future scheduling
 still requires a fresh visible preview and destination check.
+
+On 2026-09-04, one real capture of the live passage-provenance viewer was
+reviewed in Postiz for three distinct posts. The X draft exposed another
+provider transformation: Postiz removed a final protocol URL, while retaining
+the same owned route without the protocol. The operator corrected it in the
+visible editor and verified the 245-character preview before scheduling. The
+Instagram caption kept its full campaign URL and the LinkedIn version connected
+the evidence-chain problem to the fixed USD 250 existing-machine sprint. All
+three previews showed the project-owned image and exact bounded proof; the
+provider records then independently reported `QUEUE` for
+2026-09-16T02:00:00Z, 2026-09-17T12:00:00Z, and 2026-09-18T02:00:00Z. No
+provider IDs are stored in Git. The newly connected YouTube channel was not used
+for this static proof because it has no reviewed demo video yet.
 
 ## Owned-post observation
 

@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 12,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -186,6 +186,38 @@
         "stored_text_exact": true
       },
       "policy": "The post teaches the timestamp-first workflow, links to project-owned proof, and states the fixed rights-cleared scope. Queueing, views, and clicks are not leads or revenue."
+    },
+    "youtube": {
+      "state": "postiz_queue",
+      "prepared_on": "2026-09-05",
+      "publish_at": "2026-09-05T02:30:00Z",
+      "title": "Turn a Lecture Into a Searchable Bilingual Study Pack",
+      "content": "What changes when every line of a lecture is tied to time? You can search a word and jump straight to the source second.\n\nThis short LazyingArt proof uses one project-owned line aligned in Japanese, English, and Chinese. The workflow produces a corrected timestamped transcript, English and target-language SRT files, an editable bilingual source with an A5 pocket PDF, and a source-and-rights manifest.\n\nWorking proof: https://lazying.art/lecture-pack/?utm_source=youtube&utm_medium=video&utm_campaign=bilingual_lecture_pack_pilot&utm_content=typography_demo\n\nFree fit check: https://lazying.art/lecture-pack/fit-check/?utm_source=youtube&utm_medium=video&utm_campaign=bilingual_lecture_pack_pilot&utm_content=typography_demo\n\nThe fixed USD 250 pilot covers one rights-cleared English lecture up to 20 minutes and one target language.",
+      "postiz_content": "What changes when every line of a lecture is tied to time? You can search a word and jump straight to the source second.\n\nThis short LazyingArt proof uses one project-owned line aligned in Japanese, English, and Chinese. The workflow produces a corrected timestamped transcript, English and target-language SRT files, an editable bilingual source with an A5 pocket PDF, and a source-and-rights manifest.\n\nWorking proof: https://lazying.art/lecture-pack/?utm_source=youtube&utm_medium=video&utm_campaign=bilingual_lecture_pack_pilot&utm_content=typography_demo\n\nFree fit check: https://lazying.art/lecture-pack/fit-check/?utm_source=youtube&utm_medium=video&utm_campaign=bilingual_lecture_pack_pilot&utm_content=typography_demo\n\nThe fixed USD 250 pilot covers one rights-cleared English lecture up to 20 minutes and one target language.",
+      "format": "23-second 1080x1920 typography-only proof with native H.264 video, AAC stereo audio, and the configured LazyingArt logo",
+      "source_provenance": "The only transcript example is a project-owned Japanese, English, and Chinese line at 00:05.000 from the public LalaMedias proof. No third-party lecture footage or customer content is included.",
+      "video_sha256": "5b7ee9a56b9ca52032d9db7eead37503cb458c9f635307df68237382fc9c8743",
+      "package_sha256": "69b5696b8f1787b3482a61322e619c476703ff06a806f8864fb8c33981d82dbd",
+      "destination": "https://lazying.art/lecture-pack/?utm_source=youtube&utm_medium=video&utm_campaign=bilingual_lecture_pack_pilot&utm_content=typography_demo",
+      "fit_check": "https://lazying.art/lecture-pack/fit-check/?utm_source=youtube&utm_medium=video&utm_campaign=bilingual_lecture_pack_pilot&utm_content=typography_demo",
+      "review": {
+        "public_publish_attempts": 0,
+        "visual_contact_sheet_checked": true,
+        "cover_checked": true,
+        "five_slides_legible": true,
+        "metadata_checked": true,
+        "hallucinated_caption_terms_removed": true,
+        "selected_master_matches_package": true,
+        "postiz_media_upload_verified": true,
+        "stored_state": "QUEUE",
+        "stored_content_sha256": "ca984ae13b5b96f459f792dc39b0d726872abc3a09e0a55347d9cb708df25198",
+        "stored_time_exact": true,
+        "stored_title_exact": true,
+        "stored_text_exact": true,
+        "shortlink": false
+      },
+      "queue_gate": "The reviewed Postiz schedule is the only active publication route for this asset. Do not also submit its LazyEdit package to AutoPublish.",
+      "policy": "This is project-owned workflow proof, not a customer result. The public copy states one rights-cleared English lecture up to 20 minutes, one target language, and the fixed USD 250 pilot. Queueing, views, and clicks are not leads or revenue."
     },
     "reddit": {
       "state": "needs_exact_need",

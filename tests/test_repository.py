@@ -1294,7 +1294,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 10)
+        self.assertEqual(campaign["version"], 12)
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")
         self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")
@@ -1305,6 +1305,35 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(linkedin["shortlink"])
         self.assertTrue(linkedin["verification"]["stored_text_exact"])
         self.assertIn("not leads or revenue", linkedin["policy"])
+
+    def test_bilingual_lecture_youtube_proof_is_reviewed_before_one_publish(self):
+        path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        youtube = campaign["channels"]["youtube"]
+        self.assertEqual(youtube["state"], "postiz_queue")
+        self.assertEqual(youtube["review"]["public_publish_attempts"], 0)
+        self.assertTrue(youtube["review"]["visual_contact_sheet_checked"])
+        self.assertTrue(youtube["review"]["metadata_checked"])
+        self.assertTrue(youtube["review"]["hallucinated_caption_terms_removed"])
+        self.assertEqual(len(youtube["video_sha256"]), 64)
+        self.assertEqual(len(youtube["package_sha256"]), 64)
+        self.assertEqual(youtube["publish_at"], "2026-09-05T02:30:00Z")
+        self.assertEqual(youtube["content"], youtube["postiz_content"])
+        self.assertTrue(youtube["review"]["postiz_media_upload_verified"])
+        self.assertTrue(youtube["review"]["stored_text_exact"])
+        self.assertFalse(youtube["review"]["shortlink"])
+        self.assertIn("utm_source=youtube", youtube["destination"])
+        self.assertIn("USD 250", youtube["policy"])
+        self.assertIn("only active publication route", youtube["queue_gate"])
+
+        renderer = (ROOT / "scripts" / "render_lecture_pack_demo.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn('item["start"] == "00:00:05.000"', renderer)
+        self.assertIn('"Source and rights manifest"', renderer)
+        self.assertIn('"One rights-cleared"', renderer)
+        self.assertIn('"USD 250"', renderer)
+        self.assertNotIn("customer result", renderer.casefold())
 
     def test_latex_redline_sample_matches_its_public_manifest(self):
         sample = ROOT / "examples" / "latex-redline"

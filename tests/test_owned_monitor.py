@@ -261,6 +261,19 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(linkedin_route["campaign_id"], "bilingual-lecture-pack-pilot")
         self.assertEqual(linkedin_route["route"], "product")
 
+        youtube = campaign["channels"]["youtube"]
+        self.assertEqual(youtube["state"], "postiz_queue")
+        self.assertEqual(youtube["content"], youtube["postiz_content"])
+        self.assertEqual(
+            owned_monitor.content_hash(youtube["postiz_content"]),
+            "ca984ae13b5b96f459f792dc39b0d726872abc3a09e0a55347d9cb708df25198",
+        )
+        youtube_route = owned_monitor.route_for_post(
+            "youtube", youtube["postiz_content"], owned_monitor.route_index()
+        )
+        self.assertEqual(youtube_route["campaign_id"], "bilingual-lecture-pack-pilot")
+        self.assertEqual(youtube_route["route"], "product")
+
     def test_live_sample_report_posts_match_the_lkt_campaign(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(

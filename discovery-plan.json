@@ -62,6 +62,28 @@
         "purpose": "Creators explicitly asking for caption or transcription help"
       },
       {
+        "project_id": "video2book",
+        "query": "subreddit:VideoEditing (\"course video\" OR \"training video\" OR \"recorded lecture\" OR webinar) (subtitles OR transcript OR bilingual) (help OR editor OR hire)",
+        "purpose": "Lecture-pack buyer intent: a course owner asking for transcript, subtitle, or bilingual study-material help",
+        "required_body_groups": [
+          ["my lecture", "my course", "our lecture", "our course", "course video", "training video", "recorded lecture", "webinar"],
+          ["subtitle", "caption", "transcript", "bilingual", "translation", "translate"],
+          ["help", "need", "looking for", "hire", "editor", "how can", "recommend"]
+        ],
+        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+      },
+      {
+        "project_id": "paperagent",
+        "query": "subreddit:LaTeX (manuscript OR paper OR thesis) (latexdiff OR redline OR compile OR formatting) (help OR editor OR hire)",
+        "purpose": "Manuscript-sprint buyer intent: an author asking for a reproducible LaTeX build, redline, or submission-format repair",
+        "required_body_groups": [
+          ["manuscript", "paper", "thesis", "latex", "overleaf"],
+          ["latexdiff", "redline", "compile", "build", "formatting", "template", "bibtex", "citation"],
+          ["help", "need", "looking for", "hire", "editor", "how do", "anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+      },
+      {
         "project_id": "pocketpolyglot",
         "query": "subreddit:languagelearning \"parallel text\" recommend",
         "purpose": "Learners seeking bilingual or parallel reading material"
@@ -177,6 +199,28 @@
         "purpose": "Explicit subtitle help requests from video creators"
       },
       {
+        "project_id": "video2book",
+        "query": "(\"my course\" OR \"our course\" OR \"training video\" OR webinar) (subtitles OR transcript OR bilingual) (help OR editor OR hire) -filter:retweets",
+        "purpose": "Lecture-pack buyer intent: a course owner asking for transcript, subtitle, or bilingual study-material help",
+        "required_body_groups": [
+          ["my lecture", "my course", "our lecture", "our course", "course video", "training video", "recorded lecture", "webinar"],
+          ["subtitle", "caption", "transcript", "bilingual", "translation", "translate"],
+          ["help", "need", "looking for", "hire", "editor", "how can", "recommend"]
+        ],
+        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+      },
+      {
+        "project_id": "paperagent",
+        "query": "(manuscript OR paper OR thesis) (LaTeX OR Overleaf) (latexdiff OR redline OR compile OR formatting) (help OR editor OR hire) -filter:retweets",
+        "purpose": "Manuscript-sprint buyer intent: an author asking for a reproducible LaTeX build, redline, or submission-format repair",
+        "required_body_groups": [
+          ["manuscript", "paper", "thesis", "latex", "overleaf"],
+          ["latexdiff", "redline", "compile", "build", "formatting", "template", "bibtex", "citation"],
+          ["help", "need", "looking for", "hire", "editor", "how do", "anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "we built", "we created", "my service", "our service", "for hire", "available for work"]
+      },
+      {
         "project_id": "pocketpolyglot",
         "query": "\"graded reader\" (recommend OR advice) -filter:retweets",
         "purpose": "Language learners requesting reading resources"
@@ -267,6 +311,18 @@
         "query": "Ask HN video subtitles transcription",
         "comment_query": "subtitles",
         "purpose": "Video creators asking for caption, transcription, or editing help"
+      },
+      {
+        "project_id": "video2book",
+        "query": "Ask HN course lecture subtitles localization",
+        "comment_query": "lecture subtitles",
+        "purpose": "Research-only evidence for course owners who need transcript, subtitle, or bilingual study-material workflows"
+      },
+      {
+        "project_id": "paperagent",
+        "query": "Ask HN LaTeX manuscript redline build",
+        "comment_query": "LaTeX manuscript",
+        "purpose": "Research-only evidence for authors who need reproducible LaTeX builds, redlines, or submission-format repair"
       },
       {
         "project_id": "localknowledgeterminal",

@@ -262,6 +262,46 @@ class RepositoryTests(unittest.TestCase):
                     route,
                 ))
 
+    def test_paid_book_media_and_code_sprints_have_frequent_buyer_intent_routes(self):
+        for platform in ("reddit", "x", "hackernews"):
+            core = browser.discovery_query_lanes(platform)["core"]
+            with self.subTest(platform=platform):
+                self.assertTrue(any(route["project_id"] == "video2book" for route in core))
+                self.assertTrue(any(route["project_id"] == "paperagent" for route in core))
+
+        for platform in ("reddit", "x"):
+            core = browser.discovery_query_lanes(platform)["core"]
+            lecture = next(
+                route for route in core
+                if route["project_id"] == "video2book"
+                and "buyer intent" in route["purpose"].casefold()
+            )
+            manuscript = next(
+                route for route in core
+                if route["project_id"] == "paperagent"
+                and "buyer intent" in route["purpose"].casefold()
+            )
+            with self.subTest(platform=platform, offer="lecture"):
+                self.assertTrue(browser.route_body_qualified(
+                    "I need an editor for my course video: correct the transcript, "
+                    "add bilingual subtitles, and make it easier to study.",
+                    lecture,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I built my service for automatic lecture subtitles.",
+                    lecture,
+                ))
+            with self.subTest(platform=platform, offer="manuscript"):
+                self.assertTrue(browser.route_body_qualified(
+                    "My LaTeX manuscript fails to compile in Overleaf. I need help "
+                    "fixing the build and producing a latexdiff redline.",
+                    manuscript,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I am available for work and offer a LaTeX manuscript service.",
+                    manuscript,
+                ))
+
     def test_classical_chinese_routes_require_a_reader_request(self):
         for platform in ("reddit", "x"):
             routes = [

@@ -1406,7 +1406,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 20)
+        self.assertEqual(campaign["version"], 21)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1468,6 +1468,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(
             campaign["conversion_readiness"]["fit_check"]["working_terms_linked"]
         )
+        payment = campaign["conversion_readiness"]["payment"]
+        self.assertEqual(payment["state"], "ready_for_reviewed_live_request")
+        self.assertEqual(payment["price"], "USD 250")
+        self.assertEqual(payment["quantity"], 1)
+        self.assertEqual(payment["fulfillment_review_notes"], 9)
+        self.assertEqual(payment["private_key_file_mode"], "600")
+        self.assertTrue(payment["live_key_format_valid"])
+        self.assertTrue(payment["account_authenticated"])
+        self.assertTrue(payment["charges_enabled"])
+        self.assertTrue(payment["payouts_enabled"])
+        self.assertTrue(payment["details_submitted"])
+        self.assertFalse(payment["stripe_objects_created"])
+        self.assertFalse(payment["public_payment_link"])
+        self.assertIn("real buyer", payment["policy"].casefold())
 
         instagram = campaign["channels"]["instagram"]
         self.assertEqual(instagram["content"], instagram["postiz_content"])

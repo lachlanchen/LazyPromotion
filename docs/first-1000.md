@@ -165,6 +165,13 @@ subtitles, USD 75 for the study companion, and USD 75 for the preview, manifest,
 and correction pass. Working source copies are deleted within fourteen calendar
 days unless the written scope requires earlier deletion. LazyingArtWebsite
 commit `565421a` is deployed, and the fit check links back to these terms.
+
+The lecture pack now has the same fail-closed payment readiness as the other
+active sprints. A nine-item fulfillment plan validates one USD 250 quantity,
+disables public export, shipping, adjustable quantity, and promotion codes, and
+requires the fit, rights, scope, and working terms to be reviewed first. A
+sanitized live account check passed for authentication, charges, payouts, and
+submitted details without creating a Stripe object or payment link.
 It delivers a timestamped English transcript and SRT, a target-language SRT,
 editable bilingual source, an A5 study PDF, one customer-selected 30–45 second
 captioned preview, a rights manifest, and one bounded corrections pass. Its

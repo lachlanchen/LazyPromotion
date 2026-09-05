@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 21,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -142,8 +142,22 @@
       "working_terms_linked": true
     },
     "payment": {
-      "state": "not_requested",
-      "policy": "The public price is fixed, but a real Stripe request still requires a qualified buyer, accepted written scope, and reviewed delivery, correction, cancellation, refund, tax, and support terms."
+      "state": "ready_for_reviewed_live_request",
+      "checked_at": "2026-09-05T08:21:02Z",
+      "price": "USD 250",
+      "quantity": 1,
+      "fulfillment_review_notes": 9,
+      "private_key_file_mode": "600",
+      "live_key_format_valid": true,
+      "account_authenticated": true,
+      "charges_enabled": true,
+      "payouts_enabled": true,
+      "details_submitted": true,
+      "stripe_plan_commit": "491ebe3",
+      "readiness_helper_commit": "809ace3",
+      "stripe_objects_created": false,
+      "public_payment_link": false,
+      "policy": "The read-only check proves that the guarded USD 250 configuration and Stripe account are ready. It does not authorize or create a payment object. A real buyer must pass the fit check and accept the exact written scope, rights, delivery, correction, cancellation, refund, tax, retention, and support terms before a separately reviewed creation command is considered."
     }
   },
   "search_discovery": {

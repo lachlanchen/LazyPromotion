@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -125,6 +125,7 @@
       },
       "public_proof": [
         "https://lazying.art/meeting-intelligence/",
+        "https://blog.lazying.art/html/computer_internet/3802/meeting-transcripts-decisions-action-items-audit-trail.html",
         "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/907e0b3ba6a48cc1d42e37cdaa22b28416264ab6/examples/artifacts/scripted-bilingual-meeting-knowledge.json",
         "https://github.com/lachlanchen/LocalKnowledgeTerminal",
         "https://lazying.art/lkt/passage-graph/",
@@ -147,6 +148,24 @@
           "evidence": "Visible Search Console URL Inspection reported URL unknown to Google, then accepted one indexing request and confirmed that the URL was added to a priority crawl queue.",
           "policy": "A crawl request is not indexing, ranking, traffic, a lead, or revenue. Do not resubmit while the request is queued."
         }
+      },
+      "practical_guide": {
+        "state": "published_and_verified",
+        "checked_on": "2026-09-05",
+        "url": "https://blog.lazying.art/html/computer_internet/3802/meeting-transcripts-decisions-action-items-audit-trail.html",
+        "source_commit": "d06ee28",
+        "languages": [
+          "en",
+          "zh-hant",
+          "ja"
+        ],
+        "proof_link": "https://lazying.art/meeting-intelligence/?utm_source=lazyblog&utm_medium=article&utm_campaign=meeting_intelligence&utm_content=auditable_transcript_guide",
+        "fit_check_link": "https://lazying.art/lkt/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=meeting_transcript_guide",
+        "supported_copy": "A transcript is not yet a decision record. Preserve exact source spans, review typed items, retain corrections, and build the current graph only from accepted records.",
+        "proof_boundary": "The article uses the project-owned scripted 54.8-second English/Mandarin fixture and exact unit-05 evidence fields. It does not claim recorded audio, automatic extraction, customer evidence, or enterprise deployment.",
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "Use the guide as standalone help for an explicit meeting-transcript provenance or action-item need. Mention the proof or USD 250 fit check only when it materially advances that exact need and with affiliation clear; publication is not a lead, sale, or revenue."
       },
       "application_packet": "prepared_in_ignored_private_storage",
       "architecture_attachment": {

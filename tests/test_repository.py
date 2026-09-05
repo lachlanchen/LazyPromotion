@@ -720,7 +720,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -811,6 +811,22 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertIn("Do not resubmit", proof["search_indexing"]["policy"])
         self.assertIn("https://lazying.art/meeting-intelligence/", meeting["public_proof"])
+        guide = meeting["practical_guide"]
+        self.assertEqual(guide["state"], "published_and_verified")
+        self.assertEqual(
+            guide["url"],
+            "https://blog.lazying.art/html/computer_internet/3802/meeting-transcripts-decisions-action-items-audit-trail.html",
+        )
+        self.assertEqual(guide["languages"], ["en", "zh-hant", "ja"])
+        self.assertEqual(guide["source_commit"], "d06ee28")
+        self.assertIn("source spans", guide["supported_copy"])
+        self.assertIn("scripted 54.8-second", guide["proof_boundary"])
+        self.assertIn("does not claim", guide["proof_boundary"])
+        self.assertFalse(guide["lead_or_sale_observed"])
+        self.assertEqual(guide["verified_received_gross_usd"], 0)
+        self.assertIn("standalone help", guide["policy"])
+        self.assertIn("not a lead", guide["policy"])
+        self.assertIn(guide["url"], meeting["public_proof"])
         self.assertEqual(
             meeting["architecture_attachment"]["sha256"],
             "5a28f7033b9e6c780c11cc8314ac9e8e0b79c3eca2c215ad9c48aac1d8633323",

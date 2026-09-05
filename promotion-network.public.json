@@ -76,7 +76,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 11
+        "version": 12
       },
       "url": ""
     },
@@ -5830,37 +5830,58 @@
       "url": "https://lazying.art/meeting-intelligence/"
     },
     {
+      "id": "url:807e415bd0224e67",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission practical guide fit check link",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=meeting_transcript_guide"
+    },
+    {
+      "id": "url:992640952c7492d0",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission practical guide proof link",
+      "metadata": {},
+      "url": "https://lazying.art/meeting-intelligence/?utm_source=lazyblog&utm_medium=article&utm_campaign=meeting_intelligence&utm_content=auditable_transcript_guide"
+    },
+    {
+      "id": "url:d620cc2c103ee1d1",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission practical guide url",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/3802/meeting-transcripts-decisions-action-items-audit-trail.html"
+    },
+    {
       "id": "url:94ee137e42979da1",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 2",
+      "label": "enterprise meeting intelligence mission public proof 3",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/907e0b3ba6a48cc1d42e37cdaa22b28416264ab6/examples/artifacts/scripted-bilingual-meeting-knowledge.json"
     },
     {
       "id": "url:1c57cb81d6efe0d4",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 4",
+      "label": "enterprise meeting intelligence mission public proof 5",
       "metadata": {},
       "url": "https://lazying.art/lkt/passage-graph/"
     },
     {
       "id": "url:6c61657175e6875a",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 5",
+      "label": "enterprise meeting intelligence mission public proof 6",
       "metadata": {},
       "url": "https://github.com/lachlanchen/Video2Book"
     },
     {
       "id": "url:45192426591114fc",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 6",
+      "label": "enterprise meeting intelligence mission public proof 7",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyEdge"
     },
     {
       "id": "url:e11294f3dfa63ddb",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 7",
+      "label": "enterprise meeting intelligence mission public proof 8",
       "metadata": {},
       "url": "https://text-and-speech-api.lazying.art/healthz"
     },
@@ -7390,6 +7411,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=meeting_transcript_guide",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:807e415bd0224e67"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689",
       "metadata": {},
       "relation": "uses_evidence",
@@ -7427,6 +7456,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:94ee137e42979da1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/meeting-intelligence/?utm_source=lazyblog&utm_medium=article&utm_campaign=meeting_intelligence&utm_content=auditable_transcript_guide",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:992640952c7492d0"
     },
     {
       "confidence": 1.0,
@@ -7475,6 +7512,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:d538df28a3543975"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/3802/meeting-transcripts-decisions-action-items-audit-trail.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:d620cc2c103ee1d1"
     },
     {
       "confidence": 1.0,

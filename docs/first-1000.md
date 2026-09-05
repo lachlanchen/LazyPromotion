@@ -139,6 +139,15 @@ or claim about a large collection. Its single X note is queued for 2026-09-14,
 after the existing campaigns. Publication, clicks, and replies remain attention
 evidence until a real request passes qualification.
 
+The [auditable meeting-transcript
+guide](https://blog.lazying.art/html/computer_internet/3802/meeting-transcripts-decisions-action-items-audit-trail.html)
+turns the bilingual meeting proof into a standalone answer: define typed items,
+preserve exact source spans, keep superseded revisions, build the graph from
+accepted records, and test a portable export. It is live in English,
+Traditional Chinese, and Japanese. The article uses project-owned scripted text
+and is not customer, ASR, or automatic-extraction evidence; publication is not
+a lead or revenue.
+
 ## Active secondary route: manuscript build and redline
 
 The live [Manuscript Build & Redline Sprint](https://lazying.art/manuscript-sprint/)

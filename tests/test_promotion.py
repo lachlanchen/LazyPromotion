@@ -50,6 +50,17 @@ class PromotionTests(unittest.TestCase):
         ranked = promotion.rank_projects("Looking for a bilingual Japanese reader with furigana for reading practice")
         self.assertEqual(ranked[0]["project"]["id"], "pocketpolyglot")
 
+    def test_l_and_n_pronunciation_need_matches_focused_app(self):
+        ranked = promotion.rank_projects(
+            "I confuse L and N and need an L and N pronunciation app with minimal pairs."
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "l-and-n")
+        self.assertEqual(
+            ranked[0]["project"]["homepage"],
+            "https://l-and-n.lazying.art/",
+        )
+        self.assertIn("free no-signup PWA", ranked[0]["project"]["reply_context"])
+
     def test_multilingual_eink_purchase_need_matches_public_offer(self):
         ranked = promotion.rank_projects(
             "Can anyone recommend an e-ink reader for multilingual language learning?"

@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 10,
+  "version": 11,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -33,7 +33,7 @@
     "state": "live",
     "url": "https://lazying.art/manuscript-sprint/",
     "fit_check": "https://lazying.art/manuscript-sprint/fit-check/",
-    "website_commit": "ed0434d210122c0c6ee33e8fca4363b312fa6036",
+    "website_commit": "12e65ae269de4730b0bae5d230ba1017950ea251",
     "sample_delivery": {
       "state": "deployed_verified",
       "checked_at": "2026-09-05T11:38:00Z",
@@ -174,14 +174,41 @@
     }
   },
   "fit_check_smoke": {
-    "state": "live_review_panel_verified",
+    "state": "historical_local_review_panel_verified",
     "checked_at": "2026-09-04T09:16:00Z",
+    "historical": true,
+    "superseded_by": "encrypted_direct_intake",
     "customer_data_used": false,
     "automatic_submission": false,
     "network_mutations": 0,
     "attribution_fields": ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
     "payment_before_scope_acceptance": false,
     "working_terms_linked": true
+  },
+  "encrypted_direct_intake": {
+    "state": "live_verified",
+    "checked_at": "2026-09-05T12:39:31Z",
+    "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+    "record_schema": "fit-check-record/v2",
+    "source_schema": "fit-check/v2",
+    "offer_route": "manuscript",
+    "backend_commit": "https://github.com/lachlanchen/myblog/commit/c8d3c0669b54ddbeef936b8f613d7d376d065936",
+    "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/12e65ae269de4730b0bae5d230ba1017950ea251",
+    "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
+    "explicit_review_confirmation": true,
+    "automatic_submission": false,
+    "source_upload_requested": false,
+    "email_fallback": true,
+    "copy_fallback": true,
+    "synthetic_visible_round_trip_verified": true,
+    "receiver_authenticated_decrypted_and_saved": true,
+    "private_copy_mode": "0600",
+    "remote_envelope_deleted_only_after_unchanged_verification": true,
+    "synthetic_local_payload_artifacts_removed": true,
+    "remote_spool_empty": true,
+    "lead_or_sale_observed": false,
+    "verified_received_gross_usd": 0,
+    "policy": "The labeled synthetic metadata round trip proves the review gate, encrypted transport, private receiver, and email fallback. It is not a customer inquiry, qualification, sale, delivery, or revenue."
   },
   "intake_routing": {
     "state": "active",

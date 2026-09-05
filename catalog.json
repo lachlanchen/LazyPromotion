@@ -185,6 +185,19 @@
       ]
     },
     {
+      "id": "l-and-n",
+      "name": "L-and-N",
+      "url": "https://github.com/lachlanchen/L-and-N",
+      "homepage": "https://l-and-n.lazying.art/",
+      "summary": "A focused English L/N pronunciation coach with Mandarin and Cantonese guidance, minimal-pair practice, and PWA, iOS, Android, and watchOS builds.",
+      "reply_context": "Use L-and-N only for a concrete L/N sound-confusion or teaching need. Lead with a complete practice method, then mention the free no-signup PWA when it helps the learner act on the advice. The first-party APK and Google internal-test route are test builds, TestFlight is awaiting beta approval, and neither mobile store listing is publicly available yet. Do not call its score diagnostic, clinical, scientifically validated, or reliably on-device across browsers; recognition depends on the user's platform and browser.",
+      "keywords": [
+        "l and n pronunciation", "pronounce l and n", "confuse l and n",
+        "l n minimal pairs", "l/n minimal pairs", "l sound n sound",
+        "l n pronunciation practice", "l n pronunciation app"
+      ]
+    },
+    {
       "id": "localknowledgeterminal",
       "name": "LocalKnowledgeTerminal",
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",

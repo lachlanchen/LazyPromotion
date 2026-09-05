@@ -265,10 +265,9 @@ description links were verified. This was the only publication route, so its
 LazyEdit package must not be sent through AutoPublish. Publication is attention
 evidence, not a lead or revenue.
 
-The verified fit-check page is
-<https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
-shows a review gate inside the current browser tab. The prospective customer
-must explicitly submit the encrypted request or choose the
+The LKT, manuscript, and lecture fit-check pages validate their minimum
+questions and show a review gate inside the current browser tab. A prospective
+customer must explicitly confirm and submit the encrypted request or choose the
 `contact@lazying.art` email fallback. Inquiry content is stored only as an
 encrypted envelope outside the webroot; the operational rate and idempotency
 state contains no inquiry content.
@@ -282,12 +281,19 @@ keeps Stripe after written scope acceptance. The mail action was not clicked.
 This proves only that the review-first path is ready; it is not a lead, sale, or
 revenue event. The checked deployment is LazyingArtWebsite commit `8541e9c`.
 
-Encrypted direct intake is now live. The verified components are myblog backend
-commit `bcf0e22debc4bf2d87af17768782708d0e0a3860`, LazyingArtWebsite frontend
-commit `f31d7f0b0f2673f116af9490a36c103a5e099689`, and LazyPromotion receiver
-commit `7d7e40058ae37c468bb4156bfc74b2042d61db69`. Allowed-origin OPTIONS returned
+Encrypted direct intake is now live for all three offers. The verified
+components are myblog backend commit
+`c8d3c0669b54ddbeef936b8f613d7d376d065936`, LazyingArtWebsite frontend commit
+`12e65ae269de4730b0bae5d230ba1017950ea251`, and LazyPromotion receiver commit
+`d04488c08a815b9e21d6ca6d3059c142f38d049a`. Allowed-origin OPTIONS returned
 the exact ACAO, foreign-origin OPTIONS returned none, and a malformed allowed
 POST failed with HTTP 400.
+
+The manuscript and lecture routes then completed labeled synthetic visible
+round trips through the routed v2 record. Both were decrypted and verified in
+private mode `0600`; only the unchanged remote envelopes were removed. The
+synthetic local payload artifacts were deleted, the remote spool returned to
+empty, and no customer, lead, sale, or revenue state changed.
 
 An explicitly labeled synthetic request then completed through the visible live
 page with reference `cc078babd1b32b0c08e796e88886201f`. The receiver

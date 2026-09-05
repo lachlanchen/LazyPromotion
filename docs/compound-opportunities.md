@@ -24,7 +24,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | candidate | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks | 3.35 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
-| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Retire or redirect the stale memo.lazying.art claims, align the live terms and privacy wording, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort | 2.95 |
+| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Keep the aligned public pages in free private-alpha mode, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort | 2.95 |
 
 ## Opportunity contracts
 
@@ -470,7 +470,7 @@ Gates:
 
 **First deliverable:** Keep AiMemo as a gated private alpha while proving the manual memo path it implements now: create, edit, search, archive, classify, date, tag, resolve a revision conflict, and export account-scoped JSON without AI consent
 
-**First demand test:** Retire or redirect the stale memo.lazying.art claims, align the live terms and privacy wording, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort
+**First demand test:** Keep the aligned public pages in free private-alpha mode, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort
 
 Evidence:
 
@@ -485,9 +485,9 @@ Evidence:
 
 Gates:
 
-- Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and its two public sites disagree
+- Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and deletion, voice, collaboration, and store reliability remain unverified
 - Do not claim reliable live AI or voice, collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, full offline operation, or public store availability
-- Remove the stale subscription statement from the free alpha terms and retire or redirect the older memo.lazying.art marketing claims
+- Keep both public pages aligned with the free private-alpha state and recheck them before any invitation
 - Complete and verify deletion across retained agent, speech, and backup data before inviting external testers
 - Restore the AI provider and separately verify a current text and voice round trip before promoting AI organization
 

@@ -334,7 +334,7 @@
       "need": "Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job",
       "projects": ["AgentShell", "LocalKnowledgeTerminal", "LazyingAgentWeb", "AI-Wearable"],
       "first_deliverable": "Keep AiMemo as a gated private alpha while proving the manual memo path it implements now: create, edit, search, archive, classify, date, tag, resolve a revision conflict, and export account-scoped JSON without AI consent",
-      "first_test": "Retire or redirect the stale memo.lazying.art claims, align the live terms and privacy wording, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort",
+      "first_test": "Keep the aligned public pages in free private-alpha mode, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort",
       "proof": [
         "https://github.com/lachlanchen/AgentShell",
         "https://github.com/lachlanchen/LocalKnowledgeTerminal",
@@ -346,9 +346,9 @@
         "https://www.reddit.com/r/AiNoteTaker/comments/1vhbfj2/apps_for_taking_voice_notes/"
       ],
       "gates": [
-        "Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and its two public sites disagree",
+        "Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and deletion, voice, collaboration, and store reliability remain unverified",
         "Do not claim reliable live AI or voice, collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, full offline operation, or public store availability",
-        "Remove the stale subscription statement from the free alpha terms and retire or redirect the older memo.lazying.art marketing claims",
+        "Keep both public pages aligned with the free private-alpha state and recheck them before any invitation",
         "Complete and verify deletion across retained agent, speech, and backup data before inviting external testers",
         "Restore the AI provider and separately verify a current text and voice round trip before promoting AI organization"
       ],

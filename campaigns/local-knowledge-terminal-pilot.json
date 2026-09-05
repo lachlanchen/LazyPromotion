@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -7,9 +7,15 @@
     "fit_check": "https://lazying.art/lkt/fit-check/",
     "encrypted_intake_sources": {
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
-      "backend_commit": "https://github.com/lachlanchen/myblog/commit/bcf0e22debc4bf2d87af17768782708d0e0a3860",
-      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689",
-      "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69"
+      "backend_commit": "https://github.com/lachlanchen/myblog/commit/c8d3c0669b54ddbeef936b8f613d7d376d065936",
+      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/12e65ae269de4730b0bae5d230ba1017950ea251",
+      "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
+      "record_schema": "fit-check/v2",
+      "supported_offers": [
+        "lkt",
+        "manuscript",
+        "lecture"
+      ]
     },
     "practical_guide": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
@@ -18,7 +24,7 @@
     "sample_fit_report_source": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
     "passage_provenance_proof": {
       "state": "live_verified",
-      "checked_on": "2026-09-04",
+      "checked_on": "2026-09-05",
       "viewer": "https://lazying.art/lkt/passage-graph/",
       "website_commit": "b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb",
       "social_preview_commit": "b7ea9cdf363a33552a38a52ad3bc790b51ab05e8",
@@ -352,9 +358,9 @@
       "checked_on": "2026-09-04",
       "current_live_path": "encrypted_direct_intake_with_email_fallback",
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
-      "backend_source": "https://github.com/lachlanchen/myblog/commit/bcf0e22debc4bf2d87af17768782708d0e0a3860",
-      "frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/f31d7f0b0f2673f116af9490a36c103a5e099689",
-      "receiver_source": "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69",
+      "backend_source": "https://github.com/lachlanchen/myblog/commit/c8d3c0669b54ddbeef936b8f613d7d376d065936",
+      "frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/12e65ae269de4730b0bae5d230ba1017950ea251",
+      "receiver_source": "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
       "transport_verification": {
         "allowed_options_exact_acao": true,
         "foreign_options_acao_present": false,
@@ -374,6 +380,26 @@
         "remote_spool_empty": true,
         "private_screenshot_retained_outside_git": true,
         "earlier_endpoint_probe_receipt": "d10ad62060dbe7e8b33f87c4908f1826"
+      },
+      "v2_transition": {
+        "state": "live_verified",
+        "record_schema": "fit-check-record/v2",
+        "source_schema": "fit-check/v2",
+        "supported_offers": [
+          "lkt",
+          "manuscript",
+          "lecture"
+        ],
+        "cached_lkt_v1_frontend_compatible": true,
+        "allowed_origin_options_verified": true,
+        "malformed_offer_status": 400,
+        "manuscript_and_lecture_visible_round_trips_verified": true,
+        "remote_envelopes_deleted_after_unchanged_verification": true,
+        "synthetic_local_payload_artifacts_removed": true,
+        "remote_spool_empty": true,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The routed v2 check used labeled synthetic metadata only. It proves the shared encrypted intake for the three offer routes, not a customer inquiry, qualification, sale, delivery, or revenue."
       },
       "receiver_runtime": {
         "state": "healthy",
@@ -662,13 +688,18 @@
         "visual": "https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png",
         "reviewed_on": "2026-09-05",
         "shortlink": false,
-        "verification": {
-          "provider": "linkedin",
-          "stored_text_exact": true,
-          "uploaded_media_visible": true,
-          "original_url_preserved": true,
-          "queue_state_verified": true
-        },
+      "verification": {
+        "provider": "linkedin",
+        "stored_text_exact": true,
+        "uploaded_media_visible": true,
+        "original_url_preserved": true,
+        "queue_state_verified": true,
+        "visible_preflight_rechecked_at": "2026-09-05T12:06:00Z",
+        "intended_account_visible": true,
+        "exact_scope_and_exclusions_visible": true,
+        "modal_closed_without_update": true,
+        "scheduled_item_remained_in_queue": true
+      },
         "lead_or_sale_observed": false,
         "policy": "The complete LinkedIn preview was visibly reviewed with the intended account, original first-party URL, uploaded service cover, exact USD 250 scope, existing-machine boundary, exclusions, and September 9 09:00 HKT schedule before entering QUEUE. It is an owned offer post, not a lead, customer result, sale, or revenue."
       },

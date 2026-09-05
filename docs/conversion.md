@@ -187,11 +187,12 @@ mail link. This is conversion-path readiness evidence, not a fit inquiry,
 qualified lead, or sale. The verified public deployment is LazyingArtWebsite
 commit `8541e9c`.
 
-Encrypted direct intake is now live. The backend is pinned at myblog commit
-`bcf0e22debc4bf2d87af17768782708d0e0a3860`, the frontend at
-LazyingArtWebsite commit `f31d7f0b0f2673f116af9490a36c103a5e099689`,
+Encrypted direct intake is now live for LKT, manuscript, and lecture fit
+checks. The backend is pinned at myblog commit
+`c8d3c0669b54ddbeef936b8f613d7d376d065936`, the frontend at
+LazyingArtWebsite commit `12e65ae269de4730b0bae5d230ba1017950ea251`,
 and the receiver at LazyPromotion commit
-`7d7e40058ae37c468bb4156bfc74b2042d61db69`. Live preflight verified that the
+`d04488c08a815b9e21d6ca6d3059c142f38d049a`. Live preflight verified that the
 allowed OPTIONS request receives the exact ACAO, a foreign origin receives no
 ACAO, and a malformed allowed POST fails with HTTP 400.
 
@@ -214,6 +215,12 @@ state only. The private visual evidence remains outside Git. This synthetic
 verification is not a customer inquiry, qualification, lead, customer outcome,
 sale, or revenue. The receiver never replies or qualifies automatically, and
 the `contact@lazying.art` email fallback remains available.
+
+On September 5, the manuscript and lecture pages each completed the same
+visible, explicitly confirmed synthetic round trip using the strict routed v2
+record. Both private records were verified in mode `0600`; their unchanged
+remote envelopes and exact synthetic local payload artifacts were removed.
+The remote spool returned to empty without changing any lead or revenue state.
 
 The first-party search-discovery gate was also checked through Search Console's
 visible URL Inspection and Sitemaps screens. On September 2, the sample report

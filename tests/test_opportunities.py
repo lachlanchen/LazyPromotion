@@ -53,6 +53,8 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("Keep AiMemo as a gated private alpha", body)
         self.assertIn("export account-scoped JSON without AI consent", body)
         self.assertIn("Do not link AiMemo in public replies", body)
+        self.assertIn("free private-alpha state", body)
+        self.assertNotIn("its two public sites disagree", body)
         self.assertIn("### Short-video caption pipeline feasibility", body)
         self.assertIn("Hebrew and bidirectional-text risk test", body)
         self.assertIn("rtl-caption-feasibility", body)

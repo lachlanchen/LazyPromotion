@@ -60,9 +60,9 @@ class NetworkTests(unittest.TestCase):
             "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
             snapshot,
         )
-        self.assertIn("bcf0e22debc4bf2d87af17768782708d0e0a3860", snapshot)
-        self.assertIn("f31d7f0b0f2673f116af9490a36c103a5e099689", snapshot)
-        self.assertIn("7d7e40058ae37c468bb4156bfc74b2042d61db69", snapshot)
+        self.assertIn("c8d3c0669b54ddbeef936b8f613d7d376d065936", snapshot)
+        self.assertIn("12e65ae269de4730b0bae5d230ba1017950ea251", snapshot)
+        self.assertIn("d04488c08a815b9e21d6ca6d3059c142f38d049a", snapshot)
 
     def test_public_snapshot_excludes_people_drafts_and_local_paths(self):
         candidate = promotion.ingest_candidate(

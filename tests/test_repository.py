@@ -942,7 +942,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 16)
+        self.assertEqual(campaign["version"], 17)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1049,10 +1049,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("standalone help", guide["policy"])
         self.assertIn("not a lead", guide["policy"])
         self.assertIn(guide["url"], meeting["public_proof"])
+        packet = meeting["application_packet"]
+        self.assertEqual(packet["answers"], 18)
+        self.assertEqual(len(packet["sha256"]), 64)
+        self.assertIn("ignored_private_storage", packet["state"])
+        attachment = meeting["architecture_attachment"]
         self.assertEqual(
-            meeting["architecture_attachment"]["sha256"],
-            "5a28f7033b9e6c780c11cc8314ac9e8e0b79c3eca2c215ad9c48aac1d8633323",
+            attachment["sha256"],
+            "a4aa92ff4681344bdcc9ba442fa9edb3731bde58cdc360995325327bff65aa11",
         )
+        self.assertEqual(attachment["page_count"], 2)
+        visible_check = meeting["visible_application_check"]
+        self.assertTrue(visible_check["listing_loaded"])
+        self.assertFalse(visible_check["project_profile_authenticated"])
+        self.assertFalse(visible_check["form_opened"])
+        self.assertFalse(visible_check["application_submitted"])
+        self.assertEqual(visible_check["connects_spent"], 0)
         self.assertFalse(meeting["application_submitted"])
         self.assertEqual(meeting["connects_spent"], 0)
         self.assertFalse(meeting["contract_observed"])

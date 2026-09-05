@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -95,12 +95,13 @@
     "enterprise_meeting_intelligence_mission": {
       "state": "application_packet_ready_login_required",
       "observed_on": "2026-09-05",
+      "rechecked_on": "2026-09-06",
       "source": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/",
       "buyer_location": "Suzhou, China",
       "public_budget": "USD 4,000–8,000 for Phase 1",
       "public_timeline": "six to eight weeks",
       "need": "Turn Chinese, English, and mixed-language meeting audio into a durable timestamped transcript, independently understandable knowledge units, explicit human-confirmation states, portable company-controlled storage, evidence-linked search, and a foundation that later phases can extend without replacing the source layer.",
-      "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites, and a client view within the previous 21 hours",
+      "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites, and the client's last view shown as two days earlier",
       "client_evidence": "The public listing showed a new Upwork account created on August 31, 2026 and no prior spend or hire history.",
       "component_fit": {
         "localstt": "A running private first-party service implements durable multilingual Whisper large-v3 jobs, timestamped Markdown, per-application isolation, recovery, and optional WhisperX/pyannote diarization. Its public health boundary was live; it does not prove meeting-scale recognition accuracy.",
@@ -174,11 +175,27 @@
         "verified_received_gross_usd": 0,
         "policy": "Use the guide as standalone help for an explicit meeting-transcript provenance or action-item need. Mention the proof or USD 250 fit check only when it materially advances that exact need and with affiliation clear; publication is not a lead, sale, or revenue."
       },
-      "application_packet": "prepared_in_ignored_private_storage",
+      "application_packet": {
+        "state": "reconstructed_in_ignored_private_storage_after_source_drive_failure",
+        "answers": 18,
+        "word_count": 693,
+        "sha256": "01d0ffea372dcee28dedc8752bf75edd9175968aef48b8b403f1aecb665fa980"
+      },
       "architecture_attachment": {
         "state": "two_page_pdf_ready_not_attached",
-        "sha256": "5a28f7033b9e6c780c11cc8314ac9e8e0b79c3eca2c215ad9c48aac1d8633323",
-        "visual_qa": "Both rendered pages were inspected after the missing-glyph correction; no clipping, overlap, broken link text, or missing glyph remained."
+        "sha256": "a4aa92ff4681344bdcc9ba442fa9edb3731bde58cdc360995325327bff65aa11",
+        "page_count": 2,
+        "page_size": "A4",
+        "visual_qa": "Both rendered pages were inspected after correcting repeated overlapping footers; no clipping, overlap, broken link text, or missing glyph remained."
+      },
+      "visible_application_check": {
+        "checked_on": "2026-09-06",
+        "listing_loaded": true,
+        "project_profile_authenticated": false,
+        "form_opened": false,
+        "attachment_added": false,
+        "connects_spent": 0,
+        "application_submitted": false
       },
       "application_submitted": false,
       "connects_spent": 0,

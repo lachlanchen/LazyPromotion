@@ -20,10 +20,10 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Cited etymology learning deck](#etymology-learning-deck) | candidate | Learn words through meanings, roots, affixes, pronunciations, translations, and provenance rather than isolated flashcards | Publish a small deck from openly licensed lexical sources and ask teachers which theme they would actually use | 3.50 |
 | [Explainable game classroom bundle](#explainable-game-classroom) | candidate | Teach decisions with exact rules and visible reasoning instead of opaque move recommendations | Let one teacher or club use a short lesson pack and observe where explanation or setup fails | 3.50 |
 | [Song-to-language lesson](#song-to-language-lesson) | candidate | Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes | Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material | 3.50 |
+| [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | candidate | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks | 3.35 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
 | [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes | 3.25 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
-| [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | gated | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits | 3.15 |
 
 ## Opportunity contracts
 
@@ -347,6 +347,37 @@ Gates:
 - A fluent reviewer must approve lyrics, translation, and pronunciation guidance
 - Do not promise automatic publication, streaming distribution, or learning outcomes
 
+### Focused pronunciation micro-lessons
+
+**State:** candidate
+
+**Buyer:** A language learner or teacher working on one persistent sound contrast rather than a general accent course
+
+**Need:** Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning
+
+**Existing work:** [L-and-N](https://github.com/lachlanchen/L-and-N), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [WordOrigins](https://github.com/lachlanchen/WordOrigins)
+
+**First deliverable:** Keep the L-and-N PWA free, then test one source-aware printable and browser lesson that connects its minimal pairs to pronunciation cues, translations, and word notes
+
+**First demand test:** Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks
+
+Evidence:
+
+- <https://l-and-n.lazying.art/>
+- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk>
+- <https://github.com/lachlanchen/L-and-N>
+- <https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json>
+- <https://github.com/lachlanchen/PocketPolyglot>
+- <https://github.com/lachlanchen/WordOrigins>
+
+Gates:
+
+- Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device
+- Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
+- Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
+- Call the direct APK and Google Play link test builds; do not call either public store availability
+- Treat mobile builds as release candidates until their public store listings are independently verified
+
 ### Source-aware money and decision workbook
 
 **State:** gated
@@ -431,36 +462,6 @@ Gates:
 - Verify the exact source edition, translation, annotations, images, fonts, and media rights
 - Do not monetize or broadly promote the existing LinguaLeaf shelf until its title-level rights ledger is complete
 - Historical explanations require source review and must distinguish evidence from dramatization
-
-### Focused pronunciation micro-lessons
-
-**State:** gated
-
-**Buyer:** A language learner or teacher working on one persistent sound contrast rather than a general accent course
-
-**Need:** Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning
-
-**Existing work:** [L-and-N](https://github.com/lachlanchen/L-and-N), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [WordOrigins](https://github.com/lachlanchen/WordOrigins)
-
-**First deliverable:** Keep the L-and-N PWA free, then test one source-aware printable and browser lesson that connects its minimal pairs to pronunciation cues, translations, and word notes
-
-**First demand test:** After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits
-
-Evidence:
-
-- <https://l-and-n.lazying.art/>
-- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk>
-- <https://github.com/lachlanchen/L-and-N>
-- <https://github.com/lachlanchen/PocketPolyglot>
-- <https://github.com/lachlanchen/WordOrigins>
-
-Gates:
-
-- Make the public privacy text match when and where the PWA sends recorded audio before broad promotion
-- Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
-- Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
-- Call the direct APK and Google Play link test builds; do not call either public store availability
-- Treat mobile builds as release candidates until their public store listings are independently verified
 
 ## Interpretation
 

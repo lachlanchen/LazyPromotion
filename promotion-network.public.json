@@ -397,9 +397,9 @@
       "metadata": {
         "buyer": "A language learner or teacher working on one persistent sound contrast rather than a general accent course",
         "first_deliverable": "Keep the L-and-N PWA free, then test one source-aware printable and browser lesson that connects its minimal pairs to pronunciation cues, translations, and word notes",
-        "first_test": "After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits",
+        "first_test": "Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks",
         "gates": [
-          "Make the public privacy text match when and where the PWA sends recorded audio before broad promotion",
+          "Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device",
           "Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus",
           "Record provenance, consent, and redistribution rights for every bundled voice and lesson asset",
           "Call the direct APK and Google Play link test builds; do not call either public store availability",
@@ -408,13 +408,13 @@
         "need": "Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning",
         "scores": {
           "buyer_pain": 3,
-          "delivery_readiness": 2,
+          "delivery_readiness": 3,
           "low_support": 4,
           "proof": 4,
           "repeatability": 3
         },
-        "state": "gated",
-        "weighted_score": 3.15
+        "state": "candidate",
+        "weighted_score": 3.35
       },
       "url": ""
     },
@@ -3701,7 +3701,7 @@
       "metadata": {
         "description": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
         "homepage": "https://l-and-n.lazying.art",
-        "pushed_at": "2026-09-05T05:25:47Z",
+        "pushed_at": "2026-09-05T07:37:27Z",
         "topics": [
           "android",
           "cantonese",
@@ -3723,7 +3723,7 @@
           "watchos",
           "whisper"
         ],
-        "updated_at": "2026-09-05T05:25:51Z"
+        "updated_at": "2026-09-05T07:37:31Z"
       },
       "url": "https://github.com/lachlanchen/L-and-N"
     },
@@ -4099,7 +4099,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T06:13:45Z",
+        "pushed_at": "2026-09-05T07:04:43Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4119,7 +4119,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T06:13:48Z"
+        "updated_at": "2026-09-05T07:04:46Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4317,7 +4317,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T06:17:44Z",
+        "pushed_at": "2026-09-05T06:44:22Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4333,7 +4333,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T06:17:48Z"
+        "updated_at": "2026-09-05T06:44:26Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -5652,7 +5652,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T06:04:54Z",
+        "pushed_at": "2026-09-05T07:28:39Z",
         "topics": [
           "automation",
           "language",
@@ -5665,7 +5665,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T06:04:57Z"
+        "updated_at": "2026-09-05T07:28:42Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -5676,7 +5676,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T06:04:53Z",
+        "pushed_at": "2026-09-05T07:28:21Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5694,7 +5694,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-05T06:04:56Z"
+        "updated_at": "2026-09-05T07:28:24Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -5977,6 +5977,13 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyEarn"
+    },
+    {
+      "id": "url:988412e2f51fe7ea",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json"
     },
     {
       "id": "url:9a48729df2afb4b3",
@@ -8252,6 +8259,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:focused-pronunciation-micro-lessons",
       "target": "url:7f2655584aa51854"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "url:988412e2f51fe7ea"
     },
     {
       "confidence": 1.0,

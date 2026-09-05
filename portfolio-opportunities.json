@@ -335,27 +335,28 @@
     {
       "id": "focused-pronunciation-micro-lessons",
       "title": "Focused pronunciation micro-lessons",
-      "state": "gated",
+      "state": "candidate",
       "buyer": "A language learner or teacher working on one persistent sound contrast rather than a general accent course",
       "need": "Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning",
       "projects": ["L-and-N", "PocketPolyglot", "WordOrigins"],
       "first_deliverable": "Keep the L-and-N PWA free, then test one source-aware printable and browser lesson that connects its minimal pairs to pronunciation cues, translations, and word notes",
-      "first_test": "After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits",
+      "first_test": "Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks",
       "proof": [
         "https://l-and-n.lazying.art/",
         "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
         "https://github.com/lachlanchen/L-and-N",
+        "https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json",
         "https://github.com/lachlanchen/PocketPolyglot",
         "https://github.com/lachlanchen/WordOrigins"
       ],
       "gates": [
-        "Make the public privacy text match when and where the PWA sends recorded audio before broad promotion",
+        "Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device",
         "Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus",
         "Record provenance, consent, and redistribution rights for every bundled voice and lesson asset",
         "Call the direct APK and Google Play link test builds; do not call either public store availability",
         "Treat mobile builds as release candidates until their public store listings are independently verified"
       ],
-      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 2, "low_support": 4, "repeatability": 3}
+      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 3}
     }
   ]
 }

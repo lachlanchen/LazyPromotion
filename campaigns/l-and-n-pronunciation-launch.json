@@ -26,6 +26,14 @@
       "operator_handoff_updated_on": "2026-09-06",
       "policy": "This campaign links only the live PWA. Do not call either store version public or available until the corresponding storefront is independently verified."
     },
+    "owned_discovery": {
+      "url": "https://lazying.art/work/",
+      "state": "live",
+      "verified_at": "2026-09-05T20:16:41Z",
+      "website_commit": "37607b9beab15554a1214de040d7101c29f48396",
+      "tracked_destination": "https://l-and-n.lazying.art/?utm_source=lazyingart&utm_medium=website&utm_campaign=l_and_n_pronunciation_launch&utm_content=work_shelf",
+      "policy": "This is an owned discovery link to the free no-signup PWA and public source, not evidence of a tester, lead, sale, or store release."
+    },
     "audio_repair": {
       "pwa": "The iPhone browser path now records one microphone stream, retains the waveform after Stop, and requires recognized text before showing or saving a score.",
       "apple": "iOS and embedded watchOS build 2 include the repair and are available through TestFlight; the same build is waiting for formal App Review.",
@@ -61,7 +69,7 @@
         "post_as_images_carousel": false
       },
       "schedule_verification": {
-        "checked_at": "2026-09-05T17:37:11Z",
+        "checked_at": "2026-09-05T20:12:46Z",
         "provider": "linkedin",
         "integration_enabled": true,
         "provider_max_length": 3000,

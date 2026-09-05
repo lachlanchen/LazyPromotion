@@ -41,8 +41,8 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 18:40:17 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 18:38:42 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 20:07:39 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 19:45:02 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 18:28:31 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 17:56:03 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 16:54:54 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |

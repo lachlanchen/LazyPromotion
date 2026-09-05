@@ -4228,7 +4228,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T18:40:17Z",
+        "pushed_at": "2026-09-05T20:07:39Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4248,7 +4248,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T18:40:21Z"
+        "updated_at": "2026-09-05T20:07:43Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4469,7 +4469,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T18:38:42Z",
+        "pushed_at": "2026-09-05T19:45:02Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4485,7 +4485,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T18:38:46Z"
+        "updated_at": "2026-09-05T19:45:06Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -6424,13 +6424,6 @@
       "url": "https://lazying.art/manuscript-sprint/fit-check/"
     },
     {
-      "id": "url:d40014bc482d5429",
-      "kind": "web_resource",
-      "label": "lazying.art",
-      "metadata": {},
-      "url": "https://lazying.art/work/"
-    },
-    {
       "id": "url:39175a1b6a3b2d14",
       "kind": "web_resource",
       "label": "live proof",
@@ -6464,6 +6457,20 @@
       "label": "offer page",
       "metadata": {},
       "url": "https://lazying.art/eink/"
+    },
+    {
+      "id": "url:b57449d2d42e1d8e",
+      "kind": "web_resource",
+      "label": "owned discovery tracked destination",
+      "metadata": {},
+      "url": "https://l-and-n.lazying.art/?utm_source=lazyingart&utm_medium=website&utm_campaign=l_and_n_pronunciation_launch&utm_content=work_shelf"
+    },
+    {
+      "id": "url:d40014bc482d5429",
+      "kind": "web_resource",
+      "label": "owned discovery url",
+      "metadata": {},
+      "url": "https://lazying.art/work/"
     },
     {
       "id": "url:05e1df8fa511ac01",
@@ -7610,6 +7617,22 @@
       "relation": "uses_evidence",
       "source": "campaign:l-and-n-pronunciation-launch",
       "target": "url:74104787f83f4cbe"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/?utm_source=lazyingart&utm_medium=website&utm_campaign=l_and_n_pronunciation_launch&utm_content=work_shelf",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:b57449d2d42e1d8e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/work/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:d40014bc482d5429"
     },
     {
       "confidence": 1.0,

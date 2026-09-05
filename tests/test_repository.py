@@ -678,6 +678,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(releases["apple_app_store"], "waiting_for_review")
         test_build = campaign["source_evidence"]["android_test_build"]
         self.assertTrue(test_build["first_party_apk"].startswith("https://l-and-n.lazying.art/"))
+        owned = campaign["source_evidence"]["owned_discovery"]
+        self.assertEqual(owned["state"], "live")
+        self.assertEqual(owned["url"], "https://lazying.art/work/")
+        self.assertIn("utm_campaign=l_and_n_pronunciation_launch", owned["tracked_destination"])
+        self.assertEqual(len(owned["website_commit"]), 40)
         self.assertEqual(len(test_build["sha256"]), 64)
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_scheduled")

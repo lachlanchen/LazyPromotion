@@ -8,13 +8,14 @@ This note is the secret-free bridge between LazyPromotion and the L & N release 
 
 - Product: `L & N: Speech Practice`
 - Website and primary campaign destination: https://l-and-n.lazying.art/
+- Owned discovery shelf: https://lazying.art/work/
 - Source: https://github.com/lachlanchen/L-and-N
 - L & N release evidence commit: `d389aacf93d5109858ac6d4abd62e7336bb11c49`
 - Deployed audio-repair source commit: `d837c146eb0ff66b4ea4000a004f582f4c31ef5f`
 - Detailed durable operator handoff: `store/operator-handoff.md` in the L & N repository
 - Campaign record: `campaigns/l-and-n-pronunciation-launch.json`
 
-The original LazyPromotion checkout under `/home/lachlan/Projects/LazyPromotion` is on a filesystem returning kernel I/O errors. Use the healthy checkout `/home/lachlan/LazyPromotion-landn-handoff` until that storage is repaired.
+Use the active healthy recovery checkout recorded in the private runtime handoff. Do not read from or write to a checkout on the known failed storage.
 
 ## What is safe to say now
 
@@ -43,6 +44,8 @@ Build 3 is the current repaired Android tester binary. Call the Play link and di
 Lead with the concrete learner problem: “I mix up L and N, so I built the practice loop I wanted.” Show the loop in this order: hear the prompted contrast, inspect the mouth/airflow cue, record one word, see the waveform and recognized text, then inspect the coaching result. Invite specific feedback about whether the mouth view and visible evidence make the contrast easier to understand.
 
 The existing LinkedIn item is scheduled for `2026-09-20T02:00:00Z` and remains a scheduled draft until provider delivery is independently verified. Do not record a post, view, tester, lead, or store review as a conversion or publication outcome without separate evidence.
+
+The selected-work shelf now links the free no-signup PWA and public source from a pronunciation-shaped card. Its tracked link is discovery evidence only; a visit is not a lead or sale.
 
 ## Release-following actions
 

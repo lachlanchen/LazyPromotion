@@ -6,7 +6,7 @@
       "label": "auditable-policy-content-coding",
       "metadata": {
         "objective": "Win and deliver a current USD 600 textbook content-coding contract by showing exact, source-linked coding discipline rather than making an unsupported research claim.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -632,7 +632,7 @@
           "voice assistant",
           "wearable"
         ],
-        "summary": "AI-Wearable focuses on practical workflows and tooling. omi _AI-powered wearable for instant meetings and chats: capture, summarize, and act—hands-free._ Meet Omi, the world’s leading open-source AI wearable that captures conversations, gives summaries, action items and does actions for you. Simply connect Omi to yo..."
+        "summary": "Open-source AI wearable stack for hands-free conversation capture, summaries, action items, and extensible device and app integrations."
       },
       "url": "https://github.com/lachlanchen/AI-Wearable"
     },
@@ -652,7 +652,7 @@
           "prompt chain",
           "self healing"
         ],
-        "summary": "AgInTi focuses on practical workflows and tooling. AgInTi Documentation-first repository scaffold for maintaining one canonical English README and synchronized multilingual documentation, guided by three operating principles: sear creation tools, self-healing tools, and chain of prompt tools. 🧭 Quick Navigation ---..."
+        "summary": "Documentation-first AgInTi scaffold for canonical multilingual READMEs and traceable self-creation, self-healing, and prompt-tool workflows."
       },
       "url": "https://github.com/lachlanchen/AgInTi"
     },
@@ -798,7 +798,7 @@
           "pwa",
           "tornado"
         ],
-        "summary": "AutoNovelWriter focuses on practical workflows and tooling. AutoNovelWriter Scratch-like PWA + Tornado backend for controlling an automated novel-writing (and app-dev) pipeline. 🖼️ Demo This repo also vendors AutoAppDev/ as a submodule (reusable auto-development scripts). Localized variants live in i18n/ and are lin..."
+        "summary": "Scratch-like PWA and Tornado backend for a resumable novel-writing and app-development pipeline with persisted execution state."
       },
       "url": "https://github.com/lachlanchen/AutoNovelWriter"
     },
@@ -861,7 +861,7 @@
           "selenium",
           "short video"
         ],
-        "summary": "AutoPublish focuses on practical workflows and tooling. AutoPublish Script-first, browser-driven multi-platform short-video publishing. Canonical operations manual for setup, runtime, queue mode, and platform automation workflows. Automation toolkit for distributing short-form video content to multiple Chinese and i..."
+        "summary": "Script-first browser automation for publishing short video through a local watcher or queue to Chinese and international creator platforms."
       },
       "url": "https://github.com/lachlanchen/AutoPublish"
     },
@@ -872,7 +872,15 @@
       "metadata": {
         "generated": true,
         "keywords": [
-          "big me"
+          "adb",
+          "android",
+          "big me",
+          "bigme",
+          "ebook reader",
+          "eink",
+          "file sync",
+          "macos",
+          "shell"
         ],
         "summary": "BigMe device connection and file sync workspace"
       },
@@ -914,7 +922,7 @@
           "ip management",
           "network policy"
         ],
-        "summary": "DomainAndIpManager focuses on practical workflows and tooling. DomainAndIpManager A Python toolkit for maintaining curated domain/IP/CIDR list sets, resolving DNS to deterministic IP blocks, deduplicating, and exporting reproducible snapshots for routing and filtering workflows. 🧭 Usage GUI start_gui.sh starts code/..."
+        "summary": "Python CLI and local GUI for curated domain, IP, and CIDR sets with DNS resolution, deterministic deduplication, and reproducible exports."
       },
       "url": "https://github.com/lachlanchen/DomainAndIpManager"
     },
@@ -934,7 +942,7 @@
           "paper",
           "repo"
         ],
-        "summary": "The repo for the paper Event-assited Holographic Imaging"
+        "summary": "Documentation-first materials for the early-stage Event-assisted Holographic Imaging research project; no executable package yet."
       },
       "url": "https://github.com/lachlanchen/EventHolography"
     },
@@ -1032,7 +1040,16 @@
       "metadata": {
         "generated": true,
         "keywords": [
-          "glass agent-wearable-releases"
+          "ai glasses",
+          "android",
+          "companion app",
+          "cryptographic signatures",
+          "ecdsa",
+          "glass agent-wearable-releases",
+          "release management",
+          "secure updates",
+          "software supply chain",
+          "wearable"
         ],
         "summary": "Signed companion software releases and setup resources for supported AI glasses"
       },
@@ -2139,7 +2156,7 @@
           "research paper",
           "templates"
         ],
-        "summary": "PaperAgentDemo focuses on practical workflows and tooling. PaperAgentDemo A compact, repository-accurate LaTeX paper scaffold centered on latex/main.tex, designed to validate and extend a manuscript workflow with equations, algorithms, tables, glossary/acronyms, references, and PDF build tooling. 🧩 At a Glance 📌 Ove..."
+        "summary": "Compact LaTeX research-paper scaffold with equations, algorithms, tables, glossaries, citations, and reproducible PDF build commands."
       },
       "url": "https://github.com/lachlanchen/PaperAgentDemo"
     },
@@ -2248,19 +2265,17 @@
       "metadata": {
         "generated": true,
         "keywords": [
-          "aedat4",
-          "alignment",
-          "event",
-          "frame",
-          "implicit",
-          "main",
-          "soft",
-          "soft event frame alignment",
-          "softeventframealignment",
-          "streams",
-          "training"
+          "computer vision",
+          "event camera",
+          "frame camera",
+          "implicit neural representation",
+          "multimodal alignment",
+          "neuromorphic vision",
+          "research paper",
+          "soft alignment",
+          "soft event frame alignment"
         ],
-        "summary": "The repo for the paper Soft Alignment of Event and Frame Data with Unified Implicit Neural Representation"
+        "summary": "Paper documentation for soft alignment of event-camera and frame-camera data with a unified implicit neural representation; public code release is pending."
       },
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
     },
@@ -2303,7 +2318,7 @@
           "sync imaging system",
           "synchronization"
         ],
-        "summary": "SyncImagingSystem focuses on practical workflows and tooling. SyncImagingSystem SyncImagingSystem is a Python workspace for synchronized frame-camera and event-camera capture, organized around practical workflows for EVK/DAVIS and Hikrobot/Haikang cameras. 🧭 Quick Navigator 📌 Overview SyncImagingSystem is a Python w..."
+        "summary": "Windows-focused Python workspace for synchronized Hikrobot frame-camera and EVK or DAVIS event-camera capture and recording."
       },
       "url": "https://github.com/lachlanchen/SyncImagingSystem"
     },
@@ -2759,6 +2774,26 @@
       "url": "https://github.com/lachlanchen/lazealoptix"
     },
     {
+      "id": "project:github-lightmind-privacy",
+      "kind": "project",
+      "label": "lightmind-privacy",
+      "metadata": {
+        "generated": true,
+        "keywords": [
+          "android",
+          "lightmind-privacy",
+          "local first",
+          "privacy",
+          "privacy notice",
+          "rokid",
+          "smart glasses",
+          "wearable"
+        ],
+        "summary": "Public privacy notice for the local-first LightMind companion test build for supported Rokid glasses."
+      },
+      "url": "https://github.com/lachlanchen/lightmind-privacy"
+    },
+    {
       "id": "project:github-nhi-hardware",
       "kind": "project",
       "label": "nhi_hardware",
@@ -2774,7 +2809,7 @@
           "hardware",
           "nhi hardware"
         ],
-        "summary": "nhi_hardware focuses on practical workflows and tooling. NHI Hardware Control and Event Capture 📖 Quick Navigation 🧭 Project at a Glance A hardware-orchestration project for event-camera experiments combining: - EVK5 event camera capture (Prophesee Metavision stack) - FMC4030-based CNC motion control - Arduino seria..."
+        "summary": "Experimental hardware orchestration for synchronized event/frame capture, FMC4030 CNC motion, Arduino lighting, and a Tornado trigger UI."
       },
       "url": "https://github.com/lachlanchen/nhi_hardware"
     },
@@ -2839,7 +2874,7 @@
           "onlyideas-react-native",
           "react native"
         ],
-        "summary": "onlyideas-react-native focuses on practical workflows and tooling. OnlyIdeas Full Stack App OnlyIdeas is a full-stack application that helps people share and monetize their ideas. It integrates with AWS Amplify for user authentication, data storage (AppSync & DynamoDB), and file hosting (S3). You can run this projec..."
+        "summary": "Prototype Expo and React Native creator app with AWS Amplify authentication, GraphQL data, S3 media, and iOS, Android, and web targets."
       },
       "url": "https://github.com/lachlanchen/onlyideas-react-native"
     },
@@ -2983,7 +3018,7 @@
       "kind": "repository",
       "label": "AI-Wearable",
       "metadata": {
-        "description": "AI-Wearable focuses on practical workflows and tooling. omi _AI-powered wearable for instant meetings and chats: capture, summarize, and act—hands-free._ Meet Omi, the world’s leading open-source AI wearable that captures conversations, gives summaries, action items and does actions for you. Simply connect Omi to yo...",
+        "description": "Open-source AI wearable stack for hands-free conversation capture, summaries, action items, and extensible device and app integrations.",
         "homepage": "https://lazying.art",
         "topics": [
           "backend",
@@ -3004,7 +3039,7 @@
       "kind": "repository",
       "label": "AgInTi",
       "metadata": {
-        "description": "AgInTi focuses on practical workflows and tooling. AgInTi Documentation-first repository scaffold for maintaining one canonical English README and synchronized multilingual documentation, guided by three operating principles: sear creation tools, self-healing tools, and chain of prompt tools. 🧭 Quick Navigation ---...",
+        "description": "Documentation-first AgInTi scaffold for canonical multilingual READMEs and traceable self-creation, self-healing, and prompt-tool workflows.",
         "homepage": "https://agent.lazying.art",
         "topics": [
           "aginti",
@@ -3158,7 +3193,7 @@
       "kind": "repository",
       "label": "AutoNovelWriter",
       "metadata": {
-        "description": "AutoNovelWriter focuses on practical workflows and tooling. AutoNovelWriter Scratch-like PWA + Tornado backend for controlling an automated novel-writing (and app-dev) pipeline. 🖼️ Demo This repo also vendors AutoAppDev/ as a submodule (reusable auto-development scripts). Localized variants live in i18n/ and are lin...",
+        "description": "Scratch-like PWA and Tornado backend for a resumable novel-writing and app-development pipeline with persisted execution state.",
         "homepage": "https://lazying.art",
         "topics": [
           "auto-novel",
@@ -3225,7 +3260,7 @@
       "kind": "repository",
       "label": "AutoPublish",
       "metadata": {
-        "description": "AutoPublish focuses on practical workflows and tooling. AutoPublish Script-first, browser-driven multi-platform short-video publishing. Canonical operations manual for setup, runtime, queue mode, and platform automation workflows. Automation toolkit for distributing short-form video content to multiple Chinese and i...",
+        "description": "Script-first browser automation for publishing short video through a local watcher or queue to Chinese and international creator platforms.",
         "homepage": "https://studio.lazying.art",
         "topics": [
           "autopublish",
@@ -3247,8 +3282,17 @@
       "label": "BigMe",
       "metadata": {
         "description": "BigMe device connection and file sync workspace",
-        "homepage": "",
-        "topics": [],
+        "homepage": "https://learn.lazying.art",
+        "topics": [
+          "adb",
+          "android",
+          "bigme",
+          "ebook-reader",
+          "eink",
+          "file-sync",
+          "macos",
+          "shell"
+        ],
         "updated_at": ""
       },
       "url": "https://github.com/lachlanchen/BigMe"
@@ -3278,7 +3322,7 @@
       "kind": "repository",
       "label": "DomainAndIpManager",
       "metadata": {
-        "description": "DomainAndIpManager focuses on practical workflows and tooling. DomainAndIpManager A Python toolkit for maintaining curated domain/IP/CIDR list sets, resolving DNS to deterministic IP blocks, deduplicating, and exporting reproducible snapshots for routing and filtering workflows. 🧭 Usage GUI start_gui.sh starts code/...",
+        "description": "Python CLI and local GUI for curated domain, IP, and CIDR sets with DNS resolution, deterministic deduplication, and reproducible exports.",
         "homepage": "https://lazying.art",
         "topics": [
           "automation",
@@ -3299,7 +3343,7 @@
       "kind": "repository",
       "label": "EventHolography",
       "metadata": {
-        "description": "The repo for the paper Event-assited Holographic Imaging",
+        "description": "Documentation-first materials for the early-stage Event-assisted Holographic Imaging research project; no executable package yet.",
         "homepage": "https://lazying.art",
         "topics": [
           "assited",
@@ -3411,8 +3455,18 @@
       "label": "GlassAgent-Wearable-Releases",
       "metadata": {
         "description": "Signed companion software releases and setup resources for supported AI glasses",
-        "homepage": "",
-        "topics": [],
+        "homepage": "https://lachlanchen.github.io/GlassAgent-Wearable-Releases/",
+        "topics": [
+          "ai-glasses",
+          "android",
+          "companion-app",
+          "cryptographic-signatures",
+          "ecdsa",
+          "release-management",
+          "secure-updates",
+          "software-supply-chain",
+          "wearable"
+        ],
         "updated_at": ""
       },
       "url": "https://github.com/lachlanchen/GlassAgent-Wearable-Releases"
@@ -3740,19 +3794,27 @@
       "kind": "repository",
       "label": "LazyEdit",
       "metadata": {
-        "description": "LazyEdit is a tool to automatically edit videos with AI-assisted auto-caption, auto-transcription, auto-highlight, auto-metadata and auto-subtitles.",
+        "description": "Local-first AI-assisted video workflow for transcription, multilingual subtitles, captions, metadata, generation, and reviewed publishing.",
         "homepage": "https://studio.lazying.art/",
         "topics": [
-          "environment",
-          "expo",
-          "generation",
-          "lazyedit",
-          "media",
-          "metadata",
-          "optional",
-          "paths",
-          "tmux",
-          "upload"
+          "ai-video-editing",
+          "automatic-subtitles",
+          "captioning",
+          "ffmpeg",
+          "instagram",
+          "local-first",
+          "media-processing",
+          "multilingual",
+          "open-source",
+          "publishing-automation",
+          "python",
+          "speech-to-text",
+          "subtitles",
+          "transcription",
+          "video-editing",
+          "video-processing",
+          "whisper",
+          "youtube"
         ],
         "updated_at": ""
       },
@@ -4547,16 +4609,20 @@
         "description": "PaperAgent is a local-first web workspace for academic writing. It lets you edit LaTeX and code in the browser, run Python or R and compile LaTeX on the backend, and preview PDFs with build logs—all in one place.",
         "homepage": "https://paper.lazying.art/",
         "topics": [
+          "academic-writing",
           "codex",
-          "compile",
           "docker",
           "latex",
-          "optional",
-          "paperagent",
-          "preview",
+          "local-first",
+          "paper-writing",
+          "pdf",
           "python",
-          "shell",
-          "terminal"
+          "reproducible-research",
+          "scientific-writing",
+          "terminal",
+          "tornado",
+          "web-ide",
+          "websocket"
         ],
         "updated_at": ""
       },
@@ -4567,8 +4633,8 @@
       "kind": "repository",
       "label": "PaperAgentDemo",
       "metadata": {
-        "description": "PaperAgentDemo focuses on practical workflows and tooling. PaperAgentDemo A compact, repository-accurate LaTeX paper scaffold centered on latex/main.tex, designed to validate and extend a manuscript workflow with equations, algorithms, tables, glossary/acronyms, references, and PDF build tooling. 🧩 At a Glance 📌 Ove...",
-        "homepage": "https://lazying.art",
+        "description": "Compact LaTeX research-paper scaffold with equations, algorithms, tables, glossaries, citations, and reproducible PDF build commands.",
+        "homepage": "https://lazying.art/manuscript-sprint/",
         "topics": [
           "demo",
           "glossary",
@@ -4693,19 +4759,17 @@
       "kind": "repository",
       "label": "SoftEventFrameAlignment",
       "metadata": {
-        "description": "The repo for the paper Soft Alignment of Event and Frame Data with Unified Implicit Neural Representation",
+        "description": "Paper documentation for soft alignment of event-camera and frame-camera data with a unified implicit neural representation; public code release is pending.",
         "homepage": "https://lazying.art",
         "topics": [
-          "aedat4",
-          "alignment",
-          "event",
-          "frame",
-          "implicit",
-          "main",
-          "soft",
-          "softeventframealignment",
-          "streams",
-          "training"
+          "computer-vision",
+          "event-camera",
+          "frame-camera",
+          "implicit-neural-representation",
+          "multimodal-alignment",
+          "neuromorphic-vision",
+          "research-paper",
+          "soft-alignment"
         ],
         "updated_at": ""
       },
@@ -4739,7 +4803,7 @@
       "kind": "repository",
       "label": "SyncImagingSystem",
       "metadata": {
-        "description": "SyncImagingSystem focuses on practical workflows and tooling. SyncImagingSystem SyncImagingSystem is a Python workspace for synchronized frame-camera and event-camera capture, organized around practical workflows for EVK/DAVIS and Hikrobot/Haikang cameras. 🧭 Quick Navigator 📌 Overview SyncImagingSystem is a Python w...",
+        "description": "Windows-focused Python workspace for synchronized Hikrobot frame-camera and EVK or DAVIS event-camera capture and recording.",
         "homepage": "https://lazying.art",
         "topics": [
           "capture",
@@ -4760,17 +4824,25 @@
       "kind": "repository",
       "label": "Video2Book",
       "metadata": {
-        "description": "Video2Book focuses on practical workflows and tooling. Video2Book by LazyingArt LLC > Video2Book by LazyingArt LLC. Websites: lazying.art and learn.lazying.art. Video2Book is a practical pipeline for turning long-form video collections into durable study material: downloaded media, timestamped transcripts, and trans...",
+        "description": "Turn long-form videos into timestamped transcripts, lecture notes, multilingual study material, and compiled books with a reproducible local pipeline.",
         "homepage": "https://learn.lazying.art",
         "topics": [
-          "learning",
-          "lecture",
-          "notes",
-          "pipeline",
+          "audio-transcription",
+          "book-generation",
+          "education",
+          "ffmpeg",
+          "language-learning",
+          "latex",
+          "lecture-notes",
+          "local-first",
+          "multilingual",
+          "open-source",
+          "pdf",
           "subtitles",
-          "tmux",
-          "transcript",
-          "video2book"
+          "transcription",
+          "video-to-text",
+          "whisper",
+          "xelatex"
         ],
         "updated_at": ""
       },
@@ -5237,17 +5309,23 @@
       "kind": "repository",
       "label": "leonardsusskind",
       "metadata": {
-        "description": "The lecture notes of Professor Leonard Susskind.",
-        "homepage": "https://lazying.art",
+        "description": "Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures.",
+        "homepage": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
         "topics": [
+          "classical-mechanics",
           "cosmology",
+          "education",
+          "general-relativity",
           "lazyingart",
           "lecture-notes",
-          "leonardsusskind",
+          "leonard-susskind",
           "physics",
+          "quantum-field-theory",
           "quantum-mechanics",
           "relativity",
-          "video2book"
+          "string-theory",
+          "theoretical-minimum",
+          "transcripts"
         ],
         "updated_at": ""
       },
@@ -5258,9 +5336,17 @@
       "kind": "repository",
       "label": "lightmind-privacy",
       "metadata": {
-        "description": "",
-        "homepage": "",
-        "topics": [],
+        "description": "Public privacy notice for the local-first LightMind companion test build for supported Rokid glasses.",
+        "homepage": "https://lachlanchen.github.io/lightmind-privacy/",
+        "topics": [
+          "android",
+          "local-first",
+          "privacy",
+          "privacy-notice",
+          "rokid",
+          "smart-glasses",
+          "wearable"
+        ],
         "updated_at": ""
       },
       "url": "https://github.com/lachlanchen/lightmind-privacy"
@@ -5270,7 +5356,7 @@
       "kind": "repository",
       "label": "nhi_hardware",
       "metadata": {
-        "description": "nhi_hardware focuses on practical workflows and tooling. NHI Hardware Control and Event Capture 📖 Quick Navigation 🧭 Project at a Glance A hardware-orchestration project for event-camera experiments combining: - EVK5 event camera capture (Prophesee Metavision stack) - FMC4030-based CNC motion control - Arduino seria...",
+        "description": "Experimental hardware orchestration for synchronized event/frame capture, FMC4030 CNC motion, Arduino lighting, and a Tornado trigger UI.",
         "homepage": "https://lazying.art",
         "topics": [
           "arduino",
@@ -5340,7 +5426,7 @@
       "kind": "repository",
       "label": "onlyideas-react-native",
       "metadata": {
-        "description": "onlyideas-react-native focuses on practical workflows and tooling. OnlyIdeas Full Stack App OnlyIdeas is a full-stack application that helps people share and monetize their ideas. It integrates with AWS Amplify for user authentication, data storage (AppSync & DynamoDB), and file hosting (S3). You can run this projec...",
+        "description": "Prototype Expo and React Native creator app with AWS Amplify authentication, GraphQL data, S3 media, and iOS, Android, and web targets.",
         "homepage": "https://lazying.art",
         "topics": [
           "auth",
@@ -8749,6 +8835,14 @@
       "relation": "backed_by",
       "source": "project:github-lightmind",
       "target": "repository:lachlanchen/LightMind"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/lightmind-privacy",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:github-lightmind-privacy",
+      "target": "repository:lachlanchen/lightmind-privacy"
     },
     {
       "confidence": 1.0,

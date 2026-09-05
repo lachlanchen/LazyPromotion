@@ -503,7 +503,8 @@
         "gates": [
           "The customer must control the media and any music",
           "Publishing is optional and separately reviewed",
-          "Human language review is required before claiming subtitle accuracy"
+          "Human language review is required before claiming subtitle accuracy",
+          "The public Cantonese packet uses a project-owned generated-song excerpt; it is not spoken-word, sermon, customer, native-editor, or unseen-alignment proof"
         ],
         "need": "Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline",
         "scores": {
@@ -6127,6 +6128,13 @@
       "url": "https://github.com/lachlanchen/AgentShell"
     },
     {
+      "id": "url:6be51f8b4a99d23e",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery"
+    },
+    {
       "id": "url:8c31df37ee870928",
       "kind": "web_resource",
       "label": "github.com",
@@ -8869,6 +8877,14 @@
       "relation": "combines",
       "source": "opportunity:multilingual-video-accessibility",
       "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:multilingual-video-accessibility",
+      "target": "url:6be51f8b4a99d23e"
     },
     {
       "confidence": 1.0,

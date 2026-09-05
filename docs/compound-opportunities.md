@@ -168,12 +168,14 @@ Evidence:
 
 - <https://github.com/lachlanchen/LazyEdit>
 - <https://github.com/lachlanchen/FuriganaSubtitles>
+- <https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery>
 
 Gates:
 
 - The customer must control the media and any music
 - Publishing is optional and separately reviewed
 - Human language review is required before claiming subtitle accuracy
+- The public Cantonese packet uses a project-owned generated-song excerpt; it is not spoken-word, sermon, customer, native-editor, or unseen-alignment proof
 
 ### Private local-AI workstation deployment
 

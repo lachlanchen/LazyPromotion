@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -67,12 +67,14 @@
       "first_test": "Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems",
       "proof": [
         "https://github.com/lachlanchen/LazyEdit",
-        "https://github.com/lachlanchen/FuriganaSubtitles"
+        "https://github.com/lachlanchen/FuriganaSubtitles",
+        "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery"
       ],
       "gates": [
         "The customer must control the media and any music",
         "Publishing is optional and separately reviewed",
-        "Human language review is required before claiming subtitle accuracy"
+        "Human language review is required before claiming subtitle accuracy",
+        "The public Cantonese packet uses a project-owned generated-song excerpt; it is not spoken-word, sermon, customer, native-editor, or unseen-alignment proof"
       ],
       "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 3, "repeatability": 4}
     },

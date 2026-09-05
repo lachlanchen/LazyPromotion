@@ -44,6 +44,11 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("https://lazying.art/lecture-pack/#example", body)
         self.assertIn("41.191-second synthetic project-owned source", body)
         self.assertIn(
+            "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
+            body,
+        )
+        self.assertIn("not spoken-word, sermon, customer", body)
+        self.assertIn(
             "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
             body,
         )

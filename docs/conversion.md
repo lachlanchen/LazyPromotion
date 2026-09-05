@@ -33,8 +33,9 @@ four confirmed USD 250 payments across these routes would reach the same USD
 1,000 gross milestone. A fourth route, the fixed USD 250 [Story Clip
 Pilot](https://lazying.art/story-clip/), turns one customer-owned recording up
 to 30 minutes into two candidate moments and one buyer-selected captioned
-vertical clip. Its [encrypted fit check](https://lazying.art/story-clip/fit-check/)
-now precedes source transfer and payment.
+vertical clip. Its [review-first fit check](https://lazying.art/story-clip/fit-check/)
+now reviews the request locally and continues by email or copy before source
+transfer and payment.
 
 Three direct Story Clip applications have been sent against explicit hiring
 needs. The latest went through YDEHM's first-party form after its paid-per-clip
@@ -186,7 +187,7 @@ validates their characters and length, and changes only the exact HTTPS
 `lazying.art/lkt/sample-report/` and `lazying.art/lkt/fit-check/` destinations.
 Organic blog readers retain the article's normal `lazyblog` attribution. The
 browser review includes the resulting fields; nothing is submitted until the
-visitor explicitly sends an encrypted request or chooses the email fallback.
+visitor explicitly opens the reviewed request in email or copies it.
 The same allowlist runs on the first-party LKT offer and sample-report pages,
 so a Reddit, Instagram, or X visitor who reviews the evidence before continuing
 keeps the original campaign fields. A live Reddit-profile click verified the
@@ -206,34 +207,35 @@ mail link. This is conversion-path readiness evidence, not a fit inquiry,
 qualified lead, or sale. The verified public deployment is LazyingArtWebsite
 commit `8541e9c`.
 
-Encrypted direct intake is now live for LKT, manuscript, lecture, and Story Clip fit
-checks. The backend is pinned at myblog commit
+Encrypted direct intake was verified on September 5 for LKT, manuscript,
+lecture, and Story Clip fit checks. The historical backend is pinned at myblog commit
 `0463dcb2470ad1c908597b7f4d636cf2d33013a1`, the frontend at
 LazyingArtWebsite commit `3ff43e4afc0dfd4512629443af198345696c170e`,
 and the receiver at LazyPromotion commit
 `f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445`. Live preflight verified that the
-allowed OPTIONS request receives the exact ACAO, a foreign origin receives no
-ACAO, and a malformed allowed POST fails with HTTP 400.
+allowed OPTIONS request received the exact ACAO, a foreign origin received no
+ACAO, and a malformed allowed POST failed with HTTP 400.
 
-Before the September 9 offer post, LazyingArtWebsite commit `4317e47` aligned
-the landing page and sample-report CTA with that live intake. Both now say that
-nothing is sent while a visitor fills in or reviews the fit check, and that an
-explicit Send uses encrypted private intake while email and copy remain
-available. The Pages deployment succeeded and both public routes were checked.
+On September 6, the recovery checkout could not access the matching private key
+or remote receiver. LazyingArtWebsite commit
+`1ba106beadff2de89d71874fa2df6379e6eb35fb` therefore disabled direct
+submission on all four pages. The live path now reviews locally and continues
+by email or copy. Direct submission stays disabled until an atomic key rotation
+and a new labeled end-to-end verification succeed.
 
 The primary live proof used an explicitly labeled synthetic request submitted
 through the visible fit-check page. Reference
 `cc078babd1b32b0c08e796e88886201f` was accepted, authenticated, decrypted,
 saved in private mode `0600`, verified, and then its unchanged encrypted remote
 envelope was deleted. Synthetic local payload artifacts were removed, the
-remote spool is empty, and the 15-minute `lazypromotion-lkt-inbox` receiver is
-healthy with state `no_pending`. Inquiry content is stored only as an encrypted
+remote spool was empty, and the former 15-minute `lazypromotion-lkt-inbox`
+receiver reached state `no_pending`. Inquiry content was stored only as an encrypted
 envelope outside the webroot; operational rate and idempotency state contains
 no inquiry content, and sanitized receiver status contains receipt, time, and
 state only. The private visual evidence remains outside Git. This synthetic
 verification is not a customer inquiry, qualification, lead, customer outcome,
 sale, or revenue. The receiver never replies or qualifies automatically, and
-the `contact@lazying.art` email fallback remains available.
+the current `contact@lazying.art` email route remains available.
 
 On September 5, the manuscript and lecture pages each completed the same
 visible, explicitly confirmed synthetic round trip using the strict routed v2
@@ -345,9 +347,9 @@ the experiment's acceptance criteria justify more work.
 250 collection-fit sprint for people with one private book or dictionary
 collection. It is a service using the customer's existing machine, not
 ready-to-ship hardware. The [free fit check](https://lazying.art/lkt/fit-check/)
-precedes payment and presents a review gate before an explicit encrypted
-submission; `contact@lazying.art` remains the email fallback. Inquiry content
-is stored only as an encrypted envelope outside the webroot. A received inquiry still
+precedes payment and presents a local review gate before the visitor opens the
+prepared request in email or copies it; `contact@lazying.art` remains visible.
+A received inquiry still
 requires human review and is never recorded as a qualified lead or sale without
 the corresponding evidence and confirmed payment.
 

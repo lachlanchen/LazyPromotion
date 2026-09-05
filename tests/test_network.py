@@ -53,7 +53,7 @@ class NetworkTests(unittest.TestCase):
             list(network.source_evidence_urls(evidence)),
         )
 
-    def test_live_encrypted_intake_sources_enter_public_graph(self):
+    def test_historical_intake_and_current_disabled_frontend_enter_public_graph(self):
         network.sync_graph(self.db)
         snapshot = json.dumps(network.public_snapshot(self.db), ensure_ascii=False)
         self.assertIn(
@@ -63,6 +63,7 @@ class NetworkTests(unittest.TestCase):
         self.assertIn("0463dcb2470ad1c908597b7f4d636cf2d33013a1", snapshot)
         self.assertIn("3ff43e4afc0dfd4512629443af198345696c170e", snapshot)
         self.assertIn("f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445", snapshot)
+        self.assertIn("1ba106beadff2de89d71874fa2df6379e6eb35fb", snapshot)
 
     def test_public_snapshot_excludes_people_drafts_and_local_paths(self):
         candidate = promotion.ingest_candidate(

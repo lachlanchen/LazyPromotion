@@ -705,7 +705,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 10)
+        self.assertEqual(campaign["version"], 11)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -768,7 +768,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 10)
+        self.assertEqual(campaign["version"], 11)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -807,7 +807,12 @@ class RepositoryTests(unittest.TestCase):
             offer["fit_check_url"], "https://lazying.art/story-clip/fit-check/"
         )
         intake = offer["encrypted_intake"]
-        self.assertEqual(intake["state"], "live_verified")
+        self.assertEqual(
+            intake["state"],
+            "historically_verified_direct_route_temporarily_disabled",
+        )
+        self.assertFalse(intake["direct_submit_available"])
+        self.assertTrue(intake["key_rotation_required"])
         self.assertEqual(intake["offer"], "story_clip")
         self.assertEqual(intake["record_schema"], "fit-check-record/v2")
         self.assertTrue(intake["visible_synthetic_round_trip_verified"])
@@ -817,7 +822,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(intake["automatic_reply"])
         self.assertFalse(intake["lead_or_sale_observed"])
         self.assertEqual(intake["received_revenue_usd"], 0)
-        self.assertIn("receiver", offer["inquiry_monitor"])
+        self.assertIn("email", offer["inquiry_monitor"])
         self.assertFalse(offer["checkout_created"])
         self.assertFalse(offer["social_post_created"])
         self.assertTrue(offer["deployment_verified"])
@@ -955,7 +960,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 17)
+        self.assertEqual(campaign["version"], 18)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -991,15 +996,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(terms["live_verification"]["fit_check_links_to_terms"])
         self.assertEqual(terms["live_verification"]["deployment_conclusion"], "success")
         explanation = campaign["source_evidence"]["fit_check_explanation_contract"]
-        self.assertEqual(explanation["state"], "live_verified")
+        self.assertEqual(explanation["state"], "live_email_or_copy_verified")
         self.assertEqual(
             explanation["website_commit"],
-            "4317e47b682a2f7f29d52cf5bd4afb59104b636e",
+            "1ba106beadff2de89d71874fa2df6379e6eb35fb",
         )
         self.assertEqual(len(explanation["routes"]), 2)
-        self.assertIn("explicit Send", explanation["policy"])
-        self.assertIn("encrypted private intake", explanation["policy"])
-        self.assertIn("email and copy remain available", explanation["policy"])
+        self.assertIn("prepared email", explanation["policy"])
+        self.assertIn("Direct submission remains disabled", explanation["policy"])
         currency = campaign["source_evidence"]["currency_contract"]
         self.assertEqual(currency["state"], "live")
         self.assertEqual(currency["exact_price"], "USD 250")
@@ -1099,6 +1103,10 @@ class RepositoryTests(unittest.TestCase):
         )
         intake_sources = campaign["source_evidence"]["encrypted_intake_sources"]
         self.assertEqual(
+            intake_sources["current_state"],
+            "historically_verified_direct_route_disabled_pending_key_rotation",
+        )
+        self.assertEqual(
             intake_sources["endpoint"],
             "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
         )
@@ -1170,11 +1178,17 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not permission to contact", demand["policy"])
         self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
         direct_intake = campaign["conversion_readiness"]["encrypted_direct_intake"]
-        self.assertEqual(direct_intake["state"], "live_verified")
+        self.assertEqual(
+            direct_intake["state"],
+            "historically_verified_direct_route_temporarily_disabled",
+        )
         self.assertEqual(
             direct_intake["current_live_path"],
-            "encrypted_direct_intake_four_offers_with_email_fallback",
+            "local_review_then_email_or_copy",
         )
+        self.assertFalse(direct_intake["direct_submit_available"])
+        self.assertTrue(direct_intake["key_rotation_required"])
+        self.assertFalse(direct_intake["recovery_key_available"])
         self.assertEqual(
             direct_intake["endpoint"],
             "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
@@ -1238,10 +1252,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(
             direct_intake["receiver_runtime"],
             {
-                "state": "healthy",
-                "session": "lazypromotion-lkt-inbox",
+                "state": "not_running",
+                "last_verified_session": "lazypromotion-lkt-inbox",
                 "interval_minutes": 15,
-                "latest_state": "complete",
+                "latest_state": "unavailable",
             },
         )
         self.assertEqual(
@@ -1637,7 +1651,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1684,7 +1698,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(smoke["payment_before_scope_acceptance"])
         self.assertTrue(smoke["working_terms_linked"])
         direct_intake = campaign["encrypted_direct_intake"]
-        self.assertEqual(direct_intake["state"], "live_verified")
+        self.assertEqual(
+            direct_intake["state"],
+            "historically_verified_direct_route_temporarily_disabled",
+        )
+        self.assertFalse(direct_intake["direct_submit_available"])
+        self.assertTrue(direct_intake["key_rotation_required"])
         self.assertEqual(direct_intake["offer_route"], "manuscript")
         self.assertTrue(direct_intake["explicit_review_confirmation"])
         self.assertFalse(direct_intake["automatic_submission"])
@@ -1815,7 +1834,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 28)
+        self.assertEqual(campaign["version"], 29)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1986,10 +2005,12 @@ class RepositoryTests(unittest.TestCase):
             campaign["conversion_readiness"]["fit_check"]["working_terms_linked"]
         )
         fit_check = campaign["conversion_readiness"]["fit_check"]
+        self.assertEqual(fit_check["state"], "live_local_review_with_email_or_copy")
         self.assertEqual(fit_check["offer_route"], "lecture")
         self.assertTrue(fit_check["explicit_review_confirmation"])
         self.assertFalse(fit_check["automatic_submission"])
-        self.assertTrue(fit_check["direct_submit_available"])
+        self.assertFalse(fit_check["direct_submit_available"])
+        self.assertTrue(fit_check["key_rotation_required"])
         self.assertTrue(fit_check["synthetic_visible_round_trip_verified"])
         self.assertTrue(fit_check["receiver_authenticated_decrypted_and_saved"])
         self.assertTrue(fit_check["synthetic_local_payload_artifacts_removed"])

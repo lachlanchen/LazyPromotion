@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 28
+        "version": 29
       },
       "url": ""
     },
@@ -36,7 +36,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 10
+        "version": 11
       },
       "url": ""
     },
@@ -126,7 +126,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 17
+        "version": 18
       },
       "url": ""
     },
@@ -136,7 +136,7 @@
       "label": "manuscript-sprint-pilot",
       "metadata": {
         "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
-        "version": 11
+        "version": 12
       },
       "url": ""
     },
@@ -5992,6 +5992,13 @@
       "url": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1"
     },
     {
+      "id": "url:6fb769a9de3f79b6",
+      "kind": "web_resource",
+      "label": "encrypted intake sources disabled frontend commit",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb"
+    },
+    {
       "id": "url:91a35c7c8125b8ac",
       "kind": "web_resource",
       "label": "encrypted intake sources endpoint",
@@ -6111,11 +6118,11 @@
       "url": "https://lazying.art/lecture-pack/fit-check/"
     },
     {
-      "id": "url:5ffd916ea073a22d",
+      "id": "url:0e6df4716c6e21f5",
       "kind": "web_resource",
       "label": "fit check explanation contract deployment run",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33953673032"
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33986621344"
     },
     {
       "id": "url:c48afb0dbeb7ee89",
@@ -7927,6 +7934,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33986621344",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:0e6df4716c6e21f5"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -7999,14 +8014,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33953673032",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "campaign:local-knowledge-terminal-pilot",
-      "target": "url:5ffd916ea073a22d"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://www.youtube.com/watch?v=UuVa-DaSAvI",
       "metadata": {},
       "relation": "uses_evidence",
@@ -8020,6 +8027,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:6fb769a9de3f79b6"
     },
     {
       "confidence": 1.0,

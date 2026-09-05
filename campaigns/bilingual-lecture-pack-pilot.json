@@ -1,5 +1,5 @@
 {
-  "version": 28,
+  "version": 29,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -151,8 +151,8 @@
     "revenue_policy": "Count revenue only after confirmed payment; visits, fit-check drafts, emails, likes, queued posts, and source transfers are not sales."
   },
   "conversion_readiness": {
-    "state": "live_encrypted_direct_fit_check",
-    "checked_at": "2026-09-05T12:39:31Z",
+    "state": "live_email_or_copy_fit_check",
+    "checked_at": "2026-09-06T19:16:37Z",
     "website_commits": [
       "83b1d7a",
       "24e48c3",
@@ -180,7 +180,10 @@
       "d070282"
     ],
     "fit_check": {
-      "state": "live_encrypted_direct_intake_with_email_fallback",
+      "state": "live_local_review_with_email_or_copy",
+      "historical_direct_intake_verified_on": "2026-09-05",
+      "current_frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb",
+      "key_rotation_required": true,
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "record_schema": "fit-check-record/v2",
       "source_schema": "fit-check/v2",
@@ -190,7 +193,7 @@
       "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
       "explicit_review_confirmation": true,
       "automatic_submission": false,
-      "direct_submit_available": true,
+      "direct_submit_available": false,
       "source_upload_requested": false,
       "visible_recipient": "contact@lazying.art",
       "copy_fallback": true,
@@ -211,7 +214,7 @@
       "synthetic_local_payload_artifacts_removed": true,
       "remote_spool_empty": true,
       "verified_received_gross_usd": 0,
-      "policy": "The labeled synthetic metadata round trip proves the review gate, encrypted transport, private receiver, and email fallback. It is not a customer inquiry, qualification, sale, delivery, or revenue."
+      "policy": "The September 5 labeled synthetic metadata round trip remains historical evidence. Direct submission is disabled while the private receiver key is rotated; the live page reviews locally and continues by email or copy. It is not a customer inquiry, qualification, sale, delivery, or revenue."
     },
     "payment": {
       "state": "ready_for_reviewed_live_request",

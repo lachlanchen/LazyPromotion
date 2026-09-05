@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -147,9 +147,13 @@
     "fit_check_url": "https://lazying.art/story-clip/fit-check/",
     "price": "USD 250",
     "scope": "One customer-owned recording up to 30 minutes, two timestamped candidate moments, then one buyer-selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, a caption/source ledger, and one bounded correction pass.",
-    "qualification": "Review-confirmed encrypted metadata fit check before source transfer or payment",
+    "qualification": "Local review followed by a prepared email or copied request before source transfer or payment",
     "encrypted_intake": {
-      "state": "live_verified",
+      "state": "historically_verified_direct_route_temporarily_disabled",
+      "historical_verification_date": "2026-09-05",
+      "direct_submit_available": false,
+      "current_frontend_commit": "1ba106beadff2de89d71874fa2df6379e6eb35fb",
+      "key_rotation_required": true,
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "offer": "story_clip",
       "record_schema": "fit-check-record/v2",
@@ -164,7 +168,7 @@
       "lead_or_sale_observed": false,
       "received_revenue_usd": 0
     },
-    "inquiry_monitor": "The existing receiver checks encrypted envelopes every 15 minutes and stores only sanitized operational status outside the private inquiry copies",
+    "inquiry_monitor": "Direct encrypted intake is disabled during key rotation; prospective buyers review locally and continue through the prepared email or copy route",
     "checkout_created": false,
     "social_post_created": false,
     "deployment_verified": true

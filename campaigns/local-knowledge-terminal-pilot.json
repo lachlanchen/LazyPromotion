@@ -1,15 +1,17 @@
 {
-  "version": 17,
+  "version": 18,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
     "pilot_page": "https://lazying.art/lkt/",
     "fit_check": "https://lazying.art/lkt/fit-check/",
     "encrypted_intake_sources": {
+      "current_state": "historically_verified_direct_route_disabled_pending_key_rotation",
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "backend_commit": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
       "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/3ff43e4afc0dfd4512629443af198345696c170e",
       "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
+      "disabled_frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb",
       "record_schema": "fit-check/v2",
       "supported_offers": [
         "lkt",
@@ -262,17 +264,17 @@
       "policy": "These are public draft commercial terms for qualification and listing consistency. A buyer-specific contract may narrow them but must never expand the scope or weaken the refund, privacy, retention, or support boundaries without explicit written review."
     },
     "fit_check_explanation_contract": {
-      "state": "live_verified",
-      "checked_at": "2026-09-05T07:52:37Z",
-      "website_commit": "4317e47b682a2f7f29d52cf5bd4afb59104b636e",
-      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33953673032",
+      "state": "live_email_or_copy_verified",
+      "checked_at": "2026-09-06T19:16:37Z",
+      "website_commit": "1ba106beadff2de89d71874fa2df6379e6eb35fb",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33986621344",
       "routes": [
         "https://lazying.art/lkt/",
         "https://lazying.art/lkt/sample-report/"
       ],
-      "policy": "The offer and sample report explain the actual reviewed flow: nothing is sent while the visitor fills in or reviews the fit check; an explicit Send uses encrypted private intake, while email and copy remain available. Do not describe the current fit check as email-draft-only or imply that a reviewed Send action cannot submit it."
+      "policy": "The offer and sample report explain the current reviewed flow: nothing is sent while the visitor fills in or reviews the fit check; after review, the visitor opens the prepared email or copies the request. Direct submission remains disabled until key rotation and a new end-to-end verification."
     },
-    "current_order_mode": "live encrypted direct free fit check with contact@ email fallback, followed by human review and a separately reviewed Stripe payment request",
+    "current_order_mode": "free fit check reviewed locally and continued by email or copy, followed by human review and a separately reviewed Stripe payment request",
     "included_scope": [
       "one customer-provided collection",
       "one language goal",
@@ -372,9 +374,13 @@
       "policy": "This September 1 synthetic visible-browser smoke test predates encrypted direct submission and is retained as historical review-gate evidence. It stopped at the local review panel, named the recipient, offered a copy fallback, said not to send source files yet, and kept Stripe after fit and scope acceptance. It did not click the mail link, send a message, or create a customer outcome."
     },
     "encrypted_direct_intake": {
-      "state": "live_verified",
-      "checked_on": "2026-09-05",
-      "current_live_path": "encrypted_direct_intake_four_offers_with_email_fallback",
+      "state": "historically_verified_direct_route_temporarily_disabled",
+      "checked_on": "2026-09-06",
+      "current_live_path": "local_review_then_email_or_copy",
+      "direct_submit_available": false,
+      "current_frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb",
+      "key_rotation_required": true,
+      "recovery_key_available": false,
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "backend_source": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
       "frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/3ff43e4afc0dfd4512629443af198345696c170e",
@@ -422,10 +428,10 @@
         "policy": "The routed v2 checks used labeled synthetic metadata only. They prove the shared encrypted intake for four offer routes, not a customer inquiry, qualification, sale, delivery, or revenue."
       },
       "receiver_runtime": {
-        "state": "healthy",
-        "session": "lazypromotion-lkt-inbox",
+        "state": "not_running",
+        "last_verified_session": "lazypromotion-lkt-inbox",
         "interval_minutes": 15,
-        "latest_state": "complete"
+        "latest_state": "unavailable"
       },
       "sanitized_status_fields": [
         "receipt",
@@ -438,7 +444,7 @@
       "automatic_qualification": false,
       "lead_or_sale_observed": false,
       "verified_received_gross_usd": 0,
-      "policy": "The labeled synthetic browser round trip verifies encrypted submission, authenticated receiver processing, private mode-0600 persistence, and delete-after-unchanged remote cleanup. It is operational evidence only, not a customer inquiry, qualified lead, customer outcome, sale, or revenue. Never publish keys, receiver configuration, private paths, inquiry content, or private screenshots."
+      "policy": "The September 5 labeled synthetic round trip remains historical evidence. On September 6 the recovery checkout could not access the matching private key or remote receiver, so all four public pages disabled direct submission and retained only local review, email, and copy. Re-enable direct submission only after an atomic key rotation and a new labeled end-to-end verification. This is operational evidence only, not a customer inquiry, qualified lead, customer outcome, sale, or revenue."
     },
     "attribution_bridge": {
       "state": "live",

@@ -1,5 +1,14 @@
 # Encrypted service-fit inbox
 
+## Current status
+
+Direct web submission is disabled as of 2026-09-06. The recovery checkout does
+not have the matching private receiver key, and the remote receiver could not be
+reached for a safe atomic rotation. All four public fit checks now review the
+request locally and continue through email or copy. Do not run a synthetic POST
+or re-enable the Send control until the public key, private key, receiver, and
+frontend are rotated and verified together.
+
 `lkt_inbox.py` is the operator-side receiver for the LKT, manuscript, lecture,
 and Story Clip fit checks accepted by the first-party WordPress endpoint. The web
 server stores an encrypted envelope, not a readable inquiry. The receiver
@@ -55,10 +64,12 @@ and followed by deletion of only the unchanged remote envelope. The exact
 synthetic local payload artifacts were then removed and the remote spool was
 empty. Private visual evidence remains outside Git.
 
-The current four-offer components are myblog commit
+The historically verified four-offer components are myblog commit
 `0463dcb2470ad1c908597b7f4d636cf2d33013a1`, LazyingArtWebsite commit
 `3ff43e4afc0dfd4512629443af198345696c170e`, and LazyPromotion receiver commit
-`f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445`. The 15-minute
-`lazypromotion-lkt-inbox` loop is healthy and completed the Story Clip probe.
-This is synthetic operational evidence, not a customer inquiry,
+`f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445`. The former 15-minute
+`lazypromotion-lkt-inbox` loop completed the Story Clip probe but is not running
+in the recovery checkout. LazyingArtWebsite commit
+`1ba106beadff2de89d71874fa2df6379e6eb35fb` is the current recoverable
+email-or-copy frontend. This is synthetic operational evidence, not a customer inquiry,
 qualified lead, customer outcome, sale, or revenue.

@@ -289,10 +289,8 @@ evidence, not a lead or revenue.
 
 The LKT, manuscript, lecture, and Story Clip fit-check pages validate their minimum
 questions and show a review gate inside the current browser tab. A prospective
-customer must explicitly confirm and submit the encrypted request or choose the
-`contact@lazying.art` email fallback. Inquiry content is stored only as an
-encrypted envelope outside the webroot; the operational rate and idempotency
-state contains no inquiry content.
+customer reviews the exact request, then chooses the prepared email or copy
+route. Nothing is sent from the page itself.
 
 A historical visible-browser smoke test on September 2, 2026 used synthetic,
 non-customer answers and stopped at that review panel. It verified the exact
@@ -303,8 +301,8 @@ keeps Stripe after written scope acceptance. The mail action was not clicked.
 This proves only that the review-first path is ready; it is not a lead, sale, or
 revenue event. The checked deployment is LazyingArtWebsite commit `8541e9c`.
 
-Encrypted direct intake is now live for all four offers. The verified
-components are myblog backend commit
+Encrypted direct intake was verified on September 5 for all four offers. The
+historically verified components are myblog backend commit
 `0463dcb2470ad1c908597b7f4d636cf2d33013a1`, LazyingArtWebsite frontend commit
 `3ff43e4afc0dfd4512629443af198345696c170e`, and LazyPromotion receiver commit
 `f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445`. Allowed-origin OPTIONS returned
@@ -328,12 +326,19 @@ An explicitly labeled synthetic request then completed through the visible live
 page with reference `cc078babd1b32b0c08e796e88886201f`. The receiver
 authenticated and decrypted it, saved private mode-`0600` copies, verified the
 saved record, and deleted only the unchanged remote envelope. Its synthetic
-local payload artifacts were removed; the remote spool is empty. The 15-minute
-`lazypromotion-lkt-inbox` loop is healthy at `no_pending`, and sanitized status
+local payload artifacts were removed; the remote spool was empty. The former
+15-minute `lazypromotion-lkt-inbox` loop reached `no_pending`, and sanitized status
 contains receipt, time, and state only. The private screenshot remains outside
 Git. This proves the synthetic intake route, not a customer inquiry, qualified
 lead, customer outcome, sale, or revenue; there is no automatic reply or
 qualification.
+
+On September 6 the recovery checkout could not access the matching private key
+or remote receiver. LazyingArtWebsite commit
+`1ba106beadff2de89d71874fa2df6379e6eb35fb` disabled direct submission on
+all four live fit checks and retained local review, email, and copy. Re-enable
+direct submission only after an atomic key rotation and a new labeled
+end-to-end verification.
 
 Prospective customers can inspect a
 [complete sample fit report](https://lazying.art/lkt/sample-report/)
@@ -502,8 +507,7 @@ Instagram attribution when a reader moves from LazyBlog, the LKT offer, or the
 sample report into the fit check. They forward only four validated UTM fields
 to the exact first-party destination. The browser review includes those fields,
 while organic readers retain the normal page attribution; nothing is submitted
-until the visitor explicitly sends the encrypted request or uses the email
-fallback.
+by the page, and the visitor continues through the prepared email or copy route.
 
 The downstream payment path can be checked without creating Stripe objects:
 

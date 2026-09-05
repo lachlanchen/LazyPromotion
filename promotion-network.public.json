@@ -4071,7 +4071,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T05:40:34Z",
+        "pushed_at": "2026-09-05T05:46:40Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4091,7 +4091,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T05:40:38Z"
+        "updated_at": "2026-09-05T05:46:43Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -5624,7 +5624,7 @@
       "metadata": {
         "description": "\"The Art of Lazying\" is a repository that promotes strategic laziness for a simplified, productive life, encompassing AI agents, language learning, and vlogs with practical tips and real-life use cases.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T04:36:38Z",
+        "pushed_at": "2026-09-05T05:46:57Z",
         "topics": [
           "automation",
           "language",
@@ -5637,7 +5637,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T04:36:42Z"
+        "updated_at": "2026-09-05T05:47:01Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -5648,7 +5648,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T04:36:37Z",
+        "pushed_at": "2026-09-05T05:46:56Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5666,7 +5666,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-05T04:36:41Z"
+        "updated_at": "2026-09-05T05:47:00Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },

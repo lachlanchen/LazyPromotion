@@ -51,6 +51,14 @@ conversion, production deployment, and ongoing support are excluded. The
 customer must have the right to use the source. A free fit check comes first;
 Stripe payment is requested only after both sides accept the scope.
 
+The live [working terms](https://lazying.art/lkt/#terms) now fix the delivery
+window at ten business days after complete inputs and confirmed payment, keep
+capacity to one sprint, provide one seven-day correction window, allocate the
+USD 250 deliverables as USD 75/125/50 for cancellation accounting, delete
+working source copies within fourteen days, and exclude ongoing operation.
+LazyingArtWebsite commit `65cdc86` deployed these terms and links the free fit
+check back to them.
+
 This USD 250 service price is not a device price. A supplied LKT terminal stays
 quote-only and separate until its complete landed BOM and fulfillment terms
 pass the [`lkt-hardware-pricing.md`](lkt-hardware-pricing.md) gates.

@@ -76,7 +76,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 7
+        "version": 8
       },
       "url": ""
     },
@@ -6336,6 +6336,20 @@
       "url": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html"
     },
     {
+      "id": "url:075c955db29c4cd8",
+      "kind": "web_resource",
+      "label": "working terms contract deployment run",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33950635752"
+    },
+    {
+      "id": "url:b8df126935281364",
+      "kind": "web_resource",
+      "label": "working terms contract public anchor",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/#terms"
+    },
+    {
       "id": "url:094d5ff48e63de9c",
       "kind": "web_resource",
       "label": "www.reddit.com",
@@ -7163,6 +7177,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33950635752",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:075c955db29c4cd8"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
       "metadata": {},
       "relation": "uses_evidence",
@@ -7288,6 +7310,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:a71a4b9504cbc9fa"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/#terms",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:b8df126935281364"
     },
     {
       "confidence": 1.0,

@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -106,7 +106,7 @@
     "service_scope_contract": {
       "state": "live_verified",
       "checked_on": "2026-09-05",
-      "website_commit": "65628d033b660abf2cb7438d55ee2e6d9c2d983c",
+      "website_commit": "65cdc8669fca7aaf059462f69b760ff5299012df",
       "repository_commit": "83f262abc3ebb2281a06b3ffaa50a17fe613b38d",
       "sample_cap": "12 agreed source units and 20 test questions",
       "browser_proof_cap": "up to two cited browser cards when usable",
@@ -118,6 +118,30 @@
         "https://lazying.art/lkt/sample-report/"
       ],
       "policy": "The founding USD 250 price is sustainable only inside this exact work cap. Any larger sample, additional language, bulk conversion, custom OCR, production deployment, or ongoing support needs a separate scope."
+    },
+    "working_terms_contract": {
+      "state": "live_verified",
+      "checked_at": "2026-09-05T06:45:36Z",
+      "website_commit": "65cdc8669fca7aaf059462f69b760ff5299012df",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33950635752",
+      "public_anchor": "https://lazying.art/lkt/#terms",
+      "delivery_window": "ten business days after accepted scope, confirmed payment, complete agreed sample, and ready machine-access path",
+      "maximum_concurrent_sprints": 1,
+      "correction_window": "one consolidated list of up to ten factual corrections within seven calendar days after delivery",
+      "deliverable_allocation_usd": {
+        "data_citation_and_privacy_map": 75,
+        "sample_evaluation_and_up_to_two_cited_cards": 125,
+        "go_no_go_report_and_correction_pass": 50
+      },
+      "source_copy_retention_days": 14,
+      "support_boundary": "written clarification during the seven-day correction window; no hosting, maintenance, hardware support, or ongoing operation",
+      "live_verification": {
+        "offer_http_status": 200,
+        "fit_check_http_status": 200,
+        "fit_check_links_to_terms": true,
+        "deployment_conclusion": "success"
+      },
+      "policy": "These are public draft commercial terms for qualification and listing consistency. A buyer-specific contract may narrow them but must never expand the scope or weaken the refund, privacy, retention, or support boundaries without explicit written review."
     },
     "current_order_mode": "live encrypted direct free fit check with contact@ email fallback, followed by human review and a separately reviewed Stripe payment request",
     "included_scope": [
@@ -139,7 +163,7 @@
     ],
     "limits": [
       "Do not call the hardware ready to ship or imply that a standard kit is available.",
-      "Quote only the published USD 250 collection-fit sprint; do not invent a delivery date, support term, corpus entitlement, model benchmark, or hardware specification.",
+      "Quote only the published USD 250 collection-fit sprint and its public ten-business-day, correction, refund, retention, and support terms; do not invent a corpus entitlement, model benchmark, hardware specification, or additional promise.",
       "The public repository has no detected software license; describe it as public code, not open source, until the owner selects a license.",
       "Ask about the collection, language goal, intended readers, rights, privacy needs, sample format, and existing hardware before requesting payment.",
       "The generated product hero is a concept visual grounded in the current prototype and interface; never present it as shipped inventory.",

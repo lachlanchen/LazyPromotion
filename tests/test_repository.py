@@ -682,7 +682,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 7)
+        self.assertEqual(campaign["version"], 8)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -706,6 +706,17 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(scope_contract["sample_cap"], "12 agreed source units and 20 test questions")
         self.assertEqual(len(scope_contract["live_routes_verified"]), 3)
         self.assertIn("larger sample", scope_contract["policy"])
+        terms = campaign["source_evidence"]["working_terms_contract"]
+        self.assertEqual(terms["state"], "live_verified")
+        self.assertEqual(
+            terms["website_commit"],
+            "65cdc8669fca7aaf059462f69b760ff5299012df",
+        )
+        self.assertEqual(terms["maximum_concurrent_sprints"], 1)
+        self.assertEqual(sum(terms["deliverable_allocation_usd"].values()), 250)
+        self.assertEqual(terms["source_copy_retention_days"], 14)
+        self.assertTrue(terms["live_verification"]["fit_check_links_to_terms"])
+        self.assertEqual(terms["live_verification"]["deployment_conclusion"], "success")
         currency = campaign["source_evidence"]["currency_contract"]
         self.assertEqual(currency["state"], "live")
         self.assertEqual(currency["exact_price"], "USD 250")
@@ -1137,7 +1148,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "marketplace-channels.json"
         packet = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(packet["version"], 3)
+        self.assertEqual(packet["version"], 4)
         self.assertEqual(packet["offer"]["public_price"], "USD 250")
         self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
         self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
@@ -1163,6 +1174,9 @@ class RepositoryTests(unittest.TestCase):
             listing["commercial_terms_state"],
             "selected_for_listing_draft_not_yet_contractual",
         )
+        self.assertEqual(listing["public_terms"]["state"], "live_verified")
+        self.assertEqual(listing["public_terms"]["url"], "https://lazying.art/lkt/#terms")
+        self.assertTrue(listing["public_terms"]["fit_check_links_to_terms"])
         commitments = listing["publication_commitments"]
         self.assertIn("Ten business days", commitments["delivery_window"])
         self.assertEqual(commitments["maximum_concurrent_sprints"], 1)

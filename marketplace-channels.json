@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "checked_at": "2026-09-05",
   "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint where buyers already look for bounded technical services, without weakening the free fit check, privacy gate, or received-revenue accounting.",
   "offer": {
@@ -89,6 +89,13 @@
       "Do not use the existing Reddit acknowledgement as a testimonial; it concerns a separate free educational archive."
     ],
     "commercial_terms_state": "selected_for_listing_draft_not_yet_contractual",
+    "public_terms": {
+      "state": "live_verified",
+      "url": "https://lazying.art/lkt/#terms",
+      "website_commit": "65cdc8669fca7aaf059462f69b760ff5299012df",
+      "fit_check_links_to_terms": true,
+      "policy": "The future Contra preview must match this public contract exactly before publication."
+    },
     "publication_commitments": {
       "delivery_window": "Ten business days after the written scope is accepted, platform payment is secured, and the complete agreed sample and machine-access path are available. The delivery clock pauses while required material, access, or answers are missing.",
       "maximum_concurrent_sprints": 1,

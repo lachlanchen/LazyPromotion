@@ -52,18 +52,21 @@ from the homepage. LazyingArtWebsite commit `d589cda` also replaces an
 unsupported audience count with verifiable portfolio facts, removes an
 unverified discount and dead footer links, and gates Robot, eInk, and OpenHI
 checkout behind an availability conversation until fulfillment terms exist.
-Follow-up commits `a8b3e0e` and `78ecc81` replace token and automated-income
-promises with links to the public project record, describe EchoMind as a public
-beta with feature boundaries, and label IdeasGlass capabilities as prototype
-design goals across all 13 locales. The deployed page and all 12 website
-contracts passed. This improves trust and qualification; it is not a lead,
-order, sponsorship, or revenue.
+Follow-up commits `a8b3e0e`, `78ecc81`, `0273f2f`, and `3d71cc8` replace token
+and automated-income promises with links to the public project record, describe
+EchoMind as a public beta with feature boundaries, label IdeasGlass capabilities
+as prototype design goals across all 13 locales, add the fourth inspectable
+research proof to the work shelf, and bring the 11-language repository
+documentation in line with the fit-check-first payment flow. The deployed page
+and all 12 website contracts passed. This improves trust and qualification; it
+is not a lead, order, sponsorship, or revenue.
 
-Search Console URL inspection on 2026-09-05 independently reported the LKT,
-Manuscript Build & Redline, and Bilingual Lecture Pack landing pages as indexed
-and eligible to appear in Google Search. None needed another indexing request.
-That verifies discoverability only; it does not establish a query impression,
-lead, customer, or revenue event.
+Search Console URL inspection on 2026-09-05 independently reported the LKT and
+Manuscript Build & Redline landing pages as indexed and eligible to appear in
+Google Search. The Bilingual Lecture Pack page was discovered but not indexed;
+one priority crawl request was accepted and should not be repeated merely to
+seek priority. These checks verify discovery state only; they do not establish
+a query impression, lead, customer, or revenue event.
 
 The [scientific-PDF integrity guide](https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html)
 now gives owners of collections ranging from hundreds to tens of thousands of
@@ -389,12 +392,14 @@ The operational funnel is:
 `helpful interaction → fit inquiry → qualified lead → scope accepted → Stripe payment → delivered sprint`
 
 A complementary buyer-intent route is prepared in the [LKT marketplace
-packet](lkt-marketplaces.md). Contra Services ranks first because its inquiry
-flow can preserve the free fit check. The listing remains a draft until the
-operator completes registration and identity/payout setup and explicitly
-selects every delivery, revision, sample, cancellation, refund, and support
-commitment. Upwork and Fiverr remain deferred. A marketplace inquiry, contract,
-balance, or pending payout does not change the received-revenue total.
+packet](lkt-marketplaces.md). Contra Services ranks first for a reusable listing
+because its inquiry flow can preserve the free fit check. The listing remains a
+draft until the operator completes registration and identity/payout setup and
+explicitly selects every delivery, revision, sample, cancellation, refund, and
+support commitment. Three current Upwork applications are also prepared around
+exact public proof, but the project browser is logged out; no proposal was sent
+and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
+contract, balance, or pending payout does not change the received-revenue total.
 The prepared cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
 

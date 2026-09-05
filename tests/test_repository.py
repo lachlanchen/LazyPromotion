@@ -1091,7 +1091,7 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(len(campaign["channels"]["x"]["content"]), 273)
         self.assertIn(
-            "19,119 structured records",
+            "16,800 current-code records",
             campaign["channels"]["instagram"]["content"],
         )
         self.assertIn(

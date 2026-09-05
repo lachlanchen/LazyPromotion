@@ -484,8 +484,13 @@
     "instagram": {
       "state": "postiz_queue",
       "publish_at": "2026-09-08T11:31:00Z",
-      "content": "Some knowledge should stay in the room.\n\nLocal Knowledge Terminal turns a private book or reviewed dictionary collection into cited multilingual cards on an existing machine. The browser software works today; the image is a concept visual grounded in the current display prototype, not shipped inventory.\n\nI’m opening four founding collection-fit sprints at $250 each. Before sharing any material, you can inspect a measured example using LKT’s own documented reference collection: 19,119 structured records, a data/privacy map, two browser proofs, and a written go/no-go boundary.\n\nIt is project-owned evidence—not a customer result or testimonial. Hardware, shipping, custom OCR, and production deployment are not included.\n\nRead the sample report first:\nhttps://lazying.art/lkt/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=product_sample_report\n\n#LocalFirst #KnowledgeManagement #LanguageLearning #RaspberryPi #Privacy",
+      "content": "Some knowledge should stay in the room.\n\nLocal Knowledge Terminal turns a private book or reviewed dictionary collection into cited multilingual cards on an existing machine. The browser software works today; the image is a concept visual grounded in the current display prototype, not shipped inventory.\n\nI’m opening four founding collection-fit sprints at $250 each. Before sharing any material, you can inspect a measured example using LKT’s own documented reference collection: 16,800 current-code records, a data/privacy map, two browser proofs, and a written go/no-go boundary.\n\nIt is project-owned evidence—not a customer result or testimonial. Hardware, shipping, custom OCR, and production deployment are not included.\n\nRead the sample report first:\nhttps://lazying.art/lkt/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=product_sample_report\n\n#LocalFirst #KnowledgeManagement #LanguageLearning #RaspberryPi #Privacy",
       "visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
+      "correction": {
+        "reviewed_on": "2026-09-05",
+        "reason": "The current morphology parser excludes index-only cross-reference rows from claim-bearing records.",
+        "verification": "The visible Postiz editor retained the account, uploaded image, 2026-09-08T11:31:00Z time, original tracked URL, and boundaries. A fresh provider read confirmed the exact 16,800 current-code count and QUEUE state."
+      },
       "sample_report_post": {
         "state": "published_and_visibly_verified",
         "published_at": "2026-09-01T23:53:19Z",

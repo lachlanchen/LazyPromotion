@@ -81,6 +81,13 @@ shortlink. A fresh record and visible-calendar review confirmed the exact copy,
 uploaded media, provider settings, unchanged times, and persisted `QUEUE`
 state. At that review point, the Wenyan and eInk items remained drafts.
 
+On 2026-09-05, the unpublished Instagram item was corrected after the current
+LKT parser excluded index-only morphology rows. The visible editor retained the
+same image, account, 2026-09-08T11:31:00Z schedule, original tracked URL, and
+customer-result and hardware boundaries while changing only the measured
+reference count to 16,800 current-code records. A fresh provider read confirmed
+the exact correction and `QUEUE` state; no provider ID is stored in Git.
+
 On 2026-09-02, a publication preflight caught a format mismatch after the two
 Wenyan items had subsequently entered the queue. The X copy said the
 `資治通鑑` edition was available in both color and black-and-white, while the

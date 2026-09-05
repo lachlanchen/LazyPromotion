@@ -34,7 +34,7 @@ class LktDeliveryTests(unittest.TestCase):
         self.assertIn("## Go/no-go boundary", first)
         self.assertIn("## Fixed exclusions", first)
         self.assertIn("GO TO REPRESENTATIVE-PROOF PLAN", first)
-        self.assertIn("19,119", first)
+        self.assertIn("16,800", first)
 
     def test_operator_prepared_metadata_path_can_drive_real_fulfillment_safely(self):
         intake = lkt_delivery.load_intake(OPERATOR_EXAMPLE)

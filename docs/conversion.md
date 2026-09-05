@@ -104,6 +104,14 @@ Its [source report and corpus
 ledger](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
 remain public for reproducibility.
 
+The current-code corpus total is 16,800 records across five indexes. The
+previous 19,119 figure counted index-only root and affix cross-reference rows
+that the current parser correctly excludes. Source commit `78c9ddf` and website
+commit `de036ed` make that boundary consistent in the public report, landing
+page, and tests. The LKT page also names rights-cleared terminology collections
+as a concrete use case without changing the USD 250 contract: etymology, root,
+or affix relations appear only when the supplied source supports them.
+
 The live [passage provenance graph](https://lazying.art/lkt/passage-graph/)
 adds a narrower inspectable proof. This hand-reviewed sample turns one
 project-owned aligned passage into a small concept graph. Every reviewed

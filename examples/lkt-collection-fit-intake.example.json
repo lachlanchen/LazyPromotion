@@ -7,7 +7,7 @@
   "collection": {
     "format": "structured_jsonl",
     "bounded": true,
-    "approximate_items": 19119,
+    "approximate_items": 16800,
     "language_goal": {
       "goal": "multilingual_cards",
       "source_language": "en",

@@ -37,7 +37,7 @@ same Markdown; the program has no network calls, timestamps, random values, or
 model calls.
 
 The example uses only facts already disclosed in LKT's public sample report:
-the project-owned reference collection is bounded at 19,119 structured records,
+the project-owned reference collection is bounded at 16,800 current-code records,
 the example processing boundary is local, the machine class is 8 GiB without a
 discrete accelerator, and citations can retain stable record provenance. The
 new packet still labels its proof as planned. It does not claim that this

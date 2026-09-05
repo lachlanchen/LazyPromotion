@@ -171,6 +171,22 @@ The [source report and corpus
 ledger](https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md)
 remain public for reproducibility.
 
+On 2026-09-05, the current morphology parser and hashed source exports were
+reconciled: index-only cross-reference rows do not support morphology claims,
+so the current-code total is **16,800** records rather than the earlier 19,119.
+LocalKnowledgeTerminal commit `78c9ddf` corrects the source ledger and test;
+LazyingArtWebsite commit `de036ed` publishes the same figures, and the old
+figures are absent from both live LKT pages. The queued Instagram caption was
+corrected in place while preserving its image, schedule, original URL, and
+commercial boundaries. This is a truth correction, not a new result.
+
+The same fixed sprint now names one exact high-fit use case: a rights-cleared
+glossary, dictionary, terminology archive, or reading collection. When the
+source supports the relation, the representative cards may preserve citations
+while tracing roots, affixes, and word history. This is still the existing USD
+250 collection-fit scope—not a bundled dictionary, automatic etymology claim,
+or separate product. LazyingArtWebsite commit `48b1e68` is deployed.
+
 Prospective buyers can also inspect the live [passage provenance
 graph](https://lazying.art/lkt/passage-graph/). This hand-reviewed sample turns
 one project-owned aligned passage into a small concept graph. Every reviewed

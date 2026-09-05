@@ -140,7 +140,13 @@
         "repository_commit": "907e0b3ba6a48cc1d42e37cdaa22b28416264ab6",
         "artifact_sha256": "b75713fcd7520fb904b56a02e513405ecbd8f4e8e62097cf04cbc4b35ef0358e",
         "source_fixture_sha256": "4087a4626f719379ff78971865c9a5e931c1024aea8a24d77116f7f54f956d74",
-        "proof_boundary": "Project-owned scripted English/Mandarin transcript, authored timestamps, ten manually reviewed knowledge categories, exact evidence spans, one stored superseded correction, reviewed graph assertions, and portable JSON. It is not recorded meeting audio, ASR, diarization, automatic extraction, an accuracy benchmark, a customer result, or an enterprise deployment."
+        "proof_boundary": "Project-owned scripted English/Mandarin transcript, authored timestamps, ten manually reviewed knowledge categories, exact evidence spans, one stored superseded correction, reviewed graph assertions, and portable JSON. It is not recorded meeting audio, ASR, diarization, automatic extraction, an accuracy benchmark, a customer result, or an enterprise deployment.",
+        "search_indexing": {
+          "state": "priority_crawl_requested_not_indexed",
+          "checked_at": "2026-09-05T09:58:00Z",
+          "evidence": "Visible Search Console URL Inspection reported URL unknown to Google, then accepted one indexing request and confirmed that the URL was added to a priority crawl queue.",
+          "policy": "A crawl request is not indexing, ranking, traffic, a lead, or revenue. Do not resubmit while the request is queued."
+        }
       },
       "application_packet": "prepared_in_ignored_private_storage",
       "architecture_attachment": {

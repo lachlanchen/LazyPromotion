@@ -278,6 +278,44 @@ class RepositoryTests(unittest.TestCase):
                     route,
                 ))
 
+    def test_meeting_knowledge_routes_require_owned_source_and_explicit_need(self):
+        for platform in ("reddit", "x"):
+            routes = [
+                route for route in browser.discovery_query_lanes(platform)["core"]
+                if "meeting-knowledge buyer intent" in route["purpose"].casefold()
+            ]
+            with self.subTest(platform=platform):
+                self.assertEqual(len(routes), 1)
+                route = routes[0]
+                self.assertEqual(route["project_id"], "localknowledgeterminal")
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertIn("i built", route["excluded_body_any"])
+                self.assertTrue(browser.route_body_qualified(
+                    "We have our meeting transcripts and need help turning them "
+                    "into traceable decisions and action items.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I built a meeting transcript knowledge-base tool and launched it today.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I've built a dashboard that extracts action items from my meeting transcripts.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I need a transcript of a podcast episode.",
+                    route,
+                ))
+
+        hackernews = [
+            route for route in browser.discovery_query_lanes("hackernews")["core"]
+            if "meeting transcripts" in route.get("comment_query", "")
+            and "decisions" in route.get("comment_query", "")
+        ]
+        self.assertEqual(len(hackernews), 1)
+        self.assertIn("Research-only", hackernews[0]["purpose"])
+
     def test_paid_book_media_and_code_sprints_have_frequent_buyer_intent_routes(self):
         for platform in ("reddit", "x", "hackernews"):
             core = browser.discovery_query_lanes(platform)["core"]
@@ -767,6 +805,11 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertIn("scripted", proof["proof_boundary"])
         self.assertIn("not recorded meeting audio", proof["proof_boundary"])
+        self.assertEqual(
+            proof["search_indexing"]["state"],
+            "priority_crawl_requested_not_indexed",
+        )
+        self.assertIn("Do not resubmit", proof["search_indexing"]["policy"])
         self.assertIn("https://lazying.art/meeting-intelligence/", meeting["public_proof"])
         self.assertEqual(
             meeting["architecture_attachment"]["sha256"],

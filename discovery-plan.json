@@ -43,6 +43,17 @@
       },
       {
         "project_id": "localknowledgeterminal",
+        "query": "(\"my meeting transcripts\" OR \"our meeting transcripts\" OR \"our meeting notes\") (\"action items\" OR decisions OR \"knowledge base\") (help OR recommend OR \"looking for\")",
+        "purpose": "Meeting-knowledge buyer intent: an owner asking how to turn existing transcripts or notes into traceable actions, decisions, or reusable knowledge",
+        "required_body_groups": [
+          ["my meeting transcript", "my meeting transcripts", "our meeting transcript", "our meeting transcripts", "our meeting notes"],
+          ["action item", "action items", "decision", "decisions", "knowledge base", "reusable knowledge"],
+          ["help", "recommend", "looking for", "need", "how can", "how do", "anyone"]
+        ],
+        "excluded_body_any": ["i built", "i've built", "i have built", "i created", "i launched", "we built", "we've built", "we have built", "we created", "we launched", "my new tool", "our new tool", "for hire", "available for work"]
+      },
+      {
+        "project_id": "localknowledgeterminal",
         "query": "subreddit:Rag (\"my PDFs\" OR \"my documents\" OR \"my collection\") (help OR recommend OR advice)",
         "purpose": "Owned-collection buyer intent: a person deciding how to search their own local or private material",
         "required_body_groups": [
@@ -196,6 +207,17 @@
       },
       {
         "project_id": "localknowledgeterminal",
+        "query": "(\"my meeting transcripts\" OR \"our meeting transcripts\" OR \"our meeting notes\") (\"action items\" OR decisions OR \"knowledge base\") (help OR recommend OR \"looking for\") -filter:retweets",
+        "purpose": "Meeting-knowledge buyer intent: an owner asking how to turn existing transcripts or notes into traceable actions, decisions, or reusable knowledge",
+        "required_body_groups": [
+          ["my meeting transcript", "my meeting transcripts", "our meeting transcript", "our meeting transcripts", "our meeting notes"],
+          ["action item", "action items", "decision", "decisions", "knowledge base", "reusable knowledge"],
+          ["help", "recommend", "looking for", "need", "how can", "how do", "anyone"]
+        ],
+        "excluded_body_any": ["i built", "i've built", "i have built", "i created", "i launched", "we built", "we've built", "we have built", "we created", "we launched", "my new tool", "our new tool", "for hire", "available for work"]
+      },
+      {
+        "project_id": "localknowledgeterminal",
         "query": "(\"my PDFs\" OR \"my documents\" OR \"my collection\") (help OR recommend OR advice) -filter:retweets",
         "purpose": "Owned-collection buyer intent: a person deciding how to search their own local or private material",
         "required_body_groups": [
@@ -311,6 +333,12 @@
         "query": "Ask HN local knowledge base",
         "comment_query": "knowledge base",
         "purpose": "People asking how to build a private or local knowledge workflow"
+      },
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "Ask HN meeting transcripts decisions knowledge base",
+        "comment_query": "meeting transcripts action items decisions",
+        "purpose": "Research-only evidence for owners who need traceable actions or decisions from existing meeting transcripts"
       },
       {
         "project_id": "localvideogen",

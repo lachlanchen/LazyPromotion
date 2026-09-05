@@ -107,7 +107,7 @@ pass the [`lkt-hardware-pricing.md`](lkt-hardware-pricing.md) gates.
 
 The main LazyingArt site now exposes the curated [selected-work
 shelf](https://lazying.art/work/) in all 13 site languages, so the books, code,
-media, research workflows, and three fixed-scope services have one quiet path
+media, research workflows, and four fixed-scope services have one quiet path
 from the homepage. LazyingArtWebsite commit `d589cda` also replaces an
 unsupported audience count with verifiable portfolio facts, removes an
 unverified discount and dead footer links, and gates Robot, eInk, and OpenHI
@@ -545,10 +545,9 @@ pitch merely to promote more projects.
 
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
-media, research tooling, games, and local AI. LKT, manuscript redline, and the
-bilingual lecture pack remain the three homepage routes, while Story Clip is a
-fourth active direct offer; a candidate advances only after a current need and
-a small first test are found.
+media, research tooling, games, and local AI. LKT, manuscript redline, the
+bilingual lecture pack, and Story Clip are the four homepage routes; a
+candidate advances only after a current need and a small first test are found.
 
 ## Truthful measurement
 

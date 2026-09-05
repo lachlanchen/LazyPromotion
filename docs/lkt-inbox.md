@@ -69,7 +69,8 @@ The historically verified four-offer components are myblog commit
 `3ff43e4afc0dfd4512629443af198345696c170e`, and LazyPromotion receiver commit
 `f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445`. The former 15-minute
 `lazypromotion-lkt-inbox` loop completed the Story Clip probe but is not running
-in the recovery checkout. LazyingArtWebsite commit
-`1ba106beadff2de89d71874fa2df6379e6eb35fb` is the current recoverable
-email-or-copy frontend. This is synthetic operational evidence, not a customer inquiry,
+in the recovery checkout. The email-or-copy mitigation was introduced by
+LazyingArtWebsite commit `1ba106beadff2de89d71874fa2df6379e6eb35fb` and
+remains live in current deployment `e4a1c36b3efa93399b6a5754f3692c1802a211c7`.
+This is synthetic operational evidence, not a customer inquiry,
 qualified lead, customer outcome, sale, or revenue.

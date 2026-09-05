@@ -378,7 +378,7 @@
       "checked_on": "2026-09-06",
       "current_live_path": "local_review_then_email_or_copy",
       "direct_submit_available": false,
-      "current_frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb",
+      "current_frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/e4a1c36b3efa93399b6a5754f3692c1802a211c7",
       "key_rotation_required": true,
       "recovery_key_available": false,
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
@@ -497,10 +497,10 @@
     },
     "homepage": {
       "state": "live_and_verified",
-      "checked_on": "2026-09-05",
-      "website_commit": "99c04611eacf6e5dd080058b2de5b575011b61d0",
+      "checked_on": "2026-09-06",
+      "website_commit": "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
       "destination": "https://lazying.art/lkt/?utm_source=lazyingart&utm_medium=website&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_chooser",
-      "role": "One of three fixed-scope USD 250 service choices shown immediately below the main banner. The tracked link leads to the offer and public proof before the free fit check.",
+      "role": "One of four fixed-scope USD 250 service choices shown immediately below the main banner. The tracked link leads to the offer and public proof before the free fit check.",
       "policy": "The homepage separates the existing-machine service from supplied hardware and does not ask for a source upload or payment before scope acceptance. Publication is not a lead or sale."
     },
     "lazyblog": {

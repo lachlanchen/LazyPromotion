@@ -801,7 +801,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["price"], "USD 250")
         self.assertEqual(
             offer["website_commit"],
-            "e1ae562a0a86f93e7c91c96ccd0403624b7eb481",
+            "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
         )
         self.assertEqual(
             offer["fit_check_url"], "https://lazying.art/story-clip/fit-check/"
@@ -823,6 +823,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(intake["lead_or_sale_observed"])
         self.assertEqual(intake["received_revenue_usd"], 0)
         self.assertIn("email", offer["inquiry_monitor"])
+        homepage = offer["homepage"]
+        self.assertEqual(homepage["state"], "live_and_verified")
+        self.assertIn("utm_campaign=story_clip_pilot", homepage["destination"])
+        self.assertIn("utm_content=service_chooser", homepage["destination"])
+        self.assertEqual(homepage["languages"], 13)
+        self.assertIn("not a lead or sale", homepage["policy"].casefold())
         self.assertFalse(offer["checkout_created"])
         self.assertFalse(offer["social_post_created"])
         self.assertTrue(offer["deployment_verified"])
@@ -1794,21 +1800,41 @@ class RepositoryTests(unittest.TestCase):
 
     def test_homepage_routes_all_active_sprints_without_inflating_revenue(self):
         expected = {
-            "local-knowledge-terminal-pilot.json": "local_knowledge_terminal_pilot",
-            "manuscript-sprint-pilot.json": "manuscript_sprint_pilot",
-            "bilingual-lecture-pack-pilot.json": "bilingual_lecture_pack_pilot",
+            "local-knowledge-terminal-pilot.json": (
+                "local_knowledge_terminal_pilot",
+                ("channels", "homepage"),
+            ),
+            "manuscript-sprint-pilot.json": (
+                "manuscript_sprint_pilot",
+                ("channels", "homepage"),
+            ),
+            "bilingual-lecture-pack-pilot.json": (
+                "bilingual_lecture_pack_pilot",
+                ("channels", "homepage"),
+            ),
+            "content-repurposing-pilot.json": (
+                "story_clip_pilot",
+                ("owned_offer", "homepage"),
+            ),
         }
 
-        for filename, campaign_name in expected.items():
+        for filename, (campaign_name, homepage_path) in expected.items():
             campaign = json.loads((ROOT / "campaigns" / filename).read_text(encoding="utf-8"))
-            homepage = campaign["channels"]["homepage"]
+            homepage = campaign
+            for key in homepage_path:
+                homepage = homepage[key]
             self.assertEqual(homepage["state"], "live_and_verified")
+            website_commit = homepage.get(
+                "website_commit",
+                campaign.get("owned_offer", {}).get("website_commit"),
+            )
             self.assertEqual(
-                homepage["website_commit"],
-                "99c04611eacf6e5dd080058b2de5b575011b61d0",
+                website_commit,
+                "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
             )
             self.assertIn(f"utm_campaign={campaign_name}", homepage["destination"])
             self.assertIn("utm_content=service_chooser", homepage["destination"])
+            self.assertIn("one of four", homepage["role"].casefold())
             self.assertIn("not a lead or sale", homepage["policy"].casefold())
 
     def test_github_profile_routes_all_active_sprints_to_public_proof_first(self):

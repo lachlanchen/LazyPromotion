@@ -143,7 +143,7 @@
   "owned_offer": {
     "state": "live",
     "url": "https://lazying.art/story-clip/",
-    "website_commit": "e1ae562a0a86f93e7c91c96ccd0403624b7eb481",
+    "website_commit": "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
     "fit_check_url": "https://lazying.art/story-clip/fit-check/",
     "price": "USD 250",
     "scope": "One customer-owned recording up to 30 minutes, two timestamped candidate moments, then one buyer-selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, a caption/source ledger, and one bounded correction pass.",
@@ -152,7 +152,7 @@
       "state": "historically_verified_direct_route_temporarily_disabled",
       "historical_verification_date": "2026-09-05",
       "direct_submit_available": false,
-      "current_frontend_commit": "1ba106beadff2de89d71874fa2df6379e6eb35fb",
+      "current_frontend_commit": "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
       "key_rotation_required": true,
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "offer": "story_clip",
@@ -169,6 +169,14 @@
       "received_revenue_usd": 0
     },
     "inquiry_monitor": "Direct encrypted intake is disabled during key rotation; prospective buyers review locally and continue through the prepared email or copy route",
+    "homepage": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-06",
+      "destination": "https://lazying.art/story-clip/?utm_source=lazyingart&utm_medium=website&utm_campaign=story_clip_pilot&utm_content=service_chooser",
+      "role": "One of four fixed-scope USD 250 service choices shown immediately below the main banner. The tracked link leads to the Story Clip scope and sample packet before the free fit check.",
+      "languages": 13,
+      "policy": "The homepage asks for one recording the buyer controls and does not ask for source transfer or payment before scope acceptance. Publication is not a lead or sale."
+    },
     "checkout_created": false,
     "social_post_created": false,
     "deployment_verified": true

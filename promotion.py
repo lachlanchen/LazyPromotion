@@ -306,6 +306,38 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
                 """,
                 (candidate_id, "legacy draft lacked immutable evidence binding", now),
             )
+    blocked_orphan_candidates = [
+        row[0]
+        for row in db.execute(
+            f"""
+            SELECT c.id
+            FROM candidates c
+            WHERE c.platform IN ({','.join('?' for _ in AI_COMMENT_BLOCKED_PLATFORMS)})
+              AND c.status='drafted'
+              AND NOT EXISTS (
+                SELECT 1 FROM drafts d
+                WHERE d.candidate_id=c.id
+                  AND d.status IN ('draft', 'prepared', 'approved')
+              )
+            """,
+            tuple(sorted(AI_COMMENT_BLOCKED_PLATFORMS)),
+        )
+    ]
+    if blocked_orphan_candidates:
+        now = utc_now()
+        reason = "Hacker News is discovery-only; generated or AI-edited comments are not prepared or sent."
+        for candidate_id in blocked_orphan_candidates:
+            db.execute(
+                "UPDATE candidates SET status='rejected', triage_reason=?, updated_at=? WHERE id=?",
+                (reason, now, candidate_id),
+            )
+            db.execute(
+                """
+                INSERT INTO events(candidate_id, kind, detail, created_at)
+                VALUES (?, 'blocked_platform_draft_reconciled', ?, ?)
+                """,
+                (candidate_id, reason, now),
+            )
     refresh_duplicates(db)
     db.commit()
     return db

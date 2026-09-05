@@ -673,6 +673,34 @@ class PromotionTests(unittest.TestCase):
                 },
             )
 
+    def test_legacy_hacker_news_drafted_state_without_active_draft_is_reconciled(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="hackernews",
+            source_url="https://news.ycombinator.com/item?id=76543",
+            author="asker",
+            body="Ask HN: How should I keep a local model deployment reproducible?",
+        )
+        self.db.execute(
+            "UPDATE candidates SET status='drafted' WHERE id=?",
+            (candidate["id"],),
+        )
+        self.db.commit()
+        self.db.close()
+
+        self.db = promotion.open_db(Path(self.tmp.name) / "test.sqlite3")
+        status = self.db.execute(
+            "SELECT status, triage_reason FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(status["status"], "rejected")
+        self.assertIn("discovery-only", status["triage_reason"])
+        events = self.db.execute(
+            "SELECT COUNT(*) FROM events WHERE candidate_id=? AND kind='blocked_platform_draft_reconciled'",
+            (candidate["id"],),
+        ).fetchone()[0]
+        self.assertEqual(events, 1)
+
     def test_courtesy_draft_needs_no_project_and_cannot_promote(self):
         candidate = promotion.ingest_candidate(
             self.db,

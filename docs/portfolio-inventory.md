@@ -40,14 +40,14 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 05:49:25 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 05:46:57 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-05 05:46:56 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 06:04:54 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-05 06:04:53 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 06:01:47 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 05:51:04 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 05:25:47 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 05:17:14 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | 2026-09-05 04:52:51 | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. |
 | [AgentShell](https://github.com/lachlanchen/AgentShell) | 2026-09-05 03:17:01 | AgentShell: isolate named AI CLI accounts across terminals, share one working tree, and choose private or shared Codex history. |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 01:13:59 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-04 23:50:58 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
 | [BigMe](https://github.com/lachlanchen/BigMe) | 2026-09-04 21:00:37 | BigMe device connection and file sync workspace |
 

@@ -1337,7 +1337,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 18)
+        self.assertEqual(campaign["version"], 19)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1377,6 +1377,22 @@ class RepositoryTests(unittest.TestCase):
             "accepted_priority_crawl_request",
         )
         self.assertFalse(blog_guide["search_discovery"]["indexed"])
+
+        sample = campaign["source_evidence"]["executed_media_sample"]
+        preview = sample["social_preview"]
+        self.assertEqual(preview["dimensions"], "1200x630")
+        self.assertEqual(len(preview["sha256"]), 64)
+        self.assertIn("lecture-pack/assets/", preview["url"])
+        self.assertIn("project-owned", preview["claim_boundary"])
+
+        instagram = campaign["channels"]["instagram"]
+        self.assertEqual(instagram["content"], instagram["postiz_content"])
+        self.assertIn("15 timed lines", instagram["content"])
+        self.assertIn("45 searchable language strings", instagram["content"])
+        self.assertNotIn("45 searchable lines", instagram["content"])
+        self.assertEqual(len(instagram["content_sha256"]), 64)
+        self.assertTrue(instagram["visible_review"]["stored_text_exact"])
+        self.assertTrue(instagram["visible_review"]["old_inaccurate_text_absent"])
 
     def test_bilingual_lecture_youtube_proof_completed_one_reviewed_publish(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"

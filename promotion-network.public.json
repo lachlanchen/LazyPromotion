@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 18
+        "version": 19
       },
       "url": ""
     },
@@ -4071,7 +4071,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T05:49:25Z",
+        "pushed_at": "2026-09-05T05:51:04Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4091,7 +4091,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T05:49:28Z"
+        "updated_at": "2026-09-05T05:51:07Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4289,7 +4289,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T01:13:59Z",
+        "pushed_at": "2026-09-05T06:01:47Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4305,7 +4305,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T01:14:02Z"
+        "updated_at": "2026-09-05T06:01:51Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -5624,7 +5624,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T05:46:57Z",
+        "pushed_at": "2026-09-05T06:04:54Z",
         "topics": [
           "automation",
           "language",
@@ -5637,7 +5637,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T05:50:19Z"
+        "updated_at": "2026-09-05T06:04:57Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -5648,7 +5648,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T05:46:56Z",
+        "pushed_at": "2026-09-05T06:04:53Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5666,7 +5666,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-05T05:47:00Z"
+        "updated_at": "2026-09-05T06:04:56Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -5802,6 +5802,13 @@
       "label": "executed media sample repository",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LalaMedias"
+    },
+    {
+      "id": "url:e0231f922c410b76",
+      "kind": "web_resource",
+      "label": "executed media sample social preview url",
+      "metadata": {},
+      "url": "https://lazying.art/lecture-pack/assets/bilingual-lecture-pack-social.png"
     },
     {
       "id": "url:95067a4d090bc3c1",
@@ -6558,6 +6565,14 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "url:bc9f5affabab7f69"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/assets/bilingual-lecture-pack-social.png",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:e0231f922c410b76"
     },
     {
       "confidence": 1.0,

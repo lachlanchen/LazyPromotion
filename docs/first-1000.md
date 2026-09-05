@@ -143,6 +143,13 @@ and LKT supply the surrounding book, transcript, caption, and provenance
 workflows. They prove a format and process, not resale rights, lecturer
 endorsement, a complete 20-minute customer delivery, or a customer result.
 
+The offer and fit-check pages now share a dedicated 1200×630 preview built
+from that exact project-owned sample. It shows one verified English–Japanese
+timed line, the USD 250 boundary, and the free-fit-check route. The committed
+renderer pins the source thumbnail hash, and the deployed image matches the
+committed artifact. This is a clearer share preview, not evidence of reach,
+interest, or revenue.
+
 The [practical source-first
 guide](https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html)
 now connects those code, book, media, and knowledge-graph parts in one useful

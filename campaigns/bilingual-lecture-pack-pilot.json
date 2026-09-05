@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -21,6 +21,20 @@
         "English and Japanese WebVTT exports",
         "source and rights manifest with the canonical media SHA-256"
       ],
+      "social_preview": {
+        "url": "https://lazying.art/lecture-pack/assets/bilingual-lecture-pack-social.png",
+        "website_commit": "bb7214fc8b6bbed3019732a4c4132a91a88e545d",
+        "dimensions": "1200x630",
+        "sha256": "9a528ea514cb74da40196a77d6c54582360a9cd6b22b3a25e0ad0d82fb2849b0",
+        "source_thumbnail_sha256": "af8f2f18525c98f8861b5f95472a3f9196181b462ac13f799a78ff647d511a92",
+        "source_line": {
+          "timestamp": "00:00:00.160",
+          "en": "Today we're not shooting an ad; we're doing a real experiment.",
+          "ja": "今日は広告を撮らずに、本当の実験を一度します。"
+        },
+        "verification": "The landing page, fit-check page, and exact PNG returned HTTP 200 after the Pages deployment; the live image hash and 1200x630 dimensions matched the committed artifact.",
+        "claim_boundary": "The card uses the exact project-owned sample thumbnail and timed text. It makes no customer, accuracy, scientific, resale-rights, or sales claim."
+      },
       "claim_boundary": "This is a reproducible project-owned process demonstration, not an automated LKT import, scientific finding, customer result, or proof of rights to unrelated media."
     },
     "transcript_to_book_pipeline": "https://github.com/lachlanchen/Video2Book",
@@ -63,11 +77,12 @@
   },
   "conversion_readiness": {
     "state": "live_metadata_fit_check",
-    "checked_at": "2026-09-04T12:13:58Z",
+    "checked_at": "2026-09-05T06:03:02Z",
     "website_commits": [
       "83b1d7a",
       "24e48c3",
-      "4efb6c4"
+      "4efb6c4",
+      "bb7214fc8b6bbed3019732a4c4132a91a88e545d"
     ],
     "proof_commits": [
       "c56c27e",
@@ -201,14 +216,23 @@
     "instagram": {
       "state": "postiz_queue",
       "publish_at": "2026-09-11T12:00:00Z",
-      "content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 45 searchable lines in Japanese, English, and Chinese. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
-      "postiz_content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 45 searchable lines in Japanese, English, and Chinese. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
+      "content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 15 timed lines across Japanese, English, and Chinese—45 searchable language strings in all. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
+      "postiz_content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 15 timed lines across Japanese, English, and Chinese—45 searchable language strings in all. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
+      "content_sha256": "b92c0a7394e46c421d8cd5bb738da489d80824b6dba763d83fa653956f013924",
       "destination": "https://lazying.art/lecture-pack/",
       "proof_url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
       "media_source": "https://github.com/lachlanchen/LalaMedias/releases/download/media-v1/aginti-autonomous-lab-ai-glasses-2b85b0d9.mp4",
       "media_sha256": "2b85b0d95538a571893fb1ea2ea2123a4e7e1535bf92953f884181ae608aadeb",
       "settings": {
         "post_type": "post"
+      },
+      "visible_review": {
+        "checked_at": "2026-09-05T06:06:16Z",
+        "stored_state": "QUEUE",
+        "stored_time_exact": true,
+        "stored_text_exact": true,
+        "old_inaccurate_text_absent": true,
+        "update_http_status": 201
       },
       "policy": "The attached video is the project-owned demonstration documented by the public source manifest. The caption describes only the working proof and bounded pilot; it does not claim scientific validity, customer results, or rights to unrelated media."
     },

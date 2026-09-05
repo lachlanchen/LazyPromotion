@@ -246,6 +246,11 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(instagram["state"], "postiz_queue")
         self.assertEqual(instagram["settings"]["post_type"], "post")
         self.assertEqual(64, len(instagram["media_sha256"]))
+        self.assertEqual(
+            owned_monitor.content_hash(instagram["postiz_content"]),
+            "b92c0a7394e46c421d8cd5bb738da489d80824b6dba763d83fa653956f013924",
+        )
+        self.assertTrue(instagram["visible_review"]["stored_text_exact"])
         instagram_route = owned_monitor.route_for_post(
             "instagram-standalone",
             instagram["postiz_content"],

@@ -155,6 +155,19 @@ class RepositoryTests(unittest.TestCase):
                         self.assertEqual(platform, "hackernews")
                         self.assertTrue(query["comment_query"].strip())
 
+    def test_terminology_discovery_requires_collection_owner_intent(self):
+        plan = json.loads((ROOT / "discovery-plan.json").read_text(encoding="utf-8"))
+        route = next(
+            item
+            for item in plan["queries"]["reddit"]
+            if item["purpose"].startswith("Collection owners asking how to search")
+        )
+        self.assertEqual(route["project_id"], "localknowledgeterminal")
+        self.assertIn('"my glossary"', route["query"])
+        self.assertIn("required_body_groups", route)
+        self.assertEqual(len(route["required_body_groups"]), 3)
+        self.assertIn("i built", route["excluded_body_any"])
+
     def test_x_go_route_is_qualified_as_the_board_game(self):
         route = next(
             item for item in browser.discovery_queries("x")

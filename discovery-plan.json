@@ -156,6 +156,17 @@
         "purpose": "People asking to explore the relationships behind a word origin"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "(\"my glossary\" OR \"my terminology database\" OR \"my dictionary data\") (local OR private OR offline) (help OR recommend OR tool)",
+        "purpose": "Collection owners asking how to search or present a private terminology source with provenance",
+        "required_body_groups": [
+          ["my glossary", "my terminology", "my dictionary", "our glossary", "our terminology", "our dictionary"],
+          ["local", "private", "offline", "on my machine", "self-hosted", "self hosted"],
+          ["help", "recommend", "looking for", "need", "tool", "how can", "how do"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool"]
+      },
+      {
         "project_id": "lazyingart-eink",
         "query": "(eink OR \"e-ink\" OR ereader OR \"e-reader\") (\"language learning\" OR bilingual OR multilingual) (recommend OR advice OR looking)",
         "purpose": "Readers explicitly evaluating e-paper hardware for multilingual or language-learning use",

@@ -101,6 +101,30 @@ Video2Book, PocketPolyglot, LazyEdit, LKT, and the Susskind archive provide the
 reusable book, media, and provenance components. The proof is 30.5 seconds—not
 a complete customer delivery or permission to reuse third-party lectures.
 
+## Terminology and word-history audit
+
+The terminology path is useful, but it does not need a fourth product. The
+smallest sellable unit is the existing LKT sprint applied to one customer-owned
+glossary, dictionary, terminology archive, or reading collection. It keeps the
+same USD 250 scope and can show roots, affixes, or word history only when the
+supplied source supports those relations.
+
+The strongest current public proof is the one-passage provenance graph: each
+reviewed relation resolves to an exact source unit, excerpt, commit, and file
+hash. `WordOrigins` remains historical UI and code evidence; its sample analyses
+are uncited model generations and must not be presented as factual provenance.
+The private root, affix, and book corpora have hashes and local source trails,
+but no commercial redistribution permission was found. They remain private
+implementation material rather than a product bundle. A current-code rebuild
+admits 16,800 claim-bearing records across the five LKT indexes after excluding
+index-only cross-reference rows.
+
+One exact Reddit discovery route now looks only for collection owners who name
+their own glossary, terminology database, or dictionary data together with a
+local/private requirement and a request for help. Its first live run found only
+stale or unrelated results, so no reply, outreach, lead, or demand claim
+followed. The route remains a low-frequency research input.
+
 ## What should stay in evidence-building
 
 | Need observed now | Portfolio combination | Small next proof | Why it is not the first sales route |

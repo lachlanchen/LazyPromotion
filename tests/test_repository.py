@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
+from zipfile import ZipFile
 
 import browser
 import promotion
@@ -1707,6 +1708,37 @@ class RepositoryTests(unittest.TestCase):
             self.assertNotIn("LaTeX Error", content)
             self.assertNotIn("There were undefined references", content)
             self.assertNotIn("Overfull", content)
+
+    def test_latex_redline_delivery_packet_is_complete_and_verifiable(self):
+        sample = ROOT / "examples" / "latex-redline"
+        artifacts = sample / "artifacts"
+        archive_path = artifacts / "sample-delivery.zip"
+        checksum = (artifacts / "sample-delivery.zip.sha256").read_text(
+            encoding="utf-8"
+        ).split()[0]
+        self.assertEqual(hashlib.sha256(archive_path.read_bytes()).hexdigest(), checksum)
+
+        manifest = json.loads(
+            (artifacts / "delivery-manifest.json").read_text(encoding="utf-8")
+        )
+        self.assertIn("Not customer work", manifest["evidence_boundary"])
+        with ZipFile(archive_path) as archive:
+            names = set(archive.namelist())
+            self.assertIn("DELIVERY.md", names)
+            self.assertIn("ISSUE_LEDGER.md", names)
+            self.assertIn("pdf/revision.pdf", names)
+            self.assertIn("pdf/redline.pdf", names)
+            self.assertIn("evidence/build-manifest.json", names)
+            self.assertIn("evidence/delivery-manifest.json", names)
+            self.assertEqual(
+                json.loads(archive.read("evidence/delivery-manifest.json")), manifest
+            )
+            for name, digest in manifest["files"].items():
+                self.assertEqual(hashlib.sha256(archive.read(name)).hexdigest(), digest)
+            self.assertIn(
+                b"Unresolved build blockers in this synthetic sample: **0**",
+                archive.read("ISSUE_LEDGER.md"),
+            )
 
     def test_reply_prompt_uses_quiet_profile_led_promotion(self):
         candidate = {

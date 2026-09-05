@@ -16,7 +16,7 @@ if [[ "${latexdiff_version}" != *"1.4.0"* ]]; then
   exit 1
 fi
 
-for command_name in latexmk pdflatex pdfinfo pdftotext jq sha256sum; do
+for command_name in latexmk pdflatex pdfinfo pdftotext jq sha256sum python3; do
   if ! command -v "${command_name}" >/dev/null 2>&1; then
     echo "missing required command: ${command_name}" >&2
     exit 1
@@ -123,3 +123,4 @@ jq -n \
   }' >"${artifact_dir}/manifest.json"
 
 printf 'Built baseline, revision, and redline PDFs in %s\n' "${artifact_dir}"
+python3 "${sample_dir}/package_sample.py"

@@ -1,0 +1,20 @@
+{
+  "archive": "sample-delivery.zip",
+  "deterministic_timestamp": "2026-09-05T00:00:00Z",
+  "evidence_boundary": "Not customer work, a scientific result, journal compliance, a paid delivery, or evidence of publication.",
+  "files": {
+    "DELIVERY.md": "6942e6501d759991c4fa369007a60ad3f882a28a323154b0d47d55ff69e02442",
+    "ISSUE_LEDGER.md": "929cc869e2bdd6f538e30ba3b373df065b389d055ce8c732a0b8956f47cae795",
+    "evidence/build-manifest.json": "90ebc26edf954f2e97dec31f151fa4742fcb35592048c12c85ca7459967c8845",
+    "logs/baseline-final.log": "ba915a786f667b4b4ebda220aa3bd9c5cb18c44f5d2b64fc7a019fc0c5f7a378",
+    "logs/redline-final.log": "789c69b7122a3fa9a0ccc3f4c02bfee9b7566a3f94192d16035ae09843c3f926",
+    "logs/revision-final.log": "f261e3e729c33277ec07ac774be91a1806cb206afe58720258c77ca8a9b2f09d",
+    "pdf/baseline.pdf": "50fee7eee42567991a5c07d7d2f202a6650355c26982c794a6311bf9c3f70ed8",
+    "pdf/redline.pdf": "52bedcef9d7ecbb10329f07eb52383f98b8917ccfd4fa7c85af1bd4af1c670d2",
+    "pdf/revision.pdf": "a4deac1fe4177b8e66b20e9c1df2f5b9f49eb9bfebe7cfea2c1db2fd00cd08d2",
+    "redline/redline.tex": "399019d671e2bb1a9e24f0fd76b090daa91ceead7b4431a9cb813659d3536d4b",
+    "sources/baseline/main.tex": "ef4169a27032c0c063ffa2d0ce82880f0c9840b9edda50be0fd985a113835637",
+    "sources/revision/main.tex": "c3e1bf6204b98af9855ec62c80f0931c62da187f35fbe80c253e5c90de7977e6"
+  },
+  "sample": "project-owned synthetic manuscript delivery"
+}

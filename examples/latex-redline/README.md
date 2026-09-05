@@ -26,6 +26,17 @@ Current evidence lives under `artifacts/`:
 - `redline.tex`
 - three final-pass LaTeX logs
 - `manifest.json`
+- `delivery-manifest.json`
+- `sample-delivery.zip` and its SHA-256 checksum
+
+The downloadable packet also includes a concise synthetic issue ledger and a
+delivery index mapping each promised output to its source, PDF, log, and
+manifest. Rebuild it from the checked artifacts with:
+
+```bash
+python3 package_sample.py
+sha256sum -c artifacts/sample-delivery.zip.sha256
+```
 
 Read [Both LaTeX Versions Compile, but the Latexdiff File Does Not](https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html) for the reasoning behind the workflow. The maintained [paper revision skill](https://github.com/lachlanchen/paper-revision-skill) covers larger manuscripts, response locations, and plan-gated edits.
 

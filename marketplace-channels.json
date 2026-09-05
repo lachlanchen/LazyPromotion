@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "checked_at": "2026-09-02",
+  "version": 3,
+  "checked_at": "2026-09-05",
   "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint where buyers already look for bounded technical services, without weakening the free fit check, privacy gate, or received-revenue accounting.",
   "offer": {
     "campaign_id": "local-knowledge-terminal-pilot",
@@ -9,7 +9,7 @@
     "public_page": "https://lazying.art/lkt/",
     "sample_report": "https://lazying.art/lkt/sample-report/",
     "fit_check": "https://lazying.art/lkt/fit-check/",
-    "scope_policy": "The marketplace route must preserve one collection, one language goal, one existing machine, a 12-source-unit and 20-question sample cap, up to two cited browser cards, one factual correction pass, the written map and go/no-go decision, and the existing exclusions. It must not invent a turnaround time, support term, benchmark, or customer result."
+    "scope_policy": "The marketplace route must preserve one collection, one language goal, one existing machine, a 12-source-unit and 20-question sample cap, up to two cited browser cards, one factual correction pass, the written map and go/no-go decision, the existing exclusions, and the selected draft commitments below. It must not invent or add an unrecorded turnaround, support promise, benchmark, or customer result."
   },
   "channels": [
     {
@@ -30,7 +30,7 @@
         "The operator registers once, reviews and accepts the current terms, and confirms the intended LazyingArt business identity.",
         "The operator completes Persona identity verification and a supported payout route; no agent submits identity or bank information.",
         "The live service editor is checked for current tags, media rules, fee display, contract flow, cancellation terms, and any required schedule or revision fields.",
-        "Any turnaround time, revision allowance, concurrent-work limit, sample size, cancellation term, or support promise is selected explicitly before publication.",
+        "The final preview uses the exact delivery, concurrency, correction, cancellation, refund, confidentiality, retention, and support commitments recorded in the listing packet.",
         "The public sample report is used only as project-owned evidence, never as a customer result or testimonial.",
         "Inquiry, proposal, contract, payment, revisions, and delivery evidence stay in the platform workflow when its rules require that.",
         "The final listing preview preserves the source-rights, privacy, custom-OCR, hardware, and production-deployment boundaries."
@@ -66,7 +66,7 @@
   ],
   "contra_listing_packet": {
     "state": "draft_only_not_registered_or_published",
-    "title": "Private Document Collection-Fit Sprint",
+    "title": "Audit a Private Document Collection for Local AI Search",
     "cover_asset": {
       "public_url": "https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png",
       "source_path": "../LazyingArtWebsite/lkt/assets/lkt-collection-fit-service-cover-v1.png",
@@ -88,12 +88,25 @@
       "Label every interface or generated product image as project-owned proof or a prototype-grounded concept.",
       "Do not use the existing Reddit acknowledgement as a testimonial; it concerns a separate free educational archive."
     ],
-    "operator_decisions_before_publish": [
-      "turnaround time",
-      "maximum concurrent sprints",
-      "cancellation and refund terms",
-      "support boundary",
-      "exact live Contra role, tool, and industry tags"
+    "commercial_terms_state": "selected_for_listing_draft_not_yet_contractual",
+    "publication_commitments": {
+      "delivery_window": "Ten business days after the written scope is accepted, platform payment is secured, and the complete agreed sample and machine-access path are available. The delivery clock pauses while required material, access, or answers are missing.",
+      "maximum_concurrent_sprints": 1,
+      "correction_window": "One consolidated factual correction pass of up to ten items submitted within seven calendar days after delivery. Errors against the written scope are corrected; new sources, questions, languages, formats, interfaces, deployment work, or preferences are a new scope.",
+      "deliverable_allocation_usd": {
+        "data_citation_and_privacy_map": 75,
+        "sample_evaluation_and_up_to_two_cited_cards": 125,
+        "go_no_go_report_and_correction_pass": 50
+      },
+      "cancellation_and_refund": "Cancel before source transfer or processing begins for a full refund. After work begins, LazyingArt retains only the fixed allocation for each completed and delivered item above and refunds the undelivered balance. If the source rights, format, privacy needs, or machine path materially differ from the accepted fit, work stops and the unearned balance is refunded. Accepted completed deliverables are not refundable except where the platform or applicable law requires it.",
+      "confidentiality_and_retention": "Customer material is used only for the accepted sprint, is not published or reused as portfolio evidence without separate written permission, and is handled through the agreed transfer and processing path. Working source copies are deleted within fourteen calendar days after acceptance, cancellation, or refund unless the written scope requires an earlier deletion or applicable recordkeeping rules require a limited record.",
+      "support_boundary": "Written clarification about the delivered report is available through the platform during the seven-day correction window. Hosting, monitoring, deployment, maintenance, retraining, hardware support, additional meetings, and ongoing operation are excluded."
+    },
+    "remaining_live_editor_checks": [
+      "Confirm the exact available Contra role, tool, and industry tags and choose only directly relevant tags.",
+      "Preview the cover crop and retain the visible SOFTWARE SERVICE · HARDWARE NOT INCLUDED disclosure.",
+      "Verify the current client fee display and contract flow without advertising a fixed client total.",
+      "Save as unpublished first and compare every field with this packet before publication."
     ],
     "revenue_policy": "A listing view, inquiry, proposal, signed contract, platform balance, or pending payout is not received revenue. Record the sale and money only after the platform payment and private evidence meet the existing metrics gates."
   }

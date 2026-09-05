@@ -1137,7 +1137,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "marketplace-channels.json"
         packet = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(packet["version"], 2)
+        self.assertEqual(packet["version"], 3)
         self.assertEqual(packet["offer"]["public_price"], "USD 250")
         self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
         self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
@@ -1159,6 +1159,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("source material", " ".join(listing["requirements"]))
         self.assertIn("first portfolio", listing["evidence"][0].casefold())
         self.assertIn("lazying.art/lkt/sample-report", listing["evidence"][0])
+        self.assertEqual(
+            listing["commercial_terms_state"],
+            "selected_for_listing_draft_not_yet_contractual",
+        )
+        commitments = listing["publication_commitments"]
+        self.assertIn("Ten business days", commitments["delivery_window"])
+        self.assertEqual(commitments["maximum_concurrent_sprints"], 1)
+        self.assertIn("up to ten items", commitments["correction_window"])
+        self.assertEqual(
+            sum(commitments["deliverable_allocation_usd"].values()),
+            250,
+        )
+        self.assertIn("full refund", commitments["cancellation_and_refund"])
+        self.assertIn("fourteen calendar days", commitments["confidentiality_and_retention"])
+        self.assertIn("ongoing operation", commitments["support_boundary"])
+        self.assertEqual(len(listing["remaining_live_editor_checks"]), 4)
         self.assertIn("pending payout", listing["revenue_policy"])
         self.assertNotIn("confirmed customer", serialized)
         self.assertNotIn("received usd", serialized)

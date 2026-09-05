@@ -433,9 +433,11 @@ The operational funnel is:
 A complementary buyer-intent route is prepared in the [LKT marketplace
 packet](lkt-marketplaces.md). Contra Services ranks first for a reusable listing
 because its inquiry flow can preserve the free fit check. The listing remains a
-draft until the operator completes registration and identity/payout setup and
-explicitly selects every delivery, revision, sample, cancellation, refund, and
-support commitment. Three current Upwork applications are also prepared around
+draft until the operator completes registration and identity/payout setup. Its
+commercial packet now fixes the delivery window, one-at-a-time capacity,
+correction pass, deliverable-based refund allocation, retention period, and
+support boundary; the final unpublished preview must preserve them exactly.
+Three current Upwork applications are also prepared around
 exact public proof, but the project browser is logged out; no proposal was sent
 and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
 contract, balance, or pending payout does not change the received-revenue total.

@@ -28,11 +28,14 @@ the payment method. The independent keeps the service amount before payout
 processor or currency-conversion fees, taxes, refunds, and delivery costs.
 Never advertise an exact client total without checking the live checkout.
 
-Wallet setup requires identity verification through Persona. That is an
-operator-only legal and financial step. The operator must also select any
-turnaround, revisions, concurrent-work limit, sample boundary, cancellation,
-refund, and support promises before publishing. The existing public offer
-expressly forbids inventing those details.
+Wallet setup requires identity verification through Persona. That remains an
+operator-only legal and financial step. The listing packet now selects
+conservative draft commitments instead of leaving them implicit: ten business
+days after complete inputs and secured platform payment, one sprint at a time,
+one consolidated pass of up to ten factual corrections within seven calendar
+days, written clarification only during that window, and no ongoing operation
+or hardware support. These terms are not contractual until the final listing
+and platform contract are reviewed and accepted.
 
 Primary sources: [adding a Contra
 Service](https://help.contra.com/en/articles/9322412-how-to-add-services-to-your-contra-profile),
@@ -91,6 +94,28 @@ Hardware, shipping, custom OCR, and production deployment remain excluded. A
 buyer must confirm source rights before material is accepted. The public sample
 report is project-owned evidence, not a customer result, testimonial,
 benchmark, sale, or paid engagement.
+
+## Draft cancellation, refund, and retention terms
+
+The fixed USD 250 scope has three delivery allocations solely for determining
+an earned amount after work begins: USD 75 for the data, citation, and privacy
+map; USD 125 for the sample evaluation and up to two cited cards; and USD 50
+for the go/no-go report and correction pass. Cancellation before source
+transfer or processing begins receives a full refund. Later cancellation keeps
+only the allocation for completed, delivered items and refunds the undelivered
+balance. A material mismatch in source rights, format, privacy needs, or the
+machine path stops work and refunds the unearned balance.
+
+Customer material is used only for the accepted sprint and is not published or
+reused as portfolio evidence without separate written permission. Working
+source copies are deleted within fourteen calendar days after acceptance,
+cancellation, or refund unless the written scope requires earlier deletion or
+limited records must be retained by applicable rules.
+
+The live editor still needs four checks after login: exact available tags,
+cover crop, current fee display and contract flow, and an unpublished preview
+against the packet. Registration, terms acceptance, identity verification,
+payout setup, and final publication remain unperformed.
 
 Marketplace views, inquiries, proposals, signed contracts, platform balances,
 and pending payouts remain separate states. Only a verified payment recorded

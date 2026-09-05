@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 24
+        "version": 25
       },
       "url": ""
     },
@@ -5812,6 +5812,27 @@
       "url": "https://github.com/lachlanchen/zhjpbook"
     },
     {
+      "id": "url:76d9ae429ad7991e",
+      "kind": "web_resource",
+      "label": "complete delivery sample download url",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/raw/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack/artifacts/bilingual-lecture-pack-sample.zip"
+    },
+    {
+      "id": "url:555e8458ebb0e57a",
+      "kind": "web_resource",
+      "label": "complete delivery sample landing page",
+      "metadata": {},
+      "url": "https://lazying.art/lecture-pack/#example"
+    },
+    {
+      "id": "url:e730675d5e287bce",
+      "kind": "web_resource",
+      "label": "complete delivery sample repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack"
+    },
+    {
       "id": "url:aa198f9562d200f2",
       "kind": "web_resource",
       "label": "course hierarchy pattern",
@@ -6773,6 +6794,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/#example",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:555e8458ebb0e57a"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lecture-pack/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -6786,6 +6815,14 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/raw/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack/artifacts/bilingual-lecture-pack-sample.zip",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:76d9ae429ad7991e"
     },
     {
       "confidence": 1.0,
@@ -6850,6 +6887,14 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:e730675d5e287bce"
     },
     {
       "confidence": 1.0,

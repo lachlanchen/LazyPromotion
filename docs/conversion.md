@@ -101,6 +101,13 @@ unknown to Google, then accepted one priority crawl request on September 5.
 That request is not indexing, ranking, traffic, or revenue and must not be
 resubmitted merely to seek priority.
 
+The lecture landing page now has a complete downloadable sample behind the
+same already-scheduled links. It contains the project-owned English source,
+corrected transcript, both subtitle tracks, editable Traditional Chinese
+alignment, an A5 study PDF, a 41-second captioned preview, issue and rights
+records, and file hashes. The packet is process evidence, not customer work or
+revenue; no extra Postiz item is needed.
+
 A [complete sample fit
 report](https://lazying.art/lkt/sample-report/)
 shows the three deliverables using LKT's own documented reference collection.

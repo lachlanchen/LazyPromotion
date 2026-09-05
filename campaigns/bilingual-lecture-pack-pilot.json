@@ -1,5 +1,5 @@
 {
-  "version": 24,
+  "version": 25,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -36,6 +36,56 @@
         "claim_boundary": "The card uses the exact project-owned sample thumbnail and timed text. It makes no customer, accuracy, scientific, resale-rights, or sales claim."
       },
       "claim_boundary": "This is a reproducible project-owned process demonstration, not an automated LKT import, scientific finding, customer result, or proof of rights to unrelated media."
+    },
+    "complete_delivery_sample": {
+      "state": "live_pinned_and_verified",
+      "checked_at": "2026-09-05T13:06:00Z",
+      "landing_page": "https://lazying.art/lecture-pack/#example",
+      "repository": "https://github.com/lachlanchen/LazyPromotion/tree/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack",
+      "proof_commit": "ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c",
+      "website_commit": "6833da1431365c570d83c8a1a9d5872c43d53cb9",
+      "download_url": "https://github.com/lachlanchen/LazyPromotion/raw/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack/artifacts/bilingual-lecture-pack-sample.zip",
+      "archive_size_bytes": 2542623,
+      "archive_sha256": "73aa8de495cb5dd2b9b0301c7a89e880411a5d53ca91c0bc4f57c1a0ed62eedb",
+      "source": "41.191-second project-owned synthetic English mini-lecture about provenance in a multilingual knowledge graph",
+      "target_language": "Traditional Chinese",
+      "verified_outputs": [
+        "project-owned English script and locally generated PCM WAV source",
+        "corrected timestamped English Markdown and SRT with the first ASR draft retained",
+        "Traditional Chinese SRT and an editable eight-segment bilingual JSON alignment",
+        "editable TeX and a two-page A5 study companion PDF",
+        "41.191-second 1280x720 H.264/AAC preview with burned English and Traditional Chinese captions",
+        "issue ledger, CC BY 4.0 source note, rights manifest, and a checksum for every delivered file"
+      ],
+      "transcript_review": {
+        "asr_tool": "openai-whisper 20250625 tiny.en",
+        "resolved_items": 5,
+        "unresolved_english_words": 0
+      },
+      "rebuild_verification": {
+        "two_consecutive_builds_same_archive_sha256": true,
+        "zip_integrity_passed": true,
+        "all_inventory_hashes_passed": true,
+        "pdf_pages": 2,
+        "pdf_page_size": "A5",
+        "video_dimensions": "1280x720",
+        "video_frame_rate": 24,
+        "video_codec": "H.264",
+        "audio_codec": "AAC"
+      },
+      "visible_live_review": {
+        "page_http_status": 200,
+        "download_visible": true,
+        "checksum_visible": true,
+        "media_ready_state": 4,
+        "media_duration_seconds": 41.191,
+        "media_playback_advanced": true,
+        "console_errors": 0
+      },
+      "customer_data_used": false,
+      "lead_or_sale_observed": false,
+      "verified_received_gross_usd": 0,
+      "claim_boundary": "The packet proves the small English-to-Traditional-Chinese delivery structure with a synthetic project-owned source. It is not customer work, a full 20-minute delivery, certified translation, independent native-language review, a sale, or revenue."
     },
     "transcript_to_book_pipeline": "https://github.com/lachlanchen/Video2Book",
     "lecture_archive_format": "https://github.com/lachlanchen/leonardsusskind",
@@ -94,7 +144,7 @@
     }
   },
   "funnel": {
-    "free_value": "A searchable project-owned multilingual video with exact timestamp evidence, subtitle exports, and a source manifest, plus a complete Classical Mechanics lesson and public transcript-to-book workflows that a buyer can inspect before enquiring.",
+    "free_value": "A complete downloadable project-owned English-to-Traditional-Chinese sample packet with source, corrected transcript, both subtitle tracks, editable alignment, A5 study PDF, captioned preview, issue ledger, manifest, and hashes; plus searchable multilingual media, a complete Classical Mechanics lesson, and public transcript-to-book workflows.",
     "qualified_interest": "Use the metadata-only fit check to review source ownership, duration, speaker count, audio, target language, learner, terminology, excerpt rights, and intended distribution.",
     "commercial_action": "After a positive fit review, accept one exact USD 250 scope, receive a reviewed Stripe payment request, and then arrange a private source-file transfer.",
     "revenue_policy": "Count revenue only after confirmed payment; visits, fit-check drafts, emails, likes, queued posts, and source transfers are not sales."
@@ -107,11 +157,13 @@
       "24e48c3",
       "4efb6c4",
       "bb7214fc8b6bbed3019732a4c4132a91a88e545d",
-      "12e65ae269de4730b0bae5d230ba1017950ea251"
+      "12e65ae269de4730b0bae5d230ba1017950ea251",
+      "6833da1431365c570d83c8a1a9d5872c43d53cb9"
     ],
     "proof_commits": [
       "c56c27e",
-      "ae7cdcd"
+      "ae7cdcd",
+      "ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c"
     ],
     "repository_bridge_commits": {
       "LalaMedias": "ae7cdcd",

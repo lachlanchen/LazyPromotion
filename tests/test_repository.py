@@ -1605,7 +1605,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 24)
+        self.assertEqual(campaign["version"], 25)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1680,6 +1680,25 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(len(preview["sha256"]), 64)
         self.assertIn("lecture-pack/assets/", preview["url"])
         self.assertIn("project-owned", preview["claim_boundary"])
+
+        delivery = campaign["source_evidence"]["complete_delivery_sample"]
+        self.assertEqual(delivery["state"], "live_pinned_and_verified")
+        self.assertEqual(delivery["archive_size_bytes"], 2542623)
+        self.assertEqual(len(delivery["archive_sha256"]), 64)
+        self.assertEqual(delivery["target_language"], "Traditional Chinese")
+        self.assertIn("two-page A5", "\n".join(delivery["verified_outputs"]))
+        self.assertEqual(delivery["transcript_review"]["resolved_items"], 5)
+        self.assertEqual(delivery["transcript_review"]["unresolved_english_words"], 0)
+        self.assertTrue(
+            delivery["rebuild_verification"][
+                "two_consecutive_builds_same_archive_sha256"
+            ]
+        )
+        self.assertTrue(delivery["visible_live_review"]["media_playback_advanced"])
+        self.assertFalse(delivery["customer_data_used"])
+        self.assertFalse(delivery["lead_or_sale_observed"])
+        self.assertEqual(delivery["verified_received_gross_usd"], 0)
+        self.assertIn("not customer work", delivery["claim_boundary"])
 
         terms = campaign["source_evidence"]["working_terms_contract"]
         self.assertEqual(terms["state"], "live_verified")

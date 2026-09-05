@@ -233,8 +233,19 @@ contains 15 aligned Japanese, English, and Chinese lines, 45 searchable strings,
 click-to-time navigation, five checked concept pointers, subtitle exports, and
 a source manifest. The Susskind archive, Video2Book, PocketPolyglot, LazyEdit,
 and LKT supply the surrounding book, transcript, caption, and provenance
-workflows. They prove a format and process, not resale rights, lecturer
-endorsement, a complete 20-minute customer delivery, or a customer result.
+workflows.
+
+The landing page now also opens a [complete delivery
+sample](https://lazying.art/lecture-pack/#example): a project-owned English
+source, corrected timestamped Markdown and SRT, Traditional Chinese SRT,
+editable eight-segment alignment, two-page A5 study PDF, 41-second captioned
+preview, preserved first ASR draft, issue ledger, rights manifest, and hashes.
+The deterministic 2.54 MB ZIP rebuilt twice to the same SHA-256,
+`73aa8de495cb5dd2b9b0301c7a89e880411a5d53ca91c0bc4f57c1a0ed62eedb`.
+The live video loaded at 1280×720 and advanced in the shared project browser.
+This closes the inspectable-delivery gap before the scheduled lecture posts; it
+proves a small synthetic package, not resale rights, certified translation, a
+complete 20-minute customer delivery, customer interest, or revenue.
 
 The offer and fit-check pages now share a dedicated 1200×630 preview built
 from that exact project-owned sample. It shows one verified English–Japanese

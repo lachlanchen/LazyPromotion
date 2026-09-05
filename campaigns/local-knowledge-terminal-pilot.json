@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -71,6 +71,19 @@
       "direct_message_sent": false,
       "lead_or_sale_observed": false,
       "policy": "This is a public product-research signal only. A restricted community comment is not permission to contact the author, post, or treat the author as a lead."
+    },
+    "enterprise_architecture_consultation_need": {
+      "state": "application_prepared_login_required",
+      "observed_on": "2026-09-05",
+      "source": "https://www.upwork.com/freelance-jobs/apply/Enterprise-Architecture-Consultant-Expert-Review-Operating-Layer-Intelligence-Brain_~022095776744342146823/",
+      "budget": "USD 200 fixed for a 30-minute paid consultation after reviewing the client brief",
+      "need": "Challenge an enterprise-memory architecture spanning Gmail, Drive, Sheets, meeting transcripts, tender files, and project records, with source evidence, permissions, human-approved state, audit trails, build-versus-buy analysis, and one real-data proof-of-concept.",
+      "fit": "LKT's cited local knowledge architecture and passage-provenance proof support a bounded review of evidence and accepted-state boundaries, but they do not prove a production Google Workspace or industry deployment.",
+      "activity_when_checked": "15 to 20 proposals, 15 interviewing, 20 invites sent, and a recent client view",
+      "application_submitted": false,
+      "connects_spent": 0,
+      "application_packet": "prepared_in_ignored_private_storage",
+      "policy": "The public listing is buyer-intent evidence only. Do not claim enterprise, Google Workspace, oil-and-gas, or customer implementation experience without substantiation. Login, final proposal review, and any Connects spend remain required before submission; the listing is not a lead, contract, payment, or revenue."
     },
     "website_hero": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
     "instagram_visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",

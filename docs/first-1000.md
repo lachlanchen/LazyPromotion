@@ -23,6 +23,16 @@ examples are shorter than the requested format, and accepts the client's paid
 3–5 minute sample as the proper fit test. It remains unsubmitted behind the
 same marketplace login and review gate.
 
+A USD 200 paid architecture consultation now provides a second exact LKT-shaped
+need: a company wants its enterprise memory to preserve source evidence,
+permissions, human-approved state, and audit trails across existing business
+systems. A candid application packet maps the review to LKT's public provenance
+proof while explicitly declining to claim an existing Google Workspace or
+industry deployment. The listing already shows substantial interview and invite
+activity, so it is a competitive buyer-intent signal, not a lead or likely sale.
+It also remains unsubmitted behind marketplace login, final proposal review, and
+the Connects-spend gate.
+
 ## Fixed scope
 
 One sprint covers one customer-provided collection, one language goal, and one

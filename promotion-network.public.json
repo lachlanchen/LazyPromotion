@@ -76,7 +76,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 6
+        "version": 7
       },
       "url": ""
     },
@@ -5687,6 +5687,13 @@
       "url": "https://github.com/lachlanchen/LazyPromotion/commit/7d7e40058ae37c468bb4156bfc74b2042d61db69"
     },
     {
+      "id": "url:3939af6ed06479e7",
+      "kind": "web_resource",
+      "label": "enterprise architecture consultation need source",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Enterprise-Architecture-Consultant-Expert-Review-Operating-Layer-Intelligence-Brain_~022095776744342146823/"
+    },
+    {
       "id": "url:265444c2e249d3e1",
       "kind": "web_resource",
       "label": "executed media sample repository",
@@ -6973,6 +6980,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:2dcaa1958ba3ae23"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Enterprise-Architecture-Consultant-Expert-Review-Operating-Layer-Intelligence-Brain_~022095776744342146823/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:3939af6ed06479e7"
     },
     {
       "confidence": 1.0,

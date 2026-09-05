@@ -676,7 +676,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 6)
+        self.assertEqual(campaign["version"], 7)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -709,6 +709,13 @@ class RepositoryTests(unittest.TestCase):
             campaign["source_evidence"]["practical_guide"],
             "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
         )
+        consultation = campaign["source_evidence"]["enterprise_architecture_consultation_need"]
+        self.assertEqual(consultation["state"], "application_prepared_login_required")
+        self.assertIn("USD 200", consultation["budget"])
+        self.assertIn("human-approved state", consultation["need"])
+        self.assertFalse(consultation["application_submitted"])
+        self.assertEqual(consultation["connects_spent"], 0)
+        self.assertIn("not a lead", consultation["policy"])
         self.assertEqual(
             promotion.project_by_id("localknowledgeterminal")["reply_url"],
             campaign["source_evidence"]["fit_check"],

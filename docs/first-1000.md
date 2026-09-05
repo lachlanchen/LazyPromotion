@@ -52,8 +52,12 @@ from the homepage. LazyingArtWebsite commit `d589cda` also replaces an
 unsupported audience count with verifiable portfolio facts, removes an
 unverified discount and dead footer links, and gates Robot, eInk, and OpenHI
 checkout behind an availability conversation until fulfillment terms exist.
-The deployed page and all 12 website contracts passed. This improves trust and
-qualification; it is not a lead, order, sponsorship, or revenue.
+Follow-up commits `a8b3e0e` and `78ecc81` replace token and automated-income
+promises with links to the public project record, describe EchoMind as a public
+beta with feature boundaries, and label IdeasGlass capabilities as prototype
+design goals across all 13 locales. The deployed page and all 12 website
+contracts passed. This improves trust and qualification; it is not a lead,
+order, sponsorship, or revenue.
 
 Search Console URL inspection on 2026-09-05 independently reported the LKT,
 Manuscript Build & Redline, and Bilingual Lecture Pack landing pages as indexed

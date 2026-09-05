@@ -834,6 +834,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_content=service_chooser", homepage["destination"])
         self.assertEqual(homepage["languages"], 13)
         self.assertIn("not a lead or sale", homepage["policy"].casefold())
+        bridge = offer["blog_bridge"]
+        self.assertEqual(bridge["state"], "repository_prepared_remote_publish_pending")
+        probe = bridge["last_publish_probe"]
+        self.assertEqual(probe["wordpress_application_password"], "not_configured")
+        self.assertEqual(probe["project_browser_wordpress_session"], "signed_out")
+        self.assertEqual(probe["remote_ssh"], "connection_timed_out")
+        self.assertFalse(probe["live_story_clip_link"])
+        self.assertIn("No working reviewed write route", bridge["blocker"])
         self.assertFalse(offer["checkout_created"])
         self.assertFalse(offer["social_post_created"])
         self.assertTrue(offer["deployment_verified"])

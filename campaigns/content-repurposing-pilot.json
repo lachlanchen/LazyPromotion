@@ -185,7 +185,14 @@
       "languages": ["en", "zh-hant", "ja"],
       "destination": "https://lazying.art/story-clip/?utm_source=lazyblog&utm_medium=article&utm_campaign=story_clip_pilot&utm_content=cantonese_caption_delivery",
       "validation": "A complete LazyPub update dry run passed for the source post and both translations.",
-      "blocker": "The bounded remote SSH health check did not complete; the public post still lacks the Story Clip link.",
+      "last_publish_probe": {
+        "checked_at": "2026-09-05T20:19:16Z",
+        "wordpress_application_password": "not_configured",
+        "project_browser_wordpress_session": "signed_out",
+        "remote_ssh": "connection_timed_out",
+        "live_story_clip_link": false
+      },
+      "blocker": "No working reviewed write route is available: the WordPress application-password fields are empty, the project-only browser session is signed out, and remote SSH timed out. The public post still lacks the Story Clip link.",
       "lead_or_sale_observed": false,
       "policy": "Do not call this bridge published until WordPress update and live source/translation checks succeed."
     },

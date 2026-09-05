@@ -947,12 +947,11 @@ def run_codex_structured(prompt: str, schema: Path, *, prefix: str) -> dict[str,
         command = [
             "codex", "exec", "--ephemeral", "--json", "--model", MODEL,
             "-c", f'model_reasoning_effort="{EFFORT}"',
-            "-c", "mcp_servers.lazypromotion_browser.enabled=false",
-            "-c", "mcp_servers.postiz.enabled=false",
+            "-c", "mcp_servers={}",
             "--sandbox", "read-only", "--skip-git-repo-check",
             "--output-schema", str(schema),
             "--output-last-message", str(output),
-            "-C", str(ROOT), "-",
+            "-C", tmp, "-",
         ]
         completed = subprocess.run(
             command,

@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 import promotion
@@ -115,6 +116,31 @@ class PromotionTests(unittest.TestCase):
         self.assertIn("https://lazying.art/lkt/sample-report/", prompt)
         self.assertIn("docs/sample-fit-report.md", prompt)
         self.assertIn("not a customer result", prompt)
+
+    def test_structured_model_check_uses_an_mcp_free_temporary_workdir(self):
+        observed = {}
+
+        def fake_run(command, **kwargs):
+            observed["command"] = command
+            working_dir = Path(command[command.index("-C") + 1])
+            self.assertTrue(working_dir.is_dir())
+            self.assertNotEqual(working_dir.resolve(), promotion.ROOT.resolve())
+            output = Path(command[command.index("--output-last-message") + 1])
+            output.write_text('{"eligible": false}', encoding="utf-8")
+            return SimpleNamespace(returncode=0, stderr="", stdout="")
+
+        with patch("promotion.subprocess.run", side_effect=fake_run):
+            result = promotion.run_codex_structured(
+                "Inspect this candidate.",
+                promotion.TRIAGE_SCHEMA_PATH,
+                prefix="lazypromotion-command-test-",
+            )
+
+        self.assertEqual(result, {"eligible": False})
+        command = observed["command"]
+        self.assertIn("mcp_servers={}", command)
+        self.assertNotIn("mcp_servers.lazypromotion_browser.enabled=false", command)
+        self.assertNotIn("mcp_servers.postiz.enabled=false", command)
 
     def test_value_only_draft_policy_forbids_project_and_links(self):
         candidate = {

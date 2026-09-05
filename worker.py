@@ -132,7 +132,8 @@ def pending_candidate_ids(db, preferred_ids: list[str], limit: int) -> list[str]
             SELECT * FROM candidates
             WHERE status='discovered' AND published_at != ''
               AND triage_requested_at != ''
-            ORDER BY published_at DESC, score DESC, updated_at DESC
+            ORDER BY published_at DESC, score DESC,
+                     triage_requested_at ASC, updated_at DESC, id ASC
             LIMIT 500
             """
         ).fetchall()

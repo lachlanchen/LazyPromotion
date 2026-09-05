@@ -686,6 +686,26 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
+    def test_story_clip_campaign_exposes_an_inspectable_bounded_delivery_sample(self):
+        path = ROOT / "campaigns" / "content-repurposing-pilot.json"
+        serialized = path.read_text(encoding="utf-8")
+        campaign = json.loads(serialized)
+        sample = campaign["fit"]["delivery_sample"]
+
+        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
+        self.assertIn(sample["commit"], sample["url"])
+        self.assertIn(sample["commit"], sample["download"])
+        self.assertEqual(len(sample["contains"]), 5)
+        self.assertIn("not customer work", sample["claim_boundary"])
+        self.assertIn(
+            "Natural-interview Story Clip delivery",
+            " ".join(campaign["fit"]["not_proven"]),
+        )
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+        self.assertNotIn("integration_id", serialized.casefold())
+        self.assertNotIn("post_id", serialized.casefold())
+
     def test_lazyedit_video_pipeline_opportunity_stays_feasibility_first(self):
         path = ROOT / "campaigns" / "lazyedit-video-pipeline-opportunity.json"
         serialized = path.read_text(encoding="utf-8")
@@ -729,7 +749,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 8)
+        self.assertEqual(campaign["version"], 9)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")

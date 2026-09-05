@@ -36,7 +36,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 8
+        "version": 9
       },
       "url": ""
     },
@@ -203,13 +203,6 @@
       "id": "channel:linkedin",
       "kind": "channel",
       "label": "linkedin",
-      "metadata": {},
-      "url": ""
-    },
-    {
-      "id": "channel:linkedin_practical_guide",
-      "kind": "channel",
-      "label": "linkedin_practical_guide",
       "metadata": {},
       "url": ""
     },
@@ -594,7 +587,8 @@
         "gates": [
           "Hardware, model, driver, security, uptime, and remote-access support boundaries must be written",
           "Never expose an unauthenticated model endpoint",
-          "Model licenses and geographic restrictions must be checked per deployment"
+          "Model licenses and geographic restrictions must be checked per deployment",
+          "Treat LazyTunnel as an early operator-reviewed SSH/systemd toolkit until bidirectional shell, file transfer, failure recovery, negative-permission, and reboot tests are complete for the customer's topology"
         ],
         "need": "Install and operate a pinned local model stack with a usable web client and guarded remote access",
         "scores": {
@@ -721,7 +715,7 @@
       "metadata": {
         "buyer": "A podcast, interview series, educator, or small mission-led team with a recording it controls",
         "first_deliverable": "The live fixed USD 250 Story Clip Pilot for one customer-owned recording up to 30 minutes: two timestamped candidate moments with hook, cut rationale, and rights notes; then one selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, an editable caption/source ledger, and one bounded correction pass",
-        "first_test": "Use the two current direct applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
+        "first_test": "Use the three current one-time applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
         "gates": [
           "The customer must control the recording, voices, faces, music, locations, and marks or identify every restriction before source transfer",
           "The public samples are project-owned LazyingArt pieces, not customer work, travel-client experience, sales evidence, reach evidence, or a viral-performance claim",
@@ -1767,6 +1761,27 @@
         "summary": "Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON"
       },
       "url": "https://github.com/lachlanchen/LazyTravel"
+    },
+    {
+      "id": "project:github-lazytunnel",
+      "kind": "project",
+      "label": "LazyTunnel",
+      "metadata": {
+        "generated": true,
+        "keywords": [
+          "cloud relay",
+          "lazy tunnel",
+          "lazying art",
+          "openssh",
+          "remote access",
+          "reverse tunnel",
+          "self hosted",
+          "ssh",
+          "systemd"
+        ],
+        "summary": "Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance."
+      },
+      "url": "https://github.com/lachlanchen/LazyTunnel"
     },
     {
       "id": "project:lazyweiqi",
@@ -3198,7 +3213,7 @@
       "metadata": {
         "description": "AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T12:06:36Z",
+        "pushed_at": "2026-09-05T15:27:06Z",
         "topics": [
           "aginti",
           "agintiflow",
@@ -3219,7 +3234,7 @@
           "unity",
           "unreal-engine"
         ],
-        "updated_at": "2026-09-05T12:06:40Z"
+        "updated_at": "2026-09-05T15:27:10Z"
       },
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
@@ -4175,7 +4190,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T12:15:46Z",
+        "pushed_at": "2026-09-05T16:14:30Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4195,7 +4210,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T12:15:50Z"
+        "updated_at": "2026-09-05T16:14:46Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4230,7 +4245,7 @@
       "metadata": {
         "description": "Portable LazyingArt agent skills for AgInTiFlow, Codex, Claude, Gemini, Copilot, LazyEdit, AutoPublish, browser automation, books, and publishing workflows.",
         "homepage": "https://lachlanchen.github.io/LazySkills/",
-        "pushed_at": "2026-09-01T15:33:29Z",
+        "pushed_at": "2026-09-05T15:26:52Z",
         "topics": [
           "aginti",
           "ai-agents",
@@ -4253,7 +4268,7 @@
           "workflow-automation",
           "xiaoyunque"
         ],
-        "updated_at": "2026-09-01T16:11:00Z"
+        "updated_at": "2026-09-05T15:26:56Z"
       },
       "url": "https://github.com/lachlanchen/LazySkills"
     },
@@ -4280,6 +4295,29 @@
         "updated_at": "2026-08-23T06:15:42Z"
       },
       "url": "https://github.com/lachlanchen/LazyTravel"
+    },
+    {
+      "id": "repository:lachlanchen/LazyTunnel",
+      "kind": "repository",
+      "label": "LazyTunnel",
+      "metadata": {
+        "description": "Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance.",
+        "homepage": "https://lazying.art",
+        "pushed_at": "2026-09-05T15:29:49Z",
+        "topics": [
+          "cloud-relay",
+          "lazying-art",
+          "openssh",
+          "python",
+          "remote-access",
+          "reverse-tunnel",
+          "self-hosted",
+          "ssh",
+          "systemd"
+        ],
+        "updated_at": "2026-09-05T15:29:53Z"
+      },
+      "url": "https://github.com/lachlanchen/LazyTunnel"
     },
     {
       "id": "repository:lachlanchen/LazyWeiqi",
@@ -4393,7 +4431,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T12:30:31Z",
+        "pushed_at": "2026-09-05T16:01:18Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4409,7 +4447,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T12:30:35Z"
+        "updated_at": "2026-09-05T16:01:22Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -4889,7 +4927,7 @@
       "metadata": {
         "description": "Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun.",
         "homepage": "https://lachlanchen.github.io/LalaMedias/",
-        "pushed_at": "2026-09-05T04:52:51Z",
+        "pushed_at": "2026-09-05T14:39:28Z",
         "topics": [
           "ai-video",
           "animation-prompts",
@@ -4903,7 +4941,7 @@
           "storytelling",
           "xiaoyunque"
         ],
-        "updated_at": "2026-09-05T05:50:16Z"
+        "updated_at": "2026-09-05T14:39:35Z"
       },
       "url": "https://github.com/lachlanchen/RaraXiaAndAyaChan"
     },
@@ -5734,7 +5772,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T12:05:07Z",
+        "pushed_at": "2026-09-05T15:35:08Z",
         "topics": [
           "automation",
           "language",
@@ -5747,7 +5785,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T12:05:11Z"
+        "updated_at": "2026-09-05T15:35:12Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -5758,7 +5796,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T12:04:37Z",
+        "pushed_at": "2026-09-05T14:16:12Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5776,7 +5814,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-05T12:04:41Z"
+        "updated_at": "2026-09-05T14:16:16Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -6166,6 +6204,13 @@
       "url": "https://github.com/lachlanchen/WordOrigins"
     },
     {
+      "id": "url:58c74e4f8c91e704",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyTunnel"
+    },
+    {
       "id": "url:5e65cdfa20d329fc",
       "kind": "web_resource",
       "label": "github.com",
@@ -6178,6 +6223,13 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery"
+    },
+    {
+      "id": "url:78830be928985376",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/a51ac6f33ce28d9a42143cfc4651e859ec35b6bb/examples/story-clip-pilot"
     },
     {
       "id": "url:8c31df37ee870928",
@@ -6297,6 +6349,13 @@
       "label": "lazying.art",
       "metadata": {},
       "url": "https://lazying.art/manuscript-sprint/"
+    },
+    {
+      "id": "url:332425b84dc7b635",
+      "kind": "web_resource",
+      "label": "lazying.art",
+      "metadata": {},
+      "url": "https://lazying.art/story-clip/fit-check/"
     },
     {
       "id": "url:415da1977e7f8d4e",
@@ -6628,6 +6687,13 @@
       "url": "https://www.reddit.com/r/NoteTaking/comments/1w31va8/recording_lectures/"
     },
     {
+      "id": "url:88394004a1e6152d",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/HireAnEditor/comments/1uptuh8/hiring_editors_for_podcast_clips_paid_per_clip/"
+    },
+    {
       "id": "url:8c315ed8a2b4c34c",
       "kind": "web_resource",
       "label": "www.reddit.com",
@@ -6689,6 +6755,13 @@
       "label": "www.youtube.com",
       "metadata": {},
       "url": "https://www.youtube.com/watch?v=da0vnv1lQ_E"
+    },
+    {
+      "id": "url:fec72037af4ff468",
+      "kind": "web_resource",
+      "label": "youdontevenhear.me",
+      "metadata": {},
+      "url": "https://youdontevenhear.me/apply"
     }
   ],
   "relationships": [
@@ -8918,6 +8991,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "project:github-lazytunnel"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalLLM",
       "metadata": {},
       "relation": "combines",
@@ -8947,6 +9028,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:local-ai-workstation-deployment",
       "target": "url:45192426591114fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:local-ai-workstation-deployment",
+      "target": "url:58c74e4f8c91e704"
     },
     {
       "confidence": 1.0,
@@ -9422,6 +9511,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/story-clip/fit-check/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:332425b84dc7b635"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/story-clip/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9435,6 +9532,22 @@
       "relation": "uses_evidence",
       "source": "opportunity:story-first-content-repurposing",
       "target": "url:64eb9b1b7f4428fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/a51ac6f33ce28d9a42143cfc4651e859ec35b6bb/examples/story-clip-pilot",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:78830be928985376"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/HireAnEditor/comments/1uptuh8/hiring_editors_for_podcast_clips_paid_per_clip/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:88394004a1e6152d"
     },
     {
       "confidence": 1.0,
@@ -9475,6 +9588,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:story-first-content-repurposing",
       "target": "url:f8b923ff128279e1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://youdontevenhear.me/apply",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:fec72037af4ff468"
     },
     {
       "confidence": 1.0,
@@ -9931,6 +10052,14 @@
       "relation": "backed_by",
       "source": "project:github-lazytravel",
       "target": "repository:lachlanchen/LazyTravel"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:github-lazytunnel",
+      "target": "repository:lachlanchen/LazyTunnel"
     },
     {
       "confidence": 1.0,

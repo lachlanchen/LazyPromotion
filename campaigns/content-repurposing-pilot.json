@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -68,18 +68,39 @@
         "duration": "4:36"
       },
       {
+        "title": "Story Clip Pilot delivery sample",
+        "url": "https://github.com/lachlanchen/LazyPromotion/tree/a51ac6f33ce28d9a42143cfc4651e859ec35b6bb/examples/story-clip-pilot",
+        "duration": "0:13"
+      },
+      {
         "title": "Selected LazyingArt work",
         "url": "https://lazying.art/work/"
       }
     ],
+    "delivery_sample": {
+      "state": "public_project_owned_synthetic_process_evidence",
+      "commit": "a51ac6f33ce28d9a42143cfc4651e859ec35b6bb",
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/a51ac6f33ce28d9a42143cfc4651e859ec35b6bb/examples/story-clip-pilot",
+      "download": "https://github.com/lachlanchen/LazyPromotion/raw/a51ac6f33ce28d9a42143cfc4651e859ec35b6bb/examples/story-clip-pilot/artifacts/story-clip-pilot-sample.zip",
+      "contains": [
+        "Two timestamped candidate moments with hooks, cut rationale, and rights notes",
+        "One selected 12.82-second 9:16 H.264/AAC clip",
+        "Corrected source-language SRT",
+        "Caption/source ledger and rights manifest",
+        "File hashes and verified delivery ZIP"
+      ],
+      "claim_boundary": "The sample reuses a project-owned synthetic mini-lecture. It proves the handoff structure, not customer work, natural-interview judgment, 30-minute throughput, publishing, or performance."
+    },
     "supported_now": [
       "Project-owned short visual stories and multilingual product demonstrations",
+      "An inspectable two-candidate Story Clip handoff with selected vertical clip, corrected SRT, source ledger, rights manifest, and hashes",
       "Traceable transcript, caption, visual-source, and reviewed publishing workflows",
       "Remote delivery from Hong Kong",
       "Reviewed scheduling across YouTube, Instagram, LinkedIn, and X"
     ],
     "not_proven": [
       "Prior travel-client work or customer results",
+      "Natural-interview Story Clip delivery or 30-minute source throughput",
       "India-specific cultural review or Smukti brand fit",
       "Rights and budget for third-party stock or archive footage",
       "Retention or conversion results for this employer",

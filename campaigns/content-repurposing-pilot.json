@@ -177,6 +177,18 @@
       "languages": 13,
       "policy": "The homepage asks for one recording the buyer controls and does not ask for source transfer or payment before scope acceptance. Publication is not a lead or sale."
     },
+    "blog_bridge": {
+      "state": "repository_prepared_remote_publish_pending",
+      "wordpress_article": 3803,
+      "live_url": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html",
+      "lazyblog_commit": "53fda6ce33fa41d317fb3a18f49fcf0f833ca6bb",
+      "languages": ["en", "zh-hant", "ja"],
+      "destination": "https://lazying.art/story-clip/?utm_source=lazyblog&utm_medium=article&utm_campaign=story_clip_pilot&utm_content=cantonese_caption_delivery",
+      "validation": "A complete LazyPub update dry run passed for the source post and both translations.",
+      "blocker": "The bounded remote SSH health check did not complete; the public post still lacks the Story Clip link.",
+      "lead_or_sale_observed": false,
+      "policy": "Do not call this bridge published until WordPress update and live source/translation checks succeed."
+    },
     "checkout_created": false,
     "social_post_created": false,
     "deployment_verified": true

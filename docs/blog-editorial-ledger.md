@@ -64,6 +64,14 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
 
+- Post `3803` has a prepared, not-yet-live bridge from the complete Cantonese
+  caption guide to the fixed USD 250 Story Clip Pilot for readers who need one
+  short vertical clip rather than a full subtitle set. English, Traditional
+  Chinese, and Japanese source copies passed a complete LazyPub update dry run
+  and are committed at LazyBlog `53fda6c`. The bounded remote SSH health check
+  did not complete, and the public article still lacks the new link, so this is
+  not counted as a published conversion route, lead, or sale.
+
 - Post `3803` is a complete English, Traditional Chinese, and Japanese guide
   to delivering Cantonese captions as one checked timeline, two editable SRT
   files, and an inspectable H.264 preview. It links OpenCC, YouTube, FFmpeg,

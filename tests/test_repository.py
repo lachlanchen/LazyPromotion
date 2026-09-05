@@ -692,12 +692,18 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
         self.assertEqual(len(sample["contains"]), 5)
         self.assertIn("not customer work", sample["claim_boundary"])
+        live = sample["live_page"]
+        self.assertEqual(live["deployment"], "success")
+        self.assertEqual(live["mobile_width_checked"], 390)
+        self.assertFalse(live["mobile_horizontal_overflow"])
+        self.assertEqual(len(live["video_sha256"]), 64)
+        self.assertEqual(len(live["packet_sha256"]), 64)
         self.assertIn(
             "Natural-interview Story Clip delivery",
             " ".join(campaign["fit"]["not_proven"]),
@@ -749,7 +755,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -782,7 +788,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["price"], "USD 250")
         self.assertEqual(
             offer["website_commit"],
-            "3ff43e4afc0dfd4512629443af198345696c170e",
+            "e1ae562a0a86f93e7c91c96ccd0403624b7eb481",
         )
         self.assertEqual(
             offer["fit_check_url"], "https://lazying.art/story-clip/fit-check/"

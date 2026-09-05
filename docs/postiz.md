@@ -88,6 +88,15 @@ customer-result and hardware boundaries while changing only the measured
 reference count to 16,800 current-code records. A fresh provider read confirmed
 the exact correction and `QUEUE` state; no provider ID is stored in Git.
 
+Also on 2026-09-05, a CLI-created LinkedIn video draft replaced a pinned GitHub
+proof URL with a Postiz shortlink even though the item was still a draft. The
+video, account, copy, and 2026-09-19T02:00:00Z time were visibly reviewed before
+the item was scheduled once. A single visible edit then restored the pinned URL
+and selected original URLs; a fresh provider read confirmed `QUEUE`, the exact
+time and canonical copy, and no remaining shortlink. Treat draft creation as a
+provider transformation boundary: inspect the stored URL before and after every
+status change.
+
 On 2026-09-02, a publication preflight caught a format mismatch after the two
 Wenyan items had subsequently entered the queue. The X copy said the
 `資治通鑑` edition was available in both color and black-and-white, while the

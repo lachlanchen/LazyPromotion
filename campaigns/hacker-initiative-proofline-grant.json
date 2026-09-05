@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "id": "hacker-initiative-proofline-grant",
+  "objective": "Seek restricted project funding for an MIT-licensed offline source-to-claim provenance verifier without presenting a grant application as customer revenue.",
+  "program": {
+    "name": "Hacker Initiative 2026 Grant Cycle: Signal/Noise",
+    "program_url": "https://hackerinitiative.org/",
+    "guidelines_url": "https://hackerinitiative.org/grant-guidelines/",
+    "faq_url": "https://hackerinitiative.org/application-faq/",
+    "application_url": "https://docs.google.com/forms/d/e/1FAIpQLSc_6C9WO9PEXS3r1BN_Qq5LOL9xtoEux0pC6xTmxUlpxlanxg/viewform",
+    "verified_on": "2026-09-06",
+    "deadline": "2026-11-09T23:59:00-08:00",
+    "award_range_usd": {
+      "minimum": 5000,
+      "maximum": 25000
+    },
+    "state": "open_verified",
+    "limits": [
+      "One application per project per cycle",
+      "The application must be submitted through the English online form",
+      "An application may advance to a remote presentation",
+      "Awarded funding may be less than requested",
+      "Recipients owe project and budget reports",
+      "The applicant is responsible for lawful USD receipt and tax compliance"
+    ]
+  },
+  "project": {
+    "name": "Proofline: Offline Source-to-Claim Verification",
+    "repository": "https://github.com/lachlanchen/LazyPromotion",
+    "license": "MIT",
+    "prototype": "proofline.py",
+    "example": "examples/proofline/manifest.json",
+    "fit": [
+      "Runs offline and does not upload source files",
+      "Checks local SHA-256 hashes for source and derived artifacts",
+      "Checks transformation references and source-located evidence for verified claims",
+      "Keeps unverified and rejected claims distinct from verified claims",
+      "Produces a deterministic non-zero exit on broken evidence"
+    ],
+    "claim_boundary": "A passing manifest establishes internal evidence-chain consistency only; it does not prove source truth, rights, authorship, learning outcomes, customer results, or security certification."
+  },
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/LazyPromotion",
+    "prototype": "https://github.com/lachlanchen/LazyPromotion/blob/main/proofline.py",
+    "example": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/proofline",
+    "program": "https://hackerinitiative.org/",
+    "guidelines": "https://hackerinitiative.org/grant-guidelines/",
+    "faq": "https://hackerinitiative.org/application-faq/"
+  },
+  "application": {
+    "state": "private_draft_not_submitted",
+    "requested_usd": 5000,
+    "categories": [
+      "Software/Tool Development",
+      "Equipment purchase"
+    ],
+    "budget": [
+      {
+        "item": "Four diverse offline test kits, removable storage, and capture peripherals",
+        "usd": 2400
+      },
+      {
+        "item": "Fixed-scope independent security, privacy, and accessibility reviews",
+        "usd": 1500,
+        "gate": "Confirm that external fixed-scope review expense is allowable before submission"
+      },
+      {
+        "item": "Small tester stipends and accessibility reimbursements",
+        "usd": 600
+      },
+      {
+        "item": "Shipping, adapters, media, and test consumables",
+        "usd": 500
+      }
+    ],
+    "excluded_costs": [
+      "Applicant salary",
+      "Staff training",
+      "Books, films, videos, social media, or website production",
+      "Advertising, merchandise, fundraising, or general awareness work"
+    ],
+    "private_fields_required": [
+      "Contact identity and address",
+      "Organization and tax identity",
+      "Responsible payee and physical mailing address",
+      "Alternate contact details and responsible parties"
+    ],
+    "acceptance_required": [
+      "Reporting requirements",
+      "Anti-discrimination policy"
+    ],
+    "submission_gate": "Review the exact entity, tax recipient, budget, eligibility, allowability, contact fields, and agreements in the visible form before submitting."
+  },
+  "funnel": {
+    "application_submitted": false,
+    "presentation_invited": false,
+    "award_announced": false,
+    "funding_received_usd": 0,
+    "verified_received_gross_revenue_usd": 0,
+    "policy": "Restricted project funding remains separate from customer revenue. An application, invitation, award notice, pending check, or click is not received money."
+  }
+}

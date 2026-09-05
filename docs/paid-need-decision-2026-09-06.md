@@ -35,7 +35,30 @@ not an ASR, diarization, automatic-extraction, enterprise-scale, or customer
 result. The isolated project profile is logged out, so no form was opened,
 attachment added, Connects spent, or application submitted.
 
-### 2. Parallel funding priority: FUTO microgrant
+### 2. Parallel funding priority: Hacker Initiative Proofline grant
+
+[Hacker Initiative's current 2026 Signal/Noise call](https://hackerinitiative.org/)
+explicitly names open-source source/provenance verification and
+privacy-respecting tools. It accepts individuals, independent researchers, and
+small organizations, and publishes a USD 5,000–25,000 award range with a
+November 9 deadline.
+
+LazyPromotion now includes an MIT-licensed offline prototype named Proofline.
+It validates local file hashes, transformation edges, and source-located claim
+evidence without uploading the underlying files. The project-owned example and
+five focused tests pass. A private form-aligned application draft requests the
+minimum USD 5,000 for test equipment, fixed-scope independent reviews, bounded
+tester expenses, and consumables; applicant development time is contributed
+in kind. The budget excludes the salaries, books, films, videos, websites,
+social media, advertising, and merchandise that the program disallows.
+
+Submission still requires private identity, physical-address, entity, tax, and
+payee fields plus explicit reporting and anti-discrimination agreements. The
+allowability of fixed-scope external review expenses also needs confirmation.
+No form has been submitted. If received, this is restricted project funding,
+not customer revenue.
+
+### 3. Additional funding route: FUTO microgrant
 
 [FUTO's official grants page](https://futo.tech/grants) says applications are
 open and publishes one-time USD 1,000–5,000 microgrants for small or early-stage
@@ -85,4 +108,3 @@ than restoring authenticated access and submitting one reviewed application.
 Applications, replies, offers, grants, pending balances, and marketplace
 activity are not received revenue. The verified received gross total remains
 USD 0.
-

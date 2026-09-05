@@ -109,6 +109,8 @@ flowchart LR
 | [`lkt_hardware_pricing.py`](lkt_hardware_pricing.py) | Read-only supplied-device margin check that keeps hardware separate from the USD 250 collection-fit service |
 | [`lkt_delivery.py`](lkt_delivery.py) | Deterministic metadata-only LKT sprint preflight and truth-safe Markdown delivery-packet renderer |
 | [`docs/lkt-delivery.md`](docs/lkt-delivery.md) | Sanitized intake contract, go/no-go behavior, and customer-data-free delivery workflow |
+| [`proofline.py`](proofline.py) | Offline verifier for file hashes, transformation edges, and source-located claim evidence |
+| [`examples/proofline/`](examples/proofline/) | Minimal project-owned source-to-card manifest that passes the verifier without network access |
 | [`examples/lkt-scientific-pdf-fit/`](examples/lkt-scientific-pdf-fit/) | Reproducible project-owned synthetic PDF mini-sprint with duplicate/version evidence, multilingual extraction, 20 fixed queries, page citations, and a static browser card |
 | [`examples/cantonese-caption-delivery/`](examples/cantonese-caption-delivery/) | Reproducible project-owned Cantonese media packet with matched Traditional/Simplified SRTs, a burned H.264 preview, review frames, and explicit evidence limits |
 | [`signals.py`](signals.py) | Private first-party demand signals kept distinct from leads, orders, and revenue |
@@ -284,6 +286,16 @@ python network.py sync --workspace
 python network.py report
 python network.py export-public
 ```
+
+Verify a small source-to-claim chain without sending its files anywhere:
+
+```bash
+python proofline.py examples/proofline/manifest.json
+```
+
+Proofline checks local SHA-256 values, known transformation inputs and outputs,
+and an inspectable locator for every verified claim. A passing manifest proves
+internal consistency, not source truth, rights clearance, or a customer result.
 
 Triage and drafting explicitly disable browser MCP access. Those model calls
 can classify or write local structured output only; they cannot navigate,

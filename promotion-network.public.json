@@ -71,6 +71,16 @@
       "url": ""
     },
     {
+      "id": "campaign:hacker-initiative-proofline-grant",
+      "kind": "campaign",
+      "label": "hacker-initiative-proofline-grant",
+      "metadata": {
+        "objective": "Seek restricted project funding for an MIT-licensed offline source-to-claim provenance verifier without presenting a grant application as customer revenue.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:l-and-n-pronunciation-launch",
       "kind": "campaign",
       "label": "l-and-n-pronunciation-launch",
@@ -6060,6 +6070,13 @@
       "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/"
     },
     {
+      "id": "url:3631a323c617683b",
+      "kind": "web_resource",
+      "label": "example",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/proofline"
+    },
+    {
       "id": "url:265444c2e249d3e1",
       "kind": "web_resource",
       "label": "executed media sample repository",
@@ -6086,6 +6103,13 @@
       "label": "executed sample",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lkt-scientific-pdf-fit"
+    },
+    {
+      "id": "url:f4189f4afa7eb5d6",
+      "kind": "web_resource",
+      "label": "faq",
+      "metadata": {},
+      "url": "https://hackerinitiative.org/application-faq/"
     },
     {
       "id": "url:bc9f5affabab7f69",
@@ -6312,6 +6336,13 @@
       "url": "https://grobid.readthedocs.io/en/latest/Introduction/"
     },
     {
+      "id": "url:c426cd5363c6491a",
+      "kind": "web_resource",
+      "label": "guidelines",
+      "metadata": {},
+      "url": "https://hackerinitiative.org/grant-guidelines/"
+    },
+    {
       "id": "url:f75e957442aee504",
       "kind": "web_resource",
       "label": "guwen guanzhi evidence public shelf folder",
@@ -6501,6 +6532,13 @@
       "url": "https://futo.tech/grants"
     },
     {
+      "id": "url:c8321ce595f1598d",
+      "kind": "web_resource",
+      "label": "program",
+      "metadata": {},
+      "url": "https://hackerinitiative.org/"
+    },
+    {
       "id": "url:75c9f7d2578872a2",
       "kind": "web_resource",
       "label": "program page",
@@ -6513,6 +6551,13 @@
       "label": "project",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+    },
+    {
+      "id": "url:18e12d4196a3c6fb",
+      "kind": "web_resource",
+      "label": "prototype",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/blob/main/proofline.py"
     },
     {
       "id": "url:43d56bb572f1ca4a",
@@ -6536,11 +6581,25 @@
       "url": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html"
     },
     {
+      "id": "url:d4333582120f1591",
+      "kind": "web_resource",
+      "label": "release state testflight public url",
+      "metadata": {},
+      "url": "https://testflight.apple.com/join/CpkT8m9C"
+    },
+    {
       "id": "url:6da737bdd18800ca",
       "kind": "web_resource",
       "label": "repository",
       "metadata": {},
       "url": "https://github.com/lachlanchen/L-and-N"
+    },
+    {
+      "id": "url:762eab1e4c7d5e60",
+      "kind": "web_resource",
+      "label": "repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
       "id": "url:08da0dd4fa5a19c9",
@@ -7394,6 +7453,62 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "project:github-lazypromotion"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/blob/main/proofline.py",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "url:18e12d4196a3c6fb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/proofline",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "url:3631a323c617683b"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "url:762eab1e4c7d5e60"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://hackerinitiative.org/grant-guidelines/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "url:c426cd5363c6491a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://hackerinitiative.org/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "url:c8321ce595f1598d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://hackerinitiative.org/application-faq/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "url:f4189f4afa7eb5d6"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/L-and-N",
       "metadata": {},
       "relation": "promotes",
@@ -7463,6 +7578,14 @@
       "relation": "uses_evidence",
       "source": "campaign:l-and-n-pronunciation-launch",
       "target": "url:7f2655584aa51854"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://testflight.apple.com/join/CpkT8m9C",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:d4333582120f1591"
     },
     {
       "confidence": 1.0,

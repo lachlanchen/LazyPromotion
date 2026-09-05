@@ -1,0 +1,53 @@
+{
+  "schema_version": "proofline/v1",
+  "project": {
+    "name": "Proofline project-owned example",
+    "license": "MIT",
+    "source_url": "https://github.com/lachlanchen/LazyPromotion"
+  },
+  "files": [
+    {
+      "id": "passage",
+      "path": "source/passage.txt",
+      "role": "source",
+      "sha256": "a4107c15d84e536f5f588d30f6db5f29c362e2e150f246011814e823acb89499"
+    },
+    {
+      "id": "card",
+      "path": "artifacts/card.json",
+      "role": "derived_artifact",
+      "sha256": "205cc02d27b960ef67f373ed6895ede57a86c8ad99b4d43b83b6720e9ff66484"
+    }
+  ],
+  "transformations": [
+    {
+      "id": "reviewed-card-derivation",
+      "inputs": [
+        "passage"
+      ],
+      "outputs": [
+        "card"
+      ],
+      "method": "manual project-owned example with source identity retained"
+    }
+  ],
+  "claims": [
+    {
+      "id": "source-link-retained",
+      "statement": "The derived card retains the source identifier and locator.",
+      "status": "verified",
+      "evidence": [
+        {
+          "file_id": "card",
+          "locator": "source_id and source_locator fields"
+        }
+      ]
+    },
+    {
+      "id": "customer-outcome",
+      "statement": "This example has produced a customer or learning outcome.",
+      "status": "rejected",
+      "evidence": []
+    }
+  ]
+}

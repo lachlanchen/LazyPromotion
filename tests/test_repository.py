@@ -1331,7 +1331,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 17)
+        self.assertEqual(campaign["version"], 18)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1372,12 +1372,12 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertFalse(blog_guide["search_discovery"]["indexed"])
 
-    def test_bilingual_lecture_youtube_proof_is_reviewed_before_one_publish(self):
+    def test_bilingual_lecture_youtube_proof_completed_one_reviewed_publish(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         youtube = campaign["channels"]["youtube"]
-        self.assertEqual(youtube["state"], "postiz_queue")
-        self.assertEqual(youtube["review"]["public_publish_attempts"], 0)
+        self.assertEqual(youtube["state"], "postiz_published")
+        self.assertEqual(youtube["review"]["public_publish_attempts"], 1)
         self.assertTrue(youtube["review"]["visual_contact_sheet_checked"])
         self.assertTrue(youtube["review"]["metadata_checked"])
         self.assertTrue(youtube["review"]["hallucinated_caption_terms_removed"])
@@ -1385,12 +1385,26 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(len(youtube["package_sha256"]), 64)
         self.assertEqual(youtube["publish_at"], "2026-09-05T02:30:00Z")
         self.assertEqual(youtube["content"], youtube["postiz_content"])
+        self.assertEqual(
+            youtube["content_sha256"],
+            "ca984ae13b5b96f459f792dc39b0d726872abc3a09e0a55347d9cb708df25198",
+        )
+        self.assertEqual(
+            youtube["release_url"],
+            "https://www.youtube.com/watch?v=G9NKncZgRis",
+        )
         self.assertTrue(youtube["review"]["postiz_media_upload_verified"])
         self.assertTrue(youtube["review"]["stored_text_exact"])
         self.assertFalse(youtube["review"]["shortlink"])
+        self.assertEqual(youtube["review"]["stored_state"], "PUBLISHED")
+        self.assertTrue(youtube["review"]["release_present"])
+        self.assertEqual(youtube["review"]["public_visibility"], "public")
+        self.assertTrue(youtube["review"]["public_title_exact"])
+        self.assertTrue(youtube["review"]["public_playback_verified"])
+        self.assertTrue(youtube["review"]["tracked_destinations_present"])
         self.assertIn("utm_source=youtube", youtube["destination"])
         self.assertIn("USD 250", youtube["policy"])
-        self.assertIn("only active publication route", youtube["queue_gate"])
+        self.assertIn("only publication route", youtube["queue_gate"])
 
         renderer = (ROOT / "scripts" / "render_lecture_pack_demo.py").read_text(
             encoding="utf-8"

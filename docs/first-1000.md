@@ -158,6 +158,13 @@ reviewed text hash and the tracked link resolves to the exact lecture-pack
 landing page. Publication and link integrity are attention evidence only; no
 reply, inquiry, payment, or revenue was observed at verification time.
 
+The 23-second project-owned proof is also public on YouTube at
+<https://www.youtube.com/watch?v=G9NKncZgRis>. Postiz preserved the exact
+reviewed title, text, and content hash; public playback and both first-party
+description links were verified. This was the only publication route, so its
+LazyEdit package must not be sent through AutoPublish. Publication is attention
+evidence, not a lead or revenue.
+
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and
 shows a review gate inside the current browser tab. The prospective customer

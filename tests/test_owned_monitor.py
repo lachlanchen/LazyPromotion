@@ -276,12 +276,19 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(guide_route["route"], "practical_guide")
 
         youtube = campaign["channels"]["youtube"]
-        self.assertEqual(youtube["state"], "postiz_queue")
+        self.assertEqual(youtube["state"], "postiz_published")
         self.assertEqual(youtube["content"], youtube["postiz_content"])
         self.assertEqual(
             owned_monitor.content_hash(youtube["postiz_content"]),
             "ca984ae13b5b96f459f792dc39b0d726872abc3a09e0a55347d9cb708df25198",
         )
+        self.assertEqual(
+            youtube["content_sha256"],
+            "ca984ae13b5b96f459f792dc39b0d726872abc3a09e0a55347d9cb708df25198",
+        )
+        self.assertIn("youtube.com/watch?v=", youtube["release_url"])
+        self.assertEqual(youtube["review"]["stored_state"], "PUBLISHED")
+        self.assertTrue(youtube["review"]["release_present"])
         youtube_route = owned_monitor.route_for_post(
             "youtube", youtube["postiz_content"], owned_monitor.route_index()
         )

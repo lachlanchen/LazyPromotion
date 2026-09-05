@@ -134,6 +134,12 @@ shortlink. A provider read confirmed `QUEUE`, the exact time, and the exact
 text after normalizing Postiz's paragraph HTML. No provider ID is stored in
 Git, and the queued note is not a lead or sale.
 
+The Bilingual Lecture Pack video became the first verified YouTube release
+scheduled through Postiz. The exact reviewed title, text, content hash, public
+playback, and both first-party description links were checked at
+<https://www.youtube.com/watch?v=G9NKncZgRis>. Postiz was the only publication
+route; do not send the same LazyEdit package through AutoPublish after release.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

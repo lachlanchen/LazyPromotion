@@ -1,0 +1,74 @@
+{
+  "schema": "bilingual-lecture-alignment/v1",
+  "sample_id": "knowledge-graph-provenance-synthetic-2026-09",
+  "source_language": "en",
+  "target_language": "zh-TW",
+  "translation_status": "assisted_translation_terminology_and_alignment_reviewed_not_certified",
+  "segments": [
+    {
+      "id": "seg-001",
+      "start_ms": 0,
+      "end_ms": 5760,
+      "source": "When a knowledge graph says two ideas are related, the link is only as useful as its evidence.",
+      "target": "當知識圖譜說兩個概念彼此相關時，這條連結有多大價值，取決於它背後的證據。",
+      "uncertainty": null
+    },
+    {
+      "id": "seg-002",
+      "start_ms": 6340,
+      "end_ms": 8760,
+      "source": "A good graph keeps three things together:",
+      "target": "好的圖譜會把三樣東西放在一起：",
+      "uncertainty": null
+    },
+    {
+      "id": "seg-003",
+      "start_ms": 9260,
+      "end_ms": 15160,
+      "source": "the claim, the exact passage that supports it, and a fingerprint of the source file.",
+      "target": "一項主張、支持它的確切原文段落，以及來源檔案的指紋。",
+      "uncertainty": "The metaphor ‘fingerprint’ is retained literally because it denotes a file hash in this context."
+    },
+    {
+      "id": "seg-004",
+      "start_ms": 15940,
+      "end_ms": 17380,
+      "source": "Translation adds another layer.",
+      "target": "翻譯又多了一層需要追溯的資訊。",
+      "uncertainty": "The target makes the implied provenance layer explicit."
+    },
+    {
+      "id": "seg-005",
+      "start_ms": 17920,
+      "end_ms": 25200,
+      "source": "The original phrase, the translated phrase, and the translator's uncertainty should stay visible side by side.",
+      "target": "原文、譯文，以及譯者不確定的地方，都應並列保留。",
+      "uncertainty": null
+    },
+    {
+      "id": "seg-006",
+      "start_ms": 25200,
+      "end_ms": 27240,
+      "source": "This makes correction easier.",
+      "target": "這樣會更容易修正。",
+      "uncertainty": null
+    },
+    {
+      "id": "seg-007",
+      "start_ms": 27600,
+      "end_ms": 34900,
+      "source": "A reader can follow the link back to the passage, check the wording, and decide whether the relationship still holds.",
+      "target": "讀者可以沿著連結回到原文，核對措辭，再判斷那項關係是否仍然成立。",
+      "uncertainty": null
+    },
+    {
+      "id": "seg-008",
+      "start_ms": 35580,
+      "end_ms": 40420,
+      "source": "Provenance does not make every claim true, but it makes each claim inspectable.",
+      "target": "資料來源記錄不能保證每項主張都正確，卻能讓每項主張都可供查驗。",
+      "uncertainty": "‘Provenance’ is rendered as 資料來源記錄 for plain-language readability in this sample."
+    }
+  ]
+}
+

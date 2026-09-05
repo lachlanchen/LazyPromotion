@@ -1,0 +1,50 @@
+{
+  "schema": "bilingual-lecture-pack-sample/v1",
+  "sample_id": "knowledge-graph-provenance-synthetic-2026-09",
+  "created_utc": "2026-09-05T00:00:00Z",
+  "status": "project_owned_synthetic_process_evidence",
+  "source": {
+    "title": "Why provenance matters in a multilingual knowledge graph",
+    "language": "en",
+    "format": "PCM WAV",
+    "duration_seconds": 41.190975,
+    "sha256": "909d4e4ea2b9fc7777ad76cc0ddcba7d92f49bdff3c3e9fc6e70a9368d935824",
+    "rights_holder": "LazyingArt LLC",
+    "license": "CC BY 4.0",
+    "third_party_content": false,
+    "generation": "eSpeak NG 1.51, en-us, 145 wpm, pitch 38, amplitude 160"
+  },
+  "target": {
+    "language": "zh-TW",
+    "status": "assisted translation; terminology and alignment reviewed; not certified; no independent native-language review"
+  },
+  "asr": {
+    "first_draft": "working/asr-draft.srt",
+    "tool": "openai-whisper 20250625",
+    "model": "tiny.en",
+    "review": "corrected against the included source script and audio; corrections recorded in delivery/issue-ledger.md"
+  },
+  "preview": {
+    "duration_seconds": 41.190975,
+    "video": "H.264 1280x720 24fps yuv420p",
+    "audio": "AAC 48kHz",
+    "burned_captions": [
+      "en",
+      "zh-TW"
+    ],
+    "sha256": "79d44204269139d7476d198bf600335bedcfa9db940c07afc3354c962abaa271"
+  },
+  "study_companion": {
+    "format": "A5 PDF",
+    "editable_source": "delivery/study-companion/study-companion.tex",
+    "sha256": "6aa1d0f1ee18f11a2dc75c06a5940497c7fbfa9f710fe97bc6d7ed5d09ae2261"
+  },
+  "exclusions": [
+    "customer result",
+    "certified translation",
+    "independent native-language review",
+    "professional narration",
+    "audio restoration"
+  ],
+  "inventory_hashes": "delivery/SHA256SUMS"
+}

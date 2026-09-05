@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:05,760
+When a knowledge graph says two ideas are related, the link is only as useful as its evidence.
+
+2
+00:00:06,340 --> 00:00:08,760
+A good graph keeps three things together.
+
+3
+00:00:09,260 --> 00:00:15,160
+The claim, the exact passage at support, and the finger print of the source file.
+
+4
+00:00:15,940 --> 00:00:17,380
+Translation at the other layer.
+
+5
+00:00:17,920 --> 00:00:25,200
+The original phrase, the translated phrase, and the translators uncertainty should stay visible side by side.
+
+6
+00:00:25,200 --> 00:00:27,240
+This makes correction easier.
+
+7
+00:00:27,600 --> 00:00:34,900
+A reader can follow the link back to the passage, check the wording, and decide whether the relationship still holds.
+
+8
+00:00:35,580 --> 00:00:40,420
+Provens does not make every claim true, but it makes each claim impeccable.
+

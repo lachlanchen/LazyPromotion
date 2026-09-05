@@ -9,7 +9,7 @@ import json
 import os
 import signal
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
@@ -35,6 +35,7 @@ VALUE_ONLY_DRAFT_PLATFORMS = frozenset({"reddit"})
 CDP_ATTACH_TIMEOUT_MS = 30_000
 CDP_ATTACH_ATTEMPTS = 2
 CDP_ATTACH_RETRY_SECONDS = 3.0
+MODEL_QUOTA_BACKOFF_HOURS = 24
 STOP = False
 
 
@@ -165,6 +166,34 @@ def next_route_cursor(current: int, result: dict) -> int:
     return int(result["next_query"]) if result["ok"] else current
 
 
+def is_model_quota_error(error: Exception | str) -> bool:
+    message = str(error).casefold()
+    return "usage limit" in message or "purchase more credits" in message
+
+
+def model_backoff_until(*, now: datetime | None = None) -> str:
+    current = now or datetime.now(timezone.utc)
+    return (current + timedelta(hours=MODEL_QUOTA_BACKOFF_HOURS)).replace(
+        microsecond=0
+    ).isoformat().replace("+00:00", "Z")
+
+
+def active_model_backoff(state: dict, *, now: datetime | None = None) -> str:
+    value = str(state.get("model_retry_after") or "")
+    if not value:
+        return ""
+    try:
+        retry_at = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        state.pop("model_retry_after", None)
+        return ""
+    current = now or datetime.now(timezone.utc)
+    if retry_at <= current:
+        state.pop("model_retry_after", None)
+        return ""
+    return value
+
+
 def connect_browser(playwright, endpoint: str):
     """Bound CDP attachment time and retry one transient handshake failure."""
     for attempt in range(CDP_ATTACH_ATTEMPTS):
@@ -192,6 +221,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
     drafted = []
     draft_skipped = []
     errors = []
+    quota_limited = False
     for candidate_id in selected_ids:
         candidate = promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone())
         if not candidate or candidate["status"] != "discovered":
@@ -206,8 +236,11 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
             })
         except Exception as exc:
             errors.append({"stage": "triage", "candidate_id": candidate_id, "error": str(exc)})
+            if is_model_quota_error(exc):
+                quota_limited = True
+                break
     accepted = [row for row in triaged if row["status"] == "triaged"]
-    for row in accepted[:max_drafts]:
+    for row in (accepted[:max_drafts] if not quota_limited else []):
         candidate_id = row["candidate_id"]
         candidate = promotion.row_dict(db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone())
         if not candidate or candidate["status"] != "triaged":
@@ -233,6 +266,9 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
             })
         except Exception as exc:
             errors.append({"stage": "draft", "candidate_id": candidate_id, "error": str(exc)})
+            if is_model_quota_error(exc):
+                quota_limited = True
+                break
     queue = review_queue(db)
     write_json(QUEUE_PATH, {"updated_at": utc_now(), "count": len(queue), "items": queue})
     graph = network.sync_graph(db)
@@ -243,6 +279,7 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
         "drafted": drafted,
         "draft_skipped": draft_skipped,
         "errors": errors,
+        "quota_limited": quota_limited,
         "review_queue_size": len(queue),
         "graph": graph,
     }
@@ -331,10 +368,26 @@ def run_cycle(args, state: dict) -> dict:
                 })
             except Exception as exc:
                 platform_results.append({"platform": platform, "ok": False, "error": str(exc)})
-    model_results = (
-        run_models(discovered, max_triage=args.max_triage, max_drafts=args.max_drafts)
-        if not args.no_model else {"skipped": True}
-    )
+    retry_after = active_model_backoff(state)
+    if args.no_model:
+        model_results = {"skipped": True, "reason": "disabled"}
+    elif retry_after:
+        model_results = {
+            "skipped": True,
+            "reason": "model_quota_backoff",
+            "retry_after": retry_after,
+        }
+    else:
+        model_results = run_models(
+            discovered,
+            max_triage=args.max_triage,
+            max_drafts=args.max_drafts,
+        )
+        if model_results["quota_limited"]:
+            state["model_retry_after"] = model_backoff_until()
+            model_results["retry_after"] = state["model_retry_after"]
+        else:
+            state.pop("model_retry_after", None)
     state["cycles"] = int(state.get("cycles", 0)) + 1
     state["last_cycle_at"] = utc_now()
     state["last_result"] = {

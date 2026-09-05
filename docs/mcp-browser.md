@@ -77,6 +77,9 @@ hiring formats, promotional self-tests, quoted request examples, and reply text
 without a direct ask cause the admission to be withdrawn before a
 model call. The withdrawal event stores only the candidate identifier and a
 short reason; it does not turn a rejected search result into a lead or outcome.
+An exhausted model-usage response opens a 24-hour circuit breaker. Discovery
+continues, but triage and drafting wait until the recorded retry time instead
+of repeatedly spending calls that are known to fail.
 
 ## Verification and fallback
 

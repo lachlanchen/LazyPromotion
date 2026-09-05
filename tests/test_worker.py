@@ -83,6 +83,52 @@ class WorkerTests(unittest.TestCase):
         self.assertEqual(result["errors"][0]["stage"], "triage")
         self.assertEqual(worker.pending_candidate_ids(self.db, [], 1), [candidate["id"]])
 
+    def test_quota_failure_stops_more_model_calls_in_the_cycle(self):
+        candidates = []
+        for index in range(2):
+            candidate = promotion.ingest_candidate(
+                self.db,
+                platform="reddit",
+                source_url=f"https://www.reddit.com/r/example/comments/quota-{index}/help/",
+                author=f"reader-{index}",
+                body="Can someone recommend private local search for my PDF collection?",
+                published_at=self.now,
+            )
+            promotion.mark_triage_requested(self.db, [candidate["id"]])
+            candidates.append(candidate)
+        with patch("promotion.open_db", return_value=self.db), patch(
+            "promotion.run_codex_triage",
+            side_effect=RuntimeError("You've hit your usage limit. Purchase more credits."),
+        ) as triage_model:
+            result = worker.run_models(
+                [candidate["id"] for candidate in candidates],
+                max_triage=2,
+                max_drafts=1,
+            )
+        triage_model.assert_called_once()
+        self.assertTrue(result["quota_limited"])
+        self.assertEqual(len(result["errors"]), 1)
+        self.assertEqual(
+            worker.pending_candidate_ids(self.db, [], 2),
+            [candidate["id"] for candidate in candidates],
+        )
+
+    def test_model_backoff_is_active_only_before_retry_time(self):
+        now = datetime(2026, 9, 5, 6, 0, tzinfo=timezone.utc)
+        state = {"model_retry_after": "2026-09-06T06:00:00Z"}
+        self.assertEqual(
+            worker.active_model_backoff(state, now=now),
+            "2026-09-06T06:00:00Z",
+        )
+        self.assertEqual(
+            worker.active_model_backoff(
+                state,
+                now=datetime(2026, 9, 6, 6, 0, tzinfo=timezone.utc),
+            ),
+            "",
+        )
+        self.assertNotIn("model_retry_after", state)
+
     def test_current_non_request_is_withdrawn_before_model_quota(self):
         candidate = promotion.ingest_candidate(
             self.db,

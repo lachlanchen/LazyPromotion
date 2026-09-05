@@ -659,11 +659,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
-    def test_landn_campaign_keeps_pwa_story_draft_truthful_and_unpublished(self):
+    def test_landn_campaign_keeps_scheduled_pwa_story_truthful_and_unpublished(self):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -675,13 +675,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(test_build["first_party_apk"].startswith("https://l-and-n.lazying.art/"))
         self.assertEqual(len(test_build["sha256"]), 64)
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_draft")
+        self.assertEqual(linkedin["state"], "postiz_scheduled")
+        self.assertEqual(linkedin["scheduled_for"], "2026-09-20T02:00:00Z")
         self.assertIn("I have trouble pronouncing L and N", linkedin["content"])
         self.assertIn("English, Mandarin, and Cantonese", linkedin["content"])
         self.assertEqual(linkedin["destination"], campaign["source_evidence"]["pwa"])
         self.assertTrue(linkedin["visible_review"]["stored_text_normalized_exact"])
         self.assertTrue(linkedin["visible_review"]["original_url_preserved"])
         self.assertFalse(linkedin["visible_review"]["release_present"])
+        schedule = linkedin["schedule_verification"]
+        self.assertTrue(schedule["integration_enabled"])
+        self.assertEqual(schedule["provider"], "linkedin")
+        self.assertEqual(schedule["verified_state"], "QUEUE")
+        self.assertTrue(schedule["stored_html_normalizes_to_reviewed_text"])
+        self.assertEqual(schedule["matching_posts"], 1)
+        self.assertFalse(schedule["release_present"])
         self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())

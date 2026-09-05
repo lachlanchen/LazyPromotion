@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
   "source_evidence": {
@@ -21,6 +21,7 @@
       "google_play_production": "changes_in_review",
       "testflight_external": "waiting_for_review",
       "apple_app_store": "waiting_for_review",
+      "operator_handoff_updated_on": "2026-09-06",
       "policy": "This campaign links only the live PWA. Do not call either store version public or available until the corresponding storefront is independently verified."
     },
     "android_test_build": {
@@ -42,14 +43,28 @@
   },
   "channels": {
     "linkedin": {
-      "state": "postiz_draft",
-      "draft_calendar_date": "2026-09-20T02:00:00Z",
+      "state": "postiz_scheduled",
+      "scheduled_for": "2026-09-20T02:00:00Z",
       "content": "I have trouble pronouncing L and N, so I built the practice tool I wanted.\n\nHear a pair, see the mouth and airflow cue, record one word, and get feedback you can inspect. The same four-minute drill works in English, Mandarin, and Cantonese.\n\nIt’s free and open source, and runs in the browser without an account:\nhttps://l-and-n.lazying.art/\n\nIf you try it, tell me whether the mouth view actually makes the difference clearer.",
       "content_sha256": "4976b657ef333e7e2aa1104c28326e16317c2166c2ae51eaad0362b25f0c6898",
       "destination": "https://l-and-n.lazying.art/",
       "media_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
       "settings": {
         "post_as_images_carousel": false
+      },
+      "schedule_verification": {
+        "checked_at": "2026-09-05T17:37:11Z",
+        "provider": "linkedin",
+        "integration_enabled": true,
+        "provider_max_length": 3000,
+        "provider_attachment_rule_satisfied": true,
+        "pwa_http_status": 200,
+        "test_apk_http_status": 200,
+        "postiz_stored_content_sha256": "aec34e4c569ace2910977718638347c748c7794edebe542e40a484f2d983c4f5",
+        "stored_html_normalizes_to_reviewed_text": true,
+        "matching_posts": 1,
+        "verified_state": "QUEUE",
+        "release_present": false
       },
       "visible_review": {
         "checked_at": "2026-09-05T11:12:00Z",
@@ -59,7 +74,7 @@
         "state_rechecked": "DRAFT",
         "release_present": false
       },
-      "policy": "This is an unpublished first-party product draft. A draft calendar date is not a schedule, public post, engagement, lead, or sale. Recheck the PWA, store states, media, copy, destination, account, and provider settings before scheduling."
+      "policy": "This is a scheduled first-party product demonstration, not yet a public post, engagement, lead, or sale. Recheck delivery after the scheduled time before recording publication or outcomes."
     },
     "reddit": {
       "state": "exact_need_only",

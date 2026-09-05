@@ -76,7 +76,7 @@
       "label": "l-and-n-pronunciation-launch",
       "metadata": {
         "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -7414,7 +7414,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft"
+        "state": "postiz_scheduled"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",

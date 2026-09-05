@@ -1,0 +1,16 @@
+{
+  "schema": "story-clip-source-reference/v1",
+  "source_id": "knowledge-graph-provenance-synthetic-2026-09",
+  "title": "Why provenance matters in a multilingual knowledge graph",
+  "repository_path": "examples/bilingual-lecture-pack/delivery/preview/bilingual-caption-preview.mp4",
+  "source_script_path": "examples/bilingual-lecture-pack/source/lecture-script.txt",
+  "corrected_caption_path": "examples/bilingual-lecture-pack/delivery/subtitles/en.srt",
+  "correction_ledger_path": "examples/bilingual-lecture-pack/delivery/issue-ledger.md",
+  "sha256": "79d44204269139d7476d198bf600335bedcfa9db940c07afc3354c962abaa271",
+  "duration_seconds": 41.191,
+  "source_language": "en",
+  "rights_holder": "LazyingArt LLC",
+  "license": "CC BY 4.0",
+  "third_party_content": false,
+  "source_type": "project-owned synthetic mini-lecture"
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "story-clip-pilot-sample/v1",
+  "sample_id": "provenance-inspectability-clip-2026-09",
+  "created_utc": "2026-09-06T00:00:00Z",
+  "status": "project_owned_synthetic_process_evidence",
+  "offer": "USD 250 Story Clip Pilot",
+  "source": {
+    "source_id": "knowledge-graph-provenance-synthetic-2026-09",
+    "repository_path": "examples/bilingual-lecture-pack/delivery/preview/bilingual-caption-preview.mp4",
+    "sha256": "79d44204269139d7476d198bf600335bedcfa9db940c07afc3354c962abaa271",
+    "duration_seconds": 41.191,
+    "language": "en",
+    "rights_holder": "LazyingArt LLC",
+    "license": "CC BY 4.0"
+  },
+  "selection": {
+    "candidate_count": 2,
+    "selected_id": "candidate-b",
+    "source_start": "00:00:27.600",
+    "source_end": "00:00:40.420"
+  },
+  "delivery": {
+    "video": "delivery/selected-provenance-clip.mp4",
+    "duration_seconds": 12.820000,
+    "dimensions": "1080x1920",
+    "video_codec": "H.264",
+    "audio_codec": "AAC",
+    "captions": "delivery/selected-caption.en.srt",
+    "caption_source_ledger": "delivery/caption-source-ledger.md",
+    "rights_manifest": "delivery/rights-manifest.json",
+    "poster": "delivery/poster.png"
+  },
+  "hashes": {
+    "video": "dc6f1ae24cd33947b56d3f52dae66926ce04958b8fd9a326462488462d0d3bfe",
+    "poster": "fb0d9636efdc7dcbeb485b5bc158b14b49efd9e87d987de4b7b09339440d0c58",
+    "captions": "c10b6371952a5b566714912b80bb6d12a35a36307993f249376a01dfeb047275",
+    "candidates": "81c58aa9dec08374c65db9b5b174eda055a4cd21e330558e14f4aa84367088f6",
+    "caption_source_ledger": "52461566abc7aad083df2edbfd8fa8ac16f1daf4db3aaca7e70e8a7b822f88ac",
+    "rights_manifest": "e46307808ecd0a20abf4638ab33af98bf07ce07b7f1afff8dc1e5b749c62454c"
+  },
+  "exclusions": [
+    "customer result",
+    "natural-interview editing proof",
+    "30-minute source turnaround proof",
+    "views, retention, or conversion result",
+    "publishing"
+  ],
+  "inventory_hashes": "delivery/SHA256SUMS"
+}

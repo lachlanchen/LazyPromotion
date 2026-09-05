@@ -1,0 +1,21 @@
+{
+  "schema": "story-clip-rights/v1",
+  "source_id": "knowledge-graph-provenance-synthetic-2026-09",
+  "rights_holder": "LazyingArt LLC",
+  "license": "CC BY 4.0",
+  "source_owned_or_licensed": true,
+  "voices": "Locally generated synthetic English narration",
+  "faces": "None",
+  "music": "None",
+  "third_party_stock": "None",
+  "customer_content": false,
+  "publishing_permission": "Public project-owned process sample only",
+  "excluded_claims": [
+    "customer work",
+    "natural-interview editing proof",
+    "viewer retention or conversion result",
+    "30-minute source turnaround proof",
+    "certified translation",
+    "independent native-language review"
+  ]
+}

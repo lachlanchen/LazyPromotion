@@ -1,0 +1,29 @@
+{
+  "schema": "story-clip-candidates/v1",
+  "source_id": "knowledge-graph-provenance-synthetic-2026-09",
+  "selection_policy": "Choose the shortest complete thought that preserves the speaker's meaning and can stand without invented context.",
+  "candidates": [
+    {
+      "id": "candidate-a",
+      "start": "00:00:00.000",
+      "end": "00:00:15.160",
+      "duration_seconds": 15.16,
+      "title": "What a trustworthy graph keeps together",
+      "hook": "A link between two ideas is only as useful as its evidence.",
+      "cut_rationale": "The opening names the problem, then gives a concrete three-part answer: claim, passage, and source fingerprint.",
+      "rights_note": "Project-owned synthetic narration and graphics under CC BY 4.0.",
+      "selected": false
+    },
+    {
+      "id": "candidate-b",
+      "start": "00:00:27.600",
+      "end": "00:00:40.420",
+      "duration_seconds": 12.82,
+      "title": "Inspectability, not certainty",
+      "hook": "Provenance does not make every claim true.",
+      "cut_rationale": "The conclusion is self-contained, gives the reader one action, and ends on the sharper promise: each claim becomes inspectable.",
+      "rights_note": "Project-owned synthetic narration and graphics under CC BY 4.0.",
+      "selected": true
+    }
+  ]
+}

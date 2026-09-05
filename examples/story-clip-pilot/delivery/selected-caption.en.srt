@@ -1,0 +1,9 @@
+1
+00:00:00,000 --> 00:00:07,300
+A reader can follow the link back to the passage, check the wording,
+and decide whether the relationship still holds.
+
+2
+00:00:07,980 --> 00:00:12,820
+Provenance does not make every claim true,
+but it makes each claim inspectable.

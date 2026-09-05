@@ -134,6 +134,11 @@ class RepositoryTests(unittest.TestCase):
             by_id["video2book"]["homepage"],
             "https://lazying.art/lecture-pack/",
         )
+        self.assertIn(
+            "https://lazying.art/lecture-pack/#example",
+            by_id["video2book"]["reply_context"],
+        )
+        self.assertIn("41.191-second synthetic source", by_id["video2book"]["reply_context"])
         self.assertEqual(
             by_id["paperagent"]["homepage"],
             "https://lazying.art/manuscript-sprint/",
@@ -1632,7 +1637,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 26)
+        self.assertEqual(campaign["version"], 27)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1670,6 +1675,29 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(marketplace["contract_observed"])
         self.assertFalse(marketplace["payment_observed"])
         self.assertIn("not a lead, contract, sale, or revenue", marketplace["policy"])
+
+        sermon = campaign["marketplace_leads"]["cantonese_sermon_caption_delivery"]
+        self.assertEqual(
+            sermon["state"], "application_packet_ready_account_review_required"
+        )
+        self.assertIn("project-40689651", sermon["source_url"])
+        self.assertIn("HKD 2,800", sermon["proposed_scope"]["price"])
+        self.assertIn("funded Freelancer milestone", sermon["proposed_scope"]["start_gate"])
+        self.assertEqual(
+            sermon["proof"]["proof_commit"],
+            "8db8e1722c85c626296f1306e7dca662439a6a6e",
+        )
+        self.assertEqual(len(sermon["proof"]["video_sha256"]), 64)
+        self.assertIn("not a sermon", sermon["proof"]["claim_boundary"])
+        self.assertEqual(
+            sermon["application_packet"], "prepared_in_ignored_private_storage"
+        )
+        self.assertFalse(sermon["application_submitted"])
+        self.assertEqual(sermon["bid_or_membership_spend"], 0)
+        self.assertFalse(sermon["funded_milestone_observed"])
+        self.assertFalse(sermon["contract_observed"])
+        self.assertFalse(sermon["payment_observed"])
+        self.assertIn("not a lead, contract, sale, or revenue", sermon["policy"])
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")
         self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")
@@ -1698,6 +1726,22 @@ class RepositoryTests(unittest.TestCase):
             guide["verification"]["stored_text_exact_after_html_normalization"]
         )
         self.assertIn("not leads or revenue", guide["policy"])
+
+        caption_post = linkedin["cantonese_caption_workflow"]
+        self.assertEqual(caption_post["state"], "postiz_queue")
+        self.assertEqual(caption_post["publish_at"], "2026-09-19T02:00:00Z")
+        self.assertEqual(caption_post["content"], caption_post["postiz_content"])
+        self.assertIn("Cantonese example", caption_post["content"])
+        self.assertIn("rights-cleared", caption_post["content"])
+        self.assertIn("8db8e1722c85c626296f1306e7dca662439a6a6e", caption_post["destination"])
+        self.assertFalse(caption_post["shortlink"])
+        self.assertEqual(len(caption_post["media_sha256"]), 64)
+        self.assertTrue(caption_post["verification"]["postiz_media_upload_verified"])
+        self.assertTrue(caption_post["verification"]["visible_editor_reviewed"])
+        self.assertTrue(caption_post["verification"]["original_url_selected"])
+        self.assertFalse(caption_post["lead_or_sale_observed"])
+        self.assertEqual(caption_post["verified_received_gross_usd"], 0)
+        self.assertIn("not claim sermon work", caption_post["policy"])
 
         blog_guide = campaign["channels"]["lazyblog"]["practical_workflow_guide"]
         self.assertEqual(

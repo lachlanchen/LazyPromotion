@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 26
+        "version": 27
       },
       "url": ""
     },
@@ -362,14 +362,14 @@
       "label": "Durable AI conversation and voice memory",
       "metadata": {
         "buyer": "A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later",
-        "first_deliverable": "Keep AiMemo as a gated private alpha while proving the manual memo path it implements now: create, edit, search, archive, classify, date, tag, resolve a revision conflict, and export account-scoped JSON without AI consent",
-        "first_test": "Keep the aligned public pages in free private-alpha mode, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort",
+        "first_deliverable": "Keep AiMemo as a gated private alpha. Its private PWA evidence now covers text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, and separate dictation; native-device and data-lifecycle proof remain required",
+        "first_test": "Keep the aligned public pages in free private-alpha mode, then verify a physical-microphone round trip, manual memo and export behavior, retention, and full deletion with opt-in native-device test data before inviting a small private cohort",
         "gates": [
           "Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and deletion, voice, collaboration, and store reliability remain unverified",
-          "Do not claim reliable live AI or voice, collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, full offline operation, or public store availability",
+          "Do not turn the private PWA text and synthetic-audio checks into a public reliability, native-voice, deletion, store, or customer-result claim; collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, and full offline operation also remain unverified",
           "Keep both public pages aligned with the free private-alpha state and recheck them before any invitation",
           "Complete and verify deletion across retained agent, speech, and backup data before inviting external testers",
-          "Restore the AI provider and separately verify a current text and voice round trip before promoting AI organization"
+          "Run a native physical-microphone round trip, resolve the known synthetic-title mistranscription, and verify retention and deletion across agent, speech, and backup data before promoting AI organization"
         ],
         "need": "Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job",
         "scores": {
@@ -449,7 +449,7 @@
         "gates": [
           "Use only customer-owned, licensed, or clearly open educational media",
           "The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale",
-          "Treat the 30.5-second project-owned sample as process evidence, not proof of a complete 20-minute customer delivery",
+          "The complete downloadable packet uses a 41.191-second synthetic project-owned source with assisted translation; it is not customer work, independent native-language review, certified translation, or proof of a full 20-minute delivery",
           "Define transcript correction and translation acceptance criteria during the fit review"
         ],
         "need": "Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest",
@@ -8720,6 +8720,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/#example",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:555e8458ebb0e57a"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lecture-pack/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -8765,6 +8773,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:lecture-to-study-library",
       "target": "url:bc9f5affabab7f69"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:lecture-to-study-library",
+      "target": "url:e730675d5e287bce"
     },
     {
       "confidence": 1.0,

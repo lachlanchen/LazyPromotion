@@ -24,7 +24,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | candidate | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks | 3.35 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
-| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Keep the aligned public pages in free private-alpha mode, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort | 2.95 |
+| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Keep the aligned public pages in free private-alpha mode, then verify a physical-microphone round trip, manual memo and export behavior, retention, and full deletion with opt-in native-device test data before inviting a small private cohort | 2.95 |
 
 ## Opportunity contracts
 
@@ -109,7 +109,9 @@ Gates:
 Evidence:
 
 - <https://lazying.art/lecture-pack/>
+- <https://lazying.art/lecture-pack/#example>
 - <https://lazying.art/lecture-pack/fit-check/>
+- <https://github.com/lachlanchen/LazyPromotion/tree/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack>
 - <https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html>
 - <https://github.com/lachlanchen/Video2Book>
 - <https://github.com/lachlanchen/leonardsusskind>
@@ -120,7 +122,7 @@ Gates:
 
 - Use only customer-owned, licensed, or clearly open educational media
 - The Susskind archive demonstrates a format and workflow; it is not customer proof or content offered for resale
-- Treat the 30.5-second project-owned sample as process evidence, not proof of a complete 20-minute customer delivery
+- The complete downloadable packet uses a 41.191-second synthetic project-owned source with assisted translation; it is not customer work, independent native-language review, certified translation, or proof of a full 20-minute delivery
 - Define transcript correction and translation acceptance criteria during the fit review
 
 ### Review-first agent workflow kit
@@ -468,9 +470,9 @@ Gates:
 
 **Existing work:** [AgentShell](https://github.com/lachlanchen/AgentShell), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal), [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb), [AI-Wearable](https://github.com/lachlanchen/AI-Wearable)
 
-**First deliverable:** Keep AiMemo as a gated private alpha while proving the manual memo path it implements now: create, edit, search, archive, classify, date, tag, resolve a revision conflict, and export account-scoped JSON without AI consent
+**First deliverable:** Keep AiMemo as a gated private alpha. Its private PWA evidence now covers text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, and separate dictation; native-device and data-lifecycle proof remain required
 
-**First demand test:** Keep the aligned public pages in free private-alpha mode, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort
+**First demand test:** Keep the aligned public pages in free private-alpha mode, then verify a physical-microphone round trip, manual memo and export behavior, retention, and full deletion with opt-in native-device test data before inviting a small private cohort
 
 Evidence:
 
@@ -486,10 +488,10 @@ Evidence:
 Gates:
 
 - Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and deletion, voice, collaboration, and store reliability remain unverified
-- Do not claim reliable live AI or voice, collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, full offline operation, or public store availability
+- Do not turn the private PWA text and synthetic-audio checks into a public reliability, native-voice, deletion, store, or customer-result claim; collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, and full offline operation also remain unverified
 - Keep both public pages aligned with the free private-alpha state and recheck them before any invitation
 - Complete and verify deletion across retained agent, speech, and backup data before inviting external testers
-- Restore the AI provider and separately verify a current text and voice round trip before promoting AI organization
+- Run a native physical-microphone round trip, resolve the known synthetic-title mistranscription, and verify retention and deletion across agent, speech, and backup data before promoting AI organization
 
 ## Interpretation
 

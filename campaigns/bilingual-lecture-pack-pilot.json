@@ -1,5 +1,5 @@
 {
-  "version": 26,
+  "version": 27,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -241,7 +241,7 @@
     "policy": "The visible URL Inspection result reported Discovered - currently not indexed, and one crawl request was accepted. That request is not indexing, ranking, traffic, a lead, or revenue; do not resubmit it merely to seek higher priority."
   },
   "marketplace_leads": {
-    "checked_at": "2026-09-05T08:37:00Z",
+    "checked_at": "2026-09-05T14:02:26Z",
     "video_editor_for_meta_ads": {
       "state": "application_prepared_login_required",
       "preflight_rechecked_at": "2026-09-05T12:44:00Z",
@@ -291,6 +291,60 @@
       "contract_observed": false,
       "payment_observed": false,
       "policy": "The listing is a strong current paid need, not a lead, contract, sale, or revenue. Recheck that it remains open, inspect the exact Connects cost and freelancer fee after login, review the proposal once in the visible composer, keep all pre-contract communication on Upwork, and submit only once. Do not claim customer ad results, Taiwan-market performance, paid-campaign management, or years of experience that the public proof does not establish."
+    },
+    "cantonese_sermon_caption_delivery": {
+      "state": "application_packet_ready_account_review_required",
+      "checked_at": "2026-09-05T14:02:26Z",
+      "source_url": "https://www.freelancer.com/projects/video-editing/project-40689651",
+      "need": "Turn roughly 40-minute Cantonese sermon videos into manually corrected Traditional Chinese captions, matching Simplified Chinese subtitles, and a Bilibili-ready H.264 MP4 with Simplified subtitles burned in while keeping visible timing within plus or minus 0.2 seconds.",
+      "commercial_terms_seen": "HKD 2,000 to 6,000 fixed budget with per-video or batch milestone pricing invited",
+      "activity_when_checked": "The listing was open; indexed and current marketplace views showed an active bid count changing from 5 to 13.",
+      "client_evidence": "Hong Kong client account created on 2026-09-04 with email and phone checks visible, no reviews, and payment not verified when checked.",
+      "fit": [
+        "LazyEdit and local ffmpeg subtitle rendering",
+        "Traditional and Simplified Chinese subtitle delivery",
+        "project-controlled Cantonese audio and reviewed per-vocal timing",
+        "checksum, codec, frame, and reproducible-delivery evidence"
+      ],
+      "gaps": [
+        "The exact number of source videos is not stated.",
+        "The public sample is a generated Cantonese song excerpt, not spoken sermon or customer work.",
+        "Native Hong Kong Cantonese proficiency and religious-terminology review have not been established.",
+        "The buyer is new and payment was not verified when checked."
+      ],
+      "proof": {
+        "state": "public_project_owned_sample_pinned",
+        "repository": "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
+        "video": "https://github.com/lachlanchen/LazyPromotion/raw/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery/artifacts/cantonese-caption-sample.mp4",
+        "proof_commit": "8db8e1722c85c626296f1306e7dca662439a6a6e",
+        "video_sha256": "4a2bb05bd7d10796e8fbffffa9d6852dd70d5ef635d86ec75a85e52cefc1ebff",
+        "duration_seconds": 23.52,
+        "dimensions": "1280x720",
+        "tracks": [
+          "yue-Hant",
+          "zh-Hans"
+        ],
+        "claim_boundary": "The sample proves a project-owned two-script caption packet and reproducible H.264 render. It is not a sermon, customer result, native-editor endorsement, religious-terminology sample, or accuracy proof on unseen speech."
+      },
+      "proposed_scope": {
+        "price": "HKD 2,800 per approximately 40-minute source video",
+        "delivery_window": "five business days after the complete source, preferred Bible translation, names, and terminology are supplied",
+        "deliverables": [
+          "manually corrected Traditional Chinese subtitle track",
+          "matching Simplified Chinese SRT",
+          "H.264 MP4 with Simplified Chinese subtitles burned in",
+          "both Traditional and Simplified standalone SRT files",
+          "one consolidated correction pass"
+        ],
+        "start_gate": "Confirm the source count, language, transcript availability, terminology, resolution, and frame rate, then require a funded Freelancer milestone for the agreed unit."
+      },
+      "application_packet": "prepared_in_ignored_private_storage",
+      "application_submitted": false,
+      "bid_or_membership_spend": 0,
+      "funded_milestone_observed": false,
+      "contract_observed": false,
+      "payment_observed": false,
+      "policy": "This is a current paid need and a prepared application path, not a lead, contract, sale, or revenue. Do not start, move pre-contract communication off-platform, or deliver source work before an exact scope and funded milestone. Do not claim native Cantonese, sermon experience, customer results, or unseen-speech timing accuracy."
     }
   },
   "channels": {
@@ -440,6 +494,29 @@
           "visible_editor_reviewed": true
         },
         "policy": "The article provides the complete source-first method before its single bounded offer link. The queue was placed after the existing campaign calendar; queueing, views, clicks, and replies are not leads or revenue."
+      },
+      "cantonese_caption_workflow": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-19T02:00:00Z",
+        "content": "Chinese caption work is more than changing 繁體 to 简体. A useful delivery keeps one checked timeline, both editable SRT files, and an H.264 preview that can be inspected frame by frame.\n\nI made a 23-second Cantonese example from our own audio: Traditional and Simplified tracks, a burned preview, review frames, source hashes, and the rebuild script.\n\nThe source is a short music excerpt, so this is a workflow sample rather than a claim about unseen speech. If you have a rights-cleared Cantonese lecture or interview, send the duration, audio condition, and required script. I can tell you whether it fits before quoting.\n\nhttps://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
+        "postiz_content": "Chinese caption work is more than changing 繁體 to 简体. A useful delivery keeps one checked timeline, both editable SRT files, and an H.264 preview that can be inspected frame by frame.\n\nI made a 23-second Cantonese example from our own audio: Traditional and Simplified tracks, a burned preview, review frames, source hashes, and the rebuild script.\n\nThe source is a short music excerpt, so this is a workflow sample rather than a claim about unseen speech. If you have a rights-cleared Cantonese lecture or interview, send the duration, audio condition, and required script. I can tell you whether it fits before quoting.\n\nhttps://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
+        "destination": "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
+        "reviewed_on": "2026-09-05",
+        "shortlink": false,
+        "proof_commit": "8db8e1722c85c626296f1306e7dca662439a6a6e",
+        "media_sha256": "4a2bb05bd7d10796e8fbffffa9d6852dd70d5ef635d86ec75a85e52cefc1ebff",
+        "verification": {
+          "stored_state": "QUEUE",
+          "stored_content_sha256": "8b60fed51063daf10ed0439681dc6acddb30a03208bc277abae1b5dbfe547964",
+          "stored_time_exact": true,
+          "stored_text_exact_after_html_normalization": true,
+          "postiz_media_upload_verified": true,
+          "visible_editor_reviewed": true,
+          "original_url_selected": true
+        },
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The post shares a project-owned generated-song workflow packet and asks for source metadata before a quote. It does not claim sermon work, native review, customer results, or unseen-speech accuracy. Queueing, views, clicks, and replies are not leads or revenue."
       }
     },
     "youtube": {

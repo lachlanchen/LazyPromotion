@@ -41,6 +41,8 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("hand-reviewed and project-owned", body)
         self.assertIn("https://lazying.art/manuscript-sprint/", body)
         self.assertIn("https://lazying.art/lecture-pack/", body)
+        self.assertIn("https://lazying.art/lecture-pack/#example", body)
+        self.assertIn("41.191-second synthetic project-owned source", body)
         self.assertIn(
             "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
             body,
@@ -51,9 +53,11 @@ class OpportunityTests(unittest.TestCase):
             body,
         )
         self.assertIn("Keep AiMemo as a gated private alpha", body)
-        self.assertIn("export account-scoped JSON without AI consent", body)
+        self.assertIn("synthetic-audio transcription and organization", body)
+        self.assertIn("physical-microphone round trip", body)
         self.assertIn("Do not link AiMemo in public replies", body)
         self.assertIn("free private-alpha state", body)
+        self.assertNotIn("Restore the AI provider", body)
         self.assertNotIn("its two public sites disagree", body)
         self.assertIn("### Short-video caption pipeline feasibility", body)
         self.assertIn("Hebrew and bidirectional-text risk test", body)

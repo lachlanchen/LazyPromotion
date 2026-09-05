@@ -3243,7 +3243,7 @@
       "metadata": {
         "description": "AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T15:27:06Z",
+        "pushed_at": "2026-09-05T17:56:03Z",
         "topics": [
           "aginti",
           "agintiflow",
@@ -3264,7 +3264,7 @@
           "unity",
           "unreal-engine"
         ],
-        "updated_at": "2026-09-05T15:27:10Z"
+        "updated_at": "2026-09-05T17:56:07Z"
       },
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
@@ -3822,7 +3822,7 @@
       "metadata": {
         "description": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
         "homepage": "https://l-and-n.lazying.art",
-        "pushed_at": "2026-09-05T10:13:41Z",
+        "pushed_at": "2026-09-05T18:28:31Z",
         "topics": [
           "android",
           "cantonese",
@@ -3844,7 +3844,7 @@
           "watchos",
           "whisper"
         ],
-        "updated_at": "2026-09-05T10:13:45Z"
+        "updated_at": "2026-09-05T18:28:35Z"
       },
       "url": "https://github.com/lachlanchen/L-and-N"
     },
@@ -4220,7 +4220,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T16:14:30Z",
+        "pushed_at": "2026-09-05T18:40:17Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4240,7 +4240,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T16:14:46Z"
+        "updated_at": "2026-09-05T18:40:21Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4461,7 +4461,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T16:01:18Z",
+        "pushed_at": "2026-09-05T18:38:42Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4477,7 +4477,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T16:01:22Z"
+        "updated_at": "2026-09-05T18:38:46Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -5802,7 +5802,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T15:35:08Z",
+        "pushed_at": "2026-09-05T16:54:54Z",
         "topics": [
           "automation",
           "language",
@@ -5815,7 +5815,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T15:35:12Z"
+        "updated_at": "2026-09-05T16:54:57Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },

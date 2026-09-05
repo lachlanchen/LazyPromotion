@@ -41,16 +41,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 16:14:30 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 16:01:18 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 15:35:08 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 18:40:17 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 18:38:42 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 18:28:31 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
+| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 17:56:03 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 16:54:54 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-05 15:29:49 | Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance. |
-| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 15:27:06 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [LazySkills](https://github.com/lachlanchen/LazySkills) | 2026-09-05 15:26:52 | Portable LazyingArt agent skills for AgInTiFlow, Codex, Claude, Gemini, Copilot, LazyEdit, AutoPublish, browser automation, books, and publishing workflows. |
 | [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | 2026-09-05 14:39:28 | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-05 14:16:12 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 | [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb) | 2026-09-05 11:31:46 | Standalone cloud PWA, durable chat BFF, and AgInTi frontend for llm.lazying.art |
-| [MicroQuant](https://github.com/lachlanchen/MicroQuant) | 2026-09-05 10:57:30 | Experimental MetaTrader 5 research dashboard for OHLC ingestion, PostgreSQL history, STL analysis, and review-gated trading workflows. |
 
 ## Complete public repository inventory
 

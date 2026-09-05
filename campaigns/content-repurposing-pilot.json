@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -99,6 +99,11 @@
       "Existing stock-footage license or budget",
       "Available brand kit"
     ],
+    "follow_up_gate": {
+      "review_not_before": "2026-09-12",
+      "action": "Recheck the public hiring post and aggregate business-outreach status before deciding whether one concise follow-up is appropriate.",
+      "automatic_send": false
+    },
     "claim_boundary": "The linked samples are project-owned LazyingArt work, not travel-client work. No contract, customer outcome, or sale is implied.",
     "delivery_or_contract_started": false
   },

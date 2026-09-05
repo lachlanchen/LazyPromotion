@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -548,6 +548,25 @@
     },
     "linkedin": {
       "state": "postiz_queue",
+      "collection_fit_offer_post": {
+        "state": "postiz_queue",
+        "publish_at": "2026-09-09T01:00:00Z",
+        "content": "Private-document projects often fail before retrieval: extraction is uneven, citations cannot be checked, or nobody has defined what “good enough” means.\n\nI built a small public LKT sample around those earlier questions. It covers 16,800 records checked against the current code, a data and privacy map, fixed test questions, two browser proofs, and a written go/no-go boundary.\n\nI am opening four USD 250 collection-fit sprints for one customer-owned collection on one existing machine. Hardware, custom OCR, and production deployment are outside the fixed sprint.\n\nRead the sample first: https://lazying.art/lkt/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=collection_fit_terms\n\nThe image shows the current display prototype; the sprint is a software service and does not include hardware.\n\n#LocalFirst #KnowledgeManagement #DigitalHumanities #OpenSource",
+        "postiz_content": "Private-document projects often fail before retrieval: extraction is uneven, citations cannot be checked, or nobody has defined what “good enough” means.\n\nI built a small public LKT sample around those earlier questions. It covers 16,800 records checked against the current code, a data and privacy map, fixed test questions, two browser proofs, and a written go/no-go boundary.\n\nI am opening four USD 250 collection-fit sprints for one customer-owned collection on one existing machine. Hardware, custom OCR, and production deployment are outside the fixed sprint.\n\nRead the sample first: https://lazying.art/lkt/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=collection_fit_terms\n\nThe image shows the current display prototype; the sprint is a software service and does not include hardware.\n\n#LocalFirst #KnowledgeManagement #DigitalHumanities #OpenSource",
+        "destination": "https://lazying.art/lkt/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=collection_fit_terms",
+        "visual": "https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png",
+        "reviewed_on": "2026-09-05",
+        "shortlink": false,
+        "verification": {
+          "provider": "linkedin",
+          "stored_text_exact": true,
+          "uploaded_media_visible": true,
+          "original_url_preserved": true,
+          "queue_state_verified": true
+        },
+        "lead_or_sale_observed": false,
+        "policy": "The complete LinkedIn preview was visibly reviewed with the intended account, original first-party URL, uploaded service cover, exact USD 250 scope, existing-machine boundary, exclusions, and September 9 09:00 HKT schedule before entering QUEUE. It is an owned offer post, not a lead, customer result, sale, or revenue."
+      },
       "multilingual_ocr_guide_post": {
         "state": "postiz_queue",
         "publish_at": "2026-09-22T02:00:00Z",

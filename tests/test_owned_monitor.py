@@ -353,6 +353,36 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertNotIn("private-linkedin-post", serialized)
         self.assertNotIn("private-linkedin-integration", serialized)
 
+    def test_linkedin_collection_fit_offer_is_an_owned_queue_not_a_sale(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        offer = campaign["channels"]["linkedin"]["collection_fit_offer_post"]
+        linkedin_post = post(
+            post_id="private-linkedin-offer-post",
+            publish_at=offer["publish_at"],
+        )
+        linkedin_post["content"] = offer["postiz_content"]
+        linkedin_post["integration"] = {"providerIdentifier": "linkedin"}
+        fake = FakePostiz(
+            posts=[linkedin_post],
+            integrations=[
+                {"id": "private-linkedin-integration", "identifier": "linkedin"}
+            ],
+        )
+
+        report = self.run_monitor(fake)
+
+        self.assertEqual(report["summary"]["queued"], 1)
+        self.assertEqual(report["posts"][0]["campaign_id"], "local-knowledge-terminal-pilot")
+        self.assertEqual(report["posts"][0]["route"], "collection_fit_offer_post")
+        self.assertNotIn("revenue", report["posts"][0])
+        serialized = json.dumps(report)
+        self.assertNotIn("private-linkedin-offer-post", serialized)
+        self.assertNotIn("private-linkedin-integration", serialized)
+
 
 if __name__ == "__main__":
     unittest.main()

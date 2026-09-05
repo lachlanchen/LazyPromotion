@@ -124,6 +124,13 @@ timestamp-first workflow, links to project-owned proof, keeps the original
 campaign URL, and states the fixed USD 250 rights-cleared scope. The read-only
 monitor confirmed the exact text, time, provider, and `QUEUE` state.
 
+The LKT offer also gained one early LinkedIn slot at 2026-09-09T01:00:00Z. Its
+complete preview showed the intended account, uploaded service cover, exact
+USD 250 existing-machine scope, exclusions, and first-party sample-report URL.
+The final visible confirmation kept that original URL instead of a Postiz
+shortlink, and a provider read confirmed `QUEUE`. This is owned distribution,
+not a lead or sale.
+
 Later that day, the complete source-first lecture guide was published on
 LazyBlog and one separate LinkedIn note was visibly reviewed for
 2026-09-24T02:00:00Z, after the existing campaign calendar. The note teaches

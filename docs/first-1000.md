@@ -37,6 +37,20 @@ no ROAS, cost-per-lead, or Taiwan-market performance claim. The attachment is
 not published and the project browser is logged out; no proposal was sent and
 no Connects were spent.
 
+A higher-value exact component match is now ready for a different route. A
+Suzhou company has posted a USD 4,000–8,000 Phase 1 mission to turn Chinese,
+English, and mixed meeting audio into human-confirmed, source-linked,
+searchable enterprise knowledge. LocalSTT, Local Knowledge Terminal,
+Video2Book, private AiMemo patterns, and LazyEdge cover the hard components,
+but no existing artifact proves the integrated meeting product or a customer
+deployment. The application therefore proposes a seven-week USD 8,000 build
+with a funded architecture and representative-audio gate first, followed by a
+capped three-meeting pilot. Its complete 18-answer proposal and visually
+checked two-page architecture brief are ready in ignored private storage. The
+client account is new, the listing already has 15–20 proposals, and Upwork is
+still logged out, so this remains buyer-intent evidence—not a lead, contract,
+sale, or revenue—and no Connects were spent.
+
 A USD 200 paid architecture consultation now provides a second exact LKT-shaped
 need: a company wants its enterprise memory to preserve source evidence,
 permissions, human-approved state, and audit trails across existing business

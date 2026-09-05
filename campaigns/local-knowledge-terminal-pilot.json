@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -84,6 +84,63 @@
       "connects_spent": 0,
       "application_packet": "prepared_in_ignored_private_storage",
       "policy": "The public listing is buyer-intent evidence only. Do not claim enterprise, Google Workspace, oil-and-gas, or customer implementation experience without substantiation. Login, final proposal review, and any Connects spend remain required before submission; the listing is not a lead, contract, payment, or revenue."
+    },
+    "enterprise_meeting_intelligence_mission": {
+      "state": "application_packet_ready_login_required",
+      "observed_on": "2026-09-05",
+      "source": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/",
+      "buyer_location": "Suzhou, China",
+      "public_budget": "USD 4,000–8,000 for Phase 1",
+      "public_timeline": "six to eight weeks",
+      "need": "Turn Chinese, English, and mixed-language meeting audio into a durable timestamped transcript, independently understandable knowledge units, explicit human-confirmation states, portable company-controlled storage, evidence-linked search, and a foundation that later phases can extend without replacing the source layer.",
+      "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites, and a client view within the previous 21 hours",
+      "client_evidence": "The public listing showed a new Upwork account created on August 31, 2026 and no prior spend or hire history.",
+      "component_fit": {
+        "localstt": "A running private first-party service implements durable multilingual Whisper large-v3 jobs, timestamped Markdown, per-application isolation, recovery, and optional WhisperX/pyannote diarization. Its public health boundary was live; it does not prove meeting-scale recognition accuracy.",
+        "localknowledgeterminal": "Public code and the live passage graph prove source hashes, locators, excerpts, accepted/rejected/superseded states, and rebuildable graph projections at a small hand-reviewed scale.",
+        "video2book": "Public code proves durable timestamped transcript and source-map workflows across long-form archives.",
+        "aimemo": "Private active-development code provides strict structured memo types, account-scoped search/export, and conflict-safe revisions; it is not a meeting ontology or enterprise approval system.",
+        "lazyedge": "Public code proves a default-deny boundary for explicitly approved private services; it is not enterprise SSO, RBAC, or compliance certification."
+      },
+      "critical_gaps": [
+        "No artifact proves the complete long bilingual meeting to multi-speaker diarization to automatic knowledge extraction to per-unit approval to portable search loop.",
+        "No real buyer audio establishes Chinese variant, code-switch, name, overlap, room-acoustics, WER, or diarization acceptance thresholds.",
+        "The public evidence is first-party project work, not an enterprise customer deployment.",
+        "Live meeting bots, enterprise connectors, SSO or enterprise IAM, compliance certification, guaranteed accuracy, unlimited volume, and ongoing support do not fit the proposed fixed build."
+      ],
+      "proposed_scope": {
+        "fixed_price_usd": 8000,
+        "timeline_weeks": 7,
+        "deployment_cap": 1,
+        "pilot_meeting_cap": 3,
+        "minutes_per_meeting_cap": 60,
+        "language_boundary": "English and an explicitly agreed Chinese variant, including agreed mixed-language cases",
+        "milestones_usd": [
+          1600,
+          2400,
+          2400,
+          1600
+        ],
+        "first_gate": "A funded architecture, data/threat map, representative-audio benchmark plan, and documented go/no-go decision before the larger build spend."
+      },
+      "public_proof": [
+        "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+        "https://lazying.art/lkt/passage-graph/",
+        "https://github.com/lachlanchen/Video2Book",
+        "https://github.com/lachlanchen/LazyEdge",
+        "https://text-and-speech-api.lazying.art/healthz"
+      ],
+      "application_packet": "prepared_in_ignored_private_storage",
+      "architecture_attachment": {
+        "state": "two_page_pdf_ready_not_attached",
+        "sha256": "f8e8939861553b1cc5b5ce0c99547f71ced0052c33e6ebe30c30f64cbacdf34c",
+        "visual_qa": "Both rendered pages were inspected after the missing-glyph correction; no clipping, overlap, broken link text, or missing glyph remained."
+      },
+      "application_submitted": false,
+      "connects_spent": 0,
+      "contract_observed": false,
+      "payment_observed": false,
+      "policy": "This is a high-value exact component match, not a lead, contract, sale, or revenue. Recheck the live brief, Connects cost, fee, identity and payout state in the visible Upwork composer; confirm seven-week operator capacity; keep all pre-contract communication and payment on Upwork; and submit once only if the funded first milestone and pilot caps are preserved. Do not claim an existing end-to-end meeting product, enterprise customer delivery, language fluency, or unmeasured ASR or diarization accuracy."
     },
     "website_hero": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
     "instagram_visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",

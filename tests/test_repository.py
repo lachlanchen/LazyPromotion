@@ -682,7 +682,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 10)
+        self.assertEqual(campaign["version"], 11)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -743,6 +743,23 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(consultation["application_submitted"])
         self.assertEqual(consultation["connects_spent"], 0)
         self.assertIn("not a lead", consultation["policy"])
+        meeting = campaign["source_evidence"]["enterprise_meeting_intelligence_mission"]
+        self.assertEqual(meeting["state"], "application_packet_ready_login_required")
+        self.assertEqual(meeting["proposed_scope"]["fixed_price_usd"], 8000)
+        self.assertEqual(sum(meeting["proposed_scope"]["milestones_usd"]), 8000)
+        self.assertEqual(meeting["proposed_scope"]["pilot_meeting_cap"], 3)
+        self.assertEqual(meeting["proposed_scope"]["minutes_per_meeting_cap"], 60)
+        self.assertIn("explicitly agreed Chinese variant", meeting["proposed_scope"]["language_boundary"])
+        self.assertEqual(
+            meeting["architecture_attachment"]["sha256"],
+            "f8e8939861553b1cc5b5ce0c99547f71ced0052c33e6ebe30c30f64cbacdf34c",
+        )
+        self.assertFalse(meeting["application_submitted"])
+        self.assertEqual(meeting["connects_spent"], 0)
+        self.assertFalse(meeting["contract_observed"])
+        self.assertFalse(meeting["payment_observed"])
+        self.assertIn("not a lead", meeting["policy"])
+        self.assertIn("Do not claim", meeting["policy"])
         self.assertEqual(
             promotion.project_by_id("localknowledgeterminal")["reply_url"],
             campaign["source_evidence"]["fit_check"],

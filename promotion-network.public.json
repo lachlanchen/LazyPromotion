@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 21
+        "version": 23
       },
       "url": ""
     },
@@ -76,7 +76,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 10
+        "version": 11
       },
       "url": ""
     },
@@ -5755,13 +5755,6 @@
       "url": "https://github.com/lachlanchen/zhjpbook"
     },
     {
-      "id": "url:6c61657175e6875a",
-      "kind": "web_resource",
-      "label": "conversion pipeline",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/Video2Book"
-    },
-    {
       "id": "url:aa198f9562d200f2",
       "kind": "web_resource",
       "label": "course hierarchy pattern",
@@ -5823,6 +5816,41 @@
       "label": "enterprise architecture consultation need source",
       "metadata": {},
       "url": "https://www.upwork.com/freelance-jobs/apply/Enterprise-Architecture-Consultant-Expert-Review-Operating-Layer-Intelligence-Brain_~022095776744342146823/"
+    },
+    {
+      "id": "url:1c57cb81d6efe0d4",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission public proof 2",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/passage-graph/"
+    },
+    {
+      "id": "url:6c61657175e6875a",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission public proof 3",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/Video2Book"
+    },
+    {
+      "id": "url:45192426591114fc",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission public proof 4",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyEdge"
+    },
+    {
+      "id": "url:e11294f3dfa63ddb",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission public proof 5",
+      "metadata": {},
+      "url": "https://text-and-speech-api.lazying.art/healthz"
+    },
+    {
+      "id": "url:0ea6c797f14e5c74",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission source",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/"
     },
     {
       "id": "url:265444c2e249d3e1",
@@ -5956,13 +5984,6 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalLLM"
-    },
-    {
-      "id": "url:45192426591114fc",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyEdge"
     },
     {
       "id": "url:47ebc35a4aa8e893",
@@ -6166,13 +6187,6 @@
       "label": "passage provenance proof social preview",
       "metadata": {},
       "url": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png"
-    },
-    {
-      "id": "url:1c57cb81d6efe0d4",
-      "kind": "web_resource",
-      "label": "passage provenance proof youtube demo description destinations 1",
-      "metadata": {},
-      "url": "https://lazying.art/lkt/passage-graph/"
     },
     {
       "id": "url:642c155f64b240e7",
@@ -7123,11 +7137,27 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "project:github-lazyedge"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
       "metadata": {},
       "relation": "promotes",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "project:video2book"
     },
     {
       "confidence": 1.0,
@@ -7245,6 +7275,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:0ea6c797f14e5c74"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/passage-graph/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -7293,6 +7331,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:45192426591114fc"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33953673032",
       "metadata": {},
       "relation": "uses_evidence",
@@ -7306,6 +7352,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:642c155f64b240e7"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:6c61657175e6875a"
     },
     {
       "confidence": 1.0,
@@ -7402,6 +7456,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://text-and-speech-api.lazying.art/healthz",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:e11294f3dfa63ddb"
     },
     {
       "confidence": 1.0,

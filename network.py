@@ -205,6 +205,7 @@ def sync_public_sources(db) -> dict[str, str]:
                 "description": repo.get("description") or "",
                 "topics": repo.get("topics") or [],
                 "homepage": repo.get("homepage") or "",
+                "pushed_at": repo.get("pushed_at") or "",
                 "updated_at": repo.get("updated_at") or "",
             },
         )

@@ -7,6 +7,7 @@
       "homepage": "https://aaps.lazying.art",
       "name": "AAPS",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-07-03T08:26:29Z",
       "topics": [
         "aaps",
         "autonomous-agents",
@@ -14,6 +15,7 @@
         "pipeline",
         "prompt-engineering"
       ],
+      "updated_at": "2026-07-03T08:26:33Z",
       "url": "https://github.com/lachlanchen/AAPS"
     },
     {
@@ -21,6 +23,7 @@
       "homepage": "https://lazying.art",
       "name": "AgentShell",
       "primary_language": "PowerShell",
+      "pushed_at": "2026-09-05T03:17:01Z",
       "topics": [
         "account-isolation",
         "account-management",
@@ -42,6 +45,7 @@
         "terminal",
         "workflow-automation"
       ],
+      "updated_at": "2026-09-05T03:17:04Z",
       "url": "https://github.com/lachlanchen/AgentShell"
     },
     {
@@ -49,6 +53,7 @@
       "homepage": "https://agent.lazying.art",
       "name": "AgInTi",
       "primary_language": "Shell",
+      "pushed_at": "2026-03-04T08:08:06Z",
       "topics": [
         "aginti",
         "documentation",
@@ -58,6 +63,7 @@
         "prompt-chain",
         "self-healing"
       ],
+      "updated_at": "2026-09-04T20:51:50Z",
       "url": "https://github.com/lachlanchen/AgInTi"
     },
     {
@@ -65,6 +71,7 @@
       "homepage": "https://lazying.art",
       "name": "aginti-browser",
       "primary_language": "Python",
+      "pushed_at": "2026-08-16T02:49:57Z",
       "topics": [
         "agentic-browser",
         "agintiflow",
@@ -81,6 +88,7 @@
         "python",
         "web-automation"
       ],
+      "updated_at": "2026-08-16T02:50:01Z",
       "url": "https://github.com/lachlanchen/aginti-browser"
     },
     {
@@ -88,6 +96,7 @@
       "homepage": "https://lazying.art",
       "name": "AgInTi-HardwareConsole",
       "primary_language": "Python",
+      "pushed_at": "2026-07-15T07:00:31Z",
       "topics": [
         "aginti",
         "digital-twin",
@@ -102,6 +111,7 @@
         "sensor-fusion",
         "stm32"
       ],
+      "updated_at": "2026-07-15T06:59:47Z",
       "url": "https://github.com/lachlanchen/AgInTi-HardwareConsole"
     },
     {
@@ -109,6 +119,7 @@
       "homepage": "https://lazying.art",
       "name": "AgInTi-LabCanvas",
       "primary_language": "Python",
+      "pushed_at": "2026-09-05T05:17:14Z",
       "topics": [
         "aginti",
         "agintiflow",
@@ -129,6 +140,7 @@
         "unity",
         "unreal-engine"
       ],
+      "updated_at": "2026-09-05T05:17:18Z",
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
     {
@@ -136,6 +148,7 @@
       "homepage": "https://lazying.art",
       "name": "AgInTi-Spectrometer",
       "primary_language": "Python",
+      "pushed_at": "2026-08-01T10:10:26Z",
       "topics": [
         "c12880ma",
         "data-acquisition",
@@ -150,6 +163,7 @@
         "spectroscopy",
         "webapp"
       ],
+      "updated_at": "2026-08-01T10:10:36Z",
       "url": "https://github.com/lachlanchen/AgInTi-Spectrometer"
     },
     {
@@ -157,6 +171,7 @@
       "homepage": "https://lazying.art",
       "name": "AI-Wearable",
       "primary_language": "C",
+      "pushed_at": "2026-02-28T23:10:49Z",
       "topics": [
         "backend",
         "iot",
@@ -167,6 +182,7 @@
         "voice-assistant",
         "wearable"
       ],
+      "updated_at": "2026-09-04T21:01:30Z",
       "url": "https://github.com/lachlanchen/AI-Wearable"
     },
     {
@@ -174,6 +190,7 @@
       "homepage": "https://lazying.art",
       "name": "aigi2vector",
       "primary_language": "Shell",
+      "pushed_at": "2026-02-28T23:10:58Z",
       "topics": [
         "aigi2vector",
         "convert",
@@ -182,6 +199,7 @@
         "plot",
         "vector"
       ],
+      "updated_at": "2026-04-26T08:31:37Z",
       "url": "https://github.com/lachlanchen/aigi2vector"
     },
     {
@@ -189,6 +207,7 @@
       "homepage": "https://lachlanchen.github.io/astrill-lazy-policies/",
       "name": "astrill-lazy-policies",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-07-30T17:17:03Z",
       "topics": [
         "astrill",
         "dd-wrt",
@@ -197,6 +216,7 @@
         "policy-routing",
         "vpn"
       ],
+      "updated_at": "2026-07-30T17:20:20Z",
       "url": "https://github.com/lachlanchen/astrill-lazy-policies"
     },
     {
@@ -204,6 +224,7 @@
       "homepage": "https://lazying.art",
       "name": "astrill-lazy-router",
       "primary_language": "Python",
+      "pushed_at": "2026-08-13T23:09:30Z",
       "topics": [
         "astrill",
         "automation",
@@ -226,6 +247,7 @@
         "ubuntu",
         "vpn"
       ],
+      "updated_at": "2026-08-30T04:38:18Z",
       "url": "https://github.com/lachlanchen/astrill-lazy-router"
     },
     {
@@ -233,6 +255,7 @@
       "homepage": "https://lazying.art",
       "name": "AutoAppDev",
       "primary_language": "Python",
+      "pushed_at": "2026-04-25T14:50:23Z",
       "topics": [
         "app-development",
         "codex",
@@ -243,6 +266,7 @@
         "state-machine",
         "tornado"
       ],
+      "updated_at": "2026-04-26T09:11:37Z",
       "url": "https://github.com/lachlanchen/AutoAppDev"
     },
     {
@@ -250,6 +274,7 @@
       "homepage": "https://lazying.art",
       "name": "AutoNovelWriter",
       "primary_language": "Python",
+      "pushed_at": "2026-05-09T03:30:33Z",
       "topics": [
         "auto-novel",
         "automation",
@@ -260,6 +285,7 @@
         "tornado",
         "workflow"
       ],
+      "updated_at": "2026-09-04T20:51:51Z",
       "url": "https://github.com/lachlanchen/AutoNovelWriter"
     },
     {
@@ -267,6 +293,7 @@
       "homepage": "https://lazying.art",
       "name": "AutoPublication",
       "primary_language": "",
+      "pushed_at": "2026-04-12T02:28:21Z",
       "topics": [
         "autopublication",
         "commit",
@@ -279,6 +306,7 @@
         "sync",
         "transcription"
       ],
+      "updated_at": "2026-04-26T08:40:40Z",
       "url": "https://github.com/lachlanchen/AutoPublication"
     },
     {
@@ -286,6 +314,7 @@
       "homepage": "https://studio.lazying.art",
       "name": "AutoPublish",
       "primary_language": "Python",
+      "pushed_at": "2026-09-04T17:56:24Z",
       "topics": [
         "autopublish",
         "browser-automation",
@@ -296,6 +325,7 @@
         "short-video",
         "workflow"
       ],
+      "updated_at": "2026-09-04T20:50:28Z",
       "url": "https://github.com/lachlanchen/AutoPublish"
     },
     {
@@ -303,6 +333,7 @@
       "homepage": "https://studio.lazying.art",
       "name": "AutoPubMonitor",
       "primary_language": "Python",
+      "pushed_at": "2026-05-07T04:38:29Z",
       "topics": [
         "autopubmonitor",
         "directories",
@@ -315,6 +346,7 @@
         "repository",
         "video"
       ],
+      "updated_at": "2026-05-07T04:38:33Z",
       "url": "https://github.com/lachlanchen/AutoPubMonitor"
     },
     {
@@ -322,6 +354,7 @@
       "homepage": "https://learn.lazying.art",
       "name": "BigMe",
       "primary_language": "Shell",
+      "pushed_at": "2026-09-04T21:00:37Z",
       "topics": [
         "adb",
         "android",
@@ -332,6 +365,7 @@
         "macos",
         "shell"
       ],
+      "updated_at": "2026-09-04T21:01:11Z",
       "url": "https://github.com/lachlanchen/BigMe"
     },
     {
@@ -339,6 +373,7 @@
       "homepage": "https://lazying.art",
       "name": "cellist",
       "primary_language": "Jupyter Notebook",
+      "pushed_at": "2026-02-28T23:06:32Z",
       "topics": [
         "cellist",
         "environment",
@@ -347,6 +382,7 @@
         "python",
         "verify"
       ],
+      "updated_at": "2026-04-26T08:31:43Z",
       "url": "https://github.com/lachlanchen/cellist"
     },
     {
@@ -354,6 +390,7 @@
       "homepage": "https://lazying.art",
       "name": "CustomSensor",
       "primary_language": "C++",
+      "pushed_at": "2026-02-28T23:11:54Z",
       "topics": [
         "camera",
         "custom",
@@ -363,6 +400,7 @@
         "image",
         "sensor"
       ],
+      "updated_at": "2026-04-26T08:31:35Z",
       "url": "https://github.com/lachlanchen/CustomSensor"
     },
     {
@@ -370,6 +408,7 @@
       "homepage": "https://doi.org/10.1109/ISCAS56072.2025.11044249",
       "name": "discriminative-energy-component-analysis",
       "primary_language": "Python",
+      "pushed_at": "2026-07-27T22:46:03Z",
       "topics": [
         "change-detection",
         "computational-chemistry",
@@ -392,6 +431,7 @@
         "trace-distance",
         "wilson-loop"
       ],
+      "updated_at": "2026-07-31T10:58:57Z",
       "url": "https://github.com/lachlanchen/discriminative-energy-component-analysis"
     },
     {
@@ -399,6 +439,7 @@
       "homepage": "https://lazying.art",
       "name": "DomainAndIpManager",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:13:30Z",
       "topics": [
         "automation",
         "data-pipeline",
@@ -409,6 +450,7 @@
         "ip-management",
         "network-policy"
       ],
+      "updated_at": "2026-09-04T20:51:51Z",
       "url": "https://github.com/lachlanchen/DomainAndIpManager"
     },
     {
@@ -416,6 +458,7 @@
       "homepage": "https://lazying.art",
       "name": "eca",
       "primary_language": "Jupyter Notebook",
+      "pushed_at": "2025-11-02T14:27:46Z",
       "topics": [
         "analysis",
         "component",
@@ -427,6 +470,7 @@
         "quantum",
         "theory"
       ],
+      "updated_at": "2026-04-26T08:32:12Z",
       "url": "https://github.com/lachlanchen/eca"
     },
     {
@@ -434,6 +478,7 @@
       "homepage": "https://lazying.art",
       "name": "EventHolography",
       "primary_language": "",
+      "pushed_at": "2026-02-28T23:13:37Z",
       "topics": [
         "assited",
         "event",
@@ -443,6 +488,7 @@
         "paper",
         "repo"
       ],
+      "updated_at": "2026-09-04T20:51:52Z",
       "url": "https://github.com/lachlanchen/EventHolography"
     },
     {
@@ -450,6 +496,7 @@
       "homepage": "https://buy.lazying.art",
       "name": "Figurine",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-04-26T03:53:13Z",
       "topics": [
         "ai-accessories",
         "ecommerce",
@@ -462,6 +509,7 @@
         "static-site",
         "stripe"
       ],
+      "updated_at": "2026-04-26T03:53:17Z",
       "url": "https://github.com/lachlanchen/Figurine"
     },
     {
@@ -469,6 +517,7 @@
       "homepage": "https://lazying.art",
       "name": "FujitsuQuaderno",
       "primary_language": "Shell",
+      "pushed_at": "2026-06-13T08:11:23Z",
       "topics": [
         "digital-paper",
         "e-ink",
@@ -479,6 +528,7 @@
         "mount-tools",
         "quaderno"
       ],
+      "updated_at": "2026-08-30T04:39:59Z",
       "url": "https://github.com/lachlanchen/FujitsuQuaderno"
     },
     {
@@ -486,6 +536,7 @@
       "homepage": "https://studio.lazying.art",
       "name": "FuriganaSubtitles",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T11:18:14Z",
       "topics": [
         "burner",
         "furigana",
@@ -498,6 +549,7 @@
         "subtitles",
         "that"
       ],
+      "updated_at": "2026-04-26T08:32:10Z",
       "url": "https://github.com/lachlanchen/FuriganaSubtitles"
     },
     {
@@ -505,6 +557,7 @@
       "homepage": "https://lazying.art",
       "name": "GaugeHand",
       "primary_language": "TeX",
+      "pushed_at": "2026-06-07T12:45:39Z",
       "topics": [
         "contour-gauge",
         "dense-contact",
@@ -518,6 +571,7 @@
         "soft-robotics",
         "tactile-sensing"
       ],
+      "updated_at": "2026-06-26T02:59:28Z",
       "url": "https://github.com/lachlanchen/GaugeHand"
     },
     {
@@ -525,6 +579,7 @@
       "homepage": "https://lachlanchen.github.io/GlassAgent-Wearable-Releases/",
       "name": "GlassAgent-Wearable-Releases",
       "primary_language": "Shell",
+      "pushed_at": "2026-07-31T02:35:20Z",
       "topics": [
         "ai-glasses",
         "android",
@@ -536,6 +591,7 @@
         "software-supply-chain",
         "wearable"
       ],
+      "updated_at": "2026-09-04T21:01:13Z",
       "url": "https://github.com/lachlanchen/GlassAgent-Wearable-Releases"
     },
     {
@@ -543,6 +599,7 @@
       "homepage": "https://lazying.art",
       "name": "grilling_chatgpt",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:14:37Z",
       "topics": [
         "acquiring",
         "api",
@@ -553,6 +610,7 @@
         "openai",
         "utilize"
       ],
+      "updated_at": "2026-04-26T08:31:30Z",
       "url": "https://github.com/lachlanchen/grilling_chatgpt"
     },
     {
@@ -560,6 +618,7 @@
       "homepage": "https://lazying.art",
       "name": "hackintosh",
       "primary_language": "Shell",
+      "pushed_at": "2026-08-30T01:23:53Z",
       "topics": [
         "dual-boot",
         "hackintosh",
@@ -571,6 +630,7 @@
         "skylake",
         "xcode"
       ],
+      "updated_at": "2026-08-30T04:37:40Z",
       "url": "https://github.com/lachlanchen/hackintosh"
     },
     {
@@ -578,6 +638,7 @@
       "homepage": "https://lachlanchen.github.io/HowYouGotRich/",
       "name": "HowYouGotRich",
       "primary_language": "TeX",
+      "pushed_at": "2026-08-26T10:36:45Z",
       "topics": [
         "book",
         "book-website",
@@ -597,6 +658,7 @@
         "source-traceability",
         "wealth"
       ],
+      "updated_at": "2026-08-26T10:40:28Z",
       "url": "https://github.com/lachlanchen/HowYouGotRich"
     },
     {
@@ -604,6 +666,7 @@
       "homepage": "https://lazying.art",
       "name": "HybridImager",
       "primary_language": "Python",
+      "pushed_at": "2026-06-08T04:15:36Z",
       "topics": [
         "aginti",
         "computational-imaging",
@@ -621,6 +684,7 @@
         "scientific-instrumentation",
         "single-pixel-imaging"
       ],
+      "updated_at": "2026-06-08T04:15:40Z",
       "url": "https://github.com/lachlanchen/HybridImager"
     },
     {
@@ -628,6 +692,7 @@
       "homepage": "https://ideas.onlyideas.art",
       "name": "IDEAS",
       "primary_language": "TeX",
+      "pushed_at": "2026-06-06T08:13:26Z",
       "topics": [
         "build",
         "ideas",
@@ -640,6 +705,7 @@
         "repository",
         "title"
       ],
+      "updated_at": "2026-06-06T08:13:30Z",
       "url": "https://github.com/lachlanchen/IDEAS"
     },
     {
@@ -647,6 +713,7 @@
       "homepage": "https://onlyideas.art",
       "name": "IdeasGlass",
       "primary_language": "C",
+      "pushed_at": "2026-02-28T23:22:07Z",
       "topics": [
         "ai",
         "app",
@@ -654,6 +721,7 @@
         "llm",
         "wearables"
       ],
+      "updated_at": "2026-02-28T23:22:11Z",
       "url": "https://github.com/lachlanchen/IdeasGlass"
     },
     {
@@ -661,6 +729,7 @@
       "homepage": "https://robot.lazying.art",
       "name": "IdeasRobot",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:16:12Z",
       "topics": [
         "ai",
         "automation",
@@ -668,6 +737,7 @@
         "llm",
         "robot"
       ],
+      "updated_at": "2026-02-28T23:16:15Z",
       "url": "https://github.com/lachlanchen/IdeasRobot"
     },
     {
@@ -675,6 +745,7 @@
       "homepage": "https://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=%E4%B8%AD",
       "name": "ImagizedLanguageModel",
       "primary_language": "Python",
+      "pushed_at": "2026-08-15T03:14:26Z",
       "topics": [
         "diffusion",
         "etymology",
@@ -687,6 +758,7 @@
         "path",
         "processed"
       ],
+      "updated_at": "2026-08-15T03:14:29Z",
       "url": "https://github.com/lachlanchen/ImagizedLanguageModel"
     },
     {
@@ -694,6 +766,7 @@
       "homepage": "https://lazying.art",
       "name": "Kindle",
       "primary_language": "Python",
+      "pushed_at": "2026-08-29T07:04:36Z",
       "topics": [
         "ebook",
         "kindle",
@@ -706,6 +779,7 @@
         "paperwhite",
         "winterbreak2"
       ],
+      "updated_at": "2026-08-29T07:05:05Z",
       "url": "https://github.com/lachlanchen/Kindle"
     },
     {
@@ -713,6 +787,7 @@
       "homepage": "https://flow.lazying.art",
       "name": "kria-metavision-lab",
       "primary_language": "Python",
+      "pushed_at": "2026-08-05T11:02:24Z",
       "topics": [
         "amd-kria",
         "computer-vision",
@@ -735,6 +810,7 @@
         "x11",
         "zynqmp"
       ],
+      "updated_at": "2026-08-05T11:02:42Z",
       "url": "https://github.com/lachlanchen/kria-metavision-lab"
     },
     {
@@ -742,6 +818,7 @@
       "homepage": "https://lazying.art",
       "name": "kvm-qemu-workstation",
       "primary_language": "Shell",
+      "pushed_at": "2026-09-04T12:27:27Z",
       "topics": [
         "bash",
         "kvm",
@@ -756,6 +833,7 @@
         "virtualization",
         "windows-11"
       ],
+      "updated_at": "2026-09-04T12:28:16Z",
       "url": "https://github.com/lachlanchen/kvm-qemu-workstation"
     },
     {
@@ -763,6 +841,7 @@
       "homepage": "https://l-and-n.lazying.art",
       "name": "L-and-N",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-09-05T05:25:47Z",
       "topics": [
         "android",
         "cantonese",
@@ -784,6 +863,7 @@
         "watchos",
         "whisper"
       ],
+      "updated_at": "2026-09-05T05:25:51Z",
       "url": "https://github.com/lachlanchen/L-and-N"
     },
     {
@@ -791,6 +871,7 @@
       "homepage": "https://lazying.art",
       "name": "lachlanchen",
       "primary_language": "HTML",
+      "pushed_at": "2026-09-04T18:42:36Z",
       "topics": [
         "automation",
         "config",
@@ -803,6 +884,7 @@
         "systems",
         "workflows"
       ],
+      "updated_at": "2026-09-04T18:42:40Z",
       "url": "https://github.com/lachlanchen/lachlanchen"
     },
     {
@@ -810,6 +892,7 @@
       "homepage": "https://lachlanchen.github.io/LalaMedias/",
       "name": "LalaMedias",
       "primary_language": "HTML",
+      "pushed_at": "2026-09-04T11:45:59Z",
       "topics": [
         "generated-video",
         "github-pages",
@@ -820,6 +903,7 @@
         "static-site",
         "subtitles"
       ],
+      "updated_at": "2026-09-04T11:48:32Z",
       "url": "https://github.com/lachlanchen/LalaMedias"
     },
     {
@@ -827,6 +911,7 @@
       "homepage": "https://lazying.art",
       "name": "LalaStudio",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-07-25T12:31:02Z",
       "topics": [
         "ai-video",
         "codex",
@@ -843,6 +928,7 @@
         "workflow-automation",
         "xiaoyunque"
       ],
+      "updated_at": "2026-07-25T12:31:08Z",
       "url": "https://github.com/lachlanchen/LalaStudio"
     },
     {
@@ -850,6 +936,7 @@
       "homepage": "https://lazealoptix.com",
       "name": "lazealoptix",
       "primary_language": "Jupyter Notebook",
+      "pushed_at": "2026-02-28T23:17:34Z",
       "topics": [
         "biochemical-analysis",
         "diagnostics",
@@ -859,6 +946,7 @@
         "medical-devices",
         "microscopy"
       ],
+      "updated_at": "2026-02-28T23:17:37Z",
       "url": "https://github.com/lachlanchen/lazealoptix"
     },
     {
@@ -866,6 +954,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyChess",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-08-11T15:39:20Z",
       "topics": [
         "chess",
         "education",
@@ -879,6 +968,7 @@
         "typescript",
         "xiangqi"
       ],
+      "updated_at": "2026-08-11T15:41:27Z",
       "url": "https://github.com/lachlanchen/LazyChess"
     },
     {
@@ -886,6 +976,7 @@
       "homepage": "https://earn.lazying.art",
       "name": "LazyEarn",
       "primary_language": "TeX",
+      "pushed_at": "2026-08-30T03:30:08Z",
       "topics": [
         "accounting",
         "banking",
@@ -899,6 +990,7 @@
         "money",
         "wealth"
       ],
+      "updated_at": "2026-08-30T03:31:01Z",
       "url": "https://github.com/lachlanchen/LazyEarn"
     },
     {
@@ -906,6 +998,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyEdge",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-09-04T08:09:19Z",
       "topics": [
         "caddy",
         "cli",
@@ -922,6 +1015,7 @@
         "ssh",
         "zero-trust"
       ],
+      "updated_at": "2026-09-04T08:10:34Z",
       "url": "https://github.com/lachlanchen/LazyEdge"
     },
     {
@@ -929,6 +1023,7 @@
       "homepage": "https://studio.lazying.art/",
       "name": "LazyEdit",
       "primary_language": "Python",
+      "pushed_at": "2026-09-04T17:56:39Z",
       "topics": [
         "ai-video-editing",
         "automatic-subtitles",
@@ -949,6 +1044,7 @@
         "whisper",
         "youtube"
       ],
+      "updated_at": "2026-09-04T20:48:31Z",
       "url": "https://github.com/lachlanchen/LazyEdit"
     },
     {
@@ -956,6 +1052,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyGame",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-08-12T03:41:08Z",
       "topics": [
         "accessibility",
         "chess",
@@ -975,6 +1072,7 @@
         "react",
         "typescript"
       ],
+      "updated_at": "2026-08-12T03:41:11Z",
       "url": "https://github.com/lachlanchen/LazyGame"
     },
     {
@@ -982,6 +1080,7 @@
       "homepage": "https://game.lazying.art",
       "name": "LazyGameWeb",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-08-31T12:06:39Z",
       "topics": [
         "board-games",
         "chess",
@@ -1002,6 +1101,7 @@
         "xiangqi",
         "zero-trust"
       ],
+      "updated_at": "2026-08-31T12:09:19Z",
       "url": "https://github.com/lachlanchen/LazyGameWeb"
     },
     {
@@ -1009,6 +1109,7 @@
       "homepage": "https://llm.lazying.art",
       "name": "LazyingAgentWeb",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-09-01T16:24:35Z",
       "topics": [
         "aginti",
         "ai-agent",
@@ -1022,6 +1123,7 @@
         "self-hosted",
         "sqlite"
       ],
+      "updated_at": "2026-09-01T16:31:42Z",
       "url": "https://github.com/lachlanchen/LazyingAgentWeb"
     },
     {
@@ -1029,6 +1131,7 @@
       "homepage": "https://agent.lazying.art",
       "name": "LazyingArtAgent",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-02-28T23:18:44Z",
       "topics": [
         "agent",
         "art",
@@ -1040,6 +1143,7 @@
         "small",
         "turn"
       ],
+      "updated_at": "2026-04-26T08:31:56Z",
       "url": "https://github.com/lachlanchen/LazyingArtAgent"
     },
     {
@@ -1047,6 +1151,7 @@
       "homepage": "https://lab.lazying.art/",
       "name": "LazyingArtBot",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-03-06T01:16:33Z",
       "topics": [
         "auto",
         "automation",
@@ -1059,6 +1164,7 @@
         "personal",
         "reminders"
       ],
+      "updated_at": "2026-04-26T08:41:21Z",
       "url": "https://github.com/lachlanchen/LazyingArtBot"
     },
     {
@@ -1066,6 +1172,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
+      "pushed_at": "2026-09-05T01:13:59Z",
       "topics": [
         "ai-tools",
         "ecosystem",
@@ -1081,6 +1188,7 @@
         "static-site",
         "website"
       ],
+      "updated_at": "2026-09-05T01:14:02Z",
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
@@ -1088,6 +1196,7 @@
       "homepage": "https://earn.lazying.art",
       "name": "LazyInvest",
       "primary_language": "Python",
+      "pushed_at": "2026-06-27T04:11:58Z",
       "topics": [
         "equities",
         "finance",
@@ -1101,6 +1210,7 @@
         "us-stocks",
         "watchlist"
       ],
+      "updated_at": "2026-06-27T04:12:01Z",
       "url": "https://github.com/lachlanchen/LazyInvest"
     },
     {
@@ -1108,6 +1218,7 @@
       "homepage": "https://earn.lazying.art",
       "name": "LazyInvestReports",
       "primary_language": "TeX",
+      "pushed_at": "2026-06-27T04:09:32Z",
       "topics": [
         "codex",
         "fred",
@@ -1117,6 +1228,7 @@
         "pdf-reports",
         "sec-edgar"
       ],
+      "updated_at": "2026-06-28T10:11:23Z",
       "url": "https://github.com/lachlanchen/LazyInvestReports"
     },
     {
@@ -1124,6 +1236,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyLanguageLearner",
       "primary_language": "Jupyter Notebook",
+      "pushed_at": "2026-02-28T23:18:48Z",
       "topics": [
         "language",
         "lazy",
@@ -1131,6 +1244,7 @@
         "learner",
         "way"
       ],
+      "updated_at": "2026-04-26T08:31:23Z",
       "url": "https://github.com/lachlanchen/LazyLanguageLearner"
     },
     {
@@ -1138,6 +1252,7 @@
       "homepage": "http://learn.lazying.art/",
       "name": "LazyLearn",
       "primary_language": "Fortran",
+      "pushed_at": "2026-09-01T22:26:00Z",
       "topics": [
         "chapter",
         "edition",
@@ -1150,6 +1265,7 @@
         "read",
         "root"
       ],
+      "updated_at": "2026-09-01T22:26:17Z",
       "url": "https://github.com/lachlanchen/LazyLearn"
     },
     {
@@ -1157,6 +1273,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyMahjong",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-08-11T21:16:21Z",
       "topics": [
         "education",
         "game-teaching",
@@ -1172,6 +1289,7 @@
         "typescript",
         "vite"
       ],
+      "updated_at": "2026-08-11T21:18:12Z",
       "url": "https://github.com/lachlanchen/LazyMahjong"
     },
     {
@@ -1179,6 +1297,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPoker",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-08-11T16:05:50Z",
       "topics": [
         "card-games",
         "contract-bridge",
@@ -1193,6 +1312,7 @@
         "texas-holdem",
         "typescript"
       ],
+      "updated_at": "2026-08-11T16:06:17Z",
       "url": "https://github.com/lachlanchen/LazyPoker"
     },
     {
@@ -1200,6 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
+      "pushed_at": "2026-09-05T05:36:14Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1219,6 +1340,7 @@
         "sqlite",
         "x"
       ],
+      "updated_at": "2026-09-05T05:36:18Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1226,6 +1348,7 @@
       "homepage": "https://router.lazying.art",
       "name": "LazyRouter",
       "primary_language": "Go",
+      "pushed_at": "2026-06-14T03:06:49Z",
       "topics": [
         "ai-gateway",
         "api-router",
@@ -1238,6 +1361,7 @@
         "quota-management",
         "venice-ai"
       ],
+      "updated_at": "2026-06-14T03:07:19Z",
       "url": "https://github.com/lachlanchen/LazyRouter"
     },
     {
@@ -1245,6 +1369,7 @@
       "homepage": "https://lachlanchen.github.io/LazySkills/",
       "name": "LazySkills",
       "primary_language": "Python",
+      "pushed_at": "2026-09-01T15:33:29Z",
       "topics": [
         "aginti",
         "ai-agents",
@@ -1267,6 +1392,7 @@
         "workflow-automation",
         "xiaoyunque"
       ],
+      "updated_at": "2026-09-01T16:11:00Z",
       "url": "https://github.com/lachlanchen/LazySkills"
     },
     {
@@ -1274,6 +1400,7 @@
       "homepage": "https://lachlanchen.github.io/LazyTravel/",
       "name": "LazyTravel",
       "primary_language": "Python",
+      "pushed_at": "2026-08-23T06:15:34Z",
       "topics": [
         "chinese",
         "digital-publishing",
@@ -1286,6 +1413,7 @@
         "travel-guide",
         "xian"
       ],
+      "updated_at": "2026-08-23T06:15:42Z",
       "url": "https://github.com/lachlanchen/LazyTravel"
     },
     {
@@ -1293,6 +1421,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyWeiqi",
       "primary_language": "TypeScript",
+      "pushed_at": "2026-08-12T03:39:35Z",
       "topics": [
         "ai-tutor",
         "board-game",
@@ -1314,6 +1443,7 @@
         "visualization",
         "weiqi"
       ],
+      "updated_at": "2026-08-12T03:40:22Z",
       "url": "https://github.com/lachlanchen/LazyWeiqi"
     },
     {
@@ -1321,6 +1451,7 @@
       "homepage": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
       "name": "leonardsusskind",
       "primary_language": "TeX",
+      "pushed_at": "2026-09-02T22:33:52Z",
       "topics": [
         "classical-mechanics",
         "cosmology",
@@ -1337,6 +1468,7 @@
         "theoretical-minimum",
         "transcripts"
       ],
+      "updated_at": "2026-09-04T20:48:40Z",
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
@@ -1344,6 +1476,7 @@
       "homepage": "http://lre.lazying.art/",
       "name": "LifeReverseEngineering",
       "primary_language": "HTML",
+      "pushed_at": "2026-03-04T08:07:04Z",
       "topics": [
         "latest",
         "lifereverseengineering",
@@ -1356,6 +1489,7 @@
         "stage",
         "submodules"
       ],
+      "updated_at": "2026-04-26T08:41:29Z",
       "url": "https://github.com/lachlanchen/LifeReverseEngineering"
     },
     {
@@ -1363,6 +1497,7 @@
       "homepage": "https://github.com/LightMind",
       "name": "LightMind",
       "primary_language": "HTML",
+      "pushed_at": "2026-05-01T10:01:12Z",
       "topics": [
         "analysis",
         "development",
@@ -1375,6 +1510,7 @@
         "optical",
         "wearable"
       ],
+      "updated_at": "2026-05-01T10:01:16Z",
       "url": "https://github.com/lachlanchen/LightMind"
     },
     {
@@ -1382,6 +1518,7 @@
       "homepage": "https://lachlanchen.github.io/lightmind-privacy/",
       "name": "lightmind-privacy",
       "primary_language": "HTML",
+      "pushed_at": "2026-07-24T11:23:02Z",
       "topics": [
         "android",
         "local-first",
@@ -1391,6 +1528,7 @@
         "smart-glasses",
         "wearable"
       ],
+      "updated_at": "2026-09-04T21:01:15Z",
       "url": "https://github.com/lachlanchen/lightmind-privacy"
     },
     {
@@ -1398,6 +1536,7 @@
       "homepage": "https://lachlanchen.github.io/LinguaLeaf/website/",
       "name": "LinguaLeaf",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-09-01T22:53:28Z",
       "topics": [
         "chinese-history",
         "classical-chinese",
@@ -1411,6 +1550,7 @@
         "pocketpolyglot",
         "xelatex"
       ],
+      "updated_at": "2026-09-01T22:52:46Z",
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
@@ -1418,6 +1558,7 @@
       "homepage": "https://lazying.art/lkt/",
       "name": "LocalKnowledgeTerminal",
       "primary_language": "Python",
+      "pushed_at": "2026-09-04T23:50:58Z",
       "topics": [
         "e-ink",
         "etymology",
@@ -1432,6 +1573,7 @@
         "raspberry-pi",
         "sqlite"
       ],
+      "updated_at": "2026-09-04T23:51:02Z",
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {
@@ -1439,6 +1581,7 @@
       "homepage": "https://lazying.art",
       "name": "LocalLLM",
       "primary_language": "Python",
+      "pushed_at": "2026-09-02T01:53:32Z",
       "topics": [
         "deep-research",
         "fastapi",
@@ -1453,6 +1596,7 @@
         "reverse-engineering",
         "rtx-4090"
       ],
+      "updated_at": "2026-09-02T01:53:36Z",
       "url": "https://github.com/lachlanchen/LocalLLM"
     },
     {
@@ -1460,6 +1604,7 @@
       "homepage": "https://lazying.art",
       "name": "LocalVideoGen",
       "primary_language": "Python",
+      "pushed_at": "2026-09-04T20:11:12Z",
       "topics": [
         "ai-video",
         "audio-generation",
@@ -1482,6 +1627,7 @@
         "webapp",
         "world-travel"
       ],
+      "updated_at": "2026-09-04T21:27:20Z",
       "url": "https://github.com/lachlanchen/LocalVideoGen"
     },
     {
@@ -1489,6 +1635,7 @@
       "homepage": "https://lazying.art",
       "name": "MetasurfaceInverseDeisgn",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:21:14Z",
       "topics": [
         "deisgn",
         "design",
@@ -1499,6 +1646,7 @@
         "repository",
         "spectral"
       ],
+      "updated_at": "2026-06-15T08:37:09Z",
       "url": "https://github.com/lachlanchen/MetasurfaceInverseDeisgn"
     },
     {
@@ -1506,6 +1654,7 @@
       "homepage": "http://quant.lazying.art/",
       "name": "MicroQuant",
       "primary_language": "HTML",
+      "pushed_at": "2026-02-28T23:10:06Z",
       "topics": [
         "companion",
         "data",
@@ -1519,6 +1668,7 @@
         "that",
         "tornado"
       ],
+      "updated_at": "2026-04-26T08:32:07Z",
       "url": "https://github.com/lachlanchen/MicroQuant"
     },
     {
@@ -1526,6 +1676,7 @@
       "homepage": "https://lazying.art",
       "name": "MultilingualWhisper",
       "primary_language": "Python",
+      "pushed_at": "2026-05-15T07:06:45Z",
       "topics": [
         "current",
         "ffmpeg",
@@ -1538,6 +1689,7 @@
         "subtitle",
         "whisper"
       ],
+      "updated_at": "2026-05-15T07:06:49Z",
       "url": "https://github.com/lachlanchen/MultilingualWhisper"
     },
     {
@@ -1545,6 +1697,7 @@
       "homepage": "https://fun.lazying.art",
       "name": "Musia",
       "primary_language": "Python",
+      "pushed_at": "2026-08-01T14:48:12Z",
       "topics": [
         "ai-music",
         "audio-analysis",
@@ -1561,6 +1714,7 @@
         "source-separation",
         "whisper"
       ],
+      "updated_at": "2026-08-01T14:48:17Z",
       "url": "https://github.com/lachlanchen/Musia"
     },
     {
@@ -1568,6 +1722,7 @@
       "homepage": "https://lazying.art",
       "name": "nhi_hardware",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:21:21Z",
       "topics": [
         "arduino",
         "cnc",
@@ -1578,6 +1733,7 @@
         "hardware",
         "python"
       ],
+      "updated_at": "2026-09-04T20:51:53Z",
       "url": "https://github.com/lachlanchen/nhi_hardware"
     },
     {
@@ -1585,6 +1741,7 @@
       "homepage": "https://lazying.art",
       "name": "novnc-manager",
       "primary_language": "CSS",
+      "pushed_at": "2026-07-30T03:41:07Z",
       "topics": [
         "desktop-manager",
         "linux",
@@ -1600,6 +1757,7 @@
         "x11",
         "xvfb"
       ],
+      "updated_at": "2026-07-30T03:41:16Z",
       "url": "https://github.com/lachlanchen/novnc-manager"
     },
     {
@@ -1607,6 +1765,7 @@
       "homepage": "https://lazying.art",
       "name": "onlyideas-aws",
       "primary_language": "Vue",
+      "pushed_at": "2026-02-28T23:21:24Z",
       "topics": [
         "amplify",
         "auth",
@@ -1619,6 +1778,7 @@
         "onlyideas",
         "pull"
       ],
+      "updated_at": "2026-04-26T08:44:03Z",
       "url": "https://github.com/lachlanchen/onlyideas-aws"
     },
     {
@@ -1626,6 +1786,7 @@
       "homepage": "https://lazying.art",
       "name": "onlyideas-react-native",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-02-28T23:22:12Z",
       "topics": [
         "auth",
         "aws-amplify",
@@ -1636,6 +1797,7 @@
         "mobile",
         "react-native"
       ],
+      "updated_at": "2026-09-04T20:51:54Z",
       "url": "https://github.com/lachlanchen/onlyideas-react-native"
     },
     {
@@ -1643,6 +1805,7 @@
       "homepage": "https://lazying.art/openhi-kit.html",
       "name": "OpenHI",
       "primary_language": "Python",
+      "pushed_at": "2026-04-27T01:39:28Z",
       "topics": [
         "computer-vision",
         "event-camera",
@@ -1653,6 +1816,7 @@
         "python",
         "pytorch"
       ],
+      "updated_at": "2026-08-14T09:11:01Z",
       "url": "https://github.com/lachlanchen/OpenHI"
     },
     {
@@ -1660,6 +1824,7 @@
       "homepage": "https://lazying.art",
       "name": "OrganoidAgent",
       "primary_language": "Python",
+      "pushed_at": "2026-06-27T12:48:47Z",
       "topics": [
         "archive",
         "dataset",
@@ -1672,6 +1837,7 @@
         "root",
         "support"
       ],
+      "updated_at": "2026-06-27T12:48:50Z",
       "url": "https://github.com/lachlanchen/OrganoidAgent"
     },
     {
@@ -1679,6 +1845,7 @@
       "homepage": "https://ideas.onlyideas.art",
       "name": "OrganoidIntelligence",
       "primary_language": "Python",
+      "pushed_at": "2026-05-31T05:41:33Z",
       "topics": [
         "agintiflow",
         "biocomputing",
@@ -1693,6 +1860,7 @@
         "organoidintelligence",
         "wetware-computing"
       ],
+      "updated_at": "2026-05-31T05:41:48Z",
       "url": "https://github.com/lachlanchen/OrganoidIntelligence"
     },
     {
@@ -1700,6 +1868,7 @@
       "homepage": "https://ideas.onlyideas.art",
       "name": "OrganoidVision",
       "primary_language": "TeX",
+      "pushed_at": "2026-05-31T05:47:56Z",
       "topics": [
         "agintiflow",
         "bioelectronics",
@@ -1713,6 +1882,7 @@
         "organoidvision",
         "retinal-organoids"
       ],
+      "updated_at": "2026-05-31T05:47:59Z",
       "url": "https://github.com/lachlanchen/OrganoidVision"
     },
     {
@@ -1720,6 +1890,7 @@
       "homepage": "https://lazying.art",
       "name": "paper-critique-skill",
       "primary_language": "TeX",
+      "pushed_at": "2026-06-19T05:11:58Z",
       "topics": [
         "academic-writing",
         "codex-skill",
@@ -1732,6 +1903,7 @@
         "research-assessment",
         "reviewer-comments"
       ],
+      "updated_at": "2026-06-19T05:10:35Z",
       "url": "https://github.com/lachlanchen/paper-critique-skill"
     },
     {
@@ -1739,6 +1911,7 @@
       "homepage": "https://lachlanchen.github.io/paper-revision-skill/",
       "name": "paper-revision-skill",
       "primary_language": "Python",
+      "pushed_at": "2026-06-19T05:11:36Z",
       "topics": [
         "academic-writing",
         "ai-agents",
@@ -1752,6 +1925,7 @@
         "research-tools",
         "response-letter"
       ],
+      "updated_at": "2026-09-01T13:26:21Z",
       "url": "https://github.com/lachlanchen/paper-revision-skill"
     },
     {
@@ -1759,6 +1933,7 @@
       "homepage": "https://paper.lazying.art/",
       "name": "PaperAgent",
       "primary_language": "JavaScript",
+      "pushed_at": "2026-02-28T23:25:03Z",
       "topics": [
         "academic-writing",
         "codex",
@@ -1775,6 +1950,7 @@
         "web-ide",
         "websocket"
       ],
+      "updated_at": "2026-09-04T20:48:37Z",
       "url": "https://github.com/lachlanchen/PaperAgent"
     },
     {
@@ -1782,6 +1958,7 @@
       "homepage": "https://lazying.art/manuscript-sprint/",
       "name": "PaperAgentDemo",
       "primary_language": "TeX",
+      "pushed_at": "2026-02-28T23:23:39Z",
       "topics": [
         "demo",
         "glossary",
@@ -1792,6 +1969,7 @@
         "research-paper",
         "templates"
       ],
+      "updated_at": "2026-09-04T20:50:30Z",
       "url": "https://github.com/lachlanchen/PaperAgentDemo"
     },
     {
@@ -1799,6 +1977,7 @@
       "homepage": "https://learn.lazying.art",
       "name": "PocketPolyglot",
       "primary_language": "Python",
+      "pushed_at": "2026-09-04T11:58:10Z",
       "topics": [
         "bilingual-books",
         "book-publishing",
@@ -1821,6 +2000,7 @@
         "translation",
         "xelatex"
       ],
+      "updated_at": "2026-09-04T12:05:57Z",
       "url": "https://github.com/lachlanchen/PocketPolyglot"
     },
     {
@@ -1828,6 +2008,7 @@
       "homepage": "https://lazying.art",
       "name": "RapidOrganoidImaging",
       "primary_language": "",
+      "pushed_at": "2026-02-28T23:23:52Z",
       "topics": [
         "current",
         "currently",
@@ -1840,6 +2021,7 @@
         "rapidorganoidimaging",
         "tracked"
       ],
+      "updated_at": "2026-04-26T08:42:52Z",
       "url": "https://github.com/lachlanchen/RapidOrganoidImaging"
     },
     {
@@ -1847,6 +2029,7 @@
       "homepage": "https://buy.lazying.art",
       "name": "RaraXiaAndAyaChan",
       "primary_language": "Python",
+      "pushed_at": "2026-09-05T04:52:51Z",
       "topics": [
         "ai-video",
         "animation-prompts",
@@ -1860,6 +2043,7 @@
         "storytelling",
         "xiaoyunque"
       ],
+      "updated_at": "2026-09-05T04:52:55Z",
       "url": "https://github.com/lachlanchen/RaraXiaAndAyaChan"
     },
     {
@@ -1867,6 +2051,7 @@
       "homepage": "https://lachlanchen.github.io/ShiGame/",
       "name": "ShiGame",
       "primary_language": "Python",
+      "pushed_at": "2026-08-11T00:15:52Z",
       "topics": [
         "chinese-history",
         "digital-humanities",
@@ -1881,6 +2066,7 @@
         "unreal-engine",
         "unreal-engine-5"
       ],
+      "updated_at": "2026-08-11T00:15:59Z",
       "url": "https://github.com/lachlanchen/ShiGame"
     },
     {
@@ -1888,6 +2074,7 @@
       "homepage": "https://lazying.art",
       "name": "SoftEventFrameAlignment",
       "primary_language": "",
+      "pushed_at": "2026-02-28T23:26:03Z",
       "topics": [
         "computer-vision",
         "event-camera",
@@ -1898,6 +2085,7 @@
         "research-paper",
         "soft-alignment"
       ],
+      "updated_at": "2026-09-04T20:50:33Z",
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
     },
     {
@@ -1905,6 +2093,7 @@
       "homepage": "https://lazying.art",
       "name": "SoraRemote",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:25:32Z",
       "topics": [
         "attach",
         "browser",
@@ -1917,6 +2106,7 @@
         "soraremote",
         "storyboard"
       ],
+      "updated_at": "2026-04-26T08:43:07Z",
       "url": "https://github.com/lachlanchen/SoraRemote"
     },
     {
@@ -1924,6 +2114,7 @@
       "homepage": "https://lazying.art",
       "name": "stm32dev",
       "primary_language": "C",
+      "pushed_at": "2026-08-13T03:25:51Z",
       "topics": [
         "cortex-m7",
         "embedded",
@@ -1940,6 +2131,7 @@
         "swd",
         "touchscreen"
       ],
+      "updated_at": "2026-08-13T03:25:54Z",
       "url": "https://github.com/lachlanchen/stm32dev"
     },
     {
@@ -1947,6 +2139,7 @@
       "homepage": "https://lazying.art",
       "name": "SyncImagingSystem",
       "primary_language": "Visual Basic .NET",
+      "pushed_at": "2026-02-28T23:26:51Z",
       "topics": [
         "capture",
         "event-camera",
@@ -1957,6 +2150,7 @@
         "python",
         "synchronization"
       ],
+      "updated_at": "2026-09-04T20:51:54Z",
       "url": "https://github.com/lachlanchen/SyncImagingSystem"
     },
     {
@@ -1964,6 +2158,7 @@
       "homepage": "https://lazying.art",
       "name": "the-art-of-lazying",
       "primary_language": "Shell",
+      "pushed_at": "2026-09-05T04:36:38Z",
       "topics": [
         "automation",
         "language",
@@ -1976,6 +2171,7 @@
         "strategic",
         "workflows"
       ],
+      "updated_at": "2026-09-05T04:36:42Z",
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
     {
@@ -1983,6 +2179,7 @@
       "homepage": "https://lazying.art",
       "name": "uu-remote-ubuntu-bridge",
       "primary_language": "Python",
+      "pushed_at": "2026-09-05T04:36:37Z",
       "topics": [
         "automation",
         "binary-patching",
@@ -2000,6 +2197,7 @@
         "wine",
         "xvfb"
       ],
+      "updated_at": "2026-09-05T04:36:41Z",
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
     {
@@ -2007,6 +2205,7 @@
       "homepage": "https://learn.lazying.art",
       "name": "Video2Book",
       "primary_language": "Python",
+      "pushed_at": "2026-09-04T11:48:33Z",
       "topics": [
         "audio-transcription",
         "book-generation",
@@ -2025,6 +2224,7 @@
         "whisper",
         "xelatex"
       ],
+      "updated_at": "2026-09-04T20:48:34Z",
       "url": "https://github.com/lachlanchen/Video2Book"
     },
     {
@@ -2032,6 +2232,7 @@
       "homepage": "https://lazying.art",
       "name": "VideoCaptionerWithClip",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:29:32Z",
       "topics": [
         "captioning",
         "clip",
@@ -2044,6 +2245,7 @@
         "video",
         "videocaptionerwithclip"
       ],
+      "updated_at": "2026-04-26T08:43:19Z",
       "url": "https://github.com/lachlanchen/VideoCaptionerWithClip"
     },
     {
@@ -2051,6 +2253,7 @@
       "homepage": "https://lazying.art",
       "name": "VideoCaptionerWithVit",
       "primary_language": "Python",
+      "pushed_at": "2026-04-12T02:34:44Z",
       "topics": [
         "captions",
         "extraction",
@@ -2063,6 +2266,7 @@
         "videocaptionerwithvit",
         "videos"
       ],
+      "updated_at": "2026-04-26T08:43:23Z",
       "url": "https://github.com/lachlanchen/VideoCaptionerWithVit"
     },
     {
@@ -2070,6 +2274,7 @@
       "homepage": "https://lazying.art",
       "name": "WIFI2LAN",
       "primary_language": "Shell",
+      "pushed_at": "2026-09-04T11:16:50Z",
       "topics": [
         "dnsmasq",
         "ethernet",
@@ -2084,6 +2289,7 @@
         "vnc",
         "wifi"
       ],
+      "updated_at": "2026-09-04T11:18:34Z",
       "url": "https://github.com/lachlanchen/WIFI2LAN"
     },
     {
@@ -2091,6 +2297,7 @@
       "homepage": "https://lazying.art",
       "name": "WordOrigins",
       "primary_language": "Jupyter Notebook",
+      "pushed_at": "2026-02-28T23:32:48Z",
       "topics": [
         "analysis",
         "artifacts",
@@ -2103,6 +2310,7 @@
         "word",
         "wordorigins"
       ],
+      "updated_at": "2026-04-26T08:43:33Z",
       "url": "https://github.com/lachlanchen/WordOrigins"
     },
     {
@@ -2110,6 +2318,7 @@
       "homepage": "https://lazying.art",
       "name": "WordsCardEink",
       "primary_language": "Python",
+      "pushed_at": "2026-09-01T16:20:06Z",
       "topics": [
         "cache",
         "hardware",
@@ -2122,6 +2331,7 @@
         "words",
         "wordscardeink"
       ],
+      "updated_at": "2026-09-01T16:52:28Z",
       "url": "https://github.com/lachlanchen/WordsCardEink"
     },
     {
@@ -2129,6 +2339,7 @@
       "homepage": "https://lazying.art",
       "name": "Yinghan",
       "primary_language": "Python",
+      "pushed_at": "2026-02-28T23:33:45Z",
       "topics": [
         "environment",
         "json",
@@ -2141,6 +2352,7 @@
         "segmentation",
         "yinghan"
       ],
+      "updated_at": "2026-04-26T08:43:41Z",
       "url": "https://github.com/lachlanchen/Yinghan"
     }
   ],

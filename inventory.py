@@ -169,6 +169,14 @@ def escape_cell(value: str) -> str:
     return " ".join(str(value or "").split()).replace("|", "\\|")
 
 
+def recently_pushed(payload: dict, *, limit: int = 10) -> list[dict]:
+    return sorted(
+        payload["repositories"],
+        key=lambda repo: (repo.get("pushed_at") or "", repo["name"].casefold()),
+        reverse=True,
+    )[:limit]
+
+
 def load_index(path: Path = INDEX) -> dict:
     payload = json.loads(path.read_text(encoding="utf-8"))
     if payload.get("visibility") != "public" or payload.get("includes_forks"):
@@ -253,6 +261,24 @@ def render(payload: dict) -> str:
     for category, repos in grouped.items():
         anchor = category.casefold().replace(" ", "-").replace(",", "").replace("and-", "and-")
         lines.append(f"| [{escape_cell(category)}](#{anchor}) | {len(repos)} |")
+
+    lines.extend(
+        [
+            "",
+            "## Recently pushed",
+            "",
+            "This view comes from GitHub's source-push timestamps and is refreshed with the catalog.",
+            "",
+            "| Repository | Last source push (UTC) | What it is |",
+            "|---|---|---|",
+        ]
+    )
+    for repo in recently_pushed(payload):
+        pushed_at = (repo.get("pushed_at") or "unknown").replace("T", " ").replace("Z", "")
+        lines.append(
+            f"| [{escape_cell(repo['name'])}]({repo['url']}) | {escape_cell(pushed_at)} | "
+            f"{escape_cell(repo['description'] or 'No public description yet.')} |"
+        )
 
     lines.extend(["", "## Complete public repository inventory", ""])
     for category, repos in grouped.items():

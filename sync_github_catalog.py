@@ -16,7 +16,7 @@ DEFAULT_OUTPUT = ROOT / "github-repos.json"
 def fetch(owner: str) -> list[dict]:
     fields = (
         "name,url,description,repositoryTopics,isArchived,homepageUrl,"
-        "primaryLanguage"
+        "primaryLanguage,pushedAt,updatedAt"
     )
     completed = subprocess.run(
         [
@@ -45,6 +45,8 @@ def normalize(repositories: list[dict]) -> list[dict]:
             "description": str(repo.get("description") or "").strip(),
             "homepage": str(repo.get("homepageUrl") or "").strip(),
             "primary_language": str(language.get("name") or ""),
+            "pushed_at": str(repo.get("pushedAt") or ""),
+            "updated_at": str(repo.get("updatedAt") or ""),
             "topics": sorted(
                 str(topic["name"]) for topic in (repo.get("repositoryTopics") or [])
                 if topic.get("name")

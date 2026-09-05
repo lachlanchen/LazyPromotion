@@ -201,6 +201,8 @@ class RepositoryTests(unittest.TestCase):
             with self.subTest(repo=repo["name"]):
                 self.assertTrue(repo["url"].startswith("https://github.com/lachlanchen/"))
                 self.assertNotIn("private", repo)
+                self.assertRegex(repo["pushed_at"], r"^20\d{2}-\d{2}-\d{2}T")
+                self.assertRegex(repo["updated_at"], r"^20\d{2}-\d{2}-\d{2}T")
 
     def test_rotating_routes_cover_every_evidence_backed_project(self):
         project_ids = {project["id"] for project in promotion.load_catalog()["projects"]}

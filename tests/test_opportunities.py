@@ -58,7 +58,7 @@ class OpportunityTests(unittest.TestCase):
         )
         self.assertIn("not spoken-word, sermon, customer", body)
         self.assertIn(
-            "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
+            "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk",
             body,
         )
         self.assertIn("### Durable AI conversation and voice memory", body)

@@ -6,7 +6,7 @@
     "repository": "https://github.com/lachlanchen/L-and-N",
     "pwa": "https://l-and-n.lazying.art/",
     "deployed_source_commit": "d837c146eb0ff66b4ea4000a004f582f4c31ef5f",
-    "current_evidence_commit": "d538acb1637618eda9633acd3ec13186fecd73e2",
+    "current_evidence_commit": "d389aacf93d5109858ac6d4abd62e7336bb11c49",
     "verified_on": "2026-09-06",
     "supported_capabilities": [
       "Hear an L/N contrast and record one word",
@@ -29,13 +29,13 @@
     "audio_repair": {
       "pwa": "The iPhone browser path now records one microphone stream, retains the waveform after Stop, and requires recognized text before showing or saving a score.",
       "apple": "iOS and embedded watchOS build 2 include the repair and are available through TestFlight; the same build is waiting for formal App Review.",
-      "android": "The existing Google Play and direct APK builds predate this repair. Do not advertise the repaired behavior as present on Android until a newer Android build is tested and uploaded.",
+      "android": "Android build 3 includes the no-empty-score repair plus release-only microphone permission and non-resolving Stop fixes. A signed release-emulator test showed the live waveform, a completed Stop flow, and no score for silence.",
       "claim_boundary": "Describe scores as explainable coaching feedback, never as clinical assessment or guaranteed pronunciation accuracy."
     },
     "android_test_build": {
-      "version": "1.0 (2)",
-      "first_party_apk": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
-      "sha256": "9b018d62df3c2e0ca1dc3004bd8c0b30fc08459e12b83fe96a395467c4839934",
+      "version": "1.0 (3)",
+      "first_party_apk": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk",
+      "sha256": "89867c73d2ae3f3023a1e402e7c7fd21dd4337a409262aff3832f3c30efd1fb7",
       "google_play_internal_test": "https://play.google.com/apps/internaltest/4701251861700553150",
       "policy": "Use only for an explicit tester invitation after rechecking the exact artifact and tester access; it is not evidence of public Google Play availability."
     },

@@ -435,7 +435,7 @@ Gates:
 Evidence:
 
 - <https://l-and-n.lazying.art/>
-- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk>
+- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk>
 - <https://github.com/lachlanchen/L-and-N>
 - <https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json>
 - <https://github.com/lachlanchen/PocketPolyglot>

@@ -9,7 +9,7 @@ This note is the secret-free bridge between LazyPromotion and the L & N release 
 - Product: `L & N: Speech Practice`
 - Website and primary campaign destination: https://l-and-n.lazying.art/
 - Source: https://github.com/lachlanchen/L-and-N
-- L & N release evidence commit: `d538acb1637618eda9633acd3ec13186fecd73e2`
+- L & N release evidence commit: `d389aacf93d5109858ac6d4abd62e7336bb11c49`
 - Deployed audio-repair source commit: `d837c146eb0ff66b4ea4000a004f582f4c31ef5f`
 - Detailed durable operator handoff: `store/operator-handoff.md` in the L & N repository
 - Campaign record: `campaigns/l-and-n-pronunciation-launch.json`
@@ -24,7 +24,8 @@ The original LazyPromotion checkout under `/home/lachlan/Projects/LazyPromotion`
 - The repaired PWA uses one microphone stream on iPhone browsers, leaves the last waveform visible after Stop, and does not show or save a score when it could not recognize speech.
 - iOS and embedded watchOS build `1.0 (2)` are Testing in TestFlight.
 - The same Apple build is Waiting for formal App Review. It is not yet public on the App Store.
-- Google Play production `1.0.0 (1)` is Changes in review. It is not yet confirmed public.
+- Google Play production `1.0 (3)` is Changes in review after the corrected binary replaced build 1 and restarted review. It is not yet confirmed public.
+- Android build `1.0 (3)` is available to internal testers and includes the microphone permission, waveform/Stop, and no-empty-score repairs verified on an API-36.1 release emulator.
 
 Do not promise clinical accuracy, diagnosis, speech-therapy outcomes, guaranteed recognition, store approval, or public storefront availability. The score is coaching feedback based on the prompted word and detected speech, not a medical measurement.
 
@@ -32,10 +33,10 @@ Do not promise clinical accuracy, diagnosis, speech-therapy outcomes, guaranteed
 
 - TestFlight public beta: https://testflight.apple.com/join/CpkT8m9C
 - Google Play internal test: https://play.google.com/apps/internaltest/4701251861700553150
-- First-party signed APK: https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk
-- APK SHA-256: `9b018d62df3c2e0ca1dc3004bd8c0b30fc08459e12b83fe96a395467c4839934`
+- First-party signed APK: https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk
+- APK SHA-256: `89867c73d2ae3f3023a1e402e7c7fd21dd4337a409262aff3832f3c30efd1fb7`
 
-The Android tester builds predate the 2026-09-06 no-placeholder-score repair. Use them only with that disclosure until a newer Android build is produced and verified.
+Build 3 is the current repaired Android tester binary. Call the Play link and direct APK test builds—not public Google Play availability—and keep the score framed as coaching feedback rather than an accuracy guarantee.
 
 ## Promotion angle
 
@@ -48,7 +49,7 @@ The existing LinkedIn item is scheduled for `2026-09-20T02:00:00Z` and remains a
 1. Before the scheduled promotion, recheck the PWA, tester links, and both store states.
 2. If Apple approves the formal version, remember that release is manual; verify the public storefront only after the explicit release action succeeds.
 3. If Google approves production, verify the public listing before changing campaign language.
-4. Once a repaired Android build is tested and uploaded, replace the Android caveat and record the new version, artifact hash, and track status.
+4. Collect physical-device feedback for Android build 3, especially permission, visible waveform, Stop completion, recognition, and abstention when speech is unclear.
 5. Keep the campaign destination on `l-and-n.lazying.art`; use the tester URLs only for explicit testing invitations.
 
 ## Browser handoff

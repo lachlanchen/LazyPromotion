@@ -5860,11 +5860,11 @@
       "url": "https://learn.lazying.art"
     },
     {
-      "id": "url:7f2655584aa51854",
+      "id": "url:ede85ba330d03dcf",
       "kind": "web_resource",
       "label": "android test build first party apk",
       "metadata": {},
-      "url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk"
+      "url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk"
     },
     {
       "id": "url:74104787f83f4cbe",
@@ -7588,11 +7588,11 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
+      "evidence_url": "https://testflight.apple.com/join/CpkT8m9C",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:l-and-n-pronunciation-launch",
-      "target": "url:7f2655584aa51854"
+      "target": "url:d4333582120f1591"
     },
     {
       "confidence": 1.0,
@@ -7609,6 +7609,14 @@
       "relation": "uses_evidence",
       "source": "campaign:l-and-n-pronunciation-launch",
       "target": "url:dad6a142b98ee7ea"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:ede85ba330d03dcf"
     },
     {
       "confidence": 1.0,
@@ -9048,14 +9056,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "opportunity:focused-pronunciation-micro-lessons",
-      "target": "url:7f2655584aa51854"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9077,6 +9077,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:focused-pronunciation-micro-lessons",
       "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "url:ede85ba330d03dcf"
     },
     {
       "confidence": 1.0,

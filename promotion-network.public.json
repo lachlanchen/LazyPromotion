@@ -6070,11 +6070,11 @@
       "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/"
     },
     {
-      "id": "url:3631a323c617683b",
+      "id": "url:dba6608e8adae973",
       "kind": "web_resource",
       "label": "example",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/proofline"
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/a062c7110d3c814b66ae9732f88eb891fe32b973/examples/proofline"
     },
     {
       "id": "url:265444c2e249d3e1",
@@ -6420,6 +6420,13 @@
       "url": "https://lazying.art/work/"
     },
     {
+      "id": "url:39175a1b6a3b2d14",
+      "kind": "web_resource",
+      "label": "live proof",
+      "metadata": {},
+      "url": "https://lazying.art/proofline/"
+    },
+    {
       "id": "url:414ba0a19b25ec62",
       "kind": "web_resource",
       "label": "mission",
@@ -6553,11 +6560,11 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {
-      "id": "url:18e12d4196a3c6fb",
+      "id": "url:6cdf73f241d7eb49",
       "kind": "web_resource",
       "label": "prototype",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyPromotion/blob/main/proofline.py"
+      "url": "https://github.com/lachlanchen/LazyPromotion/blob/a062c7110d3c814b66ae9732f88eb891fe32b973/proofline.py"
     },
     {
       "id": "url:43d56bb572f1ca4a",
@@ -7461,19 +7468,19 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/blob/main/proofline.py",
+      "evidence_url": "https://lazying.art/proofline/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:hacker-initiative-proofline-grant",
-      "target": "url:18e12d4196a3c6fb"
+      "target": "url:39175a1b6a3b2d14"
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/proofline",
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/blob/a062c7110d3c814b66ae9732f88eb891fe32b973/proofline.py",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:hacker-initiative-proofline-grant",
-      "target": "url:3631a323c617683b"
+      "target": "url:6cdf73f241d7eb49"
     },
     {
       "confidence": 1.0,
@@ -7498,6 +7505,14 @@
       "relation": "uses_evidence",
       "source": "campaign:hacker-initiative-proofline-grant",
       "target": "url:c8321ce595f1598d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/a062c7110d3c814b66ae9732f88eb891fe32b973/examples/proofline",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:hacker-initiative-proofline-grant",
+      "target": "url:dba6608e8adae973"
     },
     {
       "confidence": 1.0,

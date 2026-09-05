@@ -26,6 +26,7 @@
   },
   "project": {
     "name": "Proofline: Offline Source-to-Claim Verification",
+    "live_proof": "https://lazying.art/proofline/",
     "repository": "https://github.com/lachlanchen/LazyPromotion",
     "license": "MIT",
     "prototype": "proofline.py",
@@ -40,9 +41,10 @@
     "claim_boundary": "A passing manifest establishes internal evidence-chain consistency only; it does not prove source truth, rights, authorship, learning outcomes, customer results, or security certification."
   },
   "source_evidence": {
+    "live_proof": "https://lazying.art/proofline/",
     "repository": "https://github.com/lachlanchen/LazyPromotion",
-    "prototype": "https://github.com/lachlanchen/LazyPromotion/blob/main/proofline.py",
-    "example": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/proofline",
+    "prototype": "https://github.com/lachlanchen/LazyPromotion/blob/a062c7110d3c814b66ae9732f88eb891fe32b973/proofline.py",
+    "example": "https://github.com/lachlanchen/LazyPromotion/tree/a062c7110d3c814b66ae9732f88eb891fe32b973/examples/proofline",
     "program": "https://hackerinitiative.org/",
     "guidelines": "https://hackerinitiative.org/grant-guidelines/",
     "faq": "https://hackerinitiative.org/application-faq/"

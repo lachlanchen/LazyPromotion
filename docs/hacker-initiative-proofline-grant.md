@@ -37,6 +37,10 @@ material. A passing report means the recorded chain is internally intact; it
 does not prove source truth, redistribution rights, authorship, or a user
 outcome.
 
+The live proof page is <https://lazying.art/proofline/>. It exposes the exact
+passing command and result, with immutable links to the verifier, manifest,
+tests, and example used for the current demonstration.
+
 The request is intentionally limited to software/tool development and test
 equipment. Hacker Initiative excludes salaries, books, films, videos, social
 media, websites, merchandise, and general promotion, so none of those appears

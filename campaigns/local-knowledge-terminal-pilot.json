@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -142,6 +142,17 @@
         "deployment_conclusion": "success"
       },
       "policy": "These are public draft commercial terms for qualification and listing consistency. A buyer-specific contract may narrow them but must never expand the scope or weaken the refund, privacy, retention, or support boundaries without explicit written review."
+    },
+    "fit_check_explanation_contract": {
+      "state": "live_verified",
+      "checked_at": "2026-09-05T07:52:37Z",
+      "website_commit": "4317e47b682a2f7f29d52cf5bd4afb59104b636e",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33953673032",
+      "routes": [
+        "https://lazying.art/lkt/",
+        "https://lazying.art/lkt/sample-report/"
+      ],
+      "policy": "The offer and sample report explain the actual reviewed flow: nothing is sent while the visitor fills in or reviews the fit check; an explicit Send uses encrypted private intake, while email and copy remain available. Do not describe the current fit check as email-draft-only or imply that a reviewed Send action cannot submit it."
     },
     "current_order_mode": "live encrypted direct free fit check with contact@ email fallback, followed by human review and a separately reviewed Stripe payment request",
     "included_scope": [

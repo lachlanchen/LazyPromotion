@@ -682,7 +682,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -717,6 +717,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(terms["source_copy_retention_days"], 14)
         self.assertTrue(terms["live_verification"]["fit_check_links_to_terms"])
         self.assertEqual(terms["live_verification"]["deployment_conclusion"], "success")
+        explanation = campaign["source_evidence"]["fit_check_explanation_contract"]
+        self.assertEqual(explanation["state"], "live_verified")
+        self.assertEqual(
+            explanation["website_commit"],
+            "4317e47b682a2f7f29d52cf5bd4afb59104b636e",
+        )
+        self.assertEqual(len(explanation["routes"]), 2)
+        self.assertIn("explicit Send", explanation["policy"])
+        self.assertIn("encrypted private intake", explanation["policy"])
+        self.assertIn("email and copy remain available", explanation["policy"])
         currency = campaign["source_evidence"]["currency_contract"]
         self.assertEqual(currency["state"], "live")
         self.assertEqual(currency["exact_price"], "USD 250")

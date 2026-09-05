@@ -76,7 +76,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 9
+        "version": 10
       },
       "url": ""
     },
@@ -5860,6 +5860,27 @@
       "url": "https://lazying.art/lecture-pack/fit-check/"
     },
     {
+      "id": "url:5ffd916ea073a22d",
+      "kind": "web_resource",
+      "label": "fit check explanation contract deployment run",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33953673032"
+    },
+    {
+      "id": "url:c48afb0dbeb7ee89",
+      "kind": "web_resource",
+      "label": "fit check explanation contract routes 1",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/"
+    },
+    {
+      "id": "url:3f9d0326fb664513",
+      "kind": "web_resource",
+      "label": "fit check explanation contract routes 2",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/sample-report/"
+    },
+    {
       "id": "url:b5905affb9e9343e",
       "kind": "web_resource",
       "label": "format example",
@@ -6259,25 +6280,11 @@
       "url": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html"
     },
     {
-      "id": "url:c48afb0dbeb7ee89",
-      "kind": "web_resource",
-      "label": "service scope contract live routes verified 1",
-      "metadata": {},
-      "url": "https://lazying.art/lkt/"
-    },
-    {
       "id": "url:d873c4adf4afccff",
       "kind": "web_resource",
       "label": "service scope contract live routes verified 2",
       "metadata": {},
       "url": "https://lazying.art/lkt/fit-check/"
-    },
-    {
-      "id": "url:3f9d0326fb664513",
-      "kind": "web_resource",
-      "label": "service scope contract live routes verified 3",
-      "metadata": {},
-      "url": "https://lazying.art/lkt/sample-report/"
     },
     {
       "id": "url:6f4d0939c85ed5f5",
@@ -7253,6 +7260,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:44752e26757961b2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33953673032",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:5ffd916ea073a22d"
     },
     {
       "confidence": 1.0,

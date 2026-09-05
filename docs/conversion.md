@@ -189,6 +189,12 @@ and the receiver at LazyPromotion commit
 allowed OPTIONS request receives the exact ACAO, a foreign origin receives no
 ACAO, and a malformed allowed POST fails with HTTP 400.
 
+Before the September 9 offer post, LazyingArtWebsite commit `4317e47` aligned
+the landing page and sample-report CTA with that live intake. Both now say that
+nothing is sent while a visitor fills in or reviews the fit check, and that an
+explicit Send uses encrypted private intake while email and copy remain
+available. The Pages deployment succeeded and both public routes were checked.
+
 The primary live proof used an explicitly labeled synthetic request submitted
 through the visible fit-check page. Reference
 `cc078babd1b32b0c08e796e88886201f` was accepted, authenticated, decrypted,

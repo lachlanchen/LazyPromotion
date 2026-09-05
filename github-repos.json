@@ -119,7 +119,7 @@
       "homepage": "https://lazying.art",
       "name": "AgInTi-LabCanvas",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T12:06:36Z",
+      "pushed_at": "2026-09-05T15:27:06Z",
       "topics": [
         "aginti",
         "agintiflow",
@@ -140,7 +140,7 @@
         "unity",
         "unreal-engine"
       ],
-      "updated_at": "2026-09-05T12:06:40Z",
+      "updated_at": "2026-09-05T15:27:10Z",
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
     {
@@ -1172,7 +1172,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
-      "pushed_at": "2026-09-05T12:30:31Z",
+      "pushed_at": "2026-09-05T16:01:18Z",
       "topics": [
         "ai-tools",
         "ecosystem",
@@ -1188,7 +1188,7 @@
         "static-site",
         "website"
       ],
-      "updated_at": "2026-09-05T12:30:35Z",
+      "updated_at": "2026-09-05T16:01:22Z",
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T12:15:46Z",
+      "pushed_at": "2026-09-05T16:14:30Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-05T12:15:50Z",
+      "updated_at": "2026-09-05T16:14:46Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1369,7 +1369,7 @@
       "homepage": "https://lachlanchen.github.io/LazySkills/",
       "name": "LazySkills",
       "primary_language": "Python",
-      "pushed_at": "2026-09-01T15:33:29Z",
+      "pushed_at": "2026-09-05T15:26:52Z",
       "topics": [
         "aginti",
         "ai-agents",
@@ -1392,7 +1392,7 @@
         "workflow-automation",
         "xiaoyunque"
       ],
-      "updated_at": "2026-09-01T16:11:00Z",
+      "updated_at": "2026-09-05T15:26:56Z",
       "url": "https://github.com/lachlanchen/LazySkills"
     },
     {
@@ -1415,6 +1415,26 @@
       ],
       "updated_at": "2026-08-23T06:15:42Z",
       "url": "https://github.com/lachlanchen/LazyTravel"
+    },
+    {
+      "description": "Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance.",
+      "homepage": "https://lazying.art",
+      "name": "LazyTunnel",
+      "primary_language": "Python",
+      "pushed_at": "2026-09-05T15:29:49Z",
+      "topics": [
+        "cloud-relay",
+        "lazying-art",
+        "openssh",
+        "python",
+        "remote-access",
+        "reverse-tunnel",
+        "self-hosted",
+        "ssh",
+        "systemd"
+      ],
+      "updated_at": "2026-09-05T15:29:53Z",
+      "url": "https://github.com/lachlanchen/LazyTunnel"
     },
     {
       "description": "Local-first 11-language Weiqi teacher with exact 5×5–19×19 play, game-native shape/influence/territory visualizations, bounded KataGo fast/deep analysis, and non-mutating AI study.",
@@ -2035,7 +2055,7 @@
       "homepage": "https://lachlanchen.github.io/LalaMedias/",
       "name": "RaraXiaAndAyaChan",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T04:52:51Z",
+      "pushed_at": "2026-09-05T14:39:28Z",
       "topics": [
         "ai-video",
         "animation-prompts",
@@ -2049,7 +2069,7 @@
         "storytelling",
         "xiaoyunque"
       ],
-      "updated_at": "2026-09-05T05:50:16Z",
+      "updated_at": "2026-09-05T14:39:35Z",
       "url": "https://github.com/lachlanchen/RaraXiaAndAyaChan"
     },
     {
@@ -2164,7 +2184,7 @@
       "homepage": "https://lazying.art",
       "name": "the-art-of-lazying",
       "primary_language": "Shell",
-      "pushed_at": "2026-09-05T12:05:07Z",
+      "pushed_at": "2026-09-05T15:35:08Z",
       "topics": [
         "automation",
         "language",
@@ -2177,7 +2197,7 @@
         "strategic",
         "workflows"
       ],
-      "updated_at": "2026-09-05T12:05:11Z",
+      "updated_at": "2026-09-05T15:35:12Z",
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
     {
@@ -2185,7 +2205,7 @@
       "homepage": "https://lazying.art",
       "name": "uu-remote-ubuntu-bridge",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T12:04:37Z",
+      "pushed_at": "2026-09-05T14:16:12Z",
       "topics": [
         "automation",
         "binary-patching",
@@ -2203,7 +2223,7 @@
         "wine",
         "xvfb"
       ],
-      "updated_at": "2026-09-05T12:04:41Z",
+      "updated_at": "2026-09-05T14:16:16Z",
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
     {

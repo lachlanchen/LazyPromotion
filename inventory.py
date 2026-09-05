@@ -87,7 +87,7 @@ CATEGORIES = OrderedDict(
             {
                 "astrill-lazy-policies", "astrill-lazy-router", "DomainAndIpManager",
                 "hackintosh", "kvm-qemu-workstation", "LazyEdge", "LazyRouter",
-                "uu-remote-ubuntu-bridge", "WIFI2LAN",
+                "LazyTunnel", "uu-remote-ubuntu-bridge", "WIFI2LAN",
             },
         ),
         (
@@ -159,7 +159,7 @@ PRIORITIES = [
         "work": "LazyEdit + LocalVideoGen + Musia",
         "need": "A meaningful moment from an owned interview or podcast turned into one captioned vertical clip",
         "audience": "Podcasts, interview series, educators, and small mission-led teams",
-        "route": "USD 250 Story Clip Pilot after a scoped inquiry; one source and one finished clip",
+        "route": "USD 250 Story Clip Pilot after a metadata-only free fit check; one source and one finished clip",
         "url": "https://lazying.art/story-clip/",
     },
     {

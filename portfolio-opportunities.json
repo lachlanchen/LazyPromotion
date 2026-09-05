@@ -64,15 +64,18 @@
       "need": "Find a quiet but meaningful moment in a longer recording and turn it into one captioned vertical clip without forcing it into a generic viral template",
       "projects": ["LazyEdit", "LocalVideoGen", "Musia", "AutoPublish"],
       "first_deliverable": "The live fixed USD 250 Story Clip Pilot for one customer-owned recording up to 30 minutes: two timestamped candidate moments with hook, cut rationale, and rights notes; then one selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, an editable caption/source ledger, and one bounded correction pass",
-      "first_test": "Use the two current direct applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
+      "first_test": "Use the three current one-time applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
       "proof": [
         "https://lazying.art/story-clip/",
+        "https://lazying.art/story-clip/fit-check/",
         "https://lazying.art/work/",
         "https://www.youtube.com/watch?v=da0vnv1lQ_E",
         "https://www.youtube.com/watch?v=rVU37lPKPo8",
         "https://www.youtube.com/watch?v=9FjVTAgD9QE",
         "https://www.reddit.com/r/kanyakumari/comments/1w7812g/hiring_content_social_media_creator_turn_our/",
-        "https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/"
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/",
+        "https://www.reddit.com/r/HireAnEditor/comments/1uptuh8/hiring_editors_for_podcast_clips_paid_per_clip/",
+        "https://youdontevenhear.me/apply"
       ],
       "gates": [
         "The customer must control the recording, voices, faces, music, locations, and marks or identify every restriction before source transfer",
@@ -203,17 +206,19 @@
       "state": "candidate",
       "buyer": "A technical small team that owns suitable compute and needs a private, maintainable local model endpoint",
       "need": "Install and operate a pinned local model stack with a usable web client and guarded remote access",
-      "projects": ["LocalLLM", "LazyEdge", "LazyingAgentWeb", "aginti-browser", "novnc-manager"],
+      "projects": ["LocalLLM", "LazyEdge", "LazyTunnel", "LazyingAgentWeb", "aginti-browser", "novnc-manager"],
       "first_deliverable": "A compatibility audit and single-machine deployment plan before any implementation or managed-support scope",
       "first_test": "Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit",
       "proof": [
         "https://github.com/lachlanchen/LocalLLM",
-        "https://github.com/lachlanchen/LazyEdge"
+        "https://github.com/lachlanchen/LazyEdge",
+        "https://github.com/lachlanchen/LazyTunnel"
       ],
       "gates": [
         "Hardware, model, driver, security, uptime, and remote-access support boundaries must be written",
         "Never expose an unauthenticated model endpoint",
-        "Model licenses and geographic restrictions must be checked per deployment"
+        "Model licenses and geographic restrictions must be checked per deployment",
+        "Treat LazyTunnel as an early operator-reviewed SSH/systemd toolkit until bidirectional shell, file transfer, failure recovery, negative-permission, and reboot tests are complete for the customer's topology"
       ],
       "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 1, "repeatability": 5}
     },

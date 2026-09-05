@@ -10,7 +10,7 @@ class InventoryTests(unittest.TestCase):
         payload = inventory.load_index()
         body = inventory.render(payload)
         complete_inventory = body.split("## Complete public repository inventory", 1)[1]
-        self.assertEqual(len(payload["repositories"]), 106)
+        self.assertEqual(len(payload["repositories"]), 107)
         for repo in payload["repositories"]:
             marker = f"]({repo['url']})"
             with self.subTest(repo=repo["name"]):
@@ -53,7 +53,10 @@ class InventoryTests(unittest.TestCase):
         )
         self.assertIn("four confirmed USD 250", priority)
         self.assertIn("[LazyEdit + LocalVideoGen + Musia](https://lazying.art/story-clip/)", priority)
-        self.assertIn("USD 250 Story Clip Pilot after a scoped inquiry", priority)
+        self.assertIn(
+            "USD 250 Story Clip Pilot after a metadata-only free fit check",
+            priority,
+        )
         self.assertNotIn("Verified public pre-order", priority)
 
 

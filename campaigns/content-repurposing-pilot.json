@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -128,8 +128,38 @@
     "evidence": "ignored_private_screenshot",
     "claim_boundary": "A crawl request is not indexing, ranking, traffic, a lead, a sale, or revenue."
   },
+  "additional_outreach": [
+    {
+      "company": "Oxodonia LTD",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/",
+      "source_state": "official_company_hiring_post_visible",
+      "captured_at": "2026-09-05T15:34:00Z",
+      "need": "A remote freelance short-form creator for websites, booking systems, and AI tools, with phone editing, hooks, pacing, and a public reel",
+      "company_site": "https://oxodonia.co.uk/",
+      "company_linkedin": "https://www.linkedin.com/company/oxodonia/",
+      "application_state": "sent_awaiting_reply",
+      "sent_at": "2026-09-05T15:35:00Z",
+      "method": "LinkedIn company-page message with Careers topic",
+      "delivery_evidence": "The exact company conversation visibly contained the reviewed message, the stated limitation, the USD 250 pilot, and the Story Clip URL after send",
+      "public_samples": [
+        "https://www.youtube.com/watch?v=da0vnv1lQ_E",
+        "https://www.youtube.com/watch?v=rVU37lPKPo8",
+        "https://lazying.art/work/",
+        "https://lazying.art/story-clip/"
+      ],
+      "proposal": "One paid test with two story angles before editing the selected clip",
+      "claim_boundary": "The message explicitly states that the strongest fit is existing product demos, founder recordings, and longer media, and that the applicant is not an on-location Preston phone shooter. Public samples are project work, not customer results.",
+      "buyer_reply_observed": false,
+      "qualified_lead_observed": false,
+      "scope_accepted": false,
+      "payment_confirmed": false,
+      "received_revenue_usd": 0,
+      "automatic_follow_up": false
+    }
+  ],
   "funnel": {
     "state": "application_sent",
+    "outbound_application_count": 2,
     "application_sent": true,
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,

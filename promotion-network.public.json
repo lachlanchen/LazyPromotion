@@ -36,7 +36,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 5
+        "version": 6
       },
       "url": ""
     },
@@ -721,7 +721,7 @@
       "metadata": {
         "buyer": "A podcast, interview series, educator, or small mission-led team with a recording it controls",
         "first_deliverable": "The live fixed USD 250 Story Clip Pilot for one customer-owned recording up to 30 minutes: two timestamped candidate moments with hook, cut rationale, and rights notes; then one selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, an editable caption/source ledger, and one bounded correction pass",
-        "first_test": "Use the current direct application as the first demand test and wait for a response; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
+        "first_test": "Use the two current direct applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
         "gates": [
           "The customer must control the recording, voices, faces, music, locations, and marks or identify every restriction before source transfer",
           "The public samples are project-owned LazyingArt pieces, not customer work, travel-client experience, sales evidence, reach evidence, or a viral-performance claim",
@@ -6579,6 +6579,13 @@
       "url": "https://lazying.art/lecture-pack/#terms"
     },
     {
+      "id": "url:64eb9b1b7f4428fc",
+      "kind": "web_resource",
+      "label": "www.linkedin.com",
+      "metadata": {},
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/"
+    },
+    {
       "id": "url:094d5ff48e63de9c",
       "kind": "web_resource",
       "label": "www.reddit.com",
@@ -9420,6 +9427,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:story-first-content-repurposing",
       "target": "url:415da1977e7f8d4e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:64eb9b1b7f4428fc"
     },
     {
       "confidence": 1.0,

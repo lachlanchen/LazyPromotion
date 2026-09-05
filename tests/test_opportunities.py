@@ -45,6 +45,8 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("https://lazying.art/lecture-pack/#example", body)
         self.assertIn("https://lazying.art/story-clip/", body)
         self.assertIn("### Story-first interview clip pilot", body)
+        self.assertIn("two current direct applications", body)
+        self.assertIn("urn:li:activity:7501848655239233536", body)
         self.assertIn("not customer work, travel-client experience", body)
         self.assertIn("41.191-second synthetic project-owned source", body)
         self.assertIn(

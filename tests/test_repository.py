@@ -729,7 +729,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["version"], 6)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -776,8 +776,25 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(discovery["request_count"], 1)
         self.assertFalse(discovery["resubmit"])
         self.assertIn("not indexing", discovery["claim_boundary"])
+        outreach = campaign["additional_outreach"]
+        self.assertEqual(len(outreach), 1)
+        oxodonia = outreach[0]
+        self.assertEqual(oxodonia["company"], "Oxodonia LTD")
+        self.assertEqual(
+            oxodonia["source_url"],
+            "https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/",
+        )
+        self.assertEqual(oxodonia["application_state"], "sent_awaiting_reply")
+        self.assertIn("not an on-location Preston phone shooter", oxodonia["claim_boundary"])
+        self.assertIn("USD 250 pilot", oxodonia["delivery_evidence"])
+        self.assertFalse(oxodonia["buyer_reply_observed"])
+        self.assertFalse(oxodonia["qualified_lead_observed"])
+        self.assertFalse(oxodonia["payment_confirmed"])
+        self.assertEqual(oxodonia["received_revenue_usd"], 0)
+        self.assertFalse(oxodonia["automatic_follow_up"])
         funnel = campaign["funnel"]
         self.assertEqual(funnel["state"], "application_sent")
+        self.assertEqual(funnel["outbound_application_count"], 2)
         self.assertTrue(funnel["application_sent"])
         self.assertFalse(funnel["buyer_reply_observed"])
         self.assertFalse(funnel["qualified_lead_observed"])

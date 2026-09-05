@@ -14,7 +14,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
 | [Multilingual video accessibility package](#multilingual-video-accessibility) | candidate | Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline | Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems | 4.00 |
 | [Private local-AI workstation deployment](#local-ai-workstation-deployment) | candidate | Install and operate a pinned local model stack with a usable web client and guarded remote access | Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit | 3.95 |
-| [Story-first interview clip pilot](#story-first-content-repurposing) | active | Find a quiet but meaningful moment in a longer recording and turn it into one captioned vertical clip without forcing it into a generic viral template | Use the current direct application as the first demand test and wait for a response; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly | 3.90 |
+| [Story-first interview clip pilot](#story-first-content-repurposing) | active | Find a quiet but meaningful moment in a longer recording and turn it into one captioned vertical clip without forcing it into a generic viral template | Use the two current direct applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly | 3.90 |
 | [Creator library refinery](#creator-library-refinery) | candidate | Turn an existing archive into searchable source material, polished articles, clips, and multilingual derivatives without losing provenance | Use one LazyingArt-owned archive as the case study, then approach creators whose existing catalog is underused | 3.70 |
 | [Creator media library website](#creator-media-library) | candidate | Give an existing catalog a durable, searchable home with reliable metadata and language access instead of depending on a platform feed | Use a small LazyingArt-owned catalog as the demonstration, then ask creators with an existing back catalog whether they would pay to have three items organized | 3.70 |
 | [OpenHI reproducibility and kit qualification](#openhi-reproducibility-session) | gated | Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time | Interview existing repository users and kit inquiries before increasing traffic or changing checkout | 3.60 |
@@ -215,7 +215,7 @@ Gates:
 
 **First deliverable:** The live fixed USD 250 Story Clip Pilot for one customer-owned recording up to 30 minutes: two timestamped candidate moments with hook, cut rationale, and rights notes; then one selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, an editable caption/source ledger, and one bounded correction pass
 
-**First demand test:** Use the current direct application as the first demand test and wait for a response; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly
+**First demand test:** Use the two current direct applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly
 
 Evidence:
 
@@ -225,6 +225,7 @@ Evidence:
 - <https://www.youtube.com/watch?v=rVU37lPKPo8>
 - <https://www.youtube.com/watch?v=9FjVTAgD9QE>
 - <https://www.reddit.com/r/kanyakumari/comments/1w7812g/hiring_content_social_media_creator_turn_our/>
+- <https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/>
 
 Gates:
 

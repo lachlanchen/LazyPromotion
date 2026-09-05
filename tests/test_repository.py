@@ -1637,7 +1637,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 27)
+        self.assertEqual(campaign["version"], 28)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1749,6 +1749,23 @@ class RepositoryTests(unittest.TestCase):
             "accepted_priority_crawl_request",
         )
         self.assertFalse(blog_guide["search_discovery"]["indexed"])
+
+        caption_guide = campaign["channels"]["lazyblog"][
+            "cantonese_caption_workflow_guide"
+        ]
+        self.assertEqual(caption_guide["post_id"], 3803)
+        self.assertEqual(caption_guide["blog_commit"], "3837aa6")
+        self.assertEqual(caption_guide["source_commit"], "6191c8a")
+        self.assertEqual(caption_guide["translations"], ["ja", "zh-hant"])
+        self.assertEqual(
+            caption_guide["search_discovery"]["request_state"],
+            "accepted_priority_crawl_request",
+        )
+        self.assertFalse(caption_guide["search_discovery"]["indexed"])
+        self.assertFalse(caption_guide["search_discovery"]["traffic_observed"])
+        self.assertFalse(caption_guide["lead_or_sale_observed"])
+        self.assertEqual(caption_guide["verified_received_gross_usd"], 0)
+        self.assertIn("not customer work", caption_guide["policy"])
 
         sample = campaign["source_evidence"]["executed_media_sample"]
         preview = sample["social_preview"]

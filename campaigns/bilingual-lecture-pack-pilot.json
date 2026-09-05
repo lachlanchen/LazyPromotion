@@ -1,5 +1,5 @@
 {
-  "version": 27,
+  "version": 28,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -8,6 +8,7 @@
     "working_article": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html",
     "search_demand_article": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
     "practical_workflow_guide": "https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html",
+    "cantonese_caption_guide": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html",
     "executed_media_sample": {
       "url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
       "repository": "https://github.com/lachlanchen/LalaMedias",
@@ -403,6 +404,30 @@
           "indexed": false
         },
         "policy": "Publication is an owned discovery asset, not a lead, customer result, sale, or revenue."
+      },
+      "cantonese_caption_workflow_guide": {
+        "post_id": 3803,
+        "url": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html",
+        "source_language": "en",
+        "translations": [
+          "ja",
+          "zh-hant"
+        ],
+        "source_commit": "6191c8a",
+        "blog_commit": "3837aa6",
+        "route": "A complete practical guide explains one checked Cantonese timeline, Traditional and Simplified SRT files, an inspectable H.264 preview, and editable delivery before one metadata-first email invitation.",
+        "verification": "The English, Japanese, and Traditional Chinese public routes returned HTTP 200 with their reviewed titles and the pinned project-owned sample packet.",
+        "search_discovery": {
+          "checked_at": "2026-09-05T14:45:00Z",
+          "initial_state": "unknown_to_google",
+          "request_state": "accepted_priority_crawl_request",
+          "indexed": false,
+          "traffic_observed": false,
+          "policy": "The accepted request is not indexing, traffic, a lead, or revenue. Do not resubmit the URL merely to seek a different queue position."
+        },
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The source is an owned song excerpt and the article calls it a workflow example, not customer work or proof on unseen speech. Publication is not a lead, sale, or revenue."
       }
     },
     "x": {

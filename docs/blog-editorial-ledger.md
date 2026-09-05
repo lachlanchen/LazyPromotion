@@ -4,9 +4,9 @@ Last verified: 2026-09-05 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `4c757c8`
+Verified BLOG commit: `3837aa6`
 
-Campaign range: `3b45351^..4c757c8`
+Campaign range: `3b45351^..3837aa6`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -20,9 +20,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **148 posts** have completed this protocol:
+As of the verified commit, **149 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772, 3791, 3792`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772, 3791, 3792, 3803`
 
 ### Safety and historical corrections
 
@@ -45,7 +45,7 @@ Posts: `690, 1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 - Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, PyQt, Vim, Git, Raspberry Pi GPIO, native-extension, and table-of-contents notes around current diagnostics, official sources, executable checks, rollback, electrical safety, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 472, 476, 484, 488, 527, 560, 573, 697, 701, 717, 724, 731, 736, 740, 754, 944, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1526, 1565, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 2013, 2996, 3087, 3096, 3114`.
+Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 472, 476, 484, 488, 527, 560, 573, 697, 701, 717, 724, 731, 736, 740, 754, 944, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1526, 1565, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 2013, 2996, 3087, 3096, 3114, 3803`.
 
 ### Literary and learning resources
 
@@ -64,6 +64,15 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
 
+- Post `3803` is a complete English, Traditional Chinese, and Japanese guide
+  to delivering Cantonese captions as one checked timeline, two editable SRT
+  files, and an inspectable H.264 preview. It links OpenCC, YouTube, FFmpeg,
+  LazyEdit, and the project-owned 23.52-second packet before one restrained
+  metadata-first email invitation. All three language routes returned HTTP 200
+  with the reviewed title and proof link. Search Console initially reported the
+  URL as unknown to Google and accepted one priority crawl request; this is not
+  proof of indexing or traffic and should not be resubmitted for priority.
+  Publication is not a lead or sale.
 - Post `3096` now reads as a practical archived e-paper build instead of a
   compliance memo. The English, Chinese, and Japanese editions keep the useful
   F-versus-E driver and migration facts, remove the unnecessary explanation
@@ -268,6 +277,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `24d6afa` | 3782 | Added one exact-fit path from the complete guide to the LKT sample report and preserved attribution through the fit check |
 | `2906a8c` | 3791 | Published a multilingual OCR evaluation guide in English, Simplified Chinese, and Japanese |
 | `d070282` | 3792 | Published the source-first bilingual lecture workflow guide in English, Traditional Chinese, and Japanese |
+| `3837aa6` | 3803 | Published the Cantonese subtitle delivery guide in English, Traditional Chinese, and Japanese |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

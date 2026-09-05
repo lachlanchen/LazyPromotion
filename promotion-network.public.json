@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 27
+        "version": 28
       },
       "url": ""
     },
@@ -5806,6 +5806,13 @@
       "url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html"
     },
     {
+      "id": "url:b08e9eef9fc5b7c9",
+      "kind": "web_resource",
+      "label": "cantonese caption guide",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html"
+    },
+    {
       "id": "url:4cc1345b764a38aa",
       "kind": "web_resource",
       "label": "classical chinese work",
@@ -6855,6 +6862,14 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "url:95067a4d090bc3c1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:b08e9eef9fc5b7c9"
     },
     {
       "confidence": 1.0,

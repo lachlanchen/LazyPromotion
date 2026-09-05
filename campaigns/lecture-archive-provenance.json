@@ -3,6 +3,18 @@
   "version": 1,
   "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
   "channels": {
+    "github": {
+      "state": "organic_discovery_observed",
+      "observed_at": "2026-09-05T19:38:55Z",
+      "stargazers_count": 28,
+      "recent_growth": {
+        "count": 4,
+        "date": "2026-09-02",
+        "evidence": "GitHub's timestamped stargazer endpoint shows four distinct stars on 2026-09-02."
+      },
+      "lead_or_sale_observed": false,
+      "policy": "Treat stars as evidence that the free archive is being discovered, not as learning outcomes, leads, testimonials, or revenue."
+    },
     "lazyblog": {
       "state": "published",
       "published_at": "2026-09-02T00:31:37Z",

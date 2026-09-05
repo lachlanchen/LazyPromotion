@@ -7716,6 +7716,16 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
+        "state": "organic_discovery_observed"
+      },
+      "relation": "targets",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "channel:github"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
         "state": "research_only"
       },
       "relation": "targets",

@@ -25,17 +25,19 @@
   },
   "channels": {
     "linkedin": {
-      "state": "postiz_queue",
+      "state": "postiz_published",
       "publish_at": "2026-09-05T01:20:00Z",
       "content": "Policy coding becomes much easier to review when every answer carries its evidence.\n\nI made a tiny synthetic example with three passages and a frozen codebook. For each question it records the exact source locator, deciding excerpt, selected code, one-line rationale, and an ambiguity flag. A deterministic manifest makes the sample reproducible.\n\nIt is small on purpose: a reviewer can disagree with a code and point to the exact sentence instead of debating an opaque score.\n\nSample and builder:\nhttps://github.com/lachlanchen/LazyPromotion/tree/main/examples/auditable-policy-coding\n\n#ContentAnalysis #ResearchMethods #DataQuality #OpenSource",
       "destination": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/auditable-policy-coding",
       "content_sha256": "f78244ce298b6a9975eed56b72463b4ebe91b80a98fe45d0b82e406df0c55efb",
+      "release_url": "https://www.linkedin.com/feed/update/urn:li:share:7501811430535348225",
       "visible_review": {
-        "checked_at": "2026-09-05T02:06:45+08:00",
+        "checked_at": "2026-09-05T01:21:44Z",
         "provider": "linkedin",
-        "state_rechecked_after_schedule": "QUEUE",
+        "state_rechecked_after_schedule": "PUBLISHED",
         "original_url_preserved": true,
-        "release_present": false
+        "release_present": true,
+        "public_http_status": 200
       },
       "policy": "First-party open-source workflow proof using only synthetic text. It does not claim client work, policy expertise, a contract, a sale, or revenue."
     },

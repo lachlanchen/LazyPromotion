@@ -6192,7 +6192,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "postiz_published"
       },
       "relation": "targets",
       "source": "campaign:auditable-policy-content-coding",

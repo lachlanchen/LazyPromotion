@@ -1163,9 +1163,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("auditable-policy-coding", campaign["owned_proof"]["url"])
         upwork = campaign["channels"]["upwork"]
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["state"], "postiz_published")
         self.assertEqual(linkedin["visible_review"]["provider"], "linkedin")
         self.assertTrue(linkedin["visible_review"]["original_url_preserved"])
+        self.assertTrue(linkedin["visible_review"]["release_present"])
+        self.assertEqual(linkedin["visible_review"]["public_http_status"], 200)
+        self.assertIn("linkedin.com/feed/update/", linkedin["release_url"])
         self.assertIn("synthetic text", linkedin["policy"])
         self.assertEqual(
             linkedin["content_sha256"],

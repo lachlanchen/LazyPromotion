@@ -29,8 +29,20 @@ and payment. Ghostwriting, new claims, statistical analysis, submission access,
 and publication guarantees are excluded. The third route is the fixed USD 250
 [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) for one
 rights-cleared English lecture up to 20 minutes and one target language. Any
-four confirmed USD 250 payments across the three routes would reach the same
-USD 1,000 gross milestone.
+four confirmed USD 250 payments across these routes would reach the same USD
+1,000 gross milestone. A fourth route, the fixed USD 250 [Story Clip
+Pilot](https://lazying.art/story-clip/), turns one customer-owned recording up
+to 30 minutes into two candidate moments and one buyer-selected captioned
+vertical clip. Its [encrypted fit check](https://lazying.art/story-clip/fit-check/)
+now precedes source transfer and payment.
+
+Three direct Story Clip applications have been sent against explicit hiring
+needs. The latest went through YDEHM's first-party form after its paid-per-clip
+post and live application were visibly checked. The quote follows the buyer's
+published ranges: USD 45 when a segment is supplied or USD 150 when moment
+selection is included, with source length agreed first. The form confirmed
+receipt after one submit. Work remains gated on a paid trial with fixed terms;
+no reply, lead, accepted scope, payment, or revenue is inferred.
 
 The manuscript page now lets a buyer inspect and download the complete
 one-page synthetic delivery before sharing a source: frozen baseline and

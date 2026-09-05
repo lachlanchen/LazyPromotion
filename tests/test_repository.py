@@ -729,7 +729,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 7)
+        self.assertEqual(campaign["version"], 8)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -791,7 +791,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(discovery["resubmit"])
         self.assertIn("not indexing", discovery["claim_boundary"])
         outreach = campaign["additional_outreach"]
-        self.assertEqual(len(outreach), 1)
+        self.assertEqual(len(outreach), 2)
         oxodonia = outreach[0]
         self.assertEqual(oxodonia["company"], "Oxodonia LTD")
         self.assertEqual(
@@ -806,9 +806,27 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(oxodonia["payment_confirmed"])
         self.assertEqual(oxodonia["received_revenue_usd"], 0)
         self.assertFalse(oxodonia["automatic_follow_up"])
+        ydehm = outreach[1]
+        self.assertEqual(ydehm["company"], "YDEHM")
+        self.assertEqual(
+            ydehm["application_url"], "https://youdontevenhear.me/apply"
+        )
+        self.assertEqual(ydehm["application_state"], "sent_awaiting_reply")
+        self.assertIn("$45 per clip", ydehm["proposal"])
+        self.assertIn("$150", ydehm["proposal"])
+        self.assertIn("paid trial", ydehm["trial_boundary"])
+        self.assertIn("fixed rate", ydehm["trial_boundary"])
+        self.assertIn("performance-only", ydehm["trial_boundary"])
+        self.assertFalse(ydehm["account_or_application_fee"])
+        self.assertFalse(ydehm["unpaid_sample_offered"])
+        self.assertFalse(ydehm["buyer_reply_observed"])
+        self.assertFalse(ydehm["qualified_lead_observed"])
+        self.assertFalse(ydehm["payment_confirmed"])
+        self.assertEqual(ydehm["received_revenue_usd"], 0)
+        self.assertFalse(ydehm["automatic_follow_up"])
         funnel = campaign["funnel"]
         self.assertEqual(funnel["state"], "application_sent")
-        self.assertEqual(funnel["outbound_application_count"], 2)
+        self.assertEqual(funnel["outbound_application_count"], 3)
         self.assertTrue(funnel["application_sent"])
         self.assertFalse(funnel["buyer_reply_observed"])
         self.assertFalse(funnel["qualified_lead_observed"])

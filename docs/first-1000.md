@@ -531,8 +531,9 @@ pitch merely to promote more projects.
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. LKT, manuscript redline, and the
-bilingual lecture pack are the active revenue routes; a candidate advances only
-after a current need and a small first test are found.
+bilingual lecture pack remain the three homepage routes, while Story Clip is a
+fourth active direct offer; a candidate advances only after a current need and
+a small first test are found.
 
 ## Truthful measurement
 
@@ -556,6 +557,14 @@ excluded and remains project-owned concept material, not customer evidence.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.
+
+The Story Clip campaign now has three one-time applications against explicit
+hiring needs. The newest used YDEHM's live first-party form and its published
+per-clip ranges, with a USD 45 supplied-segment quote or USD 150
+moment-selection quote. The visible page confirmed receipt. A paid trial still
+requires agreed source length, rights, deliverable, one correction pass, and
+fixed payment; no reply, lead, scope acceptance, payment, or revenue exists yet.
+
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced
 the sale; never put the raw Stripe receipt in Git.

@@ -4,9 +4,9 @@ Last verified: 2026-09-05 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `5e7063b`
+Verified BLOG commit: `427355b`
 
-Campaign range: `3b45351^..5e7063b`
+Campaign range: `3b45351^..427355b`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -64,6 +64,13 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
 
+- Post `3096` now reads as a practical archived e-paper build instead of a
+  compliance memo. The English, Chinese, and Japanese editions keep the useful
+  F-versus-E driver and migration facts, remove the unnecessary explanation
+  that no affiliate link exists, and end with one natural sample-report path
+  for readers who already have a rights-cleared terminology collection. All
+  three live routes retained the image and returned the updated copy; this is
+  an owned conversion path, not a lead or sale.
 - Post `3619` now includes a Markdown-first route based on QMD's current
   first-party documentation: stable per-project files, BM25 search before
   embeddings, structured source results, and optional local MCP access. The

@@ -187,6 +187,12 @@ while tracing roots, affixes, and word history. This is still the existing USD
 250 collection-fit scope—not a bundled dictionary, automatic etymology claim,
 or separate product. LazyingArtWebsite commit `48b1e68` is deployed.
 
+The existing EinkWordsGPT archive article now supports that route without
+turning into an advertisement: it keeps the useful F-versus-E e-paper migration
+details, drops the long discussion about absent affiliate links, and ends with
+one sample-report link for readers who already have a suitable collection. The
+English, Chinese, and Japanese updates are live at BLOG commit `427355b`.
+
 Prospective buyers can also inspect the live [passage provenance
 graph](https://lazying.art/lkt/passage-graph/). This hand-reviewed sample turns
 one project-owned aligned passage into a small concept graph. Every reviewed

@@ -35,6 +35,8 @@
   "owned_proof": {
     "state": "live_project_owned_synthetic_proof",
     "url": "https://lazying.art/meeting-intelligence/",
+    "website_commit": "0772254b3762b6d5edceb62cdabcfd884732182d",
+    "contact_path": "A prefilled contact@lazying.art email asks for meeting metadata, language, duration, audio conditions, speaker count, data boundary, desired knowledge, infrastructure, and rights/consent confirmation before any confidential audio is attached.",
     "description": "A scripted English-Mandarin meeting, ten manually reviewed typed knowledge units, exact speaker and timestamp evidence, lifecycle history including a superseded correction, graph assertions, integrity checks, and portable JSON.",
     "limits": [
       "The meeting is scripted and project-owned.",

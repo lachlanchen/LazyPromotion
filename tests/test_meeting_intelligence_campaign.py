@@ -28,6 +28,9 @@ class MeetingIntelligenceCampaignTests(unittest.TestCase):
         self.assertIn("manual", limits)
         self.assertIn("real-room asr", limits)
         self.assertIn("customer outcomes", limits)
+        self.assertIn("metadata", proof["contact_path"])
+        self.assertIn("before any confidential audio is attached", proof["contact_path"])
+        self.assertRegex(proof["website_commit"], r"^[0-9a-f]{40}$")
 
     def test_linkedin_queue_uses_one_first_party_destination(self):
         linkedin = self.campaign["channels"]["linkedin"]

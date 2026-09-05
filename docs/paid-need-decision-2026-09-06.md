@@ -36,6 +36,11 @@ the scripted/manual boundary in the post itself. The queued content preserves
 the first-party address instead of routing readers through a challenge-gated
 shortener.
 
+The live proof now ends in a meeting-specific contact path instead of the LKT
+collection form. It asks for metadata and rights/consent confirmation first and
+explicitly tells the reader not to attach confidential audio until scope and
+handling are agreed.
+
 The real gaps stay visible: the public proof is scripted and manually reviewed,
 not an ASR, diarization, automatic-extraction, enterprise-scale, or customer
 result. The isolated project profile is logged out, so no form was opened,

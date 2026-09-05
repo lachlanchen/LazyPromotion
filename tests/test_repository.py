@@ -30,6 +30,19 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
+    def test_first_thousand_plan_names_all_four_active_routes(self):
+        body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
+        self.assertIn("# First USD 1,000: four focused USD 250 routes", body)
+        for offer in (
+            "Local Knowledge Terminal collection-fit sprint",
+            "Manuscript Build & Redline Sprint",
+            "Bilingual Lecture Pack",
+            "Story Clip Pilot",
+        ):
+            self.assertIn(offer, body)
+        self.assertIn("payments across these four routes", body)
+        self.assertNotIn("payments across these three routes", body)
+
     def test_browser_operations_are_serialized_across_clients(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(
             browser, "BROWSER_LOCK_PATH", Path(tmp) / "browser-operation.lock"

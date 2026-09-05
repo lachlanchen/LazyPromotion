@@ -1,11 +1,12 @@
-# First USD 1,000: three focused USD 250 routes
+# First USD 1,000: four focused USD 250 routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
-Pack** are also active at **USD 250**, each with a fixed scope, free fit check,
-and reproducible project-owned proof. The milestone is any four confirmed USD
-250 payments across these three routes, or USD 1,000 gross before fees, tax,
-refunds, and delivery costs. It is a target, not a revenue promise.
+Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one
+customer-owned recording. Each route has a fixed scope, a free fit check, and
+reproducible project-owned proof. The milestone is any four confirmed USD 250
+payments across these four routes, or USD 1,000 gross before fees, tax, refunds,
+and delivery costs. It is a target, not a revenue promise.
 
 A current buyer-intent contract can shorten the route without changing those
 offers. An Upwork listing requests source-linked coding of 21 policy-text files

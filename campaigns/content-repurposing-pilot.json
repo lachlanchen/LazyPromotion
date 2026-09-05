@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -118,6 +118,15 @@
     "checkout_created": false,
     "social_post_created": false,
     "deployment_verified": true
+  },
+  "search_discovery": {
+    "checked_at": "2026-09-05T15:22:00Z",
+    "initial_state": "URL is not on Google; URL is unknown to Google",
+    "indexing_request": "accepted_into_priority_crawl_queue",
+    "request_count": 1,
+    "resubmit": false,
+    "evidence": "ignored_private_screenshot",
+    "claim_boundary": "A crawl request is not indexing, ranking, traffic, a lead, a sale, or revenue."
   },
   "funnel": {
     "state": "application_sent",

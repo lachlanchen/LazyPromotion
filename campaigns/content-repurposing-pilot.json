@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -110,10 +110,11 @@
   "owned_offer": {
     "state": "live",
     "url": "https://lazying.art/story-clip/",
-    "website_commit": "e7d6c60df1f87408ddc5a31556daf1bfcce12abd",
+    "website_commit": "c7a20d4f2152f063b4da53fc0b987b89ecd5c7ce",
     "price": "USD 250",
     "scope": "One customer-owned recording up to 30 minutes, two timestamped candidate moments, then one buyer-selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, a caption/source ledger, and one bounded correction pass.",
-    "qualification": "Pre-scoped inquiry before source transfer or payment",
+    "qualification": "Pre-scoped inquiry to the public monitored business alias before source transfer or payment",
+    "inquiry_monitor": "Aggregate unread-badge monitoring only; no message content, sender, or subject is opened or persisted automatically",
     "checkout_created": false,
     "social_post_created": false,
     "deployment_verified": true

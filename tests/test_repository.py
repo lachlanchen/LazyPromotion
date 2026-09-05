@@ -729,7 +729,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -760,6 +760,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["url"], "https://lazying.art/story-clip/")
         self.assertEqual(offer["price"], "USD 250")
+        self.assertEqual(
+            offer["website_commit"],
+            "c7a20d4f2152f063b4da53fc0b987b89ecd5c7ce",
+        )
+        self.assertIn("Aggregate unread-badge", offer["inquiry_monitor"])
         self.assertFalse(offer["checkout_created"])
         self.assertFalse(offer["social_post_created"])
         self.assertTrue(offer["deployment_verified"])

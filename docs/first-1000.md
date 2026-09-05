@@ -154,6 +154,17 @@ the written scope requires earlier deletion. LazyingArtWebsite commit
 The live [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) covers one
 customer-owned or qualifying openly licensed English lecture up to 20 minutes,
 one primary speaker, and one target language: Traditional Chinese or Japanese.
+
+Its public working terms now keep the USD 250 pack operationally bounded:
+delivery within ten business days after accepted scope, payment, complete
+source, protected terms, and preview timestamp; one active pack; one list of up
+to ten timing, transcription, or terminology corrections within seven days; a
+full refund before source transfer or processing; and refund of the undelivered
+balance after work begins. The allocation is USD 100 for transcript and
+subtitles, USD 75 for the study companion, and USD 75 for the preview, manifest,
+and correction pass. Working source copies are deleted within fourteen calendar
+days unless the written scope requires earlier deletion. LazyingArtWebsite
+commit `565421a` is deployed, and the fit check links back to these terms.
 It delivers a timestamped English transcript and SRT, a target-language SRT,
 editable bilingual source, an A5 study PDF, one customer-selected 30–45 second
 captioned preview, a rights manifest, and one bounded corrections pass. Its

@@ -16,7 +16,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 19
+        "version": 20
       },
       "url": ""
     },
@@ -6357,11 +6357,25 @@
       "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33950635752"
     },
     {
+      "id": "url:2950360f2ae3f466",
+      "kind": "web_resource",
+      "label": "working terms contract deployment run",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33954533937"
+    },
+    {
       "id": "url:b8df126935281364",
       "kind": "web_resource",
       "label": "working terms contract public anchor",
       "metadata": {},
       "url": "https://lazying.art/lkt/#terms"
+    },
+    {
+      "id": "url:cb90336d7c8c3ce5",
+      "kind": "web_resource",
+      "label": "working terms contract public anchor",
+      "metadata": {},
+      "url": "https://lazying.art/lecture-pack/#terms"
     },
     {
       "id": "url:094d5ff48e63de9c",
@@ -6615,6 +6629,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33954533937",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:2950360f2ae3f466"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
       "metadata": {},
       "relation": "uses_evidence",
@@ -6684,6 +6706,14 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-lecture-pack-pilot",
       "target": "url:bc9f5affabab7f69"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/#terms",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "url:cb90336d7c8c3ce5"
     },
     {
       "confidence": 1.0,

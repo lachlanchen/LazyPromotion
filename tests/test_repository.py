@@ -1406,7 +1406,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 19)
+        self.assertEqual(campaign["version"], 20)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1453,6 +1453,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(len(preview["sha256"]), 64)
         self.assertIn("lecture-pack/assets/", preview["url"])
         self.assertIn("project-owned", preview["claim_boundary"])
+
+        terms = campaign["source_evidence"]["working_terms_contract"]
+        self.assertEqual(terms["state"], "live_verified")
+        self.assertEqual(
+            terms["website_commit"],
+            "565421a3f4c08506a2fbb9c9af034f26199b598c",
+        )
+        self.assertEqual(terms["maximum_concurrent_packs"], 1)
+        self.assertEqual(sum(terms["deliverable_allocation_usd"].values()), 250)
+        self.assertEqual(terms["source_copy_retention_days"], 14)
+        self.assertTrue(terms["verification"]["fit_check_links_to_terms"])
+        self.assertEqual(terms["verification"]["deployment_conclusion"], "success")
+        self.assertTrue(
+            campaign["conversion_readiness"]["fit_check"]["working_terms_linked"]
+        )
 
         instagram = campaign["channels"]["instagram"]
         self.assertEqual(instagram["content"], instagram["postiz_content"])

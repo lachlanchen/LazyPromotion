@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -67,7 +67,31 @@
       "The public repositories and Classical Mechanics article demonstrate a workflow and output format, not a paid customer result, lecturer endorsement, translation certification, or sales lift.",
       "Do not request a source file, create a Stripe payment request, or begin delivery until the metadata-only fit check and written scope are accepted.",
       "Mark unresolved recognition, terminology, equation, timing, and translation uncertainties for customer subject review."
-    ]
+    ],
+    "working_terms_contract": {
+      "state": "live_verified",
+      "checked_at": "2026-09-05T08:11:13Z",
+      "website_commit": "565421a3f4c08506a2fbb9c9af034f26199b598c",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33954533937",
+      "public_anchor": "https://lazying.art/lecture-pack/#terms",
+      "delivery_window": "ten business days after accepted scope, confirmed payment, complete agreed source, and ready protected terms and preview timestamp",
+      "maximum_concurrent_packs": 1,
+      "correction_window": "one consolidated list of up to ten timing, transcription, or terminology corrections within seven calendar days after delivery",
+      "deliverable_allocation_usd": {
+        "transcript_and_subtitles": 100,
+        "study_companion": 75,
+        "preview_manifest_and_correction_pass": 75
+      },
+      "source_copy_retention_days": 14,
+      "support_boundary": "written clarification during the seven-day correction window; no hosting, posting, full-course, or ongoing editing service",
+      "verification": {
+        "offer_http_status": 200,
+        "fit_check_http_status": 200,
+        "fit_check_links_to_terms": true,
+        "deployment_conclusion": "success"
+      },
+      "policy": "The buyer-specific written scope may narrow these terms but must not expand the fixed deliverables, weaken the rights and source-handling boundaries, or create certified-translation, publication, hosting, or posting promises without separate explicit review."
+    }
   },
   "funnel": {
     "free_value": "A searchable project-owned multilingual video with exact timestamp evidence, subtitle exports, and a source manifest, plus a complete Classical Mechanics lesson and public transcript-to-book workflows that a buyer can inspect before enquiring.",
@@ -114,7 +138,8 @@
       ],
       "network_mutations_in_synthetic_review": 0,
       "customer_data_used": false,
-      "lead_or_sale_observed": false
+      "lead_or_sale_observed": false,
+      "working_terms_linked": true
     },
     "payment": {
       "state": "not_requested",

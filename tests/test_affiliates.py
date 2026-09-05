@@ -28,6 +28,7 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.assertEqual(self.by_id["amazon-us"]["state"], "delay")
         self.assertEqual(self.by_id["distrokid"]["state"], "conditional")
         self.assertEqual(self.by_id["digitalocean"]["state"], "rebuild_first")
+        self.assertEqual(self.by_id["roboforex"]["state"], "account_review_required")
 
     def test_public_registry_contains_no_private_link_or_identifier_fields(self):
         body = (ROOT / "affiliate-programs.json").read_text(encoding="utf-8").casefold()
@@ -126,6 +127,7 @@ class AffiliatePortfolioTests(unittest.TestCase):
             "wise",
             "skrill",
             "waveshare",
+            "roboforex",
         ):
             program = self.by_id[program_id]
             private = {
@@ -140,6 +142,18 @@ class AffiliatePortfolioTests(unittest.TestCase):
             with self.subTest(program=program_id):
                 failures = affiliate.readiness(program, private)
                 self.assertIn(f"public state is {program['state']}", failures)
+
+    def test_roboforex_stays_gated_around_existing_microquant_placement(self):
+        program = self.by_id["roboforex"]
+        self.assertEqual(program["reviewed_at"], "2026-09-05")
+        self.assertIn("MicroQuant", program["matches"][0]["asset"])
+        self.assertIn("Existing disclosed README", program["matches"][0]["placement"])
+        self.assertIn("publisher_eligibility_confirmed", program["activation_gates"])
+        self.assertIn("audience_geography_confirmed", program["activation_gates"])
+        self.assertTrue(
+            any("restricted jurisdictions" in action for action in program["forbidden_actions"])
+        )
+        self.assertIn("not expected income", program["public_economics"])
 
     def test_skrill_packet_preserves_clarification_gate(self):
         program = self.by_id["skrill"]

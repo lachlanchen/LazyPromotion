@@ -2000,19 +2000,20 @@
       "metadata": {
         "generated": true,
         "keywords": [
-          "companion",
-          "data",
-          "live",
-          "micro",
+          "algorithmic trading",
+          "lazying art",
+          "metatrader5",
           "micro quant",
           "ohlc",
           "postgresql",
-          "powered",
-          "pulls",
-          "quant",
-          "tornado"
+          "quantitative finance",
+          "risk controls",
+          "stl decomposition",
+          "time series",
+          "tornado",
+          "trading dashboard"
         ],
-        "summary": "A Tornado + PostgreSQL-powered MT5 companion that pulls live OHLC data via the MetaTrader5 API, stores it, and serves a feature-rich UI with AI-driven tech/basic analysis, STL overlays, and automated periodic trading controls (with synced prefs, logging, and docs)"
+        "summary": "Experimental MetaTrader 5 research dashboard for OHLC ingestion, PostgreSQL history, STL analysis, and review-gated trading workflows."
       },
       "url": "https://github.com/lachlanchen/MicroQuant"
     },
@@ -4099,7 +4100,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T10:42:33Z",
+        "pushed_at": "2026-09-05T10:45:23Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4119,7 +4120,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T10:42:36Z"
+        "updated_at": "2026-09-05T10:45:26Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4528,23 +4529,24 @@
       "kind": "repository",
       "label": "MicroQuant",
       "metadata": {
-        "description": "A Tornado + PostgreSQL-powered MT5 companion that pulls live OHLC data via the MetaTrader5 API, stores it, and serves   a feature-rich UI with AI-driven tech/basic analysis, STL overlays, and automated periodic trading controls (with   synced prefs, logging, and docs)",
-        "homepage": "http://quant.lazying.art/",
-        "pushed_at": "2026-02-28T23:10:06Z",
+        "description": "Experimental MetaTrader 5 research dashboard for OHLC ingestion, PostgreSQL history, STL analysis, and review-gated trading workflows.",
+        "homepage": "https://quant.lazying.art/",
+        "pushed_at": "2026-09-05T10:57:30Z",
         "topics": [
-          "companion",
-          "data",
-          "live",
-          "micro",
+          "algorithmic-trading",
+          "lazying-art",
+          "metatrader5",
           "ohlc",
           "postgresql",
-          "powered",
-          "pulls",
-          "quant",
-          "that",
-          "tornado"
+          "python",
+          "quantitative-finance",
+          "risk-controls",
+          "stl-decomposition",
+          "time-series",
+          "tornado",
+          "trading-dashboard"
         ],
-        "updated_at": "2026-04-26T08:32:07Z"
+        "updated_at": "2026-09-05T10:57:43Z"
       },
       "url": "https://github.com/lachlanchen/MicroQuant"
     },
@@ -5657,7 +5659,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T10:33:43Z",
+        "pushed_at": "2026-09-05T10:56:31Z",
         "topics": [
           "automation",
           "language",
@@ -5670,7 +5672,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T10:33:47Z"
+        "updated_at": "2026-09-05T10:56:34Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -5681,7 +5683,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T10:23:46Z",
+        "pushed_at": "2026-09-05T10:53:56Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5699,7 +5701,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-05T10:23:50Z"
+        "updated_at": "2026-09-05T10:54:00Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },

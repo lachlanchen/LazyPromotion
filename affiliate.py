@@ -21,6 +21,7 @@ BLOCKED_STATES = {
     "clarification_first",
     "terms_conflict_review",
     "migration_first",
+    "account_review_required",
 }
 REQUIRED_PRIVATE_FIELDS = {
     "accepted": bool,

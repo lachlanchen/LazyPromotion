@@ -101,6 +101,12 @@ with `affiliate_commission_received`; a verified clawback uses
 - **TradingView is on hold.** Public economics have conflicted, and its data-use
   terms do not authorize presenting it as a MicroQuant data source, execution
   route, webhook, or automated-decision input.
+- **RoboForex needs an account and jurisdiction review.** MicroQuant's existing
+  partner button now has a nearby disclosure, a working HTTPS project URL, and
+  a current risk link. Do not add placements or social promotion until the
+  current account, accepted agreement, publisher and audience eligibility,
+  channel rules, and payout route are verified. Its public commission examples
+  are not expected income, and the received-revenue baseline remains zero.
 - **Amazon is delayed.** Apply when exact product pages can plausibly produce
   three organic qualifying sales, not merely because the catalog is broad.
 - **DistroKid is conditional.** First distribute one wholly rights-cleared Musia

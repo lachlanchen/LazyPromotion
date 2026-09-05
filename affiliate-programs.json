@@ -535,6 +535,38 @@
       "disclosure": "No affiliate link may be placed while this program is on hold.",
       "activation_gates": ["written_economics_clarification", "data_use_boundary_confirmed", "terms_reviewed", "human_charting_page_reviewed"],
       "forbidden_actions": ["affiliate activation while on hold", "machine-driven market-data use", "automated trading claims", "algorithmic-decision use", "risk-processing claims"]
+    },
+    {
+      "id": "roboforex",
+      "name": "RoboForex Infinity Partner Program",
+      "priority": 19,
+      "state": "account_review_required",
+      "reviewed_at": "2026-09-05",
+      "official_urls": {
+        "program": "https://roboforex.com/partner-program/",
+        "terms": "https://roboforex.com/about/company/documents/",
+        "application": "https://roboforex.com/partner-program/"
+      },
+      "public_economics": "The current public page describes commission from referred-client trading activity, including up to 85% of spread on closed trades, 30% of swap on open trades, and 10% of sub-partner commission. These headline figures are not expected income; the accepted Partner Agreement, instrument, account, transaction, jurisdiction, and any reversal rules control.",
+      "unknowns": [
+        "Confirm that the existing partner account remains active, the current Partner Agreement has been accepted, and the payout route is usable.",
+        "Confirm that the operator, publisher, audience, and intended channels are eligible under the current geographic restrictions before any new placement or social promotion.",
+        "Confirm the exact attribution, prohibited traffic, advertising, disclosure, commission, adjustment, and termination rules in the authenticated account."
+      ],
+      "conversion_event": "An eligible referred client completes qualifying trading activity, the provider confirms commission under the accepted agreement, and the payout is actually received.",
+      "direct_url": "https://roboforex.com/",
+      "permitted_link_hosts": ["roboforex.com", "my.roboforex.com"],
+      "matches": [
+        {
+          "asset": "MicroQuant",
+          "placement": "Existing disclosed README data-source button only",
+          "reason": "MicroQuant is the exact technical context. The README now identifies the partner relationship, links the current risk disclosure, and avoids advice or return promises; no broader promotion is approved until account and jurisdiction review passes."
+        }
+      ],
+      "application_pitch": "No new application or placement is needed. Review the existing partner account and agreement, keep the relationship disclosed beside the exact MicroQuant link, and do not use earnings promises, individualized financial advice, or unsolicited social promotion.",
+      "disclosure": "Affiliate disclosure: LazyingArt may receive commission from eligible referred trading activity. Participation is optional; leveraged trading carries a high risk of loss, and MicroQuant is experimental software rather than investment advice or a promise of returns.",
+      "activation_gates": ["existing_account_active", "current_partner_agreement_reviewed", "publisher_eligibility_confirmed", "audience_geography_confirmed", "channel_rules_reviewed", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["promotion into restricted jurisdictions", "undisclosed links", "income or return promises", "personalized financial advice", "self-referral", "incentivized trading", "unsolicited social promotion", "unverified commission claims"]
     }
   ]
 }

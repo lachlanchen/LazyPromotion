@@ -40,16 +40,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 10:42:33 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 10:33:43 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-05 10:23:46 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [MicroQuant](https://github.com/lachlanchen/MicroQuant) | 2026-09-05 10:57:30 | Experimental MetaTrader 5 research dashboard for OHLC ingestion, PostgreSQL history, STL analysis, and review-gated trading workflows. |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 10:56:31 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-05 10:53:56 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 10:45:23 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-05 10:22:33 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 10:13:41 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 09:42:32 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 09:32:37 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | 2026-09-05 04:52:51 | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. |
 | [AgentShell](https://github.com/lachlanchen/AgentShell) | 2026-09-05 03:17:01 | AgentShell: isolate named AI CLI accounts across terminals, share one working tree, and choose private or shared Codex history. |
-| [BigMe](https://github.com/lachlanchen/BigMe) | 2026-09-04 21:00:37 | BigMe device connection and file sync workspace |
 
 ## Complete public repository inventory
 
@@ -179,7 +179,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LazyEarn](https://github.com/lachlanchen/LazyEarn) | Research-driven guide to money, wealth, business, finance, economics, and decision-making, with a living book, PDF, site, and refinery. | TeX | [Open](https://earn.lazying.art) |
 | [LazyInvest](https://github.com/lachlanchen/LazyInvest) | LazyInvest: dated U.S. sector and stock research notes with multilingual LazyingArt README | Python | [Open](https://earn.lazying.art) |
 | [LazyInvestReports](https://github.com/lachlanchen/LazyInvestReports) | Independent daily LazyInvest market research PDF archive | TeX | [Open](https://earn.lazying.art) |
-| [MicroQuant](https://github.com/lachlanchen/MicroQuant) | A Tornado + PostgreSQL-powered MT5 companion that pulls live OHLC data via the MetaTrader5 API, stores it, and serves a feature-rich UI with AI-driven tech/basic analysis, STL overlays, and automated periodic trading controls (with synced prefs, logging, and docs) | HTML | [Open](http://quant.lazying.art/) |
+| [MicroQuant](https://github.com/lachlanchen/MicroQuant) | Experimental MetaTrader 5 research dashboard for OHLC ingestion, PostgreSQL history, STL analysis, and review-gated trading workflows. | HTML | [Open](https://quant.lazying.art/) |
 | [onlyideas-aws](https://github.com/lachlanchen/onlyideas-aws) | OnlyIdeas: My Amplify Gen 2 starter application | Vue | [Open](https://lazying.art) |
 | [onlyideas-react-native](https://github.com/lachlanchen/onlyideas-react-native) | Prototype Expo and React Native creator app with AWS Amplify authentication, GraphQL data, S3 media, and iOS, Android, and web targets. | JavaScript | [Open](https://lazying.art) |
 

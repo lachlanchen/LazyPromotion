@@ -659,10 +659,14 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "eink-multilingual-reading.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8")
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(campaign["source_evidence"]["offer_stage"], "pre-order")
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 128 / CNY 999")
         self.assertIn("email inquiry", campaign["source_evidence"]["current_order_mode"])
+        self.assertEqual(
+            campaign["source_evidence"]["hero_asset_repository"],
+            "https://github.com/lachlanchen/LazyingArtWebsite",
+        )
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_draft")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_draft")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)

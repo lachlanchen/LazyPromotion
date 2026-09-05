@@ -138,6 +138,19 @@ def sync_public_sources(db) -> dict[str, str]:
     projects = promotion.load_catalog()["projects"]
     project_by_url = {}
     active_project_ids = set()
+    verified_public_repositories = set()
+
+    # Project, opportunity, and campaign links are deterministic derivatives of
+    # the current committed sources. Rebuild them so renamed repositories and
+    # replaced evidence URLs do not survive forever in the public snapshot.
+    db.execute(
+        """
+        DELETE FROM relationships
+        WHERE source_id LIKE 'project:%'
+           OR source_id LIKE 'opportunity:%'
+           OR source_id LIKE 'campaign:%'
+        """
+    )
     for project in projects:
         entity_id = f"project:{project['id']}"
         active_project_ids.add(entity_id)
@@ -156,6 +169,7 @@ def sync_public_sources(db) -> dict[str, str]:
         )
         project_by_url[project["url"].rstrip("/").casefold()] = entity_id
         repo = repository_entity(db, project["url"], label=project["name"])
+        verified_public_repositories.add(repo)
         upsert_relationship(db, entity_id, "backed_by", repo, evidence_url=project["url"])
         if project.get("homepage"):
             homepage = url_entity(db, project["homepage"], label=f"{project['name']} homepage")
@@ -177,7 +191,6 @@ def sync_public_sources(db) -> dict[str, str]:
     )
 
     github = json.loads((ROOT / "github-repos.json").read_text(encoding="utf-8"))
-    verified_public_repositories = set()
     for repo in github.get("repositories", []):
         repo_id = f"repository:{github['owner']}/{repo['name']}"
         verified_public_repositories.add(repo_id)
@@ -238,15 +251,6 @@ def sync_public_sources(db) -> dict[str, str]:
                 evidence_url=proof_url,
             )
 
-    verified_public_repositories.update(
-        entity_id
-        for entity_id, in db.execute(
-            """
-            SELECT target_id FROM relationships
-            WHERE relation='backed_by' AND target_id LIKE 'repository:%'
-            """
-        )
-    )
     # A local checkout is not evidence that its GitHub repository is public.
     # Demote anything outside the verified public index/catalog before export.
     for entity_id, in db.execute("SELECT id FROM entities WHERE kind='repository'").fetchall():
@@ -286,6 +290,22 @@ def sync_public_sources(db) -> dict[str, str]:
                 upsert_relationship(
                     db, campaign_id, "promotes", project_id, evidence_url=value
                 )
+
+    # URL entities are also derived from current public sources. Keep stale
+    # URLs in private history, but do not export them as current evidence.
+    db.execute(
+        """
+        UPDATE entities
+        SET visibility='private'
+        WHERE kind='web_resource'
+          AND id NOT IN (
+            SELECT relationships.target_id
+            FROM relationships
+            JOIN entities AS sources ON sources.id=relationships.source_id
+            WHERE sources.visibility='public'
+          )
+        """
+    )
     return project_by_url
 
 

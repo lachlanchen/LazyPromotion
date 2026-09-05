@@ -176,6 +176,52 @@ class NetworkTests(unittest.TestCase):
         ).fetchone()[0]
         self.assertEqual(visibility, "private")
 
+    def test_sync_demotes_replaced_repository_and_evidence_url(self):
+        stale_url = "https://github.com/lachlanchen/LazyingArtLanding"
+        stale_repo = network.repository_entity(
+            self.db,
+            stale_url,
+            label="Old eInk checkout name",
+        )
+        stale_resource = network.url_entity(
+            self.db,
+            stale_url,
+            label="old hero asset repository",
+        )
+        network.upsert_relationship(
+            self.db,
+            "project:lazyingart-eink",
+            "backed_by",
+            stale_repo,
+            evidence_url=stale_url,
+        )
+        network.upsert_relationship(
+            self.db,
+            "campaign:eink-multilingual-reading",
+            "uses_evidence",
+            stale_resource,
+            evidence_url=stale_url,
+        )
+
+        network.sync_graph(self.db)
+        snapshot = json.dumps(network.public_snapshot(self.db), ensure_ascii=False)
+
+        self.assertNotIn("LazyingArtLanding", snapshot)
+        self.assertEqual(
+            self.db.execute(
+                "SELECT visibility FROM entities WHERE id=?",
+                (stale_repo,),
+            ).fetchone()[0],
+            "private",
+        )
+        self.assertEqual(
+            self.db.execute(
+                "SELECT visibility FROM entities WHERE id=?",
+                (stale_resource,),
+            ).fetchone()[0],
+            "private",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

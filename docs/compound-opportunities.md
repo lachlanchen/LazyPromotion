@@ -22,6 +22,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Song-to-language lesson](#song-to-language-lesson) | candidate | Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes | Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material | 3.50 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
+| [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | gated | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits | 3.15 |
 
 ## Opportunity contracts
 
@@ -396,6 +397,34 @@ Gates:
 - Verify the exact source edition, translation, annotations, images, fonts, and media rights
 - Do not monetize or broadly promote the existing LinguaLeaf shelf until its title-level rights ledger is complete
 - Historical explanations require source review and must distinguish evidence from dramatization
+
+### Focused pronunciation micro-lessons
+
+**State:** gated
+
+**Buyer:** A language learner or teacher working on one persistent sound contrast rather than a general accent course
+
+**Need:** Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning
+
+**Existing work:** [L-and-N](https://github.com/lachlanchen/L-and-N), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [WordOrigins](https://github.com/lachlanchen/WordOrigins)
+
+**First deliverable:** Keep the L-and-N PWA free, then test one source-aware printable and browser lesson that connects its minimal pairs to pronunciation cues, translations, and word notes
+
+**First demand test:** After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits
+
+Evidence:
+
+- <https://l-and-n.lazying.art/>
+- <https://github.com/lachlanchen/L-and-N>
+- <https://github.com/lachlanchen/PocketPolyglot>
+- <https://github.com/lachlanchen/WordOrigins>
+
+Gates:
+
+- Make the public privacy text match when and where the PWA sends recorded audio before broad promotion
+- Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
+- Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
+- Treat mobile builds as release candidates until their public store listings are independently verified
 
 ## Interpretation
 

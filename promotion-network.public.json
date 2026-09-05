@@ -46,7 +46,7 @@
       "label": "eink-multilingual-reading",
       "metadata": {
         "objective": "Earn qualified multilingual-reader visits and pre-order conversations by proving useful free paths before presenting the optional LazyingArt eInk hardware.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -359,6 +359,33 @@
         },
         "state": "candidate",
         "weighted_score": 3.5
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:focused-pronunciation-micro-lessons",
+      "kind": "opportunity",
+      "label": "Focused pronunciation micro-lessons",
+      "metadata": {
+        "buyer": "A language learner or teacher working on one persistent sound contrast rather than a general accent course",
+        "first_deliverable": "Keep the L-and-N PWA free, then test one source-aware printable and browser lesson that connects its minimal pairs to pronunciation cues, translations, and word notes",
+        "first_test": "After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits",
+        "gates": [
+          "Make the public privacy text match when and where the PWA sends recorded audio before broad promotion",
+          "Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus",
+          "Record provenance, consent, and redistribution rights for every bundled voice and lesson asset",
+          "Treat mobile builds as release candidates until their public store listings are independently verified"
+        ],
+        "need": "Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning",
+        "scores": {
+          "buyer_pain": 3,
+          "delivery_readiness": 2,
+          "low_support": 4,
+          "proof": 4,
+          "repeatability": 3
+        },
+        "state": "gated",
+        "weighted_score": 3.15
       },
       "url": ""
     },
@@ -1703,7 +1730,7 @@
         ],
         "summary": "A multilingual e-paper reading offer connected to free LinguaLeaf books and a free local Kindle sender; the dedicated reader is publicly offered as a USD 128 / CNY 999 pre-order."
       },
-      "url": "https://github.com/lachlanchen/LazyingArtLanding"
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
       "id": "project:github-lazyingartagent",
@@ -1748,30 +1775,6 @@
         "summary": "Lazying Art Bot (LAB) — a local-first personal AI assistant you run on your own devices, with multi-channel chat and tools."
       },
       "url": "https://github.com/lachlanchen/LazyingArtBot"
-    },
-    {
-      "id": "project:github-lazyingartwebsite",
-      "kind": "project",
-      "label": "LazyingArtWebsite",
-      "metadata": {
-        "generated": true,
-        "keywords": [
-          "ai tools",
-          "ecosystem",
-          "github pages",
-          "i18n",
-          "landing page",
-          "language learning",
-          "lazying art",
-          "lazying art website",
-          "local first",
-          "marketing",
-          "product showcase",
-          "static site"
-        ],
-        "summary": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes."
-      },
-      "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
       "id": "project:leonardsusskind",
@@ -4183,13 +4186,6 @@
       "url": "https://github.com/lachlanchen/LazyingAgentWeb"
     },
     {
-      "id": "repository:lachlanchen/LazyingArtLanding",
-      "kind": "repository",
-      "label": "LazyingArt eInk",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyingArtLanding"
-    },
-    {
       "id": "repository:lachlanchen/LazyingArtAgent",
       "kind": "repository",
       "label": "LazyingArtAgent",
@@ -5813,6 +5809,13 @@
       "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline"
     },
     {
+      "id": "url:6da737bdd18800ca",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/L-and-N"
+    },
+    {
       "id": "url:8c31df37ee870928",
       "kind": "web_resource",
       "label": "github.com",
@@ -5897,11 +5900,11 @@
       "url": "https://github.com/lachlanchen/LazyPromotion/blob/main/lkt_hardware_pricing.py"
     },
     {
-      "id": "url:2384ab616d067b14",
+      "id": "url:d5bc86f4486d0cba",
       "kind": "web_resource",
       "label": "hero asset repository",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyingArtLanding"
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
       "id": "url:0bb69e434c76a028",
@@ -5916,6 +5919,13 @@
       "label": "knowledge identity pattern",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
+    },
+    {
+      "id": "url:dad6a142b98ee7ea",
+      "kind": "web_resource",
+      "label": "l-and-n.lazying.art",
+      "metadata": {},
+      "url": "https://l-and-n.lazying.art/"
     },
     {
       "id": "url:273db0ceb258a5af",
@@ -6329,16 +6339,6 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
-      },
-      "relation": "targets",
-      "source": "campaign:bilingual-lecture-pack-pilot",
-      "target": "channel:linkedin_practical_guide"
-    },
-    {
-      "confidence": 1.0,
-      "evidence_url": "",
-      "metadata": {
         "state": "needs_exact_need"
       },
       "relation": "targets",
@@ -6601,7 +6601,7 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyingArtLanding",
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite",
       "metadata": {},
       "relation": "promotes",
       "source": "campaign:eink-multilingual-reading",
@@ -6665,19 +6665,19 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyingArtLanding",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "campaign:eink-multilingual-reading",
-      "target": "url:2384ab616d067b14"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://lachlanchen.github.io/LinguaLeaf/website/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:eink-multilingual-reading",
       "target": "url:43d56bb572f1ca4a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:eink-multilingual-reading",
+      "target": "url:d5bc86f4486d0cba"
     },
     {
       "confidence": 1.0,
@@ -7837,6 +7837,62 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "project:github-l-and-n"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/WordOrigins",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "project:wordorigins"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/WordOrigins",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "url:4e9793cff914e3b1"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "url:6da737bdd18800ca"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "url:dad6a142b98ee7ea"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/PocketPolyglot",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
       "metadata": {},
       "relation": "combines",
@@ -8757,14 +8813,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite",
-      "metadata": {},
-      "relation": "backed_by",
-      "source": "project:github-lazyingartwebsite",
-      "target": "repository:lachlanchen/LazyingArtWebsite"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyInvest",
       "metadata": {},
       "relation": "backed_by",
@@ -9133,11 +9181,11 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyingArtLanding",
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite",
       "metadata": {},
       "relation": "backed_by",
       "source": "project:lazyingart-eink",
-      "target": "repository:lachlanchen/LazyingArtLanding"
+      "target": "repository:lachlanchen/LazyingArtWebsite"
     },
     {
       "confidence": 1.0,

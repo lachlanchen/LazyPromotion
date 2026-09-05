@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "eink-multilingual-reading",
   "objective": "Earn qualified multilingual-reader visits and pre-order conversations by proving useful free paths before presenting the optional LazyingArt eInk hardware.",
   "source_evidence": {
@@ -9,7 +9,7 @@
     "public_price": "USD 128 / CNY 999",
     "free_kindle_sender": "https://github.com/lachlanchen/Kindle/releases/latest",
     "public_book_shelf": "https://lachlanchen.github.io/LinguaLeaf/website/",
-    "hero_asset_repository": "https://github.com/lachlanchen/LazyingArtLanding",
+    "hero_asset_repository": "https://github.com/lachlanchen/LazyingArtWebsite",
     "hero_asset_path": "eink/assets/lazyingart-eink-hero.png",
     "limits": [
       "Do not claim inventory, a shipping date, warranty terms, battery life, display specifications, or fulfillment details not stated on the public offer page.",
@@ -31,7 +31,7 @@
     },
     "instagram": {
       "state": "postiz_draft",
-      "asset_path": "../LazyingArtLanding/eink/assets/lazyingart-eink-hero.png",
+      "asset_path": "../LazyingArtWebsite/eink/assets/lazyingart-eink-hero.png",
       "content": "A multilingual e-reader should earn its place before you buy it.\n\nThat is why the LazyingArt reading path starts free: a local Kindle sender for KOReader and a public LinguaLeaf shelf with multilingual editions. If that workflow fits and you want dedicated hardware, LazyingArt eInk is now a pre-order at $128 / ¥999.\n\nhttps://lazying.art/eink/?utm_source=instagram&utm_medium=social&utm_campaign=eink_multilingual_reading\n\nI build and maintain these LazyingArt tools. What would your ideal multilingual e-paper reader need to do?\n\n#eink #ereader #languagelearning #multilingual #LinguaLeaf",
       "draft_validation": "Full copy, destination text, and the 1536×1024 hero asset loaded in a visible Postiz draft on 2026-08-31. The draft remains unscheduled and unpublished."
     },

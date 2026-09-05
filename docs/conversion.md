@@ -32,6 +32,12 @@ rights-cleared English lecture up to 20 minutes and one target language. Any
 four confirmed USD 250 payments across the three routes would reach the same
 USD 1,000 gross milestone.
 
+The manuscript page now lets a buyer inspect and download the complete
+one-page synthetic delivery before sharing a source: frozen baseline and
+revision, three PDFs, generated redline, final logs, a seven-row issue ledger,
+and manifests with a hash for every included file. The deterministic packet is
+process evidence only, not customer work or journal validation.
+
 `python payment_readiness.py --offer manuscript` verifies the sibling Stripe
 plan, exact USD 250 price, fixed quantity, fulfillment checklist, and private
 key posture without contacting Stripe or creating an object. The optional

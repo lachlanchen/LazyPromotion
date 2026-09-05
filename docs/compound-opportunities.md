@@ -20,6 +20,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Cited etymology learning deck](#etymology-learning-deck) | candidate | Learn words through meanings, roots, affixes, pronunciations, translations, and provenance rather than isolated flashcards | Publish a small deck from openly licensed lexical sources and ask teachers which theme they would actually use | 3.50 |
 | [Explainable game classroom bundle](#explainable-game-classroom) | candidate | Teach decisions with exact rules and visible reasoning instead of opaque move recommendations | Let one teacher or club use a short lesson pack and observe where explanation or setup fails | 3.50 |
 | [Song-to-language lesson](#song-to-language-lesson) | candidate | Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes | Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material | 3.50 |
+| [Short-video caption pipeline feasibility](#short-video-pipeline-engineering) | candidate | Accept large mobile videos, generate correctly timed multilingual captions, render reusable styles, and return a vertical MP4 through an asynchronous API | Use the current low-proposal Upwork brief as demand evidence and apply only after account, fee, rate, availability, acceptance, and client-spend review; state that Hebrew and RTL are validation work, not proven capability | 3.45 |
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | candidate | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks | 3.35 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
@@ -346,6 +347,32 @@ Gates:
 - The creator must control the composition, recording, lyrics, artwork, and translations used in the lesson
 - A fluent reviewer must approve lyrics, translation, and pronunciation guidance
 - Do not promise automatic publication, streaming distribution, or learning outcomes
+
+### Short-video caption pipeline feasibility
+
+**State:** candidate
+
+**Buyer:** A SaaS team replacing a third-party short-video editor with an owned server-side pipeline
+
+**Need:** Accept large mobile videos, generate correctly timed multilingual captions, render reusable styles, and return a vertical MP4 through an asynchronous API
+
+**Existing work:** [LazyEdit](https://github.com/lachlanchen/LazyEdit), [MultilingualWhisper](https://github.com/lachlanchen/MultilingualWhisper), [LazyEdge](https://github.com/lachlanchen/LazyEdge), [AutoPublish](https://github.com/lachlanchen/AutoPublish)
+
+**First deliverable:** One paid caption-core feasibility milestone: private API-contract map, representative Hebrew and bidirectional-text risk test, one supplied caption style, resumable-upload boundary, and measured go/no-go report
+
+**First demand test:** Use the current low-proposal Upwork brief as demand evidence and apply only after account, fee, rate, availability, acceptance, and client-spend review; state that Hebrew and RTL are validation work, not proven capability
+
+Evidence:
+
+- <https://github.com/lachlanchen/LazyEdit>
+- <https://www.upwork.com/freelance-jobs/apply/Senior-Video-Pipeline-Engineer-Build-Short-Video-Editing-Service_~022093815402846822614/>
+
+Gates:
+
+- Do not claim Hebrew ASR, word alignment, RTL or bidirectional rendering, two-gigabyte resumable upload, ten-style coverage, or minutes-level production throughput before measurement
+- Keep the first commitment to a paid feasibility milestone rather than the full four-stage service
+- The client's low historical spend and payment-per-accepted-milestone language require exact acceptance and payment review
+- Keep application, communication, source files, contract, and payment on Upwork
 
 ### Focused pronunciation micro-lessons
 

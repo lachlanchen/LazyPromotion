@@ -674,6 +674,32 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
+    def test_lazyedit_video_pipeline_opportunity_stays_feasibility_first(self):
+        path = ROOT / "campaigns" / "lazyedit-video-pipeline-opportunity.json"
+        serialized = path.read_text(encoding="utf-8")
+        campaign = json.loads(serialized)
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["source_need"]["state"], "public_listing_visible")
+        self.assertEqual(campaign["source_need"]["public_rate"], "not shown")
+        self.assertEqual(
+            campaign["fit"]["verified_public_commit"],
+            "29307f919d8f1505937bb8ada1547bbdd3895af0",
+        )
+        gaps = " ".join(campaign["fit"]["not_proven"]).casefold()
+        self.assertIn("hebrew", gaps)
+        self.assertIn("bidirectional", gaps)
+        self.assertIn("two gigabytes", gaps)
+        milestone = campaign["recommended_first_milestone"]
+        self.assertEqual(milestone["state"], "proposal_only")
+        self.assertIn("paid caption-core feasibility", milestone["scope"])
+        channel = campaign["channel"]
+        self.assertEqual(channel["state"], "application_prepared_login_required")
+        self.assertFalse(channel["application_submitted"])
+        self.assertEqual(channel["connects_spent"], 0)
+        self.assertFalse(campaign["funnel"]["payment_confirmed"])
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+        self.assertNotIn("@", serialized)
+
     def test_postiz_affiliate_campaign_starts_at_zero_and_requires_disclosure(self):
         path = ROOT / "campaigns" / "postiz-affiliate-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
@@ -1371,7 +1397,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1387,6 +1413,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(len(preview["sha256"]), 64)
         self.assertIn("manuscript-sprint/assets/", preview["url"])
         self.assertIn("synthetic", preview["claim_boundary"])
+        delivery = offer["sample_delivery"]
+        self.assertEqual(delivery["state"], "deployed_verified")
+        self.assertEqual(delivery["packet_bytes"], 503431)
+        self.assertEqual(delivery["files"], 13)
+        self.assertEqual(delivery["issue_ledger_rows"], 7)
+        self.assertEqual(delivery["preview_dimensions"], "993x1404")
+        self.assertEqual(len(delivery["packet_sha256"]), 64)
+        self.assertEqual(len(delivery["preview_sha256"]), 64)
+        self.assertIn("raw/183d64325f4e943f", delivery["packet_url"])
+        self.assertIn("not customer work", delivery["claim_boundary"].casefold())
         exclusions = " ".join(offer["excluded"]).casefold()
         self.assertIn("ghostwriting", exclusions)
         self.assertIn("publication or acceptance guarantees", exclusions)

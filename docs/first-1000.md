@@ -189,6 +189,15 @@ pass. Working source copies are deleted within fourteen calendar days unless
 the written scope requires earlier deletion. LazyingArtWebsite commit
 `da8fbf8` is deployed, and the fit check links back to these terms.
 
+The same page now shows the redline itself beside a three-row ledger preview
+and a pinned downloadable sample packet. The 492 KB archive contains thirteen
+files: the exact source pair, revision and redline outputs, logs, issue ledger,
+and build and delivery manifests. Its deterministic SHA-256 is
+`1683a0ebe49753608287a9e4af23090c05a9ce7cda13d662c6c3cc737a7aa878`.
+LazyingArtWebsite commit `ed0434d` is deployed; the page, preview, and packet
+returned HTTP 200 and the binary hashes matched. This closes the promised
+issue-ledger evidence gap without creating a customer or revenue claim.
+
 ## Active secondary route: bilingual lecture pack
 
 The live [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) covers one

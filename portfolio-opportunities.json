@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -73,6 +73,27 @@
         "Human language review is required before claiming subtitle accuracy"
       ],
       "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "short-video-pipeline-engineering",
+      "title": "Short-video caption pipeline feasibility",
+      "state": "candidate",
+      "buyer": "A SaaS team replacing a third-party short-video editor with an owned server-side pipeline",
+      "need": "Accept large mobile videos, generate correctly timed multilingual captions, render reusable styles, and return a vertical MP4 through an asynchronous API",
+      "projects": ["LazyEdit", "MultilingualWhisper", "LazyEdge", "AutoPublish"],
+      "first_deliverable": "One paid caption-core feasibility milestone: private API-contract map, representative Hebrew and bidirectional-text risk test, one supplied caption style, resumable-upload boundary, and measured go/no-go report",
+      "first_test": "Use the current low-proposal Upwork brief as demand evidence and apply only after account, fee, rate, availability, acceptance, and client-spend review; state that Hebrew and RTL are validation work, not proven capability",
+      "proof": [
+        "https://github.com/lachlanchen/LazyEdit",
+        "https://www.upwork.com/freelance-jobs/apply/Senior-Video-Pipeline-Engineer-Build-Short-Video-Editing-Service_~022093815402846822614/"
+      ],
+      "gates": [
+        "Do not claim Hebrew ASR, word alignment, RTL or bidirectional rendering, two-gigabyte resumable upload, ten-style coverage, or minutes-level production throughput before measurement",
+        "Keep the first commitment to a paid feasibility milestone rather than the full four-stage service",
+        "The client's low historical spend and payment-per-accepted-milestone language require exact acceptance and payment review",
+        "Keep application, communication, source files, contract, and payment on Upwork"
+      ],
+      "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 2, "low_support": 1, "repeatability": 3}
     },
     {
       "id": "etymology-learning-deck",

@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "id": "lazyedit-video-pipeline-opportunity",
+  "objective": "Pursue one paid caption-core feasibility milestone for an in-house short-video editing service without claiming unverified Hebrew, RTL, large-upload, or production-scale capability.",
+  "source_need": {
+    "captured_at": "2026-09-05T11:40:00Z",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Senior-Video-Pipeline-Engineer-Build-Short-Video-Editing-Service_~022093815402846822614/",
+    "title": "Senior Video-Pipeline Engineer — Build an AI Short-Video Editing Service",
+    "state": "public_listing_visible",
+    "posted": "six days before verification",
+    "contract": "Hourly, expert, more than 30 hours per week, three to six months, paid per accepted milestone",
+    "public_rate": "not shown",
+    "activity": "fewer than five proposals; zero interviewing; zero invites; client last viewed five days before verification",
+    "client_evidence": "Member since 2020; USD 488 total spend; seven hires; one active contract",
+    "requested_first_priority": "Fast Hebrew captions with word timing, correct RTL and bidirectional rendering, approximately ten supplied styles, silence pacing, and optional repeated-take removal.",
+    "requested_integration": "A drop-in asynchronous REST service with webhook delivery, resumable mobile uploads and URL ingestion, queue and monitoring, cloud deployment, and 1080x1920 MP4 output."
+  },
+  "fit": {
+    "repository": "https://github.com/lachlanchen/LazyEdit",
+    "verified_public_commit": "29307f919d8f1505937bb8ada1547bbdd3895af0",
+    "supported_now": [
+      "Python and Tornado API-first video workflow",
+      "FFmpeg-backed video processing",
+      "Speech transcription and timed subtitle processing",
+      "Multilingual subtitle correction, translation, and burn-in",
+      "Upload, media-serving, process-status, preview, and publishing-queue paths",
+      "Project-owned vertical-video examples suitable as workflow evidence"
+    ],
+    "not_proven": [
+      "Fast conversational Hebrew accuracy or word alignment",
+      "Correct Hebrew and Arabic RTL or bidirectional mixed-script caption rendering",
+      "Ten buyer-supplied animated caption templates",
+      "Resumable or multipart uploads for files of two gigabytes or more",
+      "Drop-in compatibility with the buyer's private POST /projects and webhook contract",
+      "Repeated-take removal, punch-in zoom, B-roll selection, or face-centered reframing at the requested scale",
+      "Minutes-level production throughput or the buyer's ten-video blind acceptance test"
+    ]
+  },
+  "recommended_first_milestone": {
+    "state": "proposal_only",
+    "scope": "A paid caption-core feasibility and contract-mapping milestone using a small buyer-supplied representative set: map the private API contract, test Hebrew and mixed-direction caption risks, render one supplied caption style, choose the resumable-upload boundary, and report measured gaps before committing to the blind ten-video acceptance stage.",
+    "price": "not proposed until the live listing, rate, source set, acceptance criteria, freelancer fee, and account state are reviewed",
+    "policy": "Present this as risk reduction by an adjacent-system builder, not as an already complete Hebrew or production service. Keep contract, communication, files, and payment on Upwork."
+  },
+  "channel": {
+    "platform": "upwork",
+    "state": "application_prepared_login_required",
+    "application_packet": "prepared_in_ignored_private_storage",
+    "project_browser_account_state": "logged_out_at_last_visible_check",
+    "application_submitted": false,
+    "connects_spent": 0,
+    "remaining_review": [
+      "Confirm the listing is still open and unchanged",
+      "Inspect the visible Connects cost and freelancer fee after login",
+      "Confirm an honest hourly rate and 30-plus-hour availability",
+      "Review the client's low historical spend and milestone acceptance language",
+      "Confirm the first paid feasibility milestone with the buyer before promising the full pipeline"
+    ],
+    "policy": "Do not contact the buyer outside Upwork, claim portfolio results that are not public, or imply that a public listing is a qualified lead."
+  },
+  "funnel": {
+    "state": "attention",
+    "application_submitted": false,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

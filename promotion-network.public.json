@@ -71,6 +71,16 @@
       "url": ""
     },
     {
+      "id": "campaign:lazyedit-video-pipeline-opportunity",
+      "kind": "campaign",
+      "label": "lazyedit-video-pipeline-opportunity",
+      "metadata": {
+        "objective": "Pursue one paid caption-core feasibility milestone for an in-house short-video editing service without claiming unverified Hebrew, RTL, large-upload, or production-scale capability.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:lecture-archive-provenance",
       "kind": "campaign",
       "label": "lecture-archive-provenance",
@@ -96,7 +106,7 @@
       "label": "manuscript-sprint-pilot",
       "metadata": {
         "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
-        "version": 9
+        "version": 10
       },
       "url": ""
     },
@@ -611,6 +621,33 @@
         },
         "state": "candidate",
         "weighted_score": 4.05
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:short-video-pipeline-engineering",
+      "kind": "opportunity",
+      "label": "Short-video caption pipeline feasibility",
+      "metadata": {
+        "buyer": "A SaaS team replacing a third-party short-video editor with an owned server-side pipeline",
+        "first_deliverable": "One paid caption-core feasibility milestone: private API-contract map, representative Hebrew and bidirectional-text risk test, one supplied caption style, resumable-upload boundary, and measured go/no-go report",
+        "first_test": "Use the current low-proposal Upwork brief as demand evidence and apply only after account, fee, rate, availability, acceptance, and client-spend review; state that Hebrew and RTL are validation work, not proven capability",
+        "gates": [
+          "Do not claim Hebrew ASR, word alignment, RTL or bidirectional rendering, two-gigabyte resumable upload, ten-style coverage, or minutes-level production throughput before measurement",
+          "Keep the first commitment to a paid feasibility milestone rather than the full four-stage service",
+          "The client's low historical spend and payment-per-accepted-milestone language require exact acceptance and payment review",
+          "Keep application, communication, source files, contract, and payment on Upwork"
+        ],
+        "need": "Accept large mobile videos, generate correctly timed multilingual captions, render reusable styles, and return a vertical MP4 through an asynchronous API",
+        "scores": {
+          "buyer_pain": 5,
+          "delivery_readiness": 2,
+          "low_support": 1,
+          "proof": 4,
+          "repeatability": 3
+        },
+        "state": "candidate",
+        "weighted_score": 3.45
       },
       "url": ""
     },
@@ -6374,6 +6411,13 @@
       "url": "https://github.com/lachlanchen/LazyEdit"
     },
     {
+      "id": "url:101272dce8a5a487",
+      "kind": "web_resource",
+      "label": "synthetic delivery packet",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/raw/183d64325f4e943f14beb6a975a518eb593175f0/examples/latex-redline/artifacts/sample-delivery.zip"
+    },
+    {
       "id": "url:6b2db2d76f97f682",
       "kind": "web_resource",
       "label": "synthetic redline sample",
@@ -6512,6 +6556,13 @@
       "label": "www.reddit.com",
       "metadata": {},
       "url": "https://www.reddit.com/r/classicalchinese/comments/1s3bm63/started_learning_classical_non_mandarin_speaker/"
+    },
+    {
+      "id": "url:0ad4d57308a041c7",
+      "kind": "web_resource",
+      "label": "www.upwork.com",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Senior-Video-Pipeline-Engineer-Build-Short-Video-Editing-Service_~022093815402846822614/"
     },
     {
       "id": "url:69f6c24d845f2558",
@@ -7713,6 +7764,14 @@
       "relation": "targets",
       "source": "campaign:manuscript-sprint-pilot",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/raw/183d64325f4e943f14beb6a975a518eb593175f0/examples/latex-redline/artifacts/sample-delivery.zip",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "url:101272dce8a5a487"
     },
     {
       "confidence": 1.0,
@@ -9001,6 +9060,54 @@
       "relation": "uses_evidence",
       "source": "opportunity:scientific-manuscript-workbench",
       "target": "url:ab38f07eba1541a7"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AutoPublish",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:short-video-pipeline-engineering",
+      "target": "project:github-autopublish"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:short-video-pipeline-engineering",
+      "target": "project:github-lazyedge"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:short-video-pipeline-engineering",
+      "target": "project:github-multilingualwhisper"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:short-video-pipeline-engineering",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Senior-Video-Pipeline-Engineer-Build-Short-Video-Editing-Service_~022093815402846822614/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:short-video-pipeline-engineering",
+      "target": "url:0ad4d57308a041c7"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:short-video-pipeline-engineering",
+      "target": "url:90dd533df880bbcd"
     },
     {
       "confidence": 1.0,

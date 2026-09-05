@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 9,
+  "version": 10,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -24,6 +24,8 @@
   ],
   "source_evidence": {
     "synthetic_redline_sample": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
+    "synthetic_delivery_packet": "https://github.com/lachlanchen/LazyPromotion/raw/183d64325f4e943f14beb6a975a518eb593175f0/examples/latex-redline/artifacts/sample-delivery.zip",
+    "synthetic_delivery_packet_sha256": "1683a0ebe49753608287a9e4af23090c05a9ce7cda13d662c6c3cc737a7aa878",
     "social_preview": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png",
     "preview_renderer": "https://github.com/lachlanchen/LazyingArtWebsite/blob/eef9bdac71670586afc5fbfe162aed8ba0bcff61/tools/render_manuscript_sprint_social.py"
   },
@@ -31,7 +33,24 @@
     "state": "live",
     "url": "https://lazying.art/manuscript-sprint/",
     "fit_check": "https://lazying.art/manuscript-sprint/fit-check/",
-    "website_commit": "da8fbf8322d3a81602a363fed1ff36f646c8db2a",
+    "website_commit": "ed0434d210122c0c6ee33e8fca4363b312fa6036",
+    "sample_delivery": {
+      "state": "deployed_verified",
+      "checked_at": "2026-09-05T11:38:00Z",
+      "website_deployment": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33963816952",
+      "source_commit": "183d64325f4e943f14beb6a975a518eb593175f0",
+      "website_commit": "ed0434d210122c0c6ee33e8fca4363b312fa6036",
+      "packet_url": "https://github.com/lachlanchen/LazyPromotion/raw/183d64325f4e943f14beb6a975a518eb593175f0/examples/latex-redline/artifacts/sample-delivery.zip",
+      "packet_bytes": 503431,
+      "packet_sha256": "1683a0ebe49753608287a9e4af23090c05a9ce7cda13d662c6c3cc737a7aa878",
+      "files": 13,
+      "issue_ledger_rows": 7,
+      "preview_url": "https://lazying.art/manuscript-sprint/assets/manuscript-redline-sample.png",
+      "preview_dimensions": "993x1404",
+      "preview_sha256": "f67fc56a510f235424dd5ae91293ab9481f3f82c87df721cc763c4228c66b358",
+      "verification": "The Pages deployment succeeded. The live offer, preview PNG, and pinned packet returned HTTP 200; the PNG and ZIP matched their committed SHA-256 values.",
+      "claim_boundary": "A one-page project-owned synthetic delivery. It is not customer work, scientific review, journal compliance, a paid delivery, or a publication result."
+    },
     "social_preview": {
       "state": "deployed_verified",
       "url": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png",

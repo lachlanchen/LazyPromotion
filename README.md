@@ -90,7 +90,7 @@ flowchart LR
 | [`sync_github_catalog.py`](sync_github_catalog.py) | Deterministic catalog refresh through the open-source GitHub CLI |
 | [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
-| [`docs/first-1000.md`](docs/first-1000.md) | Three bounded USD 250 service routes and their truthful four-sale milestone |
+| [`docs/first-1000.md`](docs/first-1000.md) | Four bounded USD 250 service routes and their truthful four-sale milestone |
 | [`docs/lkt-marketplaces.md`](docs/lkt-marketplaces.md) | Evidence-backed Contra-first service-listing route, exact offer copy, operator gates, and marketplace fee boundaries |
 | [`marketplace-channels.json`](marketplace-channels.json) | Current Contra, Upwork, and Fiverr comparison plus a fail-closed LKT listing packet |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |
@@ -101,6 +101,7 @@ flowchart LR
 | [`blog_editorial.py`](blog_editorial.py) | Static count, identity, language, Markdown-structure, and manifest checks for the LazyBlog editorial ledger and four-file post bundles |
 | [`owned_monitor.py`](owned_monitor.py) | Read-only Postiz publication/engagement monitor that requires visible release verification, creates review alerts, stores no raw provider IDs, and never calls engagement a lead |
 | [`inbound_monitor.py`](inbound_monitor.py) | Read-only iCloud intake monitor that records only the dedicated paid-sprint folder's aggregate counts and never opens or persists mail content |
+| [`linkedin_reply_monitor.py`](linkedin_reply_monitor.py) | Read-only monitor for one reviewed LinkedIn outreach thread; records only aggregate event counts and requires visible review before changing funnel state |
 | [`lkt_inbox.py`](lkt_inbox.py) | Fail-closed receiver for the encrypted LKT fit-check spool; validates, decrypts, saves privately, then removes only the verified remote envelope |
 | [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT, manuscript, and lecture-pack Stripe paths |
 | [`lkt_hardware_pricing.py`](lkt_hardware_pricing.py) | Read-only supplied-device margin check that keeps hardware separate from the USD 250 collection-fit service |
@@ -410,7 +411,7 @@ before every public reply.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py worker.py network.py inventory.py metrics.py signals.py blog_editorial.py
+python -m py_compile promotion.py browser.py worker.py network.py inventory.py metrics.py signals.py blog_editorial.py linkedin_reply_monitor.py
 python blog_editorial.py ledger docs/blog-editorial-ledger.md
 python blog_editorial.py post ../BLOG POST_ID
 bash -n scripts/desktop.sh

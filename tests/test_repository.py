@@ -750,9 +750,27 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(meeting["proposed_scope"]["pilot_meeting_cap"], 3)
         self.assertEqual(meeting["proposed_scope"]["minutes_per_meeting_cap"], 60)
         self.assertIn("explicitly agreed Chinese variant", meeting["proposed_scope"]["language_boundary"])
+        proof = meeting["meeting_proof"]
+        self.assertEqual(proof["state"], "live_verified")
+        self.assertEqual(proof["url"], "https://lazying.art/meeting-intelligence/")
+        self.assertEqual(
+            proof["website_commit"],
+            "a984487b7cab7a42168619888749e3bf51b143ec",
+        )
+        self.assertEqual(
+            proof["repository_commit"],
+            "907e0b3ba6a48cc1d42e37cdaa22b28416264ab6",
+        )
+        self.assertEqual(
+            proof["artifact_sha256"],
+            "b75713fcd7520fb904b56a02e513405ecbd8f4e8e62097cf04cbc4b35ef0358e",
+        )
+        self.assertIn("scripted", proof["proof_boundary"])
+        self.assertIn("not recorded meeting audio", proof["proof_boundary"])
+        self.assertIn("https://lazying.art/meeting-intelligence/", meeting["public_proof"])
         self.assertEqual(
             meeting["architecture_attachment"]["sha256"],
-            "f8e8939861553b1cc5b5ce0c99547f71ced0052c33e6ebe30c30f64cbacdf34c",
+            "5a28f7033b9e6c780c11cc8314ac9e8e0b79c3eca2c215ad9c48aac1d8633323",
         )
         self.assertFalse(meeting["application_submitted"])
         self.assertEqual(meeting["connects_spent"], 0)

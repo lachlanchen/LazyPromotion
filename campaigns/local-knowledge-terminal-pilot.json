@@ -97,13 +97,13 @@
       "client_evidence": "The public listing showed a new Upwork account created on August 31, 2026 and no prior spend or hire history.",
       "component_fit": {
         "localstt": "A running private first-party service implements durable multilingual Whisper large-v3 jobs, timestamped Markdown, per-application isolation, recovery, and optional WhisperX/pyannote diarization. Its public health boundary was live; it does not prove meeting-scale recognition accuracy.",
-        "localknowledgeterminal": "Public code and the live passage graph prove source hashes, locators, excerpts, accepted/rejected/superseded states, and rebuildable graph projections at a small hand-reviewed scale.",
+        "localknowledgeterminal": "Public code, the live passage graph, and a live scripted bilingual meeting proof demonstrate source hashes, exact transcript spans, all ten requested knowledge categories, stored manual correction history, reviewed graph edges, and portable JSON at a small hand-reviewed scale.",
         "video2book": "Public code proves durable timestamped transcript and source-map workflows across long-form archives.",
         "aimemo": "Private active-development code provides strict structured memo types, account-scoped search/export, and conflict-safe revisions; it is not a meeting ontology or enterprise approval system.",
         "lazyedge": "Public code proves a default-deny boundary for explicitly approved private services; it is not enterprise SSO, RBAC, or compliance certification."
       },
       "critical_gaps": [
-        "No artifact proves the complete long bilingual meeting to multi-speaker diarization to automatic knowledge extraction to per-unit approval to portable search loop.",
+        "The new public artifact proves the scripted, manually reviewed transcript-to-typed-unit-to-evidence-and-revision-to-portable-JSON path, but it does not prove recorded-audio ingestion, multi-speaker diarization, automatic extraction, measured accuracy, long-meeting scale, or permission-filtered search.",
         "No real buyer audio establishes Chinese variant, code-switch, name, overlap, room-acoustics, WER, or diarization acceptance thresholds.",
         "The public evidence is first-party project work, not an enterprise customer deployment.",
         "Live meeting bots, enterprise connectors, SSO or enterprise IAM, compliance certification, guaranteed accuracy, unlimited volume, and ongoing support do not fit the proposed fixed build."
@@ -124,16 +124,28 @@
         "first_gate": "A funded architecture, data/threat map, representative-audio benchmark plan, and documented go/no-go decision before the larger build spend."
       },
       "public_proof": [
+        "https://lazying.art/meeting-intelligence/",
+        "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/907e0b3ba6a48cc1d42e37cdaa22b28416264ab6/examples/artifacts/scripted-bilingual-meeting-knowledge.json",
         "https://github.com/lachlanchen/LocalKnowledgeTerminal",
         "https://lazying.art/lkt/passage-graph/",
         "https://github.com/lachlanchen/Video2Book",
         "https://github.com/lachlanchen/LazyEdge",
         "https://text-and-speech-api.lazying.art/healthz"
       ],
+      "meeting_proof": {
+        "state": "live_verified",
+        "checked_on": "2026-09-05",
+        "url": "https://lazying.art/meeting-intelligence/",
+        "website_commit": "a984487b7cab7a42168619888749e3bf51b143ec",
+        "repository_commit": "907e0b3ba6a48cc1d42e37cdaa22b28416264ab6",
+        "artifact_sha256": "b75713fcd7520fb904b56a02e513405ecbd8f4e8e62097cf04cbc4b35ef0358e",
+        "source_fixture_sha256": "4087a4626f719379ff78971865c9a5e931c1024aea8a24d77116f7f54f956d74",
+        "proof_boundary": "Project-owned scripted English/Mandarin transcript, authored timestamps, ten manually reviewed knowledge categories, exact evidence spans, one stored superseded correction, reviewed graph assertions, and portable JSON. It is not recorded meeting audio, ASR, diarization, automatic extraction, an accuracy benchmark, a customer result, or an enterprise deployment."
+      },
       "application_packet": "prepared_in_ignored_private_storage",
       "architecture_attachment": {
         "state": "two_page_pdf_ready_not_attached",
-        "sha256": "f8e8939861553b1cc5b5ce0c99547f71ced0052c33e6ebe30c30f64cbacdf34c",
+        "sha256": "5a28f7033b9e6c780c11cc8314ac9e8e0b79c3eca2c215ad9c48aac1d8633323",
         "visual_qa": "Both rendered pages were inspected after the missing-glyph correction; no clipping, overlap, broken link text, or missing glyph remained."
       },
       "application_submitted": false,

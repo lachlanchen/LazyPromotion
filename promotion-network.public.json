@@ -5818,30 +5818,44 @@
       "url": "https://www.upwork.com/freelance-jobs/apply/Enterprise-Architecture-Consultant-Expert-Review-Operating-Layer-Intelligence-Brain_~022095776744342146823/"
     },
     {
-      "id": "url:1c57cb81d6efe0d4",
+      "id": "url:8f00fbacca64b715",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission meeting proof url",
+      "metadata": {},
+      "url": "https://lazying.art/meeting-intelligence/"
+    },
+    {
+      "id": "url:94ee137e42979da1",
       "kind": "web_resource",
       "label": "enterprise meeting intelligence mission public proof 2",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/907e0b3ba6a48cc1d42e37cdaa22b28416264ab6/examples/artifacts/scripted-bilingual-meeting-knowledge.json"
+    },
+    {
+      "id": "url:1c57cb81d6efe0d4",
+      "kind": "web_resource",
+      "label": "enterprise meeting intelligence mission public proof 4",
       "metadata": {},
       "url": "https://lazying.art/lkt/passage-graph/"
     },
     {
       "id": "url:6c61657175e6875a",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 3",
+      "label": "enterprise meeting intelligence mission public proof 5",
       "metadata": {},
       "url": "https://github.com/lachlanchen/Video2Book"
     },
     {
       "id": "url:45192426591114fc",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 4",
+      "label": "enterprise meeting intelligence mission public proof 6",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyEdge"
     },
     {
       "id": "url:e11294f3dfa63ddb",
       "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 5",
+      "label": "enterprise meeting intelligence mission public proof 7",
       "metadata": {},
       "url": "https://text-and-speech-api.lazying.art/healthz"
     },
@@ -7387,11 +7401,27 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/meeting-intelligence/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:8f00fbacca64b715"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:91a35c7c8125b8ac"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/907e0b3ba6a48cc1d42e37cdaa22b28416264ab6/examples/artifacts/scripted-bilingual-meeting-knowledge.json",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:94ee137e42979da1"
     },
     {
       "confidence": 1.0,

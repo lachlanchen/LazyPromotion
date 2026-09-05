@@ -1249,7 +1249,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 8)
+        self.assertEqual(campaign["version"], 9)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1268,11 +1268,23 @@ class RepositoryTests(unittest.TestCase):
         exclusions = " ".join(offer["excluded"]).casefold()
         self.assertIn("ghostwriting", exclusions)
         self.assertIn("publication or acceptance guarantees", exclusions)
+        terms = offer["working_terms"]
+        self.assertEqual(terms["state"], "live_verified")
+        self.assertEqual(
+            terms["website_commit"],
+            "da8fbf8322d3a81602a363fed1ff36f646c8db2a",
+        )
+        self.assertEqual(terms["maximum_concurrent_sprints"], 1)
+        self.assertEqual(sum(terms["deliverable_allocation_usd"].values()), 250)
+        self.assertEqual(terms["source_copy_retention_days"], 14)
+        self.assertTrue(terms["verification"]["fit_check_links_to_terms"])
+        self.assertEqual(terms["verification"]["deployment_conclusion"], "success")
 
         smoke = campaign["fit_check_smoke"]
         self.assertFalse(smoke["automatic_submission"])
         self.assertEqual(smoke["network_mutations"], 0)
         self.assertFalse(smoke["payment_before_scope_acceptance"])
+        self.assertTrue(smoke["working_terms_linked"])
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
 

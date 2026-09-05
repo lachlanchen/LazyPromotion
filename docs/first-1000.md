@@ -138,6 +138,17 @@ Its renderer pins the source PDF hash, and the live image matches the committed
 artifact. This improves the share preview without implying a client or journal
 outcome.
 
+The public offer now also fixes the working terms before source transfer:
+delivery within ten business days after accepted scope, payment, complete
+source, and an accessible template; one active sprint; one consolidated pass
+of up to ten build or formatting corrections within seven days; a full refund
+before source transfer or processing; and refund of the undelivered balance
+after work begins. The USD 250 allocation is USD 100 for the clean build, USD
+75 for the template and issue ledger, and USD 75 for the redline and correction
+pass. Working source copies are deleted within fourteen calendar days unless
+the written scope requires earlier deletion. LazyingArtWebsite commit
+`da8fbf8` is deployed, and the fit check links back to these terms.
+
 ## Active secondary route: bilingual lecture pack
 
 The live [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) covers one

@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 8,
+  "version": 9,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -31,7 +31,7 @@
     "state": "live",
     "url": "https://lazying.art/manuscript-sprint/",
     "fit_check": "https://lazying.art/manuscript-sprint/fit-check/",
-    "website_commit": "eef9bdac71670586afc5fbfe162aed8ba0bcff61",
+    "website_commit": "da8fbf8322d3a81602a363fed1ff36f646c8db2a",
     "social_preview": {
       "state": "deployed_verified",
       "url": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png",
@@ -51,7 +51,31 @@
       "peer-review response drafting",
       "submission portal access",
       "publication or acceptance guarantees"
-    ]
+    ],
+    "working_terms": {
+      "state": "live_verified",
+      "checked_at": "2026-09-05T08:05:50Z",
+      "website_commit": "da8fbf8322d3a81602a363fed1ff36f646c8db2a",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33954289603",
+      "public_anchor": "https://lazying.art/manuscript-sprint/#terms",
+      "delivery_window": "ten business days after accepted scope, confirmed payment, complete agreed source, and an accessible target template",
+      "maximum_concurrent_sprints": 1,
+      "correction_window": "one consolidated list of up to ten build or formatting corrections within seven calendar days after delivery",
+      "deliverable_allocation_usd": {
+        "clean_build": 100,
+        "template_and_issue_ledger": 75,
+        "redline_and_correction_pass": 75
+      },
+      "source_copy_retention_days": 14,
+      "support_boundary": "written clarification during the seven-day correction window; no ongoing editing or submission service",
+      "verification": {
+        "offer_http_status": 200,
+        "fit_check_http_status": 200,
+        "fit_check_links_to_terms": true,
+        "deployment_conclusion": "success"
+      },
+      "policy": "The buyer-specific written scope may narrow these terms but must not expand the fixed deliverables, weaken the source-handling boundary, or create publication and submission promises without separate explicit review."
+    }
   },
   "channels": {
     "github_profile": {
@@ -137,7 +161,8 @@
     "automatic_submission": false,
     "network_mutations": 0,
     "attribution_fields": ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
-    "payment_before_scope_acceptance": false
+    "payment_before_scope_acceptance": false,
+    "working_terms_linked": true
   },
   "intake_routing": {
     "state": "active",

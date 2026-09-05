@@ -23,6 +23,17 @@ examples are shorter than the requested format, and accepts the client's paid
 3–5 minute sample as the proper fit test. It remains unsubmitted behind the
 same marketplace login and review gate.
 
+A fresher and cleaner production match asks for Mandarin/English 15–60 second
+paid-social edits for a Taiwanese audience at USD 10–18 per hour, starting with
+paid trial tasks. The public client record shows USD 23K spent, 79 hires, and
+only 5–10 proposals when checked. A concise application now points to the
+project-owned 9:16 timed-text proof, the 30-second aligned-media proof, and
+LazyEdit source. It proposes one master plus two hook variants, burned captions
+and SRT at USD 18 per hour. It also states the real gap: LazyingArt has no public
+Meta-ad conversion case study, so the proposal makes no ROAS, cost-per-lead, or
+Taiwan-market performance claim. The project browser is logged out; no proposal
+was sent and no Connects were spent.
+
 A USD 200 paid architecture consultation now provides a second exact LKT-shaped
 need: a company wants its enterprise memory to preserve source evidence,
 permissions, human-approved state, and audit trails across existing business

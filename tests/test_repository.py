@@ -1406,7 +1406,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 21)
+        self.assertEqual(campaign["version"], 22)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1416,6 +1416,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(discovery["indexed"])
         self.assertFalse(discovery["traffic_observed"])
         self.assertIn("not indexing", discovery["policy"])
+
+        marketplace = campaign["marketplace_leads"]["video_editor_for_meta_ads"]
+        self.assertEqual(marketplace["state"], "application_prepared_login_required")
+        self.assertIn("Video-Editor-for-Meta-Ads", marketplace["source_url"])
+        self.assertEqual(marketplace["proposed_rate"], "USD 18 per hour")
+        self.assertIn("paid trial", marketplace["commercial_terms_seen"])
+        self.assertIn("23K", marketplace["client_evidence"])
+        self.assertIn("Traditional Chinese wording", marketplace["proposal_draft"])
+        self.assertIn("won't claim ROAS", marketplace["proposal_draft"])
+        self.assertFalse(marketplace["application_submitted"])
+        self.assertFalse(marketplace["connects_spent"])
+        self.assertFalse(marketplace["contract_observed"])
+        self.assertFalse(marketplace["payment_observed"])
+        self.assertIn("not a lead, contract, sale, or revenue", marketplace["policy"])
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")
         self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")

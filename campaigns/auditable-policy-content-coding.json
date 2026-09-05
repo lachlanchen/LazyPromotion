@@ -1,15 +1,15 @@
 {
   "id": "auditable-policy-content-coding",
-  "version": 2,
+  "version": 3,
   "objective": "Win and deliver a current USD 600 textbook content-coding contract by showing exact, source-linked coding discipline rather than making an unsupported research claim.",
   "source_need": {
     "captured_on": "2026-09-05",
     "posted_on": "2026-08-31",
     "url": "https://www.upwork.com/freelance-jobs/apply/Content-coding-policy-texts-three-questions-each-plus-short-validation-pass_~022094173981642613860/",
     "budget": "USD 600 fixed price in two milestones: USD 450 for Part 1 and USD 150 for Part 2",
-    "scope": "Independently code 21 supplied policy-text excerpt files against three dropdown questions each, retain the deciding sentence and one-line rationale, then validate 193 supplied passages against the same fixed codebook.",
+    "scope": "Independently code 21 supplied policy-text excerpt files against five dropdown questions per text, retain the deciding sentence and one-line rationale, then validate 193 supplied passages against two or three questions per passage under the same fixed codebook.",
     "delivery_window": "Three weeks after receiving the files, with a longer schedule available for discussion before contracting.",
-    "activity_when_checked": "20 to 50 proposals, 0 interviewing, 0 invites sent",
+    "activity_when_checked": "20 to 50 proposals, 1 interviewing, 0 invites sent; client last viewed the listing five hours before the 2026-09-05 recheck",
     "client_history_when_checked": "USD 3.1K total spent and 11 hires",
     "policy": "The public listing is buyer-intent evidence only. It is not a lead, contract, sale, payment, or received revenue. Client files must remain outside Git."
   },

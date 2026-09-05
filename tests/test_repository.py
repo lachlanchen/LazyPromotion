@@ -1155,8 +1155,9 @@ class RepositoryTests(unittest.TestCase):
     def test_policy_coding_campaign_has_real_demand_and_synthetic_proof(self):
         path = ROOT / "campaigns" / "auditable-policy-content-coding.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         self.assertIn("USD 600", campaign["source_need"]["budget"])
+        self.assertIn("five dropdown questions", campaign["source_need"]["scope"])
         self.assertIn("193", campaign["source_need"]["scope"])
         self.assertEqual(campaign["owned_proof"]["state"], "built_and_reproducible")
         self.assertIn("auditable-policy-coding", campaign["owned_proof"]["url"])

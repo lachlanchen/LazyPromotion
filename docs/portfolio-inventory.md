@@ -40,15 +40,15 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 05:46:57 | "The Art of Lazying" is a repository that promotes strategic laziness for a simplified, productive life, encompassing AI agents, language learning, and vlogs with practical tips and real-life use cases. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 05:49:25 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 05:46:57 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-05 05:46:56 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 05:46:40 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 05:25:47 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 05:17:14 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | 2026-09-05 04:52:51 | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. |
-| [AgentShell](https://github.com/lachlanchen/AgentShell) | 2026-09-05 03:17:01 | AgentShell: separate Codex and AI CLI accounts across terminals while sharing one real working tree |
+| [AgentShell](https://github.com/lachlanchen/AgentShell) | 2026-09-05 03:17:01 | AgentShell: isolate named AI CLI accounts across terminals, share one working tree, and choose private or shared Codex history. |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 01:13:59 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
-| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-04 23:50:58 | Private, book-grounded multilingual knowledge cards on local hardware |
+| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-04 23:50:58 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
 | [BigMe](https://github.com/lachlanchen/BigMe) | 2026-09-04 21:00:37 | BigMe device connection and file sync workspace |
 
 ## Complete public repository inventory
@@ -58,7 +58,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | Repository | What its public metadata says | Language | Public surface |
 |---|---|---|---|
 | [AAPS](https://github.com/lachlanchen/AAPS) | Prompt is all you need: AAPS turns prompts into structured, verifiable pipelines. | JavaScript | [Open](https://aaps.lazying.art) |
-| [AgentShell](https://github.com/lachlanchen/AgentShell) | AgentShell: separate Codex and AI CLI accounts across terminals while sharing one real working tree | PowerShell | [Open](https://lazying.art) |
+| [AgentShell](https://github.com/lachlanchen/AgentShell) | AgentShell: isolate named AI CLI accounts across terminals, share one working tree, and choose private or shared Codex history. | PowerShell | [Open](https://lazying.art) |
 | [AgInTi](https://github.com/lachlanchen/AgInTi) | Documentation-first AgInTi scaffold for canonical multilingual READMEs and traceable self-creation, self-healing, and prompt-tool workflows. | Shell | [Open](https://agent.lazying.art) |
 | [aginti-browser](https://github.com/lachlanchen/aginti-browser) | Local-first Chrome/CDP agentic browser with webapp, CLI, Codex exec steering, virtual desktop, and guarded automation. | Python | [Open](https://lazying.art) |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. | Python | [Open](https://lazying.art) |
@@ -93,7 +93,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LocalVideoGen](https://github.com/lachlanchen/LocalVideoGen) | Quality-first local MiniMax H3 video-series generation and loopback API for dual RTX 4090 workstations, with native audio, references, P8/P9 continuity, and preserved artifacts. | Python | [Open](https://lazying.art) |
 | [MultilingualWhisper](https://github.com/lachlanchen/MultilingualWhisper) | MultilingualWhisper – Enhanced Whisper subtitles with fine‑grained language detection for multilingual videos | Python | [Open](https://lazying.art) |
 | [Musia](https://github.com/lachlanchen/Musia) | Musia: local-first AI song localization, stem separation, lyrics, beats, chords, and creative music workflows | Python | [Open](https://fun.lazying.art) |
-| [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. | Python | [Open](https://buy.lazying.art) |
+| [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. | Python | [Open](https://lachlanchen.github.io/LalaMedias/) |
 | [VideoCaptionerWithClip](https://github.com/lachlanchen/VideoCaptionerWithClip) | Video & image captioning with OpenAI CLIP embeddings + GPT decoder | Python | [Open](https://lazying.art) |
 | [VideoCaptionerWithVit](https://github.com/lachlanchen/VideoCaptionerWithVit) | Video captioning tool: extract key‑frames with Katna/OpenCV & generate captions with a ViT+GPT‑2 model. | Python | [Open](https://lazying.art) |
 
@@ -111,9 +111,9 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LazyTravel](https://github.com/lachlanchen/LazyTravel) | Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON | Python | [Open](https://lachlanchen.github.io/LazyTravel/) |
 | [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. | TeX | [Open](https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html) |
 | [LinguaLeaf](https://github.com/lachlanchen/LinguaLeaf) | Compressed PDF artifact shelf for PocketPolyglot multilingual pocket books | JavaScript | [Open](https://lachlanchen.github.io/LinguaLeaf/website/) |
-| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | Private, book-grounded multilingual knowledge cards on local hardware | Python | [Open](https://lazying.art/lkt/) |
+| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. | Python | [Open](https://lazying.art/lkt/) |
 | [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot) | Build polished multilingual interlinear pocket books from PDF, EPUB, OCR, and TeX with ruby, grammar color, Studio, CLI, and resumable pipelines. | Python | [Open](https://learn.lazying.art) |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | "The Art of Lazying" is a repository that promotes strategic laziness for a simplified, productive life, encompassing AI agents, language learning, and vlogs with practical tips and real-life use cases. | Shell | [Open](https://lazying.art) |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. | Shell | [Open](https://lazying.art) |
 | [Video2Book](https://github.com/lachlanchen/Video2Book) | Turn long-form videos into timestamped transcripts, lecture notes, multilingual study material, and compiled books with a reproducible local pipeline. | Python | [Open](https://learn.lazying.art) |
 | [WordOrigins](https://github.com/lachlanchen/WordOrigins) | Analyze the word's origin and plot in a graph. | Jupyter Notebook | [Open](https://lazying.art) |
 | [WordsCardEink](https://github.com/lachlanchen/WordsCardEink) | A Raspberry Pi e‑ink project that curates vocabulary from CSV or OpenAI, adds phonetics and translations, renders themed word cards, and exposes a simple HTTP API to push new words to Waveshare panels. | Python | [Open](https://lazying.art) |

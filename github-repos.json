@@ -19,7 +19,7 @@
       "url": "https://github.com/lachlanchen/AAPS"
     },
     {
-      "description": "AgentShell: separate Codex and AI CLI accounts across terminals while sharing one real working tree",
+      "description": "AgentShell: isolate named AI CLI accounts across terminals, share one working tree, and choose private or shared Codex history.",
       "homepage": "https://lazying.art",
       "name": "AgentShell",
       "primary_language": "PowerShell",
@@ -45,7 +45,7 @@
         "terminal",
         "workflow-automation"
       ],
-      "updated_at": "2026-09-05T03:17:04Z",
+      "updated_at": "2026-09-05T05:50:16Z",
       "url": "https://github.com/lachlanchen/AgentShell"
     },
     {
@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T05:46:40Z",
+      "pushed_at": "2026-09-05T05:49:25Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-05T05:46:43Z",
+      "updated_at": "2026-09-05T05:49:28Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1554,7 +1554,7 @@
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
-      "description": "Private, book-grounded multilingual knowledge cards on local hardware",
+      "description": "Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware.",
       "homepage": "https://lazying.art/lkt/",
       "name": "LocalKnowledgeTerminal",
       "primary_language": "Python",
@@ -1573,7 +1573,7 @@
         "raspberry-pi",
         "sqlite"
       ],
-      "updated_at": "2026-09-04T23:51:02Z",
+      "updated_at": "2026-09-05T05:50:18Z",
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {
@@ -2026,7 +2026,7 @@
     },
     {
       "description": "Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun.",
-      "homepage": "https://buy.lazying.art",
+      "homepage": "https://lachlanchen.github.io/LalaMedias/",
       "name": "RaraXiaAndAyaChan",
       "primary_language": "Python",
       "pushed_at": "2026-09-05T04:52:51Z",
@@ -2043,7 +2043,7 @@
         "storytelling",
         "xiaoyunque"
       ],
-      "updated_at": "2026-09-05T04:52:55Z",
+      "updated_at": "2026-09-05T05:50:16Z",
       "url": "https://github.com/lachlanchen/RaraXiaAndAyaChan"
     },
     {
@@ -2154,7 +2154,7 @@
       "url": "https://github.com/lachlanchen/SyncImagingSystem"
     },
     {
-      "description": "\"The Art of Lazying\" is a repository that promotes strategic laziness for a simplified, productive life, encompassing AI agents, language learning, and vlogs with practical tips and real-life use cases.",
+      "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
       "homepage": "https://lazying.art",
       "name": "the-art-of-lazying",
       "primary_language": "Shell",
@@ -2171,7 +2171,7 @@
         "strategic",
         "workflows"
       ],
-      "updated_at": "2026-09-05T05:47:01Z",
+      "updated_at": "2026-09-05T05:50:19Z",
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
     {

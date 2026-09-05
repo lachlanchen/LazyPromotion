@@ -1406,7 +1406,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 22)
+        self.assertEqual(campaign["version"], 23)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1425,6 +1425,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("23K", marketplace["client_evidence"])
         self.assertIn("Traditional Chinese wording", marketplace["proposal_draft"])
         self.assertIn("won't claim ROAS", marketplace["proposal_draft"])
+        sample = marketplace["prepared_sample"]
+        self.assertEqual(sample["state"], "local_attachment_ready_not_published")
+        self.assertEqual(sample["dimensions"], "1080x1920")
+        self.assertEqual(sample["frame_rate"], 30)
+        self.assertEqual(len(sample["sha256"]), 64)
+        self.assertIn("Traditional Chinese", sample["content"])
+        self.assertIn("AAC stereo", sample["audio"])
+        self.assertFalse(sample["published"])
+        self.assertFalse(sample["attached"])
+        self.assertIn("not a customer ad", sample["claim_boundary"])
         self.assertFalse(marketplace["application_submitted"])
         self.assertFalse(marketplace["connects_spent"])
         self.assertFalse(marketplace["contract_observed"])

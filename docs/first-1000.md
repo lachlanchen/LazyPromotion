@@ -29,10 +29,13 @@ paid trial tasks. The public client record shows USD 23K spent, 79 hires, and
 only 5–10 proposals when checked. A concise application now points to the
 project-owned 9:16 timed-text proof, the 30-second aligned-media proof, and
 LazyEdit source. It proposes one master plus two hook variants, burned captions
-and SRT at USD 18 per hour. It also states the real gap: LazyingArt has no public
-Meta-ad conversion case study, so the proposal makes no ROAS, cost-per-lead, or
-Taiwan-market performance claim. The project browser is logged out; no proposal
-was sent and no Connects were spent.
+and SRT at USD 18 per hour. A 19-second 1080×1920 application attachment now
+demonstrates English/Traditional Chinese layout using only first-party L-and-N
+screens and release-bundled prompt audio. It also states the real gap:
+LazyingArt has no public Meta-ad conversion case study, so the proposal makes
+no ROAS, cost-per-lead, or Taiwan-market performance claim. The attachment is
+not published and the project browser is logged out; no proposal was sent and
+no Connects were spent.
 
 A USD 200 paid architecture consultation now provides a second exact LKT-shaped
 need: a company wants its enterprise memory to preserve source evidence,

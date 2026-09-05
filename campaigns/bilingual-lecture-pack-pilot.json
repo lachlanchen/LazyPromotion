@@ -1,5 +1,5 @@
 {
-  "version": 22,
+  "version": 23,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -194,8 +194,22 @@
         "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
         "https://github.com/lachlanchen/LazyEdit"
       ],
+      "prepared_sample": {
+        "state": "local_attachment_ready_not_published",
+        "filename": "landn-bilingual-vertical-v2.mp4",
+        "sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+        "duration_seconds": 19.366667,
+        "dimensions": "1080x1920",
+        "frame_rate": 30,
+        "audio": "AAC stereo with the release-bundled English light and night studio prompts",
+        "content": "A concise English and Traditional Chinese L-and-N web-app sample using only first-party interface captures, icon, and bundled prompt audio.",
+        "destination": "https://l-and-n.lazying.art",
+        "published": false,
+        "attached": false,
+        "claim_boundary": "The clip demonstrates bilingual short-form layout and first-party product editing. It is not a customer ad, paid-campaign result, pronunciation-accuracy claim, or public-store availability claim."
+      },
       "proposed_rate": "USD 18 per hour",
-      "proposal_draft": "Hi — this is close to the workflow I already use. I work in Mandarin and English, and I maintain LazyEdit, a local-first workflow for transcription, subtitle timing, multilingual captions, short vertical renders, and reviewed publishing. Two relevant project-owned examples are a 23-second 9:16 timed-text piece (https://www.youtube.com/watch?v=G9NKncZgRis) and a 30-second scene with 15 aligned segments and subtitle exports (https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html). For a paid trial, I can return one polished 15–60 second master, two hook variations, burned captions plus SRT, and export notes for the requested formats. For Taiwan, I would confirm the audience, Traditional Chinese wording, CTA, brand constraints, and one conversion goal before editing rather than mechanically translating the captions. My public examples are workflow pieces rather than customer ads, so your paid trial is the right fit test; I won't claim ROAS or cost-per-lead figures I don't have. I can begin at USD 18/hour.",
+      "proposal_draft": "Hi — this is close to the workflow I already use. I work in Mandarin and English, and I maintain LazyEdit, a local-first workflow for transcription, subtitle timing, multilingual captions, short vertical renders, and reviewed publishing. Two relevant project-owned examples are a 23-second 9:16 timed-text piece (https://www.youtube.com/watch?v=G9NKncZgRis) and a 30-second scene with 15 aligned segments and subtitle exports (https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html). I have also prepared an attached 19-second English/Traditional Chinese sample using first-party L-and-N app screens and audio. For a paid trial, I can return one polished 15–60 second master, two hook variations, burned captions plus SRT, and export notes for the requested formats. For Taiwan, I would confirm the audience, Traditional Chinese wording, CTA, brand constraints, and one conversion goal before editing rather than mechanically translating the captions. My public examples are workflow pieces rather than customer ads, so your paid trial is the right fit test; I won't claim ROAS or cost-per-lead figures I don't have. I can begin at USD 18/hour.",
       "application_submitted": false,
       "connects_spent": false,
       "contract_observed": false,

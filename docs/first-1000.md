@@ -123,6 +123,13 @@ The exact manuscript fit-check subject is routed into the same dedicated
 aggregate-only intake folder used by LKT. The routing rule and a fresh folder
 count were verified visibly without opening or persisting any message content.
 
+The offer and fit-check pages now use a dedicated 1200×630 preview rendered
+from the public synthetic redline. It shows the real additions and deletion,
+the three-build result, the fixed USD 250 scope, and the free-fit-check route.
+Its renderer pins the source PDF hash, and the live image matches the committed
+artifact. This improves the share preview without implying a client or journal
+outcome.
+
 ## Active secondary route: bilingual lecture pack
 
 The live [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) covers one

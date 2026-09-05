@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 7,
+  "version": 8,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -22,11 +22,27 @@
       "engagement": "research_only"
     }
   ],
+  "source_evidence": {
+    "synthetic_redline_sample": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
+    "social_preview": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png",
+    "preview_renderer": "https://github.com/lachlanchen/LazyingArtWebsite/blob/eef9bdac71670586afc5fbfe162aed8ba0bcff61/tools/render_manuscript_sprint_social.py"
+  },
   "offer": {
     "state": "live",
     "url": "https://lazying.art/manuscript-sprint/",
     "fit_check": "https://lazying.art/manuscript-sprint/fit-check/",
-    "website_commit": "a5dae7d",
+    "website_commit": "eef9bdac71670586afc5fbfe162aed8ba0bcff61",
+    "social_preview": {
+      "state": "deployed_verified",
+      "url": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png",
+      "dimensions": "1200x630",
+      "sha256": "72148026c25930370ec03888ef194ca46e6ab931a7a61ce8b4935c7f6a186292",
+      "source_pdf": "https://github.com/lachlanchen/LazyPromotion/blob/main/examples/latex-redline/artifacts/redline.pdf",
+      "source_pdf_sha256": "52bedcef9d7ecbb10329f07eb52383f98b8917ccfd4fa7c85af1bd4af1c670d2",
+      "source_evidence": "Project-owned synthetic redline: baseline, revision, and redline all build; final LaTeX errors and undefined references are both zero.",
+      "verification": "The landing page, fit-check page, and exact PNG returned HTTP 200 after the Pages deployment; the live image hash and 1200x630 dimensions matched the committed artifact.",
+      "claim_boundary": "The card is a synthetic build proof, not a customer result, journal submission, scientific result, or acceptance claim."
+    },
     "price": "USD 250",
     "scope": "One LaTeX manuscript up to 7,500 words, one target template, one supplied baseline and revision, a clean build, issue ledger, reproducible redline, and one pass of up to ten consolidated build or formatting corrections.",
     "excluded": [

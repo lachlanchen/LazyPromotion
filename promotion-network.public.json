@@ -86,7 +86,7 @@
       "label": "manuscript-sprint-pilot",
       "metadata": {
         "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
-        "version": 7
+        "version": 8
       },
       "url": ""
     },
@@ -4071,7 +4071,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T05:51:04Z",
+        "pushed_at": "2026-09-05T06:13:45Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4091,7 +4091,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T05:51:07Z"
+        "updated_at": "2026-09-05T06:13:48Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4289,7 +4289,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T06:01:47Z",
+        "pushed_at": "2026-09-05T06:17:44Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4305,7 +4305,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T06:01:51Z"
+        "updated_at": "2026-09-05T06:17:48Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -5916,13 +5916,6 @@
       "url": "https://github.com/lachlanchen/WordOrigins"
     },
     {
-      "id": "url:6b2db2d76f97f682",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline"
-    },
-    {
       "id": "url:6da737bdd18800ca",
       "kind": "web_resource",
       "label": "github.com",
@@ -6154,6 +6147,13 @@
       "url": "https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html"
     },
     {
+      "id": "url:e26b66653f0f443d",
+      "kind": "web_resource",
+      "label": "preview renderer",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/blob/eef9bdac71670586afc5fbfe162aed8ba0bcff61/tools/render_manuscript_sprint_social.py"
+    },
+    {
       "id": "url:8a87167432f94090",
       "kind": "web_resource",
       "label": "product brief",
@@ -6224,11 +6224,25 @@
       "url": "https://lazying.art/lkt/sample-report/"
     },
     {
+      "id": "url:6f4d0939c85ed5f5",
+      "kind": "web_resource",
+      "label": "social preview",
+      "metadata": {},
+      "url": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png"
+    },
+    {
       "id": "url:90dd533df880bbcd",
       "kind": "web_resource",
       "label": "subtitle pipeline",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyEdit"
+    },
+    {
+      "id": "url:6b2db2d76f97f682",
+      "kind": "web_resource",
+      "label": "synthetic redline sample",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline"
     },
     {
       "id": "url:1b32d792d65f5fdb",
@@ -7299,6 +7313,30 @@
       "relation": "targets",
       "source": "campaign:manuscript-sprint-pilot",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "url:6b2db2d76f97f682"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "url:6f4d0939c85ed5f5"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/blob/eef9bdac71670586afc5fbfe162aed8ba0bcff61/tools/render_manuscript_sprint_social.py",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:manuscript-sprint-pilot",
+      "target": "url:e26b66653f0f443d"
     },
     {
       "confidence": 1.0,

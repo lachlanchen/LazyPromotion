@@ -1198,7 +1198,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 7)
+        self.assertEqual(campaign["version"], 8)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -1208,6 +1208,12 @@ class RepositoryTests(unittest.TestCase):
             "https://lazying.art/manuscript-sprint/fit-check/",
         )
         self.assertIn("7,500 words", offer["scope"])
+        preview = offer["social_preview"]
+        self.assertEqual(preview["state"], "deployed_verified")
+        self.assertEqual(preview["dimensions"], "1200x630")
+        self.assertEqual(len(preview["sha256"]), 64)
+        self.assertIn("manuscript-sprint/assets/", preview["url"])
+        self.assertIn("synthetic", preview["claim_boundary"])
         exclusions = " ".join(offer["excluded"]).casefold()
         self.assertIn("ghostwriting", exclusions)
         self.assertIn("publication or acceptance guarantees", exclusions)

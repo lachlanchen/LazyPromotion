@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -618,6 +618,7 @@
       "visual": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
       "sample_report_post": {
         "state": "published_and_link_verified",
+        "known_owned_replies": 1,
         "published_at": "2026-09-01T23:48:17Z",
         "url": "https://twitter.com/lazyingart/status/2094935495788945567",
         "content": "Before building local RAG for a private PDF collection, try the boring path first: clean extraction, SQLite/FTS, visible citations, and a written failure boundary. Here’s a concrete sample: https://lazying.art/lkt/sample-report/",
@@ -628,6 +629,19 @@
           "reply_url": "https://x.com/lazyingart/status/2094942330940019052",
           "reply_content": "The sample report is here: https://lazying.art/lkt/sample-report/",
           "verification": "The visible X reply renders one lazying.art sample-report card. The repair was submitted once and then verified; it was not retried."
+        },
+        "analytics_observation": {
+          "checked_at": "2026-09-05T13:24:32Z",
+          "post_impressions": 6,
+          "provider_reply_count": 1,
+          "known_owned_reply_count": 1,
+          "external_reply_count": 0,
+          "likes": 0,
+          "reposts": 0,
+          "visible_thread_review": "Both visible articles were authored by @lazyingart; the only reply is the already-recorded missing-link repair.",
+          "lead_or_sale_observed": false,
+          "verified_received_gross_usd": 0,
+          "policy": "Postiz reply totals include owned thread repairs. Subtract the exact recorded owned reply before creating an external-engagement alert; impressions and owned replies are not leads or revenue."
         },
         "policy": "First-party evidence note. The repair adds only the missing destination and makes no new product or revenue claim."
       },
@@ -664,6 +678,18 @@
         "published_at": "2026-09-01T23:53:19Z",
         "url": "https://www.instagram.com/p/Dcw4xSzj1F8/",
         "content": "Most private-document projects start by choosing a vector database. I’d start earlier:\n\nCan you extract the text cleanly? Can every answer point back to a stable record? Can the system say “not enough evidence”?\n\nI turned that into a small collection-fit process. The public sample shows the data map, citation boundary, browser proof, and go/no-go.\n\nlazying.art/lkt/sample-report/\n\n#LocalAI #KnowledgeManagement",
+        "analytics_observation": {
+          "checked_at": "2026-09-05T13:18:00Z",
+          "views": 31,
+          "reach": 13,
+          "likes": 1,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "lead_or_sale_observed": false,
+          "verified_received_gross_usd": 0,
+          "policy": "These are provider-reported attention metrics for this exact post. They do not establish a fit inquiry, lead, sale, or received revenue."
+        },
         "policy": "A concise first-party demonstration using the project-owned service cover. The caption makes no customer-result or performance claim."
       },
       "passage_provenance_post": {

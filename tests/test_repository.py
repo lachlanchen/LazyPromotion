@@ -787,7 +787,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1176,6 +1176,27 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("free fit check", payment_request["policy"])
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
+        x_sample = campaign["channels"]["x"]["sample_report_post"]
+        self.assertEqual(x_sample["known_owned_replies"], 1)
+        self.assertEqual(x_sample["analytics_observation"]["provider_reply_count"], 1)
+        self.assertEqual(x_sample["analytics_observation"]["known_owned_reply_count"], 1)
+        self.assertEqual(x_sample["analytics_observation"]["external_reply_count"], 0)
+        self.assertFalse(x_sample["analytics_observation"]["lead_or_sale_observed"])
+        self.assertEqual(
+            x_sample["analytics_observation"]["verified_received_gross_usd"], 0
+        )
+        instagram_sample = campaign["channels"]["instagram"]["sample_report_post"]
+        self.assertEqual(instagram_sample["analytics_observation"]["views"], 31)
+        self.assertEqual(instagram_sample["analytics_observation"]["reach"], 13)
+        self.assertEqual(instagram_sample["analytics_observation"]["likes"], 1)
+        self.assertEqual(instagram_sample["analytics_observation"]["comments"], 0)
+        self.assertFalse(
+            instagram_sample["analytics_observation"]["lead_or_sale_observed"]
+        )
+        self.assertEqual(
+            instagram_sample["analytics_observation"]["verified_received_gross_usd"],
+            0,
+        )
         self.assertEqual(campaign["channels"]["lazyblog"]["state"], "published")
         self.assertEqual(
             sorted(campaign["channels"]["lazyblog"]["translations"]), ["ja", "zh"]
@@ -1605,7 +1626,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 25)
+        self.assertEqual(campaign["version"], 26)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -1653,6 +1674,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(linkedin["shortlink"])
         self.assertTrue(linkedin["verification"]["stored_text_exact"])
         self.assertIn("not leads or revenue", linkedin["policy"])
+
+        x_analytics = campaign["channels"]["x"]["analytics_observation"]
+        self.assertEqual(x_analytics["impressions"], 2)
+        self.assertEqual(x_analytics["replies"], 0)
+        self.assertFalse(x_analytics["lead_or_sale_observed"])
 
         guide = linkedin["practical_guide"]
         self.assertEqual(guide["state"], "postiz_queue")

@@ -78,6 +78,75 @@ class OwnedMonitorTests(unittest.TestCase):
             now=self.now,
         )
 
+    def test_metric_snapshot_normalizes_postiz_numeric_strings(self):
+        snapshot = owned_monitor.metric_snapshot(
+            [
+                {"label": "Impressions", "data": [{"date": "2026-09-05", "total": "1,234"}]},
+                {"label": "Watch percentage", "data": [{"date": "2026-09-05", "total": "108.26"}]},
+                {"label": "Unavailable", "data": [{"date": "2026-09-05", "total": "N/A"}]},
+                {"label": "Boolean", "data": [{"date": "2026-09-05", "total": True}]},
+            ]
+        )
+
+        self.assertEqual(snapshot["Impressions"]["latest"], 1234)
+        self.assertEqual(snapshot["Watch percentage"]["latest"], 108.26)
+        self.assertIsNone(snapshot["Unavailable"]["latest"])
+        self.assertIsNone(snapshot["Boolean"]["latest"])
+
+    def test_string_reply_metric_still_creates_review_alert(self):
+        published = post(state="PUBLISHED")
+        published["releaseURL"] = "https://x.com/lazyingart/status/123"
+        fake = FakePostiz(
+            posts=[published],
+            post_metrics=[
+                [{"label": "Replies", "data": [{"date": "2026-09-05", "total": "1"}]}]
+            ],
+        )
+
+        report = self.run_monitor(fake)
+
+        self.assertEqual(report["posts"][0]["replies"], 1)
+        self.assertEqual(report["alerts"][0]["kind"], "engagement_increased")
+        self.assertIn("do not reply automatically", report["alerts"][0]["action"])
+
+    def test_recorded_owned_reply_is_not_external_engagement(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "local-knowledge-terminal-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        sample = campaign["channels"]["x"]["sample_report_post"]
+        published = post(state="PUBLISHED")
+        published["content"] = sample["postiz_content"]
+        published["releaseURL"] = sample["url"]
+        first = FakePostiz(
+            posts=[published],
+            post_metrics=[
+                [{"label": "Replies", "data": [{"date": "2026-09-05", "total": "1"}]}]
+            ],
+        )
+
+        report = self.run_monitor(first)
+
+        observed = report["posts"][0]
+        self.assertEqual(observed["provider_replies"], 1)
+        self.assertEqual(observed["known_owned_replies"], 1)
+        self.assertEqual(observed["replies"], 0)
+        self.assertEqual(report["alerts"], [])
+
+        second = FakePostiz(
+            posts=[published],
+            post_metrics=[
+                [{"label": "Replies", "data": [{"date": "2026-09-05", "total": "2"}]}]
+            ],
+        )
+        report = self.run_monitor(second)
+        alert = report["alerts"][0]
+        self.assertEqual(alert["provider_replies"], 2)
+        self.assertEqual(alert["known_owned_replies"], 1)
+        self.assertEqual(alert["replies"], 1)
+        self.assertEqual(alert["reply_delta"], 1)
+
     def test_queued_post_stays_read_only_and_ids_are_not_persisted(self):
         fake = FakePostiz(posts=[post()])
         report = self.run_monitor(fake)
@@ -294,6 +363,9 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertIn("youtube.com/watch?v=", youtube["release_url"])
         self.assertEqual(youtube["review"]["stored_state"], "PUBLISHED")
         self.assertTrue(youtube["review"]["release_present"])
+        self.assertEqual(youtube["analytics_observation"]["views"], 21)
+        self.assertEqual(youtube["analytics_observation"]["comments"], 0)
+        self.assertFalse(youtube["analytics_observation"]["lead_or_sale_observed"])
         youtube_route = owned_monitor.route_for_post(
             "youtube", youtube["postiz_content"], owned_monitor.route_index()
         )
@@ -311,6 +383,7 @@ class OwnedMonitorTests(unittest.TestCase):
         x_route = owned_monitor.route_for_post("x", x_post["postiz_content"], routes)
         self.assertEqual(x_route["campaign_id"], "local-knowledge-terminal-pilot")
         self.assertEqual(x_route["route"], "sample_report_post")
+        self.assertEqual(x_route["known_owned_replies"], 1)
 
         instagram_post = campaign["channels"]["instagram"]["sample_report_post"]
         instagram_route = owned_monitor.route_for_post(

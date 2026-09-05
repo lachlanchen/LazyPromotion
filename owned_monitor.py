@@ -13,6 +13,7 @@ import fcntl
 import hashlib
 import html
 import json
+import math
 import os
 import re
 import sqlite3
@@ -125,25 +126,28 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
             provider = providers.get(channel_name)
             if not provider or not isinstance(channel, dict):
                 continue
-            candidates = [("product", channel.get("content"))]
+            candidates = [("product", channel.get("content"), channel)]
             if channel.get("postiz_content"):
-                candidates.append(("product", channel.get("postiz_content")))
+                candidates.append(("product", channel.get("postiz_content"), channel))
             candidates.extend(
-                (name, value.get("content"))
+                (name, value.get("content"), value)
                 for name, value in channel.items()
                 if isinstance(value, dict) and value.get("content")
             )
             candidates.extend(
-                (name, value.get("postiz_content"))
+                (name, value.get("postiz_content"), value)
                 for name, value in channel.items()
                 if isinstance(value, dict) and value.get("postiz_content")
             )
-            for route, content in candidates:
+            for route, content, record in candidates:
                 normalized = canonical_text(str(content or ""))
                 if normalized:
                     routes[(provider, normalized)] = {
                         "campaign_id": campaign_id,
                         "route": route,
+                        "known_owned_replies": max(
+                            0, int(record.get("known_owned_replies") or 0)
+                        ),
                     }
     return routes
 
@@ -151,7 +155,11 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
 def route_for_post(provider: str, content: str, routes: dict) -> dict:
     return routes.get(
         (provider, canonical_text(content)),
-        {"campaign_id": "", "route": "unmatched_owned_post"},
+        {
+            "campaign_id": "",
+            "route": "unmatched_owned_post",
+            "known_owned_replies": 0,
+        },
     )
 
 
@@ -169,9 +177,9 @@ def metric_snapshot(payload: Any) -> dict[str, dict]:
         if not label or not isinstance(points, list):
             continue
         latest = points[-1] if points and isinstance(points[-1], dict) else {}
-        total = latest.get("total", latest.get("value"))
+        total = numeric_metric(latest.get("total", latest.get("value")))
         result[label] = {
-            "latest": total if isinstance(total, (int, float)) else None,
+            "latest": total,
             "date": str(latest.get("date") or ""),
             "points": len(points),
             "percentage_change": metric.get(
@@ -179,6 +187,27 @@ def metric_snapshot(payload: Any) -> dict[str, dict]:
             ),
         }
     return result
+
+
+def numeric_metric(value: Any) -> int | float | None:
+    """Normalize Postiz metric totals without treating booleans as counts."""
+    if isinstance(value, bool) or value is None:
+        return None
+    if isinstance(value, (int, float)):
+        number = float(value)
+    elif isinstance(value, str):
+        candidate = value.strip().replace(",", "")
+        if not candidate:
+            return None
+        try:
+            number = float(candidate)
+        except ValueError:
+            return None
+    else:
+        return None
+    if not math.isfinite(number):
+        return None
+    return int(number) if number.is_integer() else number
 
 
 def metric_value(metrics: dict[str, dict], label: str) -> int:
@@ -348,7 +377,11 @@ def monitor_once(
                     metrics = metric_snapshot(analytics)
 
             comments = metric_value(metrics, "Comments")
-            replies = metric_value(metrics, "Replies")
+            provider_replies = metric_value(metrics, "Replies")
+            known_owned_replies = min(
+                provider_replies, int(route.get("known_owned_replies") or 0)
+            )
+            replies = max(0, provider_replies - known_owned_replies)
             previous = previous_observation(db, key)
             previous_comments = int(previous["comments"]) if previous else 0
             previous_replies = int(previous["replies"]) if previous else 0
@@ -364,6 +397,8 @@ def monitor_once(
                 "release_url": release_url,
                 "comments": comments,
                 "replies": replies,
+                "provider_replies": provider_replies,
+                "known_owned_replies": known_owned_replies,
                 "needs_release_connection": needs_connection,
             }
             observed.append(public_summary)
@@ -469,6 +504,7 @@ def monitor_once(
             "engagement_is_not_a_lead": True,
             "automatic_public_reply": False,
             "raw_postiz_ids_persisted": False,
+            "known_owned_replies_subtracted_before_alerts": True,
         },
         "posts": observed,
         "alerts": alerts,

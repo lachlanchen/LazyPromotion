@@ -98,8 +98,15 @@ sample](https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai
 has 15 aligned lines in Japanese, English, and Chinese, 45 searchable strings,
 click-to-time navigation, five checked concept pointers, and subtitle exports.
 Video2Book, PocketPolyglot, LazyEdit, LKT, and the Susskind archive provide the
-reusable book, media, and provenance components. The proof is 30.5 seconds—not
-a complete customer delivery or permission to reuse third-party lectures.
+reusable book, media, and provenance components.
+
+The landing page now also opens a complete project-owned delivery packet: a
+41-second synthetic English source, corrected Markdown and SRT, Traditional
+Chinese SRT, editable alignment, a two-page A5 PDF, captioned H.264 preview,
+preserved first ASR draft, issue ledger, rights manifest, and hashes. It is the
+inspectable delivery format the earlier media proof lacked. It is still not a
+customer result, certified translation, complete 20-minute delivery, or
+permission to reuse third-party lectures.
 
 A separate [USD 400 scientific-video editing
 brief](https://www.upwork.com/freelance-jobs/apply/Video-Editor-for-Scientific-Educational-YouTube-Video_~022095602736009919529/)
@@ -161,6 +168,11 @@ followed. The route remains a low-frequency research input.
   Susskind archive article led with 28 clicks and the Classical Mechanics Reader
   had 25. That is owned discovery evidence for the lecture route, but the PDF-led
   queries still indicate free-resource intent rather than a lead or sale.
+- A current Reddit request asked for a coherent path from product fundamentals
+  into LLMs, embeddings, and evaluations. The reviewed response gave an
+  8–12-week project plan and course-selection criteria without a link or product
+  mention because LazyingArtAgent is only a partial fit. The exact reply was
+  visibly delivered once. It is a helpful interaction, not a lead or sale.
 
 ## Operating decision
 

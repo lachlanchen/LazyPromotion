@@ -1,5 +1,5 @@
 {
-  "version": 25,
+  "version": 26,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -374,6 +374,17 @@
         "public_http_status": 200,
         "tracked_destination_preserved": true
       },
+      "analytics_observation": {
+        "checked_at": "2026-09-05T13:18:00Z",
+        "impressions": 2,
+        "likes": 0,
+        "replies": 0,
+        "reposts": 0,
+        "bookmarks": 0,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "These are provider-reported attention metrics for this exact post. They do not establish a fit inquiry, lead, sale, or received revenue."
+      },
       "policy": "The reviewed 242-character post leads with the source-work lesson, uses the protocol-less first-party destination that Postiz preserved, and carries the live fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
     },
     "instagram": {
@@ -469,6 +480,16 @@
         "public_title_exact": true,
         "public_playback_verified": true,
         "tracked_destinations_present": true
+      },
+      "analytics_observation": {
+        "checked_at": "2026-09-05T13:18:00Z",
+        "views": 21,
+        "likes": 0,
+        "comments": 0,
+        "favorites": 0,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "These are provider-reported attention metrics for this exact video. Views are not a fit inquiry, lead, sale, or received revenue."
       },
       "queue_gate": "The reviewed Postiz schedule was the only publication route used for this asset. Do not submit its LazyEdit package to AutoPublish after release.",
       "policy": "This is project-owned workflow proof, not a customer result. The public copy states one rights-cleared English lecture up to 20 minutes, one target language, and the fixed USD 250 pilot. Publication, views, and clicks are attention evidence, not leads or revenue."

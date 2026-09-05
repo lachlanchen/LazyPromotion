@@ -30,6 +30,13 @@ def valid_manuscript_config() -> dict:
     return config
 
 
+def valid_lecture_config() -> dict:
+    config = valid_config()
+    config["slug"] = "bilingual-lecture-pack"
+    config["fulfillmentReviewNotes"].extend(["review 7", "review 8"])
+    return config
+
+
 class FakeResponse:
     def __init__(self, payload: dict):
         self.payload = payload
@@ -89,6 +96,24 @@ class PaymentReadinessTests(unittest.TestCase):
         )
         self.assertEqual(report["config"]["display_price"], "USD 250")
         self.assertEqual(report["config"]["fulfillment_review_notes"], 8)
+        self.assertTrue(report["local_live_configuration_ready"])
+        self.assertFalse(report["mutates_stripe"])
+        self.assertNotIn("sk_live_private_test_value", serialized)
+
+    def test_lecture_report_uses_its_exact_guarded_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            helper = self.helper(
+                Path(tmp),
+                valid_lecture_config(),
+                config_name="bilingual-lecture-pack.json",
+            )
+            report = payment_readiness.build_report(helper, offer="lecture")
+        serialized = json.dumps(report)
+        self.assertEqual(report["offer"], "lecture")
+        self.assertEqual(report["config"]["offer"], "lecture")
+        self.assertEqual(report["config"]["product_slug"], "bilingual-lecture-pack")
+        self.assertEqual(report["config"]["display_price"], "USD 250")
+        self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
         self.assertTrue(report["local_live_configuration_ready"])
         self.assertFalse(report["mutates_stripe"])
         self.assertNotIn("sk_live_private_test_value", serialized)

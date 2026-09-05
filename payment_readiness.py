@@ -24,6 +24,11 @@ OFFER_CONTRACTS = {
         "slug": "manuscript-build-redline-sprint",
         "minimum_review_notes": 8,
     },
+    "lecture": {
+        "config_relative": Path("config/bilingual-lecture-pack.json"),
+        "slug": "bilingual-lecture-pack",
+        "minimum_review_notes": 9,
+    },
 }
 
 

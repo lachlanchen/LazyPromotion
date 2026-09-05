@@ -192,6 +192,11 @@
     "checked_at": "2026-09-05T08:37:00Z",
     "video_editor_for_meta_ads": {
       "state": "application_prepared_login_required",
+      "preflight_rechecked_at": "2026-09-05T12:44:00Z",
+      "listing_visible_in_project_browser": true,
+      "project_browser_login_required": true,
+      "apply_control_visible": false,
+      "connects_cost_visible": false,
       "source_url": "https://www.upwork.com/freelance-jobs/apply/Video-Editor-for-Meta-Ads_~022095584849534897201/",
       "need": "Edit 15–60 second Chinese and English footage into short paid-social videos, produce hook and aspect-ratio variants, and deliver bilingual burned captions or subtitle tracks for a Taiwanese audience.",
       "commercial_terms_seen": "USD 10–18 per hour, less than 30 hours per week, three to six months, beginning with paid trial tasks",

@@ -1618,6 +1618,10 @@ class RepositoryTests(unittest.TestCase):
 
         marketplace = campaign["marketplace_leads"]["video_editor_for_meta_ads"]
         self.assertEqual(marketplace["state"], "application_prepared_login_required")
+        self.assertTrue(marketplace["listing_visible_in_project_browser"])
+        self.assertTrue(marketplace["project_browser_login_required"])
+        self.assertFalse(marketplace["apply_control_visible"])
+        self.assertFalse(marketplace["connects_cost_visible"])
         self.assertIn("Video-Editor-for-Meta-Ads", marketplace["source_url"])
         self.assertEqual(marketplace["proposed_rate"], "USD 18 per hour")
         self.assertIn("paid trial", marketplace["commercial_terms_seen"])

@@ -337,6 +337,34 @@
       "url": ""
     },
     {
+      "id": "opportunity:durable-ai-memory-workflow",
+      "kind": "opportunity",
+      "label": "Durable AI conversation and voice memory",
+      "metadata": {
+        "buyer": "A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later",
+        "first_deliverable": "Keep AiMemo as a free beta while proving an export-first workflow: preserve the untouched source, extract one reviewable record per useful item, retain its source reference and capture time, append corrections, and export plain Markdown or JSON",
+        "first_test": "Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes",
+        "gates": [
+          "Do not claim that AiMemo can import or back up another product's full chat history until that exact path is tested",
+          "Explain capture, model processing, retention, deletion, and export behavior in short plain language that matches the running app",
+          "Voice capture requires recording consent and must preserve the original audio or clearly say when it does not",
+          "Verify that correction history and plain Markdown or JSON export survive a round trip before charging",
+          "Do not link AiMemo in public replies until its voice reliability, retention behavior, and store-facing privacy wording agree"
+        ],
+        "need": "Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 2,
+          "low_support": 3,
+          "proof": 3,
+          "repeatability": 4
+        },
+        "state": "gated",
+        "weighted_score": 3.25
+      },
+      "url": ""
+    },
+    {
       "id": "opportunity:explainable-game-classroom",
       "kind": "opportunity",
       "label": "Explainable game classroom bundle",
@@ -5867,6 +5895,13 @@
       "url": "https://github.com/lachlanchen/Musia"
     },
     {
+      "id": "url:18fd544f017e768f",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/AI-Wearable"
+    },
+    {
       "id": "url:1b702463589d4de7",
       "kind": "web_resource",
       "label": "github.com",
@@ -5886,6 +5921,13 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/PaperAgentDemo"
+    },
+    {
+      "id": "url:350f04027b2f2e9d",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingAgentWeb"
     },
     {
       "id": "url:3ac773bf58cf86d3",
@@ -5914,6 +5956,13 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/WordOrigins"
+    },
+    {
+      "id": "url:5e65cdfa20d329fc",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/AgentShell"
     },
     {
       "id": "url:6da737bdd18800ca",
@@ -6287,11 +6336,39 @@
       "url": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html"
     },
     {
+      "id": "url:094d5ff48e63de9c",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/AiNoteTaker/comments/1vhbfj2/apps_for_taking_voice_notes/"
+    },
+    {
       "id": "url:2a9f5af30427584b",
       "kind": "web_resource",
       "label": "www.reddit.com",
       "metadata": {},
       "url": "https://www.reddit.com/r/ChineseLanguage/comments/1vkx5ss/the_analects_for_learners_15920_definitions/"
+    },
+    {
+      "id": "url:3631d469793120a0",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/"
+    },
+    {
+      "id": "url:3db6b3d6b01cadef",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vil3c6/anyone_else_hate_how_messy_it_is_to_get_useful/"
+    },
+    {
+      "id": "url:683672644b0eae8f",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/ObsidianMD/comments/1vx7v75/whats_your_fastest_way_to_capture_ideas_into/"
     },
     {
       "id": "url:7f9069ec37cf1b43",
@@ -7897,6 +7974,102 @@
       "relation": "uses_evidence",
       "source": "opportunity:creator-media-library",
       "target": "url:90dd533df880bbcd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AgentShell",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "project:github-agentshell"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AI-Wearable",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "project:github-ai-wearable"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingAgentWeb",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "project:github-lazyingagentweb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/AiNoteTaker/comments/1vhbfj2/apps_for_taking_voice_notes/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:094d5ff48e63de9c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AI-Wearable",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:18fd544f017e768f"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingAgentWeb",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:350f04027b2f2e9d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:3631d469793120a0"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/ChatGPT/comments/1vil3c6/anyone_else_hate_how_messy_it_is_to_get_useful/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:3db6b3d6b01cadef"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AgentShell",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:5e65cdfa20d329fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/ObsidianMD/comments/1vx7v75/whats_your_fastest_way_to_capture_ideas_into/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:683672644b0eae8f"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:durable-ai-memory-workflow",
+      "target": "url:d9c92d269df40406"
     },
     {
       "confidence": 1.0,

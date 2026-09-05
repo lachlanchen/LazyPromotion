@@ -45,6 +45,13 @@ class OpportunityTests(unittest.TestCase):
             "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
             body,
         )
+        self.assertIn("### Durable AI conversation and voice memory", body)
+        self.assertIn(
+            "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/",
+            body,
+        )
+        self.assertIn("Keep AiMemo as a free beta", body)
+        self.assertIn("Do not link AiMemo in public replies", body)
         self.assertIn("do not call either public store availability", body)
         self.assertIn("the three active USD 250 routes", body)
         self.assertIn("Gates:", body)

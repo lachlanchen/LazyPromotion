@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -303,6 +303,34 @@
         "Date changing financial facts and link to primary sources"
       ],
       "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 2, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "durable-ai-memory-workflow",
+      "title": "Durable AI conversation and voice memory",
+      "state": "gated",
+      "buyer": "A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later",
+      "need": "Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job",
+      "projects": ["AgentShell", "LocalKnowledgeTerminal", "LazyingAgentWeb", "AI-Wearable"],
+      "first_deliverable": "Keep AiMemo as a free beta while proving an export-first workflow: preserve the untouched source, extract one reviewable record per useful item, retain its source reference and capture time, append corrections, and export plain Markdown or JSON",
+      "first_test": "Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes",
+      "proof": [
+        "https://github.com/lachlanchen/AgentShell",
+        "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+        "https://github.com/lachlanchen/LazyingAgentWeb",
+        "https://github.com/lachlanchen/AI-Wearable",
+        "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/",
+        "https://www.reddit.com/r/ChatGPT/comments/1vil3c6/anyone_else_hate_how_messy_it_is_to_get_useful/",
+        "https://www.reddit.com/r/ObsidianMD/comments/1vx7v75/whats_your_fastest_way_to_capture_ideas_into/",
+        "https://www.reddit.com/r/AiNoteTaker/comments/1vhbfj2/apps_for_taking_voice_notes/"
+      ],
+      "gates": [
+        "Do not claim that AiMemo can import or back up another product's full chat history until that exact path is tested",
+        "Explain capture, model processing, retention, deletion, and export behavior in short plain language that matches the running app",
+        "Voice capture requires recording consent and must preserve the original audio or clearly say when it does not",
+        "Verify that correction history and plain Markdown or JSON export survive a round trip before charging",
+        "Do not link AiMemo in public replies until its voice reliability, retention behavior, and store-facing privacy wording agree"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 3, "delivery_readiness": 2, "low_support": 3, "repeatability": 4}
     },
     {
       "id": "focused-pronunciation-micro-lessons",

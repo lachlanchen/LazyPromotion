@@ -21,6 +21,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Explainable game classroom bundle](#explainable-game-classroom) | candidate | Teach decisions with exact rules and visible reasoning instead of opaque move recommendations | Let one teacher or club use a short lesson pack and observe where explanation or setup fails | 3.50 |
 | [Song-to-language lesson](#song-to-language-lesson) | candidate | Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes | Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material | 3.50 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
+| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes | 3.25 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | gated | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits | 3.15 |
 
@@ -370,6 +371,39 @@ Gates:
 - No personalized financial advice, performance promises, or implied endorsement
 - Verify interview, figure, quotation, and translation permissions
 - Date changing financial facts and link to primary sources
+
+### Durable AI conversation and voice memory
+
+**State:** gated
+
+**Buyer:** A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later
+
+**Need:** Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job
+
+**Existing work:** [AgentShell](https://github.com/lachlanchen/AgentShell), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal), [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb), [AI-Wearable](https://github.com/lachlanchen/AI-Wearable)
+
+**First deliverable:** Keep AiMemo as a free beta while proving an export-first workflow: preserve the untouched source, extract one reviewable record per useful item, retain its source reference and capture time, append corrections, and export plain Markdown or JSON
+
+**First demand test:** Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes
+
+Evidence:
+
+- <https://github.com/lachlanchen/AgentShell>
+- <https://github.com/lachlanchen/LocalKnowledgeTerminal>
+- <https://github.com/lachlanchen/LazyingAgentWeb>
+- <https://github.com/lachlanchen/AI-Wearable>
+- <https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/>
+- <https://www.reddit.com/r/ChatGPT/comments/1vil3c6/anyone_else_hate_how_messy_it_is_to_get_useful/>
+- <https://www.reddit.com/r/ObsidianMD/comments/1vx7v75/whats_your_fastest_way_to_capture_ideas_into/>
+- <https://www.reddit.com/r/AiNoteTaker/comments/1vhbfj2/apps_for_taking_voice_notes/>
+
+Gates:
+
+- Do not claim that AiMemo can import or back up another product's full chat history until that exact path is tested
+- Explain capture, model processing, retention, deletion, and export behavior in short plain language that matches the running app
+- Voice capture requires recording consent and must preserve the original audio or clearly say when it does not
+- Verify that correction history and plain Markdown or JSON export survive a round trip before charging
+- Do not link AiMemo in public replies until its voice reliability, retention behavior, and store-facing privacy wording agree
 
 ### Classical Chinese history classroom pack
 

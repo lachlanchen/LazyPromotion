@@ -5,9 +5,9 @@
   "source_evidence": {
     "repository": "https://github.com/lachlanchen/L-and-N",
     "pwa": "https://l-and-n.lazying.art/",
-    "deployed_source_commit": "01d0e9e27e5316bb463a10c1904f26b67bd441bc",
-    "current_evidence_commit": "1a3629a8adb5c03c7936bf7ad42c514d22001496",
-    "verified_on": "2026-09-05",
+    "deployed_source_commit": "d837c146eb0ff66b4ea4000a004f582f4c31ef5f",
+    "current_evidence_commit": "d538acb1637618eda9633acd3ec13186fecd73e2",
+    "verified_on": "2026-09-06",
     "supported_capabilities": [
       "Hear an L/N contrast and record one word",
       "Inspect mouth-placement and airflow guidance",
@@ -19,10 +19,18 @@
       "pwa": "live",
       "google_play_internal_test": "available_to_internal_testers",
       "google_play_production": "changes_in_review",
-      "testflight_external": "waiting_for_review",
+      "testflight_internal": "testing_build_2",
+      "testflight_external": "testing_build_2",
+      "testflight_public_url": "https://testflight.apple.com/join/CpkT8m9C",
       "apple_app_store": "waiting_for_review",
       "operator_handoff_updated_on": "2026-09-06",
       "policy": "This campaign links only the live PWA. Do not call either store version public or available until the corresponding storefront is independently verified."
+    },
+    "audio_repair": {
+      "pwa": "The iPhone browser path now records one microphone stream, retains the waveform after Stop, and requires recognized text before showing or saving a score.",
+      "apple": "iOS and embedded watchOS build 2 include the repair and are available through TestFlight; the same build is waiting for formal App Review.",
+      "android": "The existing Google Play and direct APK builds predate this repair. Do not advertise the repaired behavior as present on Android until a newer Android build is tested and uploaded.",
+      "claim_boundary": "Describe scores as explainable coaching feedback, never as clinical assessment or guaranteed pronunciation accuracy."
     },
     "android_test_build": {
       "version": "1.0 (2)",

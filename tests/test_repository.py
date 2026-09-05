@@ -669,7 +669,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(releases["pwa"], "live")
         self.assertEqual(releases["google_play_internal_test"], "available_to_internal_testers")
         self.assertEqual(releases["google_play_production"], "changes_in_review")
-        self.assertEqual(releases["testflight_external"], "waiting_for_review")
+        self.assertEqual(releases["testflight_internal"], "testing_build_2")
+        self.assertEqual(releases["testflight_external"], "testing_build_2")
+        self.assertEqual(
+            releases["testflight_public_url"],
+            "https://testflight.apple.com/join/CpkT8m9C",
+        )
         self.assertEqual(releases["apple_app_store"], "waiting_for_review")
         test_build = campaign["source_evidence"]["android_test_build"]
         self.assertTrue(test_build["first_party_apk"].startswith("https://l-and-n.lazying.art/"))

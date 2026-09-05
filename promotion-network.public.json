@@ -3122,7 +3122,7 @@
       "metadata": {
         "description": "AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T05:17:14Z",
+        "pushed_at": "2026-09-05T09:32:37Z",
         "topics": [
           "aginti",
           "agintiflow",
@@ -3143,7 +3143,7 @@
           "unity",
           "unreal-engine"
         ],
-        "updated_at": "2026-09-05T05:17:18Z"
+        "updated_at": "2026-09-05T09:32:41Z"
       },
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
@@ -3701,7 +3701,7 @@
       "metadata": {
         "description": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
         "homepage": "https://l-and-n.lazying.art",
-        "pushed_at": "2026-09-05T07:37:27Z",
+        "pushed_at": "2026-09-05T10:13:41Z",
         "topics": [
           "android",
           "cantonese",
@@ -3723,7 +3723,7 @@
           "watchos",
           "whisper"
         ],
-        "updated_at": "2026-09-05T07:37:31Z"
+        "updated_at": "2026-09-05T10:13:45Z"
       },
       "url": "https://github.com/lachlanchen/L-and-N"
     },
@@ -4099,7 +4099,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T07:04:43Z",
+        "pushed_at": "2026-09-05T10:05:34Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4119,7 +4119,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T07:04:46Z"
+        "updated_at": "2026-09-05T10:05:37Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4317,7 +4317,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T06:44:22Z",
+        "pushed_at": "2026-09-05T09:42:32Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4333,7 +4333,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T06:44:26Z"
+        "updated_at": "2026-09-05T09:42:36Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -4417,22 +4417,27 @@
       "metadata": {
         "description": "Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware.",
         "homepage": "https://lazying.art/lkt/",
-        "pushed_at": "2026-09-04T23:50:58Z",
+        "pushed_at": "2026-09-05T10:22:33Z",
         "topics": [
+          "citations",
           "e-ink",
           "etymology",
           "knowledge-base",
+          "knowledge-graph",
+          "lazying-art",
           "llama-cpp",
           "local-first",
+          "meeting-intelligence",
           "multilingual",
           "offline",
+          "provenance",
           "python",
           "qwen",
           "rag",
           "raspberry-pi",
           "sqlite"
         ],
-        "updated_at": "2026-09-05T05:50:18Z"
+        "updated_at": "2026-09-05T10:22:38Z"
       },
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
@@ -4492,7 +4497,7 @@
           "webapp",
           "world-travel"
         ],
-        "updated_at": "2026-09-04T21:27:20Z"
+        "updated_at": "2026-09-05T09:38:11Z"
       },
       "url": "https://github.com/lachlanchen/LocalVideoGen"
     },
@@ -5652,7 +5657,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T07:28:39Z",
+        "pushed_at": "2026-09-05T09:54:43Z",
         "topics": [
           "automation",
           "language",
@@ -5665,7 +5670,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T07:28:42Z"
+        "updated_at": "2026-09-05T09:54:47Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -5676,7 +5681,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T07:28:21Z",
+        "pushed_at": "2026-09-05T09:45:45Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5694,7 +5699,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-05T07:28:24Z"
+        "updated_at": "2026-09-05T09:45:48Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },

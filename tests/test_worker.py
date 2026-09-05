@@ -162,6 +162,27 @@ class WorkerTests(unittest.TestCase):
         self.assertEqual(result["candidates_reconciled"][0]["candidate_id"], candidate["id"])
         self.assertEqual(result["candidates_reconciled"][0]["status"], "rejected")
 
+    def test_zero_budget_model_pass_still_reconciles_unmatched_need(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/camping/help/",
+            author="reader",
+            body="Can someone recommend a cheap tent for camping in Arizona?",
+            published_at=self.now,
+        )
+        with patch("promotion.open_db", return_value=self.db), patch(
+            "promotion.run_codex_triage"
+        ) as triage_model:
+            result = worker.run_models([], max_triage=0, max_drafts=0)
+        triage_model.assert_not_called()
+        self.assertEqual(result["selected_candidate_ids"], [])
+        self.assertEqual(result["candidates_reconciled"][0]["candidate_id"], candidate["id"])
+        status = self.db.execute(
+            "SELECT status FROM candidates WHERE id=?", (candidate["id"],)
+        ).fetchone()[0]
+        self.assertEqual(status, "rejected")
+
     def test_review_queue_only_contains_latest_unsent_draft(self):
         candidate = promotion.ingest_candidate(
             self.db,

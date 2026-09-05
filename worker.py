@@ -373,13 +373,15 @@ def run_cycle(args, state: dict) -> dict:
                 platform_results.append({"platform": platform, "ok": False, "error": str(exc)})
     retry_after = active_model_backoff(state)
     if args.no_model:
-        model_results = {"skipped": True, "reason": "disabled"}
+        model_results = run_models([], max_triage=0, max_drafts=0)
+        model_results.update({"skipped": True, "reason": "disabled"})
     elif retry_after:
-        model_results = {
+        model_results = run_models([], max_triage=0, max_drafts=0)
+        model_results.update({
             "skipped": True,
             "reason": "model_quota_backoff",
             "retry_after": retry_after,
-        }
+        })
     else:
         model_results = run_models(
             discovered,

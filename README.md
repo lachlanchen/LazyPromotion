@@ -262,7 +262,8 @@ for current needs that are genuinely worth considering.
 If the model account reports an exhausted usage balance, the worker stops that
 cycle's remaining model calls and records a 24-hour backoff. Browser discovery
 continues during the backoff, so useful candidates remain available for later
-review without repeating a known-failing call every hour.
+review without repeating a known-failing call every hour. Deterministic cleanup
+and graph synchronization still run while model use is disabled or backed off.
 Continuous mode never approves,
 submits, votes, follows, or sends a direct message.
 It also generates Reddit drafts in value-only mode by default. A project mention

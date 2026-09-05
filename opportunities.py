@@ -126,9 +126,10 @@ def render(payload: dict) -> str:
             "## Interpretation",
             "",
             (
-                "LKT, manuscript redline, and the bilingual lecture pack are the three active "
-                "USD 250 routes because each has an exact scope, public proof, fit check, and "
-                "price. Candidate and gated opportunities should advance only after a current "
+                "LKT, manuscript redline, the bilingual lecture pack, and the story clip pilot "
+                "are the four active USD 250 routes because each has an exact scope, public "
+                "proof, price, and pre-transfer qualification route. Candidate and gated "
+                "opportunities should advance only after a current "
                 "explicit need, a rights-safe sample, and a written delivery boundary exist."
             ),
             "",

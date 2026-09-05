@@ -52,6 +52,8 @@ class InventoryTests(unittest.TestCase):
             priority,
         )
         self.assertIn("four confirmed USD 250", priority)
+        self.assertIn("[LazyEdit + LocalVideoGen + Musia](https://lazying.art/story-clip/)", priority)
+        self.assertIn("USD 250 Story Clip Pilot after a scoped inquiry", priority)
         self.assertNotIn("Verified public pre-order", priority)
 
 

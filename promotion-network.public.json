@@ -36,7 +36,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -711,6 +711,34 @@
         },
         "state": "gated",
         "weighted_score": 3.3
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:story-first-content-repurposing",
+      "kind": "opportunity",
+      "label": "Story-first interview clip pilot",
+      "metadata": {
+        "buyer": "A podcast, interview series, educator, or small mission-led team with a recording it controls",
+        "first_deliverable": "The live fixed USD 250 Story Clip Pilot for one customer-owned recording up to 30 minutes: two timestamped candidate moments with hook, cut rationale, and rights notes; then one selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, an editable caption/source ledger, and one bounded correction pass",
+        "first_test": "Use the current direct application as the first demand test and wait for a response; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
+        "gates": [
+          "The customer must control the recording, voices, faces, music, locations, and marks or identify every restriction before source transfer",
+          "The public samples are project-owned LazyingArt pieces, not customer work, travel-client experience, sales evidence, reach evidence, or a viral-performance claim",
+          "Translation, new filming, paid stock, publishing, raw source redistribution, extra finished clips, and performance promises are outside the fixed pilot",
+          "Agree compensation, confidentiality, delivery, revision, cancellation, refund, source transfer, and retention terms before payment or customer work",
+          "Do not repeat outreach or count an application, reply, inquiry, or page visit as revenue"
+        ],
+        "need": "Find a quiet but meaningful moment in a longer recording and turn it into one captioned vertical clip without forcing it into a generic viral template",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 4,
+          "low_support": 3,
+          "proof": 4,
+          "repeatability": 4
+        },
+        "state": "active",
+        "weighted_score": 3.9
       },
       "url": ""
     },
@@ -6271,11 +6299,25 @@
       "url": "https://lazying.art/manuscript-sprint/"
     },
     {
+      "id": "url:415da1977e7f8d4e",
+      "kind": "web_resource",
+      "label": "lazying.art",
+      "metadata": {},
+      "url": "https://lazying.art/story-clip/"
+    },
+    {
       "id": "url:ab38f07eba1541a7",
       "kind": "web_resource",
       "label": "lazying.art",
       "metadata": {},
       "url": "https://lazying.art/manuscript-sprint/fit-check/"
+    },
+    {
+      "id": "url:d40014bc482d5429",
+      "kind": "web_resource",
+      "label": "lazying.art",
+      "metadata": {},
+      "url": "https://lazying.art/work/"
     },
     {
       "id": "url:593c601822a24f73",
@@ -6586,6 +6628,13 @@
       "url": "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/"
     },
     {
+      "id": "url:cd5af9c1e5d02057",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/kanyakumari/comments/1w7812g/hiring_content_social_media_creator_turn_our/"
+    },
+    {
       "id": "url:e619addef00aff79",
       "kind": "web_resource",
       "label": "www.reddit.com",
@@ -6612,6 +6661,27 @@
       "label": "www.upwork.com",
       "metadata": {},
       "url": "https://www.upwork.com/freelance-jobs/apply/Academic-Editor-Needed_~022095485257926469387/"
+    },
+    {
+      "id": "url:bfdf7726f8851fd9",
+      "kind": "web_resource",
+      "label": "www.youtube.com",
+      "metadata": {},
+      "url": "https://www.youtube.com/watch?v=rVU37lPKPo8"
+    },
+    {
+      "id": "url:c29c81b2faaac7f5",
+      "kind": "web_resource",
+      "label": "www.youtube.com",
+      "metadata": {},
+      "url": "https://www.youtube.com/watch?v=9FjVTAgD9QE"
+    },
+    {
+      "id": "url:f8b923ff128279e1",
+      "kind": "web_resource",
+      "label": "www.youtube.com",
+      "metadata": {},
+      "url": "https://www.youtube.com/watch?v=da0vnv1lQ_E"
     }
   ],
   "relationships": [
@@ -9310,6 +9380,86 @@
       "relation": "uses_evidence",
       "source": "opportunity:source-aware-money-workbook",
       "target": "url:8c31df37ee870928"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AutoPublish",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "project:github-autopublish"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalVideoGen",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "project:localvideogen"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Musia",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "project:musia"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/story-clip/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:415da1977e7f8d4e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.youtube.com/watch?v=rVU37lPKPo8",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:bfdf7726f8851fd9"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.youtube.com/watch?v=9FjVTAgD9QE",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:c29c81b2faaac7f5"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/kanyakumari/comments/1w7812g/hiring_content_social_media_creator_turn_our/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:cd5af9c1e5d02057"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/work/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:d40014bc482d5429"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.youtube.com/watch?v=da0vnv1lQ_E",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:story-first-content-repurposing",
+      "target": "url:f8b923ff128279e1"
     },
     {
       "confidence": 1.0,

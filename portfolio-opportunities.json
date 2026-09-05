@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -55,6 +55,32 @@
         "Define transcript correction and translation acceptance criteria during the fit review"
       ],
       "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 4, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "story-first-content-repurposing",
+      "title": "Story-first interview clip pilot",
+      "state": "active",
+      "buyer": "A podcast, interview series, educator, or small mission-led team with a recording it controls",
+      "need": "Find a quiet but meaningful moment in a longer recording and turn it into one captioned vertical clip without forcing it into a generic viral template",
+      "projects": ["LazyEdit", "LocalVideoGen", "Musia", "AutoPublish"],
+      "first_deliverable": "The live fixed USD 250 Story Clip Pilot for one customer-owned recording up to 30 minutes: two timestamped candidate moments with hook, cut rationale, and rights notes; then one selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, an editable caption/source ledger, and one bounded correction pass",
+      "first_test": "Use the current direct application as the first demand test and wait for a response; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly",
+      "proof": [
+        "https://lazying.art/story-clip/",
+        "https://lazying.art/work/",
+        "https://www.youtube.com/watch?v=da0vnv1lQ_E",
+        "https://www.youtube.com/watch?v=rVU37lPKPo8",
+        "https://www.youtube.com/watch?v=9FjVTAgD9QE",
+        "https://www.reddit.com/r/kanyakumari/comments/1w7812g/hiring_content_social_media_creator_turn_our/"
+      ],
+      "gates": [
+        "The customer must control the recording, voices, faces, music, locations, and marks or identify every restriction before source transfer",
+        "The public samples are project-owned LazyingArt pieces, not customer work, travel-client experience, sales evidence, reach evidence, or a viral-performance claim",
+        "Translation, new filming, paid stock, publishing, raw source redistribution, extra finished clips, and performance promises are outside the fixed pilot",
+        "Agree compensation, confidentiality, delivery, revision, cancellation, refund, source transfer, and retention terms before payment or customer work",
+        "Do not repeat outreach or count an application, reply, inquiry, or page visit as revenue"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 4, "delivery_readiness": 4, "low_support": 3, "repeatability": 4}
     },
     {
       "id": "multilingual-video-accessibility",

@@ -15,6 +15,7 @@ class OpportunityTests(unittest.TestCase):
             [
                 "private-collection-intelligence",
                 "lecture-to-study-library",
+                "story-first-content-repurposing",
                 "scientific-manuscript-workbench",
             ],
         )
@@ -42,6 +43,9 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("https://lazying.art/manuscript-sprint/", body)
         self.assertIn("https://lazying.art/lecture-pack/", body)
         self.assertIn("https://lazying.art/lecture-pack/#example", body)
+        self.assertIn("https://lazying.art/story-clip/", body)
+        self.assertIn("### Story-first interview clip pilot", body)
+        self.assertIn("not customer work, travel-client experience", body)
         self.assertIn("41.191-second synthetic project-owned source", body)
         self.assertIn(
             "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
@@ -69,7 +73,7 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("rtl-caption-feasibility", body)
         self.assertIn("low historical spend", body)
         self.assertIn("do not call either public store availability", body)
-        self.assertIn("the three active USD 250 routes", body)
+        self.assertIn("the four active USD 250 routes", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)
 

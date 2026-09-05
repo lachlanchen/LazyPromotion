@@ -729,7 +729,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -756,6 +756,13 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertFalse(application["follow_up_gate"]["automatic_send"])
         self.assertFalse(application["delivery_or_contract_started"])
+        offer = campaign["owned_offer"]
+        self.assertEqual(offer["state"], "live")
+        self.assertEqual(offer["url"], "https://lazying.art/story-clip/")
+        self.assertEqual(offer["price"], "USD 250")
+        self.assertFalse(offer["checkout_created"])
+        self.assertFalse(offer["social_post_created"])
+        self.assertTrue(offer["deployment_verified"])
         funnel = campaign["funnel"]
         self.assertEqual(funnel["state"], "application_sent")
         self.assertTrue(funnel["application_sent"])

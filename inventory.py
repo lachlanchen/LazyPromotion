@@ -156,6 +156,13 @@ PRIORITIES = [
         "url": "https://lazying.art/lecture-pack/",
     },
     {
+        "work": "LazyEdit + LocalVideoGen + Musia",
+        "need": "A meaningful moment from an owned interview or podcast turned into one captioned vertical clip",
+        "audience": "Podcasts, interview series, educators, and small mission-led teams",
+        "route": "USD 250 Story Clip Pilot after a scoped inquiry; one source and one finished clip",
+        "url": "https://lazying.art/story-clip/",
+    },
+    {
         "work": "Musia + LocalVideoGen",
         "need": "Local-first music localization and controllable video generation",
         "audience": "Creators who already have a specific song, stem, or video workflow problem",
@@ -244,9 +251,9 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is four confirmed USD 250 payments across three "
+            "The first-USD-1,000 route is four confirmed USD 250 payments across four "
             "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
-            "Redline, and the Bilingual Lecture Pack. The eInk inquiry and Figurine checkout "
+            "Redline, the Bilingual Lecture Pack, and the Story Clip Pilot. The eInk inquiry and Figurine checkout "
             "remain separate offers, not competing calls to action. Open-source replies "
             "should optimize for a solved problem, not for extracting a donation. GitHub "
             "Sponsors and donations remain quiet secondary support routes on the "

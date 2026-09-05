@@ -787,7 +787,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 14)
+        self.assertEqual(campaign["version"], 15)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1255,8 +1255,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(linkedin_offer["content"], linkedin_offer["postiz_content"])
         self.assertFalse(linkedin_offer["shortlink"])
         self.assertIn("four USD 250 collection-fit sprints", linkedin_offer["content"])
+        self.assertIn("concept visual based on the current browser prototype", linkedin_offer["content"])
+        self.assertNotIn("The image shows the current display prototype", linkedin_offer["content"])
         self.assertIn("does not include hardware", linkedin_offer["content"])
         self.assertTrue(linkedin_offer["verification"]["queue_state_verified"])
+        self.assertTrue(linkedin_offer["verification"]["wording_update_saved"])
+        self.assertTrue(
+            linkedin_offer["verification"]["saved_via_original_url_confirmation"]
+        )
         self.assertFalse(linkedin_offer["lead_or_sale_observed"])
         self.assertEqual(linkedin_ocr["state"], "postiz_queue")
         self.assertEqual(linkedin_ocr["publish_at"], "2026-09-22T02:00:00Z")

@@ -13,7 +13,7 @@ The current [USD 8,000 Upwork mission](https://www.upwork.com/freelance-jobs/app
 asks for Chinese/English meeting capture, evidence-linked knowledge units,
 human confirmation, portable company-controlled storage, search, deployment,
 and handover over six to eight weeks. On 2026-09-06 the first-party page still
-showed 15–20 proposals, no interviews, and a client view two days earlier.
+showed 15–20 proposals, no interviews, and a client view the previous day.
 
 This is the closest paid match across the public portfolio:
 
@@ -29,6 +29,12 @@ client's USD 8,000 ceiling across four milestones: USD 1,600 / 2,400 / 2,400 /
 1,600. It starts with a funded representative-audio and architecture gate,
 then caps the pilot at one deployment and three meetings of at most 60 minutes.
 The two-page architecture brief has been rebuilt and visually checked.
+
+One proof-led LinkedIn post is queued for September 8. It points to the live
+meeting record without naming or contacting the marketplace buyer, and keeps
+the scripted/manual boundary in the post itself. The queued content preserves
+the first-party address instead of routing readers through a challenge-gated
+shortener.
 
 The real gaps stay visible: the public proof is scripted and manually reviewed,
 not an ASR, diarization, automatic-extraction, enterprise-scale, or customer

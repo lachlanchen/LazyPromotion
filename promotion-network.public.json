@@ -141,6 +141,16 @@
       "url": ""
     },
     {
+      "id": "campaign:meeting-intelligence-mission",
+      "kind": "campaign",
+      "label": "meeting-intelligence-mission",
+      "metadata": {
+        "objective": "Win and deliver the current bilingual enterprise meeting-intelligence mission with an evidence-linked, human-confirmed knowledge workflow and no unsupported production claims.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:postiz-affiliate-pilot",
       "kind": "campaign",
       "label": "postiz-affiliate-pilot",
@@ -5902,6 +5912,13 @@
       "url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html"
     },
     {
+      "id": "url:0ea6c797f14e5c74",
+      "kind": "web_resource",
+      "label": "buyer need",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/"
+    },
+    {
       "id": "url:b08e9eef9fc5b7c9",
       "kind": "web_resource",
       "label": "cantonese caption guide",
@@ -6000,13 +6017,6 @@
       "url": "https://www.upwork.com/freelance-jobs/apply/Enterprise-Architecture-Consultant-Expert-Review-Operating-Layer-Intelligence-Brain_~022095776744342146823/"
     },
     {
-      "id": "url:8f00fbacca64b715",
-      "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission meeting proof url",
-      "metadata": {},
-      "url": "https://lazying.art/meeting-intelligence/"
-    },
-    {
       "id": "url:807e415bd0224e67",
       "kind": "web_resource",
       "label": "enterprise meeting intelligence mission practical guide fit check link",
@@ -6042,32 +6052,11 @@
       "url": "https://lazying.art/lkt/passage-graph/"
     },
     {
-      "id": "url:6c61657175e6875a",
-      "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 6",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/Video2Book"
-    },
-    {
-      "id": "url:45192426591114fc",
-      "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission public proof 7",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyEdge"
-    },
-    {
       "id": "url:e11294f3dfa63ddb",
       "kind": "web_resource",
       "label": "enterprise meeting intelligence mission public proof 8",
       "metadata": {},
       "url": "https://text-and-speech-api.lazying.art/healthz"
-    },
-    {
-      "id": "url:0ea6c797f14e5c74",
-      "kind": "web_resource",
-      "label": "enterprise meeting intelligence mission source",
-      "metadata": {},
-      "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/"
     },
     {
       "id": "url:dba6608e8adae973",
@@ -6385,6 +6374,13 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
     },
     {
+      "id": "url:45192426591114fc",
+      "kind": "web_resource",
+      "label": "lazyedge",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyEdge"
+    },
+    {
       "id": "url:273db0ceb258a5af",
       "kind": "web_resource",
       "label": "lazying.art",
@@ -6425,6 +6421,13 @@
       "label": "live proof",
       "metadata": {},
       "url": "https://lazying.art/proofline/"
+    },
+    {
+      "id": "url:8f00fbacca64b715",
+      "kind": "web_resource",
+      "label": "live proof",
+      "metadata": {},
+      "url": "https://lazying.art/meeting-intelligence/"
     },
     {
       "id": "url:414ba0a19b25ec62",
@@ -6691,6 +6694,13 @@
       "label": "timestamped source pattern",
       "metadata": {},
       "url": "https://github.com/lachlanchen/Video2Book/blob/main/subtitles2notes/generate_course_notes.py#L609-L647"
+    },
+    {
+      "id": "url:6c61657175e6875a",
+      "kind": "web_resource",
+      "label": "video2book",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/Video2Book"
     },
     {
       "id": "url:9d1733477761da4f",
@@ -7596,14 +7606,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://testflight.apple.com/join/CpkT8m9C",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "campaign:l-and-n-pronunciation-launch",
-      "target": "url:d4333582120f1591"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://l-and-n.lazying.art/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -8253,6 +8255,100 @@
       "relation": "uses_evidence",
       "source": "campaign:manuscript-sprint-pilot",
       "target": "url:e26b66653f0f443d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "project:github-lazyedge"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "project:video2book"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queued"
+      },
+      "relation": "targets",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_planned"
+      },
+      "relation": "targets",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "application_prepared_login_required"
+      },
+      "relation": "targets",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "channel:upwork"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "url:0ea6c797f14e5c74"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "url:45192426591114fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/Video2Book",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "url:6c61657175e6875a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/meeting-intelligence/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "url:8f00fbacca64b715"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:meeting-intelligence-mission",
+      "target": "url:d9c92d269df40406"
     },
     {
       "confidence": 1.0,

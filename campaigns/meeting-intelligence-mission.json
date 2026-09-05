@@ -1,0 +1,94 @@
+{
+  "id": "meeting-intelligence-mission",
+  "version": 1,
+  "objective": "Win and deliver the current bilingual enterprise meeting-intelligence mission with an evidence-linked, human-confirmed knowledge workflow and no unsupported production claims.",
+  "source_need": {
+    "captured_on": "2026-09-06",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/",
+    "title": "Turning Enterprise Conversations into Living Knowledge",
+    "buyer": "YARNS & COLORS",
+    "budget": "USD 4,000-8,000 indicative fixed-price range",
+    "target_timeline": "6-8 weeks",
+    "scope": "Phase 1 meeting capture, multilingual transcript, typed knowledge extraction, human confirmation, company-controlled portable storage, evidence-linked retrieval, deployment, documentation, and handover.",
+    "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites sent; client last viewed the listing yesterday",
+    "policy": "The live marketplace listing is buyer-intent evidence only. It is not a lead, interview, contract, payment, customer result, or received revenue."
+  },
+  "offer": {
+    "quotation_usd": 8000,
+    "timeline_weeks": 7,
+    "milestones_usd": [1600, 2400, 2400, 1600],
+    "scope_caps": {
+      "deployments": 1,
+      "pilot_meetings": 3,
+      "minutes_per_meeting": 60,
+      "languages": "English plus one agreed Chinese variant and agreed mixed-language cases"
+    },
+    "first_gate": "Architecture, knowledge model, threat model, acceptance plan, and representative-audio benchmark with a documented go/no-go.",
+    "separate_scope": [
+      "Enterprise SSO or compliance certification",
+      "Deep ERP, CRM, or OA integrations",
+      "Unlimited meetings, languages, or support",
+      "Live meeting bots",
+      "Phase 2-4 cross-meeting intelligence and digital-workforce integrations"
+    ]
+  },
+  "owned_proof": {
+    "state": "live_project_owned_synthetic_proof",
+    "url": "https://lazying.art/meeting-intelligence/",
+    "description": "A scripted English-Mandarin meeting, ten manually reviewed typed knowledge units, exact speaker and timestamp evidence, lifecycle history including a superseded correction, graph assertions, integrity checks, and portable JSON.",
+    "limits": [
+      "The meeting is scripted and project-owned.",
+      "Knowledge extraction and review are manual in the public proof.",
+      "The proof does not establish real-room ASR, diarization, translation, automatic extraction, enterprise deployment, customer outcomes, or revenue."
+    ]
+  },
+  "source_evidence": {
+    "buyer_need": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/",
+    "live_proof": "https://lazying.art/meeting-intelligence/",
+    "local_knowledge_terminal": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "video2book": "https://github.com/lachlanchen/Video2Book",
+    "lazyedge": "https://github.com/lachlanchen/LazyEdge"
+  },
+  "channels": {
+    "upwork": {
+      "state": "application_prepared_login_required",
+      "proposal_answers": 18,
+      "architecture_brief_pages": 2,
+      "application_submitted": false,
+      "connects_spent": 0,
+      "policy": "Keep application, communication, source files, contract, and payment on Upwork. Recheck Connects, fees, availability, and form fields in the isolated visible browser before one submission."
+    },
+    "linkedin": {
+      "state": "postiz_queued",
+      "post_id": "cmtopx4ux0thfqk0ylamf7bjm",
+      "publish_at": "2026-09-08T02:00:00Z",
+      "content": "A meeting summary is useful for a day. A decision trail can stay useful after the team changes.\n\nI built a small English/Mandarin proof that keeps the scripted transcript immutable, turns it into ten typed knowledge units, and lets every confirmed item reopen the exact speaker, timestamp, and excerpt. Corrections stay in the history as superseded versions instead of silently replacing the source.\n\nThe boundary matters: this is a scripted, manually reviewed project proof—not a claim about real-room ASR, automatic extraction, or a customer deployment.\n\nYou can inspect the chain and download the portable JSON here:\nlazying.art/meeting-intelligence/?utm_source=linkedin&utm_medium=social&utm_campaign=meeting_intelligence&utm_content=evidence_chain\n\nIf you are testing this with rights-cleared meeting audio, start with one representative recording and measure the names, numbers, speakers, and timestamps before choosing the larger architecture.\n\n#KnowledgeManagement #LocalAI #MultilingualAI #OpenSource",
+      "destination": "https://lazying.art/meeting-intelligence/?utm_source=linkedin&utm_medium=social&utm_campaign=meeting_intelligence&utm_content=evidence_chain",
+      "scheduled_content_link": "lazying.art/meeting-intelligence/?utm_source=linkedin&utm_medium=social&utm_campaign=meeting_intelligence&utm_content=evidence_chain",
+      "settings": {
+        "post_as_images_carousel": false
+      },
+      "verification": {
+        "state_rechecked_after_schedule": "QUEUE",
+        "provider": "linkedin",
+        "shortener_used": false,
+        "duplicate_queue_items": 0
+      },
+      "policy": "The post shows one bounded first-party proof and a representative-audio test principle. It does not mention or contact the marketplace buyer, claim automatic performance, or present attention as a lead."
+    },
+    "reddit": {
+      "state": "not_planned",
+      "policy": "Do not seek or contact the marketplace buyer outside Upwork."
+    }
+  },
+  "funnel": {
+    "state": "buyer_intent_identified",
+    "post_published": false,
+    "application_submitted": false,
+    "interview_observed": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

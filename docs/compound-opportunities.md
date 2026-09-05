@@ -415,6 +415,7 @@ Gates:
 Evidence:
 
 - <https://l-and-n.lazying.art/>
+- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk>
 - <https://github.com/lachlanchen/L-and-N>
 - <https://github.com/lachlanchen/PocketPolyglot>
 - <https://github.com/lachlanchen/WordOrigins>
@@ -424,6 +425,7 @@ Gates:
 - Make the public privacy text match when and where the PWA sends recorded audio before broad promotion
 - Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
 - Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
+- Call the direct APK and Google Play link test builds; do not call either public store availability
 - Treat mobile builds as release candidates until their public store listings are independently verified
 
 ## Interpretation

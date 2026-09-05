@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -315,6 +315,7 @@
       "first_test": "After reconciling the PWA audio-processing behavior with its privacy page, answer one current L/N learner question with the complete practice method and offer the no-signup PWA only when it directly fits",
       "proof": [
         "https://l-and-n.lazying.art/",
+        "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
         "https://github.com/lachlanchen/L-and-N",
         "https://github.com/lachlanchen/PocketPolyglot",
         "https://github.com/lachlanchen/WordOrigins"
@@ -323,6 +324,7 @@
         "Make the public privacy text match when and where the PWA sends recorded audio before broad promotion",
         "Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus",
         "Record provenance, consent, and redistribution rights for every bundled voice and lesson asset",
+        "Call the direct APK and Google Play link test builds; do not call either public store availability",
         "Treat mobile builds as release candidates until their public store listings are independently verified"
       ],
       "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 2, "low_support": 4, "repeatability": 3}

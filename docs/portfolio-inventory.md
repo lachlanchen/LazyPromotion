@@ -40,7 +40,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 05:36:14 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 05:40:34 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 05:25:47 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 05:17:14 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | 2026-09-05 04:52:51 | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. |

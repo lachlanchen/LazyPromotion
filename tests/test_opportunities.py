@@ -41,6 +41,11 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("hand-reviewed and project-owned", body)
         self.assertIn("https://lazying.art/manuscript-sprint/", body)
         self.assertIn("https://lazying.art/lecture-pack/", body)
+        self.assertIn(
+            "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
+            body,
+        )
+        self.assertIn("do not call either public store availability", body)
         self.assertIn("the three active USD 250 routes", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)

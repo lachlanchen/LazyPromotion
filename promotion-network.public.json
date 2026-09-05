@@ -374,6 +374,7 @@
           "Make the public privacy text match when and where the PWA sends recorded audio before broad promotion",
           "Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus",
           "Record provenance, consent, and redistribution rights for every bundled voice and lesson asset",
+          "Call the direct APK and Google Play link test builds; do not call either public store availability",
           "Treat mobile builds as release candidates until their public store listings are independently verified"
         ],
         "need": "Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning",
@@ -4070,7 +4071,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T05:36:14Z",
+        "pushed_at": "2026-09-05T05:40:34Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4090,7 +4091,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T05:36:18Z"
+        "updated_at": "2026-09-05T05:40:38Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -6025,6 +6026,13 @@
       "label": "knowledge identity pattern",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
+    },
+    {
+      "id": "url:7f2655584aa51854",
+      "kind": "web_resource",
+      "label": "l-and-n.lazying.art",
+      "metadata": {},
+      "url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk"
     },
     {
       "id": "url:dad6a142b98ee7ea",
@@ -7980,6 +7988,14 @@
       "relation": "uses_evidence",
       "source": "opportunity:focused-pronunciation-micro-lessons",
       "target": "url:6da737bdd18800ca"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:focused-pronunciation-micro-lessons",
+      "target": "url:7f2655584aa51854"
     },
     {
       "confidence": 1.0,

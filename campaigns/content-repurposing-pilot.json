@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -110,11 +110,28 @@
   "owned_offer": {
     "state": "live",
     "url": "https://lazying.art/story-clip/",
-    "website_commit": "c7a20d4f2152f063b4da53fc0b987b89ecd5c7ce",
+    "website_commit": "3ff43e4afc0dfd4512629443af198345696c170e",
+    "fit_check_url": "https://lazying.art/story-clip/fit-check/",
     "price": "USD 250",
     "scope": "One customer-owned recording up to 30 minutes, two timestamped candidate moments, then one buyer-selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, a caption/source ledger, and one bounded correction pass.",
-    "qualification": "Pre-scoped inquiry to the public monitored business alias before source transfer or payment",
-    "inquiry_monitor": "Aggregate unread-badge monitoring only; no message content, sender, or subject is opened or persisted automatically",
+    "qualification": "Review-confirmed encrypted metadata fit check before source transfer or payment",
+    "encrypted_intake": {
+      "state": "live_verified",
+      "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+      "offer": "story_clip",
+      "record_schema": "fit-check-record/v2",
+      "backend_commit": "0463dcb2470ad1c908597b7f4d636cf2d33013a1",
+      "frontend_commit": "3ff43e4afc0dfd4512629443af198345696c170e",
+      "receiver_commit": "f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
+      "visible_synthetic_round_trip_verified": true,
+      "private_copy_mode": "0600",
+      "remote_spool_empty": true,
+      "synthetic_local_payload_artifacts_removed": true,
+      "automatic_reply": false,
+      "lead_or_sale_observed": false,
+      "received_revenue_usd": 0
+    },
+    "inquiry_monitor": "The existing receiver checks encrypted envelopes every 15 minutes and stores only sanitized operational status outside the private inquiry copies",
     "checkout_created": false,
     "social_post_created": false,
     "deployment_verified": true

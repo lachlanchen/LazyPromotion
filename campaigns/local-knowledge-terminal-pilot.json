@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -7,14 +7,15 @@
     "fit_check": "https://lazying.art/lkt/fit-check/",
     "encrypted_intake_sources": {
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
-      "backend_commit": "https://github.com/lachlanchen/myblog/commit/c8d3c0669b54ddbeef936b8f613d7d376d065936",
-      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/12e65ae269de4730b0bae5d230ba1017950ea251",
-      "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
+      "backend_commit": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
+      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/3ff43e4afc0dfd4512629443af198345696c170e",
+      "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
       "record_schema": "fit-check/v2",
       "supported_offers": [
         "lkt",
         "manuscript",
-        "lecture"
+        "lecture",
+        "story_clip"
       ]
     },
     "practical_guide": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
@@ -355,12 +356,12 @@
     },
     "encrypted_direct_intake": {
       "state": "live_verified",
-      "checked_on": "2026-09-04",
-      "current_live_path": "encrypted_direct_intake_with_email_fallback",
+      "checked_on": "2026-09-05",
+      "current_live_path": "encrypted_direct_intake_four_offers_with_email_fallback",
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
-      "backend_source": "https://github.com/lachlanchen/myblog/commit/c8d3c0669b54ddbeef936b8f613d7d376d065936",
-      "frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/12e65ae269de4730b0bae5d230ba1017950ea251",
-      "receiver_source": "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
+      "backend_source": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
+      "frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/3ff43e4afc0dfd4512629443af198345696c170e",
+      "receiver_source": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
       "transport_verification": {
         "allowed_options_exact_acao": true,
         "foreign_options_acao_present": false,
@@ -388,24 +389,26 @@
         "supported_offers": [
           "lkt",
           "manuscript",
-          "lecture"
+          "lecture",
+          "story_clip"
         ],
         "cached_lkt_v1_frontend_compatible": true,
         "allowed_origin_options_verified": true,
         "malformed_offer_status": 400,
         "manuscript_and_lecture_visible_round_trips_verified": true,
+        "story_clip_visible_round_trip_verified": true,
         "remote_envelopes_deleted_after_unchanged_verification": true,
         "synthetic_local_payload_artifacts_removed": true,
         "remote_spool_empty": true,
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
-        "policy": "The routed v2 check used labeled synthetic metadata only. It proves the shared encrypted intake for the three offer routes, not a customer inquiry, qualification, sale, delivery, or revenue."
+        "policy": "The routed v2 checks used labeled synthetic metadata only. They prove the shared encrypted intake for four offer routes, not a customer inquiry, qualification, sale, delivery, or revenue."
       },
       "receiver_runtime": {
         "state": "healthy",
         "session": "lazypromotion-lkt-inbox",
         "interval_minutes": 15,
-        "latest_state": "no_pending"
+        "latest_state": "complete"
       },
       "sanitized_status_fields": [
         "receipt",
@@ -413,6 +416,7 @@
         "state"
       ],
       "email_fallback": "contact@lazying.art",
+      "story_clip_email_fallback": "lach@lazying.art",
       "automatic_reply": false,
       "automatic_qualification": false,
       "lead_or_sale_observed": false,

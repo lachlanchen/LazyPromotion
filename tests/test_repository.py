@@ -729,7 +729,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 6)
+        self.assertEqual(campaign["version"], 7)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -762,9 +762,23 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["price"], "USD 250")
         self.assertEqual(
             offer["website_commit"],
-            "c7a20d4f2152f063b4da53fc0b987b89ecd5c7ce",
+            "3ff43e4afc0dfd4512629443af198345696c170e",
         )
-        self.assertIn("Aggregate unread-badge", offer["inquiry_monitor"])
+        self.assertEqual(
+            offer["fit_check_url"], "https://lazying.art/story-clip/fit-check/"
+        )
+        intake = offer["encrypted_intake"]
+        self.assertEqual(intake["state"], "live_verified")
+        self.assertEqual(intake["offer"], "story_clip")
+        self.assertEqual(intake["record_schema"], "fit-check-record/v2")
+        self.assertTrue(intake["visible_synthetic_round_trip_verified"])
+        self.assertEqual(intake["private_copy_mode"], "0600")
+        self.assertTrue(intake["remote_spool_empty"])
+        self.assertTrue(intake["synthetic_local_payload_artifacts_removed"])
+        self.assertFalse(intake["automatic_reply"])
+        self.assertFalse(intake["lead_or_sale_observed"])
+        self.assertEqual(intake["received_revenue_usd"], 0)
+        self.assertIn("receiver", offer["inquiry_monitor"])
         self.assertFalse(offer["checkout_created"])
         self.assertFalse(offer["social_post_created"])
         self.assertTrue(offer["deployment_verified"])
@@ -884,7 +898,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1021,19 +1035,20 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(
             intake_sources["backend_commit"],
-            "https://github.com/lachlanchen/myblog/commit/c8d3c0669b54ddbeef936b8f613d7d376d065936",
+            "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
         )
         self.assertEqual(
             intake_sources["frontend_commit"],
-            "https://github.com/lachlanchen/LazyingArtWebsite/commit/12e65ae269de4730b0bae5d230ba1017950ea251",
+            "https://github.com/lachlanchen/LazyingArtWebsite/commit/3ff43e4afc0dfd4512629443af198345696c170e",
         )
         self.assertEqual(
             intake_sources["receiver_commit"],
-            "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
+            "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
         )
         self.assertEqual(intake_sources["record_schema"], "fit-check/v2")
         self.assertEqual(
-            intake_sources["supported_offers"], ["lkt", "manuscript", "lecture"]
+            intake_sources["supported_offers"],
+            ["lkt", "manuscript", "lecture", "story_clip"],
         )
         self.assertEqual(
             campaign["source_evidence"]["sample_fit_report"],
@@ -1089,22 +1104,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(direct_intake["state"], "live_verified")
         self.assertEqual(
             direct_intake["current_live_path"],
-            "encrypted_direct_intake_with_email_fallback",
+            "encrypted_direct_intake_four_offers_with_email_fallback",
         )
         self.assertEqual(
             direct_intake["endpoint"],
             "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
         )
         self.assertIn(
-            "c8d3c0669b54ddbeef936b8f613d7d376d065936",
+            "0463dcb2470ad1c908597b7f4d636cf2d33013a1",
             direct_intake["backend_source"],
         )
         self.assertIn(
-            "12e65ae269de4730b0bae5d230ba1017950ea251",
+            "3ff43e4afc0dfd4512629443af198345696c170e",
             direct_intake["frontend_source"],
         )
         self.assertIn(
-            "d04488c08a815b9e21d6ca6d3059c142f38d049a",
+            "f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
             direct_intake["receiver_source"],
         )
         transport = direct_intake["transport_verification"]
@@ -1141,10 +1156,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(transition["record_schema"], "fit-check-record/v2")
         self.assertEqual(transition["source_schema"], "fit-check/v2")
         self.assertEqual(
-            transition["supported_offers"], ["lkt", "manuscript", "lecture"]
+            transition["supported_offers"],
+            ["lkt", "manuscript", "lecture", "story_clip"],
         )
         self.assertTrue(transition["cached_lkt_v1_frontend_compatible"])
         self.assertTrue(transition["manuscript_and_lecture_visible_round_trips_verified"])
+        self.assertTrue(transition["story_clip_visible_round_trip_verified"])
         self.assertTrue(transition["synthetic_local_payload_artifacts_removed"])
         self.assertTrue(transition["remote_spool_empty"])
         self.assertFalse(transition["lead_or_sale_observed"])
@@ -1155,7 +1172,7 @@ class RepositoryTests(unittest.TestCase):
                 "state": "healthy",
                 "session": "lazypromotion-lkt-inbox",
                 "interval_minutes": 15,
-                "latest_state": "no_pending",
+                "latest_state": "complete",
             },
         )
         self.assertEqual(

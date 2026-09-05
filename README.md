@@ -102,7 +102,7 @@ flowchart LR
 | [`owned_monitor.py`](owned_monitor.py) | Read-only Postiz publication/engagement monitor that requires visible release verification, creates review alerts, stores no raw provider IDs, and never calls engagement a lead |
 | [`inbound_monitor.py`](inbound_monitor.py) | Read-only iCloud intake monitor that records only the dedicated paid-sprint folder's aggregate counts and never opens or persists mail content |
 | [`linkedin_reply_monitor.py`](linkedin_reply_monitor.py) | Read-only monitor for one reviewed LinkedIn outreach thread; records only aggregate event counts and requires visible review before changing funnel state |
-| [`lkt_inbox.py`](lkt_inbox.py) | Fail-closed receiver for the encrypted LKT fit-check spool; validates, decrypts, saves privately, then removes only the verified remote envelope |
+| [`lkt_inbox.py`](lkt_inbox.py) | Fail-closed receiver for the encrypted LKT, manuscript, lecture, and Story Clip fit-check spool; validates, decrypts, saves privately, then removes only the verified remote envelope |
 | [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT, manuscript, and lecture-pack Stripe paths |
 | [`lkt_hardware_pricing.py`](lkt_hardware_pricing.py) | Read-only supplied-device margin check that keeps hardware separate from the USD 250 collection-fit service |
 | [`lkt_delivery.py`](lkt_delivery.py) | Deterministic metadata-only LKT sprint preflight and truth-safe Markdown delivery-packet renderer |

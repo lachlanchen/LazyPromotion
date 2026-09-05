@@ -194,12 +194,12 @@ mail link. This is conversion-path readiness evidence, not a fit inquiry,
 qualified lead, or sale. The verified public deployment is LazyingArtWebsite
 commit `8541e9c`.
 
-Encrypted direct intake is now live for LKT, manuscript, and lecture fit
+Encrypted direct intake is now live for LKT, manuscript, lecture, and Story Clip fit
 checks. The backend is pinned at myblog commit
-`c8d3c0669b54ddbeef936b8f613d7d376d065936`, the frontend at
-LazyingArtWebsite commit `12e65ae269de4730b0bae5d230ba1017950ea251`,
+`0463dcb2470ad1c908597b7f4d636cf2d33013a1`, the frontend at
+LazyingArtWebsite commit `3ff43e4afc0dfd4512629443af198345696c170e`,
 and the receiver at LazyPromotion commit
-`d04488c08a815b9e21d6ca6d3059c142f38d049a`. Live preflight verified that the
+`f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445`. Live preflight verified that the
 allowed OPTIONS request receives the exact ACAO, a foreign origin receives no
 ACAO, and a malformed allowed POST fails with HTTP 400.
 
@@ -228,6 +228,13 @@ visible, explicitly confirmed synthetic round trip using the strict routed v2
 record. Both private records were verified in mode `0600`; their unchanged
 remote envelopes and exact synthetic local payload artifacts were removed.
 The remote spool returned to empty without changing any lead or revenue state.
+
+The Story Clip page then completed that same labeled, review-confirmed route.
+The receiver authenticated and decrypted the strict `story_clip` record, saved
+and verified both private copies in mode `0600`, deleted only the unchanged
+remote envelope, and returned the remote spool to empty. The exact synthetic
+local artifacts were removed. This confirms intake readiness only; no customer,
+lead, accepted scope, payment, or revenue was created.
 
 The first-party search-discovery gate was also checked through Search Console's
 visible URL Inspection and Sitemaps screens. On September 2, the sample report

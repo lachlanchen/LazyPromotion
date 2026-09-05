@@ -1,7 +1,7 @@
 # Encrypted service-fit inbox
 
-`lkt_inbox.py` is the operator-side receiver for the LKT, manuscript, and
-lecture fit checks accepted by the first-party WordPress endpoint. The web
+`lkt_inbox.py` is the operator-side receiver for the LKT, manuscript, lecture,
+and Story Clip fit checks accepted by the first-party WordPress endpoint. The web
 server stores an encrypted envelope, not a readable inquiry. The receiver
 downloads a final envelope over SSH, checks the entire cryptographic and
 application contract, saves both copies locally, verifies them from disk, and
@@ -23,8 +23,8 @@ Accepted final spool names have the exact form
 names are ignored. A valid envelope must use the pinned key fingerprint,
 RSA-OAEP with SHA-1 for the 32-byte key wrap, AES-256-GCM with the contract AAD,
 and either the legacy LKT v1 record or the routed `fit-check-record/v2` schema.
-The v2 payload has a strict `lkt`, `manuscript`, or `lecture` offer discriminator
-and rejects fields from another offer. Authentication, schema, source,
+The v2 payload has a strict `lkt`, `manuscript`, `lecture`, or `story_clip`
+offer discriminator and rejects fields from another offer. Authentication, schema, source,
 timestamp, receipt, normalization, or persistence failures leave the remote
 file in place.
 
@@ -48,17 +48,17 @@ removed from the server; it does not mean the request is qualified or paid.
 
 The original LKT route was verified on 2026-09-04 with an explicitly labeled
 synthetic request submitted through the visible fit-check page. On 2026-09-05,
-the manuscript and lecture pages each completed the same visible, explicitly
-confirmed round trip using routed v2 records. All records were authenticated,
-decrypted, saved in private mode `0600`, verified from disk, and followed by
-deletion of only the unchanged remote envelope. The synthetic local payload
-artifacts were then removed and the remote spool was empty. Private visual
-evidence remains outside Git.
+the manuscript, lecture, and Story Clip pages each completed the same visible,
+explicitly confirmed round trip using routed v2 records. All records were
+authenticated, decrypted, saved in private mode `0600`, verified from disk,
+and followed by deletion of only the unchanged remote envelope. The exact
+synthetic local payload artifacts were then removed and the remote spool was
+empty. Private visual evidence remains outside Git.
 
-The deployed components are myblog commit
-`c8d3c0669b54ddbeef936b8f613d7d376d065936`, LazyingArtWebsite commit
-`12e65ae269de4730b0bae5d230ba1017950ea251`, and LazyPromotion receiver commit
-`d04488c08a815b9e21d6ca6d3059c142f38d049a`. The 15-minute
-`lazypromotion-lkt-inbox` loop is healthy and reported `no_pending` after the
-probe. This is synthetic operational evidence, not a customer inquiry,
+The current four-offer components are myblog commit
+`0463dcb2470ad1c908597b7f4d636cf2d33013a1`, LazyingArtWebsite commit
+`3ff43e4afc0dfd4512629443af198345696c170e`, and LazyPromotion receiver commit
+`f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445`. The 15-minute
+`lazypromotion-lkt-inbox` loop is healthy and completed the Story Clip probe.
+This is synthetic operational evidence, not a customer inquiry,
 qualified lead, customer outcome, sale, or revenue.

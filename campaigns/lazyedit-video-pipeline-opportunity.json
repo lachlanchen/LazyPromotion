@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "lazyedit-video-pipeline-opportunity",
   "objective": "Pursue one paid caption-core feasibility milestone for an in-house short-video editing service without claiming unverified Hebrew, RTL, large-upload, or production-scale capability.",
   "source_need": {
@@ -24,17 +24,28 @@
       "Speech transcription and timed subtitle processing",
       "Multilingual subtitle correction, translation, and burn-in",
       "Upload, media-serving, process-status, preview, and publishing-queue paths",
+      "A project-owned synthetic Hebrew/Arabic mixed-script renderer fixture using directional isolates, Noto fonts, FriBidi, and HarfBuzz",
       "Project-owned vertical-video examples suitable as workflow evidence"
     ],
     "not_proven": [
       "Fast conversational Hebrew accuracy or word alignment",
-      "Correct Hebrew and Arabic RTL or bidirectional mixed-script caption rendering",
+      "Native-reviewed Hebrew or Arabic linguistic accuracy, line breaking, and bidirectional rendering across representative recordings",
       "Ten buyer-supplied animated caption templates",
       "Resumable or multipart uploads for files of two gigabytes or more",
       "Drop-in compatibility with the buyer's private POST /projects and webhook contract",
       "Repeated-take removal, punch-in zoom, B-roll selection, or face-centered reframing at the requested scale",
       "Minutes-level production throughput or the buyer's ten-video blind acceptance test"
-    ]
+    ],
+    "renderer_feasibility_proof": {
+      "state": "public_reproducible_fixture",
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/3c31cdd5d0b390bdb75d74dff739545ae943d2f3/examples/rtl-caption-feasibility",
+      "commit": "3c31cdd5d0b390bdb75d74dff739545ae943d2f3",
+      "video_sha256": "0d506f73e5d56c572fad7d8a29d2325809a31c982e05578c22431baf28afed24",
+      "subtitle_sha256": "af027e735d422fda85308044264cc89830950aa7bb0490178dd16efc7d59b6af",
+      "frames_visually_inspected": true,
+      "native_language_review": false,
+      "claim_boundary": "This verifies only the local synthetic mixed-script shaping and burn-in path; it is not Hebrew or Arabic ASR, linguistic validation, production-scale evidence, or buyer acceptance."
+    }
   },
   "recommended_first_milestone": {
     "state": "proposal_only",

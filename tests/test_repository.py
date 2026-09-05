@@ -678,7 +678,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "lazyedit-video-pipeline-opportunity.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(campaign["source_need"]["state"], "public_listing_visible")
         self.assertEqual(campaign["source_need"]["public_rate"], "not shown")
         self.assertEqual(
@@ -689,6 +689,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("hebrew", gaps)
         self.assertIn("bidirectional", gaps)
         self.assertIn("two gigabytes", gaps)
+        renderer = campaign["fit"]["renderer_feasibility_proof"]
+        self.assertEqual(renderer["state"], "public_reproducible_fixture")
+        self.assertIn("3c31cdd5d0b390bd", renderer["url"])
+        self.assertEqual(len(renderer["video_sha256"]), 64)
+        self.assertTrue(renderer["frames_visually_inspected"])
+        self.assertFalse(renderer["native_language_review"])
+        self.assertIn("not Hebrew or Arabic ASR", renderer["claim_boundary"])
         milestone = campaign["recommended_first_milestone"]
         self.assertEqual(milestone["state"], "proposal_only")
         self.assertIn("paid caption-core feasibility", milestone["scope"])

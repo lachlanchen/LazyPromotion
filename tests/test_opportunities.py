@@ -24,7 +24,7 @@ class OpportunityTests(unittest.TestCase):
                 for item in payload["opportunities"]
                 if item["state"] == "evidence-building"
             ],
-            [],
+            ["short-video-pipeline-engineering"],
         )
 
     def test_renderer_keeps_scores_directional_and_gates_visible(self):
@@ -55,6 +55,7 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("Do not link AiMemo in public replies", body)
         self.assertIn("### Short-video caption pipeline feasibility", body)
         self.assertIn("Hebrew and bidirectional-text risk test", body)
+        self.assertIn("rtl-caption-feasibility", body)
         self.assertIn("low historical spend", body)
         self.assertIn("do not call either public store availability", body)
         self.assertIn("the three active USD 250 routes", body)

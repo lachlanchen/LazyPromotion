@@ -1,0 +1,64 @@
+{
+  "schema": "lazyingart.cantonese-caption-delivery/v1",
+  "source": {
+    "url": "https://lazyingart.github.io/MusiaSongs/audio/take-care-of-yourself-yue-Hant.mp3",
+    "sha256": "506b7d35f5bbbdf6c52bae2a11b0e3dde3c240827e586ce4cff152a2948e7786",
+    "excerpt_seconds": [
+      0,
+      23.52
+    ],
+    "type": "project-controlled generated Cantonese song vocal"
+  },
+  "delivery": {
+    "cue_count": 4,
+    "tracks": [
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "burned_track": "zh-Hans",
+    "traditional_srt_sha256": "958bdba703a12b24ad361c719c77f714245459b3a0712959d7fb9d164aecba17",
+    "simplified_srt_sha256": "51b1b870e5e9cf7aafa2a7744537cb088673eb4f2d244451433b9b5c68c38493",
+    "video_sha256": "4a2bb05bd7d10796e8fbffffa9d6852dd70d5ef635d86ec75a85e52cefc1ebff",
+    "review_frame_sha256": {
+      "cue_1": "9c300b89df43190a4305ca678ba7ecd25a7281d96acdb1e67893222f2fff43f7",
+      "cue_2": "bf7c1a387c49c1a1d69ba2c27545c326e66ad52fa8ac62050fdfd64b25b3dc2d",
+      "cue_4": "427f5df453c32b8933f81d4bc708b68e5b2b99de0028ae2883d40921307b6564"
+    }
+  },
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "23.520000",
+      "size": "865414"
+    }
+  },
+  "evidence_boundary": "Project-owned generated-song workflow evidence; not a sermon, customer work, native-editor endorsement, ASR or translation benchmark, or proof of plus-or-minus 0.2-second alignment on unseen material.",
+  "verification": {
+    "source_excerpt_seconds": 23.52,
+    "output_duration_seconds": 23.520000,
+    "dimensions": "1280x720",
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "cue_timing_source": "reviewed Musia per-vocal lyric track",
+    "native_spoken_word_review": false,
+    "unseen_alignment_tolerance_claimed": false
+  }
+}

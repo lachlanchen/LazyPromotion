@@ -1,0 +1,14 @@
+{
+  "schema": "lazyingart.cantonese-caption-source/v1",
+  "title": "Take Care of Yourself · Cantonese vocal excerpt",
+  "source_type": "project-controlled generated song vocal",
+  "source_audio_url": "https://lazyingart.github.io/MusiaSongs/audio/take-care-of-yourself-yue-Hant.mp3",
+  "source_audio_sha256": "506b7d35f5bbbdf6c52bae2a11b0e3dde3c240827e586ce4cff152a2948e7786",
+  "source_duration_seconds": 58.044082,
+  "excerpt_start_seconds": 0,
+  "excerpt_end_seconds": 23.52,
+  "timing_source": "https://github.com/lachlanchen/Musia/blob/main/website/data/songs/take-care-of-yourself/lyrics/yue-vocal/yue-Hant.json",
+  "simplified_text_source": "https://github.com/lachlanchen/Musia/blob/main/website/data/songs/take-care-of-yourself/lyrics/yue-vocal/zh-Hans.json",
+  "public_player": "https://fun.lazying.art/#take-care-of-yourself",
+  "boundary": "Project-owned workflow evidence; not customer work, a sermon, native-editor endorsement, an ASR or translation benchmark, or proof of plus-or-minus 0.2-second alignment on unseen material."
+}

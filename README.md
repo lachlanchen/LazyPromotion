@@ -107,6 +107,7 @@ flowchart LR
 | [`lkt_delivery.py`](lkt_delivery.py) | Deterministic metadata-only LKT sprint preflight and truth-safe Markdown delivery-packet renderer |
 | [`docs/lkt-delivery.md`](docs/lkt-delivery.md) | Sanitized intake contract, go/no-go behavior, and customer-data-free delivery workflow |
 | [`examples/lkt-scientific-pdf-fit/`](examples/lkt-scientific-pdf-fit/) | Reproducible project-owned synthetic PDF mini-sprint with duplicate/version evidence, multilingual extraction, 20 fixed queries, page citations, and a static browser card |
+| [`examples/cantonese-caption-delivery/`](examples/cantonese-caption-delivery/) | Reproducible project-owned Cantonese media packet with matched Traditional/Simplified SRTs, a burned H.264 preview, review frames, and explicit evidence limits |
 | [`signals.py`](signals.py) | Private first-party demand signals kept distinct from leads, orders, and revenue |
 | [`docs/voice.md`](docs/voice.md) | Quiet, human maintainer voice that lets useful replies and the profile do the promotion |
 | [`network.py`](network.py) | Evidence graph connecting needs, projects, repositories, channels, campaigns, drafts, and public proof |

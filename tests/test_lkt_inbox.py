@@ -83,6 +83,29 @@ def lecture_payload():
     }
 
 
+def story_clip_payload():
+    return {
+        "offer": "story_clip",
+        "contact_email": "founder@example.com",
+        "source": "Twenty-minute MP4 interview recorded by our team.",
+        "language": "English, with supplied product names.",
+        "rights_scope": (
+            "We control the recording, voices, faces, music, locations, and marks "
+            "requested for this clip."
+        ),
+        "audience_platform": "Prospective customers on LinkedIn and Instagram.",
+        "goal": "Show the moment the founder explains why the product exists.",
+        "constraints": "Avoid performance claims and keep the supplied spelling.",
+        "utm_source": "story clip",
+        "utm_medium": "website",
+        "utm_campaign": "story_clip_fit_check",
+        "utm_content": "pilot_hero",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 8000,
+    }
+
+
 def sample_record(payload=None, *, created_at=CREATED_AT):
     return {
         "version": lkt_inbox.RECORD_VERSION,
@@ -211,7 +234,7 @@ class EnvelopeTests(ReceiverFixture):
         self.assertEqual(record, sample_record())
 
     def test_accepts_each_strict_offer_and_legacy_lkt_records(self):
-        for payload in (manuscript_payload(), lecture_payload()):
+        for payload in (manuscript_payload(), lecture_payload(), story_clip_payload()):
             with self.subTest(offer=payload["offer"]):
                 _, raw = encrypted_envelope(
                     self.key, self.receipt, record=sample_record(payload)
@@ -242,6 +265,12 @@ class EnvelopeTests(ReceiverFixture):
         missing = lecture_payload()
         missing.pop("intended_use")
         cases.append(missing)
+        missing_story_field = story_clip_payload()
+        missing_story_field.pop("rights_scope")
+        cases.append(missing_story_field)
+        crossed_story = story_clip_payload()
+        crossed_story["collection"] = "ten files"
+        cases.append(crossed_story)
         for payload in cases:
             with self.subTest(offer=payload.get("offer")):
                 _, raw = encrypted_envelope(

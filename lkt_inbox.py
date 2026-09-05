@@ -142,6 +142,14 @@ OFFER_FIELD_RULES = {
         "intended_use": (800, True, True),
         "constraints": (800, False, True),
     },
+    "story_clip": {
+        "source": (600, True, True),
+        "language": (300, True, False),
+        "rights_scope": (1000, True, True),
+        "audience_platform": (600, True, True),
+        "goal": (800, True, True),
+        "constraints": (800, False, True),
+    },
 }
 
 

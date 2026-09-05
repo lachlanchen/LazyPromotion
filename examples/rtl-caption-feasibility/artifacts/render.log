@@ -1,0 +1,1234 @@
+[Parsed_color_0 @ 0x613ff7c8d800] size:1080x1920 rate:30/1 duration:8.000000 sar:1/1
+Input #0, lavfi, from 'color=c=0x101826:s=1080x1920:r=30:d=8':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: wrapped_avframe, 1 reference frame, yuv420p, 1080x1920 [SAR 1:1 DAR 9:16], 30 fps, 30 tbr, 30 tbn
+[out#0/mp4 @ 0x613ff7c90680] No explicit maps, mapping streams automatically...
+[vost#0:0/libx264 @ 0x613ff7c91ac0] Created video stream from input stream 0:0
+[Parsed_subtitles_0 @ 0x613ff7c92b40] libass API version: 0x1701000
+[Parsed_subtitles_0 @ 0x613ff7c92b40] libass source: tarball: 0.17.1
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Raster: FreeType 2.13.2
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Shaper: FriBidi 1.0.13 (SIMPLE) HarfBuzz-ng 8.3.0 (COMPLEX)
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Initialized
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamil-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 78452
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 229336
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifBalinese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 51200
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifThai-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 46992
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLimbu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 12868
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansJavanese-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 120160
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBalinese-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 91948
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansRunic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 9044
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansWancho-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 18940
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamil-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 79628
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoNastaliqUrdu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 590824
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSoyombo-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 66968
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCuneiform-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 820248
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBengali-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 201964
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhojki-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 144908
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMyanmar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 260396
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinagh-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39208
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldSogdian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15540
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKayahLi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 17720
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansIndicSiyaqNumbers-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 32660
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSiddham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 142364
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSinhala-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 339844
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGeorgian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 63852
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGeorgian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 53072
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTagalog-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 6612
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTangut-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 3419020
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 531240
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 568796
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifYezidi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 10156
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAzawagh-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39508
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 512672
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCherokee-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 108512
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansImperialAramaic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 6432
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMiao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 36276
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 534180
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansEthiopic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 343168
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDogra-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 28056
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansElymaic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 9024
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30532
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifSinhala-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 322832
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAhaggar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39508
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 537268
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedThai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 65536
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBalinese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 92364
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDevanagari-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 279792
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansModi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 42712
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoTraditionalNushu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 264568
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDuployan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 18728
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOgham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 4684
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGujarati-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 147628
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMahajani-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 22852
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLisu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 12860
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTagbanwa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 6224
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDeseret-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 19928
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldTurkic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15160
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHanifiRohingya-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 27924
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMyanmar-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 210224
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGujarati-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 202944
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMono-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 523412
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghHawad-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39316
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTamilSupplement-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15804
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPhagsPa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39292
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNKo-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 38352
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGurmukhi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 52680
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOsage-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 21036
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKharoshthi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 34240
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMath-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 590896
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAir-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39476
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAgrawImazighen-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 40048
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOriya-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 92964
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifArmenian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30404
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGeorgian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 54956
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamilSlanted-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 79484
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSymbols2-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 656852
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBengali-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 210996
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKayahLi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 17716
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlam-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 94464
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTamil-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 72608
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 10788068
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansEgyptianHieroglyphs-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 585400
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoNaskhArabic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 181192
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 530120
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArmenian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30892
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHebrew-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 27156
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 508388
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSamaritan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 11120
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansVai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 91684
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 107848
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedLao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 54852
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGothic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 11660
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTelugu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 327660
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 515752
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 559120
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKannada-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 152168
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghTawellemmet-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39744
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSogdian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 101648
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoNaskhArabic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 175792
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNewTaiLue-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 17024
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTakri-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 21828
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHanunoo-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7852
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSaurashtra-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 35308
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBamum-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 228920
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMedefaidrin-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30736
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLydian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 4524
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiTham-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 94892
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLisu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 12868
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedThai-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 70556
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMedefaidrin-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30404
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlamUnjoined-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 36820
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSylotiNagri-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 26704
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGrantha-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 491220
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMalayalam-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 115944
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSoraSompeng-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 8324
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPsalterPahlavi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 33300
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMono-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 510612
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMandaic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 29068
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCarian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 12848
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMeeteiMayek-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 17152
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSundanese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 22888
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArabic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 252940
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPahawhHmong-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 18296
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansEthiopic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 340980
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSundanese-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 22960
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhojki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 143760
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamilSlanted-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 80296
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifAhom-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 19536
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBassaVah-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7808
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifEthiopic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 289600
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMyanmar-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 271320
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMalayalam-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 109996
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGujarati-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 144936
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThai-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 37788
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAvestan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 23008
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifHebrew-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 31888
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTibetan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 595476
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSyriac-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 233508
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifSinhala-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 334560
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTibetan-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 588444
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 590804
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBatak-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15104
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCaucasianAlbanian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 26852
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMultani-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 16920
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansInscriptionalPahlavi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 5988
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiViet-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30980
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansYi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 182808
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 37744
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifLao-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 40364
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldPersian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 12764
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlam-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 94372
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMongolian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 242252
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifYezidi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 10028
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMyanmar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 196608
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArmenian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30924
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiTham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 95316
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCoptic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 45048
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLepcha-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 24456
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAPT-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39532
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGujarati-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 205124
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHanifiRohingya-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 27192
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 637472
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifArmenian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 31184
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedLao-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 54748
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSharada-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 49256
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDevanagari-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 263856
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKaithi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 91276
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLinearA-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 58168
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAdrar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 38920
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBamum-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 229340
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansJavanese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 127040
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMendeKikakui-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 35384
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansUgaritic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7300
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifNyiakengPuachueHmong-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 14912
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoMusic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 80984
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansWarangCiti-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 25328
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifLao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 38528
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPhoenician-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 6192
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifNyiakengPuachueHmong-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15152
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGurmukhi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 53616
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 588876
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTamil-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 75740
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGlagolitic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39832
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCanadianAboriginal-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 87356
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTelugu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 202444
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKannada-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 214840
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOsmanya-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 17008
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMayanNumerals-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 4716
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOlChiki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15172
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGurmukhi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 52856
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLinearB-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 62892
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMeeteiMayek-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 16908
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMalayalam-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 110568
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMasaramGondi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 30828
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGunjalaGondi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 62592
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansZanabazarSquare-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 19440
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansElbasan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 19112
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlamUnjoined-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 36908
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhmer-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 113376
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOriya-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 95800
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhudawadi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 19056
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHatran-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 5044
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghGhat-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39312
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansChakma-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 59588
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCherokee-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 94592
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhojki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 61960
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMeroitic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 33668
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKannada-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 195288
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTelugu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 308116
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSinhala-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 307684
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghSIL-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39756
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNabataean-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 8328
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoNastaliqUrdu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 570552
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldHungarian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 54112
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldItalic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7596
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKannada-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 156336
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldSouthArabian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 5276
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldPermic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 10008
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldNorthArabian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7228
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoKufiArabic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 176740
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhmer-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 112372
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSoraSompeng-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 8164
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThaana-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 18536
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifBengali-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 263204
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMarchen-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 131248
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCypriot-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15080
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansRejang-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7576
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 656716
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSignWriting-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 5211268
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCham-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 31228
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMro-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 6920
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansInscriptionalParthian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7748
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDevanagari-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 237660
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTirhuta-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 96864
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAnatolianHieroglyphs-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 228424
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOlChiki-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 14500
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSymbols-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 258148
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSymbols-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 258912
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansManichaean-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 50256
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifThai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 45992
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPauCinHau-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 9840
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTelugu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 194732
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 513000
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThaana-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 18728
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 591052
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHebrew-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 26892
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLycian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 4488
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBhaiksuki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 247792
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGrantha-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 454616
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifEthiopic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 283084
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 31136
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoKufiArabic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 180552
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifBengali-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 258152
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghRhissaIxa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 39760
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhmer-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 151180
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPalmyrene-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 15708
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoRashiHebrew-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 25012
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoRashiHebrew-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 24388
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBuginese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 7200
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLao-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 32396
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMalayalam-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 111200
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiLe-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 19796
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBuhid-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 11440
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGeorgian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 61452
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNewa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 150892
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBrahmi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 41916
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 244072
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCanadianAboriginal-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 86372
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 611904
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNushu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 115064
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansShavian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 13420
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGurmukhi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 52852
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhmer-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 148960
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifHebrew-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] File size: 31172
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Error getting metadata for embedded font 'NotoColorEmoji.ttf'
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Using font provider fontconfig
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Event: [Script Info]
+Title: Project-owned RTL and bidirectional caption feasibility
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Label,Noto Sans,34,&H00B9F5E9,&H00B9F5E9,&H00101826,&H00101826,1,0,0,0,100,100,1,0,1,1,0,8,60,60,235,1
+Style: Hebrew,Noto Sans Hebrew,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+Style: Arabic,Noto Sans Arabic,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+Style: Mixed,Noto Sans,62,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+Style: Note,Noto Sans,27,&H0097A7B8,&H0097A7B8,&H00101826,&H00101826,0,0,0,0,100,100,0,0,1,1,0,2,70,70,215,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+[Parsed_subtitles_0 @ 0x613ff7c92b40] 
+[Parsed_subtitles_0 @ 0x613ff7c92b40] [0x613ff7c95910] Style: Label,Noto Sans,34,&H00B9F5E9,&H00B9F5E9,&H00101826,&H00101826,1,0,0,0,100,100,1,0,1,1,0,8,60,60,235,1
+[Parsed_subtitles_0 @ 0x613ff7c92b40] [0x613ff7c95910] Style: Hebrew,Noto Sans Hebrew,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+[Parsed_subtitles_0 @ 0x613ff7c92b40] [0x613ff7c95910] Style: Arabic,Noto Sans Arabic,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+[Parsed_subtitles_0 @ 0x613ff7c92b40] [0x613ff7c95910] Style: Mixed,Noto Sans,62,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+[Parsed_subtitles_0 @ 0x613ff7c92b40] [0x613ff7c95910] Style: Note,Noto Sans,27,&H0097A7B8,&H0097A7B8,&H00101826,&H00101826,0,0,0,0,100,100,0,0,1,1,0,2,70,70,215,1
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Event at 0, +8000: 0,0,Label,,0,0,0,,BIDIRECTIONAL CAPTION FEASIBILITY
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Event at 0, +2700: 1,0,Hebrew,,0,0,0,,⁧עברית 2026⁩ / ⁦English 25%⁩
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Event at 0, +8000: 4,0,Note,,0,0,0,,Project-owned synthetic text · renderer test only · no ASR
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Event at 2700, +2700: 2,0,Arabic,,0,0,0,,⁧العربية 2026⁩ / ⁦English 25%⁩
+[Parsed_subtitles_0 @ 0x613ff7c92b40] Event at 5400, +2600: 3,0,Mixed,,0,0,0,,⁧עברית⁩ + ⁦LazyEdit 2.0⁩\N⁧العربية⁩ + ⁦LazyEdit 2.0⁩
+[AVIOContext @ 0x613ff7c9ecc0] Statistics: 1572 bytes read, 0 seeks
+Stream mapping:
+  Stream #0:0 -> #0:0 (wrapped_avframe (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[Parsed_subtitles_0 @ 0x613ffa431fc0] libass API version: 0x1701000
+[Parsed_subtitles_0 @ 0x613ffa431fc0] libass source: tarball: 0.17.1
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Raster: FreeType 2.13.2
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Shaper: FriBidi 1.0.13 (SIMPLE) HarfBuzz-ng 8.3.0 (COMPLEX)
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Initialized
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamil-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 78452
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 229336
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifBalinese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 51200
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifThai-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 46992
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLimbu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 12868
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansJavanese-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 120160
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBalinese-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 91948
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansRunic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 9044
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansWancho-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 18940
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamil-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 79628
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoNastaliqUrdu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 590824
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSoyombo-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 66968
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCuneiform-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 820248
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBengali-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 201964
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhojki-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 144908
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMyanmar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 260396
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinagh-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39208
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldSogdian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15540
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKayahLi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 17720
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansIndicSiyaqNumbers-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 32660
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSiddham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 142364
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSinhala-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 339844
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGeorgian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 63852
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGeorgian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 53072
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTagalog-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 6612
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTangut-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 3419020
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 531240
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 568796
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifYezidi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 10156
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAzawagh-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39508
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 512672
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCherokee-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 108512
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansImperialAramaic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 6432
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMiao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 36276
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 534180
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansEthiopic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 343168
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDogra-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 28056
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansElymaic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 9024
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30532
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifSinhala-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 322832
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAhaggar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39508
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 537268
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedThai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 65536
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBalinese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 92364
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDevanagari-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 279792
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansModi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 42712
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoTraditionalNushu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 264568
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDuployan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 18728
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOgham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 4684
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGujarati-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 147628
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMahajani-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 22852
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLisu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 12860
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTagbanwa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 6224
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDeseret-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 19928
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldTurkic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15160
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHanifiRohingya-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 27924
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMyanmar-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 210224
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGujarati-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 202944
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMono-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 523412
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghHawad-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39316
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTamilSupplement-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15804
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPhagsPa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39292
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNKo-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 38352
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGurmukhi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 52680
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOsage-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 21036
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKharoshthi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 34240
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMath-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 590896
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAir-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39476
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAgrawImazighen-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 40048
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOriya-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 92964
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifArmenian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30404
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGeorgian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 54956
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamilSlanted-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 79484
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSymbols2-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 656852
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBengali-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 210996
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKayahLi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 17716
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlam-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 94464
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTamil-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 72608
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 10788068
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansEgyptianHieroglyphs-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 585400
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoNaskhArabic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 181192
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 530120
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArmenian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30892
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHebrew-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 27156
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 508388
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSamaritan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 11120
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansVai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 91684
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 107848
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedLao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 54852
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGothic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 11660
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTelugu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 327660
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 515752
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 559120
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKannada-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 152168
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghTawellemmet-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39744
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSogdian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 101648
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoNaskhArabic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 175792
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNewTaiLue-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 17024
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTakri-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 21828
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHanunoo-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7852
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSaurashtra-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 35308
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBamum-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 228920
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMedefaidrin-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30736
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLydian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 4524
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiTham-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 94892
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLisu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 12868
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedThai-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 70556
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMedefaidrin-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30404
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlamUnjoined-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 36820
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSylotiNagri-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 26704
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGrantha-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 491220
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMalayalam-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 115944
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSoraSompeng-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 8324
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPsalterPahlavi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 33300
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMono-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 510612
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMandaic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 29068
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCarian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 12848
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMeeteiMayek-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 17152
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSundanese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 22888
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArabic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 252940
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPahawhHmong-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 18296
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansEthiopic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 340980
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSundanese-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 22960
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhojki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 143760
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTamilSlanted-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 80296
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifAhom-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 19536
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBassaVah-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7808
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifEthiopic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 289600
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMyanmar-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 271320
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMalayalam-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 109996
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGujarati-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 144936
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThai-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 37788
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAvestan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 23008
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifHebrew-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 31888
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTibetan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 595476
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSyriac-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 233508
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifSinhala-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 334560
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTibetan-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 588444
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 590804
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBatak-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15104
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCaucasianAlbanian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 26852
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMultani-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 16920
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansInscriptionalPahlavi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 5988
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiViet-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30980
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansYi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 182808
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 37744
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifLao-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 40364
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldPersian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 12764
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlam-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 94372
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMongolian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 242252
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifYezidi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 10028
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMyanmar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 196608
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArmenian-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30924
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiTham-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 95316
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCoptic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 45048
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLepcha-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 24456
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAPT-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39532
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGujarati-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 205124
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHanifiRohingya-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 27192
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 637472
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifArmenian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 31184
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoLoopedLao-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 54748
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSharada-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 49256
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDevanagari-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 263856
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKaithi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 91276
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLinearA-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 58168
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghAdrar-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 38920
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBamum-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 229340
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansJavanese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 127040
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMendeKikakui-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 35384
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansUgaritic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7300
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifNyiakengPuachueHmong-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 14912
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoMusic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 80984
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansWarangCiti-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 25328
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifLao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 38528
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPhoenician-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 6192
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifNyiakengPuachueHmong-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15152
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGurmukhi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 53616
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 588876
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTamil-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 75740
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGlagolitic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39832
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCanadianAboriginal-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 87356
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTelugu-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 202444
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKannada-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 214840
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOsmanya-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 17008
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMayanNumerals-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 4716
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOlChiki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15172
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGurmukhi-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 52856
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLinearB-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 62892
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMeeteiMayek-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 16908
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMalayalam-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 110568
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMasaramGondi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 30828
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGunjalaGondi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 62592
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansZanabazarSquare-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 19440
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansElbasan-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 19112
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAdlamUnjoined-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 36908
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhmer-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 113376
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOriya-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 95800
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhudawadi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 19056
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHatran-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 5044
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghGhat-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39312
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansChakma-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 59588
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCherokee-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 94592
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhojki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 61960
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMeroitic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 33668
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKannada-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 195288
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifTelugu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 308116
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSinhala-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 307684
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghSIL-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39756
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNabataean-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 8328
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoNastaliqUrdu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 570552
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldHungarian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 54112
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldItalic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7596
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKannada-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 156336
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldSouthArabian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 5276
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldPermic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 10008
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOldNorthArabian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7228
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoKufiArabic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 176740
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansKhmer-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 112372
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSoraSompeng-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 8164
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThaana-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 18536
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifBengali-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 263204
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMarchen-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 131248
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCypriot-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15080
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansRejang-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7576
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-BoldItalic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 656716
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSignWriting-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 5211268
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCham-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 31228
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansMro-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 6920
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansInscriptionalParthian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7748
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDevanagari-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 237660
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTirhuta-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 96864
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansAnatolianHieroglyphs-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 228424
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansOlChiki-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 14500
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSymbols-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 258148
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansSymbols-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 258912
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansManichaean-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 50256
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifThai-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 45992
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPauCinHau-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 9840
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTelugu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 194732
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansDisplay-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 513000
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansThaana-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 18728
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifDisplay-Italic.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 591052
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansHebrew-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 26892
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLycian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 4488
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBhaiksuki-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 247792
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGrantha-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 454616
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifEthiopic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 283084
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLao-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 31136
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoKufiArabic-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 180552
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifBengali-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 258152
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTifinaghRhissaIxa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 39760
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhmer-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 151180
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansPalmyrene-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 15708
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoRashiHebrew-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 25012
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoRashiHebrew-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 24388
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBuginese-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 7200
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansLao-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 32396
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifMalayalam-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 111200
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansTaiLe-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 19796
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBuhid-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 11440
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifGeorgian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 61452
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNewa-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 150892
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansBrahmi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 41916
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 244072
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansCanadianAboriginal-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 86372
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerif-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 611904
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansNushu-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 115064
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansShavian-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 13420
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSansGurmukhi-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 52852
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifKhmer-Bold.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 148960
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Loading font file '/usr/share/fonts/truetype/noto/NotoSerifHebrew-Regular.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] File size: 31172
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Error getting metadata for embedded font 'NotoColorEmoji.ttf'
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Using font provider fontconfig
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Event: [Script Info]
+Title: Project-owned RTL and bidirectional caption feasibility
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Label,Noto Sans,34,&H00B9F5E9,&H00B9F5E9,&H00101826,&H00101826,1,0,0,0,100,100,1,0,1,1,0,8,60,60,235,1
+Style: Hebrew,Noto Sans Hebrew,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+Style: Arabic,Noto Sans Arabic,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+Style: Mixed,Noto Sans,62,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+Style: Note,Noto Sans,27,&H0097A7B8,&H0097A7B8,&H00101826,&H00101826,0,0,0,0,100,100,0,0,1,1,0,2,70,70,215,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+[Parsed_subtitles_0 @ 0x613ffa431fc0] 
+[Parsed_subtitles_0 @ 0x613ffa431fc0] [0x613ff7c903f0] Style: Label,Noto Sans,34,&H00B9F5E9,&H00B9F5E9,&H00101826,&H00101826,1,0,0,0,100,100,1,0,1,1,0,8,60,60,235,1
+[Parsed_subtitles_0 @ 0x613ffa431fc0] [0x613ff7c903f0] Style: Hebrew,Noto Sans Hebrew,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+[Parsed_subtitles_0 @ 0x613ffa431fc0] [0x613ff7c903f0] Style: Arabic,Noto Sans Arabic,72,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+[Parsed_subtitles_0 @ 0x613ffa431fc0] [0x613ff7c903f0] Style: Mixed,Noto Sans,62,&H00FFFFFF,&H00FFFFFF,&H00101826,&H80101826,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1
+[Parsed_subtitles_0 @ 0x613ffa431fc0] [0x613ff7c903f0] Style: Note,Noto Sans,27,&H0097A7B8,&H0097A7B8,&H00101826,&H00101826,0,0,0,0,100,100,0,0,1,1,0,2,70,70,215,1
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Event at 0, +8000: 0,0,Label,,0,0,0,,BIDIRECTIONAL CAPTION FEASIBILITY
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Event at 0, +2700: 1,0,Hebrew,,0,0,0,,⁧עברית 2026⁩ / ⁦English 25%⁩
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Event at 0, +8000: 4,0,Note,,0,0,0,,Project-owned synthetic text · renderer test only · no ASR
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Event at 2700, +2700: 2,0,Arabic,,0,0,0,,⁧العربية 2026⁩ / ⁦English 25%⁩
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Event at 5400, +2600: 3,0,Mixed,,0,0,0,,⁧עברית⁩ + ⁦LazyEdit 2.0⁩\N⁧العربية⁩ + ⁦LazyEdit 2.0⁩
+[AVIOContext @ 0x613ffa420940] Statistics: 1572 bytes read, 0 seeks
+[graph 0 input from stream 0:0 @ 0x613ffa6d8b80] w:1080 h:1920 pixfmt:yuv420p tb:1/30 fr:30/1 sar:1/1
+[Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans, 700, 0) -> NotoSans-Bold, 0, NotoSans-Bold
+[Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans Hebrew, 700, 0) -> NotoSansHebrew-Bold, 0, NotoSansHebrew-Bold
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Glyph 0x32 not found, selecting one more font for (Noto Sans Hebrew, 700, 0)
+[Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans Hebrew, 700, 0) -> NotoSans-Bold, 0, NotoSans-Bold
+[Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans, 400, 0) -> NotoSans-Regular, 0, NotoSans-Regular
+[libx264 @ 0x613ff7c91ec0] using SAR=1/1
+[libx264 @ 0x613ff7c91ec0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x613ff7c91ec0] profile High, level 5.0, 4:2:0, 8-bit
+[libx264 @ 0x613ff7c91ec0] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=5 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=8 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=2 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=1 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=3 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=50 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/lachlan/ProjectsLFS/LazyPromotion/examples/rtl-caption-feasibility/artifacts/rtl-caption-feasibility.mp4':
+  Metadata:
+    creation_time   : 2026-09-05T00:00:00Z
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1080x1920 (0x0) [SAR 1:1 DAR 9:16], q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    frame=    1 fps=0.9 q=24.0 size=       0kB time=-00:00:00.03 bitrate=N/A speed=N/A    [Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans Arabic, 700, 0) -> NotoSansArabic-Bold, 0, NotoSansArabic-Bold
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Glyph 0x2F not found, selecting one more font for (Noto Sans Arabic, 700, 0)
+[Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans Arabic, 700, 0) -> NotoSans-Bold, 0, NotoSans-Bold
+frame=   34 fps= 20 q=24.0 size=       0kB time=00:00:01.06 bitrate=   0.4kbits/s speed=0.633x    frame=   64 fps= 29 q=24.0 size=       0kB time=00:00:02.06 bitrate=   0.2kbits/s speed=0.945x    frame=  106 fps= 39 q=24.0 size=       0kB time=00:00:03.46 bitrate=   0.1kbits/s speed=1.29x    [Parsed_subtitles_0 @ 0x613ffa431fc0] Glyph 0x5E2 not found, selecting one more font for (Noto Sans, 700, 0)
+[Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans, 700, 0) -> NotoSansHebrew-Bold, 0, NotoSansHebrew-Bold
+[Parsed_subtitles_0 @ 0x613ffa431fc0] Glyph 0x627 not found, selecting one more font for (Noto Sans, 700, 0)
+[Parsed_subtitles_0 @ 0x613ffa431fc0] fontselect: (Noto Sans, 700, 0) -> NotoSansArabic-Bold, 0, NotoSansArabic-Bold
+frame=  136 fps= 43 q=24.0 size=       0kB time=00:00:04.46 bitrate=   0.1kbits/s speed= 1.4x    frame=  171 fps= 46 q=24.0 size=       0kB time=00:00:05.63 bitrate=   0.1kbits/s speed=1.52x    [in#0/lavfi @ 0x613ff7c89ec0] EOF while reading input
+[in#0/lavfi @ 0x613ff7c89ec0] Terminating demuxer thread
+[vist#0:0/wrapped_avframe @ 0x613ff7c90940] Decoder thread received EOF packet
+[vist#0:0/wrapped_avframe @ 0x613ff7c90940] Decoder returned EOF, finishing
+[vist#0:0/wrapped_avframe @ 0x613ff7c90940] Terminating decoder thread
+No more output streams to write to, finishing.
+[out#0/mp4 @ 0x613ff7c90680] All streams finished
+[out#0/mp4 @ 0x613ff7c90680] Terminating muxer thread
+[mp4 @ 0x613ff7c91240] Starting second pass: moving the moov atom to the beginning of the file
+[AVIOContext @ 0x613ffa420940] Statistics: 57079 bytes read, 0 seeks
+[AVIOContext @ 0x613ffa43ea80] Statistics: 117831 bytes written, 4 seeks, 5 writeouts
+[out#0/mp4 @ 0x613ff7c90680] Output file #0 (/home/lachlan/ProjectsLFS/LazyPromotion/examples/rtl-caption-feasibility/artifacts/rtl-caption-feasibility.mp4):
+[out#0/mp4 @ 0x613ff7c90680]   Output stream #0:0 (video): 240 frames encoded; 240 packets muxed (57030 bytes); 
+[out#0/mp4 @ 0x613ff7c90680]   Total: 240 packets (57030 bytes) muxed
+[out#0/mp4 @ 0x613ff7c90680] video:56kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 6.575487%
+frame=  240 fps= 57 q=24.0 Lsize=      59kB time=00:00:07.90 bitrate=  61.5kbits/s speed=1.86x    
+[libx264 @ 0x613ff7c91ec0] frame I:1     Avg QP: 5.48  size: 19704
+[libx264 @ 0x613ff7c91ec0] frame P:60    Avg QP:15.21  size:   378
+[libx264 @ 0x613ff7c91ec0] frame B:179   Avg QP: 8.78  size:    78
+[libx264 @ 0x613ff7c91ec0] consecutive B-frames:  0.4%  0.0%  1.2% 98.3%
+[libx264 @ 0x613ff7c91ec0] mb I  I16..4: 96.5%  0.1%  3.4%
+[libx264 @ 0x613ff7c91ec0] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  0.1%  0.0%  0.0%  0.0%  0.0%    skip:99.8%
+[libx264 @ 0x613ff7c91ec0] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  0.1%  0.0%  0.0%  direct: 0.0%  skip:99.9%  L0:47.8% L1:52.2% BI: 0.0%
+[libx264 @ 0x613ff7c91ec0] 8x8 transform intra:1.1% inter:9.0%
+[libx264 @ 0x613ff7c91ec0] direct mvs  spatial:98.9% temporal:1.1%
+[libx264 @ 0x613ff7c91ec0] coded y,uvDC,uvAC intra: 3.5% 5.7% 5.6% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x613ff7c91ec0] i16 v,h,dc,p: 99%  0%  1%  0%
+[libx264 @ 0x613ff7c91ec0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu:  9% 19% 64%  1%  1%  1%  2%  1%  1%
+[libx264 @ 0x613ff7c91ec0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 19% 18%  5%  5%  5%  5%  5%  7%
+[libx264 @ 0x613ff7c91ec0] i8c dc,h,v,p: 96%  3%  1%  0%
+[libx264 @ 0x613ff7c91ec0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x613ff7c91ec0] ref P L0: 89.7%  1.3%  7.5%  1.3%  0.4%
+[libx264 @ 0x613ff7c91ec0] ref B L0: 56.3% 43.5%  0.2%
+[libx264 @ 0x613ff7c91ec0] kb/s:56.34
+[in#0/lavfi @ 0x613ff7c89ec0] Input file #0 (color=c=0x101826:s=1080x1920:r=30:d=8):
+[in#0/lavfi @ 0x613ff7c89ec0]   Input stream #0:0 (video): 240 packets read (115200 bytes); 240 frames decoded; 0 decode errors; 
+[in#0/lavfi @ 0x613ff7c89ec0]   Total: 240 packets (115200 bytes) demuxed

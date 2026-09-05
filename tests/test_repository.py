@@ -1776,6 +1776,54 @@ class RepositoryTests(unittest.TestCase):
                 archive.read("ISSUE_LEDGER.md"),
             )
 
+    def test_rtl_caption_fixture_is_bounded_and_verifiable(self):
+        sample = ROOT / "examples" / "rtl-caption-feasibility"
+        artifacts = sample / "artifacts"
+        manifest = json.loads((artifacts / "manifest.json").read_text(encoding="utf-8"))
+
+        self.assertIn("Renderer feasibility only", manifest["evidence_boundary"])
+        self.assertIn("FriBidi", manifest["toolchain"]["shaping"])
+        self.assertIn("HarfBuzz", manifest["toolchain"]["shaping"])
+        verification = manifest["verification"]
+        self.assertEqual(verification["duration_seconds"], 8)
+        self.assertEqual(verification["dimensions"], "1080x1920")
+        self.assertEqual(verification["video_codec"], "h264")
+        self.assertEqual(verification["pixel_format"], "yuv420p")
+        self.assertEqual(verification["frame_count"], 3)
+        self.assertTrue(verification["directional_isolates_present"])
+        self.assertFalse(verification["native_language_review"])
+
+        subtitle = sample / "sample.ass"
+        self.assertEqual(
+            hashlib.sha256(subtitle.read_bytes()).hexdigest(),
+            manifest["source_sha256"]["subtitles"],
+        )
+        outputs = {
+            "video": artifacts / "rtl-caption-feasibility.mp4",
+            "hebrew_frame": artifacts / "hebrew.png",
+            "arabic_frame": artifacts / "arabic.png",
+            "mixed_frame": artifacts / "mixed.png",
+        }
+        for name, path in outputs.items():
+            with self.subTest(artifact=name):
+                self.assertEqual(
+                    hashlib.sha256(path.read_bytes()).hexdigest(),
+                    manifest["output_sha256"][name],
+                )
+        self.assertEqual((artifacts / "rtl-caption-feasibility.mp4").read_bytes()[4:8], b"ftyp")
+        for name in ("hebrew.png", "arabic.png", "mixed.png"):
+            png = (artifacts / name).read_bytes()
+            self.assertTrue(png.startswith(b"\x89PNG\r\n\x1a\n"))
+            self.assertEqual(int.from_bytes(png[16:20], "big"), 1080)
+            self.assertEqual(int.from_bytes(png[20:24], "big"), 1920)
+
+        build = (sample / "build.sh").read_text(encoding="utf-8")
+        self.assertIn("directional_isolates_present", build)
+        subtitles = subtitle.read_text(encoding="utf-8")
+        self.assertIn("\u2067", subtitles)
+        self.assertIn("\u2066", subtitles)
+        self.assertIn("renderer test only", subtitles)
+
     def test_reply_prompt_uses_quiet_profile_led_promotion(self):
         candidate = {
             "platform": "reddit",

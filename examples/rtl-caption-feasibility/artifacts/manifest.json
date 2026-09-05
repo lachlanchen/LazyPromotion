@@ -1,0 +1,41 @@
+{
+  "sample": "project-owned synthetic RTL and bidirectional caption fixture",
+  "evidence_boundary": "Renderer feasibility only; not ASR, language-accuracy, word-alignment, template-scale, ingestion, throughput, or buyer-acceptance evidence.",
+  "toolchain": {
+    "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "shaping": "Shaper: FriBidi 1.0.13 (SIMPLE) HarfBuzz-ng 8.3.0"
+  },
+  "source_sha256": {
+    "subtitles": "af027e735d422fda85308044264cc89830950aa7bb0490178dd16efc7d59b6af"
+  },
+  "output_sha256": {
+    "video": "0d506f73e5d56c572fad7d8a29d2325809a31c982e05578c22431baf28afed24",
+    "hebrew_frame": "28dbcc047bfd9e66bdefed61329c94c999e106541265ea62ac6d5f1fa94a2c25",
+    "arabic_frame": "dba73c6eb86f7555fb0b2da93e528e4605d320a0dbd68c126c767d1f20d0736b",
+    "mixed_frame": "6a95e89c50bf606938c4066847e5059292af13d62a8f461371581505b565a12e"
+  },
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  },
+  "verification": {
+    "duration_seconds": 8,
+    "dimensions": "1080x1920",
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "frame_count": 3,
+    "directional_isolates_present": true,
+    "native_language_review": false
+  }
+}

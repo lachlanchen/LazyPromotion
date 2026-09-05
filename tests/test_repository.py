@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -716,7 +717,56 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(channel["connects_spent"], 0)
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
-        self.assertNotIn("@", serialized)
+        self.assertIsNone(
+            re.search(
+                r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b",
+                serialized,
+                re.IGNORECASE,
+            )
+        )
+
+    def test_content_repurposing_application_is_sent_but_not_a_lead(self):
+        path = ROOT / "campaigns" / "content-repurposing-pilot.json"
+        serialized = path.read_text(encoding="utf-8")
+        campaign = json.loads(serialized)
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["id"], "content-repurposing-pilot")
+        source = campaign["source_need"]
+        self.assertEqual(source["state"], "public_explicit_hiring_post")
+        self.assertEqual(source["company"], "Smukti")
+        self.assertEqual(source["compensation"], "not stated publicly")
+        self.assertEqual(source["verified_public_presence"]["site"], "https://smukti.com/")
+        self.assertEqual(
+            source["verified_public_presence"]["youtube"],
+            "https://www.youtube.com/@smuktiindia",
+        )
+        samples = campaign["fit"]["public_samples"]
+        self.assertGreaterEqual(len(samples), 3)
+        self.assertTrue(all(sample["url"].startswith("https://") for sample in samples))
+        gaps = " ".join(campaign["fit"]["not_proven"]).casefold()
+        self.assertIn("travel-client", gaps)
+        application = campaign["application"]
+        self.assertEqual(application["state"], "sent_awaiting_reply")
+        self.assertEqual(application["subject"], "Content and social media creator")
+        self.assertIn("paid fit test", application["proposal"])
+        self.assertIn("not travel-client work", application["claim_boundary"])
+        self.assertFalse(application["delivery_or_contract_started"])
+        funnel = campaign["funnel"]
+        self.assertEqual(funnel["state"], "application_sent")
+        self.assertTrue(funnel["application_sent"])
+        self.assertFalse(funnel["buyer_reply_observed"])
+        self.assertFalse(funnel["qualified_lead_observed"])
+        self.assertFalse(funnel["scope_accepted"])
+        self.assertFalse(funnel["payment_confirmed"])
+        self.assertEqual(funnel["received_revenue_usd"], 0)
+        self.assertIn("Do not send repeated", campaign["policy"])
+        self.assertIsNone(
+            re.search(
+                r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b",
+                serialized,
+                re.IGNORECASE,
+            )
+        )
 
     def test_postiz_affiliate_campaign_starts_at_zero_and_requires_disclosure(self):
         path = ROOT / "campaigns" / "postiz-affiliate-pilot.json"

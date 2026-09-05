@@ -31,6 +31,16 @@
       "url": ""
     },
     {
+      "id": "campaign:content-repurposing-pilot",
+      "kind": "campaign",
+      "label": "content-repurposing-pilot",
+      "metadata": {
+        "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:cross-source-card-dedup",
       "kind": "campaign",
       "label": "cross-source-card-dedup",

@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "id": "content-repurposing-pilot",
+  "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
+  "source_need": {
+    "captured_at": "2026-09-05T14:49:00Z",
+    "url": "https://www.reddit.com/r/kanyakumari/comments/1w7812g/hiring_content_social_media_creator_turn_our/",
+    "title": "[Hiring] Content & Social Media Creator — turn our India spiritual travel podcast into Reels (Remote)",
+    "state": "public_explicit_hiring_post",
+    "company": "Smukti",
+    "posted": "2026-09-04",
+    "contract": "Full-time, freelance, or contract; remote or India",
+    "compensation": "not stated publicly",
+    "requested_scope": [
+      "Find story moments in long-form IndiaCalling interviews",
+      "Create hooks, captions, and short-form edits for Reels and Shorts",
+      "Use licensed stock or archive footage and generated visuals with judgment",
+      "Publish, observe response, and iterate without forcing quiet stories into a generic viral format"
+    ],
+    "verified_public_presence": {
+      "site": "https://smukti.com/",
+      "youtube": "https://www.youtube.com/@smuktiindia",
+      "recent_episode": {
+        "title": "Finding My Voice Through Yoga and Kirtan | Theresa Samworth",
+        "url": "https://www.youtube.com/watch?v=YFGJxDNbqrA",
+        "published": "2026-09-03",
+        "duration": "4:03"
+      }
+    }
+  },
+  "fit": {
+    "projects": [
+      {
+        "id": "lazyedit",
+        "url": "https://github.com/lachlanchen/LazyEdit",
+        "role": "Transcript, captions, video assembly, and reviewed publishing workflow"
+      },
+      {
+        "id": "localvideogen",
+        "url": "https://github.com/lachlanchen/LocalVideoGen",
+        "role": "Project-owned generated supporting visuals"
+      },
+      {
+        "id": "musia",
+        "url": "https://github.com/lachlanchen/Musia",
+        "role": "Rights-aware original audio and media workflow where appropriate"
+      },
+      {
+        "id": "pocketpolyglot",
+        "url": "https://github.com/lachlanchen/PocketPolyglot",
+        "role": "Public multilingual product-demonstration editing proof"
+      }
+    ],
+    "public_samples": [
+      {
+        "title": "Guan Ju River Song",
+        "url": "https://www.youtube.com/watch?v=da0vnv1lQ_E",
+        "duration": "0:31"
+      },
+      {
+        "title": "Desert Oasis",
+        "url": "https://www.youtube.com/watch?v=rVU37lPKPo8",
+        "duration": "0:33"
+      },
+      {
+        "title": "PocketPolyglot on Kindle",
+        "url": "https://www.youtube.com/watch?v=9FjVTAgD9QE",
+        "duration": "4:36"
+      },
+      {
+        "title": "Selected LazyingArt work",
+        "url": "https://lazying.art/work/"
+      }
+    ],
+    "supported_now": [
+      "Project-owned short visual stories and multilingual product demonstrations",
+      "Traceable transcript, caption, visual-source, and reviewed publishing workflows",
+      "Remote delivery from Hong Kong",
+      "Reviewed scheduling across YouTube, Instagram, LinkedIn, and X"
+    ],
+    "not_proven": [
+      "Prior travel-client work or customer results",
+      "India-specific cultural review or Smukti brand fit",
+      "Rights and budget for third-party stock or archive footage",
+      "Retention or conversion results for this employer",
+      "Expected weekly volume, turnaround, revision count, or platform ownership"
+    ]
+  },
+  "application": {
+    "state": "sent_awaiting_reply",
+    "sent_at": "2026-09-05T14:57:00Z",
+    "method": "Direct application through the public route requested in the hiring post",
+    "subject": "Content and social media creator",
+    "private_packet": "prepared_and_verified_in_ignored_private_storage",
+    "proposal": "One paid fit test: first return two candidate moments with hooks, cut rationale, caption drafts, and rights notes; after the buyer selects one, finish one short and hand over editable captions and a source ledger.",
+    "questions": [
+      "Expected finished clips per week",
+      "Platforms requiring publication",
+      "Existing stock-footage license or budget",
+      "Available brand kit"
+    ],
+    "claim_boundary": "The linked samples are project-owned LazyingArt work, not travel-client work. No contract, customer outcome, or sale is implied.",
+    "delivery_or_contract_started": false
+  },
+  "funnel": {
+    "state": "application_sent",
+    "application_sent": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  },
+  "policy": "Do not send repeated public or private messages. Wait for a response or one reasonable, reviewed follow-up after the hiring window. Do not begin customer work before scope, compensation, source rights, confidentiality, delivery, revisions, and payment are agreed. An application is not a lead, sale, or revenue."
+}

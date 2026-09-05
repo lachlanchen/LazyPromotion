@@ -43,13 +43,19 @@ EXPECTED_FINGERPRINT = (
     "8d9b82057dbae85fd2956b18eff95f775ba18671e2c5bf48d1bd6da39d50498f"
 )
 ENVELOPE_VERSION = "lkt-fit-check-envelope/v1"
-RECORD_VERSION = "lkt-fit-check-record/v1"
+LEGACY_RECORD_VERSION = "lkt-fit-check-record/v1"
+RECORD_VERSION = "fit-check-record/v2"
 ALGORITHM = "RSA-OAEP-SHA1+AES-256-GCM"
 AAD = b"lazyingart:lkt-fit-check:envelope:v1"
-SOURCE = {
+LEGACY_SOURCE = {
     "origin": "https://lazying.art",
     "route": "/lazyingart/v1/lkt-fit-check",
     "schema": "lkt-fit-check/v1",
+}
+SOURCE = {
+    "origin": "https://lazying.art",
+    "route": "/lazyingart/v1/lkt-fit-check",
+    "schema": "fit-check/v2",
 }
 
 FILENAME_RE = re.compile(r"\Alkt-([a-f0-9]{32})\.json\Z")
@@ -82,7 +88,7 @@ ENVELOPE_KEYS = {
     "ciphertext",
 }
 RECORD_KEYS = {"version", "received_at", "source", "payload"}
-PAYLOAD_KEYS = {
+LEGACY_PAYLOAD_KEYS = {
     "contact_email",
     "collection",
     "language_goal",
@@ -97,6 +103,45 @@ PAYLOAD_KEYS = {
     "rights_confirmed",
     "scope_confirmed",
     "client_elapsed_ms",
+}
+COMMON_PAYLOAD_KEYS = {
+    "offer",
+    "contact_email",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content",
+    "rights_confirmed",
+    "scope_confirmed",
+    "client_elapsed_ms",
+}
+OFFER_FIELD_RULES = {
+    "lkt": {
+        "collection": (1200, True, True),
+        "language_goal": (300, True, False),
+        "readers": (300, True, False),
+        "hardware": (300, True, False),
+        "sample": (300, True, False),
+        "constraints": (800, False, True),
+    },
+    "manuscript": {
+        "role": (700, True, True),
+        "shape": (400, True, False),
+        "venue": (700, True, True),
+        "problem": (1000, True, True),
+        "outputs": (700, False, True),
+        "handling": (800, True, True),
+        "constraints": (800, False, True),
+    },
+    "lecture": {
+        "source": (1000, True, True),
+        "format": (400, True, False),
+        "language": (300, True, False),
+        "terms": (800, False, True),
+        "excerpt": (300, False, False),
+        "intended_use": (800, True, True),
+        "constraints": (800, False, True),
+    },
 }
 
 
@@ -527,8 +572,23 @@ def _valid_wordpress_email(value: str) -> bool:
     )
 
 
-def validate_payload(payload: object) -> dict:
-    if not isinstance(payload, dict) or set(payload) != PAYLOAD_KEYS:
+def validate_payload(payload: object, *, version: str = RECORD_VERSION) -> dict:
+    if not isinstance(payload, dict):
+        raise InboxError("encrypted inbox payload schema is invalid")
+
+    if version == LEGACY_RECORD_VERSION:
+        if set(payload) != LEGACY_PAYLOAD_KEYS:
+            raise InboxError("encrypted inbox payload schema is invalid")
+        offer = "lkt"
+        field_rules = OFFER_FIELD_RULES[offer]
+    elif version == RECORD_VERSION:
+        offer = payload.get("offer")
+        if not isinstance(offer, str) or offer not in OFFER_FIELD_RULES:
+            raise InboxError("encrypted inbox offer is invalid")
+        field_rules = OFFER_FIELD_RULES[offer]
+        if set(payload) != COMMON_PAYLOAD_KEYS | set(field_rules):
+            raise InboxError("encrypted inbox payload schema is invalid")
+    else:
         raise InboxError("encrypted inbox payload schema is invalid")
 
     email = _validate_text(
@@ -537,14 +597,6 @@ def validate_payload(payload: object) -> dict:
     if not _valid_wordpress_email(email):
         raise InboxError("encrypted inbox contact is invalid")
 
-    field_rules = {
-        "collection": (1200, True, True),
-        "language_goal": (300, True, False),
-        "readers": (300, True, False),
-        "hardware": (300, True, False),
-        "sample": (300, True, False),
-        "constraints": (800, False, True),
-    }
     for key, (maximum, required, allow_lines) in field_rules.items():
         _validate_text(
             payload[key],
@@ -578,12 +630,14 @@ def validate_payload(payload: object) -> dict:
 def validate_record(record: object, *, created_at: str) -> dict:
     if not isinstance(record, dict) or set(record) != RECORD_KEYS:
         raise InboxError("encrypted inbox record schema is invalid")
-    if record["version"] != RECORD_VERSION or record["received_at"] != created_at:
+    version = record["version"]
+    if version not in {LEGACY_RECORD_VERSION, RECORD_VERSION} or record["received_at"] != created_at:
         raise InboxError("encrypted inbox record contract is invalid")
     validate_utc_seconds(record["received_at"])
-    if record["source"] != SOURCE:
+    expected_source = LEGACY_SOURCE if version == LEGACY_RECORD_VERSION else SOURCE
+    if record["source"] != expected_source:
         raise InboxError("encrypted inbox record source is invalid")
-    validate_payload(record["payload"])
+    validate_payload(record["payload"], version=version)
     return record
 
 

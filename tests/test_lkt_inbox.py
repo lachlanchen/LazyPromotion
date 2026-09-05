@@ -23,6 +23,7 @@ PROCESSED_AT = "2026-09-04T13:01:00Z"
 
 def sample_payload():
     return {
+        "offer": "lkt",
         "contact_email": "reader@example.com",
         "collection": "A private set of multilingual history books.",
         "language_goal": "Classical Chinese with English notes",
@@ -37,6 +38,48 @@ def sample_payload():
         "rights_confirmed": True,
         "scope_confirmed": True,
         "client_elapsed_ms": 5000,
+    }
+
+
+def manuscript_payload():
+    return {
+        "offer": "manuscript",
+        "contact_email": "author@example.com",
+        "role": "Corresponding author with source rights.",
+        "shape": "6,800 words, one main TeX file, baseline and revision available",
+        "venue": "One named journal template; deadline in three weeks.",
+        "problem": "Both versions build, but the generated redline fails.",
+        "outputs": "Clean PDF, source archive, redline, log, and issue ledger.",
+        "handling": "Keep source private and delete working copies after delivery.",
+        "constraints": "Do not change scientific claims.",
+        "utm_source": "manuscript sprint",
+        "utm_medium": "owned_site",
+        "utm_campaign": "manuscript_fit_check",
+        "utm_content": "sample_delivery",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 6000,
+    }
+
+
+def lecture_payload():
+    return {
+        "offer": "lecture",
+        "contact_email": "teacher@example.com",
+        "source": "I own the recording, slides, and voice rights.",
+        "format": "14-minute MP4, one speaker, clear audio",
+        "language": "Traditional Chinese for intermediate learners",
+        "terms": "Preserve the supplied names and two formulas.",
+        "excerpt": "00:02:10–00:02:45",
+        "intended_use": "A public course page controlled by the teacher.",
+        "constraints": "Provide WebVTT and SRT.",
+        "utm_source": "lecture pack",
+        "utm_medium": "owned_site",
+        "utm_campaign": "lecture_fit_check",
+        "utm_content": "process_proof",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 7000,
     }
 
 
@@ -166,6 +209,46 @@ class EnvelopeTests(ReceiverFixture):
         envelope, record = self.validate()
         self.assertEqual(envelope["receipt"], self.receipt)
         self.assertEqual(record, sample_record())
+
+    def test_accepts_each_strict_offer_and_legacy_lkt_records(self):
+        for payload in (manuscript_payload(), lecture_payload()):
+            with self.subTest(offer=payload["offer"]):
+                _, raw = encrypted_envelope(
+                    self.key, self.receipt, record=sample_record(payload)
+                )
+                _, record = self.validate(raw=raw)
+                self.assertEqual(record["payload"], payload)
+
+        legacy = sample_payload()
+        legacy.pop("offer")
+        legacy_record = {
+            "version": lkt_inbox.LEGACY_RECORD_VERSION,
+            "received_at": CREATED_AT,
+            "source": dict(lkt_inbox.LEGACY_SOURCE),
+            "payload": legacy,
+        }
+        _, raw = encrypted_envelope(self.key, self.receipt, record=legacy_record)
+        _, record = self.validate(raw=raw)
+        self.assertEqual(record, legacy_record)
+
+    def test_rejects_unknown_offer_and_cross_offer_fields(self):
+        cases = []
+        unknown = sample_payload()
+        unknown["offer"] = "hardware"
+        cases.append(unknown)
+        crossed = manuscript_payload()
+        crossed["sample"] = "ten pages"
+        cases.append(crossed)
+        missing = lecture_payload()
+        missing.pop("intended_use")
+        cases.append(missing)
+        for payload in cases:
+            with self.subTest(offer=payload.get("offer")):
+                _, raw = encrypted_envelope(
+                    self.key, self.receipt, record=sample_record(payload)
+                )
+                with self.assertRaises(lkt_inbox.InboxError):
+                    self.validate(raw=raw)
 
     def test_rejects_filename_receipt_mismatch(self):
         with self.assertRaises(lkt_inbox.InboxError):

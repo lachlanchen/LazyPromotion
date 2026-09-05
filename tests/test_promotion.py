@@ -301,6 +301,15 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_ai_disclosed_product_post_with_engagement_question_is_not_a_need(self):
+        body = (
+            "Do you put a root marker in every LaTeX chapter, or let the editor guess? "
+            "Written with AI fwiw. Sundial compiles the whole workspace and shows "
+            "inline diffs: https://vendor.example/r/referral"
+        )
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
     def test_hiring_listing_with_question_is_out_of_scope(self):
         body = (
             "InfoHawk | Software Engineer | Full-time | Technologies: Python, "
@@ -417,6 +426,74 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(candidate["status"], "stale")
         self.assertEqual(candidate["comment_count"], 13)
         self.assertEqual(candidate["source_score"], 23)
+
+    def test_reconcile_keeps_current_explicit_matched_request(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/keep/help/",
+            author="reader",
+            body="Can someone recommend private local search for my PDF collection?",
+        )
+        self.assertEqual(promotion.reconcile_discovered_candidates(self.db), [])
+        refreshed = self.db.execute(
+            "SELECT status FROM candidates WHERE id=?", (candidate["id"],)
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "discovered")
+
+    def test_reconcile_rejects_noise_without_deleting_source(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/noise/post/",
+            author="seller",
+            body="[For Hire] I edit videos and can add subtitles. DM me.",
+        )
+        result = promotion.reconcile_discovered_candidates(self.db)
+        self.assertEqual(
+            result,
+            [{
+                "candidate_id": candidate["id"],
+                "status": "rejected",
+                "reason": "current evidence is not an explicit help request",
+            }],
+        )
+        refreshed = self.db.execute(
+            "SELECT status, body FROM candidates WHERE id=?", (candidate["id"],)
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "rejected")
+        self.assertEqual(refreshed["body"], candidate["body"])
+
+    def test_reconcile_rejects_help_request_without_portfolio_match(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/unmatched/help/",
+            author="reader",
+            body="Can someone recommend a cheap tent for camping in Arizona?",
+        )
+        result = promotion.reconcile_discovered_candidates(self.db)
+        self.assertEqual(result[0]["candidate_id"], candidate["id"])
+        self.assertEqual(result[0]["reason"], "no evidence-backed project match")
+
+    def test_reconcile_is_idempotent_and_emits_one_transition_event(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/once/post/",
+            author="reader",
+            body="A general observation with no request for help.",
+        )
+        self.assertEqual(len(promotion.reconcile_discovered_candidates(self.db)), 1)
+        self.assertEqual(promotion.reconcile_discovered_candidates(self.db), [])
+        count = self.db.execute(
+            """
+            SELECT COUNT(*) FROM events
+            WHERE candidate_id=? AND kind='candidate_reconciled'
+            """,
+            (candidate["id"],),
+        ).fetchone()[0]
+        self.assertEqual(count, 1)
 
     def test_model_triage_decision_controls_candidate_status(self):
         candidate = promotion.ingest_candidate(

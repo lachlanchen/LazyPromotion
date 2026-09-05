@@ -56,6 +56,7 @@ OUT_OF_SCOPE_SIGNALS = {
     "dm me", "i got you", "apply now", "can i apply", "how can i apply",
     "where can i apply", "we're hiring", "we are hiring",
     "want to publish your own article", "upgrade to premium",
+    "written with ai fwiw",
 }
 COMMENT_REQUEST_PHRASES = {
     "any advice", "any recommendations", "any recommendation", "any suggestions",
@@ -813,6 +814,74 @@ def withdraw_untriageable_requests(db: sqlite3.Connection) -> list[dict[str, str
     return withdrawn
 
 
+def reconcile_discovered_candidates(db: sqlite3.Connection) -> list[dict[str, str]]:
+    """Close deterministic dead ends while preserving every source record.
+
+    ``discovered`` is reserved for a current, explicit help request with an
+    evidence-backed catalog match. Search cards can still be re-ingested with
+    richer text later; ``ingest_candidate`` reopens a rejected row when that
+    evidence or its matched project changes.
+    """
+    rows = db.execute(
+        """
+        SELECT id, platform, source_url, author, body, published_at
+        FROM candidates
+        WHERE status='discovered'
+        ORDER BY created_at, id
+        """
+    ).fetchall()
+    reconciled: list[dict[str, str]] = []
+    now = utc_now()
+    for row in rows:
+        status = ""
+        reason = ""
+        if compact(row["author"]).casefold() in BOT_AUTHORS:
+            status = "rejected"
+            reason = "automated author"
+        elif is_stale(row["published_at"]):
+            status = "stale"
+            reason = "source is older than the discovery window"
+        elif not is_triageable_request(row["platform"], row["source_url"], row["body"]):
+            status = "rejected"
+            reason = "current evidence is not an explicit help request"
+        else:
+            ranking = rank_projects(row["body"])
+            if not ranking or ranking[0]["score"] < 5:
+                status = "rejected"
+                reason = "no evidence-backed project match"
+        if not status:
+            continue
+        db.execute(
+            """
+            UPDATE candidates
+            SET status=?, triage_reason=?, triage_confidence='high',
+                triage_risk_flags='["deterministic route gate"]',
+                triage_requested_at='', updated_at=?
+            WHERE id=? AND status='discovered'
+            """,
+            (status, reason, now, row["id"]),
+        )
+        if not db.execute("SELECT changes()").fetchone()[0]:
+            continue
+        detail = json.dumps(
+            {"reason": reason, "status": status},
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+        db.execute(
+            """
+            INSERT INTO events(candidate_id, kind, detail, created_at)
+            VALUES (?, 'candidate_reconciled', ?, ?)
+            """,
+            (row["id"], detail, now),
+        )
+        reconciled.append(
+            {"candidate_id": row["id"], "status": status, "reason": reason}
+        )
+    db.commit()
+    return reconciled
+
+
 def project_by_id(project_id: str) -> dict[str, Any]:
     for project in load_catalog()["projects"]:
         if project["id"] == project_id:
@@ -1446,6 +1515,8 @@ def build_parser() -> argparse.ArgumentParser:
     triage_pending = sub.add_parser("triage-pending")
     triage_pending.add_argument("--limit", type=int, default=5)
 
+    sub.add_parser("reconcile")
+
     approve = sub.add_parser("approve")
     approve.add_argument("draft_id")
     approve.add_argument("--ttl-minutes", type=int, default=30)
@@ -1546,6 +1617,9 @@ def main() -> int:
                 db.commit()
                 results.append({"ok": False, "candidate_id": candidate["id"], "error": str(exc)})
         print_json({"model": MODEL, "effort": EFFORT, "processed": len(results), "results": results})
+    elif args.command == "reconcile":
+        reconciled = reconcile_discovered_candidates(db)
+        print_json({"count": len(reconciled), "candidates": reconciled})
     elif args.command == "approve":
         if not (1 <= args.ttl_minutes <= 1440):
             raise SystemExit("--ttl-minutes must be between 1 and 1440")

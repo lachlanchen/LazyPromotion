@@ -255,6 +255,10 @@ model backlog. Before each model pass, the worker rechecks admitted candidates
 against the current deterministic gate and withdraws obsolete or false-positive
 admissions with a sanitized local event. They remain private discovery evidence
 but consume no retry quota.
+The same pass reconciles every unreviewed discovery: stale sources become stale,
+and non-requests or requests without an evidence-backed portfolio match become
+rejected without deleting their source record. This keeps `discovered` reserved
+for current needs that are genuinely worth considering.
 If the model account reports an exhausted usage balance, the worker stops that
 cycle's remaining model calls and records a 24-hour backoff. Browser discovery
 continues during the backoff, so useful candidates remain available for later

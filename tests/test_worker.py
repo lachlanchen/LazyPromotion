@@ -159,6 +159,8 @@ class WorkerTests(unittest.TestCase):
                 "reason": "current evidence is not an explicit request",
             }],
         )
+        self.assertEqual(result["candidates_reconciled"][0]["candidate_id"], candidate["id"])
+        self.assertEqual(result["candidates_reconciled"][0]["status"], "rejected")
 
     def test_review_queue_only_contains_latest_unsent_draft(self):
         candidate = promotion.ingest_candidate(

@@ -215,6 +215,7 @@
         "local knowledge base", "private knowledge base", "book grounded", "book-grounded",
         "knowledge cards", "multilingual knowledge", "offline study", "local learning",
         "local rag", "offline rag", "private documents", "confidential documents",
+        "rag setup", "document ingestion", "personal documents",
         "document search", "pdf collection", "book collection", "text collection"
       ]
     },

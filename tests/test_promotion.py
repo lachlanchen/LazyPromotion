@@ -95,6 +95,19 @@ class PromotionTests(unittest.TestCase):
             {item["project"]["id"] for item in newspaper},
         )
 
+    def test_personal_document_pipeline_need_beats_generic_chat_metadata(self):
+        ranked = promotion.rank_projects(
+            "How do you handle a personal RAG setup with document ingestion, "
+            "personal documents, OCR, invoice tables, and fewer hallucinations?"
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "localknowledgeterminal")
+        self.assertIn("document ingestion", ranked[0]["matches"])
+        self.assertIn("personal documents", ranked[0]["matches"])
+        self.assertIn(
+            "not a finished RAG application",
+            ranked[0]["project"]["reply_context"],
+        )
+
     def test_triage_sees_reviewed_offer_context_and_boundary(self):
         project = promotion.project_by_id("localknowledgeterminal")
         prompt = promotion.triage_prompt(

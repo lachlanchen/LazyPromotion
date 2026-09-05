@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "id": "futo-lkt-microgrant",
+  "objective": "Seek one bounded FUTO microgrant to harden Local Knowledge Terminal as user-controlled, local-first software without calling public source open source before an explicit license exists or counting an application or award as customer revenue.",
+  "source_evidence": {
+    "program": "https://futo.tech/grants",
+    "mission": "https://futo.tech/about",
+    "source_first": "https://futo.tech/source-first",
+    "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "passage_provenance_proof": "https://lazying.art/lkt/passage-graph/",
+    "sample_fit_report": "https://lazying.art/lkt/sample-report/"
+  },
+  "program": {
+    "state": "applications_open_official_page_verified",
+    "observed_on": "2026-09-06",
+    "award_range_usd": {
+      "minimum": 1000,
+      "maximum": 5000
+    },
+    "published_fit": "One-time microgrants for small or early-stage projects working against technology centralization.",
+    "application_route": "email_to_public_program_address",
+    "application_fee_observed": false,
+    "deadline_published": false,
+    "geographic_eligibility_published": false,
+    "agreement_or_ip_terms_published": false,
+    "policy": "The official page verifies an open application route and award range only. It does not establish eligibility, selection probability, decision timing, agreement terms, payout, tax treatment, or an award."
+  },
+  "fit": {
+    "strength": "high_mission_fit_with_license_gate",
+    "supported": [
+      "Local retrieval and Qwen inference can run without a cloud API",
+      "Accepted knowledge is stored in SQLite and the graph is a rebuildable projection",
+      "Project-owned examples expose exact source spans, source hashes, reviewed relations, and portable JSON",
+      "The public offer and repository keep private collections, model weights, and generated data outside Git"
+    ],
+    "not_proven": [
+      "large-collection performance",
+      "automatic knowledge extraction accuracy",
+      "customer adoption or outcomes",
+      "international grant eligibility",
+      "agreement or payout terms"
+    ],
+    "license_audit": {
+      "state": "explicit_license_missing",
+      "checked_on": "2026-09-06",
+      "github_detected_license": null,
+      "root_license_file_present": false,
+      "gate": "Choose and publish an owner-approved license before accepting funding; do not describe source-visible code as granting reuse rights."
+    }
+  },
+  "proposal": {
+    "state": "private_draft_ready_not_sent",
+    "requested_usd": 5000,
+    "timeline_weeks": 6,
+    "private_draft": ".local/outreach/futo-lkt-microgrant/email-draft.md",
+    "milestones": [
+      {
+        "name": "Licensing and rights boundary",
+        "budget_usd": 1000,
+        "deliverable": "Owner-approved code license, third-party notices, corpus boundary, and public release checklist"
+      },
+      {
+        "name": "Reproducible local lifecycle",
+        "budget_usd": 1500,
+        "deliverable": "Raspberry Pi/Linux code-only install, update, uninstall, and offline smoke tests"
+      },
+      {
+        "name": "Redistributable proof collection",
+        "budget_usd": 1250,
+        "deliverable": "Synthetic or openly licensed starter data plus deterministic provenance validation"
+      },
+      {
+        "name": "Portability and release",
+        "budget_usd": 1250,
+        "deliverable": "Export/import regression tests, tagged release, operator guide, and bounded results report"
+      }
+    ],
+    "exclusions": [
+      "private books or customer material",
+      "model weights",
+      "hardware purchases or shipping",
+      "hosted inference",
+      "unmeasured accuracy or scale claims"
+    ],
+    "submission_gates": [
+      "Verify the exact sender identity and reply channel",
+      "Review the requested amount, six-week capacity, milestones, and exclusions",
+      "Choose an owner-approved licensing plan",
+      "Ask FUTO to clarify geographic eligibility and agreement terms before accepting any award"
+    ],
+    "application_sent": false
+  },
+  "funnel": {
+    "application_sent": false,
+    "reply_received": false,
+    "award_offered": false,
+    "funds_received_usd": 0,
+    "verified_received_gross_revenue_usd": 0,
+    "policy": "An application, reply, award notice, or promised grant is not customer revenue. Record received grant funding separately and only after funds settle."
+  }
+}
+

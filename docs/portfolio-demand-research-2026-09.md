@@ -1,8 +1,8 @@
 # Current needs matched to the LazyingArt portfolio
 
-Updated: 2026-09-05
+Updated: 2026-09-06
 
-The current public inventory contains 106 non-archived source repositories.
+The current public inventory contains 107 non-archived source repositories.
 The useful question is not how to promote all of them. It is which combinations
 already solve a problem someone has described clearly enough to test.
 
@@ -190,3 +190,17 @@ author credit. Two exact, conflicting LabCanvas draft duplicates were closed as
 superseded only after confirming that their useful Windows work was already
 selectively integrated and credited on current `master`. These actions improve
 project trust and contributor experience; they are not leads or revenue.
+
+## Separate funding route: FUTO microgrant
+
+FUTO's current official grants page invites applications and publishes a
+one-time USD 1,000–5,000 microgrant range for small or early-stage projects.
+Local Knowledge Terminal is a strong mission match because its useful state,
+retrieval, inference, and provenance remain on hardware controlled by the user.
+The application route is materially simpler than a marketplace proposal, but
+the repository currently has no detected license. A concise private draft is
+ready; it remains unsent until the sender, six-week capacity, USD 5,000 budget,
+and owner-approved licensing plan are reviewed. FUTO publishes no microgrant
+deadline, geography rule, agreement, payout, or tax terms, so none are inferred.
+An application, reply, or award notice is not customer revenue, and received
+grant funding must be recorded separately from the four USD 250 sales target.

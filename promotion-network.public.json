@@ -61,6 +61,16 @@
       "url": ""
     },
     {
+      "id": "campaign:futo-lkt-microgrant",
+      "kind": "campaign",
+      "label": "futo-lkt-microgrant",
+      "metadata": {
+        "objective": "Seek one bounded FUTO microgrant to harden Local Knowledge Terminal as user-controlled, local-first software without calling public source open source before an explicit license exists or counting an application or award as customer revenue.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:l-and-n-pronunciation-launch",
       "kind": "campaign",
       "label": "l-and-n-pronunciation-launch",
@@ -6379,6 +6389,13 @@
       "url": "https://lazying.art/work/"
     },
     {
+      "id": "url:414ba0a19b25ec62",
+      "kind": "web_resource",
+      "label": "mission",
+      "metadata": {},
+      "url": "https://futo.tech/about"
+    },
+    {
       "id": "url:593c601822a24f73",
       "kind": "web_resource",
       "label": "offer",
@@ -6477,6 +6494,13 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md"
     },
     {
+      "id": "url:7ee8f49f5628a773",
+      "kind": "web_resource",
+      "label": "program",
+      "metadata": {},
+      "url": "https://futo.tech/grants"
+    },
+    {
       "id": "url:75c9f7d2578872a2",
       "kind": "web_resource",
       "label": "program page",
@@ -6545,6 +6569,13 @@
       "label": "social preview",
       "metadata": {},
       "url": "https://lazying.art/manuscript-sprint/assets/manuscript-sprint-social.png"
+    },
+    {
+      "id": "url:3fc30ab3f379bb7d",
+      "kind": "web_resource",
+      "label": "source first",
+      "metadata": {},
+      "url": "https://futo.tech/source-first"
     },
     {
       "id": "url:90dd533df880bbcd",
@@ -7304,6 +7335,62 @@
       "relation": "uses_evidence",
       "source": "campaign:eink-multilingual-reading",
       "target": "url:d5bc86f4486d0cba"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/passage-graph/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "url:1c57cb81d6efe0d4"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/sample-report/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "url:3f9d0326fb664513"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://futo.tech/source-first",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "url:3fc30ab3f379bb7d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://futo.tech/about",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "url:414ba0a19b25ec62"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://futo.tech/grants",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "url:7ee8f49f5628a773"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "url:d9c92d269df40406"
     },
     {
       "confidence": 1.0,

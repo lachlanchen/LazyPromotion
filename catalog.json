@@ -209,6 +209,13 @@
         "local rag": [
           "llm", "retrieval", "embedding", "vector database", "document", "pdf",
           "knowledge base", "rag setup", "rag pipeline"
+        ],
+        "second brain": [
+          "local", "private", "markdown", "source", "citation", "provenance",
+          "document", "collection"
+        ],
+        "obsidian knowledge base": [
+          "local", "private", "markdown", "vault", "citation", "provenance"
         ]
       },
       "keywords": [
@@ -216,6 +223,8 @@
         "knowledge cards", "multilingual knowledge", "offline study", "local learning",
         "local rag", "offline rag", "private documents", "confidential documents",
         "rag setup", "document ingestion", "personal documents",
+        "second brain", "obsidian knowledge base", "rebuildable markdown",
+        "knowledge provenance", "source provenance",
         "document search", "pdf collection", "book collection", "text collection"
       ]
     },

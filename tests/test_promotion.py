@@ -108,6 +108,22 @@ class PromotionTests(unittest.TestCase):
             ranked[0]["project"]["reply_context"],
         )
 
+    def test_private_markdown_second_brain_matches_lkt_without_matching_generic_apps(self):
+        ranked = promotion.rank_projects(
+            "I need help reviewing a private second brain built from Markdown documents. "
+            "How can I preserve source provenance and citations in a rebuildable index?"
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "localknowledgeterminal")
+        self.assertIn("second brain", ranked[0]["matches"])
+
+        generic = promotion.rank_projects(
+            "Can anyone recommend a second brain app for reminders and calendar tasks?"
+        )
+        self.assertNotIn(
+            "localknowledgeterminal",
+            {item["project"]["id"] for item in generic},
+        )
+
     def test_triage_sees_reviewed_offer_context_and_boundary(self):
         project = promotion.project_by_id("localknowledgeterminal")
         prompt = promotion.triage_prompt(

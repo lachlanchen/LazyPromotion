@@ -646,6 +646,33 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
+    def test_landn_campaign_keeps_pwa_story_draft_truthful_and_unpublished(self):
+        path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
+        serialized = path.read_text(encoding="utf-8")
+        campaign = json.loads(serialized)
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
+        releases = campaign["source_evidence"]["release_state"]
+        self.assertEqual(releases["pwa"], "live")
+        self.assertEqual(releases["google_play_internal_test"], "available_to_internal_testers")
+        self.assertEqual(releases["google_play_production"], "changes_in_review")
+        self.assertEqual(releases["testflight_external"], "waiting_for_review")
+        self.assertEqual(releases["apple_app_store"], "waiting_for_review")
+        test_build = campaign["source_evidence"]["android_test_build"]
+        self.assertTrue(test_build["first_party_apk"].startswith("https://l-and-n.lazying.art/"))
+        self.assertEqual(len(test_build["sha256"]), 64)
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_draft")
+        self.assertIn("I have trouble pronouncing L and N", linkedin["content"])
+        self.assertIn("English, Mandarin, and Cantonese", linkedin["content"])
+        self.assertEqual(linkedin["destination"], campaign["source_evidence"]["pwa"])
+        self.assertTrue(linkedin["visible_review"]["stored_text_normalized_exact"])
+        self.assertTrue(linkedin["visible_review"]["original_url_preserved"])
+        self.assertFalse(linkedin["visible_review"]["release_present"])
+        self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
+        self.assertNotIn("integration_id", serialized.casefold())
+        self.assertNotIn("post_id", serialized.casefold())
+
     def test_postiz_affiliate_campaign_starts_at_zero_and_requires_disclosure(self):
         path = ROOT / "campaigns" / "postiz-affiliate-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))

@@ -22,8 +22,8 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Song-to-language lesson](#song-to-language-lesson) | candidate | Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes | Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material | 3.50 |
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | candidate | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks | 3.35 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
-| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes | 3.25 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
+| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Retire or redirect the stale memo.lazying.art claims, align the live terms and privacy wording, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort | 2.95 |
 
 ## Opportunity contracts
 
@@ -403,39 +403,6 @@ Gates:
 - Verify interview, figure, quotation, and translation permissions
 - Date changing financial facts and link to primary sources
 
-### Durable AI conversation and voice memory
-
-**State:** gated
-
-**Buyer:** A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later
-
-**Need:** Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job
-
-**Existing work:** [AgentShell](https://github.com/lachlanchen/AgentShell), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal), [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb), [AI-Wearable](https://github.com/lachlanchen/AI-Wearable)
-
-**First deliverable:** Keep AiMemo as a free beta while proving an export-first workflow: preserve the untouched source, extract one reviewable record per useful item, retain its source reference and capture time, append corrections, and export plain Markdown or JSON
-
-**First demand test:** Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes
-
-Evidence:
-
-- <https://github.com/lachlanchen/AgentShell>
-- <https://github.com/lachlanchen/LocalKnowledgeTerminal>
-- <https://github.com/lachlanchen/LazyingAgentWeb>
-- <https://github.com/lachlanchen/AI-Wearable>
-- <https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/>
-- <https://www.reddit.com/r/ChatGPT/comments/1vil3c6/anyone_else_hate_how_messy_it_is_to_get_useful/>
-- <https://www.reddit.com/r/ObsidianMD/comments/1vx7v75/whats_your_fastest_way_to_capture_ideas_into/>
-- <https://www.reddit.com/r/AiNoteTaker/comments/1vhbfj2/apps_for_taking_voice_notes/>
-
-Gates:
-
-- Do not claim that AiMemo can import or back up another product's full chat history until that exact path is tested
-- Explain capture, model processing, retention, deletion, and export behavior in short plain language that matches the running app
-- Voice capture requires recording consent and must preserve the original audio or clearly say when it does not
-- Verify that correction history and plain Markdown or JSON export survive a round trip before charging
-- Do not link AiMemo in public replies until its voice reliability, retention behavior, and store-facing privacy wording agree
-
 ### Classical Chinese history classroom pack
 
 **State:** gated
@@ -462,6 +429,39 @@ Gates:
 - Verify the exact source edition, translation, annotations, images, fonts, and media rights
 - Do not monetize or broadly promote the existing LinguaLeaf shelf until its title-level rights ledger is complete
 - Historical explanations require source review and must distinguish evidence from dramatization
+
+### Durable AI conversation and voice memory
+
+**State:** gated
+
+**Buyer:** A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later
+
+**Need:** Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job
+
+**Existing work:** [AgentShell](https://github.com/lachlanchen/AgentShell), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal), [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb), [AI-Wearable](https://github.com/lachlanchen/AI-Wearable)
+
+**First deliverable:** Keep AiMemo as a gated private alpha while proving the manual memo path it implements now: create, edit, search, archive, classify, date, tag, resolve a revision conflict, and export account-scoped JSON without AI consent
+
+**First demand test:** Retire or redirect the stale memo.lazying.art claims, align the live terms and privacy wording, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort
+
+Evidence:
+
+- <https://github.com/lachlanchen/AgentShell>
+- <https://github.com/lachlanchen/LocalKnowledgeTerminal>
+- <https://github.com/lachlanchen/LazyingAgentWeb>
+- <https://github.com/lachlanchen/AI-Wearable>
+- <https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/>
+- <https://www.reddit.com/r/ChatGPT/comments/1vil3c6/anyone_else_hate_how_messy_it_is_to_get_useful/>
+- <https://www.reddit.com/r/ObsidianMD/comments/1vx7v75/whats_your_fastest_way_to_capture_ideas_into/>
+- <https://www.reddit.com/r/AiNoteTaker/comments/1vhbfj2/apps_for_taking_voice_notes/>
+
+Gates:
+
+- Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and its two public sites disagree
+- Do not claim reliable live AI or voice, collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, full offline operation, or public store availability
+- Remove the stale subscription statement from the free alpha terms and retire or redirect the older memo.lazying.art marketing claims
+- Complete and verify deletion across retained agent, speech, and backup data before inviting external testers
+- Restore the AI provider and separately verify a current text and voice round trip before promoting AI organization
 
 ## Interpretation
 

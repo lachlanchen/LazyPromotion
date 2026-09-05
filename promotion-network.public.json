@@ -51,6 +51,16 @@
       "url": ""
     },
     {
+      "id": "campaign:l-and-n-pronunciation-launch",
+      "kind": "campaign",
+      "label": "l-and-n-pronunciation-launch",
+      "metadata": {
+        "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:latex-redline-build",
       "kind": "campaign",
       "label": "latex-redline-build",
@@ -342,25 +352,25 @@
       "label": "Durable AI conversation and voice memory",
       "metadata": {
         "buyer": "A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later",
-        "first_deliverable": "Keep AiMemo as a free beta while proving an export-first workflow: preserve the untouched source, extract one reviewable record per useful item, retain its source reference and capture time, append corrections, and export plain Markdown or JSON",
-        "first_test": "Verify the full capture, correction, deletion, and export path with opt-in test data before linking AiMemo in helpful replies to people who explicitly report lost AI-chat decisions or fragmented voice notes",
+        "first_deliverable": "Keep AiMemo as a gated private alpha while proving the manual memo path it implements now: create, edit, search, archive, classify, date, tag, resolve a revision conflict, and export account-scoped JSON without AI consent",
+        "first_test": "Retire or redirect the stale memo.lazying.art claims, align the live terms and privacy wording, then verify manual memo, export, retention, and full deletion with opt-in test data before inviting a small private cohort",
         "gates": [
-          "Do not claim that AiMemo can import or back up another product's full chat history until that exact path is tested",
-          "Explain capture, model processing, retention, deletion, and export behavior in short plain language that matches the running app",
-          "Voice capture requires recording consent and must preserve the original audio or clearly say when it does not",
-          "Verify that correction history and plain Markdown or JSON export survive a round trip before charging",
-          "Do not link AiMemo in public replies until its voice reliability, retention behavior, and store-facing privacy wording agree"
+          "Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and its two public sites disagree",
+          "Do not claim reliable live AI or voice, collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, full offline operation, or public store availability",
+          "Remove the stale subscription statement from the free alpha terms and retire or redirect the older memo.lazying.art marketing claims",
+          "Complete and verify deletion across retained agent, speech, and backup data before inviting external testers",
+          "Restore the AI provider and separately verify a current text and voice round trip before promoting AI organization"
         ],
         "need": "Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job",
         "scores": {
           "buyer_pain": 4,
-          "delivery_readiness": 2,
-          "low_support": 3,
+          "delivery_readiness": 1,
+          "low_support": 2,
           "proof": 3,
           "repeatability": 4
         },
         "state": "gated",
-        "weighted_score": 3.25
+        "weighted_score": 2.95
       },
       "url": ""
     },
@@ -5727,6 +5737,20 @@
       "url": "https://learn.lazying.art"
     },
     {
+      "id": "url:7f2655584aa51854",
+      "kind": "web_resource",
+      "label": "android test build first party apk",
+      "metadata": {},
+      "url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk"
+    },
+    {
+      "id": "url:74104787f83f4cbe",
+      "kind": "web_resource",
+      "label": "android test build google play internal test",
+      "metadata": {},
+      "url": "https://play.google.com/apps/internaltest/4701251861700553150"
+    },
+    {
       "id": "url:ebcdbdd3fa4acc0b",
       "kind": "web_resource",
       "label": "application page",
@@ -6049,13 +6073,6 @@
       "url": "https://github.com/lachlanchen/AgentShell"
     },
     {
-      "id": "url:6da737bdd18800ca",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/L-and-N"
-    },
-    {
       "id": "url:8c31df37ee870928",
       "kind": "web_resource",
       "label": "github.com",
@@ -6166,20 +6183,6 @@
       "label": "knowledge identity pattern",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
-    },
-    {
-      "id": "url:7f2655584aa51854",
-      "kind": "web_resource",
-      "label": "l-and-n.lazying.art",
-      "metadata": {},
-      "url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk"
-    },
-    {
-      "id": "url:dad6a142b98ee7ea",
-      "kind": "web_resource",
-      "label": "l-and-n.lazying.art",
-      "metadata": {},
-      "url": "https://l-and-n.lazying.art/"
     },
     {
       "id": "url:273db0ceb258a5af",
@@ -6315,11 +6318,25 @@
       "url": "https://lachlanchen.github.io/LinguaLeaf/website/"
     },
     {
+      "id": "url:dad6a142b98ee7ea",
+      "kind": "web_resource",
+      "label": "pwa",
+      "metadata": {},
+      "url": "https://l-and-n.lazying.art/"
+    },
+    {
       "id": "url:9c9f050d46c099aa",
       "kind": "web_resource",
       "label": "pymupdf text recipes",
       "metadata": {},
       "url": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html"
+    },
+    {
+      "id": "url:6da737bdd18800ca",
+      "kind": "web_resource",
+      "label": "repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/L-and-N"
     },
     {
       "id": "url:08da0dd4fa5a19c9",
@@ -7012,6 +7029,86 @@
       "relation": "uses_evidence",
       "source": "campaign:eink-multilingual-reading",
       "target": "url:d5bc86f4486d0cba"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "project:github-l-and-n"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "research_only"
+      },
+      "relation": "targets",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "channel:hackernews"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_draft"
+      },
+      "relation": "targets",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "exact_need_only"
+      },
+      "relation": "targets",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_created"
+      },
+      "relation": "targets",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:6da737bdd18800ca"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://play.google.com/apps/internaltest/4701251861700553150",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:74104787f83f4cbe"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:7f2655584aa51854"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:dad6a142b98ee7ea"
     },
     {
       "confidence": 1.0,

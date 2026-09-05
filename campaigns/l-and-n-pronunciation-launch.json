@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "id": "l-and-n-pronunciation-launch",
+  "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "pwa": "https://l-and-n.lazying.art/",
+    "deployed_source_commit": "01d0e9e27e5316bb463a10c1904f26b67bd441bc",
+    "current_evidence_commit": "1a3629a8adb5c03c7936bf7ad42c514d22001496",
+    "verified_on": "2026-09-05",
+    "supported_capabilities": [
+      "Hear an L/N contrast and record one word",
+      "Inspect mouth-placement and airflow guidance",
+      "Inspect explainable practice feedback rather than a bare score",
+      "Switch practice among English, Mandarin, and Cantonese",
+      "Use the public browser version without creating an account"
+    ],
+    "release_state": {
+      "pwa": "live",
+      "google_play_internal_test": "available_to_internal_testers",
+      "google_play_production": "changes_in_review",
+      "testflight_external": "waiting_for_review",
+      "apple_app_store": "waiting_for_review",
+      "policy": "This campaign links only the live PWA. Do not call either store version public or available until the corresponding storefront is independently verified."
+    },
+    "android_test_build": {
+      "version": "1.0 (2)",
+      "first_party_apk": "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build2-test.apk",
+      "sha256": "9b018d62df3c2e0ca1dc3004bd8c0b30fc08459e12b83fe96a395467c4839934",
+      "google_play_internal_test": "https://play.google.com/apps/internaltest/4701251861700553150",
+      "policy": "Use only for an explicit tester invitation after rechecking the exact artifact and tester access; it is not evidence of public Google Play availability."
+    },
+    "media": {
+      "filename": "landn-bilingual-vertical-v2.mp4",
+      "state": "uploaded_to_reviewable_postiz_draft",
+      "duration_seconds": 19.366667,
+      "dimensions": "1080x1920",
+      "sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "content": "First-party L-and-N screens, icon, and bundled synthetic light/night prompts in an English and Traditional Chinese vertical demonstration.",
+      "claim_boundary": "The clip is a product demonstration, not a customer result, accuracy benchmark, medical assessment, or public-store availability claim."
+    }
+  },
+  "channels": {
+    "linkedin": {
+      "state": "postiz_draft",
+      "draft_calendar_date": "2026-09-20T02:00:00Z",
+      "content": "I have trouble pronouncing L and N, so I built the practice tool I wanted.\n\nHear a pair, see the mouth and airflow cue, record one word, and get feedback you can inspect. The same four-minute drill works in English, Mandarin, and Cantonese.\n\nIt’s free and open source, and runs in the browser without an account:\nhttps://l-and-n.lazying.art/\n\nIf you try it, tell me whether the mouth view actually makes the difference clearer.",
+      "content_sha256": "4976b657ef333e7e2aa1104c28326e16317c2166c2ae51eaad0362b25f0c6898",
+      "destination": "https://l-and-n.lazying.art/",
+      "media_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "settings": {
+        "post_as_images_carousel": false
+      },
+      "visible_review": {
+        "checked_at": "2026-09-05T11:12:00Z",
+        "stored_text_normalized_exact": true,
+        "original_url_preserved": true,
+        "media_visible": true,
+        "state_rechecked": "DRAFT",
+        "release_present": false
+      },
+      "policy": "This is an unpublished first-party product draft. A draft calendar date is not a schedule, public post, engagement, lead, or sale. Recheck the PWA, store states, media, copy, destination, account, and provider settings before scheduling."
+    },
+    "reddit": {
+      "state": "exact_need_only",
+      "policy": "Answer the learner's question completely before mentioning the maintained PWA; disclose affiliation and do not reuse the LinkedIn announcement as a community reply."
+    },
+    "x": {
+      "state": "not_created",
+      "policy": "Do not duplicate the LinkedIn draft merely to increase channel count. Use a separate concise educational angle after current queue and provider-state review."
+    },
+    "hackernews": {
+      "state": "research_only",
+      "policy": "Do not draft or publish agent-authored comments."
+    }
+  },
+  "funnel": {
+    "helpful_interactions": 0,
+    "specific_feedback_received": 0,
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "A draft, post, view, app test, comment, star, or store review state is not revenue. Record money only after a separately evidenced received payment."
+  }
+}

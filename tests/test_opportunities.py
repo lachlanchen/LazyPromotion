@@ -50,7 +50,8 @@ class OpportunityTests(unittest.TestCase):
             "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/",
             body,
         )
-        self.assertIn("Keep AiMemo as a free beta", body)
+        self.assertIn("Keep AiMemo as a gated private alpha", body)
+        self.assertIn("export account-scoped JSON without AI consent", body)
         self.assertIn("Do not link AiMemo in public replies", body)
         self.assertIn("do not call either public store availability", body)
         self.assertIn("the three active USD 250 routes", body)

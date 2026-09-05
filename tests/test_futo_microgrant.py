@@ -28,13 +28,20 @@ class FutoMicrograntTests(unittest.TestCase):
         self.assertFalse(audit["root_license_file_present"])
         self.assertIn("owner-approved license", audit["gate"])
 
-    def test_private_draft_is_unsent_and_ignored(self):
+    def test_private_package_is_unsent_and_ignored(self):
         proposal = self.campaign["proposal"]
         draft = ROOT / proposal["private_draft"]
-        self.assertEqual(proposal["state"], "private_draft_ready_not_sent")
+        brief_source = ROOT / proposal["private_brief_source"]
+        brief_pdf = ROOT / proposal["private_brief_pdf"]
+        self.assertEqual(proposal["state"], "private_package_ready_not_sent")
         self.assertFalse(proposal["application_sent"])
         self.assertTrue(draft.is_file())
-        self.assertTrue(str(draft.resolve()).startswith(str((ROOT / ".local").resolve())))
+        self.assertTrue(brief_source.is_file())
+        self.assertTrue(brief_pdf.is_file())
+        for path in (draft, brief_source, brief_pdf):
+            self.assertTrue(
+                str(path.resolve()).startswith(str((ROOT / ".local").resolve()))
+            )
 
     def test_budget_is_complete_and_grant_does_not_inflate_revenue(self):
         proposal = self.campaign["proposal"]
@@ -47,4 +54,3 @@ class FutoMicrograntTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

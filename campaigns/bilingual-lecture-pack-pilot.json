@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -150,7 +150,7 @@
           "ja",
           "zh"
         ],
-        "commit": "1d0932b",
+        "commit": "368a843",
         "route": "The archive article keeps its study value first, removes unrelated notebook and LKT pitches, and offers one concise lecture-specific next step after the public Video2Book workflow."
       },
       "practical_workflow_guide": {
@@ -174,16 +174,27 @@
       }
     },
     "x": {
-      "state": "postiz_queue",
+      "state": "postiz_published",
       "publish_at": "2026-09-05T02:00:00Z",
       "content": "Turning one lecture into a bilingual study pack is mostly source work: timestamps, uncertain words, terminology, rights, and a correction pass. I made that into a bounded pilot: lazying.art/lecture-pack/?utm_source=x&utm_campaign=lecture_pack",
       "postiz_content": "Turning one lecture into a bilingual study pack is mostly source work: timestamps, uncertain words, terminology, rights, and a correction pass. I made that into a bounded pilot: lazying.art/lecture-pack/?utm_source=x&utm_campaign=lecture_pack",
       "destination": "https://lazying.art/lecture-pack/?utm_source=x&utm_campaign=lecture_pack",
+      "content_sha256": "e42b66d1e4601b115a409fed4ac885359aab2005183c2c5ce7e34eb2bdc8d7bd",
+      "release_url": "https://x.com/lazyingart/status/2096055987052687754",
       "settings": {
         "who_can_reply_post": "everyone",
         "post_type": "post",
         "made_with_ai": true,
         "paid_partnership": false
+      },
+      "visible_review": {
+        "checked_at": "2026-09-05T02:03:36Z",
+        "provider": "x",
+        "state_rechecked_after_schedule": "PUBLISHED",
+        "stored_text_exact": true,
+        "release_present": true,
+        "public_http_status": 200,
+        "tracked_destination_preserved": true
       },
       "policy": "The reviewed 242-character post leads with the source-work lesson, uses the protocol-less first-party destination that Postiz preserved, and carries the live fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
     },

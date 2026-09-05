@@ -226,7 +226,14 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertIn("45 searchable strings", "\n".join(sample["verified_outputs"]))
         self.assertIn("not an automated LKT import", sample["claim_boundary"])
         channel = campaign["channels"]["x"]
-        self.assertEqual(channel["state"], "postiz_queue")
+        self.assertEqual(channel["state"], "postiz_published")
+        self.assertEqual(
+            channel["content_sha256"],
+            "e42b66d1e4601b115a409fed4ac885359aab2005183c2c5ce7e34eb2bdc8d7bd",
+        )
+        self.assertIn("x.com/lazyingart/status/", channel["release_url"])
+        self.assertTrue(channel["visible_review"]["stored_text_exact"])
+        self.assertTrue(channel["visible_review"]["tracked_destination_preserved"])
         self.assertIn("lazying.art/lecture-pack/", channel["postiz_content"])
         self.assertNotIn("https://", channel["postiz_content"])
         route = owned_monitor.route_for_post(

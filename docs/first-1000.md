@@ -62,13 +62,15 @@ from the homepage. LazyingArtWebsite commit `d589cda` also replaces an
 unsupported audience count with verifiable portfolio facts, removes an
 unverified discount and dead footer links, and gates Robot, eInk, and OpenHI
 checkout behind an availability conversation until fulfillment terms exist.
-Follow-up commits `a8b3e0e`, `78ecc81`, `0273f2f`, and `3d71cc8` replace token
+Follow-up commits `a8b3e0e`, `78ecc81`, `0273f2f`, `3d71cc8`, `8e8dfb0`, and
+`44d9edd` replace token
 and automated-income promises with links to the public project record, describe
 EchoMind as a public beta with feature boundaries, label IdeasGlass capabilities
 as prototype design goals across all 13 locales, add the fourth inspectable
 research proof to the work shelf, and bring the 11-language repository
 documentation in line with the fit-check-first payment flow. The deployed page
-and all 12 website contracts passed. This improves trust and qualification; it
+and all 12 website contracts passed; its current sitemap dates match the live
+offer revisions. This improves trust and qualification; it
 is not a lead, order, sponsorship, or revenue.
 
 Search Console URL inspection on 2026-09-05 independently reported the LKT and
@@ -149,6 +151,12 @@ segments, derive subtitle and pocket-book formats, keep concepts linked to
 exact seconds, and test by seeking backward. It is live in English,
 Traditional Chinese, and Japanese and ends with one bounded offer link.
 Publication is not a lead or sale.
+
+The first concise X note is now public at
+<https://x.com/lazyingart/status/2096055987052687754>. Postiz preserved the
+reviewed text hash and the tracked link resolves to the exact lecture-pack
+landing page. Publication and link integrity are attention evidence only; no
+reply, inquiry, payment, or revenue was observed at verification time.
 
 The verified fit-check page is
 <https://lazying.art/lkt/fit-check/>. It validates the minimum questions and

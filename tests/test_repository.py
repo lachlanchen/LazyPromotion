@@ -1331,7 +1331,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 16)
+        self.assertEqual(campaign["version"], 17)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],

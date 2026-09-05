@@ -16,6 +16,13 @@ needed for that work. The application is prepared but not submitted because
 the project browser is not authenticated as a freelancer. No Connects were
 spent, and the listing is not a lead, contract, payment, or revenue.
 
+A newer USD 400 listing asks for a restrained 20–25 minute scientific video
+edit from supplied footage and figures. A candid application is also prepared:
+it links the public educational-media workflow, states that the present video
+examples are shorter than the requested format, and accepts the client's paid
+3–5 minute sample as the proper fit test. It remains unsubmitted behind the
+same marketplace login and review gate.
+
 ## Fixed scope
 
 One sprint covers one customer-provided collection, one language goal, and one

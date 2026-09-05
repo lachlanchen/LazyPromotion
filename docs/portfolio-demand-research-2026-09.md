@@ -101,6 +101,16 @@ Video2Book, PocketPolyglot, LazyEdit, LKT, and the Susskind archive provide the
 reusable book, media, and provenance components. The proof is 30.5 seconds—not
 a complete customer delivery or permission to reuse third-party lectures.
 
+A separate [USD 400 scientific-video editing
+brief](https://www.upwork.com/freelance-jobs/apply/Video-Editor-for-Scientific-Educational-YouTube-Video_~022095602736009919529/)
+asks for a restrained 20–25 minute edit from supplied footage and about 15
+finished figures, including conservative pacing and audio cleanup. It is a
+clear paid signal for educational-media work, but the current public video
+examples are shorter and more subtitle-heavy than the requested style. A
+private application packet therefore states that limitation and treats the
+client's proposed paid 3–5 minute sample as the honest fit test. The project
+browser is logged out, so no proposal or Connects spend has occurred.
+
 ## Terminology and word-history audit
 
 The terminology path is useful, but it does not need a fourth product. The

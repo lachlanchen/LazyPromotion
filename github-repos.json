@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T20:37:08Z",
+      "pushed_at": "2026-09-06T17:11:57Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-05T20:37:11Z",
+      "updated_at": "2026-09-06T17:12:01Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1492,13 +1492,26 @@
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
-      "description": "Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT.",
-      "homepage": "",
+      "description": "Explore a local-first 3D lexical knowledge graph of origins, roots, affixes, meanings, translations, and provenance.",
+      "homepage": "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
       "name": "LexiconAtlas",
       "primary_language": "JavaScript",
-      "pushed_at": "2026-09-06T00:22:20Z",
-      "topics": [],
-      "updated_at": "2026-09-06T00:22:23Z",
+      "pushed_at": "2026-09-06T17:17:48Z",
+      "topics": [
+        "d3-force-3d",
+        "data-visualization",
+        "digital-humanities",
+        "etymology",
+        "knowledge-graph",
+        "language-learning",
+        "lazying-art",
+        "local-first",
+        "morphology",
+        "multilingual",
+        "sqlite",
+        "threejs"
+      ],
+      "updated_at": "2026-09-06T17:18:14Z",
       "url": "https://github.com/lachlanchen/LexiconAtlas"
     },
     {
@@ -2218,7 +2231,7 @@
       "homepage": "https://lazying.art",
       "name": "uu-remote-ubuntu-bridge",
       "primary_language": "Python",
-      "pushed_at": "2026-09-06T12:00:06Z",
+      "pushed_at": "2026-09-06T17:11:57Z",
       "topics": [
         "automation",
         "binary-patching",
@@ -2236,7 +2249,7 @@
         "wine",
         "xvfb"
       ],
-      "updated_at": "2026-09-06T12:00:12Z",
+      "updated_at": "2026-09-06T17:12:01Z",
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
     {
@@ -2313,7 +2326,7 @@
       "homepage": "https://lazying.art",
       "name": "WIFI2LAN",
       "primary_language": "Shell",
-      "pushed_at": "2026-09-04T11:16:50Z",
+      "pushed_at": "2026-09-06T17:13:27Z",
       "topics": [
         "dnsmasq",
         "ethernet",
@@ -2328,7 +2341,7 @@
         "vnc",
         "wifi"
       ],
-      "updated_at": "2026-09-04T11:18:34Z",
+      "updated_at": "2026-09-06T17:13:37Z",
       "url": "https://github.com/lachlanchen/WIFI2LAN"
     },
     {

@@ -4274,7 +4274,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T20:37:08Z",
+        "pushed_at": "2026-09-06T17:11:57Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4294,7 +4294,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T20:37:11Z"
+        "updated_at": "2026-09-06T17:12:01Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4540,11 +4540,24 @@
       "kind": "repository",
       "label": "LexiconAtlas",
       "metadata": {
-        "description": "Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT.",
-        "homepage": "",
-        "pushed_at": "2026-09-06T00:22:20Z",
-        "topics": [],
-        "updated_at": "2026-09-06T00:22:23Z"
+        "description": "Explore a local-first 3D lexical knowledge graph of origins, roots, affixes, meanings, translations, and provenance.",
+        "homepage": "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
+        "pushed_at": "2026-09-06T17:17:48Z",
+        "topics": [
+          "d3-force-3d",
+          "data-visualization",
+          "digital-humanities",
+          "etymology",
+          "knowledge-graph",
+          "language-learning",
+          "lazying-art",
+          "local-first",
+          "morphology",
+          "multilingual",
+          "sqlite",
+          "threejs"
+        ],
+        "updated_at": "2026-09-06T17:18:14Z"
       },
       "url": "https://github.com/lachlanchen/LexiconAtlas"
     },
@@ -5224,7 +5237,7 @@
       "metadata": {
         "description": "Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-04T11:16:50Z",
+        "pushed_at": "2026-09-06T17:13:27Z",
         "topics": [
           "dnsmasq",
           "ethernet",
@@ -5239,7 +5252,7 @@
           "vnc",
           "wifi"
         ],
-        "updated_at": "2026-09-04T11:18:34Z"
+        "updated_at": "2026-09-06T17:13:37Z"
       },
       "url": "https://github.com/lachlanchen/WIFI2LAN"
     },
@@ -5896,7 +5909,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T12:00:06Z",
+        "pushed_at": "2026-09-06T17:11:57Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5914,7 +5927,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-06T12:00:12Z"
+        "updated_at": "2026-09-06T17:12:01Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -7961,7 +7974,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "not_planned"
+        "state": "postiz_draft"
       },
       "relation": "targets",
       "source": "campaign:lexical-database-ingestion",
@@ -7986,6 +7999,16 @@
       "relation": "targets",
       "source": "campaign:lexical-database-ingestion",
       "target": "channel:upwork"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_draft"
+      },
+      "relation": "targets",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "channel:x"
     },
     {
       "confidence": 1.0,

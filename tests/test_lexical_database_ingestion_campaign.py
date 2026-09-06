@@ -44,6 +44,21 @@ class LexicalDatabaseIngestionCampaignTests(unittest.TestCase):
         self.assertFalse(funnel["payment_confirmed"])
         self.assertEqual(funnel["received_revenue_usd"], 0)
 
+    def test_postiz_items_are_review_drafts_with_first_party_proof_only(self):
+        channels = self.campaign["channels"]
+        funnel = self.campaign["funnel"]
+        for platform in ("x", "linkedin"):
+            item = channels[platform]
+            with self.subTest(platform=platform):
+                self.assertEqual(item["state"], "postiz_draft")
+                self.assertFalse(item["shortener_used"])
+                self.assertIn("DRAFT", item["verification"])
+                self.assertNotIn("outofpapua", item["content"].casefold())
+                self.assertRegex(item["content_sha256"], r"^[0-9a-f]{64}$")
+        self.assertIn("lexical-ingest-proof", channels["linkedin"]["content"])
+        self.assertEqual(funnel["social_drafts_created"], 2)
+        self.assertEqual(funnel["social_posts_published"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

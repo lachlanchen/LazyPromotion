@@ -66,9 +66,25 @@
       "proposal_link": "",
       "policy": "The isolated project browser is logged out. Do not use the personal browser, create an account, accept terms, buy or spend Connects, or claim submission without an authenticated visible review of the exact application."
     },
+    "x": {
+      "state": "postiz_draft",
+      "post_id": "cmtq2oeec06sdqk0yoqqosw6l",
+      "nominal_publish_at": "2026-09-17T01:00:00Z",
+      "content": "Lexical ingestion should be reversible. I built a small SQLite proof that keeps raw fields, locators and hashes, logs gloss normalization, quarantines rejects, and reruns without duplicate writes. GitHub: lachlanchen/LazyPromotion → examples/lexical-ingest-proof",
+      "content_sha256": "c01c86277f2208d381b4267b43530a17728c653e5dba348f9002b572510da165",
+      "shortener_used": false,
+      "verification": "Postiz returned DRAFT with no release ID or release URL.",
+      "policy": "The draft gives one first-party workflow result and a readable GitHub path. It is not queued or published and does not mention the buyer."
+    },
     "linkedin": {
-      "state": "not_planned",
-      "policy": "A general first-party proof post may be drafted later, but do not mention or contact the marketplace buyer outside Upwork."
+      "state": "postiz_draft",
+      "post_id": "cmtq2tthm1dqrlm0y5yd6drob",
+      "nominal_publish_at": "2026-09-17T02:00:00Z",
+      "content": "Lexical ingestion is rarely just “put these rows in a database.” The difficult part is keeping every edit traceable when sources disagree in structure, orthography, gloss language, or completeness.\n\nI built a small, project-owned proof around that boundary. It ingests one synthetic Toolbox-style source and one CSV lexicon into SQLite while preserving every raw field, source record ID, field locator, and source hash. English-gloss normalization is stored separately. Supplied IPA is copied, never invented. Invalid records go to a deterministic reject ledger. A replay makes zero writes, and an injected failure rolls the transaction back.\n\nThe sample is deliberately small and candid: it uses no customer data, no real Toolbox corpus, and no customer schema. It is workflow evidence, not a compatibility or linguistic-accuracy claim.\n\nCode, database, report, and reproducible checks:\nhttps://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof\n\nThe related LexiconAtlas release shows the downstream read-only graph: terms, morphemes, historical forms, translations, relationships, and provenance kept as separate objects.\nhttps://github.com/lachlanchen/LexiconAtlas/releases/latest\n\n#DataEngineering #DigitalHumanities #Linguistics #SQLite",
+      "content_sha256": "92dc2aaf842b475afb1221ba1e59e68b2b9c937a839ab3e4c0f7d89a7f619031",
+      "shortener_used": false,
+      "verification": "Postiz returned DRAFT with both first-party URLs preserved and no release ID or release URL.",
+      "policy": "The draft explains one first-party proof and its limits. It is not queued or published and does not mention the marketplace buyer."
     },
     "reddit": {
       "state": "not_planned",
@@ -77,6 +93,8 @@
   },
   "funnel": {
     "state": "buyer_intent_identified",
+    "social_drafts_created": 2,
+    "social_posts_published": 0,
     "application_submitted": false,
     "interview_observed": false,
     "contract_observed": false,

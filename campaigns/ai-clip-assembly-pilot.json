@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "id": "ai-clip-assembly-pilot",
+  "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
+  "source_need": {
+    "state": "public_explicit_paid_listing",
+    "observed_on": "2026-09-06",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/",
+    "published_budget": "USD 500 fixed price",
+    "eligibility": "Worldwide",
+    "published_scope": "Combine six existing AI-generated clips totalling about 32 seconds into one 30-45 second cinematic brand film and one 25-30 second website cut, with colour, music, sound, selected shot repair, high-resolution exports, and editable project files.",
+    "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites sent",
+    "demand_interpretation": "A current buyer has attached a USD 500 budget to a bounded six-clip assembly problem. This validates the problem and price point, not LazyingArt demand or a likely award."
+  },
+  "offer": {
+    "state": "live",
+    "url": "https://lazying.art/video/brand-film/",
+    "website_commit": "1c54ea2107906b9de895e4ec45f6f7797227b749",
+    "price": "USD 500",
+    "scope": "Up to six customer-controlled AI-generated clips and 45 seconds of combined source; one 30-45 second 16:9 master; one 25-30 second 16:9 web cut derived from the same edit; basic colour continuity; one music and sound pass; simple supplied titles or logo; H.264 MP4 exports; a source manifest; and one consolidated correction pass.",
+    "exclusions": [
+      "New filming or AI generation",
+      "Shot recreation",
+      "Voice cloning",
+      "Paid stock footage or music",
+      "Translation",
+      "Additional aspect ratios or versions",
+      "Channel publishing",
+      "Performance, reach, or conversion promises",
+      "Native Premiere Pro, After Effects, Final Cut, or DaVinci Resolve project delivery unless the accepted scope names and confirms the format"
+    ],
+    "qualification": "Begin with a brief, source metadata, rights status, and private previews. Agree the story sentence, usable clips, native-project requirement, delivery, source handling, correction, cancellation, refund, and payment terms before original source transfer or payment.",
+    "checkout_created": false,
+    "received_revenue_usd": 0,
+    "deployment": {
+      "state": "live_http_200_commit_content_present",
+      "checked_on": "2026-09-07",
+      "desktop_width_checked": 1440,
+      "mobile_width_checked": 390,
+      "horizontal_overflow": false,
+      "mailto_fit_check_present": true
+    }
+  },
+  "proof": {
+    "portfolio": "https://lazying.art/video/",
+    "portfolio_commit": "06023d632cd76ec6c1f7f2efb2b8c6eb044ca0d3",
+    "examples": [
+      "28-second PocketPolyglot product demonstration",
+      "4:36 creator-led PocketPolyglot walkthrough",
+      "12.82-second captioned Story Clip extract",
+      "33-second AI-assisted Desert Oasis narrative"
+    ],
+    "delivery_sample": "https://lazying.art/story-clip/#sample",
+    "claim_boundary": "Every public example is first-party project work. None is a customer brand film, paid UGC campaign, e-commerce performance result, or proof that six unseen source clips will fit."
+  },
+  "marketplace": {
+    "state": "application_prepared_login_required",
+    "private_packet": ".local/outreach/ai-brand-film/application-draft.md",
+    "application_submitted": false,
+    "connects_spent": 0,
+    "gaps": [
+      "Higgsfield experience is preferred but not claimed.",
+      "A native Premiere, After Effects, or Final Cut project is not promised before compatibility is agreed.",
+      "The six buyer clips, their rights, and their technical compatibility have not been inspected."
+    ]
+  },
+  "channels": {
+    "linkedin": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-28T02:00:00.000Z",
+      "content": "Six AI-generated clips can still feel like six separate shots. The first edit decision is not the transition; it is what changes between the first frame and the last.\n\nI put four finished LazyingArt pieces on one page, with the actual role and constraint beside each player:\nhttps://lazying.art/video/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_clip_assembly&utm_content=portfolio\n\nI also wrote down a fixed $500 assembly scope for up to six customer-controlled clips: one 30–45 second 16:9 master, one shorter web cut, finishing, a source manifest, and one correction pass. New generation stays separate.\nhttps://lazying.art/video/brand-film/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_clip_assembly&utm_content=offer",
+      "content_sha256": "ac429de22f3fc7911490ef6d362cd8c691c6d6e9215a6ffa68f811a2c5dc0bc9",
+      "visible_editor_reviewed": true,
+      "matching_posts": 1,
+      "verified_state": "QUEUE",
+      "release_present": false,
+      "shortlink_enabled": false,
+      "policy": "The post explains the editorial problem before the offer, uses only first-party proof, and keeps new generation outside the fixed scope. Queue state is not publication, a lead, or a sale."
+    }
+  },
+  "funnel": {
+    "state": "owned_offer_live_application_prepared",
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0,
+    "gross_target_math": "Two confirmed USD 500 payments equal USD 1,000 gross before fees, tax, refunds, and delivery costs."
+  },
+  "policy": "Do not accept source files or payment before reviewing source rights, technical compatibility, story goal, native-project requirement, delivery, revisions, cancellation, refunds, retention, and confidentiality. A public listing, application, queued post, inquiry, or accepted scope is not received revenue."
+}

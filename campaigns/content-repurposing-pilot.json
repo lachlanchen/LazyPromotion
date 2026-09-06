@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -247,19 +247,7 @@
       "policy": "Do not call this bridge published until WordPress update and live source/translation checks succeed."
     },
     "checkout_created": false,
-    "social_post_created": {
-      "state": "postiz_queue",
-      "provider": "linkedin",
-      "publish_at": "2026-09-28T02:00:00.000Z",
-      "destination": "https://lazying.art/video/?utm_source=linkedin&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=video_portfolio",
-      "content_sha256": "d2b14f347f14220e3030a4364d6babe3b8aaa3874ff3290d5a999056f830f301",
-      "visible_editor_reviewed": true,
-      "matching_posts": 1,
-      "verified_state": "QUEUE",
-      "release_present": false,
-      "shortlink_enabled": false,
-      "policy": "The queued post teaches the story-selection problem, links to project-owned samples, and states the bounded USD 250 Story Clip scope. Queue state is not publication, a lead, or a sale."
-    },
+    "social_post_created": false,
     "deployment_verified": true
   },
   "search_discovery": {

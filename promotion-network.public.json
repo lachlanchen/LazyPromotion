@@ -1,6 +1,16 @@
 {
   "entities": [
     {
+      "id": "campaign:ai-clip-assembly-pilot",
+      "kind": "campaign",
+      "label": "ai-clip-assembly-pilot",
+      "metadata": {
+        "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:auditable-policy-content-coding",
       "kind": "campaign",
       "label": "auditable-policy-content-coding",
@@ -36,7 +46,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 13
+        "version": 14
       },
       "url": ""
     },
@@ -7063,6 +7073,16 @@
     }
   ],
   "relationships": [
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:ai-clip-assembly-pilot",
+      "target": "channel:linkedin"
+    },
     {
       "confidence": 1.0,
       "evidence_url": "",

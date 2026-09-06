@@ -1,12 +1,26 @@
-# First USD 1,000: four focused USD 250 routes
+# First USD 1,000: five focused service routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
 Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one
-customer-owned recording. Each route has a fixed scope, a free fit check, and
-reproducible project-owned proof. The milestone is any four confirmed USD 250
-payments across these four routes, or USD 1,000 gross before fees, tax, refunds,
-and delivery costs. It is a target, not a revenue promise.
+customer-owned recording. The **AI Clip Assembly Pilot** adds a bounded **USD
+500** route for up to six existing customer-controlled clips. Each route has a
+fixed scope and project-owned proof. The milestone can be two USD 500 assembly
+pilots, four USD 250 sprints, or any confirmed combination of payments across these five routes
+totalling USD 1,000 gross before fees, tax, refunds, and
+delivery costs. It is a target, not a revenue promise.
+
+The newest direct need is a worldwide USD 500 listing asking for six existing
+AI-generated clips to become one 30–45 second brand film and one 25–30 second
+web cut. The public [AI Clip Assembly Pilot](https://lazying.art/video/brand-film/)
+now turns that into a repeatable boundary: up to six clips and 45 seconds of
+combined source, two cuts from one 16:9 edit, basic colour and sound finishing,
+a source manifest, and one correction pass. New generation, shot recreation,
+paid stock, translation, extra formats, publishing, and native editor files are
+outside the fixed scope unless separately accepted. A private application is
+ready but Upwork remains logged out, so no proposal, Connects spend, buyer
+reply, payment, or revenue exists. One LinkedIn explanation is queued for 28
+September after visible review; a queue item is not publication or a lead.
 
 The clearest current one-contract route is a USD 1,200 Upwork listing for
 OUTOFPAPUA lexical-database ingestion and data carpentry. The buyer needs code

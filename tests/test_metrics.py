@@ -28,6 +28,7 @@ class MetricsTests(unittest.TestCase):
         goal = report["usd_1000_gross_goal"]
         self.assertEqual(goal["confirmed_minor"], 0)
         self.assertEqual(goal["progress_percent"], 0)
+        self.assertEqual(goal["additional_500_usd_pilots_needed"], 2)
         self.assertEqual(goal["additional_250_usd_sprints_needed"], 4)
         self.assertEqual(goal["additional_128_usd_orders_needed"], 8)
 
@@ -50,6 +51,9 @@ class MetricsTests(unittest.TestCase):
         self.assertEqual(report["outcomes"]["reply_received"], 1)
         self.assertEqual(report["gross_revenue_minor_by_currency"]["USD"], 12_800)
         self.assertEqual(report["usd_1000_gross_goal"]["progress_percent"], 12.8)
+        self.assertEqual(
+            report["usd_1000_gross_goal"]["additional_500_usd_pilots_needed"], 2
+        )
         self.assertEqual(
             report["usd_1000_gross_goal"]["additional_250_usd_sprints_needed"], 4
         )

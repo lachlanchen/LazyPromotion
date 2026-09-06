@@ -30,18 +30,18 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_all_four_active_routes(self):
+    def test_first_thousand_plan_names_all_five_active_routes(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: four focused USD 250 routes", body)
+        self.assertIn("# First USD 1,000: five focused service routes", body)
         for offer in (
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
             "Bilingual Lecture Pack",
             "Story Clip Pilot",
+            "AI Clip Assembly Pilot",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these four routes", body)
-        self.assertNotIn("payments across these three routes", body)
+        self.assertIn("payments across these five routes", body)
 
     def test_browser_operations_are_serialized_across_clients(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(
@@ -776,7 +776,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -855,7 +855,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -925,16 +925,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(probe["live_story_clip_link"])
         self.assertIn("No working reviewed write route", bridge["blocker"])
         self.assertFalse(offer["checkout_created"])
-        social = offer["social_post_created"]
-        self.assertEqual(social["state"], "postiz_queue")
-        self.assertEqual(social["provider"], "linkedin")
-        self.assertIn("utm_content=video_portfolio", social["destination"])
-        self.assertEqual(len(social["content_sha256"]), 64)
-        self.assertTrue(social["visible_editor_reviewed"])
-        self.assertEqual(social["matching_posts"], 1)
-        self.assertEqual(social["verified_state"], "QUEUE")
-        self.assertFalse(social["release_present"])
-        self.assertFalse(social["shortlink_enabled"])
+        self.assertFalse(offer["social_post_created"])
         self.assertTrue(offer["deployment_verified"])
         discovery = campaign["search_discovery"]
         self.assertEqual(
@@ -995,6 +986,66 @@ class RepositoryTests(unittest.TestCase):
                 re.IGNORECASE,
             )
         )
+
+    def test_ai_clip_assembly_offer_is_bounded_and_revenue_stays_zero(self):
+        path = ROOT / "campaigns" / "ai-clip-assembly-pilot.json"
+        serialized = path.read_text(encoding="utf-8")
+        campaign = json.loads(serialized)
+
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
+        source = campaign["source_need"]
+        self.assertEqual(source["state"], "public_explicit_paid_listing")
+        self.assertEqual(source["published_budget"], "USD 500 fixed price")
+        self.assertEqual(source["eligibility"], "Worldwide")
+
+        offer = campaign["offer"]
+        self.assertEqual(offer["state"], "live")
+        self.assertEqual(offer["url"], "https://lazying.art/video/brand-film/")
+        self.assertEqual(offer["price"], "USD 500")
+        self.assertIn("Up to six", offer["scope"])
+        self.assertIn("45 seconds", offer["scope"])
+        self.assertIn("30-45 second 16:9 master", offer["scope"])
+        self.assertIn("25-30 second 16:9 web cut", offer["scope"])
+        exclusions = " ".join(offer["exclusions"]).casefold()
+        for boundary in (
+            "new filming or ai generation",
+            "shot recreation",
+            "voice cloning",
+            "paid stock",
+            "translation",
+            "performance",
+            "native premiere pro",
+        ):
+            self.assertIn(boundary, exclusions)
+        self.assertFalse(offer["checkout_created"])
+        self.assertEqual(offer["received_revenue_usd"], 0)
+        self.assertFalse(offer["deployment"]["horizontal_overflow"])
+
+        marketplace = campaign["marketplace"]
+        self.assertEqual(marketplace["state"], "application_prepared_login_required")
+        self.assertFalse(marketplace["application_submitted"])
+        self.assertEqual(marketplace["connects_spent"], 0)
+
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertTrue(linkedin["visible_editor_reviewed"])
+        self.assertEqual(linkedin["matching_posts"], 1)
+        self.assertEqual(linkedin["verified_state"], "QUEUE")
+        self.assertFalse(linkedin["release_present"])
+        self.assertFalse(linkedin["shortlink_enabled"])
+        self.assertEqual(
+            hashlib.sha256(linkedin["content"].encode("utf-8")).hexdigest(),
+            linkedin["content_sha256"],
+        )
+
+        funnel = campaign["funnel"]
+        self.assertFalse(funnel["buyer_reply_observed"])
+        self.assertFalse(funnel["scope_accepted"])
+        self.assertFalse(funnel["payment_confirmed"])
+        self.assertEqual(funnel["received_revenue_usd"], 0)
+        self.assertNotIn("integration_id", serialized.casefold())
+        self.assertNotIn("post_id", serialized.casefold())
 
     def test_postiz_affiliate_campaign_starts_at_zero_and_requires_disclosure(self):
         path = ROOT / "campaigns" / "postiz-affiliate-pilot.json"

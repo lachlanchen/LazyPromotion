@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 3,
+  "version": 4,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -64,7 +64,7 @@
     "decision": "Treat the brief as paid demand evidence and build a bounded project-owned specimen before activating a service. Do not apply or promise the complete scope unseen."
   },
   "offer_state": {
-    "status": "specimen_contract_candidate",
+    "status": "live_fit_check_payment_gated",
     "candidate_price": "USD 250",
     "candidate_scope": "One rights-cleared chapter up to 5,000 words, one short print-layout PDF specimen, one reflowable EPUB specimen, a style and source ledger, validation results, one consolidated correction pass, and a written full-production boundary.",
     "candidate_exclusions": [
@@ -75,7 +75,23 @@
       "a complete book or rush delivery",
       "rights clearance"
     ],
-    "reason": "A current paid brief validates the output need, but the offer stays inactive until a project-owned specimen, delivery limits, corrections, cancellation, refund, retention, support terms, and intake tests are complete.",
+    "landing_page": "https://lazying.art/book-specimen/",
+    "fit_check": "https://lazying.art/book-specimen/fit-check/",
+    "proof": {
+      "source": "https://github.com/lachlanchen/LazyPromotion/tree/e8512197cabe988ee597291364c0dab373e261ed/examples/source-aware-book-specimen",
+      "packet": "https://github.com/lachlanchen/LazyPromotion/raw/e8512197cabe988ee597291364c0dab373e261ed/examples/source-aware-book-specimen/artifacts/source-aware-book-specimen.zip",
+      "status": "project_owned_process_evidence",
+      "validation": "Four 6 × 9 PDFs, one reflowable EPUB, source ledger, manifest, checksums, and a byte-identical clean rebuild passed."
+    },
+    "working_terms": {
+      "delivery": "Ten business days after accepted scope, confirmed payment, and complete agreed source; one active sprint at a time.",
+      "correction": "One consolidated list of up to ten production corrections within seven calendar days.",
+      "cancellation": "Full refund before source transfer or processing; after work starts, only completed and delivered milestones are retained and the undelivered balance is refunded.",
+      "retention": "Working source copies are deleted within fourteen calendar days after delivery, cancellation, or refund unless the accepted scope requires earlier deletion.",
+      "support": "Written clarification during the seven-day correction window only."
+    },
+    "intake": "Public fit check prepares a reviewed email request only; it does not upload manuscript files, create a payment, or send automatically.",
+    "reason": "A current paid brief validates the output need, and a project-owned specimen, delivery limits, corrections, cancellation, refund, retention, support terms, and tested fit-check path are now public. Payment remains gated behind a positive fit check and accepted written scope.",
     "received_revenue_usd": 0
   }
 }

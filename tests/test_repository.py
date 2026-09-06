@@ -2574,7 +2574,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -2582,9 +2582,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(reddit["lead_or_sale_observed"])
         self.assertIn("not as a lead", reddit["policy"])
         self.assertEqual(
-            campaign["offer_state"]["status"], "specimen_contract_candidate"
+            campaign["offer_state"]["status"], "live_fit_check_payment_gated"
         )
         self.assertEqual(campaign["offer_state"]["candidate_price"], "USD 250")
+        self.assertEqual(
+            campaign["offer_state"]["landing_page"],
+            "https://lazying.art/book-specimen/",
+        )
+        self.assertEqual(
+            campaign["offer_state"]["proof"]["status"],
+            "project_owned_process_evidence",
+        )
+        self.assertIn("e8512197", campaign["offer_state"]["proof"]["source"])
+        self.assertIn("does not upload", campaign["offer_state"]["intake"])
         self.assertIn("230,000-word", campaign["current_paid_need"]["published_scope"])
         self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)
 

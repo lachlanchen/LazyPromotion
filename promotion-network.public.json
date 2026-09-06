@@ -36,7 +36,7 @@
       "label": "bilingual-pocket-editions",
       "metadata": {
         "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
-        "version": 2
+        "version": 4
       },
       "url": ""
     },
@@ -96,7 +96,7 @@
       "label": "kikudoku-pronunciation-ux",
       "metadata": {
         "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -284,6 +284,13 @@
       "id": "channel:reddit",
       "kind": "channel",
       "label": "reddit",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:search_console",
+      "kind": "channel",
+      "label": "search_console",
       "metadata": {},
       "url": ""
     },
@@ -8171,6 +8178,16 @@
       "relation": "targets",
       "source": "campaign:lecture-archive-provenance",
       "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "owned_demand_observed_and_path_improved"
+      },
+      "relation": "targets",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "channel:search_console"
     },
     {
       "confidence": 1.0,

@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **107 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-06. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-07. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
 
 ## Where promotion should start
 
@@ -27,7 +27,7 @@ The first-USD-1,000 route is four confirmed USD 250 payments across four bounded
 |---|---:|
 | [Agentic automation and developer tools](#agentic-automation-and-developer-tools) | 20 |
 | [Media, music, storytelling, and publishing](#media-music-storytelling-and-publishing) | 14 |
-| [Languages, books, reading, and learning](#languages-books-reading-and-learning) | 16 |
+| [Languages, books, reading, and learning](#languages-books-reading-and-learning) | 17 |
 | [Scientific imaging, optics, and research](#scientific-imaging-optics-and-research) | 23 |
 | [Hardware, wearables, and robotics](#hardware-wearables-and-robotics) | 7 |
 | [Games and interactive learning](#games-and-interactive-learning) | 7 |
@@ -41,16 +41,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 20:07:39 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 19:45:02 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-06 16:32:09 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-06 12:00:07 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-06 12:00:06 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [LexiconAtlas](https://github.com/lachlanchen/LexiconAtlas) | 2026-09-06 00:22:20 | Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT. |
+| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-06 00:06:17 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-05 21:24:37 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-05 20:37:08 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 18:28:31 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
-| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-05 17:56:03 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-05 16:54:54 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-05 15:29:49 | Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance. |
 | [LazySkills](https://github.com/lachlanchen/LazySkills) | 2026-09-05 15:26:52 | Portable LazyingArt agent skills for AgInTiFlow, Codex, Claude, Gemini, Copilot, LazyEdit, AutoPublish, browser automation, books, and publishing workflows. |
-| [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | 2026-09-05 14:39:28 | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-05 14:16:12 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
-| [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb) | 2026-09-05 11:31:46 | Standalone cloud PWA, durable chat BFF, and AgInTi frontend for llm.lazying.art |
 
 ## Complete public repository inventory
 
@@ -111,6 +111,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. | Fortran | [Open](http://learn.lazying.art/) |
 | [LazyTravel](https://github.com/lachlanchen/LazyTravel) | Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON | Python | [Open](https://lachlanchen.github.io/LazyTravel/) |
 | [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. | TeX | [Open](https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html) |
+| [LexiconAtlas](https://github.com/lachlanchen/LexiconAtlas) | Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT. | JavaScript | Repository only |
 | [LinguaLeaf](https://github.com/lachlanchen/LinguaLeaf) | Compressed PDF artifact shelf for PocketPolyglot multilingual pocket books | JavaScript | [Open](https://lachlanchen.github.io/LinguaLeaf/website/) |
 | [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. | Python | [Open](https://lazying.art/lkt/) |
 | [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot) | Build polished multilingual interlinear pocket books from PDF, EPUB, OCR, and TeX with ruby, grammar color, Studio, CLI, and resumable pipelines. | Python | [Open](https://learn.lazying.art) |

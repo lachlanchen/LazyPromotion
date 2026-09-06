@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -68,6 +68,30 @@
       ],
       "policy": "Use this live project-owned sample to strengthen qualification and let a prospective buyer inspect one provenance contract before the fit check. It is proof of the bounded hand-reviewed sample only, not a sale or evidence about an untested collection."
     },
+    "markdown_vault_proof": {
+      "state": "live_verified",
+      "checked_on": "2026-09-06",
+      "viewer": "https://lazying.art/lkt/markdown-vault/",
+      "website_commit": "344d9e567abc6141adb9f450f0b02a6b7627bf0f",
+      "repository_commit": "b36bed6d794621994060c289ea788a2c71760cbf",
+      "artifact": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/b36bed6d794621994060c289ea788a2c71760cbf/examples/artifacts/markdown-vault-index.json",
+      "artifact_sha256": "ed8d778a3d8d0836e10740d5da4e3c9017fd1aca5ca6aef794aa888038b82476",
+      "counts": {
+        "canonical_files": 2,
+        "searchable_sections": 5,
+        "explicit_wikilinks": 1
+      },
+      "supported_copy": "This project-owned sample keeps multilingual Markdown files canonical while a disposable local lexical index returns the exact file, heading, line range, excerpt, and source-file hash.",
+      "not_claimed": [
+        "native Obsidian integration",
+        "semantic or vector search",
+        "automatic concept discovery",
+        "write-back",
+        "whole-vault question answering",
+        "customer result"
+      ],
+      "policy": "Use this proof only for a real Markdown, local-search, source-of-truth, or provenance need. It demonstrates a two-file project-owned fixture and rebuild safety, not a production second-brain system or a result on an untested customer vault."
+    },
     "textbook_graph_demand_signal": {
       "state": "research_only",
       "observed_on": "2026-09-04",
@@ -80,6 +104,18 @@
       "direct_message_sent": false,
       "lead_or_sale_observed": false,
       "policy": "This is a public product-research signal only. A restricted community comment is not permission to contact the author, post, or treat the author as a lead."
+    },
+    "private_second_brain_demand_signal": {
+      "state": "research_only_competitive_and_inactive",
+      "observed_on": "2026-09-06",
+      "source": "https://www.upwork.com/freelance-jobs/apply/Build-Private-Knowledge-Second-Brain-System-Obsidian-n8n-RAG-Voice-Capture_~022086617375258613782/",
+      "need": "Keep Markdown as the canonical source for a private knowledge system while making the search index disposable and rebuildable, preserving provenance and explicit links, and leaving room for separately scoped automation and voice capture.",
+      "activity_when_checked": "The public listing was about three weeks old, showed 50 or more proposals and 6 interviewing, and showed the client's last view about three weeks earlier.",
+      "fit": "The live read-only Markdown proof now demonstrates the canonical-file, disposable-index, exact-provenance, explicit-link, and atomic-rebuild boundary at a two-file project-owned scale. It does not demonstrate n8n, voice capture, embeddings, an Obsidian plugin, or a production customer vault.",
+      "application_submitted": false,
+      "connects_spent": 0,
+      "lead_or_sale_observed": false,
+      "policy": "Treat this as exact buyer-language and product validation, not an active lead. Do not contact the buyer outside Upwork, claim the requested full stack, or spend Connects on a stale and highly competitive listing without a fresh visible activity check."
     },
     "enterprise_architecture_consultation_need": {
       "state": "application_prepared_login_required",

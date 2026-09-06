@@ -992,7 +992,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 18)
+        self.assertEqual(campaign["version"], 19)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1201,6 +1201,30 @@ class RepositoryTests(unittest.TestCase):
                 "translation benchmark",
             ],
         )
+        markdown = campaign["source_evidence"]["markdown_vault_proof"]
+        self.assertEqual(markdown["state"], "live_verified")
+        self.assertEqual(markdown["viewer"], "https://lazying.art/lkt/markdown-vault/")
+        self.assertEqual(
+            markdown["repository_commit"],
+            "b36bed6d794621994060c289ea788a2c71760cbf",
+        )
+        self.assertEqual(
+            markdown["website_commit"],
+            "344d9e567abc6141adb9f450f0b02a6b7627bf0f",
+        )
+        self.assertEqual(
+            markdown["artifact_sha256"],
+            "ed8d778a3d8d0836e10740d5da4e3c9017fd1aca5ca6aef794aa888038b82476",
+        )
+        self.assertEqual(
+            markdown["counts"],
+            {
+                "canonical_files": 2,
+                "searchable_sections": 5,
+                "explicit_wikilinks": 1,
+            },
+        )
+        self.assertIn("not a production second-brain", markdown["policy"])
         demand = campaign["source_evidence"]["textbook_graph_demand_signal"]
         self.assertEqual(demand["state"], "research_only")
         self.assertEqual(demand["community_state"], "restricted")
@@ -1208,6 +1232,17 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(demand["direct_message_sent"])
         self.assertFalse(demand["lead_or_sale_observed"])
         self.assertIn("not permission to contact", demand["policy"])
+        second_brain = campaign["source_evidence"][
+            "private_second_brain_demand_signal"
+        ]
+        self.assertEqual(
+            second_brain["state"], "research_only_competitive_and_inactive"
+        )
+        self.assertIn("50 or more proposals", second_brain["activity_when_checked"])
+        self.assertFalse(second_brain["application_submitted"])
+        self.assertEqual(second_brain["connects_spent"], 0)
+        self.assertFalse(second_brain["lead_or_sale_observed"])
+        self.assertIn("not an active lead", second_brain["policy"])
         self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
         direct_intake = campaign["conversion_readiness"]["encrypted_direct_intake"]
         self.assertEqual(

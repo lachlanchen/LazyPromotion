@@ -43,7 +43,7 @@ CATEGORIES = OrderedDict(
             {
                 "BigMe", "FujitsuQuaderno", "ImagizedLanguageModel", "Kindle",
                 "LazyLanguageLearner", "LazyLearn", "LazyTravel", "leonardsusskind",
-                "L-and-N", "LinguaLeaf", "LocalKnowledgeTerminal", "PocketPolyglot",
+                "L-and-N", "LexiconAtlas", "LinguaLeaf", "LocalKnowledgeTerminal", "PocketPolyglot",
                 "the-art-of-lazying", "Video2Book", "WordOrigins", "WordsCardEink",
             },
         ),

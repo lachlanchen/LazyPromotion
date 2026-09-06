@@ -126,7 +126,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 18
+        "version": 19
       },
       "url": ""
     },
@@ -1945,6 +1945,19 @@
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
+      "id": "project:github-lexiconatlas",
+      "kind": "project",
+      "label": "LexiconAtlas",
+      "metadata": {
+        "generated": true,
+        "keywords": [
+          "lexicon atlas"
+        ],
+        "summary": "Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT."
+      },
+      "url": "https://github.com/lachlanchen/LexiconAtlas"
+    },
+    {
       "id": "project:github-lifereverseengineering",
       "kind": "project",
       "label": "LifeReverseEngineering",
@@ -2047,7 +2060,12 @@
           "personal documents",
           "second brain",
           "obsidian knowledge base",
+          "markdown vault",
+          "markdown source of truth",
+          "local markdown search",
           "rebuildable markdown",
+          "disposable search index",
+          "rebuildable index",
           "knowledge provenance",
           "source provenance",
           "document search",
@@ -2055,7 +2073,7 @@
           "book collection",
           "text collection"
         ],
-        "summary": "Private, book-grounded multilingual knowledge cards designed for local hardware."
+        "summary": "Local-first multilingual knowledge cards and rebuildable Markdown search with exact source provenance."
       },
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
@@ -3251,7 +3269,7 @@
       "metadata": {
         "description": "AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T17:56:03Z",
+        "pushed_at": "2026-09-06T16:32:09Z",
         "topics": [
           "aginti",
           "agintiflow",
@@ -3272,7 +3290,7 @@
           "unity",
           "unreal-engine"
         ],
-        "updated_at": "2026-09-05T17:56:07Z"
+        "updated_at": "2026-09-06T16:32:13Z"
       },
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
@@ -4228,7 +4246,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T20:07:39Z",
+        "pushed_at": "2026-09-05T20:37:08Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4248,7 +4266,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-05T20:07:43Z"
+        "updated_at": "2026-09-05T20:37:11Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4469,7 +4487,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T19:45:02Z",
+        "pushed_at": "2026-09-05T21:24:37Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4485,9 +4503,22 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-05T19:45:06Z"
+        "updated_at": "2026-09-05T21:24:41Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
+    },
+    {
+      "id": "repository:lachlanchen/LexiconAtlas",
+      "kind": "repository",
+      "label": "LexiconAtlas",
+      "metadata": {
+        "description": "Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT.",
+        "homepage": "",
+        "pushed_at": "2026-09-06T00:22:20Z",
+        "topics": [],
+        "updated_at": "2026-09-06T00:22:23Z"
+      },
+      "url": "https://github.com/lachlanchen/LexiconAtlas"
     },
     {
       "id": "repository:lachlanchen/LifeReverseEngineering",
@@ -4569,16 +4600,19 @@
       "metadata": {
         "description": "Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware.",
         "homepage": "https://lazying.art/lkt/",
-        "pushed_at": "2026-09-05T10:22:33Z",
+        "pushed_at": "2026-09-06T00:06:17Z",
         "topics": [
           "citations",
           "e-ink",
           "etymology",
+          "full-text-search",
           "knowledge-base",
           "knowledge-graph",
           "lazying-art",
           "llama-cpp",
           "local-first",
+          "local-search",
+          "markdown",
           "meeting-intelligence",
           "multilingual",
           "offline",
@@ -4589,7 +4623,7 @@
           "raspberry-pi",
           "sqlite"
         ],
-        "updated_at": "2026-09-05T10:22:38Z"
+        "updated_at": "2026-09-06T00:06:21Z"
       },
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
@@ -5810,7 +5844,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T16:54:54Z",
+        "pushed_at": "2026-09-06T12:00:07Z",
         "topics": [
           "automation",
           "language",
@@ -5823,7 +5857,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-05T16:54:57Z"
+        "updated_at": "2026-09-06T12:00:14Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -5834,7 +5868,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T14:16:12Z",
+        "pushed_at": "2026-09-06T12:00:06Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -5852,7 +5886,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-05T14:16:16Z"
+        "updated_at": "2026-09-06T12:00:12Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -6438,6 +6472,20 @@
       "url": "https://lazying.art/meeting-intelligence/"
     },
     {
+      "id": "url:389a01dba9514299",
+      "kind": "web_resource",
+      "label": "markdown vault proof artifact",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/b36bed6d794621994060c289ea788a2c71760cbf/examples/artifacts/markdown-vault-index.json"
+    },
+    {
+      "id": "url:57248a7df668a86d",
+      "kind": "web_resource",
+      "label": "markdown vault proof viewer",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/markdown-vault/"
+    },
+    {
       "id": "url:414ba0a19b25ec62",
       "kind": "web_resource",
       "label": "mission",
@@ -6548,6 +6596,13 @@
       "label": "preview renderer",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyingArtWebsite/blob/eef9bdac71670586afc5fbfe162aed8ba0bcff61/tools/render_manuscript_sprint_social.py"
+    },
+    {
+      "id": "url:f0e5a007d8169141",
+      "kind": "web_resource",
+      "label": "private second brain demand signal source",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Build-Private-Knowledge-Second-Brain-System-Obsidian-n8n-RAG-Voice-Capture_~022086617375258613782/"
     },
     {
       "id": "url:8a87167432f94090",
@@ -8004,6 +8059,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/b36bed6d794621994060c289ea788a2c71760cbf/examples/artifacts/markdown-vault-index.json",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:389a01dba9514299"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Enterprise-Architecture-Consultant-Expert-Review-Operating-Layer-Intelligence-Brain_~022095776744342146823/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -8049,6 +8112,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:45192426591114fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/markdown-vault/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:57248a7df668a86d"
     },
     {
       "confidence": 1.0,
@@ -8209,6 +8280,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:e11294f3dfa63ddb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Build-Private-Knowledge-Second-Brain-System-Obsidian-n8n-RAG-Voice-Capture_~022086617375258613782/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:f0e5a007d8169141"
     },
     {
       "confidence": 1.0,
@@ -10445,6 +10524,14 @@
       "relation": "backed_by",
       "source": "project:github-lazytunnel",
       "target": "repository:lachlanchen/LazyTunnel"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LexiconAtlas",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:github-lexiconatlas",
+      "target": "repository:lachlanchen/LexiconAtlas"
     },
     {
       "confidence": 1.0,

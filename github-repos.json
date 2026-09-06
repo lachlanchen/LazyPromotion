@@ -119,7 +119,7 @@
       "homepage": "https://lazying.art",
       "name": "AgInTi-LabCanvas",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T17:56:03Z",
+      "pushed_at": "2026-09-06T16:32:09Z",
       "topics": [
         "aginti",
         "agintiflow",
@@ -140,7 +140,7 @@
         "unity",
         "unreal-engine"
       ],
-      "updated_at": "2026-09-05T17:56:07Z",
+      "updated_at": "2026-09-06T16:32:13Z",
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
     {
@@ -1172,7 +1172,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
-      "pushed_at": "2026-09-05T20:15:24Z",
+      "pushed_at": "2026-09-05T21:24:37Z",
       "topics": [
         "ai-tools",
         "ecosystem",
@@ -1188,7 +1188,7 @@
         "static-site",
         "website"
       ],
-      "updated_at": "2026-09-05T20:15:28Z",
+      "updated_at": "2026-09-05T21:24:41Z",
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T20:29:52Z",
+      "pushed_at": "2026-09-05T20:37:08Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-05T20:29:55Z",
+      "updated_at": "2026-09-05T20:37:11Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1492,6 +1492,16 @@
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
+      "description": "Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT.",
+      "homepage": "",
+      "name": "LexiconAtlas",
+      "primary_language": "JavaScript",
+      "pushed_at": "2026-09-06T00:22:20Z",
+      "topics": [],
+      "updated_at": "2026-09-06T00:22:23Z",
+      "url": "https://github.com/lachlanchen/LexiconAtlas"
+    },
+    {
       "description": "Reverse Engineering of Life.",
       "homepage": "http://lre.lazying.art/",
       "name": "LifeReverseEngineering",
@@ -1578,16 +1588,19 @@
       "homepage": "https://lazying.art/lkt/",
       "name": "LocalKnowledgeTerminal",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T10:22:33Z",
+      "pushed_at": "2026-09-06T00:06:17Z",
       "topics": [
         "citations",
         "e-ink",
         "etymology",
+        "full-text-search",
         "knowledge-base",
         "knowledge-graph",
         "lazying-art",
         "llama-cpp",
         "local-first",
+        "local-search",
+        "markdown",
         "meeting-intelligence",
         "multilingual",
         "offline",
@@ -1598,7 +1611,7 @@
         "raspberry-pi",
         "sqlite"
       ],
-      "updated_at": "2026-09-05T10:22:38Z",
+      "updated_at": "2026-09-06T00:06:21Z",
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {
@@ -2184,7 +2197,7 @@
       "homepage": "https://lazying.art",
       "name": "the-art-of-lazying",
       "primary_language": "Shell",
-      "pushed_at": "2026-09-05T16:54:54Z",
+      "pushed_at": "2026-09-06T12:00:07Z",
       "topics": [
         "automation",
         "language",
@@ -2197,7 +2210,7 @@
         "strategic",
         "workflows"
       ],
-      "updated_at": "2026-09-05T16:54:57Z",
+      "updated_at": "2026-09-06T12:00:14Z",
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
     {
@@ -2205,7 +2218,7 @@
       "homepage": "https://lazying.art",
       "name": "uu-remote-ubuntu-bridge",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T14:16:12Z",
+      "pushed_at": "2026-09-06T12:00:06Z",
       "topics": [
         "automation",
         "binary-patching",
@@ -2223,7 +2236,7 @@
         "wine",
         "xvfb"
       ],
-      "updated_at": "2026-09-05T14:16:16Z",
+      "updated_at": "2026-09-06T12:00:12Z",
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
     {

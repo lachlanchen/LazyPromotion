@@ -124,6 +124,22 @@ class PromotionTests(unittest.TestCase):
             {item["project"]["id"] for item in generic},
         )
 
+    def test_markdown_vault_need_resolves_to_the_exact_public_proof(self):
+        ranked = promotion.rank_projects(
+            "I keep a private Markdown vault as my source of truth and need local search "
+            "with a disposable rebuildable index and exact provenance."
+        )
+        self.assertEqual(ranked[0]["project"]["id"], "localknowledgeterminal")
+        self.assertIn("markdown vault", ranked[0]["matches"])
+        self.assertIn(
+            "https://lazying.art/lkt/markdown-vault/",
+            ranked[0]["project"]["reply_context"],
+        )
+        self.assertIn(
+            "not native Obsidian integration",
+            ranked[0]["project"]["reply_context"],
+        )
+
     def test_triage_sees_reviewed_offer_context_and_boundary(self):
         project = promotion.project_by_id("localknowledgeterminal")
         prompt = promotion.triage_prompt(

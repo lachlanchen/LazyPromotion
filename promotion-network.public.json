@@ -126,7 +126,7 @@
       "label": "lexical-database-ingestion",
       "metadata": {
         "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -6527,6 +6527,13 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/knowledge.py#L73-L345"
     },
     {
+      "id": "url:4bdd0e55b7a0d698",
+      "kind": "web_resource",
+      "label": "lexicon explorer",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LexiconAtlas/releases/latest"
+    },
+    {
       "id": "url:39175a1b6a3b2d14",
       "kind": "web_resource",
       "label": "live proof",
@@ -6602,6 +6609,13 @@
       "label": "owned guide",
       "metadata": {},
       "url": "https://lazying.art/wenyan/"
+    },
+    {
+      "id": "url:c54f27df2f8997f4",
+      "kind": "web_resource",
+      "label": "owned landing page",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/lexical-ingest/"
     },
     {
       "id": "url:44752e26757961b2",
@@ -6812,6 +6826,13 @@
       "label": "synthetic delivery packet",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyPromotion/raw/183d64325f4e943f14beb6a975a518eb593175f0/examples/latex-redline/artifacts/sample-delivery.zip"
+    },
+    {
+      "id": "url:68f775c3bd57cc45",
+      "kind": "web_resource",
+      "label": "synthetic ingestion proof",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof"
     },
     {
       "id": "url:6b2db2d76f97f682",
@@ -8020,6 +8041,22 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:4bdd0e55b7a0d698"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:68f775c3bd57cc45"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/corpus.py#L133-L199",
       "metadata": {},
       "relation": "uses_evidence",
@@ -8041,6 +8078,14 @@
       "relation": "uses_evidence",
       "source": "campaign:lexical-database-ingestion",
       "target": "url:a8820c8c60daf5e2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/lexical-ingest/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:c54f27df2f8997f4"
     },
     {
       "confidence": 1.0,

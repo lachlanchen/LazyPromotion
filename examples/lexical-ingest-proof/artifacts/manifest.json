@@ -1,9 +1,9 @@
 {
   "artifact_sha256": {
-    "canonical-lexicon.sqlite": "395e520be855a21cf68fee5c6e9a63d6e9b11c34fb094c6b5e171b3894ff4bc3",
+    "canonical-lexicon.sqlite": "ffc404ed551f28566c6e207b4a187fee4382a7df5d422a10d9d32e8bdfa2c64f",
     "dry-run.json": "27784d21b0c0c1c1b1b6f863b5f0e13b150696f4e0c28a2dba1577b47b810c13",
-    "idempotency.json": "709781c06d868fc259f620974e217feaef3fb65792698458df079ec704a4293a",
-    "report.md": "d31a655c391fb4600cf6270ee301381fbd1b04888884d1582b63c6bfd5cf238a",
+    "idempotency.json": "9ab77a279f52e97b9d0724678e112fb6e8d7935dc648667d83444db706198dcd",
+    "report.md": "d015a2cd6606efe0195f4866e02ba972fac04712acf359958602e152a2fca4c9",
     "rollback-safety.json": "40a8b99e65baa5dfd3a6dbf95f207eeb962c6465cab2a2ce9fdeba536dcfe19b",
     "validation.json": "08c6e258673bb3b97705860d42a964d16af9a93a8dc4f27308b05057f0470bd2"
   },
@@ -20,8 +20,8 @@
   "manifest_self_hashed": false,
   "schema_version": 1,
   "source_sha256": {
-    "README.md": "c22b65ceef344175357d9b257245d1111db530edf6a009c0a0c56f0e529a355e",
-    "build.py": "08388e9e06b8dd14499bcb5a293efd0a71bdb1c22eaa786076c274fd5651b03e",
+    "README.md": "6fc2244c3655d0d012661974607702fd4d0dda7d5c92ea776dd0b0db4163ca9a",
+    "build.py": "16d3446ccc9f6cb45a9659dcd3db6fab9619a062e8a19a22833d9062ef168976",
     "inputs/synthetic-lexicon.csv": "d1cd5f39830ff2fe574e4ab458613ead0778e9f3baec1aa1f3e841bcb567602f",
     "inputs/synthetic-toolbox.txt": "63147fa56627b3f31e6175ba5c76825656f36537192b2218dc865c1556dccfe0"
   },

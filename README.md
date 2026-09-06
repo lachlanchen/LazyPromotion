@@ -147,6 +147,8 @@ x11vnc, `wmctrl`, noVNC/websockify, `tmux`, and an authenticated Codex CLI for d
 ```bash
 git clone https://github.com/lachlanchen/LazyPromotion.git
 cd LazyPromotion
+python3 -m venv .venv
+. .venv/bin/activate
 python -m pip install -r requirements.txt
 python promotion.py init
 scripts/desktop.sh start

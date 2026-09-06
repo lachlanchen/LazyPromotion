@@ -111,6 +111,9 @@ class LexicalIngestProofTests(unittest.TestCase):
         self.assertEqual(rejected_lexemes, 0)
         connection.close()
 
+        database_bytes = (ARTIFACTS / "canonical-lexicon.sqlite").read_bytes()
+        self.assertEqual(database_bytes[96:100], b"\x00\x00\x00\x00")
+
     def test_replay_is_noop_and_injected_failure_rolls_back(self):
         idempotency = load_json("idempotency.json")
         self.assertTrue(idempotency["database_bytes_unchanged"])

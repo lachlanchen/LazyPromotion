@@ -1,4 +1,5 @@
 .local/
+.venv/
 handoff/
 __pycache__/
 *.pyc

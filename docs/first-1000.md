@@ -18,6 +18,13 @@ work behind Local Knowledge Terminal and LexiconAtlas. A small
 shows the proposed vertical slice without using buyer data: raw values and
 source locators remain recoverable, transformations are explicit, rejects are
 deterministic, and transactional reruns do not duplicate accepted records. The
+owned [lexical-ingestion explanation](https://lazying.art/lkt/lexical-ingest/)
+puts that evidence in a short buyer-facing path and routes a real glossary or
+dictionary collection to the existing free fit check. It keeps custom adapters,
+bulk conversion, OCR, deployment, and hardware outside the USD 250 sprint.
+LazyingArtWebsite commit `26b23c9231d6891e7b5df942f6ec2463e9e1ccf1`
+is deployed and returned HTTP 200. This publication is proof and discovery,
+not a lead, contract, payment, or revenue. The
 USD 1,200 application is prepared around the listing's USD 20-per-hour basis and
 a 60-hour cap, but remains unsubmitted because the isolated project browser is
 logged out. The public listing is buyer-intent evidence, not a lead, interview,

@@ -41,6 +41,8 @@ ARTIFACT_FILES = (
     "rollback-safety.json",
     "validation.json",
 )
+SQLITE_LAST_WRITER_VERSION_OFFSET = 96
+SQLITE_CANONICAL_LAST_WRITER_VERSION = b"\x00\x00\x00\x00"
 CSV_FIELDS = (
     "record_id",
     "lemma",
@@ -66,6 +68,17 @@ class BuildError(RuntimeError):
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def canonicalize_sqlite_last_writer_version(path: Path) -> None:
+    """Remove the non-semantic SQLite library patch stamp from a closed database."""
+
+    with path.open("r+b") as handle:
+        header = handle.read(100)
+        if len(header) != 100 or not header.startswith(b"SQLite format 3\x00"):
+            raise BuildError("generated database has an invalid SQLite header")
+        handle.seek(SQLITE_LAST_WRITER_VERSION_OFFSET)
+        handle.write(SQLITE_CANONICAL_LAST_WRITER_VERSION)
 
 
 def json_bytes(value: Any) -> bytes:
@@ -653,6 +666,7 @@ def build(output_dir: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
     first_fingerprint = logical_fingerprint(connection)
     schema = schema_contract(connection)
     connection.close()
+    canonicalize_sqlite_last_writer_version(database)
     first_database_sha256 = sha256(database)
 
     connection = sqlite3.connect(database)
@@ -664,6 +678,7 @@ def build(output_dir: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
     integrity = connection.execute("PRAGMA integrity_check").fetchone()[0]
     foreign_key_violations = len(connection.execute("PRAGMA foreign_key_check").fetchall())
     connection.close()
+    canonicalize_sqlite_last_writer_version(database)
     second_database_sha256 = sha256(database)
     if first_counts != second_counts or first_fingerprint != second_fingerprint:
         raise BuildError("idempotent replay changed the logical database state")

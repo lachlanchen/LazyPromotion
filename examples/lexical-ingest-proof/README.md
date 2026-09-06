@@ -26,6 +26,11 @@ the same upsert without changing its bytes, and injects a failure into a
 disposable database to verify rollback. The manifest hashes every input and
 artifact except itself, avoiding a self-hash cycle.
 
+SQLite stores the patch version of the last library that wrote a database in
+four informational header bytes. The builder clears that non-semantic stamp
+after each close so a compatible SQLite patch update does not create a false
+artifact mismatch; schema version 1 and the logical fingerprint remain explicit.
+
 ## Boundaries
 
 This is workflow evidence, not domain evidence. It uses no OUTOFPAPUA schema,

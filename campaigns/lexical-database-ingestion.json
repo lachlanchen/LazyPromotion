@@ -1,6 +1,6 @@
 {
   "id": "lexical-database-ingestion",
-  "version": 1,
+  "version": 2,
   "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
   "source_need": {
     "captured_on": "2026-09-07",
@@ -38,10 +38,14 @@
   },
   "owned_proof": {
     "state": "public_reproducible_synthetic_proof",
+    "landing_page": "https://lazying.art/lkt/lexical-ingest/",
+    "website_commit": "26b23c9231d6891e7b5df942f6ec2463e9e1ccf1",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34048755968",
+    "deployment_verification": "GitHub Pages completed successfully and the live landing page returned HTTP 200 with the committed title, proof metrics, and fit-check route.",
     "lexical_ingest_sample": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof",
     "lexicon_explorer": "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
     "local_knowledge_terminal": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
-    "description": "A synthetic two-format vertical slice demonstrates source identifiers, locators, raw values, hashes, explicit transformations, deterministic rejects, idempotent loading, and validation; LexiconAtlas demonstrates the downstream read-only lexical graph.",
+    "description": "A concise owned page leads to a synthetic two-format vertical slice demonstrating source identifiers, locators, raw values, hashes, explicit transformations, deterministic rejects, idempotent loading, and validation; LexiconAtlas demonstrates the downstream read-only lexical graph.",
     "limits": [
       "No OUTOFPAPUA data, schema, code, account, or client material is used.",
       "The sample is not proof of compatibility with the buyer's actual Toolbox files or target database.",
@@ -52,6 +56,9 @@
   "source_evidence": {
     "buyer_need": "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/",
     "buyer_public_context": "https://outofpapua.com/",
+    "owned_landing_page": "https://lazying.art/lkt/lexical-ingest/",
+    "synthetic_ingestion_proof": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof",
+    "lexicon_explorer": "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
     "atomic_source_hashed_ingestion": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/corpus.py#L133-L199",
     "morphology_ingestion_and_provenance": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/morphology.py#L50-L178",
     "lexical_schema_and_evidence": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/knowledge.py#L73-L345",
@@ -68,23 +75,23 @@
     },
     "x": {
       "state": "postiz_draft",
-      "post_id": "cmtq2oeec06sdqk0yoqqosw6l",
+      "post_id": "cmtq3bj4n06ypqk0ykehr30ja",
       "nominal_publish_at": "2026-09-17T01:00:00Z",
-      "content": "Lexical ingestion should be reversible. I built a small SQLite proof that keeps raw fields, locators and hashes, logs gloss normalization, quarantines rejects, and reruns without duplicate writes. GitHub: lachlanchen/LazyPromotion → examples/lexical-ingest-proof",
-      "content_sha256": "c01c86277f2208d381b4267b43530a17728c653e5dba348f9002b572510da165",
+      "content": "Lexical data cleaning should not erase the source. I made a small SQLite proof that keeps raw fields, locators and hashes, separates gloss normalization, quarantines incomplete records, and reruns with zero duplicate writes.\n\nRead: lazying.art/lkt/lexical-ingest/",
+      "content_sha256": "90054a7685009b419e1d6e8a0f0688d7a07d3fe9560a849d1e24e96c6b84d268",
       "shortener_used": false,
-      "verification": "Postiz returned DRAFT with no release ID or release URL.",
-      "policy": "The draft gives one first-party workflow result and a readable GitHub path. It is not queued or published and does not mention the buyer."
+      "verification": "Postiz returned DRAFT with the protocol-less owned route preserved, the regular-post settings intact, and no release ID or release URL. A discarded draft whose protocol URL was stripped and the superseded GitHub-path draft were deleted only after this replacement was verified.",
+      "policy": "The draft gives one first-party workflow result and a readable owned route. It is not queued or published and does not mention the buyer."
     },
     "linkedin": {
       "state": "postiz_draft",
-      "post_id": "cmtq2tthm1dqrlm0y5yd6drob",
+      "post_id": "cmtq3b3be1duylm0yt14p0kvy",
       "nominal_publish_at": "2026-09-17T02:00:00Z",
-      "content": "Lexical ingestion is rarely just “put these rows in a database.” The difficult part is keeping every edit traceable when sources disagree in structure, orthography, gloss language, or completeness.\n\nI built a small, project-owned proof around that boundary. It ingests one synthetic Toolbox-style source and one CSV lexicon into SQLite while preserving every raw field, source record ID, field locator, and source hash. English-gloss normalization is stored separately. Supplied IPA is copied, never invented. Invalid records go to a deterministic reject ledger. A replay makes zero writes, and an injected failure rolls the transaction back.\n\nThe sample is deliberately small and candid: it uses no customer data, no real Toolbox corpus, and no customer schema. It is workflow evidence, not a compatibility or linguistic-accuracy claim.\n\nCode, database, report, and reproducible checks:\nhttps://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof\n\nThe related LexiconAtlas release shows the downstream read-only graph: terms, morphemes, historical forms, translations, relationships, and provenance kept as separate objects.\nhttps://github.com/lachlanchen/LexiconAtlas/releases/latest\n\n#DataEngineering #DigitalHumanities #Linguistics #SQLite",
-      "content_sha256": "92dc2aaf842b475afb1221ba1e59e68b2b9c937a839ab3e4c0f7d89a7f619031",
+      "content": "Lexical data is rarely just “put these rows in a database.”\n\nThe risky part is what happens when source files disagree: fields drift, glosses mix languages, some entries are incomplete, and a convenient cleanup can erase where a reading came from.\n\nI built a small synthetic proof that keeps raw fields, locators and hashes, stores gloss normalization separately, quarantines incomplete records, and makes zero writes on an identical replay. An injected failure leaves every ingestion table empty.\n\nThe page explains the design and links the runnable Python/SQLite sample:\nhttps://lazying.art/lkt/lexical-ingest/?utm_source=linkedin&utm_medium=social&utm_campaign=lexical_data_carpentry&utm_content=proof\n\nIt is a workflow sample, not a compatibility or linguistic-accuracy claim.",
+      "content_sha256": "40a41d03cc34e0b4e972055f4aaa38f36261ab8240f9a285a44e7c3f4df28fc4",
       "shortener_used": false,
-      "verification": "Postiz returned DRAFT with both first-party URLs preserved and no release ID or release URL.",
-      "policy": "The draft explains one first-party proof and its limits. It is not queued or published and does not mention the marketplace buyer."
+      "verification": "Postiz returned DRAFT with the original tracked owned URL preserved, the no-carousel setting intact, and no release ID or release URL. The superseded two-link draft was deleted only after this replacement was verified.",
+      "policy": "The draft explains one first-party proof and its limits, then routes readers to the owned explanation. It is not queued or published and does not mention the marketplace buyer."
     },
     "reddit": {
       "state": "not_planned",

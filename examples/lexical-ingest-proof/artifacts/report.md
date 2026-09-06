@@ -6,7 +6,7 @@
 
 Two project-owned inputs supplied 6 records and 42 field values. The deterministic validation accepted 4 records and rejected 2. The canonical database contains 4 lexemes and 4 separately stored English-gloss normalizations.
 
-Database SHA-256: `395e520be855a21cf68fee5c6e9a63d6e9b11c34fb094c6b5e171b3894ff4bc3`
+Database SHA-256: `ffc404ed551f28566c6e207b4a187fee4382a7df5d422a10d9d32e8bdfa2c64f`
 
 ## Provenance retained
 

@@ -28,10 +28,16 @@ class LexicalDatabaseIngestionCampaignTests(unittest.TestCase):
         self.assertIn("not proof of compatibility", limits)
         self.assertIn("supplied ipa is preserved", limits)
         self.assertIn("not prior customer work", limits)
+        self.assertEqual(proof["landing_page"], "https://lazying.art/lkt/lexical-ingest/")
+        self.assertRegex(proof["website_commit"], r"^[0-9a-f]{40}$")
+        self.assertIn("actions/runs/34048755968", proof["deployment_run"])
+        self.assertIn("HTTP 200", proof["deployment_verification"])
         self.assertIn("lexical-ingest-proof", proof["lexical_ingest_sample"])
         evidence = self.campaign["source_evidence"]
         self.assertIn("/blob/f73ace6", evidence["atomic_source_hashed_ingestion"])
         self.assertIn("test_knowledge.py#L1073-L1096", evidence["transaction_rollback_test"])
+        self.assertEqual(evidence["owned_landing_page"], proof["landing_page"])
+        self.assertEqual(evidence["synthetic_ingestion_proof"], proof["lexical_ingest_sample"])
 
     def test_marketplace_and_revenue_states_do_not_overclaim(self):
         upwork = self.campaign["channels"]["upwork"]
@@ -55,7 +61,8 @@ class LexicalDatabaseIngestionCampaignTests(unittest.TestCase):
                 self.assertIn("DRAFT", item["verification"])
                 self.assertNotIn("outofpapua", item["content"].casefold())
                 self.assertRegex(item["content_sha256"], r"^[0-9a-f]{64}$")
-        self.assertIn("lexical-ingest-proof", channels["linkedin"]["content"])
+        self.assertIn("lazying.art/lkt/lexical-ingest/", channels["x"]["content"])
+        self.assertIn("https://lazying.art/lkt/lexical-ingest/", channels["linkedin"]["content"])
         self.assertEqual(funnel["social_drafts_created"], 2)
         self.assertEqual(funnel["social_posts_published"], 0)
 

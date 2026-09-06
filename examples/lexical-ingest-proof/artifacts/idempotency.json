@@ -1,8 +1,8 @@
 {
   "boundary": "Project-owned synthetic workflow proof: no OUTOFPAPUA schema, no real Toolbox corpus, no client data, no OCR, no linguistic accuracy benchmark, and no customer result.",
   "database_bytes_unchanged": true,
-  "database_sha256_after_first_run": "395e520be855a21cf68fee5c6e9a63d6e9b11c34fb094c6b5e171b3894ff4bc3",
-  "database_sha256_after_second_run": "395e520be855a21cf68fee5c6e9a63d6e9b11c34fb094c6b5e171b3894ff4bc3",
+  "database_sha256_after_first_run": "ffc404ed551f28566c6e207b4a187fee4382a7df5d422a10d9d32e8bdfa2c64f",
+  "database_sha256_after_second_run": "ffc404ed551f28566c6e207b4a187fee4382a7df5d422a10d9d32e8bdfa2c64f",
   "first_run": {
     "changes": {
       "gloss_normalizations.created": 4,

@@ -140,6 +140,15 @@ The final visible confirmation kept that original URL instead of a Postiz
 shortlink, and a provider read confirmed `QUEUE`. This is owned distribution,
 not a lead or sale.
 
+On 2026-09-07, the two lexical-ingestion drafts were replaced after the owned
+proof page went live. Postiz stripped the protocol URL from the first X
+replacement, so it was discarded and a second draft used the visibly reviewed
+`lazying.art/lkt/lexical-ingest/` route. LinkedIn retained the complete tracked
+owned URL. Provider reads matched both committed content hashes and returned
+`DRAFT` with no release ID or release URL; the superseded drafts were removed
+only after their replacements passed that check. Nothing was queued or
+published.
+
 Later that day, the complete source-first lecture guide was published on
 LazyBlog and one separate LinkedIn note was visibly reviewed for
 2026-09-24T02:00:00Z, after the existing campaign calendar. The note teaches

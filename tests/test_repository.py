@@ -1207,7 +1207,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 25)
+        self.assertEqual(campaign["version"], 26)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1226,8 +1226,12 @@ class RepositoryTests(unittest.TestCase):
         excluded_scope = campaign["source_evidence"]["excluded_scope"]
         self.assertIn("bulk conversion", excluded_scope)
         self.assertIn("ongoing support", excluded_scope)
-        chat_archive = campaign["channels"]["reddit"]["chat_archive_reply_draft"]
-        self.assertEqual(chat_archive["state"], "prepared_not_sent")
+        chat_archive = campaign["channels"]["reddit"]["chat_archive_reply"]
+        self.assertEqual(chat_archive["state"], "sent_and_visibly_verified")
+        self.assertEqual(
+            chat_archive["url"],
+            "https://www.reddit.com/r/ChatGPT/comments/1vygqua/comment/p890vwc/",
+        )
         self.assertFalse(chat_archive["linked_owned_asset"])
         self.assertTrue(chat_archive["profile_only_context"])
         self.assertFalse(chat_archive["lead_or_sale_observed"])
@@ -1238,7 +1242,8 @@ class RepositoryTests(unittest.TestCase):
         ]
         self.assertEqual(chat_guide["wordpress_id"], 3810)
         self.assertEqual(chat_guide["languages_verified"], ["en", "zh-hant", "ja"])
-        self.assertFalse(chat_guide["public_reply_sent"])
+        self.assertTrue(chat_guide["public_reply_sent"])
+        self.assertEqual(chat_guide["public_reply_url"], chat_archive["url"])
         self.assertFalse(chat_guide["lead_or_sale_observed"])
         self.assertIn("utm_source=lazyblog", chat_guide["conversion_url"])
         self.assertEqual(

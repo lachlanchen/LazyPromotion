@@ -21,7 +21,13 @@ outside the fixed scope unless separately accepted. The
 [free clip fit check](https://lazying.art/video/brand-film/fit-check/) now turns
 the inventory, rights, story, destination, and handoff questions into a reviewed
 email or copyable request in the visitor's browser; it transfers no file and
-makes no network request during review. A private application is ready but
+makes no network request during review. An exact
+[six-source assembly proof](https://lazying.art/video/brand-film/#sample) now
+shows 43.2 seconds of selected project-owned source becoming a 41.958-second
+master and a 27.816-second web cut from the same timeline. Both videos play on
+the offer page, while the source order, crop, selected ranges, output probes,
+SHA-256 hashes, and FFmpeg build are inspectable beside them. This is editing
+process evidence, not customer work or an advertising result. A private application is ready but
 Upwork remains logged out, so no proposal, Connects spend, buyer
 reply, payment, or revenue exists. One LinkedIn explanation is queued for 28
 September after visible review; a queue item is not publication or a lead.

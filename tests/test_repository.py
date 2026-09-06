@@ -992,7 +992,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 6)
+        self.assertEqual(campaign["version"], 7)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1033,6 +1033,29 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["deployment"]["fit_check_network_requests_on_review"], 0)
         self.assertFalse(offer["deployment"]["fit_check_file_upload_present"])
         self.assertTrue(offer["deployment"]["mailto_and_copy_routes_present"])
+        self.assertEqual(
+            offer["deployment"]["assembly_sample_state"],
+            "live_http_200_media_functionally_reviewed",
+        )
+        self.assertFalse(offer["deployment"]["assembly_sample_horizontal_overflow"])
+
+        proof = campaign["proof"]
+        self.assertEqual(len(proof["examples"]), 5)
+        sample = proof["assembly_sample"]
+        self.assertEqual(sample["state"], "live_and_verified")
+        self.assertEqual(sample["source_count"], 6)
+        self.assertEqual(sample["selected_source_seconds"], 43.2)
+        self.assertEqual(sample["master"]["duration_seconds"], 41.958333)
+        self.assertEqual(sample["web_cut"]["duration_seconds"], 27.816)
+        self.assertEqual(
+            sample["master"]["sha256"],
+            "ceb4f23f963e2571ac57b2a3023d76c00dba813c74e728a6371482e03a4d2f47",
+        )
+        self.assertEqual(
+            sample["web_cut"]["sha256"],
+            "836af75cd57bcba8d72a50b3bd57020d92614d54fbe280dadb8347c6765fa653",
+        )
+        self.assertIn("not customer work", sample["claim_boundary"].casefold())
 
         article = campaign["owned_content"]
         self.assertEqual(article["state"], "published_and_verified")
@@ -1060,7 +1083,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(
             marketplace["proposal_links"],
             [
-                "https://lazying.art/video/",
+                "https://lazying.art/video/brand-film/#sample",
                 "https://lazying.art/video/brand-film/",
             ],
         )
@@ -2491,7 +2514,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "kikudoku-pronunciation-ux.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(campaign["fit"]["selected_topic"], "B - Shadowing Rate Improvement")
         self.assertEqual(
             campaign["application"]["state"], "prepared_login_required"
@@ -2500,6 +2523,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(campaign["application"]["application_submitted"])
         self.assertEqual(campaign["application"]["connects_spent"], 0)
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+        self.assertEqual(
+            campaign["source_evidence"]["repository"],
+            "https://github.com/lachlanchen/L-and-N",
+        )
+        self.assertEqual(
+            campaign["channels"]["upwork"]["state"],
+            "prepared_login_required",
+        )
         self.assertIn("l-and-n.lazying.art", serialized)
         self.assertNotIn("post_id", serialized.casefold())
 

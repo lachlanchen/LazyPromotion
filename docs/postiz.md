@@ -168,6 +168,14 @@ playback, and both first-party description links were checked at
 <https://www.youtube.com/watch?v=G9NKncZgRis>. Postiz was the only publication
 route; do not send the same LazyEdit package through AutoPublish after release.
 
+On 2026-09-07, the queued LinkedIn AI Clip Assembly note was corrected after
+the exact six-source proof went live. The visible editor replaced its stale
+four-piece wording with one plain account of the 42-second master and 28-second
+web cut. The original tracked LazyingArt URL, account, and
+2026-09-28T02:00:00Z time were retained without a shortlink. A fresh provider
+read returned the exact copy and `QUEUE` state with no release. This is a future
+owned post, not publication, a lead, or revenue.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

@@ -6,7 +6,7 @@
       "label": "ai-clip-assembly-pilot",
       "metadata": {
         "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
-        "version": 6
+        "version": 7
       },
       "url": ""
     },
@@ -96,7 +96,7 @@
       "label": "kikudoku-pronunciation-ux",
       "metadata": {
         "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -5994,6 +5994,20 @@
       "url": "https://partners.dub.co/postiz/apply"
     },
     {
+      "id": "url:487db48ca4cc1809",
+      "kind": "web_resource",
+      "label": "assembly manifest",
+      "metadata": {},
+      "url": "https://lazying.art/video/brand-film/sample/manifest.json"
+    },
+    {
+      "id": "url:fd12cb17c25f965d",
+      "kind": "web_resource",
+      "label": "assembly sample",
+      "metadata": {},
+      "url": "https://lazying.art/video/brand-film/#sample"
+    },
+    {
       "id": "url:cf97b4ba4b498557",
       "kind": "web_resource",
       "label": "asset repository",
@@ -6603,6 +6617,13 @@
       "url": "https://lazying.art/lecture-pack/"
     },
     {
+      "id": "url:da326070927d2fdb",
+      "kind": "web_resource",
+      "label": "offer",
+      "metadata": {},
+      "url": "https://lazying.art/video/brand-film/"
+    },
+    {
       "id": "url:0c3f0c1551c48c93",
       "kind": "web_resource",
       "label": "offer page",
@@ -6832,6 +6853,20 @@
       "label": "source first",
       "metadata": {},
       "url": "https://futo.tech/source-first"
+    },
+    {
+      "id": "url:1d416ebb1452ce9e",
+      "kind": "web_resource",
+      "label": "source need url",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Consultant-for-Japanese-Learning-App-Kikudoku-Paid-Test-Project_~022096362207530179711/"
+    },
+    {
+      "id": "url:4011dce35569c281",
+      "kind": "web_resource",
+      "label": "source need url",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/"
     },
     {
       "id": "url:90dd533df880bbcd",
@@ -7092,6 +7127,38 @@
       "relation": "targets",
       "source": "campaign:ai-clip-assembly-pilot",
       "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:ai-clip-assembly-pilot",
+      "target": "url:4011dce35569c281"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/video/brand-film/sample/manifest.json",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:ai-clip-assembly-pilot",
+      "target": "url:487db48ca4cc1809"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/video/brand-film/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:ai-clip-assembly-pilot",
+      "target": "url:da326070927d2fdb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/video/brand-film/#sample",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:ai-clip-assembly-pilot",
+      "target": "url:fd12cb17c25f965d"
     },
     {
       "confidence": 1.0,
@@ -7752,6 +7819,48 @@
       "relation": "uses_evidence",
       "source": "campaign:hacker-initiative-proofline-grant",
       "target": "url:f4189f4afa7eb5d6"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:kikudoku-pronunciation-ux",
+      "target": "project:l-and-n"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "prepared_login_required"
+      },
+      "relation": "targets",
+      "source": "campaign:kikudoku-pronunciation-ux",
+      "target": "channel:upwork"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Consultant-for-Japanese-Learning-App-Kikudoku-Paid-Test-Project_~022096362207530179711/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:kikudoku-pronunciation-ux",
+      "target": "url:1d416ebb1452ce9e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/L-and-N",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:kikudoku-pronunciation-ux",
+      "target": "url:6da737bdd18800ca"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:kikudoku-pronunciation-ux",
+      "target": "url:dad6a142b98ee7ea"
     },
     {
       "confidence": 1.0,

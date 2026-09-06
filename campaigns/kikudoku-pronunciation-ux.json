@@ -1,6 +1,6 @@
 {
   "id": "kikudoku-pronunciation-ux",
-  "version": 1,
+  "version": 2,
   "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
   "source_need": {
     "captured_on": "2026-09-06",
@@ -11,6 +11,11 @@
     "scope": "Choose one paid diagnostic topic, then potentially review the beta onboarding, free experience, profile navigation, and shadowing flow.",
     "activity_when_checked": "20 to 50 proposals, 0 interviewing, 0 invites sent; client has 9 hires and USD 520 total spend",
     "policy": "The listing is current buyer-intent evidence only. It is not an application, interview, contract, payment, delivery, or received revenue."
+  },
+  "source_evidence": {
+    "source_need_url": "https://www.upwork.com/freelance-jobs/apply/Consultant-for-Japanese-Learning-App-Kikudoku-Paid-Test-Project_~022096362207530179711/",
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "pwa": "https://l-and-n.lazying.art/"
   },
   "fit": {
     "selected_topic": "B - Shadowing Rate Improvement",
@@ -35,6 +40,13 @@
     "application_submitted": false,
     "connects_spent": 0,
     "policy": "Keep the application, NDA, beta access, client communication, contract, deliverables, and payment on Upwork. Do not send a free diagnostic before a funded milestone."
+  },
+  "channels": {
+    "upwork": {
+      "state": "prepared_login_required",
+      "application_submitted": false,
+      "connects_spent": 0
+    }
   },
   "funnel": {
     "state": "buyer_intent_identified",

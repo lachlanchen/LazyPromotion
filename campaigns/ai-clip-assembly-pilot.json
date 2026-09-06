@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "id": "ai-clip-assembly-pilot",
   "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
   "source_need": {
@@ -13,11 +13,17 @@
     "client_record_when_checked": "United States; Upwork member since July 23, 2023; no client spend or hire history was visible on the public listing",
     "demand_interpretation": "A current buyer has attached a USD 500 budget to a bounded six-clip assembly problem. This validates the problem and price point, not LazyingArt demand or a likely award."
   },
+  "source_evidence": {
+    "source_need_url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/",
+    "offer": "https://lazying.art/video/brand-film/",
+    "assembly_sample": "https://lazying.art/video/brand-film/#sample",
+    "assembly_manifest": "https://lazying.art/video/brand-film/sample/manifest.json"
+  },
   "offer": {
     "state": "live",
     "url": "https://lazying.art/video/brand-film/",
     "fit_check": "https://lazying.art/video/brand-film/fit-check/",
-    "website_commit": "dffcfc2588cdea259892fe66fa209da6754dbd72",
+    "website_commit": "89d45f975fc20de85ef404b6dffb92a3bb44bc74",
     "price": "USD 500",
     "scope": "Up to six customer-controlled AI-generated clips and 45 seconds of combined source; one 30-45 second 16:9 master; one 25-30 second 16:9 web cut derived from the same edit; basic colour continuity; one music and sound pass; simple supplied titles or logo; H.264 MP4 exports; a source manifest; and one consolidated correction pass.",
     "exclusions": [
@@ -45,18 +51,46 @@
       "fit_check_horizontal_overflow": false,
       "fit_check_network_requests_on_review": 0,
       "fit_check_file_upload_present": false,
-      "mailto_and_copy_routes_present": true
+      "mailto_and_copy_routes_present": true,
+      "assembly_sample_state": "live_http_200_media_functionally_reviewed",
+      "assembly_sample_url": "https://lazying.art/video/brand-film/#sample",
+      "assembly_sample_desktop_width_checked": 1920,
+      "assembly_sample_mobile_width_checked": 390,
+      "assembly_sample_horizontal_overflow": false
     }
   },
   "proof": {
     "portfolio": "https://lazying.art/video/",
-    "portfolio_commit": "06023d632cd76ec6c1f7f2efb2b8c6eb044ca0d3",
+    "portfolio_commit": "89d45f975fc20de85ef404b6dffb92a3bb44bc74",
     "examples": [
       "28-second PocketPolyglot product demonstration",
       "4:36 creator-led PocketPolyglot walkthrough",
       "12.82-second captioned Story Clip extract",
-      "33-second AI-assisted Desert Oasis narrative"
+      "33-second AI-assisted Desert Oasis narrative",
+      "Six-source Madeira assembly with a 41.958-second master and a 27.816-second web cut"
     ],
+    "assembly_sample": {
+      "state": "live_and_verified",
+      "url": "https://lazying.art/video/brand-film/#sample",
+      "manifest": "https://lazying.art/video/brand-film/sample/manifest.json",
+      "build_notes": "https://lazying.art/video/brand-film/sample/README.md",
+      "source_count": 6,
+      "selected_source_seconds": 43.2,
+      "master": {
+        "url": "https://lazying.art/video/brand-film/sample/madeira-six-clip-master.mp4",
+        "duration_seconds": 41.958333,
+        "bytes": 23345988,
+        "sha256": "ceb4f23f963e2571ac57b2a3023d76c00dba813c74e728a6371482e03a4d2f47"
+      },
+      "web_cut": {
+        "url": "https://lazying.art/video/brand-film/sample/madeira-four-beat-web-cut.mp4",
+        "duration_seconds": 27.816,
+        "bytes": 13149413,
+        "sha256": "836af75cd57bcba8d72a50b3bd57020d92614d54fbe280dadb8347c6765fa653"
+      },
+      "technical_qa": "Both live files load as 1280x720 H.264 with stereo AAC audio; neither local output contained a detected black interval of at least 0.5 seconds or silence of at least 0.8 seconds at -45 dB.",
+      "claim_boundary": "This is project-owned AI-assisted footage and editing-process evidence, not customer work, an advertising result, or proof that unseen buyer clips will fit."
+    },
     "delivery_sample": "https://lazying.art/story-clip/#sample",
     "claim_boundary": "Every public example is first-party project work. None is a customer brand film, paid UGC campaign, e-commerce performance result, or proof that six unseen source clips will fit."
   },
@@ -86,7 +120,7 @@
     "state": "application_prepared_login_required",
     "private_packet": ".local/outreach/ai-brand-film/application-draft.md",
     "proposal_links": [
-      "https://lazying.art/video/",
+      "https://lazying.art/video/brand-film/#sample",
       "https://lazying.art/video/brand-film/"
     ],
     "application_submitted": false,
@@ -113,18 +147,18 @@
     "linkedin": {
       "state": "postiz_queue",
       "publish_at": "2026-09-28T02:00:00.000Z",
-      "content": "Six AI-generated clips can still feel like six separate shots. The first edit decision is not the transition; it is what changes between the first frame and the last.\n\nI put four finished LazyingArt pieces on one page, with the actual role and constraint beside each player:\nhttps://lazying.art/video/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_clip_assembly&utm_content=portfolio\n\nI also wrote down a fixed $500 assembly scope for up to six customer-controlled clips: one 30–45 second 16:9 master, one shorter web cut, finishing, a source manifest, and one correction pass. New generation stays separate.\nhttps://lazying.art/video/brand-film/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_clip_assembly&utm_content=offer",
-      "content_sha256": "ac429de22f3fc7911490ef6d362cd8c691c6d6e9215a6ffa68f811a2c5dc0bc9",
+      "content": "Six AI-generated clips can still feel like six separate shots. The first edit decision isn't the transition. It's what should change between the first frame and the last.\n\nI tried the exact constraint on six scenes from one of our own projects. About 43 seconds of source became one 42-second journey, then a 28-second web cut from the same timeline.\n\nBoth videos are here, with the source order, trims, export notes, and hashes:\nhttps://lazying.art/video/brand-film/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_clip_assembly&utm_content=six_source_proof#sample\n\nThis is also the boundary for my fixed USD 500 assembly pilot: existing footage only, one master, one shorter cut, and one correction pass.",
+      "content_sha256": "0f3fc87a037809c6429e361fc46ffca6ad898fc9a83d29be9766cd13226dea40",
       "visible_editor_reviewed": true,
       "matching_posts": 1,
       "verified_state": "QUEUE",
       "release_present": false,
       "shortlink_enabled": false,
-      "policy": "The post explains the editorial problem before the offer, uses only first-party proof, and keeps new generation outside the fixed scope. Queue state is not publication, a lead, or a sale."
+      "policy": "The existing queued item was visibly corrected after the exact six-source proof went live. Postiz retained the original campaign URL, account, 2026-09-28T02:00:00Z time, and QUEUE state with no release. It explains the editorial problem before the offer, uses only first-party proof, and keeps new generation outside the fixed scope. Queue state is not publication, a lead, or a sale."
     }
   },
   "funnel": {
-    "state": "owned_offer_and_fit_check_live_application_prepared",
+    "state": "owned_offer_fit_check_and_exact_process_proof_live_application_prepared",
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,
     "scope_accepted": false,

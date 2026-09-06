@@ -1,5 +1,5 @@
 {
-  "version": 23,
+  "version": 25,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -606,6 +606,34 @@
         "public_reply_linked_owned_asset": false,
         "lead_or_sale_observed": false,
         "policy": "The article answers the observed need in full before offering the project-owned sample report and free fit check. The fixed sprint evaluates a representative sample; custom OCR and full-library conversion remain excluded. Publication and the earlier value-only Reddit reply are not a lead, customer result, sale, or revenue."
+      },
+      "chat_archive_current_state_guide": {
+        "state": "published_and_multilingual_verified",
+        "published_at": "2026-09-07T06:40:43+08:00",
+        "wordpress_id": 3810,
+        "url": "https://blog.lazying.art/html/computer_internet/3810/archive-chatgpt-conversations-provenance-current-state.html",
+        "source_need": "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/",
+        "need": "Preserve a large conversation archive as immutable evidence while maintaining compact, reviewed current state and preventing model suggestions from becoming facts.",
+        "languages_verified": [
+          "en",
+          "zh-hant",
+          "ja"
+        ],
+        "source_commit": "f076a8be542734357619e704c1b802678ac0db16",
+        "blog_commit": "ac8117336ac3a10b5bcf23bca1da7443455f13c2",
+        "official_openai_source": "https://learn.chatgpt.com/docs/use-chatgpt",
+        "conversion_url": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=chat_archive_current_state",
+        "search_console": {
+          "checked_at": "2026-09-07T06:43:00+08:00",
+          "initial_state": "URL is not on Google; URL is unknown to Google",
+          "request_state": "indexing_requested",
+          "submission_count": 1,
+          "repeat_request_allowed": false,
+          "evidence": ".local/evidence/20260907-chat-archive-search-console-indexing-requested.png"
+        },
+        "public_reply_sent": false,
+        "lead_or_sale_observed": false,
+        "policy": "The guide is a complete two-layer archive design before one bounded fit-check path. Its project-written example proves the source, review, correction, and rebuild contract only. The single accepted crawl request is not indexing, traffic, a lead, customer result, sale, or revenue."
       }
     },
     "reddit": {

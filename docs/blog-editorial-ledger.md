@@ -4,9 +4,9 @@ Last verified: 2026-09-07 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `a424976`
+Verified BLOG commit: `ac81173`
 
-Campaign range: `3b45351^..a424976`
+Campaign range: `3b45351^..ac81173`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -20,9 +20,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **150 posts** have completed this protocol:
+As of the verified commit, **151 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772, 3791, 3792, 3803, 3808`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772, 3791, 3792, 3803, 3808, 3810`
 
 ### Safety and historical corrections
 
@@ -63,6 +63,17 @@ Posts: `933, 1498, 1562, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1
 Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
+
+- Post `3810` is a complete English, Traditional Chinese, and Japanese guide
+  to preserving chat exports as immutable evidence while maintaining a compact,
+  reviewed current-state layer. It gives stable record shapes, a claims ledger,
+  rebuildable indexes, batch checkpoints, known-answer tests, an official
+  OpenAI usage source, and one bounded LKT fit-check route. All three language
+  pages and the destination returned HTTP 200 with the reviewed titles.
+  Search Console reported the new URL as unknown to Google and accepted one
+  priority crawl request; it must not be resubmitted merely to seek priority.
+  Publication, crawl-queue state, and the prepared value-only Reddit answer are
+  not a lead or sale.
 
 - Post `3808` is a complete English, Traditional Chinese, and Japanese guide
   to testing one representative chapter as both an actual-size print PDF and a
@@ -177,6 +188,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 | BLOG commit | Post | Outcome |
 | --- | ---: | --- |
+| `ac81173` | 3810 | Published a durable chat-archive and reviewed-current-state guide in English, Traditional Chinese, and Japanese |
 | `a424976` | 3808 | Published a chapter-first print PDF and reflowable EPUB guide in English, Traditional Chinese, and Japanese |
 | `16f9709` | 271 | Unknown `.fzip` triage and safe archive/plugin handling |
 | `528236c` | 1371 | 2018 EUR/USD wave-method audit |

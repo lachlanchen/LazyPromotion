@@ -126,6 +126,14 @@ Posts: `281, 936, 1562, 2936, 3125`.
   Bilingual Lecture Pack bridge already present on those pages. The dominant
   PDF and lecture-note queries still indicate free-resource intent; the counts
   are not leads, customers, or revenue.
+- The next visible report on 2026-09-06 showed 140 clicks and 6.55K impressions.
+  Post `3167` reached 29 clicks, up 21%; the Classical Mechanics reader held 25
+  clicks, up 56%, while the General Relativity reader gained 4 clicks, up 200%.
+  BLOG commit `5bcfc9f` added direct General Relativity reader and community-note
+  PDF links plus specific English, Chinese, and Japanese search descriptions.
+  LazyLearn commit `bb0b438` added useful static reader metadata and corrected
+  the ambiguous PDF action labels. All three article languages and the reader
+  were live-verified. These are owned discovery improvements, not leads or sales.
 - Search Console's visible 28-day report on 2026-09-02 showed 131 clicks and
   6.46K impressions across the property. Post `3167` was the leading article
   with 25 clicks; its LKT section now presents the project-owned sample report

@@ -41,10 +41,10 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 21:00:39 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-06 19:49:28 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | 2026-09-06 18:15:55 | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. |
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 18:13:07 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-06 17:34:52 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-06 17:29:24 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [LexiconAtlas](https://github.com/lachlanchen/LexiconAtlas) | 2026-09-06 17:17:48 | Explore a local-first 3D lexical knowledge graph of origins, roots, affixes, meanings, translations, and provenance. |
 | [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | 2026-09-06 17:13:27 | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-06 17:11:57 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |

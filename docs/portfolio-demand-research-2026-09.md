@@ -168,6 +168,11 @@ followed. The route remains a low-frequency research input.
   Susskind archive article led with 28 clicks and the Classical Mechanics Reader
   had 25. That is owned discovery evidence for the lecture route, but the PDF-led
   queries still indicate free-resource intent rather than a lead or sale.
+- On 2026-09-06 the visible 28-day view rose to 140 clicks and 6.55K impressions.
+  The archive article had 29 clicks, the Classical Mechanics reader had 25, and
+  the General Relativity reader gained 4 clicks. The article and reader were
+  improved around those exact free-resource needs in BLOG `5bcfc9f` and
+  LazyLearn `bb0b438`; the traffic still does not establish a buyer or revenue.
 - A current Reddit request asked for a coherent path from product fundamentals
   into LLMs, embeddings, and evaluations. The reviewed response gave an
   8–12-week project plan and course-selection criteria without a link or product

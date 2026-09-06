@@ -25,7 +25,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | candidate | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks | 3.35 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
-| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Keep the aligned public pages in free private-alpha mode, then verify a physical-microphone round trip, manual memo and export behavior, retention, and full deletion with opt-in native-device test data before inviting a small private cohort | 2.95 |
+| [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Keep the aligned public pages in free private-alpha mode, then verify a native live-AI physical-microphone round trip, end-to-end export handling, retention, and full deletion across agent, speech, and backup data with opt-in test content before inviting a small private cohort | 2.95 |
 
 ## Opportunity contracts
 
@@ -511,9 +511,9 @@ Gates:
 
 **Existing work:** [AgentShell](https://github.com/lachlanchen/AgentShell), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal), [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb), [AI-Wearable](https://github.com/lachlanchen/AI-Wearable)
 
-**First deliverable:** Keep AiMemo as a gated private alpha. Its private PWA evidence now covers text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, and separate dictation; native-device and data-lifecycle proof remain required
+**First deliverable:** Keep AiMemo as a gated private alpha. Private evidence now covers PWA text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, separate dictation, Android manual memo creation and session restoration, and account-scoped export tests; native live-AI, physical-microphone, end-to-end export handling, and retained-data deletion proof remain required
 
-**First demand test:** Keep the aligned public pages in free private-alpha mode, then verify a physical-microphone round trip, manual memo and export behavior, retention, and full deletion with opt-in native-device test data before inviting a small private cohort
+**First demand test:** Keep the aligned public pages in free private-alpha mode, then verify a native live-AI physical-microphone round trip, end-to-end export handling, retention, and full deletion across agent, speech, and backup data with opt-in test content before inviting a small private cohort
 
 Evidence:
 

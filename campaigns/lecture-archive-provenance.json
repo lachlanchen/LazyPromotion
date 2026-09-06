@@ -52,6 +52,48 @@
       "lead_or_sale_observed": false,
       "policy": "The article is a complete educational answer first. The archive appears only as a quiet study aid after the official lecture and independent exercises; no service, donation, hardware, or unrelated portfolio pitch was added."
     },
+    "search_console": {
+      "state": "owned_demand_observed_and_path_improved",
+      "observed_at": "2026-09-06T21:04:00Z",
+      "period": "Last 28 days",
+      "property_totals": {
+        "clicks": 140,
+        "impressions": 6550
+      },
+      "content": {
+        "archive_article": {
+          "url": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
+          "clicks": 29,
+          "change_percent": 21
+        },
+        "classical_mechanics_reader": {
+          "url": "https://learn.lazying.art/leonardsusskind-reader.html?book=classical-mechanics-theoretical-minimum",
+          "clicks": 25,
+          "change_percent": 56,
+          "additional_clicks": 9
+        },
+        "general_relativity_reader": {
+          "url": "https://learn.lazying.art/leonardsusskind-reader.html?book=general-relativity-theoretical-minimum",
+          "change_percent": 200,
+          "additional_clicks": 4
+        }
+      },
+      "actions": {
+        "blog_commit": "5bcfc9f",
+        "reader_commit": "bb0b438",
+        "summary": "The archive article now gives General Relativity the same direct reader and community-companion PDF path that already serves Classical Mechanics, and all three article languages have specific search descriptions. The reader now has useful static metadata, a concise provenance boundary, and accurately named PDF actions."
+      },
+      "live_verification": {
+        "article_languages_http_200": [
+          "en",
+          "ja",
+          "zh"
+        ],
+        "reader_deployed": true
+      },
+      "lead_or_sale_observed": false,
+      "policy": "Search clicks select useful owned improvements; they are not leads, customers, learning outcomes, or revenue. PDF-led queries indicate free-resource intent, so the education path remains complete before the quiet lecture-specific offer."
+    },
     "x": {
       "state": "published",
       "publish_at": "2026-09-03T02:00:00Z",

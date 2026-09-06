@@ -432,8 +432,8 @@
       "label": "Durable AI conversation and voice memory",
       "metadata": {
         "buyer": "A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later",
-        "first_deliverable": "Keep AiMemo as a gated private alpha. Its private PWA evidence now covers text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, and separate dictation; native-device and data-lifecycle proof remain required",
-        "first_test": "Keep the aligned public pages in free private-alpha mode, then verify a physical-microphone round trip, manual memo and export behavior, retention, and full deletion with opt-in native-device test data before inviting a small private cohort",
+        "first_deliverable": "Keep AiMemo as a gated private alpha. Private evidence now covers PWA text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, separate dictation, Android manual memo creation and session restoration, and account-scoped export tests; native live-AI, physical-microphone, end-to-end export handling, and retained-data deletion proof remain required",
+        "first_test": "Keep the aligned public pages in free private-alpha mode, then verify a native live-AI physical-microphone round trip, end-to-end export handling, retention, and full deletion across agent, speech, and backup data with opt-in test content before inviting a small private cohort",
         "gates": [
           "Do not link AiMemo in public replies or other public promotions while its repository and native tests remain private or internal and deletion, voice, collaboration, and store reliability remain unverified",
           "Do not turn the private PWA text and synthetic-audio checks into a public reliability, native-voice, deletion, store, or customer-result claim; collaboration, imports, provenance links, append-only correction history, Markdown export, calendar writes, reminders, and full offline operation also remain unverified",
@@ -4294,7 +4294,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T18:13:07Z",
+        "pushed_at": "2026-09-06T21:00:39Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4314,7 +4314,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-06T18:13:11Z"
+        "updated_at": "2026-09-06T21:00:45Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4535,7 +4535,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T17:29:24Z",
+        "pushed_at": "2026-09-06T19:49:28Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4551,7 +4551,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-06T17:29:28Z"
+        "updated_at": "2026-09-06T19:49:32Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },

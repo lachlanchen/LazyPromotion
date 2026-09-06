@@ -370,8 +370,8 @@
       "buyer": "A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later",
       "need": "Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job",
       "projects": ["AgentShell", "LocalKnowledgeTerminal", "LazyingAgentWeb", "AI-Wearable"],
-      "first_deliverable": "Keep AiMemo as a gated private alpha. Its private PWA evidence now covers text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, and separate dictation; native-device and data-lifecycle proof remain required",
-      "first_test": "Keep the aligned public pages in free private-alpha mode, then verify a physical-microphone round trip, manual memo and export behavior, retention, and full deletion with opt-in native-device test data before inviting a small private cohort",
+      "first_deliverable": "Keep AiMemo as a gated private alpha. Private evidence now covers PWA text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, separate dictation, Android manual memo creation and session restoration, and account-scoped export tests; native live-AI, physical-microphone, end-to-end export handling, and retained-data deletion proof remain required",
+      "first_test": "Keep the aligned public pages in free private-alpha mode, then verify a native live-AI physical-microphone round trip, end-to-end export handling, retention, and full deletion across agent, speech, and backup data with opt-in test content before inviting a small private cohort",
       "proof": [
         "https://github.com/lachlanchen/AgentShell",
         "https://github.com/lachlanchen/LocalKnowledgeTerminal",

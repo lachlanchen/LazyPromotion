@@ -1,6 +1,6 @@
 {
   "id": "lecture-archive-provenance",
-  "version": 1,
+  "version": 2,
   "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
   "channels": {
     "github": {
@@ -56,7 +56,7 @@
         "paid_partnership": false
       },
       "study_post": {
-        "state": "postiz_draft",
+        "state": "postiz_queue",
         "publish_at": "2026-09-11T02:00:00Z",
         "content": "Watching a physics lecture can feel clearer than your own understanding. Afterward, close the notes, rebuild one result in your own symbols, then solve two textbook problems. Susskind Lecture 1 study page: blog.lazying.art/?p=1625&utm_source=x&utm_campaign=susskind_study",
         "destination": "https://blog.lazying.art/html/the-theoretical-minimum/1625/classical-mechanics-lecture-1.html?utm_source=x&utm_campaign=susskind_study",
@@ -66,8 +66,19 @@
           "made_with_ai": true,
           "paid_partnership": false
         },
-        "visible_review_pending": true,
-        "policy": "A complete study habit comes first. The owned page supplies derivations, short checks, official and independent practice sources, the free archive, and only then the exact-fit lecture-pack route. Do not present repository stars as a learning result or sales proof. The exact-content Postiz draft preserves its destination and live X settings, but stays unpublished until the web calendar is visibly reviewed."
+        "content_sha256": "05044b8ce403c5da4cf8085dc0c9ebe84a6ed3d442f051c313c06be87c6c6573",
+        "verification": {
+          "checked_at": "2026-09-06T18:11:56Z",
+          "provider": "x",
+          "provider_max_length": 280,
+          "destination_http_status": 200,
+          "visible_calendar_reviewed": true,
+          "matching_posts": 1,
+          "verified_state": "QUEUE",
+          "release_present": false
+        },
+        "visible_review_pending": false,
+        "policy": "A complete study habit comes first. The owned page supplies derivations, short checks, official and independent practice sources, the free archive, and only then the exact-fit lecture-pack route. Do not present repository stars as a learning result or sales proof. The exact-content Postiz item was visibly reviewed and is queued, but remains unpublished attention rather than a lead or sale until provider delivery and any outcome are independently verified."
       },
       "repair": {
         "reviewed_at": "2026-09-02T01:40:00Z",

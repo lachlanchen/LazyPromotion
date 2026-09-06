@@ -1,0 +1,92 @@
+{
+  "chunks": [
+    {
+      "chapter_id": "ch-01",
+      "epub_locator": "#p-001",
+      "id": "p-001",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "pdf_locator": "visible stable ID beneath the rendered language pair",
+      "source": "source/book.json#/chapters/0/paragraphs/0",
+      "source_sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec",
+      "status": "reviewed"
+    },
+    {
+      "chapter_id": "ch-01",
+      "epub_locator": "#p-002",
+      "id": "p-002",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "pdf_locator": "visible stable ID beneath the rendered language pair",
+      "source": "source/book.json#/chapters/0/paragraphs/1",
+      "source_sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec",
+      "status": "reviewed"
+    },
+    {
+      "chapter_id": "ch-02",
+      "epub_locator": "#p-003",
+      "id": "p-003",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "pdf_locator": "visible stable ID beneath the rendered language pair",
+      "source": "source/book.json#/chapters/1/paragraphs/0",
+      "source_sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec",
+      "status": "reviewed"
+    },
+    {
+      "chapter_id": "ch-02",
+      "epub_locator": "#p-004",
+      "id": "p-004",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "pdf_locator": "visible stable ID beneath the rendered language pair",
+      "source": "source/book.json#/chapters/1/paragraphs/1",
+      "source_sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec",
+      "status": "reviewed"
+    },
+    {
+      "chapter_id": "ch-03",
+      "epub_locator": "#p-005",
+      "id": "p-005",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "pdf_locator": "visible stable ID beneath the rendered language pair",
+      "source": "source/book.json#/chapters/2/paragraphs/0",
+      "source_sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec",
+      "status": "reviewed"
+    },
+    {
+      "chapter_id": "ch-03",
+      "epub_locator": "#p-006",
+      "id": "p-006",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "pdf_locator": "visible stable ID beneath the rendered language pair",
+      "source": "source/book.json#/chapters/2/paragraphs/1",
+      "source_sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec",
+      "status": "reviewed"
+    }
+  ],
+  "rights": {
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "The text, translation, data, cover geometry, and generated artifacts in this specimen are project-owned.",
+    "owner": "LazyingArt LLC",
+    "third_party_content": false
+  },
+  "schema": "source-aware-book-ledger/v1",
+  "source": "source/book.json",
+  "source_sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec"
+}

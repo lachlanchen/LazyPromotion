@@ -1,0 +1,258 @@
+{
+  "schema": "source-aware-book-specimen/v1",
+  "book_id": "small-book-source-trail",
+  "title": {
+    "en": "A Small Book With a Source Trail",
+    "zh-Hant": "一本留有來源軌跡的小書"
+  },
+  "subtitle": {
+    "en": "Project-owned proof for print and reflowable production",
+    "zh-Hant": "印刷與流式電子書製作的專案自有樣本"
+  },
+  "author": "LazyingArt",
+  "created": "2026-09-07",
+  "languages": [
+    "en",
+    "zh-Hant"
+  ],
+  "rights": {
+    "owner": "LazyingArt LLC",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "third_party_content": false,
+    "note": "The text, translation, data, cover geometry, and generated artifacts in this specimen are project-owned."
+  },
+  "format": {
+    "trim": "6 × 9 inches",
+    "font_profile": "large-font",
+    "directions": [
+      "en-main",
+      "zh-main"
+    ],
+    "variants": [
+      "color",
+      "blackwhite"
+    ]
+  },
+  "chapters": [
+    {
+      "id": "ch-01",
+      "title": {
+        "en": "Keep the source",
+        "zh-Hant": "保留來源"
+      },
+      "paragraphs": [
+        {
+          "id": "p-001",
+          "source_location": "source/book.json#/chapters/0/paragraphs/0",
+          "status": "reviewed",
+          "reviewer_notes": "Project-authored bilingual sentence; structure and terminology reviewed on 2026-09-07.",
+          "main": {
+            "language": "en",
+            "text": "A usable book begins with a source you can reopen.",
+            "tokens": [
+              {"text": "A usable", "role": "attributive"},
+              {"text": "book", "role": "subject"},
+              {"text": "begins", "role": "predicate"},
+              {"text": "with", "role": "function"},
+              {"text": "a source", "role": "object"},
+              {"text": "you", "role": "subject"},
+              {"text": "can reopen.", "role": "predicate"}
+            ]
+          },
+          "comment": {
+            "language": "zh-Hant",
+            "text": "一本可靠的書始於可以重新打開的來源。",
+            "tokens": [
+              {"text": "一本可靠的", "reading": "yì běn kě kào de", "role": "attributive"},
+              {"text": "書", "reading": "shū", "role": "subject"},
+              {"text": "始於", "reading": "shǐ yú", "role": "predicate"},
+              {"text": "可以重新打開的", "reading": "kě yǐ chóngxīn dǎ kāi de", "role": "attributive"},
+              {"text": "來源", "reading": "lái yuán", "role": "object"},
+              {"text": "。", "reading": "", "role": "function"}
+            ]
+          }
+        },
+        {
+          "id": "p-002",
+          "source_location": "source/book.json#/chapters/0/paragraphs/1",
+          "status": "reviewed",
+          "reviewer_notes": "Project-authored bilingual sentence; structure and terminology reviewed on 2026-09-07.",
+          "main": {
+            "language": "en",
+            "text": "This specimen keeps a stable ID, language, status, and source location beside every reviewed paragraph.",
+            "tokens": [
+              {"text": "This", "role": "attributive"},
+              {"text": "specimen", "role": "subject"},
+              {"text": "keeps", "role": "predicate"},
+              {"text": "a stable ID, language, status, and source location", "role": "object"},
+              {"text": "beside every reviewed paragraph.", "role": "adverbial"}
+            ]
+          },
+          "comment": {
+            "language": "zh-Hant",
+            "text": "這份樣本在每個已審閱段落旁保留穩定編號、語言、狀態與來源位置。",
+            "tokens": [
+              {"text": "這份", "reading": "zhè fèn", "role": "attributive"},
+              {"text": "樣本", "reading": "yàng běn", "role": "subject"},
+              {"text": "在每個已審閱段落旁", "reading": "zài měi ge yǐ shěn yuè duàn luò páng", "role": "adverbial"},
+              {"text": "保留", "reading": "bǎo liú", "role": "predicate"},
+              {"text": "穩定編號、語言、狀態與來源位置", "reading": "wěn dìng biān hào、yǔ yán、zhuàng tài yǔ lái yuán wèi zhì", "role": "object"},
+              {"text": "。", "reading": "", "role": "function"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch-02",
+      "title": {
+        "en": "Design for paper and reflow",
+        "zh-Hant": "同時為紙頁與流式閱讀設計"
+      },
+      "paragraphs": [
+        {
+          "id": "p-003",
+          "source_location": "source/book.json#/chapters/1/paragraphs/0",
+          "status": "reviewed",
+          "reviewer_notes": "Project-authored bilingual sentence; structure and terminology reviewed on 2026-09-07.",
+          "main": {
+            "language": "en",
+            "text": "Print and reflowable books solve different reading problems; a fixed page protects composition, while EPUB lets the reader change type size.",
+            "tokens": [
+              {"text": "Print and reflowable books", "role": "subject"},
+              {"text": "solve", "role": "predicate"},
+              {"text": "different reading problems;", "role": "object"},
+              {"text": "a fixed page", "role": "subject"},
+              {"text": "protects", "role": "predicate"},
+              {"text": "composition,", "role": "object"},
+              {"text": "while EPUB", "role": "subject"},
+              {"text": "lets", "role": "predicate"},
+              {"text": "the reader change type size.", "role": "object"}
+            ]
+          },
+          "comment": {
+            "language": "zh-Hant",
+            "text": "印刷書與流式電子書解決不同的閱讀問題；固定頁面保護版式，EPUB則讓讀者調整字級。",
+            "tokens": [
+              {"text": "印刷書與流式電子書", "reading": "yìn shuā shū yǔ liú shì diàn zǐ shū", "role": "subject"},
+              {"text": "解決", "reading": "jiě jué", "role": "predicate"},
+              {"text": "不同的閱讀問題", "reading": "bù tóng de yuè dú wèn tí", "role": "object"},
+              {"text": "；", "reading": "", "role": "function"},
+              {"text": "固定頁面", "reading": "gù dìng yè miàn", "role": "subject"},
+              {"text": "保護", "reading": "bǎo hù", "role": "predicate"},
+              {"text": "版式", "reading": "bǎn shì", "role": "object"},
+              {"text": "，EPUB則讓讀者調整字級。", "reading": "，EPUB zé ràng dú zhě tiáo zhěng zì jí。", "role": "complement"}
+            ]
+          }
+        },
+        {
+          "id": "p-004",
+          "source_location": "source/book.json#/chapters/1/paragraphs/1",
+          "status": "reviewed",
+          "reviewer_notes": "Project-authored bilingual sentence; structure and terminology reviewed on 2026-09-07.",
+          "main": {
+            "language": "en",
+            "text": "The structure stays the same in both outputs: title, chapter, paragraph, source ID, and review state.",
+            "tokens": [
+              {"text": "The structure", "role": "subject"},
+              {"text": "stays", "role": "predicate"},
+              {"text": "the same", "role": "complement"},
+              {"text": "in both outputs:", "role": "adverbial"},
+              {"text": "title, chapter, paragraph, source ID, and review state.", "role": "object"}
+            ]
+          },
+          "comment": {
+            "language": "zh-Hant",
+            "text": "兩種輸出保留同一結構：書名、章節、段落、來源編號與審閱狀態。",
+            "tokens": [
+              {"text": "兩種輸出", "reading": "liǎng zhǒng shū chū", "role": "subject"},
+              {"text": "保留", "reading": "bǎo liú", "role": "predicate"},
+              {"text": "同一結構", "reading": "tóng yī jié gòu", "role": "object"},
+              {"text": "：", "reading": "", "role": "function"},
+              {"text": "書名、章節、段落、來源編號與審閱狀態", "reading": "shū míng、zhāng jié、duàn luò、lái yuán biān hào yǔ shěn yuè zhuàng tài", "role": "object"},
+              {"text": "。", "reading": "", "role": "function"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ch-03",
+      "title": {
+        "en": "Finish with checks",
+        "zh-Hant": "以檢查完成製作"
+      },
+      "paragraphs": [
+        {
+          "id": "p-005",
+          "source_location": "source/book.json#/chapters/2/paragraphs/0",
+          "status": "reviewed",
+          "reviewer_notes": "Project-authored bilingual sentence; structure and terminology reviewed on 2026-09-07.",
+          "main": {
+            "language": "en",
+            "text": "A build is not finished when the files merely open. The PDF needs page, font, and text checks; the EPUB needs package, navigation, and link checks.",
+            "tokens": [
+              {"text": "A build", "role": "subject"},
+              {"text": "is not finished", "role": "predicate"},
+              {"text": "when the files merely open.", "role": "adverbial"},
+              {"text": "The PDF", "role": "subject"},
+              {"text": "needs", "role": "predicate"},
+              {"text": "page, font, and text checks;", "role": "object"},
+              {"text": "the EPUB", "role": "subject"},
+              {"text": "needs", "role": "predicate"},
+              {"text": "package, navigation, and link checks.", "role": "object"}
+            ]
+          },
+          "comment": {
+            "language": "zh-Hant",
+            "text": "檔案能打開並不代表製作完成。PDF需要頁面、字型與文字檢查；EPUB需要封裝、導覽與連結檢查。",
+            "tokens": [
+              {"text": "檔案能打開", "reading": "dàng àn néng dǎ kāi", "role": "subject"},
+              {"text": "並不代表", "reading": "bìng bù dài biǎo", "role": "predicate"},
+              {"text": "製作完成", "reading": "zhì zuò wán chéng", "role": "object"},
+              {"text": "。PDF", "reading": "。PDF", "role": "subject"},
+              {"text": "需要", "reading": "xū yào", "role": "predicate"},
+              {"text": "頁面、字型與文字檢查", "reading": "yè miàn、zì xíng yǔ wén zì jiǎn chá", "role": "object"},
+              {"text": "；EPUB", "reading": "；EPUB", "role": "subject"},
+              {"text": "需要封裝、導覽與連結檢查", "reading": "xū yào fēng zhuāng、dǎo lǎn yǔ lián jié jiǎn chá", "role": "predicate"},
+              {"text": "。", "reading": "", "role": "function"}
+            ]
+          }
+        },
+        {
+          "id": "p-006",
+          "source_location": "source/book.json#/chapters/2/paragraphs/1",
+          "status": "reviewed",
+          "reviewer_notes": "Project-authored bilingual sentence; structure and terminology reviewed on 2026-09-07.",
+          "main": {
+            "language": "en",
+            "text": "The specimen ends with a boundary: translation, editing, cover design, platform upload, printing, and the complete book require a separate scope.",
+            "tokens": [
+              {"text": "The specimen", "role": "subject"},
+              {"text": "ends", "role": "predicate"},
+              {"text": "with a boundary:", "role": "complement"},
+              {"text": "translation, editing, cover design, platform upload, printing, and the complete book", "role": "subject"},
+              {"text": "require", "role": "predicate"},
+              {"text": "a separate scope.", "role": "object"}
+            ]
+          },
+          "comment": {
+            "language": "zh-Hant",
+            "text": "樣本最後劃清界線：翻譯、編輯、封面設計、平台上傳、印刷與完整書稿都需要另行約定。",
+            "tokens": [
+              {"text": "樣本", "reading": "yàng běn", "role": "subject"},
+              {"text": "最後劃清", "reading": "zuì hòu huà qīng", "role": "predicate"},
+              {"text": "界線", "reading": "jiè xiàn", "role": "object"},
+              {"text": "：", "reading": "", "role": "function"},
+              {"text": "翻譯、編輯、封面設計、平台上傳、印刷與完整書稿", "reading": "fān yì、biān jí、fēng miàn shè jì、píng tái shàng chuán、yìn shuā yǔ wán zhěng shū gǎo", "role": "subject"},
+              {"text": "都需要", "reading": "dōu xū yào", "role": "predicate"},
+              {"text": "另行約定", "reading": "lìng xíng yuē dìng", "role": "object"},
+              {"text": "。", "reading": "", "role": "function"}
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

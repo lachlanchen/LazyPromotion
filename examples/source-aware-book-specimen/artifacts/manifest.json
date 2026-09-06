@@ -1,0 +1,81 @@
+{
+  "book_id": "small-book-source-trail",
+  "cover": {
+    "path": "source/cover.png",
+    "sha256": "62d59d1b298a5d7c3a59e9190a681082f26d041140f985fcba37d118fc0fd637",
+    "textless": true,
+    "used_by": [
+      "all PDF variants",
+      "EPUB"
+    ]
+  },
+  "exclusions": [
+    "customer result",
+    "independent translation review",
+    "linguistic benchmark",
+    "KDP or IngramSpark approval",
+    "printer proof",
+    "complete-book or rush-delivery proof"
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/book-specimen-en-main-color.pdf",
+      "sha256": "ff99af5e0dafee80acf896eda818bcf323066e883bc76035afda30ffa680c3a2"
+    },
+    {
+      "path": "artifacts/book-specimen-en-main-blackwhite.pdf",
+      "sha256": "302240a2debafa1deedc41d6ee9bdf199774a6db964596015aac2ff9ccac5a32"
+    },
+    {
+      "path": "artifacts/book-specimen-zh-main-color.pdf",
+      "sha256": "6bdc01a00b93ff867509cd9d27fb6b786f571f18aa17591b724066980bd2ea57"
+    },
+    {
+      "path": "artifacts/book-specimen-zh-main-blackwhite.pdf",
+      "sha256": "8bd42ab6cb01ec352f816f2f46ba401f60f85e36bc8054a44dba868abfac37de"
+    },
+    {
+      "path": "artifacts/book-specimen.epub",
+      "sha256": "ae5d22a27f7d7bcef9c3b8b86855847a2a958817bb93fec68f908bbf37e70e5f"
+    },
+    {
+      "path": "artifacts/style-sheet.md",
+      "sha256": "45495f20bb5574d44d0106183f676486725f131b70af630d7c06e801bfdb9f6d"
+    },
+    {
+      "path": "artifacts/source-ledger.json",
+      "sha256": "60e120e519b1c8644ad84df71d00dc841e7aa4ece039858e5671f96eeaf8b5da"
+    },
+    {
+      "path": "artifacts/validation-report.md",
+      "sha256": "0c2c2026a3a067abed37f434f07a965cb5747ce86a5d21574079762e4257044a"
+    }
+  ],
+  "schema": "source-aware-book-specimen-manifest/v1",
+  "source": {
+    "chapters": 3,
+    "languages": [
+      "en",
+      "zh-Hant"
+    ],
+    "path": "source/book.json",
+    "reviewed_paragraphs": 6,
+    "sha256": "62923b911a3e3fe0ad6894d905ff8db569052d029b14dc898c6983314cf3c7ec",
+    "third_party_content": false
+  },
+  "status": "project_owned_process_evidence",
+  "validation": {
+    "directions": [
+      "en-main",
+      "zh-main"
+    ],
+    "epub_structure_and_links": "pass",
+    "pdf_qpdf": "pass",
+    "pdf_text_survival": "pass",
+    "source_coverage": "pass",
+    "variants": [
+      "color",
+      "blackwhite"
+    ]
+  }
+}

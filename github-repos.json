@@ -837,11 +837,11 @@
       "url": "https://github.com/lachlanchen/kvm-qemu-workstation"
     },
     {
-      "description": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
+      "description": "Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
       "homepage": "https://l-and-n.lazying.art",
       "name": "L-and-N",
       "primary_language": "TypeScript",
-      "pushed_at": "2026-09-05T18:28:31Z",
+      "pushed_at": "2026-09-06T22:27:11Z",
       "topics": [
         "android",
         "cantonese",
@@ -863,7 +863,7 @@
         "watchos",
         "whisper"
       ],
-      "updated_at": "2026-09-05T18:28:35Z",
+      "updated_at": "2026-09-06T22:33:24Z",
       "url": "https://github.com/lachlanchen/L-and-N"
     },
     {
@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-06T22:13:33Z",
+      "pushed_at": "2026-09-06T22:26:06Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-06T22:13:37Z",
+      "updated_at": "2026-09-06T22:26:10Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {

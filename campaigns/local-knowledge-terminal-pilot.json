@@ -1,5 +1,5 @@
 {
-  "version": 22,
+  "version": 23,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -705,6 +705,22 @@
         "linked_owned_asset": false,
         "lead_or_sale_observed": false,
         "policy": "Value-only community answer with no LazyingArt mention or link. The profile may provide quiet context, but the public reply is not a lead, customer result, or permission for follow-up promotion."
+      },
+      "chat_archive_reply_draft": {
+        "state": "prepared_not_sent",
+        "checked_at": "2026-09-07T06:32:27+08:00",
+        "thread": "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/",
+        "need": "Archive hundreds of conversations without one giant context window while preserving provenance, timelines, reviewed current state, and the boundary between user facts and AI suggestions.",
+        "content": "Treat the archive as three layers: immutable raw exports, normalized Markdown/JSON records, and disposable indexes. Give every conversation a stable ID; retain timestamps, message order, model metadata, attachments, and a SHA-256 hash of the raw source. Keep “current state” in separate versioned summary files that link back to exact message IDs, never by overwriting history. Store AI suggestions in a claims ledger with status fields such as proposed, verified, rejected, and superseded, plus evidence links and verification dates. Search metadata/keywords first, retrieve a few relevant excerpts, then expand only their surrounding messages. Rebuild indexes from source files so the archive remains usable without one giant prompt or a particular database.",
+        "community_rules": {
+          "checked_at": "2026-09-07T06:30:00+08:00",
+          "directly_related_to_chatgpt": true,
+          "self_advertising_restricted": true
+        },
+        "linked_owned_asset": false,
+        "profile_only_context": true,
+        "lead_or_sale_observed": false,
+        "policy": "The exact composer and community rules were visibly checked. The standalone answer contains no project name, link, service, call to action, vote, or private message. It remains unsent until the review gate is satisfied."
       },
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },

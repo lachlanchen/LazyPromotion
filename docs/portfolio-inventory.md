@@ -41,7 +41,8 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 22:13:33 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-06 22:27:11 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 22:26:06 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-06 21:50:54 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-06 21:10:57 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
 | [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | 2026-09-06 18:15:55 | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. |
@@ -50,7 +51,6 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | 2026-09-06 17:13:27 | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-06 17:11:57 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 | [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-06 12:00:07 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
-| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-06 00:06:17 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
 
 ## Complete public repository inventory
 
@@ -106,7 +106,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [FujitsuQuaderno](https://github.com/lachlanchen/FujitsuQuaderno) | Fujitsu Quaderno research, firmware notes, and mount tooling | Shell | [Open](https://lazying.art) |
 | [ImagizedLanguageModel](https://github.com/lachlanchen/ImagizedLanguageModel) | Imagized Language Model (ILM) | Python | [Open](https://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=%E4%B8%AD) |
 | [Kindle](https://github.com/lachlanchen/Kindle) | Kindle Paperwhite 2 jailbreak and KOReader setup workspace | Python | [Open](https://lazying.art) |
-| [L-and-N](https://github.com/lachlanchen/L-and-N) | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. | TypeScript | [Open](https://l-and-n.lazying.art) |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. | TypeScript | [Open](https://l-and-n.lazying.art) |
 | [LazyLanguageLearner](https://github.com/lachlanchen/LazyLanguageLearner) | Learn language in a lazy way. | Jupyter Notebook | [Open](https://lazying.art) |
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. | Fortran | [Open](http://learn.lazying.art/) |
 | [LazyTravel](https://github.com/lachlanchen/LazyTravel) | Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON | Python | [Open](https://lachlanchen.github.io/LazyTravel/) |

@@ -1207,7 +1207,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 22)
+        self.assertEqual(campaign["version"], 23)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1226,6 +1226,13 @@ class RepositoryTests(unittest.TestCase):
         excluded_scope = campaign["source_evidence"]["excluded_scope"]
         self.assertIn("bulk conversion", excluded_scope)
         self.assertIn("ongoing support", excluded_scope)
+        chat_archive = campaign["channels"]["reddit"]["chat_archive_reply_draft"]
+        self.assertEqual(chat_archive["state"], "prepared_not_sent")
+        self.assertFalse(chat_archive["linked_owned_asset"])
+        self.assertTrue(chat_archive["profile_only_context"])
+        self.assertFalse(chat_archive["lead_or_sale_observed"])
+        self.assertIn("immutable raw exports", chat_archive["content"])
+        self.assertNotIn("lazying.art", chat_archive["content"].casefold())
         scope_contract = campaign["source_evidence"]["service_scope_contract"]
         self.assertEqual(scope_contract["state"], "live_verified")
         self.assertEqual(scope_contract["sample_cap"], "12 agreed source units and 20 test questions")

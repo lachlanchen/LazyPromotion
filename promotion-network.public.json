@@ -156,7 +156,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 22
+        "version": 23
       },
       "url": ""
     },
@@ -3908,9 +3908,9 @@
       "kind": "repository",
       "label": "L-and-N",
       "metadata": {
-        "description": "Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
+        "description": "Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
         "homepage": "https://l-and-n.lazying.art",
-        "pushed_at": "2026-09-05T18:28:31Z",
+        "pushed_at": "2026-09-06T22:27:11Z",
         "topics": [
           "android",
           "cantonese",
@@ -3932,7 +3932,7 @@
           "watchos",
           "whisper"
         ],
-        "updated_at": "2026-09-05T18:28:35Z"
+        "updated_at": "2026-09-06T22:33:24Z"
       },
       "url": "https://github.com/lachlanchen/L-and-N"
     },
@@ -4308,7 +4308,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T22:13:33Z",
+        "pushed_at": "2026-09-06T22:26:06Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4328,7 +4328,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-06T22:13:37Z"
+        "updated_at": "2026-09-06T22:26:10Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },

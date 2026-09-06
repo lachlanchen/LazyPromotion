@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
   "source_evidence": {
@@ -91,6 +91,61 @@
         "release_present": false
       },
       "policy": "This is a scheduled first-party product demonstration, not yet a public post, engagement, lead, or sale. Recheck delivery after the scheduled time before recording publication or outcomes."
+    },
+    "instagram": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-13T12:00:00Z",
+      "content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
+      "postiz_content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
+      "destination": "https://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo",
+      "content_sha256": "1455439bcc20e0fef431dcb062af2efce8cccd780712af7b47a581014e1028b3",
+      "media_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "settings": {
+        "post_type": "post"
+      },
+      "verification": {
+        "checked_at": "2026-09-06T18:23:31Z",
+        "provider_max_length": 2200,
+        "provider_attachment_rule_satisfied": true,
+        "visible_editor_reviewed": true,
+        "media_visible": true,
+        "matching_posts": 1,
+        "verified_state": "QUEUE",
+        "release_present": false
+      },
+      "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
+    },
+    "youtube": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-13T02:30:00Z",
+      "title": "I mix up L and N, so I built this pronunciation drill",
+      "content": "I mix up L and N, so I built the short practice loop I wanted: hear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback.\n\nTry it free in the browser, no account:\nhttps://l-and-n.lazying.art/?utm_source=youtube&utm_medium=video&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nEnglish, Mandarin, and Cantonese.\n\n#PronunciationPractice #LanguageLearning #Shorts",
+      "postiz_content": "I mix up L and N, so I built the short practice loop I wanted: hear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback.\n\nTry it free in the browser, no account:\nhttps://l-and-n.lazying.art/?utm_source=youtube&utm_medium=video&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nEnglish, Mandarin, and Cantonese.\n\n#PronunciationPractice #LanguageLearning #Shorts",
+      "destination": "https://l-and-n.lazying.art/?utm_source=youtube&utm_medium=video&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo",
+      "content_sha256": "44e3062bb0b9b12248e69567f79452d736d12625b8b0e2b3a65eee02918a1146",
+      "media_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "settings": {
+        "type": "public",
+        "selfDeclaredMadeForKids": "no",
+        "tags": [
+          "L and N pronunciation",
+          "speech practice",
+          "Mandarin",
+          "Cantonese",
+          "open source"
+        ]
+      },
+      "verification": {
+        "checked_at": "2026-09-06T18:23:31Z",
+        "provider_max_length": 5000,
+        "provider_attachment_rule_satisfied": true,
+        "visible_editor_reviewed": true,
+        "media_visible": true,
+        "matching_posts": 1,
+        "verified_state": "QUEUE",
+        "release_present": false
+      },
+      "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "reddit": {
       "state": "exact_need_only",

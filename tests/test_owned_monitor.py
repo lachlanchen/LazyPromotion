@@ -284,6 +284,24 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], "lecture-archive-provenance")
         self.assertEqual(route["route"], "product")
 
+    def test_landn_video_queues_match_instagram_and_youtube_routes(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "l-and-n-pronunciation-launch.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        for channel, provider in (
+            ("instagram", "instagram-standalone"),
+            ("youtube", "youtube"),
+        ):
+            route = owned_monitor.route_for_post(
+                provider,
+                campaign["channels"][channel]["postiz_content"],
+                owned_monitor.route_index(),
+            )
+            self.assertEqual(route["campaign_id"], "l-and-n-pronunciation-launch")
+            self.assertEqual(route["route"], "product")
+
     def test_bilingual_lecture_pack_queue_keeps_protocol_less_destination(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "bilingual-lecture-pack-pilot.json").read_text(

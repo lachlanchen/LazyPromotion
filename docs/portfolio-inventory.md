@@ -41,16 +41,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
+| [SoftEventFrameAlignment](https://github.com/lachlanchen/SoftEventFrameAlignment) | 2026-09-06 23:21:54 | Minimal research code for soft event-frame alignment with a unified implicit neural representation. |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-06 22:54:59 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-06 22:54:59 | Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 22:53:56 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-06 22:27:11 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 22:26:06 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-06 21:50:54 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-06 21:10:57 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
 | [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | 2026-09-06 18:15:55 | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-06 17:34:52 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [LexiconAtlas](https://github.com/lachlanchen/LexiconAtlas) | 2026-09-06 17:17:48 | Explore a local-first 3D lexical knowledge graph of origins, roots, affixes, meanings, translations, and provenance. |
-| [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | 2026-09-06 17:13:27 | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-06 17:11:57 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-06 12:00:07 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 
 ## Complete public repository inventory
 
@@ -144,7 +144,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [OrganoidIntelligence](https://github.com/lachlanchen/OrganoidIntelligence) | OrganoidIntelligence: brain-organoid-on-chip intelligence, wetware computing, and bioelectronic roadmaps | Python | [Open](https://ideas.onlyideas.art) |
 | [OrganoidVision](https://github.com/lachlanchen/OrganoidVision) | OrganoidVision: bio-hybrid retinal organoids as living event-based imaging sensors | TeX | [Open](https://ideas.onlyideas.art) |
 | [RapidOrganoidImaging](https://github.com/lachlanchen/RapidOrganoidImaging) | Repo of paper Event-based Rapid Organoid Imaging | Unspecified | [Open](https://lazying.art) |
-| [SoftEventFrameAlignment](https://github.com/lachlanchen/SoftEventFrameAlignment) | Paper documentation for soft alignment of event-camera and frame-camera data with a unified implicit neural representation; public code release is pending. | Unspecified | [Open](https://lazying.art) |
+| [SoftEventFrameAlignment](https://github.com/lachlanchen/SoftEventFrameAlignment) | Minimal research code for soft event-frame alignment with a unified implicit neural representation. | Python | [Open](https://lazying.art) |
 | [SyncImagingSystem](https://github.com/lachlanchen/SyncImagingSystem) | Windows-focused Python workspace for synchronized Hikrobot frame-camera and EVK or DAVIS event-camera capture and recording. | Visual Basic .NET | [Open](https://lazying.art) |
 | [Yinghan](https://github.com/lachlanchen/Yinghan) | Organoid Segmentation (Web + CLI) | Python | [Open](https://lazying.art) |
 

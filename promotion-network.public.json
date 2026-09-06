@@ -201,6 +201,16 @@
       "url": ""
     },
     {
+      "id": "campaign:soft-event-frame-code-release",
+      "kind": "campaign",
+      "label": "soft-event-frame-code-release",
+      "metadata": {
+        "objective": "Turn one explicit request for unavailable research code into a reproducible public release and a useful maintainer response, without treating the interaction as a sale or publishing uncleared recordings.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:wenyan-history",
       "kind": "campaign",
       "label": "wenyan-history",
@@ -2512,11 +2522,15 @@
           "implicit neural representation",
           "multimodal alignment",
           "neuromorphic vision",
+          "pytorch",
+          "reproducible research",
+          "research code",
           "research paper",
+          "sensor fusion",
           "soft alignment",
           "soft event frame alignment"
         ],
-        "summary": "Paper documentation for soft alignment of event-camera and frame-camera data with a unified implicit neural representation; public code release is pending."
+        "summary": "Minimal research code for soft event-frame alignment with a unified implicit neural representation."
       },
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
     },
@@ -4308,7 +4322,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T22:26:06Z",
+        "pushed_at": "2026-09-06T22:53:56Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4328,7 +4342,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-06T22:26:10Z"
+        "updated_at": "2026-09-06T22:53:59Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4421,7 +4435,7 @@
       "metadata": {
         "description": "Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T15:29:49Z",
+        "pushed_at": "2026-09-06T22:54:59Z",
         "topics": [
           "cloud-relay",
           "lazying-art",
@@ -4433,7 +4447,7 @@
           "ssh",
           "systemd"
         ],
-        "updated_at": "2026-09-05T15:29:53Z"
+        "updated_at": "2026-09-06T22:55:02Z"
       },
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
@@ -5123,9 +5137,9 @@
       "kind": "repository",
       "label": "SoftEventFrameAlignment",
       "metadata": {
-        "description": "Paper documentation for soft alignment of event-camera and frame-camera data with a unified implicit neural representation; public code release is pending.",
+        "description": "Minimal research code for soft event-frame alignment with a unified implicit neural representation.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-02-28T23:26:03Z",
+        "pushed_at": "2026-09-06T23:21:54Z",
         "topics": [
           "computer-vision",
           "event-camera",
@@ -5133,10 +5147,14 @@
           "implicit-neural-representation",
           "multimodal-alignment",
           "neuromorphic-vision",
+          "pytorch",
+          "reproducible-research",
+          "research-code",
           "research-paper",
+          "sensor-fusion",
           "soft-alignment"
         ],
-        "updated_at": "2026-09-04T20:50:33Z"
+        "updated_at": "2026-09-06T23:21:58Z"
       },
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
     },
@@ -5919,7 +5937,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T12:00:07Z",
+        "pushed_at": "2026-09-06T22:54:59Z",
         "topics": [
           "automation",
           "language",
@@ -5932,7 +5950,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-06T12:00:14Z"
+        "updated_at": "2026-09-06T22:55:03Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -6076,6 +6094,13 @@
       "label": "cantonese caption guide",
       "metadata": {},
       "url": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html"
+    },
+    {
+      "id": "url:1970edd4d21a50a3",
+      "kind": "web_resource",
+      "label": "ci run",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/SoftEventFrameAlignment/actions/runs/34066678408"
     },
     {
       "id": "url:4cc1345b764a38aa",
@@ -6603,6 +6628,13 @@
       "url": "https://lazying.art/meeting-intelligence/"
     },
     {
+      "id": "url:b2d807c6c8cb5d92",
+      "kind": "web_resource",
+      "label": "maintainer reply",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1#issuecomment-5562954949"
+    },
+    {
       "id": "url:389a01dba9514299",
       "kind": "web_resource",
       "label": "markdown vault proof artifact",
@@ -6820,11 +6852,25 @@
       "url": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html"
     },
     {
+      "id": "url:fe79107d9d9adb58",
+      "kind": "web_resource",
+      "label": "release commit",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/SoftEventFrameAlignment/commit/b82aec90bcb4694d1de2e8495fb0b3b3c563a5e5"
+    },
+    {
       "id": "url:d4333582120f1591",
       "kind": "web_resource",
       "label": "release state testflight public url",
       "metadata": {},
       "url": "https://testflight.apple.com/join/CpkT8m9C"
+    },
+    {
+      "id": "url:25f921d56d9131bb",
+      "kind": "web_resource",
+      "label": "repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
     },
     {
       "id": "url:6da737bdd18800ca",
@@ -6839,6 +6885,13 @@
       "label": "repository",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyPromotion"
+    },
+    {
+      "id": "url:a5f2b22787256455",
+      "kind": "web_resource",
+      "label": "request",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1"
     },
     {
       "id": "url:08da0dd4fa5a19c9",
@@ -9189,6 +9242,64 @@
       "relation": "uses_evidence",
       "source": "campaign:scientific-pdf-integrity",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/SoftEventFrameAlignment",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:soft-event-frame-code-release",
+      "target": "project:github-softeventframealignment"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "public_reply_sent_waiting_for_requester_validation"
+      },
+      "relation": "targets",
+      "source": "campaign:soft-event-frame-code-release",
+      "target": "channel:github"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/SoftEventFrameAlignment/actions/runs/34066678408",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:soft-event-frame-code-release",
+      "target": "url:1970edd4d21a50a3"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/SoftEventFrameAlignment",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:soft-event-frame-code-release",
+      "target": "url:25f921d56d9131bb"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:soft-event-frame-code-release",
+      "target": "url:a5f2b22787256455"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1#issuecomment-5562954949",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:soft-event-frame-code-release",
+      "target": "url:b2d807c6c8cb5d92"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/SoftEventFrameAlignment/commit/b82aec90bcb4694d1de2e8495fb0b3b3c563a5e5",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:soft-event-frame-code-release",
+      "target": "url:fe79107d9d9adb58"
     },
     {
       "confidence": 1.0,

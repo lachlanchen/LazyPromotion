@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "id": "soft-event-frame-code-release",
+  "objective": "Turn one explicit request for unavailable research code into a reproducible public release and a useful maintainer response, without treating the interaction as a sale or publishing uncleared recordings.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/SoftEventFrameAlignment",
+    "request": "https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1",
+    "release_commit": "https://github.com/lachlanchen/SoftEventFrameAlignment/commit/b82aec90bcb4694d1de2e8495fb0b3b3c563a5e5",
+    "ci_run": "https://github.com/lachlanchen/SoftEventFrameAlignment/actions/runs/34066678408",
+    "maintainer_reply": "https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1#issuecomment-5562954949",
+    "observed_need": "A repository visitor explicitly asked when the implementation would be available.",
+    "delivery": {
+      "state": "public_release_delivered_and_ci_verified",
+      "checked_on": "2026-09-07",
+      "included": [
+        "canonical model, training, preprocessing, and evaluation source",
+        "Python dependency and packaging metadata",
+        "deterministic CPU unit and end-to-end smoke tests",
+        "current GitHub Actions CI",
+        "citation metadata and eleven complete README languages"
+      ],
+      "excluded": [
+        "raw AEDAT4 recordings",
+        "identifiable sample frames",
+        "derived arrays",
+        "historical checkpoints",
+        "local experimental workbench files"
+      ],
+      "boundary": "The smoke run proves that the public pipeline executes with finite outputs. It is not an alignment benchmark, calibration result, customer outcome, or permission to redistribute private captures."
+    }
+  },
+  "channels": {
+    "github": {
+      "state": "public_reply_sent_waiting_for_requester_validation",
+      "reply_sent": true,
+      "issue_closed": false,
+      "policy": "Keep the issue open for setup feedback. Answer reproducible failures in-thread; do not add a sales pitch, move the requester to private messages, or infer buying intent from a code request."
+    }
+  },
+  "funnel": {
+    "state": "helpful_interaction",
+    "explicit_need_observed": true,
+    "public_value_delivered": true,
+    "post_release_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "verified_received_gross_usd": 0,
+    "policy": "A code request, repository star, issue reply, CI pass, or future technical acknowledgement is not a commercial lead or received revenue."
+  }
+}

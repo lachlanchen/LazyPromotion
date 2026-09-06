@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-06T22:26:06Z",
+      "pushed_at": "2026-09-06T22:53:56Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-06T22:26:10Z",
+      "updated_at": "2026-09-06T22:53:59Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1421,7 +1421,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyTunnel",
       "primary_language": "Python",
-      "pushed_at": "2026-09-05T15:29:49Z",
+      "pushed_at": "2026-09-06T22:54:59Z",
       "topics": [
         "cloud-relay",
         "lazying-art",
@@ -1433,7 +1433,7 @@
         "ssh",
         "systemd"
       ],
-      "updated_at": "2026-09-05T15:29:53Z",
+      "updated_at": "2026-09-06T22:55:02Z",
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
     {
@@ -2122,11 +2122,11 @@
       "url": "https://github.com/lachlanchen/ShiGame"
     },
     {
-      "description": "Paper documentation for soft alignment of event-camera and frame-camera data with a unified implicit neural representation; public code release is pending.",
+      "description": "Minimal research code for soft event-frame alignment with a unified implicit neural representation.",
       "homepage": "https://lazying.art",
       "name": "SoftEventFrameAlignment",
-      "primary_language": "",
-      "pushed_at": "2026-02-28T23:26:03Z",
+      "primary_language": "Python",
+      "pushed_at": "2026-09-06T23:21:54Z",
       "topics": [
         "computer-vision",
         "event-camera",
@@ -2134,10 +2134,14 @@
         "implicit-neural-representation",
         "multimodal-alignment",
         "neuromorphic-vision",
+        "pytorch",
+        "reproducible-research",
+        "research-code",
         "research-paper",
+        "sensor-fusion",
         "soft-alignment"
       ],
-      "updated_at": "2026-09-04T20:50:33Z",
+      "updated_at": "2026-09-06T23:21:58Z",
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment"
     },
     {
@@ -2210,7 +2214,7 @@
       "homepage": "https://lazying.art",
       "name": "the-art-of-lazying",
       "primary_language": "Shell",
-      "pushed_at": "2026-09-06T12:00:07Z",
+      "pushed_at": "2026-09-06T22:54:59Z",
       "topics": [
         "automation",
         "language",
@@ -2223,7 +2227,7 @@
         "strategic",
         "workflows"
       ],
-      "updated_at": "2026-09-06T12:00:14Z",
+      "updated_at": "2026-09-06T22:55:03Z",
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
     {

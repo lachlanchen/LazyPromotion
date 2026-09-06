@@ -41,8 +41,9 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 21:00:39 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-06 19:49:28 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-06 22:13:33 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-06 21:50:54 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-06 21:10:57 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
 | [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | 2026-09-06 18:15:55 | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-06 17:34:52 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [LexiconAtlas](https://github.com/lachlanchen/LexiconAtlas) | 2026-09-06 17:17:48 | Explore a local-first 3D lexical knowledge graph of origins, roots, affixes, meanings, translations, and provenance. |
@@ -50,7 +51,6 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-06 17:11:57 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 | [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-06 12:00:07 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 | [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-06 00:06:17 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
-| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-05 18:28:31 | Scientific L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 
 ## Complete public repository inventory
 

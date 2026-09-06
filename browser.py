@@ -442,7 +442,7 @@ def instagram_comment_id(url: str) -> str:
 
 def extract_instagram_comments(page: Page, limit: int) -> list[dict[str, str]]:
     return page.locator('a[href*="/c/"]').evaluate_all(
-        """(anchors, limit) => anchors.map((anchor) => {
+        r"""(anchors, limit) => anchors.map((anchor) => {
           let root = anchor;
           const isCommentRoot = (node) => {
             const hasReply = [...node.querySelectorAll('[role="button"], button')]
@@ -485,7 +485,7 @@ def instagram_post_data(page: Page) -> dict[str, str]:
     if not post_time.count():
         raise RuntimeError("Instagram post timestamp was not found")
     data = post_time.evaluate(
-        """(time) => {
+        r"""(time) => {
           const container = time.parentElement?.parentElement?.parentElement;
           const profile = [...(container?.querySelectorAll('a[href^="/"]') || [])]
             .find(a => /^\/[A-Za-z0-9._]+\/$/.test(a.getAttribute('href') || ''));
@@ -520,7 +520,7 @@ def hydrate_instagram_rows(page: Page, rows: list[dict[str, str]], limit: int) -
 def extract_hackernews(page: Page, limit: int, content_kind: str = "posts") -> list[dict[str, str]]:
     if content_kind == "comments":
         return page.locator("article.Story").evaluate_all(
-            """(nodes, limit) => nodes.map((n) => {
+            r"""(nodes, limit) => nodes.map((n) => {
               const meta = n.querySelector('.Story_meta');
               const metaText = meta?.innerText || '';
               const permalink = [...(meta?.querySelectorAll('a') || [])]

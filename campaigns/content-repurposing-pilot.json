@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -27,6 +27,12 @@
         "duration": "4:03"
       }
     }
+  },
+  "source_evidence": {
+    "story_clip_offer": "https://lazying.art/story-clip/",
+    "video_portfolio": "https://lazying.art/video/",
+    "lazyedit_repository": "https://github.com/lachlanchen/LazyEdit",
+    "latest_public_hiring_need": "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/"
   },
   "fit": {
     "projects": [
@@ -312,11 +318,47 @@
       "payment_confirmed": false,
       "received_revenue_usd": 0,
       "automatic_follow_up": false
+    },
+    {
+      "company": "KomicSim",
+      "source_url": "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/",
+      "source_state": "public_ongoing_video_editor_hiring_post",
+      "captured_at": "2026-09-06T20:03:00Z",
+      "need": "Choose a short moment from a public live gaming recording and turn it into a polished YouTube Short with tighter pacing, cuts, readable captions, and sound finishing",
+      "published_compensation": "Negotiable; no range was stated",
+      "verified_public_presence": {
+        "youtube": "https://www.youtube.com/@pbsxmr/streams",
+        "instagram": "https://www.instagram.com/komicsim/"
+      },
+      "application_state": "sent_awaiting_reply",
+      "sent_at": "2026-09-06T20:14:00Z",
+      "method": "Instagram message requested by the public hiring post",
+      "delivery_evidence": "The visible project-only Instagram conversation contained the reviewed application and one playable 14.9-second private edit test after upload",
+      "portfolio_url": "https://lazying.art/video/brand-film/#sample",
+      "proposal": "USD 75 for one finished Short from up to 60 minutes of supplied source, including captions, one correction pass, and a two-business-day first-cut target; longer sources and batches require a written quote",
+      "private_test": {
+        "state": "sent_once_not_published",
+        "duration_seconds": 14.9,
+        "width": 720,
+        "height": 1280,
+        "video_sha256": "e1db823bec44c139bf2a2b34db5eda70774be8dd1a2c19d765240c3fea4eb23c",
+        "source_authorization": "The public hiring post explicitly invited applicants to edit a short portion from the linked channel for consideration",
+        "storage": "ignored private storage only"
+      },
+      "trial_boundary": "The requested one-time private test is complete. Do not make another unpaid edit; any further source review or delivery requires accepted scope and compensation.",
+      "claim_boundary": "The private test uses the poster's linked public footage only for the requested application. It is not public portfolio work, a customer result, or evidence of views, retention, or conversion.",
+      "buyer_reply_observed": false,
+      "qualified_lead_observed": false,
+      "scope_accepted": false,
+      "payment_confirmed": false,
+      "received_revenue_usd": 0,
+      "follow_up_not_before": "2026-09-13",
+      "automatic_follow_up": false
     }
   ],
   "funnel": {
     "state": "application_sent",
-    "outbound_application_count": 3,
+    "outbound_application_count": 4,
     "application_sent": true,
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,

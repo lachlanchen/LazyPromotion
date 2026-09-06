@@ -776,7 +776,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -855,7 +855,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -936,7 +936,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(discovery["resubmit"])
         self.assertIn("not indexing", discovery["claim_boundary"])
         outreach = campaign["additional_outreach"]
-        self.assertEqual(len(outreach), 2)
+        self.assertEqual(len(outreach), 3)
         oxodonia = outreach[0]
         self.assertEqual(oxodonia["company"], "Oxodonia LTD")
         self.assertEqual(
@@ -969,9 +969,26 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(ydehm["payment_confirmed"])
         self.assertEqual(ydehm["received_revenue_usd"], 0)
         self.assertFalse(ydehm["automatic_follow_up"])
+        komicsim = outreach[2]
+        self.assertEqual(komicsim["company"], "KomicSim")
+        self.assertEqual(
+            komicsim["source_url"],
+            "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/",
+        )
+        self.assertEqual(komicsim["application_state"], "sent_awaiting_reply")
+        self.assertIn("USD 75", komicsim["proposal"])
+        self.assertEqual(komicsim["private_test"]["duration_seconds"], 14.9)
+        self.assertEqual(len(komicsim["private_test"]["video_sha256"]), 64)
+        self.assertEqual(komicsim["private_test"]["storage"], "ignored private storage only")
+        self.assertIn("Do not make another unpaid edit", komicsim["trial_boundary"])
+        self.assertFalse(komicsim["buyer_reply_observed"])
+        self.assertFalse(komicsim["qualified_lead_observed"])
+        self.assertFalse(komicsim["payment_confirmed"])
+        self.assertEqual(komicsim["received_revenue_usd"], 0)
+        self.assertFalse(komicsim["automatic_follow_up"])
         funnel = campaign["funnel"]
         self.assertEqual(funnel["state"], "application_sent")
-        self.assertEqual(funnel["outbound_application_count"], 3)
+        self.assertEqual(funnel["outbound_application_count"], 4)
         self.assertTrue(funnel["application_sent"])
         self.assertFalse(funnel["buyer_reply_observed"])
         self.assertFalse(funnel["qualified_lead_observed"])

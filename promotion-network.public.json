@@ -46,7 +46,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 15
+        "version": 16
       },
       "url": ""
     },
@@ -6519,11 +6519,25 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
     },
     {
+      "id": "url:fb509810feb9471a",
+      "kind": "web_resource",
+      "label": "latest public hiring need",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/"
+    },
+    {
       "id": "url:45192426591114fc",
       "kind": "web_resource",
       "label": "lazyedge",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyEdge"
+    },
+    {
+      "id": "url:90dd533df880bbcd",
+      "kind": "web_resource",
+      "label": "lazyedit repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyEdit"
     },
     {
       "id": "url:273db0ceb258a5af",
@@ -6538,13 +6552,6 @@
       "label": "lazying.art",
       "metadata": {},
       "url": "https://lazying.art/story-clip/fit-check/"
-    },
-    {
-      "id": "url:415da1977e7f8d4e",
-      "kind": "web_resource",
-      "label": "lazying.art",
-      "metadata": {},
-      "url": "https://lazying.art/story-clip/"
     },
     {
       "id": "url:ab38f07eba1541a7",
@@ -6869,11 +6876,11 @@
       "url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/"
     },
     {
-      "id": "url:90dd533df880bbcd",
+      "id": "url:415da1977e7f8d4e",
       "kind": "web_resource",
-      "label": "subtitle pipeline",
+      "label": "story clip offer",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyEdit"
+      "url": "https://lazying.art/story-clip/"
     },
     {
       "id": "url:101272dce8a5a487",
@@ -6930,6 +6937,13 @@
       "label": "transaction rollback test",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/tests/test_knowledge.py#L1073-L1096"
+    },
+    {
+      "id": "url:cbd37ff2a5b5d3a8",
+      "kind": "web_resource",
+      "label": "video portfolio",
+      "metadata": {},
+      "url": "https://lazying.art/video/"
     },
     {
       "id": "url:6c61657175e6875a",
@@ -7545,6 +7559,46 @@
       "relation": "uses_evidence",
       "source": "campaign:bilingual-pocket-editions",
       "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:content-repurposing-pilot",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/story-clip/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:content-repurposing-pilot",
+      "target": "url:415da1977e7f8d4e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:content-repurposing-pilot",
+      "target": "url:90dd533df880bbcd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/video/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:content-repurposing-pilot",
+      "target": "url:cbd37ff2a5b5d3a8"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:content-repurposing-pilot",
+      "target": "url:fb509810feb9471a"
     },
     {
       "confidence": 1.0,

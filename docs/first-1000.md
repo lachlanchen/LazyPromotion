@@ -634,12 +634,15 @@ excluded and remains project-owned concept material, not customer evidence.
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.
 
-The Story Clip campaign now has three one-time applications against explicit
-hiring needs. The newest used YDEHM's live first-party form and its published
-per-clip ranges, with a USD 45 supplied-segment quote or USD 150
-moment-selection quote. The visible page confirmed receipt. A paid trial still
-requires agreed source length, rights, deliverable, one correction pass, and
-fixed payment; no reply, lead, scope acceptance, payment, or revenue exists yet.
+The Story Clip campaign now has four one-time applications against explicit
+hiring needs. The newest public post asked applicants to select a moment from
+the linked gaming stream, make a brief private Short, and send it through the
+named Instagram account. A 14.9-second 9:16 test was cut once from the invited
+source, captioned from locally checked dialogue, visibly played through, and
+sent with a bounded USD 75 quote for up to 60 minutes of source, one correction
+pass, and a two-business-day first-cut target. The third-party footage and
+message evidence remain outside Git and the test will not be published. No
+reply, lead, scope acceptance, payment, or revenue exists yet.
 
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced

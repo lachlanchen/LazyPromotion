@@ -2574,7 +2574,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 6)
+        self.assertEqual(campaign["version"], 7)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -2610,6 +2610,11 @@ class RepositoryTests(unittest.TestCase):
             sorted(blog["verification"]["translations_present"]),
             ["ja", "zh-hant"],
         )
+        self.assertEqual(
+            blog["search_console"]["request_state"],
+            "added_to_priority_crawl_queue_once",
+        )
+        self.assertFalse(blog["search_console"]["repeat_request_allowed"])
         self.assertIn("not a lead", blog["policy"])
         self.assertIn("230,000-word", campaign["current_paid_need"]["published_scope"])
         self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)

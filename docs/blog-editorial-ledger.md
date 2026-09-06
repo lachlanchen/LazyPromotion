@@ -70,7 +70,9 @@ Posts: `281, 936, 1562, 2936, 3125`.
   preview guidance, EPUBCheck, PocketPolyglot, and the project-owned source-aware
   book packet before one restrained USD 250 Book Specimen Sprint link. The
   source status, all three language routes, and the offer destination were live
-  verified. Publication is not a lead or sale.
+  verified. Search Console reported the new URL as unknown to Google and
+  accepted one priority crawl request; it must not be resubmitted merely to seek
+  priority. Publication and crawl-queue state are not a lead or sale.
 
 - Post `3803` has a prepared, not-yet-live bridge from the complete Cantonese
   caption guide to the fixed USD 250 Story Clip Pilot for readers who need one

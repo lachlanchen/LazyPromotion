@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 6,
+  "version": 7,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -77,6 +77,12 @@
         ],
         "all_language_routes_http_200": true,
         "offer_destination_http_200": true
+      },
+      "search_console": {
+        "checked_at": "2026-09-07T06:18:00+08:00",
+        "inspection_state": "url_unknown_to_google",
+        "request_state": "added_to_priority_crawl_queue_once",
+        "repeat_request_allowed": false
       },
       "policy": "The article gives a complete chapter-first PDF and EPUB workflow from current primary sources, then ends with one exact-fit offer. Publication is owned discovery, not a lead, sale, or received revenue."
     },

@@ -2551,6 +2551,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("l-and-n.lazying.art", serialized)
         self.assertNotIn("post_id", serialized.casefold())
 
+    def test_bilingual_book_reply_acknowledgement_stays_non_promotional(self):
+        path = ROOT / "campaigns" / "bilingual-pocket-editions.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        reddit = campaign["channels"]["reddit"]
+
+        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
+        self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
+        self.assertFalse(reddit["linked_owned_asset"])
+        self.assertFalse(reddit["promotional_claim"])
+        self.assertFalse(reddit["lead_or_sale_observed"])
+        self.assertIn("not as a lead", reddit["policy"])
+        self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

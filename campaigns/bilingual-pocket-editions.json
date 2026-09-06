@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 1,
+  "version": 2,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -10,9 +10,10 @@
   },
   "channels": {
     "reddit": {
-      "state": "helpful_reply_live",
-      "checked_at": "2026-09-02T01:30:11Z",
+      "state": "helpful_reply_acknowledged",
+      "checked_at": "2026-09-06T20:31:55Z",
       "url": "https://www.reddit.com/r/ebooks/comments/1vtuejx/comment/p7al3y4/",
+      "acknowledgement_url": "https://www.reddit.com/r/ebooks/comments/1vtuejx/comment/p87e9yd/",
       "content": "From the layout you describe, I’d test one spread at 100% on a 6–8 inch screen before committing to fixed A4. Two columns can look clean on desktop but become tiny on an e-reader; facing pages or alternating English/Spanish blocks may travel better. Verse numbers should be identical, visible anchors in both languages, so a reader can move between the text and your reflections without losing the pair. I’d also put the exact English edition, your Spanish-translation credit, and the rights basis on the copyright page, then offer a reflowable EPUB beside the fixed PDF if you can. That would preserve the designed edition while giving Kobo/Kindle readers control over type size.",
       "linked_owned_asset": false,
       "promotional_claim": false,
@@ -28,7 +29,8 @@
         "guard_reconciled_after_live_dom_check": true
       },
       "lead_or_sale_observed": false,
-      "policy": "The creator asked for feedback, so the reply gives concrete reading and production checks without mentioning an owned project or asking for contact."
+      "outcome": "The creator replied with a brief thank-you. No follow-up, link, offer, or request was added.",
+      "policy": "The creator asked for feedback, so the reply gives concrete reading and production checks without mentioning an owned project or asking for contact. Treat the acknowledgement only as a usefulness signal, not as a lead, testimonial licence, or permission to pitch."
     },
     "x": {
       "state": "not_scheduled",

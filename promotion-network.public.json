@@ -36,7 +36,7 @@
       "label": "bilingual-pocket-editions",
       "metadata": {
         "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -7520,7 +7520,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "helpful_reply_live"
+        "state": "helpful_reply_acknowledged"
       },
       "relation": "targets",
       "source": "campaign:bilingual-pocket-editions",

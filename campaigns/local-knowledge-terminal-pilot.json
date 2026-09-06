@@ -1,5 +1,5 @@
 {
-  "version": 21,
+  "version": 22,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -375,7 +375,7 @@
     "policy": "Authenticated access and the controlled exact-subject runtime probe prove that the inbox can be reviewed and the intake rule can route a message to its destination. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
     "aggregate_monitor": {
       "state": "healthy",
-      "checked_at": "2026-09-01T17:21:35Z",
+      "checked_at": "2026-09-06T20:51:05Z",
       "interval_minutes": 15,
       "message_content_opened": false,
       "message_metadata_persisted": false,
@@ -640,6 +640,40 @@
           "lead_or_sale_observed": false
         },
         "policy": "First-party profile resource only, not a community submission or generated reply. The published post and actual evidence-first click path were visibly verified. A provider-side one-prefix repair made the tracked URL clickable without changing the technical answer or disclosure. The live allowlisted bridges preserve Reddit attribution from the article through the sample report to the fit-check page without forwarding arbitrary parameters or sending a form."
+      },
+      "b2b_service_listing": {
+        "state": "postiz_queue",
+        "scope": "business_service_marketplace",
+        "publish_at": "2026-09-08T03:00:00Z",
+        "title": "[For Hire] (Remote) Private-document collection fit check before RAG — USD 250 fixed",
+        "content": "A private document collection can fail before retrieval: scanned pages, duplicate versions, missing metadata, and citations nobody can reopen.\n\nI’ll inspect a representative sample before you commit to a full RAG build. For USD 250, the sprint covers one rights-cleared collection, one language goal, and one existing machine—up to 12 source units and 20 test questions.\n\nYou receive:\n- a data, privacy, citation, and provenance map\n- a small browser proof with up to two cited cards if the sample is usable\n- a written go/no-go recommendation and the boundary for a larger build\n\nHardware, custom OCR, full-library conversion, hosting, and production deployment are outside this fixed scope. I only ask for source files after the free fit check and written scope.\n\nSample report:\nhttps://lazying.art/lkt/sample-report/?utm_source=reddit&utm_medium=b2bforhire&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_listing\n\nFree fit check:\nhttps://lazying.art/lkt/fit-check/?utm_source=reddit&utm_medium=b2bforhire&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_listing\n\nI built and maintain Local Knowledge Terminal.",
+        "settings": {
+          "subreddit": "/r/B2BForHire",
+          "type": "self",
+          "is_flair_required": false
+        },
+        "rules_review": {
+          "checked_at": "2026-09-06T20:53:31Z",
+          "source": "https://www.reddit.com/r/B2BForHire/",
+          "business_service_posts_allowed": true,
+          "single_person_businesses_allowed": true,
+          "self_post_required": true,
+          "title_format_reviewed": true
+        },
+        "visible_review": {
+          "checked_at": "2026-09-06T20:59:20Z",
+          "stored_state": "QUEUE",
+          "stored_text_exact": true,
+          "stored_title_exact": true,
+          "stored_time_exact": true,
+          "stored_account_exact": true,
+          "stored_subreddit_exact": true,
+          "original_urls_preserved": true,
+          "creation_submissions": 1,
+          "failed_preflight_submissions": 0
+        },
+        "lead_or_sale_observed": false,
+        "policy": "A reviewed self-post in a marketplace that explicitly permits businesses to offer services, including single-person businesses. The post states the fixed scope and exclusions, leads with the project-owned sample, sends the buyer through the free fit check before source transfer or payment, and does not claim a customer result."
       },
       "community_reply": {
         "state": "live",

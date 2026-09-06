@@ -1207,7 +1207,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 21)
+        self.assertEqual(campaign["version"], 22)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1798,6 +1798,23 @@ class RepositoryTests(unittest.TestCase):
                 "lead_or_sale_observed"
             ]
         )
+        b2b_listing = campaign["channels"]["reddit"]["b2b_service_listing"]
+        self.assertEqual(b2b_listing["state"], "postiz_queue")
+        self.assertEqual(b2b_listing["publish_at"], "2026-09-08T03:00:00Z")
+        self.assertEqual(b2b_listing["settings"]["subreddit"], "/r/B2BForHire")
+        self.assertEqual(b2b_listing["settings"]["type"], "self")
+        self.assertIn("USD 250 fixed", b2b_listing["title"])
+        self.assertIn("up to 12 source units", b2b_listing["content"])
+        self.assertIn("up to two cited cards", b2b_listing["content"])
+        self.assertIn("Hardware, custom OCR", b2b_listing["content"])
+        self.assertIn("utm_medium=b2bforhire", b2b_listing["content"])
+        self.assertTrue(b2b_listing["rules_review"]["business_service_posts_allowed"])
+        self.assertTrue(b2b_listing["rules_review"]["self_post_required"])
+        self.assertEqual(b2b_listing["visible_review"]["stored_state"], "QUEUE")
+        self.assertTrue(b2b_listing["visible_review"]["stored_subreddit_exact"])
+        self.assertTrue(b2b_listing["visible_review"]["original_urls_preserved"])
+        self.assertEqual(b2b_listing["visible_review"]["creation_submissions"], 1)
+        self.assertFalse(b2b_listing["lead_or_sale_observed"])
         self.assertEqual(
             campaign["channels"]["x"]["publish_at"], "2026-09-08T01:00:00Z"
         )

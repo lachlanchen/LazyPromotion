@@ -1,6 +1,6 @@
 {
   "id": "kikudoku-pronunciation-ux",
-  "version": 3,
+  "version": 4,
   "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
   "source_need": {
     "captured_on": "2026-09-06",
@@ -10,7 +10,7 @@
     "eligibility": "Worldwide",
     "published_budget": "USD 70 paid test; USD 470-770 total published project range",
     "scope": "Choose one paid diagnostic topic, then potentially review the beta onboarding, free experience, profile navigation, and shadowing flow.",
-    "activity_when_checked": "20 to 50 proposals, 0 interviewing, 0 invites sent, last viewed about 12 hours earlier; client has 9 hires and USD 520 total spend. The primary page remained visible and did not report that the job was unavailable.",
+    "activity_when_checked": "10 to 15 proposals, 0 interviewing, and a client view about 45 minutes earlier; client has 9 hires and USD 520 total spend. The primary page remained open on 2026-09-07.",
     "policy": "The listing is current buyer-intent evidence only. It is not an application, interview, contract, payment, delivery, or received revenue."
   },
   "source_evidence": {
@@ -40,6 +40,13 @@
     "paid_test_only": true,
     "application_submitted": false,
     "connects_spent": 0,
+    "mandatory_questions": {
+      "count": 2,
+      "screening_code": "The proposal must open with the listing's exact required sentence.",
+      "topic_selection": "Answer Topic B and explain the evidence-backed fit.",
+      "brief_insight": "Answer the registration interaction question in two to three sentences.",
+      "paid_deliverable_boundary": "The diagnostic and wireframe begin only after the USD 70 milestone is funded."
+    },
     "policy": "Keep the application, NDA, beta access, client communication, contract, deliverables, and payment on Upwork. Do not send a free diagnostic before a funded milestone."
   },
   "channels": {

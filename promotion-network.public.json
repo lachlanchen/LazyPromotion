@@ -96,7 +96,7 @@
       "label": "kikudoku-pronunciation-ux",
       "metadata": {
         "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },

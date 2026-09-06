@@ -2548,7 +2548,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "kikudoku-pronunciation-ux.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(campaign["source_need"]["rechecked_on"], "2026-09-07")
         self.assertEqual(campaign["fit"]["selected_topic"], "B - Shadowing Rate Improvement")
         self.assertEqual(
@@ -2557,6 +2557,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(campaign["application"]["paid_test_only"])
         self.assertFalse(campaign["application"]["application_submitted"])
         self.assertEqual(campaign["application"]["connects_spent"], 0)
+        self.assertEqual(campaign["application"]["mandatory_questions"]["count"], 2)
+        self.assertIn(
+            "milestone is funded",
+            campaign["application"]["mandatory_questions"][
+                "paid_deliverable_boundary"
+            ],
+        )
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
         self.assertEqual(
             campaign["source_evidence"]["repository"],

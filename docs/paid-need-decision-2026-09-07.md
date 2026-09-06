@@ -7,7 +7,10 @@ make microphone and shadowing practice less intimidating. L-and-N directly
 demonstrates the relevant listen, articulation cue, record, inspect, and retry
 loop. The prepared proposal applies only to that paid topic and does not claim
 Japanese-user research or paid UX outcomes. It remains unsent because the
-dedicated Upwork profile is not authenticated.
+dedicated Upwork profile is not authenticated. On the latest check it showed
+10–15 proposals, no interviews, and a client view about 45 minutes earlier.
+The application has exactly two required questions; its 1–2 page diagnostic is
+paid work that begins only after the USD 70 milestone is funded.
 
 The strongest fresh portfolio expansion is book production, but the right
 first sale is a specimen rather than an unbounded full book.
@@ -27,9 +30,9 @@ correction pass, and a written boundary for full production. Translation,
 substantive editing, cover design, ISBN, marketplace upload, printing, and the
 rest of the manuscript remain separate.
 
-This is a candidate until a project-owned specimen and tested intake path are
-live. The current LKT, manuscript, lecture, and story-clip sprints remain the
-four active USD 250 routes.
+The project-owned specimen, guide, and tested intake path are now live at
+<https://lazying.art/book-specimen/>. The current LKT, book-specimen,
+manuscript, lecture, and story-clip sprints remain bounded USD 250 routes.
 
 Other paid listings were rejected rather than stretched to fit:
 

@@ -1,15 +1,16 @@
 {
   "id": "kikudoku-pronunciation-ux",
-  "version": 2,
+  "version": 3,
   "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
   "source_need": {
     "captured_on": "2026-09-06",
+    "rechecked_on": "2026-09-07",
     "url": "https://www.upwork.com/freelance-jobs/apply/Consultant-for-Japanese-Learning-App-Kikudoku-Paid-Test-Project_~022096362207530179711/",
     "title": "UX/UI Consultant for Japanese Learning App (Kikudoku) - Paid Test Project",
     "eligibility": "Worldwide",
     "published_budget": "USD 70 paid test; USD 470-770 total published project range",
     "scope": "Choose one paid diagnostic topic, then potentially review the beta onboarding, free experience, profile navigation, and shadowing flow.",
-    "activity_when_checked": "20 to 50 proposals, 0 interviewing, 0 invites sent; client has 9 hires and USD 520 total spend",
+    "activity_when_checked": "20 to 50 proposals, 0 interviewing, 0 invites sent, last viewed about 12 hours earlier; client has 9 hires and USD 520 total spend. The primary page remained visible and did not report that the job was unavailable.",
     "policy": "The listing is current buyer-intent evidence only. It is not an application, interview, contract, payment, delivery, or received revenue."
   },
   "source_evidence": {

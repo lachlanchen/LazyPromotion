@@ -2548,7 +2548,8 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "kikudoku-pronunciation-ux.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["source_need"]["rechecked_on"], "2026-09-07")
         self.assertEqual(campaign["fit"]["selected_topic"], "B - Shadowing Rate Improvement")
         self.assertEqual(
             campaign["application"]["state"], "prepared_login_required"
@@ -2573,13 +2574,18 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
         self.assertFalse(reddit["promotional_claim"])
         self.assertFalse(reddit["lead_or_sale_observed"])
         self.assertIn("not as a lead", reddit["policy"])
+        self.assertEqual(
+            campaign["offer_state"]["status"], "specimen_contract_candidate"
+        )
+        self.assertEqual(campaign["offer_state"]["candidate_price"], "USD 250")
+        self.assertIn("230,000-word", campaign["current_paid_need"]["published_scope"])
         self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)
 
     def test_ai_drama_clipper_application_is_paid_and_access_gated(self):

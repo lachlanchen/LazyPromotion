@@ -2,7 +2,7 @@
 
 Updated: 2026-09-06
 
-The current public inventory contains 107 non-archived source repositories.
+The current public inventory contains 108 non-archived source repositories.
 The useful question is not how to promote all of them. It is which combinations
 already solve a problem someone has described clearly enough to test.
 

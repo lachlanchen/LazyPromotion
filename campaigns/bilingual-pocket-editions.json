@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 2,
+  "version": 3,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -55,9 +55,27 @@
       "A public reply and vote are not a lead, sale, endorsement, or permission to pitch."
     ]
   },
+  "current_paid_need": {
+    "checked_at": "2026-09-07",
+    "url": "https://www.upwork.com/freelance-jobs/apply/URGENT-Need-Professional-Book-Design-Typesetting-Non-Fiction-230-000-words-KDP-Kindle-EPUB_~022096285480175903064/",
+    "published_scope": "USD 3,000 fixed for a roughly 230,000-word nonfiction book delivered as reflowable EPUB, Kindle, and print-ready premium-colour PDF, with an urgent timeline.",
+    "fit": "PocketPolyglot, LinguaLeaf, and Video2Book demonstrate multilingual layout, reflowable and print-like output, and source-aware production patterns.",
+    "gap": "The public evidence does not yet prove an urgent 230,000-word KDP/IngramSpark delivery, printer preflight, or customer acceptance at that scale.",
+    "decision": "Treat the brief as paid demand evidence and build a bounded project-owned specimen before activating a service. Do not apply or promise the complete scope unseen."
+  },
   "offer_state": {
-    "status": "not_activated",
-    "reason": "The current evidence supports the problem and a useful production pattern, but not yet a separate paid offer or price.",
+    "status": "specimen_contract_candidate",
+    "candidate_price": "USD 250",
+    "candidate_scope": "One rights-cleared chapter up to 5,000 words, one short print-layout PDF specimen, one reflowable EPUB specimen, a style and source ledger, validation results, one consolidated correction pass, and a written full-production boundary.",
+    "candidate_exclusions": [
+      "translation or substantive editing",
+      "cover design or illustration",
+      "ISBN, KDP, IngramSpark, or other marketplace account access",
+      "print-proof purchasing or shipping",
+      "a complete book or rush delivery",
+      "rights clearance"
+    ],
+    "reason": "A current paid brief validates the output need, but the offer stays inactive until a project-owned specimen, delivery limits, corrections, cancellation, refund, retention, support terms, and intake tests are complete.",
     "received_revenue_usd": 0
   }
 }

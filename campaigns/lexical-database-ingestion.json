@@ -1,6 +1,6 @@
 {
   "id": "lexical-database-ingestion",
-  "version": 2,
+  "version": 3,
   "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
   "source_need": {
     "captured_on": "2026-09-07",
@@ -74,24 +74,24 @@
       "policy": "The isolated project browser is logged out. Do not use the personal browser, create an account, accept terms, buy or spend Connects, or claim submission without an authenticated visible review of the exact application."
     },
     "x": {
-      "state": "postiz_draft",
+      "state": "postiz_queue",
       "post_id": "cmtq3bj4n06ypqk0ykehr30ja",
       "nominal_publish_at": "2026-09-17T01:00:00Z",
       "content": "Lexical data cleaning should not erase the source. I made a small SQLite proof that keeps raw fields, locators and hashes, separates gloss normalization, quarantines incomplete records, and reruns with zero duplicate writes.\n\nRead: lazying.art/lkt/lexical-ingest/",
       "content_sha256": "90054a7685009b419e1d6e8a0f0688d7a07d3fe9560a849d1e24e96c6b84d268",
       "shortener_used": false,
-      "verification": "Postiz returned DRAFT with the protocol-less owned route preserved, the regular-post settings intact, and no release ID or release URL. A discarded draft whose protocol URL was stripped and the superseded GitHub-path draft were deleted only after this replacement was verified.",
-      "policy": "The draft gives one first-party workflow result and a readable owned route. It is not queued or published and does not mention the buyer."
+      "verification": "Postiz returned QUEUE for 2026-09-17T01:00:00Z with the protocol-less owned route preserved, the regular-post settings intact, and no release ID or release URL. The visible Scheduled view showed the correct X card at 09:00 HKT. A discarded draft whose protocol URL was stripped and the superseded GitHub-path draft were deleted only after this replacement was verified.",
+      "policy": "The reviewed item gives one first-party workflow result and a readable owned route. It is queued, not published, and does not mention the buyer."
     },
     "linkedin": {
-      "state": "postiz_draft",
+      "state": "postiz_queue",
       "post_id": "cmtq3b3be1duylm0yt14p0kvy",
       "nominal_publish_at": "2026-09-17T02:00:00Z",
       "content": "Lexical data is rarely just “put these rows in a database.”\n\nThe risky part is what happens when source files disagree: fields drift, glosses mix languages, some entries are incomplete, and a convenient cleanup can erase where a reading came from.\n\nI built a small synthetic proof that keeps raw fields, locators and hashes, stores gloss normalization separately, quarantines incomplete records, and makes zero writes on an identical replay. An injected failure leaves every ingestion table empty.\n\nThe page explains the design and links the runnable Python/SQLite sample:\nhttps://lazying.art/lkt/lexical-ingest/?utm_source=linkedin&utm_medium=social&utm_campaign=lexical_data_carpentry&utm_content=proof\n\nIt is a workflow sample, not a compatibility or linguistic-accuracy claim.",
       "content_sha256": "40a41d03cc34e0b4e972055f4aaa38f36261ab8240f9a285a44e7c3f4df28fc4",
       "shortener_used": false,
-      "verification": "Postiz returned DRAFT with the original tracked owned URL preserved, the no-carousel setting intact, and no release ID or release URL. The superseded two-link draft was deleted only after this replacement was verified.",
-      "policy": "The draft explains one first-party proof and its limits, then routes readers to the owned explanation. It is not queued or published and does not mention the marketplace buyer."
+      "verification": "Postiz returned QUEUE for 2026-09-17T02:00:00Z with the original tracked owned URL preserved, the no-carousel setting intact, and no release ID or release URL. The visible Scheduled view showed the correct LinkedIn card at 10:00 HKT. The superseded two-link draft was deleted only after this replacement was verified.",
+      "policy": "The reviewed item explains one first-party proof and its limits, then routes readers to the owned explanation. It is queued, not published, and does not mention the marketplace buyer."
     },
     "reddit": {
       "state": "not_planned",
@@ -101,6 +101,7 @@
   "funnel": {
     "state": "buyer_intent_identified",
     "social_drafts_created": 2,
+    "social_posts_queued": 2,
     "social_posts_published": 0,
     "application_submitted": false,
     "interview_observed": false,

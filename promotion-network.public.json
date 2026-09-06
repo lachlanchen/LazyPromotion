@@ -126,7 +126,7 @@
       "label": "lexical-database-ingestion",
       "metadata": {
         "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -7995,7 +7995,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:lexical-database-ingestion",
@@ -8025,7 +8025,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:lexical-database-ingestion",

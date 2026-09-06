@@ -121,6 +121,16 @@
       "url": ""
     },
     {
+      "id": "campaign:lexical-database-ingestion",
+      "kind": "campaign",
+      "label": "lexical-database-ingestion",
+      "metadata": {
+        "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:local-knowledge-terminal-pilot",
       "kind": "campaign",
       "label": "local-knowledge-terminal-pilot",
@@ -233,6 +243,13 @@
       "id": "channel:linkedin",
       "kind": "channel",
       "label": "linkedin",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:linkedin_practical_guide",
+      "kind": "channel",
+      "label": "linkedin_practical_guide",
       "metadata": {},
       "url": ""
     },
@@ -1945,15 +1962,26 @@
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
-      "id": "project:github-lexiconatlas",
+      "id": "project:lexiconatlas",
       "kind": "project",
       "label": "LexiconAtlas",
       "metadata": {
-        "generated": true,
+        "generated": false,
         "keywords": [
-          "lexicon atlas"
+          "lexical knowledge graph",
+          "word knowledge graph",
+          "etymology graph",
+          "word origins graph",
+          "word roots graph",
+          "affix explorer",
+          "morpheme graph",
+          "multilingual lexicon",
+          "dictionary knowledge graph",
+          "word family graph",
+          "lexical data visualization",
+          "terminology graph"
         ],
-        "summary": "Explore an English word knowledge graph in 3D: origins, roots, affixes, meanings, and multilingual connections. Built for local-first LKT."
+        "summary": "A local, read-only 3D explorer for multilingual lexical data, morphemes, historical forms, translations, and source provenance."
       },
       "url": "https://github.com/lachlanchen/LexiconAtlas"
     },
@@ -5940,6 +5968,13 @@
       "url": "https://github.com/lachlanchen/LinguaLeaf"
     },
     {
+      "id": "url:6d3ffbc20ce0d73e",
+      "kind": "web_resource",
+      "label": "atomic source hashed ingestion",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/corpus.py#L133-L199"
+    },
+    {
       "id": "url:a6139fe39dbb0e57",
       "kind": "web_resource",
       "label": "beir paper",
@@ -5959,6 +5994,20 @@
       "label": "buyer need",
       "metadata": {},
       "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/"
+    },
+    {
+      "id": "url:d0115d5f19663878",
+      "kind": "web_resource",
+      "label": "buyer need",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/"
+    },
+    {
+      "id": "url:a8820c8c60daf5e2",
+      "kind": "web_resource",
+      "label": "buyer public context",
+      "metadata": {},
+      "url": "https://outofpapua.com/"
     },
     {
       "id": "url:b08e9eef9fc5b7c9",
@@ -6458,6 +6507,13 @@
       "url": "https://lazying.art/manuscript-sprint/fit-check/"
     },
     {
+      "id": "url:3918296102a662b2",
+      "kind": "web_resource",
+      "label": "lexical schema and evidence",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/knowledge.py#L73-L345"
+    },
+    {
       "id": "url:39175a1b6a3b2d14",
       "kind": "web_resource",
       "label": "live proof",
@@ -6491,6 +6547,13 @@
       "label": "mission",
       "metadata": {},
       "url": "https://futo.tech/about"
+    },
+    {
+      "id": "url:c7e475f14587fd10",
+      "kind": "web_resource",
+      "label": "morphology ingestion and provenance",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/morphology.py#L50-L178"
     },
     {
       "id": "url:593c601822a24f73",
@@ -6771,6 +6834,13 @@
       "label": "timestamped source pattern",
       "metadata": {},
       "url": "https://github.com/lachlanchen/Video2Book/blob/main/subtitles2notes/generate_course_notes.py#L609-L647"
+    },
+    {
+      "id": "url:801eecf091a96ead",
+      "kind": "web_resource",
+      "label": "transaction rollback test",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/tests/test_knowledge.py#L1073-L1096"
     },
     {
       "id": "url:6c61657175e6875a",
@@ -7886,6 +7956,84 @@
       "relation": "uses_evidence",
       "source": "campaign:lecture-archive-provenance",
       "target": "url:e6fb5bef94e3ec0c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_planned"
+      },
+      "relation": "targets",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_planned"
+      },
+      "relation": "targets",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "application_prepared_login_required"
+      },
+      "relation": "targets",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "channel:upwork"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/knowledge.py#L73-L345",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:3918296102a662b2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/corpus.py#L133-L199",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:6d3ffbc20ce0d73e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/tests/test_knowledge.py#L1073-L1096",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:801eecf091a96ead"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://outofpapua.com/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:a8820c8c60daf5e2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/morphology.py#L50-L178",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:c7e475f14587fd10"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lexical-database-ingestion",
+      "target": "url:d0115d5f19663878"
     },
     {
       "confidence": 1.0,
@@ -10527,14 +10675,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LexiconAtlas",
-      "metadata": {},
-      "relation": "backed_by",
-      "source": "project:github-lexiconatlas",
-      "target": "repository:lachlanchen/LexiconAtlas"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LifeReverseEngineering",
       "metadata": {},
       "relation": "backed_by",
@@ -10892,6 +11032,14 @@
       "relation": "backed_by",
       "source": "project:leonardsusskind",
       "target": "repository:lachlanchen/leonardsusskind"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LexiconAtlas",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:lexiconatlas",
+      "target": "repository:lachlanchen/LexiconAtlas"
     },
     {
       "confidence": 1.0,

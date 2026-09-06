@@ -1,0 +1,25 @@
+{
+  "boundary": "Project-owned synthetic workflow proof: no OUTOFPAPUA schema, no real Toolbox corpus, no client data, no OCR, no linguistic accuracy benchmark, and no customer result.",
+  "database_written": false,
+  "mode": "dry-run",
+  "network_used": false,
+  "planned": {
+    "accepted_records": 4,
+    "field_values": 42,
+    "gloss_normalizations_planned": 4,
+    "records_by_format": {
+      "csv": 3,
+      "toolbox-style-text": 3
+    },
+    "reject_codes": {
+      "missing_lemma": 2
+    },
+    "rejected_records": 2,
+    "source_records": 6,
+    "sources": 2
+  },
+  "source_sha256": {
+    "synthetic-lexicon.csv": "d1cd5f39830ff2fe574e4ab458613ead0778e9f3baec1aa1f3e841bcb567602f",
+    "synthetic-toolbox.txt": "63147fa56627b3f31e6175ba5c76825656f36537192b2218dc865c1556dccfe0"
+  }
+}

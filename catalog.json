@@ -185,6 +185,24 @@
       ]
     },
     {
+      "id": "lexiconatlas",
+      "name": "LexiconAtlas",
+      "url": "https://github.com/lachlanchen/LexiconAtlas",
+      "reply_url": "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
+      "summary": "A local, read-only 3D explorer for multilingual lexical data, morphemes, historical forms, translations, and source provenance.",
+      "reply_context": "Use LexiconAtlas when a dictionary, glossary, curriculum, or terminology owner is deciding how to inspect and visualize a rights-cleared lexical collection. The v0.1.0 public SQLite snapshot contains 15,925 entities, including 9,484 terms, 1,573 morphemes, 847 translations, 404 historical forms, and 15,197 typed entity edges. Coverage is uneven and incomplete; an accepted pipeline state is not a claim of linguistic truth. The explorer is read-only and local: it does not ingest a customer's collection, edit source data, generate citations, or redistribute third-party books. Give useful data-model or visualization guidance first, and link the downloadable snapshot only when it materially helps the owner evaluate the approach. For a custom, bounded, rights-cleared collection, the separate LKT fit check is the commercial next step.",
+      "required_any": [
+        "dictionary", "glossary", "lexicon", "terminology", "lexical data",
+        "morphology", "morpheme", "curriculum", "publisher", "dataset", "database"
+      ],
+      "keywords": [
+        "lexical knowledge graph", "word knowledge graph", "etymology graph",
+        "word origins graph", "word roots graph", "affix explorer", "morpheme graph",
+        "multilingual lexicon", "dictionary knowledge graph", "word family graph",
+        "lexical data visualization", "terminology graph"
+      ]
+    },
+    {
       "id": "l-and-n",
       "name": "L-and-N",
       "url": "https://github.com/lachlanchen/L-and-N",

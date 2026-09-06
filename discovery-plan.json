@@ -167,6 +167,17 @@
         "purpose": "People asking to explore the relationships behind a word origin"
       },
       {
+        "project_id": "lexiconatlas",
+        "query": "(\"my glossary\" OR \"our dictionary data\" OR \"our terminology database\" OR \"my lexicon\") (visualize OR graph OR explore) (help OR recommend OR \"looking for\")",
+        "purpose": "Lexical-collection owner intent: a dictionary, glossary, or terminology owner asking how to visualize their own structured data",
+        "required_body_groups": [
+          ["my glossary", "our glossary", "my dictionary", "our dictionary", "my terminology", "our terminology", "my lexicon", "our lexicon"],
+          ["visualize", "visualise", "graph", "explore", "relationship", "relationships"],
+          ["help", "recommend", "looking for", "need", "how can", "how do", "anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool", "for hire", "available for work"]
+      },
+      {
         "project_id": "localknowledgeterminal",
         "query": "(\"my glossary\" OR \"my terminology database\" OR \"my dictionary data\") (local OR private OR offline) (help OR recommend OR tool)",
         "purpose": "Collection owners asking how to search or present a private terminology source with provenance",
@@ -253,6 +264,17 @@
           ["help", "need", "looking for", "hire", "editor", "how do", "anyone"]
         ],
         "excluded_body_any": ["i built", "i created", "i made", "i've been working on", "we built", "we created", "my editor", "my tool", "my app", "my service", "our service", "for hire", "available for work", "written with ai", "starting at $"]
+      },
+      {
+        "project_id": "lexiconatlas",
+        "query": "(\"my glossary\" OR \"our dictionary data\" OR \"our terminology database\" OR \"my lexicon\") (visualize OR graph OR explore) (help OR recommend OR \"looking for\") -filter:retweets",
+        "purpose": "Lexical-collection owner intent: a dictionary, glossary, or terminology owner asking how to visualize their own structured data",
+        "required_body_groups": [
+          ["my glossary", "our glossary", "my dictionary", "our dictionary", "my terminology", "our terminology", "my lexicon", "our lexicon"],
+          ["visualize", "visualise", "graph", "explore", "relationship", "relationships"],
+          ["help", "recommend", "looking for", "need", "how can", "how do", "anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool", "for hire", "available for work"]
       },
       {
         "project_id": "pocketpolyglot",
@@ -363,6 +385,12 @@
         "query": "Ask HN LaTeX manuscript redline build",
         "comment_query": "LaTeX manuscript",
         "purpose": "Research-only evidence for authors who need reproducible LaTeX builds, redlines, or submission-format repair"
+      },
+      {
+        "project_id": "lexiconatlas",
+        "query": "Ask HN visualize multilingual dictionary data",
+        "comment_query": "multilingual dictionary knowledge graph",
+        "purpose": "Research-only evidence for lexical-data owners evaluating a local visual knowledge graph; no generated HN comments"
       },
       {
         "project_id": "localknowledgeterminal",

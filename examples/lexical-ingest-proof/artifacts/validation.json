@@ -1,0 +1,101 @@
+{
+  "boundary": "Project-owned synthetic workflow proof: no OUTOFPAPUA schema, no real Toolbox corpus, no client data, no OCR, no linguistic accuracy benchmark, and no customer result.",
+  "counts": {
+    "gloss_normalizations": 4,
+    "lexemes": 4,
+    "source_fields": 42,
+    "source_records": 6,
+    "sources": 2,
+    "transformation_log": 4
+  },
+  "foreign_key_violations": 0,
+  "integrity_check": "ok",
+  "rejects": [
+    {
+      "code": "missing_lemma",
+      "detail": "A non-empty source lemma is required.",
+      "record_locator": "synthetic-toolbox.txt:L18-L24",
+      "source_id": "synthetic-toolbox",
+      "source_record_id": "TBX-003"
+    },
+    {
+      "code": "missing_lemma",
+      "detail": "A non-empty source lemma is required.",
+      "record_locator": "synthetic-lexicon.csv:R4",
+      "source_id": "synthetic-csv",
+      "source_record_id": "CSV-003"
+    }
+  ],
+  "schema": {
+    "gloss_normalizations": [
+      "lexeme_id",
+      "source_field_locator",
+      "normalized_english_gloss",
+      "rule_id",
+      "transformation_note"
+    ],
+    "lexemes": [
+      "lexeme_id",
+      "record_key",
+      "lemma_source_raw",
+      "language_source_raw",
+      "part_of_speech_source_raw",
+      "ipa_supplied_raw",
+      "english_gloss_source_raw",
+      "note_source_raw"
+    ],
+    "source_fields": [
+      "field_key",
+      "record_key",
+      "source_id",
+      "source_record_id",
+      "field_order",
+      "source_name",
+      "canonical_name",
+      "locator",
+      "raw_value",
+      "source_sha256"
+    ],
+    "source_records": [
+      "record_key",
+      "source_id",
+      "source_record_id",
+      "source_ordinal",
+      "record_locator",
+      "status",
+      "rejection_code",
+      "rejection_detail"
+    ],
+    "sources": [
+      "source_id",
+      "filename",
+      "source_format",
+      "source_sha256",
+      "synthetic",
+      "transformation_notes"
+    ],
+    "transformation_log": [
+      "transformation_id",
+      "record_key",
+      "target_field",
+      "source_field_locator",
+      "rule_id",
+      "note"
+    ]
+  },
+  "stats": {
+    "accepted_records": 4,
+    "field_values": 42,
+    "gloss_normalizations_planned": 4,
+    "records_by_format": {
+      "csv": 3,
+      "toolbox-style-text": 3
+    },
+    "reject_codes": {
+      "missing_lemma": 2
+    },
+    "rejected_records": 2,
+    "source_records": 6,
+    "sources": 2
+  }
+}

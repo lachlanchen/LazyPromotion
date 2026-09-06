@@ -1,0 +1,24 @@
+\_sh Synthetic Toolbox-style lexical source owned by the project
+\id TBX-001
+\lx sela
+\lg qaa
+\ps noun
+\ph ˈse.la
+\ge River;  stream
+\nt Invented entry for ingestion testing only.
+
+\id TBX-002
+\lx noku
+\lg qaa
+\ps verb
+\ph ˈno.ku
+\ge To gather   carefully
+\nt The IPA string is supplied, not generated.
+
+\id TBX-003
+\lx
+\lg qaa
+\ps noun
+\ph ˈka.ri
+\ge Rejected example
+\nt Missing lemma deliberately exercises validation.

@@ -1,0 +1,16 @@
+{
+  "all_ingest_tables_empty_after_failure": true,
+  "boundary": "Project-owned synthetic workflow proof: no OUTOFPAPUA schema, no real Toolbox corpus, no client data, no OCR, no linguistic accuracy benchmark, and no customer result.",
+  "failure_injected_after_writes": 3,
+  "integrity_check": "ok",
+  "passed": true,
+  "post_rollback_counts": {
+    "gloss_normalizations": 0,
+    "lexemes": 0,
+    "source_fields": 0,
+    "source_records": 0,
+    "sources": 0,
+    "transformation_log": 0
+  },
+  "transaction_scope": "all sources, records, fields, canonical rows, and normalization rows"
+}

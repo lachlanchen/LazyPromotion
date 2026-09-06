@@ -83,8 +83,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('wait_reserved_runtime_release', script)
         self.assertIn("#{pane_pid}", script)
         self.assertIn('save_browser_workspace', script)
+        self.assertIn('save-workspace) save_browser_workspace', script)
         self.assertIn('workspace.urls', script)
         self.assertIn('access_token', script)
+        self.assertIn('__cf_chl_tk', script)
+        self.assertIn('https://www.upwork.com/freelance-jobs/*', script)
+        self.assertNotIn('https://www.upwork.com/ab/account-security/*', script)
         self.assertIn('workspace_url_is_baseline', script)
         self.assertIn('wait_cdp_pages_stable', script)
         self.assertIn('deduplicate_browser_tabs', script)
@@ -162,6 +166,15 @@ class RepositoryTests(unittest.TestCase):
             "https://l-and-n.lazying.art/",
         )
         self.assertIn("test builds", by_id["l-and-n"]["reply_context"])
+        self.assertEqual(
+            by_id["lexiconatlas"]["reply_url"],
+            "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
+        )
+        self.assertIn("15,925 entities", by_id["lexiconatlas"]["reply_context"])
+        self.assertIn("accepted pipeline state", by_id["lexiconatlas"]["reply_context"])
+        self.assertNotIn("project:github-lexiconatlas", {
+            f"project:{project['id']}" for project in promotion.load_catalog()["projects"]
+        })
 
     def test_discovery_plan_uses_known_projects(self):
         known = {project["id"] for project in promotion.load_catalog()["projects"]}
@@ -193,6 +206,37 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("required_body_groups", route)
         self.assertEqual(len(route["required_body_groups"]), 3)
         self.assertIn("i built", route["excluded_body_any"])
+
+    def test_lexicon_visualization_routes_require_collection_owner_intent(self):
+        for platform in ("reddit", "x"):
+            routes = [
+                item for item in browser.discovery_queries(platform)
+                if item["project_id"] == "lexiconatlas" and not item.get("generated")
+            ]
+            with self.subTest(platform=platform):
+                self.assertEqual(len(routes), 1)
+                route = routes[0]
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertIn("i built", route["excluded_body_any"])
+                self.assertTrue(browser.route_body_qualified(
+                    "We have our dictionary data and need help visualizing relationships "
+                    "between terms and morphemes.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "What is the etymology of the word atlas?",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I built a new knowledge graph for my lexicon.",
+                    route,
+                ))
+        ranked = promotion.rank_projects(
+            "We maintain a multilingual dictionary database and need help "
+            "turning it into a word knowledge graph with morphemes."
+        )
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "lexiconatlas")
 
     def test_x_go_route_is_qualified_as_the_board_game(self):
         route = next(

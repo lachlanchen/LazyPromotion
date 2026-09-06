@@ -8,6 +8,21 @@ reproducible project-owned proof. The milestone is any four confirmed USD 250
 payments across these four routes, or USD 1,000 gross before fees, tax, refunds,
 and delivery costs. It is a target, not a revenue promise.
 
+The clearest current one-contract route is a USD 1,200 Upwork listing for
+OUTOFPAPUA lexical-database ingestion and data carpentry. The buyer needs code
+that can bring new lexical sources into an existing database, with some sources
+first prepared as Toolbox or another acceptable format. This is a direct match
+for the source-preserving ingestion, multilingual lexical schema, and provenance
+work behind Local Knowledge Terminal and LexiconAtlas. A small
+[synthetic two-format ingestion proof](../examples/lexical-ingest-proof/) now
+shows the proposed vertical slice without using buyer data: raw values and
+source locators remain recoverable, transformations are explicit, rejects are
+deterministic, and transactional reruns do not duplicate accepted records. The
+USD 1,200 application is prepared around the listing's USD 20-per-hour basis and
+a 60-hour cap, but remains unsubmitted because the isolated project browser is
+logged out. The public listing is buyer-intent evidence, not a lead, interview,
+contract, payment, or received revenue.
+
 A current buyer-intent contract can shorten the route without changing those
 offers. An Upwork listing requests source-linked coding of 21 policy-text files
 and validation of 193 passages for USD 600. A wholly synthetic, reproducible

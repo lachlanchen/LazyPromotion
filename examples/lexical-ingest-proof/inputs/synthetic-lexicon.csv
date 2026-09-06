@@ -1,0 +1,4 @@
+record_id,lemma,language,part_of_speech,ipa,gloss_en,note
+CSV-001,merin,qab,adjective,ˈme.rin,Quiet   and steady,Invented entry for ingestion testing only.
+CSV-002,vatu,qab,noun,ˈva.tu,Path; route,The IPA string is supplied by this synthetic source.
+CSV-003,,qab,verb,ˈlu.mi,Rejected example,Missing lemma deliberately exercises validation.

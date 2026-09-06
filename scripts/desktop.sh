@@ -93,13 +93,14 @@ wait_cdp_pages_stable() {
 }
 
 workspace_url_allowed() {
-  [[ ! "$1" =~ [\?\&](token|access_token|auth|authorization|session|key|secret|code)= ]] || return 1
+  [[ ! "$1" =~ [\?\&](token|access_token|auth|authorization|session|key|secret|code|__cf_chl_tk|__cf_chl_rt_tk)= ]] || return 1
   case "$1" in
     https://www.reddit.com/*|https://old.reddit.com/*|https://x.com/*|https://www.instagram.com/*|\
     https://hn.algolia.com/*|https://search.google.com/*|https://platform.postiz.com/*|\
     https://www.icloud.com/*|https://www.lingq.com/*|https://bookshop.org/*|\
     https://partners.dub.co/*|https://contra.com/*|https://www.datacamp.com/*|\
-    https://github.com/*)
+    https://github.com/*|https://www.upwork.com/freelance-jobs/*|\
+    https://www.upwork.com/jobs/*|https://www.upwork.com/nx/search/jobs/*)
       return 0
       ;;
     *)
@@ -569,8 +570,9 @@ case "${1:-status}" in
   start) start ;;
   stop) stop ;;
   restart) stop; start ;;
+  save-workspace) save_browser_workspace ;;
   register-viewer|register-viewers) register_viewer "${2:-}" ;;
   status) status ;;
   _serve) serve ;;
-  *) printf 'Usage: %s {start|stop|restart|status|register-viewer}\n' "$0" >&2; exit 2 ;;
+  *) printf 'Usage: %s {start|stop|restart|save-workspace|status|register-viewer}\n' "$0" >&2; exit 2 ;;
 esac

@@ -1,0 +1,87 @@
+{
+  "id": "lexical-database-ingestion",
+  "version": 1,
+  "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
+  "source_need": {
+    "captured_on": "2026-09-07",
+    "checked_at": "2026-09-07T01:01:00+08:00",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/",
+    "title": "Development of lexical database and data carpentry",
+    "buyer_project": "OUTOFPAPUA",
+    "budget": "USD 1,200 fixed price; the listing also states USD 20 per hour",
+    "scope": "Write ingestion code so new lexical data can be included in the OUTOFPAPUA database, preparing some source data in Toolbox or another acceptable format before ingestion.",
+    "activity_when_checked": "20 to 50 proposals, 1 interviewing, 1 invite sent; competition increased from the earlier indexed snapshot",
+    "client_history_when_checked": "Leiden, Netherlands; USD 6.9K total spent; 49 hires and 31 active contracts",
+    "policy": "The public listing is buyer-intent evidence only. It is not a lead, interview, contract, sale, payment, customer result, or received revenue. Keep all marketplace contact and payment on Upwork."
+  },
+  "buyer_public_context": {
+    "url": "https://outofpapua.com/",
+    "observed_need": "The public project describes heterogeneous contemporary and historical lexical sources whose size, structure, orthography, and gloss language vary. Original-source citations are retained while English translations and unified IPA are stored as project edits.",
+    "proposal_implication": "Lead with explicit source mapping, preserved originals, separately recorded normalization, repeatable dry runs, validation, and reversible loading. Do not lead with the 3D viewer."
+  },
+  "offer": {
+    "quotation_usd": 1200,
+    "hour_cap": 60,
+    "rate_basis_usd_per_hour": 20,
+    "milestones_usd": [200, 700, 300],
+    "milestones": [
+      "Source and target-schema audit plus one executable vertical slice",
+      "Agreed format adapters, explicit transformations, and idempotent transactional loading",
+      "Validation report, rerun and rollback checks, documentation, and handoff"
+    ],
+    "assumptions_to_confirm": [
+      "The client supplies the current target schema, ingestion environment, and representative source files.",
+      "The USD 1,200 boundary covers the source formats and volume agreed after the vertical slice.",
+      "Linguistic normalization rules and disputed entries remain client-reviewed rather than silently inferred.",
+      "OCR, manual transcription, licensing research, hosting, and unrelated application work are separate scope."
+    ]
+  },
+  "owned_proof": {
+    "state": "public_reproducible_synthetic_proof",
+    "lexical_ingest_sample": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof",
+    "lexicon_explorer": "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
+    "local_knowledge_terminal": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "description": "A synthetic two-format vertical slice demonstrates source identifiers, locators, raw values, hashes, explicit transformations, deterministic rejects, idempotent loading, and validation; LexiconAtlas demonstrates the downstream read-only lexical graph.",
+    "limits": [
+      "No OUTOFPAPUA data, schema, code, account, or client material is used.",
+      "The sample is not proof of compatibility with the buyer's actual Toolbox files or target database.",
+      "Supplied IPA is preserved; the sample does not claim phonetic conversion or linguistic validation.",
+      "It is project-owned workflow proof, not prior customer work, a benchmark, a contract, or revenue."
+    ]
+  },
+  "source_evidence": {
+    "buyer_need": "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/",
+    "buyer_public_context": "https://outofpapua.com/",
+    "atomic_source_hashed_ingestion": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/corpus.py#L133-L199",
+    "morphology_ingestion_and_provenance": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/morphology.py#L50-L178",
+    "lexical_schema_and_evidence": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/knowledge.py#L73-L345",
+    "transaction_rollback_test": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/tests/test_knowledge.py#L1073-L1096"
+  },
+  "channels": {
+    "upwork": {
+      "state": "application_prepared_login_required",
+      "application_packet": "prepared_in_ignored_private_storage",
+      "application_submitted": false,
+      "connects_spent": 0,
+      "proposal_link": "",
+      "policy": "The isolated project browser is logged out. Do not use the personal browser, create an account, accept terms, buy or spend Connects, or claim submission without an authenticated visible review of the exact application."
+    },
+    "linkedin": {
+      "state": "not_planned",
+      "policy": "A general first-party proof post may be drafted later, but do not mention or contact the marketplace buyer outside Upwork."
+    },
+    "reddit": {
+      "state": "not_planned",
+      "policy": "Do not seek or contact the marketplace buyer outside Upwork."
+    }
+  },
+  "funnel": {
+    "state": "buyer_intent_identified",
+    "application_submitted": false,
+    "interview_observed": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

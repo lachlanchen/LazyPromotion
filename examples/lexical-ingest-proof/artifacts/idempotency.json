@@ -1,0 +1,31 @@
+{
+  "boundary": "Project-owned synthetic workflow proof: no OUTOFPAPUA schema, no real Toolbox corpus, no client data, no OCR, no linguistic accuracy benchmark, and no customer result.",
+  "database_bytes_unchanged": true,
+  "database_sha256_after_first_run": "395e520be855a21cf68fee5c6e9a63d6e9b11c34fb094c6b5e171b3894ff4bc3",
+  "database_sha256_after_second_run": "395e520be855a21cf68fee5c6e9a63d6e9b11c34fb094c6b5e171b3894ff4bc3",
+  "first_run": {
+    "changes": {
+      "gloss_normalizations.created": 4,
+      "lexemes.created": 4,
+      "source_fields.created": 42,
+      "source_records.created": 6,
+      "sources.created": 2,
+      "transformation_log.created": 4
+    },
+    "writes": 62
+  },
+  "logical_fingerprint_after_first_run": "9b02716ec4e1bccc701f4077efc6ca91f3867cd25bdc18b737d8e8d47fbaa829",
+  "logical_fingerprint_after_second_run": "9b02716ec4e1bccc701f4077efc6ca91f3867cd25bdc18b737d8e8d47fbaa829",
+  "logical_state_unchanged": true,
+  "second_run": {
+    "changes": {
+      "gloss_normalizations.unchanged": 4,
+      "lexemes.unchanged": 4,
+      "source_fields.unchanged": 42,
+      "source_records.unchanged": 6,
+      "sources.unchanged": 2,
+      "transformation_log.unchanged": 4
+    },
+    "writes": 0
+  }
+}

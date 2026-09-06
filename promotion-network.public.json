@@ -46,7 +46,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 16
+        "version": 17
       },
       "url": ""
     },
@@ -6519,11 +6519,11 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
     },
     {
-      "id": "url:fb509810feb9471a",
+      "id": "url:eb728a227ca5d7ea",
       "kind": "web_resource",
       "label": "latest public hiring need",
       "metadata": {},
-      "url": "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/"
+      "url": "https://www.reddit.com/r/forhire/comments/1w7f9uc/hiring_remote_part_time_content_clipper_social/"
     },
     {
       "id": "url:45192426591114fc",
@@ -7594,11 +7594,11 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/",
+      "evidence_url": "https://www.reddit.com/r/forhire/comments/1w7f9uc/hiring_remote_part_time_content_clipper_social/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:content-repurposing-pilot",
-      "target": "url:fb509810feb9471a"
+      "target": "url:eb728a227ca5d7ea"
     },
     {
       "confidence": 1.0,

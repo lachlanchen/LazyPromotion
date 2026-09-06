@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -32,7 +32,7 @@
     "story_clip_offer": "https://lazying.art/story-clip/",
     "video_portfolio": "https://lazying.art/video/",
     "lazyedit_repository": "https://github.com/lachlanchen/LazyEdit",
-    "latest_public_hiring_need": "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/"
+    "latest_public_hiring_need": "https://www.reddit.com/r/forhire/comments/1w7f9uc/hiring_remote_part_time_content_clipper_social/"
   },
   "fit": {
     "projects": [
@@ -354,11 +354,44 @@
       "received_revenue_usd": 0,
       "follow_up_not_before": "2026-09-13",
       "automatic_follow_up": false
+    },
+    {
+      "company": "Undisclosed AI drama platform",
+      "source_url": "https://www.reddit.com/r/forhire/comments/1w7f9uc/hiring_remote_part_time_content_clipper_social/",
+      "source_state": "public_part_time_content_clipper_hiring_post",
+      "captured_at": "2026-09-06T20:34:34Z",
+      "need": "Select compelling story moments from supplied AI short-drama footage, edit vertical clips, write captions, and publish through TikTok, Instagram, YouTube, and X",
+      "published_compensation": "USD 1,000 per month for an estimated one to two hours per day",
+      "poster_check": "The Reddit account was three months old with 186 combined karma and several prior creator-recruitment posts. The company and product were not named, so identity, scope, access, and payment terms still require verification.",
+      "application_state": "sent_awaiting_reply",
+      "sent_at": "2026-09-06T20:36:00Z",
+      "method": "One Reddit private message requested by the public hiring post",
+      "delivery_evidence": "The visible project-only Reddit compose form accepted one submit, cleared the recipient, title, and message fields, and displayed no submission error. No retry was made.",
+      "public_samples": [
+        "https://lazying.art/story-clip/#sample",
+        "https://www.youtube.com/watch?v=rVU37lPKPo8",
+        "https://www.youtube.com/watch?v=qrzGXl5y-Ok"
+      ],
+      "proposal": "Start with a small paid pilot, then use the posted USD 1,000 monthly rate only after expected weekly volume and review or publishing access are defined.",
+      "questions": [
+        "Product and platform identity",
+        "Typical raw-video length",
+        "Expected clips per week",
+        "Review and publishing access"
+      ],
+      "trial_boundary": "Do not connect a channel, accept private source footage, or start delivery until the product, source rights, exact volume, approval flow, access controls, correction scope, payment cadence, and cancellation terms are verified in writing.",
+      "claim_boundary": "The application identifies all linked examples as first-party LazyingArt work. It does not claim customer results, views, retention, conversions, or prior work for an AI-drama client.",
+      "buyer_reply_observed": false,
+      "qualified_lead_observed": false,
+      "scope_accepted": false,
+      "payment_confirmed": false,
+      "received_revenue_usd": 0,
+      "automatic_follow_up": false
     }
   ],
   "funnel": {
-    "state": "application_sent",
-    "outbound_application_count": 4,
+    "state": "applications_sent_awaiting_reply",
+    "outbound_application_count": 5,
     "application_sent": true,
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,

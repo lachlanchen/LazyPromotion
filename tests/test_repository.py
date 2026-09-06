@@ -776,7 +776,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 16)
+        self.assertEqual(campaign["version"], 17)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -855,7 +855,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 16)
+        self.assertEqual(campaign["version"], 17)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -936,7 +936,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(discovery["resubmit"])
         self.assertIn("not indexing", discovery["claim_boundary"])
         outreach = campaign["additional_outreach"]
-        self.assertEqual(len(outreach), 3)
+        self.assertEqual(len(outreach), 4)
         oxodonia = outreach[0]
         self.assertEqual(oxodonia["company"], "Oxodonia LTD")
         self.assertEqual(
@@ -987,8 +987,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(komicsim["received_revenue_usd"], 0)
         self.assertFalse(komicsim["automatic_follow_up"])
         funnel = campaign["funnel"]
-        self.assertEqual(funnel["state"], "application_sent")
-        self.assertEqual(funnel["outbound_application_count"], 4)
+        self.assertEqual(funnel["state"], "applications_sent_awaiting_reply")
+        self.assertEqual(funnel["outbound_application_count"], 5)
         self.assertTrue(funnel["application_sent"])
         self.assertFalse(funnel["buyer_reply_observed"])
         self.assertFalse(funnel["qualified_lead_observed"])
@@ -2564,6 +2564,25 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(reddit["lead_or_sale_observed"])
         self.assertIn("not as a lead", reddit["policy"])
         self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)
+
+    def test_ai_drama_clipper_application_is_paid_and_access_gated(self):
+        path = ROOT / "campaigns" / "content-repurposing-pilot.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        opportunity = next(
+            item
+            for item in campaign["additional_outreach"]
+            if item["company"] == "Undisclosed AI drama platform"
+        )
+
+        self.assertEqual(campaign["version"], 17)
+        self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
+        self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
+        self.assertIn("paid pilot", opportunity["proposal"])
+        self.assertIn("Do not connect a channel", opportunity["trial_boundary"])
+        self.assertFalse(opportunity["buyer_reply_observed"])
+        self.assertFalse(opportunity["payment_confirmed"])
+        self.assertEqual(opportunity["received_revenue_usd"], 0)
+        self.assertEqual(campaign["funnel"]["outbound_application_count"], 5)
 
 
 if __name__ == "__main__":

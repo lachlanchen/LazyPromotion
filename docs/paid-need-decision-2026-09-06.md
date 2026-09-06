@@ -5,6 +5,29 @@ Verified: 2026-09-06
 The best current route is not another broad social campaign. It is one
 well-matched application backed by inspectable work.
 
+## September 6 addition: bounded pronunciation UX test
+
+The current [Kikudoku Japanese-learning UX project](https://www.upwork.com/freelance-jobs/apply/Consultant-for-Japanese-Learning-App-Kikudoku-Paid-Test-Project_~022096362207530179711/)
+is the strongest newly found small contract. It is worldwide, starts with a
+funded USD 70 test, and publishes a USD 470-770 total range. The buyer asks how
+to make shadowing easier to discover and less intimidating before registration
+or payment. When checked, the listing showed 20-50 proposals, no interviews,
+and a client history of nine hires.
+
+[L-and-N](https://l-and-n.lazying.art/) is unusually direct evidence: it was
+built around a pronunciation contrast the maintainer personally finds
+difficult and already implements a listen, articulatory cue, record, inspect,
+and retry loop. The application therefore chooses the paid shadowing-rate
+topic and proposes one private, low-stakes guest attempt before asking the
+learner to register to save progress. It does not claim Japanese learner
+research, consulting outcomes, or clinical accuracy.
+
+The exact application is prepared in ignored private storage. The isolated
+project browser is still logged out of Upwork, so no proposal was submitted,
+Connects spent, NDA accepted, beta accessed, or contract formed. If the full
+published range is won and received, one USD 250 LKT sprint would take verified
+gross revenue past USD 1,000; neither amount counts until payment is confirmed.
+
 ## Decision
 
 ### 1. Direct-revenue priority: enterprise meeting intelligence

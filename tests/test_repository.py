@@ -2361,6 +2361,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("Do not ask for stars, follows, votes, or DMs", prompt)
         self.assertIn("Prefer no reply", (ROOT / "docs" / "voice.md").read_text(encoding="utf-8"))
 
+    def test_kikudoku_paid_pronunciation_ux_lead_is_bounded(self):
+        path = ROOT / "campaigns" / "kikudoku-pronunciation-ux.json"
+        serialized = path.read_text(encoding="utf-8")
+        campaign = json.loads(serialized)
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["fit"]["selected_topic"], "B - Shadowing Rate Improvement")
+        self.assertEqual(
+            campaign["application"]["state"], "prepared_login_required"
+        )
+        self.assertTrue(campaign["application"]["paid_test_only"])
+        self.assertFalse(campaign["application"]["application_submitted"])
+        self.assertEqual(campaign["application"]["connects_spent"], 0)
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+        self.assertIn("l-and-n.lazying.art", serialized)
+        self.assertNotIn("post_id", serialized.casefold())
+
 
 if __name__ == "__main__":
     unittest.main()

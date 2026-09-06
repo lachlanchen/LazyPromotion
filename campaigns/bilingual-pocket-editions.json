@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 4,
+  "version": 5,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -32,6 +32,29 @@
       "outcome": "The creator replied with a brief thank-you. No follow-up, link, offer, or request was added.",
       "policy": "The creator asked for feedback, so the reply gives concrete reading and production checks without mentioning an owned project or asking for contact. Treat the acknowledgement only as a usefulness signal, not as a lead, testimonial licence, or permission to pitch."
     },
+    "linkedin": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-30T02:00:00Z",
+      "content": "Before typesetting a whole book, I would test one representative chapter twice: once as a real print page, once as a reflowable EPUB. Fixed composition and reader-controlled type size solve different problems, but both should come from the same traceable source.\n\nI built a small public specimen with four 6 × 9 PDFs, a reflowable EPUB, structured bilingual source, a source ledger, validation report and hashes:\n\nhttps://lazying.art/book-specimen/?utm_source=linkedin&utm_medium=social&utm_campaign=book_specimen_pilot&utm_content=source_trail\n\nFor authors or small publishers with final, rights-cleared copy, I’m also opening a USD 250 sprint for one chapter up to 5,000 words. Fit check first; no manuscript upload or payment before scope.",
+      "content_sha256": "cbef35d68657836166ecbf11dac340a0c92f30657e429845493ce0440ac0912b",
+      "destination": "https://lazying.art/book-specimen/?utm_source=linkedin&utm_medium=social&utm_campaign=book_specimen_pilot&utm_content=source_trail",
+      "media_sha256": "217c0daad4cc75383c3912c8096f097417b39d2a6e504bb14e0ffbaae9a937a9",
+      "verification": {
+        "checked_at": "2026-09-07T05:58:00+08:00",
+        "provider": "linkedin",
+        "provider_max_length": 3000,
+        "stored_state": "QUEUE",
+        "stored_time_exact": true,
+        "stored_text_exact_after_html_normalization": true,
+        "matching_posts": 1,
+        "original_url_selected": true,
+        "shortlink_present": false,
+        "media_visible": true,
+        "visible_editor_reviewed": true,
+        "release_present": false
+      },
+      "policy": "The post explains the print-versus-reflow problem before the offer, uses only project-owned proof, and keeps the chapter, rights, price, upload, and payment boundaries visible. Queue state is not publication, a lead, sale, or received revenue."
+    },
     "x": {
       "state": "not_scheduled",
       "policy": "Wait for a project-owned before-and-after layout artifact rather than turning another creator's request into content."
@@ -51,7 +74,7 @@
     "classical_chinese_work": "https://github.com/lachlanchen/zhjpbook",
     "limits": [
       "These projects demonstrate aligned multilingual layout and provenance work; they are not customer proof for the creator in the source thread.",
-      "Do not advertise a paid pocket-edition service until input limits, rights review, translation review, output formats, corrections, and commercial terms are bounded.",
+      "Keep the paid specimen within its published input, rights, translation, output, correction, and commercial boundaries.",
       "A public reply and vote are not a lead, sale, endorsement, or permission to pitch."
     ]
   },
@@ -61,7 +84,7 @@
     "published_scope": "USD 3,000 fixed for a roughly 230,000-word nonfiction book delivered as reflowable EPUB, Kindle, and print-ready premium-colour PDF, with an urgent timeline.",
     "fit": "PocketPolyglot, LinguaLeaf, and Video2Book demonstrate multilingual layout, reflowable and print-like output, and source-aware production patterns.",
     "gap": "The public evidence does not yet prove an urgent 230,000-word KDP/IngramSpark delivery, printer preflight, or customer acceptance at that scale.",
-    "decision": "Treat the brief as paid demand evidence and build a bounded project-owned specimen before activating a service. Do not apply or promise the complete scope unseen."
+    "decision": "The brief justified a bounded project-owned specimen and proof-first fit-check route. Do not apply or promise the complete scope unseen."
   },
   "offer_state": {
     "status": "live_fit_check_payment_gated",
@@ -93,5 +116,15 @@
     "intake": "Public fit check prepares a reviewed email request only; it does not upload manuscript files, create a payment, or send automatically.",
     "reason": "A current paid brief validates the output need, and a project-owned specimen, delivery limits, corrections, cancellation, refund, retention, support terms, and tested fit-check path are now public. Payment remains gated behind a positive fit check and accepted written scope.",
     "received_revenue_usd": 0
+  },
+  "funnel": {
+    "state": "owned_offer_live_postiz_queue",
+    "fit_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0,
+    "gross_target_math": "Four confirmed USD 250 payments equal USD 1,000 gross before fees, tax, refunds, and delivery costs."
   }
 }

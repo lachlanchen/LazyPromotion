@@ -2574,7 +2574,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(campaign["version"], 5)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -2595,8 +2595,16 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertIn("e8512197", campaign["offer_state"]["proof"]["source"])
         self.assertIn("does not upload", campaign["offer_state"]["intake"])
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["publish_at"], "2026-09-30T02:00:00Z")
+        self.assertEqual(linkedin["verification"]["stored_state"], "QUEUE")
+        self.assertTrue(linkedin["verification"]["media_visible"])
+        self.assertFalse(linkedin["verification"]["release_present"])
+        self.assertIn("not publication", linkedin["policy"])
         self.assertIn("230,000-word", campaign["current_paid_need"]["published_scope"])
         self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
 
     def test_ai_drama_clipper_application_is_paid_and_access_gated(self):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"

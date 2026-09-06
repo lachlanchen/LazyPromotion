@@ -60,6 +60,16 @@ no ROAS, cost-per-lead, or Taiwan-market performance claim. The attachment is
 not published and the project browser is logged out; no proposal was sent and
 no Connects were spent.
 
+A separate USD 1,000 subtitle-correction listing names Mandarin among its
+requested languages and currently shows 15–20 proposals with no interviews. The
+work is a good component match for LazyEdit and the public timed-subtitle proof,
+but the listing leaves the language assignment, total duration, file count,
+format, and deadline undefined. The prepared proposal therefore asks for those
+facts and suggests one USD 250 first milestone capped at 20 source minutes. It
+does not claim native-speaker status or customer results. The client account is
+new, Upwork is logged out, and no application or Connects spend occurred; the
+listing remains buyer-intent evidence rather than a lead or revenue.
+
 A higher-value exact component match is now ready for a different route. A
 Suzhou company has posted a USD 4,000–8,000 Phase 1 mission to turn Chinese,
 English, and mixed meeting audio into human-confirmed, source-linked,
@@ -585,7 +595,7 @@ draft until the operator completes registration and identity/payout setup. Its
 commercial packet now fixes the delivery window, one-at-a-time capacity,
 correction pass, deliverable-based refund allocation, retention period, and
 support boundary; the final unpublished preview must preserve them exactly.
-Three current Upwork applications are also prepared around
+Several current Upwork applications are also prepared around
 exact public proof, but the project browser is logged out; no proposal was sent
 and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
 contract, balance, or pending payout does not change the received-revenue total.

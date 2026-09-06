@@ -2206,6 +2206,24 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("USD 250", youtube["policy"])
         self.assertIn("only publication route", youtube["queue_gate"])
 
+    def test_subtitle_correction_marketplace_packet_keeps_scope_and_identity_gates(self):
+        path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
+        campaign = json.loads(path.read_text(encoding="utf-8"))
+        lead = campaign["marketplace_leads"]["native_mandarin_subtitle_correction"]
+
+        self.assertEqual(
+            lead["state"], "application_packet_ready_account_review_required"
+        )
+        self.assertEqual(lead["proposed_first_milestone"]["price"], "USD 250")
+        self.assertIn("20 source minutes", lead["proposed_first_milestone"]["cap"])
+        self.assertFalse(lead["application_submitted"])
+        self.assertFalse(lead["connects_spent"])
+        self.assertFalse(lead["contract_observed"])
+        self.assertFalse(lead["funded_milestone_observed"])
+        self.assertFalse(lead["payment_observed"])
+        self.assertIn("native-speaker status", lead["policy"])
+        self.assertIn("buyer-intent evidence", lead["policy"])
+
         renderer = (ROOT / "scripts" / "render_lecture_pack_demo.py").read_text(
             encoding="utf-8"
         )

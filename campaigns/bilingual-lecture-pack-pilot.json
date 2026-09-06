@@ -245,7 +245,7 @@
     "policy": "The visible URL Inspection result reported Discovered - currently not indexed, and one crawl request was accepted. That request is not indexing, ranking, traffic, a lead, or revenue; do not resubmit it merely to seek higher priority."
   },
   "marketplace_leads": {
-    "checked_at": "2026-09-05T14:02:26Z",
+    "checked_at": "2026-09-06T17:57:52Z",
     "video_editor_for_meta_ads": {
       "state": "application_prepared_login_required",
       "preflight_rechecked_at": "2026-09-05T12:44:00Z",
@@ -295,6 +295,52 @@
       "contract_observed": false,
       "payment_observed": false,
       "policy": "The listing is a strong current paid need, not a lead, contract, sale, or revenue. Recheck that it remains open, inspect the exact Connects cost and freelancer fee after login, review the proposal once in the visible composer, keep all pre-contract communication on Upwork, and submit only once. Do not claim customer ad results, Taiwan-market performance, paid-campaign management, or years of experience that the public proof does not establish."
+    },
+    "native_mandarin_subtitle_correction": {
+      "state": "application_packet_ready_account_review_required",
+      "checked_at": "2026-09-06T17:57:52Z",
+      "source_url": "https://www.upwork.com/freelance-jobs/apply/Native-Speakers-Needed-for-Subtitles-Correction_~022095092627198854214/",
+      "need": "Correct supplied subtitles for short source material in one requested language and support recurring transcript checks; the listing names Mandarin and Chinese-to-English translation among the requested skills.",
+      "commercial_terms_seen": "USD 1,000 fixed budget, worldwide, entry level, ongoing contract-to-hire; the exact language assignment, source duration, file count, subtitle format, and deadline are not stated.",
+      "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites sent, and 0 unanswered invites.",
+      "client_evidence": "The public listing showed a new Bangladesh client account created on 2026-09-01; no verified spend or prior hires were shown in the indexed result.",
+      "fit": [
+        "Mandarin and written English working context",
+        "source-listening, timestamped transcript correction, and editable SRT delivery",
+        "Traditional Chinese and English aligned-subtitle proof",
+        "project-owned public video, guide, manifest, and reproducible subtitle artifacts"
+      ],
+      "gaps": [
+        "The user's native-language status has not been verified and must not be claimed in an application.",
+        "The listing does not state the assigned source language, total duration, file count, current subtitle format, or deadline.",
+        "The client account is new and the indexed listing does not establish prior payment history.",
+        "The public examples are project-owned workflow demonstrations, not customer subtitle results."
+      ],
+      "proof": [
+        "https://www.youtube.com/watch?v=G9NKncZgRis",
+        "https://lazying.art/lecture-pack/",
+        "https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html",
+        "https://github.com/lachlanchen/LazyEdit"
+      ],
+      "proposed_first_milestone": {
+        "price": "USD 250",
+        "cap": "up to 20 source minutes across one Mandarin/English batch after the source format is reviewed",
+        "deliverables": [
+          "one corrected source-language SRT on a stable timeline",
+          "one aligned English SRT when translation is part of the agreed batch",
+          "a concise uncertainty and terminology note",
+          "one consolidated factual correction pass"
+        ],
+        "start_gate": "Confirm the language pair, total source minutes, file count, audio condition, existing subtitle format, terminology, deadline, and funded milestone before work begins."
+      },
+      "proposal_draft": "Hi — I work in Mandarin and English, and subtitle correction is close to the workflow I already use. I start from the supplied transcript, listen against the source, keep one stable timeline, and mark uncertain words instead of guessing. I can return editable SRT files plus a short correction note. Here is a 23-second public example of the timed-text workflow: https://www.youtube.com/watch?v=G9NKncZgRis. A fuller project-owned English/Traditional Chinese sample is at https://lazying.art/lecture-pack/. Before fixing the USD 1,000 scope, could you share the source language, total minutes and file count, current subtitle format, and deadline? I suggest a first USD 250 milestone for up to 20 source minutes in one Mandarin/English batch, including one consolidated correction pass.",
+      "application_packet": "prepared_in_ignored_private_storage",
+      "application_submitted": false,
+      "connects_spent": false,
+      "contract_observed": false,
+      "funded_milestone_observed": false,
+      "payment_observed": false,
+      "policy": "This is current buyer-intent evidence, not a lead, contract, payment, or revenue. Recheck that the listing remains open, verify the exact language and account terms, inspect the Connects cost and freelancer fee, and review the proposal in the visible composer before one submission. Do not claim native-speaker status, certified translation, unseen-audio accuracy, customer outcomes, or completion of an undefined USD 1,000 scope."
     },
     "cantonese_sermon_caption_delivery": {
       "state": "application_packet_ready_account_review_required",

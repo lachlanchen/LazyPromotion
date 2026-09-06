@@ -776,7 +776,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 14)
+        self.assertEqual(campaign["version"], 15)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -855,7 +855,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 14)
+        self.assertEqual(campaign["version"], 15)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -992,7 +992,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(campaign["version"], 5)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1065,6 +1065,14 @@ class RepositoryTests(unittest.TestCase):
             hashlib.sha256(linkedin["content"].encode("utf-8")).hexdigest(),
             linkedin["content_sha256"],
         )
+
+        homepage = campaign["channels"]["homepage"]
+        self.assertEqual(homepage["state"], "live_and_verified")
+        self.assertEqual(homepage["languages"], 13)
+        self.assertEqual(homepage["mobile_width_checked"], 390)
+        self.assertFalse(homepage["horizontal_overflow"])
+        self.assertIn("utm_campaign=ai_clip_assembly", homepage["destination"])
+        self.assertIn("not a lead or sale", homepage["policy"].casefold())
 
         funnel = campaign["funnel"]
         self.assertFalse(funnel["buyer_reply_observed"])
@@ -1148,7 +1156,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 19)
+        self.assertEqual(campaign["version"], 20)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1874,7 +1882,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -2033,6 +2041,10 @@ class RepositoryTests(unittest.TestCase):
                 "story_clip_pilot",
                 ("owned_offer", "homepage"),
             ),
+            "ai-clip-assembly-pilot.json": (
+                "ai_clip_assembly",
+                ("channels", "homepage"),
+            ),
         }
 
         for filename, (campaign_name, homepage_path) in expected.items():
@@ -2047,11 +2059,11 @@ class RepositoryTests(unittest.TestCase):
             )
             self.assertEqual(
                 website_commit,
-                "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
+                "9fa6d3254d73f0c3f55dc150eaef7bea655521cc",
             )
             self.assertIn(f"utm_campaign={campaign_name}", homepage["destination"])
             self.assertIn("utm_content=service_chooser", homepage["destination"])
-            self.assertIn("one of four", homepage["role"].casefold())
+            self.assertIn("one of five", homepage["role"].casefold())
             self.assertIn("not a lead or sale", homepage["policy"].casefold())
 
     def test_github_profile_routes_all_active_sprints_to_public_proof_first(self):
@@ -2077,7 +2089,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 29)
+        self.assertEqual(campaign["version"], 30)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],

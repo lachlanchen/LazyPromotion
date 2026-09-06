@@ -597,7 +597,8 @@ pitch merely to promote more projects.
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. LKT, manuscript redline, the
-bilingual lecture pack, and Story Clip are the four homepage routes; a
+bilingual lecture pack, Story Clip, and AI Clip Assembly are the five homepage
+routes; a
 candidate advances only after a current need and a small first test are found.
 
 ## Truthful measurement

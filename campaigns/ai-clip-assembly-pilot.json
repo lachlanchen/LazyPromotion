@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "id": "ai-clip-assembly-pilot",
   "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
   "source_need": {
@@ -92,6 +92,18 @@
     ]
   },
   "channels": {
+    "homepage": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-07",
+      "website_commit": "9fa6d3254d73f0c3f55dc150eaef7bea655521cc",
+      "destination": "https://lazying.art/video/brand-film/?utm_source=lazyingart&utm_medium=website&utm_campaign=ai_clip_assembly&utm_content=service_chooser",
+      "role": "One of five bounded service choices shown immediately below the main banner. The tracked link leads directly to the USD 500 scope and project-owned video proof.",
+      "languages": 13,
+      "desktop_width_checked": 1920,
+      "mobile_width_checked": 390,
+      "horizontal_overflow": false,
+      "policy": "The homepage asks for up to six AI-generated clips the buyer controls and does not ask for source transfer or payment before scope acceptance. Publication is not a lead or sale."
+    },
     "linkedin": {
       "state": "postiz_queue",
       "publish_at": "2026-09-28T02:00:00.000Z",

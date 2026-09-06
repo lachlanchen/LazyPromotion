@@ -381,7 +381,7 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertIn("youtube.com/watch?v=", youtube["release_url"])
         self.assertEqual(youtube["review"]["stored_state"], "PUBLISHED")
         self.assertTrue(youtube["review"]["release_present"])
-        self.assertEqual(youtube["analytics_observation"]["views"], 21)
+        self.assertEqual(youtube["analytics_observation"]["views"], 31)
         self.assertEqual(youtube["analytics_observation"]["comments"], 0)
         self.assertFalse(youtube["analytics_observation"]["lead_or_sale_observed"])
         youtube_route = owned_monitor.route_for_post(

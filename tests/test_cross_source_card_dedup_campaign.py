@@ -16,7 +16,7 @@ class CrossSourceCardDedupCampaignTests(unittest.TestCase):
         lazyblog = self.campaign["channels"]["lazyblog"]
         conversion = lazyblog["conversion_path"]
 
-        self.assertEqual(self.campaign["version"], 2)
+        self.assertEqual(self.campaign["version"], 3)
         self.assertIn("48adb6a", lazyblog["blog_commits"])
         self.assertIn("USD 250", conversion["offer"])
         self.assertIn("12 source units", conversion["offer"])
@@ -27,6 +27,26 @@ class CrossSourceCardDedupCampaignTests(unittest.TestCase):
         )
         self.assertFalse(conversion["automatic_form_submission"])
         self.assertIn("HTTP 200", conversion["live_review"])
+
+    def test_reddit_profile_queue_is_concise_and_visibly_verified(self):
+        reddit = self.campaign["channels"]["reddit"]
+        review = reddit["visible_review"]
+
+        self.assertEqual(reddit["state"], "postiz_queue")
+        self.assertEqual(reddit["scope"], "own_profile")
+        self.assertEqual(reddit["settings"]["subreddit"], "/r/u_Ok-Perception1122")
+        self.assertIn("I maintain the guide.", reddit["content"])
+        self.assertNotIn("Disclosure:", reddit["content"])
+        self.assertIn(
+            "https://blog.lazying.art/?p=3782&utm_source=reddit&utm_medium=profile&utm_campaign=card_dedup",
+            reddit["content"],
+        )
+        self.assertEqual(review["stored_state"], "QUEUE")
+        self.assertTrue(review["stored_text_exact"])
+        self.assertTrue(review["stored_title_exact"])
+        self.assertTrue(review["stored_time_exact"])
+        self.assertTrue(review["original_url_preserved"])
+        self.assertEqual(review["update_attempts"], 1)
 
     def test_publication_and_attention_do_not_inflate_revenue(self):
         funnel = self.campaign["funnel"]

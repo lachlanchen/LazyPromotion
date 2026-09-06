@@ -1,6 +1,6 @@
 {
   "id": "cross-source-card-dedup",
-  "version": 2,
+  "version": 3,
   "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
   "source_need": {
     "captured_at": "2026-09-02T01:00:00Z",
@@ -62,14 +62,25 @@
       "scope": "own_profile",
       "publish_at": "2026-09-07T04:00:00Z",
       "title": "One fact, two sources: avoiding duplicate study cards",
-      "content": "If a textbook chapter and a lecture transcript state the same fact, generating a fresh note from each upload splits the learner's review history.\n\nA safer model:\n\n1. Keep the original front and back.\n2. Normalize a separate matching projection.\n3. Use an exact key for retries and formatting differences.\n4. Use fuzzy search only to shortlist paraphrases.\n5. Attach page and timestamp evidence to one accepted fact.\n6. Update the same Anki note instead of exporting a new one.\n\nI wrote out the SQLite schema, transaction boundary, deletion semantics, and test cases here:\nhttps://blog.lazying.art/?p=3782&utm_source=reddit&utm_medium=profile&utm_campaign=card_dedup\n\nDisclosure: I maintain the linked guide and the public project patterns it references.",
+      "content": "One repeated fact should not become two review histories.\n\nIf a textbook chapter and a lecture transcript teach the same thing, keep each source’s original wording, but attach both citations to one accepted note. Exact keys catch retries and formatting changes. Fuzzy matching should only flag likely paraphrases for review.\n\nI wrote out the SQLite schema, update rules, and test cases here:\nhttps://blog.lazying.art/?p=3782&utm_source=reddit&utm_medium=profile&utm_campaign=card_dedup\n\nI maintain the guide.",
       "destination": "https://blog.lazying.art/html/algorithms-data-structures/3782/deduplicate-study-cards-chapters-lecture-transcripts.html?utm_source=reddit&utm_medium=profile&utm_campaign=card_dedup",
       "settings": {
         "subreddit": "/r/u_Ok-Perception1122",
         "type": "self",
         "is_flair_required": false
       },
-      "policy": "First-party profile resource only. It is not a generated reply in a community thread and contains a concise maintainer disclosure."
+      "visible_review": {
+        "checked_at": "2026-09-06T20:49:24Z",
+        "stored_state": "QUEUE",
+        "stored_text_exact": true,
+        "stored_title_exact": true,
+        "stored_time_exact": true,
+        "stored_account_exact": true,
+        "stored_subreddit_exact": true,
+        "original_url_preserved": true,
+        "update_attempts": 1
+      },
+      "policy": "First-party profile resource only. It is not a generated reply in a community thread. The closing line gives a concise maintainer disclosure without interrupting the useful explanation."
     },
     "instagram": {
       "state": "not_scheduled",

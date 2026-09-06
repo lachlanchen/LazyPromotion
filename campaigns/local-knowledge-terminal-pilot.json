@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 21,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -694,8 +694,8 @@
           "verification": "The visible X reply renders one lazying.art sample-report card. The repair was submitted once and then verified; it was not retried."
         },
         "analytics_observation": {
-          "checked_at": "2026-09-05T13:24:32Z",
-          "post_impressions": 6,
+          "checked_at": "2026-09-06T20:44:30Z",
+          "post_impressions": 7,
           "provider_reply_count": 1,
           "known_owned_reply_count": 1,
           "external_reply_count": 0,
@@ -742,7 +742,7 @@
         "url": "https://www.instagram.com/p/Dcw4xSzj1F8/",
         "content": "Most private-document projects start by choosing a vector database. I’d start earlier:\n\nCan you extract the text cleanly? Can every answer point back to a stable record? Can the system say “not enough evidence”?\n\nI turned that into a small collection-fit process. The public sample shows the data map, citation boundary, browser proof, and go/no-go.\n\nlazying.art/lkt/sample-report/\n\n#LocalAI #KnowledgeManagement",
         "analytics_observation": {
-          "checked_at": "2026-09-05T13:18:00Z",
+          "checked_at": "2026-09-06T20:43:30Z",
           "views": 31,
           "reach": 13,
           "likes": 1,

@@ -1,5 +1,5 @@
 {
-  "version": 30,
+  "version": 31,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -503,7 +503,7 @@
         "tracked_destination_preserved": true
       },
       "analytics_observation": {
-        "checked_at": "2026-09-05T13:18:00Z",
+        "checked_at": "2026-09-06T20:43:30Z",
         "impressions": 2,
         "likes": 0,
         "replies": 0,
@@ -633,8 +633,8 @@
         "tracked_destinations_present": true
       },
       "analytics_observation": {
-        "checked_at": "2026-09-05T13:18:00Z",
-        "views": 21,
+        "checked_at": "2026-09-06T20:43:30Z",
+        "views": 31,
         "likes": 0,
         "comments": 0,
         "favorites": 0,

@@ -992,7 +992,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1031,6 +1031,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(article["languages"], ["en", "zh-hant", "ja"])
         self.assertIn("HTTP 200", article["validation"])
         self.assertIn("no prospect details", article["policy"])
+
+        discovery = campaign["search_discovery"]
+        self.assertEqual(
+            discovery["indexing_request"],
+            "accepted_into_priority_crawl_queue",
+        )
+        self.assertEqual(discovery["request_count"], 1)
+        self.assertFalse(discovery["resubmit"])
+        self.assertIn("not indexing", discovery["policy"])
 
         marketplace = campaign["marketplace"]
         self.assertEqual(marketplace["state"], "application_prepared_login_required")

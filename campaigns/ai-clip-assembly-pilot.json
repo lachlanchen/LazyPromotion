@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "id": "ai-clip-assembly-pilot",
   "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
   "source_need": {
@@ -65,6 +65,15 @@
     ],
     "validation": "The source and both translation pages returned HTTP 200 with the correct localized title and one original tracked offer link.",
     "policy": "The article teaches source inventory, shot roles, silent assembly, sound, text, export, and reproducible handoff before one restrained offer. It contains no prospect details or customer-result claim."
+  },
+  "search_discovery": {
+    "checked_on": "2026-09-07",
+    "initial_state": "URL is not on Google; URL is unknown to Google",
+    "indexing_request": "accepted_into_priority_crawl_queue",
+    "request_count": 1,
+    "resubmit": false,
+    "evidence": "ignored_private_screenshot",
+    "policy": "A crawl request is not indexing, ranking, traffic, a lead, a sale, or revenue. The WordPress article remains discoverable through its normal sitemap rather than a duplicate manual request."
   },
   "marketplace": {
     "state": "application_prepared_login_required",

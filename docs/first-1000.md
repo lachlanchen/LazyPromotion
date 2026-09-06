@@ -21,6 +21,10 @@ outside the fixed scope unless separately accepted. A private application is
 ready but Upwork remains logged out, so no proposal, Connects spend, buyer
 reply, payment, or revenue exists. One LinkedIn explanation is queued for 28
 September after visible review; a queue item is not publication or a lead.
+The companion [practical assembly guide](https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html)
+is live in English, Traditional Chinese, and Japanese. It explains the complete
+method before one tracked offer link and includes no prospect details or
+customer-result claim. Publication is discovery evidence, not a sale.
 
 The clearest current one-contract route is a USD 1,200 Upwork listing for
 OUTOFPAPUA lexical-database ingestion and data carpentry. The buyer needs code

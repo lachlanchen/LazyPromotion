@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "ai-clip-assembly-pilot",
   "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
   "source_need": {
@@ -52,6 +52,19 @@
     ],
     "delivery_sample": "https://lazying.art/story-clip/#sample",
     "claim_boundary": "Every public example is first-party project work. None is a customer brand film, paid UGC campaign, e-commerce performance result, or proof that six unseen source clips will fit."
+  },
+  "owned_content": {
+    "state": "published_and_verified",
+    "title": "Six AI Clips Are Not a Brand Film: A Practical Assembly Pass",
+    "url": "https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html",
+    "lazyblog_commit": "2c65063cd83ba2561423fda227addbcff7b225d9",
+    "languages": [
+      "en",
+      "zh-hant",
+      "ja"
+    ],
+    "validation": "The source and both translation pages returned HTTP 200 with the correct localized title and one original tracked offer link.",
+    "policy": "The article teaches source inventory, shot roles, silent assembly, sound, text, export, and reproducible handoff before one restrained offer. It contains no prospect details or customer-result claim."
   },
   "marketplace": {
     "state": "application_prepared_login_required",

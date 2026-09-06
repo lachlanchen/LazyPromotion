@@ -992,7 +992,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1021,6 +1021,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(offer["checkout_created"])
         self.assertEqual(offer["received_revenue_usd"], 0)
         self.assertFalse(offer["deployment"]["horizontal_overflow"])
+
+        article = campaign["owned_content"]
+        self.assertEqual(article["state"], "published_and_verified")
+        self.assertEqual(
+            article["url"],
+            "https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html",
+        )
+        self.assertEqual(article["languages"], ["en", "zh-hant", "ja"])
+        self.assertIn("HTTP 200", article["validation"])
+        self.assertIn("no prospect details", article["policy"])
 
         marketplace = campaign["marketplace"]
         self.assertEqual(marketplace["state"], "application_prepared_login_required")

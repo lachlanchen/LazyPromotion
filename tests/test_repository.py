@@ -992,12 +992,13 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
         self.assertEqual(source["published_budget"], "USD 500 fixed price")
         self.assertEqual(source["eligibility"], "Worldwide")
+        self.assertIn("member since July 23, 2023", source["client_record_when_checked"])
 
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
@@ -1045,6 +1046,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(marketplace["state"], "application_prepared_login_required")
         self.assertFalse(marketplace["application_submitted"])
         self.assertEqual(marketplace["connects_spent"], 0)
+        self.assertEqual(
+            marketplace["proposal_links"],
+            [
+                "https://lazying.art/video/",
+                "https://lazying.art/video/brand-film/",
+            ],
+        )
 
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")

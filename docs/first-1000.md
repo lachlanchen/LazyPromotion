@@ -17,8 +17,12 @@ now turns that into a repeatable boundary: up to six clips and 45 seconds of
 combined source, two cuts from one 16:9 edit, basic colour and sound finishing,
 a source manifest, and one correction pass. New generation, shot recreation,
 paid stock, translation, extra formats, publishing, and native editor files are
-outside the fixed scope unless separately accepted. A private application is
-ready but Upwork remains logged out, so no proposal, Connects spend, buyer
+outside the fixed scope unless separately accepted. The
+[free clip fit check](https://lazying.art/video/brand-film/fit-check/) now turns
+the inventory, rights, story, destination, and handoff questions into a reviewed
+email or copyable request in the visitor's browser; it transfers no file and
+makes no network request during review. A private application is ready but
+Upwork remains logged out, so no proposal, Connects spend, buyer
 reply, payment, or revenue exists. One LinkedIn explanation is queued for 28
 September after visible review; a queue item is not publication or a lead.
 The companion [practical assembly guide](https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html)

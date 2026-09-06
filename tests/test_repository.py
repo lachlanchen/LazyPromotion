@@ -992,7 +992,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["version"], 6)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1003,6 +1003,10 @@ class RepositoryTests(unittest.TestCase):
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["url"], "https://lazying.art/video/brand-film/")
+        self.assertEqual(
+            offer["fit_check"],
+            "https://lazying.art/video/brand-film/fit-check/",
+        )
         self.assertEqual(offer["price"], "USD 500")
         self.assertIn("Up to six", offer["scope"])
         self.assertIn("45 seconds", offer["scope"])
@@ -1022,6 +1026,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(offer["checkout_created"])
         self.assertEqual(offer["received_revenue_usd"], 0)
         self.assertFalse(offer["deployment"]["horizontal_overflow"])
+        self.assertEqual(
+            offer["deployment"]["fit_check_state"],
+            "live_http_200_functionally_reviewed",
+        )
+        self.assertEqual(offer["deployment"]["fit_check_network_requests_on_review"], 0)
+        self.assertFalse(offer["deployment"]["fit_check_file_upload_present"])
+        self.assertTrue(offer["deployment"]["mailto_and_copy_routes_present"])
 
         article = campaign["owned_content"]
         self.assertEqual(article["state"], "published_and_verified")

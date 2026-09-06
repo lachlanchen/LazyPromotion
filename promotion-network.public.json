@@ -46,7 +46,7 @@
       "label": "cross-source-card-dedup",
       "metadata": {
         "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },

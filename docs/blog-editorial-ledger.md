@@ -286,6 +286,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `3ca71b7` | 3616 | Withdrew uncleared full-text PDFs and published a multilingual lawful-access notice |
 | `3220572` | 3782 | Published a source-aware study-card deduplication guide in English, Traditional Chinese, and Japanese |
 | `24d6afa` | 3782 | Added one exact-fit path from the complete guide to the LKT sample report and preserved attribution through the fit check |
+| `48adb6a` | 3782 | Added the exact USD 250 collection-fit scope and a direct fit-check path to all three reviewed editions |
 | `2906a8c` | 3791 | Published a multilingual OCR evaluation guide in English, Simplified Chinese, and Japanese |
 | `d070282` | 3792 | Published the source-first bilingual lecture workflow guide in English, Traditional Chinese, and Japanese |
 | `3837aa6` | 3803 | Published the Cantonese subtitle delivery guide in English, Traditional Chinese, and Japanese |

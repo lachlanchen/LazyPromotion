@@ -1,6 +1,6 @@
 {
   "id": "cross-source-card-dedup",
-  "version": 1,
+  "version": 2,
   "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
   "source_need": {
     "captured_at": "2026-09-02T01:00:00Z",
@@ -13,6 +13,7 @@
     "lazyblog": {
       "state": "published",
       "published_at": "2026-09-02T01:10:36Z",
+      "updated_at": "2026-09-06T18:01:09Z",
       "url": "https://blog.lazying.art/html/algorithms-data-structures/3782/deduplicate-study-cards-chapters-lecture-transcripts.html",
       "post_id": 3782,
       "source_language": "en",
@@ -24,12 +25,21 @@
         "162b59f",
         "3220572",
         "7bf8e57",
-        "24d6afa"
+        "24d6afa",
+        "48adb6a"
       ],
       "conversion_path": {
         "sample_report": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=card_dedup&utm_content=collection_readiness",
-        "fit_check": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=card_dedup&utm_content=collection_readiness",
-        "verified_at": "2026-09-02T01:20:07Z",
+        "fit_check": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=card_dedup&utm_content=fit_check",
+        "offer": "Fixed USD 250 for one rights-cleared collection on one existing machine, up to 12 source units and 20 test questions, with up to two cited browser cards when usable and a clear go/no-go recommendation.",
+        "exclusions": [
+          "custom OCR",
+          "bulk conversion",
+          "deployment",
+          "hardware"
+        ],
+        "verified_at": "2026-09-06T18:01:09Z",
+        "live_review": "The English, Japanese, and Traditional Chinese editions each returned HTTP 200 with the reviewed offer and one direct fit-check link.",
         "automatic_form_submission": false
       },
       "policy": "The article solves the design problem before mentioning any owned work. It cites three public repositories only as architectural patterns and explicitly says none is a finished cross-upload deduplicator."

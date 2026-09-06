@@ -776,7 +776,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -855,7 +855,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -925,7 +925,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(probe["live_story_clip_link"])
         self.assertIn("No working reviewed write route", bridge["blocker"])
         self.assertFalse(offer["checkout_created"])
-        self.assertFalse(offer["social_post_created"])
+        social = offer["social_post_created"]
+        self.assertEqual(social["state"], "postiz_queue")
+        self.assertEqual(social["provider"], "linkedin")
+        self.assertIn("utm_content=video_portfolio", social["destination"])
+        self.assertEqual(len(social["content_sha256"]), 64)
+        self.assertTrue(social["visible_editor_reviewed"])
+        self.assertEqual(social["matching_posts"], 1)
+        self.assertEqual(social["verified_state"], "QUEUE")
+        self.assertFalse(social["release_present"])
+        self.assertFalse(social["shortlink_enabled"])
         self.assertTrue(offer["deployment_verified"])
         discovery = campaign["search_discovery"]
         self.assertEqual(

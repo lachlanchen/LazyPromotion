@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -52,6 +52,11 @@
       }
     ],
     "public_samples": [
+      {
+        "title": "Direct-view video portfolio",
+        "url": "https://lazying.art/video/",
+        "website_commit": "06023d632cd76ec6c1f7f2efb2b8c6eb044ca0d3"
+      },
       {
         "title": "Guan Ju River Song",
         "url": "https://www.youtube.com/watch?v=da0vnv1lQ_E",
@@ -117,7 +122,52 @@
       "Rights and budget for third-party stock or archive footage",
       "Retention or conversion results for this employer",
       "Expected weekly volume, turnaround, revision count, or platform ownership"
-    ]
+    ],
+    "portfolio_reel": {
+      "state": "live_project_owned_work",
+      "url": "https://lazying.art/video/",
+      "website_commit": "06023d632cd76ec6c1f7f2efb2b8c6eb044ca0d3",
+      "examples": [
+        "28-second PocketPolyglot device and product demonstration",
+        "4:36 creator-led PocketPolyglot walkthrough",
+        "12.82-second captioned Story Clip Pilot extract",
+        "33-second AI-assisted Desert Oasis narrative"
+      ],
+      "policy": "The page states the exact project role beside each public player. Every example is first-party project work, not a customer ad, paid UGC campaign, e-commerce result, or performance case study."
+    }
+  },
+  "marketplace_research": {
+    "ai_brand_film": {
+      "state": "application_prepared_login_required",
+      "observed_on": "2026-09-06",
+      "source_url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/",
+      "published_scope": "Combine six existing AI-generated clips totalling about 32 seconds into one 30-45 second cinematic brand film and a 25-30 second website cut, with colour, music, sound, selected shot repair, high-resolution exports, and editable project files.",
+      "published_budget": "USD 500 fixed price",
+      "eligibility": "Worldwide",
+      "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites sent",
+      "fit": "The public portfolio demonstrates short product editing, creator-led footage, story selection, captions, AI-assisted narrative, and reproducible delivery sources.",
+      "gaps": [
+        "Higgsfield experience is preferred but not currently claimed.",
+        "A native Premiere, After Effects, or Final Cut project is not currently promised.",
+        "The portfolio contains project-owned work rather than customer brand films or performance results.",
+        "The public listing did not show a client spend or hire history in the captured result."
+      ],
+      "private_packet": ".local/outreach/ai-brand-film/application-draft.md",
+      "application_submitted": false,
+      "connects_spent": 0,
+      "received_revenue_usd": 0,
+      "policy": "Inspect the six clips and agree rights, native editable format, recreation boundary, exports, revision, and payment before accepting. Keep the application and contract on Upwork."
+    },
+    "full_time_ecommerce_editor": {
+      "state": "qualified_but_not_prepared",
+      "observed_on": "2026-09-06",
+      "source_url": "https://www.upwork.com/freelance-jobs/apply/Video-Editor-Creative-Content_~022096069523224005829/",
+      "published_terms": "USD 2,000 per month, two-week paid trial, full-time Monday-Friday, contract-to-hire, five freelancers requested",
+      "activity_when_checked": "20 to 50 proposals, 20 interviewing, 0 invites; client showed USD 48K spent, 77 hires, and 26 active hires",
+      "decision": "Do not submit without confirming full-time availability and whether project-owned rather than customer e-commerce samples meet the screening bar.",
+      "application_submitted": false,
+      "received_revenue_usd": 0
+    }
   },
   "application": {
     "state": "sent_awaiting_reply",

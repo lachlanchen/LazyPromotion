@@ -776,7 +776,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -792,6 +792,22 @@ class RepositoryTests(unittest.TestCase):
             "Natural-interview Story Clip delivery",
             " ".join(campaign["fit"]["not_proven"]),
         )
+        portfolio = campaign["fit"]["portfolio_reel"]
+        self.assertEqual(portfolio["state"], "live_project_owned_work")
+        self.assertEqual(portfolio["url"], "https://lazying.art/video/")
+        self.assertEqual(len(portfolio["examples"]), 4)
+        self.assertIn("not a customer ad", portfolio["policy"])
+
+        brand_film = campaign["marketplace_research"]["ai_brand_film"]
+        self.assertEqual(brand_film["state"], "application_prepared_login_required")
+        self.assertFalse(brand_film["application_submitted"])
+        self.assertEqual(brand_film["connects_spent"], 0)
+        self.assertEqual(brand_film["received_revenue_usd"], 0)
+
+        ecommerce = campaign["marketplace_research"]["full_time_ecommerce_editor"]
+        self.assertEqual(ecommerce["state"], "qualified_but_not_prepared")
+        self.assertFalse(ecommerce["application_submitted"])
+        self.assertEqual(ecommerce["received_revenue_usd"], 0)
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
@@ -839,7 +855,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")

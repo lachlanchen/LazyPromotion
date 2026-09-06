@@ -12,6 +12,19 @@
         "date": "2026-09-02",
         "evidence": "GitHub's timestamped stargazer endpoint shows four distinct stars on 2026-09-02."
       },
+      "reader_index": {
+        "state": "published",
+        "url": "https://github.com/lachlanchen/leonardsusskind/tree/main/all_notes",
+        "commit": "7e21a875ba09a3940c3ce258bd7df5966e0d3c77",
+        "books": 19,
+        "formats": [
+          "browser reader",
+          "full PDF",
+          "pocket PDF",
+          "larger-type pocket PDF"
+        ],
+        "policy": "The index responds to observed traffic on the merged-notes folder by making every current book and reading format easier to reach. It adds no product pitch, outcome claim, or revenue claim."
+      },
       "lead_or_sale_observed": false,
       "policy": "Treat stars as evidence that the free archive is being discovered, not as learning outcomes, leads, testimonials, or revenue."
     },

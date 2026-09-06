@@ -30,6 +30,23 @@ class LectureArchiveCampaignTests(unittest.TestCase):
         )
         self.assertFalse(campaign["channels"]["github"]["lead_or_sale_observed"])
 
+    def test_reader_index_routes_every_book_without_claiming_a_sale(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "lecture-archive-provenance.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        github = campaign["channels"]["github"]
+        index = github["reader_index"]
+
+        self.assertEqual(index["state"], "published")
+        self.assertEqual(index["books"], 19)
+        self.assertEqual(
+            index["url"],
+            "https://github.com/lachlanchen/leonardsusskind/tree/main/all_notes",
+        )
+        self.assertFalse(github["lead_or_sale_observed"])
+
 
 if __name__ == "__main__":
     unittest.main()

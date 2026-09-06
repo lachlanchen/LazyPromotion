@@ -2574,7 +2574,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["version"], 6)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -2602,6 +2602,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(linkedin["verification"]["media_visible"])
         self.assertFalse(linkedin["verification"]["release_present"])
         self.assertIn("not publication", linkedin["policy"])
+        blog = campaign["channels"]["blog"]
+        self.assertEqual(blog["state"], "published")
+        self.assertEqual(blog["post_id"], 3808)
+        self.assertTrue(blog["verification"]["all_language_routes_http_200"])
+        self.assertEqual(
+            sorted(blog["verification"]["translations_present"]),
+            ["ja", "zh-hant"],
+        )
+        self.assertIn("not a lead", blog["policy"])
         self.assertIn("230,000-word", campaign["current_paid_need"]["published_scope"])
         self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)

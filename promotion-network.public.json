@@ -36,7 +36,7 @@
       "label": "bilingual-pocket-editions",
       "metadata": {
         "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
-        "version": 5
+        "version": 6
       },
       "url": ""
     },
@@ -208,6 +208,13 @@
         "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
         "version": 5
       },
+      "url": ""
+    },
+    {
+      "id": "channel:blog",
+      "kind": "channel",
+      "label": "blog",
+      "metadata": {},
       "url": ""
     },
     {
@@ -7502,6 +7509,16 @@
       "relation": "promotes",
       "source": "campaign:bilingual-pocket-editions",
       "target": "project:pocketpolyglot"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "channel:blog"
     },
     {
       "confidence": 1.0,

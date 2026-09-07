@@ -91,7 +91,7 @@ flowchart LR
 | [`discovery-plan.json`](discovery-plan.json) | Bounded help-request searches plus reviewed need-oriented topic overrides for ambiguous repository metadata |
 | [`campaigns/`](campaigns/) | Evidence-backed, channel-specific campaign sources with no credentials or private integration IDs |
 | [`docs/first-1000.md`](docs/first-1000.md) | Five bounded service routes at USD 250 or USD 500 and their truthful combined milestone |
-| [`docs/paid-need-decision-2026-09-06.md`](docs/paid-need-decision-2026-09-06.md) | Current primary-source comparison of the strongest direct-revenue, grant, and manual-work routes |
+| [`docs/paid-need-decision-2026-09-07.md`](docs/paid-need-decision-2026-09-07.md) | Current primary-source comparison of the strongest direct-revenue, funding, and rejected bounty routes |
 | [`docs/lkt-marketplaces.md`](docs/lkt-marketplaces.md) | Evidence-backed Contra-first service-listing route, exact offer copy, operator gates, and marketplace fee boundaries |
 | [`marketplace-channels.json`](marketplace-channels.json) | Current Contra, Upwork, and Fiverr comparison plus a fail-closed LKT listing packet |
 | [`docs/conversion.md`](docs/conversion.md) | Value-first path from qualified attention to confirmed leads and gross revenue |

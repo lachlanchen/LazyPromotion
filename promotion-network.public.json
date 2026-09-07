@@ -181,6 +181,16 @@
       "url": ""
     },
     {
+      "id": "campaign:lozaic-video-automation",
+      "kind": "campaign",
+      "label": "lozaic-video-automation",
+      "metadata": {
+        "objective": "Win a funded, bounded first milestone for Lozaic's short-video automation prototype without promising its entire long-term editor, learning, account, and export roadmap for one fixed budget.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:manuscript-sprint-pilot",
       "kind": "campaign",
       "label": "manuscript-sprint-pilot",
@@ -3982,7 +3992,7 @@
       "metadata": {
         "description": "Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
         "homepage": "https://l-and-n.lazying.art",
-        "pushed_at": "2026-09-06T22:27:11Z",
+        "pushed_at": "2026-09-07T01:41:20Z",
         "topics": [
           "android",
           "cantonese",
@@ -4004,7 +4014,7 @@
           "watchos",
           "whisper"
         ],
-        "updated_at": "2026-09-06T22:33:24Z"
+        "updated_at": "2026-09-07T01:41:24Z"
       },
       "url": "https://github.com/lachlanchen/L-and-N"
     },
@@ -4380,7 +4390,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-07T00:58:42Z",
+        "pushed_at": "2026-09-07T02:13:06Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4400,7 +4410,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-07T00:58:45Z"
+        "updated_at": "2026-09-07T02:13:10Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -6091,6 +6101,13 @@
       "url": "https://lazying.art/video/brand-film/sample/manifest.json"
     },
     {
+      "id": "url:da326070927d2fdb",
+      "kind": "web_resource",
+      "label": "assembly proof",
+      "metadata": {},
+      "url": "https://lazying.art/video/brand-film/"
+    },
+    {
       "id": "url:fd12cb17c25f965d",
       "kind": "web_resource",
       "label": "assembly sample",
@@ -6110,6 +6127,13 @@
       "label": "atomic source hashed ingestion",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/corpus.py#L133-L199"
+    },
+    {
+      "id": "url:788a010ce66c771a",
+      "kind": "web_resource",
+      "label": "autopublish",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/AutoPublish"
     },
     {
       "id": "url:a6139fe39dbb0e57",
@@ -6630,6 +6654,13 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/knowledge-architecture.md#L3-L14"
     },
     {
+      "id": "url:cb83fc178ab3c1b2",
+      "kind": "web_resource",
+      "label": "lala studio",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LalaStudio"
+    },
+    {
       "id": "url:eb728a227ca5d7ea",
       "kind": "web_resource",
       "label": "latest public hiring need",
@@ -6646,7 +6677,7 @@
     {
       "id": "url:90dd533df880bbcd",
       "kind": "web_resource",
-      "label": "lazyedit repository",
+      "label": "lazyedit",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyEdit"
     },
@@ -6735,18 +6766,18 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/morphology.py#L50-L178"
     },
     {
+      "id": "url:9b24e3a04f8d2334",
+      "kind": "web_resource",
+      "label": "multilingual whisper",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/MultilingualWhisper"
+    },
+    {
       "id": "url:593c601822a24f73",
       "kind": "web_resource",
       "label": "offer",
       "metadata": {},
       "url": "https://lazying.art/lecture-pack/"
-    },
-    {
-      "id": "url:da326070927d2fdb",
-      "kind": "web_resource",
-      "label": "offer",
-      "metadata": {},
-      "url": "https://lazying.art/video/brand-film/"
     },
     {
       "id": "url:0c3f0c1551c48c93",
@@ -7041,6 +7072,13 @@
       "label": "source need url",
       "metadata": {},
       "url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/"
+    },
+    {
+      "id": "url:cdaa4b529a2ed1bd",
+      "kind": "web_resource",
+      "label": "source need url",
+      "metadata": {},
+      "url": "https://www.upwork.com/freelance-jobs/apply/Need-Full-Stack-coder-for-video-editing-automation-tool-for-short-form-content-creators_~022096330568622329308/"
     },
     {
       "id": "url:415da1977e7f8d4e",
@@ -8942,6 +8980,96 @@
       "relation": "targets",
       "source": "campaign:lopaka-embedded-ui-contract",
       "target": "channel:official_application_form"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AutoPublish",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lozaic-video-automation",
+      "target": "project:github-autopublish"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaStudio",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lozaic-video-automation",
+      "target": "project:github-lalastudio"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lozaic-video-automation",
+      "target": "project:github-multilingualwhisper"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:lozaic-video-automation",
+      "target": "project:lazyedit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "prepared_login_required"
+      },
+      "relation": "targets",
+      "source": "campaign:lozaic-video-automation",
+      "target": "channel:upwork"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/AutoPublish",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lozaic-video-automation",
+      "target": "url:788a010ce66c771a"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdit",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lozaic-video-automation",
+      "target": "url:90dd533df880bbcd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lozaic-video-automation",
+      "target": "url:9b24e3a04f8d2334"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LalaStudio",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lozaic-video-automation",
+      "target": "url:cb83fc178ab3c1b2"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.upwork.com/freelance-jobs/apply/Need-Full-Stack-coder-for-video-editing-automation-tool-for-short-form-content-creators_~022096330568622329308/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lozaic-video-automation",
+      "target": "url:cdaa4b529a2ed1bd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/video/brand-film/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lozaic-video-automation",
+      "target": "url:da326070927d2fdb"
     },
     {
       "confidence": 1.0,

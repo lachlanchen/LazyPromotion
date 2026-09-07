@@ -1,0 +1,67 @@
+{
+  "id": "lozaic-video-automation",
+  "version": 1,
+  "objective": "Win a funded, bounded first milestone for Lozaic's short-video automation prototype without promising its entire long-term editor, learning, account, and export roadmap for one fixed budget.",
+  "source_need": {
+    "captured_on": "2026-09-07",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Need-Full-Stack-coder-for-video-editing-automation-tool-for-short-form-content-creators_~022096330568622329308/",
+    "title": "Need Full Stack coder for a video editing automation tool for short-form content creators",
+    "eligibility": "Worldwide",
+    "published_budget": "USD 3,500 fixed",
+    "published_level": "Expert; complex project",
+    "scope": "Review an existing AI-assisted prototype and architecture, automate coherent cuts and style-dependent subtitles, effects, music, zooms, and images, add an editable video view, login and user styles, support video and project exports, and eventually infer styles and learn from user corrections.",
+    "activity_when_checked": "20 to 50 proposals, 0 interviewing, client viewed the listing the previous day, and the Canada-based client account had been open since 2026-08-12 with no visible hiring or spend history.",
+    "policy": "The listing is current buyer-intent evidence only. Its budget is not escrow, an award, a contract, payment, or received revenue. Keep all client communication and payment on Upwork."
+  },
+  "source_evidence": {
+    "source_need_url": "https://www.upwork.com/freelance-jobs/apply/Need-Full-Stack-coder-for-video-editing-automation-tool-for-short-form-content-creators_~022096330568622329308/",
+    "lazyedit": "https://github.com/lachlanchen/LazyEdit",
+    "multilingual_whisper": "https://github.com/lachlanchen/MultilingualWhisper",
+    "autopublish": "https://github.com/lachlanchen/AutoPublish",
+    "lala_studio": "https://github.com/lachlanchen/LalaStudio",
+    "assembly_proof": "https://lazying.art/video/brand-film/"
+  },
+  "fit": {
+    "supported_now": [
+      "Local-first media preprocessing, transcription, subtitle handling, metadata, and reviewed publishing workflows",
+      "Mixed-language speech segmentation and subtitle refinement",
+      "A reproducible six-source assembly example with explicit selected ranges, output probes, hashes, and build evidence",
+      "Browser production, job monitoring, and handoff patterns across local media tools"
+    ],
+    "not_proven": [
+      "An Electron nonlinear editor",
+      "Premiere Pro project export",
+      "Automatic style detection or learning from editor corrections",
+      "Secure multi-user production authentication",
+      "A paid creator-company deployment or customer outcome"
+    ],
+    "claim_boundary": "The public projects prove relevant pipeline components and one reproducible assembly workflow. They do not prove the full product requested by the listing or that the complete long-term vision fits the published fixed budget."
+  },
+  "application": {
+    "state": "prepared_login_required",
+    "private_packet": ".local/outreach/lozaic-video-automation/application-draft.md",
+    "application_submitted": false,
+    "connects_spent": 0,
+    "proposed_first_milestone": "USD 750 prototype audit and reproducible one-style baseline with an architecture map, source-to-output fixture, explicit data model, risk register, and acceptance plan",
+    "remaining_scope_policy": "Price and accept later milestones only after the actual prototype, licences, source bundle, reference output, export expectations, security boundary, and acceptance tests are visible.",
+    "policy": "Do not promise the full roadmap, unpaid implementation, Premiere export, learned editing style, production security, or fixed acceptance dates before the first funded review."
+  },
+  "channels": {
+    "upwork": {
+      "state": "prepared_login_required",
+      "application_submitted": false,
+      "connects_spent": 0
+    }
+  },
+  "funnel": {
+    "state": "buyer_intent_identified",
+    "application_submitted": false,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -196,6 +196,19 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(report["alerts"][0]["kind"], "publication_overdue")
         self.assertIn("do not resubmit", report["alerts"][0]["action"])
 
+        repeated = FakePostiz(posts=[post(publish_at="2026-08-31T23:00:00Z")])
+        report = self.run_monitor(repeated)
+        self.assertEqual(report["alerts"], [])
+
+    def test_failed_publication_alerts_once_per_state_transition(self):
+        failed = FakePostiz(posts=[post(state="ERROR")])
+        report = self.run_monitor(failed)
+        self.assertEqual(report["alerts"][0]["kind"], "publication_failed")
+
+        repeated = FakePostiz(posts=[post(state="ERROR")])
+        report = self.run_monitor(repeated)
+        self.assertEqual(report["alerts"], [])
+
     def test_missing_release_requires_explicit_connection_review(self):
         missing = post(state="PUBLISHED")
         missing["releaseId"] = "missing"

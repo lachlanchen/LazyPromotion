@@ -1,6 +1,6 @@
 {
   "id": "cross-source-card-dedup",
-  "version": 3,
+  "version": 5,
   "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
   "source_need": {
     "captured_at": "2026-09-02T01:00:00Z",
@@ -45,17 +45,34 @@
       "policy": "The article solves the design problem before mentioning any owned work. It cites three public repositories only as architectural patterns and explicitly says none is a finished cross-upload deduplicator."
     },
     "x": {
-      "state": "postiz_queue",
-      "publish_at": "2026-09-07T02:00:00Z",
+      "state": "published",
+      "publish_at": "2026-09-07T02:45:00Z",
+      "published_at": "2026-09-07T02:45:00Z",
+      "original_publish_at": "2026-09-07T02:00:00Z",
+      "release_url": "https://x.com/lazyingart/status/2096791913928278225",
       "content": "Duplicate cards can be a data-model problem: a chapter and lecture repeat one fact, but each import creates a new note. Keep one fact, attach both source spans, and update the same Anki note. Design: blog.lazying.art/?p=3782&utm_source=x&utm_campaign=card_dedup",
-      "destination": "https://blog.lazying.art/html/algorithms-data-structures/3782/deduplicate-study-cards-chapters-lecture-transcripts.html?utm_source=x&utm_medium=social&utm_campaign=card_dedup",
+      "destination": "https://blog.lazying.art/html/algorithms-data-structures/3782/deduplicate-study-cards-chapters-lecture-transcripts.html?utm_source=x&utm_campaign=card_dedup",
       "settings": {
         "who_can_reply_post": "everyone",
         "post_type": "post",
         "made_with_ai": true,
         "paid_partnership": false
       },
-      "policy": "One first-party technical note, scheduled after the current lecture and offer posts. No result, user, or revenue claim."
+      "delivery_review": {
+        "checked_at": "2026-09-07T02:36:48Z",
+        "first_attempt_state": "ERROR",
+        "postiz_notice": "Postiz reported that X received the post but its publication could not be confirmed.",
+        "visible_profile_match_found": false,
+        "exact_x_search_match_found": false,
+        "postiz_provider_match_found": false,
+        "retry_attempts": 1,
+        "retry_publish_at": "2026-09-07T02:45:00Z",
+        "retry_state": "PUBLISHED",
+        "visible_copy_exact": true,
+        "tracked_destination_verified": true,
+        "verified_at": "2026-09-07T02:46:18Z"
+      },
+      "policy": "One first-party technical note, scheduled after the current lecture and offer posts. The single retry followed a visible duplicate check and Postiz provider lookup. Do not retry again without a new visible diagnosis. No result, user, or revenue claim."
     },
     "reddit": {
       "state": "postiz_queue",

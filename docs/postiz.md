@@ -201,7 +201,9 @@ post identity, and never writes raw Postiz or integration IDs. Account-level
 analytics remain reach evidence only. A post-level increase creates an operator
 alert to inspect the public response in the visible browser; it is not a lead
 and the monitor cannot reply. Missing release IDs and overdue queue states also
-require visible review before any connecting or retry action.
+require visible review before any connecting or retry action. An unchanged
+failure or already-overdue queue does not emit the same alert on every polling
+cycle; a new state transition can alert again.
 
 The wrapper keeps exactly one `lazypromotion-owned-monitor` tmux session and a
 private sanitized log. It does not start Chrome, noVNC, or Firefox.

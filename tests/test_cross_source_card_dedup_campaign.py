@@ -16,7 +16,7 @@ class CrossSourceCardDedupCampaignTests(unittest.TestCase):
         lazyblog = self.campaign["channels"]["lazyblog"]
         conversion = lazyblog["conversion_path"]
 
-        self.assertEqual(self.campaign["version"], 3)
+        self.assertEqual(self.campaign["version"], 5)
         self.assertIn("48adb6a", lazyblog["blog_commits"])
         self.assertIn("USD 250", conversion["offer"])
         self.assertIn("12 source units", conversion["offer"])
@@ -47,6 +47,27 @@ class CrossSourceCardDedupCampaignTests(unittest.TestCase):
         self.assertTrue(review["stored_time_exact"])
         self.assertTrue(review["original_url_preserved"])
         self.assertEqual(review["update_attempts"], 1)
+
+    def test_x_retry_is_single_and_duplicate_checked(self):
+        channel = self.campaign["channels"]["x"]
+        review = channel["delivery_review"]
+
+        self.assertEqual(channel["state"], "published")
+        self.assertEqual(channel["original_publish_at"], "2026-09-07T02:00:00Z")
+        self.assertEqual(channel["publish_at"], review["retry_publish_at"])
+        self.assertEqual(review["first_attempt_state"], "ERROR")
+        self.assertEqual(review["retry_attempts"], 1)
+        self.assertFalse(review["visible_profile_match_found"])
+        self.assertFalse(review["exact_x_search_match_found"])
+        self.assertFalse(review["postiz_provider_match_found"])
+        self.assertEqual(review["retry_state"], "PUBLISHED")
+        self.assertTrue(review["visible_copy_exact"])
+        self.assertTrue(review["tracked_destination_verified"])
+        self.assertEqual(
+            channel["release_url"],
+            "https://x.com/lazyingart/status/2096791913928278225",
+        )
+        self.assertIn("Do not retry again", channel["policy"])
 
     def test_publication_and_attention_do_not_inflate_revenue(self):
         funnel = self.campaign["funnel"]

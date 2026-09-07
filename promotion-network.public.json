@@ -56,7 +56,7 @@
       "label": "cross-source-card-dedup",
       "metadata": {
         "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
-        "version": 3
+        "version": 5
       },
       "url": ""
     },
@@ -7869,7 +7869,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "published"
       },
       "relation": "targets",
       "source": "campaign:cross-source-card-dedup",

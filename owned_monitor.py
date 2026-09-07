@@ -383,6 +383,14 @@ def monitor_once(
             )
             replies = max(0, provider_replies - known_owned_replies)
             previous = previous_observation(db, key)
+            previous_state = (
+                str(previous.get("state") or "").upper() if previous else ""
+            )
+            previous_checked_at = (
+                parse_time(str(previous.get("observed_at") or ""))
+                if previous
+                else None
+            )
             previous_comments = int(previous["comments"]) if previous else 0
             previous_replies = int(previous["replies"]) if previous else 0
 
@@ -404,11 +412,19 @@ def monitor_once(
             observed.append(public_summary)
 
             published_at = parse_time(publish_at)
-            if (
+            is_overdue = (
                 state == "QUEUE"
                 and published_at
                 and published_at < now - timedelta(minutes=20)
-            ):
+            )
+            was_already_overdue = bool(
+                previous_state == "QUEUE"
+                and published_at
+                and previous_checked_at
+                and published_at
+                < previous_checked_at - timedelta(minutes=20)
+            )
+            if is_overdue and not was_already_overdue:
                 alerts.append(
                     {
                         "kind": "publication_overdue",
@@ -416,7 +432,7 @@ def monitor_once(
                         "action": "Review the Postiz workflow visibly; do not resubmit the post.",
                     }
                 )
-            if state in FAILED_STATES:
+            if state in FAILED_STATES and previous_state not in FAILED_STATES:
                 alerts.append(
                     {
                         "kind": "publication_failed",
@@ -426,7 +442,7 @@ def monitor_once(
                 )
             if (
                 previous
-                and str(previous.get("state") or "").upper() in PENDING_STATES
+                and previous_state in PENDING_STATES
                 and is_published
                 and state not in FAILED_STATES
             ):

@@ -305,8 +305,10 @@ and analytics without changing a post. It stores only hashed post identities in
 the ignored local database; raw Postiz and integration IDs remain in memory.
 An increase in comments or replies produces a visible-browser review alert, not
 a lead, and never sends an automatic response. A persistent operator can use
-`python owned_monitor.py loop --interval-minutes 15`; the lock allows only one
+`scripts/owned-monitor.sh start`; the wrapper and monitor lock allow only one
 copy and the latest sanitized status stays in `.local/owned-monitor-status.json`.
+It does not start a browser. Use the same wrapper with `status` or `stop` to
+inspect or end the persistent session.
 The first observed transition from queued to published also creates a visible
 release-verification alert. A published state without a public release URL is
 unresolved evidence: inspect Postiz and the provider, and never reconnect or

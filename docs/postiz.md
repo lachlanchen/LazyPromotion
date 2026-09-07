@@ -191,7 +191,9 @@ failures and increases in post-level comments or replies:
 
 ```bash
 python owned_monitor.py once
-python owned_monitor.py loop --interval-minutes 15
+scripts/owned-monitor.sh start
+scripts/owned-monitor.sh status
+scripts/owned-monitor.sh stop
 ```
 
 It matches campaign routes from normalized public copy, persists only a hashed
@@ -200,6 +202,9 @@ analytics remain reach evidence only. A post-level increase creates an operator
 alert to inspect the public response in the visible browser; it is not a lead
 and the monitor cannot reply. Missing release IDs and overdue queue states also
 require visible review before any connecting or retry action.
+
+The wrapper keeps exactly one `lazypromotion-owned-monitor` tmux session and a
+private sanitized log. It does not start Chrome, noVNC, or Firefox.
 
 The same review pattern was used for a value-first LKT guide post to the
 connected Reddit account's own profile. The live provider contract and profile

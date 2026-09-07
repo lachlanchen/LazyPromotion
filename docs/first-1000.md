@@ -228,7 +228,12 @@ a query impression, lead, customer, or revenue event.
 The [scientific-PDF integrity guide](https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html)
 now gives owners of collections ranging from hundreds to tens of thousands of
 papers a complete, source-linked way to test versions, extraction, citations,
-retrieval, and graph provenance before the fit check. The
+retrieval, and graph provenance before the fit check. After a fresh user named
+the exact failure mode where PyMuPDF keeps words but loses table and chart
+relationships, the live English, Chinese, and Japanese editions added separate
+table-parser and chart-to-data routes with page-overlay and value checks. A
+value-only reply answered that user once without a link; it is a helpful
+interaction, not a lead or sale. The
 [multilingual OCR evaluation
 guide](https://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html)
 does the same for English, Arabic, Urdu, mixed-direction pages, and difficult

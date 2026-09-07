@@ -1,6 +1,6 @@
 {
   "id": "scientific-pdf-integrity",
-  "version": 4,
+  "version": 5,
   "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
   "source_needs": [
     {
@@ -14,6 +14,12 @@
       "url": "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/",
       "problem": "A scientific collection of roughly 17,000 PDFs needs local ingestion, reliable citations, and a design that can be maintained as the library changes.",
       "engagement": "research_only"
+    },
+    {
+      "captured_at": "2026-09-07T01:40:40Z",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1w8lgo3/comment/p89ttr3/",
+      "problem": "A PyMuPDF user can recover chart and table words but loses row, column, label, and bar-chart relationships, and asked which packages to test next.",
+      "engagement": "answered_once_value_only"
     }
   ],
   "channels": {
@@ -27,10 +33,11 @@
         "ja",
         "zh"
       ],
-      "blog_commit": "cc4857a",
+      "blog_commit": "fb6f576c101cb470f496189ab4cf1af6d143025e",
       "proof_update_commit": "839f614",
       "proof_link_verified_at": "2026-09-04T11:08:06Z",
-      "content": "A complete collection-integrity workflow covers source ledgers, version families, extraction classes, page-level citation contracts, lexical baselines, provenance-bearing graph edges, incremental updates, and an owner-defined acceptance boundary before one quiet LKT fit-check route.",
+      "relationship_extraction_update_verified_at": "2026-09-07T01:52:00Z",
+      "content": "A complete collection-integrity workflow covers source ledgers, version families, extraction classes, separate table and chart routes, page-level citation contracts, lexical baselines, provenance-bearing graph edges, incremental updates, and an owner-defined acceptance boundary before one quiet LKT fit-check route.",
       "sample_report": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=scientific_pdf_integrity",
       "fit_check": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=scientific_pdf_integrity",
       "policy": "The guide solves the collection-design problem before mentioning the maintained LKT offer. It makes no whole-collection accuracy, customer-result, turnaround, lead, or revenue claim."
@@ -72,8 +79,13 @@
       "policy": "A single contextual guide link helps research-library visitors evaluate their collection before the fit check. It is an attention route, not a lead or customer result."
     },
     "reddit": {
-      "state": "research_only",
-      "policy": "Do not convert the observed requests into promotional replies. Answer a future active need only when a standalone technical response is welcome under the community rules."
+      "state": "one_value_only_reply_sent",
+      "reply_url": "https://www.reddit.com/r/AI_Agents/comments/1w8lgo3/comment/p89vh3f/",
+      "sent_at": "2026-09-07T01:50:37Z",
+      "content_sha256": "f059f46a96c4df106ec4a595605c55146af9cdca8bafe95137afd2602457bf3b",
+      "linked_project": false,
+      "reply_summary": "Separated born-digital table parsing from chart-to-data extraction, named PyMuPDF find_tables, pdfplumber, Camelot, PaddleOCR PP-Chart2Table, and Docling, and required geometry and value checks against the source image.",
+      "policy": "The exact nested question and r/AI_Agents rules were visibly reviewed. The reply was sent once with no link or product mention; it is a helpful interaction, not a lead, customer result, endorsement, or revenue."
     },
     "hackernews": {
       "state": "research_only",
@@ -117,18 +129,25 @@
     },
     "crossref_rest_api": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
     "pymupdf_text_recipes": "https://pymupdf.readthedocs.io/en/latest/recipes-text.html",
+    "pymupdf_table_finder": "https://pymupdf.readthedocs.io/en/latest/page.html#Page.find_tables",
+    "pdfplumber_tables": "https://github.com/jsvine/pdfplumber#extracting-tables",
+    "camelot_table_parsers": "https://camelot-py.readthedocs.io/en/master/user/how-it-works.html",
+    "paddleocr_chart_to_table": "https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version3.x/module_usage/chart_parsing.en.md",
+    "docling_structured_tables": "https://docling-project.github.io/docling/concepts/serialization/",
     "grobid_introduction": "https://grobid.readthedocs.io/en/latest/Introduction/",
     "beir_paper": "https://arxiv.org/abs/2104.08663",
     "limits": [
       "The two public needs justify a reusable owned guide; they do not authorize unsolicited promotion in those discussions.",
       "The article describes an integrity-test method, not a benchmark result for either cited collection.",
       "The public LKT report is project-owned evidence, not a customer outcome or testimonial.",
-      "The executed synthetic sample proves only its fixed local inputs and lexical checks; it does not establish OCR, semantic retrieval, graph quality, large-collection performance, or a paid delivery."
+      "The executed synthetic sample proves only its fixed local inputs and lexical checks; it does not establish OCR, semantic retrieval, graph quality, large-collection performance, or a paid delivery.",
+      "The table/chart section is a source-backed evaluation route, not proof that one parser or model succeeds on an unseen customer document."
     ]
   },
   "funnel": {
-    "state": "attention",
-    "helpful_interaction_observed": false,
+    "state": "helpful_interaction",
+    "helpful_interaction_observed": true,
+    "reply_acknowledged": false,
     "fit_inquiry_observed": false,
     "qualified_lead_observed": false,
     "scope_accepted": false,

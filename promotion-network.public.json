@@ -226,7 +226,7 @@
       "label": "scientific-pdf-integrity",
       "metadata": {
         "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
-        "version": 4
+        "version": 5
       },
       "url": ""
     },
@@ -6147,6 +6147,13 @@
       "url": "https://outofpapua.com/"
     },
     {
+      "id": "url:2dec1867ec36af84",
+      "kind": "web_resource",
+      "label": "camelot table parsers",
+      "metadata": {},
+      "url": "https://camelot-py.readthedocs.io/en/master/user/how-it-works.html"
+    },
+    {
       "id": "url:b08e9eef9fc5b7c9",
       "kind": "web_resource",
       "label": "cantonese caption guide",
@@ -6201,6 +6208,13 @@
       "label": "crossref rest api",
       "metadata": {},
       "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+    },
+    {
+      "id": "url:194a2e0ce120a58d",
+      "kind": "web_resource",
+      "label": "docling structured tables",
+      "metadata": {},
+      "url": "https://docling-project.github.io/docling/concepts/serialization/"
     },
     {
       "id": "url:8945a53cc57c5704",
@@ -6777,6 +6791,13 @@
       "url": "https://l-and-n.lazying.art/lessons/light-vs-night/"
     },
     {
+      "id": "url:fc85f099d4021d84",
+      "kind": "web_resource",
+      "label": "paddleocr chart to table",
+      "metadata": {},
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version3.x/module_usage/chart_parsing.en.md"
+    },
+    {
       "id": "url:44752e26757961b2",
       "kind": "web_resource",
       "label": "passage provenance proof artifact",
@@ -6796,6 +6817,13 @@
       "label": "passage provenance proof youtube demo url",
       "metadata": {},
       "url": "https://www.youtube.com/watch?v=UuVa-DaSAvI"
+    },
+    {
+      "id": "url:4d9b69cb647ee8b5",
+      "kind": "web_resource",
+      "label": "pdfplumber tables",
+      "metadata": {},
+      "url": "https://github.com/jsvine/pdfplumber#extracting-tables"
     },
     {
       "id": "url:e6fb5bef94e3ec0c",
@@ -6908,6 +6936,13 @@
       "label": "pwa",
       "metadata": {},
       "url": "https://l-and-n.lazying.art/"
+    },
+    {
+      "id": "url:82a0a72ecba97c9b",
+      "kind": "web_resource",
+      "label": "pymupdf table finder",
+      "metadata": {},
+      "url": "https://pymupdf.readthedocs.io/en/latest/page.html#Page.find_tables"
     },
     {
       "id": "url:9c9f050d46c099aa",
@@ -9262,7 +9297,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "research_only"
+        "state": "one_value_only_reply_sent"
       },
       "relation": "targets",
       "source": "campaign:scientific-pdf-integrity",
@@ -9290,11 +9325,43 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://docling-project.github.io/docling/concepts/serialization/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:194a2e0ce120a58d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://camelot-py.readthedocs.io/en/master/user/how-it-works.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:2dec1867ec36af84"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:scientific-pdf-integrity",
       "target": "url:2fd3901a10e605bf"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/jsvine/pdfplumber#extracting-tables",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:4d9b69cb647ee8b5"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://pymupdf.readthedocs.io/en/latest/page.html#Page.find_tables",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:82a0a72ecba97c9b"
     },
     {
       "confidence": 1.0,
@@ -9335,6 +9402,14 @@
       "relation": "uses_evidence",
       "source": "campaign:scientific-pdf-integrity",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version3.x/module_usage/chart_parsing.en.md",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:scientific-pdf-integrity",
+      "target": "url:fc85f099d4021d84"
     },
     {
       "confidence": 1.0,

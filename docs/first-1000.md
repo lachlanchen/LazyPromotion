@@ -30,6 +30,20 @@ closed after one send and the exact subject appeared in Sent. Because the post
 was 54 days old when checked and gave no closing date, this remains one outbound
 application—not a human reply, take-home offer, contract, payment, or revenue.
 
+A third direct route uses LazyPromotion and LazyEdge for We The Flywheel's
+actively open, worldwide Agentic Engineer contract. The public role is hourly,
+under 30 hours a week, and three to six months, but publishes no numerical rate
+or payment terms. One reviewed official-form submission returned the page's
+own failure message; a read-only check found its hook returning HTTP 521, so it
+was not retried. One concise fallback email was then sent to the address shown
+by that error, and the exact subject appeared in Sent after the undo window
+expired. The application states five to ten hours a week and links only
+LazyPromotion and LazyEdge. Before any assessment or contract, the project
+area, rate, currency, payment cadence, live-meeting expectation, IP terms, and
+fit with the company's mixed portfolio must be reviewed in writing. This is
+one outbound application—not a reply, lead, assessment, contract, payment, or
+revenue.
+
 The newest direct need is a worldwide USD 500 listing asking for six existing
 AI-generated clips to become one 30–45 second brand film and one 25–30 second
 web cut. The public [AI Clip Assembly Pilot](https://lazying.art/video/brand-film/)

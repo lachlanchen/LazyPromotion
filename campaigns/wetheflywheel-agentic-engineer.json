@@ -1,0 +1,77 @@
+{
+  "id": "wetheflywheel-agentic-engineer",
+  "version": 1,
+  "objective": "Earn a paid, bounded agentic-engineering engagement by showing the exact review-first browser-agent and deployment work in LazyPromotion and LazyEdge without claiming unverified client delivery or commercial terms.",
+  "source_need": {
+    "captured_at": "2026-09-07T01:05:53Z",
+    "official_url": "https://wetheflywheel.com/en/careers/agentic-engineer-remote/",
+    "hacker_news_url": "https://news.ycombinator.com/item?id=49522930",
+    "title": "Agentic Engineer (Remote)",
+    "state": "first_party_role_actively_accepting_candidates",
+    "valid_through": "2026-09-30T23:59:59Z",
+    "eligibility": "Worldwide remote hourly contract, less than 30 hours per week, three to six months with possible continuation",
+    "published_compensation": "Hourly; no numerical rate, currency, cadence, or payment method published",
+    "published_work": "Ship features, scripts, content automations, and micro-products with AI coding agents while critically reviewing architecture, integrations, APIs, databases, and generated code.",
+    "live_collaboration": "Async-first with one weekly sync; strong written and progressively stronger spoken English requested.",
+    "brand_context": "The published portfolio includes media, AI, fitness, consumer products, iGaming, performance marketing, and a social sports-betting product.",
+    "policy": "The role page and employer-authored September Hacker News listing are current buyer-intent evidence. They are not a rate, assessment, contract, payment, or revenue promise."
+  },
+  "fit": {
+    "projects": [
+      "LazyPromotion",
+      "LazyEdge"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/LazyPromotion",
+      "https://github.com/lachlanchen/LazyEdge"
+    ],
+    "supported_now": [
+      "A review-first agent with deterministic eligibility gates, SQLite evidence, model-assisted drafting, content-hash review, Playwright/CDP operation, Postiz integration, and guarded public writes",
+      "Cross-repository agent orchestration, tests, Git discipline, and evidence-backed handoffs",
+      "Packaged CLI, API, schema validation, generated infrastructure artifacts, and deployment boundaries in LazyEdge"
+    ],
+    "not_proven": [
+      "A paid client outcome for agentic engineering",
+      "Meeting-ready spoken English assessed by this employer",
+      "Fit with any particular iGaming, betting, medical, or regulated assignment",
+      "An agreed hourly rate, currency, payment cadence, trial terms, IP terms, or weekly hours"
+    ],
+    "claim_boundary": "The repositories prove relevant building, verification, browser automation, integration, API, deployment, and documentation work. They do not prove client delivery, language assessment, assignment fit, or commercial agreement."
+  },
+  "application": {
+    "state": "email_fallback_sent_awaiting_human_reply",
+    "prepared_at": "2026-09-07T01:09:46Z",
+    "sent_at": "2026-09-07T01:11:42Z",
+    "availability_stated": "5-10 hours per week",
+    "location_stated": "Hong Kong",
+    "primary_tool_stated": "Codex CLI",
+    "resume_attached": false,
+    "whatsapp_supplied": false,
+    "official_form": {
+      "submit_attempts": 1,
+      "accepted": false,
+      "visible_result": "The form displayed its own generic failure message after one submit.",
+      "read_only_endpoint_check": "The published hook returned HTTP 521 immediately afterward.",
+      "retried": false
+    },
+    "fallback": {
+      "method": "One concise email to the fallback address displayed by the failed official form",
+      "delivery_evidence": "The compose window closed after one send, the undo window expired, and the exact subject appeared in the visible Sent mailbox.",
+      "message_storage": "ignored private evidence",
+      "automatic_follow_up": false,
+      "review_after": "2026-09-14"
+    },
+    "acceptance_gate": "Before assessment or contract, obtain the exact project area, contracting entity, numerical rate and currency, payment cadence and method, paid-trial status, IP and termination terms, live-meeting expectations, and conscious brand fit in writing."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "sender_side_sent_evidence_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_assessment_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

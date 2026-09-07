@@ -841,7 +841,7 @@
       "homepage": "https://l-and-n.lazying.art",
       "name": "L-and-N",
       "primary_language": "TypeScript",
-      "pushed_at": "2026-09-06T22:27:11Z",
+      "pushed_at": "2026-09-07T01:41:20Z",
       "topics": [
         "android",
         "cantonese",
@@ -863,7 +863,7 @@
         "watchos",
         "whisper"
       ],
-      "updated_at": "2026-09-06T22:33:24Z",
+      "updated_at": "2026-09-07T01:41:24Z",
       "url": "https://github.com/lachlanchen/L-and-N"
     },
     {
@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-07T00:58:42Z",
+      "pushed_at": "2026-09-07T02:13:06Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-07T00:58:45Z",
+      "updated_at": "2026-09-07T02:13:10Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {

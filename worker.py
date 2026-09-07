@@ -253,6 +253,15 @@ def run_models(candidate_ids: list[str], *, max_triage: int, max_drafts: int) ->
                 "reason": "platform prohibits generated or AI-edited comments",
             })
             continue
+        blocked = promotion.agent_contact_block_reason(
+            candidate["platform"], candidate["source_url"], action="public_reply"
+        )
+        if blocked:
+            draft_skipped.append({
+                "candidate_id": candidate_id,
+                "reason": blocked,
+            })
+            continue
         try:
             value_only = candidate["platform"] in VALUE_ONLY_DRAFT_PLATFORMS
             result = promotion.run_codex_draft(

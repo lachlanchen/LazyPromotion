@@ -297,7 +297,7 @@ class PromotionTests(unittest.TestCase):
         candidate = promotion.ingest_candidate(
             self.db,
             platform="reddit",
-            source_url="https://www.reddit.com/r/forhire/comments/paid/video/",
+            source_url="https://www.reddit.com/r/B2BForHire/comments/paid/video/",
             author="buyer",
             body=body,
         )
@@ -367,7 +367,7 @@ class PromotionTests(unittest.TestCase):
         candidate = promotion.ingest_candidate(
             self.db,
             platform="reddit",
-            source_url="https://www.reddit.com/r/forhire/comments/paid/book/",
+            source_url="https://www.reddit.com/r/example/comments/paid/book/",
             author="buyer",
             body=(
                 "[Hiring] English to Chinese book translation. "
@@ -404,7 +404,7 @@ class PromotionTests(unittest.TestCase):
         candidate = promotion.ingest_candidate(
             self.db,
             platform="reddit",
-            source_url="https://www.reddit.com/r/forhire/comments/paid/latex/",
+            source_url="https://www.reddit.com/r/B2BForHire/comments/paid/latex/",
             author="buyer",
             body=(
                 "[Hiring] Looking for a LaTeX package writer for a one-time contract. "
@@ -443,6 +443,71 @@ class PromotionTests(unittest.TestCase):
                 candidate["id"],
                 method="Reddit direct message",
                 evidence="second send",
+            )
+
+    def test_forhire_paid_opportunity_is_manual_only_under_current_rules(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/forhire/comments/paid/latex/",
+            author="buyer",
+            body=(
+                "[Hiring] Looking for a LaTeX package writer for a one-time contract. "
+                "Budget $50-100."
+            ),
+        )
+        result = promotion.reconcile_discovered_candidates(self.db)
+        self.assertEqual(result[0]["status"], "manual_only")
+        self.assertIn("Rule 10", result[0]["reason"])
+        refreshed = self.db.execute(
+            "SELECT status, triage_reason FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "manual_only")
+        self.assertIn("prohibits bots", refreshed["triage_reason"])
+
+    def test_forhire_policy_blocks_both_agent_contact_routes(self):
+        url = "https://www.reddit.com/r/forhire/comments/example/request/"
+        self.assertIn(
+            "Rule 10",
+            promotion.agent_contact_block_reason(
+                "reddit", url, action="public_reply"
+            ),
+        )
+        self.assertIn(
+            "Rule 10",
+            promotion.agent_contact_block_reason(
+                "reddit", url, action="private_contact"
+            ),
+        )
+        self.assertEqual(
+            promotion.agent_contact_block_reason(
+                "reddit",
+                "https://www.reddit.com/r/another/comments/example/request/",
+                action="public_reply",
+            ),
+            "",
+        )
+
+    def test_forhire_opportunity_contact_remains_blocked_if_status_is_stale(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/forhire/comments/paid/stale_state/",
+            author="buyer",
+            body="[Hiring] LaTeX package rewrite. Budget USD 100.",
+        )
+        self.db.execute(
+            "UPDATE candidates SET status='opportunity' WHERE id=?",
+            (candidate["id"],),
+        )
+        self.db.commit()
+        with self.assertRaisesRegex(ValueError, "prohibited.*Rule 10"):
+            promotion.mark_opportunity_contacted(
+                self.db,
+                candidate["id"],
+                method="Reddit message",
+                evidence="should not send",
             )
 
     def test_job_application_comment_is_out_of_scope(self):

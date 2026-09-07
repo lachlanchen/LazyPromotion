@@ -46,7 +46,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 17
+        "version": 18
       },
       "url": ""
     },
@@ -116,7 +116,7 @@
       "label": "latex-package-rewrite",
       "metadata": {
         "objective": "Win one bounded paid LaTeX package rewrite without overstating prior package work or accepting an undefined compatibility surface.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -166,7 +166,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 26
+        "version": 27
       },
       "url": ""
     },

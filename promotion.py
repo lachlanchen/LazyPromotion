@@ -24,6 +24,7 @@ CATALOG_PATH = ROOT / "catalog.json"
 GITHUB_CATALOG_PATH = ROOT / "github-repos.json"
 SCHEMA_PATH = ROOT / "schemas" / "reply.json"
 TRIAGE_SCHEMA_PATH = ROOT / "schemas" / "triage.json"
+COMMUNITY_POLICIES_PATH = ROOT / "community-policies.json"
 MODEL = "gpt-5.6-sol"
 EFFORT = "low"
 MAX_CANDIDATE_AGE_DAYS = 30
@@ -358,6 +359,49 @@ def open_db(path: Path = DEFAULT_DB) -> sqlite3.Connection:
     return db
 
 
+def source_community(platform: str, source_url: str) -> str:
+    """Return the normalized community key used by the policy registry."""
+    if platform != "reddit":
+        return ""
+    parts = [part for part in urlparse(source_url).path.split("/") if part]
+    if len(parts) >= 2 and parts[0].casefold() == "r":
+        return parts[1].casefold()
+    return ""
+
+
+def community_policy(platform: str, source_url: str) -> dict[str, Any]:
+    if not COMMUNITY_POLICIES_PATH.exists():
+        return {}
+    payload = json.loads(COMMUNITY_POLICIES_PATH.read_text(encoding="utf-8"))
+    if payload.get("version") != 1 or not isinstance(payload.get("policies"), list):
+        raise ValueError("community policy registry must use version 1 with a policies list")
+    community = source_community(platform, source_url)
+    for policy in payload.get("policies", []):
+        if (
+            compact(str(policy.get("platform") or "")).casefold() == platform.casefold()
+            and compact(str(policy.get("community") or "")).casefold() == community
+        ):
+            return dict(policy)
+    return {}
+
+
+def agent_contact_block_reason(
+    platform: str,
+    source_url: str,
+    *,
+    action: str,
+) -> str:
+    """Explain a known community rule that blocks an agent-authored contact."""
+    if action not in {"public_reply", "private_contact"}:
+        raise ValueError(f"unsupported contact action: {action}")
+    policy = community_policy(platform, source_url)
+    if not policy or policy.get(f"agent_{action}_allowed", True):
+        return ""
+    reason = compact(str(policy.get("reason") or ""))
+    source = compact(str(policy.get("source_url") or ""))
+    return compact(f"{reason} Source: {source}")
+
+
 def load_catalog() -> dict[str, Any]:
     catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     projects = list(catalog["projects"])
@@ -562,6 +606,7 @@ def refresh_duplicates(db: sqlite3.Connection) -> None:
             "drafted": 1,
             "triaged": 1,
             "opportunity": 1,
+            "manual_only": 2,
             "discovered": 2,
             "stale": 3,
             "rejected": 4,
@@ -756,7 +801,7 @@ def ingest_candidate(
             (candidate_id,),
         )
     if triage_input_changed and existing["status"] in {
-        "triaged", "rejected", "drafted", "opportunity"
+        "triaged", "rejected", "drafted", "opportunity", "manual_only"
     }:
         if existing["status"] == "drafted":
             db.execute(
@@ -887,13 +932,22 @@ def reconcile_discovered_candidates(db: sqlite3.Connection) -> list[dict[str, st
         status = ""
         reason = ""
         opportunity_match: dict[str, Any] | None = None
+        paid_opportunity = is_paid_opportunity(row["body"])
+        blocked_contact = agent_contact_block_reason(
+            row["platform"],
+            row["source_url"],
+            action="private_contact" if paid_opportunity else "public_reply",
+        )
         if compact(row["author"]).casefold() in BOT_AUTHORS:
             status = "rejected"
             reason = "automated author"
         elif is_stale(row["published_at"]):
             status = "stale"
             reason = "source is older than the discovery window"
-        elif is_paid_opportunity(row["body"]):
+        elif blocked_contact:
+            status = "manual_only"
+            reason = blocked_contact
+        elif paid_opportunity:
             ranking = rank_projects(row["body"], allow_paid_opportunity=True)
             if ranking and ranking[0]["score"] >= 5:
                 status = "opportunity"
@@ -1047,6 +1101,13 @@ def mark_opportunity_contacted(
         raise ValueError(f"candidate not found: {candidate_id}")
     if candidate["status"] != "opportunity":
         raise ValueError("only an active paid opportunity can be marked contacted")
+    blocked = agent_contact_block_reason(
+        candidate["platform"],
+        candidate["source_url"],
+        action="private_contact",
+    )
+    if blocked:
+        raise ValueError(f"agent-authored opportunity contact is prohibited: {blocked}")
     now = utc_now()
     db.execute(
         "UPDATE candidates SET status='contacted', updated_at=? WHERE id=?",
@@ -1349,6 +1410,11 @@ def triage_candidate(db: sqlite3.Connection, candidate: dict[str, Any]) -> dict[
         raise ValueError(f"candidate status is {candidate['status']}; triage is not allowed")
     if compact(candidate.get("author") or "").casefold() in BOT_AUTHORS:
         raise ValueError("bot-authored candidates are not eligible for model triage")
+    blocked = agent_contact_block_reason(
+        candidate["platform"], candidate["source_url"], action="public_reply"
+    )
+    if blocked:
+        raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     if not is_help_request(candidate["body"]):
         raise ValueError("candidate is not shaped like a genuine help request")
     if is_stale(candidate.get("published_at") or ""):
@@ -1373,6 +1439,11 @@ def save_draft(
             "Hacker News prohibits generated or AI-edited comments; "
             "the agent may discover needs there but cannot draft a public reply"
         )
+    blocked = agent_contact_block_reason(
+        candidate["platform"], candidate["source_url"], action="public_reply"
+    )
+    if blocked:
+        raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     project_id = "" if manual else compact(candidate.get("suggested_tool") or "")
     if not manual and not project_id:
         raise ValueError("candidate has no model-reviewed project")
@@ -1466,7 +1537,7 @@ def approve_draft(db: sqlite3.Connection, draft_id: str, ttl_minutes: int) -> di
     draft = row_dict(
         db.execute(
             """
-            SELECT d.*, c.platform FROM drafts d
+            SELECT d.*, c.platform, c.source_url FROM drafts d
             JOIN candidates c ON c.id=d.candidate_id
             WHERE d.id=?
             """,
@@ -1477,6 +1548,11 @@ def approve_draft(db: sqlite3.Connection, draft_id: str, ttl_minutes: int) -> di
         raise ValueError(f"draft not found: {draft_id}")
     if draft["platform"] in AI_COMMENT_BLOCKED_PLATFORMS:
         raise ValueError("Hacker News prohibits generated or AI-edited comments")
+    blocked = agent_contact_block_reason(
+        draft["platform"], draft["source_url"], action="public_reply"
+    )
+    if blocked:
+        raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     if draft["status"] not in {"draft", "prepared"}:
         raise ValueError(f"draft status is {draft['status']}; approval is not allowed")
     token = f"approve_{secrets.token_urlsafe(18)}"

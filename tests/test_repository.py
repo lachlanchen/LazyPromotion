@@ -776,7 +776,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 17)
+        self.assertEqual(campaign["version"], 18)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -855,7 +855,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 17)
+        self.assertEqual(campaign["version"], 18)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -986,6 +986,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(komicsim["payment_confirmed"])
         self.assertEqual(komicsim["received_revenue_usd"], 0)
         self.assertFalse(komicsim["automatic_follow_up"])
+        self.assertFalse(komicsim["future_agent_contact"])
+        self.assertIn("Rule 10", komicsim["community_policy"])
         funnel = campaign["funnel"]
         self.assertEqual(funnel["state"], "applications_sent_awaiting_reply")
         self.assertEqual(funnel["outbound_application_count"], 5)
@@ -1207,7 +1209,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 26)
+        self.assertEqual(campaign["version"], 27)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1824,8 +1826,8 @@ class RepositoryTests(unittest.TestCase):
             ]
         )
         b2b_listing = campaign["channels"]["reddit"]["b2b_service_listing"]
-        self.assertEqual(b2b_listing["state"], "postiz_queue")
-        self.assertEqual(b2b_listing["publish_at"], "2026-09-08T03:00:00Z")
+        self.assertEqual(b2b_listing["state"], "postiz_draft_after_channel_audit")
+        self.assertEqual(b2b_listing["previous_publish_at"], "2026-09-08T03:00:00Z")
         self.assertEqual(b2b_listing["settings"]["subreddit"], "/r/B2BForHire")
         self.assertEqual(b2b_listing["settings"]["type"], "self")
         self.assertIn("USD 250 fixed", b2b_listing["title"])
@@ -1835,10 +1837,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_medium=b2bforhire", b2b_listing["content"])
         self.assertTrue(b2b_listing["rules_review"]["business_service_posts_allowed"])
         self.assertTrue(b2b_listing["rules_review"]["self_post_required"])
-        self.assertEqual(b2b_listing["visible_review"]["stored_state"], "QUEUE")
+        self.assertEqual(b2b_listing["visible_review"]["stored_state"], "DRAFT")
         self.assertTrue(b2b_listing["visible_review"]["stored_subreddit_exact"])
         self.assertTrue(b2b_listing["visible_review"]["original_urls_preserved"])
         self.assertEqual(b2b_listing["visible_review"]["creation_submissions"], 1)
+        self.assertEqual(b2b_listing["channel_audit"]["decision"], "keep_draft")
+        self.assertGreaterEqual(b2b_listing["channel_audit"]["recent_posts_reviewed"], 50)
         self.assertFalse(b2b_listing["lead_or_sale_observed"])
         self.assertEqual(
             campaign["channels"]["x"]["publish_at"], "2026-09-08T01:00:00Z"
@@ -2661,7 +2665,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 17)
+        self.assertEqual(campaign["version"], 18)
         self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])
@@ -2669,6 +2673,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(opportunity["buyer_reply_observed"])
         self.assertFalse(opportunity["payment_confirmed"])
         self.assertEqual(opportunity["received_revenue_usd"], 0)
+        self.assertFalse(opportunity["future_agent_contact"])
+        self.assertIn("Rule 10", opportunity["community_policy"])
         self.assertEqual(campaign["funnel"]["outbound_application_count"], 5)
 
 

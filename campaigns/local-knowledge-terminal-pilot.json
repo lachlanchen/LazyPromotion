@@ -1,5 +1,5 @@
 {
-  "version": 26,
+  "version": 27,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -671,9 +671,10 @@
         "policy": "First-party profile resource only, not a community submission or generated reply. The published post and actual evidence-first click path were visibly verified. A provider-side one-prefix repair made the tracked URL clickable without changing the technical answer or disclosure. The live allowlisted bridges preserve Reddit attribution from the article through the sample report to the fit-check page without forwarding arbitrary parameters or sending a form."
       },
       "b2b_service_listing": {
-        "state": "postiz_queue",
+        "state": "postiz_draft_after_channel_audit",
         "scope": "business_service_marketplace",
-        "publish_at": "2026-09-08T03:00:00Z",
+        "previous_publish_at": "2026-09-08T03:00:00Z",
+        "moved_to_draft_at": "2026-09-07T00:15:32Z",
         "title": "[For Hire] (Remote) Private-document collection fit check before RAG — USD 250 fixed",
         "content": "A private document collection can fail before retrieval: scanned pages, duplicate versions, missing metadata, and citations nobody can reopen.\n\nI’ll inspect a representative sample before you commit to a full RAG build. For USD 250, the sprint covers one rights-cleared collection, one language goal, and one existing machine—up to 12 source units and 20 test questions.\n\nYou receive:\n- a data, privacy, citation, and provenance map\n- a small browser proof with up to two cited cards if the sample is usable\n- a written go/no-go recommendation and the boundary for a larger build\n\nHardware, custom OCR, full-library conversion, hosting, and production deployment are outside this fixed scope. I only ask for source files after the free fit check and written scope.\n\nSample report:\nhttps://lazying.art/lkt/sample-report/?utm_source=reddit&utm_medium=b2bforhire&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_listing\n\nFree fit check:\nhttps://lazying.art/lkt/fit-check/?utm_source=reddit&utm_medium=b2bforhire&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_listing\n\nI built and maintain Local Knowledge Terminal.",
         "settings": {
@@ -690,8 +691,8 @@
           "title_format_reviewed": true
         },
         "visible_review": {
-          "checked_at": "2026-09-06T20:59:20Z",
-          "stored_state": "QUEUE",
+          "checked_at": "2026-09-07T00:15:32Z",
+          "stored_state": "DRAFT",
           "stored_text_exact": true,
           "stored_title_exact": true,
           "stored_time_exact": true,
@@ -701,8 +702,17 @@
           "creation_submissions": 1,
           "failed_preflight_submissions": 0
         },
+        "channel_audit": {
+          "sample_checked_at": "2026-09-07",
+          "recent_posts_reviewed": 53,
+          "sample_window_hours": 27.5,
+          "seller_share": 0.66,
+          "buyer_share": 0.34,
+          "decision": "keep_draft",
+          "reason": "Recent activity is seller-heavy and nominal buyer posts show weak or dubious intent; preserve the reviewed copy without spending a public post on this channel."
+        },
         "lead_or_sale_observed": false,
-        "policy": "A reviewed self-post in a marketplace that explicitly permits businesses to offer services, including single-person businesses. The post states the fixed scope and exclusions, leads with the project-owned sample, sends the buyer through the free fit check before source transfer or payment, and does not claim a customer result."
+        "policy": "The reviewed self-post remains a private draft. Current channel quality does not justify publication; reconsider only after fresh buyer-quality evidence."
       },
       "community_reply": {
         "state": "live",

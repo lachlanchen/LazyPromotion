@@ -982,6 +982,11 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
     candidate, draft = load_candidate_and_draft(candidate_id, draft_id)
     if candidate["platform"] in promotion.AI_COMMENT_BLOCKED_PLATFORMS:
         raise ValueError("Hacker News prohibits generated or AI-edited comments")
+    blocked = promotion.agent_contact_block_reason(
+        candidate["platform"], candidate["source_url"], action="public_reply"
+    )
+    if blocked:
+        raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     page.goto(candidate["source_url"], wait_until="domcontentloaded", timeout=45000)
     wait_ready(page)
     comment_id = reddit_comment_id(candidate["source_url"]) if candidate["platform"] == "reddit" else ""
@@ -1170,6 +1175,11 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
     candidate, draft = load_candidate_and_draft(candidate_id, draft_id)
     if candidate["platform"] in promotion.AI_COMMENT_BLOCKED_PLATFORMS:
         raise ValueError("Hacker News prohibits generated or AI-edited comments")
+    blocked = promotion.agent_contact_block_reason(
+        candidate["platform"], candidate["source_url"], action="public_reply"
+    )
+    if blocked:
+        raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     db = promotion.open_db()
     promotion.validate_approval(db, draft_id, token)
     if not destination_matches(candidate["source_url"], page.url, candidate["platform"]):

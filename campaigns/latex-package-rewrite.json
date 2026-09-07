@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "latex-package-rewrite",
   "objective": "Win one bounded paid LaTeX package rewrite without overstating prior package work or accepting an undefined compatibility surface.",
   "source_need": {
@@ -36,7 +36,14 @@
     "delivery_evidence": "The visible project-only compose form displayed Message sent and cleared all fields after one submit.",
     "message_storage": "ignored private storage",
     "automatic_follow_up": false,
-    "follow_up_not_before": "2026-09-14"
+    "follow_up_not_before": "2026-09-14",
+    "future_agent_contact": false,
+    "community_policy_observation": {
+      "checked_at": "2026-09-07T00:08:58Z",
+      "source": "https://www.reddit.com/r/forhire/about/rules/",
+      "rule": "Current Rule 10 prohibits bots from contacting members for any purpose.",
+      "action": "Do not send an agent-authored follow-up. Any future contact is manual-operator only."
+    }
   },
   "scope_gate": [
     "Inspect the old package and confirm ownership or redistribution rights",

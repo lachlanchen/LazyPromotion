@@ -13,6 +13,7 @@ class LatexPackageRewriteCampaignTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(campaign["source_need"]["state"], "public_explicit_paid_request")
         self.assertEqual(campaign["source_need"]["budget"], "USD 50-100")
         self.assertEqual(campaign["fit"]["project"], "paperagent")
@@ -21,6 +22,11 @@ class LatexPackageRewriteCampaignTests(unittest.TestCase):
         )
         self.assertEqual(campaign["application"]["state"], "sent_awaiting_reply")
         self.assertFalse(campaign["application"]["automatic_follow_up"])
+        self.assertFalse(campaign["application"]["future_agent_contact"])
+        self.assertIn(
+            "Rule 10",
+            campaign["application"]["community_policy_observation"]["rule"],
+        )
         self.assertFalse(campaign["funnel"]["buyer_reply_observed"])
         self.assertFalse(campaign["funnel"]["qualified_lead_observed"])
         self.assertFalse(campaign["funnel"]["payment_confirmed"])

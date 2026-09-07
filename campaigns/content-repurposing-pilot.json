@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -353,7 +353,9 @@
       "payment_confirmed": false,
       "received_revenue_usd": 0,
       "follow_up_not_before": "2026-09-13",
-      "automatic_follow_up": false
+      "automatic_follow_up": false,
+      "future_agent_contact": false,
+      "community_policy": "Current r/forhire Rule 10 prohibits bot contact; any future message is manual-operator only."
     },
     {
       "company": "Undisclosed AI drama platform",
@@ -386,7 +388,9 @@
       "scope_accepted": false,
       "payment_confirmed": false,
       "received_revenue_usd": 0,
-      "automatic_follow_up": false
+      "automatic_follow_up": false,
+      "future_agent_contact": false,
+      "community_policy": "Current r/forhire Rule 10 prohibits bot contact; any future message is manual-operator only."
     }
   ],
   "funnel": {

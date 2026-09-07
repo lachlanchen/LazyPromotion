@@ -53,6 +53,8 @@ class LexicalDatabaseIngestionCampaignTests(unittest.TestCase):
     def test_postiz_items_are_reviewed_queue_items_with_first_party_proof_only(self):
         channels = self.campaign["channels"]
         funnel = self.campaign["funnel"]
+        serialized = json.dumps(channels, ensure_ascii=False).casefold()
+        self.assertNotIn("post_id", serialized)
         for platform in ("x", "linkedin"):
             item = channels[platform]
             with self.subTest(platform=platform):

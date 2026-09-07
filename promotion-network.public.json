@@ -156,7 +156,7 @@
       "label": "lexical-database-ingestion",
       "metadata": {
         "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },

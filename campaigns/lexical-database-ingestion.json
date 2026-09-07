@@ -1,16 +1,16 @@
 {
   "id": "lexical-database-ingestion",
-  "version": 3,
+  "version": 4,
   "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
   "source_need": {
     "captured_on": "2026-09-07",
-    "checked_at": "2026-09-07T01:01:00+08:00",
+    "checked_at": "2026-09-07T10:27:00+08:00",
     "url": "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/",
     "title": "Development of lexical database and data carpentry",
     "buyer_project": "OUTOFPAPUA",
     "budget": "USD 1,200 fixed price; the listing also states USD 20 per hour",
     "scope": "Write ingestion code so new lexical data can be included in the OUTOFPAPUA database, preparing some source data in Toolbox or another acceptable format before ingestion.",
-    "activity_when_checked": "20 to 50 proposals, 1 interviewing, 1 invite sent; competition increased from the earlier indexed snapshot",
+    "activity_when_checked": "The visible primary listing remained open and showed 20 to 50 proposals, 1 interviewing, 1 invite sent, and 0 unanswered invites; competition had increased from the earlier indexed snapshot.",
     "client_history_when_checked": "Leiden, Netherlands; USD 6.9K total spent; 49 hires and 31 active contracts",
     "policy": "The public listing is buyer-intent evidence only. It is not a lead, interview, contract, sale, payment, customer result, or received revenue. Keep all marketplace contact and payment on Upwork."
   },
@@ -75,7 +75,6 @@
     },
     "x": {
       "state": "postiz_queue",
-      "post_id": "cmtq3bj4n06ypqk0ykehr30ja",
       "nominal_publish_at": "2026-09-17T01:00:00Z",
       "content": "Lexical data cleaning should not erase the source. I made a small SQLite proof that keeps raw fields, locators and hashes, separates gloss normalization, quarantines incomplete records, and reruns with zero duplicate writes.\n\nRead: lazying.art/lkt/lexical-ingest/",
       "content_sha256": "90054a7685009b419e1d6e8a0f0688d7a07d3fe9560a849d1e24e96c6b84d268",
@@ -85,7 +84,6 @@
     },
     "linkedin": {
       "state": "postiz_queue",
-      "post_id": "cmtq3b3be1duylm0yt14p0kvy",
       "nominal_publish_at": "2026-09-17T02:00:00Z",
       "content": "Lexical data is rarely just “put these rows in a database.”\n\nThe risky part is what happens when source files disagree: fields drift, glosses mix languages, some entries are incomplete, and a convenient cleanup can erase where a reading came from.\n\nI built a small synthetic proof that keeps raw fields, locators and hashes, stores gloss normalization separately, quarantines incomplete records, and makes zero writes on an identical replay. An injected failure leaves every ingestion table empty.\n\nThe page explains the design and links the runnable Python/SQLite sample:\nhttps://lazying.art/lkt/lexical-ingest/?utm_source=linkedin&utm_medium=social&utm_campaign=lexical_data_carpentry&utm_content=proof\n\nIt is a workflow sample, not a compatibility or linguistic-accuracy claim.",
       "content_sha256": "40a41d03cc34e0b4e972055f4aaa38f36261ab8240f9a285a44e7c3f4df28fc4",

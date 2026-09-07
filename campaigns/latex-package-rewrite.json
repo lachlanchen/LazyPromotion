@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "id": "latex-package-rewrite",
+  "objective": "Win one bounded paid LaTeX package rewrite without overstating prior package work or accepting an undefined compatibility surface.",
+  "source_need": {
+    "captured_at": "2026-09-06T23:42:00Z",
+    "url": "https://www.reddit.com/r/forhire/comments/1vwjorb/hiring_looking_for_latex_package_writer_50100/",
+    "title": "[Hiring] Looking for LaTeX package writer $50-100",
+    "state": "public_explicit_paid_request",
+    "published_at": "2026-08-23T21:33:26Z",
+    "budget": "USD 50-100",
+    "requested_scope": [
+      "Update or replace an old buggy LaTeX package",
+      "Support text and math mode, bold, italic, color, and multiple font sizes"
+    ]
+  },
+  "fit": {
+    "project": "paperagent",
+    "public_proof": [
+      "https://github.com/lachlanchen/PaperAgent",
+      "https://github.com/lachlanchen/leonardsusskind"
+    ],
+    "supported_now": [
+      "Reproducible TeX build and revision workflows",
+      "Maintained TeX-heavy educational material"
+    ],
+    "not_proven": [
+      "Prior customer LaTeX package delivery",
+      "Compatibility with the unnamed legacy package before inspecting it"
+    ]
+  },
+  "application": {
+    "state": "sent_awaiting_reply",
+    "sent_at": "2026-09-06T23:59:04Z",
+    "method": "One Reddit direct message invited by the public hiring post",
+    "delivery_evidence": "The visible project-only compose form displayed Message sent and cleared all fields after one submit.",
+    "message_storage": "ignored private storage",
+    "automatic_follow_up": false,
+    "follow_up_not_before": "2026-09-14"
+  },
+  "scope_gate": [
+    "Inspect the old package and confirm ownership or redistribution rights",
+    "List commands and environments that must remain compatible",
+    "Confirm target TeX engines, test documents, deadline, payment, and acceptance criteria",
+    "Use the stated budget only if the compatibility surface is small; otherwise propose a narrow first milestone"
+  ],
+  "funnel": {
+    "outbound_application_count": 1,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

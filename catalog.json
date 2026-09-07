@@ -50,7 +50,7 @@
         "latex manuscript", "overleaf", "latexdiff", "latex redline", "tracked changes",
         "docx to latex", "docx to overleaf", "bibtex", "reproducible manuscript",
         "paper revision", "manuscript build", "latex build", "latex error",
-        "journal template", "submission template"
+        "latex package", "sty package", "journal template", "submission template"
       ]
     },
     {
@@ -73,6 +73,7 @@
       "keywords": [
         "language learning", "learn japanese", "learn chinese", "interlinear", "bilingual book",
         "multilingual book", "furigana", "pinyin", "ruby text", "parallel text", "reading practice",
+        "english to chinese", "book translation",
         "classical chinese", "wenyan", "wenyanwen", "文言文", "古代汉语", "古代漢語",
         "chinese history", "中国历史", "中國歷史"
       ]

@@ -58,6 +58,20 @@ OUT_OF_SCOPE_SIGNALS = {
     "want to publish your own article", "upgrade to premium",
     "written with ai fwiw",
 }
+PAID_OPPORTUNITY_MARKERS = {
+    "[hiring]", "hiring ", "we are hiring", "we're hiring", "paid project",
+    "paid test", "contract hire",
+}
+PAID_OPPORTUNITY_CLOSED_MARKERS = {
+    "position closed", "role closed", "hiring closed", "applications closed",
+    "no longer hiring", "position filled", "role filled",
+}
+PAID_OPPORTUNITY_COMPENSATION_RE = re.compile(
+    r"(?:[$£€¥]\s?\d|\b(?:usd|eur|gbp|cny|rmb)\s?\d|"
+    r"\b\d+(?:[.,]\d+)?\s?(?:usd|eur|gbp|cny|rmb)\b|"
+    r"\b(?:budget|rate|pay|paid|compensation|salary)\b)",
+    flags=re.I,
+)
 COMMENT_REQUEST_PHRASES = {
     "any advice", "any recommendations", "any recommendation", "any suggestions",
     "can anyone", "can someone", "could anyone", "could someone", "does anyone",
@@ -481,6 +495,19 @@ def is_help_request(body: str) -> bool:
     )
 
 
+def is_paid_opportunity(body: str) -> bool:
+    """Recognize buyer-authored paid work without admitting it to reply drafting."""
+    haystack = normalized(body)
+    opening = compact(haystack[:320])
+    if not any(marker in opening for marker in PAID_OPPORTUNITY_MARKERS):
+        return False
+    if opening.startswith("[for hire]") or opening.startswith("for hire"):
+        return False
+    if any(marker in haystack for marker in PAID_OPPORTUNITY_CLOSED_MARKERS):
+        return False
+    return bool(PAID_OPPORTUNITY_COMPENSATION_RE.search(body))
+
+
 def is_comment_source(platform: str, source_url: str, body: str) -> bool:
     if platform == "hackernews":
         return not normalized(body).strip().startswith("ask hn ")
@@ -531,8 +558,10 @@ def refresh_duplicates(db: sqlite3.Connection) -> None:
             continue
         priority = {
             "replied": 0,
+            "contacted": 0,
             "drafted": 1,
             "triaged": 1,
+            "opportunity": 1,
             "discovered": 2,
             "stale": 3,
             "rejected": 4,
@@ -551,7 +580,12 @@ def refresh_duplicates(db: sqlite3.Connection) -> None:
             )
 
 
-def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+def rank_projects(
+    body: str,
+    catalog: dict[str, Any] | None = None,
+    *,
+    allow_paid_opportunity: bool = False,
+) -> list[dict[str, Any]]:
     catalog = catalog or load_catalog()
     haystack = normalized(body)
     signals = help_request_signals(body)
@@ -559,10 +593,23 @@ def rank_projects(body: str, catalog: dict[str, Any] | None = None) -> list[dict
     spam_hits = signals["spam_hits"]
     out_of_scope_hits = signals["out_of_scope_hits"]
     existing_solution_hits = signals["existing_solution_hits"]
-    if not intent_hits or spam_hits or out_of_scope_hits or existing_solution_hits:
+    paid_opportunity = allow_paid_opportunity and is_paid_opportunity(body)
+    if paid_opportunity:
+        intent_hits = sorted(set(intent_hits) | {"hiring"})
+    if (
+        not intent_hits
+        or spam_hits
+        or (out_of_scope_hits and not paid_opportunity)
+        or existing_solution_hits
+    ):
         return []
     ranked = []
     for project in catalog["projects"]:
+        # Paid applications need a deliberately curated proof match. Broad
+        # generated repository keywords are useful for discovery, but are not
+        # strong enough to justify representing the maintainer to a buyer.
+        if paid_opportunity and project.get("generated"):
+            continue
         matches = []
         keyword_context_any = {
             normalized(str(keyword)).strip(): [
@@ -708,7 +755,9 @@ def ingest_candidate(
             "UPDATE candidates SET triage_requested_at='' WHERE id=?",
             (candidate_id,),
         )
-    if triage_input_changed and existing["status"] in {"triaged", "rejected", "drafted"}:
+    if triage_input_changed and existing["status"] in {
+        "triaged", "rejected", "drafted", "opportunity"
+    }:
         if existing["status"] == "drafted":
             db.execute(
                 """
@@ -818,9 +867,11 @@ def reconcile_discovered_candidates(db: sqlite3.Connection) -> list[dict[str, st
     """Close deterministic dead ends while preserving every source record.
 
     ``discovered`` is reserved for a current, explicit help request with an
-    evidence-backed catalog match. Search cards can still be re-ingested with
-    richer text later; ``ingest_candidate`` reopens a rejected row when that
-    evidence or its matched project changes.
+    evidence-backed catalog match. Explicit paid buyer requests use the
+    separate ``opportunity`` state, which cannot enter the public-reply draft
+    path. Search cards can still be re-ingested with richer text later;
+    ``ingest_candidate`` reopens a rejected row when that evidence or its
+    matched project changes.
     """
     rows = db.execute(
         """
@@ -835,12 +886,22 @@ def reconcile_discovered_candidates(db: sqlite3.Connection) -> list[dict[str, st
     for row in rows:
         status = ""
         reason = ""
+        opportunity_match: dict[str, Any] | None = None
         if compact(row["author"]).casefold() in BOT_AUTHORS:
             status = "rejected"
             reason = "automated author"
         elif is_stale(row["published_at"]):
             status = "stale"
             reason = "source is older than the discovery window"
+        elif is_paid_opportunity(row["body"]):
+            ranking = rank_projects(row["body"], allow_paid_opportunity=True)
+            if ranking and ranking[0]["score"] >= 5:
+                status = "opportunity"
+                reason = "explicit paid opportunity; separate application review required"
+                opportunity_match = ranking[0]
+            else:
+                status = "rejected"
+                reason = "no evidence-backed project match"
         elif not is_triageable_request(row["platform"], row["source_url"], row["body"]):
             status = "rejected"
             reason = "current evidence is not an explicit help request"
@@ -851,16 +912,49 @@ def reconcile_discovered_candidates(db: sqlite3.Connection) -> list[dict[str, st
                 reason = "no evidence-backed project match"
         if not status:
             continue
-        db.execute(
-            """
-            UPDATE candidates
-            SET status=?, triage_reason=?, triage_confidence='high',
-                triage_risk_flags='["deterministic route gate"]',
-                triage_requested_at='', updated_at=?
-            WHERE id=? AND status='discovered'
-            """,
-            (status, reason, now, row["id"]),
-        )
+        if opportunity_match:
+            rationale = json.dumps(
+                {
+                    "matches": opportunity_match["matches"],
+                    "intent_hits": opportunity_match["intent_hits"],
+                    "spam_hits": opportunity_match["spam_hits"],
+                    "out_of_scope_hits": opportunity_match["out_of_scope_hits"],
+                    "context_hits": opportunity_match["context_hits"],
+                    "route": "paid_opportunity",
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+            )
+            db.execute(
+                """
+                UPDATE candidates
+                SET status=?, suggested_tool=?, score=?, rationale=?,
+                    triage_reason=?, triage_confidence='high',
+                    triage_risk_flags='["separate application review required"]',
+                    triage_requested_at='', updated_at=?
+                WHERE id=? AND status='discovered'
+                """,
+                (
+                    status,
+                    opportunity_match["project"]["id"],
+                    opportunity_match["score"],
+                    rationale,
+                    reason,
+                    now,
+                    row["id"],
+                ),
+            )
+        else:
+            db.execute(
+                """
+                UPDATE candidates
+                SET status=?, triage_reason=?, triage_confidence='high',
+                    triage_risk_flags='["deterministic route gate"]',
+                    triage_requested_at='', updated_at=?
+                WHERE id=? AND status='discovered'
+                """,
+                (status, reason, now, row["id"]),
+            )
         if not db.execute("SELECT changes()").fetchone()[0]:
             continue
         detail = json.dumps(
@@ -880,6 +974,107 @@ def reconcile_discovered_candidates(db: sqlite3.Connection) -> list[dict[str, st
         )
     db.commit()
     return reconciled
+
+
+def reject_opportunity_after_review(
+    db: sqlite3.Connection,
+    candidate_id: str,
+    *,
+    reason: str,
+    evidence: str,
+) -> dict[str, Any]:
+    """Close a paid opportunity when live review reveals a material blocker."""
+    reason = compact(reason)
+    evidence = compact(evidence)
+    if not reason or not evidence:
+        raise ValueError("opportunity rejection requires a reason and live-review evidence")
+    candidate = row_dict(
+        db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone()
+    )
+    if not candidate:
+        raise ValueError(f"candidate not found: {candidate_id}")
+    if candidate["status"] != "opportunity":
+        raise ValueError("only an active paid opportunity can be rejected after review")
+    now = utc_now()
+    db.execute(
+        """
+        UPDATE candidates
+        SET status='rejected', triage_reason=?,
+            triage_risk_flags='["live opportunity review blocker"]', updated_at=?
+        WHERE id=?
+        """,
+        (reason, now, candidate_id),
+    )
+    db.execute(
+        """
+        INSERT INTO events(candidate_id, kind, detail, created_at)
+        VALUES (?, 'opportunity_rejected_after_review', ?, ?)
+        """,
+        (
+            candidate_id,
+            json.dumps(
+                {"reason": reason, "evidence": evidence},
+                ensure_ascii=False,
+                sort_keys=True,
+            ),
+            now,
+        ),
+    )
+    db.commit()
+    return {
+        "candidate_id": candidate_id,
+        "candidate_status": "rejected",
+        "public_write": False,
+    }
+
+
+def mark_opportunity_contacted(
+    db: sqlite3.Connection,
+    candidate_id: str,
+    *,
+    method: str,
+    evidence: str,
+) -> dict[str, Any]:
+    """Record one reviewed application without promoting it to a lead."""
+    method = compact(method)
+    evidence = compact(evidence)
+    if not method or not evidence:
+        raise ValueError("opportunity contact requires a method and send evidence")
+    candidate = row_dict(
+        db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone()
+    )
+    if not candidate:
+        raise ValueError(f"candidate not found: {candidate_id}")
+    if candidate["status"] != "opportunity":
+        raise ValueError("only an active paid opportunity can be marked contacted")
+    now = utc_now()
+    db.execute(
+        "UPDATE candidates SET status='contacted', updated_at=? WHERE id=?",
+        (now, candidate_id),
+    )
+    db.execute(
+        """
+        INSERT INTO events(candidate_id, kind, detail, created_at)
+        VALUES (?, 'opportunity_contacted', ?, ?)
+        """,
+        (
+            candidate_id,
+            json.dumps(
+                {"method": method, "evidence": evidence},
+                ensure_ascii=False,
+                sort_keys=True,
+            ),
+            now,
+        ),
+    )
+    refresh_duplicates(db)
+    db.commit()
+    return {
+        "candidate_id": candidate_id,
+        "candidate_status": "contacted",
+        "qualified_lead": False,
+        "received_revenue_minor": 0,
+    }
 
 
 def project_by_id(project_id: str) -> dict[str, Any]:
@@ -1517,6 +1712,25 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("reconcile")
 
+    reject_opportunity = sub.add_parser("reject-opportunity")
+    reject_opportunity.add_argument("candidate_id")
+    reject_opportunity.add_argument("--reason", required=True)
+    reject_opportunity.add_argument("--evidence", required=True)
+    reject_opportunity.add_argument(
+        "--confirm-reviewed-live-context", action="store_true", required=True
+    )
+
+    contacted = sub.add_parser("mark-opportunity-contacted")
+    contacted.add_argument("candidate_id")
+    contacted.add_argument("--method", required=True)
+    contacted.add_argument("--evidence", required=True)
+    contacted.add_argument(
+        "--confirm-reviewed-exact-content", action="store_true", required=True
+    )
+    contacted.add_argument(
+        "--confirm-send-observed", action="store_true", required=True
+    )
+
     approve = sub.add_parser("approve")
     approve.add_argument("draft_id")
     approve.add_argument("--ttl-minutes", type=int, default=30)
@@ -1620,6 +1834,24 @@ def main() -> int:
     elif args.command == "reconcile":
         reconciled = reconcile_discovered_candidates(db)
         print_json({"count": len(reconciled), "candidates": reconciled})
+    elif args.command == "reject-opportunity":
+        print_json(
+            reject_opportunity_after_review(
+                db,
+                args.candidate_id,
+                reason=args.reason,
+                evidence=args.evidence,
+            )
+        )
+    elif args.command == "mark-opportunity-contacted":
+        print_json(
+            mark_opportunity_contacted(
+                db,
+                args.candidate_id,
+                method=args.method,
+                evidence=args.evidence,
+            )
+        )
     elif args.command == "approve":
         if not (1 <= args.ttl_minutes <= 1440):
             raise SystemExit("--ttl-minutes must be between 1 and 1440")

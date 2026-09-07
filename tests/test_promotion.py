@@ -288,6 +288,163 @@ class PromotionTests(unittest.TestCase):
         body = "[HIRING] Need a video editor to add subtitles to short clips"
         self.assertEqual(promotion.rank_projects(body), [])
 
+    def test_paid_hiring_post_uses_separate_opportunity_route(self):
+        body = (
+            "[HIRING] Need a video editor to add subtitles to short clips. "
+            "Budget USD 500."
+        )
+        self.assertTrue(promotion.is_paid_opportunity(body))
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/forhire/comments/paid/video/",
+            author="buyer",
+            body=body,
+        )
+        self.assertEqual(candidate["suggested_tool"], "")
+        result = promotion.reconcile_discovered_candidates(self.db)
+        self.assertEqual(
+            result,
+            [{
+                "candidate_id": candidate["id"],
+                "status": "opportunity",
+                "reason": "explicit paid opportunity; separate application review required",
+            }],
+        )
+        refreshed = self.db.execute(
+            "SELECT status, suggested_tool, score FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "opportunity")
+        self.assertEqual(refreshed["suggested_tool"], "lazyedit")
+        self.assertGreaterEqual(refreshed["score"], 5)
+
+    def test_paid_opportunity_requires_compensation_and_open_role(self):
+        self.assertFalse(
+            promotion.is_paid_opportunity("[HIRING] Need a video editor for a new channel")
+        )
+        self.assertFalse(
+            promotion.is_paid_opportunity(
+                "[HIRING] Need a video editor. Budget $500. Position closed."
+            )
+        )
+        self.assertFalse(
+            promotion.is_paid_opportunity(
+                "[For Hire] I edit videos and add subtitles for $100. DM me."
+            )
+        )
+
+    def test_book_translation_paid_opportunity_matches_pocketpolyglot(self):
+        body = (
+            "[Hiring] English to Chinese manga translation. Translate my manga "
+            "into Chinese. My budget is $150."
+        )
+        ranked = promotion.rank_projects(body, allow_paid_opportunity=True)
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "pocketpolyglot")
+
+    def test_paid_opportunity_does_not_use_broad_generated_repo_match(self):
+        body = (
+            "[HIRING] Shopify developer for an indie publisher. Build a small "
+            "product website and turn our notes into pages. Budget $400."
+        )
+        self.assertTrue(promotion.is_paid_opportunity(body))
+        self.assertEqual(
+            promotion.rank_projects(body, allow_paid_opportunity=True),
+            [],
+        )
+
+    def test_latex_package_paid_opportunity_matches_paperagent(self):
+        body = (
+            "[Hiring] Looking for a LaTeX package writer for a one-time contract. "
+            "The package must work in text and math mode. Budget $50-100."
+        )
+        ranked = promotion.rank_projects(body, allow_paid_opportunity=True)
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "paperagent")
+
+    def test_paid_opportunity_can_be_rejected_after_live_review(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/forhire/comments/paid/book/",
+            author="buyer",
+            body=(
+                "[Hiring] English to Chinese book translation. "
+                "The budget is USD 150."
+            ),
+        )
+        promotion.reconcile_discovered_candidates(self.db)
+        result = promotion.reject_opportunity_after_review(
+            self.db,
+            candidate["id"],
+            reason="contracting authority could not be established",
+            evidence="the current public profile states the poster is a minor",
+        )
+        self.assertEqual(result["candidate_status"], "rejected")
+        refreshed = self.db.execute(
+            "SELECT status, triage_reason FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "rejected")
+        self.assertEqual(
+            refreshed["triage_reason"],
+            "contracting authority could not be established",
+        )
+        count = self.db.execute(
+            """
+            SELECT COUNT(*) FROM events
+            WHERE candidate_id=? AND kind='opportunity_rejected_after_review'
+            """,
+            (candidate["id"],),
+        ).fetchone()[0]
+        self.assertEqual(count, 1)
+
+    def test_reviewed_paid_opportunity_can_be_marked_contacted_once(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/forhire/comments/paid/latex/",
+            author="buyer",
+            body=(
+                "[Hiring] Looking for a LaTeX package writer for a one-time contract. "
+                "The package must work in text and math mode. Budget $50-100."
+            ),
+        )
+        promotion.reconcile_discovered_candidates(self.db)
+        result = promotion.mark_opportunity_contacted(
+            self.db,
+            candidate["id"],
+            method="Reddit direct message requested by the hiring post",
+            evidence="visible compose form displayed Message sent",
+        )
+        self.assertEqual(result["candidate_status"], "contacted")
+        self.assertFalse(result["qualified_lead"])
+        self.assertEqual(result["received_revenue_minor"], 0)
+        refreshed = self.db.execute(
+            "SELECT status FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "contacted")
+        event = self.db.execute(
+            """
+            SELECT detail FROM events
+            WHERE candidate_id=? AND kind='opportunity_contacted'
+            """,
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(
+            json.loads(event["detail"])["method"],
+            "Reddit direct message requested by the hiring post",
+        )
+        with self.assertRaisesRegex(ValueError, "active paid opportunity"):
+            promotion.mark_opportunity_contacted(
+                self.db,
+                candidate["id"],
+                method="Reddit direct message",
+                evidence="second send",
+            )
+
     def test_job_application_comment_is_out_of_scope(self):
         body = "Sir how can I apply"
         url = "https://www.instagram.com/p/post123/c/comment456/"

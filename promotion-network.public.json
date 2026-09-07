@@ -111,6 +111,16 @@
       "url": ""
     },
     {
+      "id": "campaign:latex-package-rewrite",
+      "kind": "campaign",
+      "label": "latex-package-rewrite",
+      "metadata": {
+        "objective": "Win one bounded paid LaTeX package rewrite without overstating prior package work or accepting an undefined compatibility surface.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:latex-redline-build",
       "kind": "campaign",
       "label": "latex-redline-build",
@@ -2383,6 +2393,8 @@
           "manuscript build",
           "latex build",
           "latex error",
+          "latex package",
+          "sty package",
           "journal template",
           "submission template"
         ],
@@ -2429,6 +2441,8 @@
           "ruby text",
           "parallel text",
           "reading practice",
+          "english to chinese",
+          "book translation",
           "classical chinese",
           "wenyan",
           "wenyanwen",
@@ -4322,7 +4336,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T22:53:56Z",
+        "pushed_at": "2026-09-06T23:24:57Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4342,7 +4356,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-06T22:53:59Z"
+        "updated_at": "2026-09-06T23:25:00Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },

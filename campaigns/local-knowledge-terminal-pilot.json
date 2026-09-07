@@ -1,5 +1,5 @@
 {
-  "version": 27,
+  "version": 28,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -768,8 +768,13 @@
     "x": {
       "state": "postiz_queue",
       "publish_at": "2026-09-08T01:00:00Z",
-      "content": "Some knowledge should stay in the room. LKT turns private books into cited multilingual cards on your machine. I’m opening four $250 collection-fit sprints; this is a prototype-grounded concept, not shipped hardware. Inspect the sample report: lazying.art/lkt/sample-report",
-      "visual": "https://lazying.art/lkt/assets/lkt-product-hero-v2.png",
+      "content": "Private-document projects can fail before search: uneven extraction, broken citations, or no test for “good enough.” I’m opening four USD 250 software-only collection-fit sprints on your existing machine. Sample first: lazying.art/lkt/sample-report/",
+      "visual": "https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png",
+      "reviewed_on": "2026-09-07",
+      "superseded_post": {
+        "state": "draft",
+        "reason": "The earlier copy used $250 and a legacy product-style visual. It was moved out of the publishing queue before the reviewed replacement entered it."
+      },
       "sample_report_post": {
         "state": "published_and_link_verified",
         "known_owned_replies": 1,
@@ -815,17 +820,18 @@
         "reviewed_on": "2026-09-04",
         "policy": "The visible Postiz preview showed the real project-owned passage viewer capture, exact bounded counts, and owned destination. Postiz removed the protocol URL from the first X draft; the reviewed editor replacement uses the retained protocol-less owned route. The corrected 245-character preview, open-reply setting, AI flag, media, time, and QUEUE state were verified before scheduling."
       },
-      "policy": "First-party product post with the generated visual disclosed as a prototype-grounded concept. The exact 273-character copy, uploaded media, first-party sample-report destination, AI flag, open-reply setting, provider settings, unchanged schedule, and queue state were visibly reviewed after the update."
+      "policy": "First-party service post. The visible Postiz preview showed the exact 249-character copy, uploaded service cover, protocol-less owned sample-report route, AI flag, open-reply setting, unchanged schedule, and QUEUE state. The image itself says USD 250, software service, and hardware not included."
     },
     "instagram": {
       "state": "postiz_queue",
       "publish_at": "2026-09-08T11:31:00Z",
-      "content": "Some knowledge should stay in the room.\n\nLocal Knowledge Terminal turns a private book or reviewed dictionary collection into cited multilingual cards on an existing machine. The browser software works today; the image is a concept visual grounded in the current display prototype, not shipped inventory.\n\nI’m opening four founding collection-fit sprints at $250 each. Before sharing any material, you can inspect a measured example using LKT’s own documented reference collection: 16,800 current-code records, a data/privacy map, two browser proofs, and a written go/no-go boundary.\n\nIt is project-owned evidence—not a customer result or testimonial. Hardware, shipping, custom OCR, and production deployment are not included.\n\nRead the sample report first:\nhttps://lazying.art/lkt/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=product_sample_report\n\n#LocalFirst #KnowledgeManagement #LanguageLearning #RaspberryPi #Privacy",
-      "visual": "https://lazying.art/lkt/assets/lkt-product-social-4x5-v2.png",
-      "correction": {
-        "reviewed_on": "2026-09-05",
-        "reason": "The current morphology parser excludes index-only cross-reference rows from claim-bearing records.",
-        "verification": "The visible Postiz editor retained the account, uploaded image, 2026-09-08T11:31:00Z time, original tracked URL, and boundaries. A fresh provider read confirmed the exact 16,800 current-code count and QUEUE state."
+      "content": "Private-document projects often fail before retrieval: extraction is uneven, citations cannot be reopened, or nobody has defined what “good enough” means.\n\nI built a small public sample around those earlier questions. It covers a data and privacy map, twenty fixed test questions, two cited browser proofs, and a written go/no-go boundary.\n\nI’m opening four USD 250 collection-fit sprints. The fixed scope is a software service for one rights-cleared collection, one language goal, and one existing machine. Hardware, custom OCR, full-library conversion, hosting, and production deployment are outside it.\n\nRead the sample before sharing any material:\nhttps://lazying.art/lkt/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_card\n\n#LocalFirst #KnowledgeManagement #DigitalHumanities #OpenSource",
+      "visual": "https://lazying.art/lkt/assets/lkt-collection-fit-service-instagram-v1.png",
+      "reviewed_on": "2026-09-07",
+      "website_commit": "d337631",
+      "superseded_post": {
+        "state": "draft",
+        "reason": "The earlier copy used $250 and a legacy product-style visual. It was moved out of the publishing queue before the reviewed replacement entered it."
       },
       "sample_report_post": {
         "state": "published_and_visibly_verified",
@@ -855,7 +861,7 @@
         "reviewed_on": "2026-09-04",
         "policy": "The exact caption, unshortened destination, real project-owned page capture, Instagram post setting, time, and QUEUE state were visibly reviewed. The caption claims only the hand-reviewed sample and does not imply automatic extraction, a customer result, or a full-book benchmark."
       },
-      "policy": "Use the reviewed uploaded 4:5 concept visual and keep its disclosure in the caption. The exact caption, measured project-owned evidence, customer-result boundary, unshortened first-party sample-report URL, provider settings, unchanged schedule, and queue state were visibly reviewed after the update; never present the image as inventory."
+      "policy": "Use the reviewed uploaded 4:5 service card. The exact caption, bounded project-owned evidence, unshortened first-party sample-report URL, Instagram post setting, unchanged schedule, media, and QUEUE state were visibly reviewed. The card itself says USD 250, software service, one existing machine, and hardware not included."
     },
     "linkedin": {
       "state": "postiz_queue",

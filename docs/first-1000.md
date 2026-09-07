@@ -10,6 +10,17 @@ pilots, four USD 250 sprints, or any confirmed combination of payments across th
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
+The strongest current no-marketplace application is Lopaka's worldwide DevPet
+embedded-UI prototype contract at a published USD 80–140 per hour for roughly
+10–15 hours a week over six to eight weeks. One application was submitted on
+September 7 through the official form after visible review. It links the public
+STM32H7 LTDC and Waveshare e-paper projects, explains the framebuffer, cache,
+font, and asset-pipeline work, and states plainly that there is no public LVGL
+or shipped character-animation proof. Lopaka's automatic confirmation says the
+application was received and that a reply is expected within five business
+days. This is an outbound application—not a human reply, lead, contract,
+payment, or revenue—and it has no automatic follow-up.
+
 The newest direct need is a worldwide USD 500 listing asking for six existing
 AI-generated clips to become one 30–45 second brand film and one 25–30 second
 web cut. The public [AI Clip Assembly Pilot](https://lazying.art/video/brand-film/)
@@ -349,9 +360,10 @@ LazyEdit package must not be sent through AutoPublish. Publication is attention
 evidence, not a lead or revenue.
 
 The LKT, manuscript, lecture, and Story Clip fit-check pages validate their minimum
-questions and show a review gate inside the current browser tab. A prospective
-customer reviews the exact request, then chooses the prepared email or copy
-route. Nothing is sent from the page itself.
+questions and show a review gate inside the current browser tab. LKT, manuscript,
+and Story Clip currently continue through email or copy. The lecture route can,
+after explicit confirmation, encrypt and submit the reviewed metadata; email and
+copy remain available. No route asks for the source file before fit is established.
 
 A historical visible-browser smoke test on September 2, 2026 used synthetic,
 non-customer answers and stopped at that review panel. It verified the exact
@@ -400,6 +412,16 @@ or remote receiver. LazyingArtWebsite commit
 all four live fit checks and retained local review, email, and copy. Re-enable
 direct submission only after an atomic key rotation and a new labeled
 end-to-end verification.
+
+On September 7 the lecture route alone met that gate. LazyingArtWebsite commit
+`135e2827d1210db84f98054ac717db8a3b6df64a` restored its Send control after
+the deployed public-key fingerprint, mode-`0600` private key, receiver, and
+remote spool were checked together. One explicitly confirmed synthetic request
+was accepted, decrypted, saved privately, and removed remotely only after
+unchanged verification; a second receiver check found no pending duplicate.
+The private synthetic record is retained as operational evidence. This did not
+create a customer inquiry, qualified lead, payment, delivery, or revenue. The
+other three routes remain email-or-copy only.
 
 Prospective customers can inspect a
 [complete sample fit report](https://lazying.art/lkt/sample-report/)

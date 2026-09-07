@@ -1,0 +1,74 @@
+{
+  "id": "lopaka-embedded-ui-contract",
+  "version": 1,
+  "objective": "Win the paid Lopaka DevPet embedded-UI prototype contract with public STM32 and e-paper proof, while stating the LVGL and character-animation gap plainly.",
+  "source_need": {
+    "captured_at": "2026-09-07T00:32:00Z",
+    "url": "https://lopaka.app/careers/embedded-ui-graphics-engineer",
+    "title": "Embedded UI / Graphics Engineer",
+    "state": "official_current_paid_contract",
+    "applications_close": "2026-10-01",
+    "eligibility": "100% remote worldwide",
+    "published_rate": "USD 80-140 per hour",
+    "published_capacity": "approximately 10-15 hours per week",
+    "published_duration": "approximately 6-8 weeks",
+    "scope": "Design and implement a memory-conscious embedded display UI, character states and transitions, mixed sprite/text/status layouts, the asset pipeline, redraw strategy, and hardware trade-offs for the DevPet prototype.",
+    "policy": "The official listing is buyer-intent evidence. Its published rate and duration are not an offer, contract, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "stm32dev",
+      "WordsCardEink"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/stm32dev",
+      "https://github.com/lachlanchen/stm32dev/blob/main/docs/assets/stm32h7-trio-display.jpg",
+      "https://github.com/lachlanchen/WordsCardEink"
+    ],
+    "supported_now": [
+      "A working STM32H74/H75 1024x600 RGB565 LTDC display prototype",
+      "Cache-aware framebuffer restoration with public Thumb assembly, linker source, addresses, and validation commands",
+      "A Raspberry Pi and Waveshare e-paper vocabulary display with multilingual fonts and an HTTP-controlled Pillow rendering pipeline",
+      "Image conversion and custom asset-pipeline work across TFT and e-paper displays"
+    ],
+    "not_proven": [
+      "Public LVGL project experience",
+      "A shipped customer character-animation product",
+      "A paid embedded-UI customer outcome"
+    ],
+    "claim_boundary": "The repositories prove working personal hardware prototypes and relevant source. They do not prove a customer shipment, Lopaka result, LVGL experience, contract award, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "submitted_at": "2026-09-07T00:35:07Z",
+    "method": "One submission through Lopaka's official five-minute application form",
+    "submission_evidence": "The visible form returned three HTTP 200 POST responses and displayed 'Thanks — we got it.' after one submit.",
+    "message_storage": "ignored private evidence",
+    "resume_uploaded": false,
+    "public_project_links_used": 2,
+    "lvgl_experience_claimed": false,
+    "customer_shipping_claimed": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-14",
+    "policy": "Wait through the stated five-business-day reply window. Any interview, scope, availability, rate, contract, payment, or source transfer must be reviewed on its own evidence."
+  },
+  "channels": {
+    "official_application_form": {
+      "state": "submitted_once",
+      "application_submitted": true,
+      "fees_spent_usd": 0
+    }
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "automatic_receipt_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "interview_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -166,7 +166,17 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 27
+        "version": 28
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:lopaka-embedded-ui-contract",
+      "kind": "campaign",
+      "label": "lopaka-embedded-ui-contract",
+      "metadata": {
+        "objective": "Win the paid Lopaka DevPet embedded-UI prototype contract with public STM32 and e-paper proof, while stating the LVGL and character-animation gap plainly.",
+        "version": 1
       },
       "url": ""
     },
@@ -297,6 +307,13 @@
       "id": "channel:linkedin_practical_guide",
       "kind": "channel",
       "label": "linkedin_practical_guide",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:official_application_form",
+      "kind": "channel",
+      "label": "official_application_form",
       "metadata": {},
       "url": ""
     },
@@ -8838,6 +8855,16 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:f0e5a007d8169141"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "submitted_once"
+      },
+      "relation": "targets",
+      "source": "campaign:lopaka-embedded-ui-contract",
+      "target": "channel:official_application_form"
     },
     {
       "confidence": 1.0,

@@ -1209,7 +1209,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 27)
+        self.assertEqual(campaign["version"], 28)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1877,17 +1877,31 @@ class RepositoryTests(unittest.TestCase):
             "lazying.art/lkt/sample-report",
             campaign["channels"]["instagram"]["content"],
         )
-        self.assertEqual(len(campaign["channels"]["x"]["content"]), 273)
+        self.assertEqual(len(campaign["channels"]["x"]["content"]), 249)
         self.assertIn(
-            "16,800 current-code records",
+            "twenty fixed test questions",
             campaign["channels"]["instagram"]["content"],
         )
         self.assertIn(
-            "not a customer result or testimonial",
+            "Hardware, custom OCR, full-library conversion, hosting, and production deployment are outside it",
             campaign["channels"]["instagram"]["content"],
         )
-        self.assertIn("concept", campaign["channels"]["x"]["content"])
-        self.assertIn("not shipped inventory", campaign["channels"]["instagram"]["content"])
+        self.assertIn("software-only", campaign["channels"]["x"]["content"])
+        self.assertIn("USD 250", campaign["channels"]["x"]["content"])
+        self.assertNotIn("$250", campaign["channels"]["x"]["content"])
+        self.assertEqual(
+            campaign["channels"]["x"]["visual"],
+            "https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png",
+        )
+        self.assertEqual(
+            campaign["channels"]["instagram"]["visual"],
+            "https://lazying.art/lkt/assets/lkt-collection-fit-service-instagram-v1.png",
+        )
+        self.assertEqual(campaign["channels"]["x"]["superseded_post"]["state"], "draft")
+        self.assertEqual(
+            campaign["channels"]["instagram"]["superseded_post"]["state"],
+            "draft",
+        )
         self.assertEqual(campaign["channels"]["hackernews"]["state"], "research_only")
         self.assertIn("no detected software license", serialized)
         self.assertIn("four confirmed usd 250 payments", serialized)
@@ -2357,15 +2371,20 @@ class RepositoryTests(unittest.TestCase):
             campaign["conversion_readiness"]["fit_check"]["working_terms_linked"]
         )
         fit_check = campaign["conversion_readiness"]["fit_check"]
-        self.assertEqual(fit_check["state"], "live_local_review_with_email_or_copy")
+        self.assertEqual(
+            fit_check["state"],
+            "live_review_gated_encrypted_submit_with_email_or_copy_fallback",
+        )
         self.assertEqual(fit_check["offer_route"], "lecture")
         self.assertTrue(fit_check["explicit_review_confirmation"])
         self.assertFalse(fit_check["automatic_submission"])
-        self.assertFalse(fit_check["direct_submit_available"])
-        self.assertTrue(fit_check["key_rotation_required"])
+        self.assertTrue(fit_check["direct_submit_available"])
+        self.assertFalse(fit_check["key_rotation_required"])
         self.assertTrue(fit_check["synthetic_visible_round_trip_verified"])
         self.assertTrue(fit_check["receiver_authenticated_decrypted_and_saved"])
-        self.assertTrue(fit_check["synthetic_local_payload_artifacts_removed"])
+        self.assertFalse(fit_check["synthetic_local_payload_artifacts_removed"])
+        self.assertTrue(fit_check["synthetic_local_payload_artifacts_retained_private"])
+        self.assertEqual(fit_check["network_mutations_after_explicit_confirmation"], 1)
         self.assertTrue(fit_check["remote_spool_empty"])
         self.assertFalse(fit_check["lead_or_sale_observed"])
         self.assertEqual(fit_check["verified_received_gross_usd"], 0)

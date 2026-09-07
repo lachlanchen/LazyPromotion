@@ -105,6 +105,7 @@ flowchart LR
 | [`outreach_monitor.py`](outreach_monitor.py) | Read-only iCloud outreach monitor that requires exactly one already-selected dedicated folder and records only aggregate total and unread counts |
 | [`linkedin_reply_monitor.py`](linkedin_reply_monitor.py) | Read-only monitor for one reviewed LinkedIn outreach thread; records only aggregate event counts and requires visible review before changing funnel state |
 | [`lkt_inbox.py`](lkt_inbox.py) | Fail-closed receiver for the encrypted LKT, manuscript, lecture, and Story Clip fit-check spool; validates, decrypts, saves privately, then removes only the verified remote envelope |
+| [`scripts/lkt-inbox.sh`](scripts/lkt-inbox.sh) | Single-session start, status, and stop wrapper for the lightweight encrypted fit-check receiver |
 | [`payment_readiness.py`](payment_readiness.py) | Read-only, secret-sanitized validation of the fixed USD 250 LKT, manuscript, and lecture-pack Stripe paths |
 | [`lkt_hardware_pricing.py`](lkt_hardware_pricing.py) | Read-only supplied-device margin check that keeps hardware separate from the USD 250 collection-fit service |
 | [`lkt_delivery.py`](lkt_delivery.py) | Deterministic metadata-only LKT sprint preflight and truth-safe Markdown delivery-packet renderer |

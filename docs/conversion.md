@@ -223,6 +223,16 @@ submission on all four pages. The live path now reviews locally and continues
 by email or copy. Direct submission stays disabled until an atomic key rotation
 and a new labeled end-to-end verification succeed.
 
+On September 7, the lecture route alone completed that new end-to-end check.
+LazyingArtWebsite commit
+`135e2827d1210db84f98054ac717db8a3b6df64a` restored the explicitly confirmed
+encrypted Send action while retaining email and copy fallbacks. One labeled
+synthetic request was accepted, authenticated, decrypted, saved in private mode
+`0600`, and removed remotely only after unchanged verification. A second check
+found no pending duplicate. The retained private synthetic record is operational
+evidence, not a customer inquiry, qualified lead, payment, delivery, or revenue.
+LKT, manuscript, and Story Clip remain email-or-copy only.
+
 The primary live proof used an explicitly labeled synthetic request submitted
 through the visible fit-check page. Reference
 `cc078babd1b32b0c08e796e88886201f` was accepted, authenticated, decrypted,

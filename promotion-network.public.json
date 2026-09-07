@@ -106,7 +106,7 @@
       "label": "l-and-n-pronunciation-launch",
       "metadata": {
         "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },
@@ -6770,6 +6770,13 @@
       "url": "https://lazying.art/lkt/lexical-ingest/"
     },
     {
+      "id": "url:7ee06fc9c58c9216",
+      "kind": "web_resource",
+      "label": "owned lesson url",
+      "metadata": {},
+      "url": "https://l-and-n.lazying.art/lessons/light-vs-night/"
+    },
+    {
       "id": "url:44752e26757961b2",
       "kind": "web_resource",
       "label": "passage provenance proof artifact",
@@ -8144,6 +8151,14 @@
       "relation": "uses_evidence",
       "source": "campaign:l-and-n-pronunciation-launch",
       "target": "url:74104787f83f4cbe"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://l-and-n.lazying.art/lessons/light-vs-night/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:7ee06fc9c58c9216"
     },
     {
       "confidence": 1.0,

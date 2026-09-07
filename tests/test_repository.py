@@ -720,7 +720,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -740,6 +740,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(owned["url"], "https://lazying.art/work/")
         self.assertIn("utm_campaign=l_and_n_pronunciation_launch", owned["tracked_destination"])
         self.assertEqual(len(owned["website_commit"]), 40)
+        lesson = campaign["source_evidence"]["owned_lesson"]
+        self.assertEqual(lesson["state"], "live")
+        self.assertEqual(
+            lesson["url"],
+            "https://l-and-n.lazying.art/lessons/light-vs-night/",
+        )
+        self.assertEqual(len(lesson["release_sha256"]), 64)
+        self.assertEqual(len(lesson["html_sha256"]), 64)
+        self.assertEqual(len(lesson["video_sha256"]), 64)
+        self.assertIn("not a learner result", lesson["policy"])
         self.assertEqual(len(test_build["sha256"]), 64)
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_scheduled")

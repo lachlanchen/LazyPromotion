@@ -1,6 +1,6 @@
 # L & N promotion handoff
 
-Updated: 2026-09-06
+Updated: 2026-09-07
 
 This note is the secret-free bridge between LazyPromotion and the L & N release workflow. It contains no account credentials, tester identities, private email addresses, signing material, or browser cookies.
 
@@ -8,18 +8,20 @@ This note is the secret-free bridge between LazyPromotion and the L & N release 
 
 - Product: `L & N: Speech Practice`
 - Website and primary campaign destination: https://l-and-n.lazying.art/
+- Free light/night lesson: https://l-and-n.lazying.art/lessons/light-vs-night/
 - Owned discovery shelf: https://lazying.art/work/
 - Source: https://github.com/lachlanchen/L-and-N
-- L & N release evidence commit: `d389aacf93d5109858ac6d4abd62e7336bb11c49`
-- Deployed audio-repair source commit: `d837c146eb0ff66b4ea4000a004f582f4c31ef5f`
+- L & N release evidence commit: `6763b86d900e061c840b72deda5119010418b966`
+- Deployed lesson source commit: `7b969e618bb870ab2f09fd4390215f092934ce32`
 - Detailed durable operator handoff: `store/operator-handoff.md` in the L & N repository
 - Campaign record: `campaigns/l-and-n-pronunciation-launch.json`
 
-Use the active healthy recovery checkout recorded in the private runtime handoff. Do not read from or write to a checkout on the known failed storage.
+Use `/home/lachlan/ProjectsLFS/L-And-N`; the user repaired the filesystem and the checkout, build, and tests are healthy again.
 
 ## What is safe to say now
 
 - The PWA is live, free, open source, and usable without an account.
+- The free **Light or night?** lesson is live with project-owned listening prompts, mouth-placement images, captions, and a short demonstration video.
 - Learners can practice English, Mandarin, and Cantonese separately from the interface language.
 - The app provides L/N listening practice, mouth and airflow guidance, a 3D mouth view, recording, a visible waveform, recognized text, and explainable coaching feedback.
 - The repaired PWA uses one microphone stream on iPhone browsers, leaves the last waveform visible after Stop, and does not show or save a score when it could not recognize speech.
@@ -45,7 +47,7 @@ Lead with the concrete learner problem: “I mix up L and N, so I built the prac
 
 The existing LinkedIn item is scheduled for `2026-09-20T02:00:00Z` and remains a scheduled draft until provider delivery is independently verified. Do not record a post, view, tester, lead, or store review as a conversion or publication outcome without separate evidence.
 
-The selected-work shelf now links the free no-signup PWA and public source from a pronunciation-shaped card. Its tracked link is discovery evidence only; a visit is not a lead or sale.
+The selected-work shelf now links the free no-signup PWA and public source from a pronunciation-shaped card. The standalone lesson is an additional education-first discovery path. Either link is discovery evidence only; a visit is not a lead or sale.
 
 ## Release-following actions
 
@@ -57,8 +59,4 @@ The selected-work shelf now links the free no-signup PWA and public source from 
 
 ## Browser handoff
 
-L & N store work reuses the dedicated local stack at Xvfb `:164`, x11vnc `5964`, noVNC/websockify `6164`, and Chrome CDP `9484`. Open:
-
-`http://127.0.0.1:6164/vnc.html?host=127.0.0.1&port=6164&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=0`
-
-Do not start another L & N stack while it is running. App Store Connect and Google Play use the existing logged-in Chrome profile; never copy its profile, cookies, or credentials into Git. EchoMind-specific browser details and the distinction between its older display and this L & N stack are documented in the L & N repository handoff.
+No L & N noVNC stack is live after the workstation reboot. Start one dedicated project-owned stack only when store review is needed, record its current URL and processes in the ignored L & N runtime handoff, and stop it after evidence capture. Never touch the user's personal Firefox or copy browser profiles, cookies, or credentials into Git.

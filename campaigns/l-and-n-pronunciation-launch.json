@@ -1,19 +1,20 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
   "source_evidence": {
     "repository": "https://github.com/lachlanchen/L-and-N",
     "pwa": "https://l-and-n.lazying.art/",
-    "deployed_source_commit": "d837c146eb0ff66b4ea4000a004f582f4c31ef5f",
-    "current_evidence_commit": "d389aacf93d5109858ac6d4abd62e7336bb11c49",
-    "verified_on": "2026-09-06",
+    "deployed_source_commit": "7b969e618bb870ab2f09fd4390215f092934ce32",
+    "current_evidence_commit": "6763b86d900e061c840b72deda5119010418b966",
+    "verified_on": "2026-09-07",
     "supported_capabilities": [
       "Hear an L/N contrast and record one word",
       "Inspect mouth-placement and airflow guidance",
       "Inspect explainable practice feedback rather than a bare score",
       "Switch practice among English, Mandarin, and Cantonese",
-      "Use the public browser version without creating an account"
+      "Use the public browser version without creating an account",
+      "Follow a free light/night lesson with project-owned audio, mouth-placement images, captions, and video"
     ],
     "release_state": {
       "pwa": "live",
@@ -23,7 +24,7 @@
       "testflight_external": "testing_build_2",
       "testflight_public_url": "https://testflight.apple.com/join/CpkT8m9C",
       "apple_app_store": "waiting_for_review",
-      "operator_handoff_updated_on": "2026-09-06",
+      "operator_handoff_updated_on": "2026-09-07",
       "policy": "This campaign links only the live PWA. Do not call either store version public or available until the corresponding storefront is independently verified."
     },
     "owned_discovery": {
@@ -33,6 +34,18 @@
       "website_commit": "37607b9beab15554a1214de040d7101c29f48396",
       "tracked_destination": "https://l-and-n.lazying.art/?utm_source=lazyingart&utm_medium=website&utm_campaign=l_and_n_pronunciation_launch&utm_content=work_shelf",
       "policy": "This is an owned discovery link to the free no-signup PWA and public source, not evidence of a tester, lead, sale, or store release."
+    },
+    "owned_lesson": {
+      "url": "https://l-and-n.lazying.art/lessons/light-vs-night/",
+      "state": "live",
+      "verified_at": "2026-09-07T01:41:48Z",
+      "source_commit": "7b969e618bb870ab2f09fd4390215f092934ce32",
+      "evidence_commit": "6763b86d900e061c840b72deda5119010418b966",
+      "release_sha256": "978c0b7a1c14a129dc2a1ce6e83612257f869b33c20bed62fab2bddf850a778e",
+      "html_sha256": "62329cc584f9bb85a357047c3c2bc9b3987c2d4b5a883dd99882ff96a1c095ee",
+      "video_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "content": "A standalone four-step light/night drill with exact listening cues, mouth-placement guidance, downloadable prompts, a captioned demonstration, and a quiet path into the free PWA.",
+      "policy": "This is project-owned educational evidence, not a learner result, pronunciation benchmark, clinical assessment, lead, sale, or public app-store release."
     },
     "audio_repair": {
       "pwa": "The iPhone browser path now records one microphone stream, retains the waveform after Stop, and requires recognized text before showing or saving a score.",

@@ -246,7 +246,7 @@
       "label": "soft-event-frame-code-release",
       "metadata": {
         "objective": "Turn one explicit request for unavailable research code into a reproducible public release and a useful maintainer response, without treating the interaction as a sale or publishing uncleared recordings.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -9551,7 +9551,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "public_reply_sent_waiting_for_requester_validation"
+        "state": "request_fulfilled_issue_closed_completed"
       },
       "relation": "targets",
       "source": "campaign:soft-event-frame-code-release",

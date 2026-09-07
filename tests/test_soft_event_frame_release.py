@@ -33,6 +33,13 @@ class SoftEventFrameReleaseTests(unittest.TestCase):
         self.assertFalse(funnel["payment_confirmed"])
         self.assertEqual(funnel["verified_received_gross_usd"], 0)
 
+    def test_fulfilled_issue_is_closed_without_a_follow_up_pitch(self):
+        github = self.campaign["channels"]["github"]
+        self.assertEqual(github["state"], "request_fulfilled_issue_closed_completed")
+        self.assertTrue(github["issue_closed"])
+        self.assertEqual(github["close_reason"], "completed")
+        self.assertIn("do not add a sales pitch", github["policy"])
+
 
 if __name__ == "__main__":
     unittest.main()

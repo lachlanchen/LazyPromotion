@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "soft-event-frame-code-release",
   "objective": "Turn one explicit request for unavailable research code into a reproducible public release and a useful maintainer response, without treating the interaction as a sale or publishing uncleared recordings.",
   "source_evidence": {
@@ -31,10 +31,12 @@
   },
   "channels": {
     "github": {
-      "state": "public_reply_sent_waiting_for_requester_validation",
+      "state": "request_fulfilled_issue_closed_completed",
       "reply_sent": true,
-      "issue_closed": false,
-      "policy": "Keep the issue open for setup feedback. Answer reproducible failures in-thread; do not add a sales pitch, move the requester to private messages, or infer buying intent from a code request."
+      "issue_closed": true,
+      "closed_at": "2026-09-07T02:23:31Z",
+      "close_reason": "completed",
+      "policy": "The exact requested release and runnable commands are already in the thread. Reopen or answer a new issue if a reproducible setup failure appears; do not add a sales pitch, move the requester to private messages, or infer buying intent from a code request."
     }
   },
   "funnel": {

@@ -1,0 +1,71 @@
+{
+  "id": "namecoach-voice-ai-contract",
+  "version": 1,
+  "objective": "Earn a paid NameCoach/Euphonia voice-AI take-home or trial by presenting the strongest public pronunciation and multilingual-ASR work without claiming production G2P experience.",
+  "source_need": {
+    "captured_at": "2026-09-07T00:51:00Z",
+    "url": "https://news.ycombinator.com/item?id=48900749",
+    "title": "Founding Voice AI Engineer",
+    "state": "employer_posted_public_role",
+    "posting_age_when_checked": "54 days",
+    "closing_date": null,
+    "eligibility": "San Francisco or remote; contract or part-time",
+    "published_rate": "approximately USD 30-120 per hour by seniority",
+    "published_process": "paid take-home followed by a paid trial month before any longer engagement",
+    "requested_depth": "Grapheme-to-phoneme, IPA, ASR/TTS internals, and model building and evaluation, especially recognition and G2P.",
+    "policy": "The employer-authored post remained public and invited a short email, but no closing date or independent current-status confirmation was available. The rate and process are not an offer, contract, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "L-and-N",
+      "MultilingualWhisper"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/L-and-N",
+      "https://github.com/lachlanchen/MultilingualWhisper"
+    ],
+    "supported_now": [
+      "An open-source English, Mandarin, and Cantonese L/N pronunciation coach",
+      "Onset and spectral feature analysis, cautious calibration, explainable scoring, and a Whisper fallback",
+      "A mixed-language Whisper, Silero VAD, Lingua, and subtitle-refinement pipeline"
+    ],
+    "not_proven": [
+      "A production grapheme-to-phoneme model",
+      "A provider-neutral TTS pronunciation middleware deployment",
+      "A large expert-rated pronunciation evaluation corpus",
+      "A paid voice-AI customer outcome"
+    ],
+    "claim_boundary": "The public repositories prove relevant pronunciation UX, signal analysis, and multilingual ASR work. They do not prove the production G2P depth requested by the role."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-07T00:55:26Z",
+    "method": "One concise email to the address published in the employer's Hacker News post",
+    "delivery_evidence": "The reviewed compose window closed after one send, and the exact subject appeared in the visible Sent mailbox.",
+    "message_storage": "ignored private evidence",
+    "attachments_sent": 0,
+    "production_g2p_claimed": false,
+    "paid_take_home_requested": true,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-14",
+    "policy": "Do not infer interest from delivery. Any reply, take-home scope, overlap requirement, rate, trial, contract, payment, or source transfer must be reviewed on its own evidence."
+  },
+  "channels": {
+    "direct_email": {
+      "state": "sent_once",
+      "outbound_messages": 1,
+      "fees_spent_usd": 0
+    }
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_take_home_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -21,6 +21,15 @@ application was received and that a reply is expected within five business
 days. This is an outbound application—not a human reply, lead, contract,
 payment, or revenue—and it has no automatic follow-up.
 
+A second direct application uses L-and-N and MultilingualWhisper for an
+employer-posted NameCoach/Euphonia voice-AI role. The post describes remote or
+part-time work at approximately USD 30–120 per hour, a paid take-home, and a
+paid trial month. The one reviewed email links both public repositories and
+plainly says they do not prove production G2P experience. The compose window
+closed after one send and the exact subject appeared in Sent. Because the post
+was 54 days old when checked and gave no closing date, this remains one outbound
+application—not a human reply, take-home offer, contract, payment, or revenue.
+
 The newest direct need is a worldwide USD 500 listing asking for six existing
 AI-generated clips to become one 30–45 second brand film and one 25–30 second
 web cut. The public [AI Clip Assembly Pilot](https://lazying.art/video/brand-film/)

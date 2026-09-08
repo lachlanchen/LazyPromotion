@@ -156,11 +156,25 @@ PRIORITIES = [
         "url": "https://lazying.art/lecture-pack/",
     },
     {
+        "work": "PocketPolyglot + LinguaLeaf",
+        "need": "Test one final, rights-cleared chapter as both print layout and reflowable EPUB before committing a whole book",
+        "audience": "Independent authors and small publishers with a defined production problem",
+        "route": "USD 250 Book Specimen Sprint after a free fit check; translation and complete-book production excluded",
+        "url": "https://lazying.art/book-specimen/",
+    },
+    {
         "work": "LazyEdit + LocalVideoGen + Musia",
         "need": "A meaningful moment from an owned interview or podcast turned into one captioned vertical clip",
         "audience": "Podcasts, interview series, educators, and small mission-led teams",
         "route": "USD 250 Story Clip Pilot after a metadata-only free fit check; one source and one finished clip",
         "url": "https://lazying.art/story-clip/",
+    },
+    {
+        "work": "LazyEdit + LocalVideoGen + LalaStudio",
+        "need": "Several existing AI clips need one coherent short story, master cut, and web cut",
+        "audience": "Small brands and creators who control their source clips",
+        "route": "USD 500 AI Clip Assembly Pilot after a free fit check; new generation and performance promises excluded",
+        "url": "https://lazying.art/video/brand-film/",
     },
     {
         "work": "Musia + LocalVideoGen",
@@ -251,9 +265,10 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is four confirmed USD 250 payments across four "
+            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across six "
             "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
-            "Redline, the Bilingual Lecture Pack, and the Story Clip Pilot. The eInk inquiry and Figurine checkout "
+            "Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen "
+            "Sprint, and AI Clip Assembly. The eInk inquiry and Figurine checkout "
             "remain separate offers, not competing calls to action. Open-source replies "
             "should optimize for a solved problem, not for extracting a donation. GitHub "
             "Sponsors and donations remain quiet secondary support routes on the "

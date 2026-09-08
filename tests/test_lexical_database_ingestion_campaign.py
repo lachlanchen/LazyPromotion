@@ -42,7 +42,10 @@ class LexicalDatabaseIngestionCampaignTests(unittest.TestCase):
     def test_marketplace_and_revenue_states_do_not_overclaim(self):
         upwork = self.campaign["channels"]["upwork"]
         funnel = self.campaign["funnel"]
-        self.assertEqual(upwork["state"], "application_prepared_login_required")
+        self.assertEqual(self.campaign["version"], 5)
+        self.assertEqual(self.campaign["source_need"]["state"], "closed_public_listing")
+        self.assertIn("no longer available", self.campaign["source_need"]["latest_status"])
+        self.assertEqual(upwork["state"], "listing_closed_application_not_submitted")
         self.assertFalse(upwork["application_submitted"])
         self.assertEqual(upwork["connects_spent"], 0)
         self.assertFalse(funnel["interview_observed"])

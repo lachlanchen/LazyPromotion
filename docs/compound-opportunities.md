@@ -9,6 +9,9 @@ This map combines existing public code, books, knowledge systems, and media into
 | Opportunity | State | Buyer need | First bounded test | Score / 5 |
 |---|---|---|---|---:|
 | [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Use the live passage-provenance proof and the scientific collection sample to qualify one representative source for text survival, structure, concepts, provenance, and a small retrieval eval before recommending any full re-index | 4.65 |
+| [Source-aware book specimen](#source-aware-book-specimen) | active | Turn one representative chapter into traceable print and EPUB specimens so layout, typography, source structure, and production risks can be judged early | Let the chapter-first production guide and project-owned downloadable specimen lead to the free fit check; do not accept a complete book or urgent production schedule without a separately reviewed quote | 4.60 |
+| [Source-preserving lexical ingestion](#source-preserving-lexical-ingestion) | candidate | Add new dictionary or glossary sources to an existing database without losing source locators, raw values, transformation history, rejects, or safe reruns | Find a new explicit paid lexical-ingestion need and use the public two-format proof only when the source formats, provenance problem, and safe-rerun boundary genuinely match; the original USD 1,200 listing closed before submission | 4.50 |
+| [AI clip assembly pilot](#ai-clip-assembly) | active | Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package | Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment | 4.45 |
 | [Manuscript build and redline sprint](#scientific-manuscript-workbench) | active | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed | 4.30 |
 | [Lecture-to-study library](#lecture-to-study-library) | active | Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest | Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases | 4.15 |
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
@@ -59,6 +62,96 @@ Gates:
 - Do not imply that production deployment or managed access is included in the USD 250 sprint
 - The passage proof is hand-reviewed and project-owned; do not describe it as automatic extraction, full-book ingestion, a customer result, or a translation benchmark
 - Treat the restricted r/KnowledgeGraph comment as research only, not permission to contact its author or claim a lead
+
+### Source-aware book specimen
+
+**State:** active
+
+**Buyer:** An independent author or small publisher with final, rights-cleared copy who needs to test print and reflowable production before committing a whole book
+
+**Need:** Turn one representative chapter into traceable print and EPUB specimens so layout, typography, source structure, and production risks can be judged early
+
+**Existing work:** [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [LinguaLeaf](https://github.com/lachlanchen/LinguaLeaf), [Video2Book](https://github.com/lachlanchen/Video2Book), [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal)
+
+**First deliverable:** The live USD 250 Book Specimen Sprint for one rights-cleared chapter up to 5,000 words: one short print-layout PDF, one reflowable EPUB, a style and source ledger, validation results, one correction pass, and a written full-production boundary
+
+**First demand test:** Let the chapter-first production guide and project-owned downloadable specimen lead to the free fit check; do not accept a complete book or urgent production schedule without a separately reviewed quote
+
+Evidence:
+
+- <https://lazying.art/book-specimen/>
+- <https://lazying.art/book-specimen/fit-check/>
+- <https://blog.lazying.art/html/computer_internet/3808/test-one-chapter-print-pdf-reflowable-epub.html>
+- <https://github.com/lachlanchen/LazyPromotion/tree/e8512197cabe988ee597291364c0dab373e261ed/examples/source-aware-book-specimen>
+- <https://github.com/lachlanchen/PocketPolyglot>
+- <https://github.com/lachlanchen/LinguaLeaf>
+
+Gates:
+
+- The customer must control the supplied copy, translation, images, fonts, and other production assets
+- The project-owned specimen proves a small reproducible production path, not a customer result, full-book delivery, translation service, printer acceptance, KDP acceptance, or rush turnaround
+- Translation, substantive editing, cover work, ISBN, marketplace access, print-proof purchasing, shipping, rights clearance, and complete-book production are outside the fixed sprint
+- Agree source transfer, correction, cancellation, refund, retention, support, and full-production boundaries before payment
+
+### Source-preserving lexical ingestion
+
+**State:** candidate
+
+**Buyer:** A dictionary, language archive, research project, or specialist publisher with lexical data in several source formats
+
+**Need:** Add new dictionary or glossary sources to an existing database without losing source locators, raw values, transformation history, rejects, or safe reruns
+
+**Existing work:** [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal), [LexiconAtlas](https://github.com/lachlanchen/LexiconAtlas), [WordOrigins](https://github.com/lachlanchen/WordOrigins), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot)
+
+**First deliverable:** Start with the existing USD 250 collection-fit sprint as a source, schema, provenance, and representative-ingest audit; quote adapters, bulk ingestion, deployment, and linguistic normalization only after that boundary is accepted
+
+**First demand test:** Find a new explicit paid lexical-ingestion need and use the public two-format proof only when the source formats, provenance problem, and safe-rerun boundary genuinely match; the original USD 1,200 listing closed before submission
+
+Evidence:
+
+- <https://lazying.art/lkt/lexical-ingest/>
+- <https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof>
+- <https://github.com/lachlanchen/LocalKnowledgeTerminal>
+- <https://github.com/lachlanchen/LexiconAtlas/releases/latest>
+- <https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/>
+
+Gates:
+
+- The closed USD 1,200 listing is historical buyer-intent evidence, not a current opportunity, lead, contract, payment, customer result, or received revenue
+- The synthetic proof uses no buyer data and does not establish compatibility with an unseen Toolbox file, database schema, source volume, or linguistic normalization policy
+- Keep marketplace communication and payment on the marketplace and do not spend Connects until the listing, client, terms, and account are reviewed
+- Require source rights, a representative file, the target schema, accepted transformations, reject policy, rerun behavior, rollback, and acceptance checks before implementation
+
+### AI clip assembly pilot
+
+**State:** active
+
+**Buyer:** A small brand or creator with a handful of existing, customer-controlled AI clips that do not yet form one coherent short film
+
+**Need:** Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package
+
+**Existing work:** [LazyEdit](https://github.com/lachlanchen/LazyEdit), [LocalVideoGen](https://github.com/lachlanchen/LocalVideoGen), [LalaStudio](https://github.com/lachlanchen/LalaStudio), [AutoPublish](https://github.com/lachlanchen/AutoPublish)
+
+**First deliverable:** The live USD 500 AI Clip Assembly Pilot for up to six customer-controlled clips and 45 seconds of combined source: one 30–45 second 16:9 master, one 25–30 second web cut from the same edit, basic colour and sound finishing, supplied titles or logo, a source manifest, and one correction pass
+
+**First demand test:** Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment
+
+Evidence:
+
+- <https://lazying.art/video/brand-film/>
+- <https://lazying.art/video/brand-film/#sample>
+- <https://lazying.art/video/brand-film/fit-check/>
+- <https://lazying.art/video/brand-film/sample/manifest.json>
+- <https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html>
+- <https://github.com/lachlanchen/LazyEdit>
+- <https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/>
+
+Gates:
+
+- The customer must control the source clips, voices, faces, music, logos, and other supplied assets
+- The six-source proof is project-owned editing evidence, not customer work, an advertising result, or proof that unseen clips will fit
+- New filming or generation, shot recreation, voice cloning, paid stock, translation, extra formats, publishing, native editor files, and performance promises are outside the fixed pilot unless separately accepted
+- Agree usable sources, story sentence, native-project requirement, delivery, correction, cancellation, refund, retention, and payment terms before source transfer
 
 ### Manuscript build and redline sprint
 
@@ -186,7 +279,7 @@ Gates:
 
 **Need:** Install and operate a pinned local model stack with a usable web client and guarded remote access
 
-**Existing work:** [LocalLLM](https://github.com/lachlanchen/LocalLLM), [LazyEdge](https://github.com/lachlanchen/LazyEdge), [LazyTunnel](https://github.com/lachlanchen/LazyTunnel), [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb), [aginti-browser](https://github.com/lachlanchen/aginti-browser), [novnc-manager](https://github.com/lachlanchen/novnc-manager)
+**Existing work:** [LocalLLM](https://github.com/lachlanchen/LocalLLM), [LazyEdge](https://github.com/lachlanchen/LazyEdge), [LazyTunnel](https://github.com/lachlanchen/LazyTunnel), [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb), [aginti-browser](https://github.com/lachlanchen/aginti-browser), [novnc-manager](https://github.com/lachlanchen/novnc-manager), [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation), [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge)
 
 **First deliverable:** A compatibility audit and single-machine deployment plan before any implementation or managed-support scope
 
@@ -197,13 +290,15 @@ Evidence:
 - <https://github.com/lachlanchen/LocalLLM>
 - <https://github.com/lachlanchen/LazyEdge>
 - <https://github.com/lachlanchen/LazyTunnel>
+- <https://github.com/lachlanchen/kvm-qemu-workstation>
+- <https://github.com/lachlanchen/uu-remote-ubuntu-bridge>
 
 Gates:
 
 - Hardware, model, driver, security, uptime, and remote-access support boundaries must be written
 - Never expose an unauthenticated model endpoint
 - Model licenses and geographic restrictions must be checked per deployment
-- Treat LazyTunnel as an early operator-reviewed SSH/systemd toolkit until bidirectional shell, file transfer, failure recovery, negative-permission, and reboot tests are complete for the customer's topology
+- Treat LazyTunnel and the workstation bridges as operator-reviewed deployment evidence, not proof that an unseen customer topology will pass bidirectional shell, file transfer, failure recovery, negative-permission, or reboot tests
 
 ### Story-first interview clip pilot
 
@@ -536,4 +631,4 @@ Gates:
 
 ## Interpretation
 
-LKT, manuscript redline, the bilingual lecture pack, and the story clip pilot are the four active USD 250 routes because each has an exact scope, public proof, price, and pre-transfer qualification route. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.
+LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, and AI clip assembly are six priced service routes with an exact scope, public proof, and pre-transfer qualification. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.

@@ -1,12 +1,14 @@
-# First USD 1,000: five focused service routes
+# First USD 1,000: six focused service routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
 Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one
 customer-owned recording. The **AI Clip Assembly Pilot** adds a bounded **USD
-500** route for up to six existing customer-controlled clips. Each route has a
-fixed scope and project-owned proof. The milestone can be two USD 500 assembly
-pilots, four USD 250 sprints, or any confirmed combination of payments across these five routes
+500** route for up to six existing customer-controlled clips. The **Book
+Specimen Sprint** adds a sixth **USD 250** route for one final, rights-cleared
+chapter tested as print and reflowable output. Each route has a fixed scope and
+project-owned proof. The milestone can be two USD 500 assembly pilots, four USD
+250 sprints, or any confirmed combination of payments across these six routes
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
@@ -70,8 +72,8 @@ is live in English, Traditional Chinese, and Japanese. It explains the complete
 method before one tracked offer link and includes no prospect details or
 customer-result claim. Publication is discovery evidence, not a sale.
 
-The clearest current one-contract route is a USD 1,200 Upwork listing for
-OUTOFPAPUA lexical-database ingestion and data carpentry. The buyer needs code
+The former clearest one-contract route was a USD 1,200 Upwork listing for
+OUTOFPAPUA lexical-database ingestion and data carpentry. The buyer needed code
 that can bring new lexical sources into an existing database, with some sources
 first prepared as Toolbox or another acceptable format. This is a direct match
 for the source-preserving ingestion, multilingual lexical schema, and provenance
@@ -87,10 +89,12 @@ bulk conversion, OCR, deployment, and hardware outside the USD 250 sprint.
 LazyingArtWebsite commit `26b23c9231d6891e7b5df942f6ec2463e9e1ccf1`
 is deployed and returned HTTP 200. This publication is proof and discovery,
 not a lead, contract, payment, or revenue. The
-USD 1,200 application is prepared around the listing's USD 20-per-hour basis and
-a 60-hour cap, but remains unsubmitted because the isolated project browser is
-logged out. The public listing is buyer-intent evidence, not a lead, interview,
-contract, payment, or received revenue.
+USD 1,200 application was prepared around the listing's USD 20-per-hour basis
+and a 60-hour cap, but the public page reported the job as no longer available
+on September 8 before any application was submitted. Do not submit, retry, or
+contact the buyer elsewhere. The proof remains useful for a new explicit
+dictionary or glossary-ingestion need; the closed listing is historical demand
+evidence, not a lead, contract, payment, or received revenue.
 
 A current buyer-intent contract can shorten the route without changing those
 offers. An Upwork listing requests source-linked coding of 21 policy-text files
@@ -658,7 +662,8 @@ The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. LKT, manuscript redline, the
 bilingual lecture pack, Story Clip, and AI Clip Assembly are the five homepage
-routes; a
+routes; the Book Specimen Sprint is a sixth focused route reached from its
+chapter-first guide and proof page. A
 candidate advances only after a current need and a small first test are found.
 
 ## Truthful measurement

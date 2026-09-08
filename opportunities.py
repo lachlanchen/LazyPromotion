@@ -126,11 +126,14 @@ def render(payload: dict) -> str:
             "## Interpretation",
             "",
             (
-                "LKT, manuscript redline, the bilingual lecture pack, and the story clip pilot "
-                "are the four active USD 250 routes because each has an exact scope, public "
-                "proof, price, and pre-transfer qualification route. Candidate and gated "
-                "opportunities should advance only after a current "
-                "explicit need, a rights-safe sample, and a written delivery boundary exist."
+                "LKT collection fit, manuscript redline, the bilingual lecture pack, the story "
+                "clip pilot, the book specimen, and AI clip assembly are six priced service "
+                "routes with an exact scope, public proof, and pre-transfer qualification. "
+                "Source-preserving lexical ingestion remains a candidate specialization of LKT: "
+                "its original USD 1,200 listing closed before submission, while the reusable "
+                "synthetic proof remains available for a new explicit need. "
+                "Candidate and gated opportunities should advance only after a current explicit "
+                "need, a rights-safe sample, and a written delivery boundary exist."
             ),
             "",
         ]

@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -29,6 +29,30 @@
       "scores": {"buyer_pain": 5, "proof": 5, "delivery_readiness": 5, "low_support": 3, "repeatability": 4}
     },
     {
+      "id": "source-preserving-lexical-ingestion",
+      "title": "Source-preserving lexical ingestion",
+      "state": "candidate",
+      "buyer": "A dictionary, language archive, research project, or specialist publisher with lexical data in several source formats",
+      "need": "Add new dictionary or glossary sources to an existing database without losing source locators, raw values, transformation history, rejects, or safe reruns",
+      "projects": ["LocalKnowledgeTerminal", "LexiconAtlas", "WordOrigins", "PocketPolyglot"],
+      "first_deliverable": "Start with the existing USD 250 collection-fit sprint as a source, schema, provenance, and representative-ingest audit; quote adapters, bulk ingestion, deployment, and linguistic normalization only after that boundary is accepted",
+      "first_test": "Find a new explicit paid lexical-ingestion need and use the public two-format proof only when the source formats, provenance problem, and safe-rerun boundary genuinely match; the original USD 1,200 listing closed before submission",
+      "proof": [
+        "https://lazying.art/lkt/lexical-ingest/",
+        "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lexical-ingest-proof",
+        "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+        "https://github.com/lachlanchen/LexiconAtlas/releases/latest",
+        "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/"
+      ],
+      "gates": [
+        "The closed USD 1,200 listing is historical buyer-intent evidence, not a current opportunity, lead, contract, payment, customer result, or received revenue",
+        "The synthetic proof uses no buyer data and does not establish compatibility with an unseen Toolbox file, database schema, source volume, or linguistic normalization policy",
+        "Keep marketplace communication and payment on the marketplace and do not spend Connects until the listing, client, terms, and account are reviewed",
+        "Require source rights, a representative file, the target schema, accepted transformations, reject policy, rerun behavior, rollback, and acceptance checks before implementation"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 5, "low_support": 3, "repeatability": 5}
+    },
+    {
       "id": "lecture-to-study-library",
       "title": "Lecture-to-study library",
       "state": "active",
@@ -55,6 +79,31 @@
         "Define transcript correction and translation acceptance criteria during the fit review"
       ],
       "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 4, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "source-aware-book-specimen",
+      "title": "Source-aware book specimen",
+      "state": "active",
+      "buyer": "An independent author or small publisher with final, rights-cleared copy who needs to test print and reflowable production before committing a whole book",
+      "need": "Turn one representative chapter into traceable print and EPUB specimens so layout, typography, source structure, and production risks can be judged early",
+      "projects": ["PocketPolyglot", "LinguaLeaf", "Video2Book", "LocalKnowledgeTerminal"],
+      "first_deliverable": "The live USD 250 Book Specimen Sprint for one rights-cleared chapter up to 5,000 words: one short print-layout PDF, one reflowable EPUB, a style and source ledger, validation results, one correction pass, and a written full-production boundary",
+      "first_test": "Let the chapter-first production guide and project-owned downloadable specimen lead to the free fit check; do not accept a complete book or urgent production schedule without a separately reviewed quote",
+      "proof": [
+        "https://lazying.art/book-specimen/",
+        "https://lazying.art/book-specimen/fit-check/",
+        "https://blog.lazying.art/html/computer_internet/3808/test-one-chapter-print-pdf-reflowable-epub.html",
+        "https://github.com/lachlanchen/LazyPromotion/tree/e8512197cabe988ee597291364c0dab373e261ed/examples/source-aware-book-specimen",
+        "https://github.com/lachlanchen/PocketPolyglot",
+        "https://github.com/lachlanchen/LinguaLeaf"
+      ],
+      "gates": [
+        "The customer must control the supplied copy, translation, images, fonts, and other production assets",
+        "The project-owned specimen proves a small reproducible production path, not a customer result, full-book delivery, translation service, printer acceptance, KDP acceptance, or rush turnaround",
+        "Translation, substantive editing, cover work, ISBN, marketplace access, print-proof purchasing, shipping, rights clearance, and complete-book production are outside the fixed sprint",
+        "Agree source transfer, correction, cancellation, refund, retention, support, and full-production boundaries before payment"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 5, "low_support": 4, "repeatability": 5}
     },
     {
       "id": "story-first-content-repurposing",
@@ -86,6 +135,32 @@
         "Do not repeat outreach or count an application, reply, inquiry, or page visit as revenue"
       ],
       "scores": {"buyer_pain": 4, "proof": 4, "delivery_readiness": 4, "low_support": 3, "repeatability": 4}
+    },
+    {
+      "id": "ai-clip-assembly",
+      "title": "AI clip assembly pilot",
+      "state": "active",
+      "buyer": "A small brand or creator with a handful of existing, customer-controlled AI clips that do not yet form one coherent short film",
+      "need": "Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package",
+      "projects": ["LazyEdit", "LocalVideoGen", "LalaStudio", "AutoPublish"],
+      "first_deliverable": "The live USD 500 AI Clip Assembly Pilot for up to six customer-controlled clips and 45 seconds of combined source: one 30–45 second 16:9 master, one 25–30 second web cut from the same edit, basic colour and sound finishing, supplied titles or logo, a source manifest, and one correction pass",
+      "first_test": "Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment",
+      "proof": [
+        "https://lazying.art/video/brand-film/",
+        "https://lazying.art/video/brand-film/#sample",
+        "https://lazying.art/video/brand-film/fit-check/",
+        "https://lazying.art/video/brand-film/sample/manifest.json",
+        "https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html",
+        "https://github.com/lachlanchen/LazyEdit",
+        "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/"
+      ],
+      "gates": [
+        "The customer must control the source clips, voices, faces, music, logos, and other supplied assets",
+        "The six-source proof is project-owned editing evidence, not customer work, an advertising result, or proof that unseen clips will fit",
+        "New filming or generation, shot recreation, voice cloning, paid stock, translation, extra formats, publishing, native editor files, and performance promises are outside the fixed pilot unless separately accepted",
+        "Agree usable sources, story sentence, native-project requirement, delivery, correction, cancellation, refund, retention, and payment terms before source transfer"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 5, "low_support": 4, "repeatability": 4}
     },
     {
       "id": "multilingual-video-accessibility",
@@ -207,19 +282,21 @@
       "state": "candidate",
       "buyer": "A technical small team that owns suitable compute and needs a private, maintainable local model endpoint",
       "need": "Install and operate a pinned local model stack with a usable web client and guarded remote access",
-      "projects": ["LocalLLM", "LazyEdge", "LazyTunnel", "LazyingAgentWeb", "aginti-browser", "novnc-manager"],
+      "projects": ["LocalLLM", "LazyEdge", "LazyTunnel", "LazyingAgentWeb", "aginti-browser", "novnc-manager", "kvm-qemu-workstation", "uu-remote-ubuntu-bridge"],
       "first_deliverable": "A compatibility audit and single-machine deployment plan before any implementation or managed-support scope",
       "first_test": "Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit",
       "proof": [
         "https://github.com/lachlanchen/LocalLLM",
         "https://github.com/lachlanchen/LazyEdge",
-        "https://github.com/lachlanchen/LazyTunnel"
+        "https://github.com/lachlanchen/LazyTunnel",
+        "https://github.com/lachlanchen/kvm-qemu-workstation",
+        "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
       ],
       "gates": [
         "Hardware, model, driver, security, uptime, and remote-access support boundaries must be written",
         "Never expose an unauthenticated model endpoint",
         "Model licenses and geographic restrictions must be checked per deployment",
-        "Treat LazyTunnel as an early operator-reviewed SSH/systemd toolkit until bidirectional shell, file transfer, failure recovery, negative-permission, and reboot tests are complete for the customer's topology"
+        "Treat LazyTunnel and the workstation bridges as operator-reviewed deployment evidence, not proof that an unseen customer topology will pass bidirectional shell, file transfer, failure recovery, negative-permission, or reboot tests"
       ],
       "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 3, "low_support": 1, "repeatability": 5}
     },

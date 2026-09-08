@@ -30,18 +30,19 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_all_five_active_routes(self):
+    def test_first_thousand_plan_names_all_six_active_routes(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: five focused service routes", body)
+        self.assertIn("# First USD 1,000: six focused service routes", body)
         for offer in (
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
             "Bilingual Lecture Pack",
             "Story Clip Pilot",
             "AI Clip Assembly Pilot",
+            "Book Specimen Sprint",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these five routes", body)
+        self.assertIn("payments across these six routes", body)
 
     def test_browser_operations_are_serialized_across_clients(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(
@@ -1022,10 +1023,12 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 7)
+        self.assertEqual(campaign["version"], 8)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
+        self.assertTrue(source["rechecked_at"].startswith("2026-09-08T"))
+        self.assertIn("remained available", source["latest_status"])
         self.assertEqual(source["published_budget"], "USD 500 fixed price")
         self.assertEqual(source["eligibility"], "Worldwide")
         self.assertIn("member since July 23, 2023", source["client_record_when_checked"])
@@ -2652,7 +2655,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 7)
+        self.assertEqual(campaign["version"], 8)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])

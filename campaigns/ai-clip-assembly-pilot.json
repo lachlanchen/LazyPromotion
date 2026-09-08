@@ -1,15 +1,17 @@
 {
-  "version": 7,
+  "version": 8,
   "id": "ai-clip-assembly-pilot",
   "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
   "source_need": {
     "state": "public_explicit_paid_listing",
     "observed_on": "2026-09-06",
+    "rechecked_at": "2026-09-08T16:15:43+08:00",
     "url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/",
     "published_budget": "USD 500 fixed price",
     "eligibility": "Worldwide",
     "published_scope": "Combine six existing AI-generated clips totalling about 32 seconds into one 30-45 second cinematic brand film and one 25-30 second website cut, with colour, music, sound, selected shot repair, high-resolution exports, and editable project files.",
     "activity_when_checked": "15 to 20 proposals, 0 interviewing, 0 invites sent",
+    "latest_status": "The public listing remained available with the same USD 500 fixed price on 2026-09-08.",
     "client_record_when_checked": "United States; Upwork member since July 23, 2023; no client spend or hire history was visible on the public listing",
     "demand_interpretation": "A current buyer has attached a USD 500 budget to a bounded six-clip assembly problem. This validates the problem and price point, not LazyingArt demand or a likely award."
   },

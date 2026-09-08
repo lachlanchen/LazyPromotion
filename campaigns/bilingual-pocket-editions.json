@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 7,
+  "version": 8,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -110,7 +110,7 @@
     ]
   },
   "current_paid_need": {
-    "checked_at": "2026-09-07",
+    "checked_at": "2026-09-08T16:15:43+08:00",
     "url": "https://www.upwork.com/freelance-jobs/apply/URGENT-Need-Professional-Book-Design-Typesetting-Non-Fiction-230-000-words-KDP-Kindle-EPUB_~022096285480175903064/",
     "published_scope": "USD 3,000 fixed for a roughly 230,000-word nonfiction book delivered as reflowable EPUB, Kindle, and print-ready premium-colour PDF, with an urgent timeline.",
     "fit": "PocketPolyglot, LinguaLeaf, and Video2Book demonstrate multilingual layout, reflowable and print-like output, and source-aware production patterns.",

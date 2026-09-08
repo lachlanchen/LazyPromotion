@@ -1,16 +1,18 @@
 {
   "id": "lexical-database-ingestion",
-  "version": 4,
-  "objective": "Win and deliver the current USD 1,200 OUTOFPAPUA lexical-ingestion contract with a source-preserving, repeatable import and validation workflow.",
+  "version": 5,
+  "objective": "Reuse the source-preserving lexical-ingestion proof for the next explicit dictionary, glossary, or language-archive need; the original USD 1,200 OUTOFPAPUA listing is closed.",
   "source_need": {
+    "state": "closed_public_listing",
     "captured_on": "2026-09-07",
-    "checked_at": "2026-09-07T10:27:00+08:00",
+    "checked_at": "2026-09-08T16:15:43+08:00",
     "url": "https://www.upwork.com/freelance-jobs/apply/Development-lexical-database-and-data-carpentry_~022093649786923466815/",
     "title": "Development of lexical database and data carpentry",
     "buyer_project": "OUTOFPAPUA",
     "budget": "USD 1,200 fixed price; the listing also states USD 20 per hour",
     "scope": "Write ingestion code so new lexical data can be included in the OUTOFPAPUA database, preparing some source data in Toolbox or another acceptable format before ingestion.",
-    "activity_when_checked": "The visible primary listing remained open and showed 20 to 50 proposals, 1 interviewing, 1 invite sent, and 0 unanswered invites; competition had increased from the earlier indexed snapshot.",
+    "activity_when_open": "On 2026-09-07 the visible primary listing showed 20 to 50 proposals, 1 interviewing, 1 invite sent, and 0 unanswered invites.",
+    "latest_status": "The public Upwork page said the job is no longer available on 2026-09-08. No application was submitted.",
     "client_history_when_checked": "Leiden, Netherlands; USD 6.9K total spent; 49 hires and 31 active contracts",
     "policy": "The public listing is buyer-intent evidence only. It is not a lead, interview, contract, sale, payment, customer result, or received revenue. Keep all marketplace contact and payment on Upwork."
   },
@@ -66,12 +68,12 @@
   },
   "channels": {
     "upwork": {
-      "state": "application_prepared_login_required",
+      "state": "listing_closed_application_not_submitted",
       "application_packet": "prepared_in_ignored_private_storage",
       "application_submitted": false,
       "connects_spent": 0,
       "proposal_link": "",
-      "policy": "The isolated project browser is logged out. Do not use the personal browser, create an account, accept terms, buy or spend Connects, or claim submission without an authenticated visible review of the exact application."
+      "policy": "Do not submit, retry, contact the buyer elsewhere, or spend Connects after the public listing closed. Keep the private packet only as reusable drafting evidence for a new explicit need."
     },
     "x": {
       "state": "postiz_queue",
@@ -97,7 +99,7 @@
     }
   },
   "funnel": {
-    "state": "buyer_intent_identified",
+    "state": "listing_closed_without_application",
     "social_drafts_created": 2,
     "social_posts_queued": 2,
     "social_posts_published": 0,

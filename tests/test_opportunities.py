@@ -15,7 +15,9 @@ class OpportunityTests(unittest.TestCase):
             [
                 "private-collection-intelligence",
                 "lecture-to-study-library",
+                "source-aware-book-specimen",
                 "story-first-content-repurposing",
+                "ai-clip-assembly",
                 "scientific-manuscript-workbench",
             ],
         )
@@ -33,6 +35,13 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("not market validation", body)
         self.assertIn("## Opportunity contracts", body)
         self.assertIn("### Private collection intelligence", body)
+        self.assertIn("### Source-preserving lexical ingestion", body)
+        self.assertIn("https://lazying.art/lkt/lexical-ingest/", body)
+        self.assertIn("closed USD 1,200 listing is historical buyer-intent evidence", body)
+        self.assertIn("### Source-aware book specimen", body)
+        self.assertIn("https://lazying.art/book-specimen/", body)
+        self.assertIn("### AI clip assembly pilot", body)
+        self.assertIn("https://lazying.art/video/brand-film/#sample", body)
         self.assertIn("### Manuscript build and redline sprint", body)
         self.assertIn("https://lazying.art/lkt/passage-graph/", body)
         self.assertIn(
@@ -78,9 +87,12 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("rtl-caption-feasibility", body)
         self.assertIn("low historical spend", body)
         self.assertIn("https://github.com/lachlanchen/LazyTunnel", body)
-        self.assertIn("early operator-reviewed SSH/systemd toolkit", body)
+        self.assertIn("https://github.com/lachlanchen/kvm-qemu-workstation", body)
+        self.assertIn("https://github.com/lachlanchen/uu-remote-ubuntu-bridge", body)
+        self.assertIn("operator-reviewed deployment evidence", body)
         self.assertIn("do not call either public store availability", body)
-        self.assertIn("the four active USD 250 routes", body)
+        self.assertIn("are six priced service routes", body)
+        self.assertIn("listing closed before submission", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)
 

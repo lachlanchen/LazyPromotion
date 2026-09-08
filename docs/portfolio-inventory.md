@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-07. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-08. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
 
 ## Where promotion should start
 
@@ -16,10 +16,12 @@ These are priority paths, not a license to force a mention. LazyPromotion should
 | [Local Knowledge Terminal](https://lazying.art/lkt/) | Private, cited multilingual cards from a bounded book or dictionary collection | Educators, language labs, libraries, exhibits, and private researchers | USD 250 collection-fit sprint after a free fit check; existing hardware only |
 | [PaperAgent + paper-revision-skill](https://lazying.art/manuscript-sprint/) | A clean LaTeX build and reviewable redline without changing the author's claims | Researchers and small academic teams with a fixed manuscript problem | USD 250 Manuscript Build & Redline sprint after a free fit check |
 | [Video2Book + LazyEdit + PocketPolyglot](https://lazying.art/lecture-pack/) | A rights-cleared lecture turned into timed bilingual subtitles and a pocket study book | Independent educators and course creators with one owned English lecture | USD 250 Bilingual Lecture Pack after a metadata-only free fit check |
+| [PocketPolyglot + LinguaLeaf](https://lazying.art/book-specimen/) | Test one final, rights-cleared chapter as both print layout and reflowable EPUB before committing a whole book | Independent authors and small publishers with a defined production problem | USD 250 Book Specimen Sprint after a free fit check; translation and complete-book production excluded |
 | [LazyEdit + LocalVideoGen + Musia](https://lazying.art/story-clip/) | A meaningful moment from an owned interview or podcast turned into one captioned vertical clip | Podcasts, interview series, educators, and small mission-led teams | USD 250 Story Clip Pilot after a metadata-only free fit check; one source and one finished clip |
+| [LazyEdit + LocalVideoGen + LalaStudio](https://lazying.art/video/brand-film/) | Several existing AI clips need one coherent short story, master cut, and web cut | Small brands and creators who control their source clips | USD 500 AI Clip Assembly Pilot after a free fit check; new generation and performance promises excluded |
 | [Musia + LocalVideoGen](https://fun.lazying.art) | Local-first music localization and controllable video generation | Creators who already have a specific song, stem, or video workflow problem | Find design partners and open-source users before making a commercial claim |
 
-The first-USD-1,000 route is four confirmed USD 250 payments across four bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & Redline, the Bilingual Lecture Pack, and the Story Clip Pilot. The eInk inquiry and Figurine checkout remain separate offers, not competing calls to action. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
+The first-USD-1,000 route is confirmed payments totalling USD 1,000 across six bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen Sprint, and AI Clip Assembly. The eInk inquiry and Figurine checkout remain separate offers, not competing calls to action. Open-source replies should optimize for a solved problem, not for extracting a donation. GitHub Sponsors and donations remain quiet secondary support routes on the project/profile pages.
 
 ## Portfolio at a glance
 
@@ -41,16 +43,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-07 02:13:06 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-08 07:59:07 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-07 22:47:48 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-07 22:47:47 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | 2026-09-07 22:47:44 | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. |
+| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-07 12:57:39 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
+| [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-07 12:54:17 | Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance. |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-07 01:41:20 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-07 00:41:55 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [SoftEventFrameAlignment](https://github.com/lachlanchen/SoftEventFrameAlignment) | 2026-09-06 23:21:54 | Minimal research code for soft event-frame alignment with a unified implicit neural representation. |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-06 22:54:59 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
-| [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-06 22:54:59 | Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance. |
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-06 21:10:57 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
-| [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | 2026-09-06 18:15:55 | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. |
-| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-06 17:34:52 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
-| [LexiconAtlas](https://github.com/lachlanchen/LexiconAtlas) | 2026-09-06 17:17:48 | Explore a local-first 3D lexical knowledge graph of origins, roots, affixes, meanings, translations, and provenance. |
 
 ## Complete public repository inventory
 
@@ -193,7 +195,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [astrill-lazy-router](https://github.com/lachlanchen/astrill-lazy-router) | Native Ubuntu and DD-WRT companion for safe per-service, website, device, and application routing through Direct or the active Astrill tunnel. | Python | [Open](https://lazying.art) |
 | [DomainAndIpManager](https://github.com/lachlanchen/DomainAndIpManager) | Python CLI and local GUI for curated domain, IP, and CIDR sets with DNS resolution, deterministic deduplication, and reproducible exports. | Python | [Open](https://lazying.art) |
 | [hackintosh](https://github.com/lachlanchen/hackintosh) | Sanitized Sequoia, OpenCore, recovery, and Xcode runbook for an owned development workstation | Shell | [Open](https://lazying.art) |
-| [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. | Shell | [Open](https://lazying.art) |
+| [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. | PowerShell | [Open](https://lazying.art) |
 | [LazyEdge](https://github.com/lachlanchen/LazyEdge) | A lightweight, default-deny reverse edge for safely connecting private compute to public domains. | JavaScript | [Open](https://lazying.art) |
 | [LazyRouter](https://github.com/lachlanchen/LazyRouter) | Private AI API gateway for user keys, credits, model routing, and upstream provider aggregation. | Go | [Open](https://router.lazying.art) |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance. | Python | [Open](https://lazying.art) |

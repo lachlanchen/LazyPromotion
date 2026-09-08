@@ -63,20 +63,27 @@ The manuscript landing page was unknown to Google when inspected on September
 later visible URL Inspection check on September 5 reported that the page is on
 Google. That proves neither ranking, traffic, a lead, nor revenue.
 
-## One homepage, four focused routes
+## One homepage, five focused routes
 
-The LazyingArt homepage now presents the four active USD 250 sprints directly
-below its main banner: collection fit, manuscript build and redline, a
-bilingual lecture pack, and the Story Clip Pilot. Each tracked link leads to
-the full offer and public proof before any free fit check. The panel is
-available in all 13 homepage languages and states the shared boundary in one
-sentence: no source upload or payment before both sides accept the scope.
+The LazyingArt homepage now presents five active service routes directly below
+its main banner: USD 250 collection fit, manuscript build and redline, a
+bilingual lecture pack, the Story Clip Pilot, and the USD 500 AI Clip Assembly
+Pilot. Each tracked link leads to the full offer and public proof before any
+free fit check. The panel is available in all 13 homepage languages and states
+the shared boundary in one sentence: no source upload or payment before both
+sides accept the scope.
 
-LazyingArtWebsite commit `e4a1c36b3efa93399b6a5754f3692c1802a211c7`
-was deployed and checked at desktop and mobile widths on September 6, 2026.
-The four routes preserve separate `utm_campaign` values and use the common
+The original four-route panel was deployed at LazyingArtWebsite commit
+`e4a1c36b3efa93399b6a5754f3692c1802a211c7`; the AI Clip route and its proof
+were added at commit `89d45f975fc20de85ef404b6dffb92a3bb44bc74`. Both states
+were checked at desktop and mobile widths. The five routes preserve separate `utm_campaign` values and use the common
 `service_chooser` content marker. This fixes owned-site discoverability; it
 does not establish a visit, fit inquiry, qualified buyer, or sale.
+
+The live USD 250 Book Specimen Sprint is a sixth focused route outside the
+homepage chooser. Its chapter-first guide leads to a project-owned print/EPUB
+packet and free fit check; it is not a promise to translate, design, or deliver
+a complete book.
 
 The public GitHub profile at commit
 `76bb98a8e6dde319c50dca94ecdbb9dfca0ae7a6` retains a three-offer

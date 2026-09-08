@@ -1,5 +1,5 @@
 {
-  "version": 28,
+  "version": 29,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -766,11 +766,24 @@
       "policy": "Reply only to a current private/local knowledge-base problem after checking community rules. Solve the technical question first and disclose affiliation if the pilot page materially helps."
     },
     "x": {
-      "state": "postiz_queue",
+      "state": "published_and_link_verified",
       "publish_at": "2026-09-08T01:00:00Z",
       "content": "Private-document projects can fail before search: uneven extraction, broken citations, or no test for “good enough.” I’m opening four USD 250 software-only collection-fit sprints on your existing machine. Sample first: lazying.art/lkt/sample-report/",
       "visual": "https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png",
       "reviewed_on": "2026-09-07",
+      "published_at": "2026-09-08T01:01:00Z",
+      "url": "https://x.com/lazyingart/status/2097128037947146669",
+      "publication_verification": {
+        "provider_state_checked_at": "2026-09-08T05:50:21Z",
+        "visible_post_checked_at": "2026-09-08T07:53:39Z",
+        "visible_author": "@lazyingart",
+        "visible_copy_matches_reviewed_content": true,
+        "made_with_ai_label_visible": true,
+        "tracked_link_redirects_to": "https://lazying.art/lkt/sample-report/",
+        "tracked_link_checked_at": "2026-09-08T07:53:53Z",
+        "external_replies_when_checked": 0,
+        "outcome_boundary": "Publication is discovery evidence, not a fit inquiry, qualified lead, payment, or received revenue."
+      },
       "superseded_post": {
         "state": "draft",
         "reason": "The earlier copy used $250 and a legacy product-style visual. It was moved out of the publishing queue before the reviewed replacement entered it."

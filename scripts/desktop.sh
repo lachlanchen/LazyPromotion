@@ -335,6 +335,11 @@ register_viewer() {
 
 write_handoff() {
   {
+    if pid_alive "$RUNTIME_DIR/chrome.pid" "$PROFILE_DIR"; then
+      printf 'Runtime state: running\n'
+    else
+      printf 'Runtime state: stopped\n'
+    fi
     printf 'Current noVNC URL: %s\n' "$NOVNC_URL"
     printf 'X display: %s\n' "$DISPLAY_NAME"
     printf 'VNC: 127.0.0.1:%s\n' "$VNC_PORT"
@@ -563,6 +568,7 @@ stop() {
     printf 'Timed out waiting for LazyPromotion runtime ports or display to be released.\n' >&2
     return 1
   }
+  write_handoff
   status || true
 }
 

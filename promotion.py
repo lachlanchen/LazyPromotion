@@ -25,8 +25,14 @@ GITHUB_CATALOG_PATH = ROOT / "github-repos.json"
 SCHEMA_PATH = ROOT / "schemas" / "reply.json"
 TRIAGE_SCHEMA_PATH = ROOT / "schemas" / "triage.json"
 COMMUNITY_POLICIES_PATH = ROOT / "community-policies.json"
-MODEL = "gpt-5.6-sol"
-EFFORT = "low"
+# Let Codex choose an account-supported recommended model by default. Model
+# availability can differ by sign-in method and rollout, so pinning a model in
+# a long-running worker can turn an otherwise healthy account into a hard
+# failure. Operators can still make an explicit, auditable choice with the
+# environment variable below.
+MODEL = os.environ.get("LAZYPROMOTION_CODEX_MODEL", "").strip()
+MODEL_LABEL = MODEL or "account-default"
+EFFORT = os.environ.get("LAZYPROMOTION_CODEX_EFFORT", "low").strip()
 MAX_CANDIDATE_AGE_DAYS = 30
 AI_COMMENT_BLOCKED_PLATFORMS = {"hackernews"}
 
@@ -1270,7 +1276,7 @@ def run_codex_structured(prompt: str, schema: Path, *, prefix: str) -> dict[str,
     with tempfile.TemporaryDirectory(prefix=prefix) as tmp:
         output = Path(tmp) / "result.json"
         command = [
-            "codex", "exec", "--ephemeral", "--json", "--model", MODEL,
+            "codex", "exec", "--ephemeral", "--json",
             "-c", f'model_reasoning_effort="{EFFORT}"',
             "-c", "mcp_servers={}",
             "--sandbox", "read-only", "--skip-git-repo-check",
@@ -1278,6 +1284,8 @@ def run_codex_structured(prompt: str, schema: Path, *, prefix: str) -> dict[str,
             "--output-last-message", str(output),
             "-C", tmp, "-",
         ]
+        if MODEL:
+            command[4:4] = ["--model", MODEL]
         completed = subprocess.run(
             command,
             input=prompt,
@@ -1393,7 +1401,7 @@ def save_triage(db: sqlite3.Connection, candidate_id: str, result: dict[str, Any
                     "confidence": confidence,
                     "risk_flags": flags,
                     "project_id": project_id,
-                    "model": MODEL,
+                    "model": MODEL_LABEL,
                     "effort": EFFORT,
                 },
                 sort_keys=True,
@@ -1470,7 +1478,7 @@ def save_draft(
         f"{candidate_id}\n{candidate_content_hash}\n{project_id}\n{digest}",
     )
     now = utc_now()
-    draft_model = "human-directed" if manual else MODEL
+    draft_model = "human-directed" if manual else MODEL_LABEL
     draft_effort = "n/a" if manual else EFFORT
     db.execute(
         """
@@ -1828,7 +1836,7 @@ def main() -> int:
     args = build_parser().parse_args()
     db = open_db(args.db)
     if args.command == "init":
-        print_json({"ok": True, "database": str(args.db), "model": MODEL, "effort": EFFORT})
+        print_json({"ok": True, "database": str(args.db), "model": MODEL_LABEL, "effort": EFFORT})
     elif args.command == "catalog":
         print_json(load_catalog())
     elif args.command == "ingest":
@@ -1906,7 +1914,7 @@ def main() -> int:
                 )
                 db.commit()
                 results.append({"ok": False, "candidate_id": candidate["id"], "error": str(exc)})
-        print_json({"model": MODEL, "effort": EFFORT, "processed": len(results), "results": results})
+        print_json({"model": MODEL_LABEL, "effort": EFFORT, "processed": len(results), "results": results})
     elif args.command == "reconcile":
         reconciled = reconcile_discovered_candidates(db)
         print_json({"count": len(reconciled), "candidates": reconciled})

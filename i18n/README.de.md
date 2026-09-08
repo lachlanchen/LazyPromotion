@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/) [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](../LICENSE) [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
-LazyPromotion ist ein lokaler Social-Discovery-Assistent mit Review-Pflicht. Er durchsucht die echte Weboberfläche von Reddit, X oder Instagram in einem sichtbaren, dauerhaften Chrome-Profil, speichert mögliche Treffer in SQLite, erstellt mit `gpt-5.6-sol` bei niedriger Reasoning-Stufe einen belegbaren Antwortentwurf und hält vor dem öffentlichen Senden an. Das Werkzeug soll mit passender Open-Source-Arbeit helfen, nicht Massenwerbung automatisieren.
+LazyPromotion ist ein lokaler Social-Discovery-Assistent mit Review-Pflicht. Er durchsucht die echte Weboberfläche von Reddit, X oder Instagram in einem sichtbaren, dauerhaften Chrome-Profil, speichert mögliche Treffer in SQLite, erstellt mit dem für das Konto empfohlenen Codex-Modell bei niedriger Reasoning-Stufe einen belegbaren Antwortentwurf und hält vor dem öffentlichen Senden an. Das Werkzeug soll mit passender Open-Source-Arbeit helfen, nicht Massenwerbung automatisieren.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

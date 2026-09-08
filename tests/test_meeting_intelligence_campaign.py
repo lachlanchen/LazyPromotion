@@ -32,12 +32,15 @@ class MeetingIntelligenceCampaignTests(unittest.TestCase):
         self.assertIn("before any confidential audio is attached", proof["contact_path"])
         self.assertRegex(proof["website_commit"], r"^[0-9a-f]{40}$")
 
-    def test_linkedin_queue_uses_one_first_party_destination(self):
+    def test_linkedin_publication_uses_one_verified_first_party_destination(self):
         linkedin = self.campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queued")
+        self.assertEqual(linkedin["state"], "published_and_visibly_verified")
         self.assertEqual(linkedin["verification"]["state_rechecked_after_schedule"], "QUEUE")
         self.assertFalse(linkedin["verification"]["shortener_used"])
         self.assertEqual(linkedin["verification"]["duplicate_queue_items"], 0)
+        self.assertTrue(linkedin["verification"]["visible_copy_matches_reviewed_content"])
+        self.assertTrue(linkedin["verification"]["destination_interstitial_shows_exact_reviewed_url"])
+        self.assertIn("linkedin.com/feed/update/", linkedin["verification"]["release_url"])
         self.assertIn("lazying.art/meeting-intelligence/", linkedin["scheduled_content_link"])
         self.assertNotIn("dub.sh", linkedin["scheduled_content_link"])
 
@@ -55,6 +58,7 @@ class MeetingIntelligenceCampaignTests(unittest.TestCase):
         upwork = self.campaign["channels"]["upwork"]
         funnel = self.campaign["funnel"]
         self.assertFalse(upwork["application_submitted"])
+        self.assertTrue(funnel["post_published"])
         self.assertEqual(upwork["connects_spent"], 0)
         self.assertFalse(funnel["contract_observed"])
         self.assertFalse(funnel["payment_confirmed"])

@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/) [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](../LICENSE) [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
-LazyPromotion — локальный помощник для поиска запросов в социальных сетях с обязательной проверкой человеком. Он работает с настоящим веб-интерфейсом Reddit, X или Instagram в видимом постоянном профиле Chrome, сохраняет возможные совпадения в SQLite, создаёт обоснованный черновик через `gpt-5.6-sol` с низким уровнем рассуждения и останавливается до публичной отправки. Цель — помочь подходящим открытым проектом, а не автоматизировать массовую рекламу.
+LazyPromotion — локальный помощник для поиска запросов в социальных сетях с обязательной проверкой человеком. Он работает с настоящим веб-интерфейсом Reddit, X или Instagram в видимом постоянном профиле Chrome, сохраняет возможные совпадения в SQLite, создаёт обоснованный черновик через рекомендованную для учётной записи модель Codex с низким уровнем рассуждения и останавливается до публичной отправки. Цель — помочь подходящим открытым проектом, а не автоматизировать массовую рекламу.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

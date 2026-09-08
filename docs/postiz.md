@@ -224,7 +224,9 @@ first-party profile resource, not an automated community submission.
 
 ## Quota and trust policy
 
-- Draft text locally with `gpt-5.6-sol` at low reasoning effort.
+- Draft text locally with the signed-in account's recommended Codex model at
+  low reasoning effort. Set `LAZYPROMOTION_CODEX_MODEL` only when an explicit
+  model is known to be available to that account.
 - Reuse one grounded source package, then adapt the hook and call to action per
   channel instead of posting identical copy everywhere.
 - Batch reviewed schedules in one API call when practical.

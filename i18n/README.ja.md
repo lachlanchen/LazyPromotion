@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/) [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](../LICENSE) [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
-LazyPromotion は、ローカルで動くレビュー優先のソーシャル需要発見アシスタントです。可視の永続 Chrome プロファイルから Reddit、X、Instagram の実際の Web UI を検索し、候補を SQLite に記録し、低推論の `gpt-5.6-sol` で根拠のある返信を一件だけ下書きして、公開送信の直前で停止します。大量マーケティングではなく、関連するオープンソース成果で人を助けるためのツールです。
+LazyPromotion は、ローカルで動くレビュー優先のソーシャル需要発見アシスタントです。可視の永続 Chrome プロファイルから Reddit、X、Instagram の実際の Web UI を検索し、候補を SQLite に記録し、アカウントで推奨される Codex モデルを低推論で使って根拠のある返信を一件だけ下書きして、公開送信の直前で停止します。大量マーケティングではなく、関連するオープンソース成果で人を助けるためのツールです。
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

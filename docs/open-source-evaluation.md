@@ -28,9 +28,11 @@ for product research but cannot create, approve, prepare, or send an HN reply.
 
 - [Hacker News Guidelines](https://news.ycombinator.com/newsguidelines.html)
 
-The drafter uses `gpt-5.6-sol` with `reasoning.effort=low`, the exact requested
-combination. OpenAI's current model documentation lists `low` as supported and
-recommends it for latency-sensitive workloads:
+The drafter lets Codex choose the signed-in account's recommended model and
+uses low reasoning effort. This avoids breaking the persistent worker when
+model availability changes with sign-in method or rollout. An operator can pin
+an available model with `LAZYPROMOTION_CODEX_MODEL`. OpenAI's current Codex
+documentation says an omitted model uses a recommended model and that
+availability can vary by account and client:
 
-- [GPT-5.6 Sol model](https://developers.openai.com/api/docs/models/gpt-5.6-sol)
-- [GPT-5.6 model guidance](https://developers.openai.com/api/docs/guides/latest-model)
+- [Codex models](https://developers.openai.com/codex/models)

@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/) [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](../LICENSE) [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
-LazyPromotion là trợ lý cục bộ, ưu tiên duyệt trước khi gửi để tìm nhu cầu trên mạng xã hội. Công cụ tìm kiếm qua giao diện web thật của Reddit, X hoặc Instagram bằng một hồ sơ Chrome hiển thị và bền vững, lưu ứng viên vào SQLite, soạn một câu trả lời có căn cứ bằng `gpt-5.6-sol` với mức suy luận thấp, rồi dừng trước khi gửi công khai. Mục đích là giúp người khác bằng dự án nguồn mở phù hợp, không phải tiếp thị hàng loạt.
+LazyPromotion là trợ lý cục bộ, ưu tiên duyệt trước khi gửi để tìm nhu cầu trên mạng xã hội. Công cụ tìm kiếm qua giao diện web thật của Reddit, X hoặc Instagram bằng một hồ sơ Chrome hiển thị và bền vững, lưu ứng viên vào SQLite, soạn một câu trả lời có căn cứ bằng mô hình Codex được đề xuất cho tài khoản với mức suy luận thấp, rồi dừng trước khi gửi công khai. Mục đích là giúp người khác bằng dự án nguồn mở phù hợp, không phải tiếp thị hàng loạt.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

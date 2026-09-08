@@ -1,6 +1,6 @@
 {
   "id": "meeting-intelligence-mission",
-  "version": 1,
+  "version": 2,
   "objective": "Win and deliver the current bilingual enterprise meeting-intelligence mission with an evidence-linked, human-confirmed knowledge workflow and no unsupported production claims.",
   "source_need": {
     "captured_on": "2026-09-06",
@@ -61,7 +61,7 @@
       "policy": "Keep application, communication, source files, contract, and payment on Upwork. Recheck Connects, fees, availability, and form fields in the isolated visible browser before one submission."
     },
     "linkedin": {
-      "state": "postiz_queued",
+      "state": "published_and_visibly_verified",
       "post_id": "cmtopx4ux0thfqk0ylamf7bjm",
       "publish_at": "2026-09-08T02:00:00Z",
       "content": "A meeting summary is useful for a day. A decision trail can stay useful after the team changes.\n\nI built a small English/Mandarin proof that keeps the scripted transcript immutable, turns it into ten typed knowledge units, and lets every confirmed item reopen the exact speaker, timestamp, and excerpt. Corrections stay in the history as superseded versions instead of silently replacing the source.\n\nThe boundary matters: this is a scripted, manually reviewed project proof—not a claim about real-room ASR, automatic extraction, or a customer deployment.\n\nYou can inspect the chain and download the portable JSON here:\nlazying.art/meeting-intelligence/?utm_source=linkedin&utm_medium=social&utm_campaign=meeting_intelligence&utm_content=evidence_chain\n\nIf you are testing this with rights-cleared meeting audio, start with one representative recording and measure the names, numbers, speakers, and timestamps before choosing the larger architecture.\n\n#KnowledgeManagement #LocalAI #MultilingualAI #OpenSource",
@@ -74,7 +74,17 @@
         "state_rechecked_after_schedule": "QUEUE",
         "provider": "linkedin",
         "shortener_used": false,
-        "duplicate_queue_items": 0
+        "duplicate_queue_items": 0,
+        "published_state_checked_at": "2026-09-08T05:50:21Z",
+        "visible_post_checked_at": "2026-09-08T07:51:47Z",
+        "release_url": "https://www.linkedin.com/feed/update/urn:li:share:7502908940884705280",
+        "visible_author": "Lachlan Chen",
+        "visible_audience": "Visible to anyone on or off LinkedIn",
+        "visible_copy_matches_reviewed_content": true,
+        "visible_impressions_when_checked": 1,
+        "destination_interstitial_shows_exact_reviewed_url": true,
+        "destination_interstitial_checked_at": "2026-09-08T07:52:46Z",
+        "outcome_boundary": "The published post and one visible impression are discovery evidence, not a reply, lead, interview, contract, payment, or customer result."
       },
       "policy": "The post shows one bounded first-party proof and a representative-audio test principle. It does not mention or contact the marketplace buyer, claim automatic performance, or present attention as a lead."
     },
@@ -85,7 +95,7 @@
   },
   "funnel": {
     "state": "buyer_intent_identified",
-    "post_published": false,
+    "post_published": true,
     "application_submitted": false,
     "interview_observed": false,
     "contract_observed": false,

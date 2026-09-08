@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/) [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](../LICENSE) [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
-LazyPromotion 是一款在本機執行、先審後發的社交需求探索助手。它透過可見且持久化的 Chrome 設定檔操作 Reddit、X 或 Instagram 的真實網頁，把可能的配對記錄到 SQLite，使用低推理強度的 `gpt-5.6-sol` 起草有依據的回覆，並在公開送出前停止。它的目的，是用相關開源專案幫助別人，而不是進行大量行銷。
+LazyPromotion 是一款在本機執行、先審後發的社交需求探索助手。它透過可見且持久化的 Chrome 設定檔操作 Reddit、X 或 Instagram 的真實網頁，把可能的配對記錄到 SQLite，使用目前帳戶建議的 Codex 模型與低推理強度起草有依據的回覆，並在公開送出前停止。它的目的，是用相關開源專案幫助別人，而不是進行大量行銷。
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

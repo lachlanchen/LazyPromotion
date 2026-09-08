@@ -184,8 +184,30 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(result, {"eligible": False})
         command = observed["command"]
         self.assertIn("mcp_servers={}", command)
+        self.assertNotIn("--model", command)
         self.assertNotIn("mcp_servers.lazypromotion_browser.enabled=false", command)
         self.assertNotIn("mcp_servers.postiz.enabled=false", command)
+
+    def test_structured_model_check_allows_an_explicit_model_override(self):
+        observed = {}
+
+        def fake_run(command, **kwargs):
+            observed["command"] = command
+            output = Path(command[command.index("--output-last-message") + 1])
+            output.write_text('{"eligible": false}', encoding="utf-8")
+            return SimpleNamespace(returncode=0, stderr="", stdout="")
+
+        with patch.object(promotion, "MODEL", "gpt-5.6-luna"), patch(
+            "promotion.subprocess.run", side_effect=fake_run
+        ):
+            promotion.run_codex_structured(
+                "Inspect this candidate.",
+                promotion.TRIAGE_SCHEMA_PATH,
+                prefix="lazypromotion-command-test-",
+            )
+
+        command = observed["command"]
+        self.assertEqual(command[command.index("--model") + 1], "gpt-5.6-luna")
 
     def test_value_only_draft_policy_forbids_project_and_links(self):
         candidate = {

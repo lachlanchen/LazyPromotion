@@ -8,14 +8,15 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/)
-[![Model](https://img.shields.io/badge/Drafting-gpt--5.6--sol%20low-412991)](https://developers.openai.com/api/docs/models/gpt-5.6-sol)
+[![Model](https://img.shields.io/badge/Drafting-Codex%20account%20default%20%2F%20low-412991)](https://developers.openai.com/codex/models)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](LICENSE)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
 LazyPromotion is a local, review-first social discovery assistant. It searches
 the real Reddit, X, Instagram, or Hacker News web interface in one visible persistent Chrome
 profile, records possible matches in SQLite, drafts one grounded reply with
-`gpt-5.6-sol` at low reasoning effort, and stops before the public send. It is
+the signed-in account's recommended Codex model at low reasoning effort, and
+stops before the public send. It is
 for maintainers who want to help people with relevant open-source work without
 turning community conversations into bulk marketing.
 
@@ -29,9 +30,9 @@ turning community conversations into bulk marketing.
 flowchart LR
     A[Visible web search] --> B[Local SQLite candidate]
     B --> C[Deterministic relevance score]
-    C -->|clear need| T[gpt-5.6-sol / low eligibility check]
+    C -->|clear need| T[account-supported Codex / low eligibility check]
     C -->|weak match| X[Skip]
-    T -->|eligible| D[gpt-5.6-sol / low draft]
+    T -->|eligible| D[account-supported Codex / low draft]
     T -->|reject| X
     D --> E[Human reads exact text and destination]
     E --> F[Prepare visible composer]

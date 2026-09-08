@@ -665,7 +665,8 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(bridge["attribution"]["utm_source"], "wenyan")
         self.assertIn("not a lead or revenue", bridge["policy"])
-        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
+        x_channel = campaign["channels"]["x"]
+        self.assertEqual(x_channel["state"], "postiz_queue")
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
         self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
@@ -1219,7 +1220,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 28)
+        self.assertEqual(campaign["version"], 29)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1690,7 +1691,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(payment_request["public_export"])
         self.assertFalse(payment_request["mutates_stripe"])
         self.assertIn("free fit check", payment_request["policy"])
-        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
+        x_channel = campaign["channels"]["x"]
+        self.assertEqual(x_channel["state"], "published_and_link_verified")
+        self.assertTrue(
+            x_channel["publication_verification"]["visible_copy_matches_reviewed_content"]
+        )
+        self.assertEqual(
+            x_channel["publication_verification"]["tracked_link_redirects_to"],
+            "https://lazying.art/lkt/sample-report/",
+        )
+        self.assertEqual(
+            x_channel["publication_verification"]["external_replies_when_checked"],
+            0,
+        )
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         x_sample = campaign["channels"]["x"]["sample_report_post"]
         self.assertEqual(x_sample["known_owned_replies"], 1)

@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/) [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](../LICENSE) [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
-LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجتماعية يعتمد المراجعة قبل النشر. يبحث في واجهة Reddit أو X أو Instagram الحقيقية عبر ملف Chrome دائم ومرئي، ويحفظ النتائج المحتملة في SQLite، ويكتب مسودة موثقة باستخدام `gpt-5.6-sol` بجهد استدلال منخفض، ثم يتوقف قبل الإرسال العلني. صُمم لمساعدة الناس بمشروعات مفتوحة المصدر ذات صلة، لا للتسويق الجماعي.
+LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجتماعية يعتمد المراجعة قبل النشر. يبحث في واجهة Reddit أو X أو Instagram الحقيقية عبر ملف Chrome دائم ومرئي، ويحفظ النتائج المحتملة في SQLite، ويكتب مسودة موثقة باستخدام نموذج Codex الموصى به للحساب وبجهد استدلال منخفض، ثم يتوقف قبل الإرسال العلني. صُمم لمساعدة الناس بمشروعات مفتوحة المصدر ذات صلة، لا للتسويق الجماعي.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Playwright](https://img.shields.io/badge/Browser-Playwright%20%2B%20CDP-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/) [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](../LICENSE) [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?logo=githubsponsors)](https://github.com/sponsors/lachlanchen)
 
-LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 도우미입니다. 하나의 보이는 영구 Chrome 프로필로 Reddit, X, Instagram의 실제 웹 UI를 검색하고, 후보를 SQLite에 기록하고, 낮은 추론 강도의 `gpt-5.6-sol`로 근거 있는 답글 하나를 작성한 뒤 공개 전송 직전에 멈춥니다. 대량 마케팅이 아니라 관련 오픈 소스 작업으로 사람을 돕기 위한 도구입니다.
+LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 도우미입니다. 하나의 보이는 영구 Chrome 프로필로 Reddit, X, Instagram의 실제 웹 UI를 검색하고, 후보를 SQLite에 기록하고, 계정에 권장되는 Codex 모델을 낮은 추론 강도로 사용해 근거 있는 답글 하나를 작성한 뒤 공개 전송 직전에 멈춥니다. 대량 마케팅이 아니라 관련 오픈 소스 작업으로 사람을 돕기 위한 도구입니다.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

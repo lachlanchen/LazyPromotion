@@ -722,7 +722,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(campaign["version"], 5)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -778,6 +778,16 @@ class RepositoryTests(unittest.TestCase):
             self.assertEqual(channel["verification"]["matching_posts"], 1)
             self.assertEqual(channel["verification"]["verified_state"], "QUEUE")
             self.assertFalse(channel["verification"]["release_present"])
+        x_channel = campaign["channels"]["x"]
+        self.assertEqual(x_channel["state"], "postiz_queue")
+        self.assertEqual(x_channel["publish_at"], "2026-09-13T02:00:00Z")
+        self.assertLessEqual(len(x_channel["content"]), 280)
+        self.assertIn("utm_campaign=l_and_n_pronunciation_launch", x_channel["content"])
+        self.assertTrue(x_channel["verification"]["stored_content_exact"])
+        self.assertEqual(x_channel["verification"]["matching_posts"], 1)
+        self.assertFalse(x_channel["verification"]["release_present"])
+        self.assertEqual(len(campaign["need_research"]["observations"]), 2)
+        self.assertIn("No new reply", campaign["need_research"]["observations"][0]["decision"])
         self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())

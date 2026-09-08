@@ -447,7 +447,7 @@
       "buyer": "A knowledge worker who uses AI chats and voice notes as working memory and cannot reliably recover useful decisions later",
       "need": "Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job",
       "projects": ["AgentShell", "LocalKnowledgeTerminal", "LazyingAgentWeb", "AI-Wearable"],
-      "first_deliverable": "Keep AiMemo as a gated private alpha. Private evidence now covers PWA text creation, search and update without duplication, synthetic-audio transcription and organization, same-thread recovery after a backend restart, separate dictation, Android manual memo creation and session restoration, and account-scoped export tests; native live-AI, physical-microphone, end-to-end export handling, and retained-data deletion proof remain required",
+      "first_deliverable": "Keep AiMemo as a gated private alpha. The live PWA and private release evidence cover text creation, search and conflict-safe update, synthetic-audio transcription and organization, same-thread recovery, separate dictation, Android manual memo and session restoration, account-scoped export, and an internal Apple build; native live-AI, physical-microphone, end-to-end export handling, retained-data deletion, and public store reliability remain required",
       "first_test": "Keep the aligned public pages in free private-alpha mode, then verify a native live-AI physical-microphone round trip, end-to-end export handling, retention, and full deletion across agent, speech, and backup data with opt-in test content before inviting a small private cohort",
       "proof": [
         "https://github.com/lachlanchen/AgentShell",
@@ -475,10 +475,11 @@
       "buyer": "A language learner or teacher working on one persistent sound contrast rather than a general accent course",
       "need": "Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning",
       "projects": ["L-and-N", "PocketPolyglot", "WordOrigins"],
-      "first_deliverable": "Keep the L-and-N PWA free, then test one source-aware printable and browser lesson that connects its minimal pairs to pronunciation cues, translations, and word notes",
-      "first_test": "Find one current L/N learner or teacher question, answer it with a complete practice method, and offer the no-signup PWA only when it directly fits; measure specific practice feedback rather than clicks",
+      "first_deliverable": "Keep the L-and-N PWA free. The first browser lesson now connects one light/night minimal pair to listening, mouth-placement, airflow, recording, captions, and downloadable project-owned prompts",
+      "first_test": "Let the reviewed first-party posts invite one specific kind of practice feedback. In communities, offer the no-signup PWA only when a fresh question still lacks a useful answer; measure feedback rather than clicks",
       "proof": [
         "https://l-and-n.lazying.art/",
+        "https://l-and-n.lazying.art/lessons/light-vs-night/",
         "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk",
         "https://github.com/lachlanchen/L-and-N",
         "https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json",

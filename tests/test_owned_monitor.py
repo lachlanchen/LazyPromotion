@@ -315,6 +315,12 @@ class OwnedMonitorTests(unittest.TestCase):
             self.assertEqual(route["campaign_id"], "l-and-n-pronunciation-launch")
             self.assertEqual(route["route"], "product")
 
+        x_route = owned_monitor.route_for_post(
+            "x", campaign["channels"]["x"]["content"], owned_monitor.route_index()
+        )
+        self.assertEqual(x_route["campaign_id"], "l-and-n-pronunciation-launch")
+        self.assertEqual(x_route["route"], "product")
+
     def test_bilingual_lecture_pack_queue_keeps_protocol_less_destination(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "bilingual-lecture-pack-pilot.json").read_text(

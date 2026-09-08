@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
   "source_evidence": {
@@ -7,7 +7,7 @@
     "pwa": "https://l-and-n.lazying.art/",
     "deployed_source_commit": "7b969e618bb870ab2f09fd4390215f092934ce32",
     "current_evidence_commit": "6763b86d900e061c840b72deda5119010418b966",
-    "verified_on": "2026-09-07",
+    "verified_on": "2026-09-08",
     "supported_capabilities": [
       "Hear an L/N contrast and record one word",
       "Inspect mouth-placement and airflow guidance",
@@ -69,6 +69,26 @@
       "content": "First-party L-and-N screens, icon, and bundled synthetic light/night prompts in an English and Traditional Chinese vertical demonstration.",
       "claim_boundary": "The clip is a product demonstration, not a customer result, accuracy benchmark, medical assessment, or public-store availability claim."
     }
+  },
+  "need_research": {
+    "checked_on": "2026-09-08",
+    "academic_context": [
+      "https://lbms03.cityu.edu.hk/oaps/lt2017-4235-ncl190.pdf",
+      "https://research.cuhk.edu.hk/en/publications/cross-language-variation-of-hong-kong-cantonese-n-l-merger-for-ea/"
+    ],
+    "observations": [
+      {
+        "url": "https://www.reddit.com/r/Cantonese/comments/1uieb61/learning_cantonese/",
+        "need": "An adult learner asked for an app or course that accommodates the L-initial pronunciation used by their Hong Kong Cantonese-speaking family.",
+        "decision": "No new reply. The thread is two months old, already contains several complete explanations and multiple app or course recommendations, and the author acknowledged those answers. Another product link would add little value under the community's no-spam rule."
+      },
+      {
+        "url": "https://www.reddit.com/r/Cantonese/comments/1w8l9ls/do_all_canto_words_that_start_with_n_colloquially/",
+        "need": "A current learner asked whether colloquial n-to-l variation applies across Cantonese words.",
+        "decision": "No new reply. The question already has many specific dialect and register answers and does not ask for a practice tool; linking the app would be promotion rather than the smallest useful answer."
+      }
+    ],
+    "outcome": "The research supports a real pronunciation-learning need and the separate first-party educational post below. It did not create a Reddit interaction, tester, lead, customer, or revenue event."
   },
   "channels": {
     "linkedin": {
@@ -165,8 +185,29 @@
       "policy": "Answer the learner's question completely before mentioning the maintained PWA; disclose affiliation and do not reuse the LinkedIn announcement as a community reply."
     },
     "x": {
-      "state": "not_created",
-      "policy": "Do not duplicate the LinkedIn draft merely to increase channel count. Use a separate concise educational angle after current queue and provider-state review."
+      "state": "postiz_queue",
+      "publish_at": "2026-09-13T02:00:00Z",
+      "content": "My L/N drill shows the waveform and recognized word before the score. If speech is unclear, it does not score it; you can retry with the tongue and airflow cue.\n\nFree, open source, no account:\nl-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_pronunciation_launch",
+      "destination": "https://l-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_pronunciation_launch",
+      "content_sha256": "a8caa92e540e5465de7dd10588f336f9c19750b296c9a642c83ba33b033e5ac8",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "verification": {
+        "checked_at": "2026-09-08T16:45:00+08:00",
+        "provider_max_length": 280,
+        "stored_character_count": 268,
+        "stored_content_exact": true,
+        "destination_present": true,
+        "pwa_http_status": 200,
+        "matching_posts": 1,
+        "verified_state": "QUEUE",
+        "release_present": false
+      },
+      "policy": "This uses the app's evidence-first scoring boundary rather than repeating the LinkedIn story. It is queued, not published, and is not a tester, feedback event, lead, sale, or store-release claim."
     },
     "hackernews": {
       "state": "research_only",

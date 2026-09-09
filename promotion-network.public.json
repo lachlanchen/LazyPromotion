@@ -81,6 +81,16 @@
       "url": ""
     },
     {
+      "id": "campaign:draftdev-cybersecurity-writer-opportunity",
+      "kind": "campaign",
+      "label": "draftdev-cybersecurity-writer-opportunity",
+      "metadata": {
+        "objective": "Win one paid cybersecurity article assignment by applying through Draft.dev's official writer form with code-backed Linux, private-search, and agent-infrastructure samples.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:edge-image-quality-contract",
       "kind": "campaign",
       "label": "edge-image-quality-contract",

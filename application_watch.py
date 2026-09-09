@@ -45,7 +45,9 @@ def nested_review_after(application: dict) -> object:
 
 def is_awaiting_reply(state: str) -> bool:
     words = state.casefold()
-    return "sent" in words and ("awaiting" in words or "pending_reply" in words)
+    tokens = set(words.split("_"))
+    was_submitted = bool(tokens & {"sent", "submitted"})
+    return was_submitted and ("awaiting" in tokens or "pending_reply" in words)
 
 
 def application_record(payload: dict, *, source_file: Path, on: date) -> dict | None:
@@ -57,7 +59,7 @@ def application_record(payload: dict, *, source_file: Path, on: date) -> dict | 
         return None
 
     explicit_review = nested_review_after(application)
-    sent = sent_day(application.get("sent_at"))
+    sent = sent_day(application.get("sent_at") or application.get("submitted_at"))
     if explicit_review:
         review_after = parse_day(str(explicit_review))
         schedule_source = "campaign"
@@ -79,7 +81,40 @@ def application_record(payload: dict, *, source_file: Path, on: date) -> dict | 
     }
 
 
-def build_report(*, campaigns_dir: Path = CAMPAIGNS_DIR, on: date | None = None) -> dict:
+def additional_application_records(
+    payload: dict, *, source_file: Path, on: date
+) -> list[dict]:
+    campaign_id = str(payload.get("id") or source_file.stem).strip()
+    records = []
+    outreach = payload.get("additional_outreach")
+    if not isinstance(outreach, list):
+        return records
+    for index, item in enumerate(outreach, start=1):
+        if not isinstance(item, dict):
+            continue
+        state = str(item.get("application_state") or "").strip()
+        if not is_awaiting_reply(state):
+            continue
+        normalized = dict(item)
+        normalized["state"] = state
+        record = application_record(
+            {
+                "id": f"{campaign_id}:additional_outreach:{index}",
+                "source_need": {"url": str(item.get("source_url") or "")},
+                "application": normalized,
+            },
+            source_file=source_file,
+            on=on,
+        )
+        if record:
+            record["parent_campaign_id"] = campaign_id
+            records.append(record)
+    return records
+
+
+def build_report(
+    *, campaigns_dir: Path = CAMPAIGNS_DIR, on: date | None = None
+) -> dict:
     on = on or datetime.now(timezone.utc).date()
     records = []
     for path in sorted(campaigns_dir.glob("*.json")):
@@ -92,6 +127,7 @@ def build_report(*, campaigns_dir: Path = CAMPAIGNS_DIR, on: date | None = None)
         record = application_record(payload, source_file=path, on=on)
         if record:
             records.append(record)
+        records.extend(additional_application_records(payload, source_file=path, on=on))
 
     records.sort(
         key=lambda item: (
@@ -128,7 +164,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--on", type=parse_day, help="Evaluate against an ISO date.")
     args = parser.parse_args()
-    print(json.dumps(build_report(on=args.on), ensure_ascii=False, indent=2, sort_keys=True))
+    print(
+        json.dumps(
+            build_report(on=args.on), ensure_ascii=False, indent=2, sort_keys=True
+        )
+    )
 
 
 if __name__ == "__main__":

@@ -90,6 +90,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(campaign["version"], 1)
         self.assertEqual(demand["public_stars"], 10)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 5)
+        explicit_need = demand["current_explicit_need"]
+        self.assertIn("Ubuntu", explicit_need["need"])
+        self.assertIn(
+            "agent CLIs", " ".join(explicit_need["supporting_thread_signals"])
+        )
+        self.assertEqual(explicit_need["outreach_state"], "no_agent_reply")
+        contributor = demand["contributor_signal"]
+        self.assertEqual(contributor["state"], "changes_requested")
+        self.assertEqual(len(contributor["blocking_findings"]), 5)
+        self.assertIn("not adoption", contributor["boundary"])
         self.assertEqual(
             demand["owner_visible_traffic"]["top_referrer"]["name"], "Google"
         )
@@ -101,11 +111,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(
             campaign["owned_route"]["tracking_campaign"], "uu_remote_bridge"
         )
+        capture = campaign["owned_route"]["compatibility_need_capture"]
+        self.assertEqual(capture["state"], "live_bilingual_public_form")
+        self.assertEqual(len(capture["placements"]), 2)
+        self.assertIn("credentials", capture["privacy_boundary"])
+        self.assertIn("free", capture["commercial_boundary"])
         self.assertEqual(campaign["possible_offer"]["state"], "live_fit_first")
         self.assertEqual(campaign["possible_offer"]["price"], "USD 250")
         self.assertIn("metadata-only", campaign["possible_offer"]["intake"])
         self.assertIn("deployment", campaign["possible_offer"]["excluded"])
         self.assertFalse(campaign["possible_offer"]["hardware_included"])
+        chinese_intake = campaign["possible_offer"]["simplified_chinese_intake"]
+        self.assertEqual(chinese_intake["state"], "live_localized")
+        self.assertIn("CGNAT", " ".join(chinese_intake["fields"]))
+        self.assertIn("passwords", chinese_intake["privacy_boundary"])
         self.assertFalse(
             campaign["channels"]["automatic_community_outreach"]["allowed"]
         )

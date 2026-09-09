@@ -12,6 +12,37 @@
       "through": "2026-09-09T09:54:41Z",
       "new_stars": 5
     },
+    "current_explicit_need": {
+      "source_url": "https://linux.do/t/topic/2192302/5",
+      "published_at": "2026-05-17T08:20:00+08:00",
+      "need": "A community member asked specifically whether UU Remote can be used on Ubuntu; the immediate answer said that UU had no Linux release.",
+      "supporting_thread_signals": [
+        "another participant wanted a good tool that can control Linux",
+        "one participant named access to agent CLIs on a machine without a public address",
+        "one participant wanted networking similar to Tailscale",
+        "one participant said they could support the product if it was not too expensive"
+      ],
+      "fit": "The official-UU-plus-Ubuntu question exactly fits the compatibility bridge, while agent-CLI and private-network access can fit the separate vendor-independent LazyRemote route only after topology qualification.",
+      "platform_rules_url": "https://linux.do/guidelines",
+      "outreach_state": "no_agent_reply",
+      "outreach_reason": "The current community rules prohibit directly posting AI-generated or AI-polished text and regulate promotion. Preserve this as demand evidence; do not reply, private-message, or repost through an agent."
+    },
+    "contributor_signal": {
+      "source_url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge/pull/11",
+      "opened_at": "2026-09-05T15:45:02Z",
+      "head_sha": "ddad980d00cf8482e1149b71529d417e587583e4",
+      "need": "An outside contributor proposed a one-way GameViewer-to-X11 clipboard bridge for a Wine/VNC compatibility gap.",
+      "reviewed_at": "2026-09-09T12:37:33Z",
+      "state": "changes_requested",
+      "blocking_findings": [
+        "pre-existing clipboard text can be replayed on companion startup",
+        "GameViewer ownership is checked before the clipboard is locked and read",
+        "background xclip launcher PIDs are tracked instead of the selection owners",
+        "delivery can be acknowledged without proving X11 selection ownership",
+        "both long-lived helpers remain outside critical-process supervision"
+      ],
+      "boundary": "The contribution is relevant product evidence, but an open or revised pull request is not adoption, buyer intent, a lead, or revenue. Do not merge until the requested lifecycle, ownership, gating, and regression work passes review."
+    },
     "owner_visible_traffic": {
       "window": "The GitHub traffic API's current rolling window, whose daily series ended on 2026-09-07 when checked",
       "views": 929,
@@ -79,7 +110,20 @@
       "i18n/README.zh-Hant.md"
     ],
     "copy_boundary": "Each language presents LazyRemote as a separate vendor-independent option and keeps the current repository focused on compatibility with the official UU client.",
-    "verification": "All 145 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit."
+    "verification": "All 145 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
+    "compatibility_need_capture": {
+      "state": "live_bilingual_public_form",
+      "source_commit": "2b5d31774c9a9751bbb7873fedb828ec037c4f4c",
+      "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge/issues/new?template=compatibility.yml",
+      "placements": [
+        "README.md",
+        "i18n/README.zh-Hans.md"
+      ],
+      "scope": "One host and controller configuration with exact versions, affected area, expected result, and observed result",
+      "privacy_boundary": "The public form refuses proprietary binaries, installers, credentials, identifiers, addresses, hostnames, raw logs, screenshots, typed or clipboard content, and private configuration.",
+      "commercial_boundary": "Filing is free and donations do not buy priority, compatibility work, private support, or a delivery date.",
+      "verification": "All 147 repository tests passed with one opt-in systemd test skipped; GitHub Actions run 34351281488 completed successfully."
+    }
   },
   "possible_offer": {
     "state": "live_fit_first",
@@ -118,7 +162,21 @@
       "published_commit": "1f1daee281cf59daeb790ffabc9a248bf519bc2a",
       "boundary": "A synthetic worked example showing the decision, scope, proposed route, listener and identity maps, findings, acceptance checklist, and rollback. It is explicitly not a customer result and contains no private fleet data."
     },
-    "verification": "GitHub Pages deployment 34334051230 completed successfully. The live offer, complete HTML sample, and downloadable Markdown sample each returned HTTP 200; the landing page linked the sample and the sample linked the exact fit-first scope. The sample's full 1440-pixel render was reviewed locally before the temporary image and server were removed."
+    "simplified_chinese_intake": {
+      "state": "live_localized",
+      "source_commit": "2f2a38b2e27fec40d7865d04fa1765e5f4184356",
+      "url": "https://remote.lazying.art/zh-Hans/#review",
+      "fields": [
+        "device or service to reach",
+        "up to three endpoint operating systems",
+        "whether a reachable relay exists",
+        "NAT, CGNAT, or port constraints",
+        "SSH, noVNC, or private-web goal",
+        "device ownership and network-policy permission"
+      ],
+      "privacy_boundary": "The Chinese template asks for metadata only and explicitly refuses passwords, private keys, and unredacted configuration in the first message."
+    },
+    "verification": "GitHub Pages deployment 34350371886 completed successfully. The live English and Simplified Chinese offer routes, complete HTML sample, and downloadable Markdown sample returned HTTP 200. The Chinese fit-check button decoded to a Chinese subject and intake body while preserving the fixed scope and privacy boundary."
   },
   "channels": {
     "github": {

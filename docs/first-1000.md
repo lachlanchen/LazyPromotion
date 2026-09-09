@@ -177,7 +177,25 @@ Google supplied 593 views, and the Simplified Chinese README was the leading
 path with 461 views. The bridge README and all ten translations now offer one
 tracked, clearly separate path to LazyRemote and its open-source LazyTunnel
 core. The wording does not present LazyRemote as NetEase software or promise it
-replaces UU. This is useful discovery evidence, not a lead. The resulting
+replaces UU. This is useful discovery evidence, not a lead. One current public
+thread also asks exactly whether UU can be used on Ubuntu, alongside requests
+for Linux control, remote agent-CLI access without a public address, and
+Tailscale-like networking. That community forbids directly posting
+AI-generated or AI-polished text, so no agent reply or private message was
+made. A separate outside contribution confirms a real Wine/VNC clipboard gap,
+but its current implementation can replay stale text, race clipboard ownership,
+mis-track background selection owners, acknowledge unverified delivery, and
+leave helpers unsupervised. A concise changes-requested review was submitted on
+September 9; the patch was not merged. This is product evidence, not a buyer or
+sale. The resulting
+[bilingual compatibility form](https://github.com/lachlanchen/uu-remote-ubuntu-bridge/issues/new?template=compatibility.yml)
+lets English and Simplified-Chinese readers report one exact host/controller
+need publicly. It refuses proprietary binaries, credentials, identifiers, raw
+logs, screenshots, typed or clipboard content, and private configuration;
+filing is free and does not buy support or priority. GitHub Actions run
+`34351281488` passed all 147 repository tests except the intentionally skipped
+opt-in live systemd test. This creates structured need capture, not a lead. The
+resulting
 [LazyRemote Network Fit Review](https://remote.lazying.art/#review) is now a
 fixed USD 250, software-only route for one reachable relay and up to three
 existing computers. It returns a topology and exposure map, a key-role and
@@ -185,6 +203,11 @@ host-verification review, and recovery, rollback, and acceptance checks. A free
 metadata-only fit check precedes written scope and payment; deployment, hardware,
 hosting, network-policy changes, wake-on-LAN, desktop capture, ongoing support,
 and guarantees for an unseen topology remain outside the review.
+The highest-traffic Chinese route now opens a Chinese subject and six-field
+metadata template rather than an English intake form. It still asks for no
+password, private key, or unredacted configuration. LazyTunnel commit
+`2f2a38b`; Pages run `34350371886` succeeded. This removes one language obstacle
+without creating or implying an inquiry.
 
 The [complete sample report](https://remote.lazying.art/sample-report.html)
 shows the decision, listener and identity maps, findings, acceptance checklist,

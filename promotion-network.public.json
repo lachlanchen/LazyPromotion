@@ -196,7 +196,7 @@
       "label": "lazyremote-uu-bridge-route",
       "metadata": {
         "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -236,7 +236,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 31
+        "version": 32
       },
       "url": ""
     },
@@ -6572,11 +6572,11 @@
       "url": "https://dub.co/legal/partners"
     },
     {
-      "id": "url:39d5e5c972f196e7",
+      "id": "url:4b618c054e4e0cdd",
       "kind": "web_resource",
       "label": "encrypted intake sources backend commit",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1"
+      "url": "https://github.com/lachlanchen/myblog/commit/513d52b1e1d20833490c2459b51b9aec0bbd3295"
     },
     {
       "id": "url:6fb769a9de3f79b6",
@@ -6593,18 +6593,18 @@
       "url": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check"
     },
     {
-      "id": "url:fe823436688c2f6a",
+      "id": "url:47acc345fb04d64c",
       "kind": "web_resource",
       "label": "encrypted intake sources frontend commit",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b"
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1e00bd76f14c799b1a91ac77034ea43371c81641"
     },
     {
-      "id": "url:3e9ebe6ea695640c",
+      "id": "url:603516a034510058",
       "kind": "web_resource",
       "label": "encrypted intake sources receiver commit",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445"
+      "url": "https://github.com/lachlanchen/LazyPromotion/commit/cf3800076a71401d4657ebc4ee12466472e0d03d"
     },
     {
       "id": "url:3939af6ed06479e7",
@@ -9199,22 +9199,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "campaign:local-knowledge-terminal-pilot",
-      "target": "url:39d5e5c972f196e7"
-    },
-    {
-      "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "campaign:local-knowledge-terminal-pilot",
-      "target": "url:3e9ebe6ea695640c"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/sample-report/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9239,11 +9223,35 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1e00bd76f14c799b1a91ac77034ea43371c81641",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:47acc345fb04d64c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/myblog/commit/513d52b1e1d20833490c2459b51b9aec0bbd3295",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:4b618c054e4e0cdd"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/markdown-vault/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:57248a7df668a86d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/commit/cf3800076a71401d4657ebc4ee12466472e0d03d",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:603516a034510058"
     },
     {
       "confidence": 1.0,
@@ -9412,14 +9420,6 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:f0e5a007d8169141"
-    },
-    {
-      "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/commit/04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "campaign:local-knowledge-terminal-pilot",
-      "target": "url:fe823436688c2f6a"
     },
     {
       "confidence": 1.0,

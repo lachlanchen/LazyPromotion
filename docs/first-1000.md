@@ -228,12 +228,19 @@ existing computers. It returns a topology and exposure map, a key-role and
 host-verification review, and recovery, rollback, and acceptance checks. A free
 metadata-only fit check precedes written scope and payment; deployment, hardware,
 hosting, network-policy changes, wake-on-LAN, desktop capture, ongoing support,
-and guarantees for an unseen topology remain outside the review.
-The highest-traffic Chinese route now opens a Chinese subject and six-field
-metadata template rather than an English intake form. It still asks for no
-password, private key, or unredacted configuration. LazyTunnel commit
-`2f2a38b`; Pages run `34350371886` succeeded. This removes one language obstacle
-without creating or implying an inquiry. The Simplified-Chinese UU README now
+and guarantees for an unseen topology remain outside the review. The primary
+action now opens a concise bilingual
+[web fit check](https://lazying.art/lazyremote/fit-check/) instead of relying on
+the visitor's email app. Answering and reviewing makes no network request; the
+send action stays disabled until the visitor checks a separate confirmation.
+The form accepts network metadata only, encrypts the reviewed request for the
+existing private receiver, and retains email and copy fallbacks. Myblog commit
+`513d52b1`, LazyingArtWebsite commit `1e00bd7`, receiver commit `cf38000`, and
+LazyTunnel commit `71265c2` form the live path. One clearly labeled synthetic
+request completed the visible review, HTTP 202 acceptance, authenticated
+receipt, unchanged remote deletion, and no-pending second check. Its exact
+payload files were removed. This proves the path, not an inquiry or revenue.
+The Simplified-Chinese UU README now
 lands its independent-option link directly on that localized review section
 instead of stopping at the general product hero. UU bridge commit `b2bb426`;
 all 146 tests passed with the opt-in systemd test skipped. The free app remains

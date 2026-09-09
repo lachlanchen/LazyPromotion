@@ -2,16 +2,16 @@
 
 ## Current status
 
-Direct web submission is live for the LKT, manuscript, lecture, and Story Clip
-routes as of 2026-09-09.
+Direct web submission is live for the LKT, manuscript, lecture, Story Clip, and
+LazyRemote routes as of 2026-09-10.
 Each deployed frontend, the pinned public-key fingerprint, mode-`0600` private
 key, receiver, and remote spool completed an explicitly confirmed synthetic
 round trip. Each page still reviews locally before any network request and keeps
 an email or copy fallback.
 
 `lkt_inbox.py` is the operator-side receiver for the LKT, manuscript, lecture,
-and Story Clip fit checks accepted by the first-party WordPress endpoint. The web
-server stores an encrypted envelope, not a readable inquiry. The receiver
+Story Clip, and LazyRemote fit checks accepted by the first-party WordPress
+endpoint. The web server stores an encrypted envelope, not a readable inquiry. The receiver
 downloads a final envelope over SSH, checks the entire cryptographic and
 application contract, saves both copies locally, verifies them from disk, and
 only then removes that exact unchanged remote file.
@@ -32,8 +32,8 @@ Accepted final spool names have the exact form
 names are ignored. A valid envelope must use the pinned key fingerprint,
 RSA-OAEP with SHA-1 for the 32-byte key wrap, AES-256-GCM with the contract AAD,
 and either the legacy LKT v1 record or the routed `fit-check-record/v2` schema.
-The v2 payload has a strict `lkt`, `manuscript`, `lecture`, or `story_clip`
-offer discriminator and rejects fields from another offer. Authentication, schema, source,
+The v2 payload has a strict `lkt`, `manuscript`, `lecture`, `story_clip`, or
+`lazyremote` offer discriminator and rejects fields from another offer. Authentication, schema, source,
 timestamp, receipt, normalization, or persistence failures leave the remote
 file in place.
 
@@ -113,3 +113,17 @@ deleted remotely only after unchanged verification. A second receiver check
 returned `no_pending`; the two exact local synthetic payload copies were then
 removed. The private browser snapshot remains outside Git. This test is not a
 lead, customer result, payment, delivery, or revenue.
+
+On 2026-09-10 the LazyRemote route replaced its email-only primary action with
+the bilingual web fit check at <https://lazying.art/lazyremote/fit-check/>.
+Myblog commit `513d52b1e1d20833490c2459b51b9aec0bbd3295`, LazyingArtWebsite
+commit `1e00bd76f14c799b1a91ac77034ea43371c81641`, LazyTunnel commit
+`71265c2fd80c1a5bdb5ef90440d3bffcd33065ff`, and receiver commit
+`cf3800076a71401d4657ebc4ee12466472e0d03d` form the deployed path. One
+clearly labeled synthetic request made no POST before local review, required a
+separate confirmation, returned HTTP 202, authenticated and decrypted, saved
+with mode `0600`, and was deleted remotely only after unchanged verification.
+A second receiver check returned `no_pending`; the two exact synthetic payload
+files were removed, while the browser evidence remains private outside Git.
+This verifies the path, not a customer inquiry, qualified lead, payment,
+delivery, or revenue.

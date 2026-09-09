@@ -87,7 +87,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(demand["public_stars"], 10)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 5)
         explicit_need = demand["current_explicit_need"]
@@ -153,13 +153,33 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("metadata-only", campaign["possible_offer"]["intake"])
         self.assertIn("deployment", campaign["possible_offer"]["excluded"])
         self.assertFalse(campaign["possible_offer"]["hardware_included"])
+        fit_check = campaign["possible_offer"]["fit_check"]
+        self.assertEqual(fit_check["state"], "live_encrypted_review_first")
+        self.assertEqual(
+            fit_check["url"], "https://lazying.art/lazyremote/fit-check/"
+        )
+        self.assertEqual(fit_check["offer"], "lazyremote")
+        self.assertIn("no network request", fit_check["review_gate"])
+        self.assertIn("private keys", fit_check["privacy_boundary"])
+        self.assertTrue(
+            fit_check["live_verification"][
+                "receiver_authenticated_decrypted_and_saved"
+            ]
+        )
+        self.assertEqual(
+            fit_check["live_verification"]["second_receiver_state"],
+            "no_pending",
+        )
+        self.assertIn("not a customer inquiry", fit_check["boundary"])
         decision_guide = campaign["possible_offer"]["decision_guide"]
         self.assertEqual(decision_guide["state"], "live_reciprocal_route")
         self.assertIn("3819", decision_guide["url"])
         self.assertIn("874d2a4", decision_guide["landing_commit"])
         self.assertIn("not an inquiry", decision_guide["boundary"])
         chinese_intake = campaign["possible_offer"]["simplified_chinese_intake"]
-        self.assertEqual(chinese_intake["state"], "live_localized")
+        self.assertEqual(
+            chinese_intake["state"], "live_localized_encrypted_web_form"
+        )
         self.assertIn("CGNAT", " ".join(chinese_intake["fields"]))
         self.assertIn("passwords", chinese_intake["privacy_boundary"])
         self.assertFalse(
@@ -1392,7 +1412,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 31)
+        self.assertEqual(campaign["version"], 32)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1572,20 +1592,20 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(
             intake_sources["backend_commit"],
-            "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
+            "https://github.com/lachlanchen/myblog/commit/513d52b1e1d20833490c2459b51b9aec0bbd3295",
         )
         self.assertEqual(
             intake_sources["frontend_commit"],
-            "https://github.com/lachlanchen/LazyingArtWebsite/commit/04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b",
+            "https://github.com/lachlanchen/LazyingArtWebsite/commit/1e00bd76f14c799b1a91ac77034ea43371c81641",
         )
         self.assertEqual(
             intake_sources["receiver_commit"],
-            "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
+            "https://github.com/lachlanchen/LazyPromotion/commit/cf3800076a71401d4657ebc4ee12466472e0d03d",
         )
         self.assertEqual(intake_sources["record_schema"], "fit-check/v2")
         self.assertEqual(
             intake_sources["supported_offers"],
-            ["lkt", "manuscript", "lecture", "story_clip"],
+            ["lkt", "manuscript", "lecture", "story_clip", "lazyremote"],
         )
         self.assertEqual(
             campaign["source_evidence"]["sample_fit_report"],
@@ -1737,11 +1757,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(transition["source_schema"], "fit-check/v2")
         self.assertEqual(
             transition["supported_offers"],
-            ["lkt", "manuscript", "lecture", "story_clip"],
+            ["lkt", "manuscript", "lecture", "story_clip", "lazyremote"],
         )
         self.assertTrue(transition["cached_lkt_v1_frontend_compatible"])
         self.assertTrue(transition["manuscript_and_lecture_visible_round_trips_verified"])
         self.assertTrue(transition["story_clip_visible_round_trip_verified"])
+        self.assertTrue(transition["lazyremote_visible_round_trip_verified"])
         self.assertTrue(transition["synthetic_local_payload_artifacts_removed"])
         self.assertTrue(transition["remote_spool_empty"])
         self.assertFalse(transition["lead_or_sale_observed"])

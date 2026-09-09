@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 1,
+  "version": 2,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-09T10:41:16Z",
@@ -176,10 +176,47 @@
       "ongoing support",
       "connectivity or reboot guarantees for an unseen network"
     ],
-    "intake": "Free metadata-only email fit check; do not attach passwords, private keys, or unredacted configuration",
+    "intake": "Free bilingual web fit check reviewed locally before one encrypted submission, with email and copy fallbacks; it is metadata-only and refuses passwords, private keys, addresses, hostnames, identifiers, raw logs, and unredacted configuration",
     "payment_policy": "Request payment only after the fit check and exact written scope are accepted",
     "hardware_included": false,
     "published_commit": "13eda87cf14acee07b98d6c8ea855043a9be71b9",
+    "fit_check": {
+      "state": "live_encrypted_review_first",
+      "url": "https://lazying.art/lazyremote/fit-check/",
+      "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+      "offer": "lazyremote",
+      "record_schema": "fit-check-record/v2",
+      "backend_commit": "513d52b1e1d20833490c2459b51b9aec0bbd3295",
+      "frontend_commit": "1e00bd76f14c799b1a91ac77034ea43371c81641",
+      "receiver_commit": "cf3800076a71401d4657ebc4ee12466472e0d03d",
+      "landing_commit": "71265c2fd80c1a5bdb5ef90440d3bffcd33065ff",
+      "fields": [
+        "contact email",
+        "device or service role",
+        "up to three existing endpoints",
+        "whether one reachable relay exists",
+        "NAT, CGNAT, or port constraints",
+        "required access and users",
+        "optional policy, recovery, availability, or delivery constraints"
+      ],
+      "review_gate": "Answering and choosing Review request makes no network request. The exact text is shown locally, and Send fit check remains disabled until a separate confirmation is checked.",
+      "privacy_boundary": "The form requests no source upload or payment and explicitly refuses passwords, private keys, IP addresses, hostnames, account or device identifiers, raw logs, and unredacted configuration.",
+      "live_verification": {
+        "verified_at": "2026-09-09T16:31:09Z",
+        "frontend_http_status": 200,
+        "english_and_chinese_ctas_verified": true,
+        "allowed_origin_cors_verified": true,
+        "malformed_request_status": 400,
+        "explicitly_labeled_synthetic": true,
+        "frontend_review_and_confirmation_verified": true,
+        "receiver_authenticated_decrypted_and_saved": true,
+        "remote_envelope_deleted_only_after_unchanged_verification": true,
+        "second_receiver_state": "no_pending",
+        "synthetic_local_payload_artifacts_removed": true,
+        "private_browser_evidence_retained_outside_git": true
+      },
+      "boundary": "The synthetic round trip proves the live handoff and encrypted intake. It is not a customer inquiry, qualified lead, payment, delivery, or revenue."
+    },
     "sample_report": {
       "state": "live_project_owned_sample",
       "url": "https://remote.lazying.art/sample-report.html",
@@ -199,9 +236,9 @@
       "boundary": "Reading the guide is attention, not an inquiry, lead, payment, or revenue."
     },
     "simplified_chinese_intake": {
-      "state": "live_localized",
-      "source_commit": "2f2a38b2e27fec40d7865d04fa1765e5f4184356",
-      "url": "https://remote.lazying.art/zh-Hans/#review",
+      "state": "live_localized_encrypted_web_form",
+      "source_commit": "71265c2fd80c1a5bdb5ef90440d3bffcd33065ff",
+      "url": "https://lazying.art/lazyremote/fit-check/",
       "fields": [
         "device or service to reach",
         "up to three endpoint operating systems",
@@ -210,9 +247,9 @@
         "SSH, noVNC, or private-web goal",
         "device ownership and network-policy permission"
       ],
-      "privacy_boundary": "The Chinese template asks for metadata only and explicitly refuses passwords, private keys, and unredacted configuration in the first message."
+      "privacy_boundary": "The bilingual form asks for metadata only, reviews the exact request locally, and explicitly refuses passwords, private keys, addresses, hostnames, identifiers, raw logs, and unredacted configuration."
     },
-    "verification": "The live English and Simplified Chinese offer routes, complete HTML sample, downloadable Markdown sample, and localized role-matrix links returned HTTP 200 or appeared in the live page source. The Chinese fit-check button preserves its Chinese subject, metadata fields, fixed scope, and privacy boundary. Latest landing commit 874d2a4."
+    "verification": "The live English and Simplified Chinese offer routes now point to the bilingual review-first encrypted fit check. The form, complete sample, downloadable Markdown sample, and localized role-matrix links returned HTTP 200 or appeared in live source. One labeled synthetic request completed the visible review, explicit confirmation, HTTP 202 acceptance, authenticated receiver, unchanged remote deletion, and no-pending second check. Latest landing commit 71265c2; the synthetic request is not a lead or revenue."
   },
   "channels": {
     "github": {

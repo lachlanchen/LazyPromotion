@@ -1,5 +1,5 @@
 {
-  "version": 31,
+  "version": 32,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -8,16 +8,17 @@
     "encrypted_intake_sources": {
       "current_state": "live_verified_direct_route",
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
-      "backend_commit": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
-      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b",
-      "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
+      "backend_commit": "https://github.com/lachlanchen/myblog/commit/513d52b1e1d20833490c2459b51b9aec0bbd3295",
+      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1e00bd76f14c799b1a91ac77034ea43371c81641",
+      "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/cf3800076a71401d4657ebc4ee12466472e0d03d",
       "disabled_frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb",
       "record_schema": "fit-check/v2",
       "supported_offers": [
         "lkt",
         "manuscript",
         "lecture",
-        "story_clip"
+        "story_clip",
+        "lazyremote"
       ]
     },
     "practical_guide": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
@@ -450,26 +451,28 @@
           "lkt",
           "manuscript",
           "lecture",
-          "story_clip"
+          "story_clip",
+          "lazyremote"
         ],
         "cached_lkt_v1_frontend_compatible": true,
         "allowed_origin_options_verified": true,
         "malformed_offer_status": 400,
         "manuscript_and_lecture_visible_round_trips_verified": true,
         "story_clip_visible_round_trip_verified": true,
+        "lazyremote_visible_round_trip_verified": true,
         "remote_envelopes_deleted_after_unchanged_verification": true,
         "synthetic_local_payload_artifacts_removed": true,
         "remote_spool_empty": true,
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
-        "policy": "The routed v2 checks used labeled synthetic metadata only. They prove the shared encrypted intake for four offer routes, not a customer inquiry, qualification, sale, delivery, or revenue."
+        "policy": "The routed v2 checks used labeled synthetic metadata only. They prove the shared encrypted intake for five offer routes, not a customer inquiry, qualification, sale, delivery, or revenue."
       },
       "receiver_runtime": {
         "state": "running_monitor_healthy",
         "last_verified_session": "lazypromotion-lkt-inbox",
         "interval_minutes": 15,
         "latest_state": "no_pending",
-        "checked_at": "2026-09-09T00:24:31Z"
+        "checked_at": "2026-09-09T16:31:09Z"
       },
       "sanitized_status_fields": [
         "receipt",

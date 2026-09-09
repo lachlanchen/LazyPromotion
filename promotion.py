@@ -64,7 +64,9 @@ OUT_OF_SCOPE_SIGNALS = {
     "dm me", "i got you", "apply now", "can i apply", "how can i apply",
     "where can i apply", "we're hiring", "we are hiring",
     "want to publish your own article", "upgrade to premium",
-    "written with ai fwiw",
+    "written with ai fwiw", "looking for participants",
+    "i'm looking for participants", "survey takes about",
+    "survey link in the comments", "get ai coaching",
 }
 PAID_OPPORTUNITY_MARKERS = {
     "[hiring]", "hiring ", "we are hiring", "we're hiring", "paid project",

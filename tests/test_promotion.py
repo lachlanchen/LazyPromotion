@@ -625,6 +625,26 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_survey_recruitment_thanks_does_not_spend_triage_quota(self):
+        body = (
+            "I'm looking for participants for a short anonymous voice assistant "
+            "survey. Everyone's input helps, and I am happy to answer questions."
+        )
+        signals = promotion.help_request_signals(body)
+        self.assertIn("i'm looking for participants", signals["out_of_scope_hits"])
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
+    def test_coaching_ad_with_faq_questions_is_not_a_help_request(self):
+        body = (
+            "Get AI coaching and courses. This voice agent helps automate your "
+            "day. What is it? Who should use it?"
+        )
+        signals = promotion.help_request_signals(body)
+        self.assertIn("get ai coaching", signals["out_of_scope_hits"])
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
     def test_domain_sale_pitch_is_not_a_buyer_need(self):
         body = (
             "Need a robot to clean a warehouse? I would build the search engine "

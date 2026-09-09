@@ -109,7 +109,9 @@ three-build LaTeX redline sample. It relies on the documented research degrees,
 publication record, and reproducible manuscript tooling, while stating that the
 sample is project-owned rather than client work. The exact recipient, sender,
 subject, body, and attachment passed a final visible check; one send was made,
-and the same message and attachment then appeared in Sent. The company
+and the same message and attachment then appeared in Sent. A later inbox row
+showed an automatic acknowledgement; it was not opened and is not shortlisting
+or a human reply. The company
 publishes no rate or assignment volume and tests applicants, so this is one
 outbound application—not a reply, lead, test invitation, contract, payment, or
 revenue.

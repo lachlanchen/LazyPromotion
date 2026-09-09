@@ -26,6 +26,11 @@ class LexAcademicScientificEditorCampaignTests(unittest.TestCase):
         self.assertEqual(application["state"], "sent_awaiting_human_reply")
         self.assertEqual(application["attachments_sent"], 1)
         self.assertFalse(application["client_credits_claimed"])
+        self.assertEqual(
+            application["automated_acknowledgement"]["state"],
+            "automatic_reply_observed_without_opening",
+        )
+        self.assertFalse(application["automated_acknowledgement"]["human_reply"])
         self.assertFalse(application["automatic_follow_up"])
         funnel = campaign["funnel"]
         self.assertEqual(funnel["outbound_application_count"], 1)

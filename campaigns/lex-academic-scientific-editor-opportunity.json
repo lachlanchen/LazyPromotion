@@ -48,6 +48,12 @@
     "cv_storage": "ignored private evidence",
     "attachments_sent": 1,
     "client_credits_claimed": false,
+    "automated_acknowledgement": {
+      "observed_at": "2026-09-09T10:23:00Z",
+      "state": "automatic_reply_observed_without_opening",
+      "human_reply": false,
+      "policy": "The visible inbox row identified an automatic application acknowledgement. It was not opened, copied, or treated as shortlisting, a test invitation, a lead, an assignment, or revenue."
+    },
     "automatic_follow_up": false,
     "review_after": "2026-09-16",
     "policy": "Verify the recipient, subject, final attachment, and visible sent evidence exactly once. Any editorial test, house style, manuscript, NDA, assignment, rate, deadline, contract, or payment must be reviewed on its own terms."

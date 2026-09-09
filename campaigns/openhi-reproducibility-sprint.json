@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 4,
+  "version": 5,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -31,9 +31,17 @@
     ],
     "data_policy": "Collect metadata only during the fit check. Agree source transfer, confidentiality, retention, and permitted automation before receiving data. Delete working data copies within fourteen calendar days after delivery, cancellation, or refund unless the accepted scope requires earlier deletion.",
     "payment_policy": "After a positive fit check and accepted written scope, prepare one reviewed Stripe request from the guarded USD 500 configuration. Never expose a public self-serve checkout.",
-    "website_commit": "9d812b0692d3c27e5b37b37dd2e89464f85f0fa5",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34311930574",
-    "live_verification": "The offer, fit-check page, script, and legacy kit bridge returned HTTP 200 after the Pages deployment. The live fit-check script matched the committed SHA-256."
+    "public_sample": {
+      "state": "live_verified",
+      "url": "https://lazying.art/openhi-reproducibility/sample-report/",
+      "source_commit": "fce0e13cb937fd8443910b9eb6387cc2ff4fdd6a",
+      "openhi_revision_tested": "080ad074a4581f34e3b87e6f23be64321eda5222",
+      "result": "One public weighted-cumulative visualization stage completed with exit code 0 on a deterministic 4,096-event fixture, producing 120 time bins and one recorded PNG.",
+      "boundary": "The sample verifies only the selected file/interface execution path in the recorded environment. It does not verify acquisition, segmentation, learned compensation, calibration, reconstruction accuracy, hardware compatibility, or a scientific result, and it is not a customer result."
+    },
+    "website_commit": "9cd9617e32a96f1b207a9e321e24f075ff9260d8",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34314953255",
+    "live_verification": "The offer, fit-check page, sample report, summary, plot, fixture, and legacy kit bridge returned HTTP 200 after the Pages deployment. The live sample plot matched the committed SHA-256."
   },
   "channels": {
     "owned_website": {
@@ -43,13 +51,13 @@
     "github": {
       "state": "live_verified",
       "role": "The primary OpenHI README now offers a tracked software-first path beside the hardware inquiry without changing the maintainer's uncommitted README or translation work.",
-      "repository_commit": "080ad074a4581f34e3b87e6f23be64321eda5222",
+      "repository_commit": "ac069e989a4ab661bf1b7a639aef0d9992de092d",
       "tracked_entry_points": [
         "quick_access",
         "software_first",
         "support"
       ],
-      "verification": "The GitHub contents API returned the tracked USD 500 sprint links from main and no longer returned the unverified OPTICA promotion-code line in the primary English README."
+      "verification": "The GitHub contents API returned tracked links to the frozen sample and USD 500 sprint from main and no longer returned the unverified OPTICA promotion-code line in the primary English README."
     },
     "x": {
       "state": "queued_verified",

@@ -189,8 +189,10 @@ Google supplied 593 views, and the Simplified Chinese README was the leading
 path with 461 views. The bridge README and all ten translations now offer one
 tracked, clearly separate path to LazyRemote and its open-source LazyTunnel
 core. The repository's website metadata now also points directly to the exact
-LazyRemote page instead of the generic portfolio. The wording does not present
-LazyRemote as NetEase software or promise it
+LazyRemote page instead of the generic portfolio. The public GitHub profile's
+selected-project table now gives the same relationship one concise row in all
+11 language editions. The wording does not present LazyRemote as NetEase
+software or promise it
 replaces UU. This is useful discovery evidence, not a lead. One current public
 thread also asks exactly whether UU can be used on Ubuntu, alongside requests
 for Linux control, remote agent-CLI access without a public address, and

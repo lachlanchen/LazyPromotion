@@ -101,6 +101,18 @@
       "updated_at": "2026-09-09T13:20:00Z",
       "reason": "Replace the generic portfolio homepage with the exact separate LazyRemote product route."
     },
+    "github_profile_route": {
+      "state": "live_multilingual",
+      "profile_url": "https://github.com/lachlanchen",
+      "profile_commit": "21580849c119262a9217e64e01afda4de850ef3c",
+      "editions": 11,
+      "links": [
+        "https://remote.lazying.art/",
+        "https://github.com/lachlanchen/LazyTunnel",
+        "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
+      ],
+      "boundary": "The profile presents LazyRemote, the open-source core, and the UU compatibility bridge as related but distinct projects. A profile view or click is attention, not a lead or sale."
+    },
     "placements": [
       "README.md",
       "i18n/README.ar.md",

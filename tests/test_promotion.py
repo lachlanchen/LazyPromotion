@@ -62,6 +62,44 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertIn("free no-signup PWA", ranked[0]["project"]["reply_context"])
 
+    def test_private_cgnat_remote_access_matches_curated_lazyremote(self):
+        ranked = promotion.rank_projects(
+            "I need help reaching my home PC with SSH and a noVNC viewer behind "
+            "CGNAT through a self-hosted relay. What remote access setup should I use?"
+        )
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "github-lazytunnel")
+        self.assertIn("candidate, not a live paid offer", ranked[0]["project"]["reply_context"])
+        self.assertIn("separate from NetEase UU Remote", ranked[0]["project"]["reply_context"])
+
+    def test_uu_remote_linux_need_matches_only_vendor_bridge(self):
+        ranked = promotion.rank_projects(
+            "Can someone help me use NetEase UU Remote on Ubuntu Linux with Wine "
+            "and FreeRDP?"
+        )
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "github-uu-remote-ubuntu-bridge")
+        self.assertIn("unaffiliated compatibility bridge", ranked[0]["project"]["reply_context"])
+        self.assertIn("not a native UU Linux port", ranked[0]["project"]["reply_context"])
+
+    def test_generic_ubuntu_remote_desktop_does_not_match_uu_bridge(self):
+        ranked = promotion.rank_projects(
+            "I need help running a generic remote desktop on Ubuntu with RDP and systemd."
+        )
+        self.assertNotIn(
+            "github-uu-remote-ubuntu-bridge",
+            {item["project"]["id"] for item in ranked},
+        )
+
+    def test_paid_self_hosted_remote_access_matches_curated_lazyremote(self):
+        body = (
+            "[HIRING] Need an engineer to review self-hosted remote access to my home PC "
+            "behind CGNAT using an SSH relay and noVNC. Budget USD 500."
+        )
+        ranked = promotion.rank_projects(body, allow_paid_opportunity=True)
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "github-lazytunnel")
+
     def test_multilingual_eink_purchase_need_matches_public_offer(self):
         ranked = promotion.rank_projects(
             "Can anyone recommend an e-ink reader for multilingual language learning?"

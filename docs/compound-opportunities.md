@@ -299,6 +299,7 @@ Gates:
 - Hardware, model, driver, security, uptime, and remote-access support boundaries must be written
 - Never expose an unauthenticated model endpoint
 - Model licenses and geographic restrictions must be checked per deployment
+- Treat uu-remote-ubuntu-bridge only as vendor-specific Ubuntu workstation-integration evidence; it is not part of LazyRemote/LazyTunnel, a native UU Linux port, or proof that LazyRemote replaces UU Remote
 - Treat LazyTunnel and the workstation bridges as operator-reviewed deployment evidence, not proof that an unseen customer topology will pass bidirectional shell, file transfer, failure recovery, negative-permission, or reboot tests
 
 ### Story-first interview clip pilot
@@ -366,6 +367,7 @@ Gates:
 - Keep relay listeners on loopback unless a separately reviewed architecture requires otherwise; never expose unauthenticated VNC, RDP, SSH, or web tools
 - Use separate keys, pinned host identities, least-privilege authorized_keys restrictions, and a tested rollback path
 - Treat the public seven-device and 49-directed-check record as operator evidence, not a customer result or proof of reboot recovery on every platform
+- Treat uu-remote-ubuntu-bridge only as vendor-specific Ubuntu workstation-integration evidence; it is not part of LazyRemote/LazyTunnel, a native UU Linux port, or proof that LazyRemote replaces UU Remote
 - Do not help evade school, employer, or network-owner policy; outbound TCP availability must be verified lawfully
 
 ### Creator library refinery

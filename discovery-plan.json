@@ -23,6 +23,8 @@
     "github-lightmind": "neuromorphic optical hardware",
     "github-metasurfaceinversedeisgn": "metasurface inverse design",
     "github-microquant": "metatrader5 ohlc analysis",
+    "github-lazytunnel": "private remote access",
+    "github-uu-remote-ubuntu-bridge": "netease uu remote",
     "github-onlyideas-aws": "aws amplify authentication",
     "github-organoidagent": "organoid segmentation phenotyping",
     "github-organoidintelligence": "brain organoid computing",
@@ -40,6 +42,22 @@
         "project_id": "localknowledgeterminal",
         "query": "subreddit:selfhosted (\"private knowledge base\" OR \"document search\") (help OR recommend)",
         "purpose": "Self-hosters asking for a bounded private-document search or knowledge workflow"
+      },
+      {
+        "project_id": "github-lazytunnel",
+        "query": "subreddit:selfhosted (\"my home pc\" OR \"my private server\" OR \"my workstation\") (\"remote access\" OR \"remote desktop\" OR SSH OR noVNC) (CGNAT OR NAT OR relay OR \"self-hosted\") (help OR recommend OR \"looking for\")",
+        "purpose": "Owners asking how to reach a named private computer through a self-hosted route without publishing desktop ports",
+        "required_body_groups": [
+          ["my home pc", "my private server", "my workstation", "my computer", "my pc"],
+          ["remote access", "remote desktop", "ssh", "novnc"],
+          ["cgnat", "nat", "relay", "self hosted", "self-hosted", "no ports open", "without opening ports"],
+          ["help", "recommend", "looking for", "need", "how can", "how do", "anyone"]
+        ],
+        "excluded_body_any": [
+          "i built", "i created", "i launched", "we built", "we created", "we launched",
+          "my new tool", "our new tool", "for hire", "available for work",
+          "bypass school", "bypass work", "evade firewall", "evade policy"
+        ]
       },
       {
         "project_id": "localknowledgeterminal",
@@ -215,6 +233,22 @@
         "project_id": "localknowledgeterminal",
         "query": "(\"private knowledge base\" OR \"offline RAG\") (help OR recommend) -filter:retweets",
         "purpose": "Explicit requests for private knowledge or offline retrieval workflows"
+      },
+      {
+        "project_id": "github-lazytunnel",
+        "query": "(\"my home pc\" OR \"my private server\" OR \"my workstation\") (\"remote access\" OR SSH OR noVNC) (CGNAT OR relay OR \"self-hosted\") (help OR recommend OR \"looking for\") -filter:retweets",
+        "purpose": "Owners asking how to reach a named private computer through a self-hosted route without publishing desktop ports",
+        "required_body_groups": [
+          ["my home pc", "my private server", "my workstation", "my computer", "my pc"],
+          ["remote access", "remote desktop", "ssh", "novnc"],
+          ["cgnat", "nat", "relay", "self hosted", "self-hosted", "no ports open", "without opening ports"],
+          ["help", "recommend", "looking for", "need", "how can", "how do", "anyone"]
+        ],
+        "excluded_body_any": [
+          "i built", "i created", "i launched", "we built", "we created", "we launched",
+          "my new tool", "our new tool", "for hire", "available for work",
+          "bypass school", "bypass work", "evade firewall", "evade policy"
+        ]
       },
       {
         "project_id": "localknowledgeterminal",

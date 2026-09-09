@@ -328,6 +328,28 @@ class RepositoryTests(unittest.TestCase):
                 with self.subTest(platform=platform, project=project_id):
                     self.assertIn(f'"{topic}"', routes[project_id])
 
+    def test_remote_access_discovery_requires_owned_endpoint_and_private_route(self):
+        for platform in ("reddit", "x"):
+            route = next(
+                item for item in browser.discovery_query_lanes(platform)["core"]
+                if item["project_id"] == "github-lazytunnel"
+            )
+            with self.subTest(platform=platform):
+                self.assertEqual(len(route["required_body_groups"]), 4)
+                self.assertTrue(browser.route_body_qualified(
+                    "I need help reaching my home PC with SSH behind CGNAT through "
+                    "a self-hosted relay without opening ports.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "Can anyone recommend a remote desktop app?",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I built my new tool to bypass school network policy.",
+                    route,
+                ))
+
     def test_public_github_index_covers_owner_source_repositories(self):
         index = json.loads((ROOT / "github-repos.json").read_text(encoding="utf-8"))
         self.assertEqual(index["owner"], "lachlanchen")

@@ -135,6 +135,46 @@
       ]
     },
     {
+      "id": "github-lazytunnel",
+      "name": "LazyTunnel / LazyRemote",
+      "url": "https://github.com/lachlanchen/LazyTunnel",
+      "homepage": "https://remote.lazying.art/",
+      "summary": "LazyRemote provides native clients for named private computers, SSH terminals, and noVNC viewers; LazyTunnel is its separate self-hosted tunnel core.",
+      "reply_context": "Use only for an explicit self-hosted remote-access need involving a private computer, SSH terminal, or noVNC viewer. LazyRemote is vendor-independent and separate from NetEase UU Remote. The public release and operator checks are not a customer result or proof that an unseen topology will support low-latency gaming, wake-on-LAN, policy bypass, exposed unauthenticated desktop ports, or reliable reboot recovery. The topology and recovery audit remains a candidate, not a live paid offer.",
+      "required_any": [
+        "private computer", "private pc", "home pc", "workstation", "ssh",
+        "novnc", "nat", "cgnat", "relay", "self hosted", "self-hosted"
+      ],
+      "keyword_context_any": {
+        "remote access": [
+          "private computer", "private pc", "home pc", "workstation", "ssh",
+          "novnc", "nat", "cgnat", "relay", "self hosted", "self-hosted"
+        ],
+        "remote desktop": [
+          "private computer", "private pc", "home pc", "workstation",
+          "novnc", "nat", "cgnat", "relay", "self hosted", "self-hosted"
+        ]
+      },
+      "keywords": [
+        "lazyremote", "self hosted remote access", "self-hosted remote access",
+        "remote access", "private pc remote access", "remote desktop",
+        "remote access behind nat", "remote access behind cgnat",
+        "reverse tunnel", "cloud relay", "ssh terminal", "novnc viewer"
+      ]
+    },
+    {
+      "id": "github-uu-remote-ubuntu-bridge",
+      "name": "uu-remote-ubuntu-bridge",
+      "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
+      "summary": "A compatibility bridge for controlling Ubuntu GNOME through the official NetEase UU Remote Windows client using Wine, FreeRDP, and an input broker.",
+      "reply_context": "Use only when the request explicitly concerns NetEase UU Remote on Ubuntu or Linux. This is an unaffiliated compatibility bridge, not a native UU Linux port or a general remote-access product. LazyRemote is a separate vendor-independent project; do not imply that it is NetEase software or replaces every UU feature.",
+      "required_any": ["ubuntu", "linux", "gnome", "wine", "freerdp"],
+      "keywords": [
+        "uu remote", "netease uu remote", "uu remote ubuntu",
+        "uu remote linux", "uu remote wine", "uu remote freerdp"
+      ]
+    },
+    {
       "id": "github-localllm",
       "name": "LocalLLM",
       "url": "https://github.com/lachlanchen/LocalLLM",

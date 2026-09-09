@@ -14,7 +14,7 @@ sprints, four USD 250 sprints, or any confirmed combination of payments across t
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
-OpenHI is the strongest unused public technical proof in the portfolio: the
+OpenHI is the strongest public technical proof in the portfolio: the
 MIT-licensed repository had 104 stars and 32 forks when checked on September 9,
 and its recent owner-visible traffic showed continued cloning even without an
 open issue queue. The fixed sprint does not sell the microscope kit. It records
@@ -24,8 +24,14 @@ report plus one factual correction pass. Hardware, acquisition, calibration,
 vendor-license procurement, custom algorithms, production integration, and
 scientific or publication guarantees remain outside the USD 500 scope. A free
 metadata-only fit check precedes data transfer, payment, and any Stripe request.
-The [offer](https://lazying.art/openhi-reproducibility/) and
-[fit check](https://lazying.art/openhi-reproducibility/fit-check/) are live.
+The [offer](https://lazying.art/openhi-reproducibility/),
+[executed sample](https://lazying.art/openhi-reproducibility/sample-report/),
+and [fit check](https://lazying.art/openhi-reproducibility/fit-check/) are live.
+The OpenHI README links both the service and sample, while its public issue
+chooser separates reproducible public bug reports from private metadata-only
+fit checks. The sample pins one real public OpenHI stage, deterministic fixture,
+environment, command, log, output, and hashes; it is software-stage evidence,
+not customer or scientific-result evidence.
 One labeled synthetic request passed the visible review and explicit-confirmation
 gates, was encrypted by the current backend, authenticated and decrypted by the
 receiver, saved in private mode `0600`, and removed remotely only after unchanged
@@ -33,6 +39,20 @@ verification. The exact local synthetic payload files were then deleted and the
 remote spool was empty. The guarded Stripe configuration passed a read-only live
 account check at USD 500 without creating a product, price, payment link, charge,
 or payout. This is operational proof, not a buyer inquiry or revenue.
+
+A new worldwide Upwork listing creates a separate high-value route around the
+same scientific-imaging base: a CPU-friendly image-quality module at a published
+USD 1,800–2,500 fixed budget. The buyer asks for interpretable blur, exposure,
+glare, and incorrect-view checks, held-out evaluation, CPU benchmarks, tested
+Python, FastAPI, and Docker. A small
+[executed edge-IQA proof](https://github.com/lachlanchen/LazyPromotion/tree/main/examples/edge-image-quality)
+now demonstrates the classical baseline, input validation, API boundary,
+synthetic fixtures, local benchmark, tests, and hashes. It explicitly does not
+claim medical validation or incorrect-view accuracy without representative
+labelled data. A USD 2,200, five-week, three-milestone proposal is prepared in
+private storage, but the project browser is logged out and the listing already
+shows 50-plus proposals. No Connects were spent and no application, buyer reply,
+contract, payment, or revenue exists.
 
 The strongest current no-marketplace application is Lopaka's worldwide DevPet
 embedded-UI prototype contract at a published USD 80–140 per hour for roughly

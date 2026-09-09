@@ -1,0 +1,27 @@
+{
+  "image": {
+    "channels": 3,
+    "height": 400,
+    "width": 640
+  },
+  "metrics": {
+    "bright_fraction": 0.0,
+    "dark_fraction": 0.0,
+    "glare_fraction": 0.0,
+    "laplacian_variance": 119.8178,
+    "mean_luminance": 217.822
+  },
+  "reasons": [
+    "overexposed"
+  ],
+  "scope": "screening baseline; thresholds require labelled-domain calibration",
+  "status": "FAIL",
+  "thresholds": {
+    "max_bright_fraction": 0.45,
+    "max_dark_fraction": 0.45,
+    "max_glare_fraction": 0.08,
+    "max_mean_luminance": 200.0,
+    "min_laplacian_variance": 80.0,
+    "min_mean_luminance": 55.0
+  }
+}

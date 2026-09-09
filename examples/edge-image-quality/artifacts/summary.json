@@ -1,0 +1,45 @@
+{
+  "benchmark": {
+    "iterations": 250,
+    "median_ms": 2.8428,
+    "minimum_ms": 1.7523,
+    "p95_ms": 3.226
+  },
+  "client_data_used": false,
+  "diagnostic_or_clinical_validation": false,
+  "fixture_count": 5,
+  "incorrect_view_detection_implemented": false,
+  "reason": "incorrect-view rules require representative labelled domain images",
+  "results": {
+    "blurred.png": {
+      "reasons": [
+        "blur_or_low_detail"
+      ],
+      "status": "FAIL"
+    },
+    "glare.png": {
+      "reasons": [
+        "possible_glare"
+      ],
+      "status": "FAIL"
+    },
+    "overexposed.png": {
+      "reasons": [
+        "overexposed"
+      ],
+      "status": "FAIL"
+    },
+    "reference.png": {
+      "reasons": [],
+      "status": "PASS"
+    },
+    "underexposed.png": {
+      "reasons": [
+        "blur_or_low_detail",
+        "underexposed"
+      ],
+      "status": "FAIL"
+    }
+  },
+  "synthetic_project_owned_fixtures": true
+}

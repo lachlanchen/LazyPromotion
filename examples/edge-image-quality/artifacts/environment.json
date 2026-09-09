@@ -1,0 +1,13 @@
+{
+  "benchmark": {
+    "iterations": 250,
+    "median_ms": 2.8428,
+    "minimum_ms": 1.7523,
+    "p95_ms": 3.226
+  },
+  "machine": "x86_64",
+  "numpy": "2.2.6",
+  "opencv": "4.11.0",
+  "platform": "Linux-6.17.0-1032-oem-x86_64-with-glibc2.39",
+  "python": "3.10.13"
+}

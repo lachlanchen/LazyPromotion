@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "id": "edge-image-quality-contract",
+  "objective": "Win a paid CPU-first image-quality milestone by pairing the owner's scientific-imaging code with a small executed OpenCV/FastAPI proof, without claiming medical validation or generic incorrect-view accuracy.",
+  "source_need": {
+    "captured_at": "2026-09-09T05:53:19Z",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Computer-Vision-Edge-Engineer-Lightweight-Medical-Image-Quality-Assessment_~022096930437957381037/",
+    "title": "Computer Vision / Edge ML Engineer – Lightweight Medical Image Quality Assessment",
+    "state": "public_listing_visible",
+    "posted": "two days before the visible check",
+    "eligibility": "Worldwide",
+    "engagement": "Fixed-price, intermediate, part-time over approximately four to six weeks",
+    "published_budget": "USD 1,800–2,500 depending on experience and proposed approach",
+    "requested_work": [
+      "Assess blur, exposure, glare or reflections, and incorrect views with interpretable PASS/FAIL reasons and scores",
+      "Prefer classical computer vision when sufficient and use only a small learned model when justified",
+      "Validate against a held-out set and benchmark CPU latency, memory, and model size",
+      "Deliver tested Python plus a documented, containerized REST API that requires no GPU"
+    ],
+    "activity_when_checked": "50-plus proposals, zero interviewing, zero invites, and zero unanswered invites; the UK client joined Upwork on 2026-09-01",
+    "policy": "The public budget and listing are buyer-intent evidence only. They are not escrow, a contract, payment, received revenue, or proof that the new client will hire. Keep application, communication, contract, files, and payment on Upwork."
+  },
+  "fit": {
+    "projects": [
+      "OpenHI",
+      "LocalLLM",
+      "LazyPromotion"
+    ],
+    "public_evidence": [
+      {
+        "url": "https://github.com/lachlanchen/OpenHI",
+        "role": "Python, NumPy, PyTorch, OpenCV feature matching, event-camera and hyperspectral-imaging work",
+        "boundary": "Scientific-imaging research code, not an image-quality product or medical deployment"
+      },
+      {
+        "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/edge-image-quality",
+        "role": "Executed CPU baseline with deterministic fixtures, reason codes, benchmark, raw-image FastAPI boundary, Dockerfile, tests, and hashes",
+        "boundary": "Project-owned synthetic evidence; not clinical data, customer work, diagnostic validation, or incorrect-view proof"
+      },
+      {
+        "url": "https://github.com/lachlanchen/LocalLLM",
+        "role": "Separate public evidence of local FastAPI and OpenAI-compatible service work",
+        "boundary": "Not proof of this buyer's integration, load, security, or production acceptance"
+      }
+    ],
+    "supported_now": [
+      "Python scientific-imaging workflows using NumPy, PyTorch, and OpenCV",
+      "Classical image measurements with explicit thresholds and reason codes",
+      "A CPU-only FastAPI boundary with input validation and a non-root Docker recipe",
+      "Deterministic fixtures, per-case results, a local latency benchmark, tests, and SHA-256 evidence"
+    ],
+    "not_proven": [
+      "Accuracy on the buyer's medical images or devices",
+      "A safe or useful clinical, diagnostic, or regulatory result",
+      "The buyer's definition of an incorrect view",
+      "A small learned model that improves the buyer's held-out metrics",
+      "Production integration, security, throughput, or acceptance",
+      "Paid client delivery of a medical image-quality module"
+    ],
+    "claim_boundary": "Use the proof to show implementation discipline and the smallest classical baseline. Do not describe the synthetic thresholds as medical validation, the local timing as a deployment guarantee, or the public repositories as customer work."
+  },
+  "application": {
+    "state": "prepared_login_required",
+    "private_packet": ".local/outreach/edge-image-quality-contract/proposal.md",
+    "application_submitted": false,
+    "connects_spent": 0,
+    "connects_cost": "unknown until authenticated application review",
+    "proposed_timeline": "Five weeks after representative labelled data, label definitions, and acceptance criteria are available",
+    "proposed_fixed_price": "USD 2,200",
+    "milestones": [
+      "USD 400: data and label audit, leakage-safe split, reproducible classical benchmark, and acceptance plan",
+      "USD 900: calibrated quality criteria plus justified incorrect-view approach and held-out evaluation",
+      "USD 900: optimized implementation, tests, benchmark, documented FastAPI service, Docker package, and handoff"
+    ],
+    "policy": "Do not log in with a personal browser, spend Connects, submit, accept terms, or promise availability until the authenticated visible application shows the exact cost, client terms, required fields, and one reviewed final proposal."
+  },
+  "funnel": {
+    "state": "buyer_intent_identified",
+    "application_submitted": false,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

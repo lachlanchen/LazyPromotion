@@ -12,6 +12,26 @@ per month. It remains unsent because the form requires nationality and that fact
 cannot be inferred. Compensation is not published, so the figure is a proposed
 scope position rather than a claim about Mobbin's budget.
 
+## New high-value imaging route
+
+A worldwide Upwork listing posted on September 7 asks for a lightweight
+medical-image quality module at an indicative USD 1,800–2,500 fixed budget. It
+requires interpretable blur, exposure, glare, and incorrect-view results,
+held-out evaluation, CPU resource benchmarks, Python tests, FastAPI, and Docker.
+OpenHI and LocalLLM support a candid application, but neither proves medical-IQA
+delivery. A new
+[edge image-quality packet](https://github.com/lachlanchen/LazyPromotion/tree/main/examples/edge-image-quality)
+therefore freezes the smallest honest baseline: deterministic synthetic cases,
+classical OpenCV metrics, reason codes, input validation, a CPU benchmark, API,
+Docker recipe, tests, and hashes. It leaves incorrect-view detection open until
+the buyer defines and supplies representative labelled views.
+
+The private proposal quotes USD 2,200 over five weeks in three paid milestones,
+starting with a USD 400 data, label, split, benchmark, and acceptance-plan audit.
+The project browser is logged out, the visible listing already shows 50-plus
+proposals, and the Connects cost is unknown. No application was submitted and
+no Connects, contract, payment, or revenue exists.
+
 Altimate.ai's indexed Technical Content Creator contract looked like a strong
 match for the open-source and technical-publishing portfolio, but its official
 application now returns **Job not found** and it is absent from the employer's
@@ -90,7 +110,7 @@ The test is not a lead or revenue.
 
 ## Newly activated owned route
 
-OpenHI has the portfolio's strongest unused public technical proof: an
+OpenHI has the portfolio's strongest public technical proof: an
 MIT-licensed repository with 104 stars and 32 forks at the September 9 check,
 plus a peer-reviewed Optica article. A live USD 500 software-only sprint now
 tests one existing workstation, one rights-cleared dataset, and one named

@@ -133,9 +133,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("credentials", capture["privacy_boundary"])
         self.assertIn("free", capture["commercial_boundary"])
         blog_routes = campaign["channels"]["owned_blog"]["placements"]
-        self.assertEqual(len(blog_routes), 3)
-        self.assertEqual(blog_routes[-1]["post_id"], 3818)
-        self.assertIn("Ubuntu", blog_routes[-1]["subject"])
+        self.assertEqual(len(blog_routes), 4)
+        self.assertEqual(blog_routes[-1]["post_id"], 3819)
+        self.assertIn("Small Team", blog_routes[-1]["subject"])
+        self.assertEqual(blog_routes[-1]["locales"], ["en", "zh", "ja"])
         issue_monitor = campaign["channels"]["github"]["inbound_monitor"]
         self.assertEqual(issue_monitor["state"], "baseline_initialized")
         self.assertFalse(issue_monitor["issue_bodies_requested"])

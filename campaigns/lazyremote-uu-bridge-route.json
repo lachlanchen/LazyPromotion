@@ -221,7 +221,7 @@
     },
     "owned_blog": {
       "state": "live_exact_fit_routes",
-      "repository_commit": "3138859",
+      "repository_commit": "f6f0803",
       "placements": [
         {
           "post_id": 1133,
@@ -251,10 +251,21 @@
             "zh"
           ],
           "fit": "Simplified-Chinese readers asking specifically whether and how the official UU client can control an Ubuntu GNOME desktop"
+        },
+        {
+          "post_id": 3819,
+          "subject": "Remote Access for a Small Team: Decide Roles Before Choosing RDP or a VPN",
+          "url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html",
+          "locales": [
+            "en",
+            "zh",
+            "ja"
+          ],
+          "fit": "Small teams deciding between shared files, one web application, SSH, and full remote desktops while preserving individual identity, offboarding, and recovery"
         }
       ],
       "copy_boundary": "Each edition or guide finishes the relevant technical answer first, uses at most one first-person offer paragraph, and states the fixed price, metadata-only first contact, and the deployment and hardware exclusions.",
-      "verification": "The six established locale routes and the new question-shaped Simplified-Chinese UU guide returned HTTP 200 and contained their exact owned paths after WordPress publication. The new guide identifies the bridge as non-native, keeps its verified version boundary, links the public compatibility form, and separates LazyRemote from the official-UU route. All 31 BLOG unit tests passed; BLOG commit 6763eff."
+      "verification": "The established remote-desktop, DDNS, and UU routes remain live. The new role-matrix guide and its reviewed Simplified-Chinese and Japanese editions returned HTTP 200 with the exact tracked review links after WordPress publication. It turns the observed small-team need into a standalone access, offboarding, and recovery method before one exact-fit offer paragraph. All 31 BLOG unit tests passed; latest BLOG commit f6f0803."
     },
     "postiz": {
       "state": "not_queued",

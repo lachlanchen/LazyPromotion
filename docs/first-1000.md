@@ -257,6 +257,14 @@ backup administration, and recovery ownership. It contains no link, product,
 offer, private message, or follow-up pitch. This is a helpful interaction and
 public-profile trust signal, not buyer intent, a lead, or revenue.
 
+The same need now has a reusable
+[small-team remote-access guide](https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html)
+in English, Simplified Chinese, and Japanese. It starts with a role matrix,
+separates files, web apps, SSH, and full desktops, then tests account removal,
+active-session revocation, logs, backups, and an independent recovery path. One
+exact-fit Network Fit Review paragraph appears only after the complete method.
+BLOG commit `f6f0803`; publication is not an inquiry, lead, or sale.
+
 The [complete sample report](https://remote.lazying.art/sample-report.html)
 shows the decision, listener and identity maps, findings, acceptance checklist,
 and rollback before contact. It uses a synthetic project-owned topology, is

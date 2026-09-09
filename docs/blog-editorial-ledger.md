@@ -336,6 +336,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `2906a8c` | 3791 | Published a multilingual OCR evaluation guide in English, Simplified Chinese, and Japanese |
 | `d070282` | 3792 | Published the source-first bilingual lecture workflow guide in English, Traditional Chinese, and Japanese |
 | `3837aa6` | 3803 | Published the Cantonese subtitle delivery guide in English, Traditional Chinese, and Japanese |
+| `f6f0803` | 3819 | Published a role-first small-team remote-access guide in English, Simplified Chinese, and Japanese, with offboarding and recovery tests before one exact-fit review path |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

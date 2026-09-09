@@ -179,6 +179,13 @@ followed. The route remains a low-frequency research input.
   8–12-week project plan and course-selection criteria without a link or product
   mention because LazyingArtAgent is only a partial fit. The exact reply was
   visibly delivered once. It is a helpful interaction, not a lead or sale.
+- A current small-business server question asked how several remote users could
+  receive different access levels. One value-only reply supplied the role and
+  offboarding matrix without a link. The resulting
+  [owned guide](https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html)
+  now answers the broader decision in English, Simplified Chinese, and Japanese,
+  with one exact-fit LazyRemote review path only after the complete method. The
+  interaction and publication are not a fit inquiry, lead, or sale.
 
 ## Operating decision
 

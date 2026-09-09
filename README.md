@@ -62,7 +62,7 @@ never count as revenue.
 | [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated funnel, public graph, and first-party demand signals |
 | [`owned_monitor.py`](owned_monitor.py) and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring and private fit-check intake |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome review desktop |
-| [`application_watch.py`](application_watch.py) | Read-only due-review report for sent applications; never opens mail or follows up |
+| [`application_watch.py`](application_watch.py) and [`application_inbox_monitor.py`](application_inbox_monitor.py) | Due-review schedule plus read-only aggregate matching for known application threads; never opens mail or follows up |
 | [`docs/open-source-evaluation.md`](docs/open-source-evaluation.md) | Auditable open-source and MCP tool choices |
 
 ## Quick start

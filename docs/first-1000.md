@@ -149,6 +149,12 @@ The [complete sample report](https://remote.lazying.art/sample-report.html)
 shows the decision, listener and identity maps, findings, acceptance checklist,
 and rollback before contact. It uses a synthetic project-owned topology, is
 explicitly not a customer result, and contains no private fleet data.
+At the same September 9 check, the separate LazyTunnel repository still had no
+public stars or forks. Its owner-visible report showed zero views and 41 clones
+from 18 unique cloners, while the newly published ten-asset v0.2.0 release had
+one asset download. Those very early figures support keeping the UU bridge as
+the discovery path and improving its Simplified-Chinese handoff; they do not
+show buyer intent, product adoption, or revenue.
 
 A current-job recheck prevented two weak applications. Altimate.ai's indexed
 Technical Content Creator contract is no longer on its official board and its

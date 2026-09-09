@@ -3,7 +3,7 @@
   "version": 1,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
-    "captured_at": "2026-09-09T09:54:41Z",
+    "captured_at": "2026-09-09T10:41:16Z",
     "repository": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
     "public_stars": 10,
     "public_forks": 3,
@@ -28,6 +28,29 @@
         "views": 461,
         "unique_visitors": 362
       }
+    },
+    "lazyremote_core": {
+      "repository": "https://github.com/lachlanchen/LazyTunnel",
+      "public_stars": 0,
+      "public_forks": 0,
+      "owner_visible_traffic": {
+        "window": "The GitHub traffic API's current rolling window, whose daily series ended on 2026-09-07 when checked",
+        "views": 0,
+        "unique_visitors": 0,
+        "clones": 41,
+        "unique_cloners": 18
+      },
+      "release": {
+        "tag": "v0.2.0",
+        "published_at": "2026-09-09T06:12:28Z",
+        "assets": 10,
+        "download_count": 1
+      },
+      "package": {
+        "name": "@lazyingart/lazytunnel",
+        "latest": "0.3.0"
+      },
+      "interpretation": "The core is published and installable, but its public attention is still too early to support a demand or conversion claim. Clone counts can include automation; the single release-asset download is not a lead or sale."
     },
     "interpretation": "The concentration in Google referrals and the Simplified Chinese README is concrete discovery evidence. Stars, forks, views, clones, and automated clone activity are attention signals, not buyer intent, leads, sales, or revenue."
   },

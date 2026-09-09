@@ -31,7 +31,7 @@ pid_alive() {
   pid="$(<"$file")"
   [[ "$pid" =~ ^[0-9]+$ ]] || return 1
   [[ -r "/proc/$pid/cmdline" ]] || return 1
-  cmdline="$(tr '\0' ' ' <"/proc/$pid/cmdline" 2>/dev/null)" || return 1
+  cmdline="$(tr '\0' ' ' 2>/dev/null <"/proc/$pid/cmdline")" || return 1
   grep -Fq -- "$marker" <<<"$cmdline"
 }
 

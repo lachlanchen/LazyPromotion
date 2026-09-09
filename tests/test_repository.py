@@ -798,7 +798,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 18)
+        self.assertEqual(campaign["version"], 19)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -877,7 +877,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 18)
+        self.assertEqual(campaign["version"], 19)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -910,7 +910,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["price"], "USD 250")
         self.assertEqual(
             offer["website_commit"],
-            "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
+            "6f22bc0ccb8d1501c03c41bf0b448fd1acd6ee32",
         )
         self.assertEqual(
             offer["fit_check_url"], "https://lazying.art/story-clip/fit-check/"
@@ -918,11 +918,13 @@ class RepositoryTests(unittest.TestCase):
         intake = offer["encrypted_intake"]
         self.assertEqual(
             intake["state"],
-            "historically_verified_direct_route_temporarily_disabled",
+            "live_verified_review_then_encrypted_submit",
         )
-        self.assertFalse(intake["direct_submit_available"])
-        self.assertTrue(intake["key_rotation_required"])
+        self.assertTrue(intake["direct_submit_available"])
+        self.assertFalse(intake["key_rotation_required"])
         self.assertEqual(intake["offer"], "story_clip")
+        self.assertIn("6f22bc0c", intake["current_frontend_commit"])
+        self.assertIn("34300566025", intake["deployment_run"])
         self.assertEqual(intake["record_schema"], "fit-check-record/v2")
         self.assertTrue(intake["visible_synthetic_round_trip_verified"])
         self.assertEqual(intake["private_copy_mode"], "0600")
@@ -2748,7 +2750,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 18)
+        self.assertEqual(campaign["version"], 19)
         self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])

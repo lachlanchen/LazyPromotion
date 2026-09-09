@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -199,30 +199,33 @@
   "owned_offer": {
     "state": "live",
     "url": "https://lazying.art/story-clip/",
-    "website_commit": "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
+    "website_commit": "6f22bc0ccb8d1501c03c41bf0b448fd1acd6ee32",
     "fit_check_url": "https://lazying.art/story-clip/fit-check/",
     "price": "USD 250",
     "scope": "One customer-owned recording up to 30 minutes, two timestamped candidate moments, then one buyer-selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, a caption/source ledger, and one bounded correction pass.",
     "qualification": "Local review followed by a prepared email or copied request before source transfer or payment",
     "encrypted_intake": {
-      "state": "historically_verified_direct_route_temporarily_disabled",
+      "state": "live_verified_review_then_encrypted_submit",
+      "checked_at": "2026-09-09T01:50:23Z",
       "historical_verification_date": "2026-09-05",
-      "direct_submit_available": false,
-      "current_frontend_commit": "e4a1c36b3efa93399b6a5754f3692c1802a211c7",
-      "key_rotation_required": true,
+      "direct_submit_available": true,
+      "current_frontend_commit": "6f22bc0ccb8d1501c03c41bf0b448fd1acd6ee32",
+      "key_rotation_required": false,
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "offer": "story_clip",
       "record_schema": "fit-check-record/v2",
       "backend_commit": "0463dcb2470ad1c908597b7f4d636cf2d33013a1",
-      "frontend_commit": "3ff43e4afc0dfd4512629443af198345696c170e",
+      "frontend_commit": "6f22bc0ccb8d1501c03c41bf0b448fd1acd6ee32",
       "receiver_commit": "f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34300566025",
       "visible_synthetic_round_trip_verified": true,
       "private_copy_mode": "0600",
       "remote_spool_empty": true,
       "synthetic_local_payload_artifacts_removed": true,
       "automatic_reply": false,
       "lead_or_sale_observed": false,
-      "received_revenue_usd": 0
+      "received_revenue_usd": 0,
+      "policy": "The September 9 labeled synthetic metadata request passed the live review and explicit confirmation gates, authenticated and decrypted as the Story Clip route, persisted in mode 0600, and deleted only the unchanged remote envelope. A second receiver check found no pending envelope, and the exact local synthetic payload copies were removed. This is operational evidence, not a customer inquiry, qualification, sale, delivery, or revenue."
     },
     "inquiry_monitor": "Direct encrypted intake is disabled during key rotation; prospective buyers review locally and continue through the prepared email or copy route",
     "homepage": {

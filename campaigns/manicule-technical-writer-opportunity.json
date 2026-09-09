@@ -43,6 +43,12 @@
     "attachments_sent": 0,
     "article_links_sent": 1,
     "resume_sent": false,
+    "article_verification": {
+      "checked_at": "2026-09-09T10:02:18Z",
+      "state": "live_http_200",
+      "maintenance_commit": "f7a3d9e",
+      "result": "The live article keeps its first-person account and project evidence. Its redundant in-body H1 was removed so the WordPress title is not repeated, and the generated description now begins with the article rather than duplicating the title. GitHub, npm package metadata, and the project website remained reachable at the check."
+    },
     "automatic_follow_up": false,
     "review_after": "2026-09-16",
     "policy": "Do not resubmit. If Manicule replies, review the exact paid-trial scope, rate, deadline, interview access, attribution, IP, revision, cancellation, and payment terms before accepting work."

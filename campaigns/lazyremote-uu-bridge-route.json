@@ -1,7 +1,7 @@
 {
   "id": "lazyremote-uu-bridge-route",
   "version": 1,
-  "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, then measure whether that exact need continues beyond repository attention before creating a paid service.",
+  "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-09T07:50:26Z",
     "repository": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
@@ -59,10 +59,35 @@
     "verification": "All 145 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit."
   },
   "possible_offer": {
-    "state": "not_live",
-    "candidate": "A software-only topology and recovery audit for one relay and up to three existing endpoints",
-    "activation_gate": "Require an explicit remote-access problem or qualified inquiry, a public bounded proof, exact delivery and support terms, and a reviewed price before publishing the offer.",
-    "hardware_included": false
+    "state": "live_fit_first",
+    "name": "LazyRemote Network Fit Review",
+    "url": "https://remote.lazying.art/#review",
+    "price": "USD 250",
+    "scope": "One reachable relay and up to three existing customer-owned computers",
+    "deliverables": [
+      "Topology and listener-exposure map",
+      "Key-role and host-verification review",
+      "Recovery, rollback, and acceptance checklist"
+    ],
+    "delivery": "Ten business days after written scope and confirmed payment",
+    "corrections": "One consolidated list of up to ten factual corrections within seven calendar days",
+    "cancellation": "Full refund before work begins; unstarted stages refunded after work begins",
+    "retention": "Temporary redacted configuration excerpts are deleted within fourteen calendar days after delivery, cancellation, or refund",
+    "excluded": [
+      "deployment",
+      "hardware",
+      "relay hosting",
+      "router or firewall changes",
+      "wake-on-LAN",
+      "desktop capture",
+      "ongoing support",
+      "connectivity or reboot guarantees for an unseen network"
+    ],
+    "intake": "Free metadata-only email fit check; do not attach passwords, private keys, or unredacted configuration",
+    "payment_policy": "Request payment only after the fit check and exact written scope are accepted",
+    "hardware_included": false,
+    "published_commit": "13eda87cf14acee07b98d6c8ea855043a9be71b9",
+    "verification": "GitHub Pages deployment 34329885679 completed successfully; the live HTTPS page returned 200 and contained the exact offer, fit-check action, and metadata-only boundary. A full-page 1440-pixel render was reviewed locally before the temporary image and server were removed."
   },
   "channels": {
     "github": {

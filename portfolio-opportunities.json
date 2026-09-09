@@ -279,12 +279,12 @@
     {
       "id": "private-multidevice-remote-access",
       "title": "Private multi-device remote access",
-      "state": "candidate",
+      "state": "active",
       "buyer": "A self-hosted developer, small lab, or technical team that needs named private computers reachable from desktop and mobile clients",
       "need": "Keep SSH, file transfer, and selected browser tools available across NAT or CGNAT without publishing desktop ports or tying the transport to one remote-control app",
       "projects": ["LazyTunnel", "LazyEdge", "novnc-manager", "kvm-qemu-workstation", "uu-remote-ubuntu-bridge"],
       "first_deliverable": "A topology and recovery audit for one relay and up to three existing endpoints, covering listener exposure, key roles, host-key pinning, client paths, rollback, and an exact verification plan before any deployment",
-      "first_test": "Use the public LazyRemote release and current self-hosting questions to publish one complete security and recovery guide, then activate a paid setup scope only for a current buyer whose endpoint and network-policy constraints fit",
+      "first_test": "Measure metadata-only fit checks from the public LazyRemote route and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review",
       "proof": [
         "https://remote.lazying.art/",
         "https://github.com/lachlanchen/LazyTunnel",

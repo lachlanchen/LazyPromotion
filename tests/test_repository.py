@@ -30,9 +30,9 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_all_seven_active_routes(self):
+    def test_first_thousand_plan_names_all_eight_active_routes(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: seven focused service routes", body)
+        self.assertIn("# First USD 1,000: eight focused service routes", body)
         for offer in (
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
@@ -41,9 +41,10 @@ class RepositoryTests(unittest.TestCase):
             "AI Clip Assembly Pilot",
             "Book Specimen Sprint",
             "OpenHI Software Reproducibility Sprint",
+            "LazyRemote Network Fit Review",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these seven routes", body)
+        self.assertIn("payments across these eight routes", body)
 
     def test_openhi_reproducibility_campaign_is_bounded(self):
         campaign = json.loads(
@@ -100,7 +101,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(
             campaign["owned_route"]["tracking_campaign"], "uu_remote_bridge"
         )
-        self.assertEqual(campaign["possible_offer"]["state"], "not_live")
+        self.assertEqual(campaign["possible_offer"]["state"], "live_fit_first")
+        self.assertEqual(campaign["possible_offer"]["price"], "USD 250")
+        self.assertIn("metadata-only", campaign["possible_offer"]["intake"])
+        self.assertIn("deployment", campaign["possible_offer"]["excluded"])
         self.assertFalse(campaign["possible_offer"]["hardware_included"])
         self.assertFalse(
             campaign["channels"]["automatic_community_outreach"]["allowed"]

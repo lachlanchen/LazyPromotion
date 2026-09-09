@@ -51,7 +51,7 @@ class InventoryTests(unittest.TestCase):
             "USD 250 collection-fit sprint after a free fit check; existing hardware only",
             priority,
         )
-        self.assertIn("confirmed payments totalling USD 1,000 across seven bounded services", priority)
+        self.assertIn("confirmed payments totalling USD 1,000 across eight bounded services", priority)
         self.assertIn("[LazyEdit + LocalVideoGen + Musia](https://lazying.art/story-clip/)", priority)
         self.assertIn(
             "USD 250 Story Clip Pilot after a metadata-only free fit check",

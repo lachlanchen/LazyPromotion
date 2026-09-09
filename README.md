@@ -18,7 +18,7 @@ with relevant open-source work without turning communities into a sales queue.
 The repository also keeps a public inventory of 108 non-archived
 `lachlanchen` source repositories and combines them into buyer-shaped,
 evidence-gated opportunities across code, books, knowledge graphs, research,
-media, language learning, and local AI. Seven fixed-scope service routes support
+media, language learning, and local AI. Eight fixed-scope service routes support
 the first verified USD 1,000 goal; clicks, stars, applications, and queued posts
 never count as revenue.
 
@@ -57,7 +57,7 @@ never count as revenue.
 | [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
-| [`docs/first-1000.md`](docs/first-1000.md) | Seven bounded USD 250/USD 500 service routes and truthful milestone math |
+| [`docs/first-1000.md`](docs/first-1000.md) | Eight bounded USD 250/USD 500 service routes and truthful milestone math |
 | [`docs/paid-need-decision-2026-09-09.md`](docs/paid-need-decision-2026-09-09.md) | Current direct-route screen, evidence gaps, and submission gates |
 | [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated funnel, public graph, and first-party demand signals |
 | [`owned_monitor.py`](owned_monitor.py) and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring and private fit-check intake |

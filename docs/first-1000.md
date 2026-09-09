@@ -1,4 +1,4 @@
-# First USD 1,000: seven focused service routes
+# First USD 1,000: eight focused service routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
@@ -9,8 +9,10 @@ Specimen Sprint** adds a **USD 250** route for one final, rights-cleared chapter
 tested as print and reflowable output. The **OpenHI Software Reproducibility Sprint**
 adds a software-only **USD 500** route for one existing workstation,
 one rights-cleared dataset, and one named repository pipeline stage. Each route
-has a fixed scope and project-owned proof. The milestone can be two USD 500
-sprints, four USD 250 sprints, or any confirmed combination of payments across these seven routes
+has a fixed scope and project-owned proof. The **LazyRemote Network Fit Review**
+adds a software-only **USD 250** route for one reachable relay and up to three
+existing customer-owned computers. The milestone can be two USD 500
+sprints, four USD 250 sprints, or any confirmed combination of payments across these eight routes
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
@@ -132,9 +134,14 @@ Google supplied 593 views, and the Simplified Chinese README was the leading
 path with 461 views. The bridge README and all ten translations now offer one
 tracked, clearly separate path to LazyRemote and its open-source LazyTunnel
 core. The wording does not present LazyRemote as NetEase software or promise it
-replaces UU. This is useful discovery evidence, not a lead or paid offer, and
-the candidate topology-and-recovery audit remains unpublished until an explicit
-buyer need and complete service boundary exist.
+replaces UU. This is useful discovery evidence, not a lead. The resulting
+[LazyRemote Network Fit Review](https://remote.lazying.art/#review) is now a
+fixed USD 250, software-only route for one reachable relay and up to three
+existing computers. It returns a topology and exposure map, a key-role and
+host-verification review, and recovery, rollback, and acceptance checks. A free
+metadata-only fit check precedes written scope and payment; deployment, hardware,
+hosting, network-policy changes, wake-on-LAN, desktop capture, ongoing support,
+and guarantees for an unseen topology remain outside the review.
 
 A current-job recheck prevented two weak applications. Altimate.ai's indexed
 Technical Content Creator contract is no longer on its official board and its
@@ -791,8 +798,9 @@ portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. LKT, manuscript redline, the
 bilingual lecture pack, Story Clip, and AI Clip Assembly are the five service
 chooser routes; the Book Specimen Sprint is reached from its chapter-first guide,
-and the OpenHI software sprint from the homepage's existing OpenHI proof. A
-candidate advances only after a current need and a small first test are found.
+and the OpenHI software sprint from the homepage's existing OpenHI proof. The
+LazyRemote review is reached only from its exact remote-access route. A candidate
+advances only after a current need and a small first test are found.
 
 ## Truthful measurement
 

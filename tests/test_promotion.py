@@ -69,7 +69,8 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertTrue(ranked)
         self.assertEqual(ranked[0]["project"]["id"], "github-lazytunnel")
-        self.assertIn("candidate, not a live paid offer", ranked[0]["project"]["reply_context"])
+        self.assertIn("fixed USD 250 software-only review", ranked[0]["project"]["reply_context"])
+        self.assertIn("metadata-only fit check", ranked[0]["project"]["reply_context"])
         self.assertIn("separate from NetEase UU Remote", ranked[0]["project"]["reply_context"])
 
     def test_uu_remote_linux_need_matches_only_vendor_bridge(self):

@@ -184,6 +184,13 @@ PRIORITIES = [
         "url": "https://lazying.art/openhi-reproducibility/",
     },
     {
+        "work": "LazyRemote + LazyTunnel",
+        "need": "Review a private remote-access topology before opening desktop or management ports",
+        "audience": "Self-hosted developers, small labs, and technical teams with one relay and up to three existing computers",
+        "route": "USD 250 Network Fit Review after a metadata-only free fit check; deployment, hardware, hosting, and ongoing support excluded",
+        "url": "https://remote.lazying.art/#review",
+    },
+    {
         "work": "Musia + LocalVideoGen",
         "need": "Local-first music localization and controllable video generation",
         "audience": "Creators who already have a specific song, stem, or video workflow problem",
@@ -272,10 +279,11 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across seven "
+            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across eight "
             "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
             "Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen "
-            "Sprint, AI Clip Assembly, and the OpenHI software reproducibility sprint. "
+            "Sprint, AI Clip Assembly, the OpenHI software reproducibility sprint, and the "
+            "LazyRemote Network Fit Review. "
             "The eInk inquiry and Figurine checkout "
             "remain separate offers, not competing calls to action. Open-source replies "
             "should optimize for a solved problem, not for extracting a donation. GitHub "

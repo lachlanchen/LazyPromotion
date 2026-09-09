@@ -33,7 +33,7 @@
         "boundary": "Scientific-imaging research code, not an image-quality product or medical deployment"
       },
       {
-        "url": "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/edge-image-quality",
+        "url": "https://github.com/lachlanchen/LazyPromotion/tree/4a0efb80aa09fa84be72d6e35482ae4264190201/examples/edge-image-quality",
         "role": "Executed CPU baseline with deterministic fixtures, reason codes, benchmark, raw-image FastAPI boundary, Dockerfile, tests, and hashes",
         "boundary": "Project-owned synthetic evidence; not clinical data, customer work, diagnostic validation, or incorrect-view proof"
       },

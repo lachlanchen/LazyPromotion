@@ -92,7 +92,7 @@
   },
   "owned_route": {
     "state": "live_committed",
-    "repository_commit": "35749af3237721481f9353c9094483e4e5cba21e",
+    "repository_commit": "b2bb4269f5ef8a197d9ba43293d9e14ce08b6dbd",
     "source": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
     "destination": "https://remote.lazying.art/",
     "tracking_campaign": "uu_remote_bridge",
@@ -113,6 +113,15 @@
       ],
       "boundary": "The profile presents LazyRemote, the open-source core, and the UU compatibility bridge as related but distinct projects. A profile view or click is attention, not a lead or sale."
     },
+    "simplified_chinese_conversion_handoff": {
+      "state": "live_direct_review_anchor",
+      "source_url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge/blob/main/i18n/README.zh-Hans.md",
+      "destination_url": "https://remote.lazying.art/zh-Hans/?utm_source=github&utm_medium=readme&utm_campaign=uu_remote_bridge&utm_content=independent_option_zh_hans#review",
+      "source_commit": "b2bb4269f5ef8a197d9ba43293d9e14ce08b6dbd",
+      "reason": "The repository's highest-traffic language path now lands on the localized proof-first fixed review instead of stopping at the general product hero.",
+      "verification": "The live destination returned HTTP 200 and contained the review anchor, exact USD 250 scope, Chinese metadata-only fit-check action, and no-password or private-key boundary. All 146 repository tests passed with one opt-in systemd test skipped.",
+      "boundary": "The free open-source product explanation remains visible. A link view or click is attention, not an inquiry, lead, payment, or revenue."
+    },
     "placements": [
       "README.md",
       "i18n/README.ar.md",
@@ -127,7 +136,7 @@
       "i18n/README.zh-Hant.md"
     ],
     "copy_boundary": "Each language presents LazyRemote as a separate vendor-independent option and keeps the current repository focused on compatibility with the official UU client.",
-    "verification": "All 145 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
+    "verification": "All 146 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
     "compatibility_need_capture": {
       "state": "live_bilingual_public_form",
       "source_commit": "2b5d31774c9a9751bbb7873fedb828ec037c4f4c",

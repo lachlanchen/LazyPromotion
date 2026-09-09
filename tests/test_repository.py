@@ -119,6 +119,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(profile_route["editions"], 11)
         self.assertEqual(len(profile_route["links"]), 3)
         self.assertIn("not a lead or sale", profile_route["boundary"])
+        chinese_handoff = campaign["owned_route"][
+            "simplified_chinese_conversion_handoff"
+        ]
+        self.assertEqual(chinese_handoff["state"], "live_direct_review_anchor")
+        self.assertTrue(chinese_handoff["destination_url"].endswith("#review"))
+        self.assertIn("utm_campaign=uu_remote_bridge", chinese_handoff["destination_url"])
+        self.assertIn("146 repository tests", chinese_handoff["verification"])
+        self.assertIn("not an inquiry", chinese_handoff["boundary"])
         capture = campaign["owned_route"]["compatibility_need_capture"]
         self.assertEqual(capture["state"], "live_bilingual_public_form")
         self.assertEqual(len(capture["placements"]), 2)

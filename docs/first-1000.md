@@ -181,6 +181,16 @@ contractor and payout eligibility, rights, assistance policy, revisions, and
 payment trigger before accepting work. This is one outbound application—not
 acceptance, an assignment, publication, payment, or revenue.
 
+Alignerr's current remote Software Testing Analyst listing advertises USD
+40–120 per hour for 10–40 hours a week and matches the public testing,
+Linux, failure-analysis, and structured-reporting evidence. A one-page resume
+was prepared and reviewed, but the signup checkbox also accepts binding
+arbitration and a broad, irrevocable, perpetual interview and likeness release.
+It remains unchecked: no account, upload, identity submission, interview, or
+application was made. This route requires the operator's explicit legal choice,
+and the listed range is not a contracted rate, allocated project, payment, or
+revenue.
+
 The UU Remote Ubuntu bridge now supplies a separate product-discovery signal.
 Its public repository had ten stars and three forks when checked on September
 9, including five stars since September 3. The owner-visible rolling traffic
@@ -223,7 +233,11 @@ The highest-traffic Chinese route now opens a Chinese subject and six-field
 metadata template rather than an English intake form. It still asks for no
 password, private key, or unredacted configuration. LazyTunnel commit
 `2f2a38b`; Pages run `34350371886` succeeded. This removes one language obstacle
-without creating or implying an inquiry.
+without creating or implying an inquiry. The Simplified-Chinese UU README now
+lands its independent-option link directly on that localized review section
+instead of stopping at the general product hero. UU bridge commit `b2bb426`;
+all 146 tests passed with the opt-in systemd test skipped. The free app remains
+visible, and the route change is not an inquiry or sale.
 A concise [Chinese guide answering whether UU can be used on Ubuntu](https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html)
 is also live. It explains the Wine/RDP/input path, the exact verified host and
 UU boundary, safe install route, update discipline, bilingual compatibility

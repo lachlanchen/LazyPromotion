@@ -1,0 +1,78 @@
+{
+  "id": "alignerr-software-testing-analyst",
+  "version": 1,
+  "objective": "Apply the public testing, Linux, failure-analysis, and structured-reporting evidence to a current paid software-testing contract without accepting personal legal terms by proxy.",
+  "source_need": {
+    "captured_at": "2026-09-09T14:25:00Z",
+    "url": "https://www.alignerr.com/jobs/a47504ed-e586-4912-99ba-e8ff824e1071",
+    "title": "Software Testing Analyst",
+    "state": "official_current_freelance_listing",
+    "published_rate": "USD 40–120 per hour",
+    "published_commitment": "10–40 hours per week",
+    "eligibility": "Remote; the listing asks for the ability to read and run code, identify bugs and edge cases, and document structured findings. It says formal QA certification is not required.",
+    "process_url": "https://www.alignerr.com/process",
+    "terms_url": "https://www.alignerr.com/privacy",
+    "boundary": "The headline range, flexible schedule, and weekly-payout wording are listing terms, not an accepted rate, guaranteed project allocation, supported Hong Kong payout route, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "uu-remote-ubuntu-bridge",
+      "LazyPromotion",
+      "LazyTunnel",
+      "LazyEdge",
+      "OpenHI"
+    ],
+    "supported_now": [
+      "Reproducing failures and separating observed behavior from assumptions",
+      "Python, JavaScript and TypeScript, shell, Linux, Git, SQL, browser, image-processing, and CI workflows",
+      "Automated regression tests, unsafe-input boundaries, rollback checks, and concise issue reporting",
+      "Current public examples with 146 and 472 passing test suites"
+    ],
+    "not_proven": [
+      "Selection by Alignerr",
+      "Formal employed QA experience or a client testing result",
+      "A project allocation, its billing method, or its actual hourly rate",
+      "Hong Kong contractor and payout eligibility"
+    ],
+    "claim_boundary": "The public repositories support hands-on testing and failure-analysis capability. They do not prove acceptance, project availability, a contracted rate, or revenue."
+  },
+  "application": {
+    "state": "prepared_not_submitted_terms_review_required",
+    "prepared_at": "2026-09-09T14:26:00Z",
+    "resume": {
+      "state": "one_page_pdf_reviewed",
+      "storage": "ignored private application packet",
+      "public_examples": 5,
+      "boundary": "The resume labels public examples as project-owned evidence rather than client QA credits."
+    },
+    "visible_gate": "The signup page disables Google or LinkedIn continuation until one checkbox accepts the Terms of Service, Privacy Policy, and Release Agreement.",
+    "terms_gate": {
+      "state": "not_accepted",
+      "material_terms": [
+        "binding individual arbitration and class-action waiver, with a time-limited postal opt-out process",
+        "an unlimited, irrevocable, worldwide, perpetual license and release covering a recorded interview, likeness, and interview materials",
+        "a broad license over user submissions",
+        "personal responsibility for accurate account information, taxes, account security, and later consulting terms",
+        "no obligation to admit the applicant, allocate projects, or pay before a consulting agreement"
+      ],
+      "policy": "Do not accept these personal legal terms, create the account, upload the resume, submit identity documents, or begin an interview without the operator's explicit decision at this gate."
+    },
+    "submission_attempts": 0,
+    "account_created": false,
+    "resume_uploaded": false,
+    "identity_submitted": false,
+    "interview_started": false,
+    "automatic_follow_up": false
+  },
+  "funnel": {
+    "outbound_application_count": 0,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "assessment_invited": false,
+    "contract_observed": false,
+    "project_allocated": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

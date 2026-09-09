@@ -1,0 +1,84 @@
+{
+  "id": "neverinstall-technical-writer-opportunity",
+  "version": 1,
+  "objective": "Earn a paid cloud-developer-tools article by presenting a small, relevant technical-writing portfolio without drafting speculative unpaid work.",
+  "source_need": {
+    "captured_at": "2026-09-09T11:00:00Z",
+    "url": "https://blog.neverinstall.com/neverinstall-technical-writer-program/",
+    "application_url": "https://form.typeform.com/to/tfSSKVz8",
+    "title": "Neverinstall Technical Writer Program",
+    "state": "official_program_page_with_live_accepting_form",
+    "program_page_published_at": "2022-08-01T12:31:00Z",
+    "program_page_modified_at": "2022-09-01T12:10:52Z",
+    "published_rate": "USD 100–250 for each content piece Neverinstall approves for publication, depending on scope, complexity, length, and detail",
+    "published_topics": [
+      "Developer tools on the cloud",
+      "Application streaming and cloud personal computing",
+      "Cloud data privacy, security, governance, and risk"
+    ],
+    "published_process": "Apply with prior work, preferably at least two published pieces; accepted candidates agree a topic, scope, and outcomes with the editorial and engineering team before writing; payment occurs only after review approval and publication.",
+    "eligibility_boundary": "The writer page and form state no country restriction and request no location, but they do not explicitly guarantee Hong Kong payout support or name a payout rail.",
+    "rights_boundary": "The author keeps ownership and credit; Neverinstall receives an unlimited publication and promotion license. Private-channel republication requires a canonical link to Neverinstall, and the same work may not be published with another organization.",
+    "freshness_boundary": "The official Typeform rendered as open and accepted one response on September 9, 2026, while the underlying program page was last modified in 2022. Treat the route as potentially unattended until a human editor replies."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdge",
+      "LazyTunnel",
+      "BLOG"
+    ],
+    "public_proof": [
+      "https://lazying.art/work/#writing",
+      "https://blog.lazying.art/html/computer_internet/software/3603/i-got-tired-of-agent-limits-so-i-built-agintiflow.html",
+      "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+      "https://github.com/lachlanchen/LazyEdge",
+      "https://github.com/lachlanchen/LazyTunnel"
+    ],
+    "supported_now": [
+      "Three live technical articles collected on one public writing shelf",
+      "A default-deny cloud edge with exact host, method, and path allowlists",
+      "A self-hosted SSH relay for private devices, terminals, and noVNC viewers",
+      "First-person developer-tool writing with public source and operational boundaries"
+    ],
+    "candidate_angle": "Expose a private developer tool through a default-deny cloud edge without opening home ports.",
+    "not_proven": [
+      "Acceptance into the writer program",
+      "A commissioned or approved topic",
+      "Hong Kong payout support",
+      "Permission for any particular AI-assisted drafting workflow",
+      "Publication, payment, recurring assignments, or customer results"
+    ],
+    "claim_boundary": "The public projects and articles support the proposed domain fit. They do not prove program acceptance, a commissioned article, a publication outcome, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T11:15:51Z",
+    "method": "One response through the official Typeform with public GitHub, social, and selected-work URLs; no account, resume, video, identity document, draft, or location claim",
+    "delivery_evidence": "The live five-field form was completed in the isolated visible browser. Its URL validator rejected a comma-separated value before transmission; the portfolio answer was corrected to the live selected-work URL, the validated Submit control was clicked once, and the official thank-you screen said the application was received and may take up to one week to review.",
+    "public_urls_sent": [
+      "https://github.com/lachlanchen",
+      "https://x.com/lazyingart",
+      "https://lazying.art/work/"
+    ],
+    "portfolio_articles_visible": 3,
+    "resume_sent": false,
+    "video_sent": false,
+    "draft_sent": false,
+    "account_created": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-16",
+    "policy": "Do not resubmit or draft an article speculatively. If a human editor replies, confirm the exact topic, fee, payout rail and Hong Kong eligibility, deadline, revisions, attribution, canonical-link and reuse terms, and acceptable AI assistance before accepting work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "commissioned_topic_observed": false,
+    "contract_observed": false,
+    "publication_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}
+

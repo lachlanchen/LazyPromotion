@@ -128,6 +128,20 @@ and a fee of at least EUR 250 or equivalent must be settled in a written
 contract before a full article is drafted. This is an outbound proposal—not an
 editorial reply, contract, publication, payment, or revenue.
 
+A ninth direct application now uses the public LazyEdge, LazyTunnel, and
+technical-writing shelf for Neverinstall's official writer program. The
+published route pays USD 100–250 only for work approved for publication and
+prefers at least two prior articles; the new selected-work shelf links three
+live technical pieces through one clean portfolio URL. The official five-field
+Typeform accepted one application on September 9 and displayed its thank-you
+screen. No account, resume, video, identity document, speculative draft, or
+location claim was supplied. The program page itself dates to 2022 even though
+the form still accepts responses, and it does not name a payout rail or promise
+Hong Kong eligibility. Do not resubmit or write an article until a human editor
+agrees the topic, fee, payment method, revisions, reuse terms, and acceptable
+AI assistance. This remains an outbound application—not an assignment,
+publication, payment, or revenue.
+
 The UU Remote Ubuntu bridge now supplies a separate product-discovery signal.
 Its public repository had ten stars and three forks when checked on September
 9, including five stars since September 3. The owner-visible rolling traffic

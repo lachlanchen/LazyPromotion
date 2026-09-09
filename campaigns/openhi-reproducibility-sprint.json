@@ -64,6 +64,7 @@
     "automatic_reply": false,
     "backend_commit": "1c805a24fc18dc253d5001219efd81c3d1028830",
     "frontend_commit": "9d812b0692d3c27e5b37b37dd2e89464f85f0fa5",
+    "receiver_commit": "409dd0aa44473dda4b5043f3a7a6acf7f1f8f041",
     "synthetic_visible_round_trip_verified": true,
     "receiver_authenticated_decrypted_and_saved": true,
     "private_copy_mode": "0600",

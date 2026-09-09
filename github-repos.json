@@ -1172,7 +1172,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
-      "pushed_at": "2026-09-09T00:16:40Z",
+      "pushed_at": "2026-09-09T05:27:32Z",
       "topics": [
         "ai-tools",
         "ecosystem",
@@ -1188,7 +1188,7 @@
         "static-site",
         "website"
       ],
-      "updated_at": "2026-09-09T00:16:53Z",
+      "updated_at": "2026-09-09T05:27:38Z",
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-09T00:56:06Z",
+      "pushed_at": "2026-09-09T05:38:43Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-09T00:56:11Z",
+      "updated_at": "2026-09-09T05:39:33Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1417,23 +1417,28 @@
       "url": "https://github.com/lachlanchen/LazyTravel"
     },
     {
-      "description": "Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance.",
+      "description": "Private SSH and noVNC forwarding across Linux, macOS and Windows through your own cloud relay. Independent clients and an optional lightweight local GUI, with pinned identities, private credentials and desktop-preserving updates.",
       "homepage": "https://lazying.art",
       "name": "LazyTunnel",
       "primary_language": "Python",
-      "pushed_at": "2026-09-07T12:54:17Z",
+      "pushed_at": "2026-09-09T03:30:51Z",
       "topics": [
         "cloud-relay",
         "lazying-art",
+        "macos",
+        "novnc",
         "openssh",
         "python",
         "remote-access",
+        "remote-desktop",
         "reverse-tunnel",
         "self-hosted",
         "ssh",
-        "systemd"
+        "systemd",
+        "web-gui",
+        "windows"
       ],
-      "updated_at": "2026-09-07T12:54:40Z",
+      "updated_at": "2026-09-09T03:31:06Z",
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
     {
@@ -1857,7 +1862,7 @@
       "homepage": "https://lazying.art/openhi-kit.html",
       "name": "OpenHI",
       "primary_language": "Python",
-      "pushed_at": "2026-04-27T01:39:28Z",
+      "pushed_at": "2026-09-09T05:37:29Z",
       "topics": [
         "computer-vision",
         "event-camera",
@@ -1868,7 +1873,7 @@
         "python",
         "pytorch"
       ],
-      "updated_at": "2026-08-14T09:11:01Z",
+      "updated_at": "2026-09-09T05:37:38Z",
       "url": "https://github.com/lachlanchen/OpenHI"
     },
     {
@@ -2214,7 +2219,7 @@
       "homepage": "https://lazying.art",
       "name": "the-art-of-lazying",
       "primary_language": "Shell",
-      "pushed_at": "2026-09-07T22:47:48Z",
+      "pushed_at": "2026-09-09T03:31:08Z",
       "topics": [
         "automation",
         "language",
@@ -2227,7 +2232,7 @@
         "strategic",
         "workflows"
       ],
-      "updated_at": "2026-09-07T22:48:07Z",
+      "updated_at": "2026-09-09T03:31:18Z",
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
     {

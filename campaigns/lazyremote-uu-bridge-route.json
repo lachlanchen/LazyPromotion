@@ -1,0 +1,88 @@
+{
+  "id": "lazyremote-uu-bridge-route",
+  "version": 1,
+  "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, then measure whether that exact need continues beyond repository attention before creating a paid service.",
+  "demand_evidence": {
+    "captured_at": "2026-09-09T07:50:26Z",
+    "repository": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
+    "public_stars": 9,
+    "public_forks": 3,
+    "recent_star_window": {
+      "from": "2026-09-03T00:00:00Z",
+      "through": "2026-09-09T07:50:26Z",
+      "new_stars": 4
+    },
+    "owner_visible_traffic": {
+      "window": "The GitHub traffic API's current rolling window, whose daily series ended on 2026-09-07 when checked",
+      "views": 929,
+      "unique_visitors": 428,
+      "clones": 411,
+      "unique_cloners": 162,
+      "top_referrer": {
+        "name": "Google",
+        "views": 593,
+        "unique_visitors": 334
+      },
+      "top_path": {
+        "path": "/lachlanchen/uu-remote-ubuntu-bridge/blob/main/i18n/README.zh-Hans.md",
+        "views": 461,
+        "unique_visitors": 362
+      }
+    },
+    "interpretation": "The concentration in Google referrals and the Simplified Chinese README is concrete discovery evidence. Stars, forks, views, clones, and automated clone activity are attention signals, not buyer intent, leads, sales, or revenue."
+  },
+  "project_boundary": {
+    "uu_bridge": "A compatibility bridge for the official NetEase UU Remote Windows client on Ubuntu; it is not a native UU Linux port and is not affiliated with NetEase.",
+    "lazyremote": "A different vendor-independent product experience for private computers, SSH terminals, and noVNC viewers, powered by the separate self-hosted LazyTunnel core.",
+    "policy": "Do not imply that LazyRemote is NetEase software, that it replaces every UU feature, or that the UU bridge's attention proves demand for a paid LazyRemote offer."
+  },
+  "owned_route": {
+    "state": "live_committed",
+    "repository_commit": "35749af3237721481f9353c9094483e4e5cba21e",
+    "source": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
+    "destination": "https://remote.lazying.art/",
+    "tracking_campaign": "uu_remote_bridge",
+    "placements": [
+      "README.md",
+      "i18n/README.ar.md",
+      "i18n/README.de.md",
+      "i18n/README.es.md",
+      "i18n/README.fr.md",
+      "i18n/README.ja.md",
+      "i18n/README.ko.md",
+      "i18n/README.ru.md",
+      "i18n/README.vi.md",
+      "i18n/README.zh-Hans.md",
+      "i18n/README.zh-Hant.md"
+    ],
+    "copy_boundary": "Each language presents LazyRemote as a separate vendor-independent option and keeps the current repository focused on compatibility with the official UU client.",
+    "verification": "All 145 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit."
+  },
+  "possible_offer": {
+    "state": "not_live",
+    "candidate": "A software-only topology and recovery audit for one relay and up to three existing endpoints",
+    "activation_gate": "Require an explicit remote-access problem or qualified inquiry, a public bounded proof, exact delivery and support terms, and a reviewed price before publishing the offer.",
+    "hardware_included": false
+  },
+  "channels": {
+    "github": {
+      "state": "live_exact_fit_bridge"
+    },
+    "postiz": {
+      "state": "not_queued",
+      "policy": "Do not add a broad promotional post while the current queue is full and the cross-project route has no measured qualified inquiry."
+    },
+    "automatic_community_outreach": {
+      "state": "disabled",
+      "allowed": false
+    }
+  },
+  "funnel": {
+    "state": "attention",
+    "fit_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

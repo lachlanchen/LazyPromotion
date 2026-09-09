@@ -79,6 +79,35 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
 
+    def test_uu_bridge_routes_exact_interest_without_inventing_remote_revenue(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "lazyremote-uu-bridge-route.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        demand = campaign["demand_evidence"]
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(demand["public_stars"], 9)
+        self.assertEqual(demand["recent_star_window"]["new_stars"], 4)
+        self.assertEqual(
+            demand["owner_visible_traffic"]["top_referrer"]["name"], "Google"
+        )
+        self.assertIn(
+            "README.zh-Hans.md",
+            demand["owner_visible_traffic"]["top_path"]["path"],
+        )
+        self.assertEqual(len(campaign["owned_route"]["placements"]), 11)
+        self.assertEqual(
+            campaign["owned_route"]["tracking_campaign"], "uu_remote_bridge"
+        )
+        self.assertEqual(campaign["possible_offer"]["state"], "not_live")
+        self.assertFalse(campaign["possible_offer"]["hardware_included"])
+        self.assertFalse(
+            campaign["channels"]["automatic_community_outreach"]["allowed"]
+        )
+        self.assertFalse(campaign["funnel"]["qualified_lead_observed"])
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+
     def test_browser_operations_are_serialized_across_clients(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(
             browser, "BROWSER_LOCK_PATH", Path(tmp) / "browser-operation.lock"

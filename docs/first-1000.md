@@ -124,6 +124,18 @@ and a fee of at least EUR 250 or equivalent must be settled in a written
 contract before a full article is drafted. This is an outbound proposal—not an
 editorial reply, contract, publication, payment, or revenue.
 
+The UU Remote Ubuntu bridge now supplies a separate product-discovery signal.
+Its public repository had nine stars and three forks when checked on September
+9, including four stars since September 3. The owner-visible rolling traffic
+report showed 929 views from 428 visitors and 411 clones from 162 cloners;
+Google supplied 593 views, and the Simplified Chinese README was the leading
+path with 461 views. The bridge README and all ten translations now offer one
+tracked, clearly separate path to LazyRemote and its open-source LazyTunnel
+core. The wording does not present LazyRemote as NetEase software or promise it
+replaces UU. This is useful discovery evidence, not a lead or paid offer, and
+the candidate topology-and-recovery audit remains unpublished until an explicit
+buyer need and complete service boundary exist.
+
 A current-job recheck prevented two weak applications. Altimate.ai's indexed
 Technical Content Creator contract is no longer on its official board and its
 application URL now reports that the job was not found. The employer's remaining

@@ -142,6 +142,33 @@ agrees the topic, fee, payment method, revisions, reuse terms, and acceptable
 AI assistance. This remains an outbound application—not an assignment,
 publication, payment, or revenue.
 
+A tenth direct route is one concrete pitch to DigitalOcean's currently open
+Ripple Writers Program, which publishes USD 500 for each finally approved and
+published article after vendor onboarding. The proposal would put an
+AgInTiFlow control plane on one Droplet, connect it to a private LocalLLM worker
+through LazyEdge, preserve run receipts in Spaces, and measure latency,
+exposure, key rotation, tunnel-loss recovery, storage cost, and failed-worker
+recovery. The official Google pitch form denied access to the already signed-in
+project browser, so no form submission or access request was claimed. One
+fallback pitch was sent to the official program contact and Gmail visibly
+confirmed delivery. Do not build the DigitalOcean-specific article or accept
+vendor terms until a human confirms the topic, Hong Kong onboarding, payment
+method, credits, disclosure, and publication terms. This is an outbound pitch,
+not acceptance, publication, payment, or revenue.
+
+An eleventh direct route asks Apify to confirm the fit of a USD 500 article
+before building it. Its current call requests original, practical articles
+with working code and includes an AI-agent theme for an Actor called through
+Apify MCP. The proposal is a bounded public-web evidence Actor with typed I/O,
+URL and response-size limits, timestamps, source URLs, tests, and a complete
+Codex call. The official Discord invite was live, but joining required a new
+account, so no account or Discord submission was created. One eligibility
+question was sent to Apify's official general contact, explicitly stating that
+the Actor and article are not built yet and asking whether the theme and Hong
+Kong payout are supported. Wait for a human confirmation before doing the full
+speculative build. The inquiry is not an accepted topic, publication, payment,
+or revenue.
+
 The UU Remote Ubuntu bridge now supplies a separate product-discovery signal.
 Its public repository had ten stars and three forks when checked on September
 9, including five stars since September 3. The owner-visible rolling traffic

@@ -1,0 +1,91 @@
+{
+  "id": "digitalocean-ripple-writer-pitch",
+  "version": 1,
+  "objective": "Win one USD 500 Ripple Writers article by pitching a measured DigitalOcean implementation grounded in the existing AgInTiFlow, LazyEdge, and LazySkills work.",
+  "source_need": {
+    "captured_at": "2026-09-09T11:43:00Z",
+    "url": "https://www.digitalocean.com/ripple-writers-program",
+    "official_pitch_form": "https://docs.google.com/forms/d/e/1FAIpQLSfEVkeXaX07tBQTaU0xi25znCT3L85n6l7rHJyLGGu3OsFurw/viewform",
+    "title": "DigitalOcean Ripple Writers Program",
+    "state": "official_program_currently_accepting_pitches_but_linked_form_access_denied",
+    "published_rate": "USD 500 for each finally approved and published article after vendor onboarding, plus DigitalOcean platform credits for the approved implementation",
+    "current_priorities": [
+      "App Platform",
+      "Gradient AI Platform",
+      "Kubernetes",
+      "Managed Databases",
+      "Spaces"
+    ],
+    "published_process": "Pitch first; DigitalOcean says it reviews within five to seven business days. An approved writer completes vendor onboarding, builds and writes, works through editorial review, publishes on an owned platform, and is then paid.",
+    "rights_boundary": "The author retains ownership and editorial control while granting DigitalOcean a non-exclusive promotion and distribution license. The work must be original and free of third-party intellectual-property problems, with legally required sponsorship disclosure.",
+    "eligibility_boundary": "The public program names no country exclusion and says multiple payment methods are available according to location, but Hong Kong vendor onboarding has not been confirmed.",
+    "form_boundary": "The official Google pitch form showed ‘You need access’ to the already signed-in project browser on September 9, 2026. No access request was sent and no form submission was claimed."
+  },
+  "fit": {
+    "projects": [
+      "AgInTiFlow",
+      "LazyEdge",
+      "LazySkills",
+      "BLOG"
+    ],
+    "public_proof": [
+      "https://github.com/lazyingart/AgInTiFlow",
+      "https://github.com/lachlanchen/LazyEdge",
+      "https://github.com/lachlanchen/LazySkills",
+      "https://blog.lazying.art/"
+    ],
+    "proposed_title": "Building a guarded hybrid AI-agent control plane with a DigitalOcean Droplet and Spaces",
+    "proposed_build": "Deploy the public control plane on one DigitalOcean Droplet, connect it to a private LocalLLM/GPU worker through an authenticated reverse tunnel, and preserve immutable run receipts in Spaces.",
+    "measurement_plan": [
+      "deployment time",
+      "p50 and p95 request latency",
+      "tunnel-loss recovery",
+      "listener exposure",
+      "key rotation",
+      "storage cost",
+      "failed-worker recovery"
+    ],
+    "publication_target": "https://blog.lazying.art/",
+    "not_proven": [
+      "Pitch acceptance",
+      "Hong Kong vendor or payout eligibility",
+      "DigitalOcean-specific implementation results",
+      "Final editorial approval",
+      "Publication, payment, audience growth, or revenue"
+    ],
+    "claim_boundary": "The public projects prove relevant agent, tunnel, and operational tooling. The proposed DigitalOcean build and all measurements remain future work unless the pitch is accepted and the implementation is executed."
+  },
+  "application": {
+    "state": "email_fallback_sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T11:43:00Z",
+    "method": "One concise pitch sent to the official Ripple Writers contact after the program's linked form denied access; the message named the form problem, proposed the exact build and measurements, linked only public proof, and asked whether Hong Kong vendor onboarding and the topic are eligible.",
+    "recipient_kind": "official_program_contact",
+    "public_urls_sent": [
+      "https://github.com/lazyingart/AgInTiFlow",
+      "https://github.com/lachlanchen/LazyEdge",
+      "https://github.com/lachlanchen/LazySkills",
+      "https://blog.lazying.art/"
+    ],
+    "form_submitted": false,
+    "access_request_sent": false,
+    "account_created": false,
+    "resume_sent": false,
+    "video_sent": false,
+    "complete_article_sent": false,
+    "delivery_evidence": "The exact prepared message was visibly reviewed in the isolated project browser. One Send control was activated and Gmail displayed ‘Message sent’; the task-created empty compose window was discarded without opening inbox messages.",
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "policy": "Do not build the DigitalOcean-specific implementation, accept vendor terms, spend money, or promise publication until a human confirms the topic, current round, Hong Kong onboarding, payment method, platform credits, disclosure, review, and publication terms."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "pitch_accepted": false,
+    "vendor_onboarding_completed": false,
+    "article_published": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

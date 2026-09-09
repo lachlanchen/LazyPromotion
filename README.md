@@ -53,6 +53,7 @@ never count as revenue.
 | [`browser.py`](browser.py) | Playwright/CDP discovery, inspection, composer preparation, and guarded send |
 | [`worker.py`](worker.py) | Finite, cooldown-based discovery and private review queue; never sends |
 | [`catalog.json`](catalog.json) and [`github-repos.json`](github-repos.json) | Curated need matching plus the public repository inventory |
+| [`github_portfolio_audit.py`](github_portfolio_audit.py) | Private, read-only attention audit across every current public source repository; GitHub traffic is never counted as a lead or revenue |
 | [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of code, books, knowledge systems, and media |
 | [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |

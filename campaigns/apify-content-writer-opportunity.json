@@ -1,0 +1,73 @@
+{
+  "id": "apify-content-writer-opportunity",
+  "version": 1,
+  "objective": "Earn one USD 500 Apify article by building and documenting a bounded Actor that gives Codex live public-web evidence through the Apify MCP server.",
+  "source_need": {
+    "captured_at": "2026-09-09T11:55:00Z",
+    "url": "https://apify.com/resources/write-for-apify",
+    "program_guide": "https://apify.notion.site/apify-content-program",
+    "title": "Write for Apify",
+    "state": "official_call_for_papers_open_with_discord_account_gate",
+    "published_rate": "USD 500 once an original article with working code and real examples has been reviewed and is ready for publication",
+    "published_process": "Choose an active quarterly topic, build the real workflow, write a previously unpublished practical article, and submit the complete package through the #apify-writers Discord form.",
+    "topic_fit": "The current guide's AI-agent theme asks for a real agent calling an Apify Actor through the Apify MCP server and explaining the complete input, output, and workflow boundary.",
+    "eligibility_boundary": "The public program page names no country exclusion, but its onboarding payment procedure does not explicitly confirm Hong Kong support.",
+    "account_boundary": "The official Discord invite was live, but the isolated project browser had no Discord account. No account was created, no birth date was supplied, and no Discord terms were accepted."
+  },
+  "fit": {
+    "projects": [
+      "aginti-browser",
+      "LazyPromotion"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/aginti-browser",
+      "https://github.com/lachlanchen/LazyPromotion"
+    ],
+    "proposed_title": "Giving Codex a bounded live-web evidence tool with an Apify Actor",
+    "proposed_build": "A small Actor with typed input and output, explicit public-URL allowlisting, response-size limits, timestamps and source URLs, called end to end by Codex through Apify MCP.",
+    "required_delivery_if_confirmed": [
+      "Working Actor code",
+      "Reproducible setup and test commands",
+      "One complete Codex-to-Actor example",
+      "Failure cases and direct-browser trade-offs",
+      "Original previously unpublished article"
+    ],
+    "not_proven": [
+      "Current-topic acceptance for the exact proposal",
+      "Hong Kong payout onboarding",
+      "An implemented or deployed Apify Actor",
+      "A completed article",
+      "Editorial acceptance, publication, payment, or revenue"
+    ],
+    "claim_boundary": "The two repositories prove guarded browser-agent and evidence-led workflow experience. They do not prove an Apify implementation or article outcome."
+  },
+  "application": {
+    "state": "email_fallback_sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T11:55:00Z",
+    "method": "One concise eligibility question sent to Apify's official general contact because the required Discord route needed a new account. It linked two public repositories, described the proposed Actor boundary, disclosed that the Actor and article do not exist yet, and asked about topic and Hong Kong payout eligibility.",
+    "recipient_kind": "official_general_contact",
+    "public_urls_sent": [
+      "https://github.com/lachlanchen/aginti-browser",
+      "https://github.com/lachlanchen/LazyPromotion"
+    ],
+    "discord_joined": false,
+    "discord_submission_sent": false,
+    "account_created": false,
+    "complete_article_sent": false,
+    "delivery_evidence": "The exact message was visibly reviewed in the isolated project browser. One Send control was activated and Gmail displayed ‘Message sent’; no inbox message was opened.",
+    "automatic_follow_up": false,
+    "review_after": "2026-09-16",
+    "policy": "Do not build the speculative full submission, create an account, or accept onboarding terms until a human confirms the topic, Hong Kong payout support, current deadline, code and article ownership, review terms, and acceptable AI assistance."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "topic_confirmed": false,
+    "article_accepted": false,
+    "publication_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -181,6 +181,19 @@ contractor and payout eligibility, rights, assistance policy, revisions, and
 payment trigger before accepting work. This is one outbound application—not
 acceptance, an assignment, publication, payment, or revenue.
 
+A thirteenth direct route answers Web Specification Studio's current two-opening,
+remote, paid Technical Content Writer internship. The official role asks for one
+technical writing sample and permits one supporting tool or experiment; its
+published process includes a paid real trial, although no compensation amount is
+stated. One concise application was sent from the LazyingArt address with the live
+multilingual-OCR test-set article and the public L-and-N browser project. A visible
+review caught and corrected iCloud placing the recipients in Cc before one Send
+action. The composer then closed and Sent showed the exact subject, both official
+recipients, and matching opening text. Do not follow up before September 17, and
+do not begin a trial until its scope, fee, rights, assistance policy, acceptance,
+and payment terms are agreed. This is one outbound application—not a human reply,
+paid trial, contract, payment, or revenue.
+
 Alignerr's current remote Software Testing Analyst listing advertises USD
 40–120 per hour for 10–40 hours a week and matches the public testing,
 Linux, failure-analysis, and structured-reporting evidence. A one-page resume

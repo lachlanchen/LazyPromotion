@@ -1,0 +1,69 @@
+{
+  "id": "webspecification-technical-writer-intern",
+  "version": 2,
+  "objective": "Reach one paid technical-writing trial by applying to Web Specification Studio with one source-backed multilingual OCR article and one browser-based project, without inflating experience or treating an application as revenue.",
+  "source_need": {
+    "captured_at": "2026-09-10T01:00:00Z",
+    "url": "https://webspecification.com/careers/technical-content-writer-intern/",
+    "title": "Technical Content Writer, Intern",
+    "state": "official_current_open_role",
+    "published_scope": "Two remote paid internship openings for three to six months, part-time or full-time, researching and testing web standards, browser behavior, performance, accessibility, and architecture.",
+    "published_process": "Send a short note and one technical writing sample; a small tool or experiment may be included. The stated process is a conversation, a paid real trial task, then an offer.",
+    "compensation_boundary": "The official role says the internship and trial are paid but publishes no amount. Compensation is discussed before an offer and depends on weekly commitment.",
+    "policy": "An open role and sent application do not prove selection, a trial, an offer, payment, or received revenue. Confirm the trial fee, scope, rights, assistance policy, and payment terms before accepting work."
+  },
+  "fit": {
+    "projects": [
+      "L-and-N",
+      "LocalKnowledgeTerminal",
+      "LazyPromotion"
+    ],
+    "writing_sample": {
+      "url": "https://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html",
+      "title": "Before You OCR 1,000 Multilingual Books, Build a Small Test Set",
+      "reason": "The article turns an underspecified OCR project into a reproducible representative test, separates transcription, layout, and retrieval failures, cites primary technical sources, and states what its measurements cannot establish."
+    },
+    "supporting_project": {
+      "url": "https://github.com/lachlanchen/L-and-N",
+      "reason": "The public React and TypeScript PWA documents real browser and mobile speech-input boundaries, privacy behavior, test evidence, and deliberate refusal to show a score when evidence is insufficient."
+    },
+    "supported_now": [
+      "Public source-backed technical writing in English",
+      "Hands-on HTML, CSS, JavaScript, TypeScript, browser, mobile, testing, and documentation work",
+      "A reproducible and limitation-aware editorial style",
+      "Hong Kong location and remote work compatibility"
+    ],
+    "not_proven": [
+      "Employment or internship experience at a web-standards publication",
+      "Selection for an interview or paid trial",
+      "Any agreed weekly commitment, rate, contract, publication, or revenue"
+    ],
+    "claim_boundary": "The linked article and repository support the writing and implementation fit only. They do not prove client work, selection, compensation, or received revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T17:18:00Z",
+    "method": "One concise email to the two public addresses encoded by the official role's application link, with one writing sample and one supporting project.",
+    "recipient_source": "Official mailto application link",
+    "subject": "Application: Technical Content Writer, Intern",
+    "message_storage": "ignored private evidence",
+    "attachments_sent": 0,
+    "public_links_sent": 2,
+    "resume_sent": false,
+    "delivery_evidence": "The isolated visible composer showed both official recipients in To, the LazyingArt sender alias, exact subject, complete body, and two public links after an initial Cc placement was caught and corrected before transmission. One Send action closed the composer; Sent then showed 37 messages and one new row with both recipients, the exact subject, 1:18 AM timestamp, and matching opening text. No message was opened.",
+    "automatic_follow_up": false,
+    "review_after": "2026-09-17",
+    "policy": "Do not resubmit or follow up before the review date. If a human replies, confirm the paid-trial fee, deliverable, deadline, acceptance criteria, revision cap, attribution, IP and reuse, confidentiality, acceptable assistance, payment trigger, payment rail, and Hong Kong contractor terms before accepting work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_trial_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

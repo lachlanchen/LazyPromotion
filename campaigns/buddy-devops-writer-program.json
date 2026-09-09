@@ -1,0 +1,64 @@
+{
+  "id": "buddy-devops-writer-program",
+  "version": 2,
+  "objective": "Win one paid CI/CD tutorial assignment by proposing a tested Python reverse-SSH relay deployment and rollback workflow grounded in LazyTunnel and LazyEdge.",
+  "source_need": {
+    "captured_at": "2026-09-10T06:25:00Z",
+    "url": "https://buddy.works/share-your-knowledge",
+    "title": "Share your knowledge",
+    "state": "official_current_program_with_embedded_application_form",
+    "published_scope": "Practical, reproducible CI/CD and DevOps articles or videos covering web development, testing, automation, best practices, and Buddy pipelines.",
+    "published_process": "Apply with experience, stack, a proposed topic, and writing samples. If the portfolio is accepted, an editor helps approve the topic and outline before creation; reviewed and accepted work is paid and published.",
+    "compensation_boundary": "The official page says payment depends on length and uniqueness but publishes no amount. Buddy-specific work may receive an additional 20 percent for canonical republication. Confirm the base fee and eligibility before writing.",
+    "submission_requirements": "Name, email, experience and stack, topic, and sample links are required; a Twitter handle and file upload are optional.",
+    "policy": "Application is not assignment, publication, payment, or revenue. Do not create a full article before editorial topic and fee approval."
+  },
+  "fit": {
+    "projects": [
+      "LazyTunnel",
+      "LazyEdge",
+      "BLOG"
+    ],
+    "public_samples": [
+      "https://blog.lazying.art/html/securities-forex/metatrader/1968/metatrader-4-python-zeromq.html",
+      "https://blog.lazying.art/html/computer_internet/wordpress/390/wordpress%e9%87%8d%e8%a3%85.html",
+      "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html"
+    ],
+    "proposal_title": "Deploy a Python reverse-SSH relay with a tested rollback in Buddy",
+    "proposal_outcome": "A reader can build, test, deploy, verify, and roll back a small Python relay on Ubuntu without exposing credentials or treating a process start as a successful release.",
+    "supported_now": [
+      "Public Python, Linux, systemd, SSH, deployment, recovery, and test evidence",
+      "A working self-hosted reverse-tunnel core and default-deny edge deployment path",
+      "First-person operational writing with reproducible commands and negative checks"
+    ],
+    "not_proven": [
+      "Prior Buddy production use or publication",
+      "Editorial acceptance of the application or topic",
+      "Any agreed fee, assignment volume, publication, or received revenue"
+    ],
+    "claim_boundary": "The linked projects and articles support the proposed Python, Linux, CI/CD, testing, and recovery workflow. They do not prove Buddy experience, program acceptance, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T22:27:00Z",
+    "method": "Official embedded form using LazyingArt identity, concise stack evidence, one original topic, and three public samples; no file upload",
+    "exact_answers_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated visible browser rendered the exact six text fields, three direct sample URLs, no upload, one enabled Send control, and no checkbox. One Send action displayed Buddy's success notice that the application had been sent and it would respond soon. A later exact-text probe ran after the transient notice disappeared; the captured success view and cleared required name field establish delivery, so no retry was made.",
+    "public_urls_sent": 3,
+    "account_required": false,
+    "upload_required": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-17",
+    "policy": "Do not resubmit or follow up before the review date. If accepted, confirm fee, scope, deadline, rights, canonical-republication terms, revisions, acceptance, assistance policy, and payment rail before work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "commissioned_topic_observed": false,
+    "payment_confirmed": false,
+    "publication_observed": false,
+    "received_revenue_usd": 0
+  }
+}

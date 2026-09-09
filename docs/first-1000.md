@@ -207,6 +207,18 @@ scope, rights, assistance policy, acceptance, receipt, and payment terms are agr
 This is one submitted proposal—not acceptance, a commissioned article, publication,
 payment, or revenue.
 
+A fifteenth direct route applies to Buddy's live paid contributor program with
+LazyTunnel and LazyEdge as the implementation base. Buddy accepts practical CI/CD,
+testing, automation, and DevOps articles, helps approved contributors choose the
+outline before writing, and pays work that passes review. It publishes no base fee;
+Buddy-specific canonical republication may receive 20 percent extra. One reviewed
+form proposed a tested Python reverse-SSH relay deployment and rollback workflow,
+linked three live code-and-operations articles, uploaded no file, and used one Send
+action. Buddy's success notice said the application was sent. Do not follow up before
+September 17 or write the article before the exact topic, fee, rights, assistance,
+republication, revision, acceptance, and payment terms are agreed. This is one
+application—not an assignment, publication, payment, or revenue.
+
 Alignerr's current remote Software Testing Analyst listing advertises USD
 40–120 per hour for 10–40 hours a week and matches the public testing,
 Linux, failure-analysis, and structured-reporting evidence. A one-page resume

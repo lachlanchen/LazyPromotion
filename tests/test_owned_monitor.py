@@ -307,6 +307,23 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], "lecture-archive-provenance")
         self.assertEqual(route["route"], "product")
 
+    def test_openhi_queues_match_x_and_shortened_linkedin_copy(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "openhi-reproducibility-sprint.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        x_route = owned_monitor.route_for_post(
+            "x", campaign["channels"]["x"]["content"], owned_monitor.route_index()
+        )
+        linkedin = campaign["channels"]["linkedin"]
+        linkedin_route = owned_monitor.route_for_post(
+            "linkedin", linkedin["postiz_content"], owned_monitor.route_index()
+        )
+        self.assertEqual(x_route["campaign_id"], "openhi-reproducibility-sprint")
+        self.assertEqual(linkedin_route["campaign_id"], "openhi-reproducibility-sprint")
+        self.assertIn("lazying.art/openhi-reproducibility", linkedin["destination"])
+
     def test_landn_video_queues_match_instagram_and_youtube_routes(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "l-and-n-pronunciation-launch.json").read_text(

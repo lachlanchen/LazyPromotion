@@ -194,6 +194,19 @@ do not begin a trial until its scope, fee, rights, assistance policy, acceptance
 and payment terms are agreed. This is one outbound application—not a human reply,
 paid trial, contract, payment, or revenue.
 
+A fourteenth direct route proposes one observability tutorial to SigNoz's live
+technical-writer program. The official page asks for two or three backend-oriented
+samples plus a title and outline, reviews applications weekly, and says international
+payments use PayPal after approval and publication. It publishes no amount, and its
+linked topic wishlist currently returns 404. One application therefore used three
+live code-and-operations articles and an original, bounded proposal to instrument a
+small public Python reverse-SSH relay demo with OpenTelemetry and SigNoz. The five
+answers were visibly reviewed before one Submit action, and the official confirmation
+was shown. Do not follow up before September 17 or begin work before the exact fee,
+scope, rights, assistance policy, acceptance, receipt, and payment terms are agreed.
+This is one submitted proposal—not acceptance, a commissioned article, publication,
+payment, or revenue.
+
 Alignerr's current remote Software Testing Analyst listing advertises USD
 40–120 per hour for 10–40 hours a week and matches the public testing,
 Linux, failure-analysis, and structured-reporting evidence. A one-page resume

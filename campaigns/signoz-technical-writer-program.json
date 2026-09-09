@@ -1,0 +1,67 @@
+{
+  "id": "signoz-technical-writer-program",
+  "version": 2,
+  "objective": "Win one paid observability tutorial assignment by proposing a reproducible Python reverse-SSH relay demonstration, without writing a speculative full article or claiming prior SigNoz work.",
+  "source_need": {
+    "captured_at": "2026-09-10T02:15:00Z",
+    "url": "https://signoz.io/technical-writer-program/",
+    "application_url": "https://docs.google.com/forms/d/e/1FAIpQLSf-OEYzQ0HgPd-FONGxNorLx7zMVKiz4kjHPPmoDWv1kBEZEg/viewform",
+    "title": "SigNoz Technical Writer Program",
+    "state": "official_current_program_with_accepting_form",
+    "published_scope": "Backend, DevOps, observability, OpenTelemetry, and code-based tutorials of roughly 1,000 to 1,500 words.",
+    "published_process": "Apply with two or three technical-writing samples and a title plus outline. SigNoz says it reviews applications weekly; accepted writers work in Notion, normally return a first draft within seven to ten days, receive editorial feedback, and are paid after approval and publication.",
+    "compensation_boundary": "The official page says compensation depends on the expertise required but publishes no amount. Confirm the exact fee before starting. International payments are stated to use PayPal.",
+    "freshness_boundary": "The official program and Google form are live, but the linked Notion topic wishlist currently returns 404. The original proposal therefore relies only on the current program page and writing guidelines.",
+    "policy": "Application, acceptance, publication, invoicing, payment processing, and received revenue are separate states. Do not begin an article until the title, fee, assistance policy, rights, revisions, acceptance criteria, and payment terms are agreed."
+  },
+  "fit": {
+    "projects": [
+      "LazyTunnel",
+      "LazyEdge",
+      "BLOG"
+    ],
+    "public_samples": [
+      "https://blog.lazying.art/html/securities-forex/metatrader/1968/metatrader-4-python-zeromq.html",
+      "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+      "https://blog.lazying.art/html/computer_internet/wordpress/390/wordpress%e9%87%8d%e8%a3%85.html"
+    ],
+    "proposal_title": "Monitor a Python reverse-SSH relay with OpenTelemetry and SigNoz",
+    "proposal_outcome": "A reader can instrument and run a small public relay demonstration, distinguish healthy reconnection from repeated authentication failure, and inspect correlated traces, metrics, and logs without recording network identities, credentials, or command contents.",
+    "supported_now": [
+      "Public Python protocol, local-search, Linux recovery, and operations writing with executable examples",
+      "Hands-on self-hosted reverse-tunnel and default-deny edge implementation",
+      "Reproducible failure injection, tests, privacy boundaries, and limitation-aware reporting"
+    ],
+    "not_proven": [
+      "Prior SigNoz or OpenTelemetry publication",
+      "Acceptance of this topic or application",
+      "A commissioned article, fee, publication, payment, or recurring assignment"
+    ],
+    "claim_boundary": "The samples and public projects support Python, networking, DevOps, testing, and technical-writing fit. They do not prove prior SigNoz work, program acceptance, or revenue."
+  },
+  "application": {
+    "state": "submitted_awaiting_human_reply",
+    "sent_at": "2026-09-09T22:19:06Z",
+    "method": "Official five-field Google Form with name, LazyingArt email, public GitHub profile, three live articles, and one bounded original proposal",
+    "exact_answers_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated visible browser rendered all five exact answers, three live article URLs, and the six-step proposal with one enabled Submit control and no checkbox. One Submit action removed the fields and displayed the official 'Your response has been recorded' confirmation. Private before-and-after screenshots remain outside Git.",
+    "public_urls_sent": 4,
+    "resume_required": false,
+    "account_required": false,
+    "identity_document_required": false,
+    "terms_checkbox_observed": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-17",
+    "policy": "Do not resubmit or follow up before the review date. If accepted, confirm fee, scope, deadline, assistance policy, rights, revisions, publication acceptance, receipt requirements, PayPal eligibility, and payment timing before work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "commissioned_topic_observed": false,
+    "payment_confirmed": false,
+    "publication_observed": false,
+    "received_revenue_usd": 0
+  }
+}

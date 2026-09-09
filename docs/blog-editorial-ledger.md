@@ -327,6 +327,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `9d1fc70` | 3167 | Put the project-owned LKT sample report before the private fit check and paid scope |
 | `330d73c` | 3114 | Added an owner-disclosed LazyEdit route and removed duplicate body titles |
 | `edd5af9` | 3114 | Replaced the generic Studio link with the exact six-source assembly proof across all three editions |
+| `64242bb` | 1970 | Refreshed the official MetaTrader5 wheel boundary and linked one audited, commit-pinned MicroQuant implementation with a demo-only warning |
 | `3ca71b7` | 3616 | Withdrew uncleared full-text PDFs and published a multilingual lawful-access notice |
 | `3220572` | 3782 | Published a source-aware study-card deduplication guide in English, Traditional Chinese, and Japanese |
 | `24d6afa` | 3782 | Added one exact-fit path from the complete guide to the LKT sample report and preserved attribution through the fit check |

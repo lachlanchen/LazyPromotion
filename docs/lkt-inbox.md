@@ -2,12 +2,12 @@
 
 ## Current status
 
-Direct web submission is live for the LKT and lecture routes as of 2026-09-09.
+Direct web submission is live for the LKT, manuscript, and lecture routes as of
+2026-09-09.
 Each deployed frontend, the pinned public-key fingerprint, mode-`0600` private
 key, receiver, and remote spool completed an explicitly confirmed synthetic
-round trip. Manuscript and Story Clip still review locally and continue through
-email or copy. Do not re-enable another route until those same checks succeed
-for that route.
+round trip. Story Clip still reviews locally and continues through email or
+copy. Do not re-enable it until those same checks succeed for that route.
 
 `lkt_inbox.py` is the operator-side receiver for the LKT, manuscript, lecture,
 and Story Clip fit checks accepted by the first-party WordPress endpoint. The web
@@ -93,5 +93,15 @@ request passed the visible review and confirmation gates, returned HTTP 202,
 matched the routed LKT schema after decryption, persisted with mode `0600`, and
 was deleted remotely only after unchanged verification. A second receiver check
 returned `no_pending`. Its private synthetic artifacts and browser snapshot are
-retained outside Git. Manuscript and Story Clip remain disabled for direct
-submit. This test is not a lead, customer result, payment, delivery, or revenue.
+retained outside Git. This test is not a lead, customer result, payment,
+delivery, or revenue.
+
+Later on 2026-09-09 the manuscript route was restored by LazyingArtWebsite
+commit `c65b9874c61df10c11ac82dd40749f2644c08045`. One labeled request passed
+the live review and explicit confirmation gates, returned HTTP 202, matched the
+routed manuscript schema after decryption, persisted with mode `0600`, and was
+deleted remotely only after unchanged verification. A second receiver check
+returned `no_pending`; the two exact local synthetic payload copies were then
+removed. The private browser snapshot remains outside Git. Story Clip remains
+disabled for direct submit. This test is not a lead, customer result, payment,
+delivery, or revenue.

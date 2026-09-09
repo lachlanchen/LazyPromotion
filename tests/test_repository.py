@@ -2055,7 +2055,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -2104,11 +2104,13 @@ class RepositoryTests(unittest.TestCase):
         direct_intake = campaign["encrypted_direct_intake"]
         self.assertEqual(
             direct_intake["state"],
-            "historically_verified_direct_route_temporarily_disabled",
+            "live_verified_review_then_encrypted_submit",
         )
-        self.assertFalse(direct_intake["direct_submit_available"])
-        self.assertTrue(direct_intake["key_rotation_required"])
+        self.assertTrue(direct_intake["direct_submit_available"])
+        self.assertFalse(direct_intake["key_rotation_required"])
         self.assertEqual(direct_intake["offer_route"], "manuscript")
+        self.assertIn("c65b9874", direct_intake["current_frontend_commit"])
+        self.assertIn("34299920399", direct_intake["deployment_run"])
         self.assertTrue(direct_intake["explicit_review_confirmation"])
         self.assertFalse(direct_intake["automatic_submission"])
         self.assertTrue(direct_intake["synthetic_visible_round_trip_verified"])

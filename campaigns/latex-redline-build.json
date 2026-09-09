@@ -126,7 +126,8 @@
       "Verified identical source and PDF hashes across consecutive builds.",
       "Visually inspected all three one-page PDFs.",
       "Published the bounded USD 250 offer and no-upload fit check.",
-      "Verified the live review panel, allowlisted attribution, and zero non-read network requests with synthetic data."
+      "Verified the live review panel, allowlisted attribution, and zero non-read network requests with synthetic data.",
+      "Restored the live review-then-encrypted-submit route and verified a labeled manuscript metadata round trip through the receiver before removing the synthetic payload copies."
     ]
   },
   "funnel": {

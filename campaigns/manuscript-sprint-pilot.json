@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 13,
+  "version": 14,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -186,19 +186,20 @@
     "working_terms_linked": true
   },
   "encrypted_direct_intake": {
-    "state": "historically_verified_direct_route_temporarily_disabled",
-    "checked_at": "2026-09-06T19:16:37Z",
-    "current_path": "local_review_then_email_or_copy",
-    "direct_submit_available": false,
-    "current_frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/e4a1c36b3efa93399b6a5754f3692c1802a211c7",
-    "key_rotation_required": true,
+    "state": "live_verified_review_then_encrypted_submit",
+    "checked_at": "2026-09-09T01:42:43Z",
+    "current_path": "local_review_then_explicit_encrypted_submit_with_email_or_copy_fallback",
+    "direct_submit_available": true,
+    "current_frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/c65b9874c61df10c11ac82dd40749f2644c08045",
+    "key_rotation_required": false,
     "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
     "record_schema": "fit-check-record/v2",
     "source_schema": "fit-check/v2",
     "offer_route": "manuscript",
-    "backend_commit": "https://github.com/lachlanchen/myblog/commit/c8d3c0669b54ddbeef936b8f613d7d376d065936",
-    "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/12e65ae269de4730b0bae5d230ba1017950ea251",
-    "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/d04488c08a815b9e21d6ca6d3059c142f38d049a",
+    "backend_commit": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
+    "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/c65b9874c61df10c11ac82dd40749f2644c08045",
+    "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34299920399",
     "explicit_review_confirmation": true,
     "automatic_submission": false,
     "source_upload_requested": false,
@@ -212,7 +213,7 @@
     "remote_spool_empty": true,
     "lead_or_sale_observed": false,
     "verified_received_gross_usd": 0,
-    "policy": "The September 5 labeled synthetic metadata round trip is historical evidence. Direct submission is disabled while the private receiver key is rotated; the live page now reviews locally and continues by email or copy. It is not a customer inquiry, qualification, sale, delivery, or revenue."
+    "policy": "The September 9 labeled synthetic metadata round trip passed the live review and explicit confirmation gates, returned an acceptance receipt, authenticated and decrypted as the manuscript route, persisted in mode 0600, and deleted only the unchanged remote envelope. A second check found no pending envelope, and the exact local synthetic payload copies were removed. This is operational evidence, not a customer inquiry, qualification, sale, delivery, or revenue."
   },
   "intake_routing": {
     "state": "active",

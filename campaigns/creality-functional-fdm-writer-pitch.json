@@ -1,0 +1,69 @@
+{
+  "id": "creality-functional-fdm-writer-pitch",
+  "version": 2,
+  "objective": "Win one paid functional-3D-printing article by pitching a measured fit-test workflow grounded in OpenHI's public printed module and existing hardware writing.",
+  "source_need": {
+    "captured_at": "2026-09-09T22:35:00Z",
+    "url": "https://store.creality.com/ca/blogs/all/get-paid-to-write-articles-for-us",
+    "title": "Creality Writers or Editors Recruitment",
+    "state": "official_live_program_page_with_direct_email_application",
+    "page_date": "2024-12-23",
+    "published_rate": "Standard USD 0.10 per word, with article fees described as negotiable",
+    "published_process": "Email a unique topic, outline, fee expectation, and published samples with subject 'Guest Post'. Write only after topic approval. Approved articles are published and paid through PayPal; no reply within seven working days means rejection or the month's quota was reached.",
+    "published_eligibility": "English-language authors from all countries and backgrounds may apply.",
+    "rights_boundary": "The page requires original work, direct non-affiliate references, and no publication elsewhere after Creality publishes the article. Confirm final exclusivity, attribution, revision, image, and takedown terms before writing.",
+    "policy": "Ignore the page's unverified income anecdotes. A sent pitch is not topic approval, an assignment, publication, payment, or received revenue."
+  },
+  "fit": {
+    "projects": [
+      "OpenHI",
+      "nhi_hardware",
+      "BLOG"
+    ],
+    "public_samples": [
+      "https://github.com/lachlanchen/OpenHI",
+      "https://blog.lazying.art/html/computer_internet/hardware_system/raspberry-pi/1881/raspberry-pi-gpio-python-c-c-extension-and-wiringpi-connected.html",
+      "https://blog.lazying.art/html/securities-forex/metatrader/1968/metatrader-4-python-zeromq.html"
+    ],
+    "proposal_title": "Before You Print the Full Fixture: A Three-Part Fit Test for Functional FDM Assemblies",
+    "proposal_outcome": "A reader can test orientation, hole and slot compensation, and a critical mating interface with three small prints before committing material and time to a complete functional fixture.",
+    "fee_expectation": "USD 180 for approximately 1,800 words, original project-owned visuals, and one consolidated revision",
+    "supported_now": [
+      "OpenHI publicly includes an MIT-licensed STL, 3D-printed module documentation, and a bill of materials",
+      "Public hardware and Python writing separates electrical, scheduling, mechanical, and software failure causes",
+      "Project-owned source can support original diagrams, mesh screenshots, measurement tables, and a reproducible checklist"
+    ],
+    "not_proven": [
+      "Use of or testing on any named Creality printer",
+      "Editorial acceptance of the topic or proposed fee",
+      "A commissioned article, publication, recurring work, payment, or received revenue"
+    ],
+    "claim_boundary": "The public project supports a real 3D-printed scientific module and the proposed fit-test method. It does not prove performance on a specific printer, Creality endorsement, acceptance, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T23:04:13Z",
+    "method": "One concise email to the public program address using the required subject, one title, a six-step outline, fee expectation, and three public samples",
+    "recipient_source": "Public program address on the official page",
+    "subject": "Guest Post",
+    "exact_message_storage": "ignored private evidence",
+    "attachments_sent": 0,
+    "full_article_sent": false,
+    "public_urls_sent": 3,
+    "delivery_evidence": "The isolated visible composer showed one exact recipient in To, no other recipient token, the LazyingArt sender, required subject, complete body, one USD 180 fee expectation, and three public URLs. A visible review caught and corrected an initial Cc placement before transmission. One Send action entered the sending state and then closed the composer; Sent showed one new top row with the exact recipient, subject, and 7:04 AM timestamp. No message was opened and no retry was made.",
+    "automatic_follow_up": false,
+    "review_after": "2026-09-22",
+    "policy": "Do not resubmit or follow up before the review date. Do not write the article until the editor approves the topic and the exact printer and material scope, fee, exclusivity, attribution, image rights, revisions, acceptance, PayPal eligibility, and timing are agreed."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "topic_approved": false,
+    "contract_observed": false,
+    "publication_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

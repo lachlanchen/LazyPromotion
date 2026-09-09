@@ -219,6 +219,19 @@ September 17 or write the article before the exact topic, fee, rights, assistanc
 republication, revision, acceptance, and payment terms are agreed. This is one
 application—not an assignment, publication, payment, or revenue.
 
+A sixteenth direct route uses OpenHI's public printed-module source and existing
+hardware writing for Creality's live paid contributor program. The official page
+publishes a standard USD 0.10-per-word rate and asks for a unique topic, outline,
+fee expectation, and samples by email before any article is written. One reviewed
+pitch proposed a three-print orientation, tolerance-coupon, and mating-interface
+test before committing to a complete functional fixture, quoted USD 180 for about
+1,800 words, and linked three live samples. A visible review caught and corrected
+the recipient being placed in Cc before one Send action; the composer then closed
+and Sent showed the exact recipient and required subject. Do not follow up before
+September 22 or write the article before the exact printer and material scope, fee,
+rights, revisions, acceptance, PayPal eligibility, and timing are agreed. This is
+one application—not approval, an assignment, publication, payment, or revenue.
+
 Alignerr's current remote Software Testing Analyst listing advertises USD
 40–120 per hour for 10–40 hours a week and matches the public testing,
 Linux, failure-analysis, and structured-reporting evidence. A one-page resume

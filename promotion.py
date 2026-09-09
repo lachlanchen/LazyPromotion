@@ -52,7 +52,8 @@ HELP_PHRASES = {
 }
 SPAM_SIGNALS = {
     "promote your", "drop your link", "giveaway", "follow for follow", "f4f",
-    "crypto pump", "buy followers", "growth hack",
+    "crypto pump", "buy followers", "growth hack", "domain for sale",
+    "#domainforsale",
 }
 OUT_OF_SCOPE_SIGNALS = {
     "[for hire]", "[hiring]", "for hire", "hiring", "job opening",

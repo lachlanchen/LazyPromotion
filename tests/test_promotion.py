@@ -586,6 +586,15 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_domain_sale_pitch_is_not_a_buyer_need(self):
+        body = (
+            "Need a robot to clean a warehouse? I would build the search engine "
+            "for the robot economy. Available at our marketplace. #DomainForSale"
+        )
+        self.assertIn("#domainforsale", promotion.help_request_signals(body)["spam_hits"])
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
     def test_ai_disclosed_product_post_with_engagement_question_is_not_a_need(self):
         body = (
             "Do you put a root marker in every LaTeX chapter, or let the editor guess? "

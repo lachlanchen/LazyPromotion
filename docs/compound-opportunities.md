@@ -355,6 +355,8 @@ Gates:
 Evidence:
 
 - <https://remote.lazying.art/>
+- <https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1133/ubuntu%e4%b8%8b%e4%bd%bf%e7%94%a8%e5%8a%a8%e6%80%81%e5%9f%9f%e5%90%8d.html>
+- <https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1148/ubuntu%e5%ae%89%e8%a3%85vnc-server.html>
 - <https://github.com/lachlanchen/LazyTunnel>
 - <https://github.com/lachlanchen/LazyTunnel/releases/tag/v0.2.0>
 - <https://github.com/lachlanchen/LazyEdge>

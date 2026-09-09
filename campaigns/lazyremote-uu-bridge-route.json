@@ -93,6 +93,34 @@
     "github": {
       "state": "live_exact_fit_bridge"
     },
+    "owned_blog": {
+      "state": "live_exact_fit_routes",
+      "repository_commit": "3138859",
+      "placements": [
+        {
+          "post_id": 1133,
+          "subject": "Secure Dynamic DNS on Ubuntu/Linux: Public IP, CGNAT, IPv6, and systemd",
+          "locales": [
+            "zh",
+            "en",
+            "ja"
+          ],
+          "fit": "Readers who discover that DDNS cannot create an inbound path through CGNAT"
+        },
+        {
+          "post_id": 1148,
+          "subject": "Secure Remote Desktop on Ubuntu",
+          "locales": [
+            "zh",
+            "en",
+            "ja"
+          ],
+          "fit": "Readers evaluating a loopback-only reverse tunnel for remote desktop"
+        }
+      ],
+      "copy_boundary": "Each edition finishes the relevant technical answer first, uses one first-person offer paragraph, and states the fixed price, metadata-only first contact, and the deployment and hardware exclusions.",
+      "verification": "All six live locale routes returned HTTP 200 and contained the exact LazyRemote Network Fit Review link after the WordPress sync. The 31 BLOG unit tests passed."
+    },
     "postiz": {
       "state": "not_queued",
       "policy": "Do not add a broad promotional post while the current queue is full and the cross-project route has no measured qualified inquiry."

@@ -446,6 +446,13 @@
       "url": ""
     },
     {
+      "id": "channel:owned_blog",
+      "kind": "channel",
+      "label": "owned_blog",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "channel:owned_conversion_bridge",
       "kind": "channel",
       "label": "owned_conversion_bridge",
@@ -8654,6 +8661,16 @@
       "relation": "targets",
       "source": "campaign:lazyremote-uu-bridge-route",
       "target": "channel:github"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_exact_fit_routes"
+      },
+      "relation": "targets",
+      "source": "campaign:lazyremote-uu-bridge-route",
+      "target": "channel:owned_blog"
     },
     {
       "confidence": 1.0,

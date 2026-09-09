@@ -221,6 +221,16 @@
       "url": ""
     },
     {
+      "id": "campaign:manicule-technical-writer-opportunity",
+      "kind": "campaign",
+      "label": "manicule-technical-writer-opportunity",
+      "metadata": {
+        "objective": "Win a paid technical-writing trial by sending the one first-person developer-tools article requested in Manicule's official worldwide freelance listing.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:manuscript-sprint-pilot",
       "kind": "campaign",
       "label": "manuscript-sprint-pilot",
@@ -905,7 +915,7 @@
       "metadata": {
         "buyer": "A self-hosted developer, small lab, or technical team that needs named private computers reachable from desktop and mobile clients",
         "first_deliverable": "A topology and recovery audit for one relay and up to three existing endpoints, covering listener exposure, key roles, host-key pinning, client paths, rollback, and an exact verification plan before any deployment",
-        "first_test": "Measure metadata-only fit checks from the public LazyRemote route and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review",
+        "first_test": "Measure metadata-only fit checks after the complete project-owned sample report and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review",
         "gates": [
           "Do not promise low-latency gaming, wake-on-LAN, or compatibility with an unseen topology",
           "Keep relay listeners on loopback unless a separately reviewed architecture requires otherwise; never expose unauthenticated VNC, RDP, SSH, or web tools",
@@ -6372,6 +6382,20 @@
       "url": "https://arxiv.org/abs/2104.08663"
     },
     {
+      "id": "url:22a6942b30d42774",
+      "kind": "web_resource",
+      "label": "blog.lazying.art",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1133/ubuntu%e4%b8%8b%e4%bd%bf%e7%94%a8%e5%8a%a8%e6%80%81%e5%9f%9f%e5%90%8d.html"
+    },
+    {
+      "id": "url:4332064e352eb851",
+      "kind": "web_resource",
+      "label": "blog.lazying.art",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1148/ubuntu%e5%ae%89%e8%a3%85vnc-server.html"
+    },
+    {
       "id": "url:6629092a3af8f0e5",
       "kind": "web_resource",
       "label": "blog.lazying.art",
@@ -7315,6 +7339,13 @@
       "label": "release state testflight public url",
       "metadata": {},
       "url": "https://testflight.apple.com/join/CpkT8m9C"
+    },
+    {
+      "id": "url:2165d30209660597",
+      "kind": "web_resource",
+      "label": "remote.lazying.art",
+      "metadata": {},
+      "url": "https://remote.lazying.art/sample-report.html"
     },
     {
       "id": "url:25f921d56d9131bb",
@@ -11248,11 +11279,35 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://remote.lazying.art/sample-report.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:2165d30209660597"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1133/ubuntu%e4%b8%8b%e4%bd%bf%e7%94%a8%e5%8a%a8%e6%80%81%e5%9f%9f%e5%90%8d.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:22a6942b30d42774"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://www.reddit.com/r/homelab/comments/1vu6ata/how_do_you_handle_remote_access_to_a_home_pc_that/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "opportunity:private-multidevice-remote-access",
       "target": "url:413208ffe0b50637"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1148/ubuntu%e5%ae%89%e8%a3%85vnc-server.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:4332064e352eb851"
     },
     {
       "confidence": 1.0,

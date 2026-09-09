@@ -89,8 +89,12 @@ class ApplicationWatchTests(unittest.TestCase):
 
     def test_current_campaigns_have_no_automatic_follow_up(self):
         report = application_watch.build_report(on=date(2026, 9, 9))
-        self.assertGreaterEqual(report["summary"]["awaiting_human_reply"], 7)
+        self.assertGreaterEqual(report["summary"]["awaiting_human_reply"], 8)
         self.assertEqual(report["summary"]["missing_review_schedule"], 0)
+        self.assertIn(
+            "manicule-technical-writer-opportunity",
+            [item["campaign_id"] for item in report["applications"]],
+        )
         for item in report["applications"]:
             self.assertFalse(item["due_for_human_review"])
 

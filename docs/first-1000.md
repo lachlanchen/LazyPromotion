@@ -143,6 +143,11 @@ metadata-only fit check precedes written scope and payment; deployment, hardware
 hosting, network-policy changes, wake-on-LAN, desktop capture, ongoing support,
 and guarantees for an unseen topology remain outside the review.
 
+The [complete sample report](https://remote.lazying.art/sample-report.html)
+shows the decision, listener and identity maps, findings, acceptance checklist,
+and rollback before contact. It uses a synthetic project-owned topology, is
+explicitly not a customer result, and contains no private fleet data.
+
 A current-job recheck prevented two weak applications. Altimate.ai's indexed
 Technical Content Creator contract is no longer on its official board and its
 application URL now reports that the job was not found. The employer's remaining

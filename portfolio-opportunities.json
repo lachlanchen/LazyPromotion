@@ -284,9 +284,12 @@
       "need": "Keep SSH, file transfer, and selected browser tools available across NAT or CGNAT without publishing desktop ports or tying the transport to one remote-control app",
       "projects": ["LazyTunnel", "LazyEdge", "novnc-manager", "kvm-qemu-workstation", "uu-remote-ubuntu-bridge"],
       "first_deliverable": "A topology and recovery audit for one relay and up to three existing endpoints, covering listener exposure, key roles, host-key pinning, client paths, rollback, and an exact verification plan before any deployment",
-      "first_test": "Measure metadata-only fit checks from the public LazyRemote route and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review",
+      "first_test": "Measure metadata-only fit checks after the complete project-owned sample report and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review",
       "proof": [
         "https://remote.lazying.art/",
+        "https://remote.lazying.art/sample-report.html",
+        "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1133/ubuntu%e4%b8%8b%e4%bd%bf%e7%94%a8%e5%8a%a8%e6%80%81%e5%9f%9f%e5%90%8d.html",
+        "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1148/ubuntu%e5%ae%89%e8%a3%85vnc-server.html",
         "https://github.com/lachlanchen/LazyTunnel",
         "https://github.com/lachlanchen/LazyTunnel/releases/tag/v0.2.0",
         "https://github.com/lachlanchen/LazyEdge",

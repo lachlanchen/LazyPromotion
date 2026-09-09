@@ -1,0 +1,61 @@
+{
+  "id": "manicule-technical-writer-opportunity",
+  "version": 1,
+  "objective": "Win a paid technical-writing trial by sending the one first-person developer-tools article requested in Manicule's official worldwide freelance listing.",
+  "source_need": {
+    "captured_at": "2026-09-09T09:30:00Z",
+    "url": "https://www.ycombinator.com/companies/manicule/jobs/SeUD1cG-freelance-technical-content-writer",
+    "title": "Freelance Technical Content Writer",
+    "state": "official_current_contract_listing",
+    "eligibility": "Remote from anywhere in the world; US citizenship or visa not required",
+    "published_rate": "USD 200–300 per article, negotiable",
+    "published_process": "Email exactly one link to the best article written and explain why it is strong; no resume or portfolio; the interview process includes a paid trial",
+    "policy": "The official listing says Manicule is hiring two or three writers. It does not promise selection, article volume, a trial, or received income."
+  },
+  "fit": {
+    "projects": [
+      "AgInTiFlow",
+      "AAPS",
+      "LazyPromotion"
+    ],
+    "public_proof": [
+      "https://blog.lazying.art/html/computer_internet/software/3603/i-got-tired-of-agent-limits-so-i-built-agintiflow.html"
+    ],
+    "supported_now": [
+      "A first-person account of building and using a local web-and-CLI agent workspace",
+      "Hands-on engineering decisions about durable sessions, model routing, supervision, and artifact-first verification",
+      "Concrete screenshots, public source, a working package, and visible unfinished boundaries"
+    ],
+    "not_proven": [
+      "Selection by Manicule",
+      "A paid trial assignment",
+      "Any recurring article volume or full-time offer",
+      "Any payment or customer result"
+    ],
+    "claim_boundary": "The linked article and public projects support the specific first-person build story. They do not prove selection, a client result, a trial, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T09:42:29Z",
+    "method": "One concise email to the public address in the official listing, with exactly one article link and no resume, portfolio bundle, or attachment",
+    "delivery_evidence": "The exact public recipient, LazyingArt sender alias, subject, body, and single article URL were visibly reviewed before one Send action. The composer closed, and the Sent mailbox then showed 36 messages with the exact recipient and subject; its rendered message frame showed the LazyingArt sender alias, recipient, subject, timestamp, body, and one linked article.",
+    "message_storage": "ignored private evidence",
+    "attachments_sent": 0,
+    "article_links_sent": 1,
+    "resume_sent": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-16",
+    "policy": "Do not resubmit. If Manicule replies, review the exact paid-trial scope, rate, deadline, interview access, attribution, IP, revision, cancellation, and payment terms before accepting work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_trial_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

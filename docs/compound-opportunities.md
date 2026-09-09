@@ -18,7 +18,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Multilingual video accessibility package](#multilingual-video-accessibility) | candidate | Produce corrected captions, translation, language-aware timing, and optional ruby or furigana without rebuilding an editing pipeline | Offer a short before-and-after sample to creators who explicitly report caption, code-switching, or reading-aid problems | 4.00 |
 | [Private local-AI workstation deployment](#local-ai-workstation-deployment) | candidate | Install and operate a pinned local model stack with a usable web client and guarded remote access | Answer current hardware and deployment questions with the pinned public recipes, then invite qualified teams to request an audit | 3.95 |
 | [Story-first interview clip pilot](#story-first-content-repurposing) | active | Find a quiet but meaningful moment in a longer recording and turn it into one captioned vertical clip without forcing it into a generic viral template | Use the three current one-time applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly | 3.90 |
-| [Private multi-device remote access](#private-multidevice-remote-access) | active | Keep SSH, file transfer, and selected browser tools available across NAT or CGNAT without publishing desktop ports or tying the transport to one remote-control app | Measure metadata-only fit checks from the public LazyRemote route and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review | 3.75 |
+| [Private multi-device remote access](#private-multidevice-remote-access) | active | Keep SSH, file transfer, and selected browser tools available across NAT or CGNAT without publishing desktop ports or tying the transport to one remote-control app | Measure metadata-only fit checks after the complete project-owned sample report and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review | 3.75 |
 | [Creator library refinery](#creator-library-refinery) | candidate | Turn an existing archive into searchable source material, polished articles, clips, and multilingual derivatives without losing provenance | Use one LazyingArt-owned archive as the case study, then approach creators whose existing catalog is underused | 3.70 |
 | [Creator media library website](#creator-media-library) | candidate | Give an existing catalog a durable, searchable home with reliable metadata and language access instead of depending on a platform feed | Use a small LazyingArt-owned catalog as the demonstration, then ask creators with an existing back catalog whether they would pay to have three items organized | 3.70 |
 | [OpenHI reproducibility and kit qualification](#openhi-reproducibility-session) | active | Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time | Route repository and existing site interest to a metadata-only fit check; keep hardware inquiries separate | 3.60 |
@@ -350,11 +350,12 @@ Gates:
 
 **First deliverable:** A topology and recovery audit for one relay and up to three existing endpoints, covering listener exposure, key roles, host-key pinning, client paths, rollback, and an exact verification plan before any deployment
 
-**First demand test:** Measure metadata-only fit checks from the public LazyRemote route and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review
+**First demand test:** Measure metadata-only fit checks after the complete project-owned sample report and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review
 
 Evidence:
 
 - <https://remote.lazying.art/>
+- <https://remote.lazying.art/sample-report.html>
 - <https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1133/ubuntu%e4%b8%8b%e4%bd%bf%e7%94%a8%e5%8a%a8%e6%80%81%e5%9f%9f%e5%90%8d.html>
 - <https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/1148/ubuntu%e5%ae%89%e8%a3%85vnc-server.html>
 - <https://github.com/lachlanchen/LazyTunnel>

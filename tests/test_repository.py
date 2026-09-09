@@ -153,6 +153,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("metadata-only", campaign["possible_offer"]["intake"])
         self.assertIn("deployment", campaign["possible_offer"]["excluded"])
         self.assertFalse(campaign["possible_offer"]["hardware_included"])
+        decision_guide = campaign["possible_offer"]["decision_guide"]
+        self.assertEqual(decision_guide["state"], "live_reciprocal_route")
+        self.assertIn("3819", decision_guide["url"])
+        self.assertIn("874d2a4", decision_guide["landing_commit"])
+        self.assertIn("not an inquiry", decision_guide["boundary"])
         chinese_intake = campaign["possible_offer"]["simplified_chinese_intake"]
         self.assertEqual(chinese_intake["state"], "live_localized")
         self.assertIn("CGNAT", " ".join(chinese_intake["fields"]))

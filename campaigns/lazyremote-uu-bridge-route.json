@@ -188,6 +188,16 @@
       "published_commit": "1f1daee281cf59daeb790ffabc9a248bf519bc2a",
       "boundary": "A synthetic worked example showing the decision, scope, proposed route, listener and identity maps, findings, acceptance checklist, and rollback. It is explicitly not a customer result and contains no private fleet data."
     },
+    "decision_guide": {
+      "state": "live_reciprocal_route",
+      "url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html",
+      "localized_url": "https://blog.lazying.art/zh/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html",
+      "source_commit": "f6f0803",
+      "landing_commit": "874d2a4",
+      "fit": "A free role, access-surface, offboarding, and recovery method for small teams before they decide whether a paid network review is relevant.",
+      "verification": "Both live LazyRemote landing pages contain their localized tracked guide link, and all 86 LazyTunnel tests passed.",
+      "boundary": "Reading the guide is attention, not an inquiry, lead, payment, or revenue."
+    },
     "simplified_chinese_intake": {
       "state": "live_localized",
       "source_commit": "2f2a38b2e27fec40d7865d04fa1765e5f4184356",
@@ -202,7 +212,7 @@
       ],
       "privacy_boundary": "The Chinese template asks for metadata only and explicitly refuses passwords, private keys, and unredacted configuration in the first message."
     },
-    "verification": "GitHub Pages deployment 34350371886 completed successfully. The live English and Simplified Chinese offer routes, complete HTML sample, and downloadable Markdown sample returned HTTP 200. The Chinese fit-check button decoded to a Chinese subject and intake body while preserving the fixed scope and privacy boundary."
+    "verification": "The live English and Simplified Chinese offer routes, complete HTML sample, downloadable Markdown sample, and localized role-matrix links returned HTTP 200 or appeared in the live page source. The Chinese fit-check button preserves its Chinese subject, metadata fields, fixed scope, and privacy boundary. Latest landing commit 874d2a4."
   },
   "channels": {
     "github": {

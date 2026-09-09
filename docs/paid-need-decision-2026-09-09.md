@@ -22,6 +22,12 @@ not establish. No application was sent.
 
 ## Other verified routes
 
+- [NxSubs](https://nxsubs.com/careers) is openly recruiting remote subtitle
+  translators and QC linguists and includes ZH among its published language
+  pairs. One factual application with a checked one-page CV and two public
+  samples was sent once on September 9. The company publishes no rate, workload,
+  test terms, or assignment guarantee; wait for a human reply and review any
+  test, NDA, source transfer, scope, and payment terms separately.
 - [ODK Senior Product Manager](https://getodk.org/about/jobs/senior-product-manager/)
   is genuinely open and publishes USD 90–110 per hour, but it requires an
   ongoing 30–40 hours per week, Pacific-time overlap, and mature product

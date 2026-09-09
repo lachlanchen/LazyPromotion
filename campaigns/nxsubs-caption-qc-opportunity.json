@@ -1,0 +1,66 @@
+{
+  "id": "nxsubs-caption-qc-opportunity",
+  "version": 1,
+  "objective": "Win paid Chinese/English subtitle or QC assignments by presenting inspectable caption and bilingual-lecture proof without overstating linguistic certification or client experience.",
+  "source_need": {
+    "captured_at": "2026-09-09T03:13:00Z",
+    "url": "https://nxsubs.com/careers",
+    "title": "Subtitle Translator / QC Linguist",
+    "state": "official_current_freelance_recruitment",
+    "eligibility": "Remote; the page lists ZH among subtitle language pairs and multiple language pairs for QC",
+    "published_rate": null,
+    "published_process": "Send a CV and language pairs to the public resource email address",
+    "policy": "The official careers page is a current application route. It does not publish compensation, workload, test terms, or an assignment guarantee; an application is not a lead or revenue."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdit",
+      "MultilingualWhisper",
+      "FuriganaSubtitles",
+      "Video2Book"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery",
+      "https://lazying.art/lecture-pack/",
+      "https://github.com/lachlanchen/LazyEdit",
+      "https://github.com/lachlanchen/MultilingualWhisper"
+    ],
+    "supported_now": [
+      "Traditional and Simplified Chinese SRT delivery from one checked timeline",
+      "A burned H.264 review preview, source hashes, review frames, and rebuild script",
+      "A bilingual lecture specimen with corrected transcript, timed tracks, editable alignment, issue record, and manifest",
+      "Public transcription, subtitle-refinement, rendering, and video-delivery tools"
+    ],
+    "not_proven": [
+      "A paid media-localization customer credit",
+      "Certified translation status",
+      "Compliance with an unseen client or streaming-platform style guide",
+      "Native proficiency for every language pair listed by NxSubs"
+    ],
+    "claim_boundary": "The public artifacts prove project-owned subtitle workflow and review evidence. They do not prove certified translation, a customer outcome, or acceptance by NxSubs."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T03:23:13Z",
+    "method": "One concise email to the address on the official careers page",
+    "delivery_evidence": "The exact recipient, sender alias, subject, body, and one-page PDF were visibly reviewed; Send was clicked once, and the exact recipient, subject, attachment indicator, and message preview then appeared in the visible Sent mailbox.",
+    "message_storage": "ignored private evidence",
+    "cv_storage": "ignored private evidence",
+    "attachments_sent": 1,
+    "client_credits_claimed": false,
+    "certified_translation_claimed": false,
+    "automatic_follow_up": false,
+    "policy": "Verify the recipient, final attachment, and visible sent evidence exactly once. Any test, rate, workload, NDA, assignment, source transfer, contract, or payment must be reviewed on its own terms."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_assignment_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

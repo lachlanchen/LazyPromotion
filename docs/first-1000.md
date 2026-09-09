@@ -46,6 +46,17 @@ fit with the company's mixed portfolio must be reviewed in writing. This is
 one outbound application—not a reply, lead, assessment, contract, payment, or
 revenue.
 
+A fourth direct application answers NxSubs' current remote recruitment for
+subtitle translators and QC linguists, whose official careers page includes ZH
+among its language pairs. One concise email from the LazyingArt address links
+the checked Cantonese caption packet and bilingual lecture specimen and attaches
+a one-page CV. It says plainly that the public samples are project-owned rather
+than client credits and offers a pair- or style-guide-specific test before
+production work. The exact recipient, subject, and attachment indicator appeared
+in Sent after one send. NxSubs publishes no rate, workload, test terms, or
+assignment guarantee, so this is one outbound application—not a reply, lead,
+contract, payment, or revenue.
+
 A current-job recheck prevented two weak applications. Altimate.ai's indexed
 Technical Content Creator contract is no longer on its official board and its
 application URL now reports that the job was not found. The employer's remaining

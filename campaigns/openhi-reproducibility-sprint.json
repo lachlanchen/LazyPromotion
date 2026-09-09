@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 5,
+  "version": 6,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -75,6 +75,16 @@
       "postiz_content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The output is the environment record, pinned commands and parameters, generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://dub.sh/6YSLjj3",
       "destination": "https://lazying.art/openhi-reproducibility/?utm_source=linkedin&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=research_software",
       "role": "A first-party research-software post explains the deliverable and exclusions before linking to the fit check."
+    },
+    "instagram": {
+      "state": "queued_verified",
+      "post_id": "cmttnw2i207zoqk0ya9t0udyt",
+      "publish_at": "2026-09-23T12:00:00Z",
+      "content": "A reproducibility report should contain more than “it ran.”\n\nThis is the exact output from one public OpenHI visualization stage using a deterministic 4,096-event fixture. The report keeps the repository revision, environment, command, log, fixture, output, and hashes together—and states what was not tested.\n\nhttps://lazying.art/openhi-reproducibility/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=executed_sample\n\n#ResearchSoftware #ScientificPython #OpenScience #Reproducibility #OpenHI",
+      "postiz_content": "A reproducibility report should contain more than “it ran.”\n\nThis is the exact output from one public OpenHI visualization stage using a deterministic 4,096-event fixture. The report keeps the repository revision, environment, command, log, fixture, output, and hashes together—and states what was not tested.\n\nhttps://dub.sh/mni9E26\n\n#ResearchSoftware #ScientificPython #OpenScience #Reproducibility #OpenHI",
+      "destination": "https://lazying.art/openhi-reproducibility/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=executed_sample",
+      "media": "Project-owned exact OpenHI stage output from the frozen synthetic proof; uploaded through Postiz before scheduling.",
+      "role": "An evidence-led post shows the exact executed plot and points to the complete public packet."
     },
     "automatic_community_outreach": {
       "state": "disabled",

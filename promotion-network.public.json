@@ -6,7 +6,7 @@
       "label": "ai-clip-assembly-pilot",
       "metadata": {
         "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
-        "version": 8
+        "version": 9
       },
       "url": ""
     },
@@ -57,6 +57,16 @@
       "metadata": {
         "objective": "Help learners and study-tool builders keep one review history when a chapter, lecture transcript, or later upload repeats the same fact.",
         "version": 5
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:edge-image-quality-contract",
+      "kind": "campaign",
+      "label": "edge-image-quality-contract",
+      "metadata": {
+        "objective": "Win a paid CPU-first image-quality milestone by pairing the owner's scientific-imaging code with a small executed OpenCV/FastAPI proof, without claiming medical validation or generic incorrect-view accuracy.",
+        "version": 1
       },
       "url": ""
     },
@@ -137,6 +147,16 @@
       "metadata": {
         "objective": "Pursue one paid caption-core feasibility milestone for an in-house short-video editing service without claiming unverified Hebrew, RTL, large-upload, or production-scale capability.",
         "version": 2
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:lazyremote-uu-bridge-route",
+      "kind": "campaign",
+      "label": "lazyremote-uu-bridge-route",
+      "metadata": {
+        "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
+        "version": 1
       },
       "url": ""
     },
@@ -251,6 +271,26 @@
       "url": ""
     },
     {
+      "id": "campaign:openhi-reproducibility-sprint",
+      "kind": "campaign",
+      "label": "openhi-reproducibility-sprint",
+      "metadata": {
+        "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
+        "version": 7
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "kind": "campaign",
+      "label": "plesk-reverse-ssh-contributor-pitch",
+      "metadata": {
+        "objective": "Earn a paid Plesk technical contribution by pitching an original reverse-SSH security guide grounded in current LazyTunnel and LazyEdge work, without writing a full unpaid article or treating submission as revenue.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:postiz-affiliate-pilot",
       "kind": "campaign",
       "label": "postiz-affiliate-pilot",
@@ -301,9 +341,23 @@
       "url": ""
     },
     {
+      "id": "channel:automatic_community_outreach",
+      "kind": "channel",
+      "label": "automatic_community_outreach",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "channel:blog",
       "kind": "channel",
       "label": "blog",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:community_policy",
+      "kind": "channel",
+      "label": "community_policy",
       "metadata": {},
       "url": ""
     },
@@ -385,9 +439,30 @@
       "url": ""
     },
     {
+      "id": "channel:official_form",
+      "kind": "channel",
+      "label": "official_form",
+      "metadata": {},
+      "url": ""
+    },
+    {
       "id": "channel:owned_conversion_bridge",
       "kind": "channel",
       "label": "owned_conversion_bridge",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:owned_website",
+      "kind": "channel",
+      "label": "owned_website",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:postiz",
+      "kind": "channel",
+      "label": "postiz",
       "metadata": {},
       "url": ""
     },
@@ -740,8 +815,8 @@
       "label": "OpenHI reproducibility and kit qualification",
       "metadata": {
         "buyer": "A computational-imaging laboratory evaluating event-based hyperspectral imaging",
-        "first_deliverable": "A paid or research-partner reproducibility session and written compatibility or kit-qualification report",
-        "first_test": "Interview existing repository users and kit inquiries before increasing traffic or changing checkout",
+        "first_deliverable": "A USD 500 software-only reproduction of one named repository pipeline stage with a recorded environment, commands, outputs, failure ledger, and go/no-go report",
+        "first_test": "Route repository and existing site interest to a metadata-only fit check; keep hardware inquiries separate",
         "gates": [
           "Audit the exact SKU, inventory, price, lead time, calibration, shipping, tax, return, warranty, and support terms",
           "Keep scientific claims tied to the paper and reproducible evidence",
@@ -755,7 +830,7 @@
           "proof": 5,
           "repeatability": 3
         },
-        "state": "gated",
+        "state": "active",
         "weighted_score": 3.6
       },
       "url": ""
@@ -800,6 +875,7 @@
           "Hardware, model, driver, security, uptime, and remote-access support boundaries must be written",
           "Never expose an unauthenticated model endpoint",
           "Model licenses and geographic restrictions must be checked per deployment",
+          "Treat uu-remote-ubuntu-bridge only as vendor-specific Ubuntu workstation-integration evidence; it is not part of LazyRemote/LazyTunnel, a native UU Linux port, or proof that LazyRemote replaces UU Remote",
           "Treat LazyTunnel and the workstation bridges as operator-reviewed deployment evidence, not proof that an unseen customer topology will pass bidirectional shell, file transfer, failure recovery, negative-permission, or reboot tests"
         ],
         "need": "Install and operate a pinned local model stack with a usable web client and guarded remote access",
@@ -812,6 +888,35 @@
         },
         "state": "candidate",
         "weighted_score": 3.95
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:private-multidevice-remote-access",
+      "kind": "opportunity",
+      "label": "Private multi-device remote access",
+      "metadata": {
+        "buyer": "A self-hosted developer, small lab, or technical team that needs named private computers reachable from desktop and mobile clients",
+        "first_deliverable": "A topology and recovery audit for one relay and up to three existing endpoints, covering listener exposure, key roles, host-key pinning, client paths, rollback, and an exact verification plan before any deployment",
+        "first_test": "Measure metadata-only fit checks from the public LazyRemote route and answer current self-hosting questions with complete security and recovery guidance before mentioning the fixed review",
+        "gates": [
+          "Do not promise low-latency gaming, wake-on-LAN, or compatibility with an unseen topology",
+          "Keep relay listeners on loopback unless a separately reviewed architecture requires otherwise; never expose unauthenticated VNC, RDP, SSH, or web tools",
+          "Use separate keys, pinned host identities, least-privilege authorized_keys restrictions, and a tested rollback path",
+          "Treat the public seven-device and 49-directed-check record as operator evidence, not a customer result or proof of reboot recovery on every platform",
+          "Treat uu-remote-ubuntu-bridge only as vendor-specific Ubuntu workstation-integration evidence; it is not part of LazyRemote/LazyTunnel, a native UU Linux port, or proof that LazyRemote replaces UU Remote",
+          "Do not help evade school, employer, or network-owner policy; outbound TCP availability must be verified lawfully"
+        ],
+        "need": "Keep SSH, file transfer, and selected browser tools available across NAT or CGNAT without publishing desktop ports or tying the transport to one remote-control app",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 3,
+          "low_support": 1,
+          "proof": 5,
+          "repeatability": 4
+        },
+        "state": "active",
+        "weighted_score": 3.75
       },
       "url": ""
     },
@@ -2031,21 +2136,24 @@
     {
       "id": "project:github-lazytunnel",
       "kind": "project",
-      "label": "LazyTunnel",
+      "label": "LazyTunnel / LazyRemote",
       "metadata": {
-        "generated": true,
+        "generated": false,
         "keywords": [
-          "cloud relay",
-          "lazy tunnel",
-          "lazying art",
-          "openssh",
+          "lazyremote",
+          "self hosted remote access",
+          "self-hosted remote access",
           "remote access",
+          "private pc remote access",
+          "remote desktop",
+          "remote access behind nat",
+          "remote access behind cgnat",
           "reverse tunnel",
-          "self hosted",
-          "ssh",
-          "systemd"
+          "cloud relay",
+          "ssh terminal",
+          "novnc viewer"
         ],
-        "summary": "Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance."
+        "summary": "LazyRemote provides native clients for named private computers, SSH terminals, and noVNC viewers; LazyTunnel is its separate self-hosted tunnel core."
       },
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
@@ -3408,24 +3516,16 @@
       "kind": "project",
       "label": "uu-remote-ubuntu-bridge",
       "metadata": {
-        "generated": true,
+        "generated": false,
         "keywords": [
-          "binary patching",
-          "freerdp",
-          "gnome",
-          "netease",
-          "rdp",
-          "remote desktop",
-          "reverse engineering",
-          "systemd",
-          "ubuntu",
           "uu remote",
-          "uu-remote-ubuntu-bridge",
-          "wayland",
-          "wine",
-          "xvfb"
+          "netease uu remote",
+          "uu remote ubuntu",
+          "uu remote linux",
+          "uu remote wine",
+          "uu remote freerdp"
         ],
-        "summary": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge."
+        "summary": "A compatibility bridge for controlling Ubuntu GNOME through the official NetEase UU Remote Windows client using Wine, FreeRDP, and an input broker."
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -4501,7 +4601,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T00:56:06Z",
+        "pushed_at": "2026-09-09T08:43:59Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4521,7 +4621,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-09T00:56:11Z"
+        "updated_at": "2026-09-09T08:26:31Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4612,21 +4712,32 @@
       "kind": "repository",
       "label": "LazyTunnel",
       "metadata": {
-        "description": "Private SSH between computers through a small cloud relay, independent of desktop-control sessions. OpenSSH and systemd with separate identities, pinned host keys, reviewed deployment artifacts, and recovery guidance.",
-        "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-07T12:54:17Z",
+        "description": "LazyRemote: native apps for private computers, SSH terminals and noVNC viewers, powered by an independent self-hosted LazyTunnel core.",
+        "homepage": "https://remote.lazying.art",
+        "pushed_at": "2026-09-09T08:34:44Z",
         "topics": [
+          "android",
           "cloud-relay",
+          "dart",
+          "flutter",
+          "ios",
           "lazying-art",
+          "lazyremote",
+          "macos",
+          "native-app",
+          "novnc",
           "openssh",
           "python",
           "remote-access",
+          "remote-desktop",
           "reverse-tunnel",
           "self-hosted",
           "ssh",
-          "systemd"
+          "systemd",
+          "web-gui",
+          "windows"
         ],
-        "updated_at": "2026-09-07T12:54:40Z"
+        "updated_at": "2026-09-09T08:36:19Z"
       },
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
@@ -4742,7 +4853,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T00:16:40Z",
+        "pushed_at": "2026-09-09T05:27:32Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4758,7 +4869,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-09T00:16:53Z"
+        "updated_at": "2026-09-09T05:27:38Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -5062,7 +5173,7 @@
       "metadata": {
         "description": "Self‑calibrated neuromorphic hyperspectral imaging pipeline for event cameras with diffractive  illumination. Includes end‑to‑end tools for RAW segmentation, multi‑window time‑warping compensation, spectral visualization, and hardware control for synchronized event/frame capture and scanning.",
         "homepage": "https://lazying.art/openhi-kit.html",
-        "pushed_at": "2026-04-27T01:39:28Z",
+        "pushed_at": "2026-09-09T05:37:29Z",
         "topics": [
           "computer-vision",
           "event-camera",
@@ -5073,7 +5184,7 @@
           "python",
           "pytorch"
         ],
-        "updated_at": "2026-08-14T09:11:01Z"
+        "updated_at": "2026-09-09T05:37:38Z"
       },
       "url": "https://github.com/lachlanchen/OpenHI"
     },
@@ -6116,7 +6227,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-07T22:47:48Z",
+        "pushed_at": "2026-09-09T08:03:02Z",
         "topics": [
           "automation",
           "language",
@@ -6129,7 +6240,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-07T22:48:07Z"
+        "updated_at": "2026-09-09T08:03:22Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -6140,7 +6251,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-07T22:47:47Z",
+        "pushed_at": "2026-09-09T07:48:40Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -6158,7 +6269,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-08T02:15:55Z"
+        "updated_at": "2026-09-09T08:14:48Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -6366,11 +6477,11 @@
       "url": "https://docling-project.github.io/docling/concepts/serialization/"
     },
     {
-      "id": "url:8945a53cc57c5704",
+      "id": "url:da033398008985af",
       "kind": "web_resource",
       "label": "doi.org",
       "metadata": {},
-      "url": "https://doi.org/10.1364/OE.505380"
+      "url": "https://doi.org/10.1364/OPTICA.585766"
     },
     {
       "id": "url:b77fdcc9720dc9c0",
@@ -6646,13 +6757,6 @@
       "url": "https://github.com/lachlanchen/WordOrigins"
     },
     {
-      "id": "url:58c74e4f8c91e704",
-      "kind": "web_resource",
-      "label": "github.com",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/LazyTunnel"
-    },
-    {
       "id": "url:5e65cdfa20d329fc",
       "kind": "web_resource",
       "label": "github.com",
@@ -6672,6 +6776,13 @@
       "label": "github.com",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyPromotion/tree/e8512197cabe988ee597291364c0dab373e261ed/examples/source-aware-book-specimen"
+    },
+    {
+      "id": "url:6e535d468b3089cd",
+      "kind": "web_resource",
+      "label": "github.com",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyTunnel/releases/tag/v0.2.0"
     },
     {
       "id": "url:78830be928985376",
@@ -6877,6 +6988,20 @@
       "url": "https://lazying.art/manuscript-sprint/fit-check/"
     },
     {
+      "id": "url:f310531b65866aef",
+      "kind": "web_resource",
+      "label": "lazyremote",
+      "metadata": {},
+      "url": "https://remote.lazying.art/"
+    },
+    {
+      "id": "url:58c74e4f8c91e704",
+      "kind": "web_resource",
+      "label": "lazytunnel",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyTunnel"
+    },
+    {
       "id": "url:3918296102a662b2",
       "kind": "web_resource",
       "label": "lexical schema and evidence",
@@ -6952,6 +7077,27 @@
       "label": "offer page",
       "metadata": {},
       "url": "https://lazying.art/eink/"
+    },
+    {
+      "id": "url:2cde3f9de966a58f",
+      "kind": "web_resource",
+      "label": "official program",
+      "metadata": {},
+      "url": "https://www.plesk.com/content-contributor-program/"
+    },
+    {
+      "id": "url:df6113918f0955fd",
+      "kind": "web_resource",
+      "label": "official submission guide",
+      "metadata": {},
+      "url": "https://www.plesk.com/wp-content/uploads/2021/06/Contributor-submission-guide-2021.pdf"
+    },
+    {
+      "id": "url:f316f4ea43806f4c",
+      "kind": "web_resource",
+      "label": "official topics",
+      "metadata": {},
+      "url": "https://www.plesk.com/wp-content/uploads/2021/06/Contributors-Program-Monthly-Topics.pdf"
     },
     {
       "id": "url:b57449d2d42e1d8e",
@@ -7395,6 +7541,13 @@
       "url": "https://www.reddit.com/r/ChatGPT/comments/1vil3c6/anyone_else_hate_how_messy_it_is_to_get_useful/"
     },
     {
+      "id": "url:413208ffe0b50637",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/homelab/comments/1vu6ata/how_do_you_handle_remote_access_to_a_home_pc_that/"
+    },
+    {
       "id": "url:683672644b0eae8f",
       "kind": "web_resource",
       "label": "www.reddit.com",
@@ -7421,6 +7574,13 @@
       "label": "www.reddit.com",
       "metadata": {},
       "url": "https://www.reddit.com/r/Rag/comments/1v94yfz/if_you_were_building_a_fully_local_rag_system_for/"
+    },
+    {
+      "id": "url:bd5de683ecd1c516",
+      "kind": "web_resource",
+      "label": "www.reddit.com",
+      "metadata": {},
+      "url": "https://www.reddit.com/r/selfhosted/comments/1uejasq/need_help_setting_up_a_selfhosted_pc_that_i_can/"
     },
     {
       "id": "url:cd5af9c1e5d02057",
@@ -8477,6 +8637,36 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "disabled"
+      },
+      "relation": "targets",
+      "source": "campaign:lazyremote-uu-bridge-route",
+      "target": "channel:automatic_community_outreach"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_exact_fit_bridge"
+      },
+      "relation": "targets",
+      "source": "campaign:lazyremote-uu-bridge-route",
+      "target": "channel:github"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "not_queued"
+      },
+      "relation": "targets",
+      "source": "campaign:lazyremote-uu-bridge-route",
+      "target": "channel:postiz"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
       "metadata": {},
       "relation": "promotes",
@@ -9428,6 +9618,150 @@
       "relation": "targets",
       "source": "campaign:namecoach-voice-ai-contract",
       "target": "channel:direct_email"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "disabled"
+      },
+      "relation": "targets",
+      "source": "campaign:openhi-reproducibility-sprint",
+      "target": "channel:automatic_community_outreach"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "value_first"
+      },
+      "relation": "targets",
+      "source": "campaign:openhi-reproducibility-sprint",
+      "target": "channel:community_policy"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:openhi-reproducibility-sprint",
+      "target": "channel:github"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "queued_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:openhi-reproducibility-sprint",
+      "target": "channel:instagram"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "queued_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:openhi-reproducibility-sprint",
+      "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:openhi-reproducibility-sprint",
+      "target": "channel:owned_website"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "queued_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:openhi-reproducibility-sprint",
+      "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "project:github-lazyedge"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "project:github-lazytunnel"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "submitted_once"
+      },
+      "relation": "targets",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "channel:official_form"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.plesk.com/content-contributor-program/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "url:2cde3f9de966a58f"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "url:45192426591114fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "url:58c74e4f8c91e704"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.plesk.com/wp-content/uploads/2021/06/Contributor-submission-guide-2021.pdf",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "url:df6113918f0955fd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://remote.lazying.art/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "url:f310531b65866aef"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.plesk.com/wp-content/uploads/2021/06/Contributors-Program-Monthly-Topics.pdf",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:plesk-reverse-ssh-contributor-pitch",
+      "target": "url:f316f4ea43806f4c"
     },
     {
       "confidence": 1.0,
@@ -10761,19 +11095,19 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://doi.org/10.1364/OE.505380",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "opportunity:openhi-reproducibility-session",
-      "target": "url:8945a53cc57c5704"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/OpenHI",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "opportunity:openhi-reproducibility-session",
       "target": "url:c5ba05aea8ba9414"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://doi.org/10.1364/OPTICA.585766",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:openhi-reproducibility-session",
+      "target": "url:da033398008985af"
     },
     {
       "confidence": 1.0,
@@ -10854,6 +11188,94 @@
       "relation": "uses_evidence",
       "source": "opportunity:private-collection-intelligence",
       "target": "url:e619addef00aff79"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/kvm-qemu-workstation",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "project:github-kvm-qemu-workstation"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "project:github-lazyedge"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "project:github-lazytunnel"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/novnc-manager",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "project:github-novnc-manager"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "project:github-uu-remote-ubuntu-bridge"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/homelab/comments/1vu6ata/how_do_you_handle_remote_access_to_a_home_pc_that/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:413208ffe0b50637"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyEdge",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:45192426591114fc"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:58c74e4f8c91e704"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyTunnel/releases/tag/v0.2.0",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:6e535d468b3089cd"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.reddit.com/r/selfhosted/comments/1uejasq/need_help_setting_up_a_selfhosted_pc_that_i_can/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:bd5de683ecd1c516"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://remote.lazying.art/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:private-multidevice-remote-access",
+      "target": "url:f310531b65866aef"
     },
     {
       "confidence": 1.0,
@@ -11846,6 +12268,14 @@
       "relation": "backed_by",
       "source": "project:github-lazytunnel",
       "target": "repository:lachlanchen/LazyTunnel"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://remote.lazying.art/",
+      "metadata": {},
+      "relation": "has_homepage",
+      "source": "project:github-lazytunnel",
+      "target": "url:f310531b65866aef"
     },
     {
       "confidence": 1.0,

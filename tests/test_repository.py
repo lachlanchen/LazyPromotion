@@ -88,8 +88,8 @@ class RepositoryTests(unittest.TestCase):
         )
         demand = campaign["demand_evidence"]
         self.assertEqual(campaign["version"], 1)
-        self.assertEqual(demand["public_stars"], 9)
-        self.assertEqual(demand["recent_star_window"]["new_stars"], 4)
+        self.assertEqual(demand["public_stars"], 10)
+        self.assertEqual(demand["recent_star_window"]["new_stars"], 5)
         self.assertEqual(
             demand["owner_visible_traffic"]["top_referrer"]["name"], "Google"
         )

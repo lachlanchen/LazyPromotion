@@ -127,8 +127,8 @@ contract before a full article is drafted. This is an outbound proposal—not an
 editorial reply, contract, publication, payment, or revenue.
 
 The UU Remote Ubuntu bridge now supplies a separate product-discovery signal.
-Its public repository had nine stars and three forks when checked on September
-9, including four stars since September 3. The owner-visible rolling traffic
+Its public repository had ten stars and three forks when checked on September
+9, including five stars since September 3. The owner-visible rolling traffic
 report showed 929 views from 428 visitors and 411 clones from 162 cloners;
 Google supplied 593 views, and the Simplified Chinese README was the leading
 path with 461 views. The bridge README and all ten translations now offer one

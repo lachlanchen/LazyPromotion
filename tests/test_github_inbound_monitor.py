@@ -1,0 +1,263 @@
+import json
+import stat
+import subprocess
+import tempfile
+import unittest
+from pathlib import Path
+from types import SimpleNamespace
+
+import github_inbound_monitor as monitor
+
+
+def issue(repository, number, *, title=None):
+    return {
+        "number": number,
+        "title": title or f"Issue {number}",
+        "url": f"https://github.com/{monitor.OWNER}/{repository}/issues/{number}",
+        "state": "OPEN",
+        "createdAt": f"2026-09-{number:02d}T01:02:03Z",
+        "updatedAt": f"2026-09-{number:02d}T02:03:04Z",
+        "author": {"login": f"person-{number}"},
+    }
+
+
+def graphql_payload(issues_by_repository=None, *, visibility_by_repository=None):
+    issues_by_repository = issues_by_repository or {}
+    visibility_by_repository = visibility_by_repository or {}
+    data = {}
+    for index, name in enumerate(monitor.REPOSITORIES):
+        issues = issues_by_repository.get(name, [])
+        data[f"repo{index}"] = {
+            "nameWithOwner": f"{monitor.OWNER}/{name}",
+            "visibility": visibility_by_repository.get(name, "PUBLIC"),
+            "issues": {
+                "totalCount": len(issues),
+                "pageInfo": {"hasNextPage": False},
+                "nodes": issues,
+            },
+        }
+    return {"data": data}
+
+
+class FakeRunner:
+    def __init__(self, payloads, *, ignored=True, tracked=False, gh_failure=False):
+        self.payloads = list(payloads)
+        self.ignored = ignored
+        self.tracked = tracked
+        self.gh_failure = gh_failure
+        self.commands = []
+
+    @staticmethod
+    def result(payload=None, *, returncode=0, stderr=""):
+        stdout = payload if isinstance(payload, str) else json.dumps(payload)
+        return SimpleNamespace(
+            returncode=returncode,
+            stdout=stdout or "",
+            stderr=stderr,
+        )
+
+    def __call__(self, command, **kwargs):
+        self.commands.append((command, kwargs))
+        if command[0] == "git":
+            if "ls-files" in command:
+                return self.result(returncode=0 if self.tracked else 1)
+            if "check-ignore" in command:
+                return self.result(returncode=0 if self.ignored else 1)
+            raise AssertionError(command)
+        if command[:3] != ["gh", "api", "graphql"]:
+            raise AssertionError(command)
+        if kwargs != {
+            "text": True,
+            "capture_output": True,
+            "check": False,
+            "timeout": 60,
+        }:
+            raise AssertionError(kwargs)
+        if self.gh_failure:
+            return self.result(
+                returncode=1,
+                stderr="token and account details must not escape",
+            )
+        return self.result(self.payloads.pop(0))
+
+
+class GitHubInboundMonitorTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.root = Path(self.temporary.name)
+        self.state = self.root / ".local" / "github-inbound-status.json"
+
+    def tearDown(self):
+        self.temporary.cleanup()
+
+    def test_one_fixed_graphql_query_has_no_issue_body_or_mutation(self):
+        fake = FakeRunner([graphql_payload()])
+        observation = monitor.fetch_public_issues(runner=fake)
+
+        self.assertEqual(len(observation["repositories"]), len(monitor.REPOSITORIES))
+        gh_commands = [item for item in fake.commands if item[0][0] == "gh"]
+        self.assertEqual(len(gh_commands), 1)
+        command, _ = gh_commands[0]
+        self.assertEqual(command[:3], ["gh", "api", "graphql"])
+        self.assertEqual(command[command.index("--method") + 1], "POST")
+        query_arg = next(value for value in command if value.startswith("query="))
+        query = query_arg.removeprefix("query=")
+        self.assertTrue(query.lstrip().startswith("query "))
+        self.assertNotIn("mutation", query.casefold())
+        self.assertNotIn("body", query.split("nodes", 1)[-1].casefold())
+        self.assertNotIn("comments", query.casefold())
+        for name in monitor.REPOSITORIES:
+            self.assertIn(json.dumps(name), query)
+
+    def test_nonpublic_repository_response_is_rejected(self):
+        private_name = monitor.REPOSITORIES[-1]
+        fake = FakeRunner(
+            [
+                graphql_payload(
+                    {monitor.REPOSITORIES[0]: [issue(monitor.REPOSITORIES[0], 1)]},
+                    visibility_by_repository={private_name: "PRIVATE"},
+                )
+            ]
+        )
+        with self.assertRaisesRegex(ValueError, "non-public"):
+            monitor.fetch_public_issues(runner=fake)
+
+    def test_baseline_then_only_new_key_alerts_and_seen_keys_are_preserved(self):
+        first_name = monitor.REPOSITORIES[0]
+        baseline = graphql_payload({first_name: [issue(first_name, 1)]})
+        second = graphql_payload(
+            {first_name: [issue(first_name, 2), issue(first_name, 1)]}
+        )
+        fake = FakeRunner([baseline, second])
+
+        first = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-09T01:00:00Z",
+        )
+        self.assertTrue(first["baseline_created"])
+        self.assertEqual(first["alerts"], [])
+        self.assertEqual(first["seen_issue_keys"], [monitor.issue_key(first_name, 1)])
+
+        second_report = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-09T01:15:00Z",
+        )
+        self.assertFalse(second_report["baseline_created"])
+        self.assertEqual(
+            [alert["key"] for alert in second_report["alerts"]],
+            [monitor.issue_key(first_name, 2)],
+        )
+        self.assertEqual(
+            second_report["seen_issue_keys"],
+            [monitor.issue_key(first_name, 1), monitor.issue_key(first_name, 2)],
+        )
+        self.assertEqual(stat.S_IMODE(self.state.stat().st_mode), 0o600)
+        serialized = self.state.read_text(encoding="utf-8").casefold()
+        self.assertNotIn('"body"', serialized)
+        self.assertFalse(second_report["policy"]["issue_is_lead_evidence"])
+        self.assertFalse(second_report["policy"]["issue_is_revenue_evidence"])
+        self.assertFalse(second_report["policy"]["github_mutations_performed"])
+
+    def test_seen_state_survives_an_issue_leaving_the_current_window(self):
+        repository = monitor.REPOSITORIES[0]
+        previous = {
+            "version": 1,
+            "initialized": True,
+            "owner": monitor.OWNER,
+            "repository_allowlist": list(monitor.REPOSITORIES),
+            "seen_issue_keys": [monitor.issue_key(repository, 1)],
+        }
+        observation = monitor.fetch_public_issues(
+            runner=FakeRunner([graphql_payload()])
+        )
+        report = monitor.build_state(observation, previous)
+        self.assertEqual(report["seen_issue_keys"], [monitor.issue_key(repository, 1)])
+        self.assertEqual(report["alerts"], [])
+
+    def test_failed_query_preserves_existing_state_and_sanitizes_cli_error(self):
+        repository = monitor.REPOSITORIES[0]
+        good = FakeRunner([graphql_payload({repository: [issue(repository, 1)]})])
+        monitor.monitor_once(state_path=self.state, root=self.root, runner=good)
+        before = self.state.read_bytes()
+        failing = FakeRunner([], gh_failure=True)
+        with self.assertRaisesRegex(RuntimeError, "GraphQL query failed") as raised:
+            monitor.monitor_once(
+                state_path=self.state,
+                root=self.root,
+                runner=failing,
+            )
+        self.assertEqual(self.state.read_bytes(), before)
+        self.assertNotIn("token", str(raised.exception).casefold())
+        self.assertNotIn("account", str(raised.exception).casefold())
+
+    def test_state_path_is_restricted_ignored_untracked_and_not_linked(self):
+        accepted = FakeRunner([])
+        self.assertEqual(
+            monitor.validate_state_path(self.state, root=self.root, runner=accepted),
+            self.state,
+        )
+        with self.assertRaisesRegex(ValueError, r"\.local"):
+            monitor.validate_state_path(
+                self.root / "public.json",
+                root=self.root,
+                runner=accepted,
+            )
+        with self.assertRaisesRegex(ValueError, "inside"):
+            monitor.validate_state_path(
+                self.root.parent / "outside.json",
+                root=self.root,
+                runner=accepted,
+            )
+        with self.assertRaisesRegex(ValueError, "JSON"):
+            monitor.validate_state_path(
+                self.root / ".local" / "state.txt",
+                root=self.root,
+                runner=accepted,
+            )
+
+        tracked = FakeRunner([], tracked=True)
+        with self.assertRaisesRegex(ValueError, "not be tracked"):
+            monitor.validate_state_path(self.state, root=self.root, runner=tracked)
+        visible = FakeRunner([], ignored=False)
+        with self.assertRaisesRegex(ValueError, "must be ignored"):
+            monitor.validate_state_path(self.state, root=self.root, runner=visible)
+
+        target = self.root / "actual-local"
+        target.mkdir()
+        (self.root / ".local").symlink_to(target, target_is_directory=True)
+        with self.assertRaisesRegex(ValueError, "symbolic links"):
+            monitor.validate_state_path(self.state, root=self.root, runner=accepted)
+
+    def test_loop_rejects_intervals_shorter_than_fifteen_minutes(self):
+        with self.assertRaisesRegex(ValueError, "at least 15"):
+            monitor.monitor_loop(
+                14,
+                state_path=self.state,
+                root=self.root,
+                runner=FakeRunner([]),
+            )
+
+
+class GitHubInboundWrapperTests(unittest.TestCase):
+    def test_wrapper_is_valid_single_session_launcher(self):
+        root = Path(__file__).resolve().parents[1]
+        script = root / "scripts" / "github-inbound-monitor.sh"
+        completed = subprocess.run(
+            ["bash", "-n", str(script)], capture_output=True, text=True
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        text = script.read_text(encoding="utf-8")
+        self.assertIn('SESSION="lazypromotion-github-inbound-monitor"', text)
+        self.assertIn("python github_inbound_monitor.py loop", text)
+        self.assertIn("tmux has-session", text)
+        self.assertEqual(text.count("tmux new-session"), 1)
+        self.assertIn("INTERVAL_MINUTES < 15", text)
+        self.assertIn("chmod 600", text)
+
+
+if __name__ == "__main__":
+    unittest.main()

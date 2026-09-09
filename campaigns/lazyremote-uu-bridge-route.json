@@ -180,7 +180,18 @@
   },
   "channels": {
     "github": {
-      "state": "live_exact_fit_bridge"
+      "state": "live_exact_fit_bridge",
+      "inbound_monitor": {
+        "state": "baseline_initialized",
+        "repository_allowlist_size": 8,
+        "baseline_checked_at": "2026-09-09T13:00:25Z",
+        "issues_in_current_windows": 1,
+        "new_issue_alerts": 0,
+        "issue_bodies_requested": false,
+        "automatic_comments_or_replies": false,
+        "last_verified_session": "lazypromotion-github-inbound-monitor",
+        "policy": "A new public issue creates a manual relevance-review alert only; it is never classified as a lead, customer, sale, or revenue."
+      }
     },
     "owned_blog": {
       "state": "live_exact_fit_routes",
@@ -205,10 +216,19 @@
             "ja"
           ],
           "fit": "Readers evaluating a loopback-only reverse tunnel for remote desktop"
+        },
+        {
+          "post_id": 3818,
+          "subject": "在 Ubuntu 上用 UU 远程：我做了一个可复现的兼容桥",
+          "url": "https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html",
+          "locales": [
+            "zh"
+          ],
+          "fit": "Simplified-Chinese readers asking specifically whether and how the official UU client can control an Ubuntu GNOME desktop"
         }
       ],
-      "copy_boundary": "Each edition finishes the relevant technical answer first, uses one first-person offer paragraph, and states the fixed price, metadata-only first contact, and the deployment and hardware exclusions.",
-      "verification": "All six live locale routes returned HTTP 200 and contained the exact LazyRemote Network Fit Review link after the WordPress sync. The 31 BLOG unit tests passed."
+      "copy_boundary": "Each edition or guide finishes the relevant technical answer first, uses at most one first-person offer paragraph, and states the fixed price, metadata-only first contact, and the deployment and hardware exclusions.",
+      "verification": "The six established locale routes and the new question-shaped Simplified-Chinese UU guide returned HTTP 200 and contained their exact owned paths after WordPress publication. The new guide identifies the bridge as non-native, keeps its verified version boundary, links the public compatibility form, and separates LazyRemote from the official-UU route. All 31 BLOG unit tests passed; BLOG commit 6763eff."
     },
     "postiz": {
       "state": "not_queued",

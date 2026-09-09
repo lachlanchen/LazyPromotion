@@ -116,6 +116,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(len(capture["placements"]), 2)
         self.assertIn("credentials", capture["privacy_boundary"])
         self.assertIn("free", capture["commercial_boundary"])
+        blog_routes = campaign["channels"]["owned_blog"]["placements"]
+        self.assertEqual(len(blog_routes), 3)
+        self.assertEqual(blog_routes[-1]["post_id"], 3818)
+        self.assertIn("Ubuntu", blog_routes[-1]["subject"])
+        issue_monitor = campaign["channels"]["github"]["inbound_monitor"]
+        self.assertEqual(issue_monitor["state"], "baseline_initialized")
+        self.assertFalse(issue_monitor["issue_bodies_requested"])
+        self.assertFalse(issue_monitor["automatic_comments_or_replies"])
         self.assertEqual(campaign["possible_offer"]["state"], "live_fit_first")
         self.assertEqual(campaign["possible_offer"]["price"], "USD 250")
         self.assertIn("metadata-only", campaign["possible_offer"]["intake"])

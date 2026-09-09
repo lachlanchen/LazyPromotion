@@ -208,6 +208,15 @@ metadata template rather than an English intake form. It still asks for no
 password, private key, or unredacted configuration. LazyTunnel commit
 `2f2a38b`; Pages run `34350371886` succeeded. This removes one language obstacle
 without creating or implying an inquiry.
+A concise [Chinese guide answering whether UU can be used on Ubuntu](https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html)
+is also live. It explains the Wine/RDP/input path, the exact verified host and
+UU boundary, safe install route, update discipline, bilingual compatibility
+form, and the separate LazyRemote option before one quiet paid-review paragraph.
+BLOG commit `6763eff`; publication is not a lead or sale.
+One read-only GitHub monitor now watches public issue metadata across eight
+high-attention or offer repositories in a single GraphQL query. Its first pass
+baselined one existing issue and raised no alert; it requests no issue body and
+cannot comment or reply. Later new keys trigger manual relevance review only.
 
 The [complete sample report](https://remote.lazying.art/sample-report.html)
 shows the decision, listener and identity maps, findings, acceptance checklist,

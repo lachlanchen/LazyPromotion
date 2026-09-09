@@ -61,7 +61,7 @@ never count as revenue.
 | [`docs/first-1000.md`](docs/first-1000.md) | Eight bounded USD 250/USD 500 service routes and truthful milestone math |
 | [`docs/paid-need-decision-2026-09-09.md`](docs/paid-need-decision-2026-09-09.md) | Current direct-route screen, evidence gaps, and submission gates |
 | [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated funnel, public graph, and first-party demand signals |
-| [`owned_monitor.py`](owned_monitor.py) and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring and private fit-check intake |
+| [`owned_monitor.py`](owned_monitor.py), [`github_inbound_monitor.py`](github_inbound_monitor.py), and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring, public-issue alerts, and private fit-check intake |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome review desktop |
 | [`application_watch.py`](application_watch.py) and [`application_inbox_monitor.py`](application_inbox_monitor.py) | Due-review schedule plus read-only aggregate matching for known application threads; never opens mail or follows up |
 | [`docs/open-source-evaluation.md`](docs/open-source-evaluation.md) | Auditable open-source and MCP tool choices |
@@ -114,6 +114,21 @@ The board is discovery only. The auditor verifies live issue state and existing
 solution pull requests, rejects unsafe instruction requests, and writes its
 private report under `.local/`.
 
+New public issues in the eight current high-attention/offer repositories can be
+observed without reading issue bodies or writing to GitHub:
+
+```bash
+python github_inbound_monitor.py once
+scripts/github-inbound-monitor.sh start
+scripts/github-inbound-monitor.sh status
+scripts/github-inbound-monitor.sh stop
+```
+
+The first pass only creates a private baseline. Later passes alert only on issue
+keys not already in the retained state. The loop interval cannot be shorter
+than 15 minutes. See [`docs/github-inbound-monitor.md`](docs/github-inbound-monitor.md)
+for the fixed allowlist and safety contract.
+
 ## Runtime isolation
 
 The launcher owns one 1920×1080 display (`:116`), VNC port `5936`, noVNC
@@ -146,8 +161,8 @@ specialization, not a claim that a closed marketplace listing is still open.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py
-bash -n scripts/desktop.sh
+python -m py_compile promotion.py browser.py bounties.py github_inbound_monitor.py
+bash -n scripts/desktop.sh scripts/github-inbound-monitor.sh
 git diff --check
 ```
 

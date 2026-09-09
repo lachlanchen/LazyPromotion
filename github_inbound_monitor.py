@@ -1,0 +1,604 @@
+#!/usr/bin/env python3
+"""Read-only monitor for new public issues in a fixed GitHub repository set.
+
+The monitor performs one authenticated GraphQL query per pass.  Its query has
+no mutation and does not request issue bodies.  It writes only an ignored,
+owner-readable local state file and emits review alerts; an issue is never
+classified as a lead, customer, sale, or revenue.
+"""
+
+from __future__ import annotations
+
+import argparse
+import fcntl
+import json
+import os
+import stat
+import subprocess
+import sys
+import tempfile
+import time
+from collections.abc import Callable, Iterator
+from contextlib import contextmanager
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parent
+OWNER = "lachlanchen"
+REPOSITORIES = (
+    "uu-remote-ubuntu-bridge",
+    "LazyTunnel",
+    "LocalKnowledgeTerminal",
+    "leonardsusskind",
+    "OpenHI",
+    "Kindle",
+    "Video2Book",
+    "LazyEdit",
+)
+ISSUES_PER_REPOSITORY = 100
+MINIMUM_INTERVAL_MINUTES = 15
+DEFAULT_STATE_PATH = ROOT / ".local" / "github-inbound-monitor-status.json"
+API_VERSION = "2022-11-28"
+Runner = Callable[..., subprocess.CompletedProcess[str]]
+
+
+def _graphql_document() -> str:
+    repository_fields = []
+    for index, name in enumerate(REPOSITORIES):
+        repository_fields.append(
+            f"""  repo{index}: repository(owner: $owner, name: {json.dumps(name)}) {{
+    nameWithOwner
+    visibility
+    issues(
+      first: {ISSUES_PER_REPOSITORY}
+      states: [OPEN, CLOSED]
+      orderBy: {{field: CREATED_AT, direction: DESC}}
+    ) {{
+      totalCount
+      pageInfo {{ hasNextPage }}
+      nodes {{
+        number
+        title
+        url
+        state
+        createdAt
+        updatedAt
+        author {{ login }}
+      }}
+    }}
+  }}"""
+        )
+    return (
+        "query GitHubInboundIssues($owner: String!) {\n"
+        + "\n".join(repository_fields)
+        + "\n}"
+    )
+
+
+GRAPHQL_QUERY = _graphql_document()
+
+
+def utc_now() -> str:
+    return (
+        datetime.now(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+
+
+def default_runner(
+    command: list[str], **kwargs: Any
+) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(command, **kwargs)
+
+
+def _run_read_only_query(
+    *, runner: Runner = default_runner
+) -> subprocess.CompletedProcess[str]:
+    """Run the fixed GraphQL query; POST is transport, not a GitHub mutation."""
+    command = [
+        "gh",
+        "api",
+        "graphql",
+        "--method",
+        "POST",
+        "--header",
+        "Accept: application/vnd.github+json",
+        "--header",
+        f"X-GitHub-Api-Version: {API_VERSION}",
+        "--raw-field",
+        f"query={GRAPHQL_QUERY}",
+        "--raw-field",
+        f"owner={OWNER}",
+    ]
+    try:
+        return runner(
+            command,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=60,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        raise RuntimeError("GitHub GraphQL query did not complete") from exc
+
+
+def fetch_public_issues(*, runner: Runner = default_runner) -> dict[str, Any]:
+    """Fetch and validate all allowlisted repositories in one GraphQL call."""
+    completed = _run_read_only_query(runner=runner)
+    if completed.returncode != 0:
+        # gh stderr can contain account-specific diagnostics, so never relay it.
+        raise RuntimeError("GitHub GraphQL query failed")
+    try:
+        payload = json.loads(str(completed.stdout or ""))
+    except json.JSONDecodeError as exc:
+        raise RuntimeError("GitHub GraphQL returned invalid JSON") from exc
+    if not isinstance(payload, dict) or payload.get("errors"):
+        raise RuntimeError("GitHub GraphQL query returned an error")
+    data = payload.get("data")
+    if not isinstance(data, dict):
+        raise RuntimeError("GitHub GraphQL response did not contain data")
+
+    # Validate the entire visibility boundary before accepting issue data from
+    # any repository.  An authenticated token may otherwise expose private data.
+    raw_repositories: list[dict[str, Any]] = []
+    for index, name in enumerate(REPOSITORIES):
+        raw = data.get(f"repo{index}")
+        if not isinstance(raw, dict):
+            raise ValueError(f"allowlisted repository is unavailable: {name}")
+        expected = f"{OWNER}/{name}"
+        actual = raw.get("nameWithOwner")
+        if not isinstance(actual, str) or actual.casefold() != expected.casefold():
+            raise ValueError(f"GitHub returned an unexpected repository: {name}")
+        if raw.get("visibility") != "PUBLIC":
+            raise ValueError(f"refusing non-public repository data: {name}")
+        raw_repositories.append(raw)
+
+    repositories = []
+    for name, raw in zip(REPOSITORIES, raw_repositories):
+        repositories.append(_parse_repository(name, raw))
+    return {"owner": OWNER, "repositories": repositories}
+
+
+def _nonnegative_int(value: Any, label: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise ValueError(f"{label} must be a non-negative integer")
+    return value
+
+
+def _timestamp(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{label} must be a timestamp")
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ValueError(f"{label} must be a timestamp") from exc
+    if parsed.tzinfo is None:
+        raise ValueError(f"{label} must include a timezone")
+    return value
+
+
+def _parse_repository(name: str, raw: dict[str, Any]) -> dict[str, Any]:
+    connection = raw.get("issues")
+    if not isinstance(connection, dict):
+        raise ValueError(f"GitHub returned invalid issue data: {name}")
+    total_count = _nonnegative_int(connection.get("totalCount"), f"{name} issue total")
+    page_info = connection.get("pageInfo")
+    if not isinstance(page_info, dict) or not isinstance(
+        page_info.get("hasNextPage"), bool
+    ):
+        raise ValueError(f"GitHub returned invalid issue page data: {name}")
+    nodes = connection.get("nodes")
+    if not isinstance(nodes, list) or len(nodes) > ISSUES_PER_REPOSITORY:
+        raise ValueError(f"GitHub returned an invalid issue window: {name}")
+    if total_count < len(nodes):
+        raise ValueError(f"GitHub returned an invalid issue total: {name}")
+
+    issues = []
+    numbers: set[int] = set()
+    for raw_issue in nodes:
+        if not isinstance(raw_issue, dict):
+            raise ValueError(f"GitHub returned an invalid issue: {name}")
+        number = _nonnegative_int(raw_issue.get("number"), f"{name} issue number")
+        if number < 1 or number in numbers:
+            raise ValueError(f"GitHub returned a duplicate or invalid issue: {name}")
+        numbers.add(number)
+        title = raw_issue.get("title")
+        url = raw_issue.get("url")
+        state = raw_issue.get("state")
+        if not isinstance(title, str) or not title.strip():
+            raise ValueError(f"GitHub returned an invalid issue title: {name}#{number}")
+        expected_url = f"https://github.com/{OWNER}/{name}/issues/{number}"
+        if (
+            not isinstance(url, str)
+            or url.rstrip("/").casefold() != expected_url.casefold()
+        ):
+            raise ValueError(f"GitHub returned an invalid issue URL: {name}#{number}")
+        if state not in {"OPEN", "CLOSED"}:
+            raise ValueError(f"GitHub returned an invalid issue state: {name}#{number}")
+        author = raw_issue.get("author")
+        if author is not None and (
+            not isinstance(author, dict) or not isinstance(author.get("login"), str)
+        ):
+            raise ValueError(
+                f"GitHub returned an invalid issue author: {name}#{number}"
+            )
+        issues.append(
+            {
+                "key": issue_key(name, number),
+                "repository": name,
+                "number": number,
+                "title": title,
+                "url": url,
+                "state": state,
+                "created_at": _timestamp(
+                    raw_issue.get("createdAt"), f"{name}#{number} createdAt"
+                ),
+                "updated_at": _timestamp(
+                    raw_issue.get("updatedAt"), f"{name}#{number} updatedAt"
+                ),
+                "author_login": author.get("login") if author else None,
+            }
+        )
+    issues.sort(key=lambda issue: issue["number"])
+    return {
+        "name": name,
+        "name_with_owner": f"{OWNER}/{name}",
+        "visibility": "PUBLIC",
+        "total_issue_count": total_count,
+        "window_issue_count": len(issues),
+        "window_truncated": bool(page_info["hasNextPage"]),
+        "issues": issues,
+    }
+
+
+def issue_key(repository: str, number: int) -> str:
+    return f"{OWNER}/{repository}#{number}"
+
+
+def _split_issue_key(key: str) -> tuple[int, int]:
+    prefix, separator, number_text = key.rpartition("#")
+    if not separator or not number_text.isdigit() or int(number_text) < 1:
+        raise ValueError("state contains an invalid issue key")
+    owner, slash, repository = prefix.partition("/")
+    if owner != OWNER or not slash or repository not in REPOSITORIES:
+        raise ValueError("state contains an issue outside the allowlist")
+    return REPOSITORIES.index(repository), int(number_text)
+
+
+def _run_git_check(
+    command: list[str], *, runner: Runner
+) -> subprocess.CompletedProcess[str]:
+    try:
+        return runner(
+            command,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=30,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        raise RuntimeError("state path safety check did not complete") from exc
+
+
+def _reject_symlink_components(root: Path, relative: Path) -> None:
+    current = root
+    for part in relative.parts:
+        current = current / part
+        try:
+            metadata = current.lstat()
+        except FileNotFoundError:
+            continue
+        if stat.S_ISLNK(metadata.st_mode):
+            raise ValueError("state path must not contain symbolic links")
+        if current != root / relative and not stat.S_ISDIR(metadata.st_mode):
+            raise ValueError("state path parent must be a directory")
+        if current == root / relative and not stat.S_ISREG(metadata.st_mode):
+            raise ValueError("existing state path must be a regular file")
+        if current == root / relative and metadata.st_nlink != 1:
+            raise ValueError("existing state path must not be hard linked")
+
+
+def validate_state_path(
+    state_path: Path,
+    *,
+    root: Path = ROOT,
+    runner: Runner = default_runner,
+) -> Path:
+    """Require an untracked, ignored JSON file below this repo's .local dir."""
+    root = root.resolve()
+    raw = state_path if state_path.is_absolute() else root / state_path
+    candidate = Path(os.path.abspath(os.fspath(raw)))
+    try:
+        relative = candidate.relative_to(root)
+    except ValueError as exc:
+        raise ValueError("state path must stay inside the repository") from exc
+    if len(relative.parts) < 2 or relative.parts[0] != ".local":
+        raise ValueError("state path must be below the repository .local directory")
+    if candidate.suffix.casefold() != ".json":
+        raise ValueError("state path must be a JSON file")
+    _reject_symlink_components(root, relative)
+
+    tracked = _run_git_check(
+        [
+            "git",
+            "-C",
+            str(root),
+            "ls-files",
+            "--error-unmatch",
+            "--",
+            relative.as_posix(),
+        ],
+        runner=runner,
+    )
+    if tracked.returncode == 0:
+        raise ValueError("state path must not be tracked by Git")
+    if tracked.returncode != 1:
+        raise RuntimeError("could not verify whether the state path is tracked")
+    ignored = _run_git_check(
+        [
+            "git",
+            "-C",
+            str(root),
+            "check-ignore",
+            "--quiet",
+            "--no-index",
+            "--",
+            relative.as_posix(),
+        ],
+        runner=runner,
+    )
+    if ignored.returncode == 1:
+        raise ValueError("state path must be ignored by Git")
+    if ignored.returncode != 0:
+        raise RuntimeError("could not verify that the state path is ignored")
+    return candidate
+
+
+def load_state(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    flags = os.O_RDONLY
+    if hasattr(os, "O_NOFOLLOW"):
+        flags |= os.O_NOFOLLOW
+    descriptor = os.open(path, flags)
+    try:
+        metadata = os.fstat(descriptor)
+        if not stat.S_ISREG(metadata.st_mode) or metadata.st_nlink != 1:
+            raise ValueError("state path must be a private regular file")
+        with os.fdopen(descriptor, "r", encoding="utf-8") as stream:
+            descriptor = -1
+            payload = json.load(stream)
+    finally:
+        if descriptor >= 0:
+            os.close(descriptor)
+    if not isinstance(payload, dict) or payload.get("version") != 1:
+        raise ValueError("existing monitor state is invalid")
+    if payload.get("owner") != OWNER or payload.get("repository_allowlist") != list(
+        REPOSITORIES
+    ):
+        raise ValueError("existing monitor state does not match the fixed allowlist")
+    if payload.get("initialized") is not True:
+        raise ValueError("existing monitor state is not initialized")
+    seen = payload.get("seen_issue_keys")
+    if not isinstance(seen, list) or any(not isinstance(key, str) for key in seen):
+        raise ValueError("existing monitor state has invalid seen issue keys")
+    if len(seen) != len(set(seen)):
+        raise ValueError("existing monitor state has duplicate seen issue keys")
+    for key in seen:
+        _split_issue_key(key)
+    return payload
+
+
+def write_private_json(
+    path: Path,
+    payload: dict[str, Any],
+    *,
+    root: Path | None = None,
+) -> None:
+    """Atomically replace one regular state file with mode 0600."""
+    if root is None:
+        local_ancestors = [parent for parent in path.parents if parent.name == ".local"]
+        root = local_ancestors[-1].parent if local_ancestors else path.parent
+    root = root.resolve()
+    relative = path.relative_to(root)
+    _reject_symlink_components(root, relative)
+    path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+    _reject_symlink_components(root, relative)
+
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{path.name}.", suffix=".tmp", dir=path.parent
+    )
+    temporary = Path(temporary_name)
+    try:
+        os.fchmod(descriptor, 0o600)
+        with os.fdopen(descriptor, "w", encoding="utf-8") as output:
+            descriptor = -1
+            json.dump(payload, output, ensure_ascii=False, indent=2, sort_keys=True)
+            output.write("\n")
+            output.flush()
+            os.fsync(output.fileno())
+        if path.exists() or path.is_symlink():
+            metadata = path.lstat()
+            if not stat.S_ISREG(metadata.st_mode) or metadata.st_nlink != 1:
+                raise ValueError("refusing to replace an unsafe state path")
+        os.replace(temporary, path)
+    finally:
+        if descriptor >= 0:
+            os.close(descriptor)
+        try:
+            temporary.unlink()
+        except FileNotFoundError:
+            pass
+
+
+def build_state(
+    observation: dict[str, Any],
+    previous: dict[str, Any] | None,
+    *,
+    checked_at: str | None = None,
+) -> dict[str, Any]:
+    checked_at = checked_at or utc_now()
+    repositories = observation.get("repositories")
+    if observation.get("owner") != OWNER or not isinstance(repositories, list):
+        raise ValueError("issue observation is invalid")
+    current_issues = [
+        issue for repository in repositories for issue in repository.get("issues", [])
+    ]
+    current_keys = {issue["key"] for issue in current_issues}
+    previous_keys = set(previous["seen_issue_keys"]) if previous else set()
+    is_baseline = previous is None
+    new_keys = set() if is_baseline else current_keys - previous_keys
+    alerts = []
+    for issue in current_issues:
+        if issue["key"] not in new_keys:
+            continue
+        alerts.append(
+            {
+                "kind": "new_public_issue_observed",
+                **issue,
+                "action": (
+                    "Review the public issue manually for project relevance; do not "
+                    "reply automatically or treat it as commercial evidence."
+                ),
+            }
+        )
+    seen_keys = sorted(previous_keys | current_keys, key=_split_issue_key)
+    return {
+        "version": 1,
+        "initialized": True,
+        "checked_at": checked_at,
+        "baseline_created": is_baseline,
+        "owner": OWNER,
+        "repository_allowlist": list(REPOSITORIES),
+        "policy": {
+            "graphql_operation": "query",
+            "issue_bodies_requested": False,
+            "github_mutations_performed": False,
+            "automatic_comments_or_replies": False,
+            "issue_is_lead_evidence": False,
+            "issue_is_revenue_evidence": False,
+        },
+        "repositories": repositories,
+        "seen_issue_keys": seen_keys,
+        "alerts": alerts,
+        "summary": {
+            "repositories_checked": len(repositories),
+            "issues_in_current_windows": len(current_issues),
+            "seen_issue_keys": len(seen_keys),
+            "new_issue_alerts": len(alerts),
+            "truncated_repository_windows": sum(
+                bool(repository.get("window_truncated")) for repository in repositories
+            ),
+        },
+    }
+
+
+def monitor_once(
+    *,
+    state_path: Path = DEFAULT_STATE_PATH,
+    root: Path = ROOT,
+    runner: Runner = default_runner,
+    checked_at: str | None = None,
+) -> dict[str, Any]:
+    destination = validate_state_path(state_path, root=root, runner=runner)
+    previous = load_state(destination)
+    observation = fetch_public_issues(runner=runner)
+    report = build_state(observation, previous, checked_at=checked_at)
+    # Recheck after the network call so a newly introduced link is refused.
+    destination = validate_state_path(destination, root=root, runner=runner)
+    write_private_json(destination, report, root=root)
+    return report
+
+
+def _lock_path(state_path: Path) -> Path:
+    return state_path.with_suffix(".lock")
+
+
+@contextmanager
+def exclusive_lock(path: Path) -> Iterator[None]:
+    if path.is_symlink():
+        raise ValueError("monitor lock must not be a symbolic link")
+    flags = os.O_RDWR | os.O_CREAT
+    if hasattr(os, "O_NOFOLLOW"):
+        flags |= os.O_NOFOLLOW
+    descriptor = os.open(path, flags, 0o600)
+    try:
+        metadata = os.fstat(descriptor)
+        if not stat.S_ISREG(metadata.st_mode) or metadata.st_nlink != 1:
+            raise ValueError("monitor lock must be a regular private file")
+        os.fchmod(descriptor, 0o600)
+        try:
+            fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            raise RuntimeError("GitHub inbound monitor is already running") from exc
+        yield
+    finally:
+        os.close(descriptor)
+
+
+def monitor_loop(
+    interval_minutes: int,
+    *,
+    state_path: Path = DEFAULT_STATE_PATH,
+    root: Path = ROOT,
+    runner: Runner = default_runner,
+) -> None:
+    if interval_minutes < MINIMUM_INTERVAL_MINUTES:
+        raise ValueError("interval must be at least 15 minutes")
+    destination = validate_state_path(state_path, root=root, runner=runner)
+    destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+    with exclusive_lock(_lock_path(destination)):
+        while True:
+            try:
+                report = monitor_once(
+                    state_path=destination,
+                    root=root,
+                    runner=runner,
+                )
+                print(
+                    json.dumps(report, ensure_ascii=False, sort_keys=True), flush=True
+                )
+            except Exception as exc:
+                # Keep errors generic where a CLI failure might contain account data.
+                print(
+                    json.dumps(
+                        {"ok": False, "checked_at": utc_now(), "error": str(exc)},
+                        sort_keys=True,
+                    ),
+                    file=sys.stderr,
+                    flush=True,
+                )
+            time.sleep(interval_minutes * 60)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    once = subparsers.add_parser("once", help="Run one read-only observation pass.")
+    once.add_argument("--state", type=Path, default=DEFAULT_STATE_PATH)
+    continuous = subparsers.add_parser("loop", help="Repeat read-only observations.")
+    continuous.add_argument("--state", type=Path, default=DEFAULT_STATE_PATH)
+    continuous.add_argument("--interval-minutes", type=int, default=15)
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    try:
+        if args.command == "once":
+            report = monitor_once(state_path=args.state)
+            print(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True))
+        else:
+            monitor_loop(args.interval_minutes, state_path=args.state)
+    except (OSError, RuntimeError, ValueError, json.JSONDecodeError) as exc:
+        print(json.dumps({"ok": False, "error": str(exc)}), file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

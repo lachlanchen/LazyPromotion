@@ -158,6 +158,14 @@ OFFER_FIELD_RULES = {
         "dependencies": (800, False, True),
         "constraints": (800, False, True),
     },
+    "lazyremote": {
+        "target": (700, True, True),
+        "endpoints": (500, True, True),
+        "relay": (500, True, True),
+        "network": (800, True, True),
+        "goal": (700, True, True),
+        "constraints": (800, False, True),
+    },
 }
 
 

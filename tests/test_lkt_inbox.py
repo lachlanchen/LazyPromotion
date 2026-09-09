@@ -126,6 +126,29 @@ def openhi_payload():
     }
 
 
+def lazyremote_payload():
+    return {
+        "offer": "lazyremote",
+        "contact_email": "owner@example.com",
+        "target": "A private development workstation and its local web console.",
+        "endpoints": "Ubuntu 24.04 host, macOS client, and Android client.",
+        "relay": "One customer-controlled Debian VPS is already reachable.",
+        "network": "The workstation is behind CGNAT; no inbound ports are available.",
+        "goal": "SSH and a browser console for two named operators with separate access.",
+        "constraints": (
+            "Do not expose SSH or noVNC publicly and retain an independent "
+            "recovery path."
+        ),
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 9000,
+        "utm_source": "uu bridge readme",
+        "utm_medium": "website",
+        "utm_campaign": "lazyremote_network_review",
+        "utm_content": "review_cta",
+    }
+
+
 def sample_record(payload=None, *, created_at=CREATED_AT):
     return {
         "version": lkt_inbox.RECORD_VERSION,
@@ -259,6 +282,7 @@ class EnvelopeTests(ReceiverFixture):
             lecture_payload(),
             story_clip_payload(),
             openhi_payload(),
+            lazyremote_payload(),
         ):
             with self.subTest(offer=payload["offer"]):
                 _, raw = encrypted_envelope(
@@ -302,6 +326,12 @@ class EnvelopeTests(ReceiverFixture):
         crossed_openhi = openhi_payload()
         crossed_openhi["collection"] = "ten files"
         cases.append(crossed_openhi)
+        missing_remote_field = lazyremote_payload()
+        missing_remote_field.pop("network")
+        cases.append(missing_remote_field)
+        crossed_remote = lazyremote_payload()
+        crossed_remote["source"] = "one recording"
+        cases.append(crossed_remote)
         for payload in cases:
             with self.subTest(offer=payload.get("offer")):
                 _, raw = encrypted_envelope(

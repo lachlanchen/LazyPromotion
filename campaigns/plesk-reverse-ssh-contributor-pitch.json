@@ -1,0 +1,78 @@
+{
+  "id": "plesk-reverse-ssh-contributor-pitch",
+  "version": 1,
+  "objective": "Earn a paid Plesk technical contribution by pitching an original reverse-SSH security guide grounded in current LazyTunnel and LazyEdge work, without writing a full unpaid article or treating submission as revenue.",
+  "source_need": {
+    "captured_at": "2026-09-09T07:18:00Z",
+    "url": "https://www.plesk.com/content-contributor-program/",
+    "title": "Plesk Contributor Program",
+    "state": "official_current_proposal_first_program",
+    "published_compensation": "The landing page advertises USD 150-300 per accepted contribution; the linked submission guide states EUR 150-300 for a standard uncredited blog post and EUR 50 when author attribution is requested.",
+    "published_process": "Submit a 150-250 word abstract, then wait up to three weeks. Successful applicants receive a contributor contract covering timeline, exclusivity, attribution, and pricing before writing.",
+    "payment_route": "The linked guide states PayPal payments are processed on the 15th and 30th of each month.",
+    "policy": "The currency discrepancy must be resolved by the written contract. Acceptance, a stated fee, publication, and payment are separate evidence states; the advertised range is not revenue."
+  },
+  "source_evidence": {
+    "official_program": "https://www.plesk.com/content-contributor-program/",
+    "official_submission_guide": "https://www.plesk.com/wp-content/uploads/2021/06/Contributor-submission-guide-2021.pdf",
+    "official_topics": "https://www.plesk.com/wp-content/uploads/2021/06/Contributors-Program-Monthly-Topics.pdf",
+    "lazyremote": "https://remote.lazying.art/",
+    "lazytunnel": "https://github.com/lachlanchen/LazyTunnel",
+    "lazyedge": "https://github.com/lachlanchen/LazyEdge"
+  },
+  "fit": {
+    "projects": [
+      "LazyTunnel",
+      "LazyEdge"
+    ],
+    "proposed_title": "Keep Remote Administration Private with Reverse SSH and Loopback Listeners",
+    "supported_now": [
+      "Current public OpenSSH, systemd, reverse-tunnel, loopback-listener, host-key-pinning, and rollback documentation",
+      "A public LazyRemote release with native management clients and an independent open-source tunnel core",
+      "A live seven-device deployment whose public README records 49 directed SSH checks",
+      "Existing LazyingArt technical articles and reproducible Linux examples"
+    ],
+    "not_proven": [
+      "Compatibility with every hosting provider or customer topology",
+      "A reboot test for every supported operating system",
+      "That an outbound SSH connection is permitted by every local network policy",
+      "Acceptance, publication, audience engagement, or payment from Plesk"
+    ],
+    "claim_boundary": "The pitch proposes a standard-tool two-host lab and explicit negative checks. It does not offer firewall evasion, public desktop exposure, or a universal remote-access guarantee."
+  },
+  "application": {
+    "state": "submitted_awaiting_editorial_reply",
+    "submitted_at": "2026-09-09T07:18:00Z",
+    "method": "Official embedded contributor form",
+    "abstract_word_count": 214,
+    "country_selected": "Hong Kong",
+    "role_selected": "Web professional",
+    "author_attribution_requested": false,
+    "newsletter_requested": false,
+    "original_content_attested": true,
+    "submission_attempts": 1,
+    "delivery_evidence": "The complete form passed native validity checks, Submit was clicked once, and the embedded form returned its own contact confirmation message.",
+    "automatic_follow_up": false,
+    "review_after": "2026-09-30",
+    "contract_gate": "Do not draft the full article until a written contract states a fee of at least EUR 250 or equivalent, currency, PayPal eligibility, timeline, exclusivity, rights, revision boundary, attribution state, and payment trigger.",
+    "policy": "The abstract and confirmation are an outbound proposal only. A successful response still requires a separate contract review before article work."
+  },
+  "channels": {
+    "official_form": {
+      "state": "submitted_once",
+      "outbound_submissions": 1,
+      "fees_spent_usd": 0
+    }
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "contract_observed": false,
+    "article_delivered": false,
+    "publication_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

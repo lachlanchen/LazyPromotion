@@ -112,6 +112,18 @@ publishes no rate or assignment volume and tests applicants, so this is one
 outbound application—not a reply, lead, test invitation, contract, payment, or
 revenue.
 
+A sixth proposal uses the newly published LazyRemote/LazyTunnel evidence for
+Plesk's current contributor program. Its original 214-word abstract proposes a
+standard-OpenSSH guide that keeps reverse listeners on loopback, separates key
+roles, and tests file transfer, local web forwarding, reconnects, rollback, and
+an untrusted-host failure case. The official form returned its own confirmation
+after one submission. Plesk's landing page advertises USD 150–300 per accepted
+contribution, while its linked guide says EUR 150–300 for an uncredited post;
+that discrepancy, PayPal eligibility, exclusivity, rights, timing, revisions,
+and a fee of at least EUR 250 or equivalent must be settled in a written
+contract before a full article is drafted. This is an outbound proposal—not an
+editorial reply, contract, publication, payment, or revenue.
+
 A current-job recheck prevented two weak applications. Altimate.ai's indexed
 Technical Content Creator contract is no longer on its official board and its
 application URL now reports that the job was not found. The employer's remaining

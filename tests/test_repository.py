@@ -60,6 +60,25 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
         self.assertFalse(campaign["channels"]["automatic_community_outreach"]["allowed"])
 
+    def test_plesk_pitch_is_proposal_first_and_revenue_stays_zero(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "plesk-reverse-ssh-contributor-pitch.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        application = campaign["application"]
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(application["state"], "submitted_awaiting_editorial_reply")
+        self.assertEqual(application["abstract_word_count"], 214)
+        self.assertEqual(application["submission_attempts"], 1)
+        self.assertTrue(application["original_content_attested"])
+        self.assertFalse(application["author_attribution_requested"])
+        self.assertFalse(application["newsletter_requested"])
+        self.assertIn("EUR 250", application["contract_gate"])
+        self.assertFalse(campaign["funnel"]["human_reply_observed"])
+        self.assertFalse(campaign["funnel"]["payment_confirmed"])
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+
     def test_browser_operations_are_serialized_across_clients(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(
             browser, "BROWSER_LOCK_PATH", Path(tmp) / "browser-operation.lock"

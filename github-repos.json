@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-09T05:38:43Z",
+      "pushed_at": "2026-09-09T06:46:38Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-09T05:39:33Z",
+      "updated_at": "2026-09-09T06:47:31Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1417,15 +1417,21 @@
       "url": "https://github.com/lachlanchen/LazyTravel"
     },
     {
-      "description": "Private SSH and noVNC forwarding across Linux, macOS and Windows through your own cloud relay. Independent clients and an optional lightweight local GUI, with pinned identities, private credentials and desktop-preserving updates.",
-      "homepage": "https://lazying.art",
+      "description": "LazyRemote: native apps for private computers, SSH terminals and noVNC viewers, powered by an independent self-hosted LazyTunnel core.",
+      "homepage": "https://remote.lazying.art",
       "name": "LazyTunnel",
       "primary_language": "Python",
-      "pushed_at": "2026-09-09T03:30:51Z",
+      "pushed_at": "2026-09-09T06:21:28Z",
       "topics": [
+        "android",
         "cloud-relay",
+        "dart",
+        "flutter",
+        "ios",
         "lazying-art",
+        "lazyremote",
         "macos",
+        "native-app",
         "novnc",
         "openssh",
         "python",
@@ -1438,7 +1444,7 @@
         "web-gui",
         "windows"
       ],
-      "updated_at": "2026-09-09T03:31:06Z",
+      "updated_at": "2026-09-09T06:22:33Z",
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
     {
@@ -2219,7 +2225,7 @@
       "homepage": "https://lazying.art",
       "name": "the-art-of-lazying",
       "primary_language": "Shell",
-      "pushed_at": "2026-09-09T03:31:08Z",
+      "pushed_at": "2026-09-09T06:21:38Z",
       "topics": [
         "automation",
         "language",
@@ -2232,7 +2238,7 @@
         "strategic",
         "workflows"
       ],
-      "updated_at": "2026-09-09T03:31:18Z",
+      "updated_at": "2026-09-09T06:22:25Z",
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
     {

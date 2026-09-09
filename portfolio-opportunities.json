@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -275,6 +275,32 @@
         "Qualify the exact manuscript because the public synthetic redline proves the minimal three-build path, not every package, template, table, or figure combination"
       ],
       "scores": {"buyer_pain": 5, "proof": 4, "delivery_readiness": 4, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "private-multidevice-remote-access",
+      "title": "Private multi-device remote access",
+      "state": "candidate",
+      "buyer": "A self-hosted developer, small lab, or technical team that needs named private computers reachable from desktop and mobile clients",
+      "need": "Keep SSH, file transfer, and selected browser tools available across NAT or CGNAT without publishing desktop ports or tying the transport to one remote-control app",
+      "projects": ["LazyTunnel", "LazyEdge", "novnc-manager", "kvm-qemu-workstation", "uu-remote-ubuntu-bridge"],
+      "first_deliverable": "A topology and recovery audit for one relay and up to three existing endpoints, covering listener exposure, key roles, host-key pinning, client paths, rollback, and an exact verification plan before any deployment",
+      "first_test": "Use the public LazyRemote release and current self-hosting questions to publish one complete security and recovery guide, then activate a paid setup scope only for a current buyer whose endpoint and network-policy constraints fit",
+      "proof": [
+        "https://remote.lazying.art/",
+        "https://github.com/lachlanchen/LazyTunnel",
+        "https://github.com/lachlanchen/LazyTunnel/releases/tag/v0.2.0",
+        "https://github.com/lachlanchen/LazyEdge",
+        "https://www.reddit.com/r/selfhosted/comments/1uejasq/need_help_setting_up_a_selfhosted_pc_that_i_can/",
+        "https://www.reddit.com/r/homelab/comments/1vu6ata/how_do_you_handle_remote_access_to_a_home_pc_that/"
+      ],
+      "gates": [
+        "Do not promise low-latency gaming, wake-on-LAN, or compatibility with an unseen topology",
+        "Keep relay listeners on loopback unless a separately reviewed architecture requires otherwise; never expose unauthenticated VNC, RDP, SSH, or web tools",
+        "Use separate keys, pinned host identities, least-privilege authorized_keys restrictions, and a tested rollback path",
+        "Treat the public seven-device and 49-directed-check record as operator evidence, not a customer result or proof of reboot recovery on every platform",
+        "Do not help evade school, employer, or network-owner policy; outbound TCP availability must be verified lawfully"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 3, "low_support": 1, "repeatability": 4}
     },
     {
       "id": "local-ai-workstation-deployment",

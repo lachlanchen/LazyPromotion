@@ -1,0 +1,16 @@
+{
+  "artifact_sha256": {
+    "environment.json": "a2744ccea09835cac00aeea10b86165ee6ab8312196bf609df670d99426c426f",
+    "report.md": "6b2da0f79ea9c2af48e49042f7c966cf8bfed9049040343ea63d87cdb0d420e6",
+    "run.log": "509258bf395a344031c2adf4a66ed11a126602719c761784523528470e1bbc5a",
+    "summary.json": "fb3962d159e6ceef34d59a0242f04c8b8c38cb72cdda7e1cb1515bf541fade24",
+    "synthetic-events.npz": "17fc26e2ebdad917432af8df33d90640a5379cb7f1feefd619ea29c80767636e",
+    "weighted-cumulative.png": "c102567ccb113689d0cc787f6178586329cb17e62d41682d0e37b64e2bc06722"
+  },
+  "boundary": "Project-owned synthetic workflow evidence only: no client data, camera, optics, specimen, acquisition, calibration, compensation, reconstruction accuracy, hardware qualification, or paper-result reproduction, and no customer result.",
+  "manifest_self_hashed": false,
+  "source_sha256": {
+    "README.md": "e3a26af907459024da93cba31ac4a3837678b8855d1462beb0a42af8c507d746",
+    "build.py": "d814378ec2053b7430afa3c991762c10d775d6c28a98ee048fc6762b7a97622e"
+  }
+}

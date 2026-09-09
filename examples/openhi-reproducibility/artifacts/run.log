@@ -1,0 +1,8 @@
+exit_code=0
+stdout:
+Auto-scale: pos_scale=1.000, neg_scale=1.510
+
+✓ Weighted cumulative plot saved: <WORK_DIR>/<OUTPUT_DIR>/cumulative_weighted/weighted_cumulative_pos1.0_neg1.510.png
+stderr:
+<OPENHI_ROOT>/visualize_cumulative_weighted.py:220: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

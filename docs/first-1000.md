@@ -169,6 +169,18 @@ Kong payout are supported. Wait for a human confirmation before doing the full
 speculative build. The inquiry is not an accepted topic, publication, payment,
 or revenue.
 
+A twelfth direct route uses three live, code-backed articles for Draft.dev's
+official writer network. One application selected cybersecurity, Linux,
+Python, DevOps, AWS, AI, machine learning, and computer vision, described the
+current OpenSSH and remote-access work, and was submitted through the official
+form on September 9. Draft.dev's confirmation says applications are reviewed
+monthly depending on need and permits a feedback request after 30 days. A
+current third-party cybersecurity listing says rates start at USD 315 per
+post, but the official form publishes no rate; confirm the topic, fee,
+contractor and payout eligibility, rights, assistance policy, revisions, and
+payment trigger before accepting work. This is one outbound application—not
+acceptance, an assignment, publication, payment, or revenue.
+
 The UU Remote Ubuntu bridge now supplies a separate product-discovery signal.
 Its public repository had ten stars and three forks when checked on September
 9, including five stars since September 3. The owner-visible rolling traffic
@@ -176,7 +188,9 @@ report showed 929 views from 428 visitors and 411 clones from 162 cloners;
 Google supplied 593 views, and the Simplified Chinese README was the leading
 path with 461 views. The bridge README and all ten translations now offer one
 tracked, clearly separate path to LazyRemote and its open-source LazyTunnel
-core. The wording does not present LazyRemote as NetEase software or promise it
+core. The repository's website metadata now also points directly to the exact
+LazyRemote page instead of the generic portfolio. The wording does not present
+LazyRemote as NetEase software or promise it
 replaces UU. This is useful discovery evidence, not a lead. One current public
 thread also asks exactly whether UU can be used on Ubuntu, alongside requests
 for Linux control, remote agent-CLI access without a public address, and

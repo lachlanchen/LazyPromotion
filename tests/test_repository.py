@@ -111,6 +111,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(
             campaign["owned_route"]["tracking_campaign"], "uu_remote_bridge"
         )
+        metadata = campaign["owned_route"]["github_repository_metadata"]
+        self.assertEqual(metadata["homepage_url"], "https://remote.lazying.art/")
+        self.assertIn("exact separate LazyRemote", metadata["reason"])
         capture = campaign["owned_route"]["compatibility_need_capture"]
         self.assertEqual(capture["state"], "live_bilingual_public_form")
         self.assertEqual(len(capture["placements"]), 2)

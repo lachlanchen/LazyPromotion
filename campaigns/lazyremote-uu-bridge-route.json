@@ -96,6 +96,11 @@
     "source": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
     "destination": "https://remote.lazying.art/",
     "tracking_campaign": "uu_remote_bridge",
+    "github_repository_metadata": {
+      "homepage_url": "https://remote.lazying.art/",
+      "updated_at": "2026-09-09T13:20:00Z",
+      "reason": "Replace the generic portfolio homepage with the exact separate LazyRemote product route."
+    },
     "placements": [
       "README.md",
       "i18n/README.ar.md",

@@ -1,0 +1,68 @@
+{
+  "id": "draftdev-cybersecurity-writer-opportunity",
+  "version": 1,
+  "objective": "Win one paid cybersecurity article assignment by applying through Draft.dev's official writer form with code-backed Linux, private-search, and agent-infrastructure samples.",
+  "source_need": {
+    "captured_at": "2026-09-09T13:15:00Z",
+    "url": "https://draft.dev/write",
+    "title": "Write for Draft.dev",
+    "state": "official_current_writer_application",
+    "official_scope": "Draft.dev invites software developers to write technical content for its clients and says accepted writers are paid, but the official application page does not publish a rate or guarantee assignments.",
+    "current_listing": {
+      "url": "https://up2staff.com/technical-writer-cyber-security-at-draft-dev",
+      "title": "Technical Writer (Cyber Security) at Draft.dev",
+      "published_rate": "Starting at USD 315 per post",
+      "boundary": "This rate appears in a current third-party listing, not in the official form or an accepted contract. Confirm the exact fee directly with Draft.dev before accepting an assignment."
+    },
+    "policy": "An open form and a published third-party listing do not promise acceptance, assignment volume, publication, payment, or received revenue."
+  },
+  "fit": {
+    "projects": [
+      "AgInTiFlow",
+      "LazyEdge",
+      "LazyTunnel",
+      "LocalKnowledgeTerminal"
+    ],
+    "public_samples": [
+      "https://blog.lazying.art/html/computer_internet/software/3603/i-got-tired-of-agent-limits-so-i-built-agintiflow.html",
+      "https://blog.lazying.art/html/computer_internet/unix_linux/31/amazon-ubuntu-instance-suffers-permission-deniedpublickey.html",
+      "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html"
+    ],
+    "supported_now": [
+      "First-person writing from working Linux and local-AI systems",
+      "Commands, tests, limits, privacy boundaries, and source trails",
+      "Current hands-on work with OpenSSH relays, NAT, remote desktops, and separate machine identities"
+    ],
+    "not_proven": [
+      "Acceptance into Draft.dev's writer network",
+      "A cybersecurity assignment or agreed fee",
+      "Publication, recurring volume, or received income"
+    ],
+    "claim_boundary": "The public projects and three live articles support the engineering and writing fit. They do not prove client work, acceptance, an assignment, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T13:45:41Z",
+    "method": "One submission through Draft.dev's official embedded Airtable application",
+    "delivery_evidence": "The completed form was visibly checked before one Submit action. Draft.dev's confirmation then said applications are reviewed monthly depending on need and named the official hiring address for feedback after 30 days.",
+    "message_storage": "ignored private evidence",
+    "public_sample_links_sent": 3,
+    "skill_topics_selected": 8,
+    "resume_sent": false,
+    "photo_sent": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-10-09",
+    "policy": "Do not resubmit or contact Draft.dev before the stated 30-day window. If accepted, review the exact topic, rate, currency, Hong Kong contractor and payout support, tax and contract terms, deadline, length, code and screenshot expectations, revisions, attribution, IP and reuse, assistance policy, and payment trigger before accepting work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "assignment_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

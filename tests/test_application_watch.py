@@ -95,6 +95,10 @@ class ApplicationWatchTests(unittest.TestCase):
             "manicule-technical-writer-opportunity",
             [item["campaign_id"] for item in report["applications"]],
         )
+        self.assertIn(
+            "draftdev-cybersecurity-writer-opportunity",
+            [item["campaign_id"] for item in report["applications"]],
+        )
         for item in report["applications"]:
             self.assertFalse(item["due_for_human_review"])
 

@@ -50,6 +50,7 @@
     "client_credits_claimed": false,
     "certified_translation_claimed": false,
     "automatic_follow_up": false,
+    "review_after": "2026-09-16",
     "policy": "Verify the recipient, final attachment, and visible sent evidence exactly once. Any test, rate, workload, NDA, assignment, source transfer, contract, or payment must be reviewed on its own terms."
   },
   "funnel": {

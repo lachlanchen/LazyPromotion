@@ -49,6 +49,7 @@
     "attachments_sent": 1,
     "client_credits_claimed": false,
     "automatic_follow_up": false,
+    "review_after": "2026-09-16",
     "policy": "Verify the recipient, subject, final attachment, and visible sent evidence exactly once. Any editorial test, house style, manuscript, NDA, assignment, rate, deadline, contract, or payment must be reviewed on its own terms."
   },
   "funnel": {

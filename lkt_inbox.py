@@ -150,6 +150,14 @@ OFFER_FIELD_RULES = {
         "goal": (800, True, True),
         "constraints": (800, False, True),
     },
+    "openhi": {
+        "role": (700, True, True),
+        "environment": (500, True, True),
+        "source": (1000, True, True),
+        "target_stage": (1000, True, True),
+        "dependencies": (800, False, True),
+        "constraints": (800, False, True),
+    },
 }
 
 

@@ -403,15 +403,15 @@
     {
       "id": "openhi-reproducibility-session",
       "title": "OpenHI reproducibility and kit qualification",
-      "state": "gated",
+      "state": "active",
       "buyer": "A computational-imaging laboratory evaluating event-based hyperspectral imaging",
       "need": "Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time",
       "projects": ["OpenHI", "AgInTi-LabCanvas", "AgInTi-HardwareConsole", "nhi_hardware"],
-      "first_deliverable": "A paid or research-partner reproducibility session and written compatibility or kit-qualification report",
-      "first_test": "Interview existing repository users and kit inquiries before increasing traffic or changing checkout",
+      "first_deliverable": "A USD 500 software-only reproduction of one named repository pipeline stage with a recorded environment, commands, outputs, failure ledger, and go/no-go report",
+      "first_test": "Route repository and existing site interest to a metadata-only fit check; keep hardware inquiries separate",
       "proof": [
         "https://github.com/lachlanchen/OpenHI",
-        "https://doi.org/10.1364/OE.505380"
+        "https://doi.org/10.1364/OPTICA.585766"
       ],
       "gates": [
         "Audit the exact SKU, inventory, price, lead time, calibration, shipping, tax, return, warranty, and support terms",

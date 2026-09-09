@@ -1,0 +1,98 @@
+{
+  "id": "openhi-reproducibility-sprint",
+  "version": 1,
+  "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
+  "demand_evidence": {
+    "captured_at": "2026-09-09T04:23:00Z",
+    "repository": "https://github.com/lachlanchen/OpenHI",
+    "public_stars": 104,
+    "public_forks": 32,
+    "open_issues": 0,
+    "license": "MIT",
+    "canonical_paper": "https://doi.org/10.1364/OPTICA.585766",
+    "interpretation": "The repository and peer-reviewed article are strong first-party proof and current repository interest exists. Stars, forks, views, and clones are attention, not buyer intent, leads, or revenue."
+  },
+  "offer": {
+    "state": "live_verified",
+    "url": "https://lazying.art/openhi-reproducibility/",
+    "fit_check": "https://lazying.art/openhi-reproducibility/fit-check/",
+    "price": "USD 500",
+    "software_only": true,
+    "workstation_limit": 1,
+    "dataset_limit": 1,
+    "stage_limit": 1,
+    "scope": "One existing workstation, one rights-cleared dataset or public sample, and one named OpenHI repository pipeline stage. Deliver a recorded environment, pinned commands and parameters, generated outputs and final logs, a failure ledger, a go/no-go report, and one consolidated factual correction pass.",
+    "excluded": [
+      "hardware, cameras, optics, acquisition, component sourcing, physical alignment, or optical calibration",
+      "vendor SDK procurement, license transfer, or credentials",
+      "custom algorithm development or production integration",
+      "new experiments, scientific validation, publication work, or guaranteed results",
+      "a second dataset, workstation, repository stage, or ongoing support"
+    ],
+    "data_policy": "Collect metadata only during the fit check. Agree source transfer, confidentiality, retention, and permitted automation before receiving data. Delete working data copies within fourteen calendar days after delivery, cancellation, or refund unless the accepted scope requires earlier deletion.",
+    "payment_policy": "After a positive fit check and accepted written scope, prepare one reviewed Stripe request from the guarded USD 500 configuration. Never expose a public self-serve checkout.",
+    "website_commit": "9d812b0692d3c27e5b37b37dd2e89464f85f0fa5",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34311930574",
+    "live_verification": "The offer, fit-check page, script, and legacy kit bridge returned HTTP 200 after the Pages deployment. The live fit-check script matched the committed SHA-256."
+  },
+  "channels": {
+    "owned_website": {
+      "state": "live_verified",
+      "role": "The existing OpenHI kit page and homepage point to the software-first offer; the offer points back to the separate hardware inquiry."
+    },
+    "github": {
+      "state": "await_clean_maintainer_tree",
+      "role": "A concise service link may be added only after preserving and reviewing the maintainer's existing README edits."
+    },
+    "automatic_community_outreach": {
+      "state": "disabled",
+      "allowed": false,
+      "policy": "Do not automate community replies or private messages."
+    },
+    "community_policy": {
+      "state": "value_first",
+      "policy": "Answer a current reproducibility problem completely. Mention the maintained repository or sprint only when it materially helps and the community permits it; do not automate replies or private messages."
+    }
+  },
+  "intake": {
+    "state": "live_verified_review_then_encrypted_submit",
+    "offer_route": "openhi",
+    "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+    "review_before_send": true,
+    "encrypted_storage": true,
+    "source_upload_requested": false,
+    "automatic_reply": false,
+    "backend_commit": "1c805a24fc18dc253d5001219efd81c3d1028830",
+    "frontend_commit": "9d812b0692d3c27e5b37b37dd2e89464f85f0fa5",
+    "synthetic_visible_round_trip_verified": true,
+    "receiver_authenticated_decrypted_and_saved": true,
+    "private_copy_mode": "0600",
+    "remote_envelope_deleted_only_after_unchanged_verification": true,
+    "synthetic_local_payload_artifacts_removed": true,
+    "remote_spool_empty": true,
+    "lead_or_sale_observed": false
+  },
+  "payment_readiness": {
+    "state": "ready_for_reviewed_live_request",
+    "price": "USD 500",
+    "quantity": 1,
+    "public_payment_link": false,
+    "stripe_helper_commit": "b33073886857a9031821807fd7f4822d9e260dcd",
+    "fulfillment_review_notes": 9,
+    "live_key_format_valid": true,
+    "account_authenticated": true,
+    "charges_enabled": true,
+    "payouts_enabled": true,
+    "details_submitted": true,
+    "stripe_objects_created": false,
+    "remaining_gate": "A real buyer must pass the free fit check and accept the exact written scope before the guarded Stripe creation command is considered."
+  },
+  "funnel": {
+    "state": "attention",
+    "fit_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

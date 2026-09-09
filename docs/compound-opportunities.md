@@ -20,7 +20,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Story-first interview clip pilot](#story-first-content-repurposing) | active | Find a quiet but meaningful moment in a longer recording and turn it into one captioned vertical clip without forcing it into a generic viral template | Use the three current one-time applications as the first demand tests and wait for responses; show the page only to owners already seeking story selection, short-form editing, and reviewed captions rather than announcing it broadly | 3.90 |
 | [Creator library refinery](#creator-library-refinery) | candidate | Turn an existing archive into searchable source material, polished articles, clips, and multilingual derivatives without losing provenance | Use one LazyingArt-owned archive as the case study, then approach creators whose existing catalog is underused | 3.70 |
 | [Creator media library website](#creator-media-library) | candidate | Give an existing catalog a durable, searchable home with reliable metadata and language access instead of depending on a platform feed | Use a small LazyingArt-owned catalog as the demonstration, then ask creators with an existing back catalog whether they would pay to have three items organized | 3.70 |
-| [OpenHI reproducibility and kit qualification](#openhi-reproducibility-session) | gated | Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time | Interview existing repository users and kit inquiries before increasing traffic or changing checkout | 3.60 |
+| [OpenHI reproducibility and kit qualification](#openhi-reproducibility-session) | active | Determine whether the published OpenHI pipeline and hardware route fit a laboratory before it commits budget and time | Route repository and existing site interest to a metadata-only fit check; keep hardware inquiries separate | 3.60 |
 | [Cited etymology learning deck](#etymology-learning-deck) | candidate | Learn words through meanings, roots, affixes, pronunciations, translations, and provenance rather than isolated flashcards | Publish a small deck from openly licensed lexical sources and ask teachers which theme they would actually use | 3.50 |
 | [Explainable game classroom bundle](#explainable-game-classroom) | candidate | Teach decisions with exact rules and visible reasoning instead of opaque move recommendations | Let one teacher or club use a short lesson pack and observe where explanation or setup fails | 3.50 |
 | [Song-to-language lesson](#song-to-language-lesson) | candidate | Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes | Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material | 3.50 |
@@ -388,7 +388,7 @@ Gates:
 
 ### OpenHI reproducibility and kit qualification
 
-**State:** gated
+**State:** active
 
 **Buyer:** A computational-imaging laboratory evaluating event-based hyperspectral imaging
 
@@ -396,14 +396,14 @@ Gates:
 
 **Existing work:** [OpenHI](https://github.com/lachlanchen/OpenHI), [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas), [AgInTi-HardwareConsole](https://github.com/lachlanchen/AgInTi-HardwareConsole), [nhi_hardware](https://github.com/lachlanchen/nhi_hardware)
 
-**First deliverable:** A paid or research-partner reproducibility session and written compatibility or kit-qualification report
+**First deliverable:** A USD 500 software-only reproduction of one named repository pipeline stage with a recorded environment, commands, outputs, failure ledger, and go/no-go report
 
-**First demand test:** Interview existing repository users and kit inquiries before increasing traffic or changing checkout
+**First demand test:** Route repository and existing site interest to a metadata-only fit check; keep hardware inquiries separate
 
 Evidence:
 
 - <https://github.com/lachlanchen/OpenHI>
-- <https://doi.org/10.1364/OE.505380>
+- <https://doi.org/10.1364/OPTICA.585766>
 
 Gates:
 
@@ -632,4 +632,4 @@ Gates:
 
 ## Interpretation
 
-LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, and AI clip assembly are six priced service routes with an exact scope, public proof, and pre-transfer qualification. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.
+LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, AI clip assembly, and OpenHI software reproducibility are seven priced service routes with an exact scope, public proof, and pre-transfer qualification. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.

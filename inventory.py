@@ -177,6 +177,13 @@ PRIORITIES = [
         "url": "https://lazying.art/video/brand-film/",
     },
     {
+        "work": "OpenHI",
+        "need": "Reproduce one named OpenHI software pipeline stage on a laboratory's existing data and workstation",
+        "audience": "Computational-imaging laboratories evaluating event-based hyperspectral imaging",
+        "route": "USD 500 software reproducibility sprint after a metadata-only free fit check; hardware and new scientific development excluded",
+        "url": "https://lazying.art/openhi-reproducibility/",
+    },
+    {
         "work": "Musia + LocalVideoGen",
         "need": "Local-first music localization and controllable video generation",
         "audience": "Creators who already have a specific song, stem, or video workflow problem",
@@ -265,10 +272,11 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across six "
+            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across seven "
             "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
             "Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen "
-            "Sprint, and AI Clip Assembly. The eInk inquiry and Figurine checkout "
+            "Sprint, AI Clip Assembly, and the OpenHI software reproducibility sprint. "
+            "The eInk inquiry and Figurine checkout "
             "remain separate offers, not competing calls to action. Open-source replies "
             "should optimize for a solved problem, not for extracting a donation. GitHub "
             "Sponsors and donations remain quiet secondary support routes on the "

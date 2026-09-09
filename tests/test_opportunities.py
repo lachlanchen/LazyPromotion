@@ -19,6 +19,7 @@ class OpportunityTests(unittest.TestCase):
                 "story-first-content-repurposing",
                 "ai-clip-assembly",
                 "scientific-manuscript-workbench",
+                "openhi-reproducibility-session",
             ],
         )
         self.assertEqual(
@@ -91,7 +92,7 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("https://github.com/lachlanchen/uu-remote-ubuntu-bridge", body)
         self.assertIn("operator-reviewed deployment evidence", body)
         self.assertIn("do not call either public store availability", body)
-        self.assertIn("are six priced service routes", body)
+        self.assertIn("are seven priced service routes", body)
         self.assertIn("listing closed before submission", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)

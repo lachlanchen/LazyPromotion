@@ -1,16 +1,38 @@
-# First USD 1,000: six focused service routes
+# First USD 1,000: seven focused service routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
 Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one
 customer-owned recording. The **AI Clip Assembly Pilot** adds a bounded **USD
 500** route for up to six existing customer-controlled clips. The **Book
-Specimen Sprint** adds a sixth **USD 250** route for one final, rights-cleared
-chapter tested as print and reflowable output. Each route has a fixed scope and
-project-owned proof. The milestone can be two USD 500 assembly pilots, four USD
-250 sprints, or any confirmed combination of payments across these six routes
+Specimen Sprint** adds a **USD 250** route for one final, rights-cleared chapter
+tested as print and reflowable output. The **OpenHI Software Reproducibility Sprint**
+adds a software-only **USD 500** route for one existing workstation,
+one rights-cleared dataset, and one named repository pipeline stage. Each route
+has a fixed scope and project-owned proof. The milestone can be two USD 500
+sprints, four USD 250 sprints, or any confirmed combination of payments across these seven routes
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
+
+OpenHI is the strongest unused public technical proof in the portfolio: the
+MIT-licensed repository had 104 stars and 32 forks when checked on September 9,
+and its recent owner-visible traffic showed continued cloning even without an
+open issue queue. The fixed sprint does not sell the microscope kit. It records
+one software environment, reproduces one agreed pipeline stage, preserves the
+commands, parameters, outputs, and first real failure, and returns a go/no-go
+report plus one factual correction pass. Hardware, acquisition, calibration,
+vendor-license procurement, custom algorithms, production integration, and
+scientific or publication guarantees remain outside the USD 500 scope. A free
+metadata-only fit check precedes data transfer, payment, and any Stripe request.
+The [offer](https://lazying.art/openhi-reproducibility/) and
+[fit check](https://lazying.art/openhi-reproducibility/fit-check/) are live.
+One labeled synthetic request passed the visible review and explicit-confirmation
+gates, was encrypted by the current backend, authenticated and decrypted by the
+receiver, saved in private mode `0600`, and removed remotely only after unchanged
+verification. The exact local synthetic payload files were then deleted and the
+remote spool was empty. The guarded Stripe configuration passed a read-only live
+account check at USD 500 without creating a product, price, payment link, charge,
+or payout. This is operational proof, not a buyer inquiry or revenue.
 
 The strongest current no-marketplace application is Lopaka's worldwide DevPet
 embedded-UI prototype contract at a published USD 80–140 per hour for roughly
@@ -435,11 +457,12 @@ description links were verified. This was the only publication route, so its
 LazyEdit package must not be sent through AutoPublish. Publication is attention
 evidence, not a lead or revenue.
 
-The LKT, manuscript, lecture, and Story Clip fit-check pages validate their minimum
-questions and show a review gate inside the current browser tab. LKT, manuscript,
-and Story Clip currently continue through email or copy. The lecture route can,
-after explicit confirmation, encrypt and submit the reviewed metadata; email and
-copy remain available. No route asks for the source file before fit is established.
+The LKT, manuscript, lecture, Story Clip, and OpenHI fit-check pages validate their
+minimum questions and show a review gate inside the current browser tab. LKT,
+lecture, and OpenHI can, after explicit confirmation, encrypt and submit reviewed
+metadata; email and copy remain available. Manuscript and Story Clip currently
+continue through email or copy. No route asks for the source file before fit is
+established.
 
 A historical visible-browser smoke test on September 2, 2026 used synthetic,
 non-customer answers and stopped at that review panel. It verified the exact
@@ -717,9 +740,9 @@ pitch merely to promote more projects.
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. LKT, manuscript redline, the
-bilingual lecture pack, Story Clip, and AI Clip Assembly are the five homepage
-routes; the Book Specimen Sprint is a sixth focused route reached from its
-chapter-first guide and proof page. A
+bilingual lecture pack, Story Clip, and AI Clip Assembly are the five service
+chooser routes; the Book Specimen Sprint is reached from its chapter-first guide,
+and the OpenHI software sprint from the homepage's existing OpenHI proof. A
 candidate advances only after a current need and a small first test are found.
 
 ## Truthful measurement

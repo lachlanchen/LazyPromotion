@@ -18,16 +18,25 @@ OFFER_CONTRACTS = {
         "config_relative": Path("config/local-knowledge-terminal-sprint.json"),
         "slug": "local-knowledge-terminal-collection-fit-sprint",
         "minimum_review_notes": 7,
+        "unit_amount": 25_000,
     },
     "manuscript": {
         "config_relative": Path("config/manuscript-build-redline-sprint.json"),
         "slug": "manuscript-build-redline-sprint",
         "minimum_review_notes": 8,
+        "unit_amount": 25_000,
     },
     "lecture": {
         "config_relative": Path("config/bilingual-lecture-pack.json"),
         "slug": "bilingual-lecture-pack",
         "minimum_review_notes": 9,
+        "unit_amount": 25_000,
+    },
+    "openhi": {
+        "config_relative": Path("config/openhi-reproducibility-sprint.json"),
+        "slug": "openhi-software-reproducibility-sprint",
+        "minimum_review_notes": 9,
+        "unit_amount": 50_000,
     },
 }
 
@@ -79,8 +88,11 @@ def inspect_config(path: Path, *, offer: str = "lkt") -> dict[str, object]:
         variant = variants[0]
         if str(variant.get("currency", "")).lower() != "usd":
             failures.append("the checkout currency is not USD")
-        if variant.get("unitAmount") != 25_000:
-            failures.append("the checkout amount is not USD 250")
+        if variant.get("unitAmount") != contract["unit_amount"]:
+            expected = int(contract["unit_amount"]) // 100
+            failures.append(f"the checkout amount is not USD {expected}")
+
+    expected_amount = int(contract["unit_amount"])
     if config.get("metadata", {}).get("fit_check_required") != "true":
         failures.append("fit-check metadata is missing")
 
@@ -91,7 +103,11 @@ def inspect_config(path: Path, *, offer: str = "lkt") -> dict[str, object]:
         "product_slug": config.get("slug", ""),
         "currency": str(variant.get("currency", "")).upper(),
         "unit_amount_minor": variant.get("unitAmount"),
-        "display_price": "USD 250" if variant.get("unitAmount") == 25_000 else "",
+        "display_price": (
+            f"USD {expected_amount // 100}"
+            if variant.get("unitAmount") == expected_amount
+            else ""
+        ),
         "quantity": config.get("quantity"),
         "fulfillment_review_required": config.get("requiresFulfillmentReview") is True,
         "fulfillment_review_notes": len(notes) if isinstance(notes, list) else 0,

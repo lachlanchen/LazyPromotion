@@ -30,9 +30,9 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_all_six_active_routes(self):
+    def test_first_thousand_plan_names_all_seven_active_routes(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: six focused service routes", body)
+        self.assertIn("# First USD 1,000: seven focused service routes", body)
         for offer in (
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
@@ -40,9 +40,25 @@ class RepositoryTests(unittest.TestCase):
             "Story Clip Pilot",
             "AI Clip Assembly Pilot",
             "Book Specimen Sprint",
+            "OpenHI Software Reproducibility Sprint",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these six routes", body)
+        self.assertIn("payments across these seven routes", body)
+
+    def test_openhi_reproducibility_campaign_is_bounded(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "openhi-reproducibility-sprint.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        offer = campaign["offer"]
+        self.assertEqual(offer["price"], "USD 500")
+        self.assertEqual(offer["stage_limit"], 1)
+        self.assertEqual(offer["dataset_limit"], 1)
+        self.assertTrue(offer["software_only"])
+        self.assertIn("hardware", " ".join(offer["excluded"]).lower())
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+        self.assertFalse(campaign["channels"]["automatic_community_outreach"]["allowed"])
 
     def test_browser_operations_are_serialized_across_clients(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(

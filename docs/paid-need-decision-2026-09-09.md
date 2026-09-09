@@ -88,4 +88,17 @@ The test is not a lead or revenue.
 6. Continue matching current buyer needs to the smallest proof-backed code,
    book, media, or knowledge deliverable.
 
+## Newly activated owned route
+
+OpenHI has the portfolio's strongest unused public technical proof: an
+MIT-licensed repository with 104 stars and 32 forks at the September 9 check,
+plus a peer-reviewed Optica article. A live USD 500 software-only sprint now
+tests one existing workstation, one rights-cleared dataset, and one named
+repository pipeline stage. The offer, encrypted metadata-only fit check, private
+receiver, and guarded Stripe readiness path passed deployment and synthetic
+round-trip checks. Hardware, acquisition, calibration, vendor-license
+procurement, custom algorithms, production integration, and result guarantees
+remain outside the fixed scope. This adds a two-sale path to USD 1,000, but no
+buyer inquiry, accepted scope, payment, or revenue has been observed.
+
 Verified received gross revenue remains **USD 0**.

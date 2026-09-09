@@ -106,6 +106,26 @@ def story_clip_payload():
     }
 
 
+def openhi_payload():
+    return {
+        "offer": "openhi",
+        "contact_email": "lab@example.com",
+        "role": "Principal investigator authorized to share the test data.",
+        "environment": "Ubuntu 24.04, Python 3.11, NVIDIA GPU with 24 GB VRAM.",
+        "source": "One rights-cleared event-camera RAW recording and its metadata.",
+        "target_stage": "Reproduce segmentation and its documented diagnostic plot.",
+        "dependencies": "Metavision SDK is already installed under the lab license.",
+        "constraints": "Keep the supplied data local and delete working copies after delivery.",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 9000,
+        "utm_source": "openhi repository",
+        "utm_medium": "website",
+        "utm_campaign": "openhi_reproducibility",
+        "utm_content": "offer_hero",
+    }
+
+
 def sample_record(payload=None, *, created_at=CREATED_AT):
     return {
         "version": lkt_inbox.RECORD_VERSION,
@@ -234,7 +254,12 @@ class EnvelopeTests(ReceiverFixture):
         self.assertEqual(record, sample_record())
 
     def test_accepts_each_strict_offer_and_legacy_lkt_records(self):
-        for payload in (manuscript_payload(), lecture_payload(), story_clip_payload()):
+        for payload in (
+            manuscript_payload(),
+            lecture_payload(),
+            story_clip_payload(),
+            openhi_payload(),
+        ):
             with self.subTest(offer=payload["offer"]):
                 _, raw = encrypted_envelope(
                     self.key, self.receipt, record=sample_record(payload)
@@ -271,6 +296,12 @@ class EnvelopeTests(ReceiverFixture):
         crossed_story = story_clip_payload()
         crossed_story["collection"] = "ten files"
         cases.append(crossed_story)
+        missing_openhi_field = openhi_payload()
+        missing_openhi_field.pop("target_stage")
+        cases.append(missing_openhi_field)
+        crossed_openhi = openhi_payload()
+        crossed_openhi["collection"] = "ten files"
+        cases.append(crossed_openhi)
         for payload in cases:
             with self.subTest(offer=payload.get("offer")):
                 _, raw = encrypted_envelope(

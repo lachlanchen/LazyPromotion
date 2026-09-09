@@ -45,16 +45,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-09 12:29:06 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-09 14:39:20 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-09 14:18:43 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [lachlanchen](https://github.com/lachlanchen/lachlanchen) | 2026-09-09 14:05:36 | Config files for my GitHub profile. |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-09 12:19:37 | LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps. |
 | [Kindle](https://github.com/lachlanchen/Kindle) | 2026-09-09 12:12:00 | Kindle Paperwhite 2 jailbreak and KOReader setup workspace |
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-09 12:00:59 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-09 11:11:46 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-09 09:03:18 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 | [OpenHI](https://github.com/lachlanchen/OpenHI) | 2026-09-09 05:37:29 | Self‑calibrated neuromorphic hyperspectral imaging pipeline for event cameras with diffractive illumination. Includes end‑to‑end tools for RAW segmentation, multi‑window time‑warping compensation, spectral visualization, and hardware control for synchronized event/frame capture and scanning. |
 | [hackintosh](https://github.com/lachlanchen/hackintosh) | 2026-09-08 21:51:37 | Sanitized Sequoia, OpenCore, recovery, and Xcode runbook for an owned development workstation |
 | [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | 2026-09-07 22:47:44 | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. |
-| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-07 12:57:39 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 
 ## Complete public repository inventory
 
@@ -201,7 +201,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LazyEdge](https://github.com/lachlanchen/LazyEdge) | A lightweight, default-deny reverse edge for safely connecting private compute to public domains. | JavaScript | [Open](https://lazying.art) |
 | [LazyRouter](https://github.com/lachlanchen/LazyRouter) | Private AI API gateway for user keys, credits, model routing, and upstream provider aggregation. | Go | [Open](https://router.lazying.art) |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps. | Python | [Open](https://remote.lazying.art) |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. | Python | [Open](https://lazying.art) |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. | Python | [Open](https://remote.lazying.art/) |
 | [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. | Shell | [Open](https://lazying.art) |
 
 ### LazyingArt identity and public web surfaces

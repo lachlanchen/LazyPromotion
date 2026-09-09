@@ -4668,7 +4668,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T12:00:59Z",
+        "pushed_at": "2026-09-09T14:39:20Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4688,7 +4688,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-09T12:03:53Z"
+        "updated_at": "2026-09-09T14:42:08Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -6028,7 +6028,7 @@
       "metadata": {
         "description": "Config files for my GitHub profile.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-04T18:42:36Z",
+        "pushed_at": "2026-09-09T14:05:36Z",
         "topics": [
           "automation",
           "config",
@@ -6041,7 +6041,7 @@
           "systems",
           "workflows"
         ],
-        "updated_at": "2026-09-04T18:42:40Z"
+        "updated_at": "2026-09-09T14:10:05Z"
       },
       "url": "https://github.com/lachlanchen/lachlanchen"
     },
@@ -6317,8 +6317,8 @@
       "label": "uu-remote-ubuntu-bridge",
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
-        "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T12:29:06Z",
+        "homepage": "https://remote.lazying.art/",
+        "pushed_at": "2026-09-09T14:18:43Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -6336,7 +6336,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-09T12:34:04Z"
+        "updated_at": "2026-09-09T14:29:20Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -8762,6 +8762,16 @@
       "relation": "targets",
       "source": "campaign:lazyremote-uu-bridge-route",
       "target": "channel:postiz"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "one_value_only_reply_live"
+      },
+      "relation": "targets",
+      "source": "campaign:lazyremote-uu-bridge-route",
+      "target": "channel:reddit"
     },
     {
       "confidence": 1.0,

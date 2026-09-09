@@ -248,6 +248,15 @@ high-attention or offer repositories in a single GraphQL query. Its first pass
 baselined one existing issue and raised no alert; it requests no issue body and
 cannot comment or reply. Later new keys trigger manual relevance review only.
 
+A current [small-business server question](https://www.reddit.com/r/selfhosted/comments/1wb6lrf/server_for_a_small_business/)
+asked how to give several remote users role-limited access. One concise
+[value-only reply](https://www.reddit.com/r/selfhosted/comments/1wb6lrf/comment/p8rb42c/)
+turned that into an app/data, permission, location, and offboarding matrix, then
+added individual identity, MFA, non-public administration, restore testing,
+backup administration, and recovery ownership. It contains no link, product,
+offer, private message, or follow-up pitch. This is a helpful interaction and
+public-profile trust signal, not buyer intent, a lead, or revenue.
+
 The [complete sample report](https://remote.lazying.art/sample-report.html)
 shows the decision, listener and identity maps, findings, acceptance checklist,
 and rollback before contact. It uses a synthetic project-owned topology, is

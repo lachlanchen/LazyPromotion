@@ -140,6 +140,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(issue_monitor["state"], "baseline_initialized")
         self.assertFalse(issue_monitor["issue_bodies_requested"])
         self.assertFalse(issue_monitor["automatic_comments_or_replies"])
+        reddit = campaign["channels"]["reddit"]
+        self.assertEqual(reddit["state"], "one_value_only_reply_live")
+        self.assertTrue(reddit["public_reply_url"].endswith("/p8rb42c/"))
+        self.assertFalse(reddit["linked_owned_asset"])
+        self.assertFalse(reddit["mentioned_project_or_offer"])
+        self.assertFalse(reddit["lead_or_sale_observed"])
+        self.assertNotIn("lazying.art", reddit["content"].casefold())
         self.assertEqual(campaign["possible_offer"]["state"], "live_fit_first")
         self.assertEqual(campaign["possible_offer"]["price"], "USD 250")
         self.assertIn("metadata-only", campaign["possible_offer"]["intake"])
@@ -152,6 +159,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(
             campaign["channels"]["automatic_community_outreach"]["allowed"]
         )
+        self.assertTrue(campaign["funnel"]["helpful_interaction_observed"])
         self.assertFalse(campaign["funnel"]["qualified_lead_observed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
 

@@ -260,13 +260,26 @@
       "state": "not_queued",
       "policy": "Do not add a broad promotional post while the current queue is full and the cross-project route has no measured qualified inquiry."
     },
+    "reddit": {
+      "state": "one_value_only_reply_live",
+      "source_url": "https://www.reddit.com/r/selfhosted/comments/1wb6lrf/server_for_a_small_business/",
+      "public_reply_url": "https://www.reddit.com/r/selfhosted/comments/1wb6lrf/comment/p8rb42c/",
+      "observed_at": "2026-09-09T14:59:31Z",
+      "need": "A first-time small-business server operator asked how to give several remote users role-limited access.",
+      "content": "Before choosing the access tool, make one row per role: which app or data they need, read/write/admin permission, where they connect from, and what must stop immediately when they leave. That will tell you whether you need shared files, a web app, or actual remote desktops.\n\nFor a business, give every person an individual identity with MFA, keep daily users separate from administrators, and put access behind a managed VPN or identity gateway rather than exposing RDP, VNC, or SSH publicly. Test account disablement, a real backup restore, and access during your absence before rollout. If the machine will be business-critical, budget for an outside admin/MSP and a second recovery path. Building the box is the easy part; ownership during outages, updates, compromised accounts, and staff changes is the real system.",
+      "linked_owned_asset": false,
+      "mentioned_project_or_offer": false,
+      "lead_or_sale_observed": false,
+      "policy": "This answer closes a practical gap in a current help thread without a link, product mention, private message, or follow-up pitch. The public profile may provide quiet context, but the interaction is not buyer intent, a lead, or revenue."
+    },
     "automatic_community_outreach": {
       "state": "disabled",
       "allowed": false
     }
   },
   "funnel": {
-    "state": "attention",
+    "state": "helpful_interaction",
+    "helpful_interaction_observed": true,
     "fit_inquiry_observed": false,
     "qualified_lead_observed": false,
     "scope_accepted": false,

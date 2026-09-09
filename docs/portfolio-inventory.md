@@ -45,13 +45,13 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-09 06:46:38 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-09 06:21:38 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
-| [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-09 06:21:28 | LazyRemote: native apps for private computers, SSH terminals and noVNC viewers, powered by an independent self-hosted LazyTunnel core. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-09 08:43:59 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-09 08:34:44 | LazyRemote: native apps for private computers, SSH terminals and noVNC viewers, powered by an independent self-hosted LazyTunnel core. |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-09 08:03:02 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-09 07:48:40 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 | [OpenHI](https://github.com/lachlanchen/OpenHI) | 2026-09-09 05:37:29 | Self‑calibrated neuromorphic hyperspectral imaging pipeline for event cameras with diffractive illumination. Includes end‑to‑end tools for RAW segmentation, multi‑window time‑warping compensation, spectral visualization, and hardware control for synchronized event/frame capture and scanning. |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-09 05:27:32 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [hackintosh](https://github.com/lachlanchen/hackintosh) | 2026-09-08 21:51:37 | Sanitized Sequoia, OpenCore, recovery, and Xcode runbook for an owned development workstation |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-07 22:47:47 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 | [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | 2026-09-07 22:47:44 | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. |
 | [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-07 12:57:39 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-07 01:41:20 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |

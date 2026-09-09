@@ -29,6 +29,7 @@ OUTCOME_KINDS = {
     "affiliate_commission_received",
     "affiliate_commission_reversed",
     "affiliate_referral_confirmed",
+    "helpful_interaction",
     "reply_received",
     "qualified_lead",
     "checkout_started",
@@ -46,6 +47,7 @@ REVENUE_KINDS = {
 REVERSAL_KINDS = {"affiliate_commission_reversed", "refund_confirmed"}
 MONEY_KINDS = REVENUE_KINDS | REVERSAL_KINDS
 REFERENCE_KINDS = MONEY_KINDS | {"affiliate_referral_confirmed"}
+PUBLIC_EVIDENCE_KINDS = {"helpful_interaction"}
 
 
 def money_to_minor(value: str) -> int:
@@ -109,6 +111,8 @@ def record_outcome(
         parsed = urlparse(evidence_url)
         if parsed.scheme not in {"http", "https"} or not parsed.netloc:
             raise ValueError("evidence URL must be an absolute HTTP(S) URL")
+    if kind in PUBLIC_EVIDENCE_KINDS and not evidence_url:
+        raise ValueError("helpful interactions require a public evidence URL")
 
     currency = promotion.compact(currency).upper()
     reference = promotion.compact(reference)
@@ -142,6 +146,11 @@ def record_outcome(
             raise ValueError("this outcome reference was already recorded")
     else:
         reference_hash = ""
+        if evidence_url and db.execute(
+            "SELECT 1 FROM outcomes WHERE kind=? AND evidence_url=?",
+            (kind, evidence_url),
+        ).fetchone():
+            raise ValueError("this public outcome was already recorded")
         if (
             candidate_id
             and db.execute(

@@ -34,6 +34,37 @@ class MetricsTests(unittest.TestCase):
         self.assertEqual(goal["additional_250_usd_sprints_needed"], 4)
         self.assertEqual(goal["additional_128_usd_orders_needed"], 8)
 
+    def test_helpful_interaction_is_distinct_from_reply_lead_and_revenue(self):
+        source = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/need/answer/",
+            author="person_asking",
+            body="How should a small team design safe role-limited remote access?",
+        )
+        metrics.record_outcome(
+            self.db,
+            kind="helpful_interaction",
+            candidate_id=source["id"],
+            evidence_url="https://www.reddit.com/r/example/comments/need/comment/answer/",
+        )
+
+        report = metrics.funnel_report(self.db)
+        self.assertEqual(report["outcomes"]["helpful_interaction"], 1)
+        self.assertNotIn("reply_received", report["outcomes"])
+        self.assertNotIn("qualified_lead", report["outcomes"])
+        self.assertEqual(report["gross_revenue_minor_by_currency"], {})
+        self.assertEqual(report["usd_1000_gross_goal"]["confirmed_minor"], 0)
+        with self.assertRaisesRegex(ValueError, "already recorded"):
+            metrics.record_outcome(
+                self.db,
+                kind="helpful_interaction",
+                campaign_id="eink-multilingual-reading",
+                evidence_url=(
+                    "https://www.reddit.com/r/example/comments/need/comment/answer/"
+                ),
+            )
+
     def test_report_keeps_sent_applications_separate_from_leads_and_revenue(self):
         with tempfile.TemporaryDirectory() as tmp:
             campaigns = Path(tmp)
@@ -105,6 +136,12 @@ class MetricsTests(unittest.TestCase):
         )
 
     def test_money_and_non_money_outcomes_are_validated(self):
+        with self.assertRaisesRegex(ValueError, "public evidence URL"):
+            metrics.record_outcome(
+                self.db,
+                kind="helpful_interaction",
+                project_id="lazyingart-eink",
+            )
         with self.assertRaisesRegex(ValueError, "three-letter currency"):
             metrics.record_outcome(
                 self.db,

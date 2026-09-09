@@ -384,8 +384,10 @@ hardware checkout from an incomplete cost estimate.
 
 ## Private evidence ledger
 
-LazyPromotion keeps replies, leads, and money as different outcome types. A
-positive comment is encouraging evidence, but it is not a lead or revenue. A
+LazyPromotion keeps helpful interactions, inbound replies, leads, and money as
+different outcome types. A public answer counts as a `helpful_interaction` only
+after its delivery is verified; it is not an inbound reply, lead, or revenue. A
+positive reply is encouraging evidence, but it is still not a lead or revenue. A
 sale, donation, sponsorship, or refund enters the ledger only after a human has
 verified it:
 

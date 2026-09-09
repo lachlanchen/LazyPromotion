@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 1,
+  "version": 2,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -41,8 +41,15 @@
       "role": "The existing OpenHI kit page and homepage point to the software-first offer; the offer points back to the separate hardware inquiry."
     },
     "github": {
-      "state": "await_clean_maintainer_tree",
-      "role": "A concise service link may be added only after preserving and reviewing the maintainer's existing README edits."
+      "state": "live_verified",
+      "role": "The primary OpenHI README now offers a tracked software-first path beside the hardware inquiry without changing the maintainer's uncommitted README or translation work.",
+      "repository_commit": "080ad074a4581f34e3b87e6f23be64321eda5222",
+      "tracked_entry_points": [
+        "quick_access",
+        "software_first",
+        "support"
+      ],
+      "verification": "The GitHub contents API returned the tracked USD 500 sprint links from main and no longer returned the unverified OPTICA promotion-code line in the primary English README."
     },
     "automatic_community_outreach": {
       "state": "disabled",

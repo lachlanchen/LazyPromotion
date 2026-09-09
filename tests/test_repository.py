@@ -1233,7 +1233,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 30)
+        self.assertEqual(campaign["version"], 31)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1807,7 +1807,7 @@ class RepositoryTests(unittest.TestCase):
         linkedin_offer = campaign["channels"]["linkedin"][
             "collection_fit_offer_post"
         ]
-        self.assertEqual(linkedin_offer["state"], "postiz_queue")
+        self.assertEqual(linkedin_offer["state"], "published_and_release_connected")
         self.assertEqual(linkedin_offer["publish_at"], "2026-09-09T01:00:00Z")
         self.assertEqual(linkedin_offer["content"], linkedin_offer["postiz_content"])
         self.assertFalse(linkedin_offer["shortlink"])
@@ -1819,6 +1819,17 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(linkedin_offer["verification"]["wording_update_saved"])
         self.assertTrue(
             linkedin_offer["verification"]["saved_via_original_url_confirmation"]
+        )
+        self.assertEqual(
+            linkedin_offer["publication_verification"]["url"],
+            "https://www.linkedin.com/feed/update/urn:li:share:7503256499993980929",
+        )
+        self.assertEqual(
+            linkedin_offer["publication_verification"]["content_sha256"],
+            "34e0e0c5dc648ccc4b8078d8ea0ce33e625f4b68a8e791fe0959dbb8579e3ec3",
+        )
+        self.assertFalse(
+            linkedin_offer["publication_verification"]["lead_or_sale_observed"]
         )
         self.assertFalse(linkedin_offer["lead_or_sale_observed"])
         self.assertEqual(linkedin_ocr["state"], "postiz_queue")

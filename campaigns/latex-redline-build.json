@@ -1,6 +1,6 @@
 {
   "id": "latex-redline-build",
-  "version": 1,
+  "version": 2,
   "objective": "Help researchers produce an editor-readable LaTeX redline when the baseline and revised manuscripts compile but the generated latexdiff file does not.",
   "source_needs": [
     {
@@ -42,8 +42,12 @@
       "policy": "The guide answers the build problem before one concise link to the maintained USD 250 fit-check route. It does not claim a customer result, successful journal submission, or paid delivery."
     },
     "x": {
-      "state": "postiz_queue",
+      "state": "published_and_release_connected",
       "publish_at": "2026-09-09T02:00:00Z",
+      "published_at": "2026-09-09T02:00:00Z",
+      "observed_at": "2026-09-09T02:03:51Z",
+      "release_url": "https://twitter.com/lazyingart/status/2097505747760521436",
+      "content_sha256": "ca6f69f0864123f404dd00cd758d46e8d931b427d28d40400dfa8180ee192607",
       "content": "Both LaTeX versions compile, but the latexdiff file does not. Treat the redline as a third build: freeze both source trees, flatten inputs, compile separately, and fix the first real error. Guide: blog.lazying.art/?p=3784&utm_source=x&utm_campaign=latex_redline",
       "postiz_content": "Both LaTeX versions compile, but the latexdiff file does not. Treat the redline as a third build: freeze both source trees, flatten inputs, compile separately, and fix the first real error. Guide: blog.lazying.art/?p=3784&utm_source=x&utm_campaign=latex_redline",
       "destination": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html?utm_source=x&utm_campaign=latex_redline",
@@ -53,7 +57,16 @@
         "made_with_ai": true,
         "paid_partnership": false
       },
-      "policy": "One first-party technical guide, scheduled after the current offer queue. No sale, acceptance, turnaround, or customer claim."
+      "publication_verification": {
+        "provider_state": "PUBLISHED",
+        "rendered_text_matched": true,
+        "tracked_destination_verified": true,
+        "destination_url": "https://blog.lazying.art/html/computer_internet/3784/latex-latexdiff-redline-compiles-overleaf.html?utm_source=x&utm_campaign=latex_redline",
+        "comments": 0,
+        "external_replies": 0,
+        "lead_or_sale_observed": false
+      },
+      "policy": "One first-party technical guide published with its tracked destination intact. Publication is attention, not a sale, acceptance, turnaround, customer result, or revenue."
     },
     "tex_stackexchange": {
       "state": "research_only",

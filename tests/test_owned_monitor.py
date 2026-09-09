@@ -255,13 +255,23 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], "local-knowledge-terminal-pilot")
         self.assertEqual(route["route"], "product")
 
-    def test_existing_latex_queue_keeps_its_original_campaign_route(self):
+    def test_published_latex_post_keeps_its_original_campaign_route(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "latex-redline-build.json").read_text(
                 encoding="utf-8"
             )
         )
-        content = campaign["channels"]["x"]["postiz_content"]
+        channel = campaign["channels"]["x"]
+        self.assertEqual(channel["state"], "published_and_release_connected")
+        self.assertIn("twitter.com/lazyingart/status/", channel["release_url"])
+        self.assertTrue(channel["publication_verification"]["rendered_text_matched"])
+        self.assertTrue(
+            channel["publication_verification"]["tracked_destination_verified"]
+        )
+        self.assertFalse(
+            channel["publication_verification"]["lead_or_sale_observed"]
+        )
+        content = channel["postiz_content"]
         route = owned_monitor.route_for_post("x", content, owned_monitor.route_index())
         self.assertEqual(route["campaign_id"], "latex-redline-build")
         self.assertEqual(route["route"], "product")

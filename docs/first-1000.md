@@ -285,6 +285,12 @@ payment.
 The exact manuscript fit-check subject is routed into the same dedicated
 aggregate-only intake folder used by LKT. The routing rule and a fresh folder
 count were verified visibly without opening or persisting any message content.
+On September 9 the direct encrypted route was restored behind the page's local
+review and explicit confirmation gates. A labeled synthetic request completed
+authenticated receipt, mode-`0600` local persistence, unchanged remote
+deletion, and an empty-spool recheck; its two local payload copies were then
+removed. Email and copy remain available. This proves intake operation, not a
+customer inquiry or sale.
 
 The offer and fit-check pages now use a dedicated 1200×630 preview rendered
 from the public synthetic redline. It shows the real additions and deletion,
@@ -312,6 +318,10 @@ and build and delivery manifests. Its deterministic SHA-256 is
 LazyingArtWebsite commit `ed0434d` is deployed; the page, preview, and packet
 returned HTTP 200 and the binary hashes matched. This closes the promised
 issue-ledger evidence gap without creating a customer or revenue claim.
+The short LaTeX build guide was published on X on September 9 at
+<https://twitter.com/lazyingart/status/2097505747760521436>. Its rendered copy
+and tracked guide destination were visibly verified; no external reply, lead,
+or revenue was observed.
 
 ## Active secondary route: bilingual lecture pack
 

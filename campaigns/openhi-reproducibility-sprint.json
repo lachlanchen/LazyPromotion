@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 6,
+  "version": 7,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -51,13 +51,19 @@
     "github": {
       "state": "live_verified",
       "role": "The primary OpenHI README now offers a tracked software-first path beside the hardware inquiry without changing the maintainer's uncommitted README or translation work.",
-      "repository_commit": "ac069e989a4ab661bf1b7a639aef0d9992de092d",
+      "repository_commit": "af26ac0e99e208dfede58f89314dc160dec0ec46",
       "tracked_entry_points": [
         "quick_access",
         "software_first",
         "support"
       ],
-      "verification": "The GitHub contents API returned tracked links to the frozen sample and USD 500 sprint from main and no longer returned the unverified OPTICA promotion-code line in the primary English README."
+      "issue_intake": {
+        "state": "live_verified",
+        "chooser": "https://github.com/lachlanchen/OpenHI/issues/new/choose",
+        "public_path": "A structured issue form asks for the stage, commit, environment, input shape, exact command, first error, and expected observable while prohibiting private data.",
+        "private_path": "The issue chooser links separately to the metadata-only fit check for setups that cannot be discussed publicly."
+      },
+      "verification": "The GitHub contents API returned tracked links to the frozen sample and USD 500 sprint from main, the issue chooser returned HTTP 200, and the primary English README no longer returned the unverified OPTICA promotion-code line."
     },
     "x": {
       "state": "queued_verified",

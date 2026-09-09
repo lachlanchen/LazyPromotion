@@ -57,6 +57,19 @@ in Sent after one send. NxSubs publishes no rate, workload, test terms, or
 assignment guarantee, so this is one outbound application—not a reply, lead,
 contract, payment, or revenue.
 
+A fifth direct application answers Lex Academic's current remote freelancer
+vacancies in physics, computer science, artificial intelligence, algorithms,
+mechanics, and related engineering subjects. One concise email from the
+LazyingArt address attaches a checked one-page CV and points to the public
+three-build LaTeX redline sample. It relies on the documented research degrees,
+publication record, and reproducible manuscript tooling, while stating that the
+sample is project-owned rather than client work. The exact recipient, sender,
+subject, body, and attachment passed a final visible check; one send was made,
+and the same message and attachment then appeared in Sent. The company
+publishes no rate or assignment volume and tests applicants, so this is one
+outbound application—not a reply, lead, test invitation, contract, payment, or
+revenue.
+
 A current-job recheck prevented two weak applications. Altimate.ai's indexed
 Technical Content Creator contract is no longer on its official board and its
 application URL now reports that the job was not found. The employer's remaining

@@ -1,0 +1,65 @@
+{
+  "id": "lex-academic-scientific-editor-opportunity",
+  "version": 1,
+  "objective": "Win paid freelance scientific-editing assignments by matching documented research experience to an official specialist vacancy and showing reproducible LaTeX revision proof without claiming client editing credits.",
+  "source_need": {
+    "captured_at": "2026-09-09T03:50:00Z",
+    "url": "https://lexacademic.science/careers/",
+    "title": "Current Freelancer Vacancies",
+    "state": "official_current_freelance_recruitment",
+    "eligibility": "Remote freelance pool; the official page names physics, computer science, artificial intelligence, algorithms, mechanics, electrical engineering, mechanical engineering, and related subjects",
+    "published_rate": null,
+    "published_process": "Email the applications address with an introductory email or brief CV; shortlisted applicants are tested",
+    "policy": "The official careers page is a current application route. It does not publish assignment volume, rates, test terms, or a work guarantee; an application is not a lead or revenue."
+  },
+  "fit": {
+    "projects": [
+      "paper-revision-skill",
+      "PaperAgent",
+      "PaperAgentDemo",
+      "leonardsusskind"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/latex-redline",
+      "https://lazying.art/manuscript-sprint/",
+      "https://github.com/lachlanchen/paper-revision-skill",
+      "https://github.com/lachlanchen/PaperAgentDemo"
+    ],
+    "supported_now": [
+      "Doctoral research in imaging systems plus MSc and BSc training",
+      "Documented publication work spanning imaging, machine learning, Bayesian analysis, and chemistry",
+      "A public three-build LaTeX revision and redline sample with issue ledger",
+      "LaTeX, BibTeX, build, reference, figure, table, and source-change workflows"
+    ],
+    "not_proven": [
+      "A paid scientific-editing client credit",
+      "Acceptance into the Lex Academic freelancer pool",
+      "Compliance with an unseen house style or editorial test",
+      "Any assignment volume, rate, turnaround, or client outcome"
+    ],
+    "claim_boundary": "The CV source and public artifacts support research experience and a project-owned manuscript workflow. They do not prove a client editing history, acceptance, an assignment, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-09T03:59:00Z",
+    "method": "One concise email to the applications address on the official careers page",
+    "delivery_evidence": "The exact recipient token, LazyingArt sender alias, subject, body, one-attachment indicator, and enabled Send control passed a visible-browser validation immediately before one send click. The composer closed, and the Sent mailbox then showed the exact recipient, full subject, body, attachment preview, and 11:59 AM delivery minute.",
+    "message_storage": "ignored private evidence",
+    "cv_storage": "ignored private evidence",
+    "attachments_sent": 1,
+    "client_credits_claimed": false,
+    "automatic_follow_up": false,
+    "policy": "Verify the recipient, subject, final attachment, and visible sent evidence exactly once. Any editorial test, house style, manuscript, NDA, assignment, rate, deadline, contract, or payment must be reviewed on its own terms."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_assignment_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

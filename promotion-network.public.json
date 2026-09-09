@@ -151,6 +151,16 @@
       "url": ""
     },
     {
+      "id": "campaign:lex-academic-scientific-editor-opportunity",
+      "kind": "campaign",
+      "label": "lex-academic-scientific-editor-opportunity",
+      "metadata": {
+        "objective": "Win paid freelance scientific-editing assignments by matching documented research experience to an official specialist vacancy and showing reproducible LaTeX revision proof without claiming client editing credits.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:lexical-database-ingestion",
       "kind": "campaign",
       "label": "lexical-database-ingestion",

@@ -147,6 +147,11 @@ The companion [practical assembly guide](https://blog.lazying.art/html/computer_
 is live in English, Traditional Chinese, and Japanese. It explains the complete
 method before one tracked offer link and includes no prospect details or
 customer-result claim. Publication is discovery evidence, not a sale.
+Search Console then showed 12 clicks to the existing FFmpeg guide. Its English,
+Chinese, and Japanese editions now keep the complete answer while routing one
+relevant workflow link to the exact six-source assembly proof instead of the
+generic Studio page. This is a proof-first owned path, not buyer intent or
+revenue.
 
 The former clearest one-contract route was a USD 1,200 Upwork listing for
 OUTOFPAPUA lexical-database ingestion and data carpentry. The buyer needed code

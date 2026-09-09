@@ -1053,7 +1053,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 8)
+        self.assertEqual(campaign["version"], 9)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1129,6 +1129,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(article["languages"], ["en", "zh-hant", "ja"])
         self.assertIn("HTTP 200", article["validation"])
         self.assertIn("no prospect details", article["policy"])
+        bridge = article["search_console_bridge"]
+        self.assertEqual(bridge["source_page_clicks"], 12)
+        self.assertEqual(bridge["property_clicks"], 144)
+        self.assertEqual(bridge["property_impressions"], 6660)
+        self.assertEqual(bridge["languages"], ["en", "zh", "ja"])
+        self.assertIn("utm_campaign=ai_clip_assembly", bridge["destination"])
+        self.assertTrue(bridge["destination"].endswith("#sample"))
+        self.assertIn("not buyer intent", bridge["policy"])
 
         discovery = campaign["search_discovery"]
         self.assertEqual(

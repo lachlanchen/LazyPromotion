@@ -174,10 +174,13 @@ Posts: `281, 936, 1562, 2936, 3125`.
   LKT path below the reader. A visible production check found no direct fit-check
   or payment link and retained the public/free archive boundary. The 22 clicks
   justify prioritization only; they are not a lead or sale.
-- Post `3114` showed 12 clicks from 1.33K impressions, 0.9% CTR, and average
-  position 9.1. It now routes readers with an actual FFmpeg workflow need to
-  the owner-disclosed open-source LazyEdit source and Studio page, while stating
-  that Ubuntu's packaged FFmpeg is normally sufficient.
+- Search Console's visible report on 2026-09-09 showed 144 clicks and 6.66K
+  impressions across the property. Post `3114` remained a top page with 12
+  clicks. BLOG commit `edd5af9` keeps the complete FFmpeg answer and open-source
+  LazyEdit route, but replaces the generic Studio link with the exact six-source
+  assembly proof in English, Chinese, and Japanese. All three live editions
+  returned HTTP 200 with their tracked proof link. The clicks are attention,
+  not buyer intent, leads, sales, or revenue.
 - Post `2972` showed 14 clicks but received no commercial CTA because no
   LazyingArt offer was a truthful match for its payment-failure search intent.
 - Post `3616` showed 3 clicks and 24 impressions, but its four full-text
@@ -323,6 +326,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `5c11840` | 2180 | Improved XGBoost indexing copy without changing its technical boundary |
 | `9d1fc70` | 3167 | Put the project-owned LKT sample report before the private fit check and paid scope |
 | `330d73c` | 3114 | Added an owner-disclosed LazyEdit route and removed duplicate body titles |
+| `edd5af9` | 3114 | Replaced the generic Studio link with the exact six-source assembly proof across all three editions |
 | `3ca71b7` | 3616 | Withdrew uncleared full-text PDFs and published a multilingual lawful-access notice |
 | `3220572` | 3782 | Published a source-aware study-card deduplication guide in English, Traditional Chinese, and Japanese |
 | `24d6afa` | 3782 | Added one exact-fit path from the complete guide to the LKT sample report and preserved attribution through the fit check |

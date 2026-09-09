@@ -12,6 +12,14 @@ per month. It remains unsent because the form requires nationality and that fact
 cannot be inferred. Compensation is not published, so the figure is a proposed
 scope position rather than a claim about Mobbin's budget.
 
+Altimate.ai's indexed Technical Content Creator contract looked like a strong
+match for the open-source and technical-publishing portfolio, but its official
+application now returns **Job not found** and it is absent from the employer's
+current job board. The current remote Digital Marketing Manager opening is not
+a substitute: it requires hands-on HubSpot ownership, contact-database
+migration, and email-deliverability experience that the public portfolio does
+not establish. No application was sent.
+
 ## Other verified routes
 
 - [ODK Senior Product Manager](https://getodk.org/about/jobs/senior-product-manager/)
@@ -32,6 +40,18 @@ scope position rather than a claim about Mobbin's budget.
   geography, agreement, or IP terms, and says microgrants are internally
   selected. This is funding research, not customer revenue.
 
+## Public bounty verification
+
+The new read-only bounty auditor reconciled all nine entries in Boss's public
+unsolved feed against their live GitHub issue and timeline state. None survived
+review: entries were demos, closed upstream, explicitly not ready, or already
+had open solution pull requests. The board's displayed USD values are discovery
+claims, not evidence of funding, a contract, payment, or revenue.
+
+The same gate also rejects issue text that asks for system, developer, platform,
+or pre-task instructions. A paid label never authorizes disclosing private agent
+context or committing it to a repository.
+
 ## Conversion improvement completed
 
 The primary owned LKT route now accepts a reviewed direct fit check again.
@@ -50,7 +70,9 @@ The test is not a lead or revenue.
    software experience, client work, or retention results.
 3. Treat ODK and Welo as personal-labor alternatives, not the scalable core.
 4. Correct the FUTO record to separate a proposed request from published terms.
-5. Continue matching current buyer needs to the smallest proof-backed code,
+5. Re-run the bounty verifier before considering public issue work; start no
+   implementation unless live scope, funding, competition, and payout survive.
+6. Continue matching current buyer needs to the smallest proof-backed code,
    book, media, or knowledge deliverable.
 
 Verified received gross revenue remains **USD 0**.

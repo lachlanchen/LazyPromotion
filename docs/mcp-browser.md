@@ -31,6 +31,11 @@ scripts/desktop.sh start
 curl --fail --silent http://127.0.0.1:9436/json/version
 ```
 
+Starting the stack does not navigate a registered host Firefox window. The
+operator can opt in for a specific review session with
+`LAZYPROMOTION_REFRESH_REGISTERED_VIEWER=1`; otherwise open the reported
+noVNC URL manually.
+
 Trust this repository when Codex asks. Codex then loads
 `.codex/config.toml`, starts the pinned stdio server on demand, and attaches it
 to the already-running Chrome. Confirm the project-scoped entry from the

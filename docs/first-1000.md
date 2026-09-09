@@ -46,6 +46,16 @@ fit with the company's mixed portfolio must be reviewed in writing. This is
 one outbound application—not a reply, lead, assessment, contract, payment, or
 revenue.
 
+A current-job recheck prevented two weak applications. Altimate.ai's indexed
+Technical Content Creator contract is no longer on its official board and its
+application URL now reports that the job was not found. The employer's remaining
+remote marketing role requires specific HubSpot, contact-migration, and email
+deliverability experience that the public portfolio does not prove. Separately,
+all nine entries in a public GitHub bounty feed failed live verification because
+they were demonstrations, closed, not ready, or already contested by open pull
+requests. Neither stale job pages nor displayed bounty values count toward the
+USD 1,000 target.
+
 The newest direct need is a worldwide USD 500 listing asking for six existing
 AI-generated clips to become one 30–45 second brand film and one 25–30 second
 web cut. The public [AI Clip Assembly Pilot](https://lazying.art/video/brand-film/)

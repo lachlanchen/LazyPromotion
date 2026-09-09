@@ -54,6 +54,7 @@ never count as revenue.
 | [`worker.py`](worker.py) | Finite, cooldown-based discovery and private review queue; never sends |
 | [`catalog.json`](catalog.json) and [`github-repos.json`](github-repos.json) | Curated need matching plus the public repository inventory |
 | [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of code, books, knowledge systems, and media |
+| [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
 | [`docs/first-1000.md`](docs/first-1000.md) | Six bounded USD 250/USD 500 service routes and truthful milestone math |
@@ -101,6 +102,16 @@ send comments there. Reviewed first-party scheduling through Postiz stays
 separate from community replies. Detailed worker, payment, affiliate, delivery,
 Postiz, and browser procedures live under [`docs/`](docs/).
 
+Public GitHub bounties can be screened without claiming or changing an issue:
+
+```bash
+python bounties.py
+```
+
+The board is discovery only. The auditor verifies live issue state and existing
+solution pull requests, rejects unsafe instruction requests, and writes its
+private report under `.local/`.
+
 ## Runtime isolation
 
 The launcher owns one 1920×1080 display (`:116`), VNC port `5936`, noVNC
@@ -133,7 +144,7 @@ specialization, not a claim that a closed marketplace listing is still open.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py
+python -m py_compile promotion.py browser.py bounties.py
 bash -n scripts/desktop.sh
 git diff --check
 ```

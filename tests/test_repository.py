@@ -72,6 +72,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('viewer.window', script)
         self.assertIn('register-viewer', script)
         self.assertIn('refresh_registered_viewers', script)
+        self.assertIn('LAZYPROMOTION_REFRESH_REGISTERED_VIEWER:-0', script)
+        self.assertIn('refresh_opted_in_viewer', script)
         self.assertIn('maximize_firefox_viewer', script)
         self.assertIn('wmctrl -ir "$window_id" -b remove,fullscreen', script)
         self.assertIn('wmctrl -ir "$window_id" -b add,maximized_vert,maximized_horz', script)

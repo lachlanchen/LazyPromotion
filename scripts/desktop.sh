@@ -18,6 +18,7 @@ LINGQ_AFFILIATE_URL="https://www.lingq.com/settings/referrals"
 BOOKSHOP_AFFILIATE_URL="https://bookshop.org/affiliates/profile/introduction"
 POSTIZ_AFFILIATE_URL="https://partners.dub.co/postiz/apply"
 VIEWER_DISPLAY="${LAZYPROMOTION_VIEWER_DISPLAY:-:11}"
+REFRESH_REGISTERED_VIEWER="${LAZYPROMOTION_REFRESH_REGISTERED_VIEWER:-0}"
 NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=0"
 TMUX_SESSION="lazypromotion-browser"
 
@@ -25,11 +26,13 @@ pid_alive() {
   local file="$1"
   local marker="$2"
   local pid
+  local cmdline
   [[ -f "$file" ]] || return 1
   pid="$(<"$file")"
   [[ "$pid" =~ ^[0-9]+$ ]] || return 1
   [[ -r "/proc/$pid/cmdline" ]] || return 1
-  tr '\0' ' ' <"/proc/$pid/cmdline" | grep -Fq -- "$marker"
+  cmdline="$(tr '\0' ' ' <"/proc/$pid/cmdline" 2>/dev/null)" || return 1
+  grep -Fq -- "$marker" <<<"$cmdline"
 }
 
 wait_http() {
@@ -318,6 +321,11 @@ refresh_registered_viewers() {
   maximize_firefox_viewer "$window_id"
 }
 
+refresh_opted_in_viewer() {
+  [[ "$REFRESH_REGISTERED_VIEWER" == "1" ]] || return 0
+  refresh_registered_viewers
+}
+
 register_viewer() {
   local viewer="${1:-}"
   [[ -n "$viewer" ]] || {
@@ -519,7 +527,7 @@ serve() {
 start() {
   if status >/dev/null 2>&1; then
     status
-    refresh_registered_viewers || printf 'The stack is healthy, but the registered Firefox viewer could not be refreshed.\n' >&2
+    refresh_opted_in_viewer || printf 'The stack is healthy, but the explicitly enabled Firefox viewer could not be refreshed.\n' >&2
     return 0
   fi
   if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
@@ -544,7 +552,7 @@ start() {
     sleep 0.25
   done
   status
-  refresh_registered_viewers || printf 'The stack started, but the registered Firefox viewer could not be refreshed.\n' >&2
+  refresh_opted_in_viewer || printf 'The stack started, but the explicitly enabled Firefox viewer could not be refreshed.\n' >&2
 }
 
 stop() {

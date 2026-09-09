@@ -9,10 +9,12 @@ import json
 import math
 import secrets
 from collections import Counter, defaultdict
+from datetime import date
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from urllib.parse import urlparse
 
+import application_watch
 import promotion
 
 
@@ -82,7 +84,9 @@ def record_outcome(
     if kind not in OUTCOME_KINDS:
         raise ValueError(f"unknown outcome kind: {kind}")
     if not any((candidate_id, draft_id, campaign_id, project_id)):
-        raise ValueError("an outcome must be attached to a candidate, draft, campaign, or project")
+        raise ValueError(
+            "an outcome must be attached to a candidate, draft, campaign, or project"
+        )
     if candidate_id:
         candidate = db.execute(
             "SELECT id FROM candidates WHERE id=?", (candidate_id,)
@@ -127,7 +131,9 @@ def record_outcome(
                 raise ValueError(
                     "confirmed affiliate referrals require a private conversion reference"
                 )
-            raise ValueError("money outcomes require a private order or receipt reference")
+            raise ValueError(
+                "money outcomes require a private order or receipt reference"
+            )
         reference_hash = hashlib.sha256(reference.encode("utf-8")).hexdigest()
         if db.execute(
             "SELECT 1 FROM outcomes WHERE kind=? AND reference_hash=?",
@@ -136,10 +142,13 @@ def record_outcome(
             raise ValueError("this outcome reference was already recorded")
     else:
         reference_hash = ""
-        if candidate_id and db.execute(
-            "SELECT 1 FROM outcomes WHERE kind=? AND candidate_id=?",
-            (kind, candidate_id),
-        ).fetchone():
+        if (
+            candidate_id
+            and db.execute(
+                "SELECT 1 FROM outcomes WHERE kind=? AND candidate_id=?",
+                (kind, candidate_id),
+            ).fetchone()
+        ):
             raise ValueError("this candidate outcome was already recorded")
 
     occurred_at = promotion.compact(occurred_at) or promotion.utc_now()
@@ -185,10 +194,34 @@ def record_outcome(
         ),
     )
     db.commit()
-    return dict(db.execute("SELECT * FROM outcomes WHERE id=?", (outcome_id,)).fetchone())
+    return dict(
+        db.execute("SELECT * FROM outcomes WHERE id=?", (outcome_id,)).fetchone()
+    )
 
 
-def funnel_report(db) -> dict:
+def application_pipeline(
+    *, campaigns_dir: Path = CAMPAIGNS, on: date | None = None
+) -> dict:
+    report = application_watch.build_report(campaigns_dir=campaigns_dir, on=on)
+    due_campaign_ids = [
+        item["campaign_id"]
+        for item in report["applications"]
+        if item["due_for_human_review"]
+    ]
+    return {
+        "awaiting_human_reply": report["summary"]["awaiting_human_reply"],
+        "due_for_human_review": report["summary"]["due_for_human_review"],
+        "missing_review_schedule": report["summary"]["missing_review_schedule"],
+        "due_campaign_ids": due_campaign_ids,
+        "automatic_follow_up": False,
+        "application_is_not_a_lead": True,
+        "application_is_not_revenue": True,
+    }
+
+
+def funnel_report(
+    db, *, campaigns_dir: Path = CAMPAIGNS, on: date | None = None
+) -> dict:
     candidates = Counter(row[0] for row in db.execute("SELECT status FROM candidates"))
     drafts = Counter(row[0] for row in db.execute("SELECT status FROM drafts"))
     outcomes = Counter(row[0] for row in db.execute("SELECT kind FROM outcomes"))
@@ -213,6 +246,7 @@ def funnel_report(db) -> dict:
     return {
         "candidates": dict(sorted(candidates.items())),
         "drafts": dict(sorted(drafts.items())),
+        "applications": application_pipeline(campaigns_dir=campaigns_dir, on=on),
         "outcomes": dict(sorted(outcomes.items())),
         "gross_revenue_minor_by_currency": dict(sorted(gross_by_currency.items())),
         "refunds_minor_by_currency": dict(sorted(refunds_by_currency.items())),

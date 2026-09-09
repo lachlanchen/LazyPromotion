@@ -60,7 +60,7 @@ never count as revenue.
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
 | [`docs/first-1000.md`](docs/first-1000.md) | Eight bounded USD 250/USD 500 service routes and truthful milestone math |
 | [`docs/paid-need-decision-2026-09-09.md`](docs/paid-need-decision-2026-09-09.md) | Current direct-route screen, evidence gaps, and submission gates |
-| [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated funnel, public graph, and first-party demand signals |
+| [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated applications, revenue funnel, public graph, and first-party demand signals |
 | [`owned_monitor.py`](owned_monitor.py), [`github_inbound_monitor.py`](github_inbound_monitor.py), and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring, public-issue alerts, and private fit-check intake |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome review desktop |
 | [`application_watch.py`](application_watch.py) and [`application_inbox_monitor.py`](application_inbox_monitor.py) | Due-review schedule plus read-only aggregate matching for known application threads; never opens mail or follows up |

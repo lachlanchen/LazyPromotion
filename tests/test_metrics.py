@@ -1,5 +1,7 @@
+import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 import metrics
@@ -31,6 +33,47 @@ class MetricsTests(unittest.TestCase):
         self.assertEqual(goal["additional_500_usd_pilots_needed"], 2)
         self.assertEqual(goal["additional_250_usd_sprints_needed"], 4)
         self.assertEqual(goal["additional_128_usd_orders_needed"], 8)
+
+    def test_report_keeps_sent_applications_separate_from_leads_and_revenue(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            campaigns = Path(tmp)
+            (campaigns / "one.json").write_text(
+                json.dumps(
+                    {
+                        "id": "one",
+                        "application": {
+                            "state": "sent_awaiting_human_reply",
+                            "sent_at": "2026-09-01T00:00:00Z",
+                            "review_after": "2026-09-10",
+                            "automatic_follow_up": False,
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (campaigns / "two.json").write_text(
+                json.dumps(
+                    {
+                        "id": "two",
+                        "application": {"state": "prepared_not_sent"},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            report = metrics.funnel_report(
+                self.db,
+                campaigns_dir=campaigns,
+                on=date(2026, 9, 10),
+            )
+
+        applications = report["applications"]
+        self.assertEqual(applications["awaiting_human_reply"], 1)
+        self.assertEqual(applications["due_for_human_review"], 1)
+        self.assertEqual(applications["due_campaign_ids"], ["one"])
+        self.assertFalse(applications["automatic_follow_up"])
+        self.assertTrue(applications["application_is_not_a_lead"])
+        self.assertTrue(applications["application_is_not_revenue"])
+        self.assertEqual(report["gross_revenue_minor_by_currency"], {})
 
     def test_verified_reply_and_sale_are_distinct(self):
         metrics.record_outcome(

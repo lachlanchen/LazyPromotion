@@ -1,15 +1,15 @@
 {
-  "version": 29,
+  "version": 30,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
     "pilot_page": "https://lazying.art/lkt/",
     "fit_check": "https://lazying.art/lkt/fit-check/",
     "encrypted_intake_sources": {
-      "current_state": "historically_verified_direct_route_disabled_pending_key_rotation",
+      "current_state": "live_verified_direct_route",
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "backend_commit": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
-      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/3ff43e4afc0dfd4512629443af198345696c170e",
+      "frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b",
       "receiver_commit": "https://github.com/lachlanchen/LazyPromotion/commit/f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445",
       "disabled_frontend_commit": "https://github.com/lachlanchen/LazyingArtWebsite/commit/1ba106beadff2de89d71874fa2df6379e6eb35fb",
       "record_schema": "fit-check/v2",
@@ -300,17 +300,18 @@
       "policy": "These are public draft commercial terms for qualification and listing consistency. A buyer-specific contract may narrow them but must never expand the scope or weaken the refund, privacy, retention, or support boundaries without explicit written review."
     },
     "fit_check_explanation_contract": {
-      "state": "live_email_or_copy_verified",
-      "checked_at": "2026-09-06T19:16:37Z",
-      "website_commit": "1ba106beadff2de89d71874fa2df6379e6eb35fb",
-      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/33986621344",
+      "state": "live_encrypted_submit_with_email_or_copy_fallback_verified",
+      "checked_at": "2026-09-09T00:24:31Z",
+      "website_commit": "04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34294316806",
       "routes": [
         "https://lazying.art/lkt/",
-        "https://lazying.art/lkt/sample-report/"
+        "https://lazying.art/lkt/sample-report/",
+        "https://lazying.art/lkt/fit-check/"
       ],
-      "policy": "The offer and sample report explain the current reviewed flow: nothing is sent while the visitor fills in or reviews the fit check; after review, the visitor opens the prepared email or copies the request. Direct submission remains disabled until key rotation and a new end-to-end verification."
+      "policy": "The offer, sample report, and fit-check page explain the reviewed flow: nothing is sent while the visitor fills in or reviews the request. After explicit confirmation, the visitor may submit through the encrypted storage path, open the prepared email, or copy the request."
     },
-    "current_order_mode": "free fit check reviewed locally and continued by email or copy, followed by human review and a separately reviewed Stripe payment request",
+    "current_order_mode": "free fit check reviewed locally, then explicitly submitted through encrypted storage or continued by email or copy; human scope review precedes any separately reviewed Stripe payment request",
     "included_scope": [
       "one customer-provided collection",
       "one language goal",
@@ -375,7 +376,7 @@
     "policy": "Authenticated access and the controlled exact-subject runtime probe prove that the inbox can be reviewed and the intake rule can route a message to its destination. Do not promise a response time or treat any future message as a qualified lead until the operator has reviewed the actual request against the qualification gate.",
     "aggregate_monitor": {
       "state": "healthy",
-      "checked_at": "2026-09-06T20:51:05Z",
+      "checked_at": "2026-09-09T00:48:05Z",
       "interval_minutes": 15,
       "message_content_opened": false,
       "message_metadata_persisted": false,
@@ -410,13 +411,13 @@
       "policy": "This September 1 synthetic visible-browser smoke test predates encrypted direct submission and is retained as historical review-gate evidence. It stopped at the local review panel, named the recipient, offered a copy fallback, said not to send source files yet, and kept Stripe after fit and scope acceptance. It did not click the mail link, send a message, or create a customer outcome."
     },
     "encrypted_direct_intake": {
-      "state": "historically_verified_direct_route_temporarily_disabled",
-      "checked_on": "2026-09-06",
-      "current_live_path": "local_review_then_email_or_copy",
-      "direct_submit_available": false,
-      "current_frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/e4a1c36b3efa93399b6a5754f3692c1802a211c7",
-      "key_rotation_required": true,
-      "recovery_key_available": false,
+      "state": "live_verified_review_then_encrypted_submit",
+      "checked_on": "2026-09-09",
+      "current_live_path": "local_review_then_explicit_encrypted_submit_with_email_or_copy_fallback",
+      "direct_submit_available": true,
+      "current_frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b",
+      "key_rotation_required": false,
+      "recovery_key_available": true,
       "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
       "backend_source": "https://github.com/lachlanchen/myblog/commit/0463dcb2470ad1c908597b7f4d636cf2d33013a1",
       "frontend_source": "https://github.com/lachlanchen/LazyingArtWebsite/commit/3ff43e4afc0dfd4512629443af198345696c170e",
@@ -431,15 +432,15 @@
       "live_verification": {
         "state": "synthetic_browser_round_trip_verified",
         "explicitly_labeled_synthetic": true,
-        "visible_success_reference": "cc078babd1b32b0c08e796e88886201f",
+        "visible_success_reference": "79c83c884e52cb0f1341c522fbfa929a",
         "frontend_review_gate_verified": true,
         "receiver_authenticated_decrypted_and_saved": true,
         "private_copy_mode": "0600",
         "remote_envelope_deleted_only_after_unchanged_verification": true,
-        "synthetic_local_payload_artifacts_removed": true,
+        "synthetic_local_payload_artifacts_retained_private": true,
         "remote_spool_empty": true,
-        "private_screenshot_retained_outside_git": true,
-        "earlier_endpoint_probe_receipt": "d10ad62060dbe7e8b33f87c4908f1826"
+        "private_browser_snapshot_retained_outside_git": true,
+        "website_deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34294316806"
       },
       "v2_transition": {
         "state": "live_verified",
@@ -464,10 +465,11 @@
         "policy": "The routed v2 checks used labeled synthetic metadata only. They prove the shared encrypted intake for four offer routes, not a customer inquiry, qualification, sale, delivery, or revenue."
       },
       "receiver_runtime": {
-        "state": "not_running",
+        "state": "running_monitor_healthy",
         "last_verified_session": "lazypromotion-lkt-inbox",
         "interval_minutes": 15,
-        "latest_state": "unavailable"
+        "latest_state": "no_pending",
+        "checked_at": "2026-09-09T00:24:31Z"
       },
       "sanitized_status_fields": [
         "receipt",
@@ -480,7 +482,7 @@
       "automatic_qualification": false,
       "lead_or_sale_observed": false,
       "verified_received_gross_usd": 0,
-      "policy": "The September 5 labeled synthetic round trip remains historical evidence. On September 6 the recovery checkout could not access the matching private key or remote receiver, so all four public pages disabled direct submission and retained only local review, email, and copy. Re-enable direct submission only after an atomic key rotation and a new labeled end-to-end verification. This is operational evidence only, not a customer inquiry, qualified lead, customer outcome, sale, or revenue."
+      "policy": "The September 9 LKT round trip used only labeled synthetic data and an explicit review-and-confirm gate. The deployed route returned acceptance, the receiver authenticated and decrypted the record, saved private mode-0600 copies, deleted only the unchanged remote envelope, and then observed an empty spool. This is operational evidence only, not a customer inquiry, qualified lead, customer outcome, sale, or revenue."
     },
     "attribution_bridge": {
       "state": "live",
@@ -836,12 +838,22 @@
       "policy": "First-party service post. The visible Postiz preview showed the exact 249-character copy, uploaded service cover, protocol-less owned sample-report route, AI flag, open-reply setting, unchanged schedule, and QUEUE state. The image itself says USD 250, software service, and hardware not included."
     },
     "instagram": {
-      "state": "postiz_queue",
+      "state": "published_and_release_connected",
       "publish_at": "2026-09-08T11:31:00Z",
       "content": "Private-document projects often fail before retrieval: extraction is uneven, citations cannot be reopened, or nobody has defined what “good enough” means.\n\nI built a small public sample around those earlier questions. It covers a data and privacy map, twenty fixed test questions, two cited browser proofs, and a written go/no-go boundary.\n\nI’m opening four USD 250 collection-fit sprints. The fixed scope is a software service for one rights-cleared collection, one language goal, and one existing machine. Hardware, custom OCR, full-library conversion, hosting, and production deployment are outside it.\n\nRead the sample before sharing any material:\nhttps://lazying.art/lkt/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=service_card\n\n#LocalFirst #KnowledgeManagement #DigitalHumanities #OpenSource",
       "visual": "https://lazying.art/lkt/assets/lkt-collection-fit-service-instagram-v1.png",
       "reviewed_on": "2026-09-07",
       "website_commit": "d337631",
+      "publication_verification": {
+        "checked_at": "2026-09-09T00:48:05Z",
+        "state": "published",
+        "url": "https://www.instagram.com/p/DdBlZRuG0Xj/",
+        "content_sha256": "b661485f1e8b9cd57ede75740b594d26d54851f4b7122b104d57bbbca90954d1",
+        "provider_replies": 0,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The first-party Postiz monitor connected the scheduled record to its public release URL and matching reviewed-content hash. It does not attribute account-level metrics to this post or infer a lead or sale."
+      },
       "superseded_post": {
         "state": "draft",
         "reason": "The earlier copy used $250 and a legacy product-style visual. It was moved out of the publishing queue before the reviewed replacement entered it."
@@ -874,7 +886,7 @@
         "reviewed_on": "2026-09-04",
         "policy": "The exact caption, unshortened destination, real project-owned page capture, Instagram post setting, time, and QUEUE state were visibly reviewed. The caption claims only the hand-reviewed sample and does not imply automatic extraction, a customer result, or a full-book benchmark."
       },
-      "policy": "Use the reviewed uploaded 4:5 service card. The exact caption, bounded project-owned evidence, unshortened first-party sample-report URL, Instagram post setting, unchanged schedule, media, and QUEUE state were visibly reviewed. The card itself says USD 250, software service, one existing machine, and hardware not included."
+      "policy": "The reviewed 4:5 service card and bounded caption were published at the scheduled time and connected to the public release URL. The card says USD 250, software service, one existing machine, and hardware not included. Publication is attention evidence, not a fit inquiry or revenue."
     },
     "linkedin": {
       "state": "postiz_queue",

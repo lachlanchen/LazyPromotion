@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-08. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-09. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
 
 ## Where promotion should start
 
@@ -43,7 +43,8 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-08 07:59:07 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [hackintosh](https://github.com/lachlanchen/hackintosh) | 2026-09-08 21:51:37 | Sanitized Sequoia, OpenCore, recovery, and Xcode runbook for an owned development workstation |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-08 10:48:15 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
 | [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-07 22:47:48 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-07 22:47:47 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 | [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | 2026-09-07 22:47:44 | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. |
@@ -52,7 +53,6 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-07 01:41:20 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-07 00:41:55 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [SoftEventFrameAlignment](https://github.com/lachlanchen/SoftEventFrameAlignment) | 2026-09-06 23:21:54 | Minimal research code for soft event-frame alignment with a unified implicit neural representation. |
-| [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-06 21:10:57 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
 
 ## Complete public repository inventory
 

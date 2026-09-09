@@ -1,11 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "futo-lkt-microgrant",
-  "objective": "Seek one bounded FUTO microgrant to harden Local Knowledge Terminal as user-controlled, local-first software without calling public source open source before an explicit license exists or counting an application or award as customer revenue.",
+  "objective": "Seek one bounded FUTO grant to harden Local Knowledge Terminal as user-controlled, local-first software without calling public source open source before an explicit license exists or counting an application or award as customer revenue.",
   "source_evidence": {
-    "program": "https://futo.tech/grants",
-    "mission": "https://futo.tech/about",
-    "source_first": "https://futo.tech/source-first",
+    "program": "https://www.futo.org/grants/",
+    "mission": "https://www.futo.org/about/what-is-futo/",
+    "source_first": "https://www.futo.org/about/what-is-futo/",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "passage_provenance_proof": "https://lazying.art/lkt/passage-graph/",
     "sample_fit_report": "https://lazying.art/lkt/sample-report/"
@@ -13,17 +13,15 @@
   "program": {
     "state": "applications_open_official_page_verified",
     "observed_on": "2026-09-06",
-    "award_range_usd": {
-      "minimum": 1000,
-      "maximum": 5000
-    },
-    "published_fit": "One-time microgrants for small or early-stage projects working against technology centralization.",
-    "application_route": "email_to_public_program_address",
+    "award_range_usd": null,
+    "published_fit": "Grant programs fund projects and people working to challenge technology centralization; the page separately describes microgrants as internally selected and unsolicited.",
+    "application_route": "email_to_public_grant_program_address",
+    "microgrant_application_route_published": false,
     "application_fee_observed": false,
     "deadline_published": false,
     "geographic_eligibility_published": false,
     "agreement_or_ip_terms_published": false,
-    "policy": "The official page verifies an open application route and award range only. It does not establish eligibility, selection probability, decision timing, agreement terms, payout, tax treatment, or an award."
+    "policy": "The current official page verifies that grant applications are open by email, but publishes no award range, deadline, geography, agreement, IP, payout, or tax terms. The proposed USD 5,000 request below is not a published FUTO range."
   },
   "fit": {
     "strength": "high_mission_fit_with_license_gate",
@@ -49,7 +47,7 @@
     }
   },
   "proposal": {
-    "state": "private_package_ready_not_sent",
+    "state": "private_grant_package_ready_not_sent",
     "requested_usd": 5000,
     "timeline_weeks": 6,
     "private_draft": ".local/outreach/futo-lkt-microgrant/email-draft.md",

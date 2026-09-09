@@ -53,7 +53,7 @@ class NetworkTests(unittest.TestCase):
             list(network.source_evidence_urls(evidence)),
         )
 
-    def test_historical_intake_and_current_disabled_frontend_enter_public_graph(self):
+    def test_current_intake_and_recovery_history_enter_public_graph(self):
         network.sync_graph(self.db)
         snapshot = json.dumps(network.public_snapshot(self.db), ensure_ascii=False)
         self.assertIn(
@@ -61,7 +61,7 @@ class NetworkTests(unittest.TestCase):
             snapshot,
         )
         self.assertIn("0463dcb2470ad1c908597b7f4d636cf2d33013a1", snapshot)
-        self.assertIn("3ff43e4afc0dfd4512629443af198345696c170e", snapshot)
+        self.assertIn("04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b", snapshot)
         self.assertIn("f8be630ea3c7a5b4aa90544ddc2b5b212e1a5445", snapshot)
         self.assertIn("1ba106beadff2de89d71874fa2df6379e6eb35fb", snapshot)
 

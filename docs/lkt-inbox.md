@@ -2,12 +2,12 @@
 
 ## Current status
 
-Direct web submission is live for the lecture route only as of 2026-09-07. The
-deployed frontend, pinned public-key fingerprint, mode-`0600` private key,
-receiver, and remote spool completed one explicitly confirmed synthetic round
-trip. LKT, manuscript, and Story Clip still review locally and continue through
-email or copy. Do not re-enable another route until those same checks succeed for
-that route.
+Direct web submission is live for the LKT and lecture routes as of 2026-09-09.
+Each deployed frontend, the pinned public-key fingerprint, mode-`0600` private
+key, receiver, and remote spool completed an explicitly confirmed synthetic
+round trip. Manuscript and Story Clip still review locally and continue through
+email or copy. Do not re-enable another route until those same checks succeed
+for that route.
 
 `lkt_inbox.py` is the operator-side receiver for the LKT, manuscript, lecture,
 and Story Clip fit checks accepted by the first-party WordPress endpoint. The web
@@ -85,4 +85,13 @@ On 2026-09-07 the lecture route was restored by LazyingArtWebsite commit
 visible review and confirmation gates, returned HTTP 202, was decrypted and
 saved privately, and was deleted remotely only after unchanged verification. A
 second check returned `no_pending`. Its private synthetic artifacts are retained
-outside Git. The other three frontend routes remain disabled for direct submit.
+outside Git.
+
+On 2026-09-09 the LKT route was restored by LazyingArtWebsite commit
+`04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b`. After deployment, one labeled
+request passed the visible review and confirmation gates, returned HTTP 202,
+matched the routed LKT schema after decryption, persisted with mode `0600`, and
+was deleted remotely only after unchanged verification. A second receiver check
+returned `no_pending`. Its private synthetic artifacts and browser snapshot are
+retained outside Git. Manuscript and Story Clip remain disabled for direct
+submit. This test is not a lead, customer result, payment, delivery, or revenue.

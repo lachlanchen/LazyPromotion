@@ -453,7 +453,19 @@ was accepted, decrypted, saved privately, and removed remotely only after
 unchanged verification; a second receiver check found no pending duplicate.
 The private synthetic record is retained as operational evidence. This did not
 create a customer inquiry, qualified lead, payment, delivery, or revenue. The
-other three routes remain email-or-copy only.
+other three routes remained email-or-copy only at that checkpoint.
+
+On September 9 the LKT route independently met the same gate. LazyingArtWebsite
+commit `04d9ec740ef2ec467a7ea25e9e0cd3525a94dd5b` restored the Send control while
+keeping local review, explicit confirmation, email, and copy fallbacks. After
+the Pages deployment succeeded, one labeled synthetic LKT request returned HTTP
+202, matched the LKT schema after authenticated decryption, persisted in private
+mode `0600`, and was deleted remotely only after unchanged verification. A
+second receiver check found an empty spool. The private test record and browser
+snapshot remain outside Git. LKT and lecture now accept direct reviewed
+submissions; manuscript and Story Clip remain email-or-copy only. This is
+operational evidence, not a lead, customer outcome, payment, delivery, or
+revenue.
 
 Prospective customers can inspect a
 [complete sample fit report](https://lazying.art/lkt/sample-report/)

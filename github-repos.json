@@ -618,7 +618,7 @@
       "homepage": "https://lazying.art",
       "name": "hackintosh",
       "primary_language": "Shell",
-      "pushed_at": "2026-08-30T01:23:53Z",
+      "pushed_at": "2026-09-08T21:51:37Z",
       "topics": [
         "dual-boot",
         "hackintosh",
@@ -630,7 +630,7 @@
         "skylake",
         "xcode"
       ],
-      "updated_at": "2026-08-30T04:37:40Z",
+      "updated_at": "2026-09-08T21:53:14Z",
       "url": "https://github.com/lachlanchen/hackintosh"
     },
     {
@@ -1320,7 +1320,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-08T07:59:07Z",
+      "pushed_at": "2026-09-08T10:48:15Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1340,7 +1340,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-07T02:48:08Z",
+      "updated_at": "2026-09-08T10:48:26Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {

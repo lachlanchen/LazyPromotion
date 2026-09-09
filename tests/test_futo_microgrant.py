@@ -14,12 +14,15 @@ class FutoMicrograntTests(unittest.TestCase):
 
     def test_program_evidence_is_bounded_to_published_facts(self):
         program = self.campaign["program"]
-        self.assertEqual(program["award_range_usd"], {"minimum": 1000, "maximum": 5000})
+        self.assertEqual(self.campaign["version"], 2)
+        self.assertIsNone(program["award_range_usd"])
         self.assertEqual(program["state"], "applications_open_official_page_verified")
+        self.assertFalse(program["microgrant_application_route_published"])
         self.assertFalse(program["application_fee_observed"])
         self.assertFalse(program["deadline_published"])
         self.assertFalse(program["geographic_eligibility_published"])
         self.assertFalse(program["agreement_or_ip_terms_published"])
+        self.assertIn("publishes no award range", program["policy"])
 
     def test_missing_license_is_a_pre_award_gate(self):
         audit = self.campaign["fit"]["license_audit"]
@@ -33,7 +36,7 @@ class FutoMicrograntTests(unittest.TestCase):
         draft = ROOT / proposal["private_draft"]
         brief_source = ROOT / proposal["private_brief_source"]
         brief_pdf = ROOT / proposal["private_brief_pdf"]
-        self.assertEqual(proposal["state"], "private_package_ready_not_sent")
+        self.assertEqual(proposal["state"], "private_grant_package_ready_not_sent")
         self.assertFalse(proposal["application_sent"])
         self.assertTrue(draft.is_file())
         self.assertTrue(brief_source.is_file())

@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "id": "mobbin-youtube-editor-opportunity",
+  "objective": "Win a paid, bounded long-form product-video engagement by showing first-party screen-led editing proof without inventing client work, retention results, or software experience.",
+  "source_need": {
+    "captured_at": "2026-09-09T00:25:00Z",
+    "official_posting": "https://jobs.ashbyhq.com/mobbin.com/94fdd9b5-9371-471c-bed6-7ee3d07954a9",
+    "official_application": "https://jobs.ashbyhq.com/mobbin.com/94fdd9b5-9371-471c-bed6-7ee3d07954a9/application",
+    "official_board_api": "https://api.ashbyhq.com/posting-api/job-board/mobbin.com?includeCompensation=true",
+    "title": "YouTube Video Editor (Freelance / Contract)",
+    "state": "first_party_role_listed",
+    "published_at": "2026-08-07T07:20:35.502+00:00",
+    "location": "Global remote; any timezone with reasonable SGT overlap",
+    "engagement": "Freelance independent contractor; part-time; two to four videos per month to start",
+    "turnaround": "First cut typically within about five working days after footage is received, subject to agreement",
+    "published_compensation": "No numerical compensation, currency, fee, or payment cadence is published",
+    "requested_work": [
+      "Edit long-form YouTube videos from raw footage, screen recordings, and scripts",
+      "Own pacing and story in the cut",
+      "Clean dialogue and add restrained music and sound design",
+      "Provide color correction, captions, on-screen text, and legible UI callouts",
+      "Iterate predictably and keep project files organized"
+    ],
+    "policy": "A current first-party listing is buyer-intent evidence. It is not a lead, contract, payment, or revenue promise."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdit",
+      "PocketPolyglot",
+      "Musia",
+      "LocalVideoGen",
+      "LazyPromotion"
+    ],
+    "public_samples": [
+      {
+        "url": "https://www.youtube.com/watch?v=9FjVTAgD9QE",
+        "duration_seconds": 276,
+        "role": "Closest public long-form screen-led product walkthrough",
+        "boundary": "First-party project work, not a client case study or retention result"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qrzGXl5y-Ok",
+        "duration_seconds": 28,
+        "role": "Short product demonstration",
+        "boundary": "Useful for visual clarity only; not long-form proof"
+      },
+      {
+        "url": "https://lazying.art/video/brand-film/#sample",
+        "role": "Six-source assembly and two-deliverable proof",
+        "boundary": "Project-owned synthetic source set, not paid customer work"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=G9NKncZgRis",
+        "duration_seconds": 23,
+        "role": "Timed multilingual caption and screen-led proof",
+        "boundary": "Short project-owned demonstration"
+      },
+      {
+        "url": "https://lazying.art/video/",
+        "role": "Canonical video portfolio",
+        "boundary": "The page states roles and project-owned proof boundaries"
+      }
+    ],
+    "supported_now": [
+      "Screen-led product explanation and educational editing",
+      "Timed subtitles, multilingual caption workflows, and dialogue cleanup",
+      "FFmpeg-backed assembly, visual review, and reproducible media manifests",
+      "Async collaboration in the same GMT+8 time zone as the named editor",
+      "Self-directed open-source delivery with explicit claim boundaries"
+    ],
+    "not_proven": [
+      "Paid client editing or a Mobbin-style customer result",
+      "Long-form YouTube audience-retention improvement",
+      "A public sample at Mobbin's implied 6-to-12-minute long-form depth",
+      "Premiere Pro, Final Cut Pro, DaVinci Resolve, After Effects, or Frame.io proficiency",
+      "Thumbnail performance or high-volume channel delivery"
+    ],
+    "claim_boundary": "Use the existing pieces as evidence of product clarity, captions, sound and visual assembly, and a 4-minute-36-second walkthrough. Do not call them client work or claim retention performance."
+  },
+  "channel_observation": {
+    "video": "https://www.youtube.com/watch?v=E7RzEZ8GlHE",
+    "title": "He Tested 4,700 Paywalls. These Won.",
+    "observed_on": "2026-09-09",
+    "duration_seconds": 399,
+    "published_on": "2026-08-11",
+    "view_count_at_check": 6367,
+    "sampled_timestamps_seconds": [
+      0,
+      15,
+      30,
+      58,
+      146,
+      210,
+      243,
+      307,
+      339
+    ],
+    "improvement_note": "For this video, front-load a 10-to-12-second cold open around the counterintuitive ‘same offer, opposite outcome’ example, using two paywall screens side by side and one clean label for the audience-size constraint. Break the long single-camera stretch from roughly 1:00 to 4:00 with a few purposeful UI checkpoints tied to each experiment stage. This would make the title's promise concrete earlier without adding decorative motion.",
+    "boundary": "This is an editorial observation from sampled public frames, not access to retention data or a claim that the change would improve a measured metric."
+  },
+  "application": {
+    "state": "prepared_personal_fact_confirmation_required",
+    "private_packet": "ignored private storage",
+    "required_fields_verified": [
+      "Full name",
+      "Email",
+      "Current location",
+      "Nationality",
+      "Two or three edited-video links",
+      "Why Mobbin",
+      "Expected rate in SGD per month or year",
+      "Desired start date",
+      "Availability and working style",
+      "A few lines on one Mobbin video that could be improved"
+    ],
+    "optional_fields_verified": [
+      "Website",
+      "LinkedIn",
+      "X",
+      "Anything else"
+    ],
+    "pricing_position": {
+      "currency": "SGD",
+      "initial_scope": "Two videos per month, each approximately 6 to 12 minutes, with one consolidated revision round and supplied script, footage, screen recordings, brand assets, and licensed music",
+      "expected_rate": "SGD 2,400 per month for the initial two-video scope; additional videos require a written scope and rate",
+      "boundary": "This is a proposed application position, not published Mobbin compensation or an agreed rate."
+    },
+    "availability_position": "Start with two videos per month, approximately 8 to 10 hours per week, async with reasonable SGT overlap; confirm exact source condition and deadlines before acceptance",
+    "blocking_personal_fact": "Nationality is required by the form and must not be inferred",
+    "submitted": false,
+    "automatic_follow_up": false,
+    "acceptance_gate": "Before accepting work, confirm contracting entity, per-video or monthly scope, source condition, final runtimes, revision count, project-file format, music and asset rights, turnaround start event, currency, invoice and payment timing, taxes, IP transfer, cancellation, termination, and portfolio permission."
+  },
+  "funnel": {
+    "state": "attention",
+    "application_submitted": false,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

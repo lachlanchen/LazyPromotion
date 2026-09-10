@@ -29,6 +29,7 @@ MAX_CAMPAIGNS = 100
 MAX_TERMS_PER_FIELD = 20
 MAX_FOLDER_LENGTH = 160
 MAX_TERM_LENGTH = 500
+RECENT_BASELINE_OBSERVATIONS = 2
 
 
 def _safe_string(
@@ -425,19 +426,34 @@ def open_db(path: Path = DB_PATH) -> sqlite3.Connection:
 
 
 def _previous_summaries(db: sqlite3.Connection, campaign_ids: list[str]) -> dict:
+    """Return a short high-water baseline for virtualized-mail resilience.
+
+    iCloud may temporarily unload a matching row from the DOM as its message
+    list virtualizes. Comparing only with the latest observation turns a
+    one-pass disappearance and reappearance into a false alert. Taking the
+    maximum over the last two observations debounces that transient state
+    while still allowing a sustained count decrease to become the baseline.
+    """
     previous = {}
     for campaign_id in campaign_ids:
-        row = db.execute(
+        rows = db.execute(
             """
             SELECT matching_thread_count, unread_matching_thread_count,
                    has_matching_thread, has_unread_matching_thread
             FROM application_inbox_observations
-            WHERE campaign_id=? ORDER BY id DESC LIMIT 1
+            WHERE campaign_id=? ORDER BY id DESC LIMIT ?
             """,
-            (campaign_id,),
-        ).fetchone()
-        if row:
-            previous[campaign_id] = dict(row)
+            (campaign_id, RECENT_BASELINE_OBSERVATIONS),
+        ).fetchall()
+        if rows:
+            matching_count = max(row["matching_thread_count"] for row in rows)
+            unread_count = max(row["unread_matching_thread_count"] for row in rows)
+            previous[campaign_id] = {
+                "matching_thread_count": matching_count,
+                "unread_matching_thread_count": unread_count,
+                "has_matching_thread": matching_count > 0,
+                "has_unread_matching_thread": unread_count > 0,
+            }
     return previous
 
 
@@ -567,6 +583,9 @@ def record_observation(
             "automatic_reply_is_not_human_reply": True,
             "match_is_not_human_reply": True,
             "match_is_not_a_qualified_lead": True,
+            "transient_dom_drop_debounce_observations": (
+                RECENT_BASELINE_OBSERVATIONS
+            ),
         },
     }
     inbound_monitor.atomic_write_json(status_path, report)

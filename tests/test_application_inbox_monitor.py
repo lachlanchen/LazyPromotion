@@ -397,6 +397,64 @@ class ApplicationInboxMonitorTests(unittest.TestCase):
         self.assertFalse(second["policy"]["sender_or_subject_persisted"])
         self.assertTrue(second["policy"]["automatic_reply_is_not_human_reply"])
         self.assertTrue(second["policy"]["match_is_not_human_reply"])
+        self.assertEqual(
+            second["policy"]["transient_dom_drop_debounce_observations"], 2
+        )
+
+    def test_one_virtualized_row_drop_does_not_repeat_an_existing_alert(self):
+        present = [self.persisted_summary("alpha-application", 1, 1)]
+        absent = [self.persisted_summary("alpha-application", 0, 0)]
+        application_inbox_monitor.record_observation(
+            present,
+            db_path=self.db,
+            status_path=self.status,
+            observed_at="2026-09-09T08:00:00Z",
+        )
+        dropped = application_inbox_monitor.record_observation(
+            absent,
+            db_path=self.db,
+            status_path=self.status,
+            observed_at="2026-09-09T08:15:00Z",
+        )
+        restored = application_inbox_monitor.record_observation(
+            present,
+            db_path=self.db,
+            status_path=self.status,
+            observed_at="2026-09-09T08:30:00Z",
+        )
+        self.assertEqual(dropped["alerts"], [])
+        self.assertEqual(restored["alerts"], [])
+
+    def test_sustained_lower_counts_can_become_the_next_alert_baseline(self):
+        present = [self.persisted_summary("alpha-application", 1, 1)]
+        absent = [self.persisted_summary("alpha-application", 0, 0)]
+        for observed_at, summaries in (
+            ("2026-09-09T08:00:00Z", present),
+            ("2026-09-09T08:15:00Z", absent),
+            ("2026-09-09T08:30:00Z", absent),
+        ):
+            application_inbox_monitor.record_observation(
+                summaries,
+                db_path=self.db,
+                status_path=self.status,
+                observed_at=observed_at,
+            )
+        restored = application_inbox_monitor.record_observation(
+            present,
+            db_path=self.db,
+            status_path=self.status,
+            observed_at="2026-09-09T08:45:00Z",
+        )
+        self.assertEqual(
+            restored["alerts"],
+            [
+                {
+                    "campaign_id": "alpha-application",
+                    "matching_thread_count_increased": True,
+                    "unread_matching_thread_count_increased": True,
+                }
+            ],
+        )
 
     def test_storage_contains_no_folder_or_mail_metadata(self):
         summaries = [

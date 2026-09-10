@@ -1,7 +1,7 @@
 {
-  "version": 9,
+  "version": 10,
   "checked_at": "2026-09-10",
-  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint, USD 500 OpenHI software-stage test, USD 250 Bilingual Lecture Study Pack, and USD 250 LazyRemote Network Fit Review where buyers already look for bounded technical services, without weakening fit checks, rights and privacy gates, platform payment rules, or received-revenue accounting.",
+  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint, USD 500 OpenHI software-stage test, USD 250 Bilingual Lecture Study Pack, USD 250 LazyRemote Network Fit Review, and USD 250 Story Clip Pilot where buyers already look for bounded services, without weakening fit checks, rights and privacy gates, platform payment rules, or received-revenue accounting.",
   "offer": {
     "campaign_id": "local-knowledge-terminal-pilot",
     "public_price": "USD 250",
@@ -38,6 +38,15 @@
     "fit_check": "https://lazying.art/lazyremote/fit-check/",
     "scope_policy": "The marketplace route must preserve one reachable relay, up to three existing customer-owned computers, metadata-only first contact, the recorded maps and checklist, ten-business-day delivery boundary, one bounded correction pass, network-policy permission, retention terms, and the existing deployment and hardware exclusions. Contra-origin contracting, payment, revisions, and delivery stay on Contra."
   },
+  "story_clip_offer": {
+    "campaign_id": "content-repurposing-pilot",
+    "public_price": "USD 250",
+    "gross_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before platform and payout fees, taxes, refunds, and delivery costs.",
+    "public_page": "https://lazying.art/story-clip/",
+    "sample_report": "https://lazying.art/story-clip/#sample",
+    "fit_check": "https://lazying.art/story-clip/fit-check/",
+    "scope_policy": "The marketplace route must preserve one customer-owned recording up to 30 minutes, two timestamped candidate moments, one buyer-selected 9:16 clip up to 60 seconds, corrected source-language captions, an editable SRT, a caption and source ledger, one bounded correction pass, ten-business-day delivery after complete prerequisites, and the existing rights, publishing, performance, and source-length exclusions. Contra-origin contracting, payment, revisions, and delivery stay on Contra."
+  },
   "channels": [
     {
       "rank": 1,
@@ -65,6 +74,11 @@
           "id": "lazyremote_network_fit_review",
           "price": "USD 250",
           "url": "https://contra.com/s/kZvke2Nq-review-a-private-remote-access-network-before-opening-ports"
+        },
+        {
+          "id": "story_clip_pilot",
+          "price": "USD 250",
+          "url": "https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip"
         }
       ],
       "public_case_study": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
@@ -111,7 +125,7 @@
           "customer_result": false
         }
       ],
-      "profile_completion": "78% after five public portfolio pieces, four live services, a portfolio link, and a restrained bio",
+      "profile_completion": "89% after five public portfolio pieces, five live services, a portfolio link, a restrained bio, and a USD 50-75 hourly-rate range",
       "account_state": "email_verified_free_plan",
       "official_sources": {
         "services": "https://help.contra.com/en/articles/9322412-how-to-add-services-to-your-contra-profile",
@@ -206,7 +220,7 @@
       ],
       "faq_count": 3,
       "example_work": "Local Knowledge Terminal: Collection-Fit Sample Report",
-      "profile_completion": "78% after four public portfolio pieces, two live services, a portfolio link, and a restrained bio"
+      "profile_completion": "89% after five public portfolio pieces, five live services, a portfolio link, a restrained bio, and a USD 50-75 hourly-rate range"
     },
     "public_terms": {
       "state": "live_verified",
@@ -302,6 +316,41 @@
       "live_media_verified": true,
       "evidence_boundary": "Project-owned LazyTunnel interface proof. It is not a customer network, customer result, penetration-test result, sale, or paid engagement."
     },
+    "remaining_account_gates": [
+      "Complete Contra's Persona identity verification only through an authorized human identity check.",
+      "Configure and verify a supported payout route before accepting a paid platform contract."
+    ],
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "verified_received_gross_usd": 0,
+    "revenue_policy": "A listing view, message, inquiry, signed contract, platform balance, or pending payout is not received revenue."
+  },
+  "contra_story_clip_packet": {
+    "state": "live_published",
+    "public_service_url": "https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip",
+    "title": "Turn One Recording into a Captioned Story Clip",
+    "price": "USD 250 one-time",
+    "duration": "2 weeks",
+    "tags": [
+      "Instagram Reels",
+      "Social Media Content",
+      "Content Creator",
+      "Video Editor",
+      "Short Form Video",
+      "Subtitles"
+    ],
+    "faq_count": 3,
+    "completed_work": "https://lazying.art/story-clip/#sample",
+    "cover_asset": {
+      "source_path": "assets/contra-story-clip-service-cover-v1.png",
+      "dimensions": "1440x1080",
+      "aspect_ratio": "4:3",
+      "sha256": "5c20c5fd7f99c89aeecb3b211c58294c3827849b286bb954b4b7b635fb6ccf55",
+      "live_media_verified": true,
+      "evidence_boundary": "Project-owned screenshot of the live Story Clip offer and sample. It is not customer work, a testimonial, a performance result, a sale, or a paid engagement."
+    },
+    "publication_check": "The draft was saved unpublished, reloaded, corrected to remove a normalized duplicate tag, saved and reloaded again, then published once. The public page verifies the price, duration, six tags, three FAQs, cover, scope, sample link, and exclusions.",
     "remaining_account_gates": [
       "Complete Contra's Persona identity verification only through an authorized human identity check.",
       "Configure and verify a supported payout route before accepting a paid platform contract."

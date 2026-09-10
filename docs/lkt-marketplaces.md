@@ -1,4 +1,4 @@
-# LKT, OpenHI, Bilingual Lecture, and LazyRemote service marketplaces
+# LKT, OpenHI, Bilingual Lecture, LazyRemote, and Story Clip marketplaces
 
 The first marketplace route for the USD 250 Local Knowledge Terminal
 collection-fit sprint is now live on [Contra
@@ -43,6 +43,18 @@ The first contact remains metadata-only. Deployment, hardware, relay hosting,
 router or firewall changes, wake-on-LAN, desktop capture, ongoing support,
 penetration testing, and guarantees for an unseen network remain outside the
 fixed scope.
+
+A fifth [Contra service](https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip)
+offers the USD 250 Story Clip Pilot for one customer-owned recording up to 30
+minutes. It first returns two timestamped candidate moments and then finishes
+one buyer-selected 9:16 clip up to 60 seconds with corrected source-language
+captions, an editable SRT, and a caption and source ledger. The live listing
+shows USD 250 one-time, two weeks, six relevant tags, three FAQs, a 4:3 capture
+of the project-owned offer, and the [complete sample
+delivery](https://lazying.art/story-clip/#sample). Extra clips, translation,
+dubbing, generated footage, stock licensing, publishing access, performance
+guarantees, ongoing strategy, and longer sources remain outside the fixed
+scope.
 
 The machine-readable evidence and listing packet are in
 [`marketplace-channels.json`](../marketplace-channels.json).
@@ -154,13 +166,14 @@ the packet, linked to its case study, and then published. The Bilingual Lecture
 listing later followed the same private-save and reload checks; one incorrect
 suggested tag was removed before its single publish action. The LazyRemote
 listing was likewise saved unpublished, reloaded, checked field by field, and
-published once. The public profile now has five factual work pieces—LKT, OpenHI,
-Bilingual Lecture, LazyTunnel, and the Leonard Susskind lecture archive—and four
-live services. Each links to an
-actual public deliverable, and the profile remains 78% complete. The remaining
-items are a commercial hourly rate, onboarding, and identity or wallet setup;
-none was invented or submitted. No identity document, bank information, paid
-upgrade, payment object, or payout route was submitted.
+published once. The Story Clip draft was saved unpublished, reloaded, corrected
+to remove a normalized duplicate tag, saved and reloaded again, and published
+once. The public profile now has five factual work pieces—LKT, OpenHI, Bilingual
+Lecture, LazyTunnel, and the Leonard Susskind lecture archive—and five live
+services. Each links to actual public work. A truthful USD 50–75 hourly range
+was added, taking the profile to 89% complete. Persona identity and wallet setup
+are the remaining completion gate; no identity document, bank information,
+paid upgrade, payment object, or payout route was submitted.
 
 Marketplace views, inquiries, proposals, signed contracts, platform balances,
 and pending payouts remain separate states. Only a verified payment recorded

@@ -1045,9 +1045,23 @@ and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
 contract, balance, or pending payout does not change the received-revenue total.
 The live 4:3 cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
-The same profile now has four live fixed-scope services: LKT, OpenHI, Bilingual
-Lecture, and LazyRemote. Each uses project-owned evidence, while identity,
-payout, inquiry, contract, and revenue states remain separate.
+The same profile now has five live fixed-scope services: LKT, OpenHI, Bilingual
+Lecture, LazyRemote, and the [USD 250 Story Clip
+Pilot](https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip).
+The Story Clip draft was saved unpublished, reloaded, corrected to remove a
+normalized duplicate tag, saved and reloaded again, and published once. Its
+public page shows the exact one-time price, two-week duration, six relevant
+tags, three FAQs, project-owned cover, sample link, and exclusions. A truthful
+USD 50–75 hourly range raised profile completion to 89%; Persona identity and
+wallet setup remain pending. Each service uses project-owned evidence, while
+identity, payout, inquiry, contract, and revenue states remain separate.
+
+A current Contra opportunity asks for one weekly Reel and carousel from
+customer-provided adventure and travel media at USD 250–500 per month. The
+scope fits the Story Clip and reviewed scheduling workflow, but the application
+is blocked by Contra's Persona and wallet completion gate. No identity fact was
+invented, no off-platform contact was attempted, and no application or lead was
+recorded.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.

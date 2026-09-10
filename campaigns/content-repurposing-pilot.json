@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -173,6 +173,24 @@
       "decision": "Do not submit without confirming full-time availability and whether project-owned rather than customer e-commerce samples meet the screening bar.",
       "application_submitted": false,
       "received_revenue_usd": 0
+    },
+    "contra_instagram_lifestyle_creator": {
+      "state": "exact_paid_need_application_blocked_by_identity_gate",
+      "observed_on": "2026-09-10",
+      "source_url": "https://contra.com/opportunity/PXBB3LEE-instagram-content-creator-for-lifestyle-page",
+      "published_scope": "Create one Reel and one carousel each week from customer-provided photos and videos, write concise captions and hooks, and maintain content pillars and a simple schedule for a lifestyle page covering kitesurfing, wakeboarding, snowboarding, and travel.",
+      "published_budget": "USD 250-500 per month, ongoing",
+      "fit": "LazyEdit, the Story Clip delivery sample, the direct video portfolio, and reviewed Postiz scheduling support the repurposing, caption, and planning work.",
+      "gaps": [
+        "The portfolio contains project-owned work rather than adventure-sports customer work or performance results.",
+        "The exact weekly raw-media volume and review cadence were not stated in the visible opportunity.",
+        "Contra requires profile completion through Persona identity and wallet setup before this application can be submitted."
+      ],
+      "intended_proposal": "USD 500 per month for the stated weekly Reel and carousel cadence, beginning only after source rights, raw-media volume, approval timing, caption language, revision boundary, and platform delivery are agreed in writing.",
+      "application_submitted": false,
+      "identity_or_wallet_completed": false,
+      "received_revenue_usd": 0,
+      "policy": "Do not bypass Persona, invent identity facts, contact the buyer off-platform, or call the opportunity an application, lead, contract, payment, or revenue."
     }
   },
   "application": {
@@ -204,6 +222,30 @@
     "price": "USD 250",
     "scope": "One customer-owned recording up to 30 minutes, two timestamped candidate moments, then one buyer-selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, a caption/source ledger, and one bounded correction pass.",
     "qualification": "Local review followed by a prepared email or copied request before source transfer or payment",
+    "contra_marketplace": {
+      "state": "live_published",
+      "url": "https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip",
+      "published_on": "2026-09-10",
+      "price": "USD 250 one-time",
+      "duration": "2 weeks",
+      "tags": [
+        "Instagram Reels",
+        "Social Media Content",
+        "Content Creator",
+        "Video Editor",
+        "Short Form Video",
+        "Subtitles"
+      ],
+      "faq_count": 3,
+      "sample": "https://lazying.art/story-clip/#sample",
+      "cover_asset": "assets/contra-story-clip-service-cover-v1.png",
+      "cover_sha256": "5c20c5fd7f99c89aeecb3b211c58294c3827849b286bb954b4b7b635fb6ccf55",
+      "publication_check": "Saved unpublished, reloaded, corrected to remove a normalized duplicate tag, saved and reloaded again, then published once. The live page was checked for exact scope, price, duration, tags, FAQs, cover, sample link, and exclusions.",
+      "buyer_inquiry_observed": false,
+      "contract_observed": false,
+      "payment_observed": false,
+      "received_revenue_usd": 0
+    },
     "encrypted_intake": {
       "state": "live_verified_review_then_encrypted_submit",
       "checked_at": "2026-09-09T01:50:23Z",

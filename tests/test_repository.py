@@ -1053,7 +1053,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 19)
+        self.assertEqual(campaign["version"], 20)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -1085,6 +1085,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(ecommerce["state"], "qualified_but_not_prepared")
         self.assertFalse(ecommerce["application_submitted"])
         self.assertEqual(ecommerce["received_revenue_usd"], 0)
+        contra_need = campaign["marketplace_research"]["contra_instagram_lifestyle_creator"]
+        self.assertEqual(
+            contra_need["state"],
+            "exact_paid_need_application_blocked_by_identity_gate",
+        )
+        self.assertIn("USD 250-500", contra_need["published_budget"])
+        self.assertFalse(contra_need["application_submitted"])
+        self.assertFalse(contra_need["identity_or_wallet_completed"])
+        self.assertEqual(contra_need["received_revenue_usd"], 0)
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
@@ -1132,7 +1141,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 19)
+        self.assertEqual(campaign["version"], 20)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -1163,6 +1172,23 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["url"], "https://lazying.art/story-clip/")
         self.assertEqual(offer["price"], "USD 250")
+        marketplace = offer["contra_marketplace"]
+        self.assertEqual(marketplace["state"], "live_published")
+        self.assertIn("contra.com/s/", marketplace["url"])
+        self.assertEqual(marketplace["price"], "USD 250 one-time")
+        self.assertEqual(marketplace["duration"], "2 weeks")
+        self.assertEqual(len(marketplace["tags"]), 6)
+        self.assertEqual(marketplace["faq_count"], 3)
+        marketplace_cover = ROOT / marketplace["cover_asset"]
+        self.assertTrue(marketplace_cover.is_file())
+        self.assertEqual(
+            hashlib.sha256(marketplace_cover.read_bytes()).hexdigest(),
+            marketplace["cover_sha256"],
+        )
+        self.assertFalse(marketplace["buyer_inquiry_observed"])
+        self.assertFalse(marketplace["contract_observed"])
+        self.assertFalse(marketplace["payment_observed"])
+        self.assertEqual(marketplace["received_revenue_usd"], 0)
         self.assertEqual(
             offer["website_commit"],
             "6f22bc0ccb8d1501c03c41bf0b448fd1acd6ee32",
@@ -2267,7 +2293,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "marketplace-channels.json"
         packet = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(packet["version"], 9)
+        self.assertEqual(packet["version"], 10)
         self.assertEqual(packet["offer"]["public_price"], "USD 250")
         self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
         self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
@@ -2280,6 +2306,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(packet["remote_offer"]["public_price"], "USD 250")
         self.assertIn("metadata-only", packet["remote_offer"]["scope_policy"])
         self.assertIn("stay on Contra", packet["remote_offer"]["scope_policy"])
+        self.assertEqual(packet["story_clip_offer"]["public_price"], "USD 250")
+        self.assertIn("30 minutes", packet["story_clip_offer"]["scope_policy"])
+        self.assertIn("stay on Contra", packet["story_clip_offer"]["scope_policy"])
         channels = sorted(packet["channels"], key=lambda row: row["rank"])
         self.assertEqual(
             [row["id"] for row in channels],
@@ -2290,7 +2319,7 @@ class RepositoryTests(unittest.TestCase):
             "live_service_published_identity_and_payout_pending",
         )
         self.assertIn("contra.com/s/", channels[0]["public_service"])
-        self.assertEqual(len(channels[0]["public_services"]), 4)
+        self.assertEqual(len(channels[0]["public_services"]), 5)
         self.assertEqual(channels[0]["public_services"][1]["price"], "USD 500")
         self.assertEqual(channels[0]["public_services"][2]["price"], "USD 250")
         self.assertIn(
@@ -2301,6 +2330,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(
             "review-a-private-remote-access-network",
             channels[0]["public_services"][3]["url"],
+        )
+        self.assertEqual(channels[0]["public_services"][4]["price"], "USD 250")
+        self.assertIn(
+            "turn-one-recording-into-a-captioned-story-clip",
+            channels[0]["public_services"][4]["url"],
         )
         self.assertIn("contra.com/p/", channels[0]["public_case_study"])
         self.assertEqual(len(channels[0]["public_case_studies"]), 5)
@@ -2324,7 +2358,7 @@ class RepositoryTests(unittest.TestCase):
                     hashlib.sha256(cover.read_bytes()).hexdigest(),
                     row["cover_sha256"],
                 )
-        self.assertIn("78%", channels[0]["profile_completion"])
+        self.assertIn("89%", channels[0]["profile_completion"])
         self.assertIn("usd 15", channels[0]["economics"].casefold())
         self.assertIn("0% to 15%", channels[1]["economics"])
         self.assertIn("80%", channels[2]["economics"])
@@ -2411,6 +2445,25 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(remote["contract_observed"])
         self.assertFalse(remote["payment_observed"])
         self.assertEqual(remote["verified_received_gross_usd"], 0)
+        story = packet["contra_story_clip_packet"]
+        self.assertEqual(story["state"], "live_published")
+        self.assertIn("contra.com/s/", story["public_service_url"])
+        self.assertEqual(story["price"], "USD 250 one-time")
+        self.assertEqual(story["duration"], "2 weeks")
+        self.assertEqual(len(story["tags"]), 6)
+        self.assertEqual(story["faq_count"], 3)
+        self.assertEqual(story["completed_work"], "https://lazying.art/story-clip/#sample")
+        story_cover = ROOT / story["cover_asset"]["source_path"]
+        self.assertTrue(story_cover.is_file())
+        self.assertEqual(
+            hashlib.sha256(story_cover.read_bytes()).hexdigest(),
+            story["cover_asset"]["sha256"],
+        )
+        self.assertTrue(story["cover_asset"]["live_media_verified"])
+        self.assertFalse(story["buyer_inquiry_observed"])
+        self.assertFalse(story["contract_observed"])
+        self.assertFalse(story["payment_observed"])
+        self.assertEqual(story["verified_received_gross_usd"], 0)
         self.assertNotIn("confirmed customer", serialized)
         self.assertNotIn("received usd", serialized)
         self.assertNotIn("account_id", serialized)
@@ -3166,7 +3219,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 19)
+        self.assertEqual(campaign["version"], 20)
         self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])

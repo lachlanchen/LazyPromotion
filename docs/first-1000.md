@@ -638,6 +638,11 @@ or revenue was observed.
 The live [Bilingual Lecture Pack](https://lazying.art/lecture-pack/) covers one
 customer-owned or qualifying openly licensed English lecture up to 20 minutes,
 one primary speaker, and one target language: Traditional Chinese or Japanese.
+The same bounded offer is live as a [USD 250 Contra
+service](https://contra.com/s/WZNEBkk2-build-a-bilingual-lecture-study-pack),
+with its [complete project-owned sample](https://contra.com/p/levOlYsO-bilingual-lecture-pack-complete-sample-delivery)
+linked as example work. Contra-origin contracting, payment, revisions, and
+delivery stay on Contra.
 
 Its public working terms now keep the USD 250 pack operationally bounded:
 delivery within ten business days after accepted scope, payment, complete

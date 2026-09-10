@@ -1,5 +1,5 @@
 {
-  "version": 31,
+  "version": 32,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -246,6 +246,53 @@
     "indexed": false,
     "traffic_observed": false,
     "policy": "The visible URL Inspection result reported Discovered - currently not indexed, and one crawl request was accepted. That request is not indexing, ranking, traffic, a lead, or revenue; do not resubmit it merely to seek higher priority."
+  },
+  "contra_marketplace": {
+    "state": "published_live_verified_identity_and_payout_pending",
+    "checked_at": "2026-09-10T05:03:25Z",
+    "public_profile": "https://contra.com/lachlan_chen_vzs1sppu",
+    "service_url": "https://contra.com/s/WZNEBkk2-build-a-bilingual-lecture-study-pack",
+    "case_study_url": "https://contra.com/p/levOlYsO-bilingual-lecture-pack-complete-sample-delivery",
+    "title": "Build a Bilingual Lecture Study Pack",
+    "price": "USD 250 one-time",
+    "duration": "2 weeks",
+    "description": "Have one English lecture you own and want a bilingual study version? The free fit discussion first checks source rights, duration, single-speaker clarity, target language (Traditional Chinese or Japanese), learner level, protected terms, preview rights, and intended distribution without asking for the file. If the fit and written scope are accepted, the fixed USD 250 pack covers one rights-cleared English lecture up to 20 minutes, one primary speaker, and one target language. You receive a timestamped English Markdown transcript and SRT with uncertainties marked; one target-language SRT; an editable bilingual source and A5 pocket study PDF; one customer-selected 30–45 second captioned preview; a source and rights manifest; and one consolidated pass of up to ten timing, transcription, or terminology corrections. Delivery is within ten business days after secured payment through the agreed channel, complete agreed source, protected terms, and preview timestamp are available. Inspect the complete project-owned sample at https://lazying.art/lecture-pack/#example. Contra-origin contracting, payment, revisions, and delivery stay on Contra. Rights clearance, confidential or regulated material, multiple-speaker diarization, audio restoration, extra languages, certified translation or accessibility, dubbing, generated footage, full-course work, hosting, LMS or social posting, and unlimited revisions are excluded.",
+    "tags": [
+      "LaTeX",
+      "Python",
+      "Editor",
+      "Localization",
+      "Researcher",
+      "Technical Writer",
+      "Video Editor"
+    ],
+    "faqs": [
+      {
+        "question": "What source can I bring?",
+        "answer": "One customer-owned or clearly licensed English lecture up to 20 minutes, with one primary speaker and intelligible speech. Describe it first; do not upload the recording until rights and scope are accepted."
+      },
+      {
+        "question": "What exactly comes back?",
+        "answer": "A timestamped English Markdown transcript and SRT, one Traditional Chinese or Japanese SRT, editable bilingual source, A5 study PDF, one 30–45 second captioned preview, a source-rights manifest, and one bounded correction pass."
+      },
+      {
+        "question": "Is this certified translation or accessibility work?",
+        "answer": "No. The target-language material is assisted and reviewed for structure and terminology, with uncertainties marked for subject review. Certified translation, certified accessibility, extra languages, and unlimited revisions are outside this sprint."
+      }
+    ],
+    "cover_asset": "assets/contra-bilingual-lecture-pack-cover-v1.png",
+    "cover_dimensions": "1600x1200",
+    "cover_sha256": "abaec7cb704cd0efe05c615dfce4e44a03a3286e5fd25f4dba79631494cd6d82",
+    "example_work": "Bilingual Lecture Pack: Complete Sample Delivery",
+    "completed_work": "https://lazying.art/lecture-pack/#example",
+    "profile_completion": "78% after five public portfolio pieces and three live services",
+    "identity_verification_complete": false,
+    "payout_route_configured": false,
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "verified_received_gross_usd": 0,
+    "policy": "The live listing was saved unpublished, reloaded, corrected, reloaded again, and published once through the visible project browser. The linked packet is project-owned synthetic proof, not customer work. A view, message, inquiry, contract, platform balance, or pending payout is not received revenue."
   },
   "marketplace_leads": {
     "checked_at": "2026-09-06T17:57:52Z",

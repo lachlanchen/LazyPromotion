@@ -1,4 +1,4 @@
-# LKT and OpenHI service marketplaces
+# LKT, OpenHI, and Bilingual Lecture service marketplaces
 
 The first marketplace route for the USD 250 Local Knowledge Terminal
 collection-fit sprint is now live on [Contra
@@ -21,6 +21,16 @@ revisions, and delivery stay on Contra. The project-owned [OpenHI execution
 sample](https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report)
 is now a public Contra case study as well as a clearly labelled link in the
 service copy.
+
+A third [Contra service](https://contra.com/s/WZNEBkk2-build-a-bilingual-lecture-study-pack)
+offers the USD 250 Bilingual Lecture Study Pack for one rights-cleared English
+lecture up to 20 minutes, one primary speaker, and one Traditional Chinese or
+Japanese target language. The live listing shows USD 250 one-time, two weeks,
+seven relevant tags, three FAQs, the 4:3 project-owned sample cover, and the
+[complete sample delivery](https://contra.com/p/levOlYsO-bilingual-lecture-pack-complete-sample-delivery).
+Rights clearance, certified translation, extra languages, multiple-speaker
+diarization, unlimited revisions, hosting, and social posting remain outside
+the fixed scope.
 
 The machine-readable evidence and listing packet are in
 [`marketplace-channels.json`](../marketplace-channels.json).
@@ -127,17 +137,16 @@ source copies are deleted within fourteen calendar days after acceptance,
 cancellation, or refund unless the written scope requires earlier deletion or
 limited records must be retained by applicable rules.
 
-On September 10, the account was created and email-verified, the Free plan was
-selected, the listing was saved unpublished, reloaded, compared with the
-packet, linked to the case study, and then published. The live record shows USD
-250 one-time, two weeks, three FAQs, nine relevant tags, the 4:3 disclosure
-cover, and the sample report as example work. The public profile now has four
-factual work pieces: LKT, OpenHI, LazyTunnel, and the Leonard Susskind lecture
-archive. Each links to the actual public deliverable, and the profile
-completion indicator rose from 44% to 78%. The remaining items are a commercial
-hourly rate, onboarding, and identity or wallet setup; none was invented or
-submitted. No identity document, bank information, paid upgrade, payment
-object, or payout route was submitted.
+On September 10, the LKT listing was saved unpublished, reloaded, compared with
+the packet, linked to its case study, and then published. The Bilingual Lecture
+listing later followed the same private-save and reload checks; one incorrect
+suggested tag was removed before its single publish action. The public profile
+now has five factual work pieces—LKT, OpenHI, Bilingual Lecture, LazyTunnel, and
+the Leonard Susskind lecture archive—and three live services. Each links to an
+actual public deliverable, and the profile remains 78% complete. The remaining
+items are a commercial hourly rate, onboarding, and identity or wallet setup;
+none was invented or submitted. No identity document, bank information, paid
+upgrade, payment object, or payout route was submitted.
 
 Marketplace views, inquiries, proposals, signed contracts, platform balances,
 and pending payouts remain separate states. Only a verified payment recorded

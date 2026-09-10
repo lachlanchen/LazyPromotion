@@ -1,7 +1,7 @@
 {
-  "version": 7,
+  "version": 8,
   "checked_at": "2026-09-10",
-  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint and USD 500 OpenHI software-stage test where buyers already look for bounded technical services, without weakening fit checks, privacy gates, platform payment rules, or received-revenue accounting.",
+  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint, USD 500 OpenHI software-stage test, and USD 250 Bilingual Lecture Study Pack where buyers already look for bounded technical services, without weakening fit checks, rights and privacy gates, platform payment rules, or received-revenue accounting.",
   "offer": {
     "campaign_id": "local-knowledge-terminal-pilot",
     "public_price": "USD 250",
@@ -20,6 +20,15 @@
     "fit_check": "https://lazying.art/openhi-reproducibility/fit-check/",
     "scope_policy": "The marketplace route must preserve one existing workstation, one rights-cleared dataset or public sample, one named OpenHI stage, a ten-business-day delivery window after complete prerequisites, one factual correction pass, software-only exclusions, and a go/no-go outcome. Contra-origin contracting, payment, revisions, and delivery stay on Contra."
   },
+  "lecture_offer": {
+    "campaign_id": "bilingual-lecture-pack-pilot",
+    "public_price": "USD 250",
+    "gross_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before platform and payout fees, taxes, refunds, and delivery costs.",
+    "public_page": "https://lazying.art/lecture-pack/",
+    "sample_report": "https://lazying.art/lecture-pack/#example",
+    "fit_check": "https://lazying.art/lecture-pack/fit-check/",
+    "scope_policy": "The marketplace route must preserve one customer-owned or clearly licensed English lecture up to 20 minutes, one primary speaker, one Traditional Chinese or Japanese target language, the recorded deliverables, ten-business-day delivery boundary, one bounded correction pass, rights gate, and existing exclusions. Contra-origin contracting, payment, revisions, and delivery stay on Contra."
+  },
   "channels": [
     {
       "rank": 1,
@@ -37,6 +46,11 @@
           "id": "openhi_software_stage_test",
           "price": "USD 500",
           "url": "https://contra.com/s/AN3olOLF-test-one-open-hi-software-pipeline-stage"
+        },
+        {
+          "id": "bilingual_lecture_study_pack",
+          "price": "USD 250",
+          "url": "https://contra.com/s/WZNEBkk2-build-a-bilingual-lecture-study-pack"
         }
       ],
       "public_case_study": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
@@ -72,9 +86,18 @@
           "cover_asset": "assets/contra-susskind-archive-cover-v1.png",
           "cover_sha256": "8a8e0ba1b9d3e1a162daf368f8f5c25086fb7b0e960e01c9b76dbd404c57159c",
           "customer_result": false
+        },
+        {
+          "id": "bilingual_lecture_pack_sample",
+          "title": "Bilingual Lecture Pack: Complete Sample Delivery",
+          "url": "https://contra.com/p/levOlYsO-bilingual-lecture-pack-complete-sample-delivery",
+          "completed_work": "https://lazying.art/lecture-pack/#example",
+          "cover_asset": "assets/contra-bilingual-lecture-pack-cover-v1.png",
+          "cover_sha256": "abaec7cb704cd0efe05c615dfce4e44a03a3286e5fd25f4dba79631494cd6d82",
+          "customer_result": false
         }
       ],
-      "profile_completion": "78% after four public portfolio pieces, two live services, a portfolio link, and a restrained bio",
+      "profile_completion": "78% after five public portfolio pieces, three live services, a portfolio link, and a restrained bio",
       "account_state": "email_verified_free_plan",
       "official_sources": {
         "services": "https://help.contra.com/en/articles/9322412-how-to-add-services-to-your-contra-profile",
@@ -203,5 +226,42 @@
       "Configure and verify a supported payout route before accepting a paid platform contract."
     ],
     "revenue_policy": "A listing view, inquiry, proposal, signed contract, platform balance, or pending payout is not received revenue. Record the sale and money only after the platform payment and private evidence meet the existing metrics gates."
+  },
+  "contra_bilingual_lecture_packet": {
+    "state": "live_published",
+    "public_service_url": "https://contra.com/s/WZNEBkk2-build-a-bilingual-lecture-study-pack",
+    "public_case_study_url": "https://contra.com/p/levOlYsO-bilingual-lecture-pack-complete-sample-delivery",
+    "title": "Build a Bilingual Lecture Study Pack",
+    "price": "USD 250 one-time",
+    "duration": "2 weeks",
+    "tags": [
+      "LaTeX",
+      "Python",
+      "Editor",
+      "Localization",
+      "Researcher",
+      "Technical Writer",
+      "Video Editor"
+    ],
+    "faq_count": 3,
+    "example_work": "Bilingual Lecture Pack: Complete Sample Delivery",
+    "completed_work": "https://lazying.art/lecture-pack/#example",
+    "cover_asset": {
+      "source_path": "assets/contra-bilingual-lecture-pack-cover-v1.png",
+      "dimensions": "1600x1200",
+      "aspect_ratio": "4:3",
+      "sha256": "abaec7cb704cd0efe05c615dfce4e44a03a3286e5fd25f4dba79631494cd6d82",
+      "live_media_verified": true,
+      "evidence_boundary": "Project-owned delivery-sample cover. It is not a customer result, testimonial, rights claim for third-party lectures, sale, or paid engagement."
+    },
+    "remaining_account_gates": [
+      "Complete Contra's Persona identity verification only through an authorized human identity check.",
+      "Configure and verify a supported payout route before accepting a paid platform contract."
+    ],
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "verified_received_gross_usd": 0,
+    "revenue_policy": "A listing view, message, inquiry, signed contract, platform balance, or pending payout is not received revenue."
   }
 }

@@ -13,14 +13,53 @@ The operating target should be either:
   LazyRemote, or the Bilingual Lecture Pack.
 
 This mix uses the strongest parts of the portfolio without pretending that all
-108 current public source repositories are equally marketable. It also keeps
-the USD 498 LKT hardware device separate from the USD 250 software collection
-fit sprint. The sprint can qualify a collection and an existing computer; it
-cannot include a new Raspberry Pi, shipping, setup, warranty, and support at
-that price.
+108 current public source repositories are equally marketable. The earlier USD
+498 LKT hardware idea is not viable when the base machine alone costs about CNY
+2,500, so supplied hardware remains quote-only. The USD 250 collection-fit
+sprint qualifies one collection on an existing computer; it cannot include a
+new Raspberry Pi, shipping, setup, warranty, and support at that price.
 
 Verified received gross revenue remains **USD 0**. The USD 1,000 figure is a
 sales target, not a forecast.
+
+## September 11 evidence update
+
+The latest owner-visible GitHub audit sharpens the route. In GitHub's current
+rolling window, `uu-remote-ubuntu-bridge` had 1,106 views from 488 unique
+visitors and 451 clones from 182 unique cloners. Its Simplified-Chinese README
+alone had 533 views from 406 unique visitors, and Google supplied 716 views
+from 379 visitors. The repository has 12 stars, seven added since September 3.
+These figures are the strongest owned discovery signal, but clone automation
+and search traffic make them attention rather than purchase intent.
+
+The highest-traffic conversion gap was concrete: English already had the
+support panel, while all ten localized READMEs did not. Commit
+[`5391068`](https://github.com/lachlanchen/uu-remote-ubuntu-bridge/commit/539106820d7d5639d1e34ff4b1f3cbe81d9a61a4)
+now gives every maintained language one quiet sentence and the same GitHub
+Sponsors, LazyingArt, PayPal and Stripe routes. The free compatibility answer,
+public issue intake and separate LazyRemote path remain primary. All 148 local
+tests passed, with the existing opt-in live-systemd test skipped. A panel view,
+click or pledge is not received revenue.
+
+Contra's official MCP endpoint is now connected to the existing contractor
+account through project-scoped Codex OAuth.^14 ^15 The read-only account check
+succeeded. `ALL` and `FOR_YOU` each returned only three visible listings from a
+reported 241-item feed, marked access-limited with no next page. None matched
+the portfolio closely enough to apply. Buying Contra Pro would not remove the
+existing Persona identity and wallet gates, so a subscription is not justified
+by the current evidence.^16
+
+Two current marketplace needs validate the LKT/LocalLLM/agent cluster more
+strongly than the visible Contra feed. A boutique audit firm wants a local,
+self-managed LangGraph-or-equivalent platform with self-hosted models, RAG,
+source control, human review, permissions and audit trails.^17 A Swedish
+non-profit publisher wants a self-hosted, open-source knowledge assistant over
+its own approved content, WordPress integration, citations, unanswered-question
+routing and human review.^18 Both are close technical fits, but the former has
+more than 50 proposals and the latter omits a committed budget. Upwork's final
+freelancer registration still requires an accurate personal residence; a South
+Dakota company address does not answer that question. No account, proposal,
+Connects spend, lead or revenue was created.
 
 ## Portfolio evidence
 
@@ -297,3 +336,8 @@ routes already live.
 11. through-metal-link. “[$250 for the first independent build](https://github.com/zeloras/through-metal-link/issues/5).” Accessed September 10, 2026.
 12. Amazon. “[Build, Ship, Shape: Official Rules](https://amazonappdev2026.devpost.com/rules).” Accessed September 10, 2026.
 13. Devpost. “[Terms of Service](https://info.devpost.com/legal/terms-of-service).” Accessed September 10, 2026.
+14. Contra. “[Contra MCP](https://contra.com/features/mcp).” Accessed September 11, 2026.
+15. OpenAI. “[Model Context Protocol](https://learn.chatgpt.com/docs/extend/mcp?surface=cli).” Accessed September 11, 2026.
+16. Contra. “[Find global and remote freelance jobs](https://contra.com/features/find-freelance-jobs).” Accessed September 11, 2026.
+17. Upwork. “[Local AI Agent Platform](https://www.upwork.com/freelance-jobs/apply/Local-Agent-Platform_~022095360496874933773/).” Accessed September 11, 2026.
+18. Upwork. “[Developer wanted for self-hosted AI chatbot + expert question routing system](https://www.upwork.com/freelance-jobs/apply/Developer-wanted-for-self-hosted-chatbot-expert-question-routing-system_~022094334214117597398/).” Accessed September 11, 2026.

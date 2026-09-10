@@ -42,3 +42,13 @@ approval_mode = "prompt"
 
 [mcp_servers.postiz.tools.postSettingsTool]
 approval_mode = "prompt"
+
+# Official Contra MCP. OAuth credentials remain in Codex's private store;
+# account-changing tools stay confirmation-gated.
+[mcp_servers.contra]
+url = "https://contra.com/mcp"
+enabled = true
+required = false
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+default_tools_approval_mode = "writes"

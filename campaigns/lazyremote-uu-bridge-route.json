@@ -1,16 +1,16 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 3,
+  "version": 4,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
-    "captured_at": "2026-09-09T10:41:16Z",
+    "captured_at": "2026-09-10T23:35:17Z",
     "repository": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
-    "public_stars": 10,
+    "public_stars": 12,
     "public_forks": 3,
     "recent_star_window": {
       "from": "2026-09-03T00:00:00Z",
-      "through": "2026-09-09T09:54:41Z",
-      "new_stars": 5
+      "through": "2026-09-10T23:35:17Z",
+      "new_stars": 7
     },
     "current_explicit_need": {
       "source_url": "https://linux.do/t/topic/2192302/5",
@@ -44,20 +44,20 @@
       "boundary": "The contribution is relevant product evidence, but an open or revised pull request is not adoption, buyer intent, a lead, or revenue. Do not merge until the requested lifecycle, ownership, gating, and regression work passes review."
     },
     "owner_visible_traffic": {
-      "window": "The GitHub traffic API's current rolling window, whose daily series ended on 2026-09-07 when checked",
-      "views": 929,
-      "unique_visitors": 428,
-      "clones": 411,
-      "unique_cloners": 162,
+      "window": "The GitHub traffic API's current rolling window from 2026-08-27 through 2026-09-09",
+      "views": 1106,
+      "unique_visitors": 488,
+      "clones": 451,
+      "unique_cloners": 182,
       "top_referrer": {
         "name": "Google",
-        "views": 593,
-        "unique_visitors": 334
+        "views": 716,
+        "unique_visitors": 379
       },
       "top_path": {
         "path": "/lachlanchen/uu-remote-ubuntu-bridge/blob/main/i18n/README.zh-Hans.md",
-        "views": 461,
-        "unique_visitors": 362
+        "views": 533,
+        "unique_visitors": 406
       }
     },
     "lazyremote_core": {
@@ -65,11 +65,11 @@
       "public_stars": 0,
       "public_forks": 0,
       "owner_visible_traffic": {
-        "window": "The GitHub traffic API's current rolling window, whose daily series ended on 2026-09-07 when checked",
-        "views": 0,
-        "unique_visitors": 0,
-        "clones": 41,
-        "unique_cloners": 18
+        "window": "The GitHub traffic API's current rolling window from 2026-08-27 through 2026-09-09",
+        "views": 5,
+        "unique_visitors": 1,
+        "clones": 131,
+        "unique_cloners": 43
       },
       "release": {
         "tag": "v0.2.0",
@@ -83,7 +83,7 @@
       },
       "interpretation": "The core is published and installable, but its public attention is still too early to support a demand or conversion claim. Clone counts can include automation; the single release-asset download is not a lead or sale."
     },
-    "interpretation": "The concentration in Google referrals and the Simplified Chinese README is concrete discovery evidence. Stars, forks, views, clones, and automated clone activity are attention signals, not buyer intent, leads, sales, or revenue."
+    "interpretation": "The concentration in Google referrals and the Simplified Chinese README is concrete discovery evidence. It justifies a quiet support route in every maintained language, but stars, forks, views, clones, and automated clone activity remain attention signals rather than buyer intent, leads, sales, or revenue."
   },
   "project_boundary": {
     "uu_bridge": "A compatibility bridge for the official NetEase UU Remote Windows client on Ubuntu; it is not a native UU Linux port and is not affiliated with NetEase.",
@@ -136,7 +136,22 @@
       "i18n/README.zh-Hant.md"
     ],
     "copy_boundary": "Each language presents LazyRemote as a separate vendor-independent option and keeps the current repository focused on compatibility with the official UU client.",
-    "verification": "All 146 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
+    "localized_support_route": {
+      "state": "live_all_maintained_languages",
+      "source_commit": "539106820d7d5639d1e34ff4b1f3cbe81d9a61a4",
+      "reason": "The highest-attention repository page was Simplified Chinese while the ten localized READMEs had no direct support path.",
+      "editions": 11,
+      "routes": [
+        "https://github.com/sponsors/lachlanchen",
+        "https://chat.lazying.art/donate",
+        "https://paypal.me/RongzhouChen",
+        "https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400"
+      ],
+      "copy": "One localized sentence invites readers who saved time to support continued compatibility maintenance; the technical answer and free compatibility intake remain primary.",
+      "verification": "All 147 pre-existing repository tests plus the new 11-edition support-route regression test passed; one opt-in live systemd test remained intentionally skipped. The live main-branch Simplified Chinese README contains all four routes.",
+      "boundary": "A support-panel view, click, or pledge is not received revenue. Donations do not buy priority, compatibility work, private support, or a delivery date."
+    },
+    "verification": "All 148 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
     "compatibility_need_capture": {
       "state": "live_bilingual_public_form",
       "source_commit": "2b5d31774c9a9751bbb7873fedb828ec037c4f4c",

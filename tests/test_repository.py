@@ -144,9 +144,9 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 3)
-        self.assertEqual(demand["public_stars"], 10)
-        self.assertEqual(demand["recent_star_window"]["new_stars"], 5)
+        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(demand["public_stars"], 12)
+        self.assertEqual(demand["recent_star_window"]["new_stars"], 7)
         explicit_need = demand["current_explicit_need"]
         self.assertIn("Ubuntu", explicit_need["need"])
         self.assertIn(
@@ -165,6 +165,11 @@ class RepositoryTests(unittest.TestCase):
             demand["owner_visible_traffic"]["top_path"]["path"],
         )
         self.assertEqual(len(campaign["owned_route"]["placements"]), 11)
+        support = campaign["owned_route"]["localized_support_route"]
+        self.assertEqual(support["state"], "live_all_maintained_languages")
+        self.assertEqual(support["editions"], 11)
+        self.assertEqual(len(support["routes"]), 4)
+        self.assertIn("not received revenue", support["boundary"])
         self.assertEqual(
             campaign["owned_route"]["tracking_campaign"], "uu_remote_bridge"
         )

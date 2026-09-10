@@ -1173,7 +1173,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
-      "pushed_at": "2026-09-10T10:28:05Z",
+      "pushed_at": "2026-09-10T16:33:41Z",
       "topics": [
         "ai-tools",
         "ecosystem",
@@ -1189,7 +1189,7 @@
         "static-site",
         "website"
       ],
-      "updated_at": "2026-09-10T10:28:28Z",
+      "updated_at": "2026-09-10T16:36:50Z",
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
@@ -1321,7 +1321,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-10T13:33:24Z",
+      "pushed_at": "2026-09-10T16:56:32Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1341,7 +1341,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-10T13:00:32Z",
+      "updated_at": "2026-09-10T16:56:36Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1613,7 +1613,7 @@
       "homepage": "https://lazying.art/lkt/",
       "name": "LocalKnowledgeTerminal",
       "primary_language": "Python",
-      "pushed_at": "2026-09-06T00:06:17Z",
+      "pushed_at": "2026-09-10T16:20:14Z",
       "topics": [
         "citations",
         "e-ink",
@@ -1625,7 +1625,7 @@
         "llama-cpp",
         "local-first",
         "local-search",
-        "markdown",
+        "mcp",
         "meeting-intelligence",
         "multilingual",
         "offline",
@@ -1636,7 +1636,7 @@
         "raspberry-pi",
         "sqlite"
       ],
-      "updated_at": "2026-09-06T00:06:21Z",
+      "updated_at": "2026-09-10T16:22:17Z",
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {

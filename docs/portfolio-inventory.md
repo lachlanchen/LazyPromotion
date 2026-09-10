@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-10. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-11. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
 
 ## Where promotion should start
 
@@ -45,16 +45,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-10 13:33:24 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-10 16:56:32 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-10 16:33:41 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-10 16:20:14 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-10 12:07:47 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-10 10:28:05 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [lachlanchen](https://github.com/lachlanchen/lachlanchen) | 2026-09-10 10:18:49 | Config files for my GitHub profile. |
 | [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-10 09:56:39 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
 | [AgentShell](https://github.com/lachlanchen/AgentShell) | 2026-09-10 09:56:31 | AgentShell: named AI CLI accounts and isolated Linux Codex desktops. Reuse account logins, share working trees, and choose private or shared Codex history. |
 | [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb) | 2026-09-09 23:48:49 | Standalone cloud PWA, durable chat BFF, and AgInTi frontend for llm.lazying.art |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-09 16:22:53 | LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps. |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-09 14:18:43 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
-| [Kindle](https://github.com/lachlanchen/Kindle) | 2026-09-09 12:12:00 | Kindle Paperwhite 2 jailbreak and KOReader setup workspace |
 
 ## Complete public repository inventory
 

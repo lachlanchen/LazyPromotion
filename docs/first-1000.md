@@ -1075,6 +1075,14 @@ is blocked by Contra's Persona and wallet completion gate. No identity fact was
 invented, no off-platform contact was attempted, and no application or lead was
 recorded.
 
+The existing Contra contractor account is now also connected through the
+official `https://contra.com/mcp` endpoint. Codex holds the OAuth grant outside
+Git, and the project configuration keeps account-changing tools reviewed.
+Read-only checks verified authentication and inspected the `ALL` and `FOR_YOU`
+feeds. Both exposed the same three mismatched listings from a reported 241-item,
+access-limited feed, with no next page. The connection is operational evidence;
+it is not a registration, application, inquiry, contract, payment, or revenue.
+
 The Story Clip proof is also queued once on Instagram for September 20 at
 12:00 UTC. Postiz's current 30-day platform view showed 340 views, 9 likes, and
 1 share on Instagram, compared with 48 impressions on X and no returned
@@ -1085,6 +1093,16 @@ figures are attention signals, not buyer intent or revenue.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.
+
+The latest complete GitHub audit puts `uu-remote-ubuntu-bridge` first by owned
+attention: 1,106 views from 488 unique visitors and 451 clones from 182 unique
+cloners in the current rolling window. The Simplified-Chinese README accounts
+for 533 views from 406 visitors. Because all ten localized READMEs lacked the
+English page's support panel, commit `5391068` added one translated sentence and
+the same GitHub Sponsors, LazyingArt, PayPal, and Stripe routes to all of them.
+The free technical answer still comes first. All 148 tests passed, with one
+existing opt-in live-systemd test skipped. This is a conversion-path repair,
+not a claimed donation, lead, or sale.
 
 The Story Clip campaign now has four one-time applications against explicit
 hiring needs. The newest public post asked applicants to select a moment from

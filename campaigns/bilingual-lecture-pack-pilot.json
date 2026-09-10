@@ -465,6 +465,17 @@
       "verification": "The live lecture page now accurately labels the project-owned proof as 15 timed lines across three languages; the underlying search interface contains 45 searchable strings.",
       "policy": "The homepage requires a rights-cleared lecture and does not ask for a source upload or payment before scope acceptance. Publication is not a lead or sale."
     },
+    "leonardsusskind_reader": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-10",
+      "source_commit": "0437140",
+      "url": "https://learn.lazying.art/leonardsusskind-reader.html?book=classical-mechanics-theoretical-minimum",
+      "destination": "https://lazying.art/lecture-pack/?utm_source=leonardsusskind_reader&utm_medium=owned_reader&utm_campaign=bilingual_lecture_pack_pilot&utm_content=reader_footer",
+      "evidence": "Search Console showed the Classical Mechanics reader up ten clicks and the General Relativity reader up five in the last-28-day comparison.",
+      "route": "The free archive remains the page's main value; one lecture-specific footer leads to the project-owned bilingual sample and fixed scope before the fit check.",
+      "verification": "The deployed reader returned HTTP 200 with the reviewed copy and exact tracked destination after commit 0437140 reached the live site.",
+      "policy": "Search clicks and repository stars are attention, not a fit inquiry, lead, sale, or revenue."
+    },
     "lazyblog": {
       "state": "published",
       "published_at": "2026-09-02T00:52:38Z",

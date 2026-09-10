@@ -1004,6 +1004,13 @@ Every other repository remains searchable in the public inventory and may be
 matched to a separate real need. It should not be inserted into the LKT sprint
 pitch merely to promote more projects.
 
+Search Console showed that the Classical Mechanics and General Relativity
+readers are already gaining discovery. The Classical Mechanics reader therefore
+keeps the free archive as its main value and now offers one quiet, exact next
+step: inspect the project-owned bilingual lecture-pack sample. The tracked route
+goes to the sample and scope before the fit check; it does not turn educational
+traffic into a claimed lead or sale.
+
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. LKT, manuscript redline, the

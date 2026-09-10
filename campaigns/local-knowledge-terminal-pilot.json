@@ -1,5 +1,5 @@
 {
-  "version": 35,
+  "version": 36,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -1009,6 +1009,28 @@
         "visual": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
         "reviewed_on": "2026-09-04",
         "policy": "The LinkedIn-specific copy leads with the trust problem, shows the bounded evidence chain, states the exact service price and existing-machine boundary, and links to the interactive proof. The visible preview, image, destination, settings, time, and QUEUE state were verified before scheduling."
+      },
+      "mcp_bridge_post": {
+        "state": "postiz_queue",
+        "publish_at": "2026-10-02T02:00:00Z",
+        "content": "I kept wanting local knowledge tools to do one boring thing well: answer from the collection and let me reopen the evidence.\n\nLocal Knowledge Terminal now has an optional read-only MCP bridge. One tool queries accepted multilingual records; the other traces a returned claim to its source excerpt, safe locator, and content hash. It exposes no file or shell access, cannot ingest or rewrite the collection, and network mode stays on loopback by default.\n\nThe implementation, test boundary, and setup are public:\nhttps://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md\n\nIf you have a private collection and want to know whether it is worth turning into a local cited tool, the sample and fit check are here:\nhttps://lazying.art/lkt/?utm_source=linkedin&utm_medium=social&utm_campaign=lkt_mcp_bridge&utm_content=read_only_release",
+        "destination": "https://lazying.art/lkt/?utm_source=linkedin&utm_medium=social&utm_campaign=lkt_mcp_bridge&utm_content=read_only_release",
+        "documentation": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md",
+        "content_sha256": "f64e82360947eeff19d748b689fb297bcb0abb648af8cd39080496bb9c3ca128",
+        "reviewed_at": "2026-09-10T16:49:40Z",
+        "shortlink": false,
+        "verification": {
+          "provider": "linkedin",
+          "intended_account_visible": true,
+          "expected_time_visible": true,
+          "stored_text_exact_after_html_normalization": true,
+          "original_urls_preserved": true,
+          "queue_state_verified": true,
+          "release_url": null
+        },
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "One restrained first-party release note after the existing September queue. It leads with the evidence problem, states the exact two-tool read-only boundary, links the implementation and owned offer, and makes no Alexa, customer-result, remote-authentication, payment, or revenue claim. Queueing is not publication, a fit inquiry, a sale, or revenue."
       },
       "policy": "Use LinkedIn for professional proof and bounded buyer qualification, not a generic portfolio dump."
     },

@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 10,
+  "version": 11,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -45,9 +45,9 @@
       "result": "One public weighted-cumulative visualization stage completed with exit code 0 on a deterministic 4,096-event fixture, producing 120 time bins and one recorded PNG.",
       "boundary": "The sample verifies only the selected file/interface execution path in the recorded environment. It does not verify acquisition, segmentation, learned compensation, calibration, reconstruction accuracy, hardware compatibility, or a scientific result, and it is not a customer result."
     },
-    "website_commit": "a020e40cf6d1a5e1da62fb6cb81afd77314e99d0",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34429061266",
-    "live_verification": "The offer and fit-check page returned HTTP 200 after the Pages deployment and visibly distinguish direct-site Stripe payment from marketplace-origin contracting and payment. The offer says the sprint tests one stage and returns any generated outputs rather than promising successful reproduction."
+    "website_commit": "25f6b23566b724130986d5b7a63005bfd0be3f4b",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34437247094",
+    "live_verification": "The offer and fit-check page returned HTTP 200 after the Pages deployment and visibly distinguish direct-site Stripe payment from marketplace-origin contracting and payment. The offer says the sprint tests one stage and returns any generated outputs rather than promising successful reproduction. The offer, sample, and fit-check each appear exactly once in the public sitemap."
   },
   "contra_marketplace": {
     "state": "published_live_verified",
@@ -97,15 +97,16 @@
       "boundary": "Project-owned, AI-assisted concept cover grounded in the exact public software-stage plot and delivery fields. It is not a customer result, hardware product, scientific benchmark, or proof of paid work."
     },
     "case_study": {
-      "state": "creation_route_404_on_preflight",
-      "title": "OpenHI: Recorded Software-Stage Execution",
-      "description": "Project-owned executed sample for one public OpenHI visualization stage: a frozen synthetic fixture, pinned environment and command, log, output, hashes, failure boundary, and narrow go/no-go.",
+      "state": "published_live_verified",
+      "public_url": "https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report",
+      "published_on": "2026-09-10",
+      "title": "OpenHI Pipeline Reproducibility Sample Report",
+      "description": "A project-owned execution trace for one OpenHI stage: pinned environment, logs, failure ledger, output evidence, and an honest go/no-go boundary.",
       "source_url": "https://lazying.art/openhi-reproducibility/sample-report/",
       "completed_work_url": "https://lazying.art/openhi-reproducibility/sample-report/",
       "roles": [
         "Researcher",
-        "Software Consultant",
-        "Technical Writer"
+        "Software Engineer"
       ],
       "tools": [
         "GitHub",
@@ -115,7 +116,7 @@
       "industry": "Computer Software",
       "original_work_confirmation": true,
       "customer_result": false,
-      "platform_observation": "The visible Contra Create case study link resolved to /project/new and returned HTTP 404 during two authenticated preflight attempts. The public sample URL is therefore carried in the service description until Contra restores the route."
+      "platform_observation": "After the earlier authenticated 404s, the same visible profile Work route loaded successfully. One reviewed publish action created the case study and the public page displayed its title, description, roles, tools, completed-work link, and publication success notice."
     },
     "public_terms": {
       "state": "live_verified",
@@ -150,7 +151,7 @@
       "software_only_disclosure_verified": true,
       "public_copy_verified": true
     },
-    "policy": "The published service must retain the exact software-only scope, price, duration, FAQs, exclusions, public sample link, and on-platform rule for Contra-origin work. Attach the project-owned case study later only if Contra's visible creation route works. Publication, views, inquiries, contracts, and pending balances are not received revenue."
+    "policy": "The published service must retain the exact software-only scope, price, duration, FAQs, exclusions, public sample link, and on-platform rule for Contra-origin work. The attached public case study is project-owned execution evidence, not a customer result. Publication, views, inquiries, contracts, and pending balances are not received revenue."
   },
   "channels": {
     "owned_website": {

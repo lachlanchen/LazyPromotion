@@ -31,7 +31,10 @@ The [offer](https://lazying.art/openhi-reproducibility/),
 [executed sample](https://lazying.art/openhi-reproducibility/sample-report/),
 the [fit check](https://lazying.art/openhi-reproducibility/fit-check/), and the
 [USD 500 Contra service](https://contra.com/s/AN3olOLF-test-one-open-hi-software-pipeline-stage)
-are live. Two confirmed, delivered, unreversed OpenHI sprints would reach the
+are live. The executed sample is also a [public Contra case
+study](https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report),
+and all three owned OpenHI routes are in the public sitemap. Two confirmed,
+delivered, unreversed OpenHI sprints would reach the
 USD 1,000 gross target before fees, tax, refunds, and delivery costs.
 The OpenHI README links both the service and sample, while its public issue
 chooser separates reproducible public bug reports from private metadata-only

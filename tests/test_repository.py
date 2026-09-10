@@ -53,7 +53,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         offer = campaign["offer"]
-        self.assertEqual(campaign["version"], 10)
+        self.assertEqual(campaign["version"], 11)
         self.assertEqual(offer["price"], "USD 500")
         self.assertEqual(offer["stage_limit"], 1)
         self.assertEqual(offer["dataset_limit"], 1)
@@ -75,6 +75,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(contra["cover_asset"]["dimensions"], "1448x1086")
         self.assertEqual(contra["cover_asset"]["aspect_ratio"], "4:3")
         self.assertTrue((ROOT / contra["cover_asset"]["source_path"]).is_file())
+        self.assertEqual(contra["case_study"]["state"], "published_live_verified")
+        self.assertIn("contra.com/p/", contra["case_study"]["public_url"])
+        self.assertFalse(contra["case_study"]["customer_result"])
         self.assertEqual(sum(contra["public_terms"]["deliverable_allocation_usd"].values()), 500)
         self.assertFalse(contra["buyer_inquiry_observed"])
         self.assertFalse(contra["contract_observed"])
@@ -1435,7 +1438,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 33)
+        self.assertEqual(campaign["version"], 34)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -2196,7 +2199,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "marketplace-channels.json"
         packet = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(packet["version"], 6)
+        self.assertEqual(packet["version"], 7)
         self.assertEqual(packet["offer"]["public_price"], "USD 250")
         self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
         self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
@@ -2216,6 +2219,28 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(len(channels[0]["public_services"]), 2)
         self.assertEqual(channels[0]["public_services"][1]["price"], "USD 500")
         self.assertIn("contra.com/p/", channels[0]["public_case_study"])
+        self.assertEqual(len(channels[0]["public_case_studies"]), 4)
+        self.assertTrue(
+            all(
+                "contra.com/p/" in row["url"]
+                for row in channels[0]["public_case_studies"]
+            )
+        )
+        self.assertTrue(
+            all(
+                not row["customer_result"]
+                for row in channels[0]["public_case_studies"]
+            )
+        )
+        for row in channels[0]["public_case_studies"]:
+            if "cover_asset" in row:
+                cover = ROOT / row["cover_asset"]
+                self.assertTrue(cover.is_file())
+                self.assertEqual(
+                    hashlib.sha256(cover.read_bytes()).hexdigest(),
+                    row["cover_sha256"],
+                )
+        self.assertIn("78%", channels[0]["profile_completion"])
         self.assertIn("usd 15", channels[0]["economics"].casefold())
         self.assertIn("0% to 15%", channels[1]["economics"])
         self.assertIn("80%", channels[2]["economics"])

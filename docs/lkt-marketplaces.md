@@ -17,9 +17,10 @@ six tags, three FAQs, a software-only 4:3 cover, and a direct link to the
 project-owned execution sample. It promises the recorded environment, commands,
 any generated outputs, final logs, failure ledger, and go/no-go—not successful
 reproduction or a scientific result. Contra-origin contracting, payment,
-revisions, and delivery stay on Contra. The visible case-study creation route
-returned HTTP 404 during preflight, so the sample remains a clearly labelled
-link in the service copy until Contra restores that route.
+revisions, and delivery stay on Contra. The project-owned [OpenHI execution
+sample](https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report)
+is now a public Contra case study as well as a clearly labelled link in the
+service copy.
 
 The machine-readable evidence and listing packet are in
 [`marketplace-channels.json`](../marketplace-channels.json).
@@ -130,10 +131,13 @@ On September 10, the account was created and email-verified, the Free plan was
 selected, the listing was saved unpublished, reloaded, compared with the
 packet, linked to the case study, and then published. The live record shows USD
 250 one-time, two weeks, three FAQs, nine relevant tags, the 4:3 disclosure
-cover, and the sample report as example work. The public profile also has the
-same cover, a restrained bio, and the LazyingArt portfolio link. No identity
-document, bank information, wallet setup, paid upgrade, payment object, or
-payout route was submitted.
+cover, and the sample report as example work. The public profile now has four
+factual work pieces: LKT, OpenHI, LazyTunnel, and the Leonard Susskind lecture
+archive. Each links to the actual public deliverable, and the profile
+completion indicator rose from 44% to 78%. The remaining items are a commercial
+hourly rate, onboarding, and identity or wallet setup; none was invented or
+submitted. No identity document, bank information, paid upgrade, payment
+object, or payout route was submitted.
 
 Marketplace views, inquiries, proposals, signed contracts, platform balances,
 and pending payouts remain separate states. Only a verified payment recorded

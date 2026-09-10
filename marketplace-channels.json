@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "checked_at": "2026-09-10",
   "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint and USD 500 OpenHI software-stage test where buyers already look for bounded technical services, without weakening fit checks, privacy gates, platform payment rules, or received-revenue accounting.",
   "offer": {
@@ -40,6 +40,41 @@
         }
       ],
       "public_case_study": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
+      "public_case_studies": [
+        {
+          "id": "lkt_collection_fit_sample",
+          "title": "Local Knowledge Terminal: Collection-Fit Sample Report",
+          "url": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
+          "completed_work": "https://lazying.art/lkt/sample-report/",
+          "customer_result": false
+        },
+        {
+          "id": "openhi_reproducibility_sample",
+          "title": "OpenHI Pipeline Reproducibility Sample Report",
+          "url": "https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report",
+          "completed_work": "https://lazying.art/openhi-reproducibility/sample-report/",
+          "customer_result": false
+        },
+        {
+          "id": "lazytunnel_private_ssh",
+          "title": "LazyTunnel: Private SSH Across Personal Computers",
+          "url": "https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers",
+          "completed_work": "https://remote.lazying.art/",
+          "cover_asset": "assets/contra-lazytunnel-portfolio-cover-v1.png",
+          "cover_sha256": "6511e14d1346666692256c76475decff0e6fbcc02dbf0b67cdc8f9ef96211810",
+          "customer_result": false
+        },
+        {
+          "id": "leonard_susskind_archive",
+          "title": "Leonard Susskind Lecture Notes Archive",
+          "url": "https://contra.com/p/cg62vQQW-leonard-susskind-lecture-notes-archive",
+          "completed_work": "https://github.com/lachlanchen/leonardsusskind",
+          "cover_asset": "assets/contra-susskind-archive-cover-v1.png",
+          "cover_sha256": "8a8e0ba1b9d3e1a162daf368f8f5c25086fb7b0e960e01c9b76dbd404c57159c",
+          "customer_result": false
+        }
+      ],
+      "profile_completion": "78% after four public portfolio pieces, two live services, a portfolio link, and a restrained bio",
       "account_state": "email_verified_free_plan",
       "official_sources": {
         "services": "https://help.contra.com/en/articles/9322412-how-to-add-services-to-your-contra-profile",
@@ -134,7 +169,7 @@
       ],
       "faq_count": 3,
       "example_work": "Local Knowledge Terminal: Collection-Fit Sample Report",
-      "profile_completion": "44% after cover, one case study, portfolio link, and bio"
+      "profile_completion": "78% after four public portfolio pieces, two live services, a portfolio link, and a restrained bio"
     },
     "public_terms": {
       "state": "live_verified",

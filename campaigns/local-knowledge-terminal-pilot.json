@@ -1,5 +1,5 @@
 {
-  "version": 33,
+  "version": 34,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -37,7 +37,14 @@
       "faq_count": 3,
       "tag_count": 9,
       "example_work_linked": true,
-      "profile_completion": "44%",
+      "profile_completion": "78%",
+      "profile_case_study_count": 4,
+      "profile_case_studies": [
+        "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
+        "https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report",
+        "https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers",
+        "https://contra.com/p/cg62vQQW-leonard-susskind-lecture-notes-archive"
+      ],
       "identity_verified": false,
       "wallet_configured": false,
       "payout_configured": false,

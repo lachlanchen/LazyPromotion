@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 12,
+  "version": 13,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -165,6 +165,22 @@
         "price_shown": "USD 500",
         "verification": "All 25 website contract tests passed, the deployed GitHub Pages workflow completed successfully, and the live page returned the new localized offer and tracked destination.",
         "boundary": "A live owned discovery route is not a visit, inquiry, payment, customer result, or received revenue."
+      },
+      "lazyblog_reproducibility_guide": {
+        "state": "published_live_verified",
+        "post_id": 3820,
+        "url": "https://blog.lazying.art/html/computer_internet/3820/reproduce-research-code-new-workstation.html",
+        "title": "How to Reproduce a Research Codebase on a New Workstation",
+        "languages": [
+          "en",
+          "zh",
+          "ja"
+        ],
+        "blog_commit": "cc305e763c3db3592807eb8592f66629f50fad2c",
+        "destination": "https://lazying.art/openhi-reproducibility/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=openhi_reproducibility&utm_content=reproduction_guide",
+        "role": "A practical owned guide solves the narrow new-workstation reproduction problem before showing the public OpenHI sample and optional fit check.",
+        "verification": "The source and two reviewed translations were published through LazyPub, the live English permalink returned HTTP 200, the rendered commands were checked after publication, and the BLOG commit was pushed to origin/main.",
+        "boundary": "Publication is an owned discovery route only. It does not establish a visit, inquiry, qualified lead, payment, customer result, or received revenue."
       }
     },
     "github": {

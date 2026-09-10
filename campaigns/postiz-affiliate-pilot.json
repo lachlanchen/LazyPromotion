@@ -1,6 +1,8 @@
 {
   "version": 1,
   "id": "postiz-affiliate-pilot",
+  "campaign_type": "affiliate",
+  "revenue_event": "affiliate_commission_received",
   "objective": "Test whether a small set of useful, firsthand Postiz guides can generate verified affiliate referrals and received commission without displacing the primary Local Knowledge Terminal offer or encouraging bulk promotion.",
   "state": "approved_payout_pending",
   "checked_at": "2026-09-10",

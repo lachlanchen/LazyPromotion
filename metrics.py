@@ -60,12 +60,16 @@ def money_to_minor(value: str) -> int:
     return int(amount * 100)
 
 
-def known_campaign(campaign_id: str) -> bool:
+def campaign_by_id(campaign_id: str) -> dict | None:
     for path in CAMPAIGNS.glob("*.json"):
         payload = json.loads(path.read_text(encoding="utf-8"))
         if payload.get("id") == campaign_id:
-            return True
-    return False
+            return payload
+    return None
+
+
+def known_campaign(campaign_id: str) -> bool:
+    return campaign_by_id(campaign_id) is not None
 
 
 def record_outcome(
@@ -105,8 +109,18 @@ def record_outcome(
             raise ValueError("draft is not bound to the supplied candidate")
     if project_id:
         promotion.project_by_id(project_id)
-    if campaign_id and not known_campaign(campaign_id):
+    campaign = campaign_by_id(campaign_id) if campaign_id else None
+    if campaign_id and campaign is None:
         raise ValueError("campaign does not exist")
+    if (
+        kind == "sale_confirmed"
+        and campaign is not None
+        and campaign.get("campaign_type") == "affiliate"
+    ):
+        raise ValueError(
+            "affiliate campaigns cannot record sale_confirmed as revenue; "
+            "record the referral first and revenue only after commission receipt"
+        )
     if evidence_url:
         parsed = urlparse(evidence_url)
         if parsed.scheme not in {"http", "https"} or not parsed.netloc:

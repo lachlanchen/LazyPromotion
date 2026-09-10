@@ -64,8 +64,8 @@ profiles, repositories, comments, or direct messages.
 The first asset is now live: [Postiz CLI and MCP: A Review-First Social
 Scheduling Workflow](https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html).
 It was published on 2026-09-02 in English with Chinese and Japanese
-translations. The page uses ordinary, untracked Postiz links and explicitly
-states that it earns no Postiz affiliate commission. This counts as one useful
+translations. The page uses ordinary, untracked Postiz links and contains no
+affiliate disclosure or referral call to action. This counts as one useful
 owned asset, not a click, referral, commission, or revenue event.
 
 ## Disclosure templates

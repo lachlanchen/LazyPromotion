@@ -128,7 +128,7 @@
       "application_form_packet": {
         "website_or_social_channel": "https://lazying.art/",
         "promotion_plan": "I run LazyingArt and maintain the open-source LazyPromotion project. I plan to promote Postiz through firsthand CLI/MCP tutorials, review-first publishing case studies, and an honest managed-versus-self-hosted comparison for solo builders and small teams. Links will appear only on relevant owned pages with a prominent affiliate disclosure. I will not use unsolicited messages, automated community replies, fake engagement, or undisclosed bots.",
-        "additional_comments": "A live English tutorial with Chinese and Japanese translations already documents my review-first Postiz CLI/MCP workflow. It currently uses ordinary, untracked Postiz links and states that no affiliate commission is earned. I will add a disclosed referral link only after approval and a terms, destination, attribution, payout, and placement review.",
+        "additional_comments": "A live English tutorial with Chinese and Japanese translations already documents my review-first Postiz CLI/MCP workflow. It currently uses ordinary, untracked Postiz links and contains no affiliate referral call to action. I will add a disclosed referral link only after approval and a terms, destination, attribution, payout, and placement review.",
         "operator_only_fields": [],
         "submit_state": "submitted_and_accepted_2026-09-10"
       },

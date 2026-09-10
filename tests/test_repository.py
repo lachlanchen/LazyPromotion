@@ -1481,6 +1481,10 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
         self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["campaign_type"], "affiliate")
+        self.assertEqual(
+            campaign["revenue_event"], "affiliate_commission_received"
+        )
         self.assertEqual(campaign["state"], "approved_payout_pending")
         self.assertEqual(
             campaign["source_evidence"]["program_page"],

@@ -197,6 +197,22 @@ class MetricsTests(unittest.TestCase):
         self.assertEqual(report["outcomes"]["affiliate_referral_confirmed"], 1)
         self.assertEqual(report["gross_revenue_minor_by_currency"], {})
 
+    def test_affiliate_sale_cannot_be_recorded_as_received_revenue(self):
+        with self.assertRaisesRegex(
+            ValueError, "affiliate campaigns cannot record sale_confirmed"
+        ):
+            metrics.record_outcome(
+                self.db,
+                kind="sale_confirmed",
+                campaign_id="postiz-affiliate-pilot",
+                amount="30",
+                currency="USD",
+                reference="private-dub-sale-001",
+            )
+
+        report = metrics.funnel_report(self.db)
+        self.assertEqual(report["gross_revenue_minor_by_currency"], {})
+
     def test_received_affiliate_commission_is_revenue_and_reversal_reduces_net(self):
         metrics.record_outcome(
             self.db,

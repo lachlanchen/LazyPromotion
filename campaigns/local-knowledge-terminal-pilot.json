@@ -1,5 +1,5 @@
 {
-  "version": 36,
+  "version": 37,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -1016,7 +1016,7 @@
         "content": "I kept wanting local knowledge tools to do one boring thing well: answer from the collection and let me reopen the evidence.\n\nLocal Knowledge Terminal now has an optional read-only MCP bridge. One tool queries accepted multilingual records; the other traces a returned claim to its source excerpt, safe locator, and content hash. It exposes no file or shell access, cannot ingest or rewrite the collection, and network mode stays on loopback by default.\n\nThe implementation, test boundary, and setup are public:\nhttps://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md\n\nIf you have a private collection and want to know whether it is worth turning into a local cited tool, the sample and fit check are here:\nhttps://lazying.art/lkt/?utm_source=linkedin&utm_medium=social&utm_campaign=lkt_mcp_bridge&utm_content=read_only_release",
         "destination": "https://lazying.art/lkt/?utm_source=linkedin&utm_medium=social&utm_campaign=lkt_mcp_bridge&utm_content=read_only_release",
         "documentation": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md",
-        "content_sha256": "f64e82360947eeff19d748b689fb297bcb0abb648af8cd39080496bb9c3ca128",
+        "content_sha256": "68aa2361f6200a812e890d9baa580fe9cd2d71954c8813dfa65932772667094a",
         "reviewed_at": "2026-09-10T16:49:40Z",
         "shortlink": false,
         "verification": {

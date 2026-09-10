@@ -1562,7 +1562,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 36)
+        self.assertEqual(campaign["version"], 37)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1867,7 +1867,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(mcp_post["publish_at"], "2026-10-02T02:00:00Z")
         self.assertEqual(
             mcp_post["content_sha256"],
-            "f64e82360947eeff19d748b689fb297bcb0abb648af8cd39080496bb9c3ca128",
+            "68aa2361f6200a812e890d9baa580fe9cd2d71954c8813dfa65932772667094a",
         )
         self.assertIn("optional read-only MCP bridge", mcp_post["content"])
         self.assertIn("utm_campaign=lkt_mcp_bridge", mcp_post["destination"])

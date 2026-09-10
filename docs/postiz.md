@@ -184,6 +184,16 @@ visible editor showed the first-party page capture, correct account, time,
 scope, and original tracked URL. A provider read returned one matching `QUEUE`
 record with no release. Queueing is not publication, a lead, sale, or revenue.
 
+On 2026-09-11, one LinkedIn release note for LKT's read-only MCP bridge was
+visibly reviewed and queued for 2026-10-02T02:00:00Z, after the existing
+September calendar. Postiz initially substituted shortlinks while the item was
+still a draft. The visible editor restored the public MCP documentation and
+owned campaign URL, and the operator selected original URLs at the save and
+schedule confirmations. A fresh provider read returned the expected LinkedIn
+account, time, normalized content hash, original URLs, `QUEUE` state, and no
+release URL. It is one bounded first-party release note, not publication, a fit
+inquiry, a sale, or revenue.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

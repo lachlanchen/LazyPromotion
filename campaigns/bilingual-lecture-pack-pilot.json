@@ -467,11 +467,11 @@
     },
     "leonardsusskind_reader": {
       "state": "live_and_verified",
-      "checked_on": "2026-09-10",
+      "checked_on": "2026-09-11",
       "source_commit": "0437140",
       "url": "https://learn.lazying.art/leonardsusskind-reader.html?book=classical-mechanics-theoretical-minimum",
       "destination": "https://lazying.art/lecture-pack/?utm_source=leonardsusskind_reader&utm_medium=owned_reader&utm_campaign=bilingual_lecture_pack_pilot&utm_content=reader_footer",
-      "evidence": "Search Console showed the Classical Mechanics reader up ten clicks and the General Relativity reader up five in the last-28-day comparison.",
+      "evidence": "Search Console showed 27 clicks to the Classical Mechanics reader, up ten or 59%, and the General Relativity reader up five in the last-28-day comparison.",
       "route": "The free archive remains the page's main value; one lecture-specific footer leads to the project-owned bilingual sample and fixed scope before the fit check.",
       "verification": "The deployed reader returned HTTP 200 with the reviewed copy and exact tracked destination after commit 0437140 reached the live site.",
       "policy": "Search clicks and repository stars are attention, not a fit inquiry, lead, sale, or revenue."

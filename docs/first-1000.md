@@ -1022,6 +1022,14 @@ step: inspect the project-owned bilingual lecture-pack sample. The tracked route
 goes to the sample and scope before the fit check; it does not turn educational
 traffic into a claimed lead or sale.
 
+The September 11 visible report strengthened that decision: 146 property clicks
+were up 35% and 6.58K impressions were up 17%. The Classical Mechanics reader
+led with 27 clicks, the Susskind archive had 25, and the repaired ChatGPT
+payment guide had 23. The reader already has the exact lecture-pack path. The
+payment guide remains unmonetized because neither an owned offer nor a verified
+affiliate is a natural answer to a declined-card search. Traffic alone is not
+a reason to add an unrelated link.
+
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. The homepage now exposes seven

@@ -186,8 +186,13 @@ Posts: `281, 936, 1562, 2936, 3125`.
   assembly proof in English, Chinese, and Japanese. All three live editions
   returned HTTP 200 with their tracked proof link. The clicks are attention,
   not buyer intent, leads, sales, or revenue.
-- Post `2972` showed 14 clicks but received no commercial CTA because no
-  LazyingArt offer was a truthful match for its payment-failure search intent.
+- Search Console's visible report on 2026-09-11 showed 146 clicks, up 35%, and
+  6.58K impressions, up 17%, across the property. The Classical Mechanics
+  reader led with 27 clicks, up 59%; the Susskind archive had 25 clicks, up 4%;
+  and post `2972` reached 23 clicks, up 188%. The existing reader route already
+  leads quietly to the relevant lecture-pack sample. Post `2972` still has no
+  commercial CTA because no LazyingArt offer or verified affiliate is a
+  truthful match for its payment-failure search intent.
 - Post `3616` showed 3 clicks and 24 impressions, but its four full-text
   *Snow Country* PDF routes had no documented redistribution permission for
   both the Japanese text and Chinese translation. The source and English/Japanese

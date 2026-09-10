@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 11,
+  "version": 12,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -156,12 +156,31 @@
   "channels": {
     "owned_website": {
       "state": "live_verified",
-      "role": "The existing OpenHI kit page and homepage point to the software-first offer; the offer points back to the separate hardware inquiry."
+      "role": "The existing OpenHI kit page and homepage point to the software-first offer; the offer points back to the separate hardware inquiry.",
+      "homepage_service_chooser": {
+        "state": "live_verified_first_card_13_locales",
+        "destination": "https://lazying.art/openhi-reproducibility/?utm_source=lazyingart&utm_medium=website&utm_campaign=openhi_reproducibility&utm_content=service_chooser",
+        "website_commit": "7decf259173850f6d5bf6a8b93b44a5cec3ebb5e",
+        "placement": "First full-width card in the seven-service homepage chooser",
+        "price_shown": "USD 500",
+        "verification": "All 25 website contract tests passed, the deployed GitHub Pages workflow completed successfully, and the live page returned the new localized offer and tracked destination.",
+        "boundary": "A live owned discovery route is not a visit, inquiry, payment, customer result, or received revenue."
+      }
     },
     "github": {
       "state": "live_verified",
       "role": "The primary OpenHI README now offers a tracked software-first path beside the hardware inquiry without changing the maintainer's uncommitted README or translation work.",
       "repository_commit": "af26ac0e99e208dfede58f89314dc160dec0ec46",
+      "public_profile_route": {
+        "state": "live_verified",
+        "profile_commit": "198c5444fe7e6aef2e0ee04649070207e6d51cca",
+        "placement": "First row in a five-service fixed-scope table",
+        "destination": "https://lazying.art/openhi-reproducibility/?utm_source=github&utm_medium=profile&utm_campaign=openhi_reproducibility&utm_content=service_chooser",
+        "price_shown": "USD 500",
+        "hardware_boundary_shown": true,
+        "verification": "The raw public profile README displayed the updated five-service wording, the OpenHI route, and the separate LazyRemote route after the commit was pushed.",
+        "boundary": "A profile route is attention only and does not establish an inquiry, payment, or received revenue."
+      },
       "tracked_entry_points": [
         "quick_access",
         "software_first",

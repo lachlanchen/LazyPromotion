@@ -53,7 +53,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         offer = campaign["offer"]
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(offer["price"], "USD 500")
         self.assertEqual(offer["stage_limit"], 1)
         self.assertEqual(offer["dataset_limit"], 1)
@@ -86,6 +86,18 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("marketplace", offer["payment_policy"].lower())
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
         self.assertFalse(campaign["channels"]["automatic_community_outreach"]["allowed"])
+        homepage = campaign["channels"]["owned_website"]["homepage_service_chooser"]
+        self.assertEqual(homepage["state"], "live_verified_first_card_13_locales")
+        self.assertIn("utm_content=service_chooser", homepage["destination"])
+        self.assertEqual(homepage["price_shown"], "USD 500")
+        self.assertIn("7decf259", homepage["website_commit"])
+        self.assertIn("not a visit", homepage["boundary"])
+        profile = campaign["channels"]["github"]["public_profile_route"]
+        self.assertEqual(profile["state"], "live_verified")
+        self.assertIn("198c5444", profile["profile_commit"])
+        self.assertIn("utm_medium=profile", profile["destination"])
+        self.assertTrue(profile["hardware_boundary_shown"])
+        self.assertIn("attention only", profile["boundary"])
 
     def test_plesk_pitch_is_proposal_first_and_revenue_stays_zero(self):
         campaign = json.loads(

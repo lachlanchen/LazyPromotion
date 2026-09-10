@@ -63,36 +63,32 @@ The manuscript landing page was unknown to Google when inspected on September
 later visible URL Inspection check on September 5 reported that the page is on
 Google. That proves neither ranking, traffic, a lead, nor revenue.
 
-## One homepage, five focused routes
+## One homepage, seven focused routes
 
-The LazyingArt homepage now presents five active service routes directly below
-its main banner: USD 250 collection fit, manuscript build and redline, a
-bilingual lecture pack, the Story Clip Pilot, and the USD 500 AI Clip Assembly
-Pilot. Each tracked link leads to the full offer and public proof before any
-free fit check. The panel is available in all 13 homepage languages and states
-the shared boundary in one sentence: no source upload or payment before both
-sides accept the scope.
+The LazyingArt homepage now presents seven active service routes directly below
+its main banner. The USD 500 OpenHI reproducibility sprint is the first,
+full-width card, followed by collection fit, book specimen, manuscript build
+and redline, bilingual lecture, story clip, and USD 500 AI clip assembly. Each
+tracked link leads to the full offer and public proof before any free fit check.
+The chooser is available in all 13 homepage languages and states the shared
+boundary in one sentence: no source upload or payment before both sides accept
+the scope.
 
-The original four-route panel was deployed at LazyingArtWebsite commit
-`e4a1c36b3efa93399b6a5754f3692c1802a211c7`; the AI Clip route and its proof
-were added at commit `89d45f975fc20de85ef404b6dffb92a3bb44bc74`. Both states
-were checked at desktop and mobile widths. The five routes preserve separate `utm_campaign` values and use the common
-`service_chooser` content marker. This fixes owned-site discoverability; it
-does not establish a visit, fit inquiry, qualified buyer, or sale.
-
-The live USD 250 Book Specimen Sprint is a sixth focused route outside the
-homepage chooser. Its chapter-first guide leads to a project-owned print/EPUB
-packet and free fit check; it is not a promise to translate, design, or deliver
-a complete book.
+The seven-route chooser is deployed at LazyingArtWebsite commit
+`7decf259173850f6d5bf6a8b93b44a5cec3ebb5e`. All 25 website contract tests
+passed, the deployment workflow completed successfully, and the live localized
+page was checked after deployment. Separate `utm_campaign` values use the
+common `service_chooser` content marker. This fixes owned-site discoverability;
+it does not establish a visit, fit inquiry, qualified buyer, or sale.
 
 The public GitHub profile at commit
-`76bb98a8e6dde319c50dca94ecdbb9dfca0ae7a6` retains a three-offer
-structure with separate `github/profile` attribution. Its selected work leads
-with Local Knowledge Terminal, PaperAgent, Video2Book, PocketPolyglot,
-LinguaLeaf, the Leonard Susskind archive, and LazyEdit so visitors can connect
-the paid boundaries to inspectable code, books, and media. The existing
-11-language profile header and support panel remain intact. Profile traffic is
-attention only, never a lead or received revenue by itself.
+`198c5444fe7e6aef2e0ee04649070207e6d51cca` presents five exact service routes
+with separate `github/profile` attribution. OpenHI appears first at USD 500;
+Local Knowledge Terminal, manuscript, bilingual lecture, and LazyRemote follow.
+Hardware remains quoted separately. Its selected work still connects the paid
+boundaries to inspectable code, books, and media, while the existing 11-language
+header and support panel remain intact. Profile traffic is attention only,
+never a lead or received revenue by itself.
 
 The public [Selected Work shelf](https://lazying.art/work/) now gives the wider
 portfolio one readable route without turning the homepage into a repository

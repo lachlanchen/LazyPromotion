@@ -3194,6 +3194,27 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("l-and-n.lazying.art", serialized)
         self.assertNotIn("post_id", serialized.casefold())
 
+    def test_lkt_mcp_hackathon_keeps_product_value_separate_from_prize(self):
+        path = ROOT / "campaigns" / "lkt-private-knowledge-mcp-hackathon.json"
+        serialized = path.read_text(encoding="utf-8")
+        campaign = json.loads(serialized)
+
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["program"]["state"], "open_registration_gated")
+        self.assertFalse(campaign["registration"]["devpost_account_created"])
+        self.assertFalse(campaign["registration"]["hackathon_joined"])
+        self.assertIn("human representative", campaign["registration"]["gate"])
+        self.assertIn(
+            "No request-time model call",
+            " ".join(campaign["project"]["selected_scope"]),
+        )
+        self.assertIn("not private end to end", campaign["project"]["privacy_boundary"])
+        self.assertEqual(campaign["funnel"]["prize_received_usd"], 0)
+        self.assertEqual(
+            campaign["funnel"]["verified_received_gross_revenue_usd"], 0
+        )
+        self.assertNotIn("password", serialized.casefold())
+
     def test_bilingual_book_reply_acknowledgement_stays_non_promotional(self):
         path = ROOT / "campaigns" / "bilingual-pocket-editions.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))

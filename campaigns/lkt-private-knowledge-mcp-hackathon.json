@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "id": "lkt-private-knowledge-mcp-hackathon",
+  "objective": "Turn Local Knowledge Terminal's multilingual, source-grounded graph into a useful read-only MCP bridge first, then consider an Amazon hackathon entry without counting a registration or prize possibility as revenue.",
+  "program": {
+    "name": "Build, Ship, Shape: Amazon Developer Hackathon",
+    "announcement_url": "https://community.amazondeveloper.com/t/build-ship-shape-amazon-developer-hackathon/29099",
+    "rules_url": "https://amazonappdev2026.devpost.com/rules",
+    "registration_url": "https://amazonappdev2026.devpost.com/",
+    "verified_on": "2026-09-10",
+    "submission_deadline": "2026-10-23T12:00:00-07:00",
+    "state": "open_registration_gated",
+    "eligible_tracks": [
+      "Alexa+",
+      "Open Source mini challenge"
+    ],
+    "published_cash_prizes_usd": {
+      "alexa_plus_first": 25000,
+      "alexa_plus_second": 15000,
+      "alexa_plus_third": 4000,
+      "open_source": 5000
+    },
+    "payment_boundary": "Prizes are competitive. Registration, joining, submission, finalist status, judging, or an announced award is not received revenue."
+  },
+  "project": {
+    "name": "LKT Knowledge Bridge",
+    "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "product_route": "https://lazying.art/lkt/",
+    "standalone_value": "Let an MCP-capable agent query an allow-listed local multilingual knowledge graph and trace every returned claim back to its exact source unit, locator, excerpt, and hash.",
+    "selected_scope": [
+      "A separate read-only MCP process with loopback as the default",
+      "One bounded multilingual knowledge query tool",
+      "One exact claim or evidence trace tool",
+      "A metadata-only collections and readiness resource",
+      "No request-time model call, corpus mutation, file upload, arbitrary SQL, or shell execution"
+    ],
+    "privacy_boundary": "The corpus and indexes remain local. When a remote MCP client invokes a tool, its query and the bounded returned facts leave the device; the feature is opt-in and is not private end to end.",
+    "why_not_lazytunnel": "Publishing device or tunnel control through a voice-facing MCP surface would materially enlarge LazyTunnel's security boundary and require a multi-week OAuth and capability architecture. LKT can deliver standalone value through read-only provenance queries in days."
+  },
+  "registration": {
+    "devpost_account_created": false,
+    "hackathon_joined": false,
+    "submission_created": false,
+    "gate": "An organization entry requires an eligible adult human representative authorized to bind LazyingArt LLC. Account creation accepts Devpost terms; joining accepts participation and data-consent obligations; submission adds organization authority, ownership, licensing, publicity, indemnity, and eligibility representations.",
+    "required_before_join": [
+      "A written company authorization naming the human representative",
+      "Verified representative adulthood and residence eligibility",
+      "Review of Devpost terms and the current challenge rules"
+    ],
+    "required_before_submission": [
+      "Public repository and qualifying open-source license",
+      "Significant post-2026-08-31 implementation identified in the demo",
+      "Public under-three-minute YouTube or Vimeo demonstration",
+      "Reviewed project ownership and third-party rights",
+      "Exact organization, country, track, contributor, and form answers",
+      "Acceptance of the submission-specific warranties and publicity terms"
+    ],
+    "policy": "Do not invent the representative, sign company authority, or accept submission warranties on the user's behalf. Product development may continue independently because it has value outside the competition."
+  },
+  "funnel": {
+    "feature_started": true,
+    "feature_verified": false,
+    "registered": false,
+    "submission_entered": false,
+    "prize_awarded": false,
+    "prize_received_usd": 0,
+    "verified_received_gross_revenue_usd": 0
+  }
+}

@@ -127,6 +127,31 @@ inactivity clocks before there is a conversion basis.
 
 ## Newly checked external opportunities
 
+### Amazon developer hackathon: useful product work, competitive income
+
+Amazon's Build, Ship, Shape hackathon is open through October 23, 2026. The
+Alexa+ track accepts a self-hosted Streamable-HTTP MCP server, and a qualifying
+project can also enter the Open Source mini challenge. The published cash
+awards are USD 25,000, USD 15,000 and USD 4,000 for the Alexa+ track, plus USD
+5,000 for Open Source.^12 These are judged prizes, not payment for completing a
+submission.
+
+Local Knowledge Terminal is the portfolio's best fit. A read-only MCP bridge
+can join multilingual entity resolution, bounded graph traversal and exact
+claim provenance into a useful workflow: ask a private library, then ask where
+the answer came from. That feature also improves LKT for ordinary MCP clients,
+so development is worthwhile even if no competition entry is made. LazyTunnel
+is a weaker vehicle because voice-facing computer controls would widen its
+security boundary and require substantially more authentication work.
+
+LazyingArt LLC is an allowed organization type in the rules, but an entry must
+name an eligible adult human representative authorized to act for it.^12 A
+Devpost account accepts platform terms, joining creates participation and data
+consent obligations, and submission adds authority, ownership, licensing,
+publicity and eligibility representations.^13 No account should be created
+until that company authorization is documented. The product feature can move
+forward without making those representations.
+
 ### NLnet Restack: strong technical fit, weak current eligibility
 
 Restack is open through November 3, 2026 and accepts first-grant proposals from
@@ -270,3 +295,5 @@ routes already live.
 9. Algora. “[Pricing](https://algora.io/pricing).” Accessed September 10, 2026.
 10. warpSpeed OPEN. “[Audio Note Recording bounty](https://github.com/warpspeedopen-source/warpspeed-bounties/issues/9).” Accessed September 10, 2026.
 11. through-metal-link. “[$250 for the first independent build](https://github.com/zeloras/through-metal-link/issues/5).” Accessed September 10, 2026.
+12. Amazon. “[Build, Ship, Shape: Official Rules](https://amazonappdev2026.devpost.com/rules).” Accessed September 10, 2026.
+13. Devpost. “[Terms of Service](https://info.devpost.com/legal/terms-of-service).” Accessed September 10, 2026.

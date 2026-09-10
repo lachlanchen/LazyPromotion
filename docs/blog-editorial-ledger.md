@@ -126,6 +126,11 @@ Posts: `281, 936, 1562, 2936, 3125`.
   affiliate link or spend a closing section discussing a hypothetical future
   referral. The ordinary official documentation and source links remain, and
   all three live routes returned the shorter copy.
+- Post `3772` was republished on 2026-09-10 after LazyBlog Translations `0.4.17`
+  corrected WordPress post-meta slashing. All three live editions now preserve
+  the 11 shell continuation backslashes in their command examples. The pages
+  still contain no referral destination or affiliate call to action; this is
+  an editorial repair, not a click, lead, or revenue event.
 - Post `3619` now includes a Markdown-first route based on QMD's current
   first-party documentation: stable per-project files, BM25 search before
   embeddings, structured source results, and optional local MCP access. The

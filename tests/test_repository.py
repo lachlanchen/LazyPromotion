@@ -53,7 +53,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         offer = campaign["offer"]
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         self.assertEqual(offer["price"], "USD 500")
         self.assertEqual(offer["stage_limit"], 1)
         self.assertEqual(offer["dataset_limit"], 1)
@@ -99,6 +99,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_source=lazyblog", blog["destination"])
         self.assertIn("cc305e7", blog["blog_commit"])
         self.assertIn("does not establish a visit", blog["boundary"])
+        x_channel = campaign["channels"]["x"]
+        self.assertEqual(x_channel["state"], "queued_verified")
+        self.assertIn("?p=3820", x_channel["destination"])
+        self.assertIn("compact reproducibility workflow", x_channel["content"])
+        self.assertNotIn("fixed one-stage", x_channel["content"])
         profile = campaign["channels"]["github"]["public_profile_route"]
         self.assertEqual(profile["state"], "live_verified")
         self.assertIn("198c5444", profile["profile_commit"])

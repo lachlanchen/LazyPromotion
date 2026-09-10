@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 13,
+  "version": 14,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -212,11 +212,11 @@
     },
     "x": {
       "state": "queued_verified",
-      "post_id": "cmttmy81m07oilm0y1mo7mivp",
+      "post_id": "cmtvfq12k05oolm0y19cakp7l",
       "publish_at": "2026-09-21T02:00:00Z",
-      "content": "Imaging pipelines often fail on a new workstation before algorithms: environment drift, hidden parameters, or no rerun log. I made that a fixed one-stage OpenHI reproducibility sprint. Fit check first: lazying.art/openhi-reproducibility/?utm_source=x&utm_campaign=openhi_repro",
-      "destination": "https://lazying.art/openhi-reproducibility/?utm_source=x&utm_campaign=openhi_repro",
-      "role": "A short first-party post names three common reproducibility failures, then offers the fixed one-stage fit check."
+      "content": "Research code often fails on a new machine before the algorithm: source drift, hidden parameters, input assumptions, or a lost first error. I wrote a compact reproducibility workflow with an executed OpenHI example: blog.lazying.art/?p=3820&utm_source=x&utm_campaign=openhi_repro",
+      "destination": "https://blog.lazying.art/?p=3820&utm_source=x&utm_campaign=openhi_repro",
+      "role": "A concise first-party post leads with the practical guide and its executed OpenHI example; the article presents the optional fit check only after the useful workflow."
     },
     "linkedin": {
       "state": "queued_verified",

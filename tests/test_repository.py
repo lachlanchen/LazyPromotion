@@ -1562,7 +1562,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 34)
+        self.assertEqual(campaign["version"], 35)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1783,6 +1783,27 @@ class RepositoryTests(unittest.TestCase):
             campaign["source_evidence"]["sample_fit_report_source"],
             "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
         )
+        mcp = campaign["source_evidence"]["mcp_bridge"]
+        self.assertEqual(mcp["state"], "released_and_live_explained")
+        self.assertEqual(
+            mcp["repository_commit"],
+            "e750e5ae24b780e45de896f7dc3a769d2410dabd",
+        )
+        self.assertEqual(
+            mcp["website_commit"],
+            "2d66cbc165af46d3d3fe5e193428961daa585f0c",
+        )
+        self.assertEqual(
+            mcp["surface"]["tools"],
+            ["query_private_knowledge", "trace_private_claim"],
+        )
+        self.assertEqual(mcp["surface"]["resource"], "lkt://collections/status")
+        self.assertEqual(mcp["validation"]["repository_tests_passed"], 266)
+        self.assertTrue(mcp["validation"]["official_mcp_client_smoke_passed"])
+        self.assertEqual(mcp["validation"]["live_page_http_status"], 200)
+        self.assertIn("remote authentication", mcp["not_claimed"])
+        self.assertIn("Alexa integration", mcp["not_claimed"])
+        self.assertIn("not a fit inquiry or revenue", mcp["policy"])
         provenance = campaign["source_evidence"]["passage_provenance_proof"]
         self.assertEqual(provenance["state"], "live_verified")
         self.assertEqual(

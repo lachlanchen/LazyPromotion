@@ -1,5 +1,5 @@
 {
-  "version": 34,
+  "version": 35,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -26,6 +26,40 @@
     "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
     "sample_fit_report": "https://lazying.art/lkt/sample-report/",
     "sample_fit_report_source": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
+    "mcp_bridge": {
+      "state": "released_and_live_explained",
+      "checked_at": "2026-09-10T16:35:49Z",
+      "repository_commit": "e750e5ae24b780e45de896f7dc3a769d2410dabd",
+      "website_commit": "2d66cbc165af46d3d3fe5e193428961daa585f0c",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34502858470",
+      "docs": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md",
+      "surface": {
+        "tools": [
+          "query_private_knowledge",
+          "trace_private_claim"
+        ],
+        "resource": "lkt://collections/status",
+        "transports": [
+          "stdio",
+          "loopback-only Streamable HTTP"
+        ]
+      },
+      "validation": {
+        "repository_tests_passed": 266,
+        "website_contract_tests_passed": true,
+        "official_mcp_client_smoke_passed": true,
+        "live_page_http_status": 200
+      },
+      "supported_copy": "A compatible MCP client can search accepted multilingual knowledge and trace a returned claim to bounded source evidence through two read-only tools.",
+      "not_claimed": [
+        "remote authentication",
+        "Alexa integration",
+        "customer result",
+        "model-generated answer",
+        "file, shell, ingestion, review, or write access"
+      ],
+      "policy": "Use the released bridge as inspectable open-source product evidence and a reason to start the free fit check. It stays local or loopback by default; any remote access needs a separate authenticated boundary. A release, page visit, star, or social reaction is not a fit inquiry or revenue."
+    },
     "contra_marketplace": {
       "state": "live_service_published_identity_and_payout_pending",
       "checked_on": "2026-09-10",

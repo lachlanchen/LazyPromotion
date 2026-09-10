@@ -3157,15 +3157,18 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("Do not ask for stars, follows, votes, or DMs", prompt)
         self.assertIn("Prefer no reply", (ROOT / "docs" / "voice.md").read_text(encoding="utf-8"))
 
-    def test_kikudoku_paid_pronunciation_ux_lead_is_bounded(self):
+    def test_closed_kikudoku_pronunciation_ux_route_is_bounded(self):
         path = ROOT / "campaigns" / "kikudoku-pronunciation-ux.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 4)
-        self.assertEqual(campaign["source_need"]["rechecked_on"], "2026-09-07")
+        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["source_need"]["rechecked_on"], "2026-09-10")
+        self.assertEqual(
+            campaign["source_need"]["current_state"], "closed_no_application"
+        )
         self.assertEqual(campaign["fit"]["selected_topic"], "B - Shadowing Rate Improvement")
         self.assertEqual(
-            campaign["application"]["state"], "prepared_login_required"
+            campaign["application"]["state"], "closed_no_application"
         )
         self.assertTrue(campaign["application"]["paid_test_only"])
         self.assertFalse(campaign["application"]["application_submitted"])
@@ -3184,8 +3187,10 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(
             campaign["channels"]["upwork"]["state"],
-            "prepared_login_required",
+            "closed_no_application",
         )
+        self.assertEqual(campaign["funnel"]["state"], "opportunity_closed")
+        self.assertIn("no longer available", serialized)
         self.assertIn("l-and-n.lazying.art", serialized)
         self.assertNotIn("post_id", serialized.casefold())
 

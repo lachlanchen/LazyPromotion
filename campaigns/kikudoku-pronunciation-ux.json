@@ -1,17 +1,18 @@
 {
   "id": "kikudoku-pronunciation-ux",
-  "version": 4,
-  "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
+  "version": 5,
+  "objective": "Preserve the closed Kikudoku pronunciation UX opportunity as historical demand evidence for L-and-N without treating it as an active application route.",
   "source_need": {
     "captured_on": "2026-09-06",
-    "rechecked_on": "2026-09-07",
+    "rechecked_on": "2026-09-10",
     "url": "https://www.upwork.com/freelance-jobs/apply/Consultant-for-Japanese-Learning-App-Kikudoku-Paid-Test-Project_~022096362207530179711/",
     "title": "UX/UI Consultant for Japanese Learning App (Kikudoku) - Paid Test Project",
     "eligibility": "Worldwide",
     "published_budget": "USD 70 paid test; USD 470-770 total published project range",
     "scope": "Choose one paid diagnostic topic, then potentially review the beta onboarding, free experience, profile navigation, and shadowing flow.",
-    "activity_when_checked": "10 to 15 proposals, 0 interviewing, and a client view about 45 minutes earlier; client has 9 hires and USD 520 total spend. The primary page remained open on 2026-09-07.",
-    "policy": "The listing is current buyer-intent evidence only. It is not an application, interview, contract, payment, delivery, or received revenue."
+    "activity_when_checked": "The primary Upwork page displayed 'This job is no longer available' during a visible project-browser recheck on 2026-09-10. Earlier activity evidence is retained only as historical context.",
+    "current_state": "closed_no_application",
+    "policy": "The closed listing is historical buyer-intent evidence only. It is not an application, interview, contract, payment, delivery, or received revenue."
   },
   "source_evidence": {
     "source_need_url": "https://www.upwork.com/freelance-jobs/apply/Consultant-for-Japanese-Learning-App-Kikudoku-Paid-Test-Project_~022096362207530179711/",
@@ -34,7 +35,7 @@
     "claim_boundary": "The public app proves relevant product work and a complete practice loop. It does not prove consulting outcomes, Japanese learner research, clinical accuracy, or a Kikudoku result."
   },
   "application": {
-    "state": "prepared_login_required",
+    "state": "closed_no_application",
     "private_packet": ".local/outreach/kikudoku-pronunciation-ux/application-draft.md",
     "screening_phrase_preserved": true,
     "paid_test_only": true,
@@ -51,13 +52,13 @@
   },
   "channels": {
     "upwork": {
-      "state": "prepared_login_required",
+      "state": "closed_no_application",
       "application_submitted": false,
       "connects_spent": 0
     }
   },
   "funnel": {
-    "state": "buyer_intent_identified",
+    "state": "opportunity_closed",
     "application_submitted": false,
     "paid_test_awarded": false,
     "contract_observed": false,

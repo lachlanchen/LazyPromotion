@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "checked_at": "2026-09-05",
+  "version": 5,
+  "checked_at": "2026-09-10",
   "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint where buyers already look for bounded technical services, without weakening the free fit check, privacy gate, or received-revenue accounting.",
   "offer": {
     "campaign_id": "local-knowledge-terminal-pilot",
@@ -15,7 +15,11 @@
     {
       "rank": 1,
       "id": "contra",
-      "state": "operator_registration_required",
+      "state": "live_service_published_identity_and_payout_pending",
+      "public_profile": "https://contra.com/lachlan_chen_vzs1sppu",
+      "public_service": "https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search",
+      "public_case_study": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
+      "account_state": "email_verified_free_plan",
       "official_sources": {
         "services": "https://help.contra.com/en/articles/9322412-how-to-add-services-to-your-contra-profile",
         "fees": "https://help.contra.com/en/articles/9322934-fees-overview",
@@ -27,9 +31,9 @@
       "economics": "At a USD 250 service price, the current Free plan charges the client a USD 15 Contra platform fee plus the applicable payment-processing fee. The independent keeps the USD 250 service amount before payout-processor or currency-conversion fees, taxes, refunds, and delivery costs. Verify the live checkout before quoting any client total.",
       "fit": "Best first route. Contra Services supports a one-time price, requirements, examples, and an inquiry before the work is contracted, which preserves the free collection-fit discussion.",
       "activation_gates": [
-        "The operator registers once, reviews and accepts the current terms, and confirms the intended LazyingArt business identity.",
-        "The operator completes Persona identity verification and a supported payout route; no agent submits identity or bank information.",
-        "The live service editor is checked for current tags, media rules, fee display, contract flow, cancellation terms, and any required schedule or revision fields.",
+        "The account is created with the public Lachlan Chen work identity, its business email is verified, and the Free plan is selected; no paid upgrade was started.",
+        "Persona identity verification and a supported payout route remain pending; no identity document, bank information, wallet setup, or payment object was submitted.",
+        "The live service editor was checked for current tags, media rules, the Free-plan fee display, one-time pricing, duration, FAQs, example work, and the unpublished-to-published flow.",
         "The final preview uses the exact delivery, concurrency, correction, cancellation, refund, confidentiality, retention, and support commitments recorded in the listing packet.",
         "The public sample report is used only as project-owned evidence, never as a customer result or testimonial.",
         "Inquiry, proposal, contract, payment, revisions, and delivery evidence stay in the platform workflow when its rules require that.",
@@ -65,12 +69,16 @@
     }
   ],
   "contra_listing_packet": {
-    "state": "draft_only_not_registered_or_published",
+    "state": "live_published",
+    "public_service_url": "https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search",
+    "public_case_study_url": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
+    "public_profile_url": "https://contra.com/lachlan_chen_vzs1sppu",
     "title": "Audit a Private Document Collection for Local AI Search",
     "cover_asset": {
-      "public_url": "https://lazying.art/lkt/assets/lkt-collection-fit-service-cover-v1.png",
-      "source_path": "../LazyingArtWebsite/lkt/assets/lkt-collection-fit-service-cover-v1.png",
-      "dimensions": "1672x941",
+      "source_path": "assets/contra-lkt-service-cover-v2.png",
+      "dimensions": "1448x1086",
+      "aspect_ratio": "4:3",
+      "live_media_verified": true,
       "evidence_boundary": "Project-owned, AI-assisted concept cover grounded in the documented LKT prototype and interface. It is not a customer result, testimonial, benchmark, shipped hardware product, or proof of a paid engagement.",
       "required_disclosure": "SOFTWARE SERVICE · HARDWARE NOT INCLUDED"
     },
@@ -88,13 +96,31 @@
       "Label every interface or generated product image as project-owned proof or a prototype-grounded concept.",
       "Do not use the existing Reddit acknowledgement as a testimonial; it concerns a separate free educational archive."
     ],
-    "commercial_terms_state": "selected_for_listing_draft_not_yet_contractual",
+    "commercial_terms_state": "published_offer_terms_pre_contract",
+    "live_fields": {
+      "price": "USD 250 one-time",
+      "duration": "2 weeks",
+      "tags": [
+        "Artificial Intelligence",
+        "Software Consultant",
+        "Database Specialist",
+        "Researcher",
+        "Technical Writer",
+        "Computer Software",
+        "Python",
+        "Knowledge Graph",
+        "Information Retrieval"
+      ],
+      "faq_count": 3,
+      "example_work": "Local Knowledge Terminal: Collection-Fit Sample Report",
+      "profile_completion": "44% after cover, one case study, portfolio link, and bio"
+    },
     "public_terms": {
       "state": "live_verified",
       "url": "https://lazying.art/lkt/#terms",
       "website_commit": "65cdc8669fca7aaf059462f69b760ff5299012df",
       "fit_check_links_to_terms": true,
-      "policy": "The future Contra preview must match this public contract exactly before publication."
+      "policy": "The live Contra listing and every later platform contract must remain consistent with this public contract."
     },
     "publication_commitments": {
       "delivery_window": "Ten business days after the written scope is accepted, platform payment is secured, and the complete agreed sample and machine-access path are available. The delivery clock pauses while required material, access, or answers are missing.",
@@ -109,11 +135,16 @@
       "confidentiality_and_retention": "Customer material is used only for the accepted sprint, is not published or reused as portfolio evidence without separate written permission, and is handled through the agreed transfer and processing path. Working source copies are deleted within fourteen calendar days after acceptance, cancellation, or refund unless the written scope requires an earlier deletion or applicable recordkeeping rules require a limited record.",
       "support_boundary": "Written clarification about the delivered report is available through the platform during the seven-day correction window. Hosting, monitoring, deployment, maintenance, retraining, hardware support, additional meetings, and ongoing operation are excluded."
     },
-    "remaining_live_editor_checks": [
+    "completed_live_editor_checks": [
       "Confirm the exact available Contra role, tool, and industry tags and choose only directly relevant tags.",
       "Preview the cover crop and retain the visible SOFTWARE SERVICE · HARDWARE NOT INCLUDED disclosure.",
       "Verify the current client fee display and contract flow without advertising a fixed client total.",
       "Save as unpublished first and compare every field with this packet before publication."
+    ],
+    "remaining_live_editor_checks": [],
+    "remaining_account_gates": [
+      "Complete Contra's Persona identity verification only through an authorized human identity check.",
+      "Configure and verify a supported payout route before accepting a paid platform contract."
     ],
     "revenue_policy": "A listing view, inquiry, proposal, signed contract, platform balance, or pending payout is not received revenue. Record the sale and money only after the platform payment and private evidence meet the existing metrics gates."
   }

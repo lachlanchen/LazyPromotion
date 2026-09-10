@@ -1412,7 +1412,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 32)
+        self.assertEqual(campaign["version"], 33)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1493,6 +1493,24 @@ class RepositoryTests(unittest.TestCase):
             campaign["source_evidence"]["practical_guide"],
             "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
         )
+        contra = campaign["source_evidence"]["contra_marketplace"]
+        self.assertEqual(
+            contra["state"],
+            "live_service_published_identity_and_payout_pending",
+        )
+        self.assertEqual(contra["price"], "USD 250 one-time")
+        self.assertEqual(contra["duration"], "2 weeks")
+        self.assertEqual(contra["faq_count"], 3)
+        self.assertEqual(contra["tag_count"], 9)
+        self.assertTrue(contra["example_work_linked"])
+        self.assertFalse(contra["identity_verified"])
+        self.assertFalse(contra["wallet_configured"])
+        self.assertFalse(contra["payout_configured"])
+        self.assertFalse(contra["buyer_inquiry_observed"])
+        self.assertFalse(contra["contract_observed"])
+        self.assertFalse(contra["payment_observed"])
+        self.assertEqual(contra["received_gross_usd"], 0)
+        self.assertIn("not a lead", contra["policy"])
         consultation = campaign["source_evidence"]["enterprise_architecture_consultation_need"]
         self.assertEqual(consultation["state"], "application_prepared_login_required")
         self.assertIn("USD 200", consultation["budget"])
@@ -2155,7 +2173,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "marketplace-channels.json"
         packet = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(packet["version"], 4)
+        self.assertEqual(packet["version"], 5)
         self.assertEqual(packet["offer"]["public_price"], "USD 250")
         self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
         self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
@@ -2164,13 +2182,23 @@ class RepositoryTests(unittest.TestCase):
             [row["id"] for row in channels],
             ["contra", "upwork_project_catalog", "fiverr"],
         )
-        self.assertEqual(channels[0]["state"], "operator_registration_required")
+        self.assertEqual(
+            channels[0]["state"],
+            "live_service_published_identity_and_payout_pending",
+        )
+        self.assertIn("contra.com/s/", channels[0]["public_service"])
+        self.assertIn("contra.com/p/", channels[0]["public_case_study"])
         self.assertIn("usd 15", channels[0]["economics"].casefold())
         self.assertIn("0% to 15%", channels[1]["economics"])
         self.assertIn("80%", channels[2]["economics"])
         listing = packet["contra_listing_packet"]
-        self.assertEqual(listing["state"], "draft_only_not_registered_or_published")
-        self.assertEqual(listing["cover_asset"]["dimensions"], "1672x941")
+        self.assertEqual(listing["state"], "live_published")
+        self.assertIn("contra.com/s/", listing["public_service_url"])
+        self.assertIn("contra.com/p/", listing["public_case_study_url"])
+        self.assertEqual(listing["cover_asset"]["dimensions"], "1448x1086")
+        self.assertEqual(listing["cover_asset"]["aspect_ratio"], "4:3")
+        self.assertTrue(listing["cover_asset"]["live_media_verified"])
+        self.assertTrue((ROOT / listing["cover_asset"]["source_path"]).is_file())
         self.assertIn("hardware not included", listing["cover_asset"]["required_disclosure"].casefold())
         self.assertIn("not a customer result", listing["cover_asset"]["evidence_boundary"].casefold())
         self.assertIn("custom OCR", listing["description"])
@@ -2179,8 +2207,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("lazying.art/lkt/sample-report", listing["evidence"][0])
         self.assertEqual(
             listing["commercial_terms_state"],
-            "selected_for_listing_draft_not_yet_contractual",
+            "published_offer_terms_pre_contract",
         )
+        self.assertEqual(listing["live_fields"]["price"], "USD 250 one-time")
+        self.assertEqual(listing["live_fields"]["duration"], "2 weeks")
+        self.assertEqual(listing["live_fields"]["faq_count"], 3)
+        self.assertEqual(len(listing["live_fields"]["tags"]), 9)
         self.assertEqual(listing["public_terms"]["state"], "live_verified")
         self.assertEqual(listing["public_terms"]["url"], "https://lazying.art/lkt/#terms")
         self.assertTrue(listing["public_terms"]["fit_check_links_to_terms"])
@@ -2195,7 +2227,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("full refund", commitments["cancellation_and_refund"])
         self.assertIn("fourteen calendar days", commitments["confidentiality_and_retention"])
         self.assertIn("ongoing operation", commitments["support_boundary"])
-        self.assertEqual(len(listing["remaining_live_editor_checks"]), 4)
+        self.assertEqual(len(listing["completed_live_editor_checks"]), 4)
+        self.assertEqual(listing["remaining_live_editor_checks"], [])
+        self.assertEqual(len(listing["remaining_account_gates"]), 2)
         self.assertIn("pending payout", listing["revenue_policy"])
         self.assertNotIn("confirmed customer", serialized)
         self.assertNotIn("received usd", serialized)

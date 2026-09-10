@@ -1,5 +1,5 @@
 {
-  "version": 32,
+  "version": 33,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -26,6 +26,27 @@
     "product_brief": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/product-brief.md",
     "sample_fit_report": "https://lazying.art/lkt/sample-report/",
     "sample_fit_report_source": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md",
+    "contra_marketplace": {
+      "state": "live_service_published_identity_and_payout_pending",
+      "checked_on": "2026-09-10",
+      "public_profile": "https://contra.com/lachlan_chen_vzs1sppu",
+      "public_service": "https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search",
+      "public_case_study": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
+      "price": "USD 250 one-time",
+      "duration": "2 weeks",
+      "faq_count": 3,
+      "tag_count": 9,
+      "example_work_linked": true,
+      "profile_completion": "44%",
+      "identity_verified": false,
+      "wallet_configured": false,
+      "payout_configured": false,
+      "buyer_inquiry_observed": false,
+      "contract_observed": false,
+      "payment_observed": false,
+      "received_gross_usd": 0,
+      "policy": "The public listing is a live acquisition route, not a lead, sale, contract, payment, or revenue. Do not accept a paid contract until identity and payout setup are accurately completed and the buyer accepts the written scope."
+    },
     "passage_provenance_proof": {
       "state": "live_verified",
       "checked_on": "2026-09-05",

@@ -999,18 +999,24 @@ The operational funnel is:
 
 `helpful interaction → fit inquiry → qualified lead → scope accepted → Stripe payment → delivered sprint`
 
-A complementary buyer-intent route is prepared in the [LKT marketplace
-packet](lkt-marketplaces.md). Contra Services ranks first for a reusable listing
-because its inquiry flow can preserve the free fit check. The listing remains a
-draft until the operator completes registration and identity/payout setup. Its
-commercial packet now fixes the delivery window, one-at-a-time capacity,
+A complementary buyer-intent route is now live through the [LKT marketplace
+packet](lkt-marketplaces.md). The [Contra
+service](https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search)
+publishes the one-time USD 250 scope, two-week duration, three qualification
+FAQs, exact exclusions, and a linked [project-owned sample-report case
+study](https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report).
+It was saved unpublished and reloaded for comparison before publication. The
+public profile carries the matching cover, restrained bio, and LazyingArt
+portfolio link. Identity verification, wallet setup, and a payout route remain
+pending, so a paid platform contract cannot yet complete through Contra.
+The commercial packet fixes the delivery window, one-at-a-time capacity,
 correction pass, deliverable-based refund allocation, retention period, and
-support boundary; the final unpublished preview must preserve them exactly.
+support boundary; every inquiry and later platform contract must preserve them.
 Several current Upwork applications are also prepared around
 exact public proof, but the project browser is logged out; no proposal was sent
 and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
 contract, balance, or pending payout does not change the received-revenue total.
-The prepared cover is explicitly labeled as a software service with hardware
+The live 4:3 cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.

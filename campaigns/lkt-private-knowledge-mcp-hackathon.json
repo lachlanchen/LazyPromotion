@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "lkt-private-knowledge-mcp-hackathon",
   "objective": "Turn Local Knowledge Terminal's multilingual, source-grounded graph into a useful read-only MCP bridge first, then consider an Amazon hackathon entry without counting a registration or prize possibility as revenue.",
   "program": {
@@ -26,7 +26,7 @@
     "name": "LKT Knowledge Bridge",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "product_route": "https://lazying.art/lkt/",
-    "standalone_value": "Let an MCP-capable agent query an allow-listed local multilingual knowledge graph and trace every returned claim back to its exact source unit, locator, excerpt, and hash.",
+    "standalone_value": "Let an MCP-capable agent query an allow-listed local multilingual knowledge graph and trace every returned claim back to bounded source evidence with an opaque collection/source ID, safe relative locator, excerpt, and validated hash.",
     "selected_scope": [
       "A separate read-only MCP process with loopback as the default",
       "One bounded multilingual knowledge query tool",
@@ -36,6 +36,31 @@
     ],
     "privacy_boundary": "The corpus and indexes remain local. When a remote MCP client invokes a tool, its query and the bounded returned facts leave the device; the feature is opt-in and is not private end to end.",
     "why_not_lazytunnel": "Publishing device or tunnel control through a voice-facing MCP surface would materially enlarge LazyTunnel's security boundary and require a multi-week OAuth and capability architecture. LKT can deliver standalone value through read-only provenance queries in days."
+  },
+  "release": {
+    "state": "verified_public",
+    "verified_on": "2026-09-11",
+    "commit": "e750e5ae24b780e45de896f7dc3a769d2410dabd",
+    "license": "MIT",
+    "mcp_sdk_tested": "2.2.0",
+    "surface": {
+      "tools": [
+        "query_private_knowledge",
+        "trace_private_claim"
+      ],
+      "resource": "lkt://collections/status",
+      "transports": [
+        "stdio",
+        "loopback-only Streamable HTTP"
+      ]
+    },
+    "validation": [
+      "266 repository tests passed with declared dependencies and MCP 2.2.0 after rebasing the current upstream main branch",
+      "A real MCP Streamable HTTP client listed both tools, queried a multilingual fixture, traced one claim, and received only opaque collection/source identifiers",
+      "Ruff, compileall, git diff checks, an independent boundary review, and the 11-language repository-profile check passed",
+      "GitHub recognizes the MIT license and the repository metadata includes the mcp topic"
+    ],
+    "boundary": "This is a useful local MCP product feature, not an Alexa integration, remote authenticated service, customer result, hackathon submission, prize, sale, or received revenue."
   },
   "registration": {
     "devpost_account_created": false,
@@ -59,7 +84,7 @@
   },
   "funnel": {
     "feature_started": true,
-    "feature_verified": false,
+    "feature_verified": true,
     "registered": false,
     "submission_entered": false,
     "prize_awarded": false,

@@ -3199,7 +3199,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(campaign["program"]["state"], "open_registration_gated")
         self.assertFalse(campaign["registration"]["devpost_account_created"])
         self.assertFalse(campaign["registration"]["hackathon_joined"])
@@ -3209,6 +3209,17 @@ class RepositoryTests(unittest.TestCase):
             " ".join(campaign["project"]["selected_scope"]),
         )
         self.assertIn("not private end to end", campaign["project"]["privacy_boundary"])
+        self.assertTrue(campaign["funnel"]["feature_verified"])
+        self.assertEqual(campaign["release"]["state"], "verified_public")
+        self.assertEqual(
+            campaign["release"]["commit"],
+            "e750e5ae24b780e45de896f7dc3a769d2410dabd",
+        )
+        self.assertEqual(
+            campaign["release"]["surface"]["tools"],
+            ["query_private_knowledge", "trace_private_claim"],
+        )
+        self.assertIn("not an Alexa integration", campaign["release"]["boundary"])
         self.assertEqual(campaign["funnel"]["prize_received_usd"], 0)
         self.assertEqual(
             campaign["funnel"]["verified_received_gross_revenue_usd"], 0

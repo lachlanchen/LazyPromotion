@@ -20,15 +20,19 @@ OpenHI is the strongest public technical proof in the portfolio: the
 MIT-licensed repository had 104 stars and 32 forks when checked on September 9,
 and its recent owner-visible traffic showed continued cloning even without an
 open issue queue. The fixed sprint does not sell the microscope kit. It records
-one software environment, reproduces one agreed pipeline stage, preserves the
-commands, parameters, outputs, and first real failure, and returns a go/no-go
+one software environment, tests one agreed pipeline stage, preserves the
+commands, parameters, any outputs, and first real failure, and returns a go/no-go
 report plus one factual correction pass. Hardware, acquisition, calibration,
 vendor-license procurement, custom algorithms, production integration, and
 scientific or publication guarantees remain outside the USD 500 scope. A free
-metadata-only fit check precedes data transfer, payment, and any Stripe request.
+metadata-only fit check precedes data transfer and payment. Direct-site clients
+use the reviewed Stripe route; Contra-origin contracts and payment stay on Contra.
 The [offer](https://lazying.art/openhi-reproducibility/),
 [executed sample](https://lazying.art/openhi-reproducibility/sample-report/),
-and [fit check](https://lazying.art/openhi-reproducibility/fit-check/) are live.
+the [fit check](https://lazying.art/openhi-reproducibility/fit-check/), and the
+[USD 500 Contra service](https://contra.com/s/AN3olOLF-test-one-open-hi-software-pipeline-stage)
+are live. Two confirmed, delivered, unreversed OpenHI sprints would reach the
+USD 1,000 gross target before fees, tax, refunds, and delivery costs.
 The OpenHI README links both the service and sample, while its public issue
 chooser separates reproducible public bug reports from private metadata-only
 fit checks. The sample pins one real public OpenHI stage, deterministic fixture,

@@ -1,7 +1,7 @@
 {
-  "version": 5,
+  "version": 6,
   "checked_at": "2026-09-10",
-  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint where buyers already look for bounded technical services, without weakening the free fit check, privacy gate, or received-revenue accounting.",
+  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint and USD 500 OpenHI software-stage test where buyers already look for bounded technical services, without weakening fit checks, privacy gates, platform payment rules, or received-revenue accounting.",
   "offer": {
     "campaign_id": "local-knowledge-terminal-pilot",
     "public_price": "USD 250",
@@ -11,6 +11,15 @@
     "fit_check": "https://lazying.art/lkt/fit-check/",
     "scope_policy": "The marketplace route must preserve one collection, one language goal, one existing machine, a 12-source-unit and 20-question sample cap, up to two cited browser cards, one factual correction pass, the written map and go/no-go decision, the existing exclusions, and the selected draft commitments below. It must not invent or add an unrecorded turnaround, support promise, benchmark, or customer result."
   },
+  "additional_offer": {
+    "campaign_id": "openhi-reproducibility-sprint",
+    "public_price": "USD 500",
+    "gross_milestone": "Two confirmed USD 500 payments equal USD 1,000 gross before platform and payout fees, taxes, refunds, and delivery costs.",
+    "public_page": "https://lazying.art/openhi-reproducibility/",
+    "sample_report": "https://lazying.art/openhi-reproducibility/sample-report/",
+    "fit_check": "https://lazying.art/openhi-reproducibility/fit-check/",
+    "scope_policy": "The marketplace route must preserve one existing workstation, one rights-cleared dataset or public sample, one named OpenHI stage, a ten-business-day delivery window after complete prerequisites, one factual correction pass, software-only exclusions, and a go/no-go outcome. Contra-origin contracting, payment, revisions, and delivery stay on Contra."
+  },
   "channels": [
     {
       "rank": 1,
@@ -18,6 +27,18 @@
       "state": "live_service_published_identity_and_payout_pending",
       "public_profile": "https://contra.com/lachlan_chen_vzs1sppu",
       "public_service": "https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search",
+      "public_services": [
+        {
+          "id": "lkt_collection_fit",
+          "price": "USD 250",
+          "url": "https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search"
+        },
+        {
+          "id": "openhi_software_stage_test",
+          "price": "USD 500",
+          "url": "https://contra.com/s/AN3olOLF-test-one-open-hi-software-pipeline-stage"
+        }
+      ],
       "public_case_study": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
       "account_state": "email_verified_free_plan",
       "official_sources": {

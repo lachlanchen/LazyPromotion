@@ -1,4 +1,4 @@
-# LKT service marketplaces
+# LKT and OpenHI service marketplaces
 
 The first marketplace route for the USD 250 Local Knowledge Terminal
 collection-fit sprint is now live on [Contra
@@ -8,6 +8,18 @@ open its evidence, and send an inquiry before work is contracted. The account
 uses Contra's Free plan and a verified work email. Identity verification,
 wallet setup, and a payout route remain incomplete, so no paid platform
 contract should be accepted yet.
+
+A second [Contra service](https://contra.com/s/AN3olOLF-test-one-open-hi-software-pipeline-stage)
+now offers one bounded OpenHI software-stage test at USD 500. It uses one
+existing workstation, one rights-cleared dataset or public sample, and one named
+pipeline stage. The reloaded live listing shows a two-week marketplace duration,
+six tags, three FAQs, a software-only 4:3 cover, and a direct link to the
+project-owned execution sample. It promises the recorded environment, commands,
+any generated outputs, final logs, failure ledger, and go/no-go—not successful
+reproduction or a scientific result. Contra-origin contracting, payment,
+revisions, and delivery stay on Contra. The visible case-study creation route
+returned HTTP 404 during preflight, so the sample remains a clearly labelled
+link in the service copy until Contra restores that route.
 
 The machine-readable evidence and listing packet are in
 [`marketplace-channels.json`](../marketplace-channels.json).

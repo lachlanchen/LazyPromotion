@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 7,
+  "version": 10,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -21,7 +21,13 @@
     "workstation_limit": 1,
     "dataset_limit": 1,
     "stage_limit": 1,
-    "scope": "One existing workstation, one rights-cleared dataset or public sample, and one named OpenHI repository pipeline stage. Deliver a recorded environment, pinned commands and parameters, generated outputs and final logs, a failure ledger, a go/no-go report, and one consolidated factual correction pass.",
+    "scope": "One existing workstation, one rights-cleared dataset or public sample, and one named OpenHI repository pipeline stage. Deliver a recorded environment, pinned commands and parameters, any generated outputs and final logs, a failure ledger, a go/no-go report, and one consolidated factual correction pass.",
+    "delivery": "Within ten business days after secured payment through the agreed channel, complete setup metadata, the agreed data, working licensed dependencies, and required access are available. Only one OpenHI sprint is active at a time.",
+    "deliverable_allocation_usd": {
+      "environment_record": 150,
+      "reproduction_packet": 225,
+      "go_no_go_report": 125
+    },
     "excluded": [
       "hardware, cameras, optics, acquisition, component sourcing, physical alignment, or optical calibration",
       "vendor SDK procurement, license transfer, or credentials",
@@ -30,7 +36,7 @@
       "a second dataset, workstation, repository stage, or ongoing support"
     ],
     "data_policy": "Collect metadata only during the fit check. Agree source transfer, confidentiality, retention, and permitted automation before receiving data. Delete working data copies within fourteen calendar days after delivery, cancellation, or refund unless the accepted scope requires earlier deletion.",
-    "payment_policy": "After a positive fit check and accepted written scope, prepare one reviewed Stripe request from the guarded USD 500 configuration. Never expose a public self-serve checkout.",
+    "payment_policy": "After a positive fit check and accepted written scope, direct-site clients receive one reviewed Stripe request from the guarded USD 500 configuration. Marketplace-origin clients keep contracting, payment, revisions, and delivery on that marketplace when its rules require it. Never expose a public self-serve checkout.",
     "public_sample": {
       "state": "live_verified",
       "url": "https://lazying.art/openhi-reproducibility/sample-report/",
@@ -39,9 +45,112 @@
       "result": "One public weighted-cumulative visualization stage completed with exit code 0 on a deterministic 4,096-event fixture, producing 120 time bins and one recorded PNG.",
       "boundary": "The sample verifies only the selected file/interface execution path in the recorded environment. It does not verify acquisition, segmentation, learned compensation, calibration, reconstruction accuracy, hardware compatibility, or a scientific result, and it is not a customer result."
     },
-    "website_commit": "9cd9617e32a96f1b207a9e321e24f075ff9260d8",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34314953255",
-    "live_verification": "The offer, fit-check page, sample report, summary, plot, fixture, and legacy kit bridge returned HTTP 200 after the Pages deployment. The live sample plot matched the committed SHA-256."
+    "website_commit": "a020e40cf6d1a5e1da62fb6cb81afd77314e99d0",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34429061266",
+    "live_verification": "The offer and fit-check page returned HTTP 200 after the Pages deployment and visibly distinguish direct-site Stripe payment from marketplace-origin contracting and payment. The offer says the sprint tests one stage and returns any generated outputs rather than promising successful reproduction."
+  },
+  "contra_marketplace": {
+    "state": "published_live_verified",
+    "public_profile": "https://contra.com/lachlan_chen_vzs1sppu",
+    "public_url": "https://contra.com/s/AN3olOLF-test-one-open-hi-software-pipeline-stage",
+    "published_at": "2026-09-10T02:54:15Z",
+    "title": "Test One OpenHI Software Pipeline Stage",
+    "price": "USD 500 one-time",
+    "duration": "2 weeks",
+    "one_line": "A bounded software sprint to test one named OpenHI stage on one existing workstation and return the environment, commands, any outputs, failures, and go/no-go.",
+    "description": "Need to know whether one OpenHI stage actually runs on your setup before investing in a larger build? The free fit discussion checks the repository revision, workstation, input shape, rights, required vendor dependencies, success signal, and handling rules without asking for source data. If the fit and written scope are accepted, the fixed USD 500 sprint covers one existing workstation, one rights-cleared dataset or public sample, and one named OpenHI pipeline stage. You receive an environment record; pinned commands and parameters; any generated outputs and final logs; a failure ledger; a go/no-go report; and one consolidated factual correction pass. Delivery is within ten business days after secured payment through the agreed channel, complete agreed inputs, working licensed dependencies, and required access are available. Inspect the project-owned execution sample at https://lazying.art/openhi-reproducibility/sample-report/. Contra-origin contracts, payment, revisions, and delivery stay on Contra. Hardware, acquisition, optical calibration, licensed SDK procurement, custom algorithms, production integration, new scientific experiments, and result guarantees are excluded.",
+    "requirements": [
+      "Name the repository revision and the single pipeline stage to test; do not attach private data during the first inquiry.",
+      "Describe the existing workstation, operating system, Python environment, and available device details.",
+      "Describe the dataset or public sample, its input shape, and your right to use it.",
+      "List every required vendor SDK or dependency and confirm that working access is available under your own license.",
+      "Define one observable success signal and any confidentiality, retention, or offline constraint."
+    ],
+    "tags": [
+      "Artificial Intelligence",
+      "Software Consultant",
+      "Researcher",
+      "Writer",
+      "Computer Software",
+      "Python"
+    ],
+    "faqs": [
+      {
+        "question": "What counts as one pipeline stage?",
+        "answer": "One named stage in the public OpenHI repository with one agreed revision, input shape, command, output, and observable success boundary. A different dataset, workstation, repository stage, or new output is a separate scope."
+      },
+      {
+        "question": "What must be available before the sprint starts?",
+        "answer": "One existing workstation, complete setup metadata, one rights-cleared dataset or public sample, and working access to every required dependency or vendor SDK under your own license. The first inquiry is metadata only; source transfer and handling terms are agreed before payment."
+      },
+      {
+        "question": "What happens if the stage does not reproduce?",
+        "answer": "You still receive the recorded environment, exact commands and final logs, the first real failure, a blocker ledger, and a written go/no-go boundary for this setup. The sprint does not guarantee successful reproduction or a scientific result."
+      }
+    ],
+    "cover_asset": {
+      "source_path": "assets/contra-openhi-reproducibility-cover-v1.png",
+      "dimensions": "1448x1086",
+      "aspect_ratio": "4:3",
+      "sha256": "9a693f6ee7ddbb8a60676a4685fe461fd1ec7e487f60001fca490273ac633f2e",
+      "required_disclosure": "SOFTWARE SERVICE · HARDWARE NOT INCLUDED",
+      "boundary": "Project-owned, AI-assisted concept cover grounded in the exact public software-stage plot and delivery fields. It is not a customer result, hardware product, scientific benchmark, or proof of paid work."
+    },
+    "case_study": {
+      "state": "creation_route_404_on_preflight",
+      "title": "OpenHI: Recorded Software-Stage Execution",
+      "description": "Project-owned executed sample for one public OpenHI visualization stage: a frozen synthetic fixture, pinned environment and command, log, output, hashes, failure boundary, and narrow go/no-go.",
+      "source_url": "https://lazying.art/openhi-reproducibility/sample-report/",
+      "completed_work_url": "https://lazying.art/openhi-reproducibility/sample-report/",
+      "roles": [
+        "Researcher",
+        "Software Consultant",
+        "Technical Writer"
+      ],
+      "tools": [
+        "GitHub",
+        "Python",
+        "Git"
+      ],
+      "industry": "Computer Software",
+      "original_work_confirmation": true,
+      "customer_result": false,
+      "platform_observation": "The visible Contra Create case study link resolved to /project/new and returned HTTP 404 during two authenticated preflight attempts. The public sample URL is therefore carried in the service description until Contra restores the route."
+    },
+    "public_terms": {
+      "state": "live_verified",
+      "url": "https://lazying.art/openhi-reproducibility/#terms",
+      "website_commit": "a020e40cf6d1a5e1da62fb6cb81afd77314e99d0",
+      "delivery_window": "Ten business days after secured payment through the agreed channel, complete setup metadata, the agreed data, working licensed dependencies, and required access are available.",
+      "maximum_concurrent_sprints": 1,
+      "correction_window": "One consolidated list of factual corrections within seven calendar days after delivery.",
+      "deliverable_allocation_usd": {
+        "environment_record": 150,
+        "reproduction_packet": 225,
+        "go_no_go_report": 125
+      },
+      "source_copy_retention_days": 14
+    },
+    "remaining_account_gates": [
+      "Complete Persona identity verification only through an authorized human identity check.",
+      "Configure and verify a supported payout route before accepting a paid platform contract."
+    ],
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "received_gross_usd": 0,
+    "live_preflight": {
+      "saved_unpublished_and_reloaded": true,
+      "title_verified": true,
+      "price_verified": "USD 500 one-time",
+      "duration_verified": "2 weeks",
+      "tag_count_verified": 6,
+      "faq_count_verified": 3,
+      "cover_ratio_verified": "4:3",
+      "software_only_disclosure_verified": true,
+      "public_copy_verified": true
+    },
+    "policy": "The published service must retain the exact software-only scope, price, duration, FAQs, exclusions, public sample link, and on-platform rule for Contra-origin work. Attach the project-owned case study later only if Contra's visible creation route works. Publication, views, inquiries, contracts, and pending balances are not received revenue."
   },
   "channels": {
     "owned_website": {
@@ -77,8 +186,9 @@
       "state": "queued_verified",
       "post_id": "cmttmyk5e07rcqk0yugmerpdl",
       "publish_at": "2026-09-26T02:00:00Z",
-      "content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The output is the environment record, pinned commands and parameters, generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://lazying.art/openhi-reproducibility/?utm_source=linkedin&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=research_software",
-      "postiz_content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The output is the environment record, pinned commands and parameters, generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://dub.sh/6YSLjj3",
+      "content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The delivery includes the environment record, pinned commands and parameters, any generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://lazying.art/openhi-reproducibility/?utm_source=linkedin&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=research_software",
+      "postiz_content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The delivery includes the environment record, pinned commands and parameters, any generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://dub.sh/6YSLjj3",
+      "claim_correction_verified_at": "2026-09-10T02:54:15Z",
       "destination": "https://lazying.art/openhi-reproducibility/?utm_source=linkedin&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=research_software",
       "role": "A first-party research-software post explains the deliverable and exclusions before linking to the fit check."
     },

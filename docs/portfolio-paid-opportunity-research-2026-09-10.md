@@ -1,0 +1,258 @@
+# Portfolio routes to the first USD 1,000
+
+## Decision
+
+The shortest evidence-backed route is still paid, bounded delivery—not an
+affiliate portfolio, hardware inventory, a new consumer app, or speculative
+open-source bounty work.
+
+The operating target should be either:
+
+- two OpenHI software reproducibility sprints at USD 500 each; or
+- one OpenHI sprint plus two USD 250 sprints from Local Knowledge Terminal,
+  LazyRemote, or the Bilingual Lecture Pack.
+
+This mix uses the strongest parts of the portfolio without pretending that all
+108 current public source repositories are equally marketable. It also keeps
+the USD 498 LKT hardware device separate from the USD 250 software collection
+fit sprint. The sprint can qualify a collection and an existing computer; it
+cannot include a new Raspberry Pi, shipping, setup, warranty, and support at
+that price.
+
+Verified received gross revenue remains **USD 0**. The USD 1,000 figure is a
+sales target, not a forecast.
+
+## Portfolio evidence
+
+The refreshed public inventory contains 108 non-archived, non-fork source
+repositories. The useful assets fall into four commercial proof clusters.
+
+| Cluster | Strongest evidence | Buyer-shaped delivery | Current price |
+|---|---|---|---:|
+| Scientific software | OpenHI, reproducible Python stage, paper and public execution packet | Test one named OpenHI stage on one existing workstation; return environment, commands, outputs, failures and go/no-go | USD 500 |
+| Private knowledge | Local Knowledge Terminal, multilingual and provenance-oriented book/graph work | Audit one rights-cleared collection and produce a small browser proof plus a data, privacy, citation and provenance map | USD 250 |
+| Private networking | UU Remote Ubuntu bridge, LazyTunnel and LazyEdge | Review one relay and up to three existing computers; return topology, exposure, key-role, recovery and acceptance checks | USD 250 |
+| Learning media | Susskind archive, Video2Book, PocketPolyglot, subtitles and LazyEdit | Turn one rights-cleared lecture into a bounded bilingual transcript, subtitle and study pack | USD 250 |
+
+The current attention data supports this grouping but does not prove purchase
+intent. `uu-remote-ubuntu-bridge` is the strongest recent discovery route and
+has 12 stars; `OpenHI` has the deepest public technical validation with 104
+stars and 32 forks; `leonardsusskind` has 29 stars and a genuine learner
+acknowledgement. Clone and view counts can include automation and therefore
+must remain attention signals rather than leads.
+
+The live conversion paths already exist:
+
+- [OpenHI offer](https://lazying.art/openhi-reproducibility/), [execution
+  sample](https://lazying.art/openhi-reproducibility/sample-report/), [fit
+  check](https://lazying.art/openhi-reproducibility/fit-check/), and [USD 500
+  Contra service](https://contra.com/s/AN3olOLF-test-one-open-hi-software-pipeline-stage)
+- [LKT offer](https://lazying.art/lkt/), [sample
+  report](https://lazying.art/lkt/sample-report/), [fit
+  check](https://lazying.art/lkt/fit-check/), and [USD 250 Contra
+  service](https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search)
+- [LazyRemote review](https://remote.lazying.art/#review), [fit
+  check](https://lazying.art/lazyremote/fit-check/), and [USD 250 Contra
+  service](https://contra.com/s/kZvke2Nq-review-a-private-remote-access-network-before-opening-ports)
+- [Bilingual Lecture Pack](https://lazying.art/lecture-pack/), [fit
+  check](https://lazying.art/lecture-pack/fit-check/), and [USD 250 Contra
+  service](https://contra.com/s/WZNEBkk2-build-a-bilingual-lecture-study-pack)
+
+All four are bounded enough to quote honestly and have project-owned proof.
+None has produced a buyer inquiry or payment yet.
+
+## Route ranking
+
+### 1. Existing paid-work applications
+
+Twenty-one reviewed applications or pitches are already awaiting a human
+reply. They cover technical writing, scientific editing, software testing,
+embedded UI, multilingual subtitle work, video editing, and agent engineering.
+These routes are closer to money than another account registration because a
+real buyer or editor has already published a need and received a relevant
+application.
+
+The correct action is quiet monitoring, followed by a short, specific reply
+when a human responds. Reapplying, sending additional portfolio links, or
+opening parallel accounts would decrease trust without improving the offer.
+
+### 2. OpenHI software sprint
+
+OpenHI is the best owned route because two sales reach the target, the fixed
+scope is inspectable, and the public proof is stronger than for the consumer
+apps. The deliverable is software-only. It does not include a microscope,
+camera, optics, acquisition, calibration, a licensed vendor SDK, a new
+algorithm, or a scientific-result guarantee.
+
+The sample also gives a buyer a low-risk way to judge the work before sharing
+data. This is more credible than a general “AI consulting” page and requires
+less custom discovery than a hardware sale.
+
+### 3. LazyRemote network review
+
+The UU bridge has the clearest current attention growth, but that attention is
+attached to a specific compatibility patch. The commercially honest bridge is
+a separate network-fit review for people who already need private access among
+their own computers. It should not be described as NetEase software, a native
+UU Linux client, or proof that LazyRemote replaces UU.
+
+The offer needs four USD 250 buyers to reach USD 1,000, so it ranks below the
+OpenHI route despite stronger recent discovery. It remains valuable as the
+best inbound path for the networking cluster.
+
+### 4. LKT and bilingual knowledge work
+
+The knowledge graph, etymology, multilingual alignment, Chinese history,
+PocketPolyglot and book conversion work are differentiated evidence. Their
+first sellable unit is not an unlimited “knowledge terminal” or a bundle of
+books. It is a collection-fit sprint for one customer-controlled corpus or a
+bilingual pack for one rights-cleared lecture.
+
+The graph is useful when it preserves provenance: every relation should return
+to a source unit, locator and confidence boundary. It is not useful to promise
+automatic truth, full-library ingestion, or redistribution rights that have
+not been checked title by title.
+
+### 5. Affiliates
+
+Postiz is the only accepted affiliate route. Its issued link and destination
+have been privately tested, but the single recorded click is the operator test;
+leads, sales, earnings and payouts are zero. Payout onboarding is incomplete,
+so public placement remains paused.
+
+Other affiliate registrations do not improve the first-USD-1,000 probability
+without a relevant page that already has buyer intent. A large link inventory
+would compete with owned offers, weaken editorial trust, and start account or
+inactivity clocks before there is a conversion basis.
+
+## Newly checked external opportunities
+
+### NLnet Restack: strong technical fit, weak current eligibility
+
+Restack is open through November 3, 2026 and accepts first-grant proposals from
+EUR 5,000 to EUR 50,000. Its scope includes local-first infrastructure,
+privacy-friendly devices, security, reproducibility, packaging, testing,
+documentation and open-source software.^1 Those themes fit a carefully bounded
+LazyTunnel/LazyEdge hardening project.
+
+It is not a first-USD-1,000 route today. Applicants outside the EU and Horizon
+Europe-associated countries are eligible only for exceptional proposals with
+unique expertise and a clear European dimension.^2 No verified European
+deployment, collaborator, user or standards relationship is currently recorded.
+The call also excludes ordinary AI-related projects and requires all results to
+be released under recognised open licences.^1
+
+NLnet permits AI assistance in proposal preparation only with disclosure and a
+prompt-provenance log. Purely generated outcomes are not eligible for payment,
+and substantive use must remain publicly transparent.^3 The application itself
+asks for the repository, requested amount, task/rate/expense budget,
+alternatives, technical challenges, ecosystem, applicant background and AI
+disclosure.^4 Submitting now would require inventing the European dimension or
+turning an agent-written application into human work. The decision is
+**conditional pursue only after real EU evidence and a human-authored,
+provenance-complete proposal**.
+
+### Civo: open, but not compatible with autonomous portfolio promotion
+
+Civo's contributor page is currently open and covers cloud-native, networking,
+multi-cloud, machine-learning and AI tutorials. The editor sets the fee after
+accepting an idea; payment is PayPal or Civo credit after approval and
+publication.^5
+
+The controlling page also says Civo does not pay authors representing their
+own commercial or open-source projects, treats that as co-marketing, and does
+not accept AI-generated content.^5 A LazyTunnel, LazyEdge, LocalLLM or
+LazyPromotion tutorial submitted by an autonomous agent would therefore be a
+poor fit. No account or pitch should be created for this route.
+
+### Honeybadger and Earthly: closed
+
+Honeybadger still publishes a USD 500-per-article process, but the same page
+explicitly says it is not currently seeking authors.^6 Earthly's page states
+that submissions are temporarily closed even though it preserves its former
+USD 350 terms.^7 Neither should receive an application until the official page
+reopens.
+
+### Public bounties: no claimable work
+
+The current Boss feed contained nine listings. Live GitHub issue and timeline
+verification rejected all nine because they were closed, demonstrations, not
+ready, assigned, or already had solution work. Reviewable listed value was
+USD 0.
+
+A separate Firecrawl MCP issue carries a USD 50 bounty but is assigned, remains
+open competition, requires a CLA and form, and pays only after a selected PR is
+merged.^8 The reward is too small and the assignment risk too high to displace
+current conversion work. Algora can support GitHub bounty payment, but platform
+capability is not evidence that a particular funded, unclaimed issue exists.^9
+
+## Registration rule
+
+Create a new account only when all seven conditions are true:
+
+1. The official opportunity is open now.
+2. The portfolio supplies the exact required proof.
+3. The expected compensation and payment trigger are known.
+4. Hong Kong or the LazyingArt business is eligible.
+5. The payout route can be completed with verified information already held.
+6. Automation, AI assistance and representation rules allow the intended use.
+7. Registration creates an immediate application or conversion action, not
+   merely another dashboard.
+
+This rule rejects the current LingQ automation path, Bookshop's security
+verification wall, the low-intent DataCamp offer, Civo's authorship conflict,
+closed writer programs, and unfunded or contested bounties. It does not reject
+work because registration is inconvenient; it rejects work whose controlling
+terms make autonomous action invalid or commercially weak.
+
+## Operating plan
+
+### Now
+
+- Keep the four live service routes and their proof stable.
+- Monitor existing applications, fit-check aggregates, Contra messages and
+  high-attention GitHub issues without automatic replies.
+- Let queued first-party Postiz content publish on its reviewed schedule; do
+  not add more merely to increase volume.
+- Use the UU bridge, OpenHI and Susskind attention only to improve the exact
+  adjacent path, never as a sales claim.
+- Add no new affiliate or writer account until the registration rule passes.
+
+### When a real inquiry arrives
+
+- Answer the named problem in one short message.
+- Confirm source rights, privacy, existing equipment, single deliverable,
+  success signal, exclusions, price and payment channel in writing.
+- Keep marketplace-origin work and payment on the marketplace.
+- Count revenue only after payment is confirmed; record delivery, refund and
+  fee states separately.
+
+### After the first two similar deliveries
+
+- Measure time spent on intake, validation, report generation and corrections.
+- Extract only repeated customer-neutral checks into LazyPromoter or an LKT
+  readiness kit.
+- Price the lower-touch product from observed delivery cost and buyer feedback,
+  not from a passive-income target.
+
+## Conclusion
+
+The portfolio is broad enough; the bottleneck is buyer conversion, not missing
+accounts or missing ideas. The most feasible sequence is one exact need, one
+relevant proof, one bounded offer, and one reviewed response. The first
+USD 1,000 is most plausibly two OpenHI sprints or a mixed bundle of one OpenHI
+and two USD 250 software sprints. Grants, bounties, affiliates and new consumer
+apps remain secondary until their terms and demand become stronger than the
+routes already live.
+
+## Sources
+
+1. NLnet. “[Restack](https://nlnet.nl/restack/).” Accessed September 10, 2026.
+2. NLnet. “[Restack Eligibility information](https://nlnet.nl/restack/eligibility/).” Accessed September 10, 2026.
+3. NLnet. “[Policy on the use of Generative Artificial Intelligence for NLnet-funded projects](https://nlnet.nl/foundation/policies/generativeAI/).” Accessed September 10, 2026.
+4. NLnet. “[Apply for a grant](https://nlnet.nl/propose/).” Accessed September 10, 2026.
+5. Civo. “[Write for Civo and Earn](https://www.civo.com/write-for-us).” Accessed September 10, 2026.
+6. Honeybadger. “[Write for Honeybadger](https://www.honeybadger.io/blog/write-for-us/).” Accessed September 10, 2026.
+7. Earthly. “[Write For Us](https://earthly.dev/blog/write-for-us/).” Accessed September 10, 2026.
+8. Firecrawl. “[Add Context Limit Support for MCP, issue #2165](https://github.com/firecrawl/firecrawl/issues/2165).” Accessed September 10, 2026.
+9. Algora. “[Pricing](https://algora.io/pricing).” Accessed September 10, 2026.

@@ -59,6 +59,7 @@ never count as revenue.
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
 | [`docs/first-1000.md`](docs/first-1000.md) | Eight bounded USD 250/USD 500 service routes and truthful milestone math |
+| [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](docs/portfolio-paid-opportunity-research-2026-09-10.md) | Current portfolio-to-revenue decision, registration gates, and external-opportunity evidence |
 | [`docs/paid-need-decision-2026-09-09.md`](docs/paid-need-decision-2026-09-09.md) | Current direct-route screen, evidence gaps, and submission gates |
 | [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated applications, revenue funnel, public graph, and first-party demand signals |
 | [`owned_monitor.py`](owned_monitor.py), [`github_inbound_monitor.py`](github_inbound_monitor.py), and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring, public-issue alerts, and private fit-check intake |

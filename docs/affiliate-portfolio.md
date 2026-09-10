@@ -32,13 +32,21 @@ packets, do not create more affiliate articles or placements merely because a
 public commission percentage looks attractive, and keep the USD 250 LKT path
 primary while its owned physics entry pages have demonstrated discovery.
 
-The official program pages were rechecked on 2026-09-02. LingQ still states 20%
-of attributed-user payments while the user remains active and describes PayPal
-cash-out by request; Bookshop.org still advertises 10% and its support page
-describes a 48-hour last-touch window; Postiz still advertises 30% per sale for
-the customer's lifetime; and DataCamp still publishes category-dependent
-commission ranges and a 7–30 day cookie. These are public offer descriptions,
-not LazyingArt's accepted terms, conversion rates, or expected income.
+The routes were rechecked on 2026-09-10. LingQ still states 20% of
+attributed-user payments and PayPal cash-out, but its terms prohibit accounts
+registered by bots or automated methods. Bookshop.org still advertises 10% and
+a 48-hour last-touch window, but its application currently returns a Cloudflare
+HTTP 403 bot-verification page in the isolated browser. Neither gate should be
+bypassed.
+
+Postiz accepted LazyingArt and issued a tested link, while payout onboarding and
+public placement remain incomplete. DataCamp's actual unaccepted Impact offer
+is materially below the public maximum: 15% monthly, 7.5% for yearly and other
+named categories, and a seven-day attribution window. Because the matched owned
+page has no current search traffic and Impact can remove zero-balance accounts
+after six inactive months, DataCamp is deferred instead of registered for
+administrative completeness. These are offer descriptions and account states,
+not conversion rates or expected income.
 
 This order is about fit, not the largest advertised percentage. Bookshop is a
 better first book route than Amazon because the content has exact book intent
@@ -46,7 +54,7 @@ and the public program offers stronger book economics. Amazon stays delayed
 until three genuine qualifying sales within its application review window are
 plausible.
 
-## Tomorrow's operator checklist
+## Registration discipline
 
 For each program, start with its sanitized packet:
 
@@ -58,11 +66,12 @@ python affiliate.py packet postiz
 python affiliate.py packet datacamp
 ```
 
-Then, in the visible shared browser profile:
+Then, in the isolated project browser:
 
 1. open only the official application URL printed by the packet;
-2. let the operator enter account, tax, identity, bank, PayPal, Stripe, or KYC
-   data—the agent does not inspect or copy those values;
+2. use only verified business data already placed in scope, and stop when a
+   program requires prohibited automation, human verification, liveness,
+   unavailable identity data, payment, or an invented field;
 3. review the exact accepted terms, rates, attribution, reversals, eligible
    countries/products, payout threshold, and prohibited channels;
 4. copy an issued link only into the ignored private record shown by
@@ -70,6 +79,11 @@ Then, in the visible shared browser profile:
 5. test that it resolves to an allowlisted official/network host without making
    a self-purchase; and
 6. mark every program-specific activation gate only after direct evidence.
+
+An agent may complete an allowed, no-cost registration when every required
+field is verified and the terms permit it. It must not bypass a security check,
+invent a phone or identity value, accept an offer whose actual economics do not
+justify the route, or create a dormant account merely to increase a count.
 
 The readiness check requires an explicit private-read acknowledgement and never
 prints the issued URL:

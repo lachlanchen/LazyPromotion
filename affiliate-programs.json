@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewed_at": "2026-09-02",
+  "reviewed_at": "2026-09-10",
   "currency": "USD",
   "revenue_event": "affiliate_commission_received",
   "policy": "A program is only a candidate until LazyingArt is accepted, the exact current terms and payout route are reviewed, the issued link is privately tested, and a useful first-party page carries a nearby disclosure. A click, signup, pending commission, or referral is not revenue.",
@@ -9,15 +9,15 @@
       "id": "lingq",
       "name": "LingQ",
       "priority": 1,
-      "state": "apply_first",
+      "state": "manual_registration_only",
       "official_urls": {
         "program": "https://www.lingq.com/referral-affiliate-program/",
         "terms": "https://www.lingq.com/terms/",
         "application": "https://www.lingq.com/settings/referrals"
       },
-      "public_economics": "20% of payments by an attributed user while that user remains active; the public page says registration establishes continuing attribution and that cash-out is requested through LingQ for PayPal payment.",
+      "public_economics": "20% of payments by an attributed user while that user remains active; the public page says registration establishes continuing attribution and cash-out is requested for PayPal payment. LingQ's official FAQ states a 10,000-point (USD 100) cash-out minimum.",
       "unknowns": [
-        "The public page does not state a cash-out threshold, payment timing, eligible payment types, reversal treatment, or tax handling. Confirm them inside the account before activation."
+        "Payment timing, eligible payment types, reversal treatment, and tax handling require account review. LingQ's terms say accounts registered by bots or other automated methods are not permitted, so an agent must not create the account."
       ],
       "conversion_event": "An attributed new user registers and later makes an eligible payment.",
       "direct_url": "https://www.lingq.com/",
@@ -36,21 +36,21 @@
       ],
       "application_pitch": "LazyingArt publishes multilingual reading and language-learning workflows grounded in PocketPolyglot and LinguaLeaf. I will use one clearly disclosed link only in relevant first-party guides, describe who LingQ fits and does not fit, and avoid spam, bots, scraped content, or brand-keyword advertising.",
       "disclosure": "Affiliate disclosure: if you register through this link and later purchase a plan, LazyingArt may receive a commission at no extra cost to you.",
-      "activation_gates": ["accepted", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
-      "forbidden_actions": ["spam", "bots", "cookie stuffing", "brand-keyword ads", "uploading content without rights"]
+      "activation_gates": ["human_account_registration_compliant", "accepted", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "forbidden_actions": ["automated account registration", "spam", "bots", "cookie stuffing", "brand-keyword ads", "uploading content without rights"]
     },
     {
       "id": "bookshop",
       "name": "Bookshop.org",
       "priority": 2,
-      "state": "apply_first",
+      "state": "security_verification_required",
       "official_urls": {
         "program": "https://bookshop.org/affiliates/profile/introduction",
         "terms": "https://support.bookshop.org/en/support/solutions/articles/65000191390-can-you-explain-bookshop-org-s-affiliate-program-",
         "application": "https://bookshop.org/affiliates/profile/introduction"
       },
       "public_economics": "The US program publicly advertises 10% for ordinary affiliates, with a 48-hour last-touch attribution window.",
-      "unknowns": ["Confirm LazyingArt's eligible storefront and accepted rate before placing a link."],
+      "unknowns": ["Confirm LazyingArt's eligible storefront and accepted rate before placing a link. The official application currently returns a Cloudflare HTTP 403 bot-verification page in the isolated project browser; do not bypass it."],
       "conversion_event": "A qualifying reader purchases a book in the eligible storefront within the reviewed attribution window.",
       "direct_url": "https://bookshop.org/",
       "permitted_link_hosts": ["bookshop.org"],
@@ -102,17 +102,17 @@
       "id": "postiz",
       "name": "Postiz",
       "priority": 3,
-      "state": "apply_first",
+      "state": "approved_payout_pending",
       "official_urls": {
-        "program": "https://partners.dub.co/postiz/apply",
+        "program": "https://partners.dub.co/postiz",
         "terms": "https://postiz.com/terms-of-service",
         "application": "https://partners.dub.co/postiz/apply"
       },
-      "public_economics": "The Postiz-branded Dub page publicly advertises 30% per sale for the referred customer's lifetime.",
-      "unknowns": ["Cookie duration, eligible plans, reversals, payout threshold, and controlling affiliate terms require accepted-dashboard review."],
-      "conversion_event": "An attributed customer completes an eligible payment after the trial and the program confirms the referral.",
+      "public_economics": "The accepted Postiz program dashboard states 30% per sale for the referred customer's lifetime and a 30-day holding period. The rate and holding period are program terms, not income evidence.",
+      "unknowns": ["The overview does not state the attribution window, eligible-plan boundary, payout threshold, or program-specific reversal rules. Payout onboarding is incomplete because the connected-account form requires an account-country business phone that is not present in the verified company records."],
+      "conversion_event": "An attributed customer completes an eligible payment and the program confirms the referral.",
       "direct_url": "https://postiz.com/",
-      "permitted_link_hosts": ["dub.co", "postiz.com"],
+      "permitted_link_hosts": ["dub.co", "postiz.com", "postiz.pro"],
     "matches": [
       {
         "asset": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
@@ -128,15 +128,22 @@
       "application_form_packet": {
         "website_or_social_channel": "https://lazying.art/",
         "promotion_plan": "I run LazyingArt and maintain the open-source LazyPromotion project. I plan to promote Postiz through firsthand CLI/MCP tutorials, review-first publishing case studies, and an honest managed-versus-self-hosted comparison for solo builders and small teams. Links will appear only on relevant owned pages with a prominent affiliate disclosure. I will not use unsolicited messages, automated community replies, fake engagement, or undisclosed bots.",
-        "additional_comments": "A live English tutorial with Chinese and Japanese translations already documents my review-first Postiz CLI/MCP workflow. It currently uses ordinary, untracked Postiz links and states that no affiliate commission is earned. I will add a disclosed referral link only after approval and a terms, destination, attribution, and payout review.",
-        "operator_only_fields": [
-          "name",
-          "email",
-          "account login or registration",
-          "program terms review and acceptance",
-          "final submission"
-        ],
-        "submit_state": "not_submitted"
+        "additional_comments": "A live English tutorial with Chinese and Japanese translations already documents my review-first Postiz CLI/MCP workflow. It currently uses ordinary, untracked Postiz links and states that no affiliate commission is earned. I will add a disclosed referral link only after approval and a terms, destination, attribution, payout, and placement review.",
+        "operator_only_fields": [],
+        "submit_state": "submitted_and_accepted_2026-09-10"
+      },
+      "verified_checkpoint": {
+        "checked_at": "2026-09-10",
+        "application": "accepted",
+        "link": "issued_and_destination_tested_once",
+        "reward": "30% per sale for the customer's lifetime",
+        "holding_period_days": 30,
+        "test_clicks": 1,
+        "leads": 0,
+        "sales": 0,
+        "earnings_minor": 0,
+        "payouts": 0,
+        "payout": "incomplete"
       },
       "application_pitch": "I run LazyingArt and maintain the open-source LazyPromotion project. I plan to promote Postiz through firsthand CLI/MCP tutorials, review-first publishing case studies, and an honest managed-versus-self-hosted comparison for solo builders and small teams. Links will appear only on relevant owned pages with a prominent affiliate disclosure. I will not use unsolicited messages, automated community replies, fake engagement, or undisclosed bots.",
       "disclosure": "Affiliate disclosure: I use Postiz and may earn a commission if you buy a subscription through this link.",
@@ -147,16 +154,16 @@
       "id": "datacamp",
       "name": "DataCamp",
       "priority": 4,
-      "state": "apply_first",
+      "state": "defer_until_relevant_traffic",
       "official_urls": {
         "program": "https://www.datacamp.com/affiliates",
         "terms": "https://www.datacamp.com/affiliates/terms-and-conditions",
         "application": "https://www.datacamp.com/affiliates",
         "matched_course": "https://www.datacamp.com/courses/extreme-gradient-boosting-with-xgboost"
       },
-      "public_economics": "The public program page advertises 15-20% of annual subscriptions and 50-80% of the first monthly payment, with a category-dependent 7-30 day cookie. The controlling public terms permit dashboard-controlled ranges of 7.5-25% for the first year of an annual Individual Plan and 15-80% for the first month of a monthly Individual Plan. Record only the accepted Impact offer as authoritative.",
+      "public_economics": "The unaccepted Impact offer inspected on 2026-09-10 states 15% of monthly paid subscriptions; 7.5% of yearly, teams, track, and course orders; 0% for all other orders; and a 7-day attribution window. Actions lock 10 days after month-end and approved transactions are scheduled 20 days after locking. This exact offer is lower than the public maximum and controls the decision.",
       "unknowns": [
-        "Confirm the accepted Impact rate, affiliate category and cookie window, eligible Individual Plans, entity and geography eligibility, tax and currency setup, payment route, refunds, chargebacks, and current dashboard terms before activation."
+        "Impact payment options, payout threshold, Hong Kong eligibility, tax onboarding, and the post-acceptance dashboard state remain unverified. The matched owned page has no current Search Console traffic, so creating an account now would start the offer's six-month zero-balance inactivity clock without a conversion basis."
       ],
       "conversion_event": "A new attributed individual purchases an eligible Individual Plan within the accepted cookie window, the payment completes successfully without refund or chargeback, and the commission later clears under the Impact offer.",
       "direct_url": "https://www.datacamp.com/courses/extreme-gradient-boosting-with-xgboost",
@@ -170,7 +177,7 @@
       ],
       "application_pitch": "LazyingArt publishes a maintained, multilingual boosting-to-XGBoost tutorial with equations and a reproducible Python check. I will place one clearly disclosed DataCamp link only in a practice-next section beside the exact XGBoost course and an ordinary non-affiliate course link. I will not use brand-keyword ads, coupons, spam, self-referrals, cookie stuffing, cloaking, doorway pages, rebates, or disguised commercial recommendations.",
       "disclosure": "Affiliate disclosure: if you purchase an eligible DataCamp subscription through this link, LazyingArt may earn a commission at no extra cost to you. The adjacent plain course link is non-affiliate.",
-      "activation_gates": ["accepted", "impact_offer_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
+      "activation_gates": ["relevant_owned_traffic_observed", "accepted", "impact_offer_reviewed", "terms_reviewed", "issued_link_present", "destination_tested", "payout_ready", "placement_reviewed"],
       "forbidden_actions": ["self-referral", "brand-keyword ads", "spam", "false coupons", "rebates or kickbacks", "cookie stuffing", "cloaking", "doorway pages", "disguised commercial recommendations"]
     },
     {

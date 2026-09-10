@@ -22,6 +22,9 @@ BLOCKED_STATES = {
     "terms_conflict_review",
     "migration_first",
     "account_review_required",
+    "manual_registration_only",
+    "security_verification_required",
+    "defer_until_relevant_traffic",
 }
 REQUIRED_PRIVATE_FIELDS = {
     "accepted": bool,

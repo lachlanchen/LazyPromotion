@@ -347,9 +347,12 @@ and are mentioned only when they directly fit the stated need.
 
 The [Postiz affiliate experiment](postiz-affiliate.md) is a capped secondary
 route for readers who already need reviewed multi-platform scheduling. The
-Postiz-branded Dub page currently advertises 30% per sale for the customer's
-lifetime, but that percentage is not income evidence. No referral URL, paid
-referral, or commission was verified at the 2026-09-01 zero baseline.
+application is accepted, the authenticated dashboard states 30% per sale for
+the customer's lifetime with a 30-day holding period, and the issued link passed
+one non-purchasing destination test. That operator test is the dashboard's only
+click; leads, sales, earnings, payouts, and received revenue remain zero. Public
+placement stays paused while payout onboarding and the placement review remain
+incomplete.
 
 Lead with firsthand CLI/MCP guidance, provider pitfalls, and an honest
 managed-versus-self-hosted decision. Put a clear commission disclosure beside

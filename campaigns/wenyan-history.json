@@ -73,11 +73,14 @@
       "policy": "The bridge offers relevant proof before an optional fit check. A completed browser path is evidence of a working owned journey, not a lead or revenue."
     },
     "x": {
-      "state": "postiz_queue",
+      "state": "postiz_published",
       "publish_at": "2026-09-10T02:00:00Z",
+      "published_at": "2026-09-10T02:00:00Z",
       "content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I built a shelf with six black-and-white parts, placing 文言文 beside English, modern Japanese, and modern Chinese. Start here: lazying.art/wenyan/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
       "postiz_content": "Reading 資治通鑑 in the original shouldn't mean losing the thread. I built a shelf with six black-and-white parts, placing 文言文 beside English, modern Japanese, and modern Chinese. Start here: lazying.art/wenyan/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
       "destination": "https://lazying.art/wenyan/?utm_source=x&utm_medium=social&utm_campaign=wenyan_history",
+      "content_sha256": "530f260d65e0d4ff01aed031ecc4ce176d2a0ea2e6259b184a988ada48ae24df",
+      "release_url": "https://x.com/lazyingart/status/2097867830498930854",
       "visual": "https://raw.githubusercontent.com/lachlanchen/LinguaLeaf/main/assets/max-language-previews/zizhi-tongjian-part-03.png",
       "settings": {
         "who_can_reply_post": "everyone",
@@ -86,16 +89,22 @@
         "paid_partnership": false
       },
       "visible_review": {
-        "checked_at": "2026-09-04T12:45:00Z",
+        "checked_at": "2026-09-10T09:35:45Z",
+        "provider": "x",
         "stored_text_exact": true,
         "character_count": 266,
         "provider_limit": 280,
         "media_visible": true,
         "date_and_time_visible": true,
-        "state_rechecked_after_schedule": "QUEUE",
-        "release_present": false
+        "state_rechecked_after_schedule": "PUBLISHED",
+        "release_present": true,
+        "public_rendered_text_matched": true,
+        "tracked_destination_preserved": true,
+        "public_replies": 0,
+        "public_reposts": 0,
+        "public_likes": 0
       },
-      "policy": "A first-party reading guide with one project-owned cover preview. Postiz preserved the exact 266-character copy only with the tracked owned-domain URL written without a scheme; the full destination is recorded separately. Do not claim rights clearance, customer results, or sales."
+      "policy": "A first-party reading guide with one project-owned cover preview. Postiz and the public X page independently showed the exact copy, media, AI label, release, and tracked destination. Publication and zero visible engagement do not prove rights clearance, a lead, customer result, or sale."
     },
     "instagram": {
       "state": "postiz_queue",

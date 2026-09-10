@@ -22,7 +22,13 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.assertEqual(self.by_id["bookshop"]["priority"], 2)
         self.assertEqual(self.by_id["postiz"]["priority"], 3)
         self.assertEqual(self.by_id["datacamp"]["priority"], 4)
-        self.assertEqual(self.by_id["datacamp"]["state"], "apply_first")
+        self.assertEqual(self.by_id["lingq"]["state"], "manual_registration_only")
+        self.assertEqual(
+            self.by_id["bookshop"]["state"], "security_verification_required"
+        )
+        self.assertEqual(
+            self.by_id["datacamp"]["state"], "defer_until_relevant_traffic"
+        )
         self.assertEqual(self.by_id["waveshare"]["state"], "migration_first")
         self.assertEqual(self.by_id["tradingview"]["state"], "hold")
         self.assertEqual(self.by_id["amazon-us"]["state"], "delay")
@@ -48,42 +54,51 @@ class AffiliatePortfolioTests(unittest.TestCase):
     def test_datacamp_requires_accepted_offer_and_exact_course_match(self):
         program = self.by_id["datacamp"]
         self.assertIn("impact_offer_reviewed", program["activation_gates"])
+        self.assertIn("relevant_owned_traffic_observed", program["activation_gates"])
         self.assertIn("BLOG post 2180", program["matches"][0]["asset"])
         self.assertIn("non-affiliate", program["disclosure"])
         self.assertIn("self-referral", program["forbidden_actions"])
-        self.assertIn("Record only the accepted Impact offer", program["public_economics"])
+        self.assertIn("15% of monthly", program["public_economics"])
+        self.assertIn("7.5% of yearly", program["public_economics"])
+        self.assertIn("7-day attribution", program["public_economics"])
 
-    def test_postiz_application_packet_leaves_legal_and_identity_steps_to_operator(self):
+    def test_registration_gates_reject_automation_and_security_bypass(self):
+        lingq = self.by_id["lingq"]
+        self.assertIn("automated account registration", lingq["forbidden_actions"])
+        self.assertIn("registered by bots", lingq["unknowns"][0])
+        self.assertIn("human_account_registration_compliant", lingq["activation_gates"])
+        self.assertIn("HTTP 403", self.by_id["bookshop"]["unknowns"][0])
+
+    def test_postiz_application_packet_records_accepted_state_without_private_link(self):
         program = self.by_id["postiz"]
         packet = program["application_form_packet"]
         self.assertEqual(packet["website_or_social_channel"], "https://lazying.art/")
         self.assertEqual(packet["promotion_plan"], program["application_pitch"])
         self.assertIn("ordinary, untracked Postiz links", packet["additional_comments"])
-        self.assertEqual(packet["submit_state"], "not_submitted")
-        self.assertEqual(
-            set(packet["operator_only_fields"]),
-            {
-                "name",
-                "email",
-                "account login or registration",
-                "program terms review and acceptance",
-                "final submission",
-            },
-        )
+        self.assertEqual(packet["submit_state"], "submitted_and_accepted_2026-09-10")
+        self.assertEqual(packet["operator_only_fields"], [])
+        self.assertEqual(program["state"], "approved_payout_pending")
+        checkpoint = program["verified_checkpoint"]
+        self.assertEqual(checkpoint["application"], "accepted")
+        self.assertEqual(checkpoint["link"], "issued_and_destination_tested_once")
+        self.assertEqual(checkpoint["test_clicks"], 1)
+        self.assertEqual(checkpoint["leads"], 0)
+        self.assertEqual(checkpoint["sales"], 0)
+        self.assertEqual(checkpoint["earnings_minor"], 0)
+        self.assertEqual(checkpoint["payout"], "incomplete")
         output = io.StringIO()
         with contextlib.redirect_stdout(output):
             affiliate.print_packet(program)
         rendered = output.getvalue()
         self.assertIn("Prepared non-sensitive application fields:", rendered)
         self.assertIn("Website / social channel: https://lazying.art/", rendered)
-        self.assertIn("Operator-only application steps:", rendered)
-        self.assertIn("program terms review and acceptance", rendered)
-        self.assertIn("Submission state: not_submitted", rendered)
+        self.assertIn("Submission state: submitted_and_accepted_2026-09-10", rendered)
 
     def test_lingq_packet_preserves_public_cash_out_boundary(self):
         program = self.by_id["lingq"]
         self.assertIn("PayPal", program["public_economics"])
-        self.assertIn("does not state a cash-out threshold", program["unknowns"][0])
+        self.assertIn("10,000-point (USD 100)", program["public_economics"])
+        self.assertIn("account review", program["unknowns"][0])
 
     def test_private_read_is_explicit_and_missing_record_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -96,11 +111,11 @@ class AffiliatePortfolioTests(unittest.TestCase):
             self.assertIn("NOT READY", output.getvalue())
 
     def test_private_readiness_never_displays_issued_link(self):
-        program = self.by_id["lingq"]
+        program = self.by_id["postiz"]
         private = {
             "accepted": True,
             "terms_reviewed_at": "2026-09-02",
-            "issued_url": "https://www.lingq.com/settings/referrals?referral=private-value",
+            "issued_url": "https://postiz.pro/?ref=private-value",
             "destination_tested": True,
             "payout_ready": True,
             "placement_reviewed": True,
@@ -108,7 +123,7 @@ class AffiliatePortfolioTests(unittest.TestCase):
         }
         with tempfile.TemporaryDirectory() as tmp:
             private_root = Path(tmp)
-            (private_root / "lingq.json").write_text(json.dumps(private), encoding="utf-8")
+            (private_root / "postiz.json").write_text(json.dumps(private), encoding="utf-8")
             output = io.StringIO()
             with contextlib.redirect_stdout(output):
                 code = affiliate.check_ready(program, True, private_root)
@@ -120,6 +135,9 @@ class AffiliatePortfolioTests(unittest.TestCase):
 
     def test_hold_and_blocked_states_cannot_become_ready(self):
         for program_id in (
+            "lingq",
+            "bookshop",
+            "datacamp",
             "tradingview",
             "amazon-us",
             "distrokid",

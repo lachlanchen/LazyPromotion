@@ -885,7 +885,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(bridge["attribution"]["utm_source"], "wenyan")
         self.assertIn("not a lead or revenue", bridge["policy"])
         x_channel = campaign["channels"]["x"]
-        self.assertEqual(x_channel["state"], "postiz_queue")
+        self.assertEqual(x_channel["state"], "postiz_published")
+        self.assertEqual(
+            x_channel["release_url"],
+            "https://x.com/lazyingart/status/2097867830498930854",
+        )
+        self.assertEqual(
+            hashlib.sha256(x_channel["content"].encode("utf-8")).hexdigest(),
+            x_channel["content_sha256"],
+        )
+        self.assertEqual(
+            x_channel["visible_review"]["state_rechecked_after_schedule"],
+            "PUBLISHED",
+        )
+        self.assertTrue(x_channel["visible_review"]["tracked_destination_preserved"])
         self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
         self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
@@ -1387,12 +1400,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
-    def test_postiz_affiliate_campaign_starts_at_zero_and_requires_disclosure(self):
+    def test_postiz_affiliate_campaign_preserves_zero_baseline_and_current_gate(self):
         path = ROOT / "campaigns" / "postiz-affiliate-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
         self.assertEqual(campaign["version"], 1)
-        self.assertEqual(campaign["state"], "pre_application")
+        self.assertEqual(campaign["state"], "approved_payout_pending")
         self.assertEqual(
             campaign["source_evidence"]["program_page"],
             "https://partners.dub.co/postiz",
@@ -1417,6 +1430,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(checkpoint["useful_assets_published"], 1)
         self.assertFalse(checkpoint["affiliate_url_issued"])
         self.assertEqual(checkpoint["commission_received_minor"], 0)
+        current = campaign["current_checkpoint_2026_09_10"]
+        self.assertTrue(current["affiliate_url_issued"])
+        self.assertEqual(current["tracked_outbound_clicks"], 1)
+        self.assertEqual(current["test_clicks"], 1)
+        self.assertEqual(current["audience_clicks"], 0)
+        self.assertEqual(current["paid_referrals_confirmed"], 0)
+        self.assertEqual(current["commission_received_minor"], 0)
+        self.assertFalse(current["payout_ready"])
         published = campaign["useful_content_plan"]["published_assets"]
         self.assertEqual(len(published), 1)
         self.assertEqual(published[0]["tracking"], "ordinary untracked links only")

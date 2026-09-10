@@ -2,8 +2,8 @@
   "version": 1,
   "id": "postiz-affiliate-pilot",
   "objective": "Test whether a small set of useful, firsthand Postiz guides can generate verified affiliate referrals and received commission without displacing the primary Local Knowledge Terminal offer or encouraging bulk promotion.",
-  "state": "pre_application",
-  "checked_at": "2026-09-01",
+  "state": "approved_payout_pending",
+  "checked_at": "2026-09-10",
   "source_evidence": {
     "program_page": "https://partners.dub.co/postiz",
     "application_page": "https://partners.dub.co/postiz/apply",
@@ -14,12 +14,13 @@
     "ftc_affiliate_guidance": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
     "public_reward_claim": "Earn 30% per sale for the customer's lifetime.",
     "evidence_boundaries": [
-      "The Postiz-branded Dub page currently states the public reward claim; it does not prove approval, clicks, referrals, payout eligibility, or income for LazyingArt.",
+      "The Postiz application was accepted on 2026-09-10, and the authenticated dashboard issued one referral link. Acceptance and an issued link do not prove a customer, payout eligibility, or income.",
       "Do not restate the reward as guaranteed monthly income or as forever for the affiliate. The public wording is tied to each customer's lifetime and program terms may change.",
       "Do not claim a fixed seven-day trial. That detail is not stated on the current public program page and must be verified in the accepted program dashboard before use.",
-      "Cookie duration, attribution rules, payout threshold, reversal policy, excluded countries, self-referral rules, trademark bidding, and approved promotion methods remain unknown until the operator reviews the accepted program terms.",
+      "The authenticated overview states a 30-day holding period. It does not state the attribution window, eligible-plan boundary, payout threshold, or program-specific reversal rules, so public placement remains paused.",
       "Dub says commission is payable only after the client has paid Dub, a valid payout method and identity verification may be required, and pending or processed dashboard amounts are not cash received.",
-      "The referral URL has not been issued or verified. Never fabricate one, publish the generic application URL as if it were a referral link, or commit a private dashboard identifier."
+      "The issued URL was opened once and resolved to the official Postiz site with Dub attribution parameters. The resulting single dashboard click is a private destination test, not audience interest.",
+      "Payout onboarding is incomplete because the connected-account form requires an account-country business phone that is not present in the verified company records. Never invent a phone number or use a registered-agent or temporary number."
     ]
   },
   "hypothesis": {
@@ -124,10 +125,27 @@
     "currency": "USD",
     "interpretation": "The owned tutorial is a verified publication milestone, not authenticated affiliate analytics or revenue. Its links remain untracked until every activation gate passes."
   },
+  "current_checkpoint_2026_09_10": {
+    "state": "accepted_link_tested_payout_pending",
+    "affiliate_url_issued": true,
+    "useful_assets_published": 1,
+    "tracked_outbound_clicks": 1,
+    "test_clicks": 1,
+    "audience_clicks": 0,
+    "signups_or_trials": 0,
+    "paid_referrals_confirmed": 0,
+    "commission_pending_minor": 0,
+    "commission_received_minor": 0,
+    "commission_reversed_minor": 0,
+    "currency": "USD",
+    "holding_period_days": 30,
+    "payout_ready": false,
+    "interpretation": "The application, issued link, and destination are verified. The only click is the operator's non-purchasing test. Public placement remains paused until payout and placement gates pass; revenue remains zero."
+  },
   "acceptance_criteria": {
     "activation_gate": [
-      "The operator has one Dub partner account and the Postiz application is accepted.",
-      "The operator has reviewed and privately recorded the exact program terms, approved methods, payout threshold, attribution window, reversal rules, and trial wording.",
+      "LazyingArt has one Dub partner account and the Postiz application is accepted.",
+      "The accepted dashboard and controlling terms have been reviewed; any missing program-specific attribution, payout, reversal, or trial wording is resolved before it is used publicly.",
       "A valid payout method and any required business or identity verification are complete.",
       "The exact Dub-issued referral URL resolves to Postiz and a private test confirms attribution without making a purchase.",
       "Every asset has a clear disclosure, a useful standalone result, and a dated evidence package."
@@ -136,7 +154,7 @@
     "success": "The experiment proves an income channel only after at least one affiliate_commission_received outcome is verified. A paid referral or pending commission alone is not income."
   },
   "stop_criteria": [
-    "Do not activate if Postiz rejects the application, the exact terms cannot be reviewed, the payout route cannot be completed, or the terms conflict with clear disclosure and useful-first content.",
+    "Do not activate while the payout route is incomplete, required program-specific terms remain unresolved, or the terms conflict with clear disclosure and useful-first content.",
     "Pause immediately if a disclosure is hidden or truncated, a destination changes, a program term changes materially, a platform rule disallows the placement, or a reader reports deceptive or spam-like promotion.",
     "Stop distribution after three useful assets and 30 days if there are fewer than 25 verified outbound clicks; improve the underlying content or audience evidence before another test.",
     "Stop the offer-audience route after 50 verified outbound clicks with zero dashboard-reported signups or trials.",

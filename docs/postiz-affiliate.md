@@ -11,12 +11,11 @@ The machine-readable contract is
 
 ## What is verified
 
-Checked on 2026-09-01:
+Checked again on 2026-09-10:
 
-- The [Postiz-branded Dub program
-  page](https://partners.dub.co/postiz) says, “Earn 30% per sale for the
-  customer's lifetime.” This is the exact public claim; do not rewrite it as
-  guaranteed monthly income or “forever” for the affiliate.
+- The Postiz application is accepted. Its authenticated Dub overview states
+  **30% per sale for the customer's lifetime** and a **30-day holding period**.
+  Neither is a conversion rate, payout guarantee, or income result.
 - The [application page](https://partners.dub.co/postiz/apply) requires a name,
   email, website or social channel, promotion plan, and acceptance of terms.
 - [Dub's partner terms](https://dub.co/legal/partners) say a partner may need a
@@ -24,24 +23,25 @@ Checked on 2026-09-01:
   valid payout method. Commission becomes payable only after the client pays
   Dub; dashboard states before `Completed` are not proof of cash received.
 - The [public Postiz terms](https://postiz.com/terms-of-service) cover use of the
-  product but do not currently supply the missing affiliate details. The
-  accepted Dub/Postiz dashboard must be checked for cookie duration,
-  attribution, payout threshold, reversals, excluded countries, self-referrals,
-  trademark bidding, approved channels, and exact trial wording.
+  product but do not supply every program-specific affiliate detail. The
+  overview does not state the attribution window, eligible-plan boundary,
+  payout threshold, or reversal rules, so those claims must not be invented.
 - The current public program page does not state a seven-day trial. Do not use
   that detail in promotion unless the accepted program terms confirm it.
 
 The program may therefore produce recurring commission, but 30% is a reward
 rate—not a conversion rate, payout guarantee, or revenue forecast.
 
-The application was inspected again in the visible project browser on
-2026-09-02. It was logged out and unsubmitted. The non-sensitive website,
-promotion-plan, and additional-comments fields were preloaded from the public
-application packet, but name and email remain empty, the terms box remains
-unchecked, and `Continue` was not selected. The operator must review those
-answers, sign in or register, supply the correct identity, review and accept the
-program terms, and submit once. This checkpoint is preparation only; it is not
-an application, acceptance, referral URL, or revenue event.
+The application was submitted once with verified LazyingArt business details
+and accepted. Dub issued a referral link, which was opened once without a
+purchase and resolved to the official Postiz site with attribution parameters.
+The dashboard then showed one click, zero leads, zero sales, zero earnings, and
+no payouts. That click is the destination test, not audience demand.
+
+Payout onboarding is paused. Stripe's connected-account form requires an
+account-country business phone that is not present in the verified company
+records. No number was invented or borrowed. Public referral placement remains
+off until the payout and placement gates pass.
 
 ## Useful-first angle
 
@@ -101,9 +101,10 @@ The 2026-09-01 baseline is an administrative zero: no application acceptance,
 referral URL, affiliate content, tracked click, referral, or commission has been
 verified. It is not an authenticated Dub analytics snapshot.
 
-At the 2026-09-02 checkpoint, one useful owned asset is publicly verifiable,
-while the referral URL, authenticated affiliate analytics, referrals,
-commissions, and received revenue remain zero.
+At the 2026-09-10 checkpoint, one useful owned asset, acceptance, the issued
+link, and its destination are verified. The dashboard contains only the single
+operator test click; leads, sales, earnings, payouts, and received revenue are
+zero.
 
 Keep dated aggregate clicks and signup or trial counts in a private
 `signals.py` snapshot. For example, after visibly reading the Dub dashboard,
@@ -150,8 +151,10 @@ identifiers into Git.
 
 Activation requires an accepted Postiz application, reviewed exact program
 terms, a complete payout route, a Dub-issued referral URL, a non-purchasing
-attribution test, and a disclosure review. The URL stays in
-`.local/private/postiz-affiliate.json`; no URL is invented in source control.
+attribution test, and a disclosure review. Acceptance, the link, and the test
+are complete; payout and placement remain pending. The URL stays in
+`.local/private/affiliate-programs/postiz.json`; no URL is invented in source
+control.
 
 After one capped 30-day cycle, continue once if there is either one confirmed
 paid referral, or at least 25 verified outbound clicks plus one dashboard-
@@ -170,18 +173,9 @@ Stop or pause when any of these occurs:
 These limits prevent a promising percentage from consuming the time needed for
 LazyingArt's owned products and customer work.
 
-## One operator step before activation
+## Remaining activation gate
 
-The operator must create or use the single permitted Dub partner account,
-apply to Postiz at <https://partners.dub.co/postiz/apply>, review the exact terms
-under the intended LazyingArt business identity, and finish the payout/KYC
-route. After approval, place only the issued referral URL and a checked date in
-the ignored private config. No agent should register, accept legal terms,
-perform identity verification, or publish the link on the operator's behalf.
-
-The reusable non-sensitive answers are stored under
-`application_form_packet` in `affiliate-programs.json`. The fields listed under
-`operator_only_fields` deliberately have no saved values. The application is
-currently open in the single project noVNC desktop with the safe fields
-preloaded; inspect the full answers before entering identity data or accepting
-the terms.
+Keep the issued URL private and do not change the live tutorial while payout is
+incomplete. Resume the existing connected-account draft only with a legitimate
+account-country business phone and recheck the resulting payout, program, and
+placement terms before adding one nearby disclosure and link.

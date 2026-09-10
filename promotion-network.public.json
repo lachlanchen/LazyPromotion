@@ -46,7 +46,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 31
+        "version": 32
       },
       "url": ""
     },
@@ -61,12 +61,32 @@
       "url": ""
     },
     {
+      "id": "campaign:buddy-devops-writer-program",
+      "kind": "campaign",
+      "label": "buddy-devops-writer-program",
+      "metadata": {
+        "objective": "Win one paid CI/CD tutorial assignment by proposing a tested Python reverse-SSH relay deployment and rollback workflow grounded in LazyTunnel and LazyEdge.",
+        "version": 2
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:content-repurposing-pilot",
       "kind": "campaign",
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 19
+        "version": 21
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:creality-functional-fdm-writer-pitch",
+      "kind": "campaign",
+      "label": "creality-functional-fdm-writer-pitch",
+      "metadata": {
+        "objective": "Win one paid functional-3D-printing article by pitching a measured fit-test workflow grounded in OpenHI's public printed module and existing hardware writing.",
+        "version": 2
       },
       "url": ""
     },
@@ -151,6 +171,16 @@
       "url": ""
     },
     {
+      "id": "campaign:knowledgeowl-source-ledger-writer-pitch",
+      "kind": "campaign",
+      "label": "knowledgeowl-source-ledger-writer-pitch",
+      "metadata": {
+        "objective": "Win one USD 250 documentation article assignment with an accessible source-ledger pitch grounded in LazyingArt's real provenance and reproducibility work.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:l-and-n-pronunciation-launch",
       "kind": "campaign",
       "label": "l-and-n-pronunciation-launch",
@@ -196,7 +226,7 @@
       "label": "lazyremote-uu-bridge-route",
       "metadata": {
         "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -236,7 +266,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 32
+        "version": 34
       },
       "url": ""
     },
@@ -336,7 +366,17 @@
       "label": "openhi-reproducibility-sprint",
       "metadata": {
         "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
-        "version": 7
+        "version": 15
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:percona-microquant-writer-pitch",
+      "kind": "campaign",
+      "label": "percona-microquant-writer-pitch",
+      "metadata": {
+        "objective": "Win one USD 350 Percona Community article assignment with a narrow PostgreSQL ingestion pitch supported by public MicroQuant code.",
+        "version": 1
       },
       "url": ""
     },
@@ -371,11 +411,31 @@
       "url": ""
     },
     {
+      "id": "campaign:signoz-technical-writer-program",
+      "kind": "campaign",
+      "label": "signoz-technical-writer-program",
+      "metadata": {
+        "objective": "Win one paid observability tutorial assignment by proposing a reproducible Python reverse-SSH relay demonstration, without writing a speculative full article or claiming prior SigNoz work.",
+        "version": 2
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:soft-event-frame-code-release",
       "kind": "campaign",
       "label": "soft-event-frame-code-release",
       "metadata": {
         "objective": "Turn one explicit request for unavailable research code into a reproducible public release and a useful maintainer response, without treating the interaction as a sale or publishing uncleared recordings.",
+        "version": 2
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:webspecification-technical-writer-intern",
+      "kind": "campaign",
+      "label": "webspecification-technical-writer-intern",
+      "metadata": {
+        "objective": "Reach one paid technical-writing trial by applying to Web Specification Studio with one source-backed multilingual OCR article and one browser-based project, without inflating experience or treating an application as revenue.",
         "version": 2
       },
       "url": ""
@@ -474,6 +534,13 @@
       "id": "channel:lazyblog",
       "kind": "channel",
       "label": "lazyblog",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:leonardsusskind_reader",
+      "kind": "channel",
+      "label": "leonardsusskind_reader",
       "metadata": {},
       "url": ""
     },
@@ -1327,13 +1394,14 @@
           "gemini cli",
           "github copilot",
           "lazying art",
+          "linux desktop",
           "multi account",
           "session management",
           "shell",
           "terminal",
           "workflow automation"
         ],
-        "summary": "AgentShell: isolate named AI CLI accounts across terminals, share one working tree, and choose private or shared Codex history."
+        "summary": "AgentShell: named AI CLI accounts and isolated Linux Codex desktops. Reuse account logins, share working trees, and choose private or shared Codex history."
       },
       "url": "https://github.com/lachlanchen/AgentShell"
     },
@@ -3747,9 +3815,9 @@
       "kind": "repository",
       "label": "AgentShell",
       "metadata": {
-        "description": "AgentShell: isolate named AI CLI accounts across terminals, share one working tree, and choose private or shared Codex history.",
+        "description": "AgentShell: named AI CLI accounts and isolated Linux Codex desktops. Reuse account logins, share working trees, and choose private or shared Codex history.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-05T03:17:01Z",
+        "pushed_at": "2026-09-10T09:56:31Z",
         "topics": [
           "account-isolation",
           "account-management",
@@ -3765,13 +3833,14 @@
           "gemini-cli",
           "github-copilot",
           "lazying-art",
+          "linux-desktop",
           "multi-account",
           "session-management",
           "shell",
           "terminal",
           "workflow-automation"
         ],
-        "updated_at": "2026-09-05T05:50:16Z"
+        "updated_at": "2026-09-10T09:57:31Z"
       },
       "url": "https://github.com/lachlanchen/AgentShell"
     },
@@ -4591,7 +4660,7 @@
       "metadata": {
         "description": "LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance.",
         "homepage": "http://learn.lazying.art/",
-        "pushed_at": "2026-09-06T21:10:57Z",
+        "pushed_at": "2026-09-10T12:07:47Z",
         "topics": [
           "chapter",
           "edition",
@@ -4604,7 +4673,7 @@
           "read",
           "root"
         ],
-        "updated_at": "2026-09-06T21:11:01Z"
+        "updated_at": "2026-09-10T12:09:17Z"
       },
       "url": "https://github.com/lachlanchen/LazyLearn"
     },
@@ -4668,7 +4737,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T14:39:20Z",
+        "pushed_at": "2026-09-10T13:33:24Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4688,7 +4757,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-09T14:42:08Z"
+        "updated_at": "2026-09-10T13:00:32Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4781,7 +4850,7 @@
       "metadata": {
         "description": "LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps.",
         "homepage": "https://remote.lazying.art",
-        "pushed_at": "2026-09-09T12:19:37Z",
+        "pushed_at": "2026-09-09T16:22:53Z",
         "topics": [
           "android",
           "cloud-relay",
@@ -4804,7 +4873,7 @@
           "web-gui",
           "windows"
         ],
-        "updated_at": "2026-09-09T12:23:31Z"
+        "updated_at": "2026-09-09T16:24:18Z"
       },
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
@@ -4848,7 +4917,7 @@
       "metadata": {
         "description": "Standalone cloud PWA, durable chat BFF, and AgInTi frontend for llm.lazying.art",
         "homepage": "https://llm.lazying.art",
-        "pushed_at": "2026-09-05T11:31:46Z",
+        "pushed_at": "2026-09-09T23:48:49Z",
         "topics": [
           "aginti",
           "ai-agent",
@@ -4862,7 +4931,7 @@
           "self-hosted",
           "sqlite"
         ],
-        "updated_at": "2026-09-05T11:30:18Z"
+        "updated_at": "2026-09-09T23:48:25Z"
       },
       "url": "https://github.com/lachlanchen/LazyingAgentWeb"
     },
@@ -4920,7 +4989,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T11:11:46Z",
+        "pushed_at": "2026-09-10T10:28:05Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -4936,7 +5005,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-09T11:13:50Z"
+        "updated_at": "2026-09-10T10:28:28Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -6028,7 +6097,7 @@
       "metadata": {
         "description": "Config files for my GitHub profile.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T14:05:36Z",
+        "pushed_at": "2026-09-10T10:18:49Z",
         "topics": [
           "automation",
           "config",
@@ -6041,7 +6110,7 @@
           "systems",
           "workflows"
         ],
-        "updated_at": "2026-09-09T14:10:05Z"
+        "updated_at": "2026-09-10T10:18:55Z"
       },
       "url": "https://github.com/lachlanchen/lachlanchen"
     },
@@ -6090,7 +6159,7 @@
           "theoretical-minimum",
           "transcripts"
         ],
-        "updated_at": "2026-09-06T18:16:06Z"
+        "updated_at": "2026-09-09T23:41:03Z"
       },
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
@@ -6294,7 +6363,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-09T09:03:18Z",
+        "pushed_at": "2026-09-10T09:56:39Z",
         "topics": [
           "automation",
           "language",
@@ -6307,7 +6376,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-09T09:04:36Z"
+        "updated_at": "2026-09-10T09:58:20Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -6336,7 +6405,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-09T14:29:20Z"
+        "updated_at": "2026-09-10T03:49:16Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -6535,6 +6604,48 @@
       "label": "complete delivery sample repository",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyPromotion/tree/ab36ac63c57f7acbd9d82238fdbf0c80c0349c6c/examples/bilingual-lecture-pack"
+    },
+    {
+      "id": "url:7ccd9e77e59cd6ef",
+      "kind": "web_resource",
+      "label": "contra marketplace profile case studies 1",
+      "metadata": {},
+      "url": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report"
+    },
+    {
+      "id": "url:194cefbfba96e2ec",
+      "kind": "web_resource",
+      "label": "contra marketplace profile case studies 2",
+      "metadata": {},
+      "url": "https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report"
+    },
+    {
+      "id": "url:2c52d0c17703e6fa",
+      "kind": "web_resource",
+      "label": "contra marketplace profile case studies 3",
+      "metadata": {},
+      "url": "https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers"
+    },
+    {
+      "id": "url:86db6c20c1a0121b",
+      "kind": "web_resource",
+      "label": "contra marketplace profile case studies 4",
+      "metadata": {},
+      "url": "https://contra.com/p/cg62vQQW-leonard-susskind-lecture-notes-archive"
+    },
+    {
+      "id": "url:29285c9e5051e633",
+      "kind": "web_resource",
+      "label": "contra marketplace public profile",
+      "metadata": {},
+      "url": "https://contra.com/lachlan_chen_vzs1sppu"
+    },
+    {
+      "id": "url:3bdeac2d106df035",
+      "kind": "web_resource",
+      "label": "contra marketplace public service",
+      "metadata": {},
+      "url": "https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search"
     },
     {
       "id": "url:aa198f9562d200f2",
@@ -7921,6 +8032,16 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
+        "state": "live_and_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-lecture-pack-pilot",
+      "target": "channel:leonardsusskind_reader"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
         "state": "postiz_queue"
       },
       "relation": "targets",
@@ -9167,11 +9288,35 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://contra.com/p/kqAgsMXB-open-hi-pipeline-reproducibility-sample-report",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:194cefbfba96e2ec"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/passage-graph/",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:1c57cb81d6efe0d4"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://contra.com/lachlan_chen_vzs1sppu",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:29285c9e5051e633"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:2c52d0c17703e6fa"
     },
     {
       "confidence": 1.0,
@@ -9196,6 +9341,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:3939af6ed06479e7"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://contra.com/s/6AUPmZ3o-audit-a-private-document-collection-for-local-ai-search",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:3bdeac2d106df035"
     },
     {
       "confidence": 1.0,
@@ -9287,11 +9440,27 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:7ccd9e77e59cd6ef"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=meeting_transcript_guide",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:807e415bd0224e67"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://contra.com/p/cg62vQQW-leonard-susskind-lecture-notes-archive",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:86db6c20c1a0121b"
     },
     {
       "confidence": 1.0,
@@ -10251,7 +10420,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "postiz_published"
       },
       "relation": "targets",
       "source": "campaign:wenyan-history",

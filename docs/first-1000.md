@@ -1024,12 +1024,13 @@ traffic into a claimed lead or sale.
 
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
-media, research tooling, games, and local AI. LKT, manuscript redline, the
-bilingual lecture pack, Story Clip, and AI Clip Assembly are the five service
-chooser routes; the Book Specimen Sprint is reached from its chapter-first guide,
-and the OpenHI software sprint from the homepage's existing OpenHI proof. The
-LazyRemote review is reached only from its exact remote-access route. A candidate
-advances only after a current need and a small first test are found.
+media, research tooling, games, and local AI. The homepage now exposes seven
+bounded service routes: LKT, manuscript redline, the bilingual lecture pack,
+Story Clip, AI Clip Assembly, the Book Specimen Sprint, and the OpenHI software
+sprint. The selected-work shelf also leads from OpenHI's project-owned executed
+sample to its USD 500 scope. The LazyRemote review remains on its exact
+remote-access route. A candidate advances only after a current need and a small
+first test are found.
 
 ## Truthful measurement
 

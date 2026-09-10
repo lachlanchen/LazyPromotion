@@ -53,7 +53,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         offer = campaign["offer"]
-        self.assertEqual(campaign["version"], 14)
+        self.assertEqual(campaign["version"], 15)
         self.assertEqual(offer["price"], "USD 500")
         self.assertEqual(offer["stage_limit"], 1)
         self.assertEqual(offer["dataset_limit"], 1)
@@ -92,6 +92,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(homepage["price_shown"], "USD 500")
         self.assertIn("7decf259", homepage["website_commit"])
         self.assertIn("not a visit", homepage["boundary"])
+        work_shelf = campaign["channels"]["owned_website"]["selected_work_shelf"]
+        self.assertEqual(work_shelf["state"], "live_verified")
+        self.assertIn("utm_content=work_research_sample", work_shelf["sample_destination"])
+        self.assertIn("utm_content=work_services", work_shelf["offer_destination"])
+        self.assertIn("d8dc71ec", work_shelf["website_commit"])
+        self.assertIn("29 website contract tests", work_shelf["verification"])
+        self.assertIn("not a visit", work_shelf["boundary"])
         blog = campaign["channels"]["owned_website"]["lazyblog_reproducibility_guide"]
         self.assertEqual(blog["state"], "published_live_verified")
         self.assertEqual(blog["post_id"], 3820)

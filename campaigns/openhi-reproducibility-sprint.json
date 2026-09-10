@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 14,
+  "version": 15,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -157,6 +157,16 @@
     "owned_website": {
       "state": "live_verified",
       "role": "The existing OpenHI kit page and homepage point to the software-first offer; the offer points back to the separate hardware inquiry.",
+      "selected_work_shelf": {
+        "state": "live_verified",
+        "sample_destination": "https://lazying.art/openhi-reproducibility/sample-report/?utm_source=lazyingart&utm_medium=website&utm_campaign=openhi_reproducibility&utm_content=work_research_sample",
+        "offer_destination": "https://lazying.art/openhi-reproducibility/?utm_source=lazyingart&utm_medium=website&utm_campaign=openhi_reproducibility&utm_content=work_services",
+        "website_commit": "d8dc71ec15b82295f5750c4a64787b2c40665d5b",
+        "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34484994530",
+        "placement": "OpenHI research card leads to the executed sample and the six-route service shelf names the USD 500 software scope.",
+        "verification": "All 29 website contract tests passed; the 1,920-pixel and 390-pixel renders showed no clipping or horizontal overflow; the Pages deployment completed successfully; and both live tracked destinations returned HTTP 200.",
+        "boundary": "The selected-work route uses project-owned evidence and is not a visit, fit inquiry, customer result, payment, or received revenue."
+      },
       "homepage_service_chooser": {
         "state": "live_verified_first_card_13_locales",
         "destination": "https://lazying.art/openhi-reproducibility/?utm_source=lazyingart&utm_medium=website&utm_campaign=openhi_reproducibility&utm_content=service_chooser",

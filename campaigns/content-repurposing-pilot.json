@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 21,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -246,6 +246,26 @@
       "payment_observed": false,
       "received_revenue_usd": 0
     },
+    "postiz_instagram": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-20T12:00:00Z",
+      "content": "Choosing the clip is often harder than editing it.\n\nI made a small, checkable workflow: mark two moments from one recording, explain why each works, then finish the one selected. The handoff includes corrected captions, an editable SRT, and a source ledger.\n\nThe sample uses our own footage, so you can inspect the process before sharing yours.\n\nhttps://dub.sh/lXCEV7O\n\nI’m opening this as a fixed USD 250 pilot for one rights-cleared recording up to 30 minutes.\n\n#VideoEditing #Reels #ShortFormVideo #Captions",
+      "destination": "https://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample",
+      "media_asset": "assets/contra-story-clip-service-cover-v1.png",
+      "media_sha256": "5c20c5fd7f99c89aeecb3b211c58294c3827849b286bb954b4b7b635fb6ccf55",
+      "settings": {
+        "post_type": "post"
+      },
+      "channel_selection_evidence": "Postiz platform analytics returned 340 Instagram views, 9 likes, and 1 share for the current 30-day view when checked on September 10; it returned no comments or replies. These are attention signals, not buyer intent, a lead, a sale, or revenue.",
+      "verification": {
+        "stored_content_exact": true,
+        "matching_posts": 1,
+        "verified_state": "QUEUE",
+        "release_present": false,
+        "integration_settings_checked": true,
+        "media_uploaded_before_scheduling": true
+      }
+    },
     "encrypted_intake": {
       "state": "live_verified_review_then_encrypted_submit",
       "checked_at": "2026-09-09T01:50:23Z",
@@ -299,7 +319,7 @@
       "policy": "Do not call this bridge published until WordPress update and live source/translation checks succeed."
     },
     "checkout_created": false,
-    "social_post_created": false,
+    "social_post_created": true,
     "deployment_verified": true
   },
   "search_discovery": {

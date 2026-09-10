@@ -1053,7 +1053,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 20)
+        self.assertEqual(campaign["version"], 21)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -1141,7 +1141,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 20)
+        self.assertEqual(campaign["version"], 21)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -1189,6 +1189,25 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(marketplace["contract_observed"])
         self.assertFalse(marketplace["payment_observed"])
         self.assertEqual(marketplace["received_revenue_usd"], 0)
+        instagram = offer["postiz_instagram"]
+        self.assertEqual(instagram["state"], "postiz_queue")
+        self.assertEqual(instagram["publish_at"], "2026-09-20T12:00:00Z")
+        self.assertEqual(instagram["settings"]["post_type"], "post")
+        self.assertIn("USD 250", instagram["content"])
+        self.assertIn("story_clip_pilot", instagram["destination"])
+        instagram_media = ROOT / instagram["media_asset"]
+        self.assertTrue(instagram_media.is_file())
+        self.assertEqual(
+            hashlib.sha256(instagram_media.read_bytes()).hexdigest(),
+            instagram["media_sha256"],
+        )
+        self.assertTrue(instagram["verification"]["stored_content_exact"])
+        self.assertEqual(instagram["verification"]["matching_posts"], 1)
+        self.assertEqual(instagram["verification"]["verified_state"], "QUEUE")
+        self.assertFalse(instagram["verification"]["release_present"])
+        self.assertTrue(instagram["verification"]["integration_settings_checked"])
+        self.assertTrue(instagram["verification"]["media_uploaded_before_scheduling"])
+        self.assertIn("not buyer intent", instagram["channel_selection_evidence"])
         self.assertEqual(
             offer["website_commit"],
             "6f22bc0ccb8d1501c03c41bf0b448fd1acd6ee32",
@@ -1230,7 +1249,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(probe["live_story_clip_link"])
         self.assertIn("No working reviewed write route", bridge["blocker"])
         self.assertFalse(offer["checkout_created"])
-        self.assertFalse(offer["social_post_created"])
+        self.assertTrue(offer["social_post_created"])
         self.assertTrue(offer["deployment_verified"])
         discovery = campaign["search_discovery"]
         self.assertEqual(
@@ -3219,7 +3238,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 20)
+        self.assertEqual(campaign["version"], 21)
         self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])

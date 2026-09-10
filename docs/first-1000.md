@@ -1063,6 +1063,14 @@ is blocked by Contra's Persona and wallet completion gate. No identity fact was
 invented, no off-platform contact was attempted, and no application or lead was
 recorded.
 
+The Story Clip proof is also queued once on Instagram for September 20 at
+12:00 UTC. Postiz's current 30-day platform view showed 340 views, 9 likes, and
+1 share on Instagram, compared with 48 impressions on X and no returned
+LinkedIn analytics, so the next offer post goes to the strongest measured
+connected channel instead of every platform. The post uses the project-owned
+offer capture, one sample link, and the exact USD 250 boundary. These platform
+figures are attention signals, not buyer intent or revenue.
+
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.
 

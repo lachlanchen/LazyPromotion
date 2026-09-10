@@ -63,6 +63,17 @@ private storage, but the project browser is logged out and the listing already
 shows 50-plus proposals. No Connects were spent and no application, buyer reply,
 contract, payment, or revenue exists.
 
+Two direct paid-writing routes now use narrower parts of the portfolio without
+requiring a marketplace account. KnowledgeOwl's ongoing independent-writer page
+states a USD 250 minimum for a published article; one reviewed email pitched an
+accessible source-ledger workflow grounded in LKT and OpenHI documentation. The
+Percona Community program states USD 350 after publication; one reviewed form
+pitch points to MicroQuant's public PostgreSQL composite key and `ON CONFLICT`
+ingestion code, while describing it as an experimental research system rather
+than a production incident. Both submissions were delivered once and are
+awaiting editorial replies. Neither is an assignment, lead, publication,
+payment, or revenue.
+
 The strongest current no-marketplace application is Lopaka's worldwide DevPet
 embedded-UI prototype contract at a published USD 80–140 per hour for roughly
 10–15 hours a week over six to eight weeks. One application was submitted on

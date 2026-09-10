@@ -1,0 +1,61 @@
+{
+  "id": "knowledgeowl-source-ledger-writer-pitch",
+  "version": 1,
+  "objective": "Win one USD 250 documentation article assignment with an accessible source-ledger pitch grounded in LazyingArt's real provenance and reproducibility work.",
+  "source_need": {
+    "captured_at": "2026-09-10T13:16:55Z",
+    "url": "https://www.knowledgeowl.com/opportunities",
+    "title": "Write for KnowledgeOwl",
+    "state": "official_ongoing_paid_guest_writer_program",
+    "published_scope": "Generally 1,200 to 1,600 words about Documentarian Quality of Life, including technical writing, workflows, subject-matter experts, and customer support.",
+    "published_compensation": "USD 250 per published article, or the writer's established higher rate.",
+    "published_eligibility": "Independent writers rather than marketing agencies or PR firms; external links in the commissioned article are optional and may be removed editorially.",
+    "submission_requirements": "Topic ideas, a brief section outline, rate, and public work samples by email.",
+    "policy": "A sent pitch is not editorial acceptance, an assignment, publication, payment, or revenue. Confirm deadline, revisions, assistance policy, rights, acceptance, invoice, and payment timing before drafting a full article."
+  },
+  "fit": {
+    "projects": ["LocalKnowledgeTerminal", "OpenHI", "BLOG"],
+    "primary_topic": "The Tiny Source Ledger That Makes Knowledge Base Updates Easier",
+    "outline": [
+      "why tracing the source of an answer becomes expensive later",
+      "a four-field source ledger that does not require version-control knowledge",
+      "keeping limitations beside the claim",
+      "a short review queue for fast-aging facts",
+      "when the ledger is useful and when it is unnecessary overhead"
+    ],
+    "alternate_topics": [
+      "Write the failure path first",
+      "A useful knowledge base is allowed to say not tested"
+    ],
+    "public_samples": [
+      "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+      "https://lazying.art/openhi-reproducibility/sample-report/",
+      "https://github.com/lachlanchen"
+    ],
+    "claim_boundary": "The samples prove public technical documentation, source handling, limitation tracking, and reproducibility work. They do not prove KnowledgeOwl acceptance, a customer outcome, publication, or revenue."
+  },
+  "application": {
+    "state": "sent_awaiting_editorial_reply",
+    "sent_at": "2026-09-10T13:20:23Z",
+    "method": "One reviewed email from the LazyingArt business address to the official guest-writer address",
+    "subject": "Guest article ideas: making source checks easier",
+    "quoted_rate": "USD 250 for one 1,200 to 1,600 word article",
+    "exact_content_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated visible browser showed the exact business sender, official recipient, subject, three topic ideas, outline, rate, and three public sample URLs. One Send action closed the compose window and exposed Undo Send; no retry was made.",
+    "account_required": false,
+    "identity_document_required": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-24",
+    "policy": "Do not resubmit or follow up before the review date. If accepted, agree the exact topic and commercial terms before writing."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "assignment_observed": false,
+    "publication_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

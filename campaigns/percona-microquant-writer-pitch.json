@@ -1,0 +1,59 @@
+{
+  "id": "percona-microquant-writer-pitch",
+  "version": 1,
+  "objective": "Win one USD 350 Percona Community article assignment with a narrow PostgreSQL ingestion pitch supported by public MicroQuant code.",
+  "source_need": {
+    "captured_at": "2026-09-10T13:21:00Z",
+    "url": "https://percona.community/blog/2026/05/22/write-for-percona-community/",
+    "application_url": "https://share.hsforms.com/2quoru-zrSli2l-89aiiJggg9e0",
+    "title": "Write for the Percona Community",
+    "state": "official_current_program_with_accepting_form",
+    "published_scope": "Hands-on articles about Percona tools or the wider open-source database community, including PostgreSQL, migrations, troubleshooting, reliability, batch processing, and useful scripts.",
+    "published_compensation": "USD 350 after publication.",
+    "published_process": "Pitch the topic and why the author has done the work; the team replies with feedback, timeline, and editorial direction.",
+    "published_ai_policy": "Percona prohibits AI-generated articles, permits AI-assisted drafting, and requires the final article to reflect the author's own implementation, experience, and voice.",
+    "rights": "The contributor retains copyright and grants Percona a non-exclusive worldwide publication and promotion license; posts are normally CC BY 4.0 unless otherwise specified.",
+    "policy": "A submitted pitch is not editorial acceptance, an assignment, publication, payment, or revenue."
+  },
+  "fit": {
+    "projects": ["MicroQuant"],
+    "repository": "https://github.com/lachlanchen/MicroQuant",
+    "repository_revision_checked": "10fb3047cbd44609945a8e8b4617e7c002e230f6",
+    "topic": "Idempotent OHLC imports with PostgreSQL and asyncpg",
+    "supported_now": [
+      "A composite PostgreSQL primary key over symbol, timeframe, and timestamp",
+      "Parameterized asyncpg batch writes using ON CONFLICT DO UPDATE",
+      "Freshness queries and an experimental research-dashboard boundary",
+      "Public source code and documentation that can support a replay-without-duplicates test"
+    ],
+    "not_claimed": [
+      "A production incident or production-scale benchmark",
+      "Percona-product experience",
+      "Trading performance, financial returns, or customer outcomes",
+      "Editorial acceptance, publication, payment, or revenue"
+    ],
+    "claim_boundary": "The public code supports a hands-on PostgreSQL design article from an experimental research system. It does not support a production war story or financial claim."
+  },
+  "application": {
+    "state": "submitted_awaiting_editorial_reply",
+    "submitted_at": "2026-09-10T13:22:37Z",
+    "method": "Official four-field Percona Community form with the maintainer's name, LazyingArt business address, one narrow topic, and one public repository",
+    "exact_content_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated visible browser rendered all four exact fields and one enabled Submit control. One Submit action replaced the form with Percona's confirmation that the submission was received and the team would be in touch; no retry was made.",
+    "account_required": false,
+    "identity_document_required": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "policy": "Do not resubmit or follow up before the review date. If accepted, confirm scope, deadline, editorial assistance policy, revisions, invoice details, and payment timing before writing the article."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "commissioned_topic_observed": false,
+    "publication_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

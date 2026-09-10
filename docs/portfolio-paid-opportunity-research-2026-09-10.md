@@ -186,6 +186,18 @@ merged.^8 The reward is too small and the assignment risk too high to displace
 current conversion work. Algora can support GitHub bounty payment, but platform
 capability is not evidence that a particular funded, unclaimed issue exists.^9
 
+A second live pass at 10:45 UTC again found zero reviewable items across the
+nine-entry Boss feed. Two GitHub-search results also failed the commercial
+gate. The USD 750 warpSpeed audio-notes issue had 52 claim comments, no visible
+maintainer assignment or confirmation, reports that the official capacity and
+deadline had already passed, and a tracker README with placeholder community
+links.^10 It is not safe to register or build speculatively. The USD 250
+through-metal experiment is much clearer and remains open, but requires buying
+and physically testing a high-voltage ultrasonic rig; only successful results
+earn the two prizes.^11 Its parts cost, safety exposure, shipping time, and
+winner-takes-first risk make it a poor first-USD-1,000 action despite being a
+real hardware opportunity.
+
 ## Registration rule
 
 Create a new account only when all seven conditions are true:
@@ -256,3 +268,5 @@ routes already live.
 7. Earthly. “[Write For Us](https://earthly.dev/blog/write-for-us/).” Accessed September 10, 2026.
 8. Firecrawl. “[Add Context Limit Support for MCP, issue #2165](https://github.com/firecrawl/firecrawl/issues/2165).” Accessed September 10, 2026.
 9. Algora. “[Pricing](https://algora.io/pricing).” Accessed September 10, 2026.
+10. warpSpeed OPEN. “[Audio Note Recording bounty](https://github.com/warpspeedopen-source/warpspeed-bounties/issues/9).” Accessed September 10, 2026.
+11. through-metal-link. “[$250 for the first independent build](https://github.com/zeloras/through-metal-link/issues/5).” Accessed September 10, 2026.

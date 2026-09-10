@@ -113,7 +113,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         self.assertEqual(demand["public_stars"], 10)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 5)
         explicit_need = demand["current_explicit_need"]
@@ -211,6 +211,29 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(
             campaign["channels"]["automatic_community_outreach"]["allowed"]
         )
+        contra = campaign["contra_marketplace"]
+        self.assertEqual(
+            contra["state"],
+            "published_live_verified_identity_and_payout_pending",
+        )
+        self.assertIn(
+            "review-a-private-remote-access-network",
+            contra["public_service_url"],
+        )
+        self.assertIn(
+            "lazy-tunnel-private-ssh",
+            contra["public_case_study_url"],
+        )
+        self.assertEqual(contra["price"], "USD 250 one-time")
+        self.assertEqual(contra["duration"], "2 weeks")
+        self.assertEqual(len(contra["tags"]), 4)
+        self.assertEqual(len(contra["faqs"]), 3)
+        self.assertFalse(contra["identity_verified"])
+        self.assertFalse(contra["payout_configured"])
+        self.assertFalse(contra["buyer_inquiry_observed"])
+        self.assertFalse(contra["contract_observed"])
+        self.assertFalse(contra["payment_observed"])
+        self.assertEqual(contra["verified_received_gross_usd"], 0)
         self.assertTrue(campaign["funnel"]["helpful_interaction_observed"])
         self.assertFalse(campaign["funnel"]["qualified_lead_observed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
@@ -2199,7 +2222,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "marketplace-channels.json"
         packet = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(packet["version"], 8)
+        self.assertEqual(packet["version"], 9)
         self.assertEqual(packet["offer"]["public_price"], "USD 250")
         self.assertIn("four confirmed", packet["offer"]["gross_milestone"].casefold())
         self.assertIn("must not invent", packet["offer"]["scope_policy"].casefold())
@@ -2209,6 +2232,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(packet["lecture_offer"]["public_price"], "USD 250")
         self.assertIn("rights", packet["lecture_offer"]["scope_policy"].casefold())
         self.assertIn("stay on Contra", packet["lecture_offer"]["scope_policy"])
+        self.assertEqual(packet["remote_offer"]["public_price"], "USD 250")
+        self.assertIn("metadata-only", packet["remote_offer"]["scope_policy"])
+        self.assertIn("stay on Contra", packet["remote_offer"]["scope_policy"])
         channels = sorted(packet["channels"], key=lambda row: row["rank"])
         self.assertEqual(
             [row["id"] for row in channels],
@@ -2219,12 +2245,17 @@ class RepositoryTests(unittest.TestCase):
             "live_service_published_identity_and_payout_pending",
         )
         self.assertIn("contra.com/s/", channels[0]["public_service"])
-        self.assertEqual(len(channels[0]["public_services"]), 3)
+        self.assertEqual(len(channels[0]["public_services"]), 4)
         self.assertEqual(channels[0]["public_services"][1]["price"], "USD 500")
         self.assertEqual(channels[0]["public_services"][2]["price"], "USD 250")
         self.assertIn(
             "build-a-bilingual-lecture-study-pack",
             channels[0]["public_services"][2]["url"],
+        )
+        self.assertEqual(channels[0]["public_services"][3]["price"], "USD 250")
+        self.assertIn(
+            "review-a-private-remote-access-network",
+            channels[0]["public_services"][3]["url"],
         )
         self.assertIn("contra.com/p/", channels[0]["public_case_study"])
         self.assertEqual(len(channels[0]["public_case_studies"]), 5)
@@ -2312,6 +2343,29 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(lecture["contract_observed"])
         self.assertFalse(lecture["payment_observed"])
         self.assertEqual(lecture["verified_received_gross_usd"], 0)
+        remote = packet["contra_lazyremote_packet"]
+        self.assertEqual(remote["state"], "live_published")
+        self.assertIn("contra.com/s/", remote["public_service_url"])
+        self.assertIn("contra.com/p/", remote["public_case_study_url"])
+        self.assertEqual(remote["price"], "USD 250 one-time")
+        self.assertEqual(remote["duration"], "2 weeks")
+        self.assertEqual(len(remote["tags"]), 4)
+        self.assertEqual(remote["faq_count"], 3)
+        self.assertEqual(
+            remote["completed_work"],
+            "https://remote.lazying.art/sample-report.html",
+        )
+        remote_cover = ROOT / remote["cover_asset"]["source_path"]
+        self.assertTrue(remote_cover.is_file())
+        self.assertEqual(
+            hashlib.sha256(remote_cover.read_bytes()).hexdigest(),
+            remote["cover_asset"]["sha256"],
+        )
+        self.assertTrue(remote["cover_asset"]["live_media_verified"])
+        self.assertFalse(remote["buyer_inquiry_observed"])
+        self.assertFalse(remote["contract_observed"])
+        self.assertFalse(remote["payment_observed"])
+        self.assertEqual(remote["verified_received_gross_usd"], 0)
         self.assertNotIn("confirmed customer", serialized)
         self.assertNotIn("received usd", serialized)
         self.assertNotIn("account_id", serialized)

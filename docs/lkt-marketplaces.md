@@ -1,4 +1,4 @@
-# LKT, OpenHI, and Bilingual Lecture service marketplaces
+# LKT, OpenHI, Bilingual Lecture, and LazyRemote service marketplaces
 
 The first marketplace route for the USD 250 Local Knowledge Terminal
 collection-fit sprint is now live on [Contra
@@ -31,6 +31,18 @@ seven relevant tags, three FAQs, the 4:3 project-owned sample cover, and the
 Rights clearance, certified translation, extra languages, multiple-speaker
 diarization, unlimited revisions, hosting, and social posting remain outside
 the fixed scope.
+
+A fourth [Contra service](https://contra.com/s/kZvke2Nq-review-a-private-remote-access-network-before-opening-ports)
+offers the USD 250 LazyRemote Network Fit Review for one reachable relay and up
+to three existing customer-owned computers. It returns a topology and listener
+exposure map, a key-role and host-verification review, and a recovery, rollback,
+and acceptance checklist. The live listing shows USD 250 one-time, two weeks,
+four exact software tags, three FAQs, the project-owned LazyTunnel cover, and
+the [LazyTunnel case study](https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers).
+The first contact remains metadata-only. Deployment, hardware, relay hosting,
+router or firewall changes, wake-on-LAN, desktop capture, ongoing support,
+penetration testing, and guarantees for an unseen network remain outside the
+fixed scope.
 
 The machine-readable evidence and listing packet are in
 [`marketplace-channels.json`](../marketplace-channels.json).
@@ -140,9 +152,11 @@ limited records must be retained by applicable rules.
 On September 10, the LKT listing was saved unpublished, reloaded, compared with
 the packet, linked to its case study, and then published. The Bilingual Lecture
 listing later followed the same private-save and reload checks; one incorrect
-suggested tag was removed before its single publish action. The public profile
-now has five factual work pieces—LKT, OpenHI, Bilingual Lecture, LazyTunnel, and
-the Leonard Susskind lecture archive—and three live services. Each links to an
+suggested tag was removed before its single publish action. The LazyRemote
+listing was likewise saved unpublished, reloaded, checked field by field, and
+published once. The public profile now has five factual work pieces—LKT, OpenHI,
+Bilingual Lecture, LazyTunnel, and the Leonard Susskind lecture archive—and four
+live services. Each links to an
 actual public deliverable, and the profile remains 78% complete. The remaining
 items are a commercial hourly rate, onboarding, and identity or wallet setup;
 none was invented or submitted. No identity document, bank information, paid

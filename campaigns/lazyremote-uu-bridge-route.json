@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 2,
+  "version": 3,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-09T10:41:16Z",
@@ -334,6 +334,57 @@
       "state": "disabled",
       "allowed": false
     }
+  },
+  "contra_marketplace": {
+    "state": "published_live_verified_identity_and_payout_pending",
+    "checked_at": "2026-09-10T05:38:08Z",
+    "public_profile_url": "https://contra.com/lachlan_chen_vzs1sppu",
+    "public_service_url": "https://contra.com/s/kZvke2Nq-review-a-private-remote-access-network-before-opening-ports",
+    "public_case_study_url": "https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers",
+    "title": "Review a Private Remote-Access Network Before Opening Ports",
+    "price": "USD 250 one-time",
+    "duration": "2 weeks",
+    "description": "Opening RDP, VNC, SSH, or a web-admin port is easy; proving who can reach what, how host identity is checked, and how access is revoked or recovered is harder. The free metadata-only fit check first reviews one reachable relay and up to three existing customer-owned computers, user roles, required access, NAT or CGNAT constraints, and network-policy permission. Do not send passwords, private keys, IP addresses, hostnames, account or device identifiers, raw logs, screenshots, clipboard contents, or unredacted configuration. If the fit and written scope are accepted, the fixed USD 250 review returns a topology and listener-exposure map; a key-role and host-verification review; a recovery, rollback, and acceptance checklist; and one consolidated list of up to ten factual corrections submitted within seven calendar days. Delivery is within ten business days after secured payment and complete agreed metadata or redacted excerpts are available. Cancel before work begins for a full refund; after work begins, unstarted stages are refunded. Temporary redacted configuration excerpts are deleted within fourteen calendar days after delivery, cancellation, or refund. Inspect the project-owned sample at https://remote.lazying.art/sample-report.html. Contra-origin contracting, payment, revisions, and delivery stay on Contra. Deployment, hardware, relay hosting, router or firewall changes, wake-on-LAN, desktop capture, ongoing support, penetration testing, and connectivity or reboot guarantees for an unseen network are excluded.",
+    "tags": [
+      "Software Architect",
+      "Software Consultant",
+      "Software Engineer",
+      "Computer Software"
+    ],
+    "faqs": [
+      {
+        "question": "What information can I share?",
+        "answer": "Describe the roles, up to three existing endpoints, whether a reachable relay exists, NAT or CGNAT constraints, required access, ownership, and network-policy permission. Do not send passwords, private keys, IP addresses, hostnames, identifiers, raw logs, or unredacted configuration."
+      },
+      {
+        "question": "What do I receive?",
+        "answer": "A topology and listener-exposure map, key-role and host-verification review, recovery, rollback, and acceptance checklist, plus one consolidated factual correction pass."
+      },
+      {
+        "question": "Is deployment included?",
+        "answer": "No. Deployment, hardware, relay hosting, router or firewall changes, wake-on-LAN, desktop capture, ongoing support, penetration testing, and connectivity or reboot guarantees are outside this review."
+      }
+    ],
+    "cover_asset": {
+      "source_path": "assets/contra-lazytunnel-portfolio-cover-v1.png",
+      "dimensions": "1600x1200",
+      "aspect_ratio": "4:3",
+      "sha256": "6511e14d1346666692256c76475decff0e6fbcc02dbf0b67cdc8f9ef96211810",
+      "live_media_verified": true,
+      "boundary": "Project-owned LazyTunnel interface proof. It is not a customer network, customer result, penetration-test result, sale, or paid engagement."
+    },
+    "example_work": "LazyTunnel: Private SSH Across Personal Computers",
+    "completed_work": "https://remote.lazying.art/sample-report.html",
+    "profile_completion_percent": 78,
+    "live_service_count": 4,
+    "public_case_study_count": 5,
+    "identity_verified": false,
+    "payout_configured": false,
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "verified_received_gross_usd": 0,
+    "policy": "The cover and linked case are project-owned proof, not customer results. A listing view, message, inquiry, signed contract, platform balance, or pending payout is not received revenue."
   },
   "funnel": {
     "state": "helpful_interaction",

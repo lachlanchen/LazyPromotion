@@ -334,6 +334,14 @@ The [complete sample report](https://remote.lazying.art/sample-report.html)
 shows the decision, listener and identity maps, findings, acceptance checklist,
 and rollback before contact. It uses a synthetic project-owned topology, is
 explicitly not a customer result, and contains no private fleet data.
+The same bounded review is now live as a [Contra
+service](https://contra.com/s/kZvke2Nq-review-a-private-remote-access-network-before-opening-ports)
+at USD 250 one-time with a two-week marketplace duration, three qualification
+FAQs, and the project-owned [LazyTunnel case
+study](https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers).
+It was saved unpublished, reloaded, checked against the owned terms, and
+published once. Identity and payout setup remain incomplete; publication is not
+a buyer inquiry, contract, payment, or revenue.
 At the same September 9 check, the separate LazyTunnel repository still had no
 public stars or forks. Its owner-visible report showed zero views and 41 clones
 from 18 unique cloners, while the newly published ten-asset v0.2.0 release had
@@ -1030,6 +1038,9 @@ and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
 contract, balance, or pending payout does not change the received-revenue total.
 The live 4:3 cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
+The same profile now has four live fixed-scope services: LKT, OpenHI, Bilingual
+Lecture, and LazyRemote. Each uses project-owned evidence, while identity,
+payout, inquiry, contract, and revenue states remain separate.
 
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.

@@ -1,7 +1,7 @@
 {
-  "version": 8,
+  "version": 9,
   "checked_at": "2026-09-10",
-  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint, USD 500 OpenHI software-stage test, and USD 250 Bilingual Lecture Study Pack where buyers already look for bounded technical services, without weakening fit checks, rights and privacy gates, platform payment rules, or received-revenue accounting.",
+  "objective": "List the fixed USD 250 Local Knowledge Terminal collection-fit sprint, USD 500 OpenHI software-stage test, USD 250 Bilingual Lecture Study Pack, and USD 250 LazyRemote Network Fit Review where buyers already look for bounded technical services, without weakening fit checks, rights and privacy gates, platform payment rules, or received-revenue accounting.",
   "offer": {
     "campaign_id": "local-knowledge-terminal-pilot",
     "public_price": "USD 250",
@@ -29,6 +29,15 @@
     "fit_check": "https://lazying.art/lecture-pack/fit-check/",
     "scope_policy": "The marketplace route must preserve one customer-owned or clearly licensed English lecture up to 20 minutes, one primary speaker, one Traditional Chinese or Japanese target language, the recorded deliverables, ten-business-day delivery boundary, one bounded correction pass, rights gate, and existing exclusions. Contra-origin contracting, payment, revisions, and delivery stay on Contra."
   },
+  "remote_offer": {
+    "campaign_id": "lazyremote-uu-bridge-route",
+    "public_price": "USD 250",
+    "gross_milestone": "Four confirmed USD 250 payments equal USD 1,000 gross before platform and payout fees, taxes, refunds, and delivery costs.",
+    "public_page": "https://remote.lazying.art/#review",
+    "sample_report": "https://remote.lazying.art/sample-report.html",
+    "fit_check": "https://lazying.art/lazyremote/fit-check/",
+    "scope_policy": "The marketplace route must preserve one reachable relay, up to three existing customer-owned computers, metadata-only first contact, the recorded maps and checklist, ten-business-day delivery boundary, one bounded correction pass, network-policy permission, retention terms, and the existing deployment and hardware exclusions. Contra-origin contracting, payment, revisions, and delivery stay on Contra."
+  },
   "channels": [
     {
       "rank": 1,
@@ -51,6 +60,11 @@
           "id": "bilingual_lecture_study_pack",
           "price": "USD 250",
           "url": "https://contra.com/s/WZNEBkk2-build-a-bilingual-lecture-study-pack"
+        },
+        {
+          "id": "lazyremote_network_fit_review",
+          "price": "USD 250",
+          "url": "https://contra.com/s/kZvke2Nq-review-a-private-remote-access-network-before-opening-ports"
         }
       ],
       "public_case_study": "https://contra.com/p/ZObROYmU-local-knowledge-terminal-collection-fit-sample-report",
@@ -97,7 +111,7 @@
           "customer_result": false
         }
       ],
-      "profile_completion": "78% after five public portfolio pieces, three live services, a portfolio link, and a restrained bio",
+      "profile_completion": "78% after five public portfolio pieces, four live services, a portfolio link, and a restrained bio",
       "account_state": "email_verified_free_plan",
       "official_sources": {
         "services": "https://help.contra.com/en/articles/9322412-how-to-add-services-to-your-contra-profile",
@@ -253,6 +267,40 @@
       "sha256": "abaec7cb704cd0efe05c615dfce4e44a03a3286e5fd25f4dba79631494cd6d82",
       "live_media_verified": true,
       "evidence_boundary": "Project-owned delivery-sample cover. It is not a customer result, testimonial, rights claim for third-party lectures, sale, or paid engagement."
+    },
+    "remaining_account_gates": [
+      "Complete Contra's Persona identity verification only through an authorized human identity check.",
+      "Configure and verify a supported payout route before accepting a paid platform contract."
+    ],
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "verified_received_gross_usd": 0,
+    "revenue_policy": "A listing view, message, inquiry, signed contract, platform balance, or pending payout is not received revenue."
+  },
+  "contra_lazyremote_packet": {
+    "state": "live_published",
+    "public_service_url": "https://contra.com/s/kZvke2Nq-review-a-private-remote-access-network-before-opening-ports",
+    "public_case_study_url": "https://contra.com/p/eQ6AORE3-lazy-tunnel-private-ssh-across-personal-computers",
+    "title": "Review a Private Remote-Access Network Before Opening Ports",
+    "price": "USD 250 one-time",
+    "duration": "2 weeks",
+    "tags": [
+      "Software Architect",
+      "Software Consultant",
+      "Software Engineer",
+      "Computer Software"
+    ],
+    "faq_count": 3,
+    "example_work": "LazyTunnel: Private SSH Across Personal Computers",
+    "completed_work": "https://remote.lazying.art/sample-report.html",
+    "cover_asset": {
+      "source_path": "assets/contra-lazytunnel-portfolio-cover-v1.png",
+      "dimensions": "1600x1200",
+      "aspect_ratio": "4:3",
+      "sha256": "6511e14d1346666692256c76475decff0e6fbcc02dbf0b67cdc8f9ef96211810",
+      "live_media_verified": true,
+      "evidence_boundary": "Project-owned LazyTunnel interface proof. It is not a customer network, customer result, penetration-test result, sale, or paid engagement."
     },
     "remaining_account_gates": [
       "Complete Contra's Persona identity verification only through an authorized human identity check.",

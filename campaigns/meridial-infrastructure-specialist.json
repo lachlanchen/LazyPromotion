@@ -1,0 +1,68 @@
+{
+  "id": "meridial-infrastructure-specialist",
+  "version": 1,
+  "objective": "Use the strongest public Linux, networking, deployment-safety, and failure-verification evidence for a current infrastructure contract without inventing cloud-scale or TypeScript experience.",
+  "source_need": {
+    "captured_at": "2026-09-11T16:20:00Z",
+    "url": "https://job-boards.eu.greenhouse.io/agency/jobs/4745191101",
+    "title": "SWE Infrastructure Specialist (JS/TS/Python)",
+    "state": "official_current_worldwide_remote_contract_listing",
+    "advertised_rate": "USD 80–150 per hour, adjusted for experience and geography",
+    "deadline": "No deadline shown when checked",
+    "privacy_url": "https://invisibletech.ai/privacy-policy",
+    "boundary": "The listing and rate range are current demand evidence, not an interview, offer, guaranteed workload, accepted rate, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdge",
+      "LazyTunnel",
+      "uu-remote-ubuntu-bridge",
+      "LazyPromotion"
+    ],
+    "supported_now": [
+      "Default-deny ingress and explicit trust boundaries across Caddy, OpenSSH, systemd, browser, and noVNC routes",
+      "Private Linux relay operation with separate accounts, credentials, deployment checks, and recovery documentation",
+      "Hash-pinned inputs, staged upstream inspection, reproducible failure-window verification, and reversible restoration",
+      "Python and JavaScript implementation plus public architecture, security, operations, migration, and troubleshooting documentation"
+    ],
+    "not_proven": [
+      "TypeScript fluency",
+      "Professional AWS, GCP, Azure, Terraform, or CloudFormation history",
+      "Hyperscale distributed-systems, production SLO, or customer-incident ownership",
+      "Selection, contract, workload, or a rate inside the advertised range"
+    ]
+  },
+  "application": {
+    "state": "private_packet_prepared_not_submitted",
+    "packet": "ignored private application packet",
+    "required_fields_observed": [
+      "identity-consistent first and last name",
+      "operator-controlled email",
+      "current country, residence, city, and reachable phone",
+      "resume or CV",
+      "school, degree, discipline, and start and end years",
+      "US location status",
+      "exact LinkedIn profile URL",
+      "privacy acknowledgement"
+    ],
+    "verified_public_linkedin": "https://www.linkedin.com/in/lachlan-chen-a68486341/",
+    "privacy_acknowledgement_selected": false,
+    "form_filled": false,
+    "resume_uploaded": false,
+    "application_submitted": false,
+    "assessment_started": false,
+    "identity_verification_started": false,
+    "automatic_follow_up": false,
+    "policy": "The packet can be completed from verified facts, but the application must not submit guessed personal data, accept the privacy terms by proxy, or complete a personal assessment or identity check as the applicant."
+  },
+  "funnel": {
+    "outbound_application_count": 0,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "interview_observed": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

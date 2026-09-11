@@ -190,8 +190,23 @@
       "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "reddit": {
-      "state": "exact_need_only",
-      "policy": "Answer the learner's question completely before mentioning the maintained PWA; disclose affiliation and do not reuse the LinkedIn announcement as a community reply."
+      "state": "resource_thread_live",
+      "resource_thread": {
+        "thread": "https://www.reddit.com/r/languagelearning/comments/1w6urkg/share_your_resources_september_04_2026/",
+        "url": "https://www.reddit.com/r/languagelearning/comments/1w6urkg/share_your_resources_september_04_2026/p96gi7s/",
+        "published_at": "2026-09-11T16:00:14Z",
+        "content": "I built a small free tool for people who mix up L and N, because I do too. It gives a short loop: hear a minimal pair, see a mouth and airflow cue, record one word, then inspect the waveform and recognized word before trying again. It works in English, Mandarin, and Cantonese in the browser, with no account.\n\nhttps://l-and-n.lazying.art/\n\nI’d especially appreciate feedback on whether the mouth view makes the contrast easier to hear.",
+        "content_sha256": "ec378da7765cced7797d9dd101d436db7e8aba49abe75d7f1242751cb5d45442",
+        "rules": {
+          "self_made_resources_allowed": true,
+          "services_forbidden": true,
+          "six_month_repeat_limit": true,
+          "creator_disclosure_required": true
+        },
+        "linked_service": false,
+        "lead_or_sale_observed": false
+      },
+      "policy": "The monthly resource thread explicitly permits creator-made resources. The one comment discloses authorship, links only the free no-account PWA, asks for product feedback, and contains no service, price, donation request, affiliate link, or private-message invitation. Do not repeat it within six months or add a follow-up pitch."
     },
     "x": {
       "state": "postiz_queue",

@@ -1372,6 +1372,29 @@ the route is closed without an assignment or revenue. Proton also declined its
 affiliate application without issuing a link, so no Proton placement will be
 made from the current application.
 
+GitHub Sponsors was already active on the repositories, but its public profile
+had no preset tiers. Three restrained choices are now published and publicly
+verified: USD 5 monthly, USD 25 one-time, and USD 100 one-time. Their copy funds
+continued public documentation, tests, releases, and maintenance while
+explicitly promising no private access, priority support, feature, or specific
+delivery. The profile bio now leads with LazyingArt's current work, and its six
+featured repositories are LazyEdit, OpenHI, the Susskind archive, the UU Remote
+bridge, Local Knowledge Terminal, and L & N. The listing currently has zero
+sponsors and no payout date. A visible tier is a clearer donation path, not a
+sponsor, payment, payout, or revenue.
+
+Camunda's [current global Technical Writer
+vacancy](https://jobs.ashbyhq.com/camunda/9ce12e95-88cd-4da4-8f61-f9cb198b1cc8)
+is another high-value route
+that closely matches the public LazyEdge documentation and the portfolio's
+GitHub, Markdown/MDX, Node.js, CI, self-hosting, container, and agent-tool work.
+The application has been prepared with verified public samples and the exact
+LinkedIn profile, but it was not submitted: the form requires the applicant's
+work-authorization category, intended work address, local salary expectation,
+and consent to a six-month US data transfer. Those are personal legal or
+material declarations, not facts an agent should guess. No application, reply,
+offer, payment, or revenue exists from this route.
+
 ## Read-only receipt monitoring
 
 A private Stripe watcher now checks successful live charges every 30 minutes

@@ -1,0 +1,63 @@
+{
+  "id": "github-sponsors-clear-support-tiers",
+  "version": 1,
+  "objective": "Give people who already benefit from LazyingArt's public repositories a clear, low-pressure sponsorship path without turning sponsorship into a service promise.",
+  "source_need": {
+    "captured_at": "2026-09-11T13:10:00Z",
+    "url": "https://github.com/sponsors/lachlanchen",
+    "state": "existing_public_sponsors_profile_without_preset_tiers",
+    "evidence": "The public profile was active and accepted custom amounts, but the authenticated Sponsors listing had zero published monthly tiers and zero published one-time tiers.",
+    "policy": "Sponsorship is optional support for public work. It is not a fixed-scope service, product order, priority queue, private repository entitlement, investment, or revenue until a payment is actually received."
+  },
+  "fit": {
+    "attention_sources": [
+      "uu-remote-ubuntu-bridge",
+      "OpenHI",
+      "LocalKnowledgeTerminal",
+      "leonardsusskind"
+    ],
+    "reason": "These public projects already have owner-visible attention or strong technical proof and already expose GitHub Sponsors through repository funding configuration.",
+    "claim_boundary": "Repository stars, views, clones, replies, and a visible Sponsor button are attention only. They do not prove a sponsor, payment, payout, customer, or revenue."
+  },
+  "public_path": {
+    "state": "published_and_publicly_verified",
+    "published_at": "2026-09-11T13:10:00Z",
+    "profile_url": "https://github.com/sponsors/lachlanchen",
+    "tiers": [
+      {
+        "amount_usd": 5,
+        "frequency": "monthly",
+        "description": "Help maintain LazyingArt's open-source documentation, tests, and public releases. This is sponsorship, with no guaranteed support, private access, or specific deliverable."
+      },
+      {
+        "amount_usd": 25,
+        "frequency": "one_time",
+        "description": "A simple thank-you when a LazyingArt tool or guide saves you time. This is sponsorship, with no service, priority support, private access, or specific deliverable."
+      },
+      {
+        "amount_usd": 100,
+        "frequency": "one_time",
+        "description": "Back continued maintenance of LazyingArt's research, local-first, multilingual, and learning tools. This is sponsorship, with no promised feature, private service, or guaranteed response."
+      }
+    ],
+    "welcome_message_enabled": false,
+    "private_repository_access_enabled": false,
+    "profile_updated": true,
+    "featured_repositories": [
+      "lachlanchen/LazyEdit",
+      "lachlanchen/OpenHI",
+      "lachlanchen/leonardsusskind",
+      "lachlanchen/uu-remote-ubuntu-bridge",
+      "lachlanchen/LocalKnowledgeTerminal",
+      "lachlanchen/L-and-N"
+    ],
+    "verification": "The public GraphQL listing returned all three published tiers, and anonymous HTML returned the monthly and one-time tier copy."
+  },
+  "funnel": {
+    "public_path_published": true,
+    "sponsor_observed": false,
+    "payment_confirmed": false,
+    "payout_observed": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "camunda-global-technical-writer",
+  "version": 1,
+  "objective": "Use current docs-as-code, self-hosted infrastructure, and agent-orchestration evidence for a high-value global technical-writing role without inventing personal legal or compensation declarations.",
+  "source_need": {
+    "captured_at": "2026-09-11T14:20:00Z",
+    "official_posting": "https://jobs.ashbyhq.com/camunda/9ce12e95-88cd-4da4-8f61-f9cb198b1cc8",
+    "title": "Technical Writer",
+    "state": "official_current_global_full_time_listing",
+    "location": "Remote and global, with employment outside named entities handled through Remote.com where available",
+    "published_compensation": [
+      "United States: USD 102,300–164,900",
+      "United Kingdom: GBP 64,200–105,600",
+      "Singapore: SGD 127,000–190,500",
+      "Canada: CAD 108,600–178,600"
+    ],
+    "requested_work": [
+      "Own technical documentation for developers and enterprise users",
+      "Work through Git and GitHub with Markdown or MDX, Docusaurus, Node.js, and CI",
+      "Document cloud and self-managed software involving Java, Kubernetes, Helm, and Docker",
+      "Explain orchestration and agentic systems clearly to technical readers"
+    ],
+    "boundary": "The current listing and published bands show a real vacancy, not applicant eligibility, an interview, an offer, payment, or revenue. Compensation outside the named countries must not be inferred."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdge",
+      "AgInTiFlow",
+      "LocalKnowledgeTerminal",
+      "LazyPromotion"
+    ],
+    "public_samples": [
+      {
+        "url": "https://github.com/lachlanchen/LazyEdge/blob/main/docs/operations.md",
+        "role": "Detailed docs-as-code operations, deployment, failure-boundary, and rollback writing",
+        "verification": "Public URL returned HTTP 200 on 2026-09-11"
+      },
+      {
+        "url": "https://github.com/lachlanchen/LazyEdge/blob/main/docs/architecture.md",
+        "role": "Architecture explanation for Caddy, OpenSSH, systemd, trust boundaries, and migration",
+        "verification": "Public URL returned HTTP 200 on 2026-09-11"
+      },
+      {
+        "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+        "role": "Read-only MCP and provenance-oriented agent-tool documentation"
+      }
+    ],
+    "supported_now": [
+      "GitHub-based documentation with substantial Markdown and multilingual maintenance",
+      "Node.js and TypeScript CLI, configuration, CI, testing, release, and migration documentation",
+      "Self-hosted and cloud-edge boundaries across Caddy, OpenSSH, systemd, containers, and private services",
+      "Agent and MCP permission boundaries grounded in working public repositories"
+    ],
+    "not_proven": [
+      "Camunda or BPMN product experience",
+      "Employment eligibility in a selected country",
+      "A salary expectation Camunda would accept",
+      "Selection, interview, offer, or customer outcome"
+    ],
+    "claim_boundary": "The public work supports technical-writing and docs-as-code capability. It does not establish legal work status, an agreed country of employment, or Camunda-specific production experience."
+  },
+  "application": {
+    "state": "prepared_personal_declaration_gate",
+    "submitted": false,
+    "submission_attempts": 0,
+    "verified_profile_url": "https://www.linkedin.com/in/lachlan-chen-a68486341/",
+    "material_fields_not_inferred": [
+      "Work-authorization category for the intended country of employment",
+      "Exact intended work address and postcode",
+      "Salary expectation in the appropriate local currency",
+      "Consent to transfer applicant data to the United States for six months"
+    ],
+    "policy": "Do not submit the application by guessing legal status, residence, salary, or consent. The public vacancy can remain prepared until the named applicant supplies or directly confirms those declarations.",
+    "automatic_follow_up": false
+  },
+  "funnel": {
+    "state": "attention",
+    "application_submitted": false,
+    "human_reply_observed": false,
+    "interview_observed": false,
+    "offer_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

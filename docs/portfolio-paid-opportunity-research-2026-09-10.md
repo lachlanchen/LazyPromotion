@@ -41,6 +41,30 @@ public issue intake and separate LazyRemote path remain primary. All 148 local
 tests passed, with the existing opt-in live-systemd test skipped. A panel view,
 click or pledge is not received revenue.
 
+The linked GitHub Sponsors profile was public but required every visitor to
+invent a custom amount. It now offers three plainly bounded choices: USD 5
+monthly, USD 25 one-time, and USD 100 one-time. All three fund public
+maintenance and explicitly exclude guaranteed support, private access,
+priority, features, and specific delivery. GitHub's public listing verifies the
+tiers. Its profile now describes current LazyingArt work and features LazyEdit,
+OpenHI, the Susskind archive, the UU Remote bridge, Local Knowledge Terminal,
+and L & N instead of six older utilities. It still has zero sponsors and no
+payout date, so received revenue remains USD 0.
+
+Camunda's [official current global Technical Writer
+vacancy](https://jobs.ashbyhq.com/camunda/9ce12e95-88cd-4da4-8f61-f9cb198b1cc8)
+is a strong fit for
+the portfolio's docs-as-code evidence: Git/GitHub, Markdown or MDX, Docusaurus,
+Node.js, CI, self-managed software, containers, and agentic orchestration all
+appear in the role, while LazyEdge supplies public architecture, operations,
+migration, troubleshooting, and rollback writing. The application is prepared
+with the exact public LinkedIn profile and three relevant repositories, but it
+was not submitted. Its required work-authorization category, intended work
+address, local-currency salary expectation, and six-month US data-transfer
+consent are personal legal or material declarations that cannot be inferred.
+This is a high-value current vacancy, not an application, reply, offer, payment,
+or revenue.
+
 Contra's official MCP endpoint is now connected to the existing contractor
 account through project-scoped Codex OAuth.^14 ^15 The read-only account check
 succeeded. `ALL` and `FOR_YOU` each returned only three visible listings from a

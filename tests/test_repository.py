@@ -134,6 +134,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("learner recordings", " ".join(offer["excluded"]))
         self.assertIn("/for-tutors/", campaign["offer"]["url"])
         self.assertIn("/lessons/light-vs-night/", campaign["proof"]["sample"])
+        contra = campaign["contra_marketplace"]
+        self.assertEqual(contra["state"], "prepared_not_published")
+        self.assertEqual(contra["price"], "USD 250 one-time")
+        self.assertEqual(contra["duration"], "2 weeks")
+        self.assertEqual(len(contra["requirements"]), 5)
+        self.assertEqual(len(contra["tags"]), 6)
+        self.assertEqual(len(contra["faqs"]), 3)
+        self.assertTrue((ROOT / contra["cover_asset"]["source_path"]).is_file())
+        self.assertEqual(contra["cover_asset"]["dimensions"], "1448x1086")
         self.assertFalse(campaign["payment"]["public_checkout"])
         self.assertFalse(campaign["payment"]["payment_object_created"])
         linkedin = campaign["channels"]["linkedin"]

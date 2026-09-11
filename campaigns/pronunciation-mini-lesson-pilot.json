@@ -1,6 +1,6 @@
 {
   "id": "pronunciation-mini-lesson-pilot",
-  "version": 2,
+  "version": 3,
   "objective": "Sell and deliver four bounded USD 250 bilingual pronunciation mini-lessons to tutors or small language schools while keeping the L & N learner app free.",
   "offer": {
     "state": "live_verified",
@@ -34,6 +34,52 @@
     "release_commit": "beb2ead68a79c72333493b0cad6371a49d62052f",
     "live_checks": "The offer, sample, app, stylesheet, sitemap, signed Android test build, privacy page, HTTPS headers, and rollback release were verified after the immutable 2026-09-11 deployment.",
     "boundary": "The sample is project-owned proof of the delivery format. It is not customer work, a testimonial, a clinical result, a certified translation, or evidence of sales."
+  },
+  "contra_marketplace": {
+    "state": "prepared_not_published",
+    "title": "Build One Bilingual Pronunciation Mini-Lesson",
+    "one_line": "Turn one sound contrast into a reusable web lesson with model audio, visual cues, printable practice, and a captioned walkthrough.",
+    "price": "USD 250 one-time",
+    "duration": "2 weeks",
+    "description": "Some pronunciation problems are too specific for a general course but too persistent for another list of tips. Start with the complete project-owned light/night sample at https://l-and-n.lazying.art/lessons/light-vs-night/. If your idea fits and we accept the written scope, the fixed USD 250 pack covers one pronunciation contrast, one learner group, and English plus Simplified or Traditional Chinese. You receive two short model-audio prompts and readable phonetic cues; original teaching visuals for the relevant contact, airflow, or sound pattern; one responsive and printable four-step web lesson; one 15–30 second captioned walkthrough; the deployable static lesson files; and one consolidated factual correction pass. Delivery is within ten business days after secured payment and complete agreed inputs. Contra-origin contracting, payment, revisions, and delivery stay on Contra. Clinical assessment, certified translation, voice cloning, learner recordings or personal-data collection, app integration, hosting, a custom domain, ongoing support, and unlimited revisions are excluded.",
+    "requirements": [
+      "Name the one sound contrast or word pair and describe the learner group, first language, and level.",
+      "Choose English plus Simplified Chinese or Traditional Chinese.",
+      "Describe where the lesson will be used and the one teaching outcome it should support; do not attach learner recordings or personal data.",
+      "Link any source or brand material you want considered and confirm that you own it or may reuse it.",
+      "Confirm the desired delivery date and where your team will deploy the static lesson files; do not send hosting credentials."
+    ],
+    "tags": [
+      "Instructional Design",
+      "Educational Technology",
+      "Web Design",
+      "Copywriting",
+      "Audio Editing",
+      "Video Editing"
+    ],
+    "faqs": [
+      {
+        "question": "Do you need learner recordings?",
+        "answer": "No. The fit check and fixed pack do not collect learner recordings or personal data. The lesson is built from the agreed teaching contrast and context."
+      },
+      {
+        "question": "Which language pair is included?",
+        "answer": "English plus either Simplified Chinese or Traditional Chinese. Another target language or a second learner group needs a separate scope."
+      },
+      {
+        "question": "What if the contrast does not fit this format?",
+        "answer": "The first fit check is free. I will say no-fit before payment when the request needs clinical assessment, learner-data collection, app integration, a broader curriculum, or another excluded service."
+      }
+    ],
+    "cover_asset": {
+      "source_path": "assets/contra-pronunciation-lesson-cover-v1.png",
+      "source_svg": "assets/contra-pronunciation-lesson-cover-v1.svg",
+      "dimensions": "1448x1086",
+      "aspect_ratio": "4:3",
+      "sha256": "5023f709af6ec03a7c934da4a288ae0170f1c21338bbe5f54041be909f57eae4",
+      "boundary": "Project-owned service graphic derived from the L & N visual system. It is not customer work, a learner result, or proof of a paid engagement."
+    },
+    "publication_gate": "Publish only if the visible form preserves the exact one-time price, duration, source-first description, requirements, exclusions, and original sample URL."
   },
   "channels": {
     "owned_sample": {

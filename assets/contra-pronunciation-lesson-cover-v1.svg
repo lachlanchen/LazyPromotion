@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img" aria-labelledby="title desc">
+  <title id="title">Custom bilingual pronunciation mini-lesson</title>
+  <desc id="desc">LazyingArt service cover with coral L and teal N, a small waveform, and the phrases one contrast, bilingual, sample first.</desc>
+  <rect width="1448" height="1086" fill="#f8f5ee"/>
+  <circle cx="1320" cy="100" r="330" fill="#e6f8f5"/>
+  <circle cx="80" cy="1040" r="300" fill="#fff0eb"/>
+
+  <g transform="translate(112 88)">
+    <rect width="1224" height="910" rx="54" fill="#fffdf8" stroke="#d8d7d2" stroke-width="3"/>
+    <text x="72" y="104" fill="#0b9187" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="2">LAZYINGART · FOR TUTORS</text>
+
+    <g transform="translate(72 170)">
+      <rect width="1080" height="290" rx="38" fill="#081f4d"/>
+      <text x="64" y="106" fill="#ffffff" font-family="Georgia, serif" font-size="70" font-weight="700">One sound contrast.</text>
+      <text x="64" y="200" fill="#ffffff" font-family="Georgia, serif" font-size="70" font-weight="700">One lesson learners revisit.</text>
+    </g>
+
+    <g transform="translate(72 514)">
+      <text x="0" y="122" fill="#ed6653" font-family="Inter, Arial, sans-serif" font-size="156" font-weight="900">L</text>
+      <path d="M155 82 L190 82 L210 42 L242 138 L274 38 L307 126 L335 72 L368 72" fill="none" stroke="#7f847f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="400" y="122" fill="#0b9187" font-family="Inter, Arial, sans-serif" font-size="156" font-weight="900">N</text>
+      <line x1="590" y1="8" x2="590" y2="154" stroke="#d8d7d2" stroke-width="3"/>
+      <text x="646" y="48" fill="#10233d" font-family="Inter, Arial, sans-serif" font-size="33" font-weight="800">MODEL AUDIO</text>
+      <text x="646" y="96" fill="#10233d" font-family="Inter, Arial, sans-serif" font-size="33" font-weight="800">VISUAL CUES</text>
+      <text x="646" y="144" fill="#10233d" font-family="Inter, Arial, sans-serif" font-size="33" font-weight="800">PRINTABLE PRACTICE</text>
+    </g>
+
+    <line x1="72" y1="742" x2="1152" y2="742" stroke="#d8d7d2" stroke-width="3"/>
+    <text x="72" y="814" fill="#10233d" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="850">ONE CONTRAST · BILINGUAL · SAMPLE FIRST</text>
+    <text x="72" y="866" fill="#5c6d83" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="650">Fixed USD 250 software service · learner recordings not requested</text>
+  </g>
+</svg>

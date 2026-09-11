@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 8,
+  "version": 9,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-11T10:59:46Z",
@@ -129,6 +129,15 @@
       "verification": "The live destination returned HTTP 200 and contained the review anchor, exact USD 250 scope, Chinese metadata-only fit-check action, and no-password or private-key boundary. All 146 repository tests passed with one opt-in systemd test skipped.",
       "boundary": "The free open-source product explanation remains visible. A link view or click is attention, not an inquiry, lead, payment, or revenue."
     },
+    "simplified_chinese_guide_handoff": {
+      "state": "live_owned_guide_route",
+      "source_url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge/blob/main/i18n/README.zh-Hans.md",
+      "destination_url": "https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html?utm_source=github&utm_medium=readme&utm_campaign=uu_remote_bridge&utm_content=zh_hans_guide",
+      "source_commit": "419bc3fa7b92d4e592e4e7a8734143c1ad62afe0",
+      "reason": "The highest-traffic repository page now offers one natural route to the complete Chinese architecture, boundary, installation, and update-review guide before any commercial option.",
+      "verification": "All 150 repository tests passed with one opt-in live-systemd test skipped, and the pushed main branch contains the exact tracked owned-guide URL.",
+      "boundary": "The guide answers the UU-on-Ubuntu question first. Its final exact-fit LazyRemote review paragraph remains separate; a view or click is not an inquiry, lead, payment, or revenue."
+    },
     "placements": [
       "README.md",
       "i18n/README.ar.md",
@@ -166,7 +175,7 @@
       },
       "boundary": "A support-panel view, click, or pledge is not received revenue. Donations do not buy priority, compatibility work, private support, or a delivery date."
     },
-    "verification": "All 148 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
+    "verification": "All 150 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
     "compatibility_need_capture": {
       "state": "live_bilingual_public_form",
       "source_commit": "2b5d31774c9a9751bbb7873fedb828ec037c4f4c",

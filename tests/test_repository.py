@@ -211,7 +211,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 8)
+        self.assertEqual(campaign["version"], 9)
         self.assertEqual(demand["public_stars"], 13)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 8)
         explicit_need = demand["current_explicit_need"]
@@ -271,6 +271,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_campaign=uu_remote_bridge", chinese_handoff["destination_url"])
         self.assertIn("146 repository tests", chinese_handoff["verification"])
         self.assertIn("not an inquiry", chinese_handoff["boundary"])
+        guide_handoff = campaign["owned_route"]["simplified_chinese_guide_handoff"]
+        self.assertEqual(guide_handoff["state"], "live_owned_guide_route")
+        self.assertIn("utm_content=zh_hans_guide", guide_handoff["destination_url"])
+        self.assertTrue(guide_handoff["source_commit"].startswith("419bc3f"))
+        self.assertIn("150 repository tests", guide_handoff["verification"])
+        self.assertIn("answers the UU-on-Ubuntu question first", guide_handoff["boundary"])
         capture = campaign["owned_route"]["compatibility_need_capture"]
         self.assertEqual(capture["state"], "live_bilingual_public_form")
         self.assertEqual(len(capture["placements"]), 2)

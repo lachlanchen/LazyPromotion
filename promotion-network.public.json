@@ -31,6 +31,16 @@
       "url": ""
     },
     {
+      "id": "campaign:appsignal-technical-writer-program",
+      "kind": "campaign",
+      "label": "appsignal-technical-writer-program",
+      "metadata": {
+        "objective": "Win one paid Node.js observability article by matching current public JavaScript tooling and deep technical writing to AppSignal's open author program without inventing a rate, assignment, or professional tenure.",
+        "version": 2
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:auditable-policy-content-coding",
       "kind": "campaign",
       "label": "auditable-policy-content-coding",
@@ -185,8 +195,8 @@
       "kind": "campaign",
       "label": "l-and-n-pronunciation-launch",
       "metadata": {
-        "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy, customer outcomes, or public app-store availability.",
-        "version": 5
+        "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
+        "version": 6
       },
       "url": ""
     },
@@ -236,7 +246,7 @@
       "label": "lecture-archive-provenance",
       "metadata": {
         "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -7291,13 +7301,6 @@
       "url": "https://github.com/lachlanchen/MultilingualWhisper"
     },
     {
-      "id": "url:593c601822a24f73",
-      "kind": "web_resource",
-      "label": "offer",
-      "metadata": {},
-      "url": "https://lazying.art/lecture-pack/"
-    },
-    {
       "id": "url:0c3f0c1551c48c93",
       "kind": "web_resource",
       "label": "offer page",
@@ -7508,6 +7511,13 @@
       "url": "https://lachlanchen.github.io/LinguaLeaf/website/"
     },
     {
+      "id": "url:7fb1a23df7349a81",
+      "kind": "web_resource",
+      "label": "public store fix url",
+      "metadata": {},
+      "url": "https://play.google.com/store/apps/details?id=art.lazying.landn"
+    },
+    {
       "id": "url:dad6a142b98ee7ea",
       "kind": "web_resource",
       "label": "pwa",
@@ -7576,6 +7586,13 @@
       "label": "request",
       "metadata": {},
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment/issues/1"
+    },
+    {
+      "id": "url:593c601822a24f73",
+      "kind": "web_resource",
+      "label": "rights cleared service",
+      "metadata": {},
+      "url": "https://lazying.art/lecture-pack/"
     },
     {
       "id": "url:08da0dd4fa5a19c9",
@@ -8826,6 +8843,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:7fb1a23df7349a81"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://l-and-n.lazying.art/?utm_source=lazyingart&utm_medium=website&utm_campaign=l_and_n_pronunciation_launch&utm_content=work_shelf",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9065,6 +9090,14 @@
       "relation": "targets",
       "source": "campaign:lecture-archive-provenance",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lecture-pack/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:lecture-archive-provenance",
+      "target": "url:593c601822a24f73"
     },
     {
       "confidence": 1.0,

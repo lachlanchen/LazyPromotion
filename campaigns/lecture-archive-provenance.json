@@ -1,12 +1,12 @@
 {
   "id": "lecture-archive-provenance",
-  "version": 2,
+  "version": 3,
   "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
   "channels": {
     "github": {
       "state": "organic_discovery_observed",
-      "observed_at": "2026-09-05T19:38:55Z",
-      "stargazers_count": 28,
+      "observed_at": "2026-09-11T01:39:00Z",
+      "stargazers_count": 29,
       "recent_growth": {
         "count": 4,
         "date": "2026-09-02",
@@ -24,6 +24,14 @@
           "larger-type pocket PDF"
         ],
         "policy": "The index responds to observed traffic on the merged-notes folder by making every current book and reading format easier to reach. It adds no product pitch, outcome claim, or revenue claim."
+      },
+      "rights_cleared_service_path": {
+        "state": "published",
+        "url": "https://lazying.art/lecture-pack/?utm_source=github&utm_medium=readme&utm_campaign=leonard_susskind_archive&utm_content=rights_cleared_lecture",
+        "repository_commit": "e5645a3cf6923906f460ed743387ae18d1e06ec6",
+        "readme_languages": 11,
+        "change": "Each README now gives owners of a different, rights-cleared lecture one quiet path to the separate Bilingual Lecture Pack pilot.",
+        "policy": "The sentence explicitly keeps the Susskind archive free and outside the paid service. It does not offer Susskind material for sale or turn stars and readers into leads."
       },
       "lead_or_sale_observed": false,
       "policy": "Treat stars as evidence that the free archive is being discovered, not as learning outcomes, leads, testimonials, or revenue."
@@ -167,6 +175,7 @@
     "conversion_pipeline": "https://github.com/lachlanchen/Video2Book",
     "multilingual_pipeline": "https://github.com/lachlanchen/PocketPolyglot",
     "knowledge_pipeline": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "rights_cleared_service": "https://lazying.art/lecture-pack/",
     "limits": [
       "Use only customer-owned, public-domain, or clearly licensed recordings, slides, transcripts, translations, and images.",
       "The Susskind archive demonstrates a maintained study format; it is not a customer result or content offered for resale.",

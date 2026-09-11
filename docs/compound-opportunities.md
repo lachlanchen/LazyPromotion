@@ -579,8 +579,8 @@ Gates:
 - Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device
 - Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
 - Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
-- Call the direct APK and Google Play link test builds; do not call either public store availability
-- Treat mobile builds as release candidates until their public store listings are independently verified
+- The Google Play production listing is public; keep the direct APK and internal-test URL clearly labelled as tester routes
+- Treat Apple builds as release candidates until an Apple App Store listing is independently verified
 
 ### Source-aware money and decision workbook
 

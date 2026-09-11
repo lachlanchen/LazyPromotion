@@ -47,6 +47,22 @@ class LectureArchiveCampaignTests(unittest.TestCase):
         )
         self.assertFalse(github["lead_or_sale_observed"])
 
+    def test_rights_cleared_service_path_keeps_the_archive_free(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "lecture-archive-provenance.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        route = campaign["channels"]["github"]["rights_cleared_service_path"]
+
+        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(route["state"], "published")
+        self.assertEqual(route["readme_languages"], 11)
+        self.assertEqual(len(route["repository_commit"]), 40)
+        self.assertIn("utm_campaign=leonard_susskind_archive", route["url"])
+        self.assertIn("archive free", route["policy"])
+        self.assertFalse(campaign["channels"]["github"]["lead_or_sale_observed"])
+
 
 if __name__ == "__main__":
     unittest.main()

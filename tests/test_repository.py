@@ -999,12 +999,16 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["version"], 6)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
         self.assertEqual(releases["google_play_internal_test"], "available_to_internal_testers")
-        self.assertEqual(releases["google_play_production"], "changes_in_review")
+        self.assertEqual(releases["google_play_production"], "public_listing_live")
+        self.assertEqual(
+            releases["google_play_public_url"],
+            "https://play.google.com/store/apps/details?id=art.lazying.landn",
+        )
         self.assertEqual(releases["testflight_internal"], "testing_build_2")
         self.assertEqual(releases["testflight_external"], "testing_build_2")
         self.assertEqual(
@@ -1012,6 +1016,11 @@ class RepositoryTests(unittest.TestCase):
             "https://testflight.apple.com/join/CpkT8m9C",
         )
         self.assertEqual(releases["apple_app_store"], "waiting_for_review")
+        public_store = campaign["source_evidence"]["public_store_fix"]
+        self.assertEqual(public_store["state"], "published")
+        self.assertEqual(public_store["verified_http_status"], 200)
+        self.assertEqual(len(public_store["repository_commit"]), 40)
+        self.assertIn("not a download", public_store["policy"])
         test_build = campaign["source_evidence"]["android_test_build"]
         self.assertTrue(test_build["first_party_apk"].startswith("https://l-and-n.lazying.art/"))
         owned = campaign["source_evidence"]["owned_discovery"]

@@ -1586,7 +1586,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 39)
+        self.assertEqual(campaign["version"], 40)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1641,6 +1641,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(biomedical_guide["pmc_specific_customer_result_claimed"])
         self.assertFalse(biomedical_guide["lead_or_sale_observed"])
         self.assertIn("pubmed_pmc_local_search", biomedical_guide["sample_report_url"])
+        biomedical_post = campaign["channels"]["linkedin"][
+            "biomedical_local_search_post"
+        ]
+        self.assertEqual(biomedical_post["state"], "postiz_queue")
+        self.assertEqual(
+            biomedical_post["publish_at"], "2026-10-05T02:00:00.000Z"
+        )
+        self.assertFalse(biomedical_post["shortlink"])
+        self.assertTrue(biomedical_post["verification"]["tracked_url_preserved"])
+        self.assertEqual(
+            biomedical_post["verification"]["creation_submission_count"], 1
+        )
+        self.assertIsNone(biomedical_post["verification"]["release_url"])
+        self.assertFalse(biomedical_post["lead_or_sale_observed"])
         chat_guide = campaign["channels"]["lazyblog"][
             "chat_archive_current_state_guide"
         ]

@@ -36,6 +36,7 @@ REPOSITORIES = (
     "Kindle",
     "Video2Book",
     "LazyEdit",
+    "L-and-N",
 )
 ISSUES_PER_REPOSITORY = 100
 MINIMUM_INTERVAL_MINUTES = 15
@@ -377,9 +378,14 @@ def load_state(path: Path) -> dict[str, Any] | None:
             os.close(descriptor)
     if not isinstance(payload, dict) or payload.get("version") != 1:
         raise ValueError("existing monitor state is invalid")
-    if payload.get("owner") != OWNER or payload.get("repository_allowlist") != list(
-        REPOSITORIES
-    ):
+    stored_allowlist = payload.get("repository_allowlist")
+    allowlist_is_current_or_prefix = (
+        isinstance(stored_allowlist, list)
+        and bool(stored_allowlist)
+        and all(isinstance(name, str) for name in stored_allowlist)
+        and tuple(stored_allowlist) == REPOSITORIES[: len(stored_allowlist)]
+    )
+    if payload.get("owner") != OWNER or not allowlist_is_current_or_prefix:
         raise ValueError("existing monitor state does not match the fixed allowlist")
     if payload.get("initialized") is not True:
         raise ValueError("existing monitor state is not initialized")
@@ -452,9 +458,17 @@ def build_state(
     previous_keys = set(previous["seen_issue_keys"]) if previous else set()
     is_baseline = previous is None
     new_keys = set() if is_baseline else current_keys - previous_keys
+    newly_allowlisted_repositories = set()
+    if previous:
+        newly_allowlisted_repositories = set(REPOSITORIES) - set(
+            previous["repository_allowlist"]
+        )
     alerts = []
     for issue in current_issues:
-        if issue["key"] not in new_keys:
+        if (
+            issue["key"] not in new_keys
+            or issue["repository"] in newly_allowlisted_repositories
+        ):
             continue
         alerts.append(
             {
@@ -472,6 +486,7 @@ def build_state(
         "initialized": True,
         "checked_at": checked_at,
         "baseline_created": is_baseline,
+        "allowlist_expanded": sorted(newly_allowlisted_repositories),
         "owner": OWNER,
         "repository_allowlist": list(REPOSITORIES),
         "policy": {

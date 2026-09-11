@@ -11,6 +11,11 @@
 - `Kindle`
 - `Video2Book`
 - `LazyEdit`
+- `L-and-N`
+
+`AiMemo` is intentionally excluded while it is private. The monitor refuses
+authenticated private-repository data rather than copying it into the shared
+promotion workflow.
 
 Each pass makes one authenticated GitHub GraphQL query. The query requests the
 repository's visibility and at most the latest 100 issue records: number,
@@ -28,11 +33,13 @@ symbolic-link path components, non-regular files, and multiply linked state
 files. State replacement is atomic and the resulting file mode is `0600`.
 
 The first successful pass records existing issue keys as a baseline and emits
-no alerts. Later passes alert only for keys absent from all prior successful
-passes. Seen keys are retained even after an issue leaves the bounded current
-window. An API or validation failure leaves the last complete state untouched.
-An alert asks for manual relevance review; it is not a lead, customer, sale, or
-revenue classification, and it never triggers a GitHub response.
+no alerts. When a new public repository is appended to the fixed allowlist, its
+existing issues are also baselined while previously watched repositories keep
+their seen history. Later passes alert only for newly observed keys. Seen keys
+are retained even after an issue leaves the bounded current window. An API or
+validation failure leaves the last complete state untouched. An alert asks for
+manual relevance review; it is not a lead, customer, sale, or revenue
+classification, and it never triggers a GitHub response.
 
 ## Operation
 

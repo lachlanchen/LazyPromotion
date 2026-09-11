@@ -271,13 +271,15 @@
       "state": "live_exact_fit_bridge",
       "inbound_monitor": {
         "state": "baseline_initialized",
-        "repository_allowlist_size": 8,
-        "baseline_checked_at": "2026-09-09T13:00:25Z",
+        "repository_allowlist_size": 9,
+        "baseline_checked_at": "2026-09-11T01:02:37Z",
         "issues_in_current_windows": 1,
         "new_issue_alerts": 0,
         "issue_bodies_requested": false,
         "automatic_comments_or_replies": false,
         "last_verified_session": "lazypromotion-github-inbound-monitor",
+        "newest_public_repository": "L-and-N",
+        "private_repository_exclusion": "AiMemo remains private and is not read by this public-metadata monitor.",
         "policy": "A new public issue creates a manual relevance-review alert only; it is never classified as a lead, customer, sale, or revenue."
       }
     },

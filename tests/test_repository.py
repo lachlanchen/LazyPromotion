@@ -208,6 +208,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not an accusation", download_safety["boundary"])
         issue_monitor = campaign["channels"]["github"]["inbound_monitor"]
         self.assertEqual(issue_monitor["state"], "baseline_initialized")
+        self.assertEqual(issue_monitor["repository_allowlist_size"], 9)
+        self.assertEqual(issue_monitor["newest_public_repository"], "L-and-N")
+        self.assertIn("remains private", issue_monitor["private_repository_exclusion"])
         self.assertFalse(issue_monitor["issue_bodies_requested"])
         self.assertFalse(issue_monitor["automatic_comments_or_replies"])
         reddit = campaign["channels"]["reddit"]

@@ -178,6 +178,64 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertEqual(report["seen_issue_keys"], [monitor.issue_key(repository, 1)])
         self.assertEqual(report["alerts"], [])
 
+    def test_appended_public_repository_is_baselined_without_losing_seen_history(self):
+        previous_repository = monitor.REPOSITORIES[0]
+        appended_repository = monitor.REPOSITORIES[-1]
+        previous = {
+            "version": 1,
+            "initialized": True,
+            "owner": monitor.OWNER,
+            "repository_allowlist": list(monitor.REPOSITORIES[:-1]),
+            "seen_issue_keys": [monitor.issue_key(previous_repository, 1)],
+        }
+        monitor.write_private_json(self.state, previous, root=self.root)
+        loaded = monitor.load_state(self.state)
+        self.assertEqual(loaded["repository_allowlist"], list(monitor.REPOSITORIES[:-1]))
+
+        observation = monitor.fetch_public_issues(
+            runner=FakeRunner(
+                [
+                    graphql_payload(
+                        {
+                            previous_repository: [issue(previous_repository, 1)],
+                            appended_repository: [issue(appended_repository, 2)],
+                        }
+                    )
+                ]
+            )
+        )
+        expanded = monitor.build_state(observation, loaded)
+        self.assertEqual(expanded["allowlist_expanded"], [appended_repository])
+        self.assertEqual(expanded["alerts"], [])
+        self.assertEqual(
+            expanded["seen_issue_keys"],
+            [
+                monitor.issue_key(previous_repository, 1),
+                monitor.issue_key(appended_repository, 2),
+            ],
+        )
+
+        later_observation = monitor.fetch_public_issues(
+            runner=FakeRunner(
+                [
+                    graphql_payload(
+                        {
+                            previous_repository: [issue(previous_repository, 1)],
+                            appended_repository: [
+                                issue(appended_repository, 2),
+                                issue(appended_repository, 3),
+                            ],
+                        }
+                    )
+                ]
+            )
+        )
+        later = monitor.build_state(later_observation, expanded)
+        self.assertEqual(
+            [alert["key"] for alert in later["alerts"]],
+            [monitor.issue_key(appended_repository, 3)],
+        )
+
     def test_failed_query_preserves_existing_state_and_sanitizes_cli_error(self):
         repository = monitor.REPOSITORIES[0]
         good = FakeRunner([graphql_payload({repository: [issue(repository, 1)]})])

@@ -114,7 +114,7 @@ None has produced a buyer inquiry or payment yet.
 
 ### 1. Existing paid-work applications
 
-Twenty-four reviewed applications or pitches are already awaiting a human
+Twenty-five reviewed applications or pitches are already awaiting a human
 reply. They cover technical writing, scientific editing, software testing,
 embedded UI, multilingual subtitle work, video editing, and agent engineering.
 These routes are closer to money than another account registration because a
@@ -124,6 +124,24 @@ application.
 The correct action is quiet monitoring, followed by a short, specific reply
 when a human responds. Reapplying, sending additional portfolio links, or
 opening parallel accounts would decrease trust without improving the offer.
+
+The September 11 writer-program recheck did not justify another account or
+application. [Twilio Developer Voices](https://www.twilio.com/en-us/voices),
+[Honeybadger](https://www.honeybadger.io/blog/write-for-us/),
+[SpinupWP](https://spinupwp.com/writers-program/), and
+[Semaphore](https://semaphore.io/blog/2015/03/26/get-paid-to-write-tutorials.html)
+all explicitly say that new writing engagements are closed or paused.
+[Civo](https://www.civo.com/write-for-us) remains open but rejects AI-generated
+material and treats tutorials from authors representing their own commercial
+or open-source projects as unpaid co-marketing. [Vultr's active creator
+program](https://docs.vultr.com/introduction-to-vultr-creator-dashboard)
+requires the applicant's country of residence and a CAPTCHA at account
+creation; a company address or public profile location is not a substitute for
+that declaration. [AppSignal's application](https://blog.appsignal.com/write-for-us.html)
+requires existing mid/senior-level JavaScript, Node.js, Elixir, or Ruby article
+evidence, while the current public portfolio does not yet contain the requested
+code-heavy article samples in those exact stacks. No form, account, or claim was
+created from this recheck.
 
 ### 2. OpenHI software sprint
 

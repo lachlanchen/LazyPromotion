@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 15,
+  "version": 16,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -40,14 +40,26 @@
     "public_sample": {
       "state": "live_verified",
       "url": "https://lazying.art/openhi-reproducibility/sample-report/",
-      "source_commit": "fce0e13cb937fd8443910b9eb6387cc2ff4fdd6a",
+      "source_commit": "8fb7ac280d6018b64e01aa7c602581f8a5e035ee",
       "openhi_revision_tested": "080ad074a4581f34e3b87e6f23be64321eda5222",
       "result": "One public weighted-cumulative visualization stage completed with exit code 0 on a deterministic 4,096-event fixture, producing 120 time bins and one recorded PNG.",
+      "download_packet": {
+        "state": "live_verified",
+        "url": "https://lazying.art/openhi-reproducibility/sample-report/assets/openhi-reproducibility-sample.zip",
+        "checksum_url": "https://lazying.art/openhi-reproducibility/sample-report/assets/openhi-reproducibility-sample.zip.sha256",
+        "sha256": "658e5d17565660c4b925c539d7378d5df338397628201d367abe080e3e16059f",
+        "member_count": 9,
+        "member_root": "openhi-reproducibility-sample",
+        "deterministic_timestamp": "2026-09-09T00:00:00Z",
+        "website_commit": "de951ed9f79960163ff68d779384338aede02a90",
+        "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34627014884",
+        "verification": "The live archive is byte-identical to the committed source packet, its SHA-256 sidecar matches, and all nine safe-path members pass ZIP integrity checks."
+      },
       "boundary": "The sample verifies only the selected file/interface execution path in the recorded environment. It does not verify acquisition, segmentation, learned compensation, calibration, reconstruction accuracy, hardware compatibility, or a scientific result, and it is not a customer result."
     },
-    "website_commit": "25f6b23566b724130986d5b7a63005bfd0be3f4b",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34437247094",
-    "live_verification": "The offer and fit-check page returned HTTP 200 after the Pages deployment and visibly distinguish direct-site Stripe payment from marketplace-origin contracting and payment. The offer says the sprint tests one stage and returns any generated outputs rather than promising successful reproduction. The offer, sample, and fit-check each appear exactly once in the public sitemap."
+    "website_commit": "de951ed9f79960163ff68d779384338aede02a90",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34627014884",
+    "live_verification": "The offer and fit-check page return HTTP 200 and visibly distinguish direct-site Stripe payment from marketplace-origin contracting and payment. The sample report now provides one deterministic nine-file ZIP and its checksum; the live download is byte-identical to the committed source packet. The offer says the sprint tests one stage and returns any generated outputs rather than promising successful reproduction. The offer, sample, and fit-check each appear exactly once in the public sitemap."
   },
   "contra_marketplace": {
     "state": "published_live_verified",

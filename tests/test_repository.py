@@ -54,7 +54,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         offer = campaign["offer"]
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         self.assertEqual(offer["price"], "USD 500")
         self.assertEqual(offer["stage_limit"], 1)
         self.assertEqual(offer["dataset_limit"], 1)
@@ -65,6 +65,18 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(offer["deliverable_allocation_usd"]["environment_record"], 150)
         self.assertEqual(offer["deliverable_allocation_usd"]["reproduction_packet"], 225)
         self.assertEqual(offer["deliverable_allocation_usd"]["go_no_go_report"], 125)
+        packet = offer["public_sample"]["download_packet"]
+        self.assertEqual(packet["state"], "live_verified")
+        self.assertEqual(packet["member_count"], 9)
+        self.assertEqual(
+            packet["sha256"],
+            hashlib.sha256(
+                (ROOT / "examples" / "openhi-reproducibility" / "artifacts" / "openhi-reproducibility-sample.zip").read_bytes()
+            ).hexdigest(),
+        )
+        self.assertTrue(packet["url"].endswith("openhi-reproducibility-sample.zip"))
+        self.assertTrue(packet["checksum_url"].endswith(".zip.sha256"))
+        self.assertIn("byte-identical", packet["verification"])
         contra = campaign["contra_marketplace"]
         self.assertEqual(contra["state"], "published_live_verified")
         self.assertEqual(contra["price"], "USD 500 one-time")

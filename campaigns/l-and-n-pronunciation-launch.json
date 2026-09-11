@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -81,7 +81,7 @@
     "media_quality_review": {
       "checked_at": "2026-09-12T02:40:00+08:00",
       "method": "One-frame-per-second contact sheet plus full-resolution spot frames at 2, 8, and 15 seconds.",
-      "decision": "hold",
+      "decision": "original_rejected_replacement_approved_and_queued",
       "issue": "Cross-fades between dense app screens leave overlapping headings, bilingual copy, and interface panels visibly unreadable during transitions.",
       "affected_channels": [
         "instagram",
@@ -90,9 +90,9 @@
       ],
       "postiz_state_verified": "DRAFT",
       "text_only_x_state_verified": "QUEUE",
-      "replacement_gate": "Do not reschedule a media-backed post until a new export uses clean cuts or non-overlapping transitions and passes the same timed-frame review.",
+      "replacement_gate": "Cleared only for the hard-cut v5 export after the same timed-frame, audio-boundary, exact-copy, destination, provider-rule, and queue-state checks.",
       "replacement": {
-        "state": "attached_to_three_postiz_drafts_after_visible_review",
+        "state": "queued_after_fresh_media_and_provider_recheck",
         "filename": "landn-bilingual-vertical-v5.mp4",
         "sha256": "7c2b0fb86c0f284832a1e7851d1ce71b1707c3602c07f83e8a672d178a8ff15b",
         "duration_seconds": 19.366667,
@@ -114,7 +114,21 @@
           "linkedin"
         ],
         "postiz_verification": "The old attachment was removed once in each visible editor, this exact local file was uploaded through the editor, one replacement tile and preview were visible, the original content and URL were preserved, and Save as draft completed with DRAFT still returned by the provider read.",
-        "postiz_boundary": "The replacement is attached to all three drafts, but none was scheduled or published during the replacement review."
+        "postiz_boundary": "The replacement is attached to all three reviewed posts and each is now queued for its recorded future time; none is published yet."
+      },
+      "replacement_queue_review": {
+        "checked_at": "2026-09-12T06:29:11+08:00",
+        "decision": "queue",
+        "method": "Fresh one-frame-per-second contact sheet and file hash, prior full-resolution cut-boundary and audio checks, current Postiz authentication, current provider rules, exact stored copy and settings, live destinations, and provider state after each transition.",
+        "verified_state": "QUEUE",
+        "release_present": false,
+        "publish_at": {
+          "youtube": "2026-09-13T02:30:00Z",
+          "instagram": "2026-09-13T12:00:00Z",
+          "linkedin": "2026-09-20T02:00:00Z"
+        },
+        "destination_http_status": 200,
+        "policy": "Queueing this first-party free-app demonstration is distribution preparation, not publication, feedback, a lead, a sale, or revenue."
       }
     }
   },
@@ -140,7 +154,7 @@
   },
   "channels": {
     "linkedin": {
-      "state": "postiz_draft_quality_review",
+      "state": "postiz_queue",
       "scheduled_for": "2026-09-20T02:00:00Z",
       "content": "I have trouble pronouncing L and N, so I built the practice tool I wanted.\n\nHear a pair, see the mouth and airflow cue, record one word, and get feedback you can inspect. The same four-minute drill works in English, Mandarin, and Cantonese.\n\nIt’s free and open source, and runs in the browser without an account:\nhttps://l-and-n.lazying.art/\n\nIf you try it, tell me whether the mouth view actually makes the difference clearer.",
       "content_sha256": "4976b657ef333e7e2aa1104c28326e16317c2166c2ae51eaad0362b25f0c6898",
@@ -150,7 +164,7 @@
         "post_as_images_carousel": false
       },
       "schedule_verification": {
-        "checked_at": "2026-09-12T03:09:17+08:00",
+        "checked_at": "2026-09-12T06:29:11+08:00",
         "provider": "linkedin",
         "integration_enabled": true,
         "provider_max_length": 3000,
@@ -160,10 +174,10 @@
         "postiz_stored_content_sha256": "aec34e4c569ace2910977718638347c748c7794edebe542e40a484f2d983c4f5",
         "stored_html_normalizes_to_reviewed_text": true,
         "matching_posts": 1,
-        "verified_state": "DRAFT",
+        "verified_state": "QUEUE",
         "release_present": false,
         "replacement_media_attached": true,
-        "schedule_clicked": false
+        "schedule_clicked": true
       },
       "visible_review": {
         "checked_at": "2026-09-12T03:09:17+08:00",
@@ -175,11 +189,11 @@
         "replacement_media_visible": true,
         "original_urls_preserved_after_save": true
       },
-      "quality_hold_reason": "The cross-faded source was replaced with the hard-cut v5 export. Keep this reviewed replacement as a draft until a separate scheduling decision.",
-      "policy": "This first-party product demonstration remains a draft, not a public post, engagement, lead, or sale."
+      "quality_decision": "The cross-faded source remains rejected. The hard-cut v5 replacement passed a fresh media and provider recheck and is queued for the recorded future time.",
+      "policy": "This first-party product demonstration is queued, not yet public, and is not an engagement, lead, or sale."
     },
     "instagram": {
-      "state": "postiz_draft_quality_review",
+      "state": "postiz_queue",
       "publish_at": "2026-09-13T12:00:00Z",
       "content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
       "postiz_content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
@@ -190,23 +204,23 @@
         "post_type": "post"
       },
       "verification": {
-        "checked_at": "2026-09-12T03:09:17+08:00",
+        "checked_at": "2026-09-12T06:29:11+08:00",
         "provider_max_length": 2200,
         "provider_attachment_rule_satisfied": true,
         "visible_editor_reviewed": true,
         "media_visible": true,
         "matching_posts": 1,
-        "verified_state": "DRAFT",
+        "verified_state": "QUEUE",
         "release_present": false,
         "replacement_media_attached": true,
         "original_urls_preserved_after_save": true,
-        "schedule_clicked": false
+        "schedule_clicked": true
       },
-      "quality_hold_reason": "The cross-faded source was replaced with the hard-cut v5 export. Keep this reviewed replacement as a draft until a separate scheduling decision.",
-      "policy": "A first-party vertical demonstration of the live free browser app. It is held as a draft, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
+      "quality_decision": "The cross-faded source remains rejected. The hard-cut v5 replacement passed a fresh media and provider recheck and is queued for the recorded future time.",
+      "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "youtube": {
-      "state": "postiz_draft_quality_review",
+      "state": "postiz_queue",
       "publish_at": "2026-09-13T02:30:00Z",
       "title": "I mix up L and N, so I built this pronunciation drill",
       "content": "I mix up L and N, so I built the short practice loop I wanted: hear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback.\n\nTry it free in the browser, no account:\nhttps://l-and-n.lazying.art/?utm_source=youtube&utm_medium=video&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nEnglish, Mandarin, and Cantonese.\n\n#PronunciationPractice #LanguageLearning #Shorts",
@@ -226,20 +240,20 @@
         ]
       },
       "verification": {
-        "checked_at": "2026-09-12T03:09:17+08:00",
+        "checked_at": "2026-09-12T06:29:11+08:00",
         "provider_max_length": 5000,
         "provider_attachment_rule_satisfied": true,
         "visible_editor_reviewed": true,
         "media_visible": true,
         "matching_posts": 1,
-        "verified_state": "DRAFT",
+        "verified_state": "QUEUE",
         "release_present": false,
         "replacement_media_attached": true,
         "original_urls_preserved_after_save": true,
-        "schedule_clicked": false
+        "schedule_clicked": true
       },
-      "quality_hold_reason": "The cross-faded source was replaced with the hard-cut v5 export. Keep this reviewed replacement as a draft until a separate scheduling decision.",
-      "policy": "A first-party vertical demonstration of the live free browser app. It is held as a draft, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
+      "quality_decision": "The cross-faded source remains rejected. The hard-cut v5 replacement passed a fresh media and provider recheck and is queued for the recorded future time.",
+      "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "reddit": {
       "state": "resource_thread_live",

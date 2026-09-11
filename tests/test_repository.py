@@ -1247,7 +1247,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1288,7 +1288,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not a learner result", lesson["policy"])
         self.assertEqual(len(test_build["sha256"]), 64)
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_draft_quality_review")
+        self.assertEqual(linkedin["state"], "postiz_queue")
         self.assertEqual(linkedin["scheduled_for"], "2026-09-20T02:00:00Z")
         self.assertIn("I have trouble pronouncing L and N", linkedin["content"])
         self.assertIn("English, Mandarin, and Cantonese", linkedin["content"])
@@ -1299,13 +1299,14 @@ class RepositoryTests(unittest.TestCase):
         schedule = linkedin["schedule_verification"]
         self.assertTrue(schedule["integration_enabled"])
         self.assertEqual(schedule["provider"], "linkedin")
-        self.assertEqual(schedule["verified_state"], "DRAFT")
+        self.assertEqual(schedule["verified_state"], "QUEUE")
         self.assertTrue(schedule["stored_html_normalizes_to_reviewed_text"])
         self.assertEqual(schedule["matching_posts"], 1)
         self.assertFalse(schedule["release_present"])
+        self.assertTrue(schedule["schedule_clicked"])
         for name in ("instagram", "youtube"):
             channel = campaign["channels"][name]
-            self.assertEqual(channel["state"], "postiz_draft_quality_review")
+            self.assertEqual(channel["state"], "postiz_queue")
             self.assertEqual(
                 channel["media_sha256"],
                 campaign["source_evidence"]["media_quality_review"]["replacement"]["sha256"],
@@ -1314,25 +1315,32 @@ class RepositoryTests(unittest.TestCase):
             self.assertTrue(channel["verification"]["media_visible"])
             self.assertTrue(channel["verification"]["replacement_media_attached"])
             self.assertTrue(channel["verification"]["original_urls_preserved_after_save"])
-            self.assertFalse(channel["verification"]["schedule_clicked"])
+            self.assertTrue(channel["verification"]["schedule_clicked"])
             self.assertEqual(channel["verification"]["matching_posts"], 1)
-            self.assertEqual(channel["verification"]["verified_state"], "DRAFT")
+            self.assertEqual(channel["verification"]["verified_state"], "QUEUE")
             self.assertFalse(channel["verification"]["release_present"])
-            self.assertIn("hard-cut v5", channel["quality_hold_reason"])
+            self.assertIn("hard-cut v5", channel["quality_decision"])
         quality = campaign["source_evidence"]["media_quality_review"]
-        self.assertEqual(quality["decision"], "hold")
+        self.assertEqual(
+            quality["decision"],
+            "original_rejected_replacement_approved_and_queued",
+        )
         self.assertEqual(quality["postiz_state_verified"], "DRAFT")
         self.assertEqual(quality["text_only_x_state_verified"], "QUEUE")
-        self.assertIn("clean cuts", quality["replacement_gate"])
+        self.assertIn("hard-cut v5", quality["replacement_gate"])
         replacement = quality["replacement"]
         self.assertEqual(
             replacement["state"],
-            "attached_to_three_postiz_drafts_after_visible_review",
+            "queued_after_fresh_media_and_provider_recheck",
         )
         self.assertEqual(len(replacement["sha256"]), 64)
         self.assertEqual(replacement["cut_boundaries_seconds"], [3.8, 9.6, 12.9, 16.2])
         self.assertIn("no blended text", replacement["visual_review"])
         self.assertIn("before the listening slide cuts", replacement["audio_review"])
+        queue_review = quality["replacement_queue_review"]
+        self.assertEqual(queue_review["verified_state"], "QUEUE")
+        self.assertFalse(queue_review["release_present"])
+        self.assertEqual(queue_review["destination_http_status"], 200)
         x_channel = campaign["channels"]["x"]
         self.assertEqual(x_channel["state"], "postiz_queue")
         self.assertEqual(x_channel["publish_at"], "2026-09-13T02:00:00Z")

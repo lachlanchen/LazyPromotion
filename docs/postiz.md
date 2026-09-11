@@ -235,6 +235,15 @@ LinkedIn editor. Each editor showed one uploaded replacement and the original
 copy, and each save retained the original URL. A provider read returned all
 three items as `DRAFT`; none was scheduled or published during the review.
 
+A separate September 12 scheduling review rechecked the exact `v5` hash and a
+fresh one-frame-per-second contact sheet, the earlier cut-boundary and audio
+checks, all three current provider rule schemas, stored copy and settings, and
+the live first-party destinations. YouTube is queued for September 13 at 02:30
+UTC, Instagram for September 13 at 12:00 UTC, and LinkedIn for September 20 at
+02:00 UTC. A fresh provider read returned each item in `QUEUE` with no release
+URL. The rejected cross-faded source remains excluded; queue state is not
+publication, feedback, a lead, a sale, or revenue.
+
 The older project-made science scene published on Instagram was removed after
 the creator rejected its visual quality. Its public reel route now reports
 unavailable, and the matching Postiz record was deleted after the provider

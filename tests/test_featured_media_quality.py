@@ -7,25 +7,32 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class FeaturedMediaQualityTests(unittest.TestCase):
-    def test_landn_media_posts_remain_drafts_after_timed_frame_review(self):
+    def test_landn_rejected_source_stays_out_while_reviewed_replacement_is_queued(self):
         campaign = json.loads(
             (ROOT / "campaigns" / "l-and-n-pronunciation-launch.json").read_text(
                 encoding="utf-8"
             )
         )
         quality = campaign["source_evidence"]["media_quality_review"]
-        self.assertEqual(quality["decision"], "hold")
+        self.assertEqual(
+            quality["decision"],
+            "original_rejected_replacement_approved_and_queued",
+        )
         self.assertIn("overlapping headings", quality["issue"])
         self.assertEqual(
             quality["replacement"]["state"],
-            "attached_to_three_postiz_drafts_after_visible_review",
+            "queued_after_fresh_media_and_provider_recheck",
         )
         self.assertIn("hard cuts", quality["replacement"]["visual_review"])
-        self.assertIn("none was scheduled", quality["replacement"]["postiz_boundary"])
+        self.assertIn("queued", quality["replacement"]["postiz_boundary"])
+        queue_review = quality["replacement_queue_review"]
+        self.assertEqual(queue_review["decision"], "queue")
+        self.assertEqual(queue_review["verified_state"], "QUEUE")
+        self.assertFalse(queue_review["release_present"])
         for channel in ("instagram", "youtube", "linkedin"):
             self.assertEqual(
                 campaign["channels"][channel]["state"],
-                "postiz_draft_quality_review",
+                "postiz_queue",
             )
             self.assertEqual(
                 campaign["channels"][channel]["media_sha256"],

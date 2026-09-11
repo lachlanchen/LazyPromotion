@@ -1,0 +1,68 @@
+{
+  "id": "appsignal-technical-writer-program",
+  "version": 1,
+  "objective": "Win one paid Node.js observability article by matching current public JavaScript tooling and deep technical writing to AppSignal's open author program without inventing a rate, assignment, or professional tenure.",
+  "source_need": {
+    "captured_at": "2026-09-11T01:24:00Z",
+    "url": "https://blog.appsignal.com/write-for-us.html",
+    "title": "Write for the AppSignal blog",
+    "state": "official_current_program_with_accepting_form",
+    "published_scope": "Original mid/senior-level Node.js, Ruby, Python, or Elixir articles with substantial code and explanation, usually around 1,500 words. AppSignal names performance optimization, monitoring, and observability as core subjects.",
+    "published_compensation": "A base rate is promised, but no amount or currency is published on the program page.",
+    "published_process": "Accepted writers sign an author agreement, agree a topic and outline, write in an AppSignal GitHub repository, revise with an editor, and are paid after approval.",
+    "assistance_policy": "No explicit AI-assistance policy was found on the controlling program page. Confirm it with the editor before outlining or drafting.",
+    "policy": "Application, human reply, author agreement, topic acceptance, article approval, payment confirmation, and received revenue are separate states. Do not draft until the fee, assistance policy, rights, revisions, acceptance criteria, payment route, and timing are confirmed."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdge",
+      "AAPS",
+      "PaperAgent",
+      "LexiconAtlas",
+      "BLOG"
+    ],
+    "selected_language": "Node.js",
+    "selected_topic": "Observability",
+    "public_samples": [
+      "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
+      "https://github.com/lachlanchen/LazyEdge",
+      "https://blog.lazying.art/html/computer_internet/software/3603/i-got-tired-of-agent-limits-so-i-built-agintiflow.html"
+    ],
+    "supported_now": [
+      "A public Node.js 20+ default-deny reverse edge with implementation, security, operations, tests, and npm release evidence",
+      "A current operational article about a Node-distributed CLI and MCP workflow with code and verification boundaries",
+      "Current public JavaScript and TypeScript repositories plus published JavaScript material dating to 2011",
+      "First-person technical writing about building and validating developer tooling"
+    ],
+    "not_claimed": [
+      "Continuous professional JavaScript employment since 2011",
+      "Prior AppSignal publication or use in a production customer incident",
+      "Editorial acceptance, an agreed topic, a commissioned article, a numerical fee, payment, or revenue"
+    ],
+    "claim_boundary": "The published articles and code establish Node.js writing and implementation fit. They do not establish acceptance, an assignment, a rate, or payment."
+  },
+  "application": {
+    "state": "submitted_awaiting_human_reply",
+    "sent_at": "2026-09-11T01:26:42Z",
+    "method": "Official Google Form using the LazyingArt business contact, three live public samples, Node.js as the only selected language, and observability as the selected topic",
+    "exact_answers_storage": "ignored private evidence",
+    "delivery_evidence": "The visible isolated project browser showed all required fields completed before one submit action. The form then displayed its own acknowledgement thanking the applicant and saying AppSignal will be in touch if there is a fit. A private confirmation screenshot remains outside Git.",
+    "account_required": false,
+    "identity_document_required": false,
+    "terms_checkbox_observed": false,
+    "rate_claimed": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "policy": "Do not resubmit or follow up before the review date. If a human replies, confirm the exact topic, rate and currency, assistance policy, author agreement, rights, revisions, acceptance criteria, payment route, and timing before work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "topic_accepted": false,
+    "article_delivered": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

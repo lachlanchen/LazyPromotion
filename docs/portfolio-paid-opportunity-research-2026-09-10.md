@@ -114,7 +114,7 @@ None has produced a buyer inquiry or payment yet.
 
 ### 1. Existing paid-work applications
 
-Twenty-five reviewed applications or pitches are already awaiting a human
+Twenty-six reviewed applications or pitches are already awaiting a human
 reply. They cover technical writing, scientific editing, software testing,
 embedded UI, multilingual subtitle work, video editing, and agent engineering.
 These routes are closer to money than another account registration because a
@@ -138,10 +138,12 @@ program](https://docs.vultr.com/introduction-to-vultr-creator-dashboard)
 requires the applicant's country of residence and a CAPTCHA at account
 creation; a company address or public profile location is not a substitute for
 that declaration. [AppSignal's application](https://blog.appsignal.com/write-for-us.html)
-requires existing mid/senior-level JavaScript, Node.js, Elixir, or Ruby article
-evidence, while the current public portfolio does not yet contain the requested
-code-heavy article samples in those exact stacks. No form, account, or claim was
-created from this recheck.
+requires existing mid/senior-level JavaScript, Node.js, Ruby, Python, or Elixir
+writing with substantial code. LazyEdge and the current Postiz workflow provide
+supportable Node.js implementation and writing evidence, so one application was
+submitted for Node.js observability using three live samples. The form displayed
+its thank-you confirmation. AppSignal publishes no numerical rate, and no
+account, assignment, agreement, payment, or revenue was created.^20
 
 ### 2. OpenHI software sprint
 
@@ -370,3 +372,4 @@ routes already live.
 17. Upwork. “[Local AI Agent Platform](https://www.upwork.com/freelance-jobs/apply/Local-Agent-Platform_~022095360496874933773/).” Accessed September 11, 2026.
 18. Upwork. “[Developer wanted for self-hosted AI chatbot + expert question routing system](https://www.upwork.com/freelance-jobs/apply/Developer-wanted-for-self-hosted-chatbot-expert-question-routing-system_~022094334214117597398/).” Accessed September 11, 2026.
 19. Technically. “[Contributor](https://technically.dev/contribute/contributor).” Accessed September 11, 2026.
+20. AppSignal. “[Write for the AppSignal blog](https://blog.appsignal.com/write-for-us.html).” Accessed September 11, 2026.

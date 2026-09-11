@@ -53,6 +53,24 @@ class FeaturedMediaQualityTests(unittest.TestCase):
         self.assertEqual(linkedin["verified_state"], "DRAFT")
         self.assertFalse(linkedin["release_present"])
 
+    def test_rejected_science_reel_is_deleted_and_not_routed(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        correction = campaign["source_evidence"]["media_quality_correction"]
+        instagram = campaign["channels"]["instagram"]
+        self.assertEqual(
+            correction["decision"],
+            "delete_rejected_release_and_remove_from_current_selling_proof",
+        )
+        self.assertEqual(instagram["state"], "deleted_for_media_quality")
+        self.assertTrue(
+            instagram["visible_review"]["public_route_unavailable_after_reopen"]
+        )
+        self.assertIn("Do not recreate", instagram["policy"])
+
     def test_retired_sample_is_excluded_from_current_repurposing_proof(self):
         campaign = json.loads(
             (ROOT / "campaigns" / "content-repurposing-pilot.json").read_text(

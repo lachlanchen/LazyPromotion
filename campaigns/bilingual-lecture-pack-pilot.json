@@ -91,12 +91,12 @@
       "claim_boundary": "The packet proves the small English-to-Traditional-Chinese delivery structure with a synthetic project-owned source. It is not customer work, a full 20-minute delivery, certified translation, independent native-language review, a sale, or revenue."
     },
     "media_quality_correction": {
-      "checked_at": "2026-09-12T03:09:17+08:00",
+      "checked_at": "2026-09-12T05:35:15+08:00",
       "website_commit": "6d9233b9686bb41f39eb1ab3d084801a52664f3b",
       "retired_asset": "The early project-made science scene used by the three-language LalaMedias page and the 2026-09-11 Instagram reel",
-      "decision": "keep_historical_release_but_remove_from_current_selling_proof",
+      "decision": "delete_rejected_release_and_remove_from_current_selling_proof",
       "current_proof": "The complete 41.191-second English-to-Traditional-Chinese delivery packet, editable sources, issue ledger, manifest, and checksums.",
-      "deletion_boundary": "The already published Instagram release was not deleted; no future campaign or proposal may cite the weak scene as current visual proof."
+      "deletion_boundary": "The exact Instagram reel was removed once through the owner UI after the creator rejected its visual quality. Its public route now reports unavailable, its Postiz record was removed, and no other release was changed."
     },
     "transcript_to_book_pipeline": "https://github.com/lachlanchen/Video2Book",
     "lecture_archive_format": "https://github.com/lachlanchen/leonardsusskind",
@@ -587,10 +587,10 @@
       "policy": "The reviewed 242-character post leads with the source-work lesson, uses the protocol-less first-party destination that Postiz preserved, and carries the live fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
     },
     "instagram": {
-      "state": "postiz_published",
-      "promotion_state": "historical_release_not_reusable_as_current_selling_proof",
+      "state": "deleted_for_media_quality",
+      "promotion_state": "deleted_not_reusable_as_current_selling_proof",
       "publish_at": "2026-09-11T12:00:00Z",
-      "release_url": "https://www.instagram.com/reel/DdJXMiBANpn/",
+      "former_release_url": "https://www.instagram.com/reel/DdJXMiBANpn/",
       "content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 15 timed lines across Japanese, English, and Chinese—45 searchable language strings in all. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
       "postiz_content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 15 timed lines across Japanese, English, and Chinese—45 searchable language strings in all. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
       "content_sha256": "b92c0a7394e46c421d8cd5bb738da489d80824b6dba763d83fa653956f013924",
@@ -611,9 +611,13 @@
         "release_observed_at": "2026-09-11T12:15:52Z",
         "state_rechecked_after_schedule": "PUBLISHED",
         "release_present": true,
-        "public_http_status": 200
+        "public_http_status": 200,
+        "deleted_at": "2026-09-11T21:35:15Z",
+        "owner_delete_confirmation_used": true,
+        "public_route_unavailable_after_reopen": true,
+        "postiz_record_deleted_after_provider_removal": true
       },
-      "policy": "The attached video is a historical project-owned demonstration documented by the public source manifest, but its early generated visuals are below the current quality bar. Do not reuse it in new promotion or proposals. Publication is attention, not a fit inquiry, lead, sale, or revenue."
+      "policy": "The early generated visuals were below the current quality bar and the exact release was removed. Do not recreate, republish, or cite it in promotion or proposals. Its former publication was attention, not a fit inquiry, lead, sale, or revenue."
     },
     "linkedin": {
       "state": "postiz_queue",

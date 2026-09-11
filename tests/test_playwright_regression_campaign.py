@@ -55,6 +55,20 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
         self.assertIn("must remain on that marketplace", offer["marketplace_boundary"])
         self.assertEqual(self.campaign["funnel"]["received_revenue_usd"], 0)
 
+    def test_linkedin_post_leads_with_proof_and_uses_one_owned_offer(self):
+        post = self.campaign["channels"]["linkedin"]
+        self.assertEqual(post["state"], "postiz_queue")
+        self.assertEqual(post["publish_at"], "2026-09-16T02:00:00Z")
+        self.assertNotEqual(post["content"], post["postiz_content"])
+        self.assertEqual(post["shortlink"], "https://dub.sh/JcVjOwy")
+        self.assertIn(post["shortlink"], post["postiz_content"])
+        self.assertIn("survive the second and third run", post["content"])
+        self.assertIn("all eleven chapters", post["content"])
+        self.assertIn("fixed USD 250 baseline", post["content"])
+        self.assertEqual(post["content"].count("https://"), 1)
+        self.assertEqual(post["postiz_content"].count("https://"), 1)
+        self.assertNotIn("customer result", post["content"])
+
     def test_bid_has_no_paid_upgrade_or_revenue_claim(self):
         application = self.campaign["application"]
         funnel = self.campaign["funnel"]

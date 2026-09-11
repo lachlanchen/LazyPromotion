@@ -3399,9 +3399,11 @@ class RepositoryTests(unittest.TestCase):
         correction = campaign["source_evidence"]["media_quality_correction"]
         self.assertEqual(
             correction["decision"],
-            "keep_historical_release_but_remove_from_current_selling_proof",
+            "delete_rejected_release_and_remove_from_current_selling_proof",
         )
-        self.assertIn("not deleted", correction["deletion_boundary"])
+        self.assertIn(
+            "public route now reports unavailable", correction["deletion_boundary"]
+        )
 
         terms = campaign["source_evidence"]["working_terms_contract"]
         self.assertEqual(terms["state"], "live_verified")

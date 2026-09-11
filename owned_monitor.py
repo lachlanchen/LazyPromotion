@@ -130,6 +130,10 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
             provider = providers.get(channel_name)
             if not provider or not isinstance(channel, dict):
                 continue
+            if str(channel.get("state") or "").casefold().startswith(
+                ("deleted", "retired")
+            ):
+                continue
             candidates = [("product", channel.get("content"), channel)]
             if channel.get("postiz_content"):
                 candidates.append(("product", channel.get("postiz_content"), channel))

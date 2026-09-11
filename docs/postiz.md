@@ -43,6 +43,11 @@ Use `type=draft` first. Review channel-specific copy and settings in the visible
 Postiz calendar before scheduling or publishing. Public replies to discovered
 individual needs continue through LazyPromotion's exact-content review queue.
 
+Media stays in draft until a current full-playback review checks the opening,
+middle, ending, transitions, readable text, audio, framing, and overall finish.
+An old archive asset does not pass because it is project-owned or technically
+valid. Only reviewed current media may represent LazyingArt or a paid offer.
+
 Before changing any draft to scheduled state, fetch the live provider contract
 with `postiz integrations:settings INTEGRATION_ID` and honor its `rules` plus
 each field description. Provider-inapplicable settings can be silently ignored,
@@ -230,9 +235,10 @@ LinkedIn editor. Each editor showed one uploaded replacement and the original
 copy, and each save retained the original URL. A provider read returned all
 three items as `DRAFT`; none was scheduled or published during the review.
 
-The older project-made science scene published on Instagram remains an
-historical post, but its visual finish is below the current promotion bar. Do
-not reuse that scene as current selling proof. The complete project-owned
+The older project-made science scene published on Instagram was removed after
+the creator rejected its visual quality. Its public reel route now reports
+unavailable, and the matching Postiz record was deleted after the provider
+removal. Do not recreate or reuse that scene. The complete project-owned
 lecture-pack delivery packet is the current proof instead.
 
 ## Owned-post observation

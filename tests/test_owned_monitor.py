@@ -518,13 +518,13 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["route"], "product")
 
         instagram = campaign["channels"]["instagram"]
-        self.assertEqual(instagram["state"], "postiz_published")
+        self.assertEqual(instagram["state"], "deleted_for_media_quality")
         self.assertEqual(
             instagram["promotion_state"],
-            "historical_release_not_reusable_as_current_selling_proof",
+            "deleted_not_reusable_as_current_selling_proof",
         )
         self.assertEqual(
-            instagram["release_url"],
+            instagram["former_release_url"],
             "https://www.instagram.com/reel/DdJXMiBANpn/",
         )
         self.assertEqual(instagram["settings"]["post_type"], "post")
@@ -539,13 +539,19 @@ class OwnedMonitorTests(unittest.TestCase):
             "PUBLISHED",
         )
         self.assertTrue(instagram["visible_review"]["release_present"])
+        self.assertTrue(
+            instagram["visible_review"]["public_route_unavailable_after_reopen"]
+        )
+        self.assertTrue(
+            instagram["visible_review"]["postiz_record_deleted_after_provider_removal"]
+        )
         instagram_route = owned_monitor.route_for_post(
             "instagram-standalone",
             instagram["postiz_content"],
             owned_monitor.route_index(),
         )
-        self.assertEqual(instagram_route["campaign_id"], "bilingual-lecture-pack-pilot")
-        self.assertEqual(instagram_route["route"], "product")
+        self.assertEqual(instagram_route["campaign_id"], "")
+        self.assertEqual(instagram_route["route"], "unmatched_owned_post")
 
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")

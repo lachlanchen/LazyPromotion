@@ -17,7 +17,15 @@
       "content_sha256": "7a20be6c345e72f9b56565b30a1a2241335f8d11a5d9d784a1f1c4b61c8c9aec",
       "linked_project": false,
       "reply_summary": "Explained that deterministic code validates legal moves, game-specific engines can rank candidates, and an optional LLM explains the evidence without owning the rules.",
-      "policy": "The reply answers the exact product question without a new link, offer, private message, or sales claim. It is a helpful interaction, not a qualified lead or revenue."
+      "policy": "The reply answers the exact product question without a new link, offer, private message, or sales claim. It is a helpful interaction, not a qualified lead or revenue.",
+      "profile_context": {
+        "state": "live_verified",
+        "profile_url": "https://www.threads.com/@lazying.art",
+        "updated_at": "2026-09-11T16:09:00Z",
+        "bio": "Building open-source tools, books and experiments for language learning, local AI and reproducible research. lazying.art",
+        "content_sha256": "6e010ec4010b47d403eae75f5b11bbaa18dc3ab873a2b3b7c3203bab82c61f95",
+        "boundary": "The profile supplies quiet context for helpful replies. A profile view, follow, or click is attention only and is not a lead or revenue."
+      }
     }
   },
   "funnel": {

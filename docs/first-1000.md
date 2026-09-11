@@ -85,6 +85,17 @@ the named applicant; an agent must not impersonate them. Two accepted and paid
 articles would reach USD 1,000 gross, but no reply, test, assignment, payment,
 or revenue exists yet.
 
+WebAPI Group adds a code-and-content route worth up to USD 600 per validated
+campaign. One reviewed message through its official LinkedIn company page
+proposed a tested ChartQuery guide that turns the existing multilingual-book
+provenance graph into reproducible SVG and PDF diagrams. The application links
+the public GitHub, blog, X profile, and one published API/CLI/MCP article, and
+states the AI-assisted workflow directly. LinkedIn confirmed one successful
+send. Do not build vendor content before approval; first confirm the exact
+campaign amount, API access, deliverables, validation, rights, disclosure,
+payment details, and assistance expectations. This is an outbound application,
+not approval, a commissioned campaign, validation, payment, or revenue.
+
 The strongest current no-marketplace application is Lopaka's worldwide DevPet
 embedded-UI prototype contract at a published USD 80–140 per hour for roughly
 10–15 hours a week over six to eight weeks. One application was submitted on

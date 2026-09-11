@@ -304,6 +304,17 @@ earn the two prizes.^11 Its parts cost, safety exposure, shipping time, and
 winner-takes-first risk make it a poor first-USD-1,000 action despite being a
 real hardware opportunity.
 
+WebAPI Group's current ambassador program passes the registration rule without
+creating another account: it asks for one LinkedIn message from an existing
+profile and publishes a reward of up to USD 600 per validated campaign.^23 The
+proposal uses ChartQuery because the existing LKT and Lexicon Atlas work already
+contains a multilingual provenance graph that can become a small, tested Python
+diagram example. One reviewed message linked the public GitHub, X profile, blog,
+and one technical sample, disclosed AI-assisted tooling, and received LinkedIn's
+successful-send confirmation. Do not build the vendor-specific guide unless the
+program approves the application and fixes the campaign amount, API access,
+validation, rights, disclosure, payment details, and assistance expectations.
+
 ## Registration rule
 
 Create a new account only when all seven conditions are true:
@@ -327,7 +338,7 @@ terms make autonomous action invalid or commercially weak.
 
 ### Now
 
-- Keep the four live service routes and their proof stable.
+- Keep the eight owned service routes and five live Contra listings stable.
 - Monitor existing applications, fit-check aggregates, Contra messages and
   high-attention GitHub issues without automatic replies.
 - Let queued first-party Postiz content publish on its reviewed schedule; do
@@ -387,3 +398,4 @@ routes already live.
 20. AppSignal. “[Write for the AppSignal blog](https://blog.appsignal.com/write-for-us.html).” Accessed September 11, 2026.
 21. Grow & Convert. “[Write for Us](https://www.growandconvert.com/content-marketing-jobs/).” Accessed September 11, 2026.
 22. Vocal Video. “[8 Minute Product Demo](https://help.vocalvideo.com/article/16-product-tour).” Accessed September 11, 2026.
+23. WebAPI Group. “[Ambassador program](https://webapi.group/ambassador).” Accessed September 11, 2026.

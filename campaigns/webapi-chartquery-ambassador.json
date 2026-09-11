@@ -1,0 +1,67 @@
+{
+  "id": "webapi-chartquery-ambassador",
+  "version": 1,
+  "objective": "Win one paid WebAPI ambassador campaign worth up to USD 600 by building a tested ChartQuery guide around LazyingArt's real multilingual provenance graph.",
+  "source_need": {
+    "captured_at": "2026-09-11T02:16:10Z",
+    "url": "https://webapi.group/ambassador",
+    "title": "WebAPI Group ambassador program",
+    "state": "official_current_program_with_linkedin_application_route",
+    "published_scope": "Public tutorials, technical threads, articles, and videos that help developers understand one of WebAPI Group's API products.",
+    "published_compensation": "Up to USD 600 per campaign, paid by bank transfer within 30 days after the live content is reviewed and validated.",
+    "submission_requirements": "Send WebAPI Group a LinkedIn message with the applicant name, social profiles, one published sample, and the API the applicant wants to cover.",
+    "assistance_policy": "The program rejects misleading claims, spam, and AI-generated content without real editing and personal input.",
+    "policy": "Approval, an agreed campaign amount, published content, validation, payment processing, and received revenue are separate evidence states. Do not build speculative vendor content before approval and access terms are clear."
+  },
+  "fit": {
+    "projects": [
+      "LocalKnowledgeTerminal",
+      "LexiconAtlas",
+      "BLOG"
+    ],
+    "selected_api": "ChartQuery",
+    "proposed_content": "A tested Python guide that turns a provenance graph from a multilingual book collection into reproducible SVG and PDF diagrams, with the exact inputs, generated artifacts, and failure notes.",
+    "public_profiles": [
+      "https://github.com/lachlanchen",
+      "https://x.com/lazyingart",
+      "https://blog.lazying.art"
+    ],
+    "public_sample": "https://blog.lazying.art/?p=3772",
+    "supported_now": [
+      "A public multilingual provenance graph and a local knowledge-collection workflow",
+      "A published technical API, CLI, and MCP workflow article",
+      "Python tooling and artifact-led verification"
+    ],
+    "not_claimed": [
+      "Existing ChartQuery use, a WebAPI relationship, approval, campaign validation, audience performance, payment, or revenue",
+      "A customer result or an untested API capability"
+    ],
+    "claim_boundary": "The existing graph and writing sample prove relevant public work. The ChartQuery integration remains a proposal until the program approves it and a tested implementation exists."
+  },
+  "application": {
+    "state": "linkedin_message_sent_awaiting_human_reply",
+    "sent_at": "2026-09-11T02:16:10Z",
+    "method": "One reviewed message through the Message action on WebAPI Group's official LinkedIn company page",
+    "exact_content_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated project browser showed the Other topic, the complete 654-character message, and the enabled Send action. One click produced LinkedIn's 'Message sent successfully.' confirmation; no retry was made.",
+    "account_created": false,
+    "credential_created": false,
+    "identity_document_required": false,
+    "terms_checkbox_observed": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "policy": "Do not send another message before the review date. If accepted, confirm the exact campaign, amount, API access, deliverables, technical-validation method, rights, disclosure, payment details, and assistance expectations before producing vendor content."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "program_approval_observed": false,
+    "campaign_accepted": false,
+    "content_published": false,
+    "validation_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

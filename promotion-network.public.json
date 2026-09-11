@@ -471,6 +471,16 @@
       "url": ""
     },
     {
+      "id": "campaign:webapi-chartquery-ambassador",
+      "kind": "campaign",
+      "label": "webapi-chartquery-ambassador",
+      "metadata": {
+        "objective": "Win one paid WebAPI ambassador campaign worth up to USD 600 by building a tested ChartQuery guide around LazyingArt's real multilingual provenance graph.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:webspecification-technical-writer-intern",
       "kind": "campaign",
       "label": "webspecification-technical-writer-intern",

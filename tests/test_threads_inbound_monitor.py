@@ -30,6 +30,7 @@ class ThreadsInboundMonitorTests(unittest.TestCase):
         self.assertTrue(status["baseline_created"])
         self.assertFalse(status["review_required"])
         self.assertEqual(state["fingerprints"], ["one"])
+        self.assertEqual(state["profile_fingerprints"], [])
         self.assertFalse(status["content_opened"])
         self.assertFalse(status["automatic_reply"])
 
@@ -56,6 +57,37 @@ class ThreadsInboundMonitorTests(unittest.TestCase):
         )
         self.assertTrue(status["layout_unknown"])
         self.assertTrue(status["review_required"])
+
+    def test_profile_reply_count_is_a_quiet_fallback_baseline(self):
+        status, state = threads_inbound_monitor.summarize_observation(
+            current_fingerprints=[],
+            previous_fingerprints=[],
+            current_profile_fingerprints=["owned-one", "owned-two"],
+            previous_profile_fingerprints=None,
+            profile_available=True,
+            empty_message_visible=True,
+            authenticated=True,
+            checked_at="2026-09-12T00:15:00Z",
+        )
+        self.assertFalse(status["review_required"])
+        self.assertTrue(status["profile_baseline_created"])
+        self.assertEqual(status["profile_reply_item_count"], 2)
+        self.assertEqual(state["profile_fingerprints"], ["owned-one", "owned-two"])
+
+    def test_new_profile_reply_requires_review_when_activity_filter_is_empty(self):
+        status, _ = threads_inbound_monitor.summarize_observation(
+            current_fingerprints=[],
+            previous_fingerprints=[],
+            current_profile_fingerprints=["owned-one", "owned-two", "owned-three"],
+            previous_profile_fingerprints=["owned-one", "owned-two"],
+            profile_available=True,
+            empty_message_visible=True,
+            authenticated=True,
+            checked_at="2026-09-12T00:30:00Z",
+        )
+        self.assertTrue(status["review_required"])
+        self.assertEqual(status["new_reply_item_count"], 1)
+        self.assertFalse(status["automatic_reply"])
 
     def test_status_summary_never_returns_private_fingerprints(self):
         with tempfile.TemporaryDirectory() as temporary:

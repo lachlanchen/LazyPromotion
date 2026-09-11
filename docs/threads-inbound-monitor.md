@@ -5,7 +5,7 @@ account, so Postiz analytics cannot reliably surface replies there. This small
 monitor closes that gap through the existing dedicated noVNC browser.
 
 Open the project browser first. Its workspace restores exactly one authenticated
-Threads Replies activity tab:
+Threads Replies activity tab and one LazyingArt profile tab:
 
 ```bash
 scripts/desktop.sh start
@@ -13,11 +13,12 @@ python threads_inbound_monitor.py once
 python threads_inbound_monitor.py status
 ```
 
-The read pass brings that already-open tab to the front and inspects only page
-state and reply-link targets. It does not follow a notification or read a
-thread. Stored activity identities are SHA-256 fingerprints; usernames, reply
-text, post URLs, cookies, and account identifiers are not written to the
-status or log.
+The read pass inspects activity link targets plus aggregate reply counts on the
+visible owned profile cards. The profile-count fallback matters because Threads
+can show “No activity yet” after a real reply has already appeared on an owned
+post. It does not follow a notification or read a thread. Stored identities are
+SHA-256 fingerprints; usernames, reply text, post URLs, cookies, and account
+identifiers are not written to the status or log.
 
 The first successful observation establishes a quiet baseline. A later new
 fingerprint, a larger notification count, or an authenticated page whose

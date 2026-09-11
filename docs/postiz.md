@@ -276,11 +276,13 @@ private sanitized log. It does not start Chrome, noVNC, or Firefox.
 
 Threads is not connected to the current Postiz account. When the dedicated
 project browser is already open, `python threads_inbound_monitor.py once`
-checks the visible Replies activity page without opening any notification. It
-stores only opaque fingerprints and aggregate counts. A new item or an unknown
-page layout creates a visible-review alert; it cannot like, follow, message, or
-reply. `python owned_monitor.py status` includes this last sanitized Threads
-state beside the Postiz schedule, aggregate application-inbox, and due-review
+checks the visible Replies activity page and aggregate reply counts on owned
+profile cards without opening any notification. The profile fallback catches
+replies that Threads omits from its Replies filter. It stores only opaque
+fingerprints and aggregate counts. A new item or an unknown page layout creates
+a visible-review alert; it cannot like, follow, message, or reply. The output of
+`python owned_monitor.py status` includes this last sanitized Threads state
+beside the Postiz schedule, aggregate application-inbox, and due-review
 summaries.
 
 The same review pattern was used for a value-first LKT guide post to the

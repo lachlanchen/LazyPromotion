@@ -107,10 +107,15 @@ COMMENT_REQUEST_PHRASES = {
     "推荐", "推薦", "想学", "想學", "需要", "看不懂", "读不懂", "讀不懂",
     "どうやって", "おすすめ", "教えて", "困って", "読めない", "分からない",
 }
+FIRST_PERSON_NEED_RE = re.compile(
+    r"\b(?:i|we)\s+need\b|\b(?:i|we)\b[^.!?\n]{0,180}\b(?:and|but)\s+need\b",
+    flags=re.I,
+)
 SELF_SOLUTION_PHRASES = {
     "i built", "i created", "i launched", "i tested", "my new tool", "my new app",
     "we built", "we created", "we launched", "we tested", "our new tool", "our new app",
-    "free tutoring is available",
+    "free tutoring is available", "hope it helps", "i think i'd share",
+    "resource list",
 }
 BOT_AUTHORS = {"automoderator"}
 GENERIC_REPO_TOPICS = {
@@ -517,6 +522,8 @@ def help_request_signals(body: str) -> dict[str, list[str]]:
         phrase for phrase in COMMENT_REQUEST_PHRASES
         if keyword_present(normalized(phrase).strip(), haystack)
     )
+    if FIRST_PERSON_NEED_RE.search(body):
+        direct_request_hits.append("first-person need")
     self_solution_hits = sorted(
         phrase for phrase in SELF_SOLUTION_PHRASES
         if keyword_present(normalized(phrase).strip(), haystack)
@@ -544,7 +551,7 @@ def is_help_request(body: str) -> bool:
     direct_request = any(
         keyword_present(normalized(phrase).strip(), haystack)
         for phrase in COMMENT_REQUEST_PHRASES
-    )
+    ) or bool(FIRST_PERSON_NEED_RE.search(body))
     explicit = (
         "?" in body
         or ask_hn
@@ -672,6 +679,8 @@ def rank_projects(
     out_of_scope_hits = signals["out_of_scope_hits"]
     existing_solution_hits = signals["existing_solution_hits"]
     paid_opportunity = allow_paid_opportunity and is_paid_opportunity(body)
+    if not paid_opportunity and not is_help_request(body):
+        return []
     if paid_opportunity:
         intent_hits = sorted(set(intent_hits) | {"hiring"})
     if (

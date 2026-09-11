@@ -784,6 +784,33 @@ class PromotionTests(unittest.TestCase):
         self.assertFalse(promotion.is_help_request(body))
         self.assertEqual(promotion.rank_projects(body), [])
 
+    def test_shared_setup_with_rhetorical_questions_is_not_a_request(self):
+        body = (
+            "Here is my Qwen setup; hope it helps. I chose this quant after "
+            "testing it. Why not Docker? What should you change for less VRAM? "
+            "The complete configuration and benchmark are below."
+        )
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
+    def test_published_resource_list_is_not_a_request(self):
+        body = (
+            "Early China Resource List: Texts and Philology. This installment "
+            "lists translations and studies, including Michael Loewe and the "
+            "Oxford Handbook of Classical Chinese Literature."
+        )
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
+    def test_resource_sharer_with_direct_unresolved_request_is_kept(self):
+        body = (
+            "I published a resource list, but I need help turning my multilingual "
+            "dictionary database into a word knowledge graph with morphemes. "
+            "Can someone recommend a provenance workflow?"
+        )
+        self.assertTrue(promotion.is_help_request(body))
+        self.assertTrue(promotion.rank_projects(body))
+
     def test_tested_product_caption_without_unresolved_request_is_filtered(self):
         body = (
             "What happens when you ask AI to make a product video? I tested "

@@ -412,6 +412,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('https://bookshop.org/affiliates/profile/introduction', script)
         self.assertIn('https://partners.dub.co/postiz/apply', script)
         self.assertIn('https://www.threads.com/activity/replies', script)
+        self.assertIn('https://www.threads.com/@lazying.art', script)
         self.assertIn('restore_browser_workspace', script)
         self.assertIn('main.window', script)
         self.assertIn('viewer.window', script)

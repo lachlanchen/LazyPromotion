@@ -42,6 +42,29 @@ class FeaturedMediaQualityTests(unittest.TestCase):
             "must not be reused", campaign["quality_correction"]["historical_boundary"]
         )
 
+    def test_retired_sample_is_not_reusable_graph_evidence(self):
+        retired_url = "https://www.youtube.com/watch?v=rVU37lPKPo8"
+        opportunities = json.loads(
+            (ROOT / "portfolio-opportunities.json").read_text(encoding="utf-8")
+        )
+        current_proof = {
+            url
+            for opportunity in opportunities["opportunities"]
+            for url in opportunity["proof"]
+        }
+        self.assertNotIn(retired_url, current_proof)
+
+        network = json.loads(
+            (ROOT / "promotion-network.public.json").read_text(encoding="utf-8")
+        )
+        current_urls = {entity["url"] for entity in network["entities"]}
+        current_evidence = {
+            relationship["evidence_url"]
+            for relationship in network["relationships"]
+        }
+        self.assertNotIn(retired_url, current_urls)
+        self.assertNotIn(retired_url, current_evidence)
+
 
 if __name__ == "__main__":
     unittest.main()

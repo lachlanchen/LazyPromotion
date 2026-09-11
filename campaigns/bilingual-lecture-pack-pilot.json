@@ -1,5 +1,5 @@
 {
-  "version": 32,
+  "version": 33,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -577,8 +577,9 @@
       "policy": "The reviewed 242-character post leads with the source-work lesson, uses the protocol-less first-party destination that Postiz preserved, and carries the live fixed boundary. Do not promise reach, sales, native-human translation, or rights clearance."
     },
     "instagram": {
-      "state": "postiz_queue",
+      "state": "postiz_published",
       "publish_at": "2026-09-11T12:00:00Z",
+      "release_url": "https://www.instagram.com/reel/DdJXMiBANpn/",
       "content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 15 timed lines across Japanese, English, and Chinese—45 searchable language strings in all. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
       "postiz_content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 15 timed lines across Japanese, English, and Chinese—45 searchable language strings in all. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
       "content_sha256": "b92c0a7394e46c421d8cd5bb738da489d80824b6dba763d83fa653956f013924",
@@ -595,9 +596,13 @@
         "stored_time_exact": true,
         "stored_text_exact": true,
         "old_inaccurate_text_absent": true,
-        "update_http_status": 201
+        "update_http_status": 201,
+        "release_observed_at": "2026-09-11T12:15:52Z",
+        "state_rechecked_after_schedule": "PUBLISHED",
+        "release_present": true,
+        "public_http_status": 200
       },
-      "policy": "The attached video is the project-owned demonstration documented by the public source manifest. The caption describes only the working proof and bounded pilot; it does not claim scientific validity, customer results, or rights to unrelated media."
+      "policy": "The attached video is the project-owned demonstration documented by the public source manifest. The caption describes only the working proof and bounded pilot; it does not claim scientific validity, customer results, or rights to unrelated media. Publication is attention, not a fit inquiry, lead, sale, or revenue."
     },
     "linkedin": {
       "state": "postiz_queue",

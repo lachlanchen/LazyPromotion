@@ -469,7 +469,11 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["route"], "product")
 
         instagram = campaign["channels"]["instagram"]
-        self.assertEqual(instagram["state"], "postiz_queue")
+        self.assertEqual(instagram["state"], "postiz_published")
+        self.assertEqual(
+            instagram["release_url"],
+            "https://www.instagram.com/reel/DdJXMiBANpn/",
+        )
         self.assertEqual(instagram["settings"]["post_type"], "post")
         self.assertEqual(64, len(instagram["media_sha256"]))
         self.assertEqual(
@@ -477,6 +481,11 @@ class OwnedMonitorTests(unittest.TestCase):
             "b92c0a7394e46c421d8cd5bb738da489d80824b6dba763d83fa653956f013924",
         )
         self.assertTrue(instagram["visible_review"]["stored_text_exact"])
+        self.assertEqual(
+            instagram["visible_review"]["state_rechecked_after_schedule"],
+            "PUBLISHED",
+        )
+        self.assertTrue(instagram["visible_review"]["release_present"])
         instagram_route = owned_monitor.route_for_post(
             "instagram-standalone",
             instagram["postiz_content"],

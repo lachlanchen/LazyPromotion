@@ -37,6 +37,12 @@ REPOSITORIES = (
     "Video2Book",
     "LazyEdit",
     "L-and-N",
+    "AgInTi-LabCanvas",
+    "LocalVideoGen",
+    "LazyPromotion",
+    "Musia",
+    "LinguaLeaf",
+    "PocketPolyglot",
 )
 ISSUES_PER_REPOSITORY = 100
 MINIMUM_INTERVAL_MINUTES = 15

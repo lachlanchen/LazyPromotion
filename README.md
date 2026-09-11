@@ -127,7 +127,7 @@ The board is discovery only. The auditor verifies live issue state and existing
 solution pull requests, rejects unsafe instruction requests, and writes its
 private report under `.local/`.
 
-New public issues in the eight current high-attention/offer repositories can be
+New public issues in the fifteen current high-attention/offer repositories can be
 observed without reading issue bodies or writing to GitHub:
 
 ```bash

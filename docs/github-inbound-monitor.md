@@ -12,10 +12,23 @@
 - `Video2Book`
 - `LazyEdit`
 - `L-and-N`
+- `AgInTi-LabCanvas`
+- `LocalVideoGen`
+- `LazyPromotion`
+- `Musia`
+- `LinguaLeaf`
+- `PocketPolyglot`
 
 `AiMemo` is intentionally excluded while it is private. The monitor refuses
 authenticated private-repository data rather than copying it into the shared
 promotion workflow.
+
+The added agent, video, music, and multilingual-book repositories are current
+public, non-fork, non-archived projects with owner-visible attention in the
+September 11 portfolio audit. The allowlist remains intentionally narrower
+than the complete portfolio so the monitor follows projects with an active
+offer, strong attention, or a direct product path instead of treating every
+issue as buyer intent.
 
 Each pass makes one authenticated GitHub GraphQL query. The query requests the
 repository's visibility and at most the latest 100 issue records: number,

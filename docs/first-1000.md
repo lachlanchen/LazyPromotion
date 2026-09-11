@@ -1315,3 +1315,14 @@ third recorded helpful interaction; it is not a lead or revenue.
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced
 the sale; never put the raw Stripe receipt in Git.
+
+## Read-only receipt monitoring
+
+A private Stripe watcher now checks successful live charges every 30 minutes
+from the 2026-08-31 goal baseline. Its first live check on 2026-09-11 found no
+successful charges and no alert, so verified gross revenue remains USD 0. The
+watcher stores only aggregate amounts, a hash of each charge ID, and a small
+allowlist of offer-classification metadata under `.local/`; it does not retain
+customer or payment details, mutate Stripe, or update revenue automatically.
+A new receipt, refund, or dispute must be matched to its real commercial
+context before the funnel changes.

@@ -63,6 +63,7 @@ never count as revenue.
 | [`docs/paid-need-decision-2026-09-09.md`](docs/paid-need-decision-2026-09-09.md) | Current direct-route screen, evidence gaps, and submission gates |
 | [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated applications, revenue funnel, public graph, and first-party demand signals |
 | [`owned_monitor.py`](owned_monitor.py), [`github_inbound_monitor.py`](github_inbound_monitor.py), and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring, public-issue alerts, and private fit-check intake |
+| [`stripe_revenue_monitor.py`](stripe_revenue_monitor.py) | Read-only live-charge detection with aggregate private state; never creates Stripe objects or records revenue automatically |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome review desktop |
 | [`application_watch.py`](application_watch.py) and [`application_inbox_monitor.py`](application_inbox_monitor.py) | Due-review schedule for direct and grouped submissions plus read-only aggregate matching for known application threads; the running owned monitor embeds the privacy-limited due summary and never opens mail or follows up |
 | [`docs/open-source-evaluation.md`](docs/open-source-evaluation.md) | Auditable open-source and MCP tool choices |
@@ -141,6 +142,20 @@ keys not already in the retained state. The loop interval cannot be shorter
 than 15 minutes. See [`docs/github-inbound-monitor.md`](docs/github-inbound-monitor.md)
 for the fixed allowlist and safety contract.
 
+Real Stripe receipts can be watched without creating a checkout or retaining
+customer/payment details:
+
+```bash
+python stripe_revenue_monitor.py once --confirm-private-financial-read
+scripts/stripe-revenue-monitor.sh start
+scripts/stripe-revenue-monitor.sh status
+scripts/stripe-revenue-monitor.sh stop
+```
+
+The watcher only raises a private review alert. A payment is counted after it
+is matched to an accepted scope, product order, or donation context. See
+[`docs/stripe-revenue-monitor.md`](docs/stripe-revenue-monitor.md).
+
 ## Runtime isolation
 
 The launcher owns one 1920×1080 display (`:116`), VNC port `5936`, noVNC
@@ -173,8 +188,8 @@ specialization, not a claim that a closed marketplace listing is still open.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py github_inbound_monitor.py
-bash -n scripts/desktop.sh scripts/github-inbound-monitor.sh
+python -m py_compile promotion.py browser.py bounties.py github_inbound_monitor.py stripe_revenue_monitor.py
+bash -n scripts/desktop.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```
 

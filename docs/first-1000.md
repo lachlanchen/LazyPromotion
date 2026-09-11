@@ -1136,6 +1136,14 @@ USD 250 manuscript sprint. The deployment was verified at PaperAgent commit
 self-service-first choice at commit `f056279`. The small search sample and the
 published routes are prioritization evidence, not a lead or sale.
 
+The exact `aginti` query had the same 15-impression, zero-click shape across the
+AgInTiFlow landing page and its owned build story. Inspection found a more basic
+problem than conversion copy: the site still presented DeepSeek v4 routes as
+defaults even though the current product uses LocalLLM Fast and Deep by default
+and keeps hosted providers explicit. Commit `4e96584` corrected the landing
+page, canonical metadata, quick start, and key-storage guide; Pages run
+`34570735411` deployed it. No unrelated service link was added.
+
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
 media, research tooling, games, and local AI. The homepage now exposes seven

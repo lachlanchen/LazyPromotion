@@ -122,6 +122,18 @@ inspectable delivery format the earlier media proof lacked. It is still not a
 customer result, certified translation, complete 20-minute delivery, or
 permission to reuse third-party lectures.
 
+### Owned product trust — AgInTiFlow
+
+The exact `aginti` query also produced 15 impressions and zero clicks at an
+average position of 7.5. Google showed the AgInTiFlow landing page and its owned
+build-story article. The public landing page still described two DeepSeek v4
+routes as defaults, while the current product documentation specifies LocalLLM
+Fast and Deep as the default local lanes and hosted providers as explicit
+choices. The live page, quick start, and key-storage guide now agree at
+AgInTiFlow commit `4e96584`; Pages run `34570735411` deployed the correction.
+No paid link was added because this branded query does not establish a need for
+one of the current fixed-scope services.
+
 A separate [USD 400 scientific-video editing
 brief](https://www.upwork.com/freelance-jobs/apply/Video-Editor-for-Scientific-Educational-YouTube-Video_~022095602736009919529/)
 asks for a restrained 20–25 minute edit from supplied footage and about 15

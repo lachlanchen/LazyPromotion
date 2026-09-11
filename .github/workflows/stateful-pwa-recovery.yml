@@ -1,0 +1,45 @@
+name: Stateful PWA recovery specimen
+
+on:
+  push:
+    paths:
+      - ".github/workflows/stateful-pwa-recovery.yml"
+      - "examples/stateful-pwa-recovery/**"
+      - "tests/test_stateful_pwa_recovery_example.py"
+  pull_request:
+    paths:
+      - ".github/workflows/stateful-pwa-recovery.yml"
+      - "examples/stateful-pwa-recovery/**"
+      - "tests/test_stateful_pwa_recovery_example.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: examples/stateful-pwa-recovery/requirements.txt
+      - name: Install test dependencies
+        run: |
+          python -m pip install -r examples/stateful-pwa-recovery/requirements.txt
+          playwright install --with-deps chromium
+      - name: Check specimen contract
+        run: python -m unittest tests.test_stateful_pwa_recovery_example -v
+      - name: Run three consecutive recovery suites
+        run: examples/stateful-pwa-recovery/verify_three_runs.sh
+      - name: Keep JUnit and failure evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stateful-pwa-recovery-results
+          path: .local/proofs/stateful-pwa-recovery
+          if-no-files-found: error
+

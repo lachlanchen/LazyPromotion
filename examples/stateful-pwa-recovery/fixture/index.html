@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recovery notebook fixture</title>
+    <style>
+      :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; }
+      body { margin: 0; background: #f2f6f3; color: #17231f; }
+      main { width: min(42rem, calc(100% - 2rem)); margin: 3rem auto; }
+      section { background: white; border: 1px solid #c9d7cf; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 1rem 3rem #173c2812; }
+      button, textarea { font: inherit; }
+      button { min-height: 2.75rem; border: 0; border-radius: .65rem; padding: .6rem 1rem; background: #215c43; color: white; cursor: pointer; }
+      button.secondary { background: #e5eee8; color: #173c2b; }
+      .row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+      textarea { width: 100%; min-height: 8rem; box-sizing: border-box; border: 1px solid #8da699; border-radius: .65rem; padding: .75rem; }
+      [hidden] { display: none !important; }
+      #connection[data-state="pending"] { color: #914f00; }
+      #connection[data-state="saved"] { color: #176139; }
+      li { margin-block: .6rem; }
+      small { color: #557065; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Recovery notebook</h1>
+      <p>Deterministic local fixture for recovery tests.</p>
+
+      <section id="login-view">
+        <h2>Choose a fixture account</h2>
+        <div class="row">
+          <button type="button" data-login="ada">Continue as Ada</button>
+          <button type="button" data-login="lin">Continue as Lin</button>
+        </div>
+      </section>
+
+      <section id="workspace" hidden>
+        <div class="row">
+          <h2 id="account-name"></h2>
+          <button class="secondary" id="logout" type="button">Log out</button>
+        </div>
+        <label for="draft"><strong>Draft</strong></label>
+        <textarea id="draft" placeholder="Write a note"></textarea>
+        <div class="row">
+          <button id="save" type="button">Save note</button>
+          <span id="connection" role="status" data-state="ready">Ready</span>
+          <small><span id="pending-count">0</span> pending</small>
+        </div>
+        <h3>Notes</h3>
+        <ul id="notes"></ul>
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        "use strict";
+
+        const sessionKey = "recovery-fixture:session";
+        const draftKey = (owner) => `recovery-fixture:draft:${owner}`;
+        const loginView = document.querySelector("#login-view");
+        const workspace = document.querySelector("#workspace");
+        const accountName = document.querySelector("#account-name");
+        const draft = document.querySelector("#draft");
+        const notes = document.querySelector("#notes");
+        const connection = document.querySelector("#connection");
+        const pendingCount = document.querySelector("#pending-count");
+        let owner = localStorage.getItem(sessionKey) || "";
+
+        const openDatabase = () => new Promise((resolve, reject) => {
+          const request = indexedDB.open("recovery-notebook", 1);
+          request.onupgradeneeded = () => request.result.createObjectStore("outbox", { keyPath: "key" });
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = () => reject(request.error);
+        });
+
+        const withStore = async (mode, operation) => {
+          const database = await openDatabase();
+          try {
+            return await new Promise((resolve, reject) => {
+              const transaction = database.transaction("outbox", mode);
+              const request = operation(transaction.objectStore("outbox"));
+              request.onsuccess = () => resolve(request.result);
+              request.onerror = () => reject(request.error);
+              transaction.onabort = () => reject(transaction.error);
+            });
+          } finally {
+            database.close();
+          }
+        };
+
+        const queuedFor = async (account) => {
+          const rows = await withStore("readonly", (store) => store.getAll());
+          return rows.filter((row) => row.owner === account);
+        };
+        const queue = (row) => withStore("readwrite", (store) => store.put(row));
+        const dequeue = (key) => withStore("readwrite", (store) => store.delete(key));
+
+        const setStatus = (text, state) => {
+          connection.textContent = text;
+          connection.dataset.state = state;
+        };
+
+        const renderNotes = (rows) => {
+          notes.replaceChildren(...rows.map((row) => {
+            const item = document.createElement("li");
+            item.dataset.noteId = row.id;
+            item.dataset.status = row.status || "saved";
+            item.textContent = row.text;
+            return item;
+          }));
+        };
+
+        const refreshPending = async () => {
+          const queued = owner ? await queuedFor(owner) : [];
+          pendingCount.textContent = String(queued.length);
+          return queued;
+        };
+
+        const loadRemote = async () => {
+          const response = await fetch(`/api/notes?owner=${encodeURIComponent(owner)}`);
+          if (!response.ok) throw new Error("history unavailable");
+          const payload = await response.json();
+          renderNotes(payload.notes || []);
+        };
+
+        const flush = async () => {
+          if (!owner) return;
+          const queued = await refreshPending();
+          for (const row of queued) {
+            try {
+              const response = await fetch("/api/notes", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: row.id, owner: row.owner, text: row.text }),
+              });
+              if (!response.ok) throw new Error("write unavailable");
+              await dequeue(row.key);
+            } catch (_error) {
+              setStatus(`Offline; ${queued.length} pending`, "pending");
+              await refreshPending();
+              return;
+            }
+          }
+          await loadRemote();
+          await refreshPending();
+          setStatus(queued.length ? "Saved after retry" : "Ready", queued.length ? "saved" : "ready");
+        };
+
+        const showAccount = async () => {
+          loginView.hidden = Boolean(owner);
+          workspace.hidden = !owner;
+          if (!owner) {
+            draft.value = "";
+            renderNotes([]);
+            return;
+          }
+          localStorage.setItem(sessionKey, owner);
+          accountName.textContent = owner === "ada" ? "Ada's notes" : "Lin's notes";
+          draft.value = localStorage.getItem(draftKey(owner)) || "";
+          await loadRemote();
+          await refreshPending();
+          await flush();
+        };
+
+        document.querySelectorAll("[data-login]").forEach((button) => {
+          button.addEventListener("click", async () => {
+            owner = button.dataset.login;
+            await showAccount();
+          });
+        });
+
+        document.querySelector("#logout").addEventListener("click", () => {
+          localStorage.removeItem(sessionKey);
+          owner = "";
+          showAccount();
+        });
+
+        draft.addEventListener("input", () => {
+          if (owner) localStorage.setItem(draftKey(owner), draft.value);
+        });
+
+        document.querySelector("#save").addEventListener("click", async () => {
+          const text = draft.value.trim();
+          if (!owner || !text) return;
+          const id = crypto.randomUUID();
+          await queue({ key: `${owner}:${id}`, id, owner, text });
+          localStorage.removeItem(draftKey(owner));
+          draft.value = "";
+          renderNotes([...Array.from(notes.children).map((item) => ({
+            id: item.dataset.noteId,
+            text: item.textContent,
+            status: item.dataset.status,
+          })), { id, text, status: "pending" }]);
+          setStatus("Saving", "pending");
+          await flush();
+        });
+
+        showAccount().catch(() => setStatus("History unavailable", "pending"));
+      })();
+    </script>
+  </body>
+</html>
+

@@ -6,6 +6,26 @@ import freelancer_inbound_monitor as monitor
 
 
 class FreelancerInboundMonitorTests(unittest.TestCase):
+    def test_project_page_accepts_canonical_and_proposal_urls(self):
+        canonical = (
+            "https://www.freelancer.com/projects/automation/"
+            "Playwright-Python-Regression-Suite"
+        )
+        self.assertTrue(monitor.is_project_page(canonical))
+        self.assertTrue(monitor.is_project_page(f"{canonical}/proposals"))
+        self.assertTrue(monitor.is_project_page(f"{canonical}/proposals/"))
+        self.assertFalse(
+            monitor.is_project_page(
+                "https://example.com/projects/automation/"
+                "Playwright-Python-Regression-Suite"
+            )
+        )
+        self.assertFalse(
+            monitor.is_project_page(
+                "https://www.freelancer.com/projects/automation/another-project"
+            )
+        )
+
     def test_bid_state_recognizes_active_proposal(self):
         self.assertEqual(
             monitor.bid_state("Your Proposal\nLachlan\nRetract\nEdit"),

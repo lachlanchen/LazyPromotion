@@ -32,6 +32,9 @@ never count as revenue.
 - Honest affiliation: use plain disclosure such as “I maintain…” or “I built…”.
 - Exact need, not keyword overlap: stale posts, vague intent, self-promotion,
   quoted requests, and ambiguous phrases are filtered before model triage.
+- Timely context: ordinary public-help candidates expire after seven days;
+  explicit paid opportunities retain a 30-day review window and still require
+  a live availability check before contact.
 - Evidence before offer: a route needs inspectable public proof, written scope,
   exclusions, and a fit check before it can become commercial.
 - One person, one decision: no mass replies, unsolicited DMs, automated votes,
@@ -177,7 +180,7 @@ is matched to an accepted scope, product order, or donation context. See
 [`docs/stripe-revenue-monitor.md`](docs/stripe-revenue-monitor.md).
 
 The submitted Freelancer regression bid can be checked while its authenticated
-proposal tab is open in the dedicated browser:
+proposal or canonical project tab is open in the dedicated browser:
 
 ```bash
 python freelancer_inbound_monitor.py once

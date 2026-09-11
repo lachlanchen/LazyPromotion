@@ -33,7 +33,8 @@ COMMUNITY_POLICIES_PATH = ROOT / "community-policies.json"
 MODEL = os.environ.get("LAZYPROMOTION_CODEX_MODEL", "").strip()
 MODEL_LABEL = MODEL or "account-default"
 EFFORT = os.environ.get("LAZYPROMOTION_CODEX_EFFORT", "low").strip()
-MAX_CANDIDATE_AGE_DAYS = 30
+MAX_CANDIDATE_AGE_DAYS = 7
+MAX_PAID_OPPORTUNITY_AGE_DAYS = 30
 AI_COMMENT_BLOCKED_PLATFORMS = {"hackernews"}
 
 HELP_SIGNALS = {
@@ -502,12 +503,32 @@ def parse_source_time(value: str) -> datetime | None:
     return parsed.astimezone(timezone.utc)
 
 
-def is_stale(published_at: str, *, now: datetime | None = None) -> bool:
+def is_stale(
+    published_at: str,
+    *,
+    now: datetime | None = None,
+    max_age_days: int = MAX_CANDIDATE_AGE_DAYS,
+) -> bool:
     published = parse_source_time(published_at)
     if published is None:
         return False
     now = now or datetime.now(timezone.utc)
-    return now - published > timedelta(days=MAX_CANDIDATE_AGE_DAYS)
+    return now - published > timedelta(days=max_age_days)
+
+
+def candidate_is_stale(
+    published_at: str,
+    body: str,
+    *,
+    now: datetime | None = None,
+) -> bool:
+    """Use a short reply window without prematurely closing paid work."""
+    max_age_days = (
+        MAX_PAID_OPPORTUNITY_AGE_DAYS
+        if is_paid_opportunity(body)
+        else MAX_CANDIDATE_AGE_DAYS
+    )
+    return is_stale(published_at, now=now, max_age_days=max_age_days)
 
 
 def help_request_signals(body: str) -> dict[str, list[str]]:
@@ -871,7 +892,11 @@ def ingest_candidate(
         )
         current = db.execute("SELECT status, published_at FROM candidates WHERE id=?", (candidate_id,)).fetchone()
     if current and current["status"] in {"discovered", "stale"}:
-        status = "stale" if is_stale(current["published_at"]) else "discovered"
+        status = (
+            "stale"
+            if candidate_is_stale(current["published_at"], body)
+            else "discovered"
+        )
         db.execute("UPDATE candidates SET status=? WHERE id=?", (status, candidate_id))
     refresh_duplicates(db)
     db.execute(
@@ -930,7 +955,7 @@ def withdraw_untriageable_requests(db: sqlite3.Connection) -> list[dict[str, str
             reason = "external source requests private instruction disclosure"
         elif compact(row["author"]).casefold() in BOT_AUTHORS:
             reason = "automated author"
-        elif is_stale(row["published_at"]):
+        elif candidate_is_stale(row["published_at"], row["body"]):
             reason = "source became stale"
         elif not is_triageable_request(row["platform"], row["source_url"], row["body"]):
             reason = "current evidence is not an explicit request"
@@ -988,7 +1013,7 @@ def reconcile_discovered_candidates(db: sqlite3.Connection) -> list[dict[str, st
         elif compact(row["author"]).casefold() in BOT_AUTHORS:
             status = "rejected"
             reason = "automated author"
-        elif is_stale(row["published_at"]):
+        elif candidate_is_stale(row["published_at"], row["body"]):
             status = "stale"
             reason = "source is older than the discovery window"
         elif blocked_contact:

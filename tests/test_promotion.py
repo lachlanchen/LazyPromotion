@@ -907,6 +907,32 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(candidate["comment_count"], 13)
         self.assertEqual(candidate["source_score"], 23)
 
+    def test_social_help_request_older_than_seven_days_is_stale(self):
+        published = (datetime.now(timezone.utc) - timedelta(days=8)).isoformat()
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/old/social_help/",
+            author="reader",
+            body="Can someone recommend private local search for my PDF collection?",
+            published_at=published,
+        )
+        self.assertEqual(candidate["status"], "stale")
+
+    def test_paid_opportunity_keeps_thirty_day_review_window(self):
+        published = (datetime.now(timezone.utc) - timedelta(days=8)).isoformat()
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="x",
+            source_url="https://x.com/example/status/paid-eight-days-old",
+            author="buyer",
+            body="[Hiring] Paid project for a LaTeX package writer. Budget USD 500.",
+            published_at=published,
+        )
+        self.assertEqual(candidate["status"], "discovered")
+        reconciled = promotion.reconcile_discovered_candidates(self.db)
+        self.assertEqual(reconciled[0]["status"], "opportunity")
+
     def test_reconcile_keeps_current_explicit_matched_request(self):
         candidate = promotion.ingest_candidate(
             self.db,

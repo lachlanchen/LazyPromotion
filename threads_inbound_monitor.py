@@ -178,16 +178,16 @@ def collect_visible_activity(*, cdp: str) -> dict:
             page.wait_for_load_state("domcontentloaded")
             page.wait_for_timeout(1000)
             observed = page.evaluate(
-                """() => {
+                r"""() => {
                   const hrefs = Array.from(document.querySelectorAll('a[href]'))
                     .map((anchor) => anchor.href)
-                    .filter((href) => /threads\\.com\\/@[^/]+\\/post\\/[^/?#]+/.test(href));
+                    .filter((href) => /threads\.com\/@[^/]+\/post\/[^/?#]+/.test(href));
                   const bodyText = document.body ? document.body.innerText : '';
                   const profile = Array.from(document.querySelectorAll('a[href]'))
-                    .some((anchor) => /threads\\.com\\/@lazying\\.art\\/?$/.test(anchor.href));
+                    .some((anchor) => /threads\.com\/@lazying\.art\/?$/.test(anchor.href));
                   return {
                     hrefs,
-                    emptyMessageVisible: /No activity yet\\.?/i.test(bodyText),
+                    emptyMessageVisible: /No activity yet\.?/i.test(bodyText),
                     authenticated: profile && !document.querySelector('input[type=password]')
                   };
                 }"""
@@ -213,7 +213,7 @@ def collect_visible_activity(*, cdp: str) -> dict:
             profile.wait_for_load_state("domcontentloaded")
             profile.wait_for_timeout(500)
             profile_observed = profile.evaluate(
-                """() => {
+                r"""() => {
                   const rows = [];
                   const cards = Array.from(
                     document.querySelectorAll('[data-pressable-container="true"]')

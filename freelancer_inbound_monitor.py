@@ -28,8 +28,19 @@ DEFAULT_CDP = "http://127.0.0.1:9436"
 HOST = "www.freelancer.com"
 PROJECT_SLUG = "Playwright-Python-Regression-Suite"
 PROJECT_PATH_SUFFIX = f"/{PROJECT_SLUG}/proposals"
+PROJECT_CANONICAL_SUFFIX = f"/{PROJECT_SLUG}"
 EXPECTED_USERNAME = "@lachlanchen"
 RANK_PATTERN = re.compile(r"You are ranked\s+(\d+)\s+out of\s+(\d+)\s+proposals", re.I)
+
+
+def is_project_page(url: str) -> bool:
+    """Accept Freelancer's submitted-proposal and canonical project URLs."""
+    parsed = urlsplit(url)
+    path = parsed.path.rstrip("/")
+    return parsed.hostname == HOST and (
+        path.endswith(PROJECT_CANONICAL_SUFFIX)
+        or path.endswith(PROJECT_PATH_SUFFIX)
+    )
 
 
 def utc_now() -> str:
@@ -142,12 +153,11 @@ def collect_visible_status(*, cdp: str) -> dict:
             candidates = []
             for context in connected.contexts:
                 for page in context.pages:
-                    parsed = urlsplit(page.url)
-                    if parsed.hostname == HOST and parsed.path.endswith(PROJECT_PATH_SUFFIX):
+                    if is_project_page(page.url):
                         candidates.append(page)
             if len(candidates) != 1:
                 raise RuntimeError(
-                    "exactly one authenticated Freelancer proposal tab must be open"
+                    "exactly one authenticated Freelancer project tab must be open"
                 )
             page = candidates[0]
             page.bring_to_front()
@@ -164,7 +174,7 @@ def collect_visible_status(*, cdp: str) -> dict:
                         rect.width > 0 && rect.height > 0;
                     });
                   const digits = buttons.flatMap((button) =>
-                    ((button.innerText || '').match(/\d+/g) || []).map(Number));
+                    ((button.innerText || '').match(/\\d+/g) || []).map(Number));
                   return {
                     bodyText,
                     messageBadgeCount: digits.length ? Math.max(...digits) : 0,
@@ -221,8 +231,7 @@ def monitor_once(
                 target = next(
                     page
                     for page in pages
-                    if urlsplit(page.url).hostname == HOST
-                    and urlsplit(page.url).path.endswith(PROJECT_PATH_SUFFIX)
+                    if is_project_page(page.url)
                 )
                 evidence.parent.mkdir(parents=True, exist_ok=True)
                 target.screenshot(path=str(evidence), full_page=False)

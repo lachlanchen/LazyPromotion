@@ -2,8 +2,10 @@
 
 This read-only monitor watches the submitted Playwright regression bid without
 opening the buyer's messages or responding. It requires exactly one
-authenticated proposal tab for that project in the dedicated LazyPromotion
-browser.
+authenticated tab for that project in the dedicated LazyPromotion browser.
+Both the submitted-proposal URL and Freelancer's canonical project redirect
+are recognized. A logged-out canonical page fails the authentication gate
+instead of being mistaken for a missing tab.
 
 ```bash
 python freelancer_inbound_monitor.py once

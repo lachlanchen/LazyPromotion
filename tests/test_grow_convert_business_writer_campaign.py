@@ -37,11 +37,15 @@ class GrowConvertBusinessWriterCampaignTests(unittest.TestCase):
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
         inbound = campaign["application"]["inbound_monitor"]
-        self.assertEqual(inbound["state"], "baseline_initialized")
+        self.assertEqual(inbound["state"], "automatic_receipt_reviewed")
         self.assertEqual(inbound["matching_thread_count"], 1)
-        self.assertEqual(inbound["unread_matching_thread_count"], 1)
-        self.assertFalse(inbound["mail_opened"])
-        self.assertFalse(inbound["message_preview_read"])
+        self.assertEqual(inbound["unread_matching_thread_count"], 0)
+        self.assertTrue(inbound["mail_opened"])
+        self.assertTrue(inbound["message_preview_read"])
+        receipt = campaign["application"]["automated_acknowledgement"]
+        self.assertEqual(receipt["state"], "automatic_form_receipt_reviewed")
+        self.assertFalse(receipt["human_reply"])
+        self.assertIn("one month", receipt["published_wait"])
         self.assertIsNone(
             re.search(
                 r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b",
@@ -57,7 +61,7 @@ class GrowConvertBusinessWriterCampaignTests(unittest.TestCase):
             on=application_watch.parse_day("2026-09-11"),
         )
         self.assertIsNotNone(record)
-        self.assertEqual(record["review_after"], "2026-09-18")
+        self.assertEqual(record["review_after"], "2026-10-11")
         self.assertFalse(record["due_for_human_review"])
 
 

@@ -52,6 +52,14 @@
     "original_content_attested": true,
     "submission_attempts": 1,
     "delivery_evidence": "The complete form passed native validity checks, Submit was clicked once, and the embedded form returned its own contact confirmation message.",
+    "email_confirmation": {
+      "state": "confirmed_once",
+      "reviewed_and_confirmed_at": "2026-09-11T13:29:00Z",
+      "destination_host": "page.webpros.com",
+      "terminal_evidence": "The visible WebPros page confirmed that the email preferences were updated.",
+      "newsletter_requested_on_original_form": false,
+      "policy": "This completes the address-confirmation step requested after the contributor form. It may also update the sender's contact preference; it is not an editorial reply, proposal acceptance, contract, publication, payment, or revenue."
+    },
     "automatic_follow_up": false,
     "review_after": "2026-09-30",
     "contract_gate": "Do not draft the full article until a written contract states a fee of at least EUR 250 or equivalent, currency, PayPal eligibility, timeline, exclusivity, rights, revision boundary, attribution state, and payment trigger.",

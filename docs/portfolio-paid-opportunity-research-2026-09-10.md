@@ -182,10 +182,13 @@ publishes USD 500 per article.^21 Its application asks for three samples and a
 short bottom-of-funnel exercise. One application was submitted with three
 technically tested LazyingArt decision guides and a 182-word Vocal Video pitch
 grounded in the current official product tour.^22 The form confirmed that the
-response was recorded. The next stated step would be a phone call only if the
-samples fit, so any live identity interview must involve the named applicant;
-an agent must not impersonate them. This is one application, not a reply, test,
-assignment, payment, or revenue.
+response was recorded. Its automatic receipt says the company is accepting and
+reading applications but is not aggressively recruiting, has a significant
+writer backlog, and asks applicants to wait one month before following up. The
+next review is therefore October 11. The next stated step would be a phone call
+only if the samples fit, so any live identity interview must involve the named
+applicant; an agent must not impersonate them. This is one application, not a
+reply, test, assignment, payment, or revenue.
 
 ### 2. OpenHI software sprint
 

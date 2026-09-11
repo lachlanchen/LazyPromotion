@@ -135,8 +135,12 @@ people who can understand and sell products in clear English and publishes USD
 500 per article. One official-form application used the Postiz, small-team
 remote-access, and confidential-PDF decision guides plus a short Vocal Video
 exercise grounded in the current product tour. The form confirmed that the
-response was recorded. A later phone or live identity interview would require
-the named applicant; an agent must not impersonate them. Two accepted and paid
+response was recorded. Its automatic receipt was reviewed: the company says it
+is accepting and reading applications but is not aggressively recruiting, has
+a substantial writer backlog, and asks applicants to wait one month before
+following up. Review is therefore deferred to October 11. A later phone or live
+identity interview would require the named applicant; an agent must not
+impersonate them. Two accepted and paid
 articles would reach USD 1,000 gross, but no reply, test, assignment, payment,
 or revenue exists yet.
 
@@ -220,9 +224,10 @@ three-build LaTeX redline sample. It relies on the documented research degrees,
 publication record, and reproducible manuscript tooling, while stating that the
 sample is project-owned rather than client work. The exact recipient, sender,
 subject, body, and attachment passed a final visible check; one send was made,
-and the same message and attachment then appeared in Sent. A later inbox row
-showed an automatic acknowledgement; it was not opened and is not shortlisting
-or a human reply. The company
+and the same message and attachment then appeared in Sent. The automatic
+acknowledgement was reviewed and says the application should be treated as
+unsuccessful if no further message arrives within ten days. It is not
+shortlisting or a human reply. The company
 publishes no rate or assignment volume and tests applicants, so this is one
 outbound application—not a reply, lead, test invitation, contract, payment, or
 revenue.
@@ -236,8 +241,11 @@ after one submission. Plesk's landing page advertises USD 150–300 per accepted
 contribution, while its linked guide says EUR 150–300 for an uncredited post;
 that discrepancy, PayPal eligibility, exclusivity, rights, timing, revisions,
 and a fee of at least EUR 250 or equivalent must be settled in a written
-contract before a full article is drafted. This is an outbound proposal—not an
-editorial reply, contract, publication, payment, or revenue.
+contract before a full article is drafted. The automatic address-confirmation
+email was reviewed and confirmed once through its allow-listed WebPros
+destination; the terminal page said the email preferences were updated. The
+original form's newsletter choice remained clear. This is an outbound
+proposal—not an editorial reply, contract, publication, payment, or revenue.
 
 A ninth direct application now uses the public LazyEdge, LazyTunnel, and
 technical-writing shelf for Neverinstall's official writer program. The

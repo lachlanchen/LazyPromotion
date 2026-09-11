@@ -195,6 +195,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(application["original_content_attested"])
         self.assertFalse(application["author_attribution_requested"])
         self.assertFalse(application["newsletter_requested"])
+        confirmation = application["email_confirmation"]
+        self.assertEqual(confirmation["state"], "confirmed_once")
+        self.assertEqual(confirmation["destination_host"], "page.webpros.com")
+        self.assertFalse(confirmation["newsletter_requested_on_original_form"])
         self.assertIn("EUR 250", application["contract_gate"])
         self.assertFalse(campaign["funnel"]["human_reply_observed"])
         self.assertFalse(campaign["funnel"]["payment_confirmed"])

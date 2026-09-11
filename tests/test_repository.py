@@ -2632,7 +2632,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 14)
+        self.assertEqual(campaign["version"], 15)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -2703,6 +2703,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(homepage["state"], "live_and_verified")
         self.assertIn("utm_campaign=manuscript_sprint_pilot", homepage["destination"])
         self.assertIn("not a lead or sale", homepage["policy"].casefold())
+
+        paperagent = campaign["channels"]["paperagent_landing"]
+        self.assertEqual(paperagent["state"], "live_and_verified")
+        self.assertIn("aa99484", paperagent["source_commit"])
+        self.assertIn("utm_source=paperagent", paperagent["destination"])
+        self.assertEqual(paperagent["search_signal"]["query"], "paperagent")
+        self.assertEqual(paperagent["search_signal"]["impressions"], 15)
+        self.assertEqual(paperagent["search_signal"]["clicks"], 0)
+        self.assertIn("not leads or sales", paperagent["policy"].casefold())
 
         routing = campaign["intake_routing"]
         self.assertEqual(routing["state"], "active")

@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 14,
+  "version": 15,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -112,6 +112,23 @@
       "destination": "https://lazying.art/manuscript-sprint/?utm_source=lazyingart&utm_medium=website&utm_campaign=manuscript_sprint_pilot&utm_content=service_chooser",
       "role": "One of five bounded service choices shown immediately below the main banner. The tracked link leads to the USD 250 offer and public redline proof before the free fit check.",
       "policy": "The homepage says the sprint improves build and revision traceability without changing claims. Publication is not a lead or sale."
+    },
+    "paperagent_landing": {
+      "state": "live_and_verified",
+      "checked_on": "2026-09-11",
+      "source_commit": "aa99484e7a238c90ef9f8ddefa20bf500babb434",
+      "deployment_run": "https://github.com/lachlanchen/PaperAgent/actions/runs/34569459683",
+      "destination": "https://lazying.art/manuscript-sprint/?utm_source=paperagent&utm_medium=website&utm_campaign=manuscript_sprint_pilot&utm_content=final_cta",
+      "search_signal": {
+        "period": "last_28_days_ending_2026-09-08",
+        "query": "paperagent",
+        "impressions": 15,
+        "clicks": 0,
+        "average_position": 6.7,
+        "source": "Google Search Console visible Performance report"
+      },
+      "role": "The exact PaperAgent result now has a descriptive canonical title and gives visitors an equal choice between the open-source repository and the already-live bounded manuscript sprint.",
+      "policy": "Search impressions triggered a result-page repair, not a retargeting claim. The service link leads to public scope and proof before the free fit check; impressions and future clicks are not leads or sales."
     },
     "lazyblog": {
       "state": "published",

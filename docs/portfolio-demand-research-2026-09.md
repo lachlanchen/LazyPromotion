@@ -1,6 +1,6 @@
 # Current needs matched to the LazyingArt portfolio
 
-Updated: 2026-09-06
+Updated: 2026-09-11
 
 The current public inventory contains 108 non-archived source repositories.
 The useful question is not how to promote all of them. It is which combinations
@@ -75,6 +75,14 @@ LaTeX manuscript up to 7,500 words, one target template, a clean build, issue
 ledger, and redline from a supplied baseline. Its [fit
 check](https://lazying.art/manuscript-sprint/fit-check/) keeps the manuscript
 private until handling and scope are agreed.
+
+Search Console added one owned-intent clue: `paperagent` produced 15 impressions,
+zero clicks, and an average position of 6.7 in the last 28-day report. Every
+impression resolved to `paper.lazying.art`. That landing page now describes the
+LaTeX, Python/R, build-log, and PDF-preview workflow in its search metadata and
+offers two equally visible next steps: use the open-source repository or inspect
+the fixed USD 250 manuscript sprint. This is a result-page and routing repair,
+not evidence that those searchers wanted paid help.
 
 ### 3. Bilingual Lecture Pack — USD 250
 

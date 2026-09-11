@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "hacker-initiative-proofline-grant",
   "objective": "Seek restricted project funding for an MIT-licensed offline source-to-claim provenance verifier without presenting a grant application as customer revenue.",
   "program": {
@@ -8,7 +8,7 @@
     "guidelines_url": "https://hackerinitiative.org/grant-guidelines/",
     "faq_url": "https://hackerinitiative.org/application-faq/",
     "application_url": "https://docs.google.com/forms/d/e/1FAIpQLSc_6C9WO9PEXS3r1BN_Qq5LOL9xtoEux0pC6xTmxUlpxlanxg/viewform",
-    "verified_on": "2026-09-06",
+    "verified_on": "2026-09-11",
     "deadline": "2026-11-09T23:59:00-08:00",
     "award_range_usd": {
       "minimum": 5000,
@@ -22,6 +22,18 @@
       "Awarded funding may be less than requested",
       "Recipients owe project and budget reports",
       "The applicant is responsible for lawful USD receipt and tax compliance"
+    ]
+  },
+  "portfolio_decision": {
+    "state": "proofline_retained_openhi_gated",
+    "verified_on": "2026-09-11",
+    "research": "docs/hacker-initiative-2026-portfolio-fit.md",
+    "reason": "OpenHI has stronger public technical proof and a cleaner equipment need, but its paper names six authors and acknowledges prior HKU and Hong Kong RGC funding. Proofline is the only candidate currently safe for LazyingArt to represent without inventing authority or a funding boundary.",
+    "openhi_gate": [
+      "Authority to represent the project and contributors is documented",
+      "The proposed phase and budget do not duplicate HKU or RGC-supported work",
+      "Purchased equipment ownership and post-grant use are explicit",
+      "Current itemized quotes support the requested equipment amount"
     ]
   },
   "project": {
@@ -51,6 +63,22 @@
   },
   "application": {
     "state": "private_draft_not_submitted",
+    "budget_state": "provisional_allowability_and_quotes_unconfirmed",
+    "allowability_inquiry": {
+      "state": "email_sent_awaiting_human_reply",
+      "sent_at": "2026-09-11T07:44:00Z",
+      "official_recipient": "grant-requests@hackerinitiative.org",
+      "subject": "2026 grant budget allowability question",
+      "questions": [
+        "Whether a fixed-scope independent security or accessibility review is allowable despite the salary exclusion",
+        "Whether small independent reproduction-tester stipends or accessibility reimbursements fit the form's Stipend/Expenses category"
+      ],
+      "delivery_evidence": "The isolated project browser showed the exact recipient, subject, and bounded question before one send action. Gmail displayed Message sent, and the exact subject appeared once in Sent. Private screenshots remain ignored and mode 0600.",
+      "reply_observed": false,
+      "review_after": "2026-09-18",
+      "automatic_follow_up": false,
+      "boundary": "A delivered question is not eligibility confirmation, an application, an award, funding, a customer lead, or revenue."
+    },
     "requested_usd": 5000,
     "categories": [
       "Software/Tool Development",
@@ -68,7 +96,8 @@
       },
       {
         "item": "Small tester stipends and accessibility reimbursements",
-        "usd": 600
+        "usd": 600,
+        "gate": "Confirm that the Stipend/Expenses category permits independent reproduction testing without classifying it as excluded salary"
       },
       {
         "item": "Shipping, adapters, media, and test consumables",
@@ -91,8 +120,18 @@
       "Reporting requirements",
       "Anti-discrimination policy"
     ],
-    "submission_gate": "Review the exact entity, tax recipient, budget, eligibility, allowability, contact fields, and agreements in the visible form before submitting."
+    "submission_gate": "First obtain the funder's allowability answer and replace provisional costs with itemized current quotes. Then review the exact entity, tax recipient, budget, eligibility, contact fields, and agreements in the visible form before submitting."
   },
+  "additional_outreach": [
+    {
+      "source_url": "https://hackerinitiative.org/grant-guidelines/",
+      "application_state": "email_sent_awaiting_human_reply",
+      "sent_at": "2026-09-11T07:44:00Z",
+      "review_after": "2026-09-18",
+      "automatic_follow_up": false,
+      "purpose": "Clarify fixed-scope independent review and tester-cost allowability before deciding whether the provisional Proofline budget is valid."
+    }
+  ],
   "funnel": {
     "application_submitted": false,
     "presentation_invited": false,

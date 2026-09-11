@@ -1,10 +1,16 @@
 # Hacker Initiative 2026: Proofline grant route
 
-Verified: 2026-09-06
+Verified: 2026-09-11
 
 The 2026 Hacker Initiative call is a strong funding match for Proofline, the
 MIT-licensed offline provenance verifier in this repository. It is a project
 funding route, not a customer sale and not received revenue.
+
+The portfolio comparison is recorded in
+[`hacker-initiative-2026-portfolio-fit.md`](hacker-initiative-2026-portfolio-fit.md).
+OpenHI has stronger technical proof, but Proofline remains the controllable
+candidate unless authority to represent the six-author OpenHI project and the
+boundary from its earlier institutional funding are documented.
 
 ## Current call
 
@@ -47,7 +53,7 @@ media, websites, merchandise, and general promotion, so none of those appears
 in the proposed USD 5,000 budget. Applicant development time is contributed
 in-kind and not charged to the grant.
 
-## Proposed USD 5,000 budget
+## Provisional USD 5,000 budget
 
 | Item | USD | Boundary |
 | --- | ---: | --- |
@@ -57,12 +63,23 @@ in-kind and not charged to the grant.
 | Shipping, adapters, media, and test consumables | 500 | Documented actual project expenses |
 | **Total** | **5,000** | No salary, advertising, website, book, film, or merchandise cost |
 
+This budget is not ready for submission. The guidelines exclude salaries while
+the application form includes a `Stipend/Expenses` category. External
+fixed-scope review and tester compensation must be confirmed with the funder,
+and itemized equipment quotes must replace the provisional labels. Do not add
+unnecessary hardware merely to meet the grant minimum.
+
+One concise allowability question was sent to the program's official grant
+address on September 11. Gmail displayed the successful send and the exact
+subject once in Sent. No answer, application, award, or funding is inferred;
+review no earlier than September 18 unless a reply arrives first.
+
 The form categories are `Software/Tool Development` and `Equipment purchase`,
 the maximum two requested by the form.
 
 ## Submission gate
 
-The public narrative is drafted privately under
+The narrative and one concise allowability question are drafted privately under
 `.local/outreach/hacker-initiative-proofline-grant/`. Submission still needs the
 applicant's contact and physical address, organization and tax identity,
 responsible payee, and explicit acceptance of reporting and anti-discrimination

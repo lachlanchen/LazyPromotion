@@ -304,6 +304,25 @@ earn the two prizes.^11 Its parts cost, safety exposure, shipping time, and
 winner-takes-first risk make it a poor first-USD-1,000 action despite being a
 real hardware opportunity.
 
+### Book production: current demand, but no honest application yet
+
+A September 10 [USD 1,000 multilingual poetry-book
+brief](https://www.upwork.com/freelance-jobs/apply/Poetry-Collection-Book-Designer_~022097962898993625701/)
+asks for a print-ready PDF/X-1a, a reflowable EPUB, paragraph styles, and source
+files for a 64-page Spanish, French, and Portuguese collection. The client had
+viewed it within six hours, with 20–50 proposals and no interviews at the
+September 11 check. This strongly validates the print-plus-reflow problem behind
+the Book Specimen Sprint.
+
+It is not an honest application target yet. The buyer explicitly requires two
+previous poetry collections designed from manuscript to print-ready PDF, and
+the public PocketPolyglot specimen is project-owned multilingual process proof,
+not customer poetry work. Other current book listings either require full
+editing, cover/KDP production, Dutch editorial skill, expert InDesign source
+files, or offer USD 250 for an entire 105-page book. Keep the live specimen and
+tomorrow's LinkedIn test, but do not spend Upwork proposal credits or invent
+publishing credentials for these briefs.
+
 WebAPI Group's current ambassador program passes the registration rule without
 creating another account: it asks for one LinkedIn message from an existing
 profile and publishes a reward of up to USD 600 per validated campaign.^23 The

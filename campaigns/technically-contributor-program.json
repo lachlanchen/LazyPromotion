@@ -1,6 +1,6 @@
 {
   "id": "technically-contributor-program",
-  "version": 1,
+  "version": 2,
   "objective": "Win one USD 500 paid technical explainer by turning an inspectable MCP implementation into a clear account of permissions and agent power, without writing a speculative full article or claiming an ongoing assignment.",
   "source_need": {
     "captured_at": "2026-09-11T00:00:00Z",
@@ -59,6 +59,16 @@
     "terms_checkbox_observed": false,
     "automatic_follow_up": false,
     "review_after": "2026-09-18",
+    "inbound_monitor": {
+      "state": "baseline_initialized",
+      "checked_at": "2026-09-11T00:10:39Z",
+      "matching_thread_count": 0,
+      "unread_matching_thread_count": 0,
+      "mail_opened": false,
+      "message_preview_read": false,
+      "sender_or_subject_persisted": false,
+      "policy": "A later aggregate increase creates a review alert only. It does not prove a human reply, qualified lead, assignment, payment, or revenue."
+    },
     "policy": "Do not resubmit or follow up before the review date. If a human replies, confirm the exact brief, USD 500 fee, assistance policy, rights, revisions, acceptance criteria, payment route, and timing before work."
   },
   "funnel": {

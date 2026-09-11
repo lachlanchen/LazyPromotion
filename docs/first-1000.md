@@ -1356,6 +1356,22 @@ travel, assessment, IP, and payment terms remain explicit gates before any
 agreement. This is one direct application, not a reply, contract, payment, or
 revenue.
 
+Godengine's current first-party careers page invites senior engineering work
+across orchestration and infrastructure and asks for shipped work rather than a
+cover letter. One concise application linked AgInTi LabCanvas, LazyPromotion,
+and Local Knowledge Terminal, stated the Hong Kong location, and made no
+adoption or customer claim. The exact subject appeared once in Sent. The
+published process includes a paid take-home only after two conversations;
+eligibility, travel, rate, currency, payment, IP, and confidentiality remain
+gates before any work. This is an application, not a paid assessment, contract,
+payment, or revenue.
+
+The KnowledgeOwl editor's assistant thanked LazyingArt for the source-ledger
+pitch and samples and declined them. No response or resubmission was sent, and
+the route is closed without an assignment or revenue. Proton also declined its
+affiliate application without issuing a link, so no Proton placement will be
+made from the current application.
+
 ## Read-only receipt monitoring
 
 A private Stripe watcher now checks successful live charges every 30 minutes

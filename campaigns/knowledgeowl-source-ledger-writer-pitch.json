@@ -1,6 +1,6 @@
 {
   "id": "knowledgeowl-source-ledger-writer-pitch",
-  "version": 1,
+  "version": 2,
   "objective": "Win one USD 250 documentation article assignment with an accessible source-ledger pitch grounded in LazyingArt's real provenance and reproducibility work.",
   "source_need": {
     "captured_at": "2026-09-10T13:16:55Z",
@@ -35,7 +35,7 @@
     "claim_boundary": "The samples prove public technical documentation, source handling, limitation tracking, and reproducibility work. They do not prove KnowledgeOwl acceptance, a customer outcome, publication, or revenue."
   },
   "application": {
-    "state": "sent_awaiting_editorial_reply",
+    "state": "reply_received_declined",
     "sent_at": "2026-09-10T13:20:23Z",
     "method": "One reviewed email from the LazyingArt business address to the official guest-writer address",
     "subject": "Guest article ideas: making source checks easier",
@@ -46,12 +46,16 @@
     "identity_document_required": false,
     "automatic_follow_up": false,
     "review_after": "2026-09-24",
-    "policy": "Do not resubmit or follow up before the review date. If accepted, agree the exact topic and commercial terms before writing."
+    "reply_received_at": "2026-09-10T21:08:00Z",
+    "reply_state": "editorial_pass",
+    "reply_summary": "The editor's assistant thanked LazyingArt for the pitch and samples and declined the proposed articles.",
+    "response_action": "none",
+    "policy": "The editorial pass closes this pitch. Do not reply, resubmit, or infer an assignment, lead, payment, or revenue."
   },
   "funnel": {
     "outbound_application_count": 1,
     "delivery_observed": true,
-    "human_reply_observed": false,
+    "human_reply_observed": true,
     "qualified_lead_observed": false,
     "assignment_observed": false,
     "publication_observed": false,

@@ -1,0 +1,64 @@
+{
+  "id": "godengine-agent-orchestration-engineering",
+  "version": 1,
+  "objective": "Win a paid engineering conversation or paid take-home by showing current durable agent orchestration, evidence, recovery, local retrieval, and review-gated automation work without overstating production adoption or customer results.",
+  "source_need": {
+    "captured_at": "2026-09-11T12:40:00Z",
+    "official_url": "https://godengine.ai/careers",
+    "state": "first_party_open_general_engineering_route",
+    "published_need": "Senior engineering across kernel, orchestration, and infrastructure for a self-hosted decision-intelligence system, with written decision rationale and subsystem ownership.",
+    "published_process": "Send a repository, paper, or system diagram rather than a cover letter; selected candidates enter an intro, technical deep-dive, paid four-to-six-hour take-home, and on-site team day.",
+    "published_location_terms": "India-based compensation in INR; the Bengaluru team meets for at least one week each quarter and the company says travel and stay are covered for remote team members.",
+    "application_instruction": "Email careers@godengine.ai with the strongest relevant work.",
+    "policy": "The first-party page is current evidence of an open general engineering route. It does not establish selection, international contracting eligibility, a paid assessment, rate, employment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "AgInTi-LabCanvas",
+      "LazyPromotion",
+      "LocalKnowledgeTerminal"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/AgInTi-LabCanvas",
+      "https://github.com/lachlanchen/LazyPromotion",
+      "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+    ],
+    "supported_now": [
+      "A persistent agent workspace with durable tasks, capability routing, editable artifacts, and MCP or tool bridges",
+      "A review-first discovery and outreach agent with SQLite evidence, guarded external writes, exact-send verification, and active inbound and revenue monitoring",
+      "A local multilingual retrieval system with citation provenance, bounded source units, and evaluation fixtures"
+    ],
+    "not_proven": [
+      "Use of the work by Godengine or another external customer",
+      "Godengine-scale production load, adoption, or customer outcomes",
+      "Eligibility for India-based employment or an international contract",
+      "An agreed rate, currency, payment cadence, paid assessment, IP terms, travel schedule, or employment offer"
+    ],
+    "claim_boundary": "The public repositories prove shipped systems and reviewable architecture. They do not prove external adoption, role eligibility, selection, or a commercial agreement."
+  },
+  "application": {
+    "state": "email_sent_awaiting_human_reply",
+    "prepared_at": "2026-09-11T12:40:00Z",
+    "sent_at": "2026-09-11T12:46:45Z",
+    "review_after": "2026-09-18",
+    "method": "One concise email from the LazyingArt business alias to the first-party careers address",
+    "subject": "Engineering — agent orchestration and auditable workflows",
+    "message_storage": "ignored private evidence",
+    "resume_attached": false,
+    "attachments_sent": 0,
+    "automatic_follow_up": false,
+    "delivery_evidence": "The isolated project browser showed the LazyingArt business sender, first-party careers recipient, exact subject, three public repository links, Hong Kong location, and concise architecture note before one send action. The composer closed and the exact subject appeared once in Sent. Private screenshots remain ignored and mode 0600.",
+    "acceptance_gate": "Before an assessment, team day, contract, or employment acceptance, confirm international eligibility, contracting or employing entity, India travel expectations, working hours, numerical rate and currency, payment cadence and method, paid-assessment amount and timing, IP and confidentiality terms, termination terms, and whether the linked open-source work remains public."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "sender_side_sent_evidence_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_assessment_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

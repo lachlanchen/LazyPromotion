@@ -27,6 +27,7 @@ BLOCKED_STATES = {
     "defer_until_relevant_traffic",
     "advertiser_review_pending",
     "application_review_pending",
+    "application_declined",
 }
 REQUIRED_PRIVATE_FIELDS = {
     "accepted": bool,

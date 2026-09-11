@@ -32,9 +32,7 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.assertEqual(
             self.by_id["kobo"]["state"], "advertiser_review_pending"
         )
-        self.assertEqual(
-            self.by_id["proton"]["state"], "application_review_pending"
-        )
+        self.assertEqual(self.by_id["proton"]["state"], "application_declined")
         self.assertEqual(self.by_id["waveshare"]["state"], "migration_first")
         self.assertEqual(self.by_id["tradingview"]["state"], "hold")
         self.assertEqual(self.by_id["amazon-us"]["state"], "delay")
@@ -183,9 +181,12 @@ class AffiliatePortfolioTests(unittest.TestCase):
         proton = self.by_id["proton"]
         self.assertEqual(
             proton["verified_checkpoint"]["application"],
-            "submitted_once_official_confirmation_visible",
+            "declined_by_provider_2026-09-11",
         )
-        self.assertEqual(proton["verified_checkpoint"]["account"], "not_active_pending_provider_review")
+        self.assertEqual(
+            proton["verified_checkpoint"]["account"],
+            "not_active_provider_declined",
+        )
         self.assertEqual(proton["verified_checkpoint"]["earnings_minor"], 0)
 
     def test_roboforex_stays_gated_around_existing_microquant_placement(self):

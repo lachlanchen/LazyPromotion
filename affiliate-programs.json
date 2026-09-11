@@ -222,14 +222,14 @@
       "id": "proton",
       "name": "Proton",
       "priority": 6,
-      "state": "application_review_pending",
+      "state": "application_declined",
       "official_urls": {
         "program": "https://proton.me/partners/affiliates",
         "terms": "https://proton.me/partners/affiliates",
         "application": "https://proton.me/partners/affiliates"
       },
       "public_economics": "The public program currently lists product-dependent new-sale and renewal percentages; exact eligible products and payout terms require account review.",
-      "unknowns": ["The application reached Proton's official thank-you confirmation and is awaiting review. Confirm the accepted product schedule, country eligibility, payout minimum, renewal definition, reversals, and issued-link destination only if the application is approved."],
+      "unknowns": ["The provider declined the application without issuing a link. Reapply only if the current program still accepts the intended channels and a materially stronger first-party placement basis exists."],
       "conversion_event": "A new eligible customer completes a qualifying paid purchase and the network approves it.",
       "direct_url": "https://proton.me/",
       "permitted_link_hosts": ["proton.me"],
@@ -242,8 +242,8 @@
       ],
       "verified_checkpoint": {
         "checked_at": "2026-09-11",
-        "application": "submitted_once_official_confirmation_visible",
-        "account": "not_active_pending_provider_review",
+        "application": "declined_by_provider_2026-09-11",
+        "account": "not_active_provider_declined",
         "link": "not_issued",
         "clicks": 0,
         "sales": 0,

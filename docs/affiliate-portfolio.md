@@ -21,8 +21,9 @@ generic course catalog: the owned page derives the method, while the matched
 course continues with classification, regression, tuning, and pipelines.
 Kobo follows with the PocketPolyglot e-reader comparison. Its Rakuten publisher
 account is active and the Kobo US partnership request is awaiting manual
-review. Proton is also awaiting review after its application reached the
-official confirmation page. Neither has an issued link. These placements should
+review. Proton declined the application without issuing a link, so that route
+is closed unless a materially stronger first-party placement basis emerges.
+Kobo still has no issued link. These placements should
 each use one stable placement ID and a nearby disclosure, preserve a plain
 official URL, and be measured separately.
 

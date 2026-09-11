@@ -15,18 +15,20 @@ class PaidWriterRouteTests(unittest.TestCase):
 
     def test_knowledgeowl_pitch_is_sent_without_inflating_outcome(self):
         serialized, campaign = self.load("knowledgeowl-source-ledger-writer-pitch.json")
-        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(campaign["version"], 2)
         self.assertEqual(
             campaign["source_need"]["published_compensation"],
             "USD 250 per published article, or the writer's established higher rate.",
         )
-        self.assertEqual(campaign["application"]["state"], "sent_awaiting_editorial_reply")
+        self.assertEqual(campaign["application"]["state"], "reply_received_declined")
         self.assertEqual(
             campaign["application"]["quoted_rate"],
             "USD 250 for one 1,200 to 1,600 word article",
         )
         self.assertEqual(len(campaign["fit"]["public_samples"]), 3)
-        self.assertFalse(campaign["funnel"]["human_reply_observed"])
+        self.assertEqual(campaign["application"]["response_action"], "none")
+        self.assertTrue(campaign["funnel"]["human_reply_observed"])
+        self.assertFalse(campaign["funnel"]["assignment_observed"])
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
         self.assertIsNone(

@@ -211,9 +211,11 @@ one-time USD 1,000–5,000 microgrant range for small or early-stage projects.
 Local Knowledge Terminal is a strong mission match because its useful state,
 retrieval, inference, and provenance remain on hardware controlled by the user.
 The application route is materially simpler than a marketplace proposal, but
-the repository currently has no detected license. A concise private draft is
-ready; it remains unsent until the sender, six-week capacity, USD 5,000 budget,
-and owner-approved licensing plan are reviewed. FUTO publishes no microgrant
-deadline, geography rule, agreement, payout, or tax terms, so none are inferred.
-An application, reply, or award notice is not customer revenue, and received
-grant funding must be recorded separately from the four USD 250 sales target.
+the repository now has a GitHub-detected MIT license. A concise USD 5,000
+application and one-page six-week budget were sent once through the official
+grant address on September 11. The proposed work covers reproducible local
+lifecycle tests, a rights-cleared proof collection, portable evidence, and the
+read-only MCP release. FUTO publishes no microgrant deadline, geography rule,
+agreement, payout, tax, or decision-time terms, so none are inferred. An
+application, reply, or award notice is not customer revenue, and received grant
+funding must be recorded separately from the four USD 250 sales target.

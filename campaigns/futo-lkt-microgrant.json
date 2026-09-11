@@ -1,30 +1,40 @@
 {
-  "version": 2,
+  "version": 3,
   "id": "futo-lkt-microgrant",
-  "objective": "Seek one bounded FUTO grant to harden Local Knowledge Terminal as user-controlled, local-first software without calling public source open source before an explicit license exists or counting an application or award as customer revenue.",
+  "objective": "Seek one bounded FUTO microgrant to harden MIT-licensed Local Knowledge Terminal as user-controlled, local-first software without counting an application or award as customer revenue.",
+  "source_need": {
+    "url": "https://futo.tech/grants",
+    "title": "FUTO grant applications and microgrants",
+    "captured_at": "2026-09-11T00:18:00Z",
+    "state": "official_current_program_with_published_email_route_and_range"
+  },
   "source_evidence": {
     "program": "https://www.futo.org/grants/",
     "mission": "https://www.futo.org/about/what-is-futo/",
     "source_first": "https://www.futo.org/about/what-is-futo/",
     "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
     "passage_provenance_proof": "https://lazying.art/lkt/passage-graph/",
-    "sample_fit_report": "https://lazying.art/lkt/sample-report/"
+    "sample_fit_report": "https://lazying.art/lkt/sample-report/",
+    "mcp_boundary": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md"
   },
   "program": {
-    "state": "applications_open_official_page_verified",
-    "observed_on": "2026-09-06",
-    "award_range_usd": null,
-    "published_fit": "Grant programs fund projects and people working to challenge technology centralization; the page separately describes microgrants as internally selected and unsolicited.",
+    "state": "applications_open_and_microgrant_range_officially_verified",
+    "observed_on": "2026-09-11",
+    "award_range_usd": {
+      "minimum": 1000,
+      "maximum": 5000
+    },
+    "published_fit": "FUTO invites grant applications and publishes one-time USD 1,000–5,000 microgrants for small or early-stage projects; it notes that many microgrants are unsolicited.",
     "application_route": "email_to_public_grant_program_address",
-    "microgrant_application_route_published": false,
+    "microgrant_application_route_published": true,
     "application_fee_observed": false,
     "deadline_published": false,
     "geographic_eligibility_published": false,
     "agreement_or_ip_terms_published": false,
-    "policy": "The current official page verifies that grant applications are open by email, but publishes no award range, deadline, geography, agreement, IP, payout, or tax terms. The proposed USD 5,000 request below is not a published FUTO range."
+    "policy": "The current official page verifies that grant applications are open by email and publishes the USD 1,000–5,000 microgrant range. It publishes no deadline, geography, agreement, IP, payout, tax, or decision-time terms, so none are inferred."
   },
   "fit": {
-    "strength": "high_mission_fit_with_license_gate",
+    "strength": "high_mission_fit_with_verified_mit_license",
     "supported": [
       "Local retrieval and Qwen inference can run without a cloud API",
       "Accepted knowledge is stored in SQLite and the graph is a rebuildable projection",
@@ -39,15 +49,16 @@
       "agreement or payout terms"
     ],
     "license_audit": {
-      "state": "explicit_license_missing",
-      "checked_on": "2026-09-06",
-      "github_detected_license": null,
-      "root_license_file_present": false,
-      "gate": "Choose and publish an owner-approved license before accepting funding; do not describe source-visible code as granting reuse rights."
+      "state": "mit_license_published_and_github_detected",
+      "checked_on": "2026-09-11",
+      "github_detected_license": "MIT",
+      "root_license_file_present": true,
+      "repository_revision_checked": "e750e5ae24b780e45de896f7dc3a769d2410dabd",
+      "boundary": "The MIT code license is explicit. It does not grant rights to private or third-party books, documents, corpora, model weights, or customer material."
     }
   },
   "proposal": {
-    "state": "private_grant_package_ready_not_sent",
+    "state": "email_sent_with_one_page_brief",
     "requested_usd": 5000,
     "timeline_weeks": 6,
     "private_draft": ".local/outreach/futo-lkt-microgrant/email-draft.md",
@@ -55,24 +66,24 @@
     "private_brief_pdf": ".local/outreach/futo-lkt-microgrant/one-page-brief.pdf",
     "milestones": [
       {
-        "name": "Licensing and rights boundary",
-        "budget_usd": 1000,
-        "deliverable": "Owner-approved code license, third-party notices, corpus boundary, and public release checklist"
-      },
-      {
         "name": "Reproducible local lifecycle",
         "budget_usd": 1500,
         "deliverable": "Raspberry Pi/Linux code-only install, update, uninstall, and offline smoke tests"
       },
       {
-        "name": "Redistributable proof collection",
+        "name": "Rights-cleared proof collection",
         "budget_usd": 1250,
-        "deliverable": "Synthetic or openly licensed starter data plus deterministic provenance validation"
+        "deliverable": "Synthetic or openly licensed starter data, an explicit corpus boundary, and deterministic provenance validation"
       },
       {
-        "name": "Portability and release",
+        "name": "Portable evidence",
         "budget_usd": 1250,
-        "deliverable": "Export/import regression tests, tagged release, operator guide, and bounded results report"
+        "deliverable": "Export/import regression tests for cards, sources, relations, and revision history"
+      },
+      {
+        "name": "Bounded MCP and release",
+        "budget_usd": 1000,
+        "deliverable": "Hardened read-only MCP surface, tagged release, operator guide, and bounded results report"
       }
     ],
     "exclusions": [
@@ -82,16 +93,38 @@
       "hosted inference",
       "unmeasured accuracy or scale claims"
     ],
-    "submission_gates": [
-      "Verify the exact sender identity and reply channel",
-      "Review the requested amount, six-week capacity, milestones, and exclusions",
-      "Choose an owner-approved licensing plan",
-      "Ask FUTO to clarify geographic eligibility and agreement terms before accepting any award"
+    "submission_checks": [
+      "The exact existing business mailbox and public grant route were verified",
+      "The requested amount is within the published range and the four milestones total USD 5,000",
+      "The one-page attachment is one page and contains the same milestone budget"
     ],
-    "application_sent": false
+    "acceptance_gate": "Clarify geographic eligibility, agreement, IP, payout, tax, reporting, and timing terms before accepting any award.",
+    "application_sent": true
+  },
+  "application": {
+    "state": "email_sent_awaiting_human_reply",
+    "sent_at": "2026-09-11T00:24:00Z",
+    "review_after": "2026-09-18",
+    "automatic_follow_up": false,
+    "method": "One concise application from the existing business mailbox with one one-page PDF milestone budget attached",
+    "delivery_evidence": "The isolated visible browser showed the public grant address, exact subject, revised body, and one 21 KB PDF attachment before one send action. The composer closed, and the exact subject then appeared once in Sent. Private screenshots remain ignored and mode 0600.",
+    "account_created": false,
+    "identity_document_submitted": false,
+    "agreement_accepted": false,
+    "inbound_monitor": {
+      "state": "baseline_initialized",
+      "checked_at": "2026-09-11T00:27:12Z",
+      "matching_thread_count": 0,
+      "unread_matching_thread_count": 0,
+      "mail_opened": false,
+      "message_preview_read": false,
+      "sender_or_subject_persisted": false,
+      "policy": "A later aggregate increase creates a review alert only. It does not prove a human reply, eligibility, an award, payment, received funding, or customer revenue."
+    },
+    "policy": "Do not follow up before the review date. A reply, requested detail, eligibility confirmation, award discussion, or award notice requires separate review and is not received funding or customer revenue."
   },
   "funnel": {
-    "application_sent": false,
+    "application_sent": true,
     "reply_received": false,
     "award_offered": false,
     "funds_received_usd": 0,

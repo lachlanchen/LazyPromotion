@@ -100,16 +100,17 @@ projects. LKT's local inference, user-controlled storage, portable data, and
 no-account direction align closely with FUTO's published [user-control and
 open-software mission](https://futo.tech/about).
 
-A concise private application requests USD 5,000 for a six-week public
-hardening sprint: licensing and rights boundaries, reproducible Raspberry
-Pi/Linux lifecycle tests, a redistributable proof collection, provenance
-validation, and portable export/import. The source is public today, but GitHub
-detects no LKT license. An owner-approved license is therefore a pre-award gate;
-visible source is not described as granting reuse rights.
+A concise application requested USD 5,000 for a six-week public hardening
+sprint: reproducible Raspberry Pi/Linux lifecycle tests, a rights-cleared proof
+collection, provenance validation, portable evidence, and a hardened read-only
+MCP release. LKT is now MIT-licensed and GitHub detects that license; the code
+license remains separate from rights to private or third-party source material.
 
 FUTO publishes no microgrant deadline, geographic rule, decision time,
-agreement, payout, or tax terms. No application has been sent. A grant is
-tracked as funding, not customer revenue.
+agreement, payout, or tax terms. The application and one-page budget were sent
+once to the published grant address on September 11. A reply, award notice, or
+promised payment is not received funding; a grant is tracked as funding, not
+customer revenue.
 
 ## Qualified but lower-return fallbacks
 

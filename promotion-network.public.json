@@ -145,8 +145,8 @@
       "kind": "campaign",
       "label": "futo-lkt-microgrant",
       "metadata": {
-        "objective": "Seek one bounded FUTO grant to harden Local Knowledge Terminal as user-controlled, local-first software without calling public source open source before an explicit license exists or counting an application or award as customer revenue.",
-        "version": 2
+        "objective": "Seek one bounded FUTO microgrant to harden MIT-licensed Local Knowledge Terminal as user-controlled, local-first software without counting an application or award as customer revenue.",
+        "version": 3
       },
       "url": ""
     },
@@ -8585,6 +8585,14 @@
       "relation": "uses_evidence",
       "source": "campaign:futo-lkt-microgrant",
       "target": "url:1c57cb81d6efe0d4"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:futo-lkt-microgrant",
+      "target": "url:333e9c866f02467c"
     },
     {
       "confidence": 1.0,

@@ -494,14 +494,16 @@ the Connects-spend gate.
 
 FUTO's official grant page now provides a lower-friction, non-sales funding
 route around the same local-first work. It invites applications for one-time
-USD 1,000–5,000 microgrants to small or early-stage projects. A private draft
-requests USD 5,000 for six weeks of LKT licensing/rights work, reproducible
-Raspberry Pi/Linux lifecycle tests, a redistributable proof collection,
-provenance validation, and portable export/import. The draft is deliberately
-unsent: GitHub currently detects no LKT license, and the owner-approved license,
-sender, capacity, and FUTO eligibility/agreement terms must be settled first.
-An application, reply, offer, or promised award does not count as customer
-revenue; any received grant is recorded separately from the four-sale target.
+USD 1,000–5,000 microgrants to small or early-stage projects. LKT's MIT license
+is now present and detected by GitHub. One concise application requested USD
+5,000 for six weeks of reproducible Raspberry Pi/Linux lifecycle tests, a
+rights-cleared proof collection, provenance validation, portable evidence, and
+a hardened read-only MCP release. It was sent once with a checked one-page
+budget through the published grant address on September 11. FUTO still
+publishes no deadline, geography, agreement, payout, tax, or decision-time
+terms, so none were inferred. An application, reply, offer, or promised award
+does not count as customer revenue; any received grant is recorded separately
+from the four-sale target.
 
 ## Fixed scope
 

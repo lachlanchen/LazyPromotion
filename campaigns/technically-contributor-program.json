@@ -1,0 +1,65 @@
+{
+  "id": "technically-contributor-program",
+  "version": 1,
+  "objective": "Win one USD 500 paid technical explainer by turning an inspectable MCP implementation into a clear account of permissions and agent power, without writing a speculative full article or claiming an ongoing assignment.",
+  "source_need": {
+    "captured_at": "2026-09-11T00:00:00Z",
+    "url": "https://technically.dev/contribute/contributor",
+    "title": "Technically ongoing contributor",
+    "state": "official_current_program_with_accepting_form",
+    "published_scope": "Written explainers, with optional video, about software, AI, technical companies, and becoming more technical. The page asks contributors to be able to produce one piece per month.",
+    "published_compensation": "USD 500 per contribution. Technically says the first contribution is paid even if it does not reach the publication bar.",
+    "application_fields": "Name, email, optional LinkedIn profile, interest statement, writing examples, and topic ideas.",
+    "policy": "Application, editorial reply, topic acceptance, contribution delivery, payment confirmation, and received revenue are separate states. Confirm the brief, assistance policy, rights, revisions, acceptance, payment method, and timing before beginning a contribution."
+  },
+  "fit": {
+    "projects": [
+      "LocalKnowledgeTerminal",
+      "LazyTunnel",
+      "BLOG"
+    ],
+    "public_samples": [
+      "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
+      "https://blog.lazying.art/html/computer_internet/3810/archive-chatgpt-conversations-provenance-current-state.html",
+      "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html"
+    ],
+    "first_topic": "What an MCP server actually does—and why tool permissions matter",
+    "proposed_outcome": "Use a small diagram and a real read-only implementation to explain tools, resources, OAuth, confirmation gates, and the difference between giving an assistant information and giving it power.",
+    "supported_now": [
+      "A released read-only MCP bridge with two bounded tools, source-grounded outputs, and no request-time model or write access",
+      "A live review-first Postiz CLI and MCP guide",
+      "Public explanations of provenance, document evaluation, local AI, and reverse tunnels grounded in working repositories"
+    ],
+    "not_claimed": [
+      "Prior Technically publication",
+      "Editorial acceptance of the application or topic",
+      "A commissioned contribution, continuing monthly assignment, payment, or revenue"
+    ],
+    "claim_boundary": "The public implementations and articles support technical fit and the proposed explanation. They do not prove acceptance, delivery, payment, or a continuing engagement."
+  },
+  "application": {
+    "state": "submitted_awaiting_human_reply",
+    "sent_at": "2026-09-11T00:00:32Z",
+    "method": "Official six-field contributor form using the LazyingArt business contact, three live writing samples, and one implementation-backed topic proposal",
+    "exact_answers_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated visible browser showed all required fields complete, the optional LinkedIn field empty, and one enabled submit control. One submit action replaced the form with the site's 'Application received!' confirmation. Private before-and-after screenshots remain outside Git.",
+    "public_urls_sent": 3,
+    "linkedin_profile_sent": false,
+    "account_required": false,
+    "identity_document_required": false,
+    "terms_checkbox_observed": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "policy": "Do not resubmit or follow up before the review date. If a human replies, confirm the exact brief, USD 500 fee, assistance policy, rights, revisions, acceptance criteria, payment route, and timing before work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "topic_accepted": false,
+    "contribution_delivered": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

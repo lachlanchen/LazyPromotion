@@ -75,6 +75,33 @@ class PaidWriterRouteTests(unittest.TestCase):
             )
         )
 
+    def test_technically_application_is_paid_and_does_not_inflate_revenue(self):
+        serialized, campaign = self.load("technically-contributor-program.json")
+        self.assertEqual(campaign["version"], 1)
+        self.assertEqual(
+            campaign["source_need"]["published_compensation"],
+            "USD 500 per contribution. Technically says the first contribution is paid even if it does not reach the publication bar.",
+        )
+        self.assertEqual(
+            campaign["fit"]["first_topic"],
+            "What an MCP server actually does—and why tool permissions matter",
+        )
+        self.assertEqual(len(campaign["fit"]["public_samples"]), 3)
+        self.assertEqual(
+            campaign["application"]["state"], "submitted_awaiting_human_reply"
+        )
+        self.assertFalse(campaign["application"]["linkedin_profile_sent"])
+        self.assertFalse(campaign["funnel"]["human_reply_observed"])
+        self.assertFalse(campaign["funnel"]["payment_confirmed"])
+        self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
+        self.assertIsNone(
+            re.search(
+                r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b",
+                serialized,
+                re.IGNORECASE,
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -61,6 +61,16 @@ freelancer registration still requires an accurate personal residence; a South
 Dakota company address does not answer that question. No account, proposal,
 Connects spend, lead or revenue was created.
 
+A stronger direct route did not require a marketplace account. Technically's
+official ongoing contributor page publishes USD 500 per written contribution,
+with video optional, and says it pays the first contribution even if the result
+does not reach publication.^19 Its form accepted one application using three
+live LazyingArt explanations and a narrowly matched first topic: what an MCP
+server does and why tool permissions matter. The optional LinkedIn field was
+left blank because an exact public profile URL was not verified. The on-page
+receipt proves one delivered application, not an editorial reply, assignment,
+payment, or revenue.
+
 ## Portfolio evidence
 
 The refreshed public inventory contains 108 non-archived, non-fork source
@@ -104,7 +114,7 @@ None has produced a buyer inquiry or payment yet.
 
 ### 1. Existing paid-work applications
 
-Twenty-one reviewed applications or pitches are already awaiting a human
+Twenty-four reviewed applications or pitches are already awaiting a human
 reply. They cover technical writing, scientific editing, software testing,
 embedded UI, multilingual subtitle work, video editing, and agent engineering.
 These routes are closer to money than another account registration because a
@@ -341,3 +351,4 @@ routes already live.
 16. Contra. “[Find global and remote freelance jobs](https://contra.com/features/find-freelance-jobs).” Accessed September 11, 2026.
 17. Upwork. “[Local AI Agent Platform](https://www.upwork.com/freelance-jobs/apply/Local-Agent-Platform_~022095360496874933773/).” Accessed September 11, 2026.
 18. Upwork. “[Developer wanted for self-hosted AI chatbot + expert question routing system](https://www.upwork.com/freelance-jobs/apply/Developer-wanted-for-self-hosted-chatbot-expert-question-routing-system_~022094334214117597398/).” Accessed September 11, 2026.
+19. Technically. “[Contributor](https://technically.dev/contribute/contributor).” Accessed September 11, 2026.

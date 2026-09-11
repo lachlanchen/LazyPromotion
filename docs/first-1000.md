@@ -1102,6 +1102,15 @@ figures are attention signals, not buyer intent or revenue.
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.
 
+Technically's current contributor page publishes USD 500 per contribution and
+says the first contribution is paid even if it does not reach publication. On
+September 11, its official form accepted one application built from three live
+LazyingArt writing samples and a specific proposal: explain what an MCP server
+does and why tool permissions matter using the released read-only LKT bridge.
+The optional LinkedIn field was left blank because an exact profile URL was not
+verified. The received confirmation proves delivery only; it is not an
+editorial reply, commissioned article, payment, or revenue.
+
 The latest complete GitHub audit puts `uu-remote-ubuntu-bridge` first by owned
 attention: 1,106 views from 488 unique visitors and 451 clones from 182 unique
 cloners in the current rolling window. The Simplified-Chinese README accounts

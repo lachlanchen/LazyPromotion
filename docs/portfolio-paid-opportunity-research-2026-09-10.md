@@ -85,7 +85,7 @@ repositories. The useful assets fall into four commercial proof clusters.
 
 The current attention data supports this grouping but does not prove purchase
 intent. `uu-remote-ubuntu-bridge` is the strongest recent discovery route and
-has 12 stars; `OpenHI` has the deepest public technical validation with 104
+has 13 stars; `OpenHI` has the deepest public technical validation with 104
 stars and 32 forks; `leonardsusskind` has 29 stars and a genuine learner
 acknowledgement. Clone and view counts can include automation and therefore
 must remain attention signals rather than leads.

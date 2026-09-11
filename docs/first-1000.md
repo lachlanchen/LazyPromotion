@@ -1235,6 +1235,14 @@ The free technical answer still comes first. All 148 tests passed, with one
 existing opt-in live-systemd test skipped. This is a conversion-path repair,
 not a claimed donation, lead, or sale.
 
+The repository's About URL now lands on the exact UU-on-Ubuntu guide instead
+of the separate vendor-independent LazyRemote homepage. Commit `554f494`
+restored the unmodified standard MIT text while retaining the third-party
+license and trademark boundary in the README; GitHub now recognizes the
+license as MIT. The description, 15 exact topics, funding panel, and 11-language
+navigation remain intact. This metadata repair is a clearer trust and
+continuation path, not a click, inquiry, pledge, or sale.
+
 A current Agentspace post requests a part-time DevOps engineer for a
 self-hosted document-intelligence stack at INR 1,000 per hour, initially about
 five hours per week. One concise application linked LazyEdge, Local Knowledge

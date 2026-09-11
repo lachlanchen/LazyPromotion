@@ -57,6 +57,28 @@ screenshots, a short issue ledger, and one correction pass. The
 until the visitor reviews and explicitly sends it. This is an owned offer, not
 an inquiry or revenue; any Freelancer buyer must stay on Freelancer.
 
+The Browser Regression page now also carries a separate, executed
+state-recovery specimen. Its synthetic notebook preserves an unsent draft
+across reload, retries one interrupted write with the same id without
+duplicating the saved record, and hides cached state across an account switch.
+All three journeys passed three consecutive Chromium runs in GitHub Actions.
+This is companion proof only: it contains no private AiMemo source or customer
+data, and authenticated staging or offline-state work remains outside the
+fixed USD 250 public-site baseline.
+
+A fresh marketplace check found the same failure shapes in current PWA and
+mobile listings, but none justified another bid. One broad chat-app repair was
+budgeted below USD 500; two native offline builds had 102 and 237 bids. The
+standalone recovery offer therefore remains unlaunched until a bounded current
+buyer clears budget, competition, access, and scope gates.
+
+Two closer media opportunities also exposed account-level restrictions only
+after authenticated review. The USD 1,500–3,000 lecture-series listing was
+limited to Preferred Freelancers and additional account qualifications; the
+English lecture-transcription listing required a USD 20 wallet balance. No
+membership, verification purchase, wallet funding, or bid was made, and all
+five remaining free bids were preserved.
+
 ## Decision
 
 1. Keep technical verification and infrastructure work ahead of social volume.

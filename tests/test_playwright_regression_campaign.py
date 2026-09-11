@@ -42,11 +42,33 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
         self.assertIn("all 11 chapters", proof["journeys"][0])
         self.assertIn("not a customer result", proof["boundary"])
 
+    def test_stateful_recovery_is_companion_proof_not_a_new_claim(self):
+        proof = self.campaign["fit"]["stateful_recovery_specimen"]
+        self.assertEqual(proof["state"], "clean_ci_three_consecutive_runs_passed")
+        self.assertEqual(proof["tests_per_run"], 3)
+        self.assertEqual(proof["runs"], 3)
+        self.assertEqual(len(proof["journeys"]), 3)
+        self.assertIn("same id", proof["journeys"][1])
+        self.assertIn("no customer data or private AiMemo source", proof["boundary"])
+        self.assertIn("not a customer result", proof["boundary"])
+
+        market = self.campaign["stateful_recovery_market_check"]
+        self.assertEqual(market["state"], "proof_ready_no_qualified_current_bid")
+        self.assertEqual(len(market["rejected_current_routes"]), 3)
+        self.assertFalse(market["application_submitted"])
+        self.assertFalse(market["social_post_scheduled"])
+        self.assertEqual(market["received_revenue_usd"], 0)
+
     def test_owned_baseline_is_bounded_and_not_a_customer_outcome(self):
         offer = self.campaign["owned_offer"]
         scope = offer["scope"]
         self.assertEqual(offer["state"], "live_encrypted_intake_verified")
         self.assertEqual(offer["price_usd"], 250)
+        self.assertEqual(
+            offer["website_commit"],
+            "aceb4fce038bbd6d0c0f544f6c6a48ad3c853809",
+        )
+        self.assertIn("34652194605", offer["website_pages_run"])
         self.assertEqual(scope["journeys"], 3)
         self.assertEqual(scope["checkpoints"], 12)
         self.assertEqual(scope["viewports"], ["1440x1000", "390x844"])

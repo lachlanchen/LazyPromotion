@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "id": "playwright-regression-contract",
   "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
   "source_need": {
@@ -74,6 +74,21 @@
       "artifacts": "JUnit XML for each run plus screenshots on failure",
       "boundary": "First-party verification of the project-owned LazyTravel site; not a customer result or proof against the buyer's application."
     },
+    "stateful_recovery_specimen": {
+      "state": "clean_ci_three_consecutive_runs_passed",
+      "repository_commit": "1929c3565ba1c9db5fdb77f832587265ff1fe835",
+      "workflow_run": "https://github.com/lachlanchen/LazyPromotion/actions/runs/34651573895",
+      "source": "https://github.com/lachlanchen/LazyPromotion/tree/1929c3565ba1c9db5fdb77f832587265ff1fe835/examples/stateful-pwa-recovery",
+      "tests_per_run": 3,
+      "runs": 3,
+      "journeys": [
+        "an unsent account-scoped draft survives reload without a server write",
+        "an interrupted write retries with the same id and creates one saved note",
+        "logout and account switching hide the previous account's cached state"
+      ],
+      "artifacts": "JUnit XML on every run; Playwright trace and full-page screenshot on test failure",
+      "boundary": "Synthetic project-owned fixture with no customer data or private AiMemo source; not a customer result, service-worker test, production reliability claim, or part of the fixed USD 250 public-site scope."
+    },
     "not_proven": [
       "a complete third-party application regression suite",
       "the buyer's page model, test data, roles, or manual checklist",
@@ -88,9 +103,9 @@
     "price_usd": 250,
     "offer_url": "https://lazying.art/browser-regression/",
     "fit_check_url": "https://lazying.art/browser-regression/fit-check/",
-    "website_commit": "f0e39b72d896202594a1200d526327ea57315c39",
+    "website_commit": "aceb4fce038bbd6d0c0f544f6c6a48ad3c853809",
     "backend_commit": "f33be5bd",
-    "website_pages_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34648912037",
+    "website_pages_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34652194605",
     "live_verification": "One labeled synthetic request passed visible review and explicit confirmation, returned HTTP 202, matched the browser_regression schema after decryption, persisted locally with mode 0600, and was deleted remotely only after unchanged verification. The exact local synthetic envelope and inquiry copies were then removed.",
     "scope": {
       "site": "one customer-controlled public website",
@@ -118,6 +133,28 @@
       "boundary": "Project-owned LazyTravel verification, not a customer result."
     },
     "marketplace_boundary": "The USD 250 baseline may be proposed as a funded first milestone inside a marketplace, but a marketplace buyer must remain on that marketplace for contract, files, and payment."
+  },
+  "stateful_recovery_market_check": {
+    "checked_at": "2026-09-11T21:55:00Z",
+    "state": "proof_ready_no_qualified_current_bid",
+    "decision": "Keep the executed recovery fixture as companion proof inside the Browser Regression route; do not launch a separate social campaign or spend a marketplace bid until a current bounded buyer clears budget, platform-access, competition, and scope gates.",
+    "rejected_current_routes": [
+      {
+        "url": "https://www.freelancer.com/projects/django/VChaTie-Real-Time-Chat-Application",
+        "reason": "Exact missed and duplicate message pain, but a broad production overhaul with 34 bids and a maximum budget below USD 500."
+      },
+      {
+        "url": "https://www.freelancer.com/projects/react-native/Offline-Sync-Queue-Mobile-App",
+        "reason": "Strong offline queue semantics, but a greenfield native-app build with 102 bids rather than a bounded PWA recovery baseline."
+      },
+      {
+        "url": "https://www.freelancer.com/projects/react-native/eact-Native-Offline-Cached-App",
+        "reason": "The budget includes USD 500, but the request is a complete native app and already has 237 bids."
+      }
+    ],
+    "application_submitted": false,
+    "social_post_scheduled": false,
+    "received_revenue_usd": 0
   },
   "channels": {
     "linkedin": {

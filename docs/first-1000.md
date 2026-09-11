@@ -1260,6 +1260,18 @@ pass, and a two-business-day first-cut target. The third-party footage and
 message evidence remain outside Git and the test will not be published. No
 reply, lead, scope acceptance, payment, or revenue exists yet.
 
+A current r/selfhosted plan review asked how to combine TrueNAS, Nextcloud,
+WireGuard, encrypted OneDrive storage, ZFS snapshots and an offline drive. The
+existing discussion had not separated encryption from recoverable backup
+history. One concise, link-free answer explained that an `rclone sync` remains
+a mirror, suggested a snapshotting backup layer and restore checks, included
+Nextcloud database/config state, and narrowed the VPN policy to the required
+service path. The exact public reply is
+[visible on Reddit](https://www.reddit.com/r/selfhosted/comments/1w8u1v3/comment/p93ykyn/).
+It is one verified helpful interaction, not a portfolio match, lead, buyer, or
+revenue. The browser path also now tolerates Reddit's slower Lexical composer
+activation without retrying a send.
+
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced
 the sale; never put the raw Stripe receipt in Git.

@@ -949,8 +949,18 @@ def composer(page: Page, platform: str, *, activate: bool = True) -> Locator:
             triggers = [page.get_by_role("button", name=re.compile(r"comment", re.I))]
         trigger = visible_first(triggers)
         trigger.click()
-        page.wait_for_timeout(700)
-        return composer(page, platform, activate=False)
+        # Reddit's current Lexical composer can take more than the former
+        # fixed 700 ms to replace its textarea-like trigger. Poll the visible
+        # editor for a bounded five seconds so a slow activation is not
+        # mistaken for a missing composer.
+        attempts = 20 if platform == "reddit" else 3
+        for _ in range(attempts):
+            page.wait_for_timeout(250)
+            try:
+                return composer(page, platform, activate=False)
+            except RuntimeError:
+                continue
+        raise RuntimeError("reply composer did not activate after its trigger was clicked")
 
 
 def fill_composer(locator: Locator, body: str) -> None:

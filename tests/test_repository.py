@@ -891,6 +891,22 @@ class RepositoryTests(unittest.TestCase):
             ),
         ])
 
+    def test_reddit_composer_waits_for_slow_lexical_activation(self):
+        page = mock.MagicMock()
+        trigger = mock.MagicMock()
+        editor = mock.MagicMock()
+        with mock.patch(
+            "browser.visible_first",
+            side_effect=[RuntimeError("not active"), trigger,
+                         RuntimeError("still activating"), editor],
+        ):
+            self.assertIs(browser.composer(page, "reddit"), editor)
+        trigger.click.assert_called_once_with()
+        self.assertEqual(
+            page.wait_for_timeout.call_args_list,
+            [mock.call(250), mock.call(250)],
+        )
+
     def test_instagram_grid_alt_text_is_canonical_candidate_body(self):
         rows = browser.dedupe(
             [{

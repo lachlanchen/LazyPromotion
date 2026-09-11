@@ -245,7 +245,8 @@ checks the visible Replies activity page without opening any notification. It
 stores only opaque fingerprints and aggregate counts. A new item or an unknown
 page layout creates a visible-review alert; it cannot like, follow, message, or
 reply. `python owned_monitor.py status` includes this last sanitized Threads
-state beside the Postiz and application summaries.
+state beside the Postiz schedule, aggregate application-inbox, and due-review
+summaries.
 
 The same review pattern was used for a value-first LKT guide post to the
 connected Reddit account's own profile. The live provider contract and profile

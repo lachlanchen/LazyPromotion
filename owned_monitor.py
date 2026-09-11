@@ -35,6 +35,7 @@ STATUS_PATH = RUNTIME / "owned-monitor-status.json"
 LOG_PATH = RUNTIME / "owned-monitor.jsonl"
 LOCK_PATH = RUNTIME / "owned-monitor.lock"
 THREADS_STATUS_PATH = RUNTIME / "threads-inbound-monitor-status.json"
+APPLICATION_INBOX_STATUS_PATH = RUNTIME / "application-inbox-monitor-status.json"
 
 PENDING_STATES = frozenset({"DRAFT", "QUEUE"})
 FAILED_STATES = frozenset({"ERROR", "FAILED"})
@@ -606,10 +607,43 @@ def threads_status_summary(path: Path = THREADS_STATUS_PATH) -> dict:
     return {key: payload[key] for key in allowed if key in payload}
 
 
+def application_inbox_status_summary(
+    path: Path = APPLICATION_INBOX_STATUS_PATH,
+) -> dict:
+    """Return aggregate application-mail state without campaign or message data."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"available": False}
+    if payload.get("ok") is not True or not isinstance(payload.get("summary"), dict):
+        return {
+            "available": False,
+            "checked_at": str(payload.get("checked_at") or ""),
+        }
+    allowed_counts = {
+        "campaign_count",
+        "campaigns_with_matching_threads",
+        "campaigns_with_unread_matching_threads",
+        "matching_thread_count",
+        "unread_matching_thread_count",
+    }
+    return {
+        "available": True,
+        "checked_at": str(payload.get("checked_at") or ""),
+        "alert_count": len(payload.get("alerts") or []),
+        **{
+            key: payload["summary"][key]
+            for key in allowed_counts
+            if key in payload["summary"]
+        },
+    }
+
+
 def status_summary(
     path: Path = STATUS_PATH,
     *,
     threads_path: Path = THREADS_STATUS_PATH,
+    application_inbox_path: Path = APPLICATION_INBOX_STATUS_PATH,
 ) -> dict:
     """Read the last private status without exposing post or integration details."""
     try:
@@ -628,6 +662,9 @@ def status_summary(
         "monitor_error": "error" in payload,
         "postiz": dict(payload.get("summary") or {}),
         "threads": threads_status_summary(threads_path),
+        "application_inbox": application_inbox_status_summary(
+            application_inbox_path
+        ),
         "applications": dict(application.get("summary") or {}),
         "due_campaign_ids": [str(item) for item in due_ids],
     }

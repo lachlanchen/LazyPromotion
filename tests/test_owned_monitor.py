@@ -132,6 +132,7 @@ class OwnedMonitorTests(unittest.TestCase):
     def test_status_summary_excludes_posts_and_private_ids(self):
         status_path = self.root / "status-summary.json"
         threads_path = self.root / "threads-status-summary.json"
+        application_inbox_path = self.root / "application-inbox-status-summary.json"
         status_path.write_text(
             json.dumps(
                 {
@@ -163,9 +164,29 @@ class OwnedMonitorTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        application_inbox_path.write_text(
+            json.dumps(
+                {
+                    "checked_at": "2026-09-01T01:00:00Z",
+                    "ok": True,
+                    "summary": {
+                        "campaign_count": 22,
+                        "campaigns_with_matching_threads": 2,
+                        "campaigns_with_unread_matching_threads": 1,
+                        "matching_thread_count": 2,
+                        "unread_matching_thread_count": 1,
+                    },
+                    "alerts": [{"campaign_id": "private-campaign"}],
+                    "campaigns": [{"campaign_id": "private-campaign"}],
+                }
+            ),
+            encoding="utf-8",
+        )
 
         summary = owned_monitor.status_summary(
-            status_path, threads_path=threads_path
+            status_path,
+            threads_path=threads_path,
+            application_inbox_path=application_inbox_path,
         )
 
         self.assertTrue(summary["available"])
@@ -175,8 +196,13 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(summary["due_campaign_ids"], ["paid-route"])
         self.assertTrue(summary["threads"]["review_required"])
         self.assertNotIn("fingerprints", summary["threads"])
+        self.assertEqual(summary["application_inbox"]["alert_count"], 1)
+        self.assertEqual(
+            summary["application_inbox"]["unread_matching_thread_count"], 1
+        )
         self.assertNotIn("private-post-id", json.dumps(summary))
         self.assertNotIn("private-thread-key", json.dumps(summary))
+        self.assertNotIn("private-campaign", json.dumps(summary))
 
     def test_status_snapshot_is_owner_readable_only(self):
         self.run_monitor(FakePostiz(posts=[]))

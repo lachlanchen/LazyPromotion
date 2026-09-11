@@ -149,6 +149,32 @@ def lazyremote_payload():
     }
 
 
+def browser_regression_payload():
+    return {
+        "offer": "browser_regression",
+        "contact_email": "owner@example.com",
+        "site_url": (
+            "https://example.com; product owner authorized to request testing."
+        ),
+        "flows": (
+            "1. Open the guide and change language.\n"
+            "2. Use the mobile menu.\n"
+            "3. Reset the map."
+        ),
+        "environment": "Python 3.12, GitHub repository, GitHub Actions.",
+        "instability": "A third-party map tile request may be unavailable.",
+        "delivery": "Pull request to the existing repository within two weeks.",
+        "constraints": "Do not exercise checkout or write data.",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 9000,
+        "utm_source": "lazytravel proof",
+        "utm_medium": "website",
+        "utm_campaign": "browser_regression_baseline",
+        "utm_content": "fit_check",
+    }
+
+
 def book_specimen_payload():
     return {
         "offer": "book_specimen",
@@ -332,6 +358,7 @@ class EnvelopeTests(ReceiverFixture):
             lecture_payload(),
             story_clip_payload(),
             openhi_payload(),
+            browser_regression_payload(),
             lazyremote_payload(),
             book_specimen_payload(),
             pronunciation_lesson_payload(),
@@ -378,6 +405,15 @@ class EnvelopeTests(ReceiverFixture):
         crossed_openhi = openhi_payload()
         crossed_openhi["collection"] = "ten files"
         cases.append(crossed_openhi)
+        missing_browser_field = browser_regression_payload()
+        missing_browser_field.pop("flows")
+        cases.append(missing_browser_field)
+        crossed_browser = browser_regression_payload()
+        crossed_browser["collection"] = "ten files"
+        cases.append(crossed_browser)
+        overlong_browser_flows = browser_regression_payload()
+        overlong_browser_flows["flows"] = "x" * 1401
+        cases.append(overlong_browser_flows)
         missing_remote_field = lazyremote_payload()
         missing_remote_field.pop("network")
         cases.append(missing_remote_field)
@@ -573,6 +609,31 @@ class EnvelopeTests(ReceiverFixture):
             with self.assertRaises(lkt_inbox.InboxError):
                 self.validate(raw=raw)
 
+    def test_browser_regression_contract_matches_reviewed_web_payload(self):
+        self.assertEqual(
+            lkt_inbox.OFFER_FIELD_RULES["browser_regression"],
+            {
+                "site_url": (700, True, True),
+                "flows": (1400, True, True),
+                "environment": (700, False, True),
+                "instability": (900, False, True),
+                "delivery": (700, True, True),
+                "constraints": (800, False, True),
+            },
+        )
+
+        optional_fields = browser_regression_payload()
+        optional_fields["environment"] = ""
+        optional_fields["instability"] = ""
+        optional_fields["constraints"] = ""
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(optional_fields),
+        )
+        _, record = self.validate(raw=raw)
+        self.assertEqual(record["payload"], optional_fields)
+
     def test_email_validation_matches_wordpress_endpoint_contract(self):
         accepted = sample_payload()
         accepted["contact_email"] = ".reader..name@example.com"
@@ -742,6 +803,36 @@ class SshClientTests(unittest.TestCase):
 
 
 class ReceiveTests(ReceiverFixture):
+    def test_browser_regression_content_stays_only_in_private_inquiry_file(self):
+        payload = browser_regression_payload()
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(payload),
+        )
+        report = self.receive(FakeClient({self.filename: raw}))
+        self.assertEqual(report["state"], "complete")
+
+        inquiry_path = self.config.inbox_dir / f"lkt-{self.receipt}.inquiry.json"
+        self.assertEqual(stat.S_IMODE(inquiry_path.stat().st_mode), 0o600)
+        inquiry = json.loads(inquiry_path.read_text(encoding="utf-8"))
+        self.assertEqual(inquiry["payload"], payload)
+
+        sanitized = (
+            self.config.status_path.read_text(encoding="utf-8")
+            + self.config.log_path.read_text(encoding="utf-8")
+        )
+        for private_value in (
+            payload["contact_email"],
+            payload["site_url"],
+            payload["flows"],
+            payload["environment"],
+            payload["instability"],
+            payload["delivery"],
+            payload["constraints"],
+        ):
+            self.assertNotIn(private_value, sanitized)
+
     def test_pronunciation_lesson_content_stays_only_in_private_inquiry_file(self):
         payload = pronunciation_lesson_payload()
         _, raw = encrypted_envelope(

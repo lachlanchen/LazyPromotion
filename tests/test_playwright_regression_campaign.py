@@ -42,6 +42,19 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
         self.assertIn("all 11 chapters", proof["journeys"][0])
         self.assertIn("not a customer result", proof["boundary"])
 
+    def test_owned_baseline_is_bounded_and_not_a_customer_outcome(self):
+        offer = self.campaign["owned_offer"]
+        scope = offer["scope"]
+        self.assertEqual(offer["state"], "live_encrypted_intake_verified")
+        self.assertEqual(offer["price_usd"], 250)
+        self.assertEqual(scope["journeys"], 3)
+        self.assertEqual(scope["checkpoints"], 12)
+        self.assertEqual(scope["viewports"], ["1440x1000", "390x844"])
+        self.assertIn("three consecutive runs", scope["runs"])
+        self.assertIn("not a customer result", offer["proof"]["boundary"])
+        self.assertIn("must remain on that marketplace", offer["marketplace_boundary"])
+        self.assertEqual(self.campaign["funnel"]["received_revenue_usd"], 0)
+
     def test_bid_has_no_paid_upgrade_or_revenue_claim(self):
         application = self.campaign["application"]
         funnel = self.campaign["funnel"]

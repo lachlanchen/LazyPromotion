@@ -3,14 +3,14 @@
 ## Current status
 
 Direct web submission is live for the LKT, manuscript, lecture, Story Clip,
-OpenHI, LazyRemote, Book Specimen, and Pronunciation Mini-Lesson routes as of
-2026-09-11.
+OpenHI, LazyRemote, Book Specimen, Pronunciation Mini-Lesson, and Browser
+Regression routes as of 2026-09-11.
 Each deployed frontend, the pinned public-key fingerprint, mode-`0600` private
 key, receiver, and remote spool completed an explicitly confirmed synthetic
 round trip. Each page still reviews locally before any network request and keeps
 an email or copy fallback.
 
-`lkt_inbox.py` is the operator-side receiver for those eight fit checks accepted
+`lkt_inbox.py` is the operator-side receiver for those nine fit checks accepted
 by the first-party WordPress endpoint. The web server stores an encrypted
 envelope, not a readable inquiry. The receiver
 downloads a final envelope over SSH, checks the entire cryptographic and
@@ -34,8 +34,9 @@ names are ignored. A valid envelope must use the pinned key fingerprint,
 RSA-OAEP with SHA-1 for the 32-byte key wrap, AES-256-GCM with the contract AAD,
 and either the legacy LKT v1 record or the routed `fit-check-record/v2` schema.
 The v2 payload has a strict `lkt`, `manuscript`, `lecture`, `story_clip`,
-`openhi`, `lazyremote`, `book_specimen`, or `pronunciation_lesson` offer
-discriminator and rejects fields from another offer. Authentication, schema, source,
+`openhi`, `lazyremote`, `book_specimen`, `pronunciation_lesson`, or
+`browser_regression` offer discriminator and rejects fields from another offer.
+Authentication, schema, source,
 timestamp, receipt, normalization, or persistence failures leave the remote
 file in place.
 
@@ -81,6 +82,15 @@ LazyingArtWebsite commit `1ba106beadff2de89d71874fa2df6379e6eb35fb` and
 remains live in current deployment `e4a1c36b3efa93399b6a5754f3692c1802a211c7`.
 This is synthetic operational evidence, not a customer inquiry,
 qualified lead, customer outcome, sale, or revenue.
+
+On 2026-09-11 the Browser Regression route completed the same live path at
+<https://lazying.art/browser-regression/fit-check/>. One labeled synthetic
+request passed the visible review and explicit confirmation gates, returned
+HTTP 202, matched the strict `browser_regression` schema after decryption,
+persisted with mode `0600`, and was deleted remotely only after unchanged
+verification. A second receiver check returned `no_pending`; the exact local
+synthetic envelope and inquiry copies were then removed. This test is not a
+lead, customer result, payment, delivery, or revenue.
 
 On 2026-09-07 the lecture route was restored by LazyingArtWebsite commit
 `135e2827d1210db84f98054ac717db8a3b6df64a`. One labeled request passed the

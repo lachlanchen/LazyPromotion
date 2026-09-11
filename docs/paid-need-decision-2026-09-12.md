@@ -48,6 +48,15 @@ passed three consecutive suites, and the existing proposal was updated once to
 include it without changing price, delivery, milestones, or upgrades. This is
 an application, not a buyer reply, funded milestone, contract, or revenue.
 
+The same proof now supports a smaller direct engagement: the
+[USD 250 Browser Regression Baseline](https://lazying.art/browser-regression/)
+covers one public site, three agreed flows and twelve checkpoints, Chromium at
+1440 × 1000 and 390 × 844, three consecutive runs, JUnit, assertion-failure
+screenshots, a short issue ledger, and one correction pass. The
+[fit check](https://lazying.art/browser-regression/fit-check/) remains local
+until the visitor reviews and explicitly sends it. This is an owned offer, not
+an inquiry or revenue; any Freelancer buyer must stay on Freelancer.
+
 ## Decision
 
 1. Keep technical verification and infrastructure work ahead of social volume.

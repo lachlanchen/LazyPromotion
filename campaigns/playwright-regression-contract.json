@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "id": "playwright-regression-contract",
   "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
   "source_need": {
@@ -81,6 +81,43 @@
       "three clean runs against the buyer's environment",
       "paid customer delivery"
     ]
+  },
+  "owned_offer": {
+    "state": "live_encrypted_intake_verified",
+    "name": "Browser Regression Baseline",
+    "price_usd": 250,
+    "offer_url": "https://lazying.art/browser-regression/",
+    "fit_check_url": "https://lazying.art/browser-regression/fit-check/",
+    "website_commit": "f0e39b72d896202594a1200d526327ea57315c39",
+    "backend_commit": "f33be5bd",
+    "website_pages_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34648912037",
+    "live_verification": "One labeled synthetic request passed visible review and explicit confirmation, returned HTTP 202, matched the browser_regression schema after decryption, persisted locally with mode 0600, and was deleted remotely only after unchanged verification. The exact local synthetic envelope and inquiry copies were then removed.",
+    "scope": {
+      "site": "one customer-controlled public website",
+      "journeys": 3,
+      "checkpoints": 12,
+      "browser": "Chromium",
+      "viewports": [
+        "1440x1000",
+        "390x844"
+      ],
+      "runs": "three consecutive runs in one agreed environment",
+      "delivery": [
+        "Python pytest/Playwright Page Object suite",
+        "one documented headless command",
+        "JUnit XML",
+        "screenshots on assertion failure",
+        "short issue and boundary ledger",
+        "README",
+        "one consolidated factual correction pass"
+      ]
+    },
+    "proof": {
+      "repository_commit": "cd605396989993cd323aadc736d9b7c79d3e3f7d",
+      "workflow_run": "https://github.com/lachlanchen/LazyTravel/actions/runs/34646905819",
+      "boundary": "Project-owned LazyTravel verification, not a customer result."
+    },
+    "marketplace_boundary": "The USD 250 baseline may be proposed as a funded first milestone inside a marketplace, but a marketplace buyer must remain on that marketplace for contract, files, and payment."
   },
   "marketplace_account": {
     "state": "created_email_verified_profile_ready",

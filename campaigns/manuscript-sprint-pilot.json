@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 15,
+  "version": 16,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -127,7 +127,15 @@
         "average_position": 6.7,
         "source": "Google Search Console visible Performance report"
       },
-      "role": "The exact PaperAgent result now has a descriptive canonical title and gives visitors an equal choice between the open-source repository and the already-live bounded manuscript sprint.",
+      "repository_route": {
+        "state": "live_and_verified",
+        "commit": "f0562793d7b8d9d1a5853dd47d4893cc682556df",
+        "variants": 11,
+        "destination": "https://lazying.art/manuscript-sprint/?utm_source=github&utm_medium=repository&utm_campaign=manuscript_sprint_pilot&utm_content=paperagent_readme",
+        "position": "Immediately after the product summary in the English README and all ten localized variants",
+        "boundary": "The copy keeps self-service first and names the fixed price, one-manuscript scope, sample, exclusions, and free fit check."
+      },
+      "role": "The exact PaperAgent result now has a descriptive canonical title and gives visitors an equal choice between the public source repository and the already-live bounded manuscript sprint.",
       "policy": "Search impressions triggered a result-page repair, not a retargeting claim. The service link leads to public scope and proof before the free fit check; impressions and future clicks are not leads or sales."
     },
     "lazyblog": {

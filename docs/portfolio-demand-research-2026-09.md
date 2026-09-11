@@ -80,9 +80,15 @@ Search Console added one owned-intent clue: `paperagent` produced 15 impressions
 zero clicks, and an average position of 6.7 in the last 28-day report. Every
 impression resolved to `paper.lazying.art`. That landing page now describes the
 LaTeX, Python/R, build-log, and PDF-preview workflow in its search metadata and
-offers two equally visible next steps: use the open-source repository or inspect
+offers two equally visible next steps: use the public source repository or inspect
 the fixed USD 250 manuscript sprint. This is a result-page and routing repair,
 not evidence that those searchers wanted paid help.
+
+The same choice now appears immediately after the PaperAgent summary in the
+main README and all ten localized variants. Each language keeps self-service
+first, then names the fixed price and points to the public sample, scope, and
+exclusions before the fit check. The 11 live repository routes were verified at
+PaperAgent commit `f056279`; publication still does not establish buyer intent.
 
 ### 3. Bilingual Lecture Pack — USD 250
 

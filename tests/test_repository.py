@@ -2632,7 +2632,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -2711,6 +2711,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(paperagent["search_signal"]["query"], "paperagent")
         self.assertEqual(paperagent["search_signal"]["impressions"], 15)
         self.assertEqual(paperagent["search_signal"]["clicks"], 0)
+        repository_route = paperagent["repository_route"]
+        self.assertEqual(repository_route["state"], "live_and_verified")
+        self.assertEqual(repository_route["variants"], 11)
+        self.assertIn("f056279", repository_route["commit"])
+        self.assertIn("utm_source=github", repository_route["destination"])
+        self.assertIn("self-service first", repository_route["boundary"])
         self.assertIn("not leads or sales", paperagent["policy"].casefold())
 
         routing = campaign["intake_routing"]

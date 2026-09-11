@@ -1132,7 +1132,9 @@ had 15 impressions, zero clicks, and an average position of 6.7, all for
 `paper.lazying.art`. The landing page now has a descriptive canonical title and
 gives readers two honest paths—use PaperAgent from GitHub or inspect the bounded
 USD 250 manuscript sprint. The deployment was verified at PaperAgent commit
-`aa99484`; the small sample is a prioritization signal, not a lead or sale.
+`aa99484`. The main README and all ten localized variants now carry the same
+self-service-first choice at commit `f056279`. The small search sample and the
+published routes are prioritization evidence, not a lead or sale.
 
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,

@@ -181,11 +181,11 @@ Posts: `281, 936, 1562, 2936, 3125`.
   justify prioritization only; they are not a lead or sale.
 - Search Console's visible report on 2026-09-09 showed 144 clicks and 6.66K
   impressions across the property. Post `3114` remained a top page with 12
-  clicks. BLOG commit `edd5af9` keeps the complete FFmpeg answer and open-source
-  LazyEdit route, but replaces the generic Studio link with the exact six-source
-  assembly proof in English, Chinese, and Japanese. All three live editions
-  returned HTTP 200 with their tracked proof link. The clicks are attention,
-  not buyer intent, leads, sales, or revenue.
+  clicks. BLOG commit `edd5af9` kept the complete FFmpeg answer and open-source
+  LazyEdit route, but replaced the generic Studio link with the then-current
+  six-source assembly proof in English, Chinese, and Japanese. All three live
+  editions returned HTTP 200 with their tracked proof link. The clicks were
+  attention, not buyer intent, leads, sales, or revenue.
 - Search Console's visible report on 2026-09-11 showed 146 clicks, up 35%, and
   6.58K impressions, up 17%, across the property. The Classical Mechanics
   reader led with 27 clicks, up 59%; the Susskind archive had 25 clicks, up 4%;
@@ -193,6 +193,11 @@ Posts: `281, 936, 1562, 2936, 3125`.
   leads quietly to the relevant lecture-pack sample. Post `2972` still has no
   commercial CTA because no LazyingArt offer or verified affiliate is a
   truthful match for its payment-failure search intent.
+- A later 2026-09-11 report showed 152 clicks and 6.58K impressions. Post `3114`
+  had 13 clicks. BLOG commit `114fde0` replaced its retired AI Clip Assembly
+  route with the current project-owned Story Clip delivery sample in English,
+  Chinese, and Japanese. All three live editions returned HTTP 200, each with
+  one current sample route and no retired route.
 - Search results for “UU 远程 Linux” exposed a more useful safety gap on the
   strongest current GitHub route: look-alike download pages described
   unverified Linux packages as official. BLOG commit `edb47c3` updates post
@@ -350,6 +355,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `9d1fc70` | 3167 | Put the project-owned LKT sample report before the private fit check and paid scope |
 | `330d73c` | 3114 | Added an owner-disclosed LazyEdit route and removed duplicate body titles |
 | `edd5af9` | 3114 | Replaced the generic Studio link with the exact six-source assembly proof across all three editions |
+| `114fde0` | 3114 | Replaced the retired AI Clip Assembly link with the current project-owned Story Clip delivery sample in English, Simplified Chinese, and Japanese |
 | `64242bb` | 1970 | Refreshed the official MetaTrader5 wheel boundary and linked one audited, commit-pinned MicroQuant implementation with a demo-only warning |
 | `3138859` | 1133, 1148 | Added one concise, owner-disclosed LazyRemote review path to the existing DDNS/CGNAT and loopback-first remote-desktop guides in Chinese, English, and Japanese |
 | `3ca71b7` | 3616 | Withdrew uncleared full-text PDFs and published a multilingual lawful-access notice |

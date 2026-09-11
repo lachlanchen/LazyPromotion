@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "id": "ai-clip-assembly-pilot",
   "objective": "Preserve the AI Clip Assembly work as a historical technical record while the offer remains paused; reactivate it only after a new project-owned sample passes human review for story, motion, continuity, composition, audio, captions, and overall finish.",
   "source_need": {
@@ -116,21 +116,24 @@
     "validation": "The source and both translation pages returned HTTP 200 with the correct localized title and one original tracked offer link.",
     "policy": "The article teaches source inventory, shot roles, silent assembly, sound, text, export, and reproducible handoff before one restrained offer. It contains no prospect details or customer-result claim.",
     "search_console_bridge": {
-      "observed_at": "2026-09-09T06:24:02Z",
+      "state": "retired_proof_route_replaced",
+      "observed_at": "2026-09-11T22:39:37Z",
       "period": "Last 28 days",
-      "property_clicks": 144,
-      "property_impressions": 6660,
+      "property_clicks": 152,
+      "property_impressions": 6580,
       "source_page": "https://blog.lazying.art/html/the-art-of-lazying/3114/the-complete-guide-to-compiling-ffmpeg-with-all-features-on-ubuntu.html",
-      "source_page_clicks": 12,
-      "lazyblog_commit": "edd5af9",
-      "destination": "https://lazying.art/video/brand-film/?utm_source=lazyblog&utm_medium=article&utm_campaign=ai_clip_assembly&utm_content=ffmpeg_guide#sample",
+      "source_page_clicks": 13,
+      "previous_lazyblog_commit": "edd5af9",
+      "lazyblog_commit": "114fde0",
+      "previous_destination": "https://lazying.art/video/brand-film/?utm_source=lazyblog&utm_medium=article&utm_campaign=ai_clip_assembly&utm_content=ffmpeg_guide#sample",
+      "destination": "https://lazying.art/story-clip/?utm_source=lazyblog&utm_medium=article&utm_campaign=story_clip_pilot&utm_content=ffmpeg_guide#sample",
       "languages": [
         "en",
         "zh",
         "ja"
       ],
-      "validation": "All three live article editions returned HTTP 200 and contained their exact tracked six-source proof link. A visible production-page check found one English anchor with the expected destination.",
-      "policy": "Search clicks selected an already relevant FFmpeg workflow page for one proof-first bridge. They are attention, not buyer intent, a lead, a sale, or revenue."
+      "validation": "All three live article editions returned HTTP 200, contained one current Story Clip sample route, and contained zero retired AI Clip Assembly routes.",
+      "policy": "Search clicks selected an already relevant FFmpeg workflow page for one current proof-first bridge. The former assembly link was removed because its sample no longer passes the selling-proof quality gate. Clicks remain attention, not buyer intent, a lead, a sale, or revenue."
     }
   },
   "search_discovery": {

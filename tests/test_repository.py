@@ -1658,7 +1658,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1742,11 +1742,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("HTTP 200", article["validation"])
         self.assertIn("no prospect details", article["policy"])
         bridge = article["search_console_bridge"]
-        self.assertEqual(bridge["source_page_clicks"], 12)
-        self.assertEqual(bridge["property_clicks"], 144)
-        self.assertEqual(bridge["property_impressions"], 6660)
+        self.assertEqual(bridge["state"], "retired_proof_route_replaced")
+        self.assertEqual(bridge["source_page_clicks"], 13)
+        self.assertEqual(bridge["property_clicks"], 152)
+        self.assertEqual(bridge["property_impressions"], 6580)
         self.assertEqual(bridge["languages"], ["en", "zh", "ja"])
-        self.assertIn("utm_campaign=ai_clip_assembly", bridge["destination"])
+        self.assertEqual(bridge["lazyblog_commit"], "114fde0")
+        self.assertIn("utm_campaign=story_clip_pilot", bridge["destination"])
+        self.assertIn("utm_campaign=ai_clip_assembly", bridge["previous_destination"])
         self.assertTrue(bridge["destination"].endswith("#sample"))
         self.assertIn("not buyer intent", bridge["policy"])
 

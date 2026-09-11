@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "id": "ai-clip-assembly-pilot",
   "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
   "source_need": {
@@ -179,6 +179,17 @@
       "mobile_width_checked": 390,
       "horizontal_overflow": false,
       "policy": "The homepage asks for up to six AI-generated clips the buyer controls and does not ask for source transfer or payment before scope acceptance. Publication is not a lead or sale."
+    },
+    "github_localvideogen": {
+      "state": "about_url_live_and_verified",
+      "checked_at": "2026-09-11T09:57:14Z",
+      "repository": "https://github.com/lachlanchen/LocalVideoGen",
+      "previous_homepage": "https://lazying.art",
+      "homepage": "https://lazying.art/video/",
+      "destination_status": 200,
+      "role": "The repository About link now opens the first-party video portfolio, where visitors can inspect five project-owned examples before choosing the bounded USD 500 assembly pilot.",
+      "worktree_boundary": "Only GitHub repository metadata changed. The active LocalVideoGen source worktree and its uncommitted README and code changes were not touched.",
+      "policy": "The portfolio identifies every example as project-owned work and makes no customer-performance claim. A repository view or click is not a fit inquiry, sale, or revenue."
     },
     "linkedin": {
       "state": "postiz_queue",

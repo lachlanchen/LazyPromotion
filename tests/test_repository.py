@@ -1382,7 +1382,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1507,6 +1507,17 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(homepage["horizontal_overflow"])
         self.assertIn("utm_campaign=ai_clip_assembly", homepage["destination"])
         self.assertIn("not a lead or sale", homepage["policy"].casefold())
+
+        github = campaign["channels"]["github_localvideogen"]
+        self.assertEqual(github["state"], "about_url_live_and_verified")
+        self.assertEqual(
+            github["repository"],
+            "https://github.com/lachlanchen/LocalVideoGen",
+        )
+        self.assertEqual(github["homepage"], "https://lazying.art/video/")
+        self.assertEqual(github["destination_status"], 200)
+        self.assertIn("not touched", github["worktree_boundary"])
+        self.assertIn("not a fit inquiry", github["policy"].casefold())
 
         funnel = campaign["funnel"]
         self.assertFalse(funnel["buyer_reply_observed"])

@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 8,
+  "version": 9,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -143,6 +143,23 @@
       "cancellation": "Full refund before source transfer or processing; after work starts, only completed and delivered milestones are retained and the undelivered balance is refunded.",
       "retention": "Working source copies are deleted within fourteen calendar days after delivery, cancellation, or refund unless the accepted scope requires earlier deletion.",
       "support": "Written clarification during the seven-day correction window only."
+    },
+    "payment": {
+      "state": "ready_for_reviewed_live_request",
+      "checked_at": "2026-09-11T04:52:07Z",
+      "price": "USD 250",
+      "quantity": 1,
+      "fulfillment_review_notes": 9,
+      "private_key_file_mode": "600",
+      "live_key_format_valid": true,
+      "account_authenticated": true,
+      "charges_enabled": true,
+      "payouts_enabled": true,
+      "details_submitted": true,
+      "stripe_plan_commit": "80f7297d5ec58fded8db0fd4368e97e344cca77d",
+      "stripe_objects_created": false,
+      "public_payment_link": false,
+      "policy": "The read-only check proves that the guarded USD 250 configuration and Stripe account are ready. It does not authorize or create a payment object. A real buyer must pass the fit check and accept the exact written scope, rights, inputs, delivery, correction, cancellation, milestone refund, tax, confidentiality, retention, and support terms before a separately reviewed creation command is considered."
     },
     "intake": "Public fit check prepares a reviewed email request only; it does not upload manuscript files, create a payment, or send automatically.",
     "reason": "A current paid brief validates the output need, and a project-owned specimen, delivery limits, corrections, cancellation, refund, retention, support terms, and tested fit-check path are now public. Payment remains gated behind a positive fit check and accepted written scope.",

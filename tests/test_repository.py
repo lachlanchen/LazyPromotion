@@ -3292,7 +3292,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 8)
+        self.assertEqual(campaign["version"], 9)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -3313,6 +3313,16 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertIn("e8512197", campaign["offer_state"]["proof"]["source"])
         self.assertIn("does not upload", campaign["offer_state"]["intake"])
+        payment = campaign["offer_state"]["payment"]
+        self.assertEqual(payment["state"], "ready_for_reviewed_live_request")
+        self.assertEqual(payment["price"], "USD 250")
+        self.assertEqual(payment["quantity"], 1)
+        self.assertEqual(payment["fulfillment_review_notes"], 9)
+        self.assertTrue(payment["account_authenticated"])
+        self.assertTrue(payment["charges_enabled"])
+        self.assertTrue(payment["payouts_enabled"])
+        self.assertFalse(payment["stripe_objects_created"])
+        self.assertFalse(payment["public_payment_link"])
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")
         self.assertEqual(linkedin["publish_at"], "2026-09-30T02:00:00Z")

@@ -56,6 +56,12 @@ OFFER_CONTRACTS = {
         "minimum_review_notes": 9,
         "unit_amount": 50_000,
     },
+    "book-specimen": {
+        "config_relative": Path("config/book-specimen-sprint.json"),
+        "slug": "book-specimen-sprint",
+        "minimum_review_notes": 9,
+        "unit_amount": 25_000,
+    },
 }
 
 

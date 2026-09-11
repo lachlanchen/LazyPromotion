@@ -34,6 +34,13 @@ checks. Sanitized read-only checks confirmed the live account is ready, while
 no Stripe object or public checkout was created. This makes the existing media
 applications fulfillable if a buyer replies and accepts the written scope.
 
+The Book Specimen Sprint is now payment-ready under the same fit-first rule.
+Its guarded USD 250 plan fixes one chapter of up to 5,000 words, requires nine
+rights, source, print-profile, delivery, correction, milestone-refund, privacy,
+and retention checks, and cannot be exported as a public checkout. A sanitized
+read-only check confirmed the live account can charge and pay out. No Stripe
+object, payment link, charge, or payout was created.
+
 OpenHI is the strongest public technical proof in the portfolio: the
 MIT-licensed repository had 104 stars and 32 forks when checked on September 9,
 and its recent owner-visible traffic showed continued cloning even without an

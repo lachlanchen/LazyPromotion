@@ -67,6 +67,13 @@ def valid_ai_clip_config() -> dict:
     return config
 
 
+def valid_book_specimen_config() -> dict:
+    config = valid_config()
+    config["slug"] = "book-specimen-sprint"
+    config["fulfillmentReviewNotes"].extend(["review 7", "review 8"])
+    return config
+
+
 class FakeResponse:
     def __init__(self, payload: dict):
         self.payload = payload
@@ -217,6 +224,21 @@ class PaymentReadinessTests(unittest.TestCase):
         self.assertEqual(report["config"]["product_slug"], "ai-clip-assembly-pilot")
         self.assertEqual(report["config"]["display_price"], "USD 500")
         self.assertEqual(report["config"]["unit_amount_minor"], 50000)
+        self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
+        self.assertTrue(report["local_live_configuration_ready"])
+        self.assertFalse(report["mutates_stripe"])
+
+    def test_book_specimen_report_uses_exact_guarded_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            helper = self.helper(
+                Path(tmp),
+                valid_book_specimen_config(),
+                config_name="book-specimen-sprint.json",
+            )
+            report = payment_readiness.build_report(helper, offer="book-specimen")
+        self.assertEqual(report["offer"], "book-specimen")
+        self.assertEqual(report["config"]["product_slug"], "book-specimen-sprint")
+        self.assertEqual(report["config"]["display_price"], "USD 250")
         self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
         self.assertTrue(report["local_live_configuration_ready"])
         self.assertFalse(report["mutates_stripe"])

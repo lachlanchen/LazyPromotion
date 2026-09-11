@@ -61,7 +61,17 @@
       "blank Stripe onboarding page after email verification"
     ],
     "review_after": "2026-09-18",
-    "automatic_follow_up": false
+    "automatic_follow_up": false,
+    "inbox_monitoring": {
+      "state": "private_aggregate_baselined",
+      "checked_at": "2026-09-11T14:47:11Z",
+      "matching_thread_count": 0,
+      "unread_matching_thread_count": 0,
+      "message_opened": false,
+      "message_preview_read": false,
+      "automatic_reply": false,
+      "boundary": "The exact private sender-and-subject rule is evaluated only during an explicit project-browser mailbox pass. It stores aggregate counts, not sender, subject, message text, or attachments, and it does not keep the browser open."
+    }
   },
   "funnel": {
     "available_work_observed": false,

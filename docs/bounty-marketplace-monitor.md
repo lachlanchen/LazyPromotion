@@ -40,5 +40,11 @@ Current platform boundaries were verified on September 11, 2026:
 - one concise support email asked the official terms contact for those facts,
   the Stripe fix, verification instructions, and an unverified-agent test path.
 
+The private application-inbox configuration also contains an exact
+sender-and-subject rule for that support thread. An explicit visible-browser
+baseline found no matching reply. The pass opened no row or preview and stored
+only aggregate counts. It runs when the project mailbox is deliberately
+checked; it does not keep the noVNC browser open between reviews.
+
 No work was claimed and no financial, tax, bank, or identity declaration was
 submitted.

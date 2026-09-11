@@ -48,6 +48,14 @@ class BountyAgentMarketplaceCampaignTests(unittest.TestCase):
         self.assertFalse(readiness["business_or_residence_declaration_submitted"])
         self.assertEqual(self.campaign["support_request"]["review_after"], "2026-09-18")
         self.assertFalse(self.campaign["support_request"]["automatic_follow_up"])
+        monitoring = self.campaign["support_request"]["inbox_monitoring"]
+        self.assertEqual(monitoring["state"], "private_aggregate_baselined")
+        self.assertEqual(monitoring["matching_thread_count"], 0)
+        self.assertEqual(monitoring["unread_matching_thread_count"], 0)
+        self.assertFalse(monitoring["message_opened"])
+        self.assertFalse(monitoring["message_preview_read"])
+        self.assertFalse(monitoring["automatic_reply"])
+        self.assertIn("explicit project-browser mailbox pass", monitoring["boundary"])
 
     def test_no_marketplace_or_revenue_event_is_inferred(self):
         funnel = self.campaign["funnel"]

@@ -14,10 +14,12 @@ class EdgeImageQualityCampaignTests(unittest.TestCase):
 
     def test_current_need_and_budget_are_pinned(self):
         source = self.campaign["source_need"]
-        self.assertEqual(source["state"], "public_listing_visible")
+        self.assertEqual(source["state"], "public_listing_offline")
         self.assertEqual(source["eligibility"], "Worldwide")
         self.assertIn("1,800–2,500", source["published_budget"])
         self.assertIn("50-plus proposals", source["activity_when_checked"])
+        self.assertEqual(source["latest_recheck"]["decision"], "closed_before_application")
+        self.assertIn("offline", source["latest_recheck"]["visible_page_message"])
         self.assertIn("not escrow", source["policy"])
 
     def test_proof_and_medical_gaps_stay_separate(self):
@@ -32,16 +34,16 @@ class EdgeImageQualityCampaignTests(unittest.TestCase):
 
     def test_application_stays_guarded_and_bounded(self):
         application = self.campaign["application"]
-        self.assertEqual(application["state"], "prepared_login_required")
+        self.assertEqual(application["state"], "closed_before_application")
         self.assertEqual(application["proposed_fixed_price"], "USD 2,200")
         self.assertEqual(len(application["milestones"]), 3)
         self.assertEqual(application["connects_spent"], 0)
         self.assertFalse(application["application_submitted"])
-        self.assertIn("spend Connects", application["policy"])
+        self.assertIn("Do not submit", application["policy"])
 
     def test_attention_is_not_revenue(self):
         funnel = self.campaign["funnel"]
-        self.assertEqual(funnel["state"], "buyer_intent_identified")
+        self.assertEqual(funnel["state"], "source_closed_no_application")
         self.assertFalse(funnel["buyer_reply_observed"])
         self.assertFalse(funnel["payment_confirmed"])
         self.assertEqual(funnel["received_revenue_usd"], 0)

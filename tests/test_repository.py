@@ -1888,7 +1888,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 43)
+        self.assertEqual(campaign["version"], 44)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -2230,6 +2230,26 @@ class RepositoryTests(unittest.TestCase):
                 "translation benchmark",
             ],
         )
+        atlas = campaign["source_evidence"]["lexicon_atlas_proof"]
+        self.assertEqual(atlas["state"], "live_verified_downloadable_snapshot")
+        self.assertEqual(atlas["release_tag"], "v0.1.0")
+        self.assertEqual(
+            atlas["website_commit"],
+            "aa1a1957c3eb65402a5875412961a69f8fd57195",
+        )
+        self.assertEqual(
+            atlas["snapshot"],
+            {
+                "asset": "english-word-graph.sqlite3",
+                "bytes": 44908544,
+                "sha256": "91a93725e4feed3a5d14beabea84ca3b6c098718e83b1b9cb7fe061153575f34",
+                "entities": 15925,
+                "entity_edges": 15197,
+                "evidence_records": 13431,
+            },
+        )
+        self.assertIn("customer result", atlas["not_claimed"])
+        self.assertIn("first-party proof", atlas["policy"])
         markdown = campaign["source_evidence"]["markdown_vault_proof"]
         self.assertEqual(markdown["state"], "live_verified")
         self.assertEqual(markdown["viewer"], "https://lazying.art/lkt/markdown-vault/")

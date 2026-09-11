@@ -1,12 +1,12 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "edge-image-quality-contract",
   "objective": "Win a paid CPU-first image-quality milestone by pairing the owner's scientific-imaging code with a small executed OpenCV/FastAPI proof, without claiming medical validation or generic incorrect-view accuracy.",
   "source_need": {
     "captured_at": "2026-09-09T05:53:19Z",
     "url": "https://www.upwork.com/freelance-jobs/apply/Computer-Vision-Edge-Engineer-Lightweight-Medical-Image-Quality-Assessment_~022096930437957381037/",
     "title": "Computer Vision / Edge ML Engineer – Lightweight Medical Image Quality Assessment",
-    "state": "public_listing_visible",
+    "state": "public_listing_offline",
     "posted": "two days before the visible check",
     "eligibility": "Worldwide",
     "engagement": "Fixed-price, intermediate, part-time over approximately four to six weeks",
@@ -18,6 +18,12 @@
       "Deliver tested Python plus a documented, containerized REST API that requires no GPU"
     ],
     "activity_when_checked": "50-plus proposals, zero interviewing, zero invites, and zero unanswered invites; the UK client joined Upwork on 2026-09-01",
+    "latest_recheck": {
+      "checked_at": "2026-09-12T03:31:41+08:00",
+      "visible_page_message": "We'll be right back — this page is offline right now.",
+      "evidence": ".local/evidence/20260911T193141Z-open.png",
+      "decision": "closed_before_application"
+    },
     "policy": "The public budget and listing are buyer-intent evidence only. They are not escrow, a contract, payment, received revenue, or proof that the new client will hire. Keep application, communication, contract, files, and payment on Upwork."
   },
   "fit": {
@@ -60,7 +66,7 @@
     "claim_boundary": "Use the proof to show implementation discipline and the smallest classical baseline. Do not describe the synthetic thresholds as medical validation, the local timing as a deployment guarantee, or the public repositories as customer work."
   },
   "application": {
-    "state": "prepared_login_required",
+    "state": "closed_before_application",
     "private_packet": ".local/outreach/edge-image-quality-contract/proposal.md",
     "application_submitted": false,
     "connects_spent": 0,
@@ -72,10 +78,10 @@
       "USD 900: calibrated quality criteria plus justified incorrect-view approach and held-out evaluation",
       "USD 900: optimized implementation, tests, benchmark, documented FastAPI service, Docker package, and handoff"
     ],
-    "policy": "Do not log in with a personal browser, spend Connects, submit, accept terms, or promise availability until the authenticated visible application shows the exact cost, client terms, required fields, and one reviewed final proposal."
+    "policy": "The exact visible listing is offline. Do not submit, spend Connects, retry, or contact the buyer elsewhere. Keep the synthetic proof for a new exact need without implying medical validation."
   },
   "funnel": {
-    "state": "buyer_intent_identified",
+    "state": "source_closed_no_application",
     "application_submitted": false,
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,

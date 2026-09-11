@@ -176,7 +176,7 @@
       "label": "edge-image-quality-contract",
       "metadata": {
         "objective": "Win a paid CPU-first image-quality milestone by pairing the owner's scientific-imaging code with a small executed OpenCV/FastAPI proof, without claiming medical validation or generic incorrect-view accuracy.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -376,7 +376,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 43
+        "version": 44
       },
       "url": ""
     },
@@ -506,6 +506,16 @@
       "label": "percona-microquant-writer-pitch",
       "metadata": {
         "objective": "Win one USD 350 Percona Community article assignment with a narrow PostgreSQL ingestion pitch supported by public MicroQuant code.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:playwright-regression-contract",
+      "kind": "campaign",
+      "label": "playwright-regression-contract",
+      "metadata": {
+        "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's real browser automation with an executed Page Object, pytest, and JUnit specimen, without claiming coverage of an undisclosed application.",
         "version": 1
       },
       "url": ""
@@ -7419,6 +7429,41 @@
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/f73ace6f0c5737925dd1c171771df2a6729689a6/lkt/knowledge.py#L73-L345"
     },
     {
+      "id": "url:6290393ac115b38e",
+      "kind": "web_resource",
+      "label": "lexicon atlas proof deployment run",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34640562630"
+    },
+    {
+      "id": "url:9dd5df13bd288fbd",
+      "kind": "web_resource",
+      "label": "lexicon atlas proof offer page",
+      "metadata": {},
+      "url": "https://lazying.art/lkt/#atlas"
+    },
+    {
+      "id": "url:b1134c0a5c67b62f",
+      "kind": "web_resource",
+      "label": "lexicon atlas proof release",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LexiconAtlas/releases/tag/v0.1.0"
+    },
+    {
+      "id": "url:c2a60d9d800f0077",
+      "kind": "web_resource",
+      "label": "lexicon atlas proof repository",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LexiconAtlas"
+    },
+    {
+      "id": "url:4c1854ccad3e692c",
+      "kind": "web_resource",
+      "label": "lexicon atlas proof viewer image",
+      "metadata": {},
+      "url": "https://raw.githubusercontent.com/lachlanchen/LexiconAtlas/main/docs/images/atlas-desktop.png"
+    },
+    {
       "id": "url:4bdd0e55b7a0d698",
       "kind": "web_resource",
       "label": "lexicon explorer",
@@ -9493,6 +9538,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LexiconAtlas",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "project:lexiconatlas"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
       "metadata": {},
       "relation": "promotes",
@@ -9753,6 +9806,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://raw.githubusercontent.com/lachlanchen/LexiconAtlas/main/docs/images/atlas-desktop.png",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:4c1854ccad3e692c"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/markdown-vault/",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9782,6 +9843,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:60a19a8bbb21a91d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34640562630",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:6290393ac115b38e"
     },
     {
       "confidence": 1.0,
@@ -9881,6 +9950,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://lazying.art/lkt/#atlas",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:9dd5df13bd288fbd"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9897,11 +9974,27 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LexiconAtlas/releases/tag/v0.1.0",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:b1134c0a5c67b62f"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://lazying.art/lkt/#terms",
       "metadata": {},
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:b8df126935281364"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LexiconAtlas",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:c2a60d9d800f0077"
     },
     {
       "confidence": 1.0,

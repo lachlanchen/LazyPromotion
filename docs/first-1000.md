@@ -16,7 +16,7 @@ sprints, four USD 250 sprints, or any confirmed combination of payments across t
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
-The ninth route uses the finished L & N `light/night` lesson as direct proof for
+The eighth route uses the finished L & N `light/night` lesson as direct proof for
 a **USD 250 Custom Bilingual Pronunciation Mini-Lesson** for tutors and small
 language schools. It covers one sound contrast, one learner group, English plus
 Simplified or Traditional Chinese, two model prompts, original teaching
@@ -101,7 +101,7 @@ remote spool was empty. The guarded Stripe configuration passed a read-only live
 account check at USD 500 without creating a product, price, payment link, charge,
 or payout. This is operational proof, not a buyer inquiry or revenue.
 
-A new worldwide Upwork listing creates a separate high-value route around the
+On September 9, a worldwide Upwork listing created a high-value route around the
 same scientific-imaging base: a CPU-friendly image-quality module at a published
 USD 1,800–2,500 fixed budget. The buyer asks for interpretable blur, exposure,
 glare, and incorrect-view checks, held-out evaluation, CPU benchmarks, tested
@@ -110,10 +110,11 @@ Python, FastAPI, and Docker. A small
 now demonstrates the classical baseline, input validation, API boundary,
 synthetic fixtures, local benchmark, tests, and hashes. It explicitly does not
 claim medical validation or incorrect-view accuracy without representative
-labelled data. A USD 2,200, five-week, three-milestone proposal is prepared in
-private storage, but the project browser is logged out and the listing already
-shows 50-plus proposals. No Connects were spent and no application, buyer reply,
-contract, payment, or revenue exists.
+labelled data. A USD 2,200, five-week, three-milestone proposal was prepared in
+private storage. On September 12 the exact visible listing reported that the
+page was offline. No Connects were spent and no application, buyer reply,
+contract, payment, or revenue resulted. Do not retry or contact the buyer
+elsewhere; keep the proof for a new exact need.
 
 Two direct paid-writing routes now use narrower parts of the portfolio without
 requiring a marketplace account. KnowledgeOwl's ongoing independent-writer page
@@ -1007,6 +1008,14 @@ The live viewer is LazyingArtWebsite commit
 `b30af19ecd8eb2e64ddbd1515d19cb8a96288fbb`. This improves the evidence a
 buyer can inspect before the fit check; it is not automatic extraction,
 full-book ingestion, a customer result, a translation benchmark, or a sale.
+
+The LKT offer now also shows the actual downloadable
+[Lexicon Atlas](https://lazying.art/lkt/#atlas) rather than describing a future
+graph in the abstract. Release v0.1.0 contains a fixed 44,908,544-byte SQLite
+snapshot connecting 15,925 entities through 15,197 typed edges with 13,431
+evidence records. The public section and release links are live at
+LazyingArtWebsite commit `aa1a195`; this is project-owned product evidence, not
+a customer outcome.
 
 A [teacher's textbook-network request](https://www.reddit.com/r/KnowledgeGraph/comments/1sogxlr/comment/oguk95a/)
 describes chapters and subchapters connected to syllabus concepts, 8–10 entry

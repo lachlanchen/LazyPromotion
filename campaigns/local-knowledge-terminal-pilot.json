@@ -1,5 +1,5 @@
 {
-  "version": 43,
+  "version": 44,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -130,6 +130,34 @@
         "translation benchmark"
       ],
       "policy": "Use this live project-owned sample to strengthen qualification and let a prospective buyer inspect one provenance contract before the fit check. It is proof of the bounded hand-reviewed sample only, not a sale or evidence about an untested collection."
+    },
+    "lexicon_atlas_proof": {
+      "state": "live_verified_downloadable_snapshot",
+      "checked_at": "2026-09-11T19:47:00Z",
+      "repository": "https://github.com/lachlanchen/LexiconAtlas",
+      "release": "https://github.com/lachlanchen/LexiconAtlas/releases/tag/v0.1.0",
+      "release_tag": "v0.1.0",
+      "release_commit": "a640df978f4bd987ecfb8d269752bbcd989906a2",
+      "viewer_image": "https://raw.githubusercontent.com/lachlanchen/LexiconAtlas/main/docs/images/atlas-desktop.png",
+      "offer_page": "https://lazying.art/lkt/#atlas",
+      "website_commit": "aa1a1957c3eb65402a5875412961a69f8fd57195",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34640562630",
+      "snapshot": {
+        "asset": "english-word-graph.sqlite3",
+        "bytes": 44908544,
+        "sha256": "91a93725e4feed3a5d14beabea84ca3b6c098718e83b1b9cb7fe061153575f34",
+        "entities": 15925,
+        "entity_edges": 15197,
+        "evidence_records": 13431
+      },
+      "supported_copy": "A downloadable local snapshot connects 15,925 lexical entities through 15,197 typed edges and keeps 13,431 evidence records alongside roots, affixes, historical forms, meanings, pronunciations, and translations.",
+      "not_claimed": [
+        "authoritative or finished etymological dictionary",
+        "customer result",
+        "automatic accuracy benchmark",
+        "license rights beyond the repository's published terms"
+      ],
+      "policy": "Use the live graph and downloadable snapshot as concrete first-party proof when a buyer needs multilingual terminology, provenance, or connected lexical knowledge. It is evidence of the current project-owned release, not a result on an untested customer collection."
     },
     "markdown_vault_proof": {
       "state": "live_verified",

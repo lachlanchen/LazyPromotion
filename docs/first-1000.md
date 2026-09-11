@@ -436,6 +436,11 @@ PMC-specific. The reply cites NCBI but contains no LazyingArt link, offer, or
 call to action; the Reddit profile remains the only quiet discovery path. This
 is useful public work, not a lead or revenue.
 
+The question author later [thanked the answer and said they would try the
+design](https://www.reddit.com/r/Rag/comments/1wbot49/comment/p94o3g5/).
+That is one verified reply and evidence that the answer was useful, not a lead,
+sale, or reason to add a follow-up pitch.
+
 The same need now has a complete
 [local PubMed/PMC workstation guide](https://blog.lazying.art/html/computer_internet/3824/local-pubmed-pmc-search-qa-workstation.html)
 in English, Japanese, and Chinese. It covers official NCBI ingestion and rights,

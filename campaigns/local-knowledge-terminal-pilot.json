@@ -1,5 +1,5 @@
 {
-  "version": 41,
+  "version": 42,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -837,7 +837,7 @@
       },
       "biomedical_retrieval_reply": {
         "state": "sent_once_and_visibly_verified",
-        "checked_at": "2026-09-11T05:38:08Z",
+        "checked_at": "2026-09-11T10:34:27Z",
         "thread": "https://www.reddit.com/r/Rag/comments/1wbot49/how_would_you_build_a_local_pubmedpmcstyle_search/",
         "url": "https://www.reddit.com/r/Rag/comments/1wbot49/comment/p93noza/",
         "need": "Choose a fully local retrieval, reranking, storage, generation, and evaluation design for a private PubMed and PMC corpus on one workstation.",
@@ -849,8 +849,15 @@
         "linked_owned_asset": false,
         "profile_only_context": true,
         "automatic_follow_up": false,
+        "reply_received": {
+          "state": "positive_acknowledgement",
+          "observed_at": "2026-09-11T10:34:27Z",
+          "url": "https://www.reddit.com/r/Rag/comments/1wbot49/comment/p94o3g5/",
+          "summary": "The question author thanked the answer and said they would try the suggested design.",
+          "response_action": "none"
+        },
         "lead_or_sale_observed": false,
-        "policy": "The answer was reviewed in the visible isolated browser before one guarded submission and then verified at its public permalink. It cites an NCBI model card but contains no LazyingArt name, owned link, service, price, call to action, or private message. Treat it as a helpful interaction and quiet profile signal, not a lead, customer result, payment, or revenue."
+        "policy": "The answer was reviewed in the visible isolated browser before one guarded submission and then verified at its public permalink. It cites an NCBI model card but contains no LazyingArt name, owned link, service, price, call to action, or private message. The positive acknowledgement is a verified reply, not a lead, customer result, payment, or revenue, and it does not justify a second pitch."
       },
       "chat_archive_reply": {
         "state": "sent_and_visibly_verified",

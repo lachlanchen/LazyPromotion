@@ -1684,7 +1684,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 41)
+        self.assertEqual(campaign["version"], 42)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1724,6 +1724,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(biomedical_reply["linked_owned_asset"])
         self.assertTrue(biomedical_reply["profile_only_context"])
         self.assertFalse(biomedical_reply["automatic_follow_up"])
+        self.assertEqual(
+            biomedical_reply["reply_received"]["state"],
+            "positive_acknowledgement",
+        )
+        self.assertEqual(
+            biomedical_reply["reply_received"]["response_action"], "none"
+        )
         self.assertFalse(biomedical_reply["lead_or_sale_observed"])
         self.assertIn("MedCPT-Query-Encoder", biomedical_reply["primary_source"])
         self.assertIn("not a PMC-specific system", biomedical_reply["qualification_boundary"])

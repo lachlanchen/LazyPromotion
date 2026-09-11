@@ -5,7 +5,7 @@
   "revenue_event": "affiliate_commission_received",
   "objective": "Test whether a small set of useful, firsthand Postiz guides can generate verified affiliate referrals and received commission without displacing the primary Local Knowledge Terminal offer or encouraging bulk promotion.",
   "state": "approved_payout_pending",
-  "checked_at": "2026-09-10",
+  "checked_at": "2026-09-11",
   "source_evidence": {
     "program_page": "https://partners.dub.co/postiz",
     "application_page": "https://partners.dub.co/postiz/apply",
@@ -22,7 +22,7 @@
       "The authenticated overview states a 30-day holding period. It does not state the attribution window, eligible-plan boundary, payout threshold, or program-specific reversal rules, so public placement remains paused.",
       "Dub says commission is payable only after the client has paid Dub, a valid payout method and identity verification may be required, and pending or processed dashboard amounts are not cash received.",
       "The issued URL was opened once and resolved to the official Postiz site with Dub attribution parameters. The resulting single dashboard click is a private destination test, not audience interest.",
-      "Payout onboarding is incomplete because the connected-account form requires an account-country business phone that is not present in the verified company records. Never invent a phone number or use a registered-agent or temporary number."
+      "The verified partner business name and user-authorized US checking-account route passed the visible payout precheck. Stripe Connect then presented a human anti-bot challenge. It was not bypassed, and payout remains incomplete."
     ]
   },
   "hypothesis": {
@@ -142,6 +142,7 @@
     "currency": "USD",
     "holding_period_days": 30,
     "payout_ready": false,
+    "payout_blocker": "stripe_connect_human_verification_required",
     "interpretation": "The application, issued link, and destination are verified. The only click is the operator's non-purchasing test. Public placement remains paused until payout and placement gates pass; revenue remains zero."
   },
   "acceptance_criteria": {

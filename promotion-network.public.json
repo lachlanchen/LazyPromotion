@@ -1,6 +1,16 @@
 {
   "entities": [
     {
+      "id": "campaign:agentspace-devops-freelance",
+      "kind": "campaign",
+      "label": "agentspace-devops-freelance",
+      "metadata": {
+        "objective": "Earn a small paid on-premises document-intelligence operations engagement by showing directly relevant LazyEdge, Local Knowledge Terminal, and LazyTunnel evidence without overstating experience in the buyer's exact CI and monitoring stack.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:ai-clip-assembly-pilot",
       "kind": "campaign",
       "label": "ai-clip-assembly-pilot",

@@ -38,10 +38,11 @@ purchase and resolved to the official Postiz site with attribution parameters.
 The dashboard then showed one click, zero leads, zero sales, zero earnings, and
 no payouts. That click is the destination test, not audience demand.
 
-Payout onboarding is paused. Stripe's connected-account form requires an
-account-country business phone that is not present in the verified company
-records. No number was invented or borrowed. Public referral placement remains
-off until the payout and placement gates pass.
+Payout onboarding reached Stripe Connect after the verified partner business
+name and user-authorized US checking-account route passed the visible precheck.
+Stripe then presented a human anti-bot challenge, which was not bypassed.
+Public referral placement remains off until the payout and placement gates
+pass.
 
 ## Useful-first angle
 

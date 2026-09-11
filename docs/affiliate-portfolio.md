@@ -19,9 +19,12 @@ putting several links on one generic page:
 tutorial in BLOG post 2180. Its exact course match is stronger than adding a
 generic course catalog: the owned page derives the method, while the matched
 course continues with classification, regression, tuning, and pipelines.
-Kobo follows with the PocketPolyglot e-reader comparison. These placements
-should each use one stable placement ID and a nearby disclosure, preserve a
-plain official URL, and be measured separately.
+Kobo follows with the PocketPolyglot e-reader comparison. Its Rakuten publisher
+account is active and the Kobo US partnership request is awaiting manual
+review. Proton is also awaiting review after its application reached the
+official confirmation page. Neither has an issued link. These placements should
+each use one stable placement ID and a nearby disclosure, preserve a plain
+official URL, and be measured separately.
 
 ### Evidence-weighted allocation
 
@@ -32,21 +35,24 @@ packets, do not create more affiliate articles or placements merely because a
 public commission percentage looks attractive, and keep the USD 250 LKT path
 primary while its owned physics entry pages have demonstrated discovery.
 
-The routes were rechecked on 2026-09-10. LingQ still states 20% of
+The routes were rechecked on 2026-09-11. LingQ still states 20% of
 attributed-user payments and PayPal cash-out, but its terms prohibit accounts
 registered by bots or automated methods. Bookshop.org still advertises 10% and
 a 48-hour last-touch window, but its application currently returns a Cloudflare
 HTTP 403 bot-verification page in the isolated browser. Neither gate should be
 bypassed.
 
-Postiz accepted LazyingArt and issued a tested link, while payout onboarding and
-public placement remain incomplete. DataCamp's actual unaccepted Impact offer
+Postiz accepted LazyingArt and issued a tested link, while Stripe Connect human
+verification, payout onboarding, and public placement remain incomplete.
+DataCamp's actual unaccepted Impact offer
 is materially below the public maximum: 15% monthly, 7.5% for yearly and other
 named categories, and a seven-day attribution window. Because the matched owned
 page has no current search traffic and Impact can remove zero-balance accounts
 after six inactive months, DataCamp is deferred instead of registered for
-administrative completeness. These are offer descriptions and account states,
-not conversion rates or expected income.
+administrative completeness. Kobo's US application is pending manual review;
+its tax certification remains untouched because a US LLC by itself does not
+establish the required W-9 status. These are offer descriptions and account
+states, not conversion rates or expected income.
 
 This order is about fit, not the largest advertised percentage. Bookshop is a
 better first book route than Amazon because the content has exact book intent

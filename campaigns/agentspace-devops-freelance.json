@@ -1,0 +1,83 @@
+{
+  "id": "agentspace-devops-freelance",
+  "version": 1,
+  "objective": "Earn a small paid on-premises document-intelligence operations engagement by showing directly relevant LazyEdge, Local Knowledge Terminal, and LazyTunnel evidence without overstating experience in the buyer's exact CI and monitoring stack.",
+  "source_need": {
+    "captured_at": "2026-09-11T04:10:00Z",
+    "url": "https://www.reddit.com/r/developersIndia/comments/1vcddp6/comment/p5y9h86/",
+    "company": "Agentspace",
+    "title": "DevOps Engineer (freelance, part-time)",
+    "state": "public_explicit_paid_request",
+    "location": "Remote (India TZ)",
+    "published_compensation": "INR 1,000 per hour, roughly five hours per week to start",
+    "published_scope": "Keep a self-hosted AI document-intelligence stack healthy; own deployments, rollback, secrets, configuration, monitoring, and repeatable on-premises setup.",
+    "published_stack": [
+      "Docker Compose",
+      "Jenkins",
+      "nginx",
+      "PostgreSQL",
+      "Grafana",
+      "Prometheus",
+      "Loki"
+    ],
+    "freshness": "The employer-authored comment was eight days old at capture and contained no closure notice.",
+    "policy": "The hiring thread asks candidates to use the published application channel rather than Reddit direct messages. The listing is buyer-intent evidence, not a contract, allocation, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdge",
+      "LocalKnowledgeTerminal",
+      "LazyTunnel"
+    ],
+    "public_proof": [
+      "https://github.com/lachlanchen/LazyEdge",
+      "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "https://github.com/lachlanchen/LazyTunnel"
+    ],
+    "supported_now": [
+      "Split-secret Caddy and OpenSSH gateway design, health checks, immutable releases, and explicit rollback boundaries",
+      "Local multilingual document search with provenance and a read-only MCP boundary",
+      "Tested reverse-SSH tooling for networks behind NAT",
+      "Hong Kong UTC+8 availability with straightforward India-time overlap"
+    ],
+    "not_proven": [
+      "Two to three years in a formally titled DevOps role",
+      "Published production evidence for Jenkins",
+      "Published production evidence for the exact Grafana, Prometheus, and Loki stack",
+      "A paid client outcome for this combination of systems"
+    ],
+    "claim_boundary": "The application names the adjacent systemd, Caddy, and OpenSSH evidence and explicitly distinguishes it from the buyer's exact Jenkins and Grafana/Prometheus/Loki requirements."
+  },
+  "application": {
+    "state": "email_sent_awaiting_human_reply",
+    "sent_at": "2026-09-11T04:18:00Z",
+    "method": "One concise email to the public address in the hiring post",
+    "subject": "DevOps freelance — on-prem document intelligence",
+    "sender": "LazyingArt business email alias",
+    "recipient_storage": "public source post and ignored private mail evidence",
+    "links_sent": [
+      "https://github.com/lachlanchen/LazyEdge",
+      "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "https://github.com/lachlanchen/LazyTunnel",
+      "https://github.com/lachlanchen"
+    ],
+    "availability_stated": "About five hours per week with India-time overlap",
+    "rate_stated": "The buyer's posted INR 1,000 per hour",
+    "trial_proposed": "A small paid deployment-health or rollback task",
+    "delivery_evidence": "The compose window closed after one send and the exact subject, Bcc recipient, timestamp, and body appeared in the visible Sent mailbox.",
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "acceptance_gate": "Before work begins, confirm remote eligibility, exact first task, access boundary, hours, payment method and cadence, contracting party, confidentiality, IP, incident responsibility, and whether the adjacent CI and monitoring experience is acceptable."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "sender_side_sent_evidence_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_trial_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

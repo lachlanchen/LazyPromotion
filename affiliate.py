@@ -25,6 +25,8 @@ BLOCKED_STATES = {
     "manual_registration_only",
     "security_verification_required",
     "defer_until_relevant_traffic",
+    "advertiser_review_pending",
+    "application_review_pending",
 }
 REQUIRED_PRIVATE_FIELDS = {
     "accepted": bool,

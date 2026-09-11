@@ -29,6 +29,12 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.assertEqual(
             self.by_id["datacamp"]["state"], "defer_until_relevant_traffic"
         )
+        self.assertEqual(
+            self.by_id["kobo"]["state"], "advertiser_review_pending"
+        )
+        self.assertEqual(
+            self.by_id["proton"]["state"], "application_review_pending"
+        )
         self.assertEqual(self.by_id["waveshare"]["state"], "migration_first")
         self.assertEqual(self.by_id["tradingview"]["state"], "hold")
         self.assertEqual(self.by_id["amazon-us"]["state"], "delay")
@@ -85,7 +91,9 @@ class AffiliatePortfolioTests(unittest.TestCase):
         self.assertEqual(checkpoint["leads"], 0)
         self.assertEqual(checkpoint["sales"], 0)
         self.assertEqual(checkpoint["earnings_minor"], 0)
-        self.assertEqual(checkpoint["payout"], "incomplete")
+        self.assertEqual(
+            checkpoint["payout"], "stripe_connect_human_verification_required"
+        )
         output = io.StringIO()
         with contextlib.redirect_stdout(output):
             affiliate.print_packet(program)
@@ -146,6 +154,8 @@ class AffiliatePortfolioTests(unittest.TestCase):
             "skrill",
             "waveshare",
             "roboforex",
+            "kobo",
+            "proton",
         ):
             program = self.by_id[program_id]
             private = {
@@ -160,6 +170,23 @@ class AffiliatePortfolioTests(unittest.TestCase):
             with self.subTest(program=program_id):
                 failures = affiliate.readiness(program, private)
                 self.assertIn(f"public state is {program['state']}", failures)
+
+    def test_pending_affiliate_applications_do_not_overclaim_activation(self):
+        kobo = self.by_id["kobo"]
+        self.assertEqual(
+            kobo["verified_checkpoint"]["advertiser_application"],
+            "rakuten_kobo_us_pending_manual_review",
+        )
+        self.assertEqual(kobo["verified_checkpoint"]["link"], "not_issued")
+        self.assertEqual(kobo["verified_checkpoint"]["sales"], 0)
+
+        proton = self.by_id["proton"]
+        self.assertEqual(
+            proton["verified_checkpoint"]["application"],
+            "submitted_once_official_confirmation_visible",
+        )
+        self.assertEqual(proton["verified_checkpoint"]["account"], "not_active_pending_provider_review")
+        self.assertEqual(proton["verified_checkpoint"]["earnings_minor"], 0)
 
     def test_roboforex_stays_gated_around_existing_microquant_placement(self):
         program = self.by_id["roboforex"]

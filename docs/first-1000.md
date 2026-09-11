@@ -1161,6 +1161,21 @@ The free technical answer still comes first. All 148 tests passed, with one
 existing opt-in live-systemd test skipped. This is a conversion-path repair,
 not a claimed donation, lead, or sale.
 
+A current Agentspace post requests a part-time DevOps engineer for a
+self-hosted document-intelligence stack at INR 1,000 per hour, initially about
+five hours per week. One concise application linked LazyEdge, Local Knowledge
+Terminal, and LazyTunnel, proposed a small paid deployment-health or rollback
+task, and explicitly distinguished the public systemd/Caddy/OpenSSH evidence
+from the requested Jenkins and Grafana/Prometheus/Loki stack. The exact subject
+and recipient appeared in Sent. This is one truthful application to a direct
+paid need, not a reply, accepted trial, contract, payment, or revenue.
+
+OpenHI's first README screen now includes one direct badge for its existing USD
+500 software reproducibility sprint. The link resolves to the bounded live
+offer, and the technical quick-start remains unchanged. This is a conversion
+path improvement; two paid sprints would reach the target, but the badge itself
+is not demand or revenue.
+
 The Story Clip campaign now has four one-time applications against explicit
 hiring needs. The newest public post asked applicants to select a moment from
 the linked gaming stream, make a brief private Short, and send it through the

@@ -1227,9 +1227,9 @@ verified. The received confirmation proves delivery only; it is not an
 editorial reply, commissioned article, payment, or revenue.
 
 The latest complete GitHub audit puts `uu-remote-ubuntu-bridge` first by owned
-attention: 1,106 views from 488 unique visitors and 451 clones from 182 unique
+attention: 1,135 views from 490 unique visitors and 462 clones from 191 unique
 cloners in the current rolling window. The Simplified-Chinese README accounts
-for 533 views from 406 visitors. Because all ten localized READMEs lacked the
+for 549 views from 414 visitors. Because all ten localized READMEs lacked the
 English page's support panel, commit `5391068` added one translated sentence and
 the same GitHub Sponsors, LazyingArt, PayPal, and Stripe routes to all of them.
 The free technical answer still comes first. All 148 tests passed, with one
@@ -1251,6 +1251,19 @@ license and trademark boundary in the README; GitHub now recognizes the
 license as MIT. The description, 15 exact topics, funding panel, and 11-language
 navigation remain intact. This metadata repair is a clearer trust and
 continuation path, not a click, inquiry, pledge, or sale.
+
+The same portfolio audit found a separate, specific reading need: the dated
+Paperwhite 2 jailbreak/KOReader record received 55 views while the Kindle
+repository received 166 views from 103 unique visitors in the rolling window.
+The current KindleModding post-jailbreak guide now uses KPM and Scriptlets and
+calls KUAL obsolete. Kindle commit `0d8b0ad` therefore labels the old PW2 page
+as a device-specific execution record, links the live compatibility wizard,
+and replaces three dead guide links with the current routes. A new
+[compatibility-first article](https://blog.lazying.art/html/computer-internet/3825/kindle-koreader-match-device-firmware-package.html)
+then explains that distinction in English, Simplified Chinese, and Japanese
+before offering the free Kindle sender and LinguaLeaf shelf. Its final support
+link is optional and quiet. Publication, traffic, and a working donation page
+are not a donation or revenue.
 
 A current Agentspace post requests a part-time DevOps engineer for a
 self-hosted document-intelligence stack at INR 1,000 per hour, initially about

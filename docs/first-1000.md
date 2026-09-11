@@ -104,6 +104,14 @@ honestly that the separate LastMile AI Discord had not been joined. Do not draft
 until the topic, fee, assistance policy, rights, revisions, acceptance, payout,
 and timing are agreed. The submitted form is not an assignment or revenue.
 
+Hygraph's current Creator Program explicitly seeks work about connecting AI
+agents to a content graph and building with Hygraph MCP. One reviewed proposal
+offered a rights-cleared multilingual etymology and provenance graph tutorial,
+grounded in the existing LKT and Lexicon Atlas work. The program confirms
+compensation only after matching the format and channel, so no rate is counted.
+Do not build the Hygraph example until a human accepts the angle and agrees the
+fee, assistance policy, rights, review, disclosure, and payment terms.
+
 The strongest current no-marketplace application is Lopaka's worldwide DevPet
 embedded-UI prototype contract at a published USD 80–140 per hour for roughly
 10–15 hours a week over six to eight weeks. One application was submitted on

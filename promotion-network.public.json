@@ -181,6 +181,16 @@
       "url": ""
     },
     {
+      "id": "campaign:hygraph-creator-program",
+      "kind": "campaign",
+      "label": "hygraph-creator-program",
+      "metadata": {
+        "objective": "Win one paid Hygraph creator assignment by turning LazyingArt's real multilingual provenance graph into a tested, permission-aware Hygraph and MCP tutorial.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:kikudoku-pronunciation-ux",
       "kind": "campaign",
       "label": "kikudoku-pronunciation-ux",

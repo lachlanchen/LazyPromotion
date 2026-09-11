@@ -1,0 +1,67 @@
+{
+  "id": "hygraph-creator-program",
+  "version": 1,
+  "objective": "Win one paid Hygraph creator assignment by turning LazyingArt's real multilingual provenance graph into a tested, permission-aware Hygraph and MCP tutorial.",
+  "source_need": {
+    "captured_at": "2026-09-11T02:28:00Z",
+    "url": "https://hygraph.com/write-for-hygraph",
+    "application_url": "https://50u53.share.hsforms.com/2Cd7df-CMQvaYsmDrO-V-Kw",
+    "title": "Hygraph Creator Program",
+    "state": "official_current_program_with_accepting_form",
+    "published_scope": "Tutorials, articles, reviews, videos, forum contributions, and code examples about structured content, GraphQL, content modeling, AI-driven content systems, content graphs, and Hygraph MCP.",
+    "published_process": "Applicants describe their active channels and proposed contribution. Hygraph reviews the application, suggests an angle and channel, provides a brief and editorial review, then follows up on compensation after publication. The form says successful applicants will hear back within five business days.",
+    "compensation_boundary": "Compensation depends on format and channel and is confirmed only after Hygraph suggests a fit. No amount, currency, payment method, or payment timing is published on the current application page.",
+    "disclosure_requirement": "Published content must disclose the contributor's affiliation with Hygraph.",
+    "policy": "Application, matching, brief acceptance, publication, payment confirmation, and received revenue are separate states. Do not create vendor-specific content until the topic, channel, exact compensation, assistance policy, rights, revisions, acceptance criteria, disclosure wording, and payment terms are agreed."
+  },
+  "fit": {
+    "projects": [
+      "LocalKnowledgeTerminal",
+      "LexiconAtlas",
+      "BLOG"
+    ],
+    "content_type": "A hands-on developer tutorial with a small public code example and reproducible checks.",
+    "proposal": "Model a small multilingual etymology and source-provenance graph in Hygraph, then connect a least-privilege AI assistant through Hygraph MCP so each answer can trace back to a source and edition. Port a rights-cleared sample from the existing public SQLite graph, test the GraphQL and MCP queries, and document permission and failure boundaries.",
+    "active_channels_selected": [
+      "Personal blog",
+      "LinkedIn",
+      "GitHub"
+    ],
+    "supported_now": [
+      "A public multilingual provenance graph and bounded read-only MCP bridge",
+      "A live technical blog, GitHub portfolio, and LinkedIn profile",
+      "Reproducible testing, source-rights gates, and permission-aware agent work"
+    ],
+    "not_claimed": [
+      "Prior hands-on Hygraph use or a completed Hygraph integration",
+      "Program acceptance, a suggested fit, an editorial brief, an agreed rate, payment, or revenue",
+      "Permission to redistribute an unreviewed book corpus"
+    ],
+    "claim_boundary": "The existing graph and MCP work prove adjacent content-modeling and agent experience. Hygraph-specific claims require a tested rights-cleared implementation after the program accepts the pitch."
+  },
+  "application": {
+    "state": "submitted_awaiting_human_reply",
+    "sent_at": "2026-09-11T02:31:09Z",
+    "method": "Official two-step HubSpot form using the business contact, three active public channels, one content format, and one original bounded proposal",
+    "exact_answers_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated visible browser showed the complete proposal and enabled Submit control before one click. The form then displayed 'Form submitted' and 'Thank you, we'll be in touch soon.' No retry was made. Private before-and-after screenshots remain outside Git.",
+    "account_created": false,
+    "credential_created": false,
+    "identity_document_required": false,
+    "terms_checkbox_observed": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "policy": "Do not resubmit or follow up before the published five-business-day window ends. If accepted, confirm the exact topic, format, channel, compensation and currency, assistance policy, rights, revisions, acceptance criteria, disclosure wording, payment route, and timing before work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "program_match_observed": false,
+    "brief_accepted": false,
+    "content_published": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

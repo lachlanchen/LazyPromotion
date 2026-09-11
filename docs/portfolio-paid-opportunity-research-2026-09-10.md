@@ -325,6 +325,15 @@ terms, so no account or invented identity data was used. Do not draft before a
 human accepts the topic and fixes the fee, assistance policy, rights, revisions,
 acceptance criteria, payment route, and timing.
 
+Hygraph's current Creator Program specifically names structured relational
+content, connecting AI agents to a content graph, and Hygraph MCP.^25 One
+reviewed application proposed porting a small rights-cleared slice of the public
+multilingual etymology and provenance graph to Hygraph, then testing GraphQL and
+least-privilege MCP queries. The form confirmed one submission and publishes a
+five-business-day reply window. Compensation is only fixed after Hygraph matches
+the format and channel, so no amount is counted and no vendor-specific article
+should be built before a human agrees the working and payment terms.
+
 ## Registration rule
 
 Create a new account only when all seven conditions are true:
@@ -410,3 +419,4 @@ routes already live.
 22. Vocal Video. “[8 Minute Product Demo](https://help.vocalvideo.com/article/16-product-tour).” Accessed September 11, 2026.
 23. WebAPI Group. “[Ambassador program](https://webapi.group/ambassador).” Accessed September 11, 2026.
 24. LastMile AI. “[mcp-agent Technical Writers Program](https://docs.google.com/forms/d/e/1FAIpQLScDjxA2SDe-tCz0WUlrp4hd-Zid1L6IByuvRaf5AKCBF9w2eA/viewform).” Accessed September 11, 2026.
+25. Hygraph. “[Creator Program](https://hygraph.com/write-for-hygraph).” Accessed September 11, 2026.

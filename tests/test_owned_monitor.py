@@ -159,6 +159,11 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(summary["due_campaign_ids"], ["paid-route"])
         self.assertNotIn("private-post-id", json.dumps(summary))
 
+    def test_status_snapshot_is_owner_readable_only(self):
+        self.run_monitor(FakePostiz(posts=[]))
+
+        self.assertEqual(self.status_path.stat().st_mode & 0o777, 0o600)
+
     def test_string_reply_metric_still_creates_review_alert(self):
         published = post(state="PUBLISHED")
         published["releaseURL"] = "https://x.com/lazyingart/status/123"

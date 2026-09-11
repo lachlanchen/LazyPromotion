@@ -267,6 +267,7 @@ def atomic_write_json(path: Path, payload: dict) -> None:
         json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
+    os.chmod(temporary, 0o600)
     os.replace(temporary, path)
 
 

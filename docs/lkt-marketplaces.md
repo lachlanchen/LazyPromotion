@@ -1,4 +1,4 @@
-# LKT, OpenHI, Bilingual Lecture, LazyRemote, and Story Clip marketplaces
+# LKT, OpenHI, Bilingual Lecture, LazyRemote, Story Clip, and Pronunciation marketplaces
 
 The first marketplace route for the USD 250 Local Knowledge Terminal
 collection-fit sprint is now live on [Contra
@@ -55,6 +55,19 @@ delivery](https://lazying.art/story-clip/#sample). Extra clips, translation,
 dubbing, generated footage, stock licensing, publishing access, performance
 guarantees, ongoing strategy, and longer sources remain outside the fixed
 scope.
+
+A sixth [Contra service](https://contra.com/s/oLcclBAE-build-one-bilingual-pronunciation-mini-lesson)
+offers one USD 250 bilingual pronunciation mini-lesson for a tutor or small
+language school. It covers one sound contrast, one learner group, English plus
+Simplified or Traditional Chinese, two short model-audio prompts, original
+teaching visuals, one printable four-step web lesson, one short captioned
+walkthrough, deployable static files, and one factual correction pass. The
+public page shows the two-week duration, six relevant tags, three FAQs, the
+project-owned 4:3 cover, and the complete
+[light/night sample](https://l-and-n.lazying.art/lessons/light-vs-night/).
+Clinical assessment, certified translation, voice cloning, learner recordings,
+personal-data collection, app integration, hosting, custom domains, ongoing
+support, and unlimited revisions remain outside the fixed scope.
 
 The machine-readable evidence and listing packet are in
 [`marketplace-channels.json`](../marketplace-channels.json).
@@ -169,11 +182,14 @@ listing was likewise saved unpublished, reloaded, checked field by field, and
 published once. The Story Clip draft was saved unpublished, reloaded, corrected
 to remove a normalized duplicate tag, saved and reloaded again, and published
 once. The public profile now has five factual work pieces—LKT, OpenHI, Bilingual
-Lecture, LazyTunnel, and the Leonard Susskind lecture archive—and five live
+Lecture, LazyTunnel, and the Leonard Susskind lecture archive—and six live
 services. Each links to actual public work. A truthful USD 50–75 hourly range
 was added, taking the profile to 89% complete. Persona identity and wallet setup
 are the remaining completion gate; no identity document, bank information,
-paid upgrade, payment object, or payout route was submitted.
+paid upgrade, payment object, or payout route was submitted. On September 11,
+the pronunciation lesson followed the same unpublished-save and reload check
+before one publish action. Its public response was then checked without relying
+on the logged-in editor.
 
 Marketplace views, inquiries, proposals, signed contracts, platform balances,
 and pending payouts remain separate states. Only a verified payment recorded

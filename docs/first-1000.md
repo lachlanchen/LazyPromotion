@@ -1194,9 +1194,10 @@ and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
 contract, balance, or pending payout does not change the received-revenue total.
 The live 4:3 cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
-The same profile now has five live fixed-scope services: LKT, OpenHI, Bilingual
-Lecture, LazyRemote, and the [USD 250 Story Clip
-Pilot](https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip).
+The same profile now has six live fixed-scope services: LKT, OpenHI, Bilingual
+Lecture, LazyRemote, the [USD 250 Story Clip
+Pilot](https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip),
+and the [USD 250 Bilingual Pronunciation Mini-Lesson](https://contra.com/s/oLcclBAE-build-one-bilingual-pronunciation-mini-lesson).
 The Story Clip draft was saved unpublished, reloaded, corrected to remove a
 normalized duplicate tag, saved and reloaded again, and published once. Its
 public page shows the exact one-time price, two-week duration, six relevant
@@ -1204,6 +1205,10 @@ tags, three FAQs, project-owned cover, sample link, and exclusions. A truthful
 USD 50–75 hourly range raised profile completion to 89%; Persona identity and
 wallet setup remain pending. Each service uses project-owned evidence, while
 identity, payout, inquiry, contract, and revenue states remain separate.
+The pronunciation listing likewise passed an unpublished-save and reload check
+before one publish action. Its public page shows the project-owned light/night
+sample first, five buyer inputs, exact exclusions, the two-week duration, six
+relevant tags, and three FAQs. Publication is buyer access, not a lead or sale.
 
 A current Contra opportunity asks for one weekly Reel and carousel from
 customer-provided adventure and travel media at USD 250–500 per month. The

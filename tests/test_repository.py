@@ -135,7 +135,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("/for-tutors/", campaign["offer"]["url"])
         self.assertIn("/lessons/light-vs-night/", campaign["proof"]["sample"])
         contra = campaign["contra_marketplace"]
-        self.assertEqual(contra["state"], "prepared_not_published")
+        self.assertEqual(
+            contra["state"],
+            "published_live_verified_identity_and_payout_pending",
+        )
+        self.assertIn("contra.com/s/", contra["public_url"])
         self.assertEqual(contra["price"], "USD 250 one-time")
         self.assertEqual(contra["duration"], "2 weeks")
         self.assertEqual(len(contra["requirements"]), 5)
@@ -143,6 +147,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(len(contra["faqs"]), 3)
         self.assertTrue((ROOT / contra["cover_asset"]["source_path"]).is_file())
         self.assertEqual(contra["cover_asset"]["dimensions"], "1448x1086")
+        self.assertTrue(contra["live_verification"]["saved_unpublished_before_publish"])
+        self.assertEqual(contra["live_verification"]["publish_actions"], 1)
+        self.assertFalse(contra["identity_verification_complete"])
+        self.assertFalse(contra["payout_route_configured"])
+        self.assertFalse(contra["buyer_inquiry_observed"])
+        self.assertFalse(contra["contract_observed"])
+        self.assertFalse(contra["payment_observed"])
+        self.assertEqual(contra["received_gross_usd"], 0)
         self.assertFalse(campaign["payment"]["public_checkout"])
         self.assertFalse(campaign["payment"]["payment_object_created"])
         linkedin = campaign["channels"]["linkedin"]

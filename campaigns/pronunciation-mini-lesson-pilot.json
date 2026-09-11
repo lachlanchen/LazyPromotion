@@ -1,6 +1,6 @@
 {
   "id": "pronunciation-mini-lesson-pilot",
-  "version": 3,
+  "version": 4,
   "objective": "Sell and deliver four bounded USD 250 bilingual pronunciation mini-lessons to tutors or small language schools while keeping the L & N learner app free.",
   "offer": {
     "state": "live_verified",
@@ -36,7 +36,10 @@
     "boundary": "The sample is project-owned proof of the delivery format. It is not customer work, a testimonial, a clinical result, a certified translation, or evidence of sales."
   },
   "contra_marketplace": {
-    "state": "prepared_not_published",
+    "state": "published_live_verified_identity_and_payout_pending",
+    "public_url": "https://contra.com/s/oLcclBAE-build-one-bilingual-pronunciation-mini-lesson",
+    "saved_unpublished_at": "2026-09-11T10:50:00Z",
+    "published_at": "2026-09-11T10:50:49Z",
     "title": "Build One Bilingual Pronunciation Mini-Lesson",
     "one_line": "Turn one sound contrast into a reusable web lesson with model audio, visual cues, printable practice, and a captioned walkthrough.",
     "price": "USD 250 one-time",
@@ -50,12 +53,12 @@
       "Confirm the desired delivery date and where your team will deploy the static lesson files; do not send hosting credentials."
     ],
     "tags": [
-      "Instructional Design",
+      "Instructional Designer",
       "Educational Technology",
-      "Web Design",
-      "Copywriting",
-      "Audio Editing",
-      "Video Editing"
+      "Web Designer",
+      "Copywriter",
+      "Audio Editor",
+      "Video Editor"
     ],
     "faqs": [
       {
@@ -79,7 +82,23 @@
       "sha256": "5023f709af6ec03a7c934da4a288ae0170f1c21338bbe5f54041be909f57eae4",
       "boundary": "Project-owned service graphic derived from the L & N visual system. It is not customer work, a learner result, or proof of a paid engagement."
     },
-    "publication_gate": "Publish only if the visible form preserves the exact one-time price, duration, source-first description, requirements, exclusions, and original sample URL."
+    "publication_gate": "Publish only if the visible form preserves the exact one-time price, duration, source-first description, requirements, exclusions, and original sample URL.",
+    "live_verification": {
+      "visible_editor_review": "The isolated project browser showed the exact USD 250 one-time price, two-week duration, project-owned 4:3 cover, six relevant tags, five buyer requirements within the description, three FAQs, exclusions, and original sample URL after the unpublished draft was saved and reloaded.",
+      "public_page_review": "The single publish action opened the public service page with the exact title, USD 250 starting price, two-week duration, six tags, three FAQ questions, source-first description, requirements, and exclusions.",
+      "http_review": "An unauthenticated public response exposed the title, light/night sample reference, USD 250 price, two-week duration, Instructional Designer tag, and learner-recordings FAQ.",
+      "cover_exact": true,
+      "sample_url_exact": true,
+      "saved_unpublished_before_publish": true,
+      "publish_actions": 1
+    },
+    "identity_verification_complete": false,
+    "payout_route_configured": false,
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "received_gross_usd": 0,
+    "boundary": "A published listing is buyer access, not an inquiry, accepted scope, payment, delivery, or revenue. Do not accept a paid Contra contract until identity and payout setup are complete."
   },
   "channels": {
     "owned_sample": {

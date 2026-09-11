@@ -908,6 +908,26 @@ class RepositoryTests(unittest.TestCase):
             route,
         ))
 
+    def test_x_susskind_route_requires_a_physics_learning_request(self):
+        route = next(
+            item for item in browser.discovery_query_lanes("x")["core"]
+            if item["project_id"] == "leonardsusskind"
+        )
+        self.assertEqual(len(route["required_body_groups"]), 2)
+        self.assertTrue(browser.route_body_qualified(
+            "Does anyone have notes for Susskind's Classical Mechanics lectures?",
+            route,
+        ))
+        self.assertFalse(browser.route_body_qualified(
+            "Fun project: I used GPT to make a list of books from my bookcase, "
+            "including several by Susskind.",
+            route,
+        ))
+        self.assertFalse(browser.route_body_qualified(
+            "I built a Susskind lecture-notes app and launched it today.",
+            route,
+        ))
+
     def test_eink_routes_require_multilingual_purchase_intent(self):
         for platform in ("reddit", "x"):
             routes = [

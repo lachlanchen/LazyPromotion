@@ -355,7 +355,12 @@
       {
         "project_id": "leonardsusskind",
         "query": "\"Susskind\" (help OR notes) -filter:retweets",
-        "purpose": "Physics learners asking for notes or explanations"
+        "purpose": "Physics learners asking for notes or explanations",
+        "required_body_groups": [
+          ["susskind", "susskind's", "susskind’s", "theoretical minimum"],
+          ["looking for notes", "need notes", "does anyone have notes", "can anyone explain", "help me understand", "where can i find", "recommend notes", "any notes", "what does susskind", "why does susskind", "how does susskind"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i made", "i launched", "we built", "we created", "we launched", "fun project", "my book list", "my bookcase", "list of books", "for hire", "available for work"]
       },
       {
         "project_id": "localknowledgeterminal",

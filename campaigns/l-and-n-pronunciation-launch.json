@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -71,12 +71,26 @@
     },
     "media": {
       "filename": "landn-bilingual-vertical-v2.mp4",
-      "state": "uploaded_to_reviewable_postiz_draft",
+      "state": "quality_hold",
       "duration_seconds": 19.366667,
       "dimensions": "1080x1920",
       "sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
       "content": "First-party L-and-N screens, icon, and bundled synthetic light/night prompts in an English and Traditional Chinese vertical demonstration.",
       "claim_boundary": "The clip is a product demonstration, not a customer result, accuracy benchmark, medical assessment, or public-store availability claim."
+    },
+    "media_quality_review": {
+      "checked_at": "2026-09-12T02:40:00+08:00",
+      "method": "One-frame-per-second contact sheet plus full-resolution spot frames at 2, 8, and 15 seconds.",
+      "decision": "hold",
+      "issue": "Cross-fades between dense app screens leave overlapping headings, bilingual copy, and interface panels visibly unreadable during transitions.",
+      "affected_channels": [
+        "instagram",
+        "youtube",
+        "linkedin"
+      ],
+      "postiz_state_verified": "DRAFT",
+      "text_only_x_state_verified": "QUEUE",
+      "replacement_gate": "Do not reschedule a media-backed post until a new export uses clean cuts or non-overlapping transitions and passes the same timed-frame review."
     }
   },
   "need_research": {
@@ -101,7 +115,7 @@
   },
   "channels": {
     "linkedin": {
-      "state": "postiz_scheduled",
+      "state": "postiz_draft_quality_review",
       "scheduled_for": "2026-09-20T02:00:00Z",
       "content": "I have trouble pronouncing L and N, so I built the practice tool I wanted.\n\nHear a pair, see the mouth and airflow cue, record one word, and get feedback you can inspect. The same four-minute drill works in English, Mandarin, and Cantonese.\n\nIt’s free and open source, and runs in the browser without an account:\nhttps://l-and-n.lazying.art/\n\nIf you try it, tell me whether the mouth view actually makes the difference clearer.",
       "content_sha256": "4976b657ef333e7e2aa1104c28326e16317c2166c2ae51eaad0362b25f0c6898",
@@ -121,7 +135,7 @@
         "postiz_stored_content_sha256": "aec34e4c569ace2910977718638347c748c7794edebe542e40a484f2d983c4f5",
         "stored_html_normalizes_to_reviewed_text": true,
         "matching_posts": 1,
-        "verified_state": "QUEUE",
+        "verified_state": "DRAFT",
         "release_present": false
       },
       "visible_review": {
@@ -132,10 +146,11 @@
         "state_rechecked": "DRAFT",
         "release_present": false
       },
-      "policy": "This is a scheduled first-party product demonstration, not yet a public post, engagement, lead, or sale. Recheck delivery after the scheduled time before recording publication or outcomes."
+      "quality_hold_reason": "The shared video has overlapping text and app screens during cross-fades. Keep this draft unpublished until a clean replacement passes timed-frame review.",
+      "policy": "This first-party product demonstration is held as a draft, not a public post, engagement, lead, or sale. Do not reschedule it with the current media."
     },
     "instagram": {
-      "state": "postiz_queue",
+      "state": "postiz_draft_quality_review",
       "publish_at": "2026-09-13T12:00:00Z",
       "content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
       "postiz_content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
@@ -152,13 +167,14 @@
         "visible_editor_reviewed": true,
         "media_visible": true,
         "matching_posts": 1,
-        "verified_state": "QUEUE",
+        "verified_state": "DRAFT",
         "release_present": false
       },
-      "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
+      "quality_hold_reason": "The shared video has overlapping text and app screens during cross-fades. Keep this draft unpublished until a clean replacement passes timed-frame review.",
+      "policy": "A first-party vertical demonstration of the live free browser app. It is held as a draft, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "youtube": {
-      "state": "postiz_queue",
+      "state": "postiz_draft_quality_review",
       "publish_at": "2026-09-13T02:30:00Z",
       "title": "I mix up L and N, so I built this pronunciation drill",
       "content": "I mix up L and N, so I built the short practice loop I wanted: hear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback.\n\nTry it free in the browser, no account:\nhttps://l-and-n.lazying.art/?utm_source=youtube&utm_medium=video&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nEnglish, Mandarin, and Cantonese.\n\n#PronunciationPractice #LanguageLearning #Shorts",
@@ -184,10 +200,11 @@
         "visible_editor_reviewed": true,
         "media_visible": true,
         "matching_posts": 1,
-        "verified_state": "QUEUE",
+        "verified_state": "DRAFT",
         "release_present": false
       },
-      "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
+      "quality_hold_reason": "The shared video has overlapping text and app screens during cross-fades. Keep this draft unpublished until a clean replacement passes timed-frame review.",
+      "policy": "A first-party vertical demonstration of the live free browser app. It is held as a draft, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "reddit": {
       "state": "resource_thread_live",

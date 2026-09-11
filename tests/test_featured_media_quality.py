@@ -7,6 +7,22 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class FeaturedMediaQualityTests(unittest.TestCase):
+    def test_landn_media_posts_remain_drafts_after_timed_frame_review(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "l-and-n-pronunciation-launch.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        quality = campaign["source_evidence"]["media_quality_review"]
+        self.assertEqual(quality["decision"], "hold")
+        self.assertIn("overlapping headings", quality["issue"])
+        for channel in ("instagram", "youtube", "linkedin"):
+            self.assertEqual(
+                campaign["channels"][channel]["state"],
+                "postiz_draft_quality_review",
+            )
+        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
+
     def test_ai_clip_proof_requires_human_quality_review(self):
         campaign = json.loads(
             (ROOT / "campaigns" / "ai-clip-assembly-pilot.json").read_text(

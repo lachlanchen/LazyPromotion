@@ -215,6 +215,13 @@ provider read returned one exact normalized content match in `QUEUE`, with no
 release URL. This is scheduled owned distribution, not a buyer inquiry or
 revenue.
 
+On 2026-09-12, a timed-frame review found that the shared L & N demonstration
+used cross-fades that made headings, bilingual copy, and app screens overlap
+during transitions. The Instagram, YouTube, and LinkedIn items were moved back
+to `DRAFT` before publication. The separate text-only X item remains queued.
+The media-backed items must not be rescheduled until a clean-cut replacement
+passes the same timed-frame review.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

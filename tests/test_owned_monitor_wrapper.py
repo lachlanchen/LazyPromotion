@@ -18,6 +18,7 @@ class OwnedMonitorWrapperTests(unittest.TestCase):
         text = SCRIPT.read_text(encoding="utf-8")
         self.assertIn('SESSION="lazypromotion-owned-monitor"', text)
         self.assertIn("python owned_monitor.py loop", text)
+        self.assertIn("python owned_monitor.py status", text)
         self.assertIn("tmux has-session", text)
         self.assertNotIn("desktop.sh", text)
         self.assertNotIn("firefox", text.casefold())

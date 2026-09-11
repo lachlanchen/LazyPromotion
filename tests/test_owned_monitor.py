@@ -129,6 +129,36 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertTrue(observed["policy"]["application_is_not_a_lead"])
         self.assertNotIn("private.example", json.dumps(observed))
 
+    def test_status_summary_excludes_posts_and_private_ids(self):
+        status_path = self.root / "status-summary.json"
+        status_path.write_text(
+            json.dumps(
+                {
+                    "checked_at": "2026-09-01T01:00:00Z",
+                    "summary": {"published": 3, "queued": 2, "alerts": 0},
+                    "posts": [{"raw": "private-post-id"}],
+                    "application_watch": {
+                        "summary": {
+                            "awaiting_human_reply": 4,
+                            "due_for_human_review": 1,
+                            "missing_review_schedule": 0,
+                        },
+                        "due_campaign_ids": ["paid-route"],
+                    },
+                }
+            ),
+            encoding="utf-8",
+        )
+
+        summary = owned_monitor.status_summary(status_path)
+
+        self.assertTrue(summary["available"])
+        self.assertFalse(summary["monitor_error"])
+        self.assertEqual(summary["postiz"]["queued"], 2)
+        self.assertEqual(summary["applications"]["due_for_human_review"], 1)
+        self.assertEqual(summary["due_campaign_ids"], ["paid-route"])
+        self.assertNotIn("private-post-id", json.dumps(summary))
+
     def test_string_reply_metric_still_creates_review_alert(self):
         published = post(state="PUBLISHED")
         published["releaseURL"] = "https://x.com/lazyingart/status/123"

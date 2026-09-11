@@ -584,6 +584,28 @@ def loop(interval_minutes: int) -> None:
             time.sleep(interval_minutes * 60)
 
 
+def status_summary(path: Path = STATUS_PATH) -> dict:
+    """Read the last private status without exposing post or integration details."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"available": False}
+    application = payload.get("application_watch")
+    if not isinstance(application, dict):
+        application = {}
+    due_ids = application.get("due_campaign_ids")
+    if not isinstance(due_ids, list):
+        due_ids = []
+    return {
+        "available": True,
+        "checked_at": str(payload.get("checked_at") or ""),
+        "monitor_error": "error" in payload,
+        "postiz": dict(payload.get("summary") or {}),
+        "applications": dict(application.get("summary") or {}),
+        "due_campaign_ids": [str(item) for item in due_ids],
+    }
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Read-only publication and engagement monitor for owned Postiz posts."
@@ -591,6 +613,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
     once = subparsers.add_parser("once", help="Run one read-only observation pass.")
     once.add_argument("--days", type=int, default=30)
+    subparsers.add_parser("status", help="Print a privacy-limited status summary.")
     continuous = subparsers.add_parser("loop", help="Repeat observations locally.")
     continuous.add_argument("--interval-minutes", type=int, default=15)
     return parser
@@ -601,6 +624,8 @@ def main() -> None:
     if args.command == "once":
         report = monitor_once(days=max(1, args.days))
         print(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True))
+    elif args.command == "status":
+        print(json.dumps(status_summary(), ensure_ascii=False, sort_keys=True))
     else:
         loop(args.interval_minutes)
 

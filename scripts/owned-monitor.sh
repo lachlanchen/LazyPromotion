@@ -27,7 +27,7 @@ case "${1:-status}" in
   status)
     if tmux has-session -t "$SESSION" 2>/dev/null; then
       echo "Owned Postiz monitor is running in tmux session $SESSION"
-      tail -n 5 "$LOG" 2>/dev/null || true
+      python owned_monitor.py status
     else
       echo "Owned Postiz monitor is stopped"
       exit 1

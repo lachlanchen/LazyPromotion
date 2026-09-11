@@ -315,6 +315,7 @@ class GitHubInboundWrapperTests(unittest.TestCase):
         self.assertEqual(text.count("tmux new-session"), 1)
         self.assertIn("INTERVAL_MINUTES < 15", text)
         self.assertIn("chmod 600", text)
+        self.assertIn('tail -n 1 "$LOG"', text)
 
 
 if __name__ == "__main__":

@@ -41,7 +41,7 @@ case "${1:-status}" in
   status)
     if tmux has-session -t "$SESSION" 2>/dev/null; then
       echo "GitHub inbound monitor is running in tmux session $SESSION"
-      tail -n 5 "$LOG" 2>/dev/null || true
+      tail -n 1 "$LOG" 2>/dev/null || true
     else
       echo "GitHub inbound monitor is stopped"
       exit 1

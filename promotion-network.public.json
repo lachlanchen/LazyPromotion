@@ -341,6 +341,16 @@
       "url": ""
     },
     {
+      "id": "campaign:mcp-agent-technical-writer-program",
+      "kind": "campaign",
+      "label": "mcp-agent-technical-writer-program",
+      "metadata": {
+        "objective": "Win one paid mcp-agent technical article by proposing a tested citation-first multilingual research agent built around LazyingArt's real read-only provenance graph.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:meeting-intelligence-mission",
       "kind": "campaign",
       "label": "meeting-intelligence-mission",

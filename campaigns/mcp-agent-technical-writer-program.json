@@ -1,0 +1,67 @@
+{
+  "id": "mcp-agent-technical-writer-program",
+  "version": 1,
+  "objective": "Win one paid mcp-agent technical article by proposing a tested citation-first multilingual research agent built around LazyingArt's real read-only provenance graph.",
+  "source_need": {
+    "captured_at": "2026-09-11T02:23:52Z",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScDjxA2SDe-tCz0WUlrp4hd-Zid1L6IByuvRaf5AKCBF9w2eA/viewform",
+    "project_url": "https://github.com/lastmile-ai/mcp-agent",
+    "title": "mcp-agent - Technical Writers Program",
+    "state": "current_program_with_accepting_form",
+    "published_scope": "Tutorials, demo projects, and how-to guides for developers that include the open-source mcp-agent framework.",
+    "published_compensation": "USD 75 to USD 200 per article depending on its type and quality.",
+    "published_process": "The form requests an email, full name, GitHub, X profile, prior article, proposed title, and whether the applicant joined the LastMile AI Discord community.",
+    "assistance_policy": "No AI-assistance policy or exact acceptance, rights, revision, payout, or timing terms were stated in the application form. Confirm them before outlining or drafting.",
+    "policy": "Application, human reply, topic acceptance, article approval, payment confirmation, and received revenue are separate states. Do not draft until the exact fee, assistance policy, rights, revisions, acceptance criteria, payment route, and timing are agreed."
+  },
+  "fit": {
+    "projects": [
+      "LocalKnowledgeTerminal",
+      "LexiconAtlas",
+      "LazyPromotion",
+      "BLOG"
+    ],
+    "proposal_title": "Build a Citation-First Multilingual Research Agent with mcp-agent and a Read-Only SQLite Knowledge Graph",
+    "public_profiles": [
+      "https://github.com/lachlanchen",
+      "https://x.com/lazyingart"
+    ],
+    "public_sample": "https://blog.lazying.art/?p=3772",
+    "supported_now": [
+      "A public multilingual provenance graph and bounded read-only SQLite MCP bridge",
+      "A published technical article about a real CLI and MCP workflow",
+      "Current agent orchestration, browser review, testing, and evidence-led implementation"
+    ],
+    "not_claimed": [
+      "Existing production use of mcp-agent",
+      "Program acceptance, topic approval, an assignment, payment, or revenue",
+      "A customer result or untested framework capability"
+    ],
+    "claim_boundary": "The public graph, MCP bridge, technical article, and agent code establish adjacent implementation and writing fit. A future article must test mcp-agent directly before making framework-specific claims."
+  },
+  "application": {
+    "state": "submitted_awaiting_human_reply",
+    "sent_at": "2026-09-11T02:25:26Z",
+    "method": "Official Google Form using the already signed-in business contact, public GitHub and X profiles, one live technical sample, one bounded original title, and an honest No answer for Discord membership",
+    "exact_answers_storage": "ignored private evidence",
+    "delivery_evidence": "The isolated visible browser rendered all required answers and the selected No radio before one Submit action. The form then displayed 'Your response has been recorded.' Private before-and-after screenshots remain outside Git.",
+    "account_required_for_application": false,
+    "discord_joined": false,
+    "discord_account_created": false,
+    "identity_document_required": false,
+    "terms_checkbox_observed_on_application": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "policy": "Do not resubmit or follow up before the review date. If accepted, confirm the exact topic, fee and currency, assistance policy, rights, revisions, acceptance criteria, payment route, and timing before work. Join Discord only through an existing account or after the account holder supplies truthful age information and reviews Discord's terms."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "topic_accepted": false,
+    "article_delivered": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

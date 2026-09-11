@@ -96,6 +96,14 @@ campaign amount, API access, deliverables, validation, rights, disclosure,
 payment details, and assistance expectations. This is an outbound application,
 not approval, a commissioned campaign, validation, payment, or revenue.
 
+The mcp-agent technical-writer program publishes USD 75–200 per article. One
+reviewed application proposed a tested citation-first multilingual research
+agent using the existing LKT read-only SQLite provenance graph. It linked the
+public GitHub and X profiles plus one current MCP workflow article, and answered
+honestly that the separate LastMile AI Discord had not been joined. Do not draft
+until the topic, fee, assistance policy, rights, revisions, acceptance, payout,
+and timing are agreed. The submitted form is not an assignment or revenue.
+
 The strongest current no-marketplace application is Lopaka's worldwide DevPet
 embedded-UI prototype contract at a published USD 80–140 per hour for roughly
 10–15 hours a week over six to eight weeks. One application was submitted on

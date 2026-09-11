@@ -315,6 +315,16 @@ successful-send confirmation. Do not build the vendor-specific guide unless the
 program approves the application and fixes the campaign amount, API access,
 validation, rights, disclosure, payment details, and assistance expectations.
 
+LastMile AI's current mcp-agent technical-writer form publishes USD 75–200 per
+article and asks for public profiles, one writing sample, one proposed title,
+and Discord membership status.^24 One reviewed application proposed a tested
+citation-first multilingual research agent using LKT's read-only SQLite
+provenance graph and answered honestly that Discord had not been joined. The
+separate Discord registration requests a birth date and acceptance of Discord's
+terms, so no account or invented identity data was used. Do not draft before a
+human accepts the topic and fixes the fee, assistance policy, rights, revisions,
+acceptance criteria, payment route, and timing.
+
 ## Registration rule
 
 Create a new account only when all seven conditions are true:
@@ -399,3 +409,4 @@ routes already live.
 21. Grow & Convert. “[Write for Us](https://www.growandconvert.com/content-marketing-jobs/).” Accessed September 11, 2026.
 22. Vocal Video. “[8 Minute Product Demo](https://help.vocalvideo.com/article/16-product-tour).” Accessed September 11, 2026.
 23. WebAPI Group. “[Ambassador program](https://webapi.group/ambassador).” Accessed September 11, 2026.
+24. LastMile AI. “[mcp-agent Technical Writers Program](https://docs.google.com/forms/d/e/1FAIpQLScDjxA2SDe-tCz0WUlrp4hd-Zid1L6IByuvRaf5AKCBF9w2eA/viewform).” Accessed September 11, 2026.

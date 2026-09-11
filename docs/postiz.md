@@ -239,6 +239,14 @@ cycle; a new state transition can alert again.
 The wrapper keeps exactly one `lazypromotion-owned-monitor` tmux session and a
 private sanitized log. It does not start Chrome, noVNC, or Firefox.
 
+Threads is not connected to the current Postiz account. When the dedicated
+project browser is already open, `python threads_inbound_monitor.py once`
+checks the visible Replies activity page without opening any notification. It
+stores only opaque fingerprints and aggregate counts. A new item or an unknown
+page layout creates a visible-review alert; it cannot like, follow, message, or
+reply. `python owned_monitor.py status` includes this last sanitized Threads
+state beside the Postiz and application summaries.
+
 The same review pattern was used for a value-first LKT guide post to the
 connected Reddit account's own profile. The live provider contract and profile
 restrictions confirmed normal text and link posts were allowed without flair.

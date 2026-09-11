@@ -17,6 +17,7 @@ INBOX_URL="${LAZYPROMOTION_INBOX_URL:-https://www.icloud.com/mail/}"
 LINGQ_AFFILIATE_URL="https://www.lingq.com/settings/referrals"
 BOOKSHOP_AFFILIATE_URL="https://bookshop.org/affiliates/profile/introduction"
 POSTIZ_AFFILIATE_URL="https://partners.dub.co/postiz/apply"
+THREADS_REPLIES_URL="https://www.threads.com/activity/replies"
 VIEWER_DISPLAY="${LAZYPROMOTION_VIEWER_DISPLAY:-:11}"
 REFRESH_REGISTERED_VIEWER="${LAZYPROMOTION_REFRESH_REGISTERED_VIEWER:-0}"
 NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=0"
@@ -99,6 +100,7 @@ workspace_url_allowed() {
   [[ ! "$1" =~ [\?\&](token|access_token|auth|authorization|session|key|secret|code|__cf_chl_tk|__cf_chl_rt_tk)= ]] || return 1
   case "$1" in
     https://www.reddit.com/*|https://old.reddit.com/*|https://x.com/*|https://www.instagram.com/*|\
+    https://www.threads.com/*|\
     https://hn.algolia.com/*|https://search.google.com/*|https://platform.postiz.com/*|\
     https://www.icloud.com/*|https://www.lingq.com/*|https://bookshop.org/*|\
     https://partners.dub.co/*|https://contra.com/*|https://www.datacamp.com/*|\
@@ -116,7 +118,8 @@ workspace_url_is_baseline() {
   case "$1" in
     "$START_URL"|https://www.reddit.com/|https://www.icloud.com/mail/*|\
     https://platform.postiz.com/launches*|https://www.lingq.com/*|\
-    https://bookshop.org/affiliates/profile/*|https://partners.dub.co/postiz/*)
+    https://bookshop.org/affiliates/profile/*|https://partners.dub.co/postiz/*|\
+    "$THREADS_REPLIES_URL")
       return 0
       ;;
     *)
@@ -202,6 +205,7 @@ restore_browser_workspace() {
   cdp_has_url 'lingq.com/settings/referrals' || missing_urls+=("$LINGQ_AFFILIATE_URL")
   cdp_has_url 'bookshop.org/affiliates/profile' || missing_urls+=("$BOOKSHOP_AFFILIATE_URL")
   cdp_has_url 'partners.dub.co/postiz' || missing_urls+=("$POSTIZ_AFFILIATE_URL")
+  cdp_has_exact_url "$THREADS_REPLIES_URL" || missing_urls+=("$THREADS_REPLIES_URL")
   if [[ -f "$RUNTIME_DIR/workspace.urls" ]]; then
     while IFS= read -r url; do
       workspace_url_allowed "$url" || continue

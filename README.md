@@ -65,7 +65,7 @@ never count as revenue.
 | [`docs/paid-need-decision-2026-09-11.md`](docs/paid-need-decision-2026-09-11.md) | Ranked live buyer needs for verification, agent task engineering, pronunciation, and local knowledge work |
 | [`docs/paid-need-decision-2026-09-09.md`](docs/paid-need-decision-2026-09-09.md) | Current direct-route screen, evidence gaps, and submission gates |
 | [`metrics.py`](metrics.py), [`network.py`](network.py), and [`signals.py`](signals.py) | Evidence-gated applications, revenue funnel, public graph, and first-party demand signals |
-| [`owned_monitor.py`](owned_monitor.py), [`github_inbound_monitor.py`](github_inbound_monitor.py), and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring, public-issue alerts, and private fit-check intake |
+| [`owned_monitor.py`](owned_monitor.py), [`threads_inbound_monitor.py`](threads_inbound_monitor.py), [`github_inbound_monitor.py`](github_inbound_monitor.py), and [`lkt_inbox.py`](lkt_inbox.py) | Read-only publication monitoring, Threads reply alerts, public-issue alerts, and private fit-check intake |
 | [`stripe_revenue_monitor.py`](stripe_revenue_monitor.py) | Read-only live-charge detection with aggregate private state; never creates Stripe objects or records revenue automatically |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome review desktop |
 | [`application_watch.py`](application_watch.py) and [`application_inbox_monitor.py`](application_inbox_monitor.py) | Due-review schedule for direct and grouped submissions plus read-only aggregate matching for known application threads; the running owned monitor embeds the privacy-limited due summary and never opens mail or follows up |
@@ -207,7 +207,7 @@ specialization, not a claim that a closed marketplace listing is still open.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py stripe_revenue_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

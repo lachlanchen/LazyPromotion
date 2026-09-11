@@ -131,6 +131,7 @@ class OwnedMonitorTests(unittest.TestCase):
 
     def test_status_summary_excludes_posts_and_private_ids(self):
         status_path = self.root / "status-summary.json"
+        threads_path = self.root / "threads-status-summary.json"
         status_path.write_text(
             json.dumps(
                 {
@@ -149,15 +150,33 @@ class OwnedMonitorTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        threads_path.write_text(
+            json.dumps(
+                {
+                    "checked_at": "2026-09-01T01:00:00Z",
+                    "available": True,
+                    "reply_item_count": 1,
+                    "new_reply_item_count": 1,
+                    "review_required": True,
+                    "fingerprints": ["private-thread-key"],
+                }
+            ),
+            encoding="utf-8",
+        )
 
-        summary = owned_monitor.status_summary(status_path)
+        summary = owned_monitor.status_summary(
+            status_path, threads_path=threads_path
+        )
 
         self.assertTrue(summary["available"])
         self.assertFalse(summary["monitor_error"])
         self.assertEqual(summary["postiz"]["queued"], 2)
         self.assertEqual(summary["applications"]["due_for_human_review"], 1)
         self.assertEqual(summary["due_campaign_ids"], ["paid-route"])
+        self.assertTrue(summary["threads"]["review_required"])
+        self.assertNotIn("fingerprints", summary["threads"])
         self.assertNotIn("private-post-id", json.dumps(summary))
+        self.assertNotIn("private-thread-key", json.dumps(summary))
 
     def test_status_snapshot_is_owner_readable_only(self):
         self.run_monitor(FakePostiz(posts=[]))

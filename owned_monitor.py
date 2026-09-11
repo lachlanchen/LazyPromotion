@@ -34,6 +34,7 @@ DB_PATH = RUNTIME / "owned-monitor.sqlite3"
 STATUS_PATH = RUNTIME / "owned-monitor-status.json"
 LOG_PATH = RUNTIME / "owned-monitor.jsonl"
 LOCK_PATH = RUNTIME / "owned-monitor.lock"
+THREADS_STATUS_PATH = RUNTIME / "threads-inbound-monitor-status.json"
 
 PENDING_STATES = frozenset({"DRAFT", "QUEUE"})
 FAILED_STATES = frozenset({"ERROR", "FAILED"})
@@ -585,7 +586,31 @@ def loop(interval_minutes: int) -> None:
             time.sleep(interval_minutes * 60)
 
 
-def status_summary(path: Path = STATUS_PATH) -> dict:
+def threads_status_summary(path: Path = THREADS_STATUS_PATH) -> dict:
+    """Return only aggregate Threads state from the separate visible monitor."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"available": False}
+    allowed = {
+        "checked_at",
+        "available",
+        "authenticated",
+        "reply_item_count",
+        "new_reply_item_count",
+        "layout_unknown",
+        "review_required",
+        "content_opened",
+        "automatic_reply",
+    }
+    return {key: payload[key] for key in allowed if key in payload}
+
+
+def status_summary(
+    path: Path = STATUS_PATH,
+    *,
+    threads_path: Path = THREADS_STATUS_PATH,
+) -> dict:
     """Read the last private status without exposing post or integration details."""
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -602,6 +627,7 @@ def status_summary(path: Path = STATUS_PATH) -> dict:
         "checked_at": str(payload.get("checked_at") or ""),
         "monitor_error": "error" in payload,
         "postiz": dict(payload.get("summary") or {}),
+        "threads": threads_status_summary(threads_path),
         "applications": dict(application.get("summary") or {}),
         "due_campaign_ids": [str(item) for item in due_ids],
     }

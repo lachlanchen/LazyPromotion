@@ -149,6 +149,30 @@ def lazyremote_payload():
     }
 
 
+def book_specimen_payload():
+    return {
+        "offer": "book_specimen",
+        "contact_email": "publisher@example.com",
+        "role": "Independent publisher authorized to share the chapter privately.",
+        "shape": "4,800-word Markdown chapter with six supplied images",
+        "language": "Final English copy with aligned Traditional Chinese supplied.",
+        "output": (
+            "One black-and-white 6 x 9 print profile and one reflowable EPUB "
+            "for testing on two named readers."
+        ),
+        "deadline": "Specimen needed in three weeks; the complete book is separate.",
+        "handling": "Keep the source private and delete working copies after delivery.",
+        "constraints": "Preserve captions, credits, and heading hierarchy.",
+        "utm_source": "book specimen",
+        "utm_medium": "owned_site",
+        "utm_campaign": "book_specimen_pilot",
+        "utm_content": "fit_check",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 10000,
+    }
+
+
 def sample_record(payload=None, *, created_at=CREATED_AT):
     return {
         "version": lkt_inbox.RECORD_VERSION,
@@ -283,6 +307,7 @@ class EnvelopeTests(ReceiverFixture):
             story_clip_payload(),
             openhi_payload(),
             lazyremote_payload(),
+            book_specimen_payload(),
         ):
             with self.subTest(offer=payload["offer"]):
                 _, raw = encrypted_envelope(
@@ -332,6 +357,12 @@ class EnvelopeTests(ReceiverFixture):
         crossed_remote = lazyremote_payload()
         crossed_remote["source"] = "one recording"
         cases.append(crossed_remote)
+        missing_book_field = book_specimen_payload()
+        missing_book_field.pop("output")
+        cases.append(missing_book_field)
+        crossed_book = book_specimen_payload()
+        crossed_book["venue"] = "one journal"
+        cases.append(crossed_book)
         for payload in cases:
             with self.subTest(offer=payload.get("offer")):
                 _, raw = encrypted_envelope(
@@ -339,6 +370,40 @@ class EnvelopeTests(ReceiverFixture):
                 )
                 with self.assertRaises(lkt_inbox.InboxError):
                     self.validate(raw=raw)
+
+    def test_book_specimen_contract_matches_reviewed_web_payload(self):
+        self.assertEqual(
+            lkt_inbox.OFFER_FIELD_RULES["book_specimen"],
+            {
+                "role": (700, True, True),
+                "shape": (500, True, False),
+                "language": (700, True, True),
+                "output": (900, True, True),
+                "deadline": (700, True, True),
+                "handling": (800, True, True),
+                "constraints": (800, False, True),
+            },
+        )
+
+        optional_constraints = book_specimen_payload()
+        optional_constraints["constraints"] = ""
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(optional_constraints),
+        )
+        _, record = self.validate(raw=raw)
+        self.assertEqual(record["payload"], optional_constraints)
+
+        multiline_shape = book_specimen_payload()
+        multiline_shape["shape"] = "4,800 words\nMarkdown"
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(multiline_shape),
+        )
+        with self.assertRaises(lkt_inbox.InboxError):
+            self.validate(raw=raw)
 
     def test_rejects_filename_receipt_mismatch(self):
         with self.assertRaises(lkt_inbox.InboxError):
@@ -603,6 +668,37 @@ class SshClientTests(unittest.TestCase):
 
 
 class ReceiveTests(ReceiverFixture):
+    def test_book_specimen_content_stays_only_in_private_inquiry_file(self):
+        payload = book_specimen_payload()
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(payload),
+        )
+        report = self.receive(FakeClient({self.filename: raw}))
+        self.assertEqual(report["state"], "complete")
+
+        inquiry_path = self.config.inbox_dir / f"lkt-{self.receipt}.inquiry.json"
+        self.assertEqual(stat.S_IMODE(inquiry_path.stat().st_mode), 0o600)
+        inquiry = json.loads(inquiry_path.read_text(encoding="utf-8"))
+        self.assertEqual(inquiry["payload"], payload)
+
+        sanitized = (
+            self.config.status_path.read_text(encoding="utf-8")
+            + self.config.log_path.read_text(encoding="utf-8")
+        )
+        for private_value in (
+            payload["contact_email"],
+            payload["role"],
+            payload["shape"],
+            payload["language"],
+            payload["output"],
+            payload["deadline"],
+            payload["handling"],
+            payload["constraints"],
+        ):
+            self.assertNotIn(private_value, sanitized)
+
     def test_receives_verifies_saves_and_only_then_deletes(self):
         client = FakeClient({self.filename: self.raw})
         report = self.receive(client)

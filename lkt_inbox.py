@@ -166,6 +166,15 @@ OFFER_FIELD_RULES = {
         "goal": (700, True, True),
         "constraints": (800, False, True),
     },
+    "book_specimen": {
+        "role": (700, True, True),
+        "shape": (500, True, False),
+        "language": (700, True, True),
+        "output": (900, True, True),
+        "deadline": (700, True, True),
+        "handling": (800, True, True),
+        "constraints": (800, False, True),
+    },
 }
 
 

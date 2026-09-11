@@ -175,6 +175,15 @@ OFFER_FIELD_RULES = {
         "handling": (800, True, True),
         "constraints": (800, False, True),
     },
+    "pronunciation_lesson": {
+        "contrast": (300, True, False),
+        "learner_context": (700, True, True),
+        "language": (300, True, False),
+        "intended_use": (800, True, True),
+        "source": (800, False, True),
+        "deadline": (500, True, True),
+        "constraints": (800, False, True),
+    },
 }
 
 

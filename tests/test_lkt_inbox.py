@@ -173,6 +173,32 @@ def book_specimen_payload():
     }
 
 
+def pronunciation_lesson_payload():
+    return {
+        "offer": "pronunciation_lesson",
+        "contact_email": "tutor@example.com",
+        "contrast": "light/night",
+        "learner_context": (
+            "Adult Cantonese speakers at intermediate English level; "
+            "no learner names or recordings."
+        ),
+        "language": "English plus Traditional Chinese",
+        "intended_use": (
+            "A reusable browser and print lesson for weekly small-group tutoring."
+        ),
+        "source": "We own the school word list and may reuse its brand colours.",
+        "deadline": "Needed in three weeks; our team will deploy the static files.",
+        "constraints": "Keep the practice suitable for a four-minute lesson.",
+        "utm_source": "l and n",
+        "utm_medium": "owned_site",
+        "utm_campaign": "pronunciation_mini_lesson_pilot",
+        "utm_content": "for_tutors_fit_check",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 9000,
+    }
+
+
 def sample_record(payload=None, *, created_at=CREATED_AT):
     return {
         "version": lkt_inbox.RECORD_VERSION,
@@ -308,6 +334,7 @@ class EnvelopeTests(ReceiverFixture):
             openhi_payload(),
             lazyremote_payload(),
             book_specimen_payload(),
+            pronunciation_lesson_payload(),
         ):
             with self.subTest(offer=payload["offer"]):
                 _, raw = encrypted_envelope(
@@ -363,6 +390,18 @@ class EnvelopeTests(ReceiverFixture):
         crossed_book = book_specimen_payload()
         crossed_book["venue"] = "one journal"
         cases.append(crossed_book)
+        missing_pronunciation_field = pronunciation_lesson_payload()
+        missing_pronunciation_field.pop("learner_context")
+        cases.append(missing_pronunciation_field)
+        crossed_pronunciation = pronunciation_lesson_payload()
+        crossed_pronunciation["collection"] = "ten files"
+        cases.append(crossed_pronunciation)
+        multiline_contrast = pronunciation_lesson_payload()
+        multiline_contrast["contrast"] = "light/night\nright/night"
+        cases.append(multiline_contrast)
+        overlong_contrast = pronunciation_lesson_payload()
+        overlong_contrast["contrast"] = "x" * 301
+        cases.append(overlong_contrast)
         for payload in cases:
             with self.subTest(offer=payload.get("offer")):
                 _, raw = encrypted_envelope(
@@ -401,6 +440,41 @@ class EnvelopeTests(ReceiverFixture):
             self.key,
             self.receipt,
             record=sample_record(multiline_shape),
+        )
+        with self.assertRaises(lkt_inbox.InboxError):
+            self.validate(raw=raw)
+
+    def test_pronunciation_lesson_contract_matches_reviewed_web_payload(self):
+        self.assertEqual(
+            lkt_inbox.OFFER_FIELD_RULES["pronunciation_lesson"],
+            {
+                "contrast": (300, True, False),
+                "learner_context": (700, True, True),
+                "language": (300, True, False),
+                "intended_use": (800, True, True),
+                "source": (800, False, True),
+                "deadline": (500, True, True),
+                "constraints": (800, False, True),
+            },
+        )
+
+        optional_fields = pronunciation_lesson_payload()
+        optional_fields["source"] = ""
+        optional_fields["constraints"] = ""
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(optional_fields),
+        )
+        _, record = self.validate(raw=raw)
+        self.assertEqual(record["payload"], optional_fields)
+
+        multiline_contrast = pronunciation_lesson_payload()
+        multiline_contrast["contrast"] = "light/night\nright/night"
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(multiline_contrast),
         )
         with self.assertRaises(lkt_inbox.InboxError):
             self.validate(raw=raw)
@@ -668,6 +742,37 @@ class SshClientTests(unittest.TestCase):
 
 
 class ReceiveTests(ReceiverFixture):
+    def test_pronunciation_lesson_content_stays_only_in_private_inquiry_file(self):
+        payload = pronunciation_lesson_payload()
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(payload),
+        )
+        report = self.receive(FakeClient({self.filename: raw}))
+        self.assertEqual(report["state"], "complete")
+
+        inquiry_path = self.config.inbox_dir / f"lkt-{self.receipt}.inquiry.json"
+        self.assertEqual(stat.S_IMODE(inquiry_path.stat().st_mode), 0o600)
+        inquiry = json.loads(inquiry_path.read_text(encoding="utf-8"))
+        self.assertEqual(inquiry["payload"], payload)
+
+        sanitized = (
+            self.config.status_path.read_text(encoding="utf-8")
+            + self.config.log_path.read_text(encoding="utf-8")
+        )
+        for private_value in (
+            payload["contact_email"],
+            payload["contrast"],
+            payload["learner_context"],
+            payload["language"],
+            payload["intended_use"],
+            payload["source"],
+            payload["deadline"],
+            payload["constraints"],
+        ):
+            self.assertNotIn(private_value, sanitized)
+
     def test_book_specimen_content_stays_only_in_private_inquiry_file(self):
         payload = book_specimen_payload()
         _, raw = encrypted_envelope(

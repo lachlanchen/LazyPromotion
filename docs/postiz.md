@@ -198,6 +198,16 @@ account, time, normalized content hash, original URLs, `QUEUE` state, and no
 release URL. It is one bounded first-party release note, not publication, a fit
 inquiry, a sale, or revenue.
 
+Also on 2026-09-11, one tutor-facing L & N note was visibly reviewed and queued
+for LinkedIn at 2026-09-25T02:00:00Z. It starts with the finished free
+`light/night` lesson, then offers one fixed USD 250 bilingual pronunciation
+mini-lesson after a fit check and written scope. The preview showed the correct
+account, project-owned lesson image, exact copy, and local 10:00 AM time. The
+original tracked L & N URL was selected instead of a Postiz shortlink. A fresh
+provider read returned one exact normalized content match in `QUEUE`, with no
+release URL. This is scheduled owned distribution, not a buyer inquiry or
+revenue.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

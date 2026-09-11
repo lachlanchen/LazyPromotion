@@ -427,6 +427,20 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(x_route["campaign_id"], "l-and-n-pronunciation-launch")
         self.assertEqual(x_route["route"], "product")
 
+    def test_landn_tutor_offer_matches_the_linkedin_route(self):
+        campaign = json.loads(
+            (
+                owned_monitor.CAMPAIGNS
+                / "pronunciation-mini-lesson-pilot.json"
+            ).read_text(encoding="utf-8")
+        )
+        channel = campaign["channels"]["linkedin"]
+        route = owned_monitor.route_for_post(
+            "linkedin", channel["content"], owned_monitor.route_index()
+        )
+        self.assertEqual(route["campaign_id"], "pronunciation-mini-lesson-pilot")
+        self.assertEqual(route["route"], "product")
+
     def test_bilingual_lecture_pack_queue_keeps_protocol_less_destination(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "bilingual-lecture-pack-pilot.json").read_text(

@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -502,15 +502,16 @@
     {
       "id": "focused-pronunciation-micro-lessons",
       "title": "Focused pronunciation micro-lessons",
-      "state": "candidate",
-      "buyer": "A language learner or teacher working on one persistent sound contrast rather than a general accent course",
-      "need": "Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning",
+      "state": "active",
+      "buyer": "A tutor or small language school whose learners share one persistent sound contrast and need a reusable teaching piece rather than a general accent course",
+      "need": "Turn one repeatedly confused sound contrast into a compact bilingual lesson learners can hear, inspect, practise, print, and revisit",
       "projects": ["L-and-N", "PocketPolyglot", "WordOrigins"],
-      "first_deliverable": "Keep the L-and-N PWA free. The first browser lesson now connects one light/night minimal pair to listening, mouth-placement, airflow, recording, captions, and downloadable project-owned prompts",
-      "first_test": "Let the reviewed first-party posts invite one specific kind of practice feedback. In communities, offer the no-signup PWA only when a fresh question still lacks a useful answer; measure feedback rather than clicks",
+      "first_deliverable": "Keep the L-and-N PWA free and offer one fixed USD 250 custom bilingual pronunciation mini-lesson: one sound contrast, one learner group, English plus Simplified or Traditional Chinese, two model prompts, original teaching visuals, a printable four-step web lesson, a 15–30 second captioned walkthrough, deployable lesson files, and one correction pass",
+      "first_test": "Use the complete light/night lesson as the sample, let one reviewed tutor-facing first-party post lead to the fit check, and qualify the exact contrast, learner context, language, rights, and delivery boundary before payment",
       "proof": [
         "https://l-and-n.lazying.art/",
         "https://l-and-n.lazying.art/lessons/light-vs-night/",
+        "https://l-and-n.lazying.art/for-tutors/",
         "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk",
         "https://github.com/lachlanchen/L-and-N",
         "https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json",
@@ -518,13 +519,16 @@
         "https://github.com/lachlanchen/WordOrigins"
       ],
       "gates": [
+        "The fit check collects teaching context only; do not request or accept learner recordings or personal data",
+        "Agree the two sounds or words, learner group, language, permitted source material, delivery date, correction boundary, cancellation, and refund terms in writing before payment",
+        "Clinical assessment, certified translation, voice cloning, learner-data collection, app integration, hosting, a custom domain, and ongoing support are excluded from the fixed pack",
         "Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device",
         "Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus",
         "Record provenance, consent, and redistribution rights for every bundled voice and lesson asset",
         "Call the direct APK a test build. The Google Play production listing is independently public, but availability is not evidence of a download, retained learner, customer, or revenue",
         "Treat TestFlight as a beta route and the Apple build as a release candidate until a public Apple App Store listing is independently verified"
       ],
-      "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 3}
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 4, "low_support": 4, "repeatability": 5}
     }
   ]
 }

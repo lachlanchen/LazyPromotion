@@ -249,11 +249,12 @@
       "url": "https://github.com/lachlanchen/L-and-N",
       "homepage": "https://l-and-n.lazying.art/",
       "summary": "A focused English L/N pronunciation coach with Mandarin and Cantonese guidance, minimal-pair practice, and PWA, iOS, Android, and watchOS builds.",
-      "reply_context": "Use L-and-N only for a concrete L/N sound-confusion or teaching need. Lead with a complete practice method, then mention the free no-signup PWA when it helps the learner act on the advice. The Google Play production listing is public at https://play.google.com/store/apps/details?id=art.lazying.landn; the separate direct APK and internal-test link remain test builds for testers, and TestFlight build 2 remains a public beta rather than a verified Apple App Store release. Do not call its score diagnostic, clinical, scientifically validated, or reliably on-device across browsers; recognition depends on the user's platform and browser.",
+      "reply_context": "Use L-and-N only for a concrete L/N sound-confusion or pronunciation-teaching need. Lead with a complete practice method, then mention the free no-signup PWA when it helps the learner act on the advice. Tutors and small language schools with one specific sound contrast can inspect the complete light/night sample before the separate USD 250 bilingual mini-lesson fit check at https://l-and-n.lazying.art/for-tutors/. The service covers one contrast, one learner group, English plus Simplified or Traditional Chinese, model audio, original teaching visuals, a printable four-step web lesson, a short captioned walkthrough, deployable lesson files, and one correction pass. It excludes clinical assessment, certified translation, voice cloning, learner-data collection, app integration, hosting, a custom domain, and ongoing support. The Google Play production listing is public at https://play.google.com/store/apps/details?id=art.lazying.landn; the separate direct APK and internal-test link remain test builds for testers, and TestFlight build 2 remains a public beta rather than a verified Apple App Store release. Do not call its score diagnostic, clinical, scientifically validated, or reliably on-device across browsers; recognition depends on the user's platform and browser.",
       "keywords": [
         "l and n pronunciation", "pronounce l and n", "confuse l and n",
         "l n minimal pairs", "l/n minimal pairs", "l sound n sound",
-        "l n pronunciation practice", "l n pronunciation app"
+        "l n pronunciation practice", "l n pronunciation app",
+        "custom pronunciation lesson", "pronunciation lesson for tutors"
       ]
     },
     {

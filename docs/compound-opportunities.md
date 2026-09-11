@@ -12,6 +12,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Source-aware book specimen](#source-aware-book-specimen) | active | Turn one representative chapter into traceable print and EPUB specimens so layout, typography, source structure, and production risks can be judged early | Let the chapter-first production guide and project-owned downloadable specimen lead to the free fit check; do not accept a complete book or urgent production schedule without a separately reviewed quote | 4.60 |
 | [Source-preserving lexical ingestion](#source-preserving-lexical-ingestion) | candidate | Add new dictionary or glossary sources to an existing database without losing source locators, raw values, transformation history, rejects, or safe reruns | Find a new explicit paid lexical-ingestion need and use the public two-format proof only when the source formats, provenance problem, and safe-rerun boundary genuinely match; the original USD 1,200 listing closed before submission | 4.50 |
 | [AI clip assembly pilot](#ai-clip-assembly) | active | Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package | Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment | 4.45 |
+| [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | active | Turn one repeatedly confused sound contrast into a compact bilingual lesson learners can hear, inspect, practise, print, and revisit | Use the complete light/night lesson as the sample, let one reviewed tutor-facing first-party post lead to the fit check, and qualify the exact contrast, learner context, language, rights, and delivery boundary before payment | 4.40 |
 | [Manuscript build and redline sprint](#scientific-manuscript-workbench) | active | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed | 4.30 |
 | [Lecture-to-study library](#lecture-to-study-library) | active | Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest | Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases | 4.15 |
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
@@ -26,7 +27,6 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Explainable game classroom bundle](#explainable-game-classroom) | candidate | Teach decisions with exact rules and visible reasoning instead of opaque move recommendations | Let one teacher or club use a short lesson pack and observe where explanation or setup fails | 3.50 |
 | [Song-to-language lesson](#song-to-language-lesson) | candidate | Turn one song into a teachable listening unit with corrected lyrics, translation, pronunciation help, vocabulary, and source-aware notes | Build one complete lesson from a LazyingArt-owned song, then show it privately to five language teachers or artists who already publish learning material | 3.50 |
 | [Short-video caption pipeline feasibility](#short-video-pipeline-engineering) | evidence-building | Accept large mobile videos, generate correctly timed multilingual captions, render reusable styles, and return a vertical MP4 through an asynchronous API | Use the current low-proposal Upwork brief as demand evidence and apply only after account, fee, rate, availability, acceptance, and client-spend review; show the synthetic mixed-script renderer fixture while keeping Hebrew ASR and native-language correctness explicitly unproven | 3.45 |
-| [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | candidate | Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning | Let the reviewed first-party posts invite one specific kind of practice feedback. In communities, offer the no-signup PWA only when a fresh question still lacks a useful answer; measure feedback rather than clicks | 3.35 |
 | [Source-aware money and decision workbook](#source-aware-money-workbook) | gated | Turn interviews and research notes into exercises, source trails, and durable decisions rather than trading signals or income promises | Publish one sourced exercise chapter and measure completion or direct reader requests, not clicks alone | 3.30 |
 | [Classical Chinese history classroom pack](#classical-chinese-history-classroom) | gated | Connect short 文言文 passages to modern Chinese, English, Japanese reading aids, historical context, and interactive practice | Show one rights-cleared lesson to teachers before producing a larger collection | 3.20 |
 | [Durable AI conversation and voice memory](#durable-ai-memory-workflow) | gated | Preserve decisions, ideas, provenance, and corrections outside fragile conversation timelines without turning every chat into another manual filing job | Keep the aligned public pages in free private-alpha mode, then verify a native live-AI physical-microphone round trip, end-to-end export handling, retention, and full deletion across agent, speech, and backup data with opt-in test content before inviting a small private cohort | 2.95 |
@@ -153,6 +153,42 @@ Gates:
 - The six-source proof is project-owned editing evidence, not customer work, an advertising result, or proof that unseen clips will fit
 - New filming or generation, shot recreation, voice cloning, paid stock, translation, extra formats, publishing, native editor files, and performance promises are outside the fixed pilot unless separately accepted
 - Agree usable sources, story sentence, native-project requirement, delivery, correction, cancellation, refund, retention, and payment terms before source transfer
+
+### Focused pronunciation micro-lessons
+
+**State:** active
+
+**Buyer:** A tutor or small language school whose learners share one persistent sound contrast and need a reusable teaching piece rather than a general accent course
+
+**Need:** Turn one repeatedly confused sound contrast into a compact bilingual lesson learners can hear, inspect, practise, print, and revisit
+
+**Existing work:** [L-and-N](https://github.com/lachlanchen/L-and-N), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [WordOrigins](https://github.com/lachlanchen/WordOrigins)
+
+**First deliverable:** Keep the L-and-N PWA free and offer one fixed USD 250 custom bilingual pronunciation mini-lesson: one sound contrast, one learner group, English plus Simplified or Traditional Chinese, two model prompts, original teaching visuals, a printable four-step web lesson, a 15–30 second captioned walkthrough, deployable lesson files, and one correction pass
+
+**First demand test:** Use the complete light/night lesson as the sample, let one reviewed tutor-facing first-party post lead to the fit check, and qualify the exact contrast, learner context, language, rights, and delivery boundary before payment
+
+Evidence:
+
+- <https://l-and-n.lazying.art/>
+- <https://l-and-n.lazying.art/lessons/light-vs-night/>
+- <https://l-and-n.lazying.art/for-tutors/>
+- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk>
+- <https://github.com/lachlanchen/L-and-N>
+- <https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json>
+- <https://github.com/lachlanchen/PocketPolyglot>
+- <https://github.com/lachlanchen/WordOrigins>
+
+Gates:
+
+- The fit check collects teaching context only; do not request or accept learner recordings or personal data
+- Agree the two sounds or words, learner group, language, permitted source material, delivery date, correction boundary, cancellation, and refund terms in writing before payment
+- Clinical assessment, certified translation, voice cloning, learner-data collection, app integration, hosting, a custom domain, and ongoing support are excluded from the fixed pack
+- Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device
+- Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
+- Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
+- Call the direct APK a test build. The Google Play production listing is independently public, but availability is not evidence of a download, retained learner, customer, or revenue
+- Treat TestFlight as a beta route and the Apple build as a release candidate until a public Apple App Store listing is independently verified
 
 ### Manuscript build and redline sprint
 
@@ -550,38 +586,6 @@ Gates:
 - The client's low historical spend and payment-per-accepted-milestone language require exact acceptance and payment review
 - Keep application, communication, source files, contract, and payment on Upwork
 
-### Focused pronunciation micro-lessons
-
-**State:** candidate
-
-**Buyer:** A language learner or teacher working on one persistent sound contrast rather than a general accent course
-
-**Need:** Hear, produce, and remember a difficult sound contrast through minimal pairs, visible articulation cues, and connected word meaning
-
-**Existing work:** [L-and-N](https://github.com/lachlanchen/L-and-N), [PocketPolyglot](https://github.com/lachlanchen/PocketPolyglot), [WordOrigins](https://github.com/lachlanchen/WordOrigins)
-
-**First deliverable:** Keep the L-and-N PWA free. The first browser lesson now connects one light/night minimal pair to listening, mouth-placement, airflow, recording, captions, and downloadable project-owned prompts
-
-**First demand test:** Let the reviewed first-party posts invite one specific kind of practice feedback. In communities, offer the no-signup PWA only when a fresh question still lacks a useful answer; measure feedback rather than clicks
-
-Evidence:
-
-- <https://l-and-n.lazying.art/>
-- <https://l-and-n.lazying.art/lessons/light-vs-night/>
-- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk>
-- <https://github.com/lachlanchen/L-and-N>
-- <https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json>
-- <https://github.com/lachlanchen/PocketPolyglot>
-- <https://github.com/lachlanchen/WordOrigins>
-
-Gates:
-
-- Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device
-- Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
-- Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
-- Call the direct APK a test build. The Google Play production listing is independently public, but availability is not evidence of a download, retained learner, customer, or revenue
-- Treat TestFlight as a beta route and the Apple build as a release candidate until a public Apple App Store listing is independently verified
-
 ### Source-aware money and decision workbook
 
 **State:** gated
@@ -669,4 +673,4 @@ Gates:
 
 ## Interpretation
 
-LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, AI clip assembly, and OpenHI software reproducibility, and the LazyRemote Network Fit Review are eight priced service routes with an exact scope, public proof, and pre-transfer qualification. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.
+LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, AI clip assembly, OpenHI software reproducibility, the LazyRemote Network Fit Review, and the custom pronunciation mini-lesson are nine priced service routes with an exact scope, public proof, and pre-transfer qualification. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.

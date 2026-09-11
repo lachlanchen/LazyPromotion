@@ -127,8 +127,9 @@ def render(payload: dict) -> str:
             "",
             (
                 "LKT collection fit, manuscript redline, the bilingual lecture pack, the story "
-                "clip pilot, the book specimen, AI clip assembly, and OpenHI software "
-                "reproducibility, and the LazyRemote Network Fit Review are eight priced service "
+                "clip pilot, the book specimen, AI clip assembly, OpenHI software "
+                "reproducibility, the LazyRemote Network Fit Review, and the custom pronunciation "
+                "mini-lesson are nine priced service "
                 "routes with an exact scope, public proof, and pre-transfer qualification. "
                 "Source-preserving lexical ingestion remains a candidate specialization of LKT: "
                 "its original USD 1,200 listing closed before submission, while the reusable "

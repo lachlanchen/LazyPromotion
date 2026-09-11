@@ -30,9 +30,9 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_all_eight_active_routes(self):
+    def test_first_thousand_plan_names_all_nine_active_routes(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: eight focused service routes", body)
+        self.assertIn("# First USD 1,000: nine focused service routes", body)
         for offer in (
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
@@ -42,9 +42,10 @@ class RepositoryTests(unittest.TestCase):
             "Book Specimen Sprint",
             "OpenHI Software Reproducibility Sprint",
             "LazyRemote Network Fit Review",
+            "Custom Bilingual Pronunciation Mini-Lesson",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these eight routes", body)
+        self.assertIn("payments across these nine routes", body)
 
     def test_openhi_reproducibility_campaign_is_bounded(self):
         campaign = json.loads(
@@ -117,6 +118,32 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_medium=profile", profile["destination"])
         self.assertTrue(profile["hardware_boundary_shown"])
         self.assertIn("attention only", profile["boundary"])
+
+    def test_pronunciation_mini_lesson_campaign_is_bounded(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "pronunciation-mini-lesson-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        offer = campaign["offer"]
+        self.assertEqual(offer["state"], "live_verified")
+        self.assertEqual(offer["price"], "USD 250")
+        self.assertEqual(len(offer["deliverables"]), 6)
+        self.assertIn("ten business days", offer["delivery"])
+        self.assertIn("before requesting payment", offer["payment_gate"])
+        self.assertIn("learner recordings", " ".join(offer["excluded"]))
+        self.assertIn("/for-tutors/", campaign["offer"]["url"])
+        self.assertIn("/lessons/light-vs-night/", campaign["proof"]["sample"])
+        self.assertFalse(campaign["payment"]["public_checkout"])
+        self.assertFalse(campaign["payment"]["payment_object_created"])
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "queued_verified")
+        self.assertEqual(linkedin["verification"]["provider_state"], "QUEUE")
+        self.assertTrue(linkedin["verification"]["content_exact_after_html_normalization"])
+        self.assertTrue(linkedin["verification"]["original_owned_url_retained"])
+        self.assertFalse(linkedin["verification"]["shortlink_present"])
+        self.assertFalse(linkedin["verification"]["release_present"])
+        self.assertEqual(campaign["funnel"]["received_gross_usd"], 0)
 
     def test_plesk_pitch_is_proposal_first_and_revenue_stays_zero(self):
         campaign = json.loads(
@@ -409,6 +436,8 @@ class RepositoryTests(unittest.TestCase):
             "https://l-and-n.lazying.art/",
         )
         self.assertIn("test builds", by_id["l-and-n"]["reply_context"])
+        self.assertIn("https://l-and-n.lazying.art/for-tutors/", by_id["l-and-n"]["reply_context"])
+        self.assertIn("USD 250", by_id["l-and-n"]["reply_context"])
         self.assertEqual(
             by_id["lexiconatlas"]["reply_url"],
             "https://github.com/lachlanchen/LexiconAtlas/releases/latest",

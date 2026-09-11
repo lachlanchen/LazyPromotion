@@ -1,0 +1,87 @@
+{
+  "id": "pronunciation-mini-lesson-pilot",
+  "version": 2,
+  "objective": "Sell and deliver four bounded USD 250 bilingual pronunciation mini-lessons to tutors or small language schools while keeping the L & N learner app free.",
+  "offer": {
+    "state": "live_verified",
+    "url": "https://l-and-n.lazying.art/for-tutors/",
+    "price": "USD 250",
+    "buyer": "A tutor or small language school with one defined learner group and one recurring sound contrast",
+    "scope": "One pronunciation contrast, one learner group, English plus Simplified Chinese or Traditional Chinese",
+    "deliverables": [
+      "two short model-audio prompts and readable phonetic cues",
+      "original teaching visuals for the relevant contact, airflow, or sound pattern",
+      "one responsive and printable four-step web lesson",
+      "one 15–30 second captioned walkthrough",
+      "the deployable static lesson files",
+      "one consolidated factual correction pass"
+    ],
+    "delivery": "Within ten business days after payment and complete agreed inputs",
+    "payment_gate": "Give a fit or no-fit answer, then accept the exact words, learner context, language, source rights, delivery date, correction boundary, cancellation, and refund terms in writing before requesting payment.",
+    "refund": "Full refund before work begins; after work begins, refund unstarted stages.",
+    "excluded": [
+      "clinical assessment or treatment",
+      "certified translation",
+      "voice cloning",
+      "learner recordings or personal-data collection",
+      "app integration, hosting, or a custom domain",
+      "ongoing support or unlimited revisions"
+    ]
+  },
+  "proof": {
+    "sample": "https://l-and-n.lazying.art/lessons/light-vs-night/",
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "release_commit": "beb2ead68a79c72333493b0cad6371a49d62052f",
+    "live_checks": "The offer, sample, app, stylesheet, sitemap, signed Android test build, privacy page, HTTPS headers, and rollback release were verified after the immutable 2026-09-11 deployment.",
+    "boundary": "The sample is project-owned proof of the delivery format. It is not customer work, a testimonial, a clinical result, a certified translation, or evidence of sales."
+  },
+  "channels": {
+    "owned_sample": {
+      "state": "live_verified",
+      "route": "The free sample contains one quiet, exact-fit link for tutors."
+    },
+    "linkedin": {
+      "state": "queued_verified",
+      "target": "LinkedIn",
+      "scheduled_for": "2026-09-25T02:00:00Z",
+      "content": "Some pronunciation problems are too small for a full course and too persistent for another list of tips.\n\nI built this light/night lesson so a learner can hear the contrast, see the air path, try a short phrase, and come back later. It works without an account or microphone.\n\nFor tutors and small language schools, I’m now offering the same format for one contrast your learners keep mixing up: a bilingual web lesson with model audio, original teaching visuals, printable steps, a short captioned walkthrough, and one correction pass. The founding pack is USD 250 after a fit check and written scope.\n\nFinished sample and scope:\nhttps://l-and-n.lazying.art/for-tutors/?utm_source=linkedin&utm_medium=social&utm_campaign=pronunciation_mini_lesson_pilot&utm_content=light_night_sample",
+      "media": {
+        "source": "/home/lachlan/ProjectsLFS/L-And-N/public/lessons/light-vs-night/social.png",
+        "sha256": "d8b758e744ad00fba5712b1290f75bb88e892d42ee8277be83d4fb2698c2927c",
+        "description": "Project-owned light/night lesson cover; it is the sample being offered, not customer work."
+      },
+      "verification": {
+        "reviewed_at": "2026-09-11T10:31:00Z",
+        "visible_preview": "The isolated project browser showed the intended LinkedIn account, complete copy, project-owned image, and 2026-09-25 10:00 Asia/Hong_Kong time before one schedule action.",
+        "provider_state": "QUEUE",
+        "provider_publish_date": "2026-09-25T02:00:00.000Z",
+        "provider": "linkedin",
+        "normalized_content_sha256": "cc515dae82e4a319783a6a0d28134d89cb8f30c486d911ab160a6200e29be309",
+        "content_exact_after_html_normalization": true,
+        "original_owned_url_retained": true,
+        "shortlink_present": false,
+        "release_present": false,
+        "boundary": "A queued first-party post is not publication, an inquiry, an accepted scope, a payment, or revenue."
+      },
+      "rule": "Publish one sample-first tutor note; do not duplicate the existing learner launch posts."
+    },
+    "community_replies": {
+      "automatic": false,
+      "rule": "Answer the teaching problem first and link only when a current tutor explicitly needs a reusable lesson for one sound contrast."
+    }
+  },
+  "payment": {
+    "stripe_account_readiness": "verified_read_only",
+    "public_checkout": false,
+    "payment_object_created": false,
+    "request_only_after_scope_acceptance": true
+  },
+  "funnel": {
+    "fit_inquiries": 0,
+    "qualified_leads": 0,
+    "accepted_scopes": 0,
+    "confirmed_payments": 0,
+    "delivered_lessons": 0,
+    "received_gross_usd": 0
+  }
+}

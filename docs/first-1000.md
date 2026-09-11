@@ -1,4 +1,4 @@
-# First USD 1,000: eight focused service routes
+# First USD 1,000: nine focused service routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
@@ -12,9 +12,23 @@ one rights-cleared dataset, and one named repository pipeline stage. Each route
 has a fixed scope and project-owned proof. The **LazyRemote Network Fit Review**
 adds a software-only **USD 250** route for one reachable relay and up to three
 existing customer-owned computers. The milestone can be two USD 500
-sprints, four USD 250 sprints, or any confirmed combination of payments across these eight routes
+sprints, four USD 250 sprints, or any confirmed combination of payments across these nine routes
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
+
+The ninth route uses the finished L & N `light/night` lesson as direct proof for
+a **USD 250 Custom Bilingual Pronunciation Mini-Lesson** for tutors and small
+language schools. It covers one sound contrast, one learner group, English plus
+Simplified or Traditional Chinese, two model prompts, original teaching
+visuals, a printable four-step web lesson, a 15–30 second captioned walkthrough,
+deployable lesson files, and one correction pass. The [offer and fit
+check](https://l-and-n.lazying.art/for-tutors/) and [finished project-owned
+sample](https://l-and-n.lazying.art/lessons/light-vs-night/) are live. A fit or
+no-fit answer and written scope come before payment; learner recordings are not
+requested. No inquiry, accepted scope, payment, or revenue exists yet.
+One sample-first LinkedIn note is queued for 2026-09-25T02:00:00Z with the
+project-owned lesson image and original tracked offer URL; queue state is not
+publication or demand.
 
 LazyRemote now has the same guarded direct-payment readiness as the other
 active service routes. Its USD 250 Stripe configuration fixes quantity at one,
@@ -391,7 +405,7 @@ is also live. It explains the Wine/RDP/input path, the exact verified host and
 UU boundary, safe install route, update discipline, bilingual compatibility
 form, and the separate LazyRemote option before one quiet paid-review paragraph.
 BLOG commit `6763eff`; publication is not a lead or sale.
-One read-only GitHub monitor now watches public issue metadata across eight
+One read-only GitHub monitor now watches public issue metadata across nine
 high-attention or offer repositories in a single GraphQL query. Its first pass
 baselined one existing issue and raised no alert; it requests no issue body and
 cannot comment or reply. Later new keys trigger manual relevance review only.

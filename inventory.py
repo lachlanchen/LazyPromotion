@@ -191,6 +191,13 @@ PRIORITIES = [
         "url": "https://remote.lazying.art/#review",
     },
     {
+        "work": "L & N",
+        "need": "Turn one repeatedly confused sound contrast into a small bilingual web lesson learners can revisit",
+        "audience": "Tutors and small language schools with one defined learner group",
+        "route": "USD 250 Custom Bilingual Pronunciation Mini-Lesson after a fit check; the free app and complete light/night sample remain available first",
+        "url": "https://l-and-n.lazying.art/for-tutors/",
+    },
+    {
         "work": "Musia + LocalVideoGen",
         "need": "Local-first music localization and controllable video generation",
         "audience": "Creators who already have a specific song, stem, or video workflow problem",
@@ -279,11 +286,11 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across eight "
+            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across nine "
             "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
             "Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen "
-            "Sprint, AI Clip Assembly, the OpenHI software reproducibility sprint, and the "
-            "LazyRemote Network Fit Review. "
+            "Sprint, AI Clip Assembly, the OpenHI software reproducibility sprint, the "
+            "LazyRemote Network Fit Review, and the Custom Bilingual Pronunciation Mini-Lesson. "
             "The eInk inquiry and Figurine checkout "
             "remain separate offers, not competing calls to action. Open-source replies "
             "should optimize for a solved problem, not for extracting a donation. GitHub "

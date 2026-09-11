@@ -21,6 +21,7 @@ class OpportunityTests(unittest.TestCase):
                 "scientific-manuscript-workbench",
                 "private-multidevice-remote-access",
                 "openhi-reproducibility-session",
+                "focused-pronunciation-micro-lessons",
             ],
         )
         self.assertEqual(
@@ -94,7 +95,7 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("operator-reviewed deployment evidence", body)
         self.assertIn("Google Play production listing is independently public", body)
         self.assertIn("Treat TestFlight as a beta route", body)
-        self.assertIn("are eight priced service routes", body)
+        self.assertIn("are nine priced service routes", body)
         self.assertIn("listing closed before submission", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)

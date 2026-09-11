@@ -887,6 +887,27 @@ class RepositoryTests(unittest.TestCase):
                     route,
                 ))
 
+    def test_x_subtitle_route_requires_creator_owned_media_and_a_request(self):
+        route = next(
+            item for item in browser.discovery_query_lanes("x")["core"]
+            if item["project_id"] == "lazyedit"
+        )
+        self.assertEqual(len(route["required_body_groups"]), 2)
+        self.assertTrue(browser.route_body_qualified(
+            "I have a video from my own channel and need captions. Can anyone "
+            "recommend an editor?",
+            route,
+        ))
+        self.assertFalse(browser.route_body_qualified(
+            "Want to use AI on YouTube without your channel feeling like AI slop? "
+            "Use original editing, add subtitles, and verify your research.",
+            route,
+        ))
+        self.assertFalse(browser.route_body_qualified(
+            "I made my service for adding subtitles to your video. Available for work.",
+            route,
+        ))
+
     def test_eink_routes_require_multilingual_purchase_intent(self):
         for platform in ("reddit", "x"):
             routes = [

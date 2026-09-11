@@ -286,7 +286,12 @@
       {
         "project_id": "lazyedit",
         "query": "(\"add subtitles\" OR \"need captions\") video (help OR advice) -filter:retweets",
-        "purpose": "Explicit subtitle help requests from video creators"
+        "purpose": "Explicit subtitle help requests from video creators",
+        "required_body_groups": [
+          ["my video", "our video", "my channel", "our channel", "my footage", "our footage", "my recording", "our recording", "i have a video", "we have a video"],
+          ["need subtitles", "need captions", "looking for an editor", "need an editor", "who can add", "can someone add", "how do i add", "help me add", "can anyone recommend"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i made", "i launched", "we built", "we created", "we made", "we launched", "my service", "our service", "for hire", "available for work"]
       },
       {
         "project_id": "video2book",

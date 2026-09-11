@@ -405,6 +405,16 @@ backup administration, and recovery ownership. It contains no link, product,
 offer, private message, or follow-up pitch. This is a helpful interaction and
 public-profile trust signal, not buyer intent, a lead, or revenue.
 
+A two-day-old [private PubMed/PMC corpus question](https://www.reddit.com/r/Rag/comments/1wbot49/how_would_you_build_a_local_pubmedpmcstyle_search/)
+had no answers and asked for an exact local retrieval stack. One reviewed
+[reply](https://www.reddit.com/r/Rag/comments/1wbot49/comment/p93noza/)
+separates fielded BM25, NCBI MedCPT dense retrieval, reciprocal-rank fusion,
+section reranking, stable PMID/PMCID citations, abstention, and retrieval-first
+evaluation. It also states plainly that the maintainer's experience is not
+PMC-specific. The reply cites NCBI but contains no LazyingArt link, offer, or
+call to action; the Reddit profile remains the only quiet discovery path. This
+is useful public work, not a lead or revenue.
+
 The same need now has a reusable
 [small-team remote-access guide](https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html)
 in English, Simplified Chinese, and Japanese. It starts with a role matrix,

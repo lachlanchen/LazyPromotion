@@ -1586,7 +1586,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 37)
+        self.assertEqual(campaign["version"], 38)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1616,6 +1616,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(chat_archive["lead_or_sale_observed"])
         self.assertIn("immutable raw exports", chat_archive["content"])
         self.assertNotIn("lazying.art", chat_archive["content"].casefold())
+        biomedical_reply = campaign["channels"]["reddit"][
+            "biomedical_retrieval_reply"
+        ]
+        self.assertEqual(
+            biomedical_reply["state"], "sent_once_and_visibly_verified"
+        )
+        self.assertEqual(biomedical_reply["visible_submission_count"], 1)
+        self.assertFalse(biomedical_reply["linked_owned_asset"])
+        self.assertTrue(biomedical_reply["profile_only_context"])
+        self.assertFalse(biomedical_reply["automatic_follow_up"])
+        self.assertFalse(biomedical_reply["lead_or_sale_observed"])
+        self.assertIn("MedCPT-Query-Encoder", biomedical_reply["primary_source"])
+        self.assertIn("not a PMC-specific system", biomedical_reply["qualification_boundary"])
         chat_guide = campaign["channels"]["lazyblog"][
             "chat_archive_current_state_guide"
         ]

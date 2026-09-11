@@ -1,5 +1,5 @@
 {
-  "version": 37,
+  "version": 38,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -811,6 +811,23 @@
         "linked_owned_asset": false,
         "lead_or_sale_observed": false,
         "policy": "Value-only community answer with no LazyingArt mention or link. The profile may provide quiet context, but the public reply is not a lead, customer result, or permission for follow-up promotion."
+      },
+      "biomedical_retrieval_reply": {
+        "state": "sent_once_and_visibly_verified",
+        "checked_at": "2026-09-11T05:38:08Z",
+        "thread": "https://www.reddit.com/r/Rag/comments/1wbot49/how_would_you_build_a_local_pubmedpmcstyle_search/",
+        "url": "https://www.reddit.com/r/Rag/comments/1wbot49/comment/p93noza/",
+        "need": "Choose a fully local retrieval, reranking, storage, generation, and evaluation design for a private PubMed and PMC corpus on one workstation.",
+        "action": "Recommended a canonical PMID/PMCID/DOI source table, fielded BM25 plus NCBI MedCPT dense retrieval, reciprocal-rank fusion, section-level reranking, stable citations and abstention, a FAISS-versus-Qdrant boundary, and a real-query evaluation set before generator tuning.",
+        "qualification_boundary": "The reply says the maintainer has built provenance-heavy local document pipelines but not a PMC-specific system.",
+        "primary_source": "https://huggingface.co/ncbi/MedCPT-Query-Encoder",
+        "reply_sha256": "b6f8545bf215cf2a0c9121289267da9a675203fffdc6d3f087770d6a8ccd1cc7",
+        "visible_submission_count": 1,
+        "linked_owned_asset": false,
+        "profile_only_context": true,
+        "automatic_follow_up": false,
+        "lead_or_sale_observed": false,
+        "policy": "The answer was reviewed in the visible isolated browser before one guarded submission and then verified at its public permalink. It cites an NCBI model card but contains no LazyingArt name, owned link, service, price, call to action, or private message. Treat it as a helpful interaction and quiet profile signal, not a lead, customer result, payment, or revenue."
       },
       "chat_archive_reply": {
         "state": "sent_and_visibly_verified",

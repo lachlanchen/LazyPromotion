@@ -3292,7 +3292,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -3313,6 +3313,23 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertIn("e8512197", campaign["offer_state"]["proof"]["source"])
         self.assertIn("does not upload", campaign["offer_state"]["intake"])
+        fit_check = campaign["offer_state"]["fit_check"]
+        self.assertEqual(fit_check["state"], "live_encrypted_review_first")
+        self.assertEqual(fit_check["offer"], "book_specimen")
+        self.assertTrue(fit_check["metadata_only"])
+        self.assertFalse(fit_check["source_file_upload"])
+        self.assertTrue(fit_check["explicit_confirmation_required"])
+        self.assertEqual(
+            fit_check["synthetic_round_trip"]["state"],
+            "verified_and_remote_deleted",
+        )
+        self.assertEqual(
+            fit_check["synthetic_round_trip"]["submission_count"], 1
+        )
+        self.assertTrue(
+            fit_check["synthetic_round_trip"]["synthetic_local_payload_artifacts_removed"]
+        )
+        self.assertFalse(fit_check["synthetic_round_trip"]["customer_data_used"])
         payment = campaign["offer_state"]["payment"]
         self.assertEqual(payment["state"], "ready_for_reviewed_live_request")
         self.assertEqual(payment["price"], "USD 250")

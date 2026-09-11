@@ -41,6 +41,15 @@ and retention checks, and cannot be exported as a public checkout. A sanitized
 read-only check confirmed the live account can charge and pay out. No Stripe
 object, payment link, charge, or payout was created.
 
+Its last pre-inquiry gap is also closed. The live fit check now keeps the
+request local through review, enables submission only after a visible
+confirmation, sends metadata rather than manuscript files, and retains email
+and copy fallbacks. One labelled synthetic request was accepted, encrypted by
+the WordPress endpoint, authenticated and decrypted by the private receiver,
+saved mode 0600, and deleted remotely only after verification. A second pass
+found the spool empty, and the local synthetic payload copies were removed.
+This proves the intake path, not a customer inquiry or revenue.
+
 OpenHI is the strongest public technical proof in the portfolio: the
 MIT-licensed repository had 104 stars and 32 forks when checked on September 9,
 and its recent owner-visible traffic showed continued cloning even without an

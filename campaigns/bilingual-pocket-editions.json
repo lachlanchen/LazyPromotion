@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 9,
+  "version": 10,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -161,7 +161,35 @@
       "public_payment_link": false,
       "policy": "The read-only check proves that the guarded USD 250 configuration and Stripe account are ready. It does not authorize or create a payment object. A real buyer must pass the fit check and accept the exact written scope, rights, inputs, delivery, correction, cancellation, milestone refund, tax, confidentiality, retention, and support terms before a separately reviewed creation command is considered."
     },
-    "intake": "Public fit check prepares a reviewed email request only; it does not upload manuscript files, create a payment, or send automatically.",
+    "intake": "The public fit check reviews the exact metadata-only request locally first. Only an explicit confirmation can submit it through the encrypted storage path; email and copy remain available. It does not upload manuscript files, create a payment, or send automatically.",
+    "fit_check": {
+      "state": "live_encrypted_review_first",
+      "url": "https://lazying.art/book-specimen/fit-check/",
+      "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+      "offer": "book_specimen",
+      "metadata_only": true,
+      "source_file_upload": false,
+      "explicit_confirmation_required": true,
+      "email_and_copy_fallbacks": true,
+      "website_commit": "9f6c9158bdbdae17bf5d6b4602f7580588e0a9fe",
+      "endpoint_commit": "01ea1bc94e3fb958e453217bf2ffb5a6c7e6be56",
+      "receiver_commit": "b1d837a730939b3361d0d72721fb35e2a6c9aa9a",
+      "synthetic_round_trip": {
+        "state": "verified_and_remote_deleted",
+        "checked_at": "2026-09-11T05:16:26Z",
+        "visible_review_before_submission": true,
+        "visible_confirmation": true,
+        "submission_count": 1,
+        "server_response": 202,
+        "receiver_authenticated_decrypted_and_saved": true,
+        "private_file_mode": "0600",
+        "remote_envelope_deleted_only_after_verification": true,
+        "second_empty_spool_check": true,
+        "synthetic_local_payload_artifacts_removed": true,
+        "customer_data_used": false
+      },
+      "policy": "This labelled synthetic round trip proves the review, confirmation, accepted receipt, encrypted storage, private receiver, and cleanup path. It is not a customer inquiry, qualified lead, payment, delivery, or revenue."
+    },
     "reason": "A current paid brief validates the output need, and a project-owned specimen, delivery limits, corrections, cancellation, refund, retention, support terms, and tested fit-check path are now public. Payment remains gated behind a positive fit check and accepted written scope.",
     "received_revenue_usd": 0
   },

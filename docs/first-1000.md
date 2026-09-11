@@ -1281,6 +1281,16 @@ It is one verified helpful interaction, not a portfolio match, lead, buyer, or
 revenue. The browser path also now tolerates Reddit's slower Lexical composer
 activation without retrying a send.
 
+A separate first-homelab question had a real need but no honest repository
+match. The matcher rejected the suggested router project instead of forcing a
+promotion. One short
+[value-only reply](https://www.reddit.com/r/selfhosted/comments/1wajow4/comment/p945gnx/)
+recommended LAN-only services behind Tailscale, no exposed Docker socket,
+backups and sampled restores before VLAN complexity, and storage before a RAM
+upgrade. The subreddit rules and exact live thread were checked before one
+submission, and the delivered text was verified at its permalink. This is the
+third recorded helpful interaction; it is not a lead or revenue.
+
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced
 the sale; never put the raw Stripe receipt in Git.

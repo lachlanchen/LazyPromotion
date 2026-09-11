@@ -212,6 +212,15 @@ followed. The route remains a low-frequency research input.
   now answers the broader decision in English, Simplified Chinese, and Japanese,
   with one exact-fit LazyRemote review path only after the complete method. The
   interaction and publication are not a fit inquiry, lead, or sale.
+- A current first-homelab request proposed Debian or Ubuntu, Docker Compose,
+  Tailscale, Jellyfin, Immich, Paperless, and Pi-hole on an 8 GB Tiny PC. The
+  portfolio matcher correctly rejected an unrelated router project. A separate
+  [value-only answer](https://www.reddit.com/r/selfhosted/comments/1wajow4/comment/p945gnx/)
+  instead recommended LAN-only services, a default-deny WAN, no exposed Docker
+  socket, backups and sampled restores before VLAN complexity, a small health
+  checklist, pinned application updates, and buying a backup target before more
+  RAM. It has no link to LazyingArt, project mention, offer, or follow-up pitch;
+  it is a helpful interaction, not a lead or sale.
 
 ## Operating decision
 

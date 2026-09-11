@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 6,
+  "version": 7,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-11T10:59:46Z",
@@ -302,17 +302,21 @@
     "github": {
       "state": "live_exact_fit_bridge",
       "inbound_monitor": {
-        "state": "baseline_initialized",
-        "repository_allowlist_size": 9,
-        "baseline_checked_at": "2026-09-11T01:02:37Z",
+        "state": "issues_and_pull_requests_baseline_initialized",
+        "repository_allowlist_size": 15,
+        "baseline_checked_at": "2026-09-11T15:31:29Z",
         "issues_in_current_windows": 1,
+        "pull_requests_in_current_windows": 13,
         "new_issue_alerts": 0,
+        "pull_request_alerts": 0,
         "issue_bodies_requested": false,
+        "pull_request_bodies_requested": false,
+        "comment_or_review_bodies_requested": false,
         "automatic_comments_or_replies": false,
         "last_verified_session": "lazypromotion-github-inbound-monitor",
         "newest_public_repository": "L-and-N",
         "private_repository_exclusion": "AiMemo remains private and is not read by this public-metadata monitor.",
-        "policy": "A new public issue creates a manual relevance-review alert only; it is never classified as a lead, customer, sale, or revenue."
+        "policy": "A new public issue, new pull request, or changed public pull-request activity timestamp creates a manual relevance-review alert only; it is never classified as a lead, customer, sale, or revenue, and the monitor cannot reply or merge."
       }
     },
     "owned_blog": {

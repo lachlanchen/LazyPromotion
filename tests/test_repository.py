@@ -211,7 +211,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 6)
+        self.assertEqual(campaign["version"], 7)
         self.assertEqual(demand["public_stars"], 13)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 8)
         explicit_need = demand["current_explicit_need"]
@@ -254,6 +254,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(profile_route["editions"], 11)
         self.assertEqual(len(profile_route["links"]), 3)
         self.assertIn("not a lead or sale", profile_route["boundary"])
+        inbound = campaign["channels"]["github"]["inbound_monitor"]
+        self.assertEqual(inbound["repository_allowlist_size"], 15)
+        self.assertEqual(
+            inbound["state"], "issues_and_pull_requests_baseline_initialized"
+        )
+        self.assertEqual(inbound["pull_requests_in_current_windows"], 13)
+        self.assertFalse(inbound["pull_request_bodies_requested"])
+        self.assertFalse(inbound["comment_or_review_bodies_requested"])
+        self.assertIn("cannot reply or merge", inbound["policy"])
         chinese_handoff = campaign["owned_route"][
             "simplified_chinese_conversion_handoff"
         ]
@@ -279,13 +288,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(download_safety["repository_commit"].startswith("9e7163a"))
         self.assertIn("look-alike", download_safety["observed_problem"])
         self.assertIn("not an accusation", download_safety["boundary"])
-        issue_monitor = campaign["channels"]["github"]["inbound_monitor"]
-        self.assertEqual(issue_monitor["state"], "baseline_initialized")
-        self.assertEqual(issue_monitor["repository_allowlist_size"], 9)
-        self.assertEqual(issue_monitor["newest_public_repository"], "L-and-N")
-        self.assertIn("remains private", issue_monitor["private_repository_exclusion"])
-        self.assertFalse(issue_monitor["issue_bodies_requested"])
-        self.assertFalse(issue_monitor["automatic_comments_or_replies"])
+        self.assertEqual(inbound["newest_public_repository"], "L-and-N")
+        self.assertIn("remains private", inbound["private_repository_exclusion"])
+        self.assertFalse(inbound["issue_bodies_requested"])
+        self.assertFalse(inbound["automatic_comments_or_replies"])
         reddit = campaign["channels"]["reddit"]
         self.assertEqual(reddit["state"], "one_value_only_reply_live")
         self.assertTrue(reddit["public_reply_url"].endswith("/p8rb42c/"))

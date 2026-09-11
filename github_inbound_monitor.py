@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only monitor for new public issues in a fixed GitHub repository set.
+"""Read-only monitor for public issues and pull requests in selected repositories.
 
 The monitor performs one authenticated GraphQL query per pass.  Its query has
 no mutation and does not request issue bodies.  It writes only an ignored,
@@ -45,6 +45,7 @@ REPOSITORIES = (
     "PocketPolyglot",
 )
 ISSUES_PER_REPOSITORY = 100
+PULL_REQUESTS_PER_REPOSITORY = 100
 MINIMUM_INTERVAL_MINUTES = 15
 DEFAULT_STATE_PATH = ROOT / ".local" / "github-inbound-monitor-status.json"
 API_VERSION = "2022-11-28"
@@ -73,6 +74,26 @@ def _graphql_document() -> str:
         createdAt
         updatedAt
         author {{ login }}
+      }}
+    }}
+    pullRequests(
+      first: {PULL_REQUESTS_PER_REPOSITORY}
+      states: [OPEN, CLOSED, MERGED]
+      orderBy: {{field: CREATED_AT, direction: DESC}}
+    ) {{
+      totalCount
+      pageInfo {{ hasNextPage }}
+      nodes {{
+        number
+        title
+        url
+        state
+        isDraft
+        createdAt
+        updatedAt
+        author {{ login }}
+        comments {{ totalCount }}
+        reviews {{ totalCount }}
       }}
     }}
   }}"""
@@ -251,6 +272,9 @@ def _parse_repository(name: str, raw: dict[str, Any]) -> dict[str, Any]:
             }
         )
     issues.sort(key=lambda issue: issue["number"])
+    pull_requests, pull_request_total, pull_request_truncated = (
+        _parse_pull_requests(name, raw.get("pullRequests"))
+    )
     return {
         "name": name,
         "name_with_owner": f"{OWNER}/{name}",
@@ -259,11 +283,118 @@ def _parse_repository(name: str, raw: dict[str, Any]) -> dict[str, Any]:
         "window_issue_count": len(issues),
         "window_truncated": bool(page_info["hasNextPage"]),
         "issues": issues,
+        "total_pull_request_count": pull_request_total,
+        "window_pull_request_count": len(pull_requests),
+        "pull_request_window_truncated": pull_request_truncated,
+        "pull_requests": pull_requests,
     }
+
+
+def _parse_pull_requests(
+    name: str, connection: Any
+) -> tuple[list[dict[str, Any]], int, bool]:
+    if not isinstance(connection, dict):
+        raise ValueError(f"GitHub returned invalid pull-request data: {name}")
+    total_count = _nonnegative_int(
+        connection.get("totalCount"), f"{name} pull-request total"
+    )
+    page_info = connection.get("pageInfo")
+    if not isinstance(page_info, dict) or not isinstance(
+        page_info.get("hasNextPage"), bool
+    ):
+        raise ValueError(f"GitHub returned invalid pull-request page data: {name}")
+    nodes = connection.get("nodes")
+    if not isinstance(nodes, list) or len(nodes) > PULL_REQUESTS_PER_REPOSITORY:
+        raise ValueError(f"GitHub returned an invalid pull-request window: {name}")
+    if total_count < len(nodes):
+        raise ValueError(f"GitHub returned an invalid pull-request total: {name}")
+
+    pull_requests = []
+    numbers: set[int] = set()
+    for raw_pull_request in nodes:
+        if not isinstance(raw_pull_request, dict):
+            raise ValueError(f"GitHub returned an invalid pull request: {name}")
+        number = _nonnegative_int(
+            raw_pull_request.get("number"), f"{name} pull-request number"
+        )
+        if number < 1 or number in numbers:
+            raise ValueError(
+                f"GitHub returned a duplicate or invalid pull request: {name}"
+            )
+        numbers.add(number)
+        title = raw_pull_request.get("title")
+        url = raw_pull_request.get("url")
+        state = raw_pull_request.get("state")
+        is_draft = raw_pull_request.get("isDraft")
+        if not isinstance(title, str) or not title.strip():
+            raise ValueError(
+                f"GitHub returned an invalid pull-request title: {name}#{number}"
+            )
+        expected_url = f"https://github.com/{OWNER}/{name}/pull/{number}"
+        if (
+            not isinstance(url, str)
+            or url.rstrip("/").casefold() != expected_url.casefold()
+        ):
+            raise ValueError(
+                f"GitHub returned an invalid pull-request URL: {name}#{number}"
+            )
+        if state not in {"OPEN", "CLOSED", "MERGED"}:
+            raise ValueError(
+                f"GitHub returned an invalid pull-request state: {name}#{number}"
+            )
+        if not isinstance(is_draft, bool):
+            raise ValueError(
+                f"GitHub returned an invalid pull-request draft state: {name}#{number}"
+            )
+        author = raw_pull_request.get("author")
+        if author is not None and (
+            not isinstance(author, dict) or not isinstance(author.get("login"), str)
+        ):
+            raise ValueError(
+                f"GitHub returned an invalid pull-request author: {name}#{number}"
+            )
+        comments = raw_pull_request.get("comments")
+        reviews = raw_pull_request.get("reviews")
+        if not isinstance(comments, dict) or not isinstance(reviews, dict):
+            raise ValueError(
+                f"GitHub returned invalid pull-request activity: {name}#{number}"
+            )
+        pull_requests.append(
+            {
+                "key": pull_request_key(name, number),
+                "repository": name,
+                "number": number,
+                "title": title,
+                "url": url,
+                "state": state,
+                "is_draft": is_draft,
+                "created_at": _timestamp(
+                    raw_pull_request.get("createdAt"),
+                    f"{name}#{number} createdAt",
+                ),
+                "updated_at": _timestamp(
+                    raw_pull_request.get("updatedAt"),
+                    f"{name}#{number} updatedAt",
+                ),
+                "author_login": author.get("login") if author else None,
+                "comment_count": _nonnegative_int(
+                    comments.get("totalCount"), f"{name}#{number} comment total"
+                ),
+                "review_count": _nonnegative_int(
+                    reviews.get("totalCount"), f"{name}#{number} review total"
+                ),
+            }
+        )
+    pull_requests.sort(key=lambda pull_request: pull_request["number"])
+    return pull_requests, total_count, bool(page_info["hasNextPage"])
 
 
 def issue_key(repository: str, number: int) -> str:
     return f"{OWNER}/{repository}#{number}"
+
+
+def pull_request_key(repository: str, number: int) -> str:
+    return f"{OWNER}/{repository}#pr-{number}"
 
 
 def _split_issue_key(key: str) -> tuple[int, int]:
@@ -273,6 +404,16 @@ def _split_issue_key(key: str) -> tuple[int, int]:
     owner, slash, repository = prefix.partition("/")
     if owner != OWNER or not slash or repository not in REPOSITORIES:
         raise ValueError("state contains an issue outside the allowlist")
+    return REPOSITORIES.index(repository), int(number_text)
+
+
+def _split_pull_request_key(key: str) -> tuple[int, int]:
+    prefix, separator, number_text = key.rpartition("#pr-")
+    if not separator or not number_text.isdigit() or int(number_text) < 1:
+        raise ValueError("state contains an invalid pull-request key")
+    owner, slash, repository = prefix.partition("/")
+    if owner != OWNER or not slash or repository not in REPOSITORIES:
+        raise ValueError("state contains a pull request outside the allowlist")
     return REPOSITORIES.index(repository), int(number_text)
 
 
@@ -402,6 +543,33 @@ def load_state(path: Path) -> dict[str, Any] | None:
         raise ValueError("existing monitor state has duplicate seen issue keys")
     for key in seen:
         _split_issue_key(key)
+    seen_pull_requests = payload.get("seen_pull_request_keys", [])
+    if not isinstance(seen_pull_requests, list) or any(
+        not isinstance(key, str) for key in seen_pull_requests
+    ):
+        raise ValueError("existing monitor state has invalid seen pull-request keys")
+    if len(seen_pull_requests) != len(set(seen_pull_requests)):
+        raise ValueError("existing monitor state has duplicate seen pull-request keys")
+    for key in seen_pull_requests:
+        _split_pull_request_key(key)
+    pull_request_activity = payload.get("pull_request_activity", {})
+    if not isinstance(pull_request_activity, dict):
+        raise ValueError("existing monitor state has invalid pull-request activity")
+    if set(pull_request_activity) - set(seen_pull_requests):
+        raise ValueError("pull-request activity is outside the seen key set")
+    for key, activity in pull_request_activity.items():
+        _split_pull_request_key(key)
+        if not isinstance(activity, dict):
+            raise ValueError("existing monitor state has invalid pull-request activity")
+        _timestamp(activity.get("updated_at"), "pull-request activity updated_at")
+        _nonnegative_int(
+            activity.get("comment_count"), "pull-request activity comment total"
+        )
+        _nonnegative_int(
+            activity.get("review_count"), "pull-request activity review total"
+        )
+        if activity.get("state") not in {"OPEN", "CLOSED", "MERGED"}:
+            raise ValueError("existing monitor state has invalid pull-request state")
     return payload
 
 
@@ -460,9 +628,26 @@ def build_state(
     current_issues = [
         issue for repository in repositories for issue in repository.get("issues", [])
     ]
+    current_pull_requests = [
+        pull_request
+        for repository in repositories
+        for pull_request in repository.get("pull_requests", [])
+    ]
     current_keys = {issue["key"] for issue in current_issues}
     previous_keys = set(previous["seen_issue_keys"]) if previous else set()
+    current_pull_request_keys = {
+        pull_request["key"] for pull_request in current_pull_requests
+    }
+    previous_pull_request_keys = (
+        set(previous.get("seen_pull_request_keys", [])) if previous else set()
+    )
+    previous_pull_request_activity = (
+        dict(previous.get("pull_request_activity", {})) if previous else {}
+    )
     is_baseline = previous is None
+    pull_request_baseline = is_baseline or (
+        previous is not None and "seen_pull_request_keys" not in previous
+    )
     new_keys = set() if is_baseline else current_keys - previous_keys
     newly_allowlisted_repositories = set()
     if previous:
@@ -486,7 +671,46 @@ def build_state(
                 ),
             }
         )
+    for pull_request in current_pull_requests:
+        key = pull_request["key"]
+        if (
+            pull_request_baseline
+            or pull_request["repository"] in newly_allowlisted_repositories
+        ):
+            continue
+        previous_activity = previous_pull_request_activity.get(key)
+        if key not in previous_pull_request_keys:
+            kind = "new_public_pull_request_observed"
+        elif previous_activity and previous_activity.get("updated_at") != pull_request[
+            "updated_at"
+        ]:
+            kind = "public_pull_request_activity_observed"
+        else:
+            continue
+        alerts.append(
+            {
+                "kind": kind,
+                **pull_request,
+                "action": (
+                    "Review the public pull request manually for project relevance; "
+                    "do not reply or merge automatically or treat it as commercial "
+                    "evidence."
+                ),
+            }
+        )
     seen_keys = sorted(previous_keys | current_keys, key=_split_issue_key)
+    seen_pull_request_keys = sorted(
+        previous_pull_request_keys | current_pull_request_keys,
+        key=_split_pull_request_key,
+    )
+    pull_request_activity = dict(previous_pull_request_activity)
+    for pull_request in current_pull_requests:
+        pull_request_activity[pull_request["key"]] = {
+            "updated_at": pull_request["updated_at"],
+            "comment_count": pull_request["comment_count"],
+            "review_count": pull_request["review_count"],
+            "state": pull_request["state"],
+        }
     return {
         "version": 1,
         "initialized": True,
@@ -498,21 +722,36 @@ def build_state(
         "policy": {
             "graphql_operation": "query",
             "issue_bodies_requested": False,
+            "pull_request_bodies_requested": False,
+            "comment_or_review_bodies_requested": False,
             "github_mutations_performed": False,
             "automatic_comments_or_replies": False,
             "issue_is_lead_evidence": False,
             "issue_is_revenue_evidence": False,
+            "pull_request_is_lead_evidence": False,
+            "pull_request_is_revenue_evidence": False,
         },
         "repositories": repositories,
         "seen_issue_keys": seen_keys,
+        "seen_pull_request_keys": seen_pull_request_keys,
+        "pull_request_activity": pull_request_activity,
         "alerts": alerts,
         "summary": {
             "repositories_checked": len(repositories),
             "issues_in_current_windows": len(current_issues),
+            "pull_requests_in_current_windows": len(current_pull_requests),
             "seen_issue_keys": len(seen_keys),
-            "new_issue_alerts": len(alerts),
+            "seen_pull_request_keys": len(seen_pull_request_keys),
+            "new_issue_alerts": sum(
+                alert["kind"] == "new_public_issue_observed" for alert in alerts
+            ),
+            "pull_request_alerts": sum(
+                "pull_request" in alert["kind"] for alert in alerts
+            ),
             "truncated_repository_windows": sum(
-                bool(repository.get("window_truncated")) for repository in repositories
+                bool(repository.get("window_truncated"))
+                or bool(repository.get("pull_request_window_truncated"))
+                for repository in repositories
             ),
         },
     }

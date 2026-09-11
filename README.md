@@ -143,8 +143,9 @@ available Bounty ID or a higher version, and the five-minute minimum prevents
 aggressive polling. See
 [`docs/bounty-marketplace-monitor.md`](docs/bounty-marketplace-monitor.md).
 
-New public issues in the fifteen current high-attention/offer repositories can be
-observed without reading issue bodies or writing to GitHub:
+New public issues and pull-request activity in the fifteen current
+high-attention/offer repositories can be observed without reading content
+bodies or writing to GitHub:
 
 ```bash
 python github_inbound_monitor.py once

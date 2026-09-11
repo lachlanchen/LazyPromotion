@@ -21,8 +21,37 @@ def issue(repository, number, *, title=None):
     }
 
 
-def graphql_payload(issues_by_repository=None, *, visibility_by_repository=None):
+def pull_request(
+    repository,
+    number,
+    *,
+    title=None,
+    updated_at=None,
+    comment_count=0,
+    review_count=0,
+):
+    return {
+        "number": number,
+        "title": title or f"Pull request {number}",
+        "url": f"https://github.com/{monitor.OWNER}/{repository}/pull/{number}",
+        "state": "OPEN",
+        "isDraft": False,
+        "createdAt": f"2026-09-{number:02d}T01:02:03Z",
+        "updatedAt": updated_at or f"2026-09-{number:02d}T02:03:04Z",
+        "author": {"login": f"contributor-{number}"},
+        "comments": {"totalCount": comment_count},
+        "reviews": {"totalCount": review_count},
+    }
+
+
+def graphql_payload(
+    issues_by_repository=None,
+    *,
+    pull_requests_by_repository=None,
+    visibility_by_repository=None,
+):
     issues_by_repository = issues_by_repository or {}
+    pull_requests_by_repository = pull_requests_by_repository or {}
     visibility_by_repository = visibility_by_repository or {}
     data = {}
     for index, name in enumerate(monitor.REPOSITORIES):
@@ -34,6 +63,11 @@ def graphql_payload(issues_by_repository=None, *, visibility_by_repository=None)
                 "totalCount": len(issues),
                 "pageInfo": {"hasNextPage": False},
                 "nodes": issues,
+            },
+            "pullRequests": {
+                "totalCount": len(pull_requests_by_repository.get(name, [])),
+                "pageInfo": {"hasNextPage": False},
+                "nodes": pull_requests_by_repository.get(name, []),
             },
         }
     return {"data": data}
@@ -90,7 +124,7 @@ class GitHubInboundMonitorTests(unittest.TestCase):
     def tearDown(self):
         self.temporary.cleanup()
 
-    def test_one_fixed_graphql_query_has_no_issue_body_or_mutation(self):
+    def test_one_fixed_graphql_query_has_no_bodies_or_mutation(self):
         fake = FakeRunner([graphql_payload()])
         observation = monitor.fetch_public_issues(runner=fake)
 
@@ -104,8 +138,10 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         query = query_arg.removeprefix("query=")
         self.assertTrue(query.lstrip().startswith("query "))
         self.assertNotIn("mutation", query.casefold())
-        self.assertNotIn("body", query.split("nodes", 1)[-1].casefold())
-        self.assertNotIn("comments", query.casefold())
+        self.assertNotIn("body", query.casefold())
+        self.assertIn("pullRequests", query)
+        self.assertIn("comments { totalCount }", query)
+        self.assertIn("reviews { totalCount }", query)
         for name in monitor.REPOSITORIES:
             self.assertIn(json.dumps(name), query)
 
@@ -161,6 +197,91 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertFalse(second_report["policy"]["issue_is_lead_evidence"])
         self.assertFalse(second_report["policy"]["issue_is_revenue_evidence"])
         self.assertFalse(second_report["policy"]["github_mutations_performed"])
+
+    def test_pull_requests_are_baselined_then_new_and_updated_activity_alerts(self):
+        repository = monitor.REPOSITORIES[0]
+        first_pull_request = pull_request(repository, 11)
+        fake = FakeRunner(
+            [
+                graphql_payload(
+                    pull_requests_by_repository={repository: [first_pull_request]}
+                ),
+                graphql_payload(
+                    pull_requests_by_repository={
+                        repository: [
+                            pull_request(
+                                repository,
+                                11,
+                                updated_at="2026-09-11T03:03:04Z",
+                                review_count=1,
+                            ),
+                            pull_request(repository, 12),
+                        ]
+                    }
+                ),
+            ]
+        )
+
+        baseline = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-11T02:15:00Z",
+        )
+        self.assertEqual(baseline["alerts"], [])
+        self.assertEqual(
+            baseline["seen_pull_request_keys"],
+            [monitor.pull_request_key(repository, 11)],
+        )
+
+        changed = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-11T03:15:00Z",
+        )
+        self.assertEqual(
+            [alert["kind"] for alert in changed["alerts"]],
+            [
+                "public_pull_request_activity_observed",
+                "new_public_pull_request_observed",
+            ],
+        )
+        self.assertEqual(changed["summary"]["pull_request_alerts"], 2)
+        self.assertEqual(changed["summary"]["pull_requests_in_current_windows"], 2)
+        self.assertFalse(changed["policy"]["pull_request_is_lead_evidence"])
+        self.assertFalse(changed["policy"]["pull_request_is_revenue_evidence"])
+        serialized = self.state.read_text(encoding="utf-8").casefold()
+        self.assertNotIn('"body"', serialized)
+
+    def test_existing_issue_only_state_migrates_without_pull_request_alert_storm(self):
+        repository = monitor.REPOSITORIES[0]
+        previous = {
+            "version": 1,
+            "initialized": True,
+            "owner": monitor.OWNER,
+            "repository_allowlist": list(monitor.REPOSITORIES),
+            "seen_issue_keys": [],
+        }
+        report = monitor.build_state(
+            monitor.fetch_public_issues(
+                runner=FakeRunner(
+                    [
+                        graphql_payload(
+                            pull_requests_by_repository={
+                                repository: [pull_request(repository, 11)]
+                            }
+                        )
+                    ]
+                )
+            ),
+            previous,
+        )
+        self.assertEqual(report["alerts"], [])
+        self.assertEqual(
+            report["seen_pull_request_keys"],
+            [monitor.pull_request_key(repository, 11)],
+        )
 
     def test_seen_state_survives_an_issue_leaving_the_current_window(self):
         repository = monitor.REPOSITORIES[0]

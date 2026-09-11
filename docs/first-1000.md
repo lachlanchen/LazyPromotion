@@ -434,10 +434,12 @@ is also live. It explains the Wine/RDP/input path, the exact verified host and
 UU boundary, safe install route, update discipline, bilingual compatibility
 form, and the separate LazyRemote option before one quiet paid-review paragraph.
 BLOG commit `6763eff`; publication is not a lead or sale.
-One read-only GitHub monitor now watches public issue metadata across nine
-high-attention or offer repositories in a single GraphQL query. Its first pass
-baselined one existing issue and raised no alert; it requests no issue body and
-cannot comment or reply. Later new keys trigger manual relevance review only.
+One read-only GitHub monitor now watches public issue and pull-request metadata
+across fifteen high-attention or offer repositories in a single GraphQL query.
+It records no issue, pull-request, comment, or review body and cannot comment,
+reply, close, or merge. An upgrade from the earlier issue-only state baselines
+current pull requests once; later new issues, new pull requests, and changed
+pull-request activity timestamps trigger manual relevance review only.
 
 A current [small-business server question](https://www.reddit.com/r/selfhosted/comments/1wb6lrf/server_for_a_small_business/)
 asked how to give several remote users role-limited access. One concise

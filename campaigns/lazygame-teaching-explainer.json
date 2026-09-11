@@ -1,0 +1,32 @@
+{
+  "id": "lazygame-teaching-explainer",
+  "version": 1,
+  "objective": "Answer concrete questions about how LazyGame separates exact game rules, game-specific analysis, and optional language-model explanations.",
+  "source_evidence": {
+    "project": "https://github.com/lachlanchen/LazyGame",
+    "owned_thread": "https://www.threads.com/@lazying.art/post/Db5pydgmxmE",
+    "inbound_question": "https://www.threads.com/@peacegodh/post/Db8Oep4Cfgg",
+    "observed_need": "A reader asked how LazyGame works and whether it uses an LLM.",
+    "technical_boundary": "Deterministic adapters own rules and legal actions. Game-specific engines may rank candidates, and an optional LLM may explain bounded evidence; the rules and basic teaching path do not depend on LLM availability."
+  },
+  "channels": {
+    "threads": {
+      "state": "one_direct_answer_sent",
+      "reply_url": "https://www.threads.com/@lazying.art/post/DdJslINkx_3",
+      "sent_at": "2026-09-11T15:08:00Z",
+      "content_sha256": "7a20be6c345e72f9b56565b30a1a2241335f8d11a5d9d784a1f1c4b61c8c9aec",
+      "linked_project": false,
+      "reply_summary": "Explained that deterministic code validates legal moves, game-specific engines can rank candidates, and an optional LLM explains the evidence without owning the rules.",
+      "policy": "The reply answers the exact product question without a new link, offer, private message, or sales claim. It is a helpful interaction, not a qualified lead or revenue."
+    }
+  },
+  "funnel": {
+    "state": "helpful_interaction",
+    "reply_received": true,
+    "helpful_interaction_observed": true,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "verified_received_gross_usd": 0
+  }
+}

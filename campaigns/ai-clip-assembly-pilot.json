@@ -63,14 +63,14 @@
   },
   "proof": {
     "portfolio": "https://lazying.art/video/",
-    "portfolio_commit": "89d45f975fc20de85ef404b6dffb92a3bb44bc74",
+    "portfolio_commit": "640f50e083311be822de2ceef09b94bf9a0560f8",
     "examples": [
       "28-second PocketPolyglot product demonstration",
       "4:36 creator-led PocketPolyglot walkthrough",
       "12.82-second captioned Story Clip extract",
-      "33-second AI-assisted Desert Oasis narrative",
       "Six-source Madeira assembly with a 41.958-second master and a 27.816-second web cut"
     ],
+    "quality_gate": "A clip must pass a current human visual-quality review before it is featured as selling proof. Project ownership, a complete workflow, and technical delivery are necessary but not sufficient.",
     "assembly_sample": {
       "state": "live_and_verified",
       "url": "https://lazying.art/video/brand-film/#sample",
@@ -187,7 +187,7 @@
       "previous_homepage": "https://lazying.art",
       "homepage": "https://lazying.art/video/",
       "destination_status": 200,
-      "role": "The repository About link now opens the first-party video portfolio, where visitors can inspect five project-owned examples before choosing the bounded USD 500 assembly pilot.",
+      "role": "The repository About link now opens the first-party video portfolio, where visitors can inspect four project-owned examples before choosing the bounded USD 500 assembly pilot.",
       "worktree_boundary": "Only GitHub repository metadata changed. The active LocalVideoGen source worktree and its uncommitted README and code changes were not touched.",
       "policy": "The portfolio identifies every example as project-owned work and makes no customer-performance claim. A repository view or click is not a fit inquiry, sale, or revenue."
     },

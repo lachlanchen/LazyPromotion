@@ -1175,7 +1175,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 21)
+        self.assertEqual(campaign["version"], 22)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -1263,7 +1263,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 21)
+        self.assertEqual(campaign["version"], 22)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -1507,7 +1507,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(offer["deployment"]["assembly_sample_horizontal_overflow"])
 
         proof = campaign["proof"]
-        self.assertEqual(len(proof["examples"]), 5)
+        self.assertEqual(len(proof["examples"]), 4)
+        self.assertIn("human visual-quality review", proof["quality_gate"])
         sample = proof["assembly_sample"]
         self.assertEqual(sample["state"], "live_and_verified")
         self.assertEqual(sample["source_count"], 6)
@@ -3553,7 +3554,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 21)
+        self.assertEqual(campaign["version"], 22)
         self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])

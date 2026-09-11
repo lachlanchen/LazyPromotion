@@ -359,7 +359,6 @@ Evidence:
 - <https://lazying.art/work/>
 - <https://github.com/lachlanchen/LazyPromotion/tree/a51ac6f33ce28d9a42143cfc4651e859ec35b6bb/examples/story-clip-pilot>
 - <https://www.youtube.com/watch?v=da0vnv1lQ_E>
-- <https://www.youtube.com/watch?v=rVU37lPKPo8>
 - <https://www.youtube.com/watch?v=9FjVTAgD9QE>
 - <https://www.reddit.com/r/kanyakumari/comments/1w7812g/hiring_content_social_media_creator_turn_our/>
 - <https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/>

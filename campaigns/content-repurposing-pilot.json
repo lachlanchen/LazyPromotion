@@ -1,5 +1,5 @@
 {
-  "version": 21,
+  "version": 22,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -61,17 +61,12 @@
       {
         "title": "Direct-view video portfolio",
         "url": "https://lazying.art/video/",
-        "website_commit": "06023d632cd76ec6c1f7f2efb2b8c6eb044ca0d3"
+        "website_commit": "640f50e083311be822de2ceef09b94bf9a0560f8"
       },
       {
         "title": "Guan Ju River Song",
         "url": "https://www.youtube.com/watch?v=da0vnv1lQ_E",
         "duration": "0:31"
-      },
-      {
-        "title": "Desert Oasis",
-        "url": "https://www.youtube.com/watch?v=rVU37lPKPo8",
-        "duration": "0:33"
       },
       {
         "title": "PocketPolyglot on Kindle",
@@ -132,15 +127,23 @@
     "portfolio_reel": {
       "state": "live_project_owned_work",
       "url": "https://lazying.art/video/",
-      "website_commit": "06023d632cd76ec6c1f7f2efb2b8c6eb044ca0d3",
+      "website_commit": "640f50e083311be822de2ceef09b94bf9a0560f8",
       "examples": [
         "28-second PocketPolyglot device and product demonstration",
         "4:36 creator-led PocketPolyglot walkthrough",
         "12.82-second captioned Story Clip Pilot extract",
-        "33-second AI-assisted Desert Oasis narrative"
+        "Six-source Madeira assembly with a 41.958-second master and a 27.816-second web cut"
       ],
-      "policy": "The page states the exact project role beside each public player. Every example is first-party project work, not a customer ad, paid UGC campaign, e-commerce result, or performance case study."
+      "policy": "The page states the exact project role beside each public player. Every example is first-party project work, not a customer ad, paid UGC campaign, e-commerce result, or performance case study. A current human visual-quality review is required before any clip is added."
     }
+  },
+  "quality_correction": {
+    "made_at": "2026-09-11",
+    "website_commit": "640f50e083311be822de2ceef09b94bf9a0560f8",
+    "retired_sample": "Desert Oasis",
+    "reason": "The older generation met provenance and delivery checks but did not meet the current visual-quality bar for featured selling proof.",
+    "historical_boundary": "Two earlier applications included its public YouTube URL. Those sent-message records remain factual, but the clip must not be reused in future portfolios, pitches, applications, or scheduled content.",
+    "future_gate": "Ownership and workflow completion do not establish portfolio quality. Every featured clip needs a fresh human review of story, motion, continuity, composition, audio, captions, and overall finish."
   },
   "marketplace_research": {
     "ai_brand_film": {

@@ -46,16 +46,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-11 08:04:03 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-11 15:13:49 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-11 15:00:32 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LazyEdge](https://github.com/lachlanchen/LazyEdge) | 2026-09-11 14:35:21 | A lightweight, default-deny reverse edge for safely connecting private compute to public domains. |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-11 11:25:43 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
+| [Kindle](https://github.com/lachlanchen/Kindle) | 2026-09-11 09:42:27 | Kindle Paperwhite 2 jailbreak and KOReader setup workspace |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-11 07:12:14 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 | [PaperAgent](https://github.com/lachlanchen/PaperAgent) | 2026-09-11 06:29:29 | PaperAgent is a local-first web workspace for academic writing. It lets you edit LaTeX and code in the browser, run Python or R and compile LaTeX on the backend, and preview PDFs with build logs—all in one place. |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-11 05:11:36 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
 | [OpenHI](https://github.com/lachlanchen/OpenHI) | 2026-09-11 04:13:53 | Self‑calibrated neuromorphic hyperspectral imaging pipeline for event cameras with diffractive illumination. Includes end‑to‑end tools for RAW segmentation, multi‑window time‑warping compensation, spectral visualization, and hardware control for synchronized event/frame capture and scanning. |
-| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-11 01:41:53 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
 | [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | 2026-09-11 01:41:07 | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. |
 | [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-10 16:20:14 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
-| [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-10 12:07:47 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
-| [lachlanchen](https://github.com/lachlanchen/lachlanchen) | 2026-09-10 10:18:49 | Config files for my GitHub profile. |
 
 ## Complete public repository inventory
 
@@ -96,7 +96,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LalaMedias](https://github.com/lachlanchen/LalaMedias) | LALACHAN generated video archive with per-video transcript pages | HTML | [Open](https://lachlanchen.github.io/LalaMedias/) |
 | [LalaStudio](https://github.com/lachlanchen/LalaStudio) | Lala Studio: a local GPT-5.6-Sol story-to-video workspace with React, browser production, job monitoring, and LazyEdit publishing | TypeScript | [Open](https://lazying.art) |
 | [LazyEdit](https://github.com/lachlanchen/LazyEdit) | Local-first AI-assisted video workflow for transcription, multilingual subtitles, captions, metadata, generation, and reviewed publishing. | Python | [Open](https://studio.lazying.art/) |
-| [LocalVideoGen](https://github.com/lachlanchen/LocalVideoGen) | Quality-first local MiniMax H3 video-series generation and loopback API for dual RTX 4090 workstations, with native audio, references, P8/P9 continuity, and preserved artifacts. | Python | [Open](https://lazying.art) |
+| [LocalVideoGen](https://github.com/lachlanchen/LocalVideoGen) | Quality-first local MiniMax H3 video-series generation and loopback API for dual RTX 4090 workstations, with native audio, references, P8/P9 continuity, and preserved artifacts. | Python | [Open](https://lazying.art/video/) |
 | [MultilingualWhisper](https://github.com/lachlanchen/MultilingualWhisper) | MultilingualWhisper – Enhanced Whisper subtitles with fine‑grained language detection for multilingual videos | Python | [Open](https://lazying.art) |
 | [Musia](https://github.com/lachlanchen/Musia) | Musia: local-first AI song localization, stem separation, lyrics, beats, chords, and creative music workflows | Python | [Open](https://fun.lazying.art) |
 | [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. | Python | [Open](https://lachlanchen.github.io/LalaMedias/) |

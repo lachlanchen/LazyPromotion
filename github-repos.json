@@ -767,7 +767,7 @@
       "homepage": "https://lazying.art",
       "name": "Kindle",
       "primary_language": "Python",
-      "pushed_at": "2026-09-09T12:12:00Z",
+      "pushed_at": "2026-09-11T09:42:27Z",
       "topics": [
         "ebook",
         "kindle",
@@ -780,7 +780,7 @@
         "paperwhite",
         "winterbreak2"
       ],
-      "updated_at": "2026-09-09T12:15:16Z",
+      "updated_at": "2026-09-11T09:42:30Z",
       "url": "https://github.com/lachlanchen/Kindle"
     },
     {
@@ -842,7 +842,7 @@
       "homepage": "https://l-and-n.lazying.art",
       "name": "L-and-N",
       "primary_language": "TypeScript",
-      "pushed_at": "2026-09-11T01:41:53Z",
+      "pushed_at": "2026-09-11T11:25:43Z",
       "topics": [
         "android",
         "cantonese",
@@ -864,7 +864,7 @@
         "watchos",
         "whisper"
       ],
-      "updated_at": "2026-09-11T01:41:57Z",
+      "updated_at": "2026-09-11T11:25:47Z",
       "url": "https://github.com/lachlanchen/L-and-N"
     },
     {
@@ -999,7 +999,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyEdge",
       "primary_language": "JavaScript",
-      "pushed_at": "2026-09-04T08:09:19Z",
+      "pushed_at": "2026-09-11T14:35:21Z",
       "topics": [
         "caddy",
         "cli",
@@ -1173,7 +1173,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
-      "pushed_at": "2026-09-11T05:11:36Z",
+      "pushed_at": "2026-09-11T15:00:32Z",
       "topics": [
         "ai-tools",
         "ecosystem",
@@ -1189,7 +1189,7 @@
         "static-site",
         "website"
       ],
-      "updated_at": "2026-09-11T05:11:40Z",
+      "updated_at": "2026-09-11T15:00:44Z",
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
@@ -1321,7 +1321,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-11T08:04:03Z",
+      "pushed_at": "2026-09-11T15:13:49Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1341,7 +1341,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-11T08:04:07Z",
+      "updated_at": "2026-09-11T15:13:53Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1664,7 +1664,7 @@
     },
     {
       "description": "Quality-first local MiniMax H3 video-series generation and loopback API for dual RTX 4090 workstations, with native audio, references, P8/P9 continuity, and preserved artifacts.",
-      "homepage": "https://lazying.art",
+      "homepage": "https://lazying.art/video/",
       "name": "LocalVideoGen",
       "primary_language": "Python",
       "pushed_at": "2026-09-04T20:11:12Z",
@@ -1690,7 +1690,7 @@
         "webapp",
         "world-travel"
       ],
-      "updated_at": "2026-09-05T09:38:11Z",
+      "updated_at": "2026-09-11T09:55:52Z",
       "url": "https://github.com/lachlanchen/LocalVideoGen"
     },
     {

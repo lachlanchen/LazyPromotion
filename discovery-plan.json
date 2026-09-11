@@ -115,6 +115,17 @@
       },
       {
         "project_id": "pocketpolyglot",
+        "query": "subreddit:selfpublish (formatting OR typesetting OR EPUB) (help OR hire OR recommend)",
+        "purpose": "Book-specimen buyer intent: an author asking for print and reflowable book-production help",
+        "required_body_groups": [
+          ["my book", "our book", "my manuscript", "our manuscript", "my ebook", "our ebook", "my first book", "our first book", "my book is ready", "our book is ready"],
+          ["format", "formatting", "typeset", "typesetting", "epub", "print-ready", "print ready", "reflowable"],
+          ["want to hire", "need to hire", "need help", "looking for", "can anyone recommend", "who do you recommend", "any recommendations", "recommend someone", "recommend a formatter", "recommend a typesetter", "outsource", "could use guidance"]
+        ],
+        "excluded_body_any": ["i offer", "we offer", "my service", "our service", "my portfolio", "our portfolio", "for hire", "available for work", "i built", "i created", "i launched", "we built", "we created", "we launched"]
+      },
+      {
+        "project_id": "pocketpolyglot",
         "query": "subreddit:languagelearning \"parallel text\" recommend",
         "purpose": "Learners seeking bilingual or parallel reading material"
       },
@@ -314,6 +325,17 @@
           ["help", "need", "looking for", "hire", "editor", "how do", "anyone"]
         ],
         "excluded_body_any": ["i built", "i created", "i made", "i've been working on", "we built", "we created", "my editor", "my tool", "my app", "my service", "our service", "for hire", "available for work", "written with ai", "starting at $"]
+      },
+      {
+        "project_id": "pocketpolyglot",
+        "query": "(\"my book\" OR \"my manuscript\" OR \"my ebook\") (formatting OR typesetting OR EPUB) (help OR hire OR recommend) -filter:retweets",
+        "purpose": "Book-specimen buyer intent: an author asking for print and reflowable book-production help",
+        "required_body_groups": [
+          ["my book", "our book", "my manuscript", "our manuscript", "my ebook", "our ebook", "my first book", "our first book", "my book is ready", "our book is ready"],
+          ["format", "formatting", "typeset", "typesetting", "epub", "print-ready", "print ready", "reflowable"],
+          ["want to hire", "need to hire", "need help", "looking for", "can anyone recommend", "who do you recommend", "any recommendations", "recommend someone", "recommend a formatter", "recommend a typesetter", "outsource", "could use guidance"]
+        ],
+        "excluded_body_any": ["i offer", "we offer", "my service", "our service", "my portfolio", "our portfolio", "for hire", "available for work", "i built", "i created", "i launched", "we built", "we created", "we launched"]
       },
       {
         "project_id": "lexiconatlas",

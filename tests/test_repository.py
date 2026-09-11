@@ -928,6 +928,38 @@ class RepositoryTests(unittest.TestCase):
             route,
         ))
 
+    def test_book_specimen_routes_require_author_help_intent(self):
+        for platform in ("reddit", "x"):
+            route = next(
+                item for item in browser.discovery_query_lanes(platform)["core"]
+                if item["purpose"].startswith("Book-specimen buyer intent")
+            )
+            with self.subTest(platform=platform):
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertTrue(browser.route_body_qualified(
+                    "My book is ready and I need help formatting a print PDF and "
+                    "reflowable EPUB. Can anyone recommend someone?",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I offer book formatting and EPUB conversion. View my portfolio; "
+                    "I am available for work.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "Here are five general tips for formatting a book as EPUB.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "On a first book, I really recommend thinking about formatting, "
+                    "cover, metadata, and distribution before publishing.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I need help formatting my company report as a PDF.",
+                    route,
+                ))
+
     def test_eink_routes_require_multilingual_purchase_intent(self):
         for platform in ("reddit", "x"):
             routes = [

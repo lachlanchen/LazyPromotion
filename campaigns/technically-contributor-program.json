@@ -1,6 +1,6 @@
 {
   "id": "technically-contributor-program",
-  "version": 2,
+  "version": 3,
   "objective": "Win one USD 500 paid technical explainer by turning an inspectable MCP implementation into a clear account of permissions and agent power, without writing a speculative full article or claiming an ongoing assignment.",
   "source_need": {
     "captured_at": "2026-09-11T00:00:00Z",
@@ -70,6 +70,21 @@
       "policy": "A later aggregate increase creates a review alert only. It does not prove a human reply, qualified lead, assignment, payment, or revenue."
     },
     "policy": "Do not resubmit or follow up before the review date. If a human replies, confirm the exact brief, USD 500 fee, assistance policy, rights, revisions, acceptance criteria, payment route, and timing before work."
+  },
+  "response_readiness": {
+    "state": "private_outline_ready",
+    "artifact": "Ignored private outline with thesis, diagram, section path, primary sources, claim boundaries, and editor questions",
+    "prepared_at": "2026-09-11",
+    "full_draft_written": false,
+    "editorial_brief_received": false,
+    "source_basis": [
+      "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+      "https://modelcontextprotocol.io/specification/2025-11-25/server/resources",
+      "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+      "https://developers.openai.com/codex/mcp",
+      "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md"
+    ],
+    "policy": "Use the private outline to answer an editor promptly, but do not write or publish a full contribution until the editorial brief, assistance policy, rights, revisions, acceptance criteria, fee, payment route, and timing are confirmed."
   },
   "funnel": {
     "outbound_application_count": 1,

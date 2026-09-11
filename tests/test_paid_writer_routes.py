@@ -77,7 +77,7 @@ class PaidWriterRouteTests(unittest.TestCase):
 
     def test_technically_application_is_paid_and_does_not_inflate_revenue(self):
         serialized, campaign = self.load("technically-contributor-program.json")
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         self.assertEqual(
             campaign["source_need"]["published_compensation"],
             "USD 500 per contribution. Technically says the first contribution is paid even if it does not reach the publication bar.",
@@ -96,6 +96,11 @@ class PaidWriterRouteTests(unittest.TestCase):
         self.assertEqual(inbound["matching_thread_count"], 0)
         self.assertFalse(inbound["mail_opened"])
         self.assertFalse(inbound["message_preview_read"])
+        readiness = campaign["response_readiness"]
+        self.assertEqual(readiness["state"], "private_outline_ready")
+        self.assertEqual(len(readiness["source_basis"]), 5)
+        self.assertFalse(readiness["full_draft_written"])
+        self.assertFalse(readiness["editorial_brief_received"])
         self.assertFalse(campaign["funnel"]["human_reply_observed"])
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)

@@ -486,6 +486,106 @@ class PromotionTests(unittest.TestCase):
         ).fetchone()[0]
         self.assertEqual(count, 1)
 
+    def test_unsent_candidate_can_be_dismissed_after_live_review(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/LaTeX/comments/current/gap/",
+            author="reader",
+            body="How can I remove a white gap above a table cell in LaTeX?",
+        )
+        promotion.mark_triage_requested(self.db, [candidate["id"]])
+        evidence = (
+            "https://www.reddit.com/r/LaTeX/comments/current/gap/"
+            "comment/existing_exact_fix/"
+        )
+        result = promotion.dismiss_candidate_after_review(
+            self.db,
+            candidate["id"],
+            reason="An existing reply already provides the exact compiled fix.",
+            evidence=evidence,
+        )
+        self.assertEqual(result["candidate_status"], "rejected")
+        self.assertFalse(result["public_write"])
+        refreshed = self.db.execute(
+            """
+            SELECT status, triage_reason, triage_confidence,
+                   triage_risk_flags, triage_requested_at
+            FROM candidates WHERE id=?
+            """,
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(refreshed["status"], "rejected")
+        self.assertEqual(
+            refreshed["triage_reason"],
+            "An existing reply already provides the exact compiled fix.",
+        )
+        self.assertEqual(refreshed["triage_confidence"], "high")
+        self.assertEqual(
+            json.loads(refreshed["triage_risk_flags"]),
+            ["reviewed live-context dismissal"],
+        )
+        self.assertEqual(refreshed["triage_requested_at"], "")
+        event = self.db.execute(
+            """
+            SELECT detail FROM events
+            WHERE candidate_id=? AND kind='candidate_dismissed_after_review'
+            """,
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(
+            json.loads(event["detail"]),
+            {
+                "reason": "An existing reply already provides the exact compiled fix.",
+                "evidence": evidence,
+            },
+        )
+
+    def test_candidate_dismissal_requires_live_url_and_active_unsent_state(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/example/comments/current/help/",
+            author="reader",
+            body="Can someone recommend private local search for my PDF collection?",
+        )
+        with self.assertRaisesRegex(ValueError, "absolute HTTP"):
+            promotion.dismiss_candidate_after_review(
+                self.db,
+                candidate["id"],
+                reason="Already solved.",
+                evidence="reviewed in browser",
+            )
+        promotion.dismiss_candidate_after_review(
+            self.db,
+            candidate["id"],
+            reason="Already solved.",
+            evidence="https://www.reddit.com/r/example/comments/current/help/comment/fix/",
+        )
+        with self.assertRaisesRegex(ValueError, "active unsent non-paid"):
+            promotion.dismiss_candidate_after_review(
+                self.db,
+                candidate["id"],
+                reason="Already solved.",
+                evidence="https://www.reddit.com/r/example/comments/current/help/comment/fix/",
+            )
+
+    def test_candidate_dismissal_cli_requires_live_review_confirmation(self):
+        required = [
+            "dismiss-candidate",
+            "cand_example",
+            "--reason",
+            "already solved",
+            "--evidence",
+            "https://example.com/existing-answer",
+        ]
+        with self.assertRaises(SystemExit):
+            promotion.build_parser().parse_args(required)
+        parsed = promotion.build_parser().parse_args(
+            [*required, "--confirm-reviewed-live-context"]
+        )
+        self.assertTrue(parsed.confirm_reviewed_live_context)
+
     def test_reviewed_paid_opportunity_can_be_marked_contacted_once(self):
         candidate = promotion.ingest_candidate(
             self.db,

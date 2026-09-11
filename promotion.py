@@ -1120,6 +1120,65 @@ def reject_opportunity_after_review(
     }
 
 
+def dismiss_candidate_after_review(
+    db: sqlite3.Connection,
+    candidate_id: str,
+    *,
+    reason: str,
+    evidence: str,
+) -> dict[str, Any]:
+    """Close an unsent candidate after reviewing its current live context."""
+    reason = compact(reason)
+    evidence = compact(evidence)
+    if not reason:
+        raise ValueError("candidate dismissal requires a reason")
+    parsed_evidence = urlparse(evidence)
+    if parsed_evidence.scheme not in {"http", "https"} or not parsed_evidence.netloc:
+        raise ValueError("candidate dismissal evidence must be an absolute HTTP(S) URL")
+    candidate = row_dict(
+        db.execute("SELECT * FROM candidates WHERE id=?", (candidate_id,)).fetchone()
+    )
+    if not candidate:
+        raise ValueError(f"candidate not found: {candidate_id}")
+    if candidate["status"] not in {"discovered", "triaged", "manual_only"}:
+        raise ValueError(
+            "only an active unsent non-paid candidate can be dismissed after review"
+        )
+    now = utc_now()
+    db.execute(
+        """
+        UPDATE candidates
+        SET status='rejected', triage_reason=?, triage_confidence='high',
+            triage_risk_flags='["reviewed live-context dismissal"]',
+            triage_requested_at='', updated_at=?
+        WHERE id=?
+        """,
+        (reason, now, candidate_id),
+    )
+    db.execute(
+        """
+        INSERT INTO events(candidate_id, kind, detail, created_at)
+        VALUES (?, 'candidate_dismissed_after_review', ?, ?)
+        """,
+        (
+            candidate_id,
+            json.dumps(
+                {"reason": reason, "evidence": evidence},
+                ensure_ascii=False,
+                sort_keys=True,
+            ),
+            now,
+        ),
+    )
+    refresh_duplicates(db)
+    db.commit()
+    return {
+        "candidate_id": candidate_id,
+        "candidate_status": "rejected",
+        "public_write": False,
+    }
+
+
 def mark_opportunity_contacted(
     db: sqlite3.Connection,
     candidate_id: str,
@@ -1836,6 +1895,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--confirm-reviewed-live-context", action="store_true", required=True
     )
 
+    dismiss_candidate = sub.add_parser("dismiss-candidate")
+    dismiss_candidate.add_argument("candidate_id")
+    dismiss_candidate.add_argument("--reason", required=True)
+    dismiss_candidate.add_argument("--evidence", required=True)
+    dismiss_candidate.add_argument(
+        "--confirm-reviewed-live-context", action="store_true", required=True
+    )
+
     contacted = sub.add_parser("mark-opportunity-contacted")
     contacted.add_argument("candidate_id")
     contacted.add_argument("--method", required=True)
@@ -1953,6 +2020,15 @@ def main() -> int:
     elif args.command == "reject-opportunity":
         print_json(
             reject_opportunity_after_review(
+                db,
+                args.candidate_id,
+                reason=args.reason,
+                evidence=args.evidence,
+            )
+        )
+    elif args.command == "dismiss-candidate":
+        print_json(
+            dismiss_candidate_after_review(
                 db,
                 args.candidate_id,
                 reason=args.reason,

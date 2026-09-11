@@ -92,6 +92,17 @@ python promotion.py draft CANDIDATE_ID
 python browser.py prepare CANDIDATE_ID DRAFT_ID
 ```
 
+If the live thread is already solved or no longer a good fit, close the
+candidate locally with the exact public evidence instead of drafting another
+reply:
+
+```bash
+python promotion.py dismiss-candidate CANDIDATE_ID \
+  --reason "An existing reply already provides the exact fix." \
+  --evidence "https://example.com/existing-answer" \
+  --confirm-reviewed-live-context
+```
+
 Only after a human confirms the exact destination and complete text:
 
 ```bash

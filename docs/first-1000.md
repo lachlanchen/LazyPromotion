@@ -74,6 +74,17 @@ than a production incident. Both submissions were delivered once and are
 awaiting editorial replies. Neither is an assignment, lead, publication,
 payment, or revenue.
 
+Grow & Convert adds a higher-value writing route that fits the same public
+evidence. Its official, fully remote writer page says it is always looking for
+people who can understand and sell products in clear English and publishes USD
+500 per article. One official-form application used the Postiz, small-team
+remote-access, and confidential-PDF decision guides plus a short Vocal Video
+exercise grounded in the current product tour. The form confirmed that the
+response was recorded. A later phone or live identity interview would require
+the named applicant; an agent must not impersonate them. Two accepted and paid
+articles would reach USD 1,000 gross, but no reply, test, assignment, payment,
+or revenue exists yet.
+
 The strongest current no-marketplace application is Lopaka's worldwide DevPet
 embedded-UI prototype contract at a published USD 80–140 per hour for roughly
 10–15 hours a week over six to eight weeks. One application was submitted on

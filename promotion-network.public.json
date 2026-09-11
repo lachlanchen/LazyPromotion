@@ -161,6 +161,16 @@
       "url": ""
     },
     {
+      "id": "campaign:grow-convert-business-writer",
+      "kind": "campaign",
+      "label": "grow-convert-business-writer",
+      "metadata": {
+        "objective": "Win two paid product-copywriting articles at Grow & Convert's published USD 500 per-article rate by using technically tested LazyingArt decision guides without inventing client results, acceptance, or future availability.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:hacker-initiative-proofline-grant",
       "kind": "campaign",
       "label": "hacker-initiative-proofline-grant",

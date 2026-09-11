@@ -1,0 +1,87 @@
+{
+  "id": "grow-convert-business-writer",
+  "version": 1,
+  "objective": "Win two paid product-copywriting articles at Grow & Convert's published USD 500 per-article rate by using technically tested LazyingArt decision guides without inventing client results, acceptance, or future availability.",
+  "source_need": {
+    "captured_at": "2026-09-11T01:51:56Z",
+    "url": "https://www.growandconvert.com/content-marketing-jobs/",
+    "application_url": "https://docs.google.com/forms/d/e/1FAIpQLScD1hXaCzYh2c1YdW2V9LNp1X59d0fP3EFzbTFQPD05n4ONGw/viewform",
+    "title": "Grow & Convert business writer",
+    "state": "official_current_role_with_accepting_application",
+    "published_scope": "Fully remote, flexible product copywriting aimed at high-buying-intent searches. Writers use client interviews to explain product features, benefits, value propositions, and differentiators in clear English.",
+    "published_compensation": "USD 500 per article. Grow & Convert says there is no fixed word count, while typical pieces are about 1,500 to 2,500 words.",
+    "published_process": "The official form says submitted samples are reviewed first and the team reaches out for a phone call when it sees a fit.",
+    "assistance_policy": "No explicit AI-assistance rule was found on the controlling role page or application form. Confirm the policy before accepting a test or assignment.",
+    "policy": "An application, phone-call invitation, test, assignment, accepted article, confirmed payment, and received revenue are separate evidence states. Use only the official form linked from the official role page because Grow & Convert publishes an impersonation-scam warning."
+  },
+  "fit": {
+    "projects": [
+      "BLOG",
+      "LazyPromotion",
+      "LazyEdge",
+      "LazyTunnel",
+      "LocalKnowledgeTerminal"
+    ],
+    "public_samples": [
+      "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
+      "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html",
+      "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html"
+    ],
+    "application_exercise": {
+      "product": "Vocal Video",
+      "official_sources": [
+        "https://vocalvideo.com/features",
+        "https://help.vocalvideo.com/article/16-product-tour"
+      ],
+      "word_count": 182,
+      "supported_positioning": "One browser-based workflow for collecting remote testimonial responses, producing branded drafts, making simple edits, and publishing or embedding finished stories.",
+      "not_claimed": "No customer result, conversion rate, cost saving, exclusive feature, or hands-on product use was claimed."
+    },
+    "supported_now": [
+      "Technically tested product and deployment decision guides",
+      "Public software implementation behind several subjects",
+      "Clear scope, security, operational-limit, and buy-versus-build explanations"
+    ],
+    "not_claimed": [
+      "A Grow & Convert relationship, client byline, SEO ranking result, lead result, or product-marketing tenure",
+      "Editorial acceptance, a phone call, a test, an assignment, completed work, payment, or revenue"
+    ],
+    "claim_boundary": "The samples establish independent technical and decision-oriented editorial work. They are not presented as client results."
+  },
+  "application": {
+    "state": "submitted_awaiting_human_reply",
+    "sent_at": "2026-09-11T01:51:56Z",
+    "method": "Official Google Form using the LazyingArt business contact, three live public samples, concise role and career answers, and a 182-word Vocal Video exercise grounded in current official product pages",
+    "exact_answers_storage": "ignored private evidence",
+    "delivery_evidence": "The visible isolated project browser showed every required field completed before one submit action. The form then displayed 'Your response has been recorded.' Private snapshots and screenshots remain outside Git.",
+    "account_required": false,
+    "identity_document_required": false,
+    "terms_checkbox_observed": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-18",
+    "operator_dependency": "If Grow & Convert requests a live identity or phone interview, the named applicant must participate; an agent must not impersonate them. No such request exists now.",
+    "inbound_monitor": {
+      "state": "baseline_initialized",
+      "checked_at": "2026-09-11T01:56:28Z",
+      "matching_thread_count": 1,
+      "unread_matching_thread_count": 1,
+      "mail_opened": false,
+      "message_preview_read": false,
+      "sender_or_subject_persisted": false,
+      "policy": "A later aggregate increase creates a review alert only. It does not prove a human reply, qualified lead, test, assignment, payment, or revenue."
+    },
+    "policy": "Do not resubmit or follow up before the review date. If a human replies, confirm the exact scope, assistance policy, rights, revisions, acceptance criteria, payment route, and timing before work."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "phone_call_requested": false,
+    "test_requested": false,
+    "assignment_accepted": false,
+    "article_delivered": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

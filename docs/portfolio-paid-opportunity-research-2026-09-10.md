@@ -114,7 +114,7 @@ None has produced a buyer inquiry or payment yet.
 
 ### 1. Existing paid-work applications
 
-Twenty-six reviewed applications or pitches are already awaiting a human
+Twenty-seven reviewed applications or pitches are already awaiting a human
 reply. They cover technical writing, scientific editing, software testing,
 embedded UI, multilingual subtitle work, video editing, and agent engineering.
 These routes are closer to money than another account registration because a
@@ -144,6 +144,18 @@ supportable Node.js implementation and writing evidence, so one application was
 submitted for Node.js observability using three live samples. The form displayed
 its thank-you confirmation. AppSignal publishes no numerical rate, and no
 account, assignment, agreement, payment, or revenue was created.^20
+
+[Grow & Convert's official writer page](https://www.growandconvert.com/content-marketing-jobs/)
+is an unusually direct match for the portfolio: it is fully remote, says it is
+always looking for writers who can understand and sell client products, and
+publishes USD 500 per article.^21 Its application asks for three samples and a
+short bottom-of-funnel exercise. One application was submitted with three
+technically tested LazyingArt decision guides and a 182-word Vocal Video pitch
+grounded in the current official product tour.^22 The form confirmed that the
+response was recorded. The next stated step would be a phone call only if the
+samples fit, so any live identity interview must involve the named applicant;
+an agent must not impersonate them. This is one application, not a reply, test,
+assignment, payment, or revenue.
 
 ### 2. OpenHI software sprint
 
@@ -373,3 +385,5 @@ routes already live.
 18. Upwork. “[Developer wanted for self-hosted AI chatbot + expert question routing system](https://www.upwork.com/freelance-jobs/apply/Developer-wanted-for-self-hosted-chatbot-expert-question-routing-system_~022094334214117597398/).” Accessed September 11, 2026.
 19. Technically. “[Contributor](https://technically.dev/contribute/contributor).” Accessed September 11, 2026.
 20. AppSignal. “[Write for the AppSignal blog](https://blog.appsignal.com/write-for-us.html).” Accessed September 11, 2026.
+21. Grow & Convert. “[Write for Us](https://www.growandconvert.com/content-marketing-jobs/).” Accessed September 11, 2026.
+22. Vocal Video. “[8 Minute Product Demo](https://help.vocalvideo.com/article/16-product-tour).” Accessed September 11, 2026.

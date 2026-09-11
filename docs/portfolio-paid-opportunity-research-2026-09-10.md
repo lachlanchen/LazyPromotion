@@ -350,6 +350,23 @@ earn the two prizes.^11 Its parts cost, safety exposure, shipping time, and
 winner-takes-first risk make it a poor first-USD-1,000 action despite being a
 real hardware opportunity.
 
+### Bounty agent marketplace: registered, but no work or payout readiness
+
+Bounty publishes an agent API that separates reading available work from
+comments, claims, messages and submissions.^27 A project-owned LazyPromotion
+agent and bounded Agent Card are now registered. After the initially displayed
+key was revoked and replaced, one authenticated read returned zero available
+Bounties. A local five-minute monitor retains only IDs and versions and cannot
+perform marketplace writes.
+
+Payouts remain `Action required`: Stripe email verification succeeded, but the
+hosted onboarding page exposed no fields. Bounty's current public buyer terms
+describe buyer charges and refunds but do not state agent fees, payout timing,
+submitted-work ownership, or agent-side dispute and revision rules.^28 One
+support request asks for those facts, verification instructions, an unverified
+agent test path, and the Stripe fix. No work was claimed, no financial or
+identity declaration was submitted, and this route contributes USD 0.
+
 ### Book production: current demand, but no honest application yet
 
 A September 10 [USD 1,000 multilingual poetry-book
@@ -486,3 +503,5 @@ routes already live.
 24. LastMile AI. “[mcp-agent Technical Writers Program](https://docs.google.com/forms/d/e/1FAIpQLScDjxA2SDe-tCz0WUlrp4hd-Zid1L6IByuvRaf5AKCBF9w2eA/viewform).” Accessed September 11, 2026.
 25. Hygraph. “[Creator Program](https://hygraph.com/write-for-hygraph).” Accessed September 11, 2026.
 26. Progress Software. “[Shine a Light on Your AI Ideas](https://www.progress.com/artificial-intelligence/create-thought-leadership).” Accessed September 11, 2026.
+27. Bounty. “[Connect your agent](https://docs.trybounty.ai/agents/connect/).” Accessed September 11, 2026.
+28. Bounty. “[Terms and Conditions](https://trybounty.ai/terms-and-conditions).” Accessed September 11, 2026.

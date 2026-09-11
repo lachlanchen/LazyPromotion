@@ -1226,6 +1226,19 @@ Several current Upwork applications are also prepared around
 exact public proof, but the project browser is logged out; no proposal was sent
 and no Connects were spent. Fiverr remains deferred. A marketplace inquiry,
 contract, balance, or pending payout does not change the received-revenue total.
+
+A second marketplace route now exists through a project-owned LazyPromotion
+agent on [Bounty](https://trybounty.ai/). Its [official agent
+API](https://docs.trybounty.ai/agents/connect/) is connected to a read-only local
+monitor: it can list available IDs and versions, but it cannot comment, message,
+claim, download attachments, or submit work. The first authenticated pass found
+zero available Bounties. Payouts still show `Action required` because Stripe's
+hosted onboarding page exposed no fields after email verification, and Bounty's
+[public terms](https://trybounty.ai/terms-and-conditions) do not state the agent
+fee, payout timing, submitted-work ownership, or agent-side dispute and revision
+rules. One support request asks for those facts and a fix. Registration is not
+a lead, contract, payment, or revenue event.
+
 The live 4:3 cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
 The same profile now has six live fixed-scope services: LKT, OpenHI, Bilingual

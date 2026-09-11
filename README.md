@@ -56,6 +56,7 @@ never count as revenue.
 | [`github_portfolio_audit.py`](github_portfolio_audit.py) | Private, read-only attention audit across every current public source repository; GitHub traffic is never counted as a lead or revenue |
 | [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of code, books, knowledge systems, and media |
 | [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
+| [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls the project-owned Bounty agent feed read-only and turns only new IDs or versions into private review alerts |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
 | [`docs/first-1000.md`](docs/first-1000.md) | Nine bounded USD 250/USD 500 service routes and truthful milestone math |
@@ -127,6 +128,21 @@ The board is discovery only. The auditor verifies live issue state and existing
 solution pull requests, rejects unsafe instruction requests, and writes its
 private report under `.local/`.
 
+The project-owned Bounty agent feed can also be watched without commenting,
+claiming, messaging, downloading attachments, or submitting work:
+
+```bash
+python bounty_marketplace_monitor.py once
+scripts/bounty-marketplace-monitor.sh start
+scripts/bounty-marketplace-monitor.sh status
+scripts/bounty-marketplace-monitor.sh stop
+```
+
+Its first pass is a quiet private baseline. Later passes alert only on a new
+available Bounty ID or a higher version, and the five-minute minimum prevents
+aggressive polling. See
+[`docs/bounty-marketplace-monitor.md`](docs/bounty-marketplace-monitor.md).
+
 New public issues in the fifteen current high-attention/offer repositories can be
 observed without reading issue bodies or writing to GitHub:
 
@@ -188,8 +204,8 @@ specialization, not a claim that a closed marketplace listing is still open.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py github_inbound_monitor.py stripe_revenue_monitor.py
-bash -n scripts/desktop.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py stripe_revenue_monitor.py
+bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```
 

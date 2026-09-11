@@ -1,0 +1,76 @@
+{
+  "id": "bounty-agent-marketplace",
+  "version": 1,
+  "objective": "Observe current paid agent work that fits LazyingArt's research, software, multilingual knowledge, book, and media capabilities without automatically contacting requesters or claiming work.",
+  "official_sources": {
+    "marketplace": "https://trybounty.ai/",
+    "agent_api": "https://docs.trybounty.ai/agents/connect/",
+    "terms": "https://trybounty.ai/terms-and-conditions",
+    "privacy": "https://trybounty.ai/privacy-policy",
+    "checked_at": "2026-09-11"
+  },
+  "account": {
+    "state": "registered_email_verified",
+    "agent_name": "LazyPromotion",
+    "agent_card_version": 1,
+    "categories": [
+      "Research & Competitive Intelligence",
+      "AI Automation & Product Building",
+      "Content & Media"
+    ],
+    "profile_boundary": "The public card describes bounded, source-backed work and excludes spam, impersonation, regulated advice, and rights-unclear content.",
+    "credentials_storage": "ignored mode-0600 private vault with a verified encrypted private backup"
+  },
+  "api": {
+    "state": "authenticated_read_only",
+    "initial_dashboard_key": "revoked_after_unintended_local_output_exposure",
+    "replacement_key": "stored_private_never_committed",
+    "last_http_status": 200,
+    "available_bounty_count": 0,
+    "monitor": "bounty_marketplace_monitor.py",
+    "automatic_comments": false,
+    "automatic_messages": false,
+    "automatic_claims": false,
+    "automatic_submissions": false,
+    "attachments_downloaded": false
+  },
+  "commercial_readiness": {
+    "payout_state": "action_required",
+    "stripe_email_verification_completed": true,
+    "stripe_onboarding_fields_available_after_verification": false,
+    "bank_details_submitted": false,
+    "tax_details_submitted": false,
+    "identity_document_submitted": false,
+    "business_or_residence_declaration_submitted": false,
+    "terms_gaps": [
+      "agent fees",
+      "payout timing",
+      "submitted-work ownership",
+      "agent-side dispute and revision rules"
+    ]
+  },
+  "support_request": {
+    "state": "sent_awaiting_human_reply",
+    "sent_at": "2026-09-11",
+    "method": "one concise message to the official terms contact",
+    "questions": [
+      "agent verification process",
+      "fees, payout timing, supported countries and entities",
+      "submitted-work ownership and agent-side disputes or revisions",
+      "test or manual-release route for an unverified agent",
+      "blank Stripe onboarding page after email verification"
+    ],
+    "review_after": "2026-09-18",
+    "automatic_follow_up": false
+  },
+  "funnel": {
+    "available_work_observed": false,
+    "work_reviewed": false,
+    "work_claimed": false,
+    "requester_contacted": false,
+    "submission_delivered": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  },
+  "policy": "Registration and a working API are marketplace access, not a lead, contract, payment, or revenue event. Inspect current task terms and attachments privately before any separate reviewed action."
+}

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "id": "playwright-regression-contract",
   "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's real browser automation with an executed Page Object, pytest, and JUnit specimen, without claiming coverage of an undisclosed application.",
   "source_need": {
@@ -52,6 +52,7 @@
         "stable shell entry point"
       ],
       "artifacts": ".local/proofs/playwright-regression/run-{1,2,3}/junit-playwright.xml",
+      "repository_commit": "7db525ca4f5db6e39d8e9b5bc4c895a56bf25301",
       "boundary": "Project-owned login fixture only; not the buyer's application, credentials, checklist, CI, or acceptance result."
     },
     "not_proven": [
@@ -69,26 +70,43 @@
     "login_store": "encrypted_private_credential_vault",
     "country_selected_by_platform": "Hong Kong",
     "paid_membership": false,
-    "free_bids_remaining_when_checked": 6,
+    "free_bids_remaining_when_checked": 5,
     "wallet_balance_hkd": 0,
     "identity_verified": false,
     "phone_verified": false,
+    "portfolio_item": {
+      "state": "prepared_not_published_phone_verification_required",
+      "title": "Playwright Regression Specimen",
+      "image_sha256": "bcb652a504046aa12b3f4489da5069e6d4a93453f8fcb6249ff6d1cd5c54a2e3",
+      "phone_verification_requested": false,
+      "policy": "Keep the reviewed proof card private until the platform's phone-verification gate can be completed by the account holder. Do not substitute a stock image or publish a claim beyond the executed fixture."
+    },
     "policy": "Do not start a trial, purchase a membership, fund the wallet, buy bid upgrades, or submit identity documents automatically. Keep project communication, milestones, files, and payment on Freelancer."
   },
   "application": {
-    "state": "proof_ready_bid_not_submitted",
+    "state": "submitted_once_visible_confirmation",
+    "submitted_at": "2026-09-11T20:19:00Z",
+    "confirmation_url": "https://www.freelancer.com/projects/automation/Playwright-Python-Regression-Suite/proposals?bidCreated=true",
+    "visible_confirmation": "You've successfully placed a bid",
+    "rank_when_confirmed": "56 of 57 proposals",
     "proposed_bid_inr": 56250,
     "proposed_delivery_days": 14,
     "platform_fee_at_proposed_bid_inr": 5625,
     "proposed_net_before_tax_inr": 50625,
     "proposal": ".local/private/applications/playwright-regression-freelancer.md",
-    "bid_submitted": false,
+    "milestones_inr": [
+      11250,
+      22500,
+      16875,
+      5625
+    ],
+    "bid_submitted": true,
     "paid_upgrade_selected": false,
-    "policy": "Use one ordinary free bid with no upgrades only after the public specimen is pushed and the final proposal preserves the checklist and funded-first-milestone boundary."
+    "policy": "The ordinary free bid was submitted once with no upgrades after the public specimen was pushed. Keep all communication, files, funded milestones, and payment on Freelancer; do not send an unsolicited follow-up or start work before the checklist and first milestone are agreed."
   },
   "funnel": {
-    "state": "qualified_paid_need_proof_ready",
-    "application_submitted": false,
+    "state": "application_submitted_awaiting_buyer",
+    "application_submitted": true,
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,
     "scope_accepted": false,

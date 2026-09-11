@@ -516,7 +516,7 @@
       "label": "playwright-regression-contract",
       "metadata": {
         "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's real browser automation with an executed Page Object, pytest, and JUnit specimen, without claiming coverage of an undisclosed application.",
-        "version": 1
+        "version": 3
       },
       "url": ""
     },

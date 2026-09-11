@@ -37,11 +37,20 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
     def test_bid_has_no_paid_upgrade_or_revenue_claim(self):
         application = self.campaign["application"]
         funnel = self.campaign["funnel"]
-        self.assertEqual(application["state"], "proof_ready_bid_not_submitted")
-        self.assertFalse(application["bid_submitted"])
+        self.assertEqual(application["state"], "submitted_once_visible_confirmation")
+        self.assertTrue(application["bid_submitted"])
         self.assertFalse(application["paid_upgrade_selected"])
-        self.assertFalse(funnel["application_submitted"])
+        self.assertTrue(funnel["application_submitted"])
+        self.assertEqual(application["milestones_inr"], [11250, 22500, 16875, 5625])
         self.assertEqual(funnel["received_revenue_usd"], 0)
+
+    def test_portfolio_card_stops_at_phone_gate(self):
+        item = self.campaign["marketplace_account"]["portfolio_item"]
+        self.assertEqual(
+            item["state"], "prepared_not_published_phone_verification_required"
+        )
+        self.assertFalse(item["phone_verification_requested"])
+        self.assertRegex(item["image_sha256"], r"^[0-9a-f]{64}$")
 
 
 if __name__ == "__main__":

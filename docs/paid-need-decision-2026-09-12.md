@@ -38,6 +38,10 @@ The LazyingArt account was created with a verified business email, a focused
 profile, and no paid membership. A project-owned specimen now demonstrates the
 missing pytest/Page Object/JUnit shape and passes three consecutive headless
 Chrome runs. It does not prove coverage of the buyer's undisclosed application.
+One ordinary free bid was then submitted at INR 56,250 over 14 days with four
+milestones, no paid upgrades, and the checklist boundary in the proposal. The
+site visibly confirmed the bid and reported rank 56 of 57 at submission. This
+is an application, not a buyer reply, funded milestone, contract, or revenue.
 
 ## Decision
 

@@ -182,7 +182,12 @@
       {
         "project_id": "wordorigins",
         "query": "subreddit:etymology \"word origin\" question",
-        "purpose": "People asking to explore the relationships behind a word origin"
+        "purpose": "People asking to explore the relationships behind a word origin",
+        "required_body_groups": [
+          ["etymology", "word origin", "origin of", "come from", "derived from"],
+          ["what is the origin", "what's the origin", "where does", "where did", "does anyone know", "can anyone explain", "why is", "why does", "how did", "is it true", "looking for"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i made", "i launched", "we built", "we created", "we made", "we launched", "my app", "our app", "my tool", "our tool", "weekly trivia", "this week's etymology", "here's this week's", "for hire", "available for work"]
       },
       {
         "project_id": "lexiconatlas",
@@ -204,7 +209,7 @@
           ["local", "private", "offline", "on my machine", "self-hosted", "self hosted"],
           ["help", "recommend", "looking for", "need", "tool", "how can", "how do"]
         ],
-        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool"]
+        "excluded_body_any": ["i built", "i created", "i made", "i launched", "we built", "we created", "we made", "we launched", "my app", "our app", "my new tool", "our new tool", "it's free", "for hire", "available for work"]
       },
       {
         "project_id": "lazyingart-eink",
@@ -324,7 +329,7 @@
           ["reader", "reading", "book", "edition", "parallel text", "bilingual", "translation", "resource", "learn", "study"],
           ["help", "recommend", "looking for", "need", "what should", "which", "where can", "anyone know", "does anyone"]
         ],
-        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my new tool", "our new tool"]
+        "excluded_body_any": ["i built", "i created", "i made", "i launched", "we built", "we created", "we made", "we launched", "my app", "our app", "my new tool", "our new tool", "it's free", "for hire", "available for work"]
       },
       {
         "project_id": "localknowledgeterminal",

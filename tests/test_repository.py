@@ -827,6 +827,12 @@ class RepositoryTests(unittest.TestCase):
                     route,
                 ))
                 self.assertFalse(browser.route_body_qualified(
+                    "Recommend an Apple app to learn Chinese Ancient Poetry. "
+                    "I made an Apple app to help people learn Chinese ancient poems. "
+                    "It's free!",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
                     "Classical Chinese was important across East Asia.",
                     route,
                 ))
@@ -834,6 +840,28 @@ class RepositoryTests(unittest.TestCase):
                     "I need help choosing a bilingual French reader.",
                     route,
                 ))
+
+    def test_word_origin_route_requires_a_real_request(self):
+        route = next(
+            item for item in browser.discovery_query_lanes("reddit")["core"]
+            if item["project_id"] == "wordorigins"
+        )
+        self.assertEqual(len(route["required_body_groups"]), 2)
+        self.assertTrue(browser.route_body_qualified(
+            "Where does the word algorithm come from? I am looking for its "
+            "etymology and how its meaning changed.",
+            route,
+        ))
+        self.assertFalse(browser.route_body_qualified(
+            "Etymology trivia - word origin. Here's this week's etymology "
+            "question. What is X? X - Lobbying.",
+            route,
+        ))
+        self.assertFalse(browser.route_body_qualified(
+            "I made my app for exploring the origin of words. Does anyone "
+            "know another launch directory?",
+            route,
+        ))
 
     def test_eink_routes_require_multilingual_purchase_intent(self):
         for platform in ("reddit", "x"):

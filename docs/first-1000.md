@@ -26,6 +26,14 @@ charge, or payout was created. This closes an operational gap on the portfolio's
 strongest current need-shaped traffic path without turning it into an open
 self-serve checkout.
 
+The Story Clip and AI Clip Assembly routes now have the same protected handoff.
+Their USD 250 and USD 500 Stripe plans each fix quantity at one, disable public
+export and promotion codes, collect no shipping address or phone number, and
+require nine source-rights, scope, delivery, correction, privacy, and refund
+checks. Sanitized read-only checks confirmed the live account is ready, while
+no Stripe object or public checkout was created. This makes the existing media
+applications fulfillable if a buyer replies and accepts the written scope.
+
 OpenHI is the strongest public technical proof in the portfolio: the
 MIT-licensed repository had 104 stars and 32 forks when checked on September 9,
 and its recent owner-visible traffic showed continued cloning even without an

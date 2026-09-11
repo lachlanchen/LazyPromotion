@@ -150,6 +150,23 @@
       "The six buyer clips, their rights, and their technical compatibility have not been inspected."
     ]
   },
+  "payment_readiness": {
+    "state": "ready_for_reviewed_live_request",
+    "checked_at": "2026-09-11T04:42:00Z",
+    "price": "USD 500",
+    "quantity": 1,
+    "fulfillment_review_notes": 9,
+    "private_key_file_mode": "600",
+    "live_key_format_valid": true,
+    "account_authenticated": true,
+    "charges_enabled": true,
+    "payouts_enabled": true,
+    "details_submitted": true,
+    "stripe_plan_commit": "33e50df4354767ae129095cd23edd7cc5136e81d",
+    "stripe_objects_created": false,
+    "public_payment_link": false,
+    "remaining_gate": "A real buyer must pass the free fit check and accept the exact written scope, source rights, delivery, correction, cancellation, refund, tax, confidentiality, retention, and support terms before the guarded Stripe creation command is considered."
+  },
   "channels": {
     "homepage": {
       "state": "live_and_verified",

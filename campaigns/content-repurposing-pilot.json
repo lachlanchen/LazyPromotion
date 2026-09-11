@@ -222,6 +222,23 @@
     "price": "USD 250",
     "scope": "One customer-owned recording up to 30 minutes, two timestamped candidate moments, then one buyer-selected 9:16 clip up to 60 seconds with corrected source-language captions, SRT, a caption/source ledger, and one bounded correction pass.",
     "qualification": "Local review followed by a prepared email or copied request before source transfer or payment",
+    "payment": {
+      "state": "ready_for_reviewed_live_request",
+      "checked_at": "2026-09-11T04:42:00Z",
+      "price": "USD 250",
+      "quantity": 1,
+      "fulfillment_review_notes": 9,
+      "private_key_file_mode": "600",
+      "live_key_format_valid": true,
+      "account_authenticated": true,
+      "charges_enabled": true,
+      "payouts_enabled": true,
+      "details_submitted": true,
+      "stripe_plan_commit": "33e50df4354767ae129095cd23edd7cc5136e81d",
+      "stripe_objects_created": false,
+      "public_payment_link": false,
+      "policy": "The read-only check proves that the guarded USD 250 configuration and Stripe account are ready. It creates no payment object. A real buyer must pass the fit check and accept the exact written source-rights, scope, delivery, corrections, cancellation, refund, tax, confidentiality, retention, and support terms before a separately reviewed creation command is considered."
+    },
     "contra_marketplace": {
       "state": "live_published",
       "url": "https://contra.com/s/QmUNEA2k-turn-one-recording-into-a-captioned-story-clip",

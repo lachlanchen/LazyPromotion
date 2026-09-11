@@ -52,6 +52,21 @@ def valid_lazyremote_config() -> dict:
     return config
 
 
+def valid_story_clip_config() -> dict:
+    config = valid_config()
+    config["slug"] = "story-clip-pilot"
+    config["fulfillmentReviewNotes"].extend(["review 7", "review 8"])
+    return config
+
+
+def valid_ai_clip_config() -> dict:
+    config = valid_config()
+    config["slug"] = "ai-clip-assembly-pilot"
+    config["fulfillmentReviewNotes"].extend(["review 7", "review 8"])
+    config["variants"][0]["unitAmount"] = 50000
+    return config
+
+
 class FakeResponse:
     def __init__(self, payload: dict):
         self.payload = payload
@@ -171,6 +186,37 @@ class PaymentReadinessTests(unittest.TestCase):
             "lazyremote-network-fit-review",
         )
         self.assertEqual(report["config"]["display_price"], "USD 250")
+        self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
+        self.assertTrue(report["local_live_configuration_ready"])
+        self.assertFalse(report["mutates_stripe"])
+
+    def test_story_clip_report_uses_exact_guarded_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            helper = self.helper(
+                Path(tmp),
+                valid_story_clip_config(),
+                config_name="story-clip-pilot.json",
+            )
+            report = payment_readiness.build_report(helper, offer="story-clip")
+        self.assertEqual(report["offer"], "story-clip")
+        self.assertEqual(report["config"]["product_slug"], "story-clip-pilot")
+        self.assertEqual(report["config"]["display_price"], "USD 250")
+        self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
+        self.assertTrue(report["local_live_configuration_ready"])
+        self.assertFalse(report["mutates_stripe"])
+
+    def test_ai_clip_report_uses_exact_500_dollar_guarded_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            helper = self.helper(
+                Path(tmp),
+                valid_ai_clip_config(),
+                config_name="ai-clip-assembly-pilot.json",
+            )
+            report = payment_readiness.build_report(helper, offer="ai-clip")
+        self.assertEqual(report["offer"], "ai-clip")
+        self.assertEqual(report["config"]["product_slug"], "ai-clip-assembly-pilot")
+        self.assertEqual(report["config"]["display_price"], "USD 500")
+        self.assertEqual(report["config"]["unit_amount_minor"], 50000)
         self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
         self.assertTrue(report["local_live_configuration_ready"])
         self.assertFalse(report["mutates_stripe"])

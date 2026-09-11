@@ -44,6 +44,18 @@ OFFER_CONTRACTS = {
         "minimum_review_notes": 9,
         "unit_amount": 25_000,
     },
+    "story-clip": {
+        "config_relative": Path("config/story-clip-pilot.json"),
+        "slug": "story-clip-pilot",
+        "minimum_review_notes": 9,
+        "unit_amount": 25_000,
+    },
+    "ai-clip": {
+        "config_relative": Path("config/ai-clip-assembly-pilot.json"),
+        "slug": "ai-clip-assembly-pilot",
+        "minimum_review_notes": 9,
+        "unit_amount": 50_000,
+    },
 }
 
 

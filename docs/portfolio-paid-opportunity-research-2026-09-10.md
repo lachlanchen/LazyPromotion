@@ -28,7 +28,7 @@ The latest owner-visible GitHub audit sharpens the route. In GitHub's current
 rolling window, `uu-remote-ubuntu-bridge` had 1,106 views from 488 unique
 visitors and 451 clones from 182 unique cloners. Its Simplified-Chinese README
 alone had 533 views from 406 unique visitors, and Google supplied 716 views
-from 379 visitors. The repository has 12 stars, seven added since September 3.
+from 379 visitors. The repository has 13 stars, eight added since September 3.
 These figures are the strongest owned discovery signal, but clone automation
 and search traffic make them attention rather than purchase intent.
 

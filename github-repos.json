@@ -842,7 +842,7 @@
       "homepage": "https://l-and-n.lazying.art",
       "name": "L-and-N",
       "primary_language": "TypeScript",
-      "pushed_at": "2026-09-07T01:41:20Z",
+      "pushed_at": "2026-09-11T01:41:53Z",
       "topics": [
         "android",
         "cantonese",
@@ -864,7 +864,7 @@
         "watchos",
         "whisper"
       ],
-      "updated_at": "2026-09-07T01:41:24Z",
+      "updated_at": "2026-09-11T01:41:57Z",
       "url": "https://github.com/lachlanchen/L-and-N"
     },
     {
@@ -1173,7 +1173,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyingArtWebsite",
       "primary_language": "HTML",
-      "pushed_at": "2026-09-10T16:33:41Z",
+      "pushed_at": "2026-09-11T05:11:36Z",
       "topics": [
         "ai-tools",
         "ecosystem",
@@ -1189,7 +1189,7 @@
         "static-site",
         "website"
       ],
-      "updated_at": "2026-09-10T16:36:50Z",
+      "updated_at": "2026-09-11T05:11:40Z",
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
@@ -1321,7 +1321,7 @@
       "homepage": "https://lazying.art",
       "name": "LazyPromotion",
       "primary_language": "Python",
-      "pushed_at": "2026-09-10T16:56:32Z",
+      "pushed_at": "2026-09-11T08:04:03Z",
       "topics": [
         "anti-spam",
         "browser-automation",
@@ -1341,7 +1341,7 @@
         "sqlite",
         "x"
       ],
-      "updated_at": "2026-09-10T16:56:36Z",
+      "updated_at": "2026-09-11T08:04:07Z",
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
     {
@@ -1483,7 +1483,7 @@
       "homepage": "https://blog.lazying.art/html/the-theoretical-minimum/3167/leonard-susskind-lecture-notes-transcripts-and-pdfs-in-one-place.html",
       "name": "leonardsusskind",
       "primary_language": "TeX",
-      "pushed_at": "2026-09-06T18:15:55Z",
+      "pushed_at": "2026-09-11T01:41:07Z",
       "topics": [
         "classical-mechanics",
         "cosmology",
@@ -1500,7 +1500,7 @@
         "theoretical-minimum",
         "transcripts"
       ],
-      "updated_at": "2026-09-09T23:41:03Z",
+      "updated_at": "2026-09-11T01:41:11Z",
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
@@ -1869,7 +1869,7 @@
       "homepage": "https://lazying.art/openhi-kit.html",
       "name": "OpenHI",
       "primary_language": "Python",
-      "pushed_at": "2026-09-09T05:37:29Z",
+      "pushed_at": "2026-09-11T04:13:53Z",
       "topics": [
         "computer-vision",
         "event-camera",
@@ -1880,7 +1880,7 @@
         "python",
         "pytorch"
       ],
-      "updated_at": "2026-09-09T05:37:38Z",
+      "updated_at": "2026-09-11T04:13:57Z",
       "url": "https://github.com/lachlanchen/OpenHI"
     },
     {
@@ -1997,7 +1997,7 @@
       "homepage": "https://paper.lazying.art/",
       "name": "PaperAgent",
       "primary_language": "JavaScript",
-      "pushed_at": "2026-02-28T23:25:03Z",
+      "pushed_at": "2026-09-11T06:29:29Z",
       "topics": [
         "academic-writing",
         "codex",
@@ -2014,7 +2014,7 @@
         "web-ide",
         "websocket"
       ],
-      "updated_at": "2026-09-04T20:48:37Z",
+      "updated_at": "2026-09-11T06:29:33Z",
       "url": "https://github.com/lachlanchen/PaperAgent"
     },
     {
@@ -2244,10 +2244,10 @@
     },
     {
       "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
-      "homepage": "https://remote.lazying.art/",
+      "homepage": "https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html",
       "name": "uu-remote-ubuntu-bridge",
       "primary_language": "Python",
-      "pushed_at": "2026-09-09T14:18:43Z",
+      "pushed_at": "2026-09-11T07:12:14Z",
       "topics": [
         "automation",
         "binary-patching",
@@ -2265,7 +2265,7 @@
         "wine",
         "xvfb"
       ],
-      "updated_at": "2026-09-10T03:49:16Z",
+      "updated_at": "2026-09-11T07:12:18Z",
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
     {

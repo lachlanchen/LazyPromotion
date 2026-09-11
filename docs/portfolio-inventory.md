@@ -45,16 +45,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-10 16:56:32 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-10 16:33:41 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-11 08:04:03 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-11 07:12:14 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [PaperAgent](https://github.com/lachlanchen/PaperAgent) | 2026-09-11 06:29:29 | PaperAgent is a local-first web workspace for academic writing. It lets you edit LaTeX and code in the browser, run Python or R and compile LaTeX on the backend, and preview PDFs with build logs—all in one place. |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-11 05:11:36 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [OpenHI](https://github.com/lachlanchen/OpenHI) | 2026-09-11 04:13:53 | Self‑calibrated neuromorphic hyperspectral imaging pipeline for event cameras with diffractive illumination. Includes end‑to‑end tools for RAW segmentation, multi‑window time‑warping compensation, spectral visualization, and hardware control for synchronized event/frame capture and scanning. |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-11 01:41:53 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
+| [leonardsusskind](https://github.com/lachlanchen/leonardsusskind) | 2026-09-11 01:41:07 | Community-maintained transcripts, notes, TeX sources, and PDFs for Leonard Susskind's Theoretical Minimum lectures. |
 | [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-10 16:20:14 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
 | [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-10 12:07:47 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
 | [lachlanchen](https://github.com/lachlanchen/lachlanchen) | 2026-09-10 10:18:49 | Config files for my GitHub profile. |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-10 09:56:39 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
-| [AgentShell](https://github.com/lachlanchen/AgentShell) | 2026-09-10 09:56:31 | AgentShell: named AI CLI accounts and isolated Linux Codex desktops. Reuse account logins, share working trees, and choose private or shared Codex history. |
-| [LazyingAgentWeb](https://github.com/lachlanchen/LazyingAgentWeb) | 2026-09-09 23:48:49 | Standalone cloud PWA, durable chat BFF, and AgInTi frontend for llm.lazying.art |
-| [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-09 16:22:53 | LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps. |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-09 14:18:43 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
 
 ## Complete public repository inventory
 
@@ -201,7 +201,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LazyEdge](https://github.com/lachlanchen/LazyEdge) | A lightweight, default-deny reverse edge for safely connecting private compute to public domains. | JavaScript | [Open](https://lazying.art) |
 | [LazyRouter](https://github.com/lachlanchen/LazyRouter) | Private AI API gateway for user keys, credits, model routing, and upstream provider aggregation. | Go | [Open](https://router.lazying.art) |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps. | Python | [Open](https://remote.lazying.art) |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. | Python | [Open](https://remote.lazying.art/) |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. | Python | [Open](https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html) |
 | [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. | Shell | [Open](https://lazying.art) |
 
 ### LazyingArt identity and public web surfaces

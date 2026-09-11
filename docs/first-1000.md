@@ -1342,6 +1342,15 @@ Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced
 the sale; never put the raw Stripe receipt in Git.
 
+A current Catalyst·Wayfare posting asks for an AI agent builder to own prompts,
+tools, retrieval, evaluations, monitoring, orchestration state, error recovery,
+and audit logs. One concise application used the live LazyingAgentWeb service
+plus LazyPromotion and Local Knowledge Terminal as public evidence. The exact
+subject appeared once in Sent. International eligibility, rate, schedule,
+travel, assessment, IP, and payment terms remain explicit gates before any
+agreement. This is one direct application, not a reply, contract, payment, or
+revenue.
+
 ## Read-only receipt monitoring
 
 A private Stripe watcher now checks successful live charges every 30 minutes

@@ -1,0 +1,67 @@
+{
+  "id": "catalyst-wayfare-agent-builder",
+  "version": 1,
+  "objective": "Win a paid AI-agent engineering contract by showing current production orchestration, recovery, retrieval, and review-gated automation work without overstating users, client delivery, or availability.",
+  "source_need": {
+    "captured_at": "2026-09-11T12:00:00Z",
+    "official_url": "https://www.catalystwayfare.ai/jd-builder",
+    "hacker_news_url": "https://news.ycombinator.com/item?id=49650855",
+    "title": "AI Engineer, Agent Builder",
+    "state": "first_party_role_open_with_valid_through_2026_12_31",
+    "published_work": "Own individual capability agents end to end across prompts, tools, retrieval, evals, monitoring, integrations, orchestration state, error recovery, audit logging, and handoff documentation.",
+    "published_terms": "1099 contractor, about 30 to 40 hours per week for seven months with extension likely; numerical compensation and payment cadence are not published.",
+    "eligibility": "The employer-authored September Hacker News post says international candidates may be considered with US Eastern overlap. The first-party page is remote-first with US Eastern overlap and occasional US domestic travel, while its structured JobPosting metadata names the United States; exact eligibility must therefore be confirmed before assessment or contract.",
+    "application_instruction": "Email talent@cwai.co with the exact subject AI Engineer - Agent Builder, a short cover letter, and one production or real-user staging LLM system; GitHub or CV is optional.",
+    "policy": "The current employer page and employer-authored Hacker News post are buyer-intent evidence. They do not establish eligibility, selection, rate, assessment terms, contract, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "LazyingAgentWeb",
+      "LazyPromotion",
+      "LocalKnowledgeTerminal"
+    ],
+    "public_proof": [
+      "https://llm.lazying.art/",
+      "https://github.com/lachlanchen/LazyingAgentWeb",
+      "https://github.com/lachlanchen/LazyPromotion",
+      "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+    ],
+    "supported_now": [
+      "A live production PWA and BFF over a local agent with capability gates, durable receipts, exact-idempotency retry, resume semantics, and strict cloud/local ownership boundaries",
+      "A Python, Playwright, and SQLite review-first agent workflow with model-assisted triage, durable evidence, guarded writes, and active monitoring",
+      "A Python local-model retrieval system with bounded multilingual source units, cited outputs, provenance, deterministic fixtures, and evaluation artifacts"
+    ],
+    "not_proven": [
+      "A Catalyst Wayfare interview, paid assessment, selection, or contract",
+      "Eligibility for the role despite conflicting first-party US and international wording",
+      "Any client result, external-user count, adoption metric, or regulated-industry delivery",
+      "An agreed weekly schedule, travel commitment, numerical rate, currency, payment cadence, IP terms, or termination terms"
+    ],
+    "claim_boundary": "The public applications and repositories prove relevant systems and current operation. They do not prove external adoption, client delivery, role eligibility, selection, or commercial agreement."
+  },
+  "application": {
+    "state": "email_sent_awaiting_human_reply",
+    "prepared_at": "2026-09-11T12:00:00Z",
+    "sent_at": "2026-09-11T12:01:00Z",
+    "review_after": "2026-09-18",
+    "method": "One concise email from the LazyingArt business alias to the official talent address",
+    "subject": "AI Engineer - Agent Builder",
+    "message_storage": "ignored private evidence",
+    "resume_attached": false,
+    "attachments_sent": 0,
+    "automatic_follow_up": false,
+    "delivery_evidence": "The isolated project browser showed the official talent recipient, LazyingArt business sender, exact subject, and concise evidence-led body before one send action. The composer closed, and the exact subject appeared once in Sent. Private screenshots remain ignored and mode 0600.",
+    "acceptance_gate": "Before any assessment or contract, confirm international eligibility, contracting entity, expected US Eastern overlap, travel expectations, weekly capacity, numerical rate and currency, payment cadence and method, paid-assessment status, IP and confidentiality terms, termination, and whether public open-source work may remain public."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "sender_side_sent_evidence_observed": true,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "paid_assessment_offered": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

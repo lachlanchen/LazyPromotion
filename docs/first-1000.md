@@ -144,6 +144,20 @@ impersonate them. Two accepted and paid
 articles would reach USD 1,000 gross, but no reply, test, assignment, payment,
 or revenue exists yet.
 
+Progress Software adds a second direct USD 500 written-content route whose
+published topics match the portfolio rather than a generic writing pitch. Its
+AI thought-leadership program explicitly names autonomous agents,
+human-in-the-loop GenAI, RAG, memory, and counterarguments to prevailing AI
+practice. One official-form application proposed a source-backed article about
+bounded agent authority, reviewable receipts, and provenance-aware local RAG,
+using three live LazyingArt articles as style samples. Only Blogs was selected;
+the Progress partner and employee boxes remained clear. The form was submitted
+once and replaced itself with Progress's thank-you receipt. Do not draft the
+vendor-specific article until a human confirms the topic, USD 500 honorarium,
+assistance and disclosure rules, rights, revisions, acceptance, payment
+onboarding, and schedule. This is an application—not selection, publication,
+payment, or revenue.
+
 WebAPI Group adds a code-and-content route worth up to USD 600 per validated
 campaign. One reviewed message through its official LinkedIn company page
 proposed a tested ChartQuery guide that turns the existing multilingual-book

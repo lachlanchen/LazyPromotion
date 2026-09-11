@@ -190,6 +190,19 @@ only if the samples fit, so any live identity interview must involve the named
 applicant; an agent must not impersonate them. This is one application, not a
 reply, test, assignment, payment, or revenue.
 
+[Progress Software's AI thought-leadership
+program](https://www.progress.com/artificial-intelligence/create-thought-leadership)
+publishes USD 500 for each approved written piece and directly names autonomous
+agents, human-in-the-loop GenAI, RAG, embeddings and memory among its current
+topics.^26 One official-form application used three live LazyingArt articles
+and proposed a source-backed piece about bounded agent authority, reviewable
+receipts, and provenance-aware local RAG. Only Blogs was selected, with neither
+the Progress partner nor employee box selected. The page replaced the form with
+its own thank-you receipt after one Apply action. Do not write vendor-specific
+content until a human agrees the topic, honorarium, assistance and disclosure
+rules, rights, revisions, acceptance, payment onboarding, and schedule. This is
+an application, not contributor selection, publication, payment, or revenue.
+
 ### 2. OpenHI software sprint
 
 OpenHI is the best owned route because two sales reach the target, the fixed
@@ -472,3 +485,4 @@ routes already live.
 23. WebAPI Group. “[Ambassador program](https://webapi.group/ambassador).” Accessed September 11, 2026.
 24. LastMile AI. “[mcp-agent Technical Writers Program](https://docs.google.com/forms/d/e/1FAIpQLScDjxA2SDe-tCz0WUlrp4hd-Zid1L6IByuvRaf5AKCBF9w2eA/viewform).” Accessed September 11, 2026.
 25. Hygraph. “[Creator Program](https://hygraph.com/write-for-hygraph).” Accessed September 11, 2026.
+26. Progress Software. “[Shine a Light on Your AI Ideas](https://www.progress.com/artificial-intelligence/create-thought-leadership).” Accessed September 11, 2026.

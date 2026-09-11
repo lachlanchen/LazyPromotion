@@ -1,0 +1,81 @@
+{
+  "id": "progress-ai-thought-leadership-contributor",
+  "version": 1,
+  "objective": "Earn a published-piece honorarium by turning working LazyPromotion and Local Knowledge Terminal evidence into a clear article about human review, bounded agent authority, and source provenance.",
+  "source_need": {
+    "captured_at": "2026-09-11T13:38:00Z",
+    "url": "https://www.progress.com/artificial-intelligence/create-thought-leadership",
+    "title": "Shine a Light on Your AI Ideas",
+    "state": "official_current_accepting_contributor_form",
+    "published_topics": [
+      "Autonomous AI Agents",
+      "Tokenization, embeddings and AI memory",
+      "Retrieval-augmented generation and semantic AI",
+      "Human-in-the-loop for GenAI in business",
+      "Counterarguments to prevailing wisdom about AI"
+    ],
+    "published_compensation": {
+      "written_content_usd_per_published_piece": 500,
+      "remote_podcast_or_webinar_usd_per_published_piece": 750,
+      "in_person_video_usd_per_published_piece": 1000
+    },
+    "eligibility_boundary": "Progress partners and employees may participate but are not eligible for payment. Selection, a brief, publication, payment onboarding, and received money remain separate states.",
+    "form_boundary": "The visible form requires identity, company, social links, at least one content type, and proposed topics. It acknowledges privacy-policy processing on submission. No country, residence, bank, tax, identity-document, partner agreement, purchase, or paid action was requested."
+  },
+  "fit": {
+    "projects": [
+      "LazyPromotion",
+      "LocalKnowledgeTerminal",
+      "AgInTiFlow",
+      "LazyEdge"
+    ],
+    "publications": [
+      "https://blog.lazying.art/html/computer_internet/software/3603/i-got-tired-of-agent-limits-so-i-built-agintiflow.html",
+      "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+      "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html"
+    ],
+    "proposed_topic": "Human-in-the-loop agents that expose only the authority needed for one task, preserve reviewable receipts, separate attention from verified outcomes, and keep multilingual local-RAG answers traceable to bounded source passages.",
+    "supported_now": [
+      "A working review-first promotion agent with strict outcome accounting",
+      "A released read-only MCP bridge over a provenance-oriented multilingual knowledge graph",
+      "Public writing about agent limits, confidential local document search, and reviewed social scheduling",
+      "Open-source implementation evidence whose failures and boundaries can be shown"
+    ],
+    "not_claimed": [
+      "A Progress relationship or product deployment",
+      "A customer result, enterprise adoption metric, or AI safety guarantee",
+      "Selection, commissioned content, publication, payment, or revenue"
+    ]
+  },
+  "application": {
+    "state": "submitted_awaiting_human_reply",
+    "submitted_at": "2026-09-11T13:43:00Z",
+    "method": "Official visible form with three live publications and one evidence-backed topic",
+    "exact_answers_storage": "ignored mode-0600 private packet",
+    "identity_document_required": false,
+    "account_required": false,
+    "partner_selected": false,
+    "employee_selected": false,
+    "content_types_selected": [
+      "Blogs"
+    ],
+    "optional_marketing_control_visible": false,
+    "cookie_preference": "necessary_only",
+    "submission_attempts": 1,
+    "delivery_evidence": "After one Apply click, the visible form was replaced by Progress's own thank-you receipt.",
+    "review_after": "2026-09-18",
+    "automatic_follow_up": false,
+    "acceptance_gate": "Do not draft vendor-specific content until a human confirms the topic, USD 500 honorarium, assistance policy, originality and disclosure expectations, rights and reuse, revisions, acceptance criteria, payment onboarding, tax handling, and schedule."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "human_reply_observed": false,
+    "selected_as_contributor": false,
+    "brief_accepted": false,
+    "content_delivered": false,
+    "publication_observed": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

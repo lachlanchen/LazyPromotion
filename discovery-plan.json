@@ -225,7 +225,13 @@
       {
         "project_id": "pocketpolyglot",
         "query": "subreddit:ChineseLanguage (reader OR book OR reading) (recommend OR beginner OR help)",
-        "purpose": "Chinese learners asking for useful reading material rather than generic app promotion"
+        "purpose": "Chinese learners asking for useful reading material rather than generic app promotion",
+        "required_body_groups": [
+          ["learning chinese", "learn chinese", "studying chinese", "chinese learner", "mandarin", "hsk"],
+          ["graded reader", "bilingual reader", "chinese reader", "reader for", "parallel text", "reading material", "book recommendation", "recommend a book", "recommend any books", "which book", "what book", "something to read", "books should i read"],
+          ["recommend", "looking for", "need", "which", "what", "anyone know", "can anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i made", "i launched", "we built", "we created", "we made", "we launched", "my app", "our app", "my tool", "our tool", "it's free", "for hire", "available for work"]
       },
       {
         "project_id": "lingualleaf",
@@ -380,7 +386,13 @@
       {
         "project_id": "pocketpolyglot",
         "query": "(\"learning Chinese\" OR \"learn Chinese\") (reader OR book OR reading) (recommend OR help) -filter:retweets",
-        "purpose": "Chinese learners asking for reading material"
+        "purpose": "Chinese learners asking for reading material",
+        "required_body_groups": [
+          ["learning chinese", "learn chinese", "studying chinese", "chinese learner", "mandarin", "hsk"],
+          ["graded reader", "bilingual reader", "chinese reader", "reader for", "parallel text", "reading material", "book recommendation", "recommend a book", "recommend any books", "which book", "what book", "something to read", "books should i read"],
+          ["recommend", "looking for", "need", "which", "what", "anyone know", "can anyone"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i made", "i launched", "we built", "we created", "we made", "we launched", "my app", "our app", "my tool", "our tool", "it's free", "for hire", "available for work"]
       },
       {
         "project_id": "lingualleaf",

@@ -863,6 +863,30 @@ class RepositoryTests(unittest.TestCase):
             route,
         ))
 
+    def test_general_chinese_reading_routes_exclude_syllabus_and_app_requests(self):
+        for platform in ("reddit", "x"):
+            route = next(
+                item for item in browser.discovery_query_lanes(platform)["core"]
+                if item["project_id"] == "pocketpolyglot"
+                and item["purpose"].startswith("Chinese learners asking")
+            )
+            with self.subTest(platform=platform):
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertTrue(browser.route_body_qualified(
+                    "I finished HSK 1 and need something to read. Can anyone "
+                    "recommend a graded reader for learning Chinese?",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I am a broke beginner learning Mandarin. What free app "
+                    "should I use, and how should I set up Anki? I cannot afford textbooks.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I made my app for Chinese learners. It's free and includes books.",
+                    route,
+                ))
+
     def test_eink_routes_require_multilingual_purchase_intent(self):
         for platform in ("reddit", "x"):
             routes = [

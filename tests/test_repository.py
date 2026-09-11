@@ -1722,12 +1722,20 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 42)
+        self.assertEqual(campaign["version"], 43)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
         )
         self.assertEqual(campaign["source_evidence"]["public_price"], "USD 250")
+        threads = campaign["channels"]["threads"]
+        self.assertEqual(threads["state"], "obsolete_device_price_post_deleted")
+        self.assertEqual(threads["removed_claim"], "Early Bird Price: $498")
+        self.assertTrue(threads["verification"]["exact_post_redirected_to_profile"])
+        self.assertFalse(threads["verification"]["profile_contains_removed_claim"])
+        self.assertFalse(threads["replacement_post_sent"])
+        self.assertFalse(threads["lead_or_sale_observed"])
+        self.assertIn("existing machine", threads["current_boundary"])
         included_scope = campaign["source_evidence"]["included_scope"]
         self.assertIn(
             "an agreed representative sample capped at 12 source units and 20 test questions",

@@ -1,5 +1,5 @@
 {
-  "version": 42,
+  "version": 43,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -590,6 +590,21 @@
     }
   },
   "channels": {
+    "threads": {
+      "state": "obsolete_device_price_post_deleted",
+      "checked_at": "2026-09-11T17:08:00Z",
+      "deleted_post": "https://www.threads.com/@lazying.art/post/DcnWiN7GLcH",
+      "removed_claim": "Early Bird Price: $498",
+      "verification": {
+        "exact_post_redirected_to_profile": true,
+        "profile_contains_removed_claim": false,
+        "profile_contains_deleted_post_link": false
+      },
+      "current_boundary": "The public USD 250 offer is a service on the customer's existing machine. Supplied hardware remains quote-only; the internal USD 798 planning floor is not a public offer.",
+      "replacement_post_sent": false,
+      "lead_or_sale_observed": false,
+      "policy": "The obsolete device price was removed once because it conflicted with the verified hardware-cost boundary. Do not publish a replacement hardware price until the landed BOM and fulfillment terms are confirmed. Deletion is not a lead, sale, or revenue."
+    },
     "github_profile": {
       "state": "live_and_verified",
       "checked_on": "2026-09-05",

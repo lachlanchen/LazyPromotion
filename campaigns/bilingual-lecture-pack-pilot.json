@@ -1,5 +1,5 @@
 {
-  "version": 33,
+  "version": 34,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -10,6 +10,7 @@
     "practical_workflow_guide": "https://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html",
     "cantonese_caption_guide": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html",
     "executed_media_sample": {
+      "promotion_state": "historical_technical_sample_not_current_selling_proof",
       "url": "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
       "repository": "https://github.com/lachlanchen/LalaMedias",
       "commit": "c56c27e",
@@ -36,7 +37,8 @@
         "verification": "The landing page, fit-check page, and exact PNG returned HTTP 200 after the Pages deployment; the live image hash and 1200x630 dimensions matched the committed artifact.",
         "claim_boundary": "The card uses the exact project-owned sample thumbnail and timed text. It makes no customer, accuracy, scientific, resale-rights, or sales claim."
       },
-      "claim_boundary": "This is a reproducible project-owned process demonstration, not an automated LKT import, scientific finding, customer result, or proof of rights to unrelated media."
+      "claim_boundary": "This is a reproducible project-owned process demonstration, not an automated LKT import, scientific finding, customer result, or proof of rights to unrelated media.",
+      "quality_boundary": "The timed-text data remains inspectable, but the underlying early generated scene is below the current visual-quality bar and must not be reused in new promotion, proposals, or featured website proof."
     },
     "complete_delivery_sample": {
       "state": "live_pinned_and_verified",
@@ -87,6 +89,14 @@
       "lead_or_sale_observed": false,
       "verified_received_gross_usd": 0,
       "claim_boundary": "The packet proves the small English-to-Traditional-Chinese delivery structure with a synthetic project-owned source. It is not customer work, a full 20-minute delivery, certified translation, independent native-language review, a sale, or revenue."
+    },
+    "media_quality_correction": {
+      "checked_at": "2026-09-12T03:09:17+08:00",
+      "website_commit": "6d9233b9686bb41f39eb1ab3d084801a52664f3b",
+      "retired_asset": "The early project-made science scene used by the three-language LalaMedias page and the 2026-09-11 Instagram reel",
+      "decision": "keep_historical_release_but_remove_from_current_selling_proof",
+      "current_proof": "The complete 41.191-second English-to-Traditional-Chinese delivery packet, editable sources, issue ledger, manifest, and checksums.",
+      "deletion_boundary": "The already published Instagram release was not deleted; no future campaign or proposal may cite the weak scene as current visual proof."
     },
     "transcript_to_book_pipeline": "https://github.com/lachlanchen/Video2Book",
     "lecture_archive_format": "https://github.com/lachlanchen/leonardsusskind",
@@ -321,13 +331,13 @@
       ],
       "proof": [
         "https://www.youtube.com/watch?v=G9NKncZgRis",
-        "https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html",
+        "https://lazying.art/lecture-pack/#example",
         "https://github.com/lachlanchen/LazyEdit"
       ],
       "prepared_sample": {
-        "state": "local_attachment_ready_not_published",
-        "filename": "landn-bilingual-vertical-v2.mp4",
-        "sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+        "state": "local_quality_reviewed_not_published",
+        "filename": "landn-bilingual-vertical-v5.mp4",
+        "sha256": "7c2b0fb86c0f284832a1e7851d1ce71b1707c3602c07f83e8a672d178a8ff15b",
         "duration_seconds": 19.366667,
         "dimensions": "1080x1920",
         "frame_rate": 30,
@@ -339,7 +349,7 @@
         "claim_boundary": "The clip demonstrates bilingual short-form layout and first-party product editing. It is not a customer ad, paid-campaign result, pronunciation-accuracy claim, or public-store availability claim."
       },
       "proposed_rate": "USD 18 per hour",
-      "proposal_draft": "Hi — this is close to the workflow I already use. I work in Mandarin and English, and I maintain LazyEdit, a local-first workflow for transcription, subtitle timing, multilingual captions, short vertical renders, and reviewed publishing. Two relevant project-owned examples are a 23-second 9:16 timed-text piece (https://www.youtube.com/watch?v=G9NKncZgRis) and a 30-second scene with 15 aligned segments and subtitle exports (https://lachlanchen.github.io/LalaMedias/videos/aginti-autonomous-lab-ai-glasses-2b85b0d9.html). I have also prepared an attached 19-second English/Traditional Chinese sample using first-party L-and-N app screens and audio. For a paid trial, I can return one polished 15–60 second master, two hook variations, burned captions plus SRT, and export notes for the requested formats. For Taiwan, I would confirm the audience, Traditional Chinese wording, CTA, brand constraints, and one conversion goal before editing rather than mechanically translating the captions. My public examples are workflow pieces rather than customer ads, so your paid trial is the right fit test; I won't claim ROAS or cost-per-lead figures I don't have. I can begin at USD 18/hour.",
+      "proposal_draft": "Hi — this is close to the workflow I already use. I work in Mandarin and English, and I maintain LazyEdit, a local-first workflow for transcription, subtitle timing, multilingual captions, short vertical renders, and reviewed publishing. Two relevant project-owned examples are the 23-second typography piece at https://www.youtube.com/watch?v=G9NKncZgRis and the complete editable subtitle and study-pack delivery at https://lazying.art/lecture-pack/#example. I have also prepared a 19-second English/Traditional Chinese sample using first-party L-and-N app screens and audio. For a paid trial, I can return one polished 15–60 second master, two hook variations, burned captions plus SRT, and export notes for the requested formats. For Taiwan, I would confirm the audience, Traditional Chinese wording, CTA, brand constraints, and one conversion goal before editing rather than mechanically translating the captions. My public examples are workflow pieces rather than customer ads, so your paid trial is the right fit test; I won't claim ROAS or cost-per-lead figures I don't have. I can begin at USD 18/hour.",
       "application_submitted": false,
       "connects_spent": false,
       "contract_observed": false,
@@ -578,6 +588,7 @@
     },
     "instagram": {
       "state": "postiz_published",
+      "promotion_state": "historical_release_not_reusable_as_current_selling_proof",
       "publish_at": "2026-09-11T12:00:00Z",
       "release_url": "https://www.instagram.com/reel/DdJXMiBANpn/",
       "content": "One short video can be more useful than one more feed post.\n\nI turned this 30-second, project-made science scene into 15 timed lines across Japanese, English, and Chinese—45 searchable language strings in all. Search a word, jump to the exact moment, or export the subtitle tracks.\n\nIt is the working proof behind my bilingual lecture-pack pilot: lazying.art/lecture-pack/\n\n#MultilingualLearning #Subtitles #DigitalHumanities",
@@ -602,7 +613,7 @@
         "release_present": true,
         "public_http_status": 200
       },
-      "policy": "The attached video is the project-owned demonstration documented by the public source manifest. The caption describes only the working proof and bounded pilot; it does not claim scientific validity, customer results, or rights to unrelated media. Publication is attention, not a fit inquiry, lead, sale, or revenue."
+      "policy": "The attached video is a historical project-owned demonstration documented by the public source manifest, but its early generated visuals are below the current quality bar. Do not reuse it in new promotion or proposals. Publication is attention, not a fit inquiry, lead, sale, or revenue."
     },
     "linkedin": {
       "state": "postiz_queue",

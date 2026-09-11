@@ -15,8 +15,8 @@
       "kind": "campaign",
       "label": "ai-clip-assembly-pilot",
       "metadata": {
-        "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
-        "version": 11
+        "objective": "Preserve the AI Clip Assembly work as a historical technical record while the offer remains paused; reactivate it only after a new project-owned sample passes human review for story, motion, continuity, composition, audio, captions, and overall finish.",
+        "version": 12
       },
       "url": ""
     },
@@ -66,7 +66,7 @@
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 33
+        "version": 34
       },
       "url": ""
     },
@@ -76,7 +76,7 @@
       "label": "bilingual-pocket-editions",
       "metadata": {
         "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
-        "version": 11
+        "version": 12
       },
       "url": ""
     },
@@ -126,7 +126,7 @@
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 23
+        "version": 24
       },
       "url": ""
     },
@@ -276,7 +276,7 @@
       "label": "l-and-n-pronunciation-launch",
       "metadata": {
         "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
-        "version": 6
+        "version": 9
       },
       "url": ""
     },
@@ -316,7 +316,7 @@
       "label": "lazygame-teaching-explainer",
       "metadata": {
         "objective": "Answer concrete questions about how LazyGame separates exact game rules, game-specific analysis, and optional language-model explanations.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -326,7 +326,7 @@
       "label": "lazyremote-uu-bridge-route",
       "metadata": {
         "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
-        "version": 8
+        "version": 9
       },
       "url": ""
     },
@@ -376,7 +376,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 42
+        "version": 43
       },
       "url": ""
     },
@@ -496,7 +496,7 @@
       "label": "openhi-reproducibility-sprint",
       "metadata": {
         "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
-        "version": 15
+        "version": 16
       },
       "url": ""
     },
@@ -556,7 +556,7 @@
       "label": "scientific-pdf-integrity",
       "metadata": {
         "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
-        "version": 5
+        "version": 6
       },
       "url": ""
     },
@@ -860,9 +860,10 @@
       "label": "AI clip assembly pilot",
       "metadata": {
         "buyer": "A small brand or creator with a handful of existing, customer-controlled AI clips that do not yet form one coherent short film",
-        "first_deliverable": "The live USD 500 AI Clip Assembly Pilot for up to six customer-controlled clips and 45 seconds of combined source: one 30–45 second 16:9 master, one 25–30 second web cut from the same edit, basic colour and sound finishing, supplied titles or logo, a source manifest, and one correction pass",
-        "first_test": "Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment",
+        "first_deliverable": "No current paid deliverable. The former USD 500 pilot remains archived until a new project-owned assembly sample passes human review for story, motion, continuity, composition, audio, captions, and overall finish",
+        "first_test": "Create and review a substantially better project-owned assembly sample before restoring an offer, fit-check path, marketplace application, social post, or payment route",
         "gates": [
+          "The archived six-source sample is below the current visual-quality bar and must not be used as current selling proof",
           "The customer must control the source clips, voices, faces, music, logos, and other supplied assets",
           "The six-source proof is project-owned editing evidence, not customer work, an advertising result, or proof that unseen clips will fit",
           "New filming or generation, shot recreation, voice cloning, paid stock, translation, extra formats, publishing, native editor files, and performance promises are outside the fixed pilot unless separately accepted",
@@ -876,7 +877,7 @@
           "proof": 5,
           "repeatability": 4
         },
-        "state": "active",
+        "state": "gated",
         "weighted_score": 4.45
       },
       "url": ""
@@ -7383,13 +7384,6 @@
       "url": "https://lazying.art/story-clip/fit-check/"
     },
     {
-      "id": "url:5267923d830ab567",
-      "kind": "web_resource",
-      "label": "lazying.art",
-      "metadata": {},
-      "url": "https://lazying.art/video/brand-film/fit-check/"
-    },
-    {
       "id": "url:90cbf0c4f28e84bd",
       "kind": "web_resource",
       "label": "lazying.art",
@@ -8133,7 +8127,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "live_and_verified"
+        "state": "removed_from_current_service_chooser"
       },
       "relation": "targets",
       "source": "campaign:ai-clip-assembly-pilot",
@@ -8975,7 +8969,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "postiz_draft_quality_review"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -8985,7 +8979,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_scheduled"
+        "state": "postiz_draft_quality_review"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -9015,7 +9009,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "postiz_draft_quality_review"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -9582,6 +9576,16 @@
       "relation": "targets",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "obsolete_device_price_post_deleted"
+      },
+      "relation": "targets",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "channel:threads"
     },
     {
       "confidence": 1.0,
@@ -11022,14 +11026,6 @@
       "relation": "uses_evidence",
       "source": "opportunity:ai-clip-assembly",
       "target": "url:487db48ca4cc1809"
-    },
-    {
-      "confidence": 1.0,
-      "evidence_url": "https://lazying.art/video/brand-film/fit-check/",
-      "metadata": {},
-      "relation": "uses_evidence",
-      "source": "opportunity:ai-clip-assembly",
-      "target": "url:5267923d830ab567"
     },
     {
       "confidence": 1.0,

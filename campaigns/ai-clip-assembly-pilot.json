@@ -1,7 +1,7 @@
 {
-  "version": 11,
+  "version": 12,
   "id": "ai-clip-assembly-pilot",
-  "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
+  "objective": "Preserve the AI Clip Assembly work as a historical technical record while the offer remains paused; reactivate it only after a new project-owned sample passes human review for story, motion, continuity, composition, audio, captions, and overall finish.",
   "source_need": {
     "state": "public_explicit_paid_listing",
     "observed_on": "2026-09-06",
@@ -16,16 +16,17 @@
     "demand_interpretation": "A current buyer has attached a USD 500 budget to a bounded six-clip assembly problem. This validates the problem and price point, not LazyingArt demand or a likely award."
   },
   "source_evidence": {
+    "promotion_state": "historical_only_pending_new_visual_proof",
     "source_need_url": "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/",
     "offer": "https://lazying.art/video/brand-film/",
     "assembly_sample": "https://lazying.art/video/brand-film/#sample",
     "assembly_manifest": "https://lazying.art/video/brand-film/sample/manifest.json"
   },
   "offer": {
-    "state": "live",
+    "state": "paused_quality_review",
     "url": "https://lazying.art/video/brand-film/",
     "fit_check": "https://lazying.art/video/brand-film/fit-check/",
-    "website_commit": "89d45f975fc20de85ef404b6dffb92a3bb44bc74",
+    "website_commit": "6d9233b9686bb41f39eb1ab3d084801a52664f3b",
     "price": "USD 500",
     "scope": "Up to six customer-controlled AI-generated clips and 45 seconds of combined source; one 30-45 second 16:9 master; one 25-30 second 16:9 web cut derived from the same edit; basic colour continuity; one music and sound pass; simple supplied titles or logo; H.264 MP4 exports; a source manifest; and one consolidated correction pass.",
     "exclusions": [
@@ -54,7 +55,7 @@
       "fit_check_network_requests_on_review": 0,
       "fit_check_file_upload_present": false,
       "mailto_and_copy_routes_present": true,
-      "assembly_sample_state": "live_http_200_media_functionally_reviewed",
+      "assembly_sample_state": "live_archive_noindex_not_current_selling_proof",
       "assembly_sample_url": "https://lazying.art/video/brand-film/#sample",
       "assembly_sample_desktop_width_checked": 1920,
       "assembly_sample_mobile_width_checked": 390,
@@ -63,16 +64,15 @@
   },
   "proof": {
     "portfolio": "https://lazying.art/video/",
-    "portfolio_commit": "640f50e083311be822de2ceef09b94bf9a0560f8",
+    "portfolio_commit": "6d9233b9686bb41f39eb1ab3d084801a52664f3b",
     "examples": [
       "28-second PocketPolyglot product demonstration",
       "4:36 creator-led PocketPolyglot walkthrough",
-      "12.82-second captioned Story Clip extract",
-      "Six-source Madeira assembly with a 41.958-second master and a 27.816-second web cut"
+      "12.82-second captioned Story Clip extract"
     ],
     "quality_gate": "A clip must pass a current human visual-quality review before it is featured as selling proof. Project ownership, a complete workflow, and technical delivery are necessary but not sufficient.",
     "assembly_sample": {
-      "state": "live_and_verified",
+      "state": "historical_not_featured",
       "url": "https://lazying.art/video/brand-film/#sample",
       "manifest": "https://lazying.art/video/brand-film/sample/manifest.json",
       "build_notes": "https://lazying.art/video/brand-film/sample/README.md",
@@ -91,7 +91,14 @@
         "sha256": "836af75cd57bcba8d72a50b3bd57020d92614d54fbe280dadb8347c6765fa653"
       },
       "technical_qa": "Both live files load as 1280x720 H.264 with stereo AAC audio; neither local output contained a detected black interval of at least 0.5 seconds or silence of at least 0.8 seconds at -45 dB.",
-      "claim_boundary": "This is project-owned AI-assisted footage and editing-process evidence, not customer work, an advertising result, or proof that unseen buyer clips will fit."
+      "claim_boundary": "This is project-owned AI-assisted footage and editing-process evidence, not customer work, an advertising result, or proof that unseen buyer clips will fit. Its early generated visuals are below the current portfolio bar and are retained only as an archived technical record."
+    },
+    "quality_correction": {
+      "checked_at": "2026-09-12T03:09:17+08:00",
+      "decision": "retire_madeira_from_current_selling_proof",
+      "website_action": "Removed the assembly from the homepage service chooser and video portfolio, changed the direct page to a noindex archive, removed its fit-check links, and retained the media and manifest for provenance.",
+      "social_action": "The LinkedIn item remains DRAFT and must not be scheduled with this proof.",
+      "reentry_gate": "A new project-owned sample must pass full story, motion, continuity, composition, audio, caption, and overall-finish review before this offer can return."
     },
     "delivery_sample": "https://lazying.art/story-clip/#sample",
     "claim_boundary": "Every public example is first-party project work. None is a customer brand film, paid UGC campaign, e-commerce performance result, or proof that six unseen source clips will fit."
@@ -136,7 +143,7 @@
     "policy": "A crawl request is not indexing, ranking, traffic, a lead, a sale, or revenue. The WordPress article remains discoverable through its normal sitemap rather than a duplicate manual request."
   },
   "marketplace": {
-    "state": "application_prepared_login_required",
+    "state": "paused_proof_not_current",
     "private_packet": ".local/outreach/ai-brand-film/application-draft.md",
     "proposal_links": [
       "https://lazying.art/video/brand-film/#sample",
@@ -151,7 +158,7 @@
     ]
   },
   "payment_readiness": {
-    "state": "ready_for_reviewed_live_request",
+    "state": "paused_until_new_visual_proof",
     "checked_at": "2026-09-11T04:42:00Z",
     "price": "USD 500",
     "quantity": 1,
@@ -165,20 +172,20 @@
     "stripe_plan_commit": "33e50df4354767ae129095cd23edd7cc5136e81d",
     "stripe_objects_created": false,
     "public_payment_link": false,
-    "remaining_gate": "A real buyer must pass the free fit check and accept the exact written scope, source rights, delivery, correction, cancellation, refund, tax, confidentiality, retention, and support terms before the guarded Stripe creation command is considered."
+    "remaining_gate": "Do not create a Stripe object or accept a buyer request while the offer is paused. A new project-owned sample must first pass the current human quality gate; only then may a real buyer proceed through the fit check and accept the exact written scope and commercial terms."
   },
   "channels": {
     "homepage": {
-      "state": "live_and_verified",
-      "checked_on": "2026-09-07",
-      "website_commit": "9fa6d3254d73f0c3f55dc150eaef7bea655521cc",
+      "state": "removed_from_current_service_chooser",
+      "checked_on": "2026-09-12",
+      "website_commit": "6d9233b9686bb41f39eb1ab3d084801a52664f3b",
       "destination": "https://lazying.art/video/brand-film/?utm_source=lazyingart&utm_medium=website&utm_campaign=ai_clip_assembly&utm_content=service_chooser",
-      "role": "One of five bounded service choices shown immediately below the main banner. The tracked link leads directly to the USD 500 scope and project-owned video proof.",
+      "role": "The weak assembly proof and its service card were removed from the current homepage. The direct page remains an unindexed historical build record.",
       "languages": 13,
       "desktop_width_checked": 1920,
       "mobile_width_checked": 390,
       "horizontal_overflow": false,
-      "policy": "The homepage asks for up to six AI-generated clips the buyer controls and does not ask for source transfer or payment before scope acceptance. Publication is not a lead or sale."
+      "policy": "Do not restore this homepage route until a new visual sample passes the current quality gate."
     },
     "github_localvideogen": {
       "state": "about_url_live_and_verified",
@@ -187,7 +194,7 @@
       "previous_homepage": "https://lazying.art",
       "homepage": "https://lazying.art/video/",
       "destination_status": 200,
-      "role": "The repository About link now opens the first-party video portfolio, where visitors can inspect four project-owned examples before choosing the bounded USD 500 assembly pilot.",
+      "role": "The repository About link opens the first-party video portfolio, where visitors can inspect three current project-owned examples. It no longer routes visitors to the paused assembly pilot.",
       "worktree_boundary": "Only GitHub repository metadata changed. The active LocalVideoGen source worktree and its uncommitted README and code changes were not touched.",
       "policy": "The portfolio identifies every example as project-owned work and makes no customer-performance claim. A repository view or click is not a fit inquiry, sale, or revenue."
     },
@@ -207,7 +214,7 @@
     }
   },
   "funnel": {
-    "state": "owned_offer_fit_check_and_exact_process_proof_live_application_prepared",
+    "state": "offer_paused_pending_new_visual_proof",
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,
     "scope_accepted": false,
@@ -216,5 +223,5 @@
     "received_revenue_usd": 0,
     "gross_target_math": "Two confirmed USD 500 payments equal USD 1,000 gross before fees, tax, refunds, and delivery costs."
   },
-  "policy": "Do not accept source files or payment before reviewing source rights, technical compatibility, story goal, native-project requirement, delivery, revisions, cancellation, refunds, retention, and confidentiality. A public listing, application, queued post, inquiry, or accepted scope is not received revenue."
+  "policy": "Do not promote, accept source files, or accept payment for this paused offer until a new visual sample passes review. A public listing, archived page, draft, inquiry, or accepted scope is not received revenue."
 }

@@ -18,6 +18,12 @@ listings, for example, pointed to already-closed GitHub issues. A closed,
 stale, geographically ineligible, or acceptance-free task is not counted as an
 opportunity.
 
+A fresh index result also described a USD 300 guidebook-to-training-manual
+redesign that fit the Book Specimen workflow. The exact Upwork page was checked
+in the isolated visible browser before proposal drafting and reported that the
+job was offline. The live page overrides the index: no proposal was prepared,
+no buyer was contacted elsewhere, and no Connects were spent.
+
 ## Decision
 
 1. Keep technical verification and infrastructure work ahead of social volume.

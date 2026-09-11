@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 11,
+  "version": 12,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -117,6 +117,20 @@
     "fit": "PocketPolyglot, LinguaLeaf, and Video2Book demonstrate multilingual layout, reflowable and print-like output, and source-aware production patterns.",
     "gap": "The public evidence does not yet prove an urgent 230,000-word KDP/IngramSpark delivery, printer preflight, or customer acceptance at that scale.",
     "decision": "The brief justified a bounded project-owned specimen and proof-first fit-check route. Do not apply or promise the complete scope unseen."
+  },
+  "latest_market_check": {
+    "checked_at": "2026-09-12T02:55:00+08:00",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Redesign-Guidebook-into-Luxury-Training-Manual_~022098088755200440933/",
+    "indexed_signal": "A search result described a USD 300 fixed guidebook-to-training-manual redesign posted on 2026-09-10 with 10–15 proposals.",
+    "visible_live_page": {
+      "state": "offline",
+      "message": "We'll be right back — this page is offline right now.",
+      "evidence": ".local/private/evidence/upwork-luxury-manual-live-2026-09-12.png"
+    },
+    "decision": "rejected_before_application",
+    "proposal_submitted": false,
+    "connects_spent": 0,
+    "policy": "The visible exact job page overrides the indexed result. Do not prepare, submit, retry, or contact the buyer elsewhere after the listing is offline."
   },
   "offer_state": {
     "status": "live_fit_check_payment_gated",

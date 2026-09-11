@@ -222,6 +222,19 @@ to `DRAFT` before publication. The separate text-only X item remains queued.
 The media-backed items must not be rescheduled until a clean-cut replacement
 passes the same timed-frame review.
 
+The `v5` replacement uses hard cuts, contains the complete L/N teaching-model
+regions instead of side-cropping them, and keeps both model words on the
+listening slide. Boundary frames and audio timing passed review. The old
+attachment was then replaced once in each visible Instagram, YouTube, and
+LinkedIn editor. Each editor showed one uploaded replacement and the original
+copy, and each save retained the original URL. A provider read returned all
+three items as `DRAFT`; none was scheduled or published during the review.
+
+The older project-made science scene published on Instagram remains an
+historical post, but its visual finish is below the current promotion bar. Do
+not reuse that scene as current selling proof. The complete project-owned
+lecture-pack delivery packet is the current proof instead.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

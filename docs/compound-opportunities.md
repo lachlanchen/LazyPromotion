@@ -11,7 +11,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Private collection intelligence](#private-collection-intelligence) | active | Turn owned documents into locally searchable, cited, multilingual knowledge without uploading the collection to a hosted chatbot | Use the live passage-provenance proof and the scientific collection sample to qualify one representative source for text survival, structure, concepts, provenance, and a small retrieval eval before recommending any full re-index | 4.65 |
 | [Source-aware book specimen](#source-aware-book-specimen) | active | Turn one representative chapter into traceable print and EPUB specimens so layout, typography, source structure, and production risks can be judged early | Let the chapter-first production guide and project-owned downloadable specimen lead to the free fit check; do not accept a complete book or urgent production schedule without a separately reviewed quote | 4.60 |
 | [Source-preserving lexical ingestion](#source-preserving-lexical-ingestion) | candidate | Add new dictionary or glossary sources to an existing database without losing source locators, raw values, transformation history, rejects, or safe reruns | Find a new explicit paid lexical-ingestion need and use the public two-format proof only when the source formats, provenance problem, and safe-rerun boundary genuinely match; the original USD 1,200 listing closed before submission | 4.50 |
-| [AI clip assembly pilot](#ai-clip-assembly) | active | Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package | Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment | 4.45 |
+| [AI clip assembly pilot](#ai-clip-assembly) | gated | Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package | Create and review a substantially better project-owned assembly sample before restoring an offer, fit-check path, marketplace application, social post, or payment route | 4.45 |
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | active | Turn one repeatedly confused sound contrast into a compact bilingual lesson learners can hear, inspect, practise, print, and revisit | Use the complete light/night lesson as the sample, let one reviewed tutor-facing first-party post lead to the fit check, and qualify the exact contrast, learner context, language, rights, and delivery boundary before payment | 4.40 |
 | [Manuscript build and redline sprint](#scientific-manuscript-workbench) | active | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed | 4.30 |
 | [Lecture-to-study library](#lecture-to-study-library) | active | Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest | Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases | 4.15 |
@@ -125,7 +125,7 @@ Gates:
 
 ### AI clip assembly pilot
 
-**State:** active
+**State:** gated
 
 **Buyer:** A small brand or creator with a handful of existing, customer-controlled AI clips that do not yet form one coherent short film
 
@@ -133,15 +133,14 @@ Gates:
 
 **Existing work:** [LazyEdit](https://github.com/lachlanchen/LazyEdit), [LocalVideoGen](https://github.com/lachlanchen/LocalVideoGen), [LalaStudio](https://github.com/lachlanchen/LalaStudio), [AutoPublish](https://github.com/lachlanchen/AutoPublish)
 
-**First deliverable:** The live USD 500 AI Clip Assembly Pilot for up to six customer-controlled clips and 45 seconds of combined source: one 30–45 second 16:9 master, one 25–30 second web cut from the same edit, basic colour and sound finishing, supplied titles or logo, a source manifest, and one correction pass
+**First deliverable:** No current paid deliverable. The former USD 500 pilot remains archived until a new project-owned assembly sample passes human review for story, motion, continuity, composition, audio, captions, and overall finish
 
-**First demand test:** Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment
+**First demand test:** Create and review a substantially better project-owned assembly sample before restoring an offer, fit-check path, marketplace application, social post, or payment route
 
 Evidence:
 
 - <https://lazying.art/video/brand-film/>
 - <https://lazying.art/video/brand-film/#sample>
-- <https://lazying.art/video/brand-film/fit-check/>
 - <https://lazying.art/video/brand-film/sample/manifest.json>
 - <https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html>
 - <https://github.com/lachlanchen/LazyEdit>
@@ -149,6 +148,7 @@ Evidence:
 
 Gates:
 
+- The archived six-source sample is below the current visual-quality bar and must not be used as current selling proof
 - The customer must control the source clips, voices, faces, music, logos, and other supplied assets
 - The six-source proof is project-owned editing evidence, not customer work, an advertising result, or proof that unseen clips will fit
 - New filming or generation, shot recreation, voice cloning, paid stock, translation, extra formats, publishing, native editor files, and performance promises are outside the fixed pilot unless separately accepted
@@ -672,4 +672,4 @@ Gates:
 
 ## Interpretation
 
-LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, AI clip assembly, OpenHI software reproducibility, the LazyRemote Network Fit Review, and the custom pronunciation mini-lesson are nine priced service routes with an exact scope, public proof, and pre-transfer qualification. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.
+LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, OpenHI software reproducibility, the LazyRemote Network Fit Review, and the custom pronunciation mini-lesson are eight priced service routes with an exact scope, public proof, and pre-transfer qualification. AI clip assembly is gated until a new project-owned sample passes human visual-quality review. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.

@@ -127,10 +127,11 @@ def render(payload: dict) -> str:
             "",
             (
                 "LKT collection fit, manuscript redline, the bilingual lecture pack, the story "
-                "clip pilot, the book specimen, AI clip assembly, OpenHI software "
+                "clip pilot, the book specimen, OpenHI software "
                 "reproducibility, the LazyRemote Network Fit Review, and the custom pronunciation "
-                "mini-lesson are nine priced service "
+                "mini-lesson are eight priced service "
                 "routes with an exact scope, public proof, and pre-transfer qualification. "
+                "AI clip assembly is gated until a new project-owned sample passes human visual-quality review. "
                 "Source-preserving lexical ingestion remains a candidate specialization of LKT: "
                 "its original USD 1,200 listing closed before submission, while the reusable "
                 "synthetic proof remains available for a new explicit need. "

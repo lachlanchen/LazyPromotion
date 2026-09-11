@@ -496,6 +496,10 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertIn("LalaMedias/videos/", sample["url"])
         self.assertIn("45 searchable strings", "\n".join(sample["verified_outputs"]))
         self.assertIn("not an automated LKT import", sample["claim_boundary"])
+        self.assertEqual(
+            sample["promotion_state"],
+            "historical_technical_sample_not_current_selling_proof",
+        )
         channel = campaign["channels"]["x"]
         self.assertEqual(channel["state"], "postiz_published")
         self.assertEqual(
@@ -515,6 +519,10 @@ class OwnedMonitorTests(unittest.TestCase):
 
         instagram = campaign["channels"]["instagram"]
         self.assertEqual(instagram["state"], "postiz_published")
+        self.assertEqual(
+            instagram["promotion_state"],
+            "historical_release_not_reusable_as_current_selling_proof",
+        )
         self.assertEqual(
             instagram["release_url"],
             "https://www.instagram.com/reel/DdJXMiBANpn/",

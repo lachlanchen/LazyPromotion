@@ -30,22 +30,23 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_all_nine_active_routes(self):
+    def test_first_thousand_plan_names_eight_active_routes_and_paused_ai_clip(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: nine focused service routes", body)
+        self.assertIn("# First USD 1,000: eight active service routes", body)
         for offer in (
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
             "Bilingual Lecture Pack",
             "Story Clip Pilot",
-            "AI Clip Assembly Pilot",
             "Book Specimen Sprint",
             "OpenHI Software Reproducibility Sprint",
             "LazyRemote Network Fit Review",
             "Custom Bilingual Pronunciation Mini-Lesson",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these nine routes", body)
+        self.assertIn("payments across these eight routes", body)
+        self.assertIn("AI Clip Assembly Pilot", body)
+        self.assertIn("archived technical record, not current selling proof", body)
 
     def test_openhi_reproducibility_campaign_is_bounded(self):
         campaign = json.loads(
@@ -1246,7 +1247,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 7)
+        self.assertEqual(campaign["version"], 9)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1305,18 +1306,33 @@ class RepositoryTests(unittest.TestCase):
         for name in ("instagram", "youtube"):
             channel = campaign["channels"][name]
             self.assertEqual(channel["state"], "postiz_draft_quality_review")
-            self.assertEqual(channel["media_sha256"], campaign["source_evidence"]["media"]["sha256"])
+            self.assertEqual(
+                channel["media_sha256"],
+                campaign["source_evidence"]["media_quality_review"]["replacement"]["sha256"],
+            )
             self.assertTrue(channel["verification"]["visible_editor_reviewed"])
             self.assertTrue(channel["verification"]["media_visible"])
+            self.assertTrue(channel["verification"]["replacement_media_attached"])
+            self.assertTrue(channel["verification"]["original_urls_preserved_after_save"])
+            self.assertFalse(channel["verification"]["schedule_clicked"])
             self.assertEqual(channel["verification"]["matching_posts"], 1)
             self.assertEqual(channel["verification"]["verified_state"], "DRAFT")
             self.assertFalse(channel["verification"]["release_present"])
-            self.assertIn("overlapping text", channel["quality_hold_reason"])
+            self.assertIn("hard-cut v5", channel["quality_hold_reason"])
         quality = campaign["source_evidence"]["media_quality_review"]
         self.assertEqual(quality["decision"], "hold")
         self.assertEqual(quality["postiz_state_verified"], "DRAFT")
         self.assertEqual(quality["text_only_x_state_verified"], "QUEUE")
         self.assertIn("clean cuts", quality["replacement_gate"])
+        replacement = quality["replacement"]
+        self.assertEqual(
+            replacement["state"],
+            "attached_to_three_postiz_drafts_after_visible_review",
+        )
+        self.assertEqual(len(replacement["sha256"]), 64)
+        self.assertEqual(replacement["cut_boundaries_seconds"], [3.8, 9.6, 12.9, 16.2])
+        self.assertIn("no blended text", replacement["visual_review"])
+        self.assertIn("before the listening slide cuts", replacement["audio_review"])
         x_channel = campaign["channels"]["x"]
         self.assertEqual(x_channel["state"], "postiz_queue")
         self.assertEqual(x_channel["publish_at"], "2026-09-13T02:00:00Z")
@@ -1337,7 +1353,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 23)
+        self.assertEqual(campaign["version"], 24)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -1356,7 +1372,8 @@ class RepositoryTests(unittest.TestCase):
         portfolio = campaign["fit"]["portfolio_reel"]
         self.assertEqual(portfolio["state"], "live_project_owned_work")
         self.assertEqual(portfolio["url"], "https://lazying.art/video/")
-        self.assertEqual(len(portfolio["examples"]), 4)
+        self.assertEqual(len(portfolio["examples"]), 3)
+        self.assertFalse(any("Madeira" in item for item in portfolio["examples"]))
         self.assertIn("not a customer ad", portfolio["policy"])
 
         brand_film = campaign["marketplace_research"]["ai_brand_film"]
@@ -1425,7 +1442,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 23)
+        self.assertEqual(campaign["version"], 24)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -1633,7 +1650,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1644,7 +1661,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("member since July 23, 2023", source["client_record_when_checked"])
 
         offer = campaign["offer"]
-        self.assertEqual(offer["state"], "live")
+        self.assertEqual(offer["state"], "paused_quality_review")
         self.assertEqual(offer["url"], "https://lazying.art/video/brand-film/")
         self.assertEqual(
             offer["fit_check"],
@@ -1678,15 +1695,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(offer["deployment"]["mailto_and_copy_routes_present"])
         self.assertEqual(
             offer["deployment"]["assembly_sample_state"],
-            "live_http_200_media_functionally_reviewed",
+            "live_archive_noindex_not_current_selling_proof",
         )
         self.assertFalse(offer["deployment"]["assembly_sample_horizontal_overflow"])
 
         proof = campaign["proof"]
-        self.assertEqual(len(proof["examples"]), 4)
+        self.assertEqual(len(proof["examples"]), 3)
         self.assertIn("human visual-quality review", proof["quality_gate"])
         sample = proof["assembly_sample"]
-        self.assertEqual(sample["state"], "live_and_verified")
+        self.assertEqual(sample["state"], "historical_not_featured")
         self.assertEqual(sample["source_count"], 6)
         self.assertEqual(sample["selected_source_seconds"], 43.2)
         self.assertEqual(sample["master"]["duration_seconds"], 41.958333)
@@ -1700,6 +1717,12 @@ class RepositoryTests(unittest.TestCase):
             "836af75cd57bcba8d72a50b3bd57020d92614d54fbe280dadb8347c6765fa653",
         )
         self.assertIn("not customer work", sample["claim_boundary"].casefold())
+
+        payment = campaign["payment_readiness"]
+        self.assertEqual(payment["state"], "paused_until_new_visual_proof")
+        self.assertFalse(payment["stripe_objects_created"])
+        self.assertFalse(payment["public_payment_link"])
+        self.assertIn("do not create a stripe object", payment["remaining_gate"].casefold())
 
         article = campaign["owned_content"]
         self.assertEqual(article["state"], "published_and_verified")
@@ -1729,7 +1752,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not indexing", discovery["policy"])
 
         marketplace = campaign["marketplace"]
-        self.assertEqual(marketplace["state"], "application_prepared_login_required")
+        self.assertEqual(marketplace["state"], "paused_proof_not_current")
         self.assertFalse(marketplace["application_submitted"])
         self.assertEqual(marketplace["connects_spent"], 0)
         self.assertEqual(
@@ -1753,12 +1776,12 @@ class RepositoryTests(unittest.TestCase):
         )
 
         homepage = campaign["channels"]["homepage"]
-        self.assertEqual(homepage["state"], "live_and_verified")
+        self.assertEqual(homepage["state"], "removed_from_current_service_chooser")
         self.assertEqual(homepage["languages"], 13)
         self.assertEqual(homepage["mobile_width_checked"], 390)
         self.assertFalse(homepage["horizontal_overflow"])
         self.assertIn("utm_campaign=ai_clip_assembly", homepage["destination"])
-        self.assertIn("not a lead or sale", homepage["policy"].casefold())
+        self.assertIn("do not restore", homepage["policy"].casefold())
 
         github = campaign["channels"]["github_localvideogen"]
         self.assertEqual(github["state"], "about_url_live_and_verified")
@@ -3114,10 +3137,6 @@ class RepositoryTests(unittest.TestCase):
                 "story_clip_pilot",
                 ("owned_offer", "homepage"),
             ),
-            "ai-clip-assembly-pilot.json": (
-                "ai_clip_assembly",
-                ("channels", "homepage"),
-            ),
         }
 
         for filename, (campaign_name, homepage_path) in expected.items():
@@ -3138,6 +3157,17 @@ class RepositoryTests(unittest.TestCase):
             self.assertIn("utm_content=service_chooser", homepage["destination"])
             self.assertIn("one of five", homepage["role"].casefold())
             self.assertIn("not a lead or sale", homepage["policy"].casefold())
+
+        paused = json.loads(
+            (ROOT / "campaigns" / "ai-clip-assembly-pilot.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(paused["offer"]["state"], "paused_quality_review")
+        self.assertEqual(
+            paused["channels"]["homepage"]["state"],
+            "removed_from_current_service_chooser",
+        )
 
     def test_github_profile_routes_all_active_sprints_to_public_proof_first(self):
         expected = {
@@ -3162,7 +3192,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 33)
+        self.assertEqual(campaign["version"], 34)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -3210,7 +3240,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("Traditional Chinese wording", marketplace["proposal_draft"])
         self.assertIn("won't claim ROAS", marketplace["proposal_draft"])
         sample = marketplace["prepared_sample"]
-        self.assertEqual(sample["state"], "local_attachment_ready_not_published")
+        self.assertEqual(sample["state"], "local_quality_reviewed_not_published")
         self.assertEqual(sample["dimensions"], "1080x1920")
         self.assertEqual(sample["frame_rate"], 30)
         self.assertEqual(len(sample["sha256"]), 64)
@@ -3317,6 +3347,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not customer work", caption_guide["policy"])
 
         sample = campaign["source_evidence"]["executed_media_sample"]
+        self.assertEqual(
+            sample["promotion_state"],
+            "historical_technical_sample_not_current_selling_proof",
+        )
+        self.assertIn("must not be reused", sample["quality_boundary"])
         preview = sample["social_preview"]
         self.assertEqual(preview["dimensions"], "1200x630")
         self.assertEqual(len(preview["sha256"]), 64)
@@ -3341,6 +3376,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(delivery["lead_or_sale_observed"])
         self.assertEqual(delivery["verified_received_gross_usd"], 0)
         self.assertIn("not customer work", delivery["claim_boundary"])
+        correction = campaign["source_evidence"]["media_quality_correction"]
+        self.assertEqual(
+            correction["decision"],
+            "keep_historical_release_but_remove_from_current_selling_proof",
+        )
+        self.assertIn("not deleted", correction["deletion_boundary"])
 
         terms = campaign["source_evidence"]["working_terms_contract"]
         self.assertEqual(terms["state"], "live_verified")
@@ -3652,7 +3693,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -3726,6 +3767,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(blog["search_console"]["repeat_request_allowed"])
         self.assertIn("not a lead", blog["policy"])
         self.assertIn("230,000-word", campaign["current_paid_need"]["published_scope"])
+        latest = campaign["latest_market_check"]
+        self.assertEqual(latest["visible_live_page"]["state"], "offline")
+        self.assertEqual(latest["decision"], "rejected_before_application")
+        self.assertFalse(latest["proposal_submitted"])
+        self.assertEqual(latest["connects_spent"], 0)
+        self.assertIn("overrides the indexed result", latest["policy"])
         self.assertEqual(campaign["offer_state"]["received_revenue_usd"], 0)
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)
 
@@ -3738,7 +3785,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 23)
+        self.assertEqual(campaign["version"], 24)
         self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])

@@ -1,5 +1,5 @@
 {
-  "version": 23,
+  "version": 24,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -127,22 +127,22 @@
     "portfolio_reel": {
       "state": "live_project_owned_work",
       "url": "https://lazying.art/video/",
-      "website_commit": "640f50e083311be822de2ceef09b94bf9a0560f8",
+      "website_commit": "6d9233b9686bb41f39eb1ab3d084801a52664f3b",
       "examples": [
         "28-second PocketPolyglot device and product demonstration",
         "4:36 creator-led PocketPolyglot walkthrough",
-        "12.82-second captioned Story Clip Pilot extract",
-        "Six-source Madeira assembly with a 41.958-second master and a 27.816-second web cut"
+        "12.82-second captioned Story Clip Pilot extract"
       ],
       "policy": "The page states the exact project role beside each public player. Every example is first-party project work, not a customer ad, paid UGC campaign, e-commerce result, or performance case study. A current human visual-quality review is required before any clip is added."
     }
   },
   "quality_correction": {
     "made_at": "2026-09-11",
-    "website_commit": "640f50e083311be822de2ceef09b94bf9a0560f8",
+    "website_commit": "6d9233b9686bb41f39eb1ab3d084801a52664f3b",
     "retired_sample": "Desert Oasis",
+    "second_retired_sample": "Madeira six-source assembly",
     "reason": "The older generation met provenance and delivery checks but did not meet the current visual-quality bar for featured selling proof.",
-    "historical_boundary": "Two earlier applications included its public YouTube URL. Those sent-message records remain factual, but the clip must not be reused in future portfolios, pitches, applications, or scheduled content.",
+    "historical_boundary": "Earlier applications or pages may have included these public assets. Those historical records remain factual, but both clips must not be reused in future portfolios, pitches, applications, or scheduled content.",
     "future_gate": "Ownership and workflow completion do not establish portfolio quality. Every featured clip needs a fresh human review of story, motion, continuity, composition, audio, captions, and overall finish."
   },
   "marketplace_research": {

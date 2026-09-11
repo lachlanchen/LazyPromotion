@@ -1,5 +1,7 @@
 # Paid-need decision — 2026-09-08
 
+> Historical snapshot. The AI Clip Assembly route was paused on 2026-09-12 after human review found that its early generated visuals did not meet the current portfolio bar.
+
 The USD 1,200 OUTOFPAPUA lexical-ingestion listing is no longer actionable.
 Its public Upwork page now says the job is no longer available, and no
 application was submitted. The source-preserving proof remains useful, but it

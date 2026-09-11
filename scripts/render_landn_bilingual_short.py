@@ -14,6 +14,10 @@ from pathlib import Path
 WIDTH = 1080
 HEIGHT = 1920
 FPS = 30
+# Keep both project-owned model words entirely on the listening slide. The
+# remaining slides stay long enough to read without reviving cross-fades.
+SLIDE_DURATIONS = (3.8, 5.8, 3.3, 3.3, 3.15)
+TOTAL_DURATION = sum(SLIDE_DURATIONS)
 FONT_REGULAR = Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc")
 FONT_BOLD = Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc")
 
@@ -103,6 +107,28 @@ def contain(Image, source: Path, size: tuple[int, int], radius: int):
     return canvas
 
 
+def contain_region(
+    Image,
+    source: Path,
+    box: tuple[int, int, int, int],
+    size: tuple[int, int],
+    radius: int,
+):
+    """Show a complete, intentional source region without clipping its text."""
+    from PIL import ImageDraw, ImageOps
+
+    image = Image.open(source).convert("RGB").crop(box)
+    fitted = ImageOps.contain(image, size, method=Image.Resampling.LANCZOS)
+    canvas = Image.new("RGB", size, CREAM)
+    x = (size[0] - fitted.width) // 2
+    y = (size[1] - fitted.height) // 2
+    canvas.paste(fitted, (x, y))
+    mask = Image.new("L", size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, *size), radius=radius, fill=255)
+    canvas.putalpha(mask)
+    return canvas
+
+
 def base_slide(Image, ImageDraw, ImageFont, icon_path: Path, index: int):
     image = Image.new("RGB", (WIDTH, HEIGHT), CREAM)
     draw = ImageDraw.Draw(image)
@@ -172,14 +198,16 @@ def render_slides(workdir: Path, inputs: dict[str, Path]) -> list[Path]:
     image, draw = base_slide(Image, ImageDraw, ImageFont, inputs["icon"], 2)
     center(draw, "Same place. Different pathway.", 280, heading, INK)
     center(draw, "舌位相近，氣流不同。", 380, chinese, TEAL)
-    mouth_l = cover(Image, inputs["mouth_l"], (440, 1040), 44)
-    mouth_n = cover(Image, inputs["mouth_n"], (440, 1040), 44)
-    image.paste(mouth_l, (70, 505), mouth_l)
-    image.paste(mouth_n, (570, 505), mouth_n)
-    draw.rounded_rectangle((160, 1490, 420, 1590), radius=42, fill=CORAL)
-    draw.rounded_rectangle((660, 1490, 920, 1590), radius=42, fill=TEAL)
-    draw.text((290, 1540), "L · side airflow", font=small, fill=WHITE, anchor="mm")
-    draw.text((790, 1540), "N · nasal airflow", font=small, fill=WHITE, anchor="mm")
+    model_region = (16, 65, 469, 746)
+    mouth_l = contain_region(Image, inputs["mouth_l"], model_region, (440, 720), 44)
+    mouth_n = contain_region(Image, inputs["mouth_n"], model_region, (440, 720), 44)
+    image.paste(mouth_l, (70, 500), mouth_l)
+    image.paste(mouth_n, (570, 500), mouth_n)
+    draw.rounded_rectangle((160, 1270, 420, 1370), radius=42, fill=CORAL)
+    draw.rounded_rectangle((660, 1270, 920, 1370), radius=42, fill=TEAL)
+    draw.text((290, 1320), "L · side airflow", font=small, fill=WHITE, anchor="mm")
+    draw.text((790, 1320), "N · nasal airflow", font=small, fill=WHITE, anchor="mm")
+    center(draw, "One contact point. Two air paths.", 1510, body, INK)
     path = workdir / "03-mouth.png"
     image.save(path)
     paths.append(path)
@@ -216,17 +244,29 @@ def render_slides(workdir: Path, inputs: dict[str, Path]) -> list[Path]:
 def render_video(slides: list[Path], inputs: dict[str, Path], output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     command = ["ffmpeg", "-y"]
-    for slide in slides:
-        command.extend(["-loop", "1", "-t", "4.7", "-i", str(slide)])
-    command.extend(["-f", "lavfi", "-t", "20", "-i", "anullsrc=r=48000:cl=stereo"])
+    for slide, duration in zip(slides, SLIDE_DURATIONS, strict=True):
+        command.extend(["-loop", "1", "-t", f"{duration:.2f}", "-i", str(slide)])
+    command.extend(
+        [
+            "-f",
+            "lavfi",
+            "-t",
+            f"{TOTAL_DURATION:.2f}",
+            "-i",
+            "anullsrc=r=48000:cl=stereo",
+        ]
+    )
     command.extend(["-i", str(inputs["light_audio"]), "-i", str(inputs["night_audio"])])
-    filters = [f"[{index}:v]fps={FPS},format=yuv420p[v{index}]" for index in range(5)]
+    filters = [
+        (
+            f"[{index}:v]fps={FPS},trim=duration={duration:.2f},"
+            f"setpts=PTS-STARTPTS,format=yuv420p[v{index}]"
+        )
+        for index, duration in enumerate(SLIDE_DURATIONS)
+    ]
     filters.extend(
         [
-            "[v0][v1]xfade=transition=fade:duration=0.55:offset=3.8[x1]",
-            "[x1][v2]xfade=transition=fade:duration=0.55:offset=7.6[x2]",
-            "[x2][v3]xfade=transition=fade:duration=0.55:offset=11.4[x3]",
-            "[x3][v4]xfade=transition=fade:duration=0.55:offset=15.2[vout]",
+            "[v0][v1][v2][v3][v4]concat=n=5:v=1:a=0[vout]",
             "[6:a]atrim=0:2.55,volume=1.1,pan=stereo|c0=c0|c1=c0,adelay=4100|4100[light]",
             "[7:a]atrim=0:2.85,volume=1.1,pan=stereo|c0=c0|c1=c0,adelay=6900|6900[night]",
             "[5:a][light][night]amix=inputs=3:duration=first:dropout_transition=0[aout]",
@@ -241,7 +281,7 @@ def render_video(slides: list[Path], inputs: dict[str, Path], output: Path) -> N
             "-map",
             "[aout]",
             "-t",
-            "19.35",
+            f"{TOTAL_DURATION:.2f}",
             "-c:v",
             "libx264",
             "-preset",

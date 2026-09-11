@@ -173,7 +173,7 @@ PRIORITIES = [
         "work": "LazyEdit + LocalVideoGen + LalaStudio",
         "need": "Several existing AI clips need one coherent short story, master cut, and web cut",
         "audience": "Small brands and creators who control their source clips",
-        "route": "USD 500 AI Clip Assembly Pilot after a free fit check; new generation and performance promises excluded",
+        "route": "Paused; the old assembly is an archived technical record, not current selling proof",
         "url": "https://lazying.art/video/brand-film/",
     },
     {
@@ -286,11 +286,12 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across nine "
+            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across eight "
             "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
             "Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen "
-            "Sprint, AI Clip Assembly, the OpenHI software reproducibility sprint, the "
+            "Sprint, the OpenHI software reproducibility sprint, the "
             "LazyRemote Network Fit Review, and the Custom Bilingual Pronunciation Mini-Lesson. "
+            "AI Clip Assembly is paused until a better sample passes human review. "
             "The eInk inquiry and Figurine checkout "
             "remain separate offers, not competing calls to action. Open-source replies "
             "should optimize for a solved problem, not for extracting a donation. GitHub "

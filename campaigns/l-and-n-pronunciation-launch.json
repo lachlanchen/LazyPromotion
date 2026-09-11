@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 9,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -90,7 +90,32 @@
       ],
       "postiz_state_verified": "DRAFT",
       "text_only_x_state_verified": "QUEUE",
-      "replacement_gate": "Do not reschedule a media-backed post until a new export uses clean cuts or non-overlapping transitions and passes the same timed-frame review."
+      "replacement_gate": "Do not reschedule a media-backed post until a new export uses clean cuts or non-overlapping transitions and passes the same timed-frame review.",
+      "replacement": {
+        "state": "attached_to_three_postiz_drafts_after_visible_review",
+        "filename": "landn-bilingual-vertical-v5.mp4",
+        "sha256": "7c2b0fb86c0f284832a1e7851d1ce71b1707c3602c07f83e8a672d178a8ff15b",
+        "duration_seconds": 19.366667,
+        "dimensions": "1080x1920",
+        "video": "H.264 at 30 fps",
+        "audio": "AAC stereo at 48 kHz",
+        "cut_boundaries_seconds": [
+          3.8,
+          9.6,
+          12.9,
+          16.2
+        ],
+        "visual_review": "Before-and-after frames at all four hard cuts show one complete slide with no blended text or panels; both mouth-model source regions are fully contained rather than side-cropped.",
+        "audio_review": "The unchanged first-party light/night audio ends at 9.566 seconds, before the listening slide cuts at 9.6 seconds; peak level is -12.2 dB.",
+        "postiz_reviewed_at": "2026-09-12T03:09:17+08:00",
+        "postiz_channels": [
+          "instagram",
+          "youtube",
+          "linkedin"
+        ],
+        "postiz_verification": "The old attachment was removed once in each visible editor, this exact local file was uploaded through the editor, one replacement tile and preview were visible, the original content and URL were preserved, and Save as draft completed with DRAFT still returned by the provider read.",
+        "postiz_boundary": "The replacement is attached to all three drafts, but none was scheduled or published during the replacement review."
+      }
     }
   },
   "need_research": {
@@ -120,12 +145,12 @@
       "content": "I have trouble pronouncing L and N, so I built the practice tool I wanted.\n\nHear a pair, see the mouth and airflow cue, record one word, and get feedback you can inspect. The same four-minute drill works in English, Mandarin, and Cantonese.\n\nIt’s free and open source, and runs in the browser without an account:\nhttps://l-and-n.lazying.art/\n\nIf you try it, tell me whether the mouth view actually makes the difference clearer.",
       "content_sha256": "4976b657ef333e7e2aa1104c28326e16317c2166c2ae51eaad0362b25f0c6898",
       "destination": "https://l-and-n.lazying.art/",
-      "media_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "media_sha256": "7c2b0fb86c0f284832a1e7851d1ce71b1707c3602c07f83e8a672d178a8ff15b",
       "settings": {
         "post_as_images_carousel": false
       },
       "schedule_verification": {
-        "checked_at": "2026-09-05T20:12:46Z",
+        "checked_at": "2026-09-12T03:09:17+08:00",
         "provider": "linkedin",
         "integration_enabled": true,
         "provider_max_length": 3000,
@@ -136,18 +161,22 @@
         "stored_html_normalizes_to_reviewed_text": true,
         "matching_posts": 1,
         "verified_state": "DRAFT",
-        "release_present": false
+        "release_present": false,
+        "replacement_media_attached": true,
+        "schedule_clicked": false
       },
       "visible_review": {
-        "checked_at": "2026-09-05T11:12:00Z",
+        "checked_at": "2026-09-12T03:09:17+08:00",
         "stored_text_normalized_exact": true,
         "original_url_preserved": true,
         "media_visible": true,
         "state_rechecked": "DRAFT",
-        "release_present": false
+        "release_present": false,
+        "replacement_media_visible": true,
+        "original_urls_preserved_after_save": true
       },
-      "quality_hold_reason": "The shared video has overlapping text and app screens during cross-fades. Keep this draft unpublished until a clean replacement passes timed-frame review.",
-      "policy": "This first-party product demonstration is held as a draft, not a public post, engagement, lead, or sale. Do not reschedule it with the current media."
+      "quality_hold_reason": "The cross-faded source was replaced with the hard-cut v5 export. Keep this reviewed replacement as a draft until a separate scheduling decision.",
+      "policy": "This first-party product demonstration remains a draft, not a public post, engagement, lead, or sale."
     },
     "instagram": {
       "state": "postiz_draft_quality_review",
@@ -156,21 +185,24 @@
       "postiz_content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
       "destination": "https://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo",
       "content_sha256": "1455439bcc20e0fef431dcb062af2efce8cccd780712af7b47a581014e1028b3",
-      "media_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "media_sha256": "7c2b0fb86c0f284832a1e7851d1ce71b1707c3602c07f83e8a672d178a8ff15b",
       "settings": {
         "post_type": "post"
       },
       "verification": {
-        "checked_at": "2026-09-06T18:23:31Z",
+        "checked_at": "2026-09-12T03:09:17+08:00",
         "provider_max_length": 2200,
         "provider_attachment_rule_satisfied": true,
         "visible_editor_reviewed": true,
         "media_visible": true,
         "matching_posts": 1,
         "verified_state": "DRAFT",
-        "release_present": false
+        "release_present": false,
+        "replacement_media_attached": true,
+        "original_urls_preserved_after_save": true,
+        "schedule_clicked": false
       },
-      "quality_hold_reason": "The shared video has overlapping text and app screens during cross-fades. Keep this draft unpublished until a clean replacement passes timed-frame review.",
+      "quality_hold_reason": "The cross-faded source was replaced with the hard-cut v5 export. Keep this reviewed replacement as a draft until a separate scheduling decision.",
       "policy": "A first-party vertical demonstration of the live free browser app. It is held as a draft, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "youtube": {
@@ -181,7 +213,7 @@
       "postiz_content": "I mix up L and N, so I built the short practice loop I wanted: hear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback.\n\nTry it free in the browser, no account:\nhttps://l-and-n.lazying.art/?utm_source=youtube&utm_medium=video&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nEnglish, Mandarin, and Cantonese.\n\n#PronunciationPractice #LanguageLearning #Shorts",
       "destination": "https://l-and-n.lazying.art/?utm_source=youtube&utm_medium=video&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo",
       "content_sha256": "44e3062bb0b9b12248e69567f79452d736d12625b8b0e2b3a65eee02918a1146",
-      "media_sha256": "da3962c6ce0a34db33d27ed1defa69e0ad6ea08e3f6f7c71f7e205024368f971",
+      "media_sha256": "7c2b0fb86c0f284832a1e7851d1ce71b1707c3602c07f83e8a672d178a8ff15b",
       "settings": {
         "type": "public",
         "selfDeclaredMadeForKids": "no",
@@ -194,16 +226,19 @@
         ]
       },
       "verification": {
-        "checked_at": "2026-09-06T18:23:31Z",
+        "checked_at": "2026-09-12T03:09:17+08:00",
         "provider_max_length": 5000,
         "provider_attachment_rule_satisfied": true,
         "visible_editor_reviewed": true,
         "media_visible": true,
         "matching_posts": 1,
         "verified_state": "DRAFT",
-        "release_present": false
+        "release_present": false,
+        "replacement_media_attached": true,
+        "original_urls_preserved_after_save": true,
+        "schedule_clicked": false
       },
-      "quality_hold_reason": "The shared video has overlapping text and app screens during cross-fades. Keep this draft unpublished until a clean replacement passes timed-frame review.",
+      "quality_hold_reason": "The cross-faded source was replaced with the hard-cut v5 export. Keep this reviewed replacement as a draft until a separate scheduling decision.",
       "policy": "A first-party vertical demonstration of the live free browser app. It is held as a draft, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
     },
     "reddit": {

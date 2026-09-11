@@ -1,10 +1,10 @@
-# First USD 1,000: nine focused service routes
+# First USD 1,000: eight active service routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
 Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one
-customer-owned recording. The **AI Clip Assembly Pilot** adds a bounded **USD
-500** route for up to six existing customer-controlled clips. The **Book
+customer-owned recording. The former **AI Clip Assembly Pilot** is paused: its
+old sample is an archived technical record, not current selling proof. The **Book
 Specimen Sprint** adds a **USD 250** route for one final, rights-cleared chapter
 tested as print and reflowable output. The **OpenHI Software Reproducibility Sprint**
 adds a software-only **USD 500** route for one existing workstation,
@@ -12,7 +12,7 @@ one rights-cleared dataset, and one named repository pipeline stage. Each route
 has a fixed scope and project-owned proof. The **LazyRemote Network Fit Review**
 adds a software-only **USD 250** route for one reachable relay and up to three
 existing customer-owned computers. The milestone can be two USD 500
-sprints, four USD 250 sprints, or any confirmed combination of payments across these nine routes
+sprints, four USD 250 sprints, or any confirmed combination of payments across these eight routes
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
@@ -47,13 +47,10 @@ charge, or payout was created. This closes an operational gap on the portfolio's
 strongest current need-shaped traffic path without turning it into an open
 self-serve checkout.
 
-The Story Clip and AI Clip Assembly routes now have the same protected handoff.
-Their USD 250 and USD 500 Stripe plans each fix quantity at one, disable public
-export and promotion codes, collect no shipping address or phone number, and
-require nine source-rights, scope, delivery, correction, privacy, and refund
-checks. Sanitized read-only checks confirmed the live account is ready, while
-no Stripe object or public checkout was created. This makes the existing media
-applications fulfillable if a buyer replies and accepts the written scope.
+The Story Clip route has a protected payment handoff. The AI Clip Assembly
+payment plan remains technically recorded but is paused with the offer: no
+Stripe object, public checkout, source transfer, or buyer request may proceed
+until a better project-owned sample passes human visual-quality review.
 
 The Book Specimen Sprint is now payment-ready under the same fit-first rule.
 Its guarded USD 250 plan fixes one chapter of up to 5,000 words, requires nine
@@ -516,36 +513,40 @@ they were demonstrations, closed, not ready, or already contested by open pull
 requests. Neither stale job pages nor displayed bounty values count toward the
 USD 1,000 target.
 
-The newest direct need is a worldwide USD 500 listing asking for six existing
+On September 6, a worldwide USD 500 listing asked for six existing
 AI-generated clips to become one 30–45 second brand film and one 25–30 second
-web cut. The public [AI Clip Assembly Pilot](https://lazying.art/video/brand-film/)
-now turns that into a repeatable boundary: up to six clips and 45 seconds of
+web cut. A public [AI Clip Assembly Pilot](https://lazying.art/video/brand-film/)
+was built around a repeatable boundary: up to six clips and 45 seconds of
 combined source, two cuts from one 16:9 edit, basic colour and sound finishing,
 a source manifest, and one correction pass. New generation, shot recreation,
 paid stock, translation, extra formats, publishing, and native editor files are
-outside the fixed scope unless separately accepted. The
-[free clip fit check](https://lazying.art/video/brand-film/fit-check/) now turns
+outside the fixed scope unless separately accepted. The clip fit check turned
 the inventory, rights, story, destination, and handoff questions into a reviewed
-email or copyable request in the visitor's browser; it transfers no file and
-makes no network request during review. An exact
-[six-source assembly proof](https://lazying.art/video/brand-film/#sample) now
+email or copyable request in the visitor's browser; it transferred no file and
+made no network request during review. A
+[six-source assembly proof](https://lazying.art/video/brand-film/#sample)
 shows 43.2 seconds of selected project-owned source becoming a 41.958-second
 master and a 27.816-second web cut from the same timeline. Both videos play on
 the offer page, while the source order, crop, selected ranges, output probes,
 SHA-256 hashes, and FFmpeg build are inspectable beside them. This is editing
-process evidence, not customer work or an advertising result. A private application is ready but
-Upwork remains logged out, so no proposal, Connects spend, buyer
-reply, payment, or revenue exists. One LinkedIn explanation is queued for 28
-September after visible review; a queue item is not publication or a lead.
+process evidence, not customer work or an advertising result. Upwork remained
+logged out, so no proposal, Connects spend, buyer reply, payment, or revenue
+resulted. The LinkedIn explanation is back in draft and must not be scheduled
+with this proof.
 The companion [practical assembly guide](https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html)
 is live in English, Traditional Chinese, and Japanese. It explains the complete
 method before one tracked offer link and includes no prospect details or
 customer-result claim. Publication is discovery evidence, not a sale.
-Search Console then showed 12 clicks to the existing FFmpeg guide. Its English,
-Chinese, and Japanese editions now keep the complete answer while routing one
-relevant workflow link to the exact six-source assembly proof instead of the
-generic Studio page. This is a proof-first owned path, not buyer intent or
-revenue.
+Search Console then showed 12 clicks to the existing FFmpeg guide. That search
+signal remains historical discovery evidence, not buyer intent or revenue.
+
+On September 12, human review found that the early generated visuals did not
+meet the current portfolio bar. Website commit `6d9233b` removed the piece from
+the homepage, current video portfolio, lecture-pack proof, and sitemap, and
+converted the direct page into an unindexed archive without a fit-check or
+payment path. The offer, marketplace application, social post, and Stripe
+handoff are paused until a substantially better project-owned sample passes
+review.
 
 The former clearest one-contract route was a USD 1,200 Upwork listing for
 OUTOFPAPUA lexical-database ingestion and data carpentry. The buyer needed code
@@ -1197,10 +1198,11 @@ page, canonical metadata, quick start, and key-storage guide; Pages run
 
 The [compound opportunity map](compound-opportunities.md) combines the public
 portfolio into bounded buyer-shaped tests. It includes books, knowledge graphs,
-media, research tooling, games, and local AI. The homepage now exposes seven
+media, research tooling, games, and local AI. The homepage now exposes six
 bounded service routes: LKT, manuscript redline, the bilingual lecture pack,
-Story Clip, AI Clip Assembly, the Book Specimen Sprint, and the OpenHI software
-sprint. The selected-work shelf also leads from OpenHI's project-owned executed
+Story Clip, the Book Specimen Sprint, and the OpenHI software sprint. The
+AI Clip Assembly page remains only as an unindexed archive. The selected-work
+shelf also leads from OpenHI's project-owned executed
 sample to its USD 500 scope. The LazyRemote review remains on its exact
 remote-access route. A candidate advances only after a current need and a small
 first test are found.

@@ -16,10 +16,20 @@ class FeaturedMediaQualityTests(unittest.TestCase):
         quality = campaign["source_evidence"]["media_quality_review"]
         self.assertEqual(quality["decision"], "hold")
         self.assertIn("overlapping headings", quality["issue"])
+        self.assertEqual(
+            quality["replacement"]["state"],
+            "attached_to_three_postiz_drafts_after_visible_review",
+        )
+        self.assertIn("hard cuts", quality["replacement"]["visual_review"])
+        self.assertIn("none was scheduled", quality["replacement"]["postiz_boundary"])
         for channel in ("instagram", "youtube", "linkedin"):
             self.assertEqual(
                 campaign["channels"][channel]["state"],
                 "postiz_draft_quality_review",
+            )
+            self.assertEqual(
+                campaign["channels"][channel]["media_sha256"],
+                quality["replacement"]["sha256"],
             )
         self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
 
@@ -31,7 +41,13 @@ class FeaturedMediaQualityTests(unittest.TestCase):
         )
         examples = campaign["proof"]["examples"]
         self.assertFalse(any("Desert Oasis" in example for example in examples))
+        self.assertFalse(any("Madeira" in example for example in examples))
         self.assertIn("human visual-quality review", campaign["proof"]["quality_gate"])
+        self.assertEqual(campaign["offer"]["state"], "paused_quality_review")
+        self.assertEqual(
+            campaign["proof"]["assembly_sample"]["state"],
+            "historical_not_featured",
+        )
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_draft_quality_review")
         self.assertEqual(linkedin["verified_state"], "DRAFT")

@@ -138,22 +138,22 @@
     {
       "id": "ai-clip-assembly",
       "title": "AI clip assembly pilot",
-      "state": "active",
+      "state": "gated",
       "buyer": "A small brand or creator with a handful of existing, customer-controlled AI clips that do not yet form one coherent short film",
       "need": "Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package",
       "projects": ["LazyEdit", "LocalVideoGen", "LalaStudio", "AutoPublish"],
-      "first_deliverable": "The live USD 500 AI Clip Assembly Pilot for up to six customer-controlled clips and 45 seconds of combined source: one 30–45 second 16:9 master, one 25–30 second web cut from the same edit, basic colour and sound finishing, supplied titles or logo, a source manifest, and one correction pass",
-      "first_test": "Use the six-source project-owned assembly proof for an explicit clip-assembly need, beginning with private previews and a rights and technical fit check before source transfer or payment",
+      "first_deliverable": "No current paid deliverable. The former USD 500 pilot remains archived until a new project-owned assembly sample passes human review for story, motion, continuity, composition, audio, captions, and overall finish",
+      "first_test": "Create and review a substantially better project-owned assembly sample before restoring an offer, fit-check path, marketplace application, social post, or payment route",
       "proof": [
         "https://lazying.art/video/brand-film/",
         "https://lazying.art/video/brand-film/#sample",
-        "https://lazying.art/video/brand-film/fit-check/",
         "https://lazying.art/video/brand-film/sample/manifest.json",
         "https://blog.lazying.art/html/computer_internet/3806/turn-ai-generated-clips-into-coherent-brand-film.html",
         "https://github.com/lachlanchen/LazyEdit",
         "https://www.upwork.com/freelance-jobs/apply/Video-Creator-and-Editor_~022096131823717049350/"
       ],
       "gates": [
+        "The archived six-source sample is below the current visual-quality bar and must not be used as current selling proof",
         "The customer must control the source clips, voices, faces, music, logos, and other supplied assets",
         "The six-source proof is project-owned editing evidence, not customer work, an advertising result, or proof that unseen clips will fit",
         "New filming or generation, shot recreation, voice cloning, paid stock, translation, extra formats, publishing, native editor files, and performance promises are outside the fixed pilot unless separately accepted",

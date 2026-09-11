@@ -17,13 +17,16 @@ class OpportunityTests(unittest.TestCase):
                 "lecture-to-study-library",
                 "source-aware-book-specimen",
                 "story-first-content-repurposing",
-                "ai-clip-assembly",
                 "scientific-manuscript-workbench",
                 "private-multidevice-remote-access",
                 "openhi-reproducibility-session",
                 "focused-pronunciation-micro-lessons",
             ],
         )
+        gated = [
+            item["id"] for item in payload["opportunities"] if item["state"] == "gated"
+        ]
+        self.assertIn("ai-clip-assembly", gated)
         self.assertEqual(
             [
                 item["id"]
@@ -95,7 +98,8 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("operator-reviewed deployment evidence", body)
         self.assertIn("Google Play production listing is independently public", body)
         self.assertIn("Treat TestFlight as a beta route", body)
-        self.assertIn("are nine priced service routes", body)
+        self.assertIn("are eight priced service routes", body)
+        self.assertIn("AI clip assembly is gated", body)
         self.assertIn("listing closed before submission", body)
         self.assertIn("Gates:", body)
         self.assertNotIn("EchoMind", body)

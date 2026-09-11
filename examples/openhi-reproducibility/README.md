@@ -12,8 +12,13 @@ Use a clean OpenHI checkout at the revision named in `artifacts/summary.json`:
 ```bash
 python examples/openhi-reproducibility/build.py --openhi-root /path/to/OpenHI
 python examples/openhi-reproducibility/build.py --openhi-root /path/to/OpenHI --check
+python examples/openhi-reproducibility/package.py
 python -m unittest tests.test_openhi_reproducibility_proof
 ```
+
+`package.py` first checks the frozen manifest, then writes the same nine-file
+sample packet and SHA-256 sidecar on every run. The archive contains this
+README, the builder, and all seven public evidence artifacts under one folder.
 
 The selected stage is `visualize_cumulative_weighted.py` with `--no_comp` and
 the non-interactive Matplotlib `Agg` backend. It requires NumPy and Matplotlib;

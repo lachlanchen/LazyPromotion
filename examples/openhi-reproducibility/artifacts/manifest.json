@@ -10,7 +10,7 @@
   "boundary": "Project-owned synthetic workflow evidence only: no client data, camera, optics, specimen, acquisition, calibration, compensation, reconstruction accuracy, hardware qualification, or paper-result reproduction, and no customer result.",
   "manifest_self_hashed": false,
   "source_sha256": {
-    "README.md": "e3a26af907459024da93cba31ac4a3837678b8855d1462beb0a42af8c507d746",
+    "README.md": "ad114364be3112dc2cb23bf16d1b1b8515b88f9699552d3abd75864db98f2d3d",
     "build.py": "d814378ec2053b7430afa3c991762c10d775d6c28a98ee048fc6762b7a97622e"
   }
 }

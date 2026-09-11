@@ -3,7 +3,7 @@ import json
 import struct
 import unittest
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import numpy as np
 
@@ -11,6 +11,20 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLE = ROOT / "examples" / "openhi-reproducibility"
 ARTIFACTS = SAMPLE / "artifacts"
+PACKET = ARTIFACTS / "openhi-reproducibility-sample.zip"
+CHECKSUM = ARTIFACTS / "openhi-reproducibility-sample.zip.sha256"
+PACKET_ROOT = "openhi-reproducibility-sample"
+PACKET_MEMBERS = [
+    f"{PACKET_ROOT}/README.md",
+    f"{PACKET_ROOT}/build.py",
+    f"{PACKET_ROOT}/artifacts/environment.json",
+    f"{PACKET_ROOT}/artifacts/manifest.json",
+    f"{PACKET_ROOT}/artifacts/report.md",
+    f"{PACKET_ROOT}/artifacts/run.log",
+    f"{PACKET_ROOT}/artifacts/summary.json",
+    f"{PACKET_ROOT}/artifacts/synthetic-events.npz",
+    f"{PACKET_ROOT}/artifacts/weighted-cumulative.png",
+]
 
 
 def digest(path: Path) -> str:
@@ -86,6 +100,46 @@ class OpenHIReproducibilityProofTests(unittest.TestCase):
             "scientifically correct reconstruction",
         ):
             self.assertIn(phrase, report)
+
+    def test_download_packet_is_exact_safe_and_byte_identical(self):
+        expected_paths = {
+            f"{PACKET_ROOT}/README.md": SAMPLE / "README.md",
+            f"{PACKET_ROOT}/build.py": SAMPLE / "build.py",
+            **{
+                f"{PACKET_ROOT}/artifacts/{name}": ARTIFACTS / name
+                for name in (
+                    "environment.json",
+                    "manifest.json",
+                    "report.md",
+                    "run.log",
+                    "summary.json",
+                    "synthetic-events.npz",
+                    "weighted-cumulative.png",
+                )
+            },
+        }
+        with zipfile.ZipFile(PACKET) as archive:
+            self.assertIsNone(archive.testzip())
+            infos = archive.infolist()
+            self.assertEqual([info.filename for info in infos], PACKET_MEMBERS)
+            for info in infos:
+                path = PurePosixPath(info.filename)
+                self.assertFalse(path.is_absolute())
+                self.assertNotIn("..", path.parts)
+                self.assertEqual(info.date_time, (2026, 9, 9, 0, 0, 0))
+                self.assertEqual(info.compress_type, zipfile.ZIP_STORED)
+                self.assertEqual(info.create_system, 3)
+                self.assertEqual((info.external_attr >> 16) & 0o777, 0o644)
+                data = archive.read(info.filename)
+                self.assertEqual(data, expected_paths[info.filename].read_bytes())
+                lowered = data.lower()
+                for forbidden in (b"/home/", b"/tmp/", b"api_key", b"secret_key"):
+                    self.assertNotIn(forbidden, lowered, info.filename)
+
+    def test_download_packet_checksum_matches_archive(self):
+        line = CHECKSUM.read_text(encoding="utf-8")
+        expected = f"{digest(PACKET)}  {PACKET.name}\n"
+        self.assertEqual(line, expected)
 
 
 if __name__ == "__main__":

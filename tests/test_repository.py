@@ -211,7 +211,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 7)
+        self.assertEqual(campaign["version"], 8)
         self.assertEqual(demand["public_stars"], 13)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 8)
         explicit_need = demand["current_explicit_need"]
@@ -288,6 +288,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(download_safety["repository_commit"].startswith("9e7163a"))
         self.assertIn("look-alike", download_safety["observed_problem"])
         self.assertIn("not an accusation", download_safety["boundary"])
+        indexing = uu_post["search_indexing"]
+        self.assertEqual(indexing["initial_state"], "discovered_currently_not_indexed")
+        self.assertEqual(indexing["request_state"], "accepted_into_priority_crawl_queue")
+        self.assertEqual(indexing["request_count"], 1)
+        self.assertFalse(indexing["resubmit"])
+        self.assertIn("not proof of indexing", indexing["boundary"])
         self.assertEqual(inbound["newest_public_repository"], "L-and-N")
         self.assertIn("remains private", inbound["private_repository_exclusion"])
         self.assertFalse(inbound["issue_bodies_requested"])

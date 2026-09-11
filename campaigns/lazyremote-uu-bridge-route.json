@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 7,
+  "version": 8,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-11T10:59:46Z",
@@ -359,6 +359,16 @@
             "reader_value": "The article plus the English and highest-traffic Simplified-Chinese repository pages now tell readers to verify the NetEase domain before downloading, note the platforms currently listed by the canonical product page, and explain that the bridge uses the official Windows client through a reviewed hash-pinned manifest rather than third-party Linux packages.",
             "verification": "The production article returned HTTP 200 with the new domain-verification section, exact official link, existing compatibility intake, and one final LazyRemote review route. The live repository pages contain the same concise warning; all 149 tests passed with one opt-in live-systemd test skipped.",
             "boundary": "This is a download-safety and source-verification improvement, not an accusation about a named third party, a visitor, an inquiry, or a sale."
+          },
+          "search_indexing": {
+            "checked_at": "2026-09-11T16:33:51Z",
+            "initial_state": "discovered_currently_not_indexed",
+            "sitemap": "https://blog.lazying.art/wp-sitemap.xml",
+            "last_crawl": null,
+            "request_state": "accepted_into_priority_crawl_queue",
+            "request_count": 1,
+            "resubmit": false,
+            "boundary": "The request asks Google to crawl the owned guide once. It is not proof of indexing, ranking, traffic, an inquiry, or a sale, and it must not be repeated merely to seek higher priority."
           }
         },
         {

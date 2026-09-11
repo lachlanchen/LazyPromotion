@@ -202,7 +202,10 @@ Posts: `281, 936, 1562, 2936, 3125`.
   and highest-traffic Simplified-Chinese READMEs; all 149 tests passed with one
   opt-in systemd test skipped. The live page keeps the free compatibility
   answer first and one exact LazyRemote review route last. Publication is not
-  an inquiry or sale.
+  an inquiry or sale. On 2026-09-12, Search Console URL Inspection reported the
+  guide as discovered through the sitemap but not yet indexed, then accepted
+  one request into its priority crawl queue. Do not resubmit merely to seek
+  priority; the request is not indexing, traffic, an inquiry, or revenue.
 - Post `3616` showed 3 clicks and 24 impressions, but its four full-text
   *Snow Country* PDF routes had no documented redistribution permission for
   both the Japanese text and Chinese translation. The source and English/Japanese

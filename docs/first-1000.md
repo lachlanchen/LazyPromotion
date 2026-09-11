@@ -1236,6 +1236,14 @@ The free technical answer still comes first. All 148 tests passed, with one
 existing opt-in live-systemd test skipped. This is a conversion-path repair,
 not a claimed donation, lead, or sale.
 
+The portfolio-wide LazyingArt support link also now lands on a matching
+LazyingArt page instead of an EchoMind-only message. It names the apps,
+open-source tools, books, and learning archives that send readers there while
+leaving the existing PayPal and Stripe behavior unchanged. The protected
+EchoMind deployment passed 2,731 tests and 11,779 subtests before the live
+page and both destinations were rechecked. This makes the shared route coherent;
+it does not turn a page visit or working checkout into revenue.
+
 The repository's About URL now lands on the exact UU-on-Ubuntu guide instead
 of the separate vendor-independent LazyRemote homepage. Commit `554f494`
 restored the unmodified standard MIT text while retaining the third-party

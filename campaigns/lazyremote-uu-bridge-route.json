@@ -149,6 +149,14 @@
       ],
       "copy": "One localized sentence invites readers who saved time to support continued compatibility maintenance; the technical answer and free compatibility intake remain primary.",
       "verification": "All 147 pre-existing repository tests plus the new 11-edition support-route regression test passed; one opt-in live systemd test remained intentionally skipped. The live main-branch Simplified Chinese README contains all four routes.",
+      "shared_support_page": {
+        "state": "live_portfolio_branding",
+        "url": "https://chat.lazying.art/donate",
+        "source_commit": "ec0ffeb9c41ad1a29b9916112d4a6d76d06eac0b",
+        "deployed_release": "b85f774a1ae383e65f52cf3db39195b0268cd139",
+        "verification": "The public route returns HTTP 200 with LazyingArt branding for apps, open-source tools, books, and learning archives. The configured PayPal and Stripe destinations still return HTTP 200; checkout behavior was not changed.",
+        "boundary": "A working support destination is conversion readiness, not evidence of a donation, lead, payment, or received revenue."
+      },
       "boundary": "A support-panel view, click, or pledge is not received revenue. Donations do not buy priority, compatibility work, private support, or a delivery date."
     },
     "verification": "All 148 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",

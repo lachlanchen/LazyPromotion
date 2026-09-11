@@ -16,6 +16,16 @@ sprints, four USD 250 sprints, or any confirmed combination of payments across t
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
+LazyRemote now has the same guarded direct-payment readiness as the other
+active service routes. Its USD 250 Stripe configuration fixes quantity at one,
+collects no shipping address or phone number, disables promotion codes and
+public export, and requires nine fulfillment checks after the metadata-only fit
+check and accepted written scope. A read-only account check confirmed that the
+live Stripe account can charge and pay out; no product, price, payment link,
+charge, or payout was created. This closes an operational gap on the portfolio's
+strongest current need-shaped traffic path without turning it into an open
+self-serve checkout.
+
 OpenHI is the strongest public technical proof in the portfolio: the
 MIT-licensed repository had 104 stars and 32 forks when checked on September 9,
 and its recent owner-visible traffic showed continued cloning even without an

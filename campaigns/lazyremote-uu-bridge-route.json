@@ -194,6 +194,23 @@
     "intake": "Free bilingual web fit check reviewed locally before one encrypted submission, with email and copy fallbacks; it is metadata-only and refuses passwords, private keys, addresses, hostnames, identifiers, raw logs, and unredacted configuration",
     "payment_policy": "Request payment only after the fit check and exact written scope are accepted",
     "hardware_included": false,
+    "payment": {
+      "state": "ready_for_reviewed_live_request",
+      "checked_at": "2026-09-11T04:34:00Z",
+      "price": "USD 250",
+      "quantity": 1,
+      "fulfillment_review_notes": 9,
+      "private_key_file_mode": "600",
+      "live_key_format_valid": true,
+      "account_authenticated": true,
+      "charges_enabled": true,
+      "payouts_enabled": true,
+      "details_submitted": true,
+      "stripe_plan_commit": "3b45f421907106c8aba419cdf561da0e9a0c66cd",
+      "stripe_objects_created": false,
+      "public_payment_link": false,
+      "policy": "The read-only check proves that the guarded USD 250 configuration and Stripe account are ready. It does not authorize or create a payment object. A real buyer must pass the fit check and accept the exact written scope, access boundary, delivery, corrections, cancellation, refund, tax, confidentiality, retention, and support terms before a separately reviewed creation command is considered."
+    },
     "published_commit": "13eda87cf14acee07b98d6c8ea855043a9be71b9",
     "fit_check": {
       "state": "live_encrypted_review_first",

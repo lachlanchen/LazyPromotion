@@ -45,6 +45,13 @@ def valid_openhi_config() -> dict:
     return config
 
 
+def valid_lazyremote_config() -> dict:
+    config = valid_config()
+    config["slug"] = "lazyremote-network-fit-review"
+    config["fulfillmentReviewNotes"].extend(["review 7", "review 8"])
+    return config
+
+
 class FakeResponse:
     def __init__(self, payload: dict):
         self.payload = payload
@@ -146,6 +153,24 @@ class PaymentReadinessTests(unittest.TestCase):
         self.assertEqual(report["offer"], "openhi")
         self.assertEqual(report["config"]["display_price"], "USD 500")
         self.assertEqual(report["config"]["unit_amount_minor"], 50000)
+        self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
+        self.assertTrue(report["local_live_configuration_ready"])
+        self.assertFalse(report["mutates_stripe"])
+
+    def test_lazyremote_report_uses_exact_guarded_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            helper = self.helper(
+                Path(tmp),
+                valid_lazyremote_config(),
+                config_name="lazyremote-network-fit-review.json",
+            )
+            report = payment_readiness.build_report(helper, offer="lazyremote")
+        self.assertEqual(report["offer"], "lazyremote")
+        self.assertEqual(
+            report["config"]["product_slug"],
+            "lazyremote-network-fit-review",
+        )
+        self.assertEqual(report["config"]["display_price"], "USD 250")
         self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
         self.assertTrue(report["local_live_configuration_ready"])
         self.assertFalse(report["mutates_stripe"])

@@ -14,7 +14,8 @@
   "boundary": "Project-owned synthetic evidence; not a benchmark, customer result, scientific result, or paid delivery.",
   "manifest_self_hashed": false,
   "source_sha256": {
-    "build.py": "97d07ca9e49865017d9d1650dd35e94fdc99bbacb9592a25b9f77013f64ade7b",
+    "README.md": "2e8714a2d98e9a388b387f1baf8a2809b88e15684f2e803e2010f5f168a0ae83",
+    "build.py": "caa3a48e2d9221c9ff3334b94bbafd3011570434a6cdbd1cea4aac015b3ac8a6",
     "collection.json": "39c34fc382ef5d2490ddf027429ebb0c5ead5e8709fc23fed153e4d7555226ad",
     "questions.json": "c87398d4891f04ab4dc4d98ee45502a2cd7c72b6f4e1584b25a2550877326eb0",
     "source/paper-a-v1.tex": "4bd5b0cd1a275e5e61a69ca8e5ca1a6c4ce63dc17786c31f1fe965dc7a411684",

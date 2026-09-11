@@ -584,9 +584,12 @@ def build(output: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
             encoding="utf-8",
         )
 
-        source_paths = [ROOT / "build.py", ROOT / "collection.json", ROOT / "questions.json"] + sorted(
-            (ROOT / "source").glob("*.tex")
-        )
+        source_paths = [
+            ROOT / "README.md",
+            ROOT / "build.py",
+            ROOT / "collection.json",
+            ROOT / "questions.json",
+        ] + sorted((ROOT / "source").glob("*.tex"))
         artifact_paths = sorted(path for path in staging.iterdir() if path.name != "manifest.json")
         manifest = {
             "boundary": BOUNDARY,

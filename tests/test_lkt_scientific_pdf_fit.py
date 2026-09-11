@@ -3,12 +3,36 @@ import importlib.util
 import json
 import tempfile
 import unittest
-from pathlib import Path
+import zipfile
+from pathlib import Path, PurePosixPath
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLE = ROOT / "examples" / "lkt-scientific-pdf-fit"
 ARTIFACTS = SAMPLE / "artifacts"
+PACKET = ARTIFACTS / "lkt-scientific-pdf-fit-sample.zip"
+CHECKSUM = ARTIFACTS / "lkt-scientific-pdf-fit-sample.zip.sha256"
+PACKET_ROOT = "lkt-scientific-pdf-fit-sample"
+PACKET_MEMBERS = [
+    f"{PACKET_ROOT}/README.md",
+    f"{PACKET_ROOT}/build.py",
+    f"{PACKET_ROOT}/collection.json",
+    f"{PACKET_ROOT}/questions.json",
+    f"{PACKET_ROOT}/source/paper-a-v1.tex",
+    f"{PACKET_ROOT}/source/paper-a-v2.tex",
+    f"{PACKET_ROOT}/source/paper-b-multilingual.tex",
+    f"{PACKET_ROOT}/artifacts/browser-card.html",
+    f"{PACKET_ROOT}/artifacts/citation-check.json",
+    f"{PACKET_ROOT}/artifacts/extraction-ledger.json",
+    f"{PACKET_ROOT}/artifacts/fit-report.md",
+    f"{PACKET_ROOT}/artifacts/manifest.json",
+    f"{PACKET_ROOT}/artifacts/paper-a-v1-copy.pdf",
+    f"{PACKET_ROOT}/artifacts/paper-a-v1.pdf",
+    f"{PACKET_ROOT}/artifacts/paper-a-v2.pdf",
+    f"{PACKET_ROOT}/artifacts/paper-b-multilingual.pdf",
+    f"{PACKET_ROOT}/artifacts/retrieval-ledger.json",
+    f"{PACKET_ROOT}/artifacts/source-ledger.json",
+]
 
 
 def load_json(name):
@@ -108,6 +132,54 @@ class ScientificPdfFitSampleTests(unittest.TestCase):
         self.assertEqual(manifest["verification"]["fixed_questions"], 20)
         self.assertFalse(manifest["verification"]["network_used"])
         self.assertFalse(manifest["verification"]["customer_data_used"])
+
+    def test_download_packet_is_exact_safe_and_byte_identical(self):
+        expected_paths = {
+            f"{PACKET_ROOT}/README.md": SAMPLE / "README.md",
+            f"{PACKET_ROOT}/build.py": SAMPLE / "build.py",
+            f"{PACKET_ROOT}/collection.json": SAMPLE / "collection.json",
+            f"{PACKET_ROOT}/questions.json": SAMPLE / "questions.json",
+            f"{PACKET_ROOT}/source/paper-a-v1.tex": SAMPLE / "source" / "paper-a-v1.tex",
+            f"{PACKET_ROOT}/source/paper-a-v2.tex": SAMPLE / "source" / "paper-a-v2.tex",
+            f"{PACKET_ROOT}/source/paper-b-multilingual.tex": SAMPLE / "source" / "paper-b-multilingual.tex",
+            **{
+                f"{PACKET_ROOT}/artifacts/{name}": ARTIFACTS / name
+                for name in (
+                    "browser-card.html",
+                    "citation-check.json",
+                    "extraction-ledger.json",
+                    "fit-report.md",
+                    "manifest.json",
+                    "paper-a-v1-copy.pdf",
+                    "paper-a-v1.pdf",
+                    "paper-a-v2.pdf",
+                    "paper-b-multilingual.pdf",
+                    "retrieval-ledger.json",
+                    "source-ledger.json",
+                )
+            },
+        }
+        with zipfile.ZipFile(PACKET) as archive:
+            self.assertIsNone(archive.testzip())
+            infos = archive.infolist()
+            self.assertEqual([info.filename for info in infos], PACKET_MEMBERS)
+            for info in infos:
+                path = PurePosixPath(info.filename)
+                self.assertFalse(path.is_absolute())
+                self.assertNotIn("..", path.parts)
+                self.assertEqual(info.date_time, (2026, 9, 12, 0, 0, 0))
+                self.assertEqual(info.compress_type, zipfile.ZIP_STORED)
+                self.assertEqual(info.create_system, 3)
+                self.assertEqual((info.external_attr >> 16) & 0o777, 0o644)
+                data = archive.read(info.filename)
+                self.assertEqual(data, expected_paths[info.filename].read_bytes())
+                lowered = data.lower()
+                for forbidden in (b"/home/", b"/tmp/", b"api_key", b"secret_key"):
+                    self.assertNotIn(forbidden, lowered, info.filename)
+
+    def test_download_packet_checksum_matches_archive(self):
+        expected = f"{digest(PACKET)}  {PACKET.name}\n"
+        self.assertEqual(CHECKSUM.read_text(encoding="utf-8"), expected)
 
     def test_campaign_records_the_sample_without_inflating_the_funnel(self):
         campaign = json.loads(

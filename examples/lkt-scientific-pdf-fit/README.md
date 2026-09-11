@@ -24,11 +24,14 @@ the checked artifact set is replaced.
 
 ```bash
 python examples/lkt-scientific-pdf-fit/build.py
+python examples/lkt-scientific-pdf-fit/package.py
 ```
 
 Build twice into separate temporary directories and compare hashes when the
 toolchain changes. The manifest records tool versions plus every source and
 artifact hash, while deliberately excluding its own hash to avoid a cycle.
+The packager first verifies that manifest and then writes a byte-stable ZIP
+plus a separate SHA-256 checksum for one-file review.
 
 ## Evidence
 
@@ -45,6 +48,9 @@ artifact hash, while deliberately excluding its own hash to avoid a cycle.
 - [`browser-card.html`](artifacts/browser-card.html) is the static browser
   proof and contains no generated answer or external resource.
 - [`manifest.json`](artifacts/manifest.json) makes the checked build auditable.
+- [`lkt-scientific-pdf-fit-sample.zip`](artifacts/lkt-scientific-pdf-fit-sample.zip)
+  carries the complete public sample, source, ledgers, report, browser card,
+  and PDFs in one deterministic packet.
 
 ## Boundary
 

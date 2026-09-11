@@ -415,6 +415,16 @@ PMC-specific. The reply cites NCBI but contains no LazyingArt link, offer, or
 call to action; the Reddit profile remains the only quiet discovery path. This
 is useful public work, not a lead or revenue.
 
+The same need now has a complete
+[local PubMed/PMC workstation guide](https://blog.lazying.art/html/computer_internet/3824/local-pubmed-pmc-search-qa-workstation.html)
+in English, Japanese, and Chinese. It covers official NCBI ingestion and rights,
+identifier and source ledgers, lexical plus MedCPT retrieval, rank fusion,
+evidence packets, cited QA, evaluation, and safe index updates before one quiet
+sample-report route. It explicitly says there is no PMC-specific customer
+deployment or outcome and keeps hardware, full-corpus ingestion, production,
+medical validation, and clinical use outside the bounded check. BLOG commits
+`20a7a52` and `a6e53c6`; publication is not a lead or revenue.
+
 The same need now has a reusable
 [small-team remote-access guide](https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html)
 in English, Simplified Chinese, and Japanese. It starts with a role matrix,

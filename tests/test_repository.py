@@ -1586,7 +1586,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 38)
+        self.assertEqual(campaign["version"], 39)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1629,6 +1629,18 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(biomedical_reply["lead_or_sale_observed"])
         self.assertIn("MedCPT-Query-Encoder", biomedical_reply["primary_source"])
         self.assertIn("not a PMC-specific system", biomedical_reply["qualification_boundary"])
+        biomedical_guide = campaign["channels"]["lazyblog"][
+            "biomedical_local_search_guide"
+        ]
+        self.assertEqual(
+            biomedical_guide["state"], "published_and_multilingual_verified"
+        )
+        self.assertEqual(biomedical_guide["wordpress_id"], 3824)
+        self.assertEqual(biomedical_guide["languages_verified"], ["en", "ja", "zh"])
+        self.assertEqual(biomedical_guide["owned_link_count_per_language"], 1)
+        self.assertFalse(biomedical_guide["pmc_specific_customer_result_claimed"])
+        self.assertFalse(biomedical_guide["lead_or_sale_observed"])
+        self.assertIn("pubmed_pmc_local_search", biomedical_guide["sample_report_url"])
         chat_guide = campaign["channels"]["lazyblog"][
             "chat_archive_current_state_guide"
         ]

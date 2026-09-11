@@ -1,5 +1,5 @@
 {
-  "version": 38,
+  "version": 39,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -702,6 +702,29 @@
         "public_reply_url": "https://www.reddit.com/r/ChatGPT/comments/1vygqua/comment/p890vwc/",
         "lead_or_sale_observed": false,
         "policy": "The guide is a complete two-layer archive design before one bounded fit-check path. Its project-written example proves the source, review, correction, and rebuild contract only. The public Reddit answer is standalone and link-free. Neither the reply nor the single accepted crawl request is indexing, traffic, a lead, customer result, sale, or revenue."
+      },
+      "biomedical_local_search_guide": {
+        "state": "published_and_multilingual_verified",
+        "published_at": "2026-09-11T05:51:26Z",
+        "wordpress_id": 3824,
+        "url": "https://blog.lazying.art/html/computer_internet/3824/local-pubmed-pmc-search-qa-workstation.html",
+        "source_need": "https://www.reddit.com/r/Rag/comments/1wbot49/how_would_you_build_a_local_pubmedpmcstyle_search/",
+        "need": "Build a fully local PubMed and PMC search and grounded-QA workstation while preserving exact identifiers, article rights, source structure, updates, citations, and abstention.",
+        "languages_verified": [
+          "en",
+          "ja",
+          "zh"
+        ],
+        "blog_commits": [
+          "20a7a520a72332afd8e2005601f9f863fc745b4b",
+          "a6e53c60d4c8b4e169b41acd22df33ba2ac4ff8f"
+        ],
+        "method": "Official NCBI ingestion and rights boundaries; a canonical identifier and source ledger; Tantivy BM25 plus MedCPT and Faiss; rank fusion; evidence packets; cited QA; retrieval, citation, abstention, storage, and update evaluation.",
+        "sample_report_url": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=local_knowledge_terminal_pilot&utm_content=pubmed_pmc_local_search",
+        "owned_link_count_per_language": 1,
+        "pmc_specific_customer_result_claimed": false,
+        "lead_or_sale_observed": false,
+        "policy": "The complete implementation method and primary sources precede one quiet tracked sample-report link. It explicitly separates project-owned evidence from a PMC-specific deployment and excludes hardware, full-corpus ingestion, production deployment, medical validation, and clinical use from the bounded check. Publication is not a visit, inquiry, customer result, payment, or revenue."
       }
     },
     "reddit": {

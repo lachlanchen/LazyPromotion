@@ -4,6 +4,7 @@ import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 import owned_monitor
 
@@ -92,6 +93,41 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(snapshot["Watch percentage"]["latest"], 108.26)
         self.assertIsNone(snapshot["Unavailable"]["latest"])
         self.assertIsNone(snapshot["Boolean"]["latest"])
+
+    def test_application_schedule_is_embedded_without_opening_mail(self):
+        schedule = {
+            "checked_on": "2026-09-01",
+            "applications": [
+                {
+                    "campaign_id": "paid-route",
+                    "due_for_human_review": True,
+                    "source_url": "https://private.example/should-not-persist",
+                }
+            ],
+            "summary": {
+                "awaiting_human_reply": 1,
+                "due_for_human_review": 1,
+                "missing_review_schedule": 0,
+            },
+            "policy": {
+                "due_review_action": "Check aggregate counts before review."
+            },
+        }
+        with patch.object(
+            owned_monitor.application_watch,
+            "build_report",
+            return_value=schedule,
+        ) as build_report:
+            report = self.run_monitor(FakePostiz(posts=[]))
+
+        build_report.assert_called_once_with(on=self.now.date())
+        observed = report["application_watch"]
+        self.assertEqual(observed["due_campaign_ids"], ["paid-route"])
+        self.assertEqual(observed["summary"]["due_for_human_review"], 1)
+        self.assertFalse(observed["policy"]["mail_opened"])
+        self.assertFalse(observed["policy"]["automatic_follow_up"])
+        self.assertTrue(observed["policy"]["application_is_not_a_lead"])
+        self.assertNotIn("private.example", json.dumps(observed))
 
     def test_string_reply_metric_still_creates_review_alert(self):
         published = post(state="PUBLISHED")

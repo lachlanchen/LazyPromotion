@@ -20,9 +20,11 @@ import sqlite3
 import subprocess
 import time
 from collections.abc import Callable
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+
+import application_watch
 
 
 ROOT = Path(__file__).resolve().parent
@@ -304,6 +306,27 @@ def _provider(row: dict) -> str:
     )
 
 
+def application_schedule_snapshot(*, on: date) -> dict:
+    """Return a privacy-limited due-review summary for the owned monitor."""
+    report = application_watch.build_report(on=on)
+    due_campaign_ids = [
+        str(item["campaign_id"])
+        for item in report["applications"]
+        if item["due_for_human_review"]
+    ]
+    return {
+        "checked_on": report["checked_on"],
+        "summary": dict(report["summary"]),
+        "due_campaign_ids": due_campaign_ids,
+        "policy": {
+            "mail_opened": False,
+            "automatic_follow_up": False,
+            "application_is_not_a_lead": True,
+            "action": report["policy"]["due_review_action"],
+        },
+    }
+
+
 def monitor_once(
     *,
     db_path: Path = DB_PATH,
@@ -525,6 +548,7 @@ def monitor_once(
         "posts": observed,
         "alerts": alerts,
         "platform_metrics": platform_metrics,
+        "application_watch": application_schedule_snapshot(on=now.date()),
         "summary": {
             "observed_posts": len(observed),
             "alerts": len(alerts),

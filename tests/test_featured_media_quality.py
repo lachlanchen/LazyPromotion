@@ -16,6 +16,10 @@ class FeaturedMediaQualityTests(unittest.TestCase):
         examples = campaign["proof"]["examples"]
         self.assertFalse(any("Desert Oasis" in example for example in examples))
         self.assertIn("human visual-quality review", campaign["proof"]["quality_gate"])
+        linkedin = campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_draft_quality_review")
+        self.assertEqual(linkedin["verified_state"], "DRAFT")
+        self.assertFalse(linkedin["release_present"])
 
     def test_retired_sample_is_excluded_from_current_repurposing_proof(self):
         campaign = json.loads(

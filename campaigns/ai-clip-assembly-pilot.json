@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "id": "ai-clip-assembly-pilot",
   "objective": "Sell and deliver two bounded USD 500 AI Clip Assembly pilots using existing customer-controlled footage and project-owned video proof, without promising new generation, native editor files, performance results, or unlimited revisions.",
   "source_need": {
@@ -192,16 +192,18 @@
       "policy": "The portfolio identifies every example as project-owned work and makes no customer-performance claim. A repository view or click is not a fit inquiry, sale, or revenue."
     },
     "linkedin": {
-      "state": "postiz_queue",
+      "state": "postiz_draft_quality_review",
       "publish_at": "2026-09-28T02:00:00.000Z",
       "content": "Six AI-generated clips can still feel like six separate shots. The first edit decision isn't the transition. It's what should change between the first frame and the last.\n\nI tried the exact constraint on six scenes from one of our own projects. About 43 seconds of source became one 42-second journey, then a 28-second web cut from the same timeline.\n\nBoth videos are here, with the source order, trims, export notes, and hashes:\nhttps://lazying.art/video/brand-film/?utm_source=linkedin&utm_medium=social&utm_campaign=ai_clip_assembly&utm_content=six_source_proof#sample\n\nThis is also the boundary for my fixed USD 500 assembly pilot: existing footage only, one master, one shorter cut, and one correction pass.",
       "content_sha256": "0f3fc87a037809c6429e361fc46ffca6ad898fc9a83d29be9766cd13226dea40",
       "visible_editor_reviewed": true,
       "matching_posts": 1,
-      "verified_state": "QUEUE",
+      "verified_state": "DRAFT",
       "release_present": false,
       "shortlink_enabled": false,
-      "policy": "The existing queued item was visibly corrected after the exact six-source proof went live. Postiz retained the original campaign URL, account, 2026-09-28T02:00:00Z time, and QUEUE state with no release. It explains the editorial problem before the offer, uses only first-party proof, and keeps new generation outside the fixed scope. Queue state is not publication, a lead, or a sale."
+      "paused_on": "2026-09-12",
+      "pause_reason": "Moved back to draft before release while the featured AI-generated media receives a fresh human quality review. Technical completion and provenance are not enough for active selling proof.",
+      "policy": "The item must stay in DRAFT until a human reviews the complete linked sample for story, motion, continuity, composition, audio, captions, and overall finish. A draft is not publication, a lead, or a sale."
     }
   },
   "funnel": {

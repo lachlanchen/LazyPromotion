@@ -1483,7 +1483,7 @@ class RepositoryTests(unittest.TestCase):
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
 
-        self.assertEqual(campaign["version"], 10)
+        self.assertEqual(campaign["version"], 11)
         self.assertEqual(campaign["id"], "ai-clip-assembly-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_paid_listing")
@@ -1591,10 +1591,10 @@ class RepositoryTests(unittest.TestCase):
         )
 
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["state"], "postiz_draft_quality_review")
         self.assertTrue(linkedin["visible_editor_reviewed"])
         self.assertEqual(linkedin["matching_posts"], 1)
-        self.assertEqual(linkedin["verified_state"], "QUEUE")
+        self.assertEqual(linkedin["verified_state"], "DRAFT")
         self.assertFalse(linkedin["release_present"])
         self.assertFalse(linkedin["shortlink_enabled"])
         self.assertEqual(

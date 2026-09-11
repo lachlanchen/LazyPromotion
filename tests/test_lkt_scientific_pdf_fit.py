@@ -186,7 +186,7 @@ class ScientificPdfFitSampleTests(unittest.TestCase):
             (ROOT / "campaigns" / "scientific-pdf-integrity.json").read_text(encoding="utf-8")
         )
         sample = campaign["source_evidence"]["executed_synthetic_sample"]
-        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["version"], 6)
         self.assertEqual(
             campaign["source_evidence"]["executed_sample"],
             "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/lkt-scientific-pdf-fit",
@@ -197,6 +197,9 @@ class ScientificPdfFitSampleTests(unittest.TestCase):
         self.assertEqual(sample["citation_check"], "passed")
         self.assertFalse(sample["network_used"])
         self.assertFalse(sample["customer_data_used"])
+        self.assertEqual(sample["download_packet"]["state"], "published_and_live_verified")
+        self.assertEqual(sample["download_packet"]["sha256"], digest(PACKET))
+        self.assertEqual(sample["download_packet"]["member_count"], len(PACKET_MEMBERS))
         self.assertIn("not a benchmark", sample["boundary"].casefold())
         reddit = campaign["channels"]["reddit"]
         self.assertEqual(reddit["state"], "one_value_only_reply_sent")
@@ -206,6 +209,11 @@ class ScientificPdfFitSampleTests(unittest.TestCase):
         self.assertFalse(campaign["funnel"]["reply_acknowledged"])
         self.assertEqual(campaign["channels"]["lazyblog"]["proof_update_commit"], "839f614")
         self.assertEqual(campaign["channels"]["website"]["sample_report_commit"], "3422d01")
+        self.assertEqual(campaign["channels"]["website"]["download_packet_commit"], "5d560d0")
+        self.assertEqual(
+            campaign["channels"]["website"]["download_packet_sha256"],
+            digest(PACKET),
+        )
         self.assertEqual(campaign["funnel"]["state"], "helpful_interaction")
         self.assertFalse(campaign["funnel"]["payment_confirmed"])
         self.assertEqual(campaign["funnel"]["received_revenue_usd"], 0)

@@ -1,6 +1,6 @@
 {
   "id": "scientific-pdf-integrity",
-  "version": 5,
+  "version": 6,
   "objective": "Help owners of large scientific PDF collections test versions, extraction, citations, retrieval, and provenance before committing to whole-collection RAG or knowledge-graph work.",
   "source_needs": [
     {
@@ -76,6 +76,12 @@
       "sample_report": "https://lazying.art/lkt/sample-report/",
       "sample_report_commit": "3422d01",
       "sample_report_verified_at": "2026-09-04T11:08:06Z",
+      "download_packet": "https://lazying.art/lkt/sample-report/assets/lkt-scientific-pdf-fit-sample.zip",
+      "download_packet_checksum": "https://lazying.art/lkt/sample-report/assets/lkt-scientific-pdf-fit-sample.zip.sha256",
+      "download_packet_sha256": "c9fad8795d23f46f1ae184ea5acb3f33e78705430555ad413f58a4688f3809f9",
+      "download_packet_commit": "5d560d0",
+      "download_packet_pages_run": 34628517945,
+      "download_packet_verified_at": "2026-09-11T17:36:40Z",
       "policy": "A single contextual guide link helps research-library visitors evaluate their collection before the fit check. It is an attention route, not a lead or customer result."
     },
     "reddit": {
@@ -125,6 +131,13 @@
       "citation_check": "passed",
       "network_used": false,
       "customer_data_used": false,
+      "download_packet": {
+        "state": "published_and_live_verified",
+        "build_commit": "184e5a4",
+        "sha256": "c9fad8795d23f46f1ae184ea5acb3f33e78705430555ad413f58a4688f3809f9",
+        "zip_integrity": "passed",
+        "member_count": 18
+      },
       "scope": "Local born-digital PDF compilation and extraction, exact duplicate and declared version-family evidence, SQLite FTS5 baseline, page-resolvable citation payloads, static browser card, and GO/NO-GO report only."
     },
     "crossref_rest_api": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",

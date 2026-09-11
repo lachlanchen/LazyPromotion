@@ -193,6 +193,13 @@ Posts: `281, 936, 1562, 2936, 3125`.
   leads quietly to the relevant lecture-pack sample. Post `2972` still has no
   commercial CTA because no LazyingArt offer or verified affiliate is a
   truthful match for its payment-failure search intent.
+- Search results for “UU 远程 Linux” exposed a more useful safety gap on the
+  strongest current GitHub route: look-alike download pages described
+  unverified Linux packages as official. BLOG commit `edb47c3` updates post
+  `3818` with NetEase's canonical `uuyc.163.com` domain, the platforms currently
+  listed there, and the bridge's official-Windows-client plus pinned-hash path.
+  The live page keeps the free compatibility answer first and one exact
+  LazyRemote review route last. Publication is not an inquiry or sale.
 - Post `3616` showed 3 clicks and 24 impressions, but its four full-text
   *Snow Country* PDF routes had no documented redistribution permission for
   both the Japanese text and Chinese translation. The source and English/Japanese

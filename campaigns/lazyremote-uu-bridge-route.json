@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 4,
+  "version": 5,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-10T23:35:17Z",
@@ -283,7 +283,7 @@
     },
     "owned_blog": {
       "state": "live_exact_fit_routes",
-      "repository_commit": "f6f0803",
+      "repository_commit": "edb47c3",
       "placements": [
         {
           "post_id": 1133,
@@ -312,7 +312,15 @@
           "locales": [
             "zh"
           ],
-          "fit": "Simplified-Chinese readers asking specifically whether and how the official UU client can control an Ubuntu GNOME desktop"
+          "fit": "Simplified-Chinese readers asking specifically whether and how the official UU client can control an Ubuntu GNOME desktop",
+          "official_download_safety": {
+            "state": "live_verified",
+            "official_domain": "https://uuyc.163.com/",
+            "observed_problem": "Current search results include look-alike download sites that call themselves official and advertise unverified Linux packages.",
+            "reader_value": "The article now tells readers to verify the NetEase domain before downloading, notes the platforms currently listed by the canonical product page, and explains that the bridge uses the official Windows client through a reviewed hash-pinned manifest rather than third-party Linux packages.",
+            "verification": "The production article returned HTTP 200 with the new domain-verification section, exact official link, existing compatibility intake, and one final LazyRemote review route.",
+            "boundary": "This is a download-safety and source-verification improvement, not an accusation about a named third party, a visitor, an inquiry, or a sale."
+          }
         },
         {
           "post_id": 3819,
@@ -327,7 +335,7 @@
         }
       ],
       "copy_boundary": "Each edition or guide finishes the relevant technical answer first, uses at most one first-person offer paragraph, and states the fixed price, metadata-only first contact, and the deployment and hardware exclusions.",
-      "verification": "The established remote-desktop, DDNS, and UU routes remain live. The new role-matrix guide and its reviewed Simplified-Chinese and Japanese editions returned HTTP 200 with the exact tracked review links after WordPress publication. It turns the observed small-team need into a standalone access, offboarding, and recovery method before one exact-fit offer paragraph. All 31 BLOG unit tests passed; latest BLOG commit f6f0803."
+      "verification": "The established remote-desktop, DDNS, and UU routes remain live. Post 3818 now answers the look-alike-download risk with NetEase's canonical domain before the compatibility steps and one final exact-fit offer. The role-matrix guide and its reviewed Simplified-Chinese and Japanese editions remain live. Latest BLOG commit edb47c3."
     },
     "postiz": {
       "state": "not_queued",

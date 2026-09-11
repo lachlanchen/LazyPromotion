@@ -144,7 +144,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(campaign["version"], 5)
         self.assertEqual(demand["public_stars"], 12)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 7)
         explicit_need = demand["current_explicit_need"]
@@ -199,6 +199,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(blog_routes[-1]["post_id"], 3819)
         self.assertIn("Small Team", blog_routes[-1]["subject"])
         self.assertEqual(blog_routes[-1]["locales"], ["en", "zh", "ja"])
+        uu_post = next(route for route in blog_routes if route["post_id"] == 3818)
+        download_safety = uu_post["official_download_safety"]
+        self.assertEqual(download_safety["state"], "live_verified")
+        self.assertEqual(download_safety["official_domain"], "https://uuyc.163.com/")
+        self.assertIn("look-alike", download_safety["observed_problem"])
+        self.assertIn("not an accusation", download_safety["boundary"])
         issue_monitor = campaign["channels"]["github"]["inbound_monitor"]
         self.assertEqual(issue_monitor["state"], "baseline_initialized")
         self.assertFalse(issue_monitor["issue_bodies_requested"])

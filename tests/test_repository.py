@@ -1181,7 +1181,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 22)
+        self.assertEqual(campaign["version"], 23)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -1269,7 +1269,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 22)
+        self.assertEqual(campaign["version"], 23)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -1287,6 +1287,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("travel-client", gaps)
         application = campaign["application"]
         self.assertEqual(application["state"], "sent_awaiting_reply")
+        self.assertEqual(application["review_after"], "2026-09-19")
         self.assertEqual(application["subject"], "Content and social media creator")
         self.assertIn("paid fit test", application["proposal"])
         self.assertIn("not travel-client work", application["claim_boundary"])
@@ -1295,6 +1296,9 @@ class RepositoryTests(unittest.TestCase):
             "2026-09-12",
         )
         self.assertFalse(application["follow_up_gate"]["automatic_send"])
+        self.assertTrue(application["last_review"]["source_post_live"])
+        self.assertEqual(application["last_review"]["business_outreach_message_count"], 0)
+        self.assertFalse(application["last_review"]["human_reply_observed"])
         self.assertFalse(application["delivery_or_contract_started"])
         offer = campaign["owned_offer"]
         self.assertEqual(offer["state"], "live")
@@ -1396,6 +1400,7 @@ class RepositoryTests(unittest.TestCase):
             "https://www.linkedin.com/feed/update/urn:li:activity:7501848655239233536/",
         )
         self.assertEqual(oxodonia["application_state"], "sent_awaiting_reply")
+        self.assertEqual(oxodonia["review_after"], "2026-09-19")
         self.assertIn("not an on-location Preston phone shooter", oxodonia["claim_boundary"])
         self.assertIn("USD 250 pilot", oxodonia["delivery_evidence"])
         self.assertFalse(oxodonia["buyer_reply_observed"])
@@ -1403,12 +1408,18 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(oxodonia["payment_confirmed"])
         self.assertEqual(oxodonia["received_revenue_usd"], 0)
         self.assertFalse(oxodonia["automatic_follow_up"])
+        self.assertEqual(oxodonia["last_review"]["conversation_event_count"], 1)
+        self.assertFalse(oxodonia["last_review"]["event_count_increased"])
+        self.assertFalse(oxodonia["last_review"]["message_content_opened"])
         ydehm = outreach[1]
         self.assertEqual(ydehm["company"], "YDEHM")
         self.assertEqual(
             ydehm["application_url"], "https://youdontevenhear.me/apply"
         )
-        self.assertEqual(ydehm["application_state"], "sent_awaiting_reply")
+        self.assertEqual(
+            ydehm["application_state"],
+            "reviewed_no_reply_closed_without_follow_up",
+        )
         self.assertIn("$45 per clip", ydehm["proposal"])
         self.assertIn("$150", ydehm["proposal"])
         self.assertIn("paid trial", ydehm["trial_boundary"])
@@ -1421,6 +1432,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(ydehm["payment_confirmed"])
         self.assertEqual(ydehm["received_revenue_usd"], 0)
         self.assertFalse(ydehm["automatic_follow_up"])
+        self.assertEqual(ydehm["last_review"]["public_comment_count"], 46)
+        self.assertTrue(ydehm["last_review"]["poster_reported_many_applications"])
+        self.assertFalse(ydehm["last_review"]["human_reply_observed"])
         komicsim = outreach[2]
         self.assertEqual(komicsim["company"], "KomicSim")
         self.assertEqual(
@@ -3560,7 +3574,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 22)
+        self.assertEqual(campaign["version"], 23)
         self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])

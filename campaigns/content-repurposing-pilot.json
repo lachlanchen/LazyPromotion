@@ -1,5 +1,5 @@
 {
-  "version": 22,
+  "version": 23,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -199,6 +199,7 @@
   "application": {
     "state": "sent_awaiting_reply",
     "sent_at": "2026-09-05T14:57:00Z",
+    "review_after": "2026-09-19",
     "method": "Direct application through the public route requested in the hiring post",
     "subject": "Content and social media creator",
     "private_packet": "prepared_and_verified_in_ignored_private_storage",
@@ -213,6 +214,15 @@
       "review_not_before": "2026-09-12",
       "action": "Recheck the public hiring post and aggregate business-outreach status before deciding whether one concise follow-up is appropriate.",
       "automatic_send": false
+    },
+    "last_review": {
+      "checked_at": "2026-09-11T16:24:00Z",
+      "source_post_live": true,
+      "public_comment_count": 1,
+      "business_outreach_message_count": 0,
+      "business_outreach_unread_count": 0,
+      "human_reply_observed": false,
+      "decision": "Wait without following up and check once more after September 19."
     },
     "claim_boundary": "The linked samples are project-owned LazyingArt work, not travel-client work. No contract, customer outcome, or sale is implied.",
     "delivery_or_contract_started": false
@@ -362,6 +372,7 @@
       "company_linkedin": "https://www.linkedin.com/company/oxodonia/",
       "application_state": "sent_awaiting_reply",
       "sent_at": "2026-09-05T15:35:00Z",
+      "review_after": "2026-09-19",
       "method": "LinkedIn company-page message with Careers topic",
       "delivery_evidence": "The exact company conversation visibly contained the reviewed message, the stated limitation, the USD 250 pilot, and the Story Clip URL after send",
       "public_samples": [
@@ -377,7 +388,14 @@
       "scope_accepted": false,
       "payment_confirmed": false,
       "received_revenue_usd": 0,
-      "automatic_follow_up": false
+      "automatic_follow_up": false,
+      "last_review": {
+        "checked_at": "2026-09-11T16:22:24Z",
+        "conversation_event_count": 1,
+        "event_count_increased": false,
+        "message_content_opened": false,
+        "decision": "Wait without another message and check once more after September 19."
+      }
     },
     {
       "company": "YDEHM",
@@ -387,7 +405,7 @@
       "captured_at": "2026-09-05T16:10:00Z",
       "need": "Choose self-contained moments from long podcast episodes or edit supplied high points into captioned vertical clips for TikTok, Reels, and Shorts",
       "published_compensation": "$20-$50 for a supplied straightforward edit, $60-$150 when the editor selects and builds the moment, and $150+ for heavier motion work",
-      "application_state": "sent_awaiting_reply",
+      "application_state": "reviewed_no_reply_closed_without_follow_up",
       "sent_at": "2026-09-05T16:12:00Z",
       "method": "First-party application form linked from the public hiring post",
       "delivery_evidence": "The visible first-party page replaced the form with its application-received confirmation after one submit",
@@ -402,7 +420,17 @@
       "scope_accepted": false,
       "payment_confirmed": false,
       "received_revenue_usd": 0,
-      "automatic_follow_up": false
+      "automatic_follow_up": false,
+      "last_review": {
+        "checked_at": "2026-09-11T16:25:00Z",
+        "source_post_live": true,
+        "public_comment_count": 46,
+        "poster_reported_many_applications": true,
+        "business_outreach_message_count": 0,
+        "business_outreach_unread_count": 0,
+        "human_reply_observed": false,
+        "decision": "Close the route without a follow-up; one complete first-party application was enough."
+      }
     },
     {
       "company": "KomicSim",

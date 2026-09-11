@@ -7,7 +7,7 @@ on acceptance, available work, completed delivery, and payment.
 
 | Rank | Current route | Advertised pay | Portfolio fit | Gate |
 |---|---|---:|---|---|
-| 1 | [Playwright Python regression suite](https://www.freelancer.com/projects/automation/playwright-python-regression-suite) | INR 37,500–75,000 fixed, approximately USD 392–785 | LazyPromotion now has an executed Python Playwright, Page Object, pytest, JUnit, failure-screenshot, and three-run specimen | The buyer's “every manual step” is unbounded until the checklist, roles, test-data reset, environments, and credential model are disclosed. Bid only as a capped funded first milestone. |
+| 1 | [Playwright Python regression suite](https://www.freelancer.com/projects/automation/playwright-python-regression-suite) | INR 37,500–75,000 fixed, approximately USD 392–785 | LazyTravel now has a Page Object/pytest/JUnit case on its real 11-chapter trilingual site with three clean CI runs; LazyPromotion adds the MCP-aware browser implementation and compact fixture | The buyer's “every manual step” is unbounded until the checklist, roles, test-data reset, environments, and credential model are disclosed. Bid only as a capped funded first milestone. |
 | 2 | [English lecture audio transcription](https://www.freelancer.com/projects/academic-writing/english-lecture-audio-transcription-40703433) | INR 12,500–37,500 fixed, approximately USD 131–392 | Susskind, Video2Book, and the bilingual lecture-pack sample show transcript and source-map work | Confirm total audio hours, quality, deadline, timestamp granularity, terminology, speakers, confidentiality, and acceptance before bidding. |
 | 3 | [Meridial infrastructure specialist](https://job-boards.eu.greenhouse.io/agency/jobs/4745191101) | USD 80–150/hour | LazyEdge and LazyTunnel show default-deny ingress, Caddy, OpenSSH, systemd, private relays, isolation, and verification | Do not claim unverified professional cloud, IaC, or JavaScript experience. Applying sends a CV and personal data under the employer's privacy terms. |
 | 4 | [DataAnnotation software engineer](https://www.dataannotation.tech/job-board/software-engineer) | Coding work is advertised from USD 50–100+/hour, with the role page describing up to USD 75–150+/hour | The Python/Linux repositories, reproducible debugging, tests, and technical explanations are directly relevant | Hong Kong eligibility and task availability are not established. Signup includes a one-attempt assessment and may later require identity verification. |
@@ -40,8 +40,13 @@ missing pytest/Page Object/JUnit shape and passes three consecutive headless
 Chrome runs. It does not prove coverage of the buyer's undisclosed application.
 One ordinary free bid was then submitted at INR 56,250 over 14 days with four
 milestones, no paid upgrades, and the checklist boundary in the proposal. The
-site visibly confirmed the bid and reported rank 56 of 57 at submission. This
-is an application, not a buyer reply, funded milestone, contract, or revenue.
+site visibly confirmed the bid and reported rank 56 of 57 at submission. A
+second first-party proof now exercises the real 11-chapter trilingual
+LazyTravel site through Page Objects, pytest, desktop and 390 px paths, ruby and
+map controls, browser-error gates, and JUnit. GitHub Actions run `34646905819`
+passed three consecutive suites, and the existing proposal was updated once to
+include it without changing price, delivery, milestones, or upgrades. This is
+an application, not a buyer reply, funded milestone, contract, or revenue.
 
 ## Decision
 

@@ -34,12 +34,22 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
             self.campaign["fit"]["not_proven"],
         )
 
+    def test_real_site_proof_is_ci_verified_and_first_party(self):
+        proof = self.campaign["fit"]["real_site_regression"]
+        self.assertEqual(proof["state"], "clean_ci_three_consecutive_runs_passed")
+        self.assertEqual(proof["tests_per_run"], 3)
+        self.assertEqual(proof["runs"], 3)
+        self.assertIn("all 11 chapters", proof["journeys"][0])
+        self.assertIn("not a customer result", proof["boundary"])
+
     def test_bid_has_no_paid_upgrade_or_revenue_claim(self):
         application = self.campaign["application"]
         funnel = self.campaign["funnel"]
-        self.assertEqual(application["state"], "submitted_once_visible_confirmation")
+        self.assertEqual(application["state"], "submitted_once_proof_updated_once")
         self.assertTrue(application["bid_submitted"])
         self.assertFalse(application["paid_upgrade_selected"])
+        self.assertFalse(application["proof_update"]["new_bid_created"])
+        self.assertFalse(application["proof_update"]["bid_amount_or_delivery_changed"])
         self.assertTrue(funnel["application_submitted"])
         self.assertEqual(application["milestones_inr"], [11250, 22500, 16875, 5625])
         self.assertEqual(funnel["received_revenue_usd"], 0)

@@ -69,6 +69,7 @@ never count as revenue.
 | [`stripe_revenue_monitor.py`](stripe_revenue_monitor.py) | Read-only live-charge detection with aggregate private state; never creates Stripe objects or records revenue automatically |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome review desktop |
 | [`application_watch.py`](application_watch.py) and [`application_inbox_monitor.py`](application_inbox_monitor.py) | Due-review schedule for direct and grouped submissions plus read-only aggregate matching for known application threads; the running owned monitor embeds the privacy-limited due summary and never opens mail or follows up |
+| [`freelancer_inbound_monitor.py`](freelancer_inbound_monitor.py) | Watches the one submitted regression bid for an aggregate message badge or state change without opening messages or replying |
 | [`docs/open-source-evaluation.md`](docs/open-source-evaluation.md) | Auditable open-source and MCP tool choices |
 
 ## Quick start
@@ -175,6 +176,18 @@ The watcher only raises a private review alert. A payment is counted after it
 is matched to an accepted scope, product order, or donation context. See
 [`docs/stripe-revenue-monitor.md`](docs/stripe-revenue-monitor.md).
 
+The submitted Freelancer regression bid can be checked while its authenticated
+proposal tab is open in the dedicated browser:
+
+```bash
+python freelancer_inbound_monitor.py once
+python freelancer_inbound_monitor.py status
+```
+
+The monitor records only aggregate bid state, rank, proposal count, and message
+badge count. It never opens a conversation or sends a reply. See
+[`docs/freelancer-inbound-monitor.md`](docs/freelancer-inbound-monitor.md).
+
 ## Runtime isolation
 
 The launcher owns one 1920×1080 display (`:116`), VNC port `5936`, noVNC
@@ -207,7 +220,7 @@ specialization, not a claim that a closed marketplace listing is still open.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

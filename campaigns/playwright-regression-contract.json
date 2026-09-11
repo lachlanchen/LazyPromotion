@@ -1,7 +1,7 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "playwright-regression-contract",
-  "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's real browser automation with an executed Page Object, pytest, and JUnit specimen, without claiming coverage of an undisclosed application.",
+  "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
   "source_need": {
     "captured_at": "2026-09-11T20:09:25Z",
     "url": "https://www.freelancer.com/projects/automation/Playwright-Python-Regression-Suite/details",
@@ -30,14 +30,18 @@
   },
   "fit": {
     "projects": [
-      "LazyPromotion"
+      "LazyPromotion",
+      "LazyTravel"
     ],
     "public_evidence": [
       "https://github.com/lachlanchen/LazyPromotion/blob/main/browser.py",
       "https://github.com/lachlanchen/LazyPromotion/blob/main/worker.py",
       "https://github.com/lachlanchen/LazyPromotion/tree/main/tests",
       "https://github.com/lachlanchen/LazyPromotion/blob/main/docs/mcp-browser.md",
-      "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/playwright-regression"
+      "https://github.com/lachlanchen/LazyPromotion/tree/main/examples/playwright-regression",
+      "https://github.com/lachlanchen/LazyTravel#browser-regression-case",
+      "https://github.com/lachlanchen/LazyTravel/tree/main/browser_tests",
+      "https://github.com/lachlanchen/LazyTravel/actions/runs/34646905819"
     ],
     "executed_specimen": {
       "state": "three_consecutive_runs_passed",
@@ -54,6 +58,21 @@
       "artifacts": ".local/proofs/playwright-regression/run-{1,2,3}/junit-playwright.xml",
       "repository_commit": "7db525ca4f5db6e39d8e9b5bc4c895a56bf25301",
       "boundary": "Project-owned login fixture only; not the buyer's application, credentials, checklist, CI, or acceptance result."
+    },
+    "real_site_regression": {
+      "state": "clean_ci_three_consecutive_runs_passed",
+      "site": "https://lachlanchen.github.io/LazyTravel/china/cities/lanzhou/",
+      "repository_commit": "cd605396989993cd323aadc736d9b7c79d3e3f7d",
+      "workflow_run": "https://github.com/lachlanchen/LazyTravel/actions/runs/34646905819",
+      "tests_per_run": 3,
+      "runs": 3,
+      "journeys": [
+        "all 11 chapters checked against canonical content counts",
+        "desktop and 390 px mobile-width navigation with ruby controls",
+        "map zoom and reset with console-error and request-failure gates"
+      ],
+      "artifacts": "JUnit XML for each run plus screenshots on failure",
+      "boundary": "First-party verification of the project-owned LazyTravel site; not a customer result or proof against the buyer's application."
     },
     "not_proven": [
       "a complete third-party application regression suite",
@@ -84,7 +103,7 @@
     "policy": "Do not start a trial, purchase a membership, fund the wallet, buy bid upgrades, or submit identity documents automatically. Keep project communication, milestones, files, and payment on Freelancer."
   },
   "application": {
-    "state": "submitted_once_visible_confirmation",
+    "state": "submitted_once_proof_updated_once",
     "submitted_at": "2026-09-11T20:19:00Z",
     "confirmation_url": "https://www.freelancer.com/projects/automation/Playwright-Python-Regression-Suite/proposals?bidCreated=true",
     "visible_confirmation": "You've successfully placed a bid",
@@ -102,6 +121,15 @@
     ],
     "bid_submitted": true,
     "paid_upgrade_selected": false,
+    "proof_update": {
+      "updated_at": "2026-09-11T21:01:06Z",
+      "state": "visible_in_existing_proposal",
+      "new_bid_created": false,
+      "bid_amount_or_delivery_changed": false,
+      "paid_upgrade_selected": false,
+      "rank_after_update": "57 of 58 proposals",
+      "evidence_added": "LazyTravel real-site Page Object regression case and successful three-run GitHub Actions workflow"
+    },
     "policy": "The ordinary free bid was submitted once with no upgrades after the public specimen was pushed. Keep all communication, files, funded milestones, and payment on Freelancer; do not send an unsolicited follow-up or start work before the checklist and first milestone are agreed."
   },
   "funnel": {

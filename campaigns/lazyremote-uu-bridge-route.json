@@ -1,16 +1,16 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 5,
+  "version": 6,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
-    "captured_at": "2026-09-10T23:35:17Z",
+    "captured_at": "2026-09-11T10:59:46Z",
     "repository": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
-    "public_stars": 12,
+    "public_stars": 13,
     "public_forks": 3,
     "recent_star_window": {
       "from": "2026-09-03T00:00:00Z",
-      "through": "2026-09-10T23:35:17Z",
-      "new_stars": 7
+      "through": "2026-09-11T10:59:46Z",
+      "new_stars": 8
     },
     "current_explicit_need": {
       "source_url": "https://linux.do/t/topic/2192302/5",
@@ -44,21 +44,28 @@
       "boundary": "The contribution is relevant product evidence, but an open or revised pull request is not adoption, buyer intent, a lead, or revenue. Do not merge until the requested lifecycle, ownership, gating, and regression work passes review."
     },
     "owner_visible_traffic": {
-      "window": "The GitHub traffic API's current rolling window from 2026-08-27 through 2026-09-09",
-      "views": 1106,
-      "unique_visitors": 488,
-      "clones": 451,
-      "unique_cloners": 182,
+      "window": "The GitHub traffic API's current rolling window from 2026-08-28 through 2026-09-10",
+      "views": 1135,
+      "unique_visitors": 490,
+      "clones": 462,
+      "unique_cloners": 191,
       "top_referrer": {
         "name": "Google",
-        "views": 716,
-        "unique_visitors": 379
+        "views": 734,
+        "unique_visitors": 385
       },
       "top_path": {
         "path": "/lachlanchen/uu-remote-ubuntu-bridge/blob/main/i18n/README.zh-Hans.md",
-        "views": 533,
-        "unique_visitors": 406
+        "views": 549,
+        "unique_visitors": 414
       }
+    },
+    "conversion_path_recheck": {
+      "state": "live_rechecked_no_new_pitch_needed",
+      "checked_at": "2026-09-11T11:31:00Z",
+      "simplified_chinese_path": "The highest-attention README already leads to the localized LazyRemote review anchor, where the exact USD 250 scope, sample, encrypted metadata-only fit check, and privacy boundary are visible.",
+      "decision": "Keep the free UU compatibility answer first and do not add a second service link or another Postiz item while no qualified inquiry is observed.",
+      "boundary": "The updated traffic snapshot is attention evidence, not an inquiry, qualified buyer, payment, donation, or revenue."
     },
     "lazyremote_core": {
       "repository": "https://github.com/lachlanchen/LazyTunnel",

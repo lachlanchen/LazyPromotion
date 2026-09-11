@@ -207,9 +207,9 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 5)
-        self.assertEqual(demand["public_stars"], 12)
-        self.assertEqual(demand["recent_star_window"]["new_stars"], 7)
+        self.assertEqual(campaign["version"], 6)
+        self.assertEqual(demand["public_stars"], 13)
+        self.assertEqual(demand["recent_star_window"]["new_stars"], 8)
         explicit_need = demand["current_explicit_need"]
         self.assertIn("Ubuntu", explicit_need["need"])
         self.assertIn(
@@ -227,6 +227,12 @@ class RepositoryTests(unittest.TestCase):
             "README.zh-Hans.md",
             demand["owner_visible_traffic"]["top_path"]["path"],
         )
+        self.assertEqual(demand["owner_visible_traffic"]["unique_visitors"], 490)
+        self.assertEqual(demand["owner_visible_traffic"]["unique_cloners"], 191)
+        recheck = demand["conversion_path_recheck"]
+        self.assertEqual(recheck["state"], "live_rechecked_no_new_pitch_needed")
+        self.assertIn("encrypted metadata-only fit check", recheck["simplified_chinese_path"])
+        self.assertIn("not an inquiry", recheck["boundary"])
         self.assertEqual(len(campaign["owned_route"]["placements"]), 11)
         support = campaign["owned_route"]["localized_support_route"]
         self.assertEqual(support["state"], "live_all_maintained_languages")

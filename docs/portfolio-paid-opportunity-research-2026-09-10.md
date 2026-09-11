@@ -25,10 +25,10 @@ sales target, not a forecast.
 ## September 11 evidence update
 
 The latest owner-visible GitHub audit sharpens the route. In GitHub's current
-rolling window, `uu-remote-ubuntu-bridge` had 1,106 views from 488 unique
-visitors and 451 clones from 182 unique cloners. Its Simplified-Chinese README
-alone had 533 views from 406 unique visitors, and Google supplied 716 views
-from 379 visitors. The repository has 13 stars, eight added since September 3.
+rolling window, `uu-remote-ubuntu-bridge` had 1,135 views from 490 unique
+visitors and 462 clones from 191 unique cloners. Its Simplified-Chinese README
+alone had 549 views from 414 unique visitors, and Google supplied 734 views
+from 385 visitors. The repository has 13 stars, eight added since September 3.
 These figures are the strongest owned discovery signal, but clone automation
 and search traffic make them attention rather than purchase intent.
 
@@ -48,6 +48,12 @@ reported 241-item feed, marked access-limited with no next page. None matched
 the portfolio closely enough to apply. Buying Contra Pro would not remove the
 existing Persona identity and wallet gates, so a subscription is not justified
 by the current evidence.^16
+
+The highest-attention Chinese README already leads to the localized LazyRemote
+review section, which shows the exact USD 250 scope, project-owned sample,
+encrypted metadata-only fit check, and privacy boundary. That path was rechecked
+live on September 11. A second service link or another broad Postiz item would
+add pressure without new buyer evidence, so the technical answer remains first.
 
 Two current marketplace needs validate the LKT/LocalLLM/agent cluster more
 strongly than the visible Contra feed. A boutique audit firm wants a local,

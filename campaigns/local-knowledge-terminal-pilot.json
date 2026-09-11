@@ -1,5 +1,5 @@
 {
-  "version": 40,
+  "version": 41,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -1074,23 +1074,27 @@
       },
       "biomedical_local_search_post": {
         "state": "postiz_queue",
-        "publish_at": "2026-10-05T02:00:00.000Z",
+        "publish_at": "2026-09-14T02:00:00.000Z",
+        "rescheduled_from": "2026-10-05T02:00:00.000Z",
         "content": "PubMed-style local search is not “pick a vector database.”\n\nKeep citations, PMC full text, licenses, and revisions in a canonical source ledger. Combine fielded BM25 with biomedical dense retrieval, then add QA only after citations and no-answer behavior survive a real evaluation set.\n\nI wrote the one-workstation design, from NCBI ingestion to safe index updates:\nhttps://blog.lazying.art/html/computer_internet/3824/local-pubmed-pmc-search-qa-workstation.html?utm_source=linkedin&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=pubmed_pmc_local_search",
         "destination": "https://blog.lazying.art/html/computer_internet/3824/local-pubmed-pmc-search-qa-workstation.html?utm_source=linkedin&utm_medium=social&utm_campaign=local_knowledge_terminal_pilot&utm_content=pubmed_pmc_local_search",
         "content_sha256": "4eacfe3a9d881d955072787f86bdf317bae81b3033b4d9a90b078bd8b2b4e91e",
-        "reviewed_at": "2026-09-11T05:58:41Z",
+        "reviewed_at": "2026-09-11T07:52:00Z",
         "shortlink": false,
         "verification": {
           "provider": "linkedin",
           "exact_content_in_target_window": true,
           "tracked_url_preserved": true,
+          "stored_text_exact_after_html_normalization": true,
+          "original_urls_preserved": true,
           "queue_state_verified": true,
           "creation_submission_count": 1,
+          "reschedule_submission_count": 1,
           "release_url": null
         },
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
-        "policy": "One value-first LinkedIn pointer after the existing queue. It summarizes the source-ledger, hybrid-retrieval, citation, and evaluation method before linking the complete owned guide. The original tracked URL was preserved. Queueing is not publication, a visit, inquiry, customer result, sale, or revenue."
+        "policy": "One value-first LinkedIn pointer in the first open LinkedIn slot after the Book Specimen test. It summarizes the source-ledger, hybrid-retrieval, citation, and evaluation method before linking the complete owned guide. The exact content, original tracked URL, target account, new time, and QUEUE state were verified after one reschedule. Queueing is not publication, a visit, inquiry, customer result, sale, or revenue."
       },
       "policy": "Use LinkedIn for professional proof and bounded buyer qualification, not a generic portfolio dump."
     },

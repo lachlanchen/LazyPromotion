@@ -424,9 +424,10 @@ sample-report route. It explicitly says there is no PMC-specific customer
 deployment or outcome and keeps hardware, full-corpus ingestion, production,
 medical validation, and clinical use outside the bounded check. BLOG commits
 `20a7a52` and `a6e53c6`; publication is not a lead or revenue.
-One value-first LinkedIn pointer is queued for October 5 at 02:00 UTC after the
-existing schedule. Postiz retained the exact copy and original tracked URL in
-QUEUE state. It is not yet a public post, visit, inquiry, or revenue.
+One value-first LinkedIn pointer is queued for September 14 at 02:00 UTC, the
+first open LinkedIn slot after the Book Specimen test. Postiz retained the exact
+copy and original tracked URL in QUEUE state after one reviewed reschedule. It
+is not yet a public post, visit, inquiry, or revenue.
 
 The same need now has a reusable
 [small-team remote-access guide](https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3819/small-team-remote-access-role-matrix.html)

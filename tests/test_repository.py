@@ -1602,7 +1602,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 40)
+        self.assertEqual(campaign["version"], 41)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1662,12 +1662,24 @@ class RepositoryTests(unittest.TestCase):
         ]
         self.assertEqual(biomedical_post["state"], "postiz_queue")
         self.assertEqual(
-            biomedical_post["publish_at"], "2026-10-05T02:00:00.000Z"
+            biomedical_post["publish_at"], "2026-09-14T02:00:00.000Z"
+        )
+        self.assertEqual(
+            biomedical_post["rescheduled_from"], "2026-10-05T02:00:00.000Z"
         )
         self.assertFalse(biomedical_post["shortlink"])
         self.assertTrue(biomedical_post["verification"]["tracked_url_preserved"])
+        self.assertTrue(
+            biomedical_post["verification"][
+                "stored_text_exact_after_html_normalization"
+            ]
+        )
+        self.assertTrue(biomedical_post["verification"]["original_urls_preserved"])
         self.assertEqual(
             biomedical_post["verification"]["creation_submission_count"], 1
+        )
+        self.assertEqual(
+            biomedical_post["verification"]["reschedule_submission_count"], 1
         )
         self.assertIsNone(biomedical_post["verification"]["release_url"])
         self.assertFalse(biomedical_post["lead_or_sale_observed"])

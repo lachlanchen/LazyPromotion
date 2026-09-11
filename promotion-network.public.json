@@ -165,8 +165,8 @@
       "kind": "campaign",
       "label": "kikudoku-pronunciation-ux",
       "metadata": {
-        "objective": "Win the paid Kikudoku pronunciation UX test with a concise, evidence-backed application based on the shipped L-and-N practice loop, without offering unpaid speculative design work or overstating UX credentials.",
-        "version": 4
+        "objective": "Preserve the closed Kikudoku pronunciation UX opportunity as historical demand evidence for L-and-N without treating it as an active application route.",
+        "version": 5
       },
       "url": ""
     },
@@ -226,7 +226,7 @@
       "label": "lazyremote-uu-bridge-route",
       "metadata": {
         "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },
@@ -261,12 +261,22 @@
       "url": ""
     },
     {
+      "id": "campaign:lkt-private-knowledge-mcp-hackathon",
+      "kind": "campaign",
+      "label": "lkt-private-knowledge-mcp-hackathon",
+      "metadata": {
+        "objective": "Turn Local Knowledge Terminal's multilingual, source-grounded graph into a useful read-only MCP bridge first, then consider an Amazon hackathon entry without counting a registration or prize possibility as revenue.",
+        "version": 2
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:local-knowledge-terminal-pilot",
       "kind": "campaign",
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 34
+        "version": 37
       },
       "url": ""
     },
@@ -427,6 +437,16 @@
       "metadata": {
         "objective": "Turn one explicit request for unavailable research code into a reproducible public release and a useful maintainer response, without treating the interaction as a sale or publishing uncleared recordings.",
         "version": 2
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:technically-contributor-program",
+      "kind": "campaign",
+      "label": "technically-contributor-program",
+      "metadata": {
+        "objective": "Win one USD 500 paid technical explainer by turning an inspectable MCP implementation into a clear account of permissions and agent power, without writing a speculative full article or claiming an ongoing assignment.",
+        "version": 1
       },
       "url": ""
     },
@@ -4737,7 +4757,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-10T13:33:24Z",
+        "pushed_at": "2026-09-10T16:56:32Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4757,7 +4777,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-10T13:00:32Z"
+        "updated_at": "2026-09-10T16:56:36Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -4989,7 +5009,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-10T10:28:05Z",
+        "pushed_at": "2026-09-10T16:33:41Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -5005,7 +5025,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-10T10:28:28Z"
+        "updated_at": "2026-09-10T16:36:50Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -5115,7 +5135,7 @@
       "metadata": {
         "description": "Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware.",
         "homepage": "https://lazying.art/lkt/",
-        "pushed_at": "2026-09-06T00:06:17Z",
+        "pushed_at": "2026-09-10T16:20:14Z",
         "topics": [
           "citations",
           "e-ink",
@@ -5127,7 +5147,7 @@
           "llama-cpp",
           "local-first",
           "local-search",
-          "markdown",
+          "mcp",
           "meeting-intelligence",
           "multilingual",
           "offline",
@@ -5138,7 +5158,7 @@
           "raspberry-pi",
           "sqlite"
         ],
-        "updated_at": "2026-09-06T00:06:21Z"
+        "updated_at": "2026-09-10T16:22:17Z"
       },
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
@@ -7096,6 +7116,13 @@
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
     {
+      "id": "url:333e9c866f02467c",
+      "kind": "web_resource",
+      "label": "implementation",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md"
+    },
+    {
       "id": "url:0bb69e434c76a028",
       "kind": "web_resource",
       "label": "instagram visual",
@@ -7243,6 +7270,13 @@
       "url": "https://lazying.art/lkt/markdown-vault/"
     },
     {
+      "id": "url:603400306cd41f42",
+      "kind": "web_resource",
+      "label": "mcp bridge deployment run",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34502858470"
+    },
+    {
       "id": "url:c7e475f14587fd10",
       "kind": "web_resource",
       "label": "morphology ingestion and provenance",
@@ -7276,6 +7310,13 @@
       "label": "official program",
       "metadata": {},
       "url": "https://www.plesk.com/content-contributor-program/"
+    },
+    {
+      "id": "url:5d86fa7ced33b349",
+      "kind": "web_resource",
+      "label": "official program",
+      "metadata": {},
+      "url": "https://technically.dev/contribute/contributor"
     },
     {
       "id": "url:df6113918f0955fd",
@@ -7703,6 +7744,27 @@
       "label": "working terms contract public anchor",
       "metadata": {},
       "url": "https://lazying.art/lecture-pack/#terms"
+    },
+    {
+      "id": "url:f3fb41022b018b7c",
+      "kind": "web_resource",
+      "label": "writing samples 1",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html"
+    },
+    {
+      "id": "url:fec504bcca2b88d1",
+      "kind": "web_resource",
+      "label": "writing samples 2",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/3810/archive-chatgpt-conversations-provenance-current-state.html"
+    },
+    {
+      "id": "url:720e77be954c9723",
+      "kind": "web_resource",
+      "label": "writing samples 3",
+      "metadata": {},
+      "url": "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html"
     },
     {
       "id": "url:64eb9b1b7f4428fc",
@@ -8632,7 +8694,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "prepared_login_required"
+        "state": "closed_no_application"
       },
       "relation": "targets",
       "source": "campaign:kikudoku-pronunciation-ux",
@@ -9328,6 +9390,14 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:333e9c866f02467c"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/b36bed6d794621994060c289ea788a2c71760cbf/examples/artifacts/markdown-vault-index.json",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9397,6 +9467,14 @@
       "relation": "uses_evidence",
       "source": "campaign:local-knowledge-terminal-pilot",
       "target": "url:57248a7df668a86d"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34502858470",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:local-knowledge-terminal-pilot",
+      "target": "url:603400306cd41f42"
     },
     {
       "confidence": 1.0,
@@ -10359,6 +10437,46 @@
       "relation": "uses_evidence",
       "source": "campaign:soft-event-frame-code-release",
       "target": "url:fe79107d9d9adb58"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:technically-contributor-program",
+      "target": "url:333e9c866f02467c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://technically.dev/contribute/contributor",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:technically-contributor-program",
+      "target": "url:5d86fa7ced33b349"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:technically-contributor-program",
+      "target": "url:720e77be954c9723"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:technically-contributor-program",
+      "target": "url:f3fb41022b018b7c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://blog.lazying.art/html/computer_internet/3810/archive-chatgpt-conversations-provenance-current-state.html",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:technically-contributor-program",
+      "target": "url:fec504bcca2b88d1"
     },
     {
       "confidence": 1.0,

@@ -12,6 +12,15 @@
     "application_fields": "Name, email, optional LinkedIn profile, interest statement, writing examples, and topic ideas.",
     "policy": "Application, editorial reply, topic acceptance, contribution delivery, payment confirmation, and received revenue are separate states. Confirm the brief, assistance policy, rights, revisions, acceptance, payment method, and timing before beginning a contribution."
   },
+  "source_evidence": {
+    "official_program": "https://technically.dev/contribute/contributor",
+    "writing_samples": [
+      "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
+      "https://blog.lazying.art/html/computer_internet/3810/archive-chatgpt-conversations-provenance-current-state.html",
+      "https://blog.lazying.art/html/computer_internet/3788/test-research-pdf-collection-before-local-rag.html"
+    ],
+    "implementation": "https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/mcp.md"
+  },
   "fit": {
     "projects": [
       "LocalKnowledgeTerminal",

@@ -21,11 +21,18 @@ a **USD 250 Custom Bilingual Pronunciation Mini-Lesson** for tutors and small
 language schools. It covers one sound contrast, one learner group, English plus
 Simplified or Traditional Chinese, two model prompts, original teaching
 visuals, a printable four-step web lesson, a 15–30 second captioned walkthrough,
-deployable lesson files, and one correction pass. The [offer and fit
-check](https://l-and-n.lazying.art/for-tutors/) and [finished project-owned
-sample](https://l-and-n.lazying.art/lessons/light-vs-night/) are live. A fit or
+deployable lesson files, and one correction pass. The
+[offer](https://l-and-n.lazying.art/for-tutors/), [private fit
+check](https://lazying.art/pronunciation-mini-lesson/fit-check/), and [finished
+project-owned sample](https://l-and-n.lazying.art/lessons/light-vs-night/) are
+live. A fit or
 no-fit answer and written scope come before payment; learner recordings are not
 requested. No inquiry, accepted scope, payment, or revenue exists yet.
+One labeled synthetic fit check completed the visible review, second
+confirmation, encrypted endpoint, private receiver, unchanged remote deletion,
+and empty second poll. The synthetic payload was removed afterward. This is
+operational proof, not demand. The same bounded USD 250 service is also live on
+Contra, where identity and payout setup remain incomplete.
 One sample-first LinkedIn note is queued for 2026-09-25T02:00:00Z with the
 project-owned lesson image and original tracked offer URL; queue state is not
 publication or demand.

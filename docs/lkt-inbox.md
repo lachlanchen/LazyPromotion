@@ -2,16 +2,17 @@
 
 ## Current status
 
-Direct web submission is live for the LKT, manuscript, lecture, Story Clip, and
-LazyRemote routes as of 2026-09-10.
+Direct web submission is live for the LKT, manuscript, lecture, Story Clip,
+OpenHI, LazyRemote, Book Specimen, and Pronunciation Mini-Lesson routes as of
+2026-09-11.
 Each deployed frontend, the pinned public-key fingerprint, mode-`0600` private
 key, receiver, and remote spool completed an explicitly confirmed synthetic
 round trip. Each page still reviews locally before any network request and keeps
 an email or copy fallback.
 
-`lkt_inbox.py` is the operator-side receiver for the LKT, manuscript, lecture,
-Story Clip, and LazyRemote fit checks accepted by the first-party WordPress
-endpoint. The web server stores an encrypted envelope, not a readable inquiry. The receiver
+`lkt_inbox.py` is the operator-side receiver for those eight fit checks accepted
+by the first-party WordPress endpoint. The web server stores an encrypted
+envelope, not a readable inquiry. The receiver
 downloads a final envelope over SSH, checks the entire cryptographic and
 application contract, saves both copies locally, verifies them from disk, and
 only then removes that exact unchanged remote file.
@@ -32,8 +33,9 @@ Accepted final spool names have the exact form
 names are ignored. A valid envelope must use the pinned key fingerprint,
 RSA-OAEP with SHA-1 for the 32-byte key wrap, AES-256-GCM with the contract AAD,
 and either the legacy LKT v1 record or the routed `fit-check-record/v2` schema.
-The v2 payload has a strict `lkt`, `manuscript`, `lecture`, `story_clip`, or
-`lazyremote` offer discriminator and rejects fields from another offer. Authentication, schema, source,
+The v2 payload has a strict `lkt`, `manuscript`, `lecture`, `story_clip`,
+`openhi`, `lazyremote`, `book_specimen`, or `pronunciation_lesson` offer
+discriminator and rejects fields from another offer. Authentication, schema, source,
 timestamp, receipt, normalization, or persistence failures leave the remote
 file in place.
 
@@ -127,3 +129,18 @@ A second receiver check returned `no_pending`; the two exact synthetic payload
 files were removed, while the browser evidence remains private outside Git.
 This verifies the path, not a customer inquiry, qualified lead, payment,
 delivery, or revenue.
+
+On 2026-09-11 the Pronunciation Mini-Lesson route replaced its email-only
+primary action with the review-first web fit check at
+<https://lazying.art/pronunciation-mini-lesson/fit-check/>. Myblog commit
+`fe447eeb278a8497d84afedb849be1cc3f0e9a40`, LazyingArtWebsite commit
+`8b93890d8c8e8965e50cb100f3d3aba32d12b7a9`, L & N commit
+`72ded99680bd6c760fae5203f7c8f21a6f143721`, and receiver commit
+`8f36528b695fd0e4c3ad15aabe52ec4259c21608` form the deployed path. One
+clearly labeled synthetic request made no endpoint request before local review,
+kept Send disabled until a separate confirmation, and then made exactly one
+accepted HTTP 202 request. It authenticated and decrypted, persisted with mode
+`0600`, and was deleted remotely only after unchanged verification. A second
+check returned `no_pending`; the exact synthetic payload files were removed and
+the normal monitor restarted. This verifies the path, not a buyer inquiry,
+qualified lead, payment, delivery, or revenue.

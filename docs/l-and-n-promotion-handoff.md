@@ -8,10 +8,12 @@ This note is the secret-free bridge between LazyPromotion and the L & N release 
 
 - Product: `L & N: Speech Practice`
 - Website and primary campaign destination: https://l-and-n.lazying.art/
+- Tutor offer: https://l-and-n.lazying.art/for-tutors/
+- Private fit check: https://lazying.art/pronunciation-mini-lesson/fit-check/
 - Free light/night lesson: https://l-and-n.lazying.art/lessons/light-vs-night/
 - Owned discovery shelf: https://lazying.art/work/
 - Source: https://github.com/lachlanchen/L-and-N
-- L & N release evidence commit: `5b0cdc964cbfa0979ff2b6a446a9bcd25be68b6f`
+- L & N release evidence commit: `201081025c1523f8fbe27f0356098ab548241d5e`
 - Deployed lesson source commit: `7b969e618bb870ab2f09fd4390215f092934ce32`
 - Detailed durable operator handoff: `store/operator-handoff.md` in the L & N repository
 - Campaign record: `campaigns/l-and-n-pronunciation-launch.json`
@@ -48,6 +50,13 @@ Lead with the concrete learner problem: “I mix up L and N, so I built the prac
 The existing LinkedIn item is scheduled for `2026-09-20T02:00:00Z` and remains a scheduled draft until provider delivery is independently verified. Do not record a post, view, tester, lead, or store review as a conversion or publication outcome without separate evidence.
 
 The selected-work shelf now links the free no-signup PWA and public source from a pronunciation-shaped card. The standalone lesson is an additional education-first discovery path. Either link is discovery evidence only; a visit is not a lead or sale.
+
+The fixed USD 250 tutor service now leads to a review-first encrypted fit check
+instead of relying on email alone. The live test made no endpoint request before
+review, required a separate confirmation, accepted exactly one synthetic
+request, and left no pending remote envelope after private receipt. The
+synthetic payload was removed. This verifies the intake path, not a buyer,
+payment, or revenue.
 
 ## Release-following actions
 

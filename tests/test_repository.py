@@ -134,6 +134,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("learner recordings", " ".join(offer["excluded"]))
         self.assertIn("/for-tutors/", campaign["offer"]["url"])
         self.assertIn("/lessons/light-vs-night/", campaign["proof"]["sample"])
+        intake = campaign["direct_intake"]
+        self.assertEqual(intake["state"], "live_verified_encrypted_review_first")
+        self.assertEqual(
+            intake["url"],
+            "https://lazying.art/pronunciation-mini-lesson/fit-check/",
+        )
+        self.assertIn("utm_source=l_and_n", intake["tracked_url"])
+        self.assertIn("utm_campaign=pronunciation_mini_lesson_pilot", intake["tracked_url"])
+        self.assertEqual(intake["record_schema"], "fit-check-record/v2")
+        self.assertEqual(intake["source_schema"], "fit-check/v2")
+        self.assertTrue(intake["synthetic_payload_removed"])
+        self.assertFalse(intake["buyer_inquiry_observed"])
+        self.assertFalse(intake["qualified_lead_observed"])
+        self.assertFalse(intake["payment_observed"])
+        self.assertEqual(intake["received_gross_usd"], 0)
         contra = campaign["contra_marketplace"]
         self.assertEqual(
             contra["state"],

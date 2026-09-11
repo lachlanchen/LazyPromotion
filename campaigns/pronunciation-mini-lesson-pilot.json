@@ -1,6 +1,6 @@
 {
   "id": "pronunciation-mini-lesson-pilot",
-  "version": 4,
+  "version": 5,
   "objective": "Sell and deliver four bounded USD 250 bilingual pronunciation mini-lessons to tutors or small language schools while keeping the L & N learner app free.",
   "offer": {
     "state": "live_verified",
@@ -31,9 +31,29 @@
   "proof": {
     "sample": "https://l-and-n.lazying.art/lessons/light-vs-night/",
     "repository": "https://github.com/lachlanchen/L-and-N",
-    "release_commit": "beb2ead68a79c72333493b0cad6371a49d62052f",
-    "live_checks": "The offer, sample, app, stylesheet, sitemap, signed Android test build, privacy page, HTTPS headers, and rollback release were verified after the immutable 2026-09-11 deployment.",
+    "release_commit": "72ded99680bd6c760fae5203f7c8f21a6f143721",
+    "release_evidence_commit": "201081025c1523f8fbe27f0356098ab548241d5e",
+    "live_checks": "The offer, private fit-check route, sample, app, stylesheet, sitemap, signed Android test build, privacy page, HTTPS headers, and rollback release were verified after the immutable 2026-09-11 deployment.",
     "boundary": "The sample is project-owned proof of the delivery format. It is not customer work, a testimonial, a clinical result, a certified translation, or evidence of sales."
+  },
+  "direct_intake": {
+    "state": "live_verified_encrypted_review_first",
+    "url": "https://lazying.art/pronunciation-mini-lesson/fit-check/",
+    "tracked_url": "https://lazying.art/pronunciation-mini-lesson/fit-check/?utm_source=l_and_n&utm_medium=owned_site&utm_campaign=pronunciation_mini_lesson_pilot&utm_content=for_tutors_fit_check",
+    "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
+    "backend_commit": "fe447eeb278a8497d84afedb849be1cc3f0e9a40",
+    "frontend_commit": "8b93890d8c8e8965e50cb100f3d3aba32d12b7a9",
+    "offer_source_commit": "72ded99680bd6c760fae5203f7c8f21a6f143721",
+    "receiver_commit": "8f36528b695fd0e4c3ad15aabe52ec4259c21608",
+    "record_schema": "fit-check-record/v2",
+    "source_schema": "fit-check/v2",
+    "visible_verification": "One clearly labeled synthetic request made no endpoint request before local review, kept Send disabled until a separate confirmation, then made exactly one accepted HTTP 202 request. The receiver authenticated and decrypted it, saved private files in mode 0600, deleted only the unchanged remote envelope, and returned no_pending on a second check.",
+    "synthetic_payload_removed": true,
+    "buyer_inquiry_observed": false,
+    "qualified_lead_observed": false,
+    "payment_observed": false,
+    "received_gross_usd": 0,
+    "boundary": "The test proves routing and privacy behavior. It is not a buyer inquiry, accepted scope, payment, delivery, or revenue."
   },
   "contra_marketplace": {
     "state": "published_live_verified_identity_and_payout_pending",

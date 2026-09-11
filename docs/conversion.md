@@ -37,6 +37,15 @@ vertical clip. Its [review-first fit check](https://lazying.art/story-clip/fit-c
 now reviews the request locally and continues by email or copy before source
 transfer and payment.
 
+The ninth route is a fixed USD 250 [Bilingual Pronunciation
+Mini-Lesson](https://l-and-n.lazying.art/for-tutors/) for one sound contrast,
+one learner group, and English plus Simplified or Traditional Chinese. Its
+[private fit check](https://lazying.art/pronunciation-mini-lesson/fit-check/)
+reviews the exact metadata locally, requires a separate confirmation, and keeps
+email as a fallback. One labeled synthetic request completed the encrypted
+round trip and was removed after verification. This is operational readiness,
+not a buyer inquiry or revenue.
+
 Three direct Story Clip applications have been sent against explicit hiring
 needs. The latest went through YDEHM's first-party form after its paid-per-clip
 post and live application were visibly checked. The quote follows the buyer's

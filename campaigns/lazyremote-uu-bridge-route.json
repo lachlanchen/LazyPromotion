@@ -316,9 +316,10 @@
           "official_download_safety": {
             "state": "live_verified",
             "official_domain": "https://uuyc.163.com/",
+            "repository_commit": "9e7163a909617447f0c6dbb9750ff0f20d1cac64",
             "observed_problem": "Current search results include look-alike download sites that call themselves official and advertise unverified Linux packages.",
-            "reader_value": "The article now tells readers to verify the NetEase domain before downloading, notes the platforms currently listed by the canonical product page, and explains that the bridge uses the official Windows client through a reviewed hash-pinned manifest rather than third-party Linux packages.",
-            "verification": "The production article returned HTTP 200 with the new domain-verification section, exact official link, existing compatibility intake, and one final LazyRemote review route.",
+            "reader_value": "The article plus the English and highest-traffic Simplified-Chinese repository pages now tell readers to verify the NetEase domain before downloading, note the platforms currently listed by the canonical product page, and explain that the bridge uses the official Windows client through a reviewed hash-pinned manifest rather than third-party Linux packages.",
+            "verification": "The production article returned HTTP 200 with the new domain-verification section, exact official link, existing compatibility intake, and one final LazyRemote review route. The live repository pages contain the same concise warning; all 149 tests passed with one opt-in live-systemd test skipped.",
             "boundary": "This is a download-safety and source-verification improvement, not an accusation about a named third party, a visitor, an inquiry, or a sale."
           }
         },

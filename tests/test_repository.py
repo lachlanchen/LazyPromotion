@@ -203,6 +203,7 @@ class RepositoryTests(unittest.TestCase):
         download_safety = uu_post["official_download_safety"]
         self.assertEqual(download_safety["state"], "live_verified")
         self.assertEqual(download_safety["official_domain"], "https://uuyc.163.com/")
+        self.assertTrue(download_safety["repository_commit"].startswith("9e7163a"))
         self.assertIn("look-alike", download_safety["observed_problem"])
         self.assertIn("not an accusation", download_safety["boundary"])
         issue_monitor = campaign["channels"]["github"]["inbound_monitor"]

@@ -508,6 +508,14 @@ plugin files lost during the reboot. BLOG commit `d2b8740` then moved the
 translation-route check ahead of the first source-post write, so the same outage
 cannot silently create another partial update; all 41 BLOG tests pass. This is
 maintenance proof, not traffic, an inquiry, payment, or revenue.
+The repository's current English and highest-attention Simplified-Chinese
+READMEs now also offer a short sample-first route: inspect the complete report,
+then use the free metadata-only fit check only if the fixed USD 250 software
+review fits. Commit `8ec250b` keeps the free UU answer and vendor boundary first,
+limits the review to one relay and three computers, and excludes deployment,
+hardware, and ongoing support. All 153 repository tests pass. No additional
+Postiz item was added; the clearer route is readiness, not a click, inquiry, or
+revenue.
 One read-only GitHub monitor now watches public issue and pull-request metadata
 across fifteen high-attention or offer repositories in a single GraphQL query.
 It records no issue, pull-request, comment, or review body and cannot comment,

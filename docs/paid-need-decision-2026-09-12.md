@@ -171,6 +171,18 @@ open competing implementation pull requests. Other exact-fit checks were
 assigned, heavily contested, expired, or account and identity gated. No
 application, message, registration, or account change was made.
 
+The current [EdTech contextual-retrieval and knowledge-graph
+brief](https://www.upwork.com/freelance-jobs/apply/Data-engineer_~022097896438429984349/)
+is an exact capability match but not a viable contract. Its USD 100 fixed
+budget covers a claimed production MVP spanning retrieval, reranking, an
+educational ontology, prerequisite relationships, GraphQL, Docker, CI, and an
+evaluation harness. The fresh page showed five to ten proposals, no interviews,
+and a new client without spending evidence. It was rejected before application:
+USD 100 could support only a separately accepted architecture or evaluation
+milestone, not the published production scope. No proposal was sent and no
+Connects were spent. This remains demand evidence for LKT's existing bounded
+collection-fit sprint, not a lead or reason to invent another offer.
+
 ## Decision
 
 1. Keep technical verification and infrastructure work ahead of social volume.

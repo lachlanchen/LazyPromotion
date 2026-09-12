@@ -229,7 +229,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 16)
+        self.assertEqual(campaign["version"], 17)
         self.assertEqual(demand["public_stars"], 14)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 10)
         explicit_need = demand["current_explicit_need"]
@@ -264,8 +264,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(search_signal["average_position"], 8.9)
         self.assertIn("not identify visitors", search_signal["boundary"])
         recheck = demand["conversion_path_recheck"]
-        self.assertEqual(recheck["state"], "live_rechecked_no_new_pitch_needed")
-        self.assertIn("encrypted metadata-only fit check", recheck["simplified_chinese_path"])
+        self.assertEqual(
+            recheck["state"],
+            "live_sample_first_path_added_to_highest_attention_readmes",
+        )
+        self.assertIn("metadata-only fit check", recheck["simplified_chinese_path"])
         self.assertIn("not an inquiry", recheck["boundary"])
         self.assertEqual(len(campaign["owned_route"]["placements"]), 11)
         support = campaign["owned_route"]["localized_support_route"]
@@ -284,6 +287,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(profile_route["editions"], 11)
         self.assertEqual(len(profile_route["links"]), 3)
         self.assertIn("not a lead or sale", profile_route["boundary"])
+        sample_first = campaign["owned_route"]["sample_first_readme_handoff"]
+        self.assertEqual(sample_first["state"], "live_pushed")
+        self.assertEqual(sample_first["source_commit"][:7], "8ec250b")
+        self.assertEqual(sample_first["editions"], ["English", "Simplified Chinese"])
+        self.assertEqual(sample_first["postiz_action"], "none")
+        self.assertFalse(sample_first["lead_or_sale_observed"])
+        for route in sample_first["paths"].values():
+            self.assertIn("utm_campaign=uu_remote_bridge", route)
+        self.assertIn("no deployment", sample_first["copy_boundary"])
+        self.assertIn("do not establish a click", sample_first["boundary"])
         homepage = campaign["owned_route"]["homepage_conversion_handoff"]
         self.assertEqual(homepage["state"], "live_and_verified")
         self.assertEqual(homepage["languages"], 13)

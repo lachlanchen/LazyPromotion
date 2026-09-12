@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 16,
+  "version": 17,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-12T16:32:17Z",
@@ -76,11 +76,11 @@
       "boundary": "The search report is prioritization evidence. It does not identify visitors or establish an inquiry, lead, payment, or revenue."
     },
     "conversion_path_recheck": {
-      "state": "live_rechecked_no_new_pitch_needed",
-      "checked_at": "2026-09-11T11:31:00Z",
-      "simplified_chinese_path": "The highest-attention README already leads to the localized LazyRemote review anchor, where the exact USD 250 scope, sample, encrypted metadata-only fit check, and privacy boundary are visible.",
-      "decision": "Keep the free UU compatibility answer first and do not add a second service link or another Postiz item while no qualified inquiry is observed.",
-      "boundary": "The updated traffic snapshot is attention evidence, not an inquiry, qualified buyer, payment, donation, or revenue."
+      "state": "live_sample_first_path_added_to_highest_attention_readmes",
+      "checked_at": "2026-09-12T22:39:03Z",
+      "simplified_chinese_path": "The highest-attention README keeps the free UU answer and separate LazyRemote explanation first, then names the complete Chinese sample, exact USD 250 software-review boundary, and free metadata-only fit check.",
+      "decision": "Use one concise sample-first path in English and Simplified Chinese, where current owner-visible traffic is concentrated. Do not add another Postiz item or repeat the commercial paragraph across lower-attention translations without evidence.",
+      "boundary": "The updated traffic snapshot and clearer path are attention and conversion-readiness evidence, not an inquiry, qualified buyer, payment, donation, or revenue."
     },
     "lazyremote_core": {
       "repository": "https://github.com/lachlanchen/LazyTunnel",
@@ -157,6 +157,27 @@
       "reason": "The repository's highest-traffic language path now lands on the localized proof-first fixed review instead of stopping at the general product hero.",
       "verification": "The live destination returned HTTP 200 and contained the review anchor, exact USD 250 scope, Chinese metadata-only fit-check action, and no-password or private-key boundary. All 146 repository tests passed with one opt-in systemd test skipped.",
       "boundary": "The free open-source product explanation remains visible. A link view or click is attention, not an inquiry, lead, payment, or revenue."
+    },
+    "sample_first_readme_handoff": {
+      "state": "live_pushed",
+      "checked_at": "2026-09-12T22:39:03Z",
+      "source_commit": "8ec250bdadb4fa7c076cc2e0395916794790c5a1",
+      "editions": [
+        "English",
+        "Simplified Chinese"
+      ],
+      "reason": "The portfolio audit found 1,140 views from 494 visitors, with 549 views concentrated on the Simplified-Chinese README. The existing separate-product paragraph reached the review section but did not let those readers inspect the complete report or understand the exact service boundary before leaving GitHub.",
+      "paths": {
+        "english_sample": "https://remote.lazying.art/sample-report.html?utm_source=github&utm_medium=readme&utm_campaign=uu_remote_bridge&utm_content=network_review_sample_en",
+        "english_fit_check": "https://lazying.art/lazyremote/fit-check/?utm_source=github&utm_medium=readme&utm_campaign=uu_remote_bridge&utm_content=network_review_fit_check_en",
+        "simplified_chinese_sample": "https://remote.lazying.art/zh-Hans/sample-report.html?utm_source=github&utm_medium=readme&utm_campaign=uu_remote_bridge&utm_content=network_review_sample_zh_hans",
+        "simplified_chinese_fit_check": "https://lazying.art/lazyremote/fit-check/?utm_source=github&utm_medium=readme&utm_campaign=uu_remote_bridge&utm_content=network_review_fit_check_zh_hans"
+      },
+      "copy_boundary": "One reachable relay, up to three computers, USD 250, metadata-only fit check first, and no deployment, hardware, or ongoing support. The free bridge and vendor separation remain ahead of the offer.",
+      "verification": "All 153 repository tests passed locally with the existing opt-in systemd test skipped, and the exact English and Simplified-Chinese routes were pushed to main.",
+      "postiz_action": "none",
+      "lead_or_sale_observed": false,
+      "boundary": "The improved paths are conversion readiness. They do not establish a click, inquiry, qualified lead, payment, or received revenue."
     },
     "all_language_conversion_handoff": {
       "state": "live_direct_review_anchor",

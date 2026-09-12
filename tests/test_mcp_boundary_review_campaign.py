@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 44)
+        self.assertEqual(self.payload["version"], 45)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -434,7 +434,8 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("/3829/", lazyblog["published_url"])
         self.assertEqual(lazyblog["published_post_id"], 3829)
         self.assertIn("server-local paths", lazyblog["verification"])
-        self.assertIn("BLOG publication receipt commit 516e753", lazyblog["verification"])
+        self.assertIn("BLOG commits 516e753 and 8e16200", lazyblog["verification"])
+        self.assertIn("three distinct authentication failures", lazyblog["verification"])
         self.assertIn("without duplication", lazyblog["verification"])
         auth = lazyblog["claude_authentication_guide"]
         self.assertEqual(auth["state"], "published_live_verified")
@@ -485,6 +486,12 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(search_console["property"], "sc-domain:lazying.art")
         self.assertIn("unknown to Google", search_console["prior_state"])
         self.assertIn("priority crawl queue", search_console["confirmation"])
+        discovery_support = search_console["discovery_support"]
+        self.assertIn("wp-sitemap-posts-post-1.xml", discovery_support["sitemap"])
+        self.assertEqual(discovery_support["sitemap_exact_entry_count"], 1)
+        self.assertIn("/3829/", discovery_support["internal_referring_page"])
+        self.assertEqual(discovery_support["internal_link_count"], 1)
+        self.assertTrue(discovery_support["search_console_detection_pending"])
         self.assertFalse(search_console["repeat_request_allowed"])
         self.assertIn("does not guarantee indexing", search_console["boundary"])
         self.assertFalse(discovery["lead_or_sale_observed"])

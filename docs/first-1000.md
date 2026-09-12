@@ -1659,6 +1659,12 @@ marker. The pushed default branch returned the exact three links and every
 destination returned HTTP 200. This is conversion-path readiness, not a visit,
 inquiry, payment, or revenue.
 
+WordPress already exposed the diagnostic exactly once in its post sitemap. The
+established ten-check MCP guide now also gives it one natural internal referring
+link beside the two other authentication branches. BLOG commit `8e16200`
+records the in-place update; Search Console has not yet confirmed discovery from
+either route. This is crawl support, not traffic, a lead, payment, or revenue.
+
 That exact Docker/Copilot authentication problem now also has a durable owned
 [guide](https://blog.lazying.art/html/computer_internet/3834/github-mcp-requires-authentication-docker-sandboxes.html).
 It separates sandbox-scoped secrets, the built-in server, workspace overrides,

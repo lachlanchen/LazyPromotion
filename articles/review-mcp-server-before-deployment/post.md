@@ -108,6 +108,27 @@ In one public Local Knowledge Terminal sample, the executed surface contained tw
 
 That is the point of a pre-deployment review: not to certify a whole product, but to make one real decision from evidence someone else can reproduce.
 
+## Follow the authentication failure you actually have
+
+Authentication failures that look similar in a client can come from different
+boundaries. Use the branch that matches the evidence in front of you:
+
+- If you are deciding whether a server should be deliberately public,
+  loopback-only, or OAuth-protected, start with [Claude MCP Authentication:
+  Public, Local, or Remote?](https://blog.lazying.art/html/computer_internet/3832/claude-mcp-authentication-public-local-remote.html)
+- If Copilot CLI reports that its built-in GitHub MCP server requires
+  authentication inside a Docker Sandbox, use the [sandbox secret and server
+  override checklist](https://blog.lazying.art/html/computer_internet/3834/github-mcp-requires-authentication-docker-sandboxes.html).
+- If a machine client knows its token endpoint but the authorization server
+  publishes no discovery metadata, separate the issuer, endpoint, and endpoint
+  authentication method with the [client-credentials discovery
+  diagnostic](https://blog.lazying.art/html/computer_internet/3835/mcp-client-credentials-oauth-discovery-missing.html).
+
+Do not solve one branch by weakening a different boundary. In particular, an
+explicit token endpoint is a compatibility fallback for a known authorization
+server; it is not a replacement for authorization on a remotely exposed MCP
+resource.
+
 The [complete sample report and protocol packet](https://lazying.art/mcp-boundary-review/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=mcp_boundary_review&utm_content=pre_deployment_guide) show the format. I also offer the same bounded method as a [fixed USD 500 review](https://lazying.art/mcp-boundary-review/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=mcp_boundary_review&utm_content=pre_deployment_guide_fit) of one server, one base revision, and ten agreed checks, with a limited recheck. The fit check uses repository metadata first; no source upload or payment is needed to establish scope.
 
 ## Primary references

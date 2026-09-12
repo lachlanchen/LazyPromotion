@@ -31,6 +31,18 @@ class McpPredeploymentArticleTests(unittest.TestCase):
         self.assertIn("one server, one base revision, and ten agreed checks", self.text)
         self.assertIn("no source upload or payment is needed", self.text)
 
+    def test_article_routes_three_distinct_authentication_failures(self):
+        self.assertIn("Follow the authentication failure you actually have", self.text)
+        for post_id in (3832, 3834, 3835):
+            self.assertEqual(
+                self.text.count(
+                    f"https://blog.lazying.art/html/computer_internet/{post_id}/"
+                ),
+                1,
+            )
+        self.assertIn("explicit token endpoint is a compatibility fallback", self.text)
+        self.assertIn("not a replacement for authorization", self.text)
+
     def test_article_links_only_to_primary_technical_sources(self):
         required = [
             "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
@@ -46,4 +58,3 @@ class McpPredeploymentArticleTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

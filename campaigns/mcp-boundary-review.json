@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 44,
+  "version": 45,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -385,7 +385,7 @@
       "published_url": "https://blog.lazying.art/html/computer_internet/3829/review-mcp-server-before-deployment.html",
       "published_post_id": 3829,
       "published_at": "2026-09-12T11:09:01Z",
-      "verification": "The live article now explains bounded large-result handoff through opaque list cursors, resource links or client-resolvable references, and the limits of raw server-local paths. It cites the official MCP tools, resources, and pagination specifications, retains the complete ten-check guide, sample-report route, and metadata-first fit check, and was updated in place as WordPress post 3829 without duplication. BLOG publication receipt commit 516e753 records the update.",
+      "verification": "The live article now explains bounded large-result handoff through opaque list cursors, resource links or client-resolvable references, and the limits of raw server-local paths. It cites the official MCP tools, resources, and pagination specifications, retains the complete ten-check guide, sample-report route, and metadata-first fit check, and was updated in place as WordPress post 3829 without duplication. It now also routes three distinct authentication failures to the public/local/remote, Docker Sandbox, and client-credentials diagnostics without adding another sales action. BLOG commits 516e753 and 8e16200 record the updates.",
       "claude_authentication_guide": {
         "state": "published_live_verified",
         "source": "articles/claude-mcp-authentication-public-local-remote/post.md",
@@ -462,6 +462,14 @@
           "property": "sc-domain:lazying.art",
           "prior_state": "URL is unknown to Google",
           "confirmation": "Indexing requested; URL was added to a priority crawl queue",
+          "discovery_support": {
+            "sitemap": "https://blog.lazying.art/wp-sitemap-posts-post-1.xml",
+            "sitemap_exact_entry_count": 1,
+            "internal_referring_page": "https://blog.lazying.art/html/computer_internet/3829/review-mcp-server-before-deployment.html",
+            "internal_link_count": 1,
+            "verified_at": "2026-09-12T20:43:40Z",
+            "search_console_detection_pending": true
+          },
           "repeat_request_allowed": false,
           "boundary": "A crawl request does not guarantee indexing, ranking, traffic, an inquiry, payment, or revenue."
         },

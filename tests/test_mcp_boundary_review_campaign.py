@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 34)
+        self.assertEqual(self.payload["version"], 35)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -58,6 +58,11 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(preflight["landing_exposure"]["sample_markdown"].endswith("report.md"))
         self.assertEqual(len(preflight["landing_exposure"]["sample_markdown_sha256"]), 64)
         self.assertEqual(len(preflight["landing_exposure"]["paths"]), 4)
+        indexing = preflight["landing_exposure"]["search_indexing"]
+        self.assertEqual(indexing["request_state"], "accepted_into_priority_crawl_queue")
+        self.assertEqual(indexing["request_count"], 1)
+        self.assertFalse(indexing["resubmit"])
+        self.assertIn("does not prove indexing", indexing["boundary"])
         self.assertIn("free scoping aid", preflight["boundary"])
         self.assertFalse(self.payload["funnel"]["payment_confirmed"])
 

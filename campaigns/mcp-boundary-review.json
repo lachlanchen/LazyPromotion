@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 34,
+  "version": 35,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -143,6 +143,15 @@
         "revision-pinned source",
         "revision-pinned local-run guide"
       ],
+      "search_indexing": {
+        "checked_at": "2026-09-13",
+        "initial_state": "url_unknown_to_google",
+        "request_state": "accepted_into_priority_crawl_queue",
+        "request_count": 1,
+        "resubmit": false,
+        "evidence": ".local/evidence/20260913-mcp-preflight-search-console-indexing-requested.png",
+        "boundary": "The crawl request is discovery work. It does not prove indexing, ranking, attention, an inquiry, or revenue, and it must not be repeated merely to seek higher priority."
+      },
       "verification": "All 34 website test entries passed. GitHub Pages deployment succeeded; the live offer, sample HTML, and generated Markdown were available, and both sample files were byte-identical to their committed sources."
     },
     "boundary": "The generator is a free scoping aid. It does not read private repositories, submit a fit check, create a payment, establish a vulnerability, or replace the paid executed review."

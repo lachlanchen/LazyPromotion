@@ -504,8 +504,10 @@ BLOG commit `6763eff`; publication is not a lead or sale.
 BLOG commit `1991e2e` now adds the merged clipboard route, its tested boundaries,
 and the original contributor credit to that guide. The public page and separate
 tracked LazyRemote route were verified after restoring the tracked translation
-plugin files lost during the reboot. This is maintenance proof, not traffic, an
-inquiry, payment, or revenue.
+plugin files lost during the reboot. BLOG commit `d2b8740` then moved the
+translation-route check ahead of the first source-post write, so the same outage
+cannot silently create another partial update; all 41 BLOG tests pass. This is
+maintenance proof, not traffic, an inquiry, payment, or revenue.
 One read-only GitHub monitor now watches public issue and pull-request metadata
 across fifteen high-attention or offer repositories in a single GraphQL query.
 It records no issue, pull-request, comment, or review body and cannot comment,

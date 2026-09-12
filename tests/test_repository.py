@@ -229,7 +229,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         self.assertEqual(demand["public_stars"], 14)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 10)
         explicit_need = demand["current_explicit_need"]
@@ -327,6 +327,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(proof_refresh["state"], "live_verified_after_merge")
         self.assertTrue(proof_refresh["blog_commit"].startswith("1991e2e"))
         self.assertTrue(proof_refresh["merge_commit"].startswith("af87e77"))
+        self.assertTrue(proof_refresh["sync_hardening_commit"].startswith("d2b8740"))
+        self.assertIn("before the first WordPress write", proof_refresh["sync_hardening"])
         self.assertIn("outside contributor", proof_refresh["reader_value"])
         self.assertIn("not a visitor", proof_refresh["boundary"])
         capture = campaign["owned_route"]["compatibility_need_capture"]

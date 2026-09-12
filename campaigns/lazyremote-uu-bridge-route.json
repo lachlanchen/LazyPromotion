@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 15,
+  "version": 16,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-12T16:32:17Z",
@@ -180,6 +180,8 @@
         "merge_commit": "af87e773679e7c4c7ef34e3bdeb1f66975c9949d",
         "reader_value": "The Chinese guide now explains the one-way GameViewer-to-X11 clipboard path, its startup, ownership, timeout, delivery-confirmation, and cleanup boundaries, and credits the outside contributor before linking the merged review record.",
         "production_recovery": "The reboot left the live LazyBlog Translations directory without its plugin file. The tracked v0.4.17 plugin was restored as a unit, passed its local UTM test and remote PHP syntax check, was confirmed active, and served the translation status route before the idempotent source-only push.",
+        "sync_hardening_commit": "d2b87408375bf07dc8357c0affd38cc64ad422c4",
+        "sync_hardening": "Future source pushes preflight the translation status route before the first WordPress write, so a missing or malformed plugin route cannot report failure after partially changing the source post. Three regression cases cover successful ordering, a missing route, and malformed status; all 41 BLOG tests passed.",
         "verification": "The public article returned HTTP 200 with the contributor credit, pull-request link, clipboard explanation, and separate tracked LazyRemote route. The source-only sync completed without error and BLOG commit 1991e2e was pushed.",
         "boundary": "This is project-owned maintenance and publication evidence. It is not a visitor, inquiry, qualified buyer, payment, donation, or received revenue."
       },

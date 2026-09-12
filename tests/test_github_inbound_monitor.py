@@ -44,15 +44,38 @@ def pull_request(
     }
 
 
+def external_issue(
+    owner,
+    repository,
+    number,
+    *,
+    updated_at="2026-09-12T12:19:01Z",
+    comment_count=2,
+    state="OPEN",
+):
+    return {
+        "number": number,
+        "title": "Remote MCP servers, unauthenticated: decide the egress path",
+        "url": f"https://github.com/{owner}/{repository}/issues/{number}",
+        "state": state,
+        "updatedAt": updated_at,
+        "comments": {"totalCount": comment_count},
+    }
+
+
 def graphql_payload(
     issues_by_repository=None,
     *,
     pull_requests_by_repository=None,
     visibility_by_repository=None,
+    external_issues=None,
+    external_visibility=None,
 ):
     issues_by_repository = issues_by_repository or {}
     pull_requests_by_repository = pull_requests_by_repository or {}
     visibility_by_repository = visibility_by_repository or {}
+    external_issues = external_issues or {}
+    external_visibility = external_visibility or {}
     data = {}
     for index, name in enumerate(monitor.REPOSITORIES):
         issues = issues_by_repository.get(name, [])
@@ -69,6 +92,15 @@ def graphql_payload(
                 "pageInfo": {"hasNextPage": False},
                 "nodes": pull_requests_by_repository.get(name, []),
             },
+        }
+    for index, (owner, repository, number) in enumerate(monitor.EXTERNAL_ISSUES):
+        key = monitor.external_thread_key(owner, repository, number)
+        data[f"external{index}"] = {
+            "nameWithOwner": f"{owner}/{repository}",
+            "visibility": external_visibility.get(key, "PUBLIC"),
+            "issue": external_issues.get(
+                key, external_issue(owner, repository, number)
+            ),
         }
     return {"data": data}
 
@@ -142,8 +174,75 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertIn("pullRequests", query)
         self.assertIn("comments { totalCount }", query)
         self.assertIn("reviews { totalCount }", query)
+        self.assertIn("issue(number: 18)", query)
+        self.assertNotIn("comments { nodes", query)
         for name in monitor.REPOSITORIES:
             self.assertIn(json.dumps(name), query)
+
+    def test_external_issue_is_baselined_then_activity_alerts_without_body(self):
+        owner, repository, number = monitor.EXTERNAL_ISSUES[0]
+        key = monitor.external_thread_key(owner, repository, number)
+        baseline = graphql_payload()
+        changed = graphql_payload(
+            external_issues={
+                key: external_issue(
+                    owner,
+                    repository,
+                    number,
+                    updated_at="2026-09-12T13:00:00Z",
+                    comment_count=3,
+                )
+            }
+        )
+        fake = FakeRunner([baseline, changed])
+
+        first = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-12T12:30:00Z",
+        )
+        self.assertEqual(first["alerts"], [])
+        self.assertEqual(first["external_thread_allowlist"], [key])
+        self.assertEqual(first["summary"]["external_threads_checked"], 1)
+
+        second = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-12T13:15:00Z",
+        )
+        self.assertEqual(len(second["alerts"]), 1)
+        alert = second["alerts"][0]
+        self.assertEqual(alert["kind"], "external_public_issue_activity_observed")
+        self.assertEqual(alert["key"], key)
+        self.assertEqual(alert["comment_count"], 3)
+        self.assertEqual(second["summary"]["external_thread_alerts"], 1)
+        serialized = self.state.read_text(encoding="utf-8").casefold()
+        self.assertNotIn('"body"', serialized)
+        self.assertFalse(
+            second["policy"]["external_issue_activity_is_lead_evidence"]
+        )
+        self.assertFalse(
+            second["policy"]["external_issue_activity_is_revenue_evidence"]
+        )
+
+    def test_nonpublic_external_issue_is_rejected(self):
+        owner, repository, number = monitor.EXTERNAL_ISSUES[0]
+        key = monitor.external_thread_key(owner, repository, number)
+        fake = FakeRunner(
+            [graphql_payload(external_visibility={key: "PRIVATE"})]
+        )
+        with self.assertRaisesRegex(ValueError, "non-public external"):
+            monitor.fetch_public_issues(runner=fake)
+
+    def test_build_state_rejects_external_issue_outside_fixed_allowlist(self):
+        observation = monitor.fetch_public_issues(
+            runner=FakeRunner([graphql_payload()])
+        )
+        observation["external_threads"][0]["key"] = "someone/else#99"
+        with self.assertRaisesRegex(ValueError, "fixed allowlist"):
+            monitor.build_state(observation, None)
 
     def test_nonpublic_repository_response_is_rejected(self):
         private_name = monitor.REPOSITORIES[-1]

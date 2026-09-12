@@ -44,6 +44,9 @@ REPOSITORIES = (
     "LinguaLeaf",
     "PocketPolyglot",
 )
+EXTERNAL_ISSUES = (
+    ("arjun-techjays", "bos", 18),
+)
 ISSUES_PER_REPOSITORY = 100
 PULL_REQUESTS_PER_REPOSITORY = 100
 MINIMUM_INTERVAL_MINUTES = 15
@@ -98,9 +101,28 @@ def _graphql_document() -> str:
     }}
   }}"""
         )
+    external_fields = []
+    for index, (owner, name, number) in enumerate(EXTERNAL_ISSUES):
+        external_fields.append(
+            f"""  external{index}: repository(
+    owner: {json.dumps(owner)}
+    name: {json.dumps(name)}
+  ) {{
+    nameWithOwner
+    visibility
+    issue(number: {number}) {{
+      number
+      title
+      url
+      state
+      updatedAt
+      comments {{ totalCount }}
+    }}
+  }}"""
+        )
     return (
         "query GitHubInboundIssues($owner: String!) {\n"
-        + "\n".join(repository_fields)
+        + "\n".join((*repository_fields, *external_fields))
         + "\n}"
     )
 
@@ -188,7 +210,17 @@ def fetch_public_issues(*, runner: Runner = default_runner) -> dict[str, Any]:
     repositories = []
     for name, raw in zip(REPOSITORIES, raw_repositories):
         repositories.append(_parse_repository(name, raw))
-    return {"owner": OWNER, "repositories": repositories}
+    external_threads = []
+    for index, (owner, name, number) in enumerate(EXTERNAL_ISSUES):
+        raw = data.get(f"external{index}")
+        external_threads.append(
+            _parse_external_thread(owner, name, number, raw)
+        )
+    return {
+        "owner": OWNER,
+        "repositories": repositories,
+        "external_threads": external_threads,
+    }
 
 
 def _nonnegative_int(value: Any, label: str) -> int:
@@ -389,6 +421,60 @@ def _parse_pull_requests(
     return pull_requests, total_count, bool(page_info["hasNextPage"])
 
 
+def external_thread_key(owner: str, repository: str, number: int) -> str:
+    return f"{owner}/{repository}#{number}"
+
+
+def _parse_external_thread(
+    owner: str,
+    repository: str,
+    number: int,
+    raw_repository: Any,
+) -> dict[str, Any]:
+    """Validate one explicit public issue without requesting its body or comments."""
+    expected_repository = f"{owner}/{repository}"
+    if not isinstance(raw_repository, dict):
+        raise ValueError(f"external repository is unavailable: {expected_repository}")
+    actual_repository = raw_repository.get("nameWithOwner")
+    if (
+        not isinstance(actual_repository, str)
+        or actual_repository.casefold() != expected_repository.casefold()
+    ):
+        raise ValueError(f"GitHub returned an unexpected external repository: {expected_repository}")
+    if raw_repository.get("visibility") != "PUBLIC":
+        raise ValueError(f"refusing non-public external repository data: {expected_repository}")
+    issue = raw_repository.get("issue")
+    if not isinstance(issue, dict):
+        raise ValueError(f"external issue is unavailable: {expected_repository}#{number}")
+    if _nonnegative_int(issue.get("number"), "external issue number") != number:
+        raise ValueError("GitHub returned an unexpected external issue number")
+    title = issue.get("title")
+    url = issue.get("url")
+    state = issue.get("state")
+    expected_url = f"https://github.com/{owner}/{repository}/issues/{number}"
+    if not isinstance(title, str) or not title.strip():
+        raise ValueError("GitHub returned an invalid external issue title")
+    if not isinstance(url, str) or url.rstrip("/").casefold() != expected_url.casefold():
+        raise ValueError("GitHub returned an invalid external issue URL")
+    if state not in {"OPEN", "CLOSED"}:
+        raise ValueError("GitHub returned an invalid external issue state")
+    comments = issue.get("comments")
+    if not isinstance(comments, dict):
+        raise ValueError("GitHub returned invalid external issue comment metadata")
+    return {
+        "key": external_thread_key(owner, repository, number),
+        "repository": expected_repository,
+        "number": number,
+        "title": title,
+        "url": url,
+        "state": state,
+        "updated_at": _timestamp(issue.get("updatedAt"), "external issue updatedAt"),
+        "comment_count": _nonnegative_int(
+            comments.get("totalCount"), "external issue comment total"
+        ),
+    }
+
+
 def issue_key(repository: str, number: int) -> str:
     return f"{OWNER}/{repository}#{number}"
 
@@ -415,6 +501,13 @@ def _split_pull_request_key(key: str) -> tuple[int, int]:
     if owner != OWNER or not slash or repository not in REPOSITORIES:
         raise ValueError("state contains a pull request outside the allowlist")
     return REPOSITORIES.index(repository), int(number_text)
+
+
+def _external_thread_sort_key(key: str) -> tuple[int, int]:
+    allowed = [external_thread_key(*item) for item in EXTERNAL_ISSUES]
+    if key not in allowed:
+        raise ValueError("state contains an external issue outside the allowlist")
+    return allowed.index(key), int(key.rpartition("#")[2])
 
 
 def _run_git_check(
@@ -570,6 +663,33 @@ def load_state(path: Path) -> dict[str, Any] | None:
         )
         if activity.get("state") not in {"OPEN", "CLOSED", "MERGED"}:
             raise ValueError("existing monitor state has invalid pull-request state")
+    stored_external_allowlist = payload.get("external_thread_allowlist", [])
+    current_external_allowlist = [
+        external_thread_key(*item) for item in EXTERNAL_ISSUES
+    ]
+    external_allowlist_is_current_or_prefix = (
+        isinstance(stored_external_allowlist, list)
+        and all(isinstance(key, str) for key in stored_external_allowlist)
+        and stored_external_allowlist
+        == current_external_allowlist[: len(stored_external_allowlist)]
+    )
+    if not external_allowlist_is_current_or_prefix:
+        raise ValueError("existing monitor state has an invalid external issue allowlist")
+    external_thread_activity = payload.get("external_thread_activity", {})
+    if not isinstance(external_thread_activity, dict):
+        raise ValueError("existing monitor state has invalid external issue activity")
+    if set(external_thread_activity) - set(stored_external_allowlist):
+        raise ValueError("external issue activity is outside the stored allowlist")
+    for key, activity in external_thread_activity.items():
+        _external_thread_sort_key(key)
+        if not isinstance(activity, dict):
+            raise ValueError("existing monitor state has invalid external issue activity")
+        _timestamp(activity.get("updated_at"), "external issue activity updated_at")
+        _nonnegative_int(
+            activity.get("comment_count"), "external issue activity comment total"
+        )
+        if activity.get("state") not in {"OPEN", "CLOSED"}:
+            raise ValueError("existing monitor state has invalid external issue state")
     return payload
 
 
@@ -623,8 +743,18 @@ def build_state(
 ) -> dict[str, Any]:
     checked_at = checked_at or utc_now()
     repositories = observation.get("repositories")
-    if observation.get("owner") != OWNER or not isinstance(repositories, list):
+    external_threads = observation.get("external_threads")
+    if (
+        observation.get("owner") != OWNER
+        or not isinstance(repositories, list)
+        or not isinstance(external_threads, list)
+    ):
         raise ValueError("issue observation is invalid")
+    current_external_allowlist = [
+        external_thread_key(*item) for item in EXTERNAL_ISSUES
+    ]
+    if [thread.get("key") for thread in external_threads] != current_external_allowlist:
+        raise ValueError("external issue observation does not match the fixed allowlist")
     current_issues = [
         issue for repository in repositories for issue in repository.get("issues", [])
     ]
@@ -643,6 +773,15 @@ def build_state(
     )
     previous_pull_request_activity = (
         dict(previous.get("pull_request_activity", {})) if previous else {}
+    )
+    previous_external_allowlist = (
+        list(previous.get("external_thread_allowlist", [])) if previous else []
+    )
+    newly_allowlisted_external_threads = set(current_external_allowlist) - set(
+        previous_external_allowlist
+    )
+    previous_external_activity = (
+        dict(previous.get("external_thread_activity", {})) if previous else {}
     )
     is_baseline = previous is None
     pull_request_baseline = is_baseline or (
@@ -698,6 +837,30 @@ def build_state(
                 ),
             }
         )
+    for thread in external_threads:
+        key = thread["key"]
+        if key in newly_allowlisted_external_threads:
+            continue
+        previous_activity = previous_external_activity.get(key)
+        if previous_activity is None:
+            continue
+        current_activity = {
+            "updated_at": thread["updated_at"],
+            "comment_count": thread["comment_count"],
+            "state": thread["state"],
+        }
+        if current_activity == previous_activity:
+            continue
+        alerts.append(
+            {
+                "kind": "external_public_issue_activity_observed",
+                **thread,
+                "action": (
+                    "Open this exact public issue for manual reply review; do not fetch "
+                    "comment bodies, reply automatically, or treat activity as a lead."
+                ),
+            }
+        )
     seen_keys = sorted(previous_keys | current_keys, key=_split_issue_key)
     seen_pull_request_keys = sorted(
         previous_pull_request_keys | current_pull_request_keys,
@@ -711,6 +874,13 @@ def build_state(
             "review_count": pull_request["review_count"],
             "state": pull_request["state"],
         }
+    external_thread_activity = dict(previous_external_activity)
+    for thread in external_threads:
+        external_thread_activity[thread["key"]] = {
+            "updated_at": thread["updated_at"],
+            "comment_count": thread["comment_count"],
+            "state": thread["state"],
+        }
     return {
         "version": 1,
         "initialized": True,
@@ -719,22 +889,28 @@ def build_state(
         "allowlist_expanded": sorted(newly_allowlisted_repositories),
         "owner": OWNER,
         "repository_allowlist": list(REPOSITORIES),
+        "external_thread_allowlist": current_external_allowlist,
         "policy": {
             "graphql_operation": "query",
             "issue_bodies_requested": False,
             "pull_request_bodies_requested": False,
             "comment_or_review_bodies_requested": False,
+            "external_issue_or_comment_bodies_requested": False,
             "github_mutations_performed": False,
             "automatic_comments_or_replies": False,
             "issue_is_lead_evidence": False,
             "issue_is_revenue_evidence": False,
             "pull_request_is_lead_evidence": False,
             "pull_request_is_revenue_evidence": False,
+            "external_issue_activity_is_lead_evidence": False,
+            "external_issue_activity_is_revenue_evidence": False,
         },
         "repositories": repositories,
+        "external_threads": external_threads,
         "seen_issue_keys": seen_keys,
         "seen_pull_request_keys": seen_pull_request_keys,
         "pull_request_activity": pull_request_activity,
+        "external_thread_activity": external_thread_activity,
         "alerts": alerts,
         "summary": {
             "repositories_checked": len(repositories),
@@ -747,6 +923,11 @@ def build_state(
             ),
             "pull_request_alerts": sum(
                 "pull_request" in alert["kind"] for alert in alerts
+            ),
+            "external_threads_checked": len(external_threads),
+            "external_thread_alerts": sum(
+                alert["kind"] == "external_public_issue_activity_observed"
+                for alert in alerts
             ),
             "truncated_repository_windows": sum(
                 bool(repository.get("window_truncated"))

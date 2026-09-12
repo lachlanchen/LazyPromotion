@@ -1,4 +1,4 @@
-# GitHub inbound issue and pull-request monitor
+# GitHub inbound issue, pull-request, and reply monitor
 
 `github_inbound_monitor.py` observes public issue and pull-request metadata for this fixed
 `lachlanchen` repository allowlist:
@@ -22,6 +22,14 @@
 `AiMemo` is intentionally excluded while it is private. The monitor refuses
 authenticated private-repository data rather than copying it into the shared
 promotion workflow.
+
+The fixed external-thread allowlist currently contains only
+`arjun-techjays/bos#18`, where `lachlanchen` posted one reviewed architecture
+answer. For this thread the same GraphQL query requests only repository
+visibility, issue number, title, URL, state, update time, and aggregate comment
+count. It requests neither the issue body nor any comment body. A newly added
+external thread is baselined once; a later metadata or comment-count change
+creates a manual-review alert. It never opens the response or replies.
 
 The added agent, video, music, and multilingual-book repositories are current
 public, non-fork, non-archived projects with owner-visible attention in the
@@ -53,11 +61,12 @@ baselines current pull requests once, avoiding a false alert storm. When a new
 public repository is appended to the fixed allowlist, its existing activity is
 baselined while previously watched repositories keep their seen history.
 Later passes alert for a new issue, a new pull request, or a changed public
-pull-request activity timestamp. Seen keys and the last pull-request activity
-summary are retained when an item leaves the bounded current window. An API or
-validation failure leaves the last complete state untouched. An alert asks for
-manual relevance review; it is not a lead, customer, sale, or revenue
-classification, and it never triggers a GitHub response or merge.
+pull-request activity timestamp. The explicit external thread also alerts when
+its state, update time, or aggregate comment count changes. Seen keys and the
+last activity summaries are retained when an item leaves a bounded current
+window. An API or validation failure leaves the last complete state untouched.
+An alert asks for manual relevance review; it is not a lead, customer, sale, or
+revenue classification, and it never triggers a GitHub response or merge.
 
 ## Operation
 

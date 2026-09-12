@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 13,
+  "version": 14,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -271,6 +271,24 @@
         "exact_body_verified": true,
         "answer": "Choose the dedicated A3 gateway as a protocol firewall, keep host and header authority out of worker input, constrain the dual-homed container, snapshot discovery, preserve audience and per-ref ACLs, and test redirects and DNS changes against the registry boundary.",
         "sample_disclosure": "The final paragraph identifies the linked packet as a maintained project-owned sample and explicitly says it is not an audit of BOS.",
+        "reply_monitor": {
+          "state": "active_and_baselined",
+          "thread": "arjun-techjays/bos#18",
+          "checked_fields": [
+            "public_repository_visibility",
+            "issue_number",
+            "issue_title",
+            "issue_url",
+            "issue_state",
+            "updated_at",
+            "aggregate_comment_count"
+          ],
+          "body_or_comment_text_requested": false,
+          "automatic_reply": false,
+          "baseline_comment_count": 2,
+          "alerts_after_baseline": 0,
+          "policy": "A later metadata change creates a manual-review alert only; it is not a reply, lead, customer, payment, or revenue signal."
+        },
         "reply_received": false,
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,

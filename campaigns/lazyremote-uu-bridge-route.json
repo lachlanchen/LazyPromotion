@@ -1,16 +1,16 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 10,
+  "version": 11,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
-    "captured_at": "2026-09-11T10:59:46Z",
+    "captured_at": "2026-09-12T04:54:48Z",
     "repository": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
-    "public_stars": 13,
+    "public_stars": 14,
     "public_forks": 3,
     "recent_star_window": {
       "from": "2026-09-03T00:00:00Z",
-      "through": "2026-09-11T10:59:46Z",
-      "new_stars": 8
+      "through": "2026-09-12T04:54:48Z",
+      "new_stars": 9
     },
     "current_explicit_need": {
       "source_url": "https://linux.do/t/topic/2192302/5",

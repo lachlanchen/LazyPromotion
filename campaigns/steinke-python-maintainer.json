@@ -1,0 +1,78 @@
+{
+  "id": "steinke-python-maintainer",
+  "version": 1,
+  "objective": "Use the strongest public Python API, package, testing, and Linux evidence for one current maintenance contract without inventing tenure, availability, client work, or protocol experience.",
+  "source_need": {
+    "captured_at": "2026-09-12T05:30:00Z",
+    "linkedin_url": "https://www.linkedin.com/posts/python-freelance-hiring-share-7497741339917418496-auGZ/",
+    "official_website": "https://www.steinkeconsulting.de/",
+    "official_imprint": "https://www.steinkeconsulting.de/imprint",
+    "state": "current_public_freelance_recruiting_post_with_matching_official_company_identity",
+    "role": "Senior Python Developer",
+    "published_scope": [
+      "Review a backlog of open merge requests for correctness, API design, tests, and edge cases",
+      "Maintain and extend shared connector libraries",
+      "Improve test coverage, CI, versioning, changelogs, deprecation paths, documentation, and examples",
+      "Remote freelance contract for about 20 flexible hours per week over three months with an immediate-start preference"
+    ],
+    "published_requirements": [
+      "Five or more years of production Python",
+      "Asynchronous Python, strict typing, packaging, and pytest",
+      "API or library maintenance and strong written English"
+    ],
+    "published_bonus_topics": [
+      "GitLab CI",
+      "MQTT, REST, or serial device protocols",
+      "Profiling and performance work"
+    ],
+    "compensation": "Not published",
+    "geography": "Remote was published; worldwide or Hong Kong eligibility was not stated",
+    "application_route": "One CV by email to the address published in the recruiting post",
+    "verification": "The public recruiting address matches the company website and legal-imprint domain.",
+    "boundary": "The post is current demand evidence, not confirmation of geographic eligibility, an interview, contract, accepted workload, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "LocalLLM",
+      "LazyPromotion",
+      "LocalKnowledgeTerminal",
+      "OpenHI"
+    ],
+    "supported_now": [
+      "Packaged Python services using FastAPI, HTTPX, Pydantic, asynchronous workers, pytest-asyncio, Ruff, and explicit compatibility documentation",
+      "Large regression suites covering API behavior, retries, stale state, edge cases, privacy boundaries, and false-success prevention",
+      "Setuptools and hatchling packages with CLI, HTTP, and MCP interfaces",
+      "Linux operations, reproducible failure analysis, review gates, and concise technical documentation"
+    ],
+    "not_claimed": [
+      "Five or more years of commercial production Python tenure",
+      "Prior paid maintenance of this client's connector libraries",
+      "Professional GitLab CI, MQTT, or serial-protocol ownership",
+      "Confirmed availability, start date, rate, selection, or geographic eligibility"
+    ]
+  },
+  "application": {
+    "state": "email_sent_awaiting_human_reply",
+    "submitted_at": "2026-09-12T14:03:00+08:00",
+    "follow_up_not_before": "2026-09-19",
+    "method": "One concise email from the LazyingArt business alias to the address published in the recruiting post",
+    "packet": "A checked one-page Python API and library maintenance CV",
+    "verified_public_linkedin": "https://www.linkedin.com/in/lazyingart",
+    "resume_attached": true,
+    "submission_count": 1,
+    "submission_fee_usd": 0,
+    "sent_folder_verified": true,
+    "automatic_follow_up": false,
+    "policy": "The email states Hong Kong location and interest in the approximate schedule while explicitly reserving exact availability and start date for confirmation before acceptance. It does not claim the unpublished tenure threshold, a rate, selection, a contract, payment, or revenue."
+  },
+  "funnel": {
+    "outbound_application_count": 1,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "interview_observed": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

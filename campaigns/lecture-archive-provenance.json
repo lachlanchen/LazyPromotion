@@ -1,6 +1,6 @@
 {
   "id": "lecture-archive-provenance",
-  "version": 4,
+  "version": 5,
   "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
   "channels": {
     "github": {
@@ -151,7 +151,7 @@
       "policy": "A useful first-party note about preserving provenance. The linked article documents a maintained archive format; it is not customer proof or an offer to resell lecture content."
     },
     "reddit": {
-      "state": "two_helpful_replies_one_acknowledged",
+      "state": "two_helpful_replies_two_acknowledged",
       "source_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/susskinds_lectures_and_books_prerequisites/",
       "helpful_comment_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/comment/p6y1teh/",
       "reader_acknowledgement_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/comment/p6z24h0/",
@@ -159,13 +159,22 @@
       "observed_at": "2026-09-04T08:23:51Z",
       "outcome": "The learner said the exact archive had already helped their study journey. A single warm thank-you was posted with no additional link, offer, or request.",
       "top_quark_biography_reply": {
-        "state": "published_standalone_help",
+        "state": "published_standalone_help_acknowledged",
         "published_at": "2026-09-12T00:13:55Z",
         "source_url": "https://www.reddit.com/r/AskPhysics/comments/1wdnpx5/a_request_for_learning_materials_from_a_writer/",
         "comment_url": "https://www.reddit.com/r/AskPhysics/comments/1wdnpx5/comment/p99eb4q/",
         "primary_source": "https://news.fnal.gov/2025/03/scientists-recall-the-discovery-of-the-top-quark-30-years-ago-at-fermilab/",
         "archive_url": "https://github.com/lachlanchen/leonardsusskind",
         "role": "Separate the biography's human-history research from the minimum physics scaffold, then disclose the maintained searchable archive as a more mathematical second pass.",
+        "acknowledgement": {
+          "observed_at": "2026-09-12T05:13:00Z",
+          "comment_url": "https://www.reddit.com/r/AskPhysics/comments/1wdnpx5/comment/p99j123/",
+          "outcome": "The writer said the Fermilab interview and context were incredibly helpful and supplied details they had not known.",
+          "observed_comment_score": 5,
+          "maintainer_thanks_url": "https://www.reddit.com/r/AskPhysics/comments/1wdnpx5/comment/p9apusj/",
+          "maintainer_thanks": "I’m glad it helped. Good luck with the biography — it sounds like a wonderful project.",
+          "policy": "The acknowledgement shows that the public answer helped this writer. The one short thank-you contains no link, offer, request, or second promotion; do not continue the thread unless the writer asks a new substantive question."
+        },
         "lead_or_sale_observed": false,
         "policy": "The answer stands alone, cites a current Fermilab retrospective, and says I maintain the archive. Do not add a follow-up pitch or treat votes, replies, repository visits, or stars as a lead or revenue."
       },

@@ -1,5 +1,5 @@
 {
-  "version": 45,
+  "version": 46,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -1165,6 +1165,21 @@
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
         "policy": "One value-first LinkedIn pointer in the first open LinkedIn slot after the Book Specimen test. It summarizes the source-ledger, hybrid-retrieval, citation, and evaluation method before linking the complete owned guide. The exact content, original tracked URL, target account, new time, and QUEUE state were verified after one reschedule. Queueing is not publication, a visit, inquiry, customer result, sale, or revenue."
+      },
+      "thai_receipt_ocr_help": {
+        "state": "published_value_only_direct_help",
+        "published_at": "2026-09-12T05:22:00Z",
+        "source_url": "https://www.linkedin.com/posts/cindy-cornelia_ocr-computervision-documentai-share-7503386935357259777-A4Gj/",
+        "comment_url": "https://www.linkedin.com/feed/update/urn:li:activity:7503386935839571968/?dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287504409514482221056%2Curn%3Ali%3Aactivity%3A7503386935839571968%29",
+        "profile": "https://www.linkedin.com/in/lachlan-chen-a68486341/",
+        "need": "A builder asked for production comparisons of open-source OCR on multilingual receipts, especially Thai, while trying to keep a personal project free to use.",
+        "content": "I haven’t shipped Thai receipt OCR, so I wouldn’t pretend to rank these from production experience. I’d benchmark them on receipt fields rather than one page-level score: merchant, date, tax ID, subtotal, tax, total, currency, and line-item quantity and price. Keep a Thai-heavy set with faded thermal paper, skew, mixed Thai/English text, and several digit formats. The key separation is OCR versus schema extraction—a model can read every token yet still attach the wrong number to ‘total.’ Use character-level scoring for Thai text, exact-field accuracy for critical numbers, and a manual-review rule for low-confidence totals or tax IDs. For speed, record cold start, pages per minute, and peak memory on the hardware you’ll actually deploy.",
+        "visible_submission_count": 1,
+        "visible_thread_comment_count_after_submission": 2,
+        "production_experience_claimed": false,
+        "owned_link_in_comment": false,
+        "lead_or_sale_observed": false,
+        "policy": "The comment answers the evaluation problem without ranking tools from unheld experience, linking an owned asset, naming an offer, or asking for contact. It is a helpful professional interaction, not an inquiry, qualified lead, customer result, sale, or revenue."
       },
       "policy": "Use LinkedIn for professional proof and bounded buyer qualification, not a generic portfolio dump."
     },

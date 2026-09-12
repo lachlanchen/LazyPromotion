@@ -225,9 +225,9 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 10)
-        self.assertEqual(demand["public_stars"], 13)
-        self.assertEqual(demand["recent_star_window"]["new_stars"], 8)
+        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(demand["public_stars"], 14)
+        self.assertEqual(demand["recent_star_window"]["new_stars"], 9)
         explicit_need = demand["current_explicit_need"]
         self.assertIn("Ubuntu", explicit_need["need"])
         self.assertIn(
@@ -1935,7 +1935,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 45)
+        self.assertEqual(campaign["version"], 46)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -2047,6 +2047,21 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertIsNone(biomedical_post["verification"]["release_url"])
         self.assertFalse(biomedical_post["lead_or_sale_observed"])
+        thai_receipt_help = campaign["channels"]["linkedin"][
+            "thai_receipt_ocr_help"
+        ]
+        self.assertEqual(
+            thai_receipt_help["state"], "published_value_only_direct_help"
+        )
+        self.assertIn("7503386935357259777", thai_receipt_help["source_url"])
+        self.assertIn("dashCommentUrn", thai_receipt_help["comment_url"])
+        self.assertEqual(thai_receipt_help["visible_submission_count"], 1)
+        self.assertEqual(
+            thai_receipt_help["visible_thread_comment_count_after_submission"], 2
+        )
+        self.assertFalse(thai_receipt_help["production_experience_claimed"])
+        self.assertFalse(thai_receipt_help["owned_link_in_comment"])
+        self.assertFalse(thai_receipt_help["lead_or_sale_observed"])
         chat_guide = campaign["channels"]["lazyblog"][
             "chat_archive_current_state_guide"
         ]

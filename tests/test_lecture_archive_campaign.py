@@ -55,7 +55,7 @@ class LectureArchiveCampaignTests(unittest.TestCase):
         )
         route = campaign["channels"]["github"]["rights_cleared_service_path"]
 
-        self.assertEqual(campaign["version"], 4)
+        self.assertEqual(campaign["version"], 5)
         self.assertEqual(route["state"], "published")
         self.assertEqual(route["readme_languages"], 11)
         self.assertEqual(len(route["repository_commit"]), 40)
@@ -71,8 +71,13 @@ class LectureArchiveCampaignTests(unittest.TestCase):
         )
         reply = campaign["channels"]["reddit"]["top_quark_biography_reply"]
 
-        self.assertEqual(reply["state"], "published_standalone_help")
+        self.assertEqual(reply["state"], "published_standalone_help_acknowledged")
         self.assertIn("comment/p99eb4q/", reply["comment_url"])
+        acknowledgement = reply["acknowledgement"]
+        self.assertEqual(acknowledgement["observed_comment_score"], 5)
+        self.assertIn("comment/p99j123/", acknowledgement["comment_url"])
+        self.assertIn("comment/p9apusj/", acknowledgement["maintainer_thanks_url"])
+        self.assertNotIn("http", acknowledgement["maintainer_thanks"])
         self.assertFalse(reply["lead_or_sale_observed"])
 
 

@@ -119,6 +119,7 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
     providers = {
         "x": "x",
         "instagram": "instagram-standalone",
+        "instagram-standalone": "instagram-standalone",
         "linkedin": "linkedin",
         "youtube": "youtube",
         "reddit": "reddit",

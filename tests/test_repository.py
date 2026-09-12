@@ -3727,13 +3727,20 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
         self.assertFalse(reddit["promotional_claim"])
         self.assertFalse(reddit["lead_or_sale_observed"])
         self.assertIn("not as a lead", reddit["policy"])
+        github = campaign["channels"]["github"]
+        self.assertEqual(github["state"], "technical_reply_published")
+        self.assertIn("issuecomment-5642215166", github["comment_url"])
+        self.assertTrue(github["linked_owned_asset"])
+        self.assertFalse(github["product_or_price_mentioned"])
+        self.assertFalse(github["lead_or_sale_observed"])
+        self.assertIn("not a product pitch", github["policy"])
         self.assertEqual(
             campaign["offer_state"]["status"], "live_fit_check_payment_gated"
         )

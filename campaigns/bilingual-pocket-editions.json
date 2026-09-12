@@ -1,6 +1,6 @@
 {
   "id": "bilingual-pocket-editions",
-  "version": 12,
+  "version": 13,
   "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
   "source_need": {
     "captured_at": "2026-09-02T01:22:45Z",
@@ -31,6 +31,23 @@
       "lead_or_sale_observed": false,
       "outcome": "The creator replied with a brief thank-you. No follow-up, link, offer, or request was added.",
       "policy": "The creator asked for feedback, so the reply gives concrete reading and production checks without mentioning an owned project or asking for contact. Treat the acknowledgement only as a usefulness signal, not as a lead, testimonial licence, or permission to pitch."
+    },
+    "github": {
+      "state": "technical_reply_published",
+      "published_at": "2026-09-12T00:35:31Z",
+      "source_url": "https://github.com/kizuna-ai-lab/sokuji/issues/545",
+      "comment_url": "https://github.com/kizuna-ai-lab/sokuji/issues/545#issuecomment-5642215166",
+      "need": "Keep an optional pronunciation or transliteration layer visible and copyable without feeding it back into later translation or subtitle input, while naming the scheme and handling uncertain names conservatively.",
+      "owned_example": "https://github.com/lachlanchen/PocketPolyglot#data-model",
+      "role": "Recommend separate script and reading fields, explicit scheme and source metadata, generation after final translation, cache keys that include locale and scheme, manual override for uncertainty, and optional subtitle sidecar rendering.",
+      "rules_checked": [
+        "Technical feature and architecture discussion is accepted.",
+        "Marketing, off-topic promotion, harassment, and spam are rejected."
+      ],
+      "linked_owned_asset": true,
+      "product_or_price_mentioned": false,
+      "lead_or_sale_observed": false,
+      "policy": "The single disclosed PocketPolyglot link is a concrete schema example, not a product pitch or call to action. Do not add another comment unless the maintainer asks a specific technical question."
     },
     "linkedin": {
       "state": "postiz_queue",

@@ -41,6 +41,11 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
         self.assertEqual(proof["runs"], 3)
         self.assertIn("all 11 chapters", proof["journeys"][0])
         self.assertIn("not a customer result", proof["boundary"])
+        handoff = proof["repository_handoff"]
+        self.assertEqual(handoff["state"], "published")
+        self.assertEqual(handoff["repository_commit"], "266b690")
+        self.assertIn("utm_source=github", handoff["continuation_url"])
+        self.assertIn("payment on that marketplace", handoff["role"])
 
     def test_stateful_recovery_is_companion_proof_not_a_new_claim(self):
         proof = self.campaign["fit"]["stateful_recovery_specimen"]

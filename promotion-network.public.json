@@ -16,7 +16,7 @@
       "label": "ai-clip-assembly-pilot",
       "metadata": {
         "objective": "Preserve the AI Clip Assembly work as a historical technical record while the offer remains paused; reactivate it only after a new project-owned sample passes human review for story, motion, continuity, composition, audio, captions, and overall finish.",
-        "version": 12
+        "version": 13
       },
       "url": ""
     },
@@ -27,6 +27,16 @@
       "metadata": {
         "objective": "Apply the public testing, Linux, failure-analysis, and structured-reporting evidence to a current paid software-testing contract without accepting personal legal terms by proxy.",
         "version": 1
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:android-apk-delivery-freelancer",
+      "kind": "campaign",
+      "label": "android-apk-delivery-freelancer",
+      "metadata": {
+        "objective": "Win one bounded Android build-and-delivery task using the executed L & N release as proof, without accepting code repair, missing-secret recovery, or an unbounded signing obligation.",
+        "version": 2
       },
       "url": ""
     },
@@ -76,7 +86,7 @@
       "label": "bilingual-pocket-editions",
       "metadata": {
         "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
-        "version": 12
+        "version": 13
       },
       "url": ""
     },
@@ -276,7 +286,7 @@
       "label": "l-and-n-pronunciation-launch",
       "metadata": {
         "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
-        "version": 9
+        "version": 10
       },
       "url": ""
     },
@@ -316,7 +326,7 @@
       "label": "lazygame-teaching-explainer",
       "metadata": {
         "objective": "Answer concrete questions about how LazyGame separates exact game rules, game-specific analysis, and optional language-model explanations.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -336,7 +346,7 @@
       "label": "lecture-archive-provenance",
       "metadata": {
         "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },
@@ -515,8 +525,8 @@
       "kind": "campaign",
       "label": "playwright-regression-contract",
       "metadata": {
-        "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's real browser automation with an executed Page Object, pytest, and JUnit specimen, without claiming coverage of an undisclosed application.",
-        "version": 3
+        "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
+        "version": 7
       },
       "url": ""
     },
@@ -2638,7 +2648,10 @@
           "quantum mechanics notes",
           "classical mechanics notes",
           "general relativity notes",
-          "physics lecture notes"
+          "physics lecture notes",
+          "particle physics",
+          "standard model",
+          "top quark"
         ],
         "summary": "A maintained archive of Theoretical Minimum lecture transcripts, subtitles, notes, TeX, and PDFs."
       },
@@ -4958,7 +4971,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-11T15:13:49Z",
+        "pushed_at": "2026-09-11T22:07:30Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -4978,7 +4991,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-11T15:13:53Z"
+        "updated_at": "2026-09-11T22:07:34Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -5047,7 +5060,7 @@
       "metadata": {
         "description": "Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON",
         "homepage": "https://lachlanchen.github.io/LazyTravel/",
-        "pushed_at": "2026-08-23T06:15:34Z",
+        "pushed_at": "2026-09-11T20:57:17Z",
         "topics": [
           "chinese",
           "digital-publishing",
@@ -5060,7 +5073,7 @@
           "travel-guide",
           "xian"
         ],
-        "updated_at": "2026-08-23T06:15:42Z"
+        "updated_at": "2026-09-11T20:57:28Z"
       },
       "url": "https://github.com/lachlanchen/LazyTravel"
     },
@@ -5210,7 +5223,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-11T15:00:32Z",
+        "pushed_at": "2026-09-11T22:02:28Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -5226,7 +5239,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-11T15:00:44Z"
+        "updated_at": "2026-09-11T22:02:32Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -6608,7 +6621,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html",
-        "pushed_at": "2026-09-11T07:12:14Z",
+        "pushed_at": "2026-09-11T16:59:05Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -6626,7 +6639,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-11T07:12:18Z"
+        "updated_at": "2026-09-11T17:31:13Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -8334,7 +8347,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_published"
+        "state": "deleted_for_media_quality"
       },
       "relation": "targets",
       "source": "campaign:bilingual-lecture-pack-pilot",
@@ -8561,6 +8574,16 @@
       "relation": "targets",
       "source": "campaign:bilingual-pocket-editions",
       "target": "channel:blog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "technical_reply_published"
+      },
+      "relation": "targets",
+      "source": "campaign:bilingual-pocket-editions",
+      "target": "channel:github"
     },
     {
       "confidence": 1.0,
@@ -9014,7 +9037,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft_quality_review"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -9024,7 +9047,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft_quality_review"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -9054,7 +9077,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_draft_quality_review"
+        "state": "postiz_queue"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -9350,7 +9373,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "helpful_reply_acknowledged"
+        "state": "two_helpful_replies_one_acknowledged"
       },
       "relation": "targets",
       "source": "campaign:lecture-archive-provenance",
@@ -10437,6 +10460,16 @@
       "relation": "targets",
       "source": "campaign:openhi-reproducibility-sprint",
       "target": "channel:x"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:playwright-regression-contract",
+      "target": "channel:linkedin"
     },
     {
       "confidence": 1.0,

@@ -93,8 +93,9 @@ One current USD 250–750 brief asks for same-day research on 40–50 educationa
 TikToks and Reels about history and culture. It confirms demand near the
 portfolio's book and media work, but the buyer has no reviews and the public
 portfolio does not yet prove current platform-metric capture or a comparable
-trend-research delivery. With 28 bids already present, no bid or tenth service
-page was added.
+trend-research delivery. The authenticated page now shows 29 bids and requires
+a minimum USD 20 account balance before bidding. No funds, skill claims, profile
+changes, bid, or tenth service page were added.
 
 A separate LazyRemote and LazyTunnel buyer scan also found no qualified new
 route. The only low-competition WireGuard, Caddy, and CGNAT request paid USD

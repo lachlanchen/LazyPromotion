@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "id": "playwright-regression-contract",
   "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
   "source_need": {
@@ -72,6 +72,13 @@
         "map zoom and reset with console-error and request-failure gates"
       ],
       "artifacts": "JUnit XML for each run plus screenshots on failure",
+      "repository_handoff": {
+        "state": "published",
+        "repository_commit": "266b690",
+        "url": "https://github.com/lachlanchen/LazyTravel#browser-regression-case",
+        "continuation_url": "https://lazying.art/browser-regression/?utm_source=github&utm_medium=readme&utm_campaign=browser_regression_baseline&utm_content=lazytravel_case",
+        "role": "The README now places the exact successful run beside the bounded USD 250 continuation and keeps marketplace-origin communication, files, and payment on that marketplace."
+      },
       "boundary": "First-party verification of the project-owned LazyTravel site; not a customer result or proof against the buyer's application."
     },
     "stateful_recovery_specimen": {
@@ -130,6 +137,8 @@
     "proof": {
       "repository_commit": "cd605396989993cd323aadc736d9b7c79d3e3f7d",
       "workflow_run": "https://github.com/lachlanchen/LazyTravel/actions/runs/34646905819",
+      "repository_handoff_commit": "266b690",
+      "repository_handoff_url": "https://github.com/lachlanchen/LazyTravel#browser-regression-case",
       "boundary": "Project-owned LazyTravel verification, not a customer result."
     },
     "marketplace_boundary": "The USD 250 baseline may be proposed as a funded first milestone inside a marketplace, but a marketplace buyer must remain on that marketplace for contract, files, and payment."

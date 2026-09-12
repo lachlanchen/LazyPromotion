@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "id": "kicad-plugin-testing-freelancer",
   "objective": "Win one bounded KiCad plugin evaluation by pairing a purpose-built geometry fixture with larger project-owned board evidence, without claiming the buyer's plugin was tested before authorized delivery.",
   "source_need": {
@@ -84,6 +84,36 @@
     "larger_board": "https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32",
     "angled_route_board": "https://github.com/lachlanchen/CustomSensor"
   },
+  "owned_offer": {
+    "state": "live_verified",
+    "url": "https://lazying.art/kicad-plugin-evaluation/",
+    "fit_check_url": "https://lazying.art/kicad-plugin-evaluation/fit-check/",
+    "website_commit": "753407c0959bdffdc2653fc9eb3b98886443ea8f",
+    "deployed_at": "2026-09-12",
+    "checked_on": "2026-09-12",
+    "price_usd": 400,
+    "scope": [
+      "One customer-authorized plugin version",
+      "One KiCad 10 and Linux test environment",
+      "Up to four setting presets on the project-owned geometry fixture",
+      "Before-and-after evidence, DRC comparison, issue ledger, and enhancement notes",
+      "One bounded correction pass"
+    ],
+    "exclusions": [
+      "Customer boards or confidential design files",
+      "Plugin code repair",
+      "Malware analysis or security certification",
+      "Electrical design or fabrication review",
+      "Production installation or redistribution",
+      "Performance guarantees, ongoing support, or unlimited revisions"
+    ],
+    "delivery": "Within five business days after confirmed payment and receipt of stable, authorized inputs.",
+    "live_verification": {
+      "offer_http_status": 200,
+      "fit_check_http_status": 200
+    },
+    "policy": "Direct clients receive a written scope for acceptance before any payment request. Work originating on Freelancer stays on Freelancer. The live page is an offer, not evidence of an inquiry, customer result, or revenue."
+  },
   "application": {
     "state": "submitted_awaiting_buyer_reply",
     "submitted_at": "2026-09-12T01:46:49Z",
@@ -103,6 +133,33 @@
     "free_bids_remaining_after_submission": 3,
     "bid_submitted": true,
     "policy": "Submit at most once with no paid upgrade. Do not begin until the package source, license, supported environment, test-board boundary, acceptance criteria, and funded milestone are agreed."
+  },
+  "channels": {
+    "linkedin": {
+      "state": "postiz_queue",
+      "publish_at": "2026-09-29T02:00:00Z",
+      "account_role": "Current personal technical profile",
+      "content": "Plugin screenshots are easy to overread.\n\nBefore trying a routing plugin on a real board, I prefer a small fixture that makes failure cases visible: 0°, 45°, 90°, and 135° corners, three track widths, both copper layers, and a via. Run DRC before and after, and keep the exact settings beside the images.\n\nI built that fixture for KiCad 10 and made the board, manifest, renders, and clean baseline public. It does not prove that any third-party plugin works; it gives maintainers a repeatable place to test one.\n\nFor a maintainer who wants the sweep done, I’m also offering one fixed USD 400 evaluation for one authorized plugin version and up to four presets. No customer board or code repair; fit check and written scope first.\n\nhttps://lazying.art/kicad-plugin-evaluation/?utm_source=linkedin&utm_medium=social&utm_campaign=kicad_plugin_evaluation&utm_content=fixture_method",
+      "content_sha256": "02b8af64435f1a2d4fceb55d19e400f6c9edb7df375803374267d998b8a1c86a",
+      "destination": "https://lazying.art/kicad-plugin-evaluation/?utm_source=linkedin&utm_medium=social&utm_campaign=kicad_plugin_evaluation&utm_content=fixture_method",
+      "shortlink": false,
+      "media_sha256": "87933ef13396be0767ef50d081f05c4ded5a03f47fdf4ab9eb6e33dd9a93828f",
+      "verification": {
+        "checked_at": "2026-09-12T11:38:51+08:00",
+        "provider": "linkedin",
+        "provider_max_length": 3000,
+        "provider_attachment_rule_satisfied": true,
+        "visible_editor_reviewed": true,
+        "stored_text_exact_after_html_normalization": true,
+        "original_url_selected": true,
+        "original_url_preserved": true,
+        "media_attached": true,
+        "matching_posts": 1,
+        "verified_state": "QUEUE",
+        "release_present": false
+      },
+      "policy": "One reviewed first-party technical note uses project-owned evidence and a bounded offer. Queueing, impressions, clicks, and replies are not leads or revenue. Do not duplicate it from another LinkedIn or Reddit identity."
+    }
   },
   "funnel": {
     "state": "application_submitted_awaiting_buyer",

@@ -62,7 +62,7 @@ never count as revenue.
 | [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls the project-owned Bounty agent feed read-only and turns only new IDs or versions into private review alerts |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
-| [`docs/first-1000.md`](docs/first-1000.md) | Nine bounded USD 250/USD 500 service routes and truthful milestone math |
+| [`docs/first-1000.md`](docs/first-1000.md) | Nine bounded USD 250/USD 400/USD 500 service routes and truthful milestone math |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](docs/portfolio-paid-opportunity-research-2026-09-10.md) | Current portfolio-to-revenue decision, registration gates, and external-opportunity evidence |
 | [`docs/paid-need-decision-2026-09-12.md`](docs/paid-need-decision-2026-09-12.md) | Fresh worldwide paid-route screen for infrastructure, code auditing, multilingual work, and qualification gates |
 | [`docs/paid-need-decision-2026-09-11.md`](docs/paid-need-decision-2026-09-11.md) | Ranked live buyer needs for verification, agent task engineering, pronunciation, and local knowledge work |
@@ -214,10 +214,13 @@ MCP attachments are optional and pinned; model subprocesses do not receive
 browser, scheduler, credential, or payment access.
 
 The portfolio layer turns public projects into explicit opportunity contracts
-rather than promoting all repositories at once. Current routes include local
-collection fit, manuscript redline, bilingual lecture delivery, story clips,
-book specimens, AI clip assembly, and a reproducible
-[KiCad plugin-evaluation fixture](examples/kicad-plugin-evaluation/). A compact
+rather than promoting all repositories at once. The nine current paid routes
+cover local collection fit, manuscript redline, bilingual lecture delivery,
+story clips, book specimens, KiCad plugin evaluation, OpenHI reproduction,
+LazyRemote topology review, and pronunciation mini-lessons. AI clip assembly
+remains paused until stronger proof passes human review. The reproducible
+[KiCad plugin-evaluation fixture](examples/kicad-plugin-evaluation/) supports
+the new bounded route. A compact
 [source-bounded educational prompt](examples/source-bounded-educational-prompt/)
 shows the same inputs, constraints, evidence, and evaluation discipline in
 learner-facing work. Lexical ingestion is a reusable LKT specialization, not a

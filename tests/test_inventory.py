@@ -51,7 +51,7 @@ class InventoryTests(unittest.TestCase):
             "USD 250 collection-fit sprint after a free fit check; existing hardware only",
             priority,
         )
-        self.assertIn("confirmed payments totalling USD 1,000 across eight bounded services", priority)
+        self.assertIn("confirmed payments totalling USD 1,000 across nine bounded services", priority)
         self.assertIn("[LazyEdit + LocalVideoGen + Musia](https://lazying.art/story-clip/)", priority)
         self.assertIn(
             "USD 250 Story Clip Pilot after a metadata-only free fit check",
@@ -60,6 +60,11 @@ class InventoryTests(unittest.TestCase):
         self.assertIn("USD 250 Book Specimen Sprint after a free fit check", priority)
         self.assertIn("Paused; the old assembly is an archived technical record", priority)
         self.assertIn("USD 500 software reproducibility sprint after a metadata-only free fit check", priority)
+        self.assertIn(
+            "[HybridImager + CustomSensor](https://lazying.art/kicad-plugin-evaluation/)",
+            priority,
+        )
+        self.assertIn("USD 400 KiCad Plugin Evaluation after a metadata-only fit check", priority)
         self.assertIn("USD 250 Custom Bilingual Pronunciation Mini-Lesson after a fit check", priority)
         self.assertNotIn("Verified public pre-order", priority)
 

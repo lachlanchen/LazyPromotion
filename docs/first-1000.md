@@ -1,4 +1,4 @@
-# First USD 1,000: eight active service routes
+# First USD 1,000: nine active service routes
 
 The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
 at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
@@ -11,12 +11,24 @@ adds a software-only **USD 500** route for one existing workstation,
 one rights-cleared dataset, and one named repository pipeline stage. Each route
 has a fixed scope and project-owned proof. The **LazyRemote Network Fit Review**
 adds a software-only **USD 250** route for one reachable relay and up to three
-existing customer-owned computers. The milestone can be two USD 500
-sprints, four USD 250 sprints, or any confirmed combination of payments across these eight routes
+existing customer-owned computers. The **KiCad Plugin Evaluation** adds a fixed
+**USD 400** route for one authorized plugin version, one KiCad 10/Linux
+environment, and up to four setting presets on a project-owned geometry fixture.
+The milestone can be two USD 500 sprints, four USD 250 sprints, or any confirmed
+combination of payments across these nine routes
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
-The eighth route uses the finished L & N `light/night` lesson as direct proof for
+The [KiCad offer](https://lazying.art/kicad-plugin-evaluation/) and
+[metadata-only fit check](https://lazying.art/kicad-plugin-evaluation/fit-check/)
+are live. The evaluation includes before-and-after evidence, a DRC comparison,
+an issue ledger, enhancement notes, and one correction pass. It excludes
+customer boards, plugin repair, security or electrical certification,
+production installation, redistribution, guarantees, and ongoing support. The
+current Freelancer bid is one submitted application; it is not an inquiry,
+accepted scope, customer result, payment, or revenue.
+
+The ninth route uses the finished L & N `light/night` lesson as direct proof for
 a **USD 250 Custom Bilingual Pronunciation Mini-Lesson** for tutors and small
 language schools. It covers one sound contrast, one learner group, English plus
 Simplified or Traditional Chinese, two model prompts, original teaching

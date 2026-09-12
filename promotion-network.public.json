@@ -266,7 +266,7 @@
       "label": "kicad-plugin-testing-freelancer",
       "metadata": {
         "objective": "Win one bounded KiCad plugin evaluation by pairing a purpose-built geometry fixture with larger project-owned board evidence, without claiming the buyer's plugin was tested before authorized delivery.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -1118,6 +1118,34 @@
         },
         "state": "active",
         "weighted_score": 4.4
+      },
+      "url": ""
+    },
+    {
+      "id": "opportunity:kicad-plugin-evaluation",
+      "kind": "opportunity",
+      "label": "KiCad geometry-plugin evaluation",
+      "metadata": {
+        "buyer": "A KiCad plugin maintainer or PCB-tool team with one authorized geometry plugin and a bounded settings question",
+        "first_deliverable": "The live fixed USD 400 KiCad Plugin Evaluation for one authorized plugin version, one KiCad 10 and Linux environment, up to four setting presets on the project-owned fixture, before-and-after evidence, DRC comparison, issue ledger, enhancement notes, and one bounded correction pass",
+        "first_test": "Keep the current USD 400 Freelancer application as a single submitted test; direct prospects start with the metadata-only fit check and receive a written scope before any payment request",
+        "gates": [
+          "Require an authorized plugin package or source, license, supported environment, stable inputs, and written acceptance criteria before execution",
+          "The fixed scope uses the project-owned synthetic fixture; customer boards, confidential design files, plugin repair, production installation, and redistribution are excluded",
+          "Do not describe the clean baseline fixture or public boards as a run of the customer's plugin or as customer evidence",
+          "Malware analysis, security certification, electrical design, fabrication review, performance guarantees, ongoing support, and unlimited revisions are excluded",
+          "Keep Freelancer-origin contracts, files, communication, milestones, and payment on Freelancer"
+        ],
+        "need": "Exercise a routing or geometry plugin against known corner, width, layer, and DRC cases before risking broader boards",
+        "scores": {
+          "buyer_pain": 4,
+          "delivery_readiness": 5,
+          "low_support": 3,
+          "proof": 5,
+          "repeatability": 4
+        },
+        "state": "active",
+        "weighted_score": 4.35
       },
       "url": ""
     },
@@ -1974,34 +2002,6 @@
       "url": "https://github.com/lachlanchen/HowYouGotRich"
     },
     {
-      "id": "project:github-hybridimager",
-      "kind": "project",
-      "label": "HybridImager",
-      "metadata": {
-        "generated": true,
-        "keywords": [
-          "aginti",
-          "computational imaging",
-          "event based vision",
-          "event camera",
-          "hybrid imager",
-          "hybrid imaging",
-          "hyperspectral imaging",
-          "imaging",
-          "latex",
-          "lazying art",
-          "microscopy",
-          "open hardware",
-          "optics",
-          "pcb design",
-          "scientific instrumentation",
-          "single pixel imaging"
-        ],
-        "summary": "HybridImager: open hybrid single-pixel, event, frame, and spectral scientific imaging research workspace"
-      },
-      "url": "https://github.com/lachlanchen/HybridImager"
-    },
-    {
       "id": "project:github-ideas",
       "kind": "project",
       "label": "IDEAS",
@@ -2075,6 +2075,27 @@
         "summary": "Imagized Language Model (ILM)"
       },
       "url": "https://github.com/lachlanchen/ImagizedLanguageModel"
+    },
+    {
+      "id": "project:kicad-plugin-evaluation",
+      "kind": "project",
+      "label": "KiCad Plugin Evaluation",
+      "metadata": {
+        "generated": false,
+        "keywords": [
+          "kicad plugin",
+          "kicad plugin testing",
+          "test kicad plugin",
+          "kicad plugin evaluation",
+          "kicad geometry plugin",
+          "pcb plugin testing",
+          "rounder for tracks",
+          "track rounding",
+          "trace rounding"
+        ],
+        "summary": "A bounded, evidence-led evaluation route for one authorized KiCad geometry plugin using a project-owned corner, width, layer, and DRC fixture plus public board evidence."
+      },
+      "url": "https://github.com/lachlanchen/HybridImager"
     },
     {
       "id": "project:github-kindle",
@@ -7472,6 +7493,13 @@
       "url": "https://lazying.art/story-clip/fit-check/"
     },
     {
+      "id": "url:6897178b7adbe90e",
+      "kind": "web_resource",
+      "label": "lazying.art",
+      "metadata": {},
+      "url": "https://lazying.art/kicad-plugin-evaluation/"
+    },
+    {
       "id": "url:90cbf0c4f28e84bd",
       "kind": "web_resource",
       "label": "lazying.art",
@@ -7484,6 +7512,13 @@
       "label": "lazying.art",
       "metadata": {},
       "url": "https://lazying.art/manuscript-sprint/fit-check/"
+    },
+    {
+      "id": "url:dcbce06dde08579a",
+      "kind": "web_resource",
+      "label": "lazying.art",
+      "metadata": {},
+      "url": "https://lazying.art/kicad-plugin-evaluation/fit-check/"
     },
     {
       "id": "url:f310531b65866aef",
@@ -11846,6 +11881,70 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/CustomSensor",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "project:github-customsensor"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "project:github-lazypromotion"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/HybridImager",
+      "metadata": {},
+      "relation": "combines",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "project:kicad-plugin-evaluation"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/kicad-plugin-evaluation/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "url:6897178b7adbe90e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "url:82bc3d3dd3a4322e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/CustomSensor",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "url:9a3c31df6a78d883"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/d97f76e/examples/kicad-plugin-evaluation",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "url:b8678d5dcdc616b7"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/kicad-plugin-evaluation/fit-check/",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "opportunity:kicad-plugin-evaluation",
+      "target": "url:dcbce06dde08579a"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/MultilingualWhisper",
       "metadata": {},
       "relation": "combines",
@@ -13118,14 +13217,6 @@
     },
     {
       "confidence": 1.0,
-      "evidence_url": "https://github.com/lachlanchen/HybridImager",
-      "metadata": {},
-      "relation": "backed_by",
-      "source": "project:github-hybridimager",
-      "target": "repository:lachlanchen/HybridImager"
-    },
-    {
-      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/IDEAS",
       "metadata": {},
       "relation": "backed_by",
@@ -13611,6 +13702,22 @@
       "relation": "has_homepage",
       "source": "project:howyougotrich",
       "target": "url:e9559a1b808d6466"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/HybridImager",
+      "metadata": {},
+      "relation": "backed_by",
+      "source": "project:kicad-plugin-evaluation",
+      "target": "repository:lachlanchen/HybridImager"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://lazying.art/kicad-plugin-evaluation/",
+      "metadata": {},
+      "relation": "has_homepage",
+      "source": "project:kicad-plugin-evaluation",
+      "target": "url:6897178b7adbe90e"
     },
     {
       "confidence": 1.0,

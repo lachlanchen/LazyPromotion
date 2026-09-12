@@ -19,6 +19,7 @@ class OpportunityTests(unittest.TestCase):
                 "story-first-content-repurposing",
                 "scientific-manuscript-workbench",
                 "private-multidevice-remote-access",
+                "kicad-plugin-evaluation",
                 "openhi-reproducibility-session",
                 "focused-pronunciation-micro-lessons",
             ],
@@ -96,9 +97,13 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("https://github.com/lachlanchen/kvm-qemu-workstation", body)
         self.assertIn("https://github.com/lachlanchen/uu-remote-ubuntu-bridge", body)
         self.assertIn("operator-reviewed deployment evidence", body)
+        self.assertIn("### KiCad geometry-plugin evaluation", body)
+        self.assertIn("https://lazying.art/kicad-plugin-evaluation/", body)
+        self.assertIn("https://lazying.art/kicad-plugin-evaluation/fit-check/", body)
+        self.assertIn("project-owned synthetic fixture", body)
         self.assertIn("Google Play production listing is independently public", body)
         self.assertIn("Treat TestFlight as a beta route", body)
-        self.assertIn("are eight priced service routes", body)
+        self.assertIn("are nine priced service routes", body)
         self.assertIn("AI clip assembly is gated", body)
         self.assertIn("listing closed before submission", body)
         self.assertIn("Gates:", body)

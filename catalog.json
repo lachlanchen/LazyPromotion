@@ -136,6 +136,23 @@
       ]
     },
     {
+      "id": "kicad-plugin-evaluation",
+      "name": "KiCad Plugin Evaluation",
+      "url": "https://github.com/lachlanchen/HybridImager",
+      "homepage": "https://lazying.art/kicad-plugin-evaluation/",
+      "reply_url": "https://lazying.art/kicad-plugin-evaluation/fit-check/",
+      "summary": "A bounded, evidence-led evaluation route for one authorized KiCad geometry plugin using a project-owned corner, width, layer, and DRC fixture plus public board evidence.",
+      "reply_context": "Use only for an explicit KiCad or PCB-plugin evaluation need. The live fixed USD 400 service covers one authorized plugin version, one KiCad 10 and Linux environment, up to four setting presets on the project-owned fixture, before-and-after evidence, a DRC comparison, an issue ledger, enhancement notes, and one correction pass. The clean fixture and public boards are project-owned baselines, not proof that a customer's plugin has been tested. Customer boards, confidential design files, plugin repair, malware analysis, security certification, electrical or fabrication review, production installation, redistribution, guarantees, ongoing support, and unlimited revisions are excluded. Answer the technical need first; mention the metadata-only fit check only when the maintainer is deciding whether to outsource this exact scope. Keep marketplace-origin work and payment on that marketplace.",
+      "required_any": [
+        "kicad", "pcb", "plugin"
+      ],
+      "keywords": [
+        "kicad plugin", "kicad plugin testing", "test kicad plugin",
+        "kicad plugin evaluation", "kicad geometry plugin", "pcb plugin testing",
+        "rounder for tracks", "track rounding", "trace rounding"
+      ]
+    },
+    {
       "id": "github-lazytunnel",
       "name": "LazyTunnel / LazyRemote",
       "url": "https://github.com/lachlanchen/LazyTunnel",

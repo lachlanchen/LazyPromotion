@@ -30,9 +30,9 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_eight_active_routes_and_paused_ai_clip(self):
+    def test_first_thousand_plan_names_nine_active_routes_and_paused_ai_clip(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: eight active service routes", body)
+        self.assertIn("# First USD 1,000: nine active service routes", body)
         for offer in (
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
@@ -40,11 +40,12 @@ class RepositoryTests(unittest.TestCase):
             "Story Clip Pilot",
             "Book Specimen Sprint",
             "OpenHI Software Reproducibility Sprint",
+            "KiCad Plugin Evaluation",
             "LazyRemote Network Fit Review",
             "Custom Bilingual Pronunciation Mini-Lesson",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these eight routes", body)
+        self.assertIn("payments across these nine routes", body)
         self.assertIn("AI Clip Assembly Pilot", body)
         self.assertIn("archived technical record, not current selling proof", body)
 
@@ -503,6 +504,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("video2book", ids)
         self.assertIn("paperagent", ids)
         self.assertIn("l-and-n", ids)
+        self.assertIn("kicad-plugin-evaluation", ids)
         for project in projects:
             with self.subTest(project=project["id"]):
                 self.assertTrue(project["url"].startswith("https://github.com/lachlanchen/"))
@@ -534,6 +536,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("test builds", by_id["l-and-n"]["reply_context"])
         self.assertIn("https://l-and-n.lazying.art/for-tutors/", by_id["l-and-n"]["reply_context"])
         self.assertIn("USD 250", by_id["l-and-n"]["reply_context"])
+        self.assertEqual(
+            by_id["kicad-plugin-evaluation"]["homepage"],
+            "https://lazying.art/kicad-plugin-evaluation/",
+        )
+        self.assertEqual(
+            by_id["kicad-plugin-evaluation"]["reply_url"],
+            "https://lazying.art/kicad-plugin-evaluation/fit-check/",
+        )
+        self.assertIn(
+            "fixed USD 400 service",
+            by_id["kicad-plugin-evaluation"]["reply_context"],
+        )
+        self.assertIn(
+            "Customer boards",
+            by_id["kicad-plugin-evaluation"]["reply_context"],
+        )
         self.assertEqual(
             by_id["lexiconatlas"]["reply_url"],
             "https://github.com/lachlanchen/LexiconAtlas/releases/latest",

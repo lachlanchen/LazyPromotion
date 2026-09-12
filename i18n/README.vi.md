@@ -10,7 +10,7 @@
 
 LazyPromotion là trợ lý cục bộ, ưu tiên duyệt trước khi gửi để tìm nhu cầu trên mạng xã hội. Công cụ làm việc với giao diện web thật của Reddit, X, Instagram và Hacker News trong một hồ sơ Chrome chuyên dụng có thể quan sát, lưu các kết quả có thể phù hợp vào SQLite, soạn câu trả lời có căn cứ bằng mô hình Codex được tài khoản hỗ trợ và đề xuất ở mức suy luận thấp, rồi dừng trước khi gửi công khai. Công cụ dành cho người duy trì muốn giúp người khác bằng sản phẩm nguồn mở phù hợp, chứ không biến cộng đồng thành hàng chờ bán hàng.
 
-Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` chưa lưu trữ. Mã nguồn, sách, đồ thị tri thức, nghiên cứu, nội dung đa phương tiện, học ngôn ngữ và AI cục bộ được kết hợp thành các cơ hội xuất phát từ bài toán của người mua và chịu ràng buộc bởi bằng chứng. Sáu tuyến dịch vụ có phạm vi cố định hướng đến cột mốc 1.000 USD đầu tiên đã được xác nhận; lượt nhấp, sao, đơn ứng tuyển và bài đang xếp lịch không được tính là doanh thu.
+Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` chưa lưu trữ. Mã nguồn, sách, đồ thị tri thức, nghiên cứu, nội dung đa phương tiện, học ngôn ngữ và AI cục bộ được kết hợp thành các cơ hội xuất phát từ bài toán của người mua và chịu ràng buộc bởi bằng chứng. Chín tuyến dịch vụ có phạm vi cố định hướng đến cột mốc 1.000 USD đầu tiên đã được xác nhận; lượt nhấp, sao, đơn ứng tuyển và bài đang xếp lịch không được tính là doanh thu.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -21,6 +21,7 @@ Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` 
 - Hữu ích trước: trả lời nhu cầu cụ thể trước khi nhắc đến dự án.
 - Minh bạch quan hệ: liên kết của chính mình luôn đi kèm lời nói tự nhiên như “tôi duy trì…” hoặc “tôi xây dựng…”.
 - Đúng nhu cầu, không chỉ trùng từ khóa: bài cũ, ý định mơ hồ, nội dung tự quảng bá, yêu cầu nằm trong trích dẫn và cụm từ nhập nhằng đều bị lọc trước bước phân loại bằng mô hình.
+- Ngữ cảnh đúng thời điểm: ứng viên hỗ trợ công khai thông thường hết hạn sau bảy ngày; cơ hội trả phí rõ ràng giữ cửa sổ duyệt 30 ngày nhưng vẫn phải kiểm tra trực tiếp rằng cơ hội còn mở trước khi liên hệ.
 - Bằng chứng trước lời chào bán: mỗi tuyến thương mại cần bằng chứng công khai có thể kiểm tra, phạm vi bằng văn bản, điều khoản loại trừ và bước kiểm tra độ phù hợp.
 - Một người, một quyết định: không trả lời hàng loạt, nhắn tin riêng không được yêu cầu, tự động bình chọn, theo dõi, tiếp cận lặp lại hay tạo vòng lặp tương tác.
 - Phê duyệt chính xác: sửa bản nháp sẽ vô hiệu hóa phê duyệt ngắn hạn gắn với hàm băm; nơi nhận và nội dung gửi phải khớp hoàn toàn với bản con người đã duyệt.
@@ -36,13 +37,23 @@ Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` 
 | [`browser.py`](../browser.py) | Khám phá, kiểm tra, chuẩn bị ô soạn và gửi có bảo vệ qua Playwright/CDP |
 | [`worker.py`](../worker.py) | Khám phá hữu hạn có thời gian chờ và hàng đợi duyệt riêng tư; không bao giờ tự gửi |
 | [`catalog.json`](../catalog.json) và [`github-repos.json`](../github-repos.json) | Quy tắc đối sánh được tuyển chọn và danh mục kho mã công khai |
+| [`github_portfolio_audit.py`](../github_portfolio_audit.py) | Kiểm toán mức độ chú ý riêng tư, chỉ đọc trên mọi kho mã nguồn công khai hiện tại; lưu lượng GitHub không bao giờ được tính là khách hàng tiềm năng hay doanh thu |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Kết hợp mã, sách, hệ thống tri thức và nội dung đa phương tiện quanh bài toán người mua |
+| [`bounties.py`](../bounties.py) | Đối chiếu bounty công khai với trạng thái GitHub trực tiếp và loại công việc không an toàn hoặc đã có tranh chấp |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Thăm dò luồng Bounty thuộc dự án ở chế độ chỉ đọc và chỉ chuyển ID hoặc phiên bản mới thành cảnh báo duyệt riêng tư |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Bản đồ đầy đủ các sản phẩm công khai, nhóm theo vấn đề thực tế |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Các hợp đồng cơ hội được xếp hạng, có cổng bằng chứng và giao hàng |
-| [`docs/first-1000.md`](../docs/first-1000.md) | Sáu dịch vụ giới hạn ở mức 250/500 USD và phép tính cột mốc trung thực |
+| [`docs/first-1000.md`](../docs/first-1000.md) | Chín dịch vụ giới hạn ở mức 250/400/500 USD và phép tính cột mốc trung thực |
+| [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | Quyết định hiện tại từ danh mục sang doanh thu, cổng đăng ký và bằng chứng cơ hội bên ngoài |
+| [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | Đợt rà soát toàn cầu mới về tuyến trả phí cho hạ tầng, kiểm toán mã, công việc đa ngôn ngữ và cổng đủ điều kiện |
+| [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Nhu cầu người mua trực tiếp được xếp hạng cho xác minh, thiết kế tác vụ agent, phát âm và tri thức địa phương |
+| [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | Đợt rà soát hiện tại cho tuyến trực tiếp, lỗ hổng bằng chứng và cổng nộp hồ sơ |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py) và [`signals.py`](../signals.py) | Phễu có cổng bằng chứng, đồ thị quan hệ công khai và tín hiệu nhu cầu bên thứ nhất |
-| [`owned_monitor.py`](../owned_monitor.py) và [`lkt_inbox.py`](../lkt_inbox.py) | Giám sát xuất bản chỉ đọc và tiếp nhận riêng tư yêu cầu kiểm tra LKT |
+| [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py) và [`lkt_inbox.py`](../lkt_inbox.py) | Giám sát xuất bản chỉ đọc, cảnh báo phản hồi Threads và issue công khai, cùng hộp nhận riêng tư để kiểm tra độ phù hợp |
+| [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | Phát hiện khoản thu trực tiếp ở chế độ chỉ đọc với trạng thái riêng tư tổng hợp; không tạo đối tượng Stripe hay tự động ghi nhận doanh thu |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | Một desktop Xvfb/x11vnc/noVNC/Chrome bền vững |
+| [`application_watch.py`](../application_watch.py) và [`application_inbox_monitor.py`](../application_inbox_monitor.py) | Lịch đến hạn duyệt cho hồ sơ trực tiếp và theo nhóm cùng đối chiếu tổng hợp chỉ đọc cho các luồng đã biết; monitor đang chạy chỉ nhúng bản tóm tắt hạn chế theo quyền riêng tư, không mở thư hay nhắc lại |
+| [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | Theo dõi bid Freelancer đã gửi qua một tab dùng lại để phát hiện huy hiệu tin nhắn tổng hợp hoặc thay đổi trạng thái mà không mở tin nhắn hay trả lời |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | Lựa chọn công cụ nguồn mở và MCP có thể kiểm toán |
 
 ## Bắt đầu nhanh
@@ -69,6 +80,15 @@ python promotion.py draft CANDIDATE_ID
 python browser.py prepare CANDIDATE_ID DRAFT_ID
 ```
 
+Nếu luồng trực tiếp đã được giải quyết hoặc không còn phù hợp, hãy đóng ứng viên cục bộ với bằng chứng công khai chính xác thay vì soạn thêm một câu trả lời:
+
+```bash
+python promotion.py dismiss-candidate CANDIDATE_ID \
+  --reason "An existing reply already provides the exact fix." \
+  --evidence "https://example.com/existing-answer" \
+  --confirm-reviewed-live-context
+```
+
 Chỉ gửi sau khi con người duyệt đúng nơi nhận và toàn bộ nội dung:
 
 ```bash
@@ -77,6 +97,56 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 ```
 
 Cùng một chu trình khám phá hỗ trợ Reddit, X, Instagram và Hacker News. Hacker News chỉ dành cho nghiên cứu: LazyPromotion không soạn, phê duyệt, chuẩn bị hay gửi bình luận tại đó. Việc lên lịch nội dung bên thứ nhất đã được duyệt qua Postiz luôn tách biệt với trả lời thành viên cộng đồng. Quy trình chi tiết cho worker, thanh toán, tiếp thị liên kết, giao hàng, Postiz và trình duyệt nằm trong [`docs/`](../docs/).
+
+Có thể sàng lọc bounty GitHub công khai mà không nhận hoặc thay đổi issue:
+
+```bash
+python bounties.py
+```
+
+Bảng chỉ dùng để khám phá. Trình kiểm toán xác minh trạng thái issue trực tiếp và các pull request giải pháp hiện có, từ chối yêu cầu hướng dẫn không an toàn và ghi báo cáo riêng tư dưới `.local/`.
+
+Cũng có thể theo dõi luồng Bounty thuộc dự án mà không bình luận, nhận việc, nhắn tin, tải tệp đính kèm hay nộp sản phẩm:
+
+```bash
+python bounty_marketplace_monitor.py once
+scripts/bounty-marketplace-monitor.sh start
+scripts/bounty-marketplace-monitor.sh status
+scripts/bounty-marketplace-monitor.sh stop
+```
+
+Lượt đầu âm thầm tạo mốc riêng tư. Các lượt sau chỉ cảnh báo ID Bounty mới khả dụng hoặc phiên bản cao hơn, và mức tối thiểu năm phút ngăn thăm dò quá dày. Xem [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
+
+Có thể quan sát issue công khai mới và hoạt động pull request trong mười lăm kho mã có mức chú ý hoặc đề nghị cao hiện tại mà không đọc phần nội dung hay ghi lên GitHub:
+
+```bash
+python github_inbound_monitor.py once
+scripts/github-inbound-monitor.sh start
+scripts/github-inbound-monitor.sh status
+scripts/github-inbound-monitor.sh stop
+```
+
+Lượt đầu chỉ tạo mốc riêng tư. Các lượt sau chỉ cảnh báo khóa issue chưa có trong trạng thái lưu giữ. Chu kỳ không được ngắn hơn 15 phút. Xem [`docs/github-inbound-monitor.md`](../docs/github-inbound-monitor.md) để biết danh sách cho phép cố định và quy ước an toàn.
+
+Có thể theo dõi khoản thu Stripe thật mà không tạo checkout hoặc giữ dữ liệu khách hàng hay thanh toán:
+
+```bash
+python stripe_revenue_monitor.py once --confirm-private-financial-read
+scripts/stripe-revenue-monitor.sh start
+scripts/stripe-revenue-monitor.sh status
+scripts/stripe-revenue-monitor.sh stop
+```
+
+Trình theo dõi chỉ tạo cảnh báo duyệt riêng tư. Khoản thanh toán chỉ được tính sau khi khớp với phạm vi đã chấp nhận, đơn sản phẩm hoặc bối cảnh quyên góp. Xem [`docs/stripe-revenue-monitor.md`](../docs/stripe-revenue-monitor.md).
+
+Có thể kiểm tra tuần tự các bid Freelancer đã gửi qua một tab dự án đã xác thực trong trình duyệt chuyên dụng:
+
+```bash
+python freelancer_inbound_monitor.py once
+python freelancer_inbound_monitor.py status
+```
+
+Monitor chỉ ghi ID chiến dịch, số huy hiệu tổng hợp, trạng thái và thứ hạng bid, cùng số lượng đề xuất. Nó không bao giờ mở hội thoại hay gửi trả lời. Xem [`docs/freelancer-inbound-monitor.md`](../docs/freelancer-inbound-monitor.md).
 
 ## Cách ly môi trường chạy
 
@@ -91,14 +161,14 @@ scripts/desktop.sh stop
 
 Phần lõi được giữ nhỏ có chủ đích: Playwright điều khiển trình duyệt hiển thị, SQLite lưu trạng thái cục bộ bền vững, còn mô hình Codex được tài khoản hỗ trợ thực hiện phân loại có cấu trúc và soạn bản nháp. Postiz chỉ dùng để lên lịch nội dung bên thứ nhất đã được duyệt. Kết nối MCP là tùy chọn và được ghim phiên bản; tiến trình con của mô hình không được quyền truy cập trình duyệt, bộ lập lịch, thông tin đăng nhập hay thanh toán. Xem [đánh giá đầy đủ](../docs/open-source-evaluation.md).
 
-Lớp danh mục biến dự án công khai thành hợp đồng cơ hội rõ ràng thay vì quảng bá mọi kho mã cùng lúc. Sáu tuyến hiện tại gồm đánh giá độ phù hợp của bộ sưu tập cục bộ, bản sửa đổi có redline cho bản thảo, chuyển giao bài giảng song ngữ, clip kể chuyện, mẫu sách và lắp ráp clip AI. Nhập dữ liệu từ vựng là một chuyên môn LKT có thể tái sử dụng, không phải tuyên bố rằng một tin tuyển trên thị trường đã đóng vẫn còn mở.
+Lớp danh mục biến dự án công khai thành hợp đồng cơ hội rõ ràng thay vì quảng bá mọi kho mã cùng lúc. Chín tuyến hiện tại gồm đánh giá độ phù hợp của bộ sưu tập cục bộ, bản sửa đổi có redline cho bản thảo, chuyển giao bài giảng song ngữ, clip kể chuyện, mẫu sách, đánh giá plugin KiCad, tái hiện OpenHI, rà soát cấu trúc LazyRemote và bài học phát âm ngắn. Việc lắp ráp clip AI vẫn tạm dừng cho đến khi bằng chứng tốt hơn vượt qua khâu duyệt của con người. [Mẫu đánh giá plugin KiCad có thể tái lập](../examples/kicad-plugin-evaluation/) hỗ trợ tuyến giới hạn mới. Một [prompt giáo dục bị ràng buộc bởi nguồn](../examples/source-bounded-educational-prompt/) thể hiện cùng kỷ luật về đầu vào, ràng buộc, bằng chứng và đánh giá trong công việc hướng tới người học. Nhập dữ liệu từ vựng là một chuyên môn LKT có thể tái sử dụng, không phải tuyên bố rằng một tin tuyển trên thị trường đã đóng vẫn còn mở.
 
 ## Xác thực
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py
-bash -n scripts/desktop.sh
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```
 

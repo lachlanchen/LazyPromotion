@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "policy": "These are evidence-led product hypotheses, not demand, revenue, delivery-time, or income claims. Only explicit needs may activate a test.",
   "opportunities": [
     {
@@ -429,6 +429,31 @@
         "Do not claim learning outcomes without classroom evidence"
       ],
       "scores": {"buyer_pain": 3, "proof": 4, "delivery_readiness": 3, "low_support": 4, "repeatability": 4}
+    },
+    {
+      "id": "kicad-plugin-evaluation",
+      "title": "KiCad geometry-plugin evaluation",
+      "state": "active",
+      "buyer": "A KiCad plugin maintainer or PCB-tool team with one authorized geometry plugin and a bounded settings question",
+      "need": "Exercise a routing or geometry plugin against known corner, width, layer, and DRC cases before risking broader boards",
+      "projects": ["LazyPromotion", "HybridImager", "CustomSensor"],
+      "first_deliverable": "The live fixed USD 400 KiCad Plugin Evaluation for one authorized plugin version, one KiCad 10 and Linux environment, up to four setting presets on the project-owned fixture, before-and-after evidence, DRC comparison, issue ledger, enhancement notes, and one bounded correction pass",
+      "first_test": "Keep the current USD 400 Freelancer application as a single submitted test; direct prospects start with the metadata-only fit check and receive a written scope before any payment request",
+      "proof": [
+        "https://lazying.art/kicad-plugin-evaluation/",
+        "https://lazying.art/kicad-plugin-evaluation/fit-check/",
+        "https://github.com/lachlanchen/LazyPromotion/tree/d97f76e/examples/kicad-plugin-evaluation",
+        "https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32",
+        "https://github.com/lachlanchen/CustomSensor"
+      ],
+      "gates": [
+        "Require an authorized plugin package or source, license, supported environment, stable inputs, and written acceptance criteria before execution",
+        "The fixed scope uses the project-owned synthetic fixture; customer boards, confidential design files, plugin repair, production installation, and redistribution are excluded",
+        "Do not describe the clean baseline fixture or public boards as a run of the customer's plugin or as customer evidence",
+        "Malware analysis, security certification, electrical design, fabrication review, performance guarantees, ongoing support, and unlimited revisions are excluded",
+        "Keep Freelancer-origin contracts, files, communication, milestones, and payment on Freelancer"
+      ],
+      "scores": {"buyer_pain": 4, "proof": 5, "delivery_readiness": 5, "low_support": 3, "repeatability": 4}
     },
     {
       "id": "openhi-reproducibility-session",

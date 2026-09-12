@@ -73,6 +73,33 @@ class PromotionTests(unittest.TestCase):
         self.assertIn("metadata-only fit check", ranked[0]["project"]["reply_context"])
         self.assertIn("separate from NetEase UU Remote", ranked[0]["project"]["reply_context"])
 
+    def test_kicad_plugin_testing_need_matches_bounded_evaluation(self):
+        ranked = promotion.rank_projects(
+            "I need help testing a KiCad plugin for trace rounding on PCB tracks. "
+            "Can someone compare its settings and DRC results?"
+        )
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "kicad-plugin-evaluation")
+        self.assertEqual(
+            ranked[0]["project"]["homepage"],
+            "https://lazying.art/kicad-plugin-evaluation/",
+        )
+        self.assertEqual(
+            ranked[0]["project"]["reply_url"],
+            "https://lazying.art/kicad-plugin-evaluation/fit-check/",
+        )
+        self.assertIn("fixed USD 400 service", ranked[0]["project"]["reply_context"])
+        self.assertIn("Customer boards", ranked[0]["project"]["reply_context"])
+
+    def test_generic_routing_need_does_not_match_kicad_evaluation(self):
+        ranked = promotion.rank_projects(
+            "I need help with routing requests through my web API plugin."
+        )
+        self.assertNotIn(
+            "kicad-plugin-evaluation",
+            {item["project"]["id"] for item in ranked},
+        )
+
     def test_uu_remote_linux_need_matches_only_vendor_bridge(self):
         ranked = promotion.rank_projects(
             "Can someone help me use NetEase UU Remote on Ubuntu Linux with Wine "

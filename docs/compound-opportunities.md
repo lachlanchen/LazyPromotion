@@ -13,6 +13,7 @@ This map combines existing public code, books, knowledge systems, and media into
 | [Source-preserving lexical ingestion](#source-preserving-lexical-ingestion) | candidate | Add new dictionary or glossary sources to an existing database without losing source locators, raw values, transformation history, rejects, or safe reruns | Find a new explicit paid lexical-ingestion need and use the public two-format proof only when the source formats, provenance problem, and safe-rerun boundary genuinely match; the original USD 1,200 listing closed before submission | 4.50 |
 | [AI clip assembly pilot](#ai-clip-assembly) | gated | Turn several uneven source clips into one reviewable story, a master cut, and a shorter web cut without paying for a broad generation or agency package | Create and review a substantially better project-owned assembly sample before restoring an offer, fit-check path, marketplace application, social post, or payment route | 4.45 |
 | [Focused pronunciation micro-lessons](#focused-pronunciation-micro-lessons) | active | Turn one repeatedly confused sound contrast into a compact bilingual lesson learners can hear, inspect, practise, print, and revisit | Use the complete light/night lesson as the sample, let one reviewed tutor-facing first-party post lead to the fit check, and qualify the exact contrast, learner context, language, rights, and delivery boundary before payment | 4.40 |
+| [KiCad geometry-plugin evaluation](#kicad-plugin-evaluation) | active | Exercise a routing or geometry plugin against known corner, width, layer, and DRC cases before risking broader boards | Keep the current USD 400 Freelancer application as a single submitted test; direct prospects start with the metadata-only fit check and receive a written scope before any payment request | 4.35 |
 | [Manuscript build and redline sprint](#scientific-manuscript-workbench) | active | Make a paper reproducible, buildable, traceable, and easier to revise without surrendering confidential material | Let the complete technical guide lead to the free fit check, and test the same bounded scope on marketplaces only after their account, fee, communication, and payment rules are reviewed | 4.30 |
 | [Lecture-to-study library](#lecture-to-study-library) | active | Turn one rights-cleared lecture into a corrected bilingual transcript, subtitle set, compact study edition, and source manifest | Let the project-owned multilingual sample and Susskind-format discovery pages lead to the metadata-only fit check; test one exact lecture without claiming the broader archive, hour-long, or real-time cases | 4.15 |
 | [Review-first agent workflow kit](#agent-workflow-kit) | candidate | Turn repeatable agent work into versioned, testable, human-gated workflows instead of fragile prompt transcripts | Publish one complete workflow case study with failure gates and ask teams which repeated task costs them the most review time | 4.05 |
@@ -189,6 +190,36 @@ Gates:
 - Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
 - Call the direct APK a test build. The Google Play production listing is independently public, but availability is not evidence of a download, retained learner, customer, or revenue
 - Treat TestFlight as a beta route and the Apple build as a release candidate until a public Apple App Store listing is independently verified
+
+### KiCad geometry-plugin evaluation
+
+**State:** active
+
+**Buyer:** A KiCad plugin maintainer or PCB-tool team with one authorized geometry plugin and a bounded settings question
+
+**Need:** Exercise a routing or geometry plugin against known corner, width, layer, and DRC cases before risking broader boards
+
+**Existing work:** [LazyPromotion](https://github.com/lachlanchen/LazyPromotion), [HybridImager](https://github.com/lachlanchen/HybridImager), [CustomSensor](https://github.com/lachlanchen/CustomSensor)
+
+**First deliverable:** The live fixed USD 400 KiCad Plugin Evaluation for one authorized plugin version, one KiCad 10 and Linux environment, up to four setting presets on the project-owned fixture, before-and-after evidence, DRC comparison, issue ledger, enhancement notes, and one bounded correction pass
+
+**First demand test:** Keep the current USD 400 Freelancer application as a single submitted test; direct prospects start with the metadata-only fit check and receive a written scope before any payment request
+
+Evidence:
+
+- <https://lazying.art/kicad-plugin-evaluation/>
+- <https://lazying.art/kicad-plugin-evaluation/fit-check/>
+- <https://github.com/lachlanchen/LazyPromotion/tree/d97f76e/examples/kicad-plugin-evaluation>
+- <https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32>
+- <https://github.com/lachlanchen/CustomSensor>
+
+Gates:
+
+- Require an authorized plugin package or source, license, supported environment, stable inputs, and written acceptance criteria before execution
+- The fixed scope uses the project-owned synthetic fixture; customer boards, confidential design files, plugin repair, production installation, and redistribution are excluded
+- Do not describe the clean baseline fixture or public boards as a run of the customer's plugin or as customer evidence
+- Malware analysis, security certification, electrical design, fabrication review, performance guarantees, ongoing support, and unlimited revisions are excluded
+- Keep Freelancer-origin contracts, files, communication, milestones, and payment on Freelancer
 
 ### Manuscript build and redline sprint
 
@@ -672,4 +703,4 @@ Gates:
 
 ## Interpretation
 
-LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, OpenHI software reproducibility, the LazyRemote Network Fit Review, and the custom pronunciation mini-lesson are eight priced service routes with an exact scope, public proof, and pre-transfer qualification. AI clip assembly is gated until a new project-owned sample passes human visual-quality review. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.
+LKT collection fit, manuscript redline, the bilingual lecture pack, the story clip pilot, the book specimen, the KiCad Plugin Evaluation, OpenHI software reproducibility, the LazyRemote Network Fit Review, and the custom pronunciation mini-lesson are nine priced service routes with an exact scope, public proof, and pre-transfer qualification. AI clip assembly is gated until a new project-owned sample passes human visual-quality review. Source-preserving lexical ingestion remains a candidate specialization of LKT: its original USD 1,200 listing closed before submission, while the reusable synthetic proof remains available for a new explicit need. Candidate and gated opportunities should advance only after a current explicit need, a rights-safe sample, and a written delivery boundary exist.

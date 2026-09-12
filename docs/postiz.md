@@ -227,6 +227,15 @@ to `DRAFT` before publication. The separate text-only X item remains queued.
 The media-backed items must not be rescheduled until a clean-cut replacement
 passes the same timed-frame review.
 
+Also on 2026-09-12, one LinkedIn note for the USD 400 KiCad plugin evaluation
+was visibly reviewed and queued for 2026-09-29T02:00:00Z. It teaches a bounded
+fixture method before mentioning the offer, uses the project-owned 3D fixture
+render, and preserves the original tracked LazyingArt URL. A provider read
+confirmed the current personal technical profile, exact normalized copy, one
+attachment, future time, and `QUEUE` state with no release. The same post must
+not be duplicated from a second LinkedIn or Reddit identity, and queueing is
+not a lead or revenue.
+
 The `v5` replacement uses hard cuts, contains the complete L/N teaching-model
 regions instead of side-cropping them, and keeps both model words on the
 listening slide. Boundary frames and audio timing passed review. The old

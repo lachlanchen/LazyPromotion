@@ -10,7 +10,7 @@
 
 LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 도우미입니다. 하나의 보이는 Chrome 프로필에서 Reddit, X, Instagram, Hacker News의 실제 웹 인터페이스를 검색하고, 가능한 연결점을 SQLite에 기록하며, 로그인한 계정에 권장되는 Codex 모델을 낮은 추론 강도로 사용해 근거 있는 답글을 작성합니다. 그러나 공개 전송 직전에는 반드시 멈춥니다. 커뮤니티를 영업 목록으로 바꾸지 않으면서 관련 오픈 소스 작업으로 사람을 돕고 싶은 유지보수자를 위한 도구입니다.
 
-이 저장소에는 보관 처리되지 않은 `lachlanchen` 공개 소스 저장소 108개의 목록도 있습니다. 코드, 책, 지식 그래프, 연구, 미디어, 언어 학습, 로컬 AI를 서로 결합하되, 구매자가 실제로 이해할 수 있고 공개 증거로 뒷받침되는 기회만 제시합니다. 첫 번째로 검증된 매출 USD 1,000을 향한 고정 범위 서비스 경로는 여섯 가지입니다. 클릭, 별, 지원서, 예약 게시물은 매출로 계산하지 않습니다.
+이 저장소에는 보관 처리되지 않은 `lachlanchen` 공개 소스 저장소 108개의 목록도 있습니다. 코드, 책, 지식 그래프, 연구, 미디어, 언어 학습, 로컬 AI를 서로 결합하되, 구매자가 실제로 이해할 수 있고 공개 증거로 뒷받침되는 기회만 제시합니다. 첫 번째로 검증된 매출 USD 1,000을 향한 고정 범위 서비스 경로는 아홉 가지입니다. 클릭, 별, 지원서, 예약 게시물은 매출로 계산하지 않습니다.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -21,6 +21,7 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 - 도움 우선: 프로젝트를 언급하기 전에 상대의 구체적인 필요에 답합니다.
 - 정직한 관계 공개: 자신의 링크에는 “제가 유지보수합니다” 또는 “제가 만들었습니다” 같은 설명을 붙입니다.
 - 단어가 아니라 필요를 대조: 오래된 게시물, 모호한 의도, 자기 홍보, 인용된 요청, 여러 뜻으로 해석되는 문구는 모델 분류 전에 걸러냅니다.
+- 시의성 있는 맥락: 일반 공개 도움 후보는 7일 뒤 만료됩니다. 명시적인 유료 기회는 30일 동안 검토할 수 있지만, 연락 전에는 여전히 모집 상태를 실시간으로 확인해야 합니다.
 - 제안보다 증거 우선: 상업 서비스가 되려면 확인 가능한 공개 증거, 서면 범위, 제외 사항, 적합성 확인 절차가 있어야 합니다.
 - 한 사람, 한 결정: 대량 답글, 원치 않는 DM, 자동 투표·팔로우, 반복 접촉, 참여 루프를 만들지 않습니다.
 - 정확한 승인: 초안을 편집하면 짧은 유효기간과 콘텐츠 해시에 연결된 승인이 무효가 됩니다. 전송되는 목적지와 문구는 검토한 내용과 정확히 같아야 합니다.
@@ -36,13 +37,23 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 | [`browser.py`](../browser.py) | Playwright/CDP 탐색, 검사, 작성창 준비, 보호된 전송 |
 | [`worker.py`](../worker.py) | 전송 기능 없이, 유한한 검색과 대기 시간을 적용하는 비공개 검토 대기열 |
 | [`catalog.json`](../catalog.json) 및 [`github-repos.json`](../github-repos.json) | 선별된 필요 매칭과 공개 저장소 108개의 목록 |
+| [`github_portfolio_audit.py`](../github_portfolio_audit.py) | 현재 모든 공개 소스 저장소에 대한 비공개 읽기 전용 관심도 감사. GitHub 트래픽은 리드나 매출로 계산하지 않음 |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | 코드, 책, 지식 시스템, 미디어를 구매자 문제 중심으로 결합한 기회 |
+| [`bounties.py`](../bounties.py) | 공개 바운티를 GitHub 실시간 상태와 대조하고 안전하지 않거나 이미 경쟁 중인 작업을 제외 |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 프로젝트 소유 Bounty agent feed를 읽기 전용으로 확인하고 새 ID나 버전만 비공개 검토 알림으로 전환 |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 실제 문제 영역별로 정리한 공개 작업 전체 지도 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 증거와 납품 조건을 포함한 우선순위별 기회 계약 |
-| [`docs/first-1000.md`](../docs/first-1000.md) | 범위가 정해진 USD 250·USD 500 서비스 여섯 가지와 정직한 목표 계산 |
+| [`docs/first-1000.md`](../docs/first-1000.md) | 범위가 정해진 USD 250·USD 400·USD 500 서비스 아홉 가지와 정직한 목표 계산 |
+| [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | 현재 포트폴리오의 매출 전환 결정, 등록 관문, 외부 기회 증거 |
+| [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | 인프라, 코드 감사, 다국어 작업, 자격 관문을 대상으로 한 최신 전 세계 유료 경로 검토 |
+| [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 검증, 에이전트 작업 설계, 발음, 지역 지식 작업에 대한 실시간 구매자 수요 순위 |
+| [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | 현재 직접 경로 검토, 증거 공백, 제출 관문 |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py), [`signals.py`](../signals.py) | 증거 기반 퍼널, 공개 관계 그래프, 자사 채널 수요 신호 |
-| [`owned_monitor.py`](../owned_monitor.py) 및 [`lkt_inbox.py`](../lkt_inbox.py) | 읽기 전용 게시 상태 감시와 비공개 적합성 문의 수신 |
+| [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py), [`lkt_inbox.py`](../lkt_inbox.py) | 읽기 전용 게시 상태 감시, Threads 답글 및 공개 issue 알림, 비공개 적합성 문의 수신 |
+| [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 집계된 비공개 상태로 실제 결제를 읽기 전용 감지. Stripe 객체를 만들거나 매출을 자동 기록하지 않음 |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | 프로젝트 전용 Xvfb/x11vnc/noVNC/Chrome 검토 데스크톱 하나 |
+| [`application_watch.py`](../application_watch.py) 및 [`application_inbox_monitor.py`](../application_inbox_monitor.py) | 직접·그룹 신청의 검토 기한과 알려진 신청 스레드의 읽기 전용 집계 매칭. 실행 중인 모니터는 개인정보 제한 기한 요약만 포함하며 이메일을 열거나 후속 연락하지 않음 |
+| [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | 재사용하는 프로젝트 탭 하나에서 제출한 Freelancer 입찰의 집계 메시지 배지 또는 상태 변경을 감시하며 메시지를 열거나 답장하지 않음 |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | 감사 가능한 오픈 소스 및 MCP 도구 선택 근거 |
 
 ## 빠른 시작
@@ -69,6 +80,15 @@ python promotion.py draft CANDIDATE_ID
 python browser.py prepare CANDIDATE_ID DRAFT_ID
 ```
 
+실시간 스레드가 이미 해결되었거나 더 이상 적합하지 않다면 답글을 하나 더 작성하지 말고 정확한 공개 증거와 함께 후보를 로컬에서 닫습니다.
+
+```bash
+python promotion.py dismiss-candidate CANDIDATE_ID \
+  --reason "An existing reply already provides the exact fix." \
+  --evidence "https://example.com/existing-answer" \
+  --confirm-reviewed-live-context
+```
+
 사람이 정확한 대상과 전체 문구를 확인한 뒤에만 전송합니다.
 
 ```bash
@@ -77,6 +97,56 @@ python browser.py send CANDIDATE_ID DRAFT_ID --approval-token APPROVAL_TOKEN --c
 ```
 
 같은 탐색 흐름이 Reddit, X, Instagram, Hacker News를 지원합니다. 다만 Hacker News는 조사 전용이므로 LazyPromotion에서 댓글 초안 작성, 승인, 작성창 준비, 전송을 할 수 없습니다. Postiz를 통한 검토된 자사 채널 예약 발행도 커뮤니티 답글과 별도로 운영합니다. 작업자, 결제, 제휴, 납품, Postiz, 브라우저에 관한 자세한 절차는 [`docs/`](../docs/)에 있습니다.
+
+공개 GitHub 바운티는 issue를 차지하거나 변경하지 않고 심사할 수 있습니다.
+
+```bash
+python bounties.py
+```
+
+보드는 탐색 전용입니다. 감사기는 issue 실시간 상태와 기존 해결 pull request를 확인하고 안전하지 않은 지시 요청을 거부하며 비공개 보고서를 `.local/` 아래에 씁니다.
+
+프로젝트 소유 Bounty agent feed도 댓글, 작업 차지, 메시지 전송, 첨부 다운로드, 결과 제출 없이 감시할 수 있습니다.
+
+```bash
+python bounty_marketplace_monitor.py once
+scripts/bounty-marketplace-monitor.sh start
+scripts/bounty-marketplace-monitor.sh status
+scripts/bounty-marketplace-monitor.sh stop
+```
+
+첫 실행은 비공개 기준 상태만 조용히 만듭니다. 이후에는 사용 가능한 새 Bounty ID 또는 상위 버전만 알리며, 최소 5분 간격으로 과도한 폴링을 방지합니다. 자세한 내용은 [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md)를 참조하세요.
+
+현재 관심도 또는 오퍼가 높은 15개 저장소의 새 공개 issue와 pull request 활동은 본문을 읽거나 GitHub에 쓰지 않고 관찰할 수 있습니다.
+
+```bash
+python github_inbound_monitor.py once
+scripts/github-inbound-monitor.sh start
+scripts/github-inbound-monitor.sh status
+scripts/github-inbound-monitor.sh stop
+```
+
+첫 실행은 비공개 기준 상태만 만듭니다. 이후에는 보존된 상태에 없는 issue 키만 알립니다. 루프 간격은 15분보다 짧을 수 없습니다. 고정 허용 목록과 안전 계약은 [`docs/github-inbound-monitor.md`](../docs/github-inbound-monitor.md)를 참조하세요.
+
+실제 Stripe 입금은 checkout을 만들거나 고객·결제 세부정보를 보관하지 않고 감시할 수 있습니다.
+
+```bash
+python stripe_revenue_monitor.py once --confirm-private-financial-read
+scripts/stripe-revenue-monitor.sh start
+scripts/stripe-revenue-monitor.sh status
+scripts/stripe-revenue-monitor.sh stop
+```
+
+감시기는 비공개 검토 알림만 만듭니다. 결제는 수락된 범위, 제품 주문, 기부 맥락과 연결된 뒤에만 계산합니다. 자세한 내용은 [`docs/stripe-revenue-monitor.md`](../docs/stripe-revenue-monitor.md)를 참조하세요.
+
+제출한 Freelancer 입찰은 전용 브라우저의 인증된 프로젝트 탭 하나에서 순서대로 확인할 수 있습니다.
+
+```bash
+python freelancer_inbound_monitor.py once
+python freelancer_inbound_monitor.py status
+```
+
+모니터는 캠페인 ID, 집계 배지 수, 입찰 상태와 순위, 제안 수만 기록합니다. 대화를 열거나 답장하지 않습니다. 자세한 내용은 [`docs/freelancer-inbound-monitor.md`](../docs/freelancer-inbound-monitor.md)를 참조하세요.
 
 ## 런타임 격리
 
@@ -91,14 +161,14 @@ scripts/desktop.sh stop
 
 핵심 구성은 의도적으로 작게 유지합니다. 보이는 브라우저에는 Playwright, 지속 가능한 로컬 상태에는 SQLite, 구조화된 분류와 초안에는 로그인 계정이 지원하는 Codex 모델을 사용합니다. Postiz는 검토를 마친 자사 채널 예약 발행에만 사용합니다. MCP 연결은 선택 사항이며 버전을 고정합니다. 모델 하위 프로세스에는 브라우저, 예약 발행기, 자격 증명, 결제 권한을 넘기지 않습니다.
 
-포트폴리오 계층은 저장소를 한꺼번에 홍보하는 대신 공개 프로젝트를 명시적인 기회 계약으로 바꿉니다. 현재 서비스 경로는 로컬 자료 컬렉션 적합성 진단, 논문 수정본 대조, 이중 언어 강의 자료 납품, 스토리 클립, 책 샘플 제작, AI 클립 조립입니다. 어휘 데이터 수집은 재사용 가능한 LKT 전문 영역이지만, 종료된 외부 마켓플레이스 공고가 아직 열려 있다는 주장은 하지 않습니다. 선택 근거는 [전체 오픈 소스 및 MCP 평가](../docs/open-source-evaluation.md)에서 확인할 수 있습니다.
+포트폴리오 계층은 저장소를 한꺼번에 홍보하는 대신 공개 프로젝트를 명시적인 기회 계약으로 바꿉니다. 현재 아홉 가지 경로는 로컬 자료 컬렉션 적합성 진단, 논문 수정본 대조, 이중 언어 강의 자료 납품, 스토리 클립, 책 샘플 제작, KiCad 플러그인 평가, OpenHI 재현, LazyRemote 토폴로지 검토, 발음 미니 레슨입니다. AI 클립 조립은 더 강한 근거가 사람의 검토를 통과할 때까지 중단합니다. 재현 가능한 [KiCad 플러그인 평가 픽스처](../examples/kicad-plugin-evaluation/)가 새로운 범위 제한 경로를 뒷받침합니다. 짧은 [출처 제한 교육 프롬프트](../examples/source-bounded-educational-prompt/)는 학습자 대상 작업에서도 같은 입력, 제약, 증거, 평가 규율을 보여 줍니다. 어휘 데이터 수집은 재사용 가능한 LKT 전문 영역이지만, 종료된 외부 마켓플레이스 공고가 아직 열려 있다는 주장은 하지 않습니다. 선택 근거는 [전체 오픈 소스 및 MCP 평가](../docs/open-source-evaluation.md)에서 확인할 수 있습니다.
 
 ## 검증
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py
-bash -n scripts/desktop.sh
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```
 

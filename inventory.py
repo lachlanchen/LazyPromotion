@@ -184,6 +184,13 @@ PRIORITIES = [
         "url": "https://lazying.art/openhi-reproducibility/",
     },
     {
+        "work": "HybridImager + CustomSensor",
+        "need": "Evaluate one authorized KiCad geometry plugin across controlled corner, width, layer, and DRC cases",
+        "audience": "KiCad plugin maintainers and PCB-tool teams with a bounded settings question",
+        "route": "USD 400 KiCad Plugin Evaluation after a metadata-only fit check; customer boards, plugin repair, security certification, and electrical review excluded",
+        "url": "https://lazying.art/kicad-plugin-evaluation/",
+    },
+    {
         "work": "LazyRemote + LazyTunnel",
         "need": "Review a private remote-access topology before opening desktop or management ports",
         "audience": "Self-hosted developers, small labs, and technical teams with one relay and up to three existing computers",
@@ -286,10 +293,10 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across eight "
+            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across nine "
             "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
             "Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen "
-            "Sprint, the OpenHI software reproducibility sprint, the "
+            "Sprint, the KiCad Plugin Evaluation, the OpenHI software reproducibility sprint, the "
             "LazyRemote Network Fit Review, and the Custom Bilingual Pronunciation Mini-Lesson. "
             "AI Clip Assembly is paused until a better sample passes human review. "
             "The eInk inquiry and Figurine checkout "

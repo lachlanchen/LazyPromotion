@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -46,6 +47,44 @@ class KiCadPluginCampaignTests(unittest.TestCase):
         self.assertFalse(application["paid_upgrade_selected"])
         self.assertTrue(application["bid_submitted"])
         self.assertEqual(application["free_bids_remaining_after_submission"], 3)
+
+    def test_owned_offer_is_live_bounded_and_separate_from_marketplace(self):
+        offer = self.campaign["owned_offer"]
+        self.assertEqual(self.campaign["version"], 3)
+        self.assertEqual(offer["state"], "live_verified")
+        self.assertEqual(offer["price_usd"], 400)
+        self.assertEqual(
+            offer["url"],
+            "https://lazying.art/kicad-plugin-evaluation/",
+        )
+        self.assertEqual(
+            offer["fit_check_url"],
+            "https://lazying.art/kicad-plugin-evaluation/fit-check/",
+        )
+        self.assertEqual(offer["live_verification"]["offer_http_status"], 200)
+        self.assertEqual(offer["live_verification"]["fit_check_http_status"], 200)
+        self.assertIn("Customer boards or confidential design files", offer["exclusions"])
+        self.assertIn("stays on Freelancer", offer["policy"])
+        self.assertIn("not evidence", offer["policy"])
+
+    def test_linkedin_distribution_is_reviewed_and_not_a_sale(self):
+        linkedin = self.campaign["channels"]["linkedin"]
+        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["publish_at"], "2026-09-29T02:00:00Z")
+        self.assertEqual(linkedin["account_role"], "Current personal technical profile")
+        self.assertFalse(linkedin["shortlink"])
+        self.assertIn("USD 400 evaluation", linkedin["content"])
+        self.assertIn("No customer board", linkedin["content"])
+        self.assertEqual(
+            hashlib.sha256(linkedin["content"].encode("utf-8")).hexdigest(),
+            linkedin["content_sha256"],
+        )
+        self.assertTrue(linkedin["verification"]["visible_editor_reviewed"])
+        self.assertTrue(linkedin["verification"]["original_url_preserved"])
+        self.assertEqual(linkedin["verification"]["verified_state"], "QUEUE")
+        self.assertFalse(linkedin["verification"]["release_present"])
+        self.assertNotIn("post_id", linkedin)
+        self.assertIn("not leads or revenue", linkedin["policy"])
 
     def test_application_is_not_revenue(self):
         funnel = self.campaign["funnel"]

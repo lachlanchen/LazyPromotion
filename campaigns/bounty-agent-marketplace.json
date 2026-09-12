@@ -1,7 +1,7 @@
 {
   "id": "bounty-agent-marketplace",
-  "version": 2,
-  "objective": "Observe current paid agent work from Bounty and TaskBounty that fits LazyingArt's research, software, multilingual knowledge, book, and media capabilities without automatically registering, contacting requesters, claiming work, or configuring payout.",
+  "version": 3,
+  "objective": "Observe current paid agent work from Bounty, TaskBounty, and Agent Bounties that fits LazyingArt's research, software, multilingual knowledge, book, and media capabilities without automatically registering, contacting requesters, claiming work, signing wallet actions, or configuring payout.",
   "official_sources": {
     "marketplace": "https://trybounty.ai/",
     "agent_api": "https://docs.trybounty.ai/agents/connect/",
@@ -10,7 +10,10 @@
     "taskbounty_feed": "https://www.task-bounty.com/api/v1/bounties.json?limit=100",
     "taskbounty_solver_guide": "https://www.task-bounty.com/for-agents",
     "taskbounty_mcp_source": "https://github.com/eliottreich/taskbounty-mcp-server",
-    "checked_at": "2026-09-12"
+    "agentbounties_feed": "https://api.agentbounties.app/v1/base/autonomous-bounties/feed?network=base-mainnet&claimable_only=true",
+    "agentbounties_source": "https://github.com/NSPG13/agent-bounties",
+    "agentbounties_earning_guide": "https://github.com/NSPG13/agent-bounties/blob/main/docs/autonomous-loop-guide.md",
+    "checked_at": "2026-09-13"
   },
   "account": {
     "state": "registered_email_verified",
@@ -51,6 +54,27 @@
     "solver_share": "80% of a winning bounty according to the official solver guide",
     "competition_boundary": "Multiple solvers may attempt a task and the first passing submission wins. Do not start work until the public issue, regression-test requirement, reward, active competition, terms, and payout eligibility have been reviewed.",
     "monitor_boundary": "The public monitor retains only bounded feed metadata and fingerprints. It does not retain task descriptions or execute registration, access, fork, claim, submission, wallet, bank, tax, or identity actions."
+  },
+  "agentbounties_canonical_feed": {
+    "state": "keyless_read_only_baselined",
+    "monitor_version": 3,
+    "first_live_checked_at": "2026-09-12T19:52:02Z",
+    "network": "Base mainnet",
+    "last_http_status": 200,
+    "claimable_work_count": 0,
+    "profitable_before_gas_and_risk_count": 0,
+    "account_registered": false,
+    "wallet_address_supplied": false,
+    "work_claimed": false,
+    "signature_requested": false,
+    "token_approved": false,
+    "transaction_broadcast": false,
+    "submission_created": false,
+    "payout_configured": false,
+    "settlement_observed": false,
+    "verification": "The running project-owned monitor migrated the retained version-two state to version three, completed one live page read, created the independent Agent Bounties baseline, and reported zero alerts, zero claimable items, and zero profitable-before-gas-and-risk items.",
+    "commercial_boundary": "Only canonical claimable work with valid terms, verification readiness, positive cash margin, and separately reviewed gas, bond, deadline, acceptance, and wallet policy can enter private fit review. A feed item is not profit, a lead, payment, or received revenue.",
+    "monitor_boundary": "The monitor makes one keyless GET and stores only public contract identifiers, reward and gross-margin base units, terms hashes, booleans, and fingerprints. It never stores a solver wallet or performs registration, signing, approval, funding, claiming, messaging, submission, settlement, or payout actions."
   },
   "commercial_readiness": {
     "payout_state": "action_required",

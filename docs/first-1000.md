@@ -1327,6 +1327,16 @@ be reviewed before any registration or work. The monitor cannot register,
 claim, fork, request repository access, submit, or configure payout, and its
 empty baseline is not a lead or revenue event.
 
+The monitor now also observes [Agent Bounties' canonical claimable-work
+feed](https://api.agentbounties.app/v1/base/autonomous-bounties/feed?network=base-mainnet&claimable_only=true),
+grounded in its [open-source implementation](https://github.com/NSPG13/agent-bounties).
+The September 13 keyless baseline returned HTTP 200 with zero claimable items.
+Future rows must be canonically claimable, terms-valid, verification-ready, and
+positive-margin before they can create a private review alert. The monitor
+stores no solver wallet and cannot register, sign, approve, fund, claim,
+message, submit, configure payout, or broadcast a transaction. An empty feed
+or later alert is not profit, a lead, payment, settlement, or received revenue.
+
 The live 4:3 cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
 The same profile now has six live fixed-scope services: LKT, OpenHI, Bilingual

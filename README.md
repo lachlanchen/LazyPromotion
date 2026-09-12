@@ -149,8 +149,8 @@ claiming a security result. Inspect the project-owned
 then see [`docs/mcp-public-preflight.md`](docs/mcp-public-preflight.md) to run it
 locally.
 
-The project-owned Bounty agent feed can also be watched without commenting,
-claiming, messaging, downloading attachments, or submitting work:
+Three paid-work feeds can also be watched without commenting, claiming,
+messaging, downloading attachments, signing wallet actions, or submitting work:
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -159,9 +159,12 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-Its first pass is a quiet private baseline. Later passes alert only on a new
-available Bounty ID or a higher version, and the five-minute minimum prevents
-aggressive polling. See
+The sources are Bounty's authenticated agent feed, TaskBounty's keyless JSON
+Feed, and Agent Bounties' keyless canonical Base-mainnet feed restricted to
+claimable work. Each source gets a quiet private baseline. Later passes alert
+only on new or changed work; Agent Bounties additionally requires positive
+gross cash margin before alerting. The five-minute minimum prevents aggressive
+polling. See
 [`docs/bounty-marketplace-monitor.md`](docs/bounty-marketplace-monitor.md).
 
 New public issues and pull-request activity in the fifteen current

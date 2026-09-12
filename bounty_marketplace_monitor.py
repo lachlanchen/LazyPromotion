@@ -24,6 +24,10 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parent
 API_URL = "https://api.trybounty.ai/v1/agent/bounties"
 TASKBOUNTY_FEED_URL = "https://www.task-bounty.com/api/v1/bounties.json?limit=100"
+AGENTBOUNTIES_FEED_URL = (
+    "https://api.agentbounties.app/v1/base/autonomous-bounties/feed"
+    "?network=base-mainnet&claimable_only=true"
+)
 DEFAULT_CREDENTIALS = ROOT / ".local" / "private" / "CREDENTIALS.md"
 DEFAULT_STATE = ROOT / ".local" / "bounty-marketplace-monitor-status.json"
 DEFAULT_LOCK = ROOT / ".local" / "bounty-marketplace-monitor.lock"
@@ -197,6 +201,80 @@ def fetch_taskbounty_open_tasks(*, opener: Opener = urlopen) -> dict[str, Any]:
     return {"tasks": rows, "pages_read": 1}
 
 
+def fetch_agentbounties_claimable_work(*, opener: Opener = urlopen) -> dict[str, Any]:
+    """Read the canonical claimable Base feed without a wallet or API key."""
+    request = Request(
+        AGENTBOUNTIES_FEED_URL,
+        headers={"Accept": "application/json"},
+        method="GET",
+    )
+    try:
+        with opener(request, timeout=30) as response:
+            payload = json.load(response)
+    except HTTPError as exc:
+        raise RuntimeError(
+            f"Agent Bounties canonical read failed with HTTP {exc.code}"
+        ) from exc
+    except (OSError, URLError, json.JSONDecodeError) as exc:
+        raise RuntimeError(
+            "Agent Bounties canonical read did not return valid JSON"
+        ) from exc
+    if not isinstance(payload, list):
+        raise RuntimeError("Agent Bounties returned an invalid canonical feed")
+
+    rows: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    decimal = re.compile(r"^[0-9]{1,40}$")
+    signed_decimal = re.compile(r"^-?[0-9]{1,40}$")
+    for raw in payload:
+        if not isinstance(raw, dict):
+            raise RuntimeError("Agent Bounties returned an invalid work summary")
+        bounty_id = raw.get("bounty_id")
+        bounty_contract = raw.get("bounty_contract")
+        terms_hash = raw.get("terms_hash")
+        solver_reward = raw.get("solver_reward")
+        gross_cash_margin = raw.get("gross_cash_margin")
+        if (
+            not isinstance(bounty_id, str)
+            or not bounty_id.strip()
+            or len(bounty_id) > 160
+            or not isinstance(bounty_contract, str)
+            or not re.fullmatch(r"0x[0-9a-fA-F]{40}", bounty_contract)
+            or not isinstance(terms_hash, str)
+            or not re.fullmatch(r"0x[0-9a-fA-F]{64}", terms_hash)
+            or not isinstance(solver_reward, str)
+            or not decimal.fullmatch(solver_reward)
+            or not isinstance(gross_cash_margin, str)
+            or not signed_decimal.fullmatch(gross_cash_margin)
+            or raw.get("status") != "claimable"
+            or raw.get("terms_valid") is not True
+            or raw.get("verification_ready") is not True
+        ):
+            raise RuntimeError("Agent Bounties returned an invalid work summary")
+        bounty_id = bounty_id.strip()
+        if bounty_id in seen_ids:
+            raise RuntimeError("Agent Bounties returned a duplicate work summary")
+        seen_ids.add(bounty_id)
+        fingerprint = hashlib.sha256(
+            json.dumps(
+                raw, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+            ).encode("utf-8")
+        ).hexdigest()
+        rows.append(
+            {
+                "bounty_id": bounty_id,
+                "bounty_contract": bounty_contract.lower(),
+                "terms_hash": terms_hash.lower(),
+                "solver_reward_usdc_base_units": solver_reward,
+                "gross_cash_margin_usdc_base_units": gross_cash_margin,
+                "profitable_before_gas_and_risk": int(gross_cash_margin) > 0,
+                "fingerprint": fingerprint,
+            }
+        )
+    rows.sort(key=lambda row: row["bounty_id"])
+    return {"bounties": rows, "pages_read": 1}
+
+
 def validate_local_path(path: Path, *, root: Path = ROOT, suffix: str) -> Path:
     root = root.resolve()
     candidate = Path(os.path.abspath(os.fspath(path)))
@@ -228,7 +306,7 @@ def load_state(path: Path) -> dict[str, Any] | None:
         payload = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         raise ValueError("monitor state is invalid") from exc
-    if not isinstance(payload, dict) or payload.get("version") not in {1, 2}:
+    if not isinstance(payload, dict) or payload.get("version") not in {1, 2, 3}:
         raise ValueError("monitor state is invalid")
     seen = payload.get("seen_bounty_versions")
     if not isinstance(seen, dict) or any(
@@ -249,6 +327,15 @@ def load_state(path: Path) -> dict[str, Any] | None:
         for key, fingerprint in seen_taskbounty.items()
     ):
         raise ValueError("monitor state contains invalid TaskBounty work")
+    seen_agentbounties = payload.get("seen_agentbounties_fingerprints", {})
+    if not isinstance(seen_agentbounties, dict) or any(
+        not isinstance(key, str)
+        or not key
+        or not isinstance(fingerprint, str)
+        or not re.fullmatch(r"[0-9a-f]{64}", fingerprint)
+        for key, fingerprint in seen_agentbounties.items()
+    ):
+        raise ValueError("monitor state contains invalid Agent Bounties work")
     return payload
 
 
@@ -284,6 +371,7 @@ def build_state(
     previous: dict[str, Any] | None,
     *,
     taskbounty_observation: dict[str, Any] | None = None,
+    agentbounties_observation: dict[str, Any] | None = None,
     checked_at: str | None = None,
 ) -> dict[str, Any]:
     rows = observation.get("bounties")
@@ -330,6 +418,43 @@ def build_state(
     taskbounty_baseline_created = not (
         previous and "seen_taskbounty_fingerprints" in previous
     )
+    agentbounties_observation = agentbounties_observation or {
+        "bounties": [],
+        "pages_read": 1,
+    }
+    agentbounties_rows = agentbounties_observation.get("bounties")
+    agentbounties_pages = agentbounties_observation.get("pages_read")
+    if (
+        not isinstance(agentbounties_rows, list)
+        or not isinstance(agentbounties_pages, int)
+        or agentbounties_pages != 1
+    ):
+        raise ValueError("Agent Bounties observation is invalid")
+    agentbounties_current: dict[str, str] = {}
+    for row in agentbounties_rows:
+        if not isinstance(row, dict):
+            raise ValueError("Agent Bounties observation is invalid")
+        bounty_id = row.get("bounty_id")
+        fingerprint = row.get("fingerprint")
+        if (
+            not isinstance(bounty_id, str)
+            or not bounty_id
+            or not isinstance(fingerprint, str)
+            or not re.fullmatch(r"[0-9a-f]{64}", fingerprint)
+            or not isinstance(row.get("profitable_before_gas_and_risk"), bool)
+        ):
+            raise ValueError("Agent Bounties observation is invalid")
+        if bounty_id in agentbounties_current:
+            raise ValueError("Agent Bounties observation contains duplicate IDs")
+        agentbounties_current[bounty_id] = fingerprint
+    previous_agentbounties_seen = (
+        dict(previous["seen_agentbounties_fingerprints"])
+        if previous and "seen_agentbounties_fingerprints" in previous
+        else {}
+    )
+    agentbounties_baseline_created = not (
+        previous and "seen_agentbounties_fingerprints" in previous
+    )
     alerts = []
     if previous is not None:
         for row in rows:
@@ -367,32 +492,69 @@ def build_state(
                         ),
                     }
                 )
+    if not agentbounties_baseline_created:
+        for row in agentbounties_rows:
+            old_fingerprint = previous_agentbounties_seen.get(row["bounty_id"])
+            if (
+                (old_fingerprint is None or row["fingerprint"] != old_fingerprint)
+                and row["profitable_before_gas_and_risk"]
+            ):
+                alerts.append(
+                    {
+                        "kind": (
+                            "agentbounties_work_changed"
+                            if old_fingerprint
+                            else "new_agentbounties_work"
+                        ),
+                        "provider": "agentbounties",
+                        **row,
+                        "action": (
+                            "Recheck canonical chain state, immutable terms, exact reward, "
+                            "claim bond, deadline, gas, and wallet policy for private fit review; "
+                            "do not register, claim, sign, approve, fund, message, submit, or "
+                            "configure payout automatically."
+                        ),
+                    }
+                )
     seen = dict(previous_seen)
     for bounty_id, version in current.items():
         seen[bounty_id] = max(version, seen.get(bounty_id, 0))
     seen_taskbounty = dict(previous_taskbounty_seen)
     seen_taskbounty.update(taskbounty_current)
+    seen_agentbounties = dict(previous_agentbounties_seen)
+    seen_agentbounties.update(agentbounties_current)
     return {
-        "version": 2,
+        "version": 3,
         "initialized": True,
         "checked_at": checked_at or utc_now(),
         "baseline_created": previous is None,
         "taskbounty_baseline_created": taskbounty_baseline_created,
+        "agentbounties_baseline_created": agentbounties_baseline_created,
         "available_bounties": rows,
         "taskbounty_open_tasks": taskbounty_rows,
+        "agentbounties_claimable_work": agentbounties_rows,
         "seen_bounty_versions": dict(sorted(seen.items())),
         "seen_taskbounty_fingerprints": dict(sorted(seen_taskbounty.items())),
+        "seen_agentbounties_fingerprints": dict(sorted(seen_agentbounties.items())),
         "alerts": alerts,
         "summary": {
             "available_bounties": len(rows),
             "taskbounty_open_tasks": len(taskbounty_rows),
+            "agentbounties_claimable_work": len(agentbounties_rows),
+            "agentbounties_profitable_before_gas_and_risk": sum(
+                1
+                for row in agentbounties_rows
+                if row["profitable_before_gas_and_risk"]
+            ),
             "new_or_updated_alerts": len(alerts),
             "trybounty_pages_read": pages_read,
             "taskbounty_pages_read": taskbounty_pages,
+            "agentbounties_pages_read": agentbounties_pages,
         },
         "policy": {
             "http_method": "GET",
             "taskbounty_public_feed_requires_authentication": False,
+            "agentbounties_canonical_feed_requires_authentication": False,
             "api_credentials_persisted_in_state": False,
             "raw_attachments_requested": False,
             "comments_or_messages_written": False,
@@ -400,6 +562,9 @@ def build_state(
             "submissions_created": False,
             "accounts_registered": False,
             "payout_methods_configured": False,
+            "wallet_addresses_persisted_in_state": False,
+            "wallet_signatures_requested": False,
+            "chain_transactions_broadcast": False,
             "available_work_is_not_a_lead": True,
             "available_work_is_not_revenue": True,
         },
@@ -413,6 +578,7 @@ def monitor_once(
     root: Path = ROOT,
     opener: Opener = urlopen,
     taskbounty_opener: Opener | None = None,
+    agentbounties_opener: Opener | None = None,
     checked_at: str | None = None,
 ) -> dict[str, Any]:
     state_path = validate_local_path(state_path, root=root, suffix=".json")
@@ -422,10 +588,14 @@ def monitor_once(
     taskbounty_observation = fetch_taskbounty_open_tasks(
         opener=taskbounty_opener or opener
     )
+    agentbounties_observation = fetch_agentbounties_claimable_work(
+        opener=agentbounties_opener or opener
+    )
     report = build_state(
         observation,
         previous,
         taskbounty_observation=taskbounty_observation,
+        agentbounties_observation=agentbounties_observation,
         checked_at=checked_at,
     )
     write_private_json(state_path, report)

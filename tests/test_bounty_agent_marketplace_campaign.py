@@ -14,7 +14,7 @@ class BountyAgentMarketplaceCampaignTests(unittest.TestCase):
         self.campaign = json.loads(self.serialized)
 
     def test_account_and_read_only_route_are_recorded_without_private_values(self):
-        self.assertEqual(self.campaign["version"], 2)
+        self.assertEqual(self.campaign["version"], 3)
         self.assertEqual(self.campaign["account"]["state"], "registered_email_verified")
         api = self.campaign["api"]
         self.assertEqual(api["state"], "authenticated_read_only")
@@ -48,6 +48,28 @@ class BountyAgentMarketplaceCampaignTests(unittest.TestCase):
         self.assertFalse(taskbounty["payout_configured"])
         self.assertIn("first passing submission wins", taskbounty["competition_boundary"])
         self.assertIn("does not retain task descriptions", taskbounty["monitor_boundary"])
+
+    def test_agentbounties_is_canonical_observation_without_wallet_authority(self):
+        agentbounties = self.campaign["agentbounties_canonical_feed"]
+        self.assertEqual(agentbounties["state"], "keyless_read_only_baselined")
+        self.assertEqual(agentbounties["monitor_version"], 3)
+        self.assertEqual(agentbounties["first_live_checked_at"], "2026-09-12T19:52:02Z")
+        self.assertEqual(agentbounties["network"], "Base mainnet")
+        self.assertEqual(agentbounties["last_http_status"], 200)
+        self.assertEqual(agentbounties["claimable_work_count"], 0)
+        self.assertEqual(agentbounties["profitable_before_gas_and_risk_count"], 0)
+        self.assertFalse(agentbounties["account_registered"])
+        self.assertFalse(agentbounties["wallet_address_supplied"])
+        self.assertFalse(agentbounties["work_claimed"])
+        self.assertFalse(agentbounties["signature_requested"])
+        self.assertFalse(agentbounties["token_approved"])
+        self.assertFalse(agentbounties["transaction_broadcast"])
+        self.assertFalse(agentbounties["submission_created"])
+        self.assertFalse(agentbounties["payout_configured"])
+        self.assertFalse(agentbounties["settlement_observed"])
+        self.assertIn("zero alerts", agentbounties["verification"])
+        self.assertIn("positive cash margin", agentbounties["commercial_boundary"])
+        self.assertIn("never stores a solver wallet", agentbounties["monitor_boundary"])
 
     def test_payout_and_support_boundaries_are_explicit(self):
         readiness = self.campaign["commercial_readiness"]

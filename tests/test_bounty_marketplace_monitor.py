@@ -73,6 +73,29 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
             "items": rows or [],
         }
 
+    @staticmethod
+    def agentbounty(bounty_id, *, margin="900000", reward="1000000"):
+        return {
+            "bounty_id": bounty_id,
+            "bounty_contract": "0x1111111111111111111111111111111111111111",
+            "creator": "0x2222222222222222222222222222222222222222",
+            "status": "claimable",
+            "solver_reward": reward,
+            "verifier_reward": "100000",
+            "claim_bond": "100000",
+            "target_amount": "1100000",
+            "funded_amount": "1100000",
+            "gross_cash_margin": margin,
+            "terms_hash": "0x" + "a" * 64,
+            "terms": {"document": {"goal": "Untrusted terms stay out of state."}},
+            "terms_valid": True,
+            "verification_mode": "deterministic_module",
+            "verification_ready": True,
+            "verification_readiness_reason": "supported fixture",
+            "validation_errors": [],
+            "events": [],
+        }
+
     def test_credentials_must_be_private_regular_singly_linked_and_valid(self):
         self.assertEqual(monitor.load_api_key(self.credentials), self.api_key)
 
@@ -185,6 +208,34 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                 opener=self.opener([invalid], [])
             )
 
+    def test_agentbounties_feed_is_get_only_keyless_canonical_and_minimal(self):
+        requests = []
+        report = monitor.fetch_agentbounties_claimable_work(
+            opener=self.opener(
+                [[self.agentbounty("bounty-two"), self.agentbounty("bounty-one")]],
+                requests,
+            )
+        )
+        self.assertEqual(
+            [row["bounty_id"] for row in report["bounties"]],
+            ["bounty-one", "bounty-two"],
+        )
+        self.assertEqual(requests[0]["method"], "GET")
+        self.assertIsNone(requests[0]["authorization"])
+        self.assertEqual(requests[0]["timeout"], 30)
+        self.assertIn("claimable_only=true", requests[0]["url"])
+        serialized = json.dumps(report)
+        self.assertNotIn("Untrusted terms", serialized)
+        self.assertRegex(report["bounties"][0]["fingerprint"], r"^[0-9a-f]{64}$")
+        self.assertTrue(report["bounties"][0]["profitable_before_gas_and_risk"])
+
+        invalid = self.agentbounty("invalid-status")
+        invalid["status"] = "claimed"
+        with self.assertRaisesRegex(RuntimeError, "invalid work summary"):
+            monitor.fetch_agentbounties_claimable_work(
+                opener=self.opener([[invalid]], [])
+            )
+
     def test_baseline_then_new_and_updated_versions_raise_private_review_alerts(self):
         requests = []
         first = monitor.monitor_once(
@@ -195,6 +246,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                 [
                     self.page([{"id": "alpha", "version": 1}]),
                     self.taskbounty_feed(),
+                    [],
                 ],
                 requests,
             ),
@@ -216,6 +268,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                         ]
                     ),
                     self.taskbounty_feed(),
+                    [],
                 ],
                 requests,
             ),
@@ -241,6 +294,8 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         self.assertFalse(second["policy"]["payout_methods_configured"])
         self.assertTrue(second["policy"]["available_work_is_not_a_lead"])
         self.assertTrue(second["policy"]["available_work_is_not_revenue"])
+        self.assertFalse(second["policy"]["wallet_signatures_requested"])
+        self.assertFalse(second["policy"]["chain_transactions_broadcast"])
 
     def test_taskbounty_baseline_then_change_raises_review_only_alerts(self):
         first_task = {
@@ -288,6 +343,43 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         self.assertTrue(all(row["provider"] == "taskbounty" for row in second["alerts"]))
         self.assertTrue(
             all("do not register" in row["action"] for row in second["alerts"])
+        )
+
+    def test_agentbounties_baseline_then_profitable_change_is_review_only(self):
+        first_rows = monitor.fetch_agentbounties_claimable_work(
+            opener=self.opener([[self.agentbounty("ab-one")]], [])
+        )
+        first = monitor.build_state(
+            {"bounties": [], "pages_read": 1},
+            None,
+            agentbounties_observation=first_rows,
+            checked_at="2026-09-13T03:45:00Z",
+        )
+        self.assertTrue(first["agentbounties_baseline_created"])
+        self.assertEqual(first["alerts"], [])
+
+        changed = self.agentbounty("ab-one", reward="1200000")
+        new_unprofitable = self.agentbounty("ab-two", margin="0")
+        second_rows = monitor.fetch_agentbounties_claimable_work(
+            opener=self.opener([[changed, new_unprofitable]], [])
+        )
+        second = monitor.build_state(
+            {"bounties": [], "pages_read": 1},
+            first,
+            agentbounties_observation=second_rows,
+            checked_at="2026-09-13T03:50:00Z",
+        )
+        self.assertFalse(second["agentbounties_baseline_created"])
+        self.assertEqual(
+            [(row["kind"], row["bounty_id"]) for row in second["alerts"]],
+            [("agentbounties_work_changed", "ab-one")],
+        )
+        self.assertEqual(second["alerts"][0]["provider"], "agentbounties")
+        self.assertIn("do not register", second["alerts"][0]["action"])
+        self.assertIn("sign", second["alerts"][0]["action"])
+        self.assertEqual(second["summary"]["agentbounties_claimable_work"], 2)
+        self.assertEqual(
+            second["summary"]["agentbounties_profitable_before_gas_and_risk"], 1
         )
 
     def test_seen_versions_survive_work_leaving_the_available_feed(self):

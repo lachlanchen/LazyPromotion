@@ -1,0 +1,43 @@
+{
+  "id": "minimax-h3-voice-reference-diagnostic",
+  "version": 1,
+  "objective": "Help local MiniMax H3 users isolate voice-reference assignment failures with a small, reproducible test before changing sampling settings.",
+  "source_need": {
+    "captured_at": "2026-09-12T02:18:00Z",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1wdv3dj/minimax_ignoring_all_voice_reference_info_driving/",
+    "problem": "A local MiniMax H3 user reported that two male/female audio references were repeatedly swapped or ignored under both FL2VA and Ref2VA, even after explicit descriptions and more sampling steps.",
+    "freshness": "The question was four hours old when reviewed and still asked for a working diagnostic.",
+    "community_fit": "The community permits open-source and local AI workflow discussion. The response contains no paid service, affiliate link, or media promotion."
+  },
+  "source_evidence": {
+    "project": "https://github.com/lachlanchen/LocalVideoGen",
+    "project_owned_result": "One local Ref2VA render used three separately supplied voice references; offline speaker comparisons matched each generated speaker most strongly to the intended reference.",
+    "claim_boundary": "This is evidence from one project-owned run, not a guarantee across prompts, seeds, models, or hardware. The generated video is not linked or used as selling proof because it does not meet the current promotion quality bar."
+  },
+  "channels": {
+    "reddit": {
+      "state": "helpful_reply_published",
+      "published_at": "2026-09-12T02:26:10.618Z",
+      "reply_url": "https://www.reddit.com/r/StableDiffusion/comments/1wdv3dj/comment/p9a11a2/",
+      "content": "I managed to get three separate voice refs assigned correctly in one local Ref2VA run, but I made the mapping very literal: <Audio 1> warm male, <Audio 2> young female, <Audio 3> boy, and each dialogue beat said “Aya, using the young female character of <Audio 2>, says …” in the same sentence. The dialogue never overlapped.\n\nFirst thing I’d check is whether the connector order really matches those tag numbers. Then strip the test to two character images + two audio refs (no video refs, style refs, or LoRA) and run several seeds. If that still swaps them, it looks more like adherence/seed variance than something extra steps will fix.",
+      "content_sha256": "657c61eb09b855cc50228347177e93f5671294dbd9a08c18d6d9d751a87192b7",
+      "linked_owned_asset": false,
+      "product_or_price_mentioned": false,
+      "verification": {
+        "public_body_visible": true,
+        "author": "Ok-Perception1122",
+        "duplicate_retry": false,
+        "evidence": "ignored_private_screenshot"
+      },
+      "policy": "The reply gives a bounded diagnostic from project-owned evidence and asks for no click, private message, purchase, or follow-up. Do not add another reply unless the author asks a concrete question."
+    }
+  },
+  "funnel": {
+    "state": "helpful_interaction",
+    "reply_received": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "received_revenue_usd": 0
+  }
+}

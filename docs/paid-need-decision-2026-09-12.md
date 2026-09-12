@@ -127,6 +127,15 @@ Chinese synthetic sample report covering topology, exposure, identity,
 findings, acceptance, rollback, and the software-only USD 250 boundary. It
 reduces evaluation friction but is not a customer result, inquiry, or revenue.
 
+The authenticated Contra MCP feed was also checked without a subscription or
+application. Its access-limited public feed exposed two current briefs. The
+[Kajabi membership launch](https://contra.com/opportunity/rqBYg3kR-kajabi-membership-build-and-launch-specialist-needed)
+requires direct Kajabi membership-launch experience that the portfolio does not
+prove. The [full-time senior designer](https://contra.com/opportunity/AmmLmMbs-senior-designer-international-remote-full-time-applications-only)
+explicitly rejects contractors and hybrid developer profiles, and requires a
+specialist design history that is likewise not established. Neither brief
+justifies an application or paying for broader feed access.
+
 The closest no-cost asynchronous bounty was [Dozer issue
 1690](https://github.com/getdozer/dozer/issues/1690), a USD 250 Dozer, LLM,
 vector-database, and LangChain example that fits the LKT direction. It was not

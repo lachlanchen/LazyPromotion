@@ -471,6 +471,16 @@
       "url": ""
     },
     {
+      "id": "campaign:minimax-h3-voice-reference-diagnostic",
+      "kind": "campaign",
+      "label": "minimax-h3-voice-reference-diagnostic",
+      "metadata": {
+        "objective": "Help local MiniMax H3 users isolate voice-reference assignment failures with a small, reproducible test before changing sampling settings.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:mobbin-youtube-editor-opportunity",
       "kind": "campaign",
       "label": "mobbin-youtube-editor-opportunity",
@@ -7791,6 +7801,13 @@
       "url": "https://partners.dub.co/postiz"
     },
     {
+      "id": "url:b3b59b5c4dc54084",
+      "kind": "web_resource",
+      "label": "project",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalVideoGen"
+    },
+    {
       "id": "url:d68b6d7a397bec40",
       "kind": "web_resource",
       "label": "project",
@@ -10482,6 +10499,32 @@
       "relation": "uses_evidence",
       "source": "campaign:meeting-intelligence-mission",
       "target": "url:d9c92d269df40406"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalVideoGen",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:minimax-h3-voice-reference-diagnostic",
+      "target": "project:localvideogen"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "helpful_reply_published"
+      },
+      "relation": "targets",
+      "source": "campaign:minimax-h3-voice-reference-diagnostic",
+      "target": "channel:reddit"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalVideoGen",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:minimax-h3-voice-reference-diagnostic",
+      "target": "url:b3b59b5c4dc54084"
     },
     {
       "confidence": 1.0,

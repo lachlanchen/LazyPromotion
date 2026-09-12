@@ -83,3 +83,14 @@ near-duplicate retyping listings are active. The work is neither bounded nor
 supported by current language proof, so no bid was placed. The monitor now
 suppresses manual-retyping listings while retaining bounded OCR and document
 pipeline work.
+
+The public Docker sandbox authentication thread produced a genuine follow-up
+after the first technical answer. The reporter confirmed that the write-tools
+flag solved GitHub MCP access and showed that Copilot login was not surviving
+restart under WSL. A second [source-backed
+reply](https://github.com/docker/sbx-releases/issues/583#issuecomment-5649352973)
+identified the visible missing-system-vault prompt, recommended a
+sandbox-scoped Docker secret carrying a Copilot-supported token, and kept the
+plaintext `~/.copilot/config.json` fallback explicit. It included no offer or
+LazyingArt link. This is a helpful interaction, not an inquiry, lead, contract,
+payment, or revenue event.

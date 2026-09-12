@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 12)
+        self.assertEqual(self.payload["version"], 13)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -76,6 +76,19 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(route["application_submitted"])
         self.assertEqual(route["connects_spent"], 0)
         self.assertIn("Do not guess personal experience", route["policy"])
+
+    def test_contextual_github_reply_is_exact_and_not_a_lead(self):
+        replies = self.payload["channels"]["community_replies"]
+        self.assertEqual(replies["state"], "one_contextual_github_architecture_reply")
+        item = replies["github_bos_egress_decision"]
+        self.assertIn("#issuecomment-", item["public_reply"])
+        self.assertEqual(item["reviewed_body_sha256"], item["live_body_sha256"])
+        self.assertTrue(item["exact_body_verified"])
+        self.assertIn("not an audit of BOS", item["sample_disclosure"])
+        self.assertFalse(item["reply_received"])
+        self.assertFalse(item["lead_or_sale_observed"])
+        self.assertEqual(item["verified_received_gross_usd"], 0)
+        self.assertIn("not automated outreach", item["policy"])
 
     def test_price_is_validated_without_becoming_a_security_claim(self):
         validation = self.payload["market_validation"]

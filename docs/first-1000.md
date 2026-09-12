@@ -16,6 +16,15 @@ verified because the dedicated browser reached a Cloudflare hold. No proposal,
 credits, interview, or assessment were attempted. It remains demand evidence,
 not the low-involvement primary route.
 
+One current public architecture issue asked for a decision between putting
+remote MCP client state in an existing broker or isolating it in a dedicated
+gateway. A single [reviewed GitHub
+answer](https://github.com/arjun-techjays/bos/issues/18#issuecomment-5645837515)
+chose the gateway, specified the dual-homed containment and adversarial DNS and
+redirect checks, and disclosed the project-owned sample as supporting evidence.
+The live body matches the reviewed draft exactly. This is one helpful
+interaction—not a reply, inquiry, lead, contract, payment, or revenue.
+
 The **Local Knowledge Terminal collection-fit sprint** remains active at **USD
 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
 Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one

@@ -73,7 +73,7 @@ stars, applications, and queued posts never count as revenue.
 | [`stripe_revenue_monitor.py`](stripe_revenue_monitor.py) | Read-only live-charge detection with aggregate private state; never creates Stripe objects or records revenue automatically |
 | [`scripts/desktop.sh`](scripts/desktop.sh) | One project-owned Xvfb/x11vnc/noVNC/Chrome review desktop |
 | [`application_watch.py`](application_watch.py) and [`application_inbox_monitor.py`](application_inbox_monitor.py) | Due-review schedule for direct and grouped submissions plus read-only aggregate matching for known application threads; the running owned monitor embeds the privacy-limited due summary and never opens mail or follows up |
-| [`freelancer_inbound_monitor.py`](freelancer_inbound_monitor.py) | Watches submitted Freelancer bids through one reused tab for an aggregate message badge or state change without opening messages or replying |
+| [`freelancer_inbound_monitor.py`](freelancer_inbound_monitor.py) and [`scripts/freelancer-inbound-check.sh`](scripts/freelancer-inbound-check.sh) | Watches submitted Freelancer bids through one reused tab for an aggregate message badge or state change; the one-shot wrapper owns and cleans up the isolated project browser when needed |
 | [`docs/open-source-evaluation.md`](docs/open-source-evaluation.md) | Auditable open-source and MCP tool choices |
 
 ## Quick start

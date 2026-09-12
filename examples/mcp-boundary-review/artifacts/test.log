@@ -1,0 +1,24 @@
+test_archived_entities_and_their_claims_are_not_visible (tests.test_mcp_query.KnowledgeReaderTests.test_archived_entities_and_their_claims_are_not_visible) ... ok
+test_cli_keeps_http_on_loopback_and_stops_cleanly (tests.test_mcp_query.KnowledgeReaderTests.test_cli_keeps_http_on_loopback_and_stops_cleanly) ... usage: python -m unittest [-h] [--database DATABASE]
+                          [--transport {stdio,streamable-http}] [--host HOST]
+                          [--port PORT] [--path PATH]
+python -m unittest: error: the unauthenticated standalone bridge binds only to loopback
+ok
+test_evidence_identifiers_are_bounded_in_graph_and_trace (tests.test_mcp_query.KnowledgeReaderTests.test_evidence_identifiers_are_bounded_in_graph_and_trace) ... ok
+test_invalid_inputs_are_rejected_before_querying (tests.test_mcp_query.KnowledgeReaderTests.test_invalid_inputs_are_rejected_before_querying) ... ok
+test_local_file_locators_are_withheld (tests.test_mcp_query.KnowledgeReaderTests.test_local_file_locators_are_withheld) ... ok
+test_model_or_rejected_subject_cannot_reroute_or_expose_claims (tests.test_mcp_query.KnowledgeReaderTests.test_model_or_rejected_subject_cannot_reroute_or_expose_claims) ... ok
+test_multilingual_queries_resolve_to_one_stable_grounded_subject (tests.test_mcp_query.KnowledgeReaderTests.test_multilingual_queries_resolve_to_one_stable_grounded_subject) ... ok
+test_orphaned_evidence_link_fails_closed (tests.test_mcp_query.KnowledgeReaderTests.test_orphaned_evidence_link_fails_closed) ... ok
+test_private_provenance_identifiers_and_embedded_paths_are_opaque (tests.test_mcp_query.KnowledgeReaderTests.test_private_provenance_identifiers_and_embedded_paths_are_opaque) ... ok
+test_provenance_ids_and_hashes_survive_independent_builds (tests.test_mcp_query.KnowledgeReaderTests.test_provenance_ids_and_hashes_survive_independent_builds) ... ok
+test_status_is_read_only_bounded_and_contains_no_database_path (tests.test_mcp_query.KnowledgeReaderTests.test_status_is_read_only_bounded_and_contains_no_database_path) ... ok
+test_trace_keeps_exact_stable_provenance_without_paths_or_payloads (tests.test_mcp_query.KnowledgeReaderTests.test_trace_keeps_exact_stable_provenance_without_paths_or_payloads) ... ok
+test_protocol_exposes_collection_status_as_a_resource (tests.test_mcp_query.MCPProtocolTests.test_protocol_exposes_collection_status_as_a_resource) ... Executing <Task pending name='Task-2' coro=<MCPProtocolTests.test_protocol_exposes_collection_status_as_a_resource() running at <lkt-repository>/tests/test_mcp_query.py:499> wait_for=<Future pending cb=[Task.task_wakeup()] created at <review-venv>/lib/python3.12/site-packages/anyio/_backends/_asyncio.py:1007> cb=[_run_until_complete_cb() at <python-runtime>:181] created at <python-runtime>:100> took <elapsed> seconds
+ok
+test_protocol_lists_only_read_tools_and_calls_them (tests.test_mcp_query.MCPProtocolTests.test_protocol_lists_only_read_tools_and_calls_them) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in <elapsed>s
+
+OK

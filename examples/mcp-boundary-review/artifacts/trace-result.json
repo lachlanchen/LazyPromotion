@@ -1,0 +1,42 @@
+{
+  "claim": {
+    "basis": "reviewed",
+    "confidence": 1.0,
+    "evidence_ids": [
+      "evidence-1fad6438-e59c-5559-8f76-73ac91216666"
+    ],
+    "evidence_truncated": false,
+    "id": "assertion-90966514-87d2-504e-b3eb-6af0905c7558",
+    "relation": "appears-with-quality",
+    "revision": 1,
+    "source": {
+      "id": "term-feb7abc4-ff00-56a4-8f72-9b56da6edef9",
+      "label": "spring",
+      "language": "en",
+      "quality": 1.0,
+      "subtype": "word",
+      "type": "term"
+    },
+    "target": {
+      "id": "term-52279b60-b9f9-5d6e-a544-37c1194abd34",
+      "label": "轻",
+      "language": "zh",
+      "quality": 1.0,
+      "subtype": "quality",
+      "type": "term"
+    }
+  },
+  "evidence": [
+    {
+      "collection_id": "collection-93238e8a2910746f",
+      "excerpt": "春天来了，风很轻。",
+      "id": "evidence-1fad6438-e59c-5559-8f76-73ac91216666",
+      "locator": "sections/spring/subsections/path/stories/sample-001/paragraphs/sample-001-p1/units/0",
+      "source_hash": "d544f1c97d353373b2ac86ef730c7e7a00f52f8ca79fbf34f7eaa039f5266f2f",
+      "source_id": "source-094a0e41565b3136"
+    }
+  ],
+  "kind": "claim",
+  "ok": true,
+  "result_hash": "416323ed78daf54f3baabb6566e2b6ceaacdc2f40065276db04c7ab50456d7ba"
+}

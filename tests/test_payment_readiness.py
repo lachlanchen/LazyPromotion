@@ -45,6 +45,14 @@ def valid_openhi_config() -> dict:
     return config
 
 
+def valid_mcp_review_config() -> dict:
+    config = valid_config()
+    config["slug"] = "mcp-boundary-review"
+    config["fulfillmentReviewNotes"].extend(["review 7", "review 8"])
+    config["variants"][0]["unitAmount"] = 50000
+    return config
+
+
 def valid_lazyremote_config() -> dict:
     config = valid_config()
     config["slug"] = "lazyremote-network-fit-review"
@@ -173,6 +181,22 @@ class PaymentReadinessTests(unittest.TestCase):
             )
             report = payment_readiness.build_report(helper, offer="openhi")
         self.assertEqual(report["offer"], "openhi")
+        self.assertEqual(report["config"]["display_price"], "USD 500")
+        self.assertEqual(report["config"]["unit_amount_minor"], 50000)
+        self.assertEqual(report["config"]["fulfillment_review_notes"], 9)
+        self.assertTrue(report["local_live_configuration_ready"])
+        self.assertFalse(report["mutates_stripe"])
+
+    def test_mcp_review_uses_exact_500_dollar_guarded_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            helper = self.helper(
+                Path(tmp),
+                valid_mcp_review_config(),
+                config_name="mcp-boundary-review.json",
+            )
+            report = payment_readiness.build_report(helper, offer="mcp-review")
+        self.assertEqual(report["offer"], "mcp-review")
+        self.assertEqual(report["config"]["product_slug"], "mcp-boundary-review")
         self.assertEqual(report["config"]["display_price"], "USD 500")
         self.assertEqual(report["config"]["unit_amount_minor"], 50000)
         self.assertEqual(report["config"]["fulfillment_review_notes"], 9)

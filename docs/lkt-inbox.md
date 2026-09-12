@@ -4,13 +4,13 @@
 
 Direct web submission is live for the LKT, manuscript, lecture, Story Clip,
 OpenHI, LazyRemote, Book Specimen, Pronunciation Mini-Lesson, and Browser
-Regression routes as of 2026-09-11.
-Each deployed frontend, the pinned public-key fingerprint, mode-`0600` private
-key, receiver, and remote spool completed an explicitly confirmed synthetic
-round trip. Each page still reviews locally before any network request and keeps
-an email or copy fallback.
+Regression routes. Each of those nine routes, the pinned public-key fingerprint,
+mode-`0600` private key, receiver, and remote spool completed an explicitly
+confirmed synthetic round trip. MCP Boundary Review is deployed and accepted by
+the receiver, with its live synthetic round trip still pending. Each page reviews
+locally before any network request and keeps an email or copy fallback.
 
-`lkt_inbox.py` is the operator-side receiver for those nine fit checks accepted
+`lkt_inbox.py` is the operator-side receiver for those ten fit checks accepted
 by the first-party WordPress endpoint. The web server stores an encrypted
 envelope, not a readable inquiry. The receiver
 downloads a final envelope over SSH, checks the entire cryptographic and
@@ -34,8 +34,9 @@ names are ignored. A valid envelope must use the pinned key fingerprint,
 RSA-OAEP with SHA-1 for the 32-byte key wrap, AES-256-GCM with the contract AAD,
 and either the legacy LKT v1 record or the routed `fit-check-record/v2` schema.
 The v2 payload has a strict `lkt`, `manuscript`, `lecture`, `story_clip`,
-`openhi`, `lazyremote`, `book_specimen`, `pronunciation_lesson`, or
-`browser_regression` offer discriminator and rejects fields from another offer.
+`openhi`, `mcp_boundary_review`, `lazyremote`, `book_specimen`,
+`pronunciation_lesson`, or `browser_regression` offer discriminator and rejects
+fields from another offer.
 Authentication, schema, source,
 timestamp, receipt, normalization, or persistence failures leave the remote
 file in place.

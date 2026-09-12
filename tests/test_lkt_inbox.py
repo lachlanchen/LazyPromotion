@@ -126,6 +126,31 @@ def openhi_payload():
     }
 
 
+def mcp_boundary_review_payload():
+    return {
+        "offer": "mcp_boundary_review",
+        "contact_email": "maintainer@example.com",
+        "role": "Repository maintainer authorized to request the review.",
+        "repository": "https://example.com/server at commit abc123.",
+        "surface": (
+            "search_docs reads the fixture; publish_note writes one sandbox record."
+        ),
+        "environment": "Python 3.12 on Ubuntu with a disposable SQLite fixture.",
+        "client_transport": "Local desktop agent over stdio.",
+        "risk": (
+            "Decide whether the server can be enabled without exposing source paths."
+        ),
+        "constraints": "No production credentials or external writes.",
+        "rights_confirmed": True,
+        "scope_confirmed": True,
+        "client_elapsed_ms": 9000,
+        "utm_source": "mcp sample report",
+        "utm_medium": "website",
+        "utm_campaign": "mcp_boundary_review",
+        "utm_content": "fit_check",
+    }
+
+
 def lazyremote_payload():
     return {
         "offer": "lazyremote",
@@ -358,6 +383,7 @@ class EnvelopeTests(ReceiverFixture):
             lecture_payload(),
             story_clip_payload(),
             openhi_payload(),
+            mcp_boundary_review_payload(),
             browser_regression_payload(),
             lazyremote_payload(),
             book_specimen_payload(),
@@ -405,6 +431,15 @@ class EnvelopeTests(ReceiverFixture):
         crossed_openhi = openhi_payload()
         crossed_openhi["collection"] = "ten files"
         cases.append(crossed_openhi)
+        missing_mcp_field = mcp_boundary_review_payload()
+        missing_mcp_field.pop("surface")
+        cases.append(missing_mcp_field)
+        crossed_mcp = mcp_boundary_review_payload()
+        crossed_mcp["target_stage"] = "unexpected"
+        cases.append(crossed_mcp)
+        overlong_mcp_surface = mcp_boundary_review_payload()
+        overlong_mcp_surface["surface"] = "x" * 1201
+        cases.append(overlong_mcp_surface)
         missing_browser_field = browser_regression_payload()
         missing_browser_field.pop("flows")
         cases.append(missing_browser_field)
@@ -634,6 +669,30 @@ class EnvelopeTests(ReceiverFixture):
         _, record = self.validate(raw=raw)
         self.assertEqual(record["payload"], optional_fields)
 
+    def test_mcp_boundary_review_contract_matches_reviewed_web_payload(self):
+        self.assertEqual(
+            lkt_inbox.OFFER_FIELD_RULES["mcp_boundary_review"],
+            {
+                "role": (700, True, True),
+                "repository": (900, True, True),
+                "surface": (1200, True, True),
+                "environment": (700, True, True),
+                "client_transport": (700, True, True),
+                "risk": (900, True, True),
+                "constraints": (800, False, True),
+            },
+        )
+
+        optional_fields = mcp_boundary_review_payload()
+        optional_fields["constraints"] = ""
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(optional_fields),
+        )
+        _, record = self.validate(raw=raw)
+        self.assertEqual(record["payload"], optional_fields)
+
     def test_email_validation_matches_wordpress_endpoint_contract(self):
         accepted = sample_payload()
         accepted["contact_email"] = ".reader..name@example.com"
@@ -803,6 +862,36 @@ class SshClientTests(unittest.TestCase):
 
 
 class ReceiveTests(ReceiverFixture):
+    def test_mcp_review_content_stays_only_in_private_inquiry_file(self):
+        payload = mcp_boundary_review_payload()
+        _, raw = encrypted_envelope(
+            self.key,
+            self.receipt,
+            record=sample_record(payload),
+        )
+        report = self.receive(FakeClient({self.filename: raw}))
+        self.assertEqual(report["state"], "complete")
+
+        inquiry_path = self.config.inbox_dir / f"lkt-{self.receipt}.inquiry.json"
+        self.assertEqual(stat.S_IMODE(inquiry_path.stat().st_mode), 0o600)
+        inquiry = json.loads(inquiry_path.read_text(encoding="utf-8"))
+        self.assertEqual(inquiry["payload"], payload)
+
+        sanitized = (
+            self.config.status_path.read_text(encoding="utf-8")
+            + self.config.log_path.read_text(encoding="utf-8")
+        )
+        for private_value in (
+            payload["contact_email"],
+            payload["repository"],
+            payload["surface"],
+            payload["environment"],
+            payload["client_transport"],
+            payload["risk"],
+            payload["constraints"],
+        ):
+            self.assertNotIn(private_value, sanitized)
+
     def test_browser_regression_content_stays_only_in_private_inquiry_file(self):
         payload = browser_regression_payload()
         _, raw = encrypted_envelope(

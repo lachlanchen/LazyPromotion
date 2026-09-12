@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "database_mtime_unchanged": true,
+    "prompt_count": 0,
+    "query_is_error": false,
+    "query_match_count": 1,
+    "resource_count": 1,
+    "test_exit_code": 0,
+    "tests_passed": 14,
+    "tool_count": 2,
+    "trace_is_error": false
+  },
+  "decision": "GO for the recorded local read-only scope; NO-GO for direct remote exposure",
+  "environment": {
+    "architecture": "x86_64",
+    "implementation": "CPython",
+    "mcp": "2.2.0",
+    "mcp-types": "2.2.0",
+    "pypinyin": "0.55.0",
+    "python": "3.12.13"
+  },
+  "fixture": "project-owned PocketPolyglot multilingual sample",
+  "frozen_at": "2026-09-12",
+  "lkt_commit": "e750e5ae24b780e45de896f7dc3a769d2410dabd",
+  "sample": "lkt-mcp-boundary-review/v1"
+}

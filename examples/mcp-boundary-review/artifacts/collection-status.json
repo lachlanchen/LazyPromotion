@@ -1,0 +1,26 @@
+{
+  "collections": [
+    {
+      "collection_id": "collection-93238e8a2910746f",
+      "evidence_records": 1,
+      "source_hashes": [
+        "d544f1c97d353373b2ac86ef730c7e7a00f52f8ca79fbf34f7eaa039f5266f2f"
+      ]
+    }
+  ],
+  "collections_truncated": false,
+  "counts": {
+    "accepted_claims": 1,
+    "accepted_entities": 10
+  },
+  "languages": [
+    "en",
+    "ja",
+    "zh"
+  ],
+  "languages_truncated": false,
+  "model_invocation": false,
+  "read_only": true,
+  "ready": true,
+  "status_hash": "b9708f33a7011d3d1dc82db5ae730410fc695d2713d89524104fa2b1eaff84df"
+}

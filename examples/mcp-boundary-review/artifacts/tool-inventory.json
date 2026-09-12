@@ -1,0 +1,81 @@
+{
+  "prompts": [],
+  "resources": [
+    {
+      "description": "Read-only opaque collection IDs, languages, accepted counts, and validated source hashes. Contains no filesystem paths.",
+      "mimeType": "application/json",
+      "name": "collections-status",
+      "title": "LKT collections status",
+      "uri": "lkt://collections/status"
+    }
+  ],
+  "server": "lkt-private-knowledge",
+  "server_version": "0.1.0",
+  "tools": [
+    {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "description": "Search accepted multilingual knowledge on this LKT instance and return deterministic facts, a bounded relationship graph, and bounded source evidence with truncation flags. Use for questions about the owner's local collection.",
+      "inputSchema": {
+        "properties": {
+          "limit": {
+            "default": 3,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "max_depth": {
+            "default": 2,
+            "title": "Max Depth",
+            "type": "integer"
+          },
+          "query": {
+            "title": "Query",
+            "type": "string"
+          },
+          "response_language": {
+            "default": "en",
+            "title": "Response Language",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "title": "query_private_knowledgeArguments",
+        "type": "object"
+      },
+      "name": "query_private_knowledge",
+      "title": "Query private knowledge"
+    },
+    {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "description": "Resolve one claim or evidence ID previously returned by query_private_knowledge to its accepted relationship, safe source locator, excerpt, and validated source hash.",
+      "inputSchema": {
+        "properties": {
+          "identifier": {
+            "title": "Identifier",
+            "type": "string"
+          }
+        },
+        "required": [
+          "identifier"
+        ],
+        "title": "trace_private_claimArguments",
+        "type": "object"
+      },
+      "name": "trace_private_claim",
+      "title": "Trace a private claim"
+    }
+  ]
+}

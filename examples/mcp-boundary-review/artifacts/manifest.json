@@ -1,0 +1,15 @@
+{
+  "artifact_sha256": {
+    "collection-status.json": "ae75ea5a6b511f00a8ed30c59d4171b0c4141762fb426d1d0a0126ce9ca33fee",
+    "environment.json": "e33e157652ad3e312fc49eda58e7008436be5ba74f5da01bbe4bc58cbc5f788c",
+    "query-result.json": "3a3884fc0109ffc2cdaa40ef6f949665f76832ca26978b2f9c78122265a04923",
+    "report.md": "7757600a8a1ab721acb770ea45e27df556d3569384e05597c269f024e40cb5f7",
+    "source-hashes.json": "6e3183981dc508aaed6e6eb859e08e46b37e0fc343d1308c6ad07e0c48fa5bab",
+    "summary.json": "d223157b41acea32df1871d8235c8fad014d8d22c7bdf522bd33116d45c2b8f2",
+    "test.log": "1dad58ec7c434f79fc58ac81d89d08559550afe37d6fdf065807bec1b8a2917a",
+    "tool-inventory.json": "1ca178f5ef0d56f80b0ef98cd6c3127052b94b904218a5dc4edf0c29143dff28",
+    "trace-result.json": "8028b621784b8b562ff3de0b8cb1257181ac95d73487a51786fdd5960cff2c51"
+  },
+  "frozen_at": "2026-09-12",
+  "schema": "lazyingart-mcp-review-manifest/v1"
+}

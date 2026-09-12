@@ -158,6 +158,15 @@ OFFER_FIELD_RULES = {
         "dependencies": (800, False, True),
         "constraints": (800, False, True),
     },
+    "mcp_boundary_review": {
+        "role": (700, True, True),
+        "repository": (900, True, True),
+        "surface": (1200, True, True),
+        "environment": (700, True, True),
+        "client_transport": (700, True, True),
+        "risk": (900, True, True),
+        "constraints": (800, False, True),
+    },
     "browser_regression": {
         "site_url": (700, True, True),
         "flows": (1400, True, True),

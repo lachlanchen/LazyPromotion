@@ -38,6 +38,12 @@ OFFER_CONTRACTS = {
         "minimum_review_notes": 9,
         "unit_amount": 50_000,
     },
+    "mcp-review": {
+        "config_relative": Path("config/mcp-boundary-review.json"),
+        "slug": "mcp-boundary-review",
+        "minimum_review_notes": 9,
+        "unit_amount": 50_000,
+    },
     "lazyremote": {
         "config_relative": Path("config/lazyremote-network-fit-review.json"),
         "slug": "lazyremote-network-fit-review",

@@ -1,16 +1,16 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 11,
+  "version": 12,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
-    "captured_at": "2026-09-12T04:54:48Z",
+    "captured_at": "2026-09-12T16:32:17Z",
     "repository": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
     "public_stars": 14,
     "public_forks": 3,
     "recent_star_window": {
-      "from": "2026-09-03T00:00:00Z",
-      "through": "2026-09-12T04:54:48Z",
-      "new_stars": 9
+      "from": "2026-08-29T00:00:00Z",
+      "through": "2026-09-12T16:32:17Z",
+      "new_stars": 10
     },
     "current_explicit_need": {
       "source_url": "https://linux.do/t/topic/2192302/5",
@@ -44,20 +44,20 @@
       "boundary": "The contribution is relevant product evidence, but an open or revised pull request is not adoption, buyer intent, a lead, or revenue. Do not merge until the requested lifecycle, ownership, gating, and regression work passes review."
     },
     "owner_visible_traffic": {
-      "window": "The GitHub traffic API's current rolling window from 2026-08-28 through 2026-09-10",
-      "views": 1135,
-      "unique_visitors": 490,
-      "clones": 462,
-      "unique_cloners": 191,
+      "window": "The GitHub traffic API's current rolling window from 2026-08-29 through 2026-09-11",
+      "views": 1140,
+      "unique_visitors": 494,
+      "clones": 472,
+      "unique_cloners": 192,
       "top_referrer": {
         "name": "Google",
-        "views": 734,
+        "views": 746,
         "unique_visitors": 385
       },
       "top_path": {
         "path": "/lachlanchen/uu-remote-ubuntu-bridge/blob/main/i18n/README.zh-Hans.md",
         "views": 549,
-        "unique_visitors": 414
+        "unique_visitors": 417
       }
     },
     "owned_search_signal": {
@@ -110,7 +110,7 @@
   },
   "owned_route": {
     "state": "live_committed",
-    "repository_commit": "b2bb4269f5ef8a197d9ba43293d9e14ce08b6dbd",
+    "repository_commit": "57ce7e6543d10362b182d15754ebf1625af2c407",
     "source": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
     "destination": "https://remote.lazying.art/",
     "tracking_campaign": "uu_remote_bridge",
@@ -139,6 +139,15 @@
       "reason": "The repository's highest-traffic language path now lands on the localized proof-first fixed review instead of stopping at the general product hero.",
       "verification": "The live destination returned HTTP 200 and contained the review anchor, exact USD 250 scope, Chinese metadata-only fit-check action, and no-password or private-key boundary. All 146 repository tests passed with one opt-in systemd test skipped.",
       "boundary": "The free open-source product explanation remains visible. A link view or click is attention, not an inquiry, lead, payment, or revenue."
+    },
+    "all_language_conversion_handoff": {
+      "state": "live_direct_review_anchor",
+      "source_commit": "57ce7e6543d10362b182d15754ebf1625af2c407",
+      "editions": 11,
+      "destination_anchor": "#review",
+      "reason": "Readers who choose the separate vendor-independent option now land on the exact USD 250 review scope instead of the general product hero; the Simplified Chinese edition keeps its verified localized route.",
+      "verification": "The live root and Simplified Chinese LazyRemote pages returned HTTP 200 with a review anchor, exact USD 250 scope, metadata-only fit-check action, and no-password or private-key boundary. All 151 repository tests passed with one opt-in systemd test skipped.",
+      "boundary": "The free UU compatibility answer, public compatibility intake, and LazyTunnel source remain primary. A review-section view or click is attention, not an inquiry, lead, payment, or revenue."
     },
     "simplified_chinese_guide_handoff": {
       "state": "live_owned_guide_route",
@@ -186,7 +195,7 @@
       },
       "boundary": "A support-panel view, click, or pledge is not received revenue. Donations do not buy priority, compatibility work, private support, or a delivery date."
     },
-    "verification": "All 150 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
+    "verification": "All 151 proprietary-binary-free repository tests passed; one opt-in live systemd test remained intentionally skipped. The pushed main branch matched the recorded commit.",
     "compatibility_need_capture": {
       "state": "live_bilingual_public_form",
       "source_commit": "2b5d31774c9a9751bbb7873fedb828ec037c4f4c",

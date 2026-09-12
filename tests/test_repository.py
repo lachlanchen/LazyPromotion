@@ -229,9 +229,9 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(demand["public_stars"], 14)
-        self.assertEqual(demand["recent_star_window"]["new_stars"], 9)
+        self.assertEqual(demand["recent_star_window"]["new_stars"], 10)
         explicit_need = demand["current_explicit_need"]
         self.assertIn("Ubuntu", explicit_need["need"])
         self.assertIn(
@@ -249,8 +249,8 @@ class RepositoryTests(unittest.TestCase):
             "README.zh-Hans.md",
             demand["owner_visible_traffic"]["top_path"]["path"],
         )
-        self.assertEqual(demand["owner_visible_traffic"]["unique_visitors"], 490)
-        self.assertEqual(demand["owner_visible_traffic"]["unique_cloners"], 191)
+        self.assertEqual(demand["owner_visible_traffic"]["unique_visitors"], 494)
+        self.assertEqual(demand["owner_visible_traffic"]["unique_cloners"], 192)
         search_signal = demand["owned_search_signal"]
         self.assertEqual(search_signal["impressions"], 437)
         self.assertEqual(search_signal["clicks"], 0)
@@ -294,6 +294,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_campaign=uu_remote_bridge", chinese_handoff["destination_url"])
         self.assertIn("146 repository tests", chinese_handoff["verification"])
         self.assertIn("not an inquiry", chinese_handoff["boundary"])
+        all_languages = campaign["owned_route"]["all_language_conversion_handoff"]
+        self.assertEqual(all_languages["state"], "live_direct_review_anchor")
+        self.assertEqual(all_languages["editions"], 11)
+        self.assertEqual(all_languages["destination_anchor"], "#review")
+        self.assertIn("151 repository tests", all_languages["verification"])
+        self.assertIn("not an inquiry", all_languages["boundary"])
         guide_handoff = campaign["owned_route"]["simplified_chinese_guide_handoff"]
         self.assertEqual(guide_handoff["state"], "live_owned_guide_route")
         self.assertIn("utm_content=zh_hans_guide", guide_handoff["destination_url"])

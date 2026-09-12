@@ -63,18 +63,42 @@ def external_issue(
     }
 
 
+def external_pull_request(
+    owner,
+    repository,
+    number,
+    *,
+    updated_at="2026-09-12T12:20:01Z",
+    comment_count=0,
+    review_count=0,
+    state="OPEN",
+):
+    return {
+        "number": number,
+        "title": "Support explicit token endpoint for client credentials",
+        "url": f"https://github.com/{owner}/{repository}/pull/{number}",
+        "state": state,
+        "isDraft": False,
+        "updatedAt": updated_at,
+        "comments": {"totalCount": comment_count},
+        "reviews": {"totalCount": review_count},
+    }
+
+
 def graphql_payload(
     issues_by_repository=None,
     *,
     pull_requests_by_repository=None,
     visibility_by_repository=None,
     external_issues=None,
+    external_pull_requests=None,
     external_visibility=None,
 ):
     issues_by_repository = issues_by_repository or {}
     pull_requests_by_repository = pull_requests_by_repository or {}
     visibility_by_repository = visibility_by_repository or {}
     external_issues = external_issues or {}
+    external_pull_requests = external_pull_requests or {}
     external_visibility = external_visibility or {}
     data = {}
     for index, name in enumerate(monitor.REPOSITORIES):
@@ -100,6 +124,17 @@ def graphql_payload(
             "visibility": external_visibility.get(key, "PUBLIC"),
             "issue": external_issues.get(
                 key, external_issue(owner, repository, number)
+            ),
+        }
+    for index, (owner, repository, number) in enumerate(
+        monitor.EXTERNAL_PULL_REQUESTS
+    ):
+        key = monitor.external_pull_request_key(owner, repository, number)
+        data[f"externalPullRequest{index}"] = {
+            "nameWithOwner": f"{owner}/{repository}",
+            "visibility": external_visibility.get(key, "PUBLIC"),
+            "pullRequest": external_pull_requests.get(
+                key, external_pull_request(owner, repository, number)
             ),
         }
     return {"data": data}
@@ -179,7 +214,9 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertIn("issue(number: 10)", query)
         self.assertIn("issue(number: 361)", query)
         self.assertIn("issue(number: 583)", query)
+        self.assertIn("pullRequest(number: 362)", query)
         self.assertNotIn("comments { nodes", query)
+        self.assertNotIn("reviews { nodes", query)
         for name in monitor.REPOSITORIES:
             self.assertIn(json.dumps(name), query)
 
@@ -209,11 +246,11 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertEqual(first["alerts"], [])
         self.assertEqual(
             first["external_thread_allowlist"],
-            [monitor.external_thread_key(*item) for item in monitor.EXTERNAL_ISSUES],
+            monitor.external_thread_allowlist(),
         )
         self.assertEqual(
             first["summary"]["external_threads_checked"],
-            len(monitor.EXTERNAL_ISSUES),
+            len(monitor.EXTERNAL_ISSUES) + len(monitor.EXTERNAL_PULL_REQUESTS),
         )
 
         second = monitor.monitor_once(
@@ -236,6 +273,77 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertFalse(
             second["policy"]["external_issue_activity_is_revenue_evidence"]
         )
+
+    def test_external_pull_request_is_baselined_then_review_alerts_without_text(self):
+        owner, repository, number = monitor.EXTERNAL_PULL_REQUESTS[0]
+        key = monitor.external_pull_request_key(owner, repository, number)
+        baseline = graphql_payload()
+        changed = graphql_payload(
+            external_pull_requests={
+                key: external_pull_request(
+                    owner,
+                    repository,
+                    number,
+                    updated_at="2026-09-12T14:00:00Z",
+                    review_count=1,
+                )
+            }
+        )
+        fake = FakeRunner([baseline, changed])
+
+        first = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-12T12:30:00Z",
+        )
+        self.assertEqual(first["alerts"], [])
+        second = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=fake,
+            checked_at="2026-09-12T14:15:00Z",
+        )
+        self.assertEqual(len(second["alerts"]), 1)
+        alert = second["alerts"][0]
+        self.assertEqual(
+            alert["kind"], "external_public_pull_request_activity_observed"
+        )
+        self.assertEqual(alert["key"], key)
+        self.assertEqual(alert["review_count"], 1)
+        self.assertFalse(
+            second["policy"][
+                "external_pull_request_activity_is_lead_evidence"
+            ]
+        )
+        self.assertFalse(
+            second["policy"][
+                "external_pull_request_activity_is_revenue_evidence"
+            ]
+        )
+        serialized = self.state.read_text(encoding="utf-8").casefold()
+        self.assertNotIn('"body"', serialized)
+
+    def test_newly_allowlisted_external_pull_request_is_baselined(self):
+        baseline = monitor.build_state(
+            monitor.fetch_public_issues(runner=FakeRunner([graphql_payload()])),
+            None,
+            checked_at="2026-09-12T12:30:00Z",
+        )
+        pull_request_key = monitor.external_pull_request_key(
+            *monitor.EXTERNAL_PULL_REQUESTS[0]
+        )
+        baseline["external_thread_allowlist"].remove(pull_request_key)
+        baseline["external_thread_activity"].pop(pull_request_key)
+
+        migrated = monitor.build_state(
+            monitor.fetch_public_issues(runner=FakeRunner([graphql_payload()])),
+            baseline,
+            checked_at="2026-09-12T12:45:00Z",
+        )
+        self.assertEqual(migrated["alerts"], [])
+        self.assertIn(pull_request_key, migrated["external_thread_allowlist"])
+        self.assertIn(pull_request_key, migrated["external_thread_activity"])
 
     def test_nonpublic_external_issue_is_rejected(self):
         owner, repository, number = monitor.EXTERNAL_ISSUES[0]

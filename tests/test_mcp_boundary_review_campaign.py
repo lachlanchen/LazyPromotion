@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 42)
+        self.assertEqual(self.payload["version"], 43)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -118,12 +118,25 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
             "punkpeye/mcp-remote#361",
         )
         self.assertEqual(
+            contribution["reply_monitor"]["pull_request_thread"],
+            "punkpeye/mcp-remote#pr-362",
+        )
+        self.assertEqual(
             contribution["reply_monitor"]["state"],
             "active_and_baselined",
         )
         self.assertEqual(contribution["reply_monitor"]["baseline_comment_count"], 0)
+        self.assertEqual(
+            contribution["reply_monitor"]["baseline_pull_request_comment_count"],
+            0,
+        )
+        self.assertEqual(
+            contribution["reply_monitor"]["baseline_pull_request_review_count"],
+            0,
+        )
         self.assertEqual(contribution["reply_monitor"]["alerts_after_baseline"], 0)
         self.assertFalse(contribution["reply_monitor"]["body_or_comment_text_requested"])
+        self.assertFalse(contribution["reply_monitor"]["review_text_requested"])
         self.assertFalse(contribution["reply_monitor"]["automatic_reply"])
         self.assertFalse(contribution["owned_link_or_offer_included"])
         self.assertFalse(contribution["lead_or_sale_observed"])

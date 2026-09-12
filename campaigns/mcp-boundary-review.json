@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 42,
+  "version": 43,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -92,10 +92,14 @@
     "reply_monitor": {
       "state": "active_and_baselined",
       "thread": "punkpeye/mcp-remote#361",
-      "checked_at": "2026-09-12T19:16:08Z",
+      "pull_request_thread": "punkpeye/mcp-remote#pr-362",
+      "checked_at": "2026-09-12T20:31:11Z",
       "baseline_comment_count": 0,
+      "baseline_pull_request_comment_count": 0,
+      "baseline_pull_request_review_count": 0,
       "alerts_after_baseline": 0,
       "body_or_comment_text_requested": false,
+      "review_text_requested": false,
       "automatic_reply": false
     },
     "owned_link_or_offer_included": false,

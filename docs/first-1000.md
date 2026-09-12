@@ -1687,3 +1687,9 @@ at publication rather than documenting its flag as released. One canonical post,
 all ten public links, desktop and mobile rendering, and the visible sample handoff
 were verified. LazyBlog commit `0049e94` records the publication. This is an
 owned conversion asset, not attention, a lead, payment, or revenue.
+
+The metadata-only GitHub monitor now watches both the source issue and upstream
+pull request 362. The pull request entered the allowlist as a quiet baseline at
+zero comments and zero reviews; future count or state changes create a manual
+review alert without fetching body, comment, or review text. This monitoring is
+not a reply, acceptance, buyer inquiry, payment, or revenue.

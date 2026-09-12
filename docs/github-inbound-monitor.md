@@ -28,11 +28,15 @@ The fixed external-thread allowlist currently contains
 `hivtools/hivtools-mcp#10`, where `lachlanchen` posted reviewed,
 issue-specific answers, plus `punkpeye/mcp-remote#361`, which is linked to a
 submitted upstream fix, and `docker/sbx-releases#583`, where a current
-sandbox-authentication question received a reviewed answer. For these threads the same GraphQL query requests only repository
-visibility, issue number, title, URL, state, update time, and aggregate comment
-count. It requests neither the issue body nor any comment body. A newly added
-external thread is baselined once; a later metadata or comment-count change
-creates a manual-review alert. It never opens the response or replies.
+sandbox-authentication question received a reviewed answer. The allowlist also
+contains `modelcontextprotocol/modelcontextprotocol#3347`, where a remote
+connector's public discovery path was checked and the maintainer received one
+source-backed cloud-egress diagnostic. For these threads the same GraphQL query
+requests only repository visibility, issue number, title, URL, state, update
+time, and aggregate comment count. It requests neither the issue body nor any
+comment body. A newly added external thread is baselined once; a later metadata
+or comment-count change creates a manual-review alert. It never opens the
+response or replies.
 
 The added agent, video, music, and multilingual-book repositories are current
 public, non-fork, non-archived projects with owner-visible attention in the

@@ -50,6 +50,7 @@ EXTERNAL_ISSUES = (
     ("hivtools", "hivtools-mcp", 10),
     ("punkpeye", "mcp-remote", 361),
     ("docker", "sbx-releases", 583),
+    ("modelcontextprotocol", "modelcontextprotocol", 3347),
 )
 EXTERNAL_PULL_REQUESTS = (
     ("punkpeye", "mcp-remote", 362),
@@ -782,13 +783,16 @@ def load_state(path: Path) -> dict[str, Any] | None:
             raise ValueError("existing monitor state has invalid pull-request state")
     stored_external_allowlist = payload.get("external_thread_allowlist", [])
     current_external_allowlist = external_thread_allowlist()
-    external_allowlist_is_current_or_prefix = (
-        isinstance(stored_external_allowlist, list)
-        and all(isinstance(key, str) for key in stored_external_allowlist)
-        and stored_external_allowlist
-        == current_external_allowlist[: len(stored_external_allowlist)]
-    )
-    if not external_allowlist_is_current_or_prefix:
+    external_allowlist_is_current_or_ordered_subset = False
+    if isinstance(stored_external_allowlist, list) and all(
+        isinstance(key, str) for key in stored_external_allowlist
+    ):
+        current_keys = iter(current_external_allowlist)
+        external_allowlist_is_current_or_ordered_subset = all(
+            any(stored_key == current_key for current_key in current_keys)
+            for stored_key in stored_external_allowlist
+        )
+    if not external_allowlist_is_current_or_ordered_subset:
         raise ValueError(
             "existing monitor state has an invalid external thread allowlist"
         )

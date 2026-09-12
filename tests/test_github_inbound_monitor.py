@@ -214,6 +214,7 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertIn("issue(number: 10)", query)
         self.assertIn("issue(number: 361)", query)
         self.assertIn("issue(number: 583)", query)
+        self.assertIn("issue(number: 3347)", query)
         self.assertIn("pullRequest(number: 362)", query)
         self.assertNotIn("comments { nodes", query)
         self.assertNotIn("reviews { nodes", query)
@@ -344,6 +345,30 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertEqual(migrated["alerts"], [])
         self.assertIn(pull_request_key, migrated["external_thread_allowlist"])
         self.assertIn(pull_request_key, migrated["external_thread_activity"])
+
+    def test_newly_allowlisted_external_issue_before_pr_is_baselined(self):
+        baseline = monitor.build_state(
+            monitor.fetch_public_issues(runner=FakeRunner([graphql_payload()])),
+            None,
+            checked_at="2026-09-12T12:30:00Z",
+        )
+        issue_key = monitor.external_thread_key(*monitor.EXTERNAL_ISSUES[-1])
+        baseline["external_thread_allowlist"].remove(issue_key)
+        baseline["external_thread_activity"].pop(issue_key)
+        self.state.parent.mkdir(parents=True)
+        self.state.write_text(json.dumps(baseline), encoding="utf-8")
+        self.state.chmod(0o600)
+
+        migrated = monitor.monitor_once(
+            state_path=self.state,
+            root=self.root,
+            runner=FakeRunner([graphql_payload()]),
+            checked_at="2026-09-12T12:45:00Z",
+        )
+
+        self.assertEqual(migrated["alerts"], [])
+        self.assertIn(issue_key, migrated["external_thread_allowlist"])
+        self.assertIn(issue_key, migrated["external_thread_activity"])
 
     def test_nonpublic_external_issue_is_rejected(self):
         owner, repository, number = monitor.EXTERNAL_ISSUES[0]

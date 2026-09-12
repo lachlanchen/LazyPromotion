@@ -119,6 +119,18 @@ and plaintext fallback while preserving the same post ID and quiet executed-
 sample path. LazyBlog commit `0697deb` records the in-place update. Publication
 is conversion readiness, not traffic, a lead, payment, or revenue.
 
+A separate [remote-connector
+report](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/3347#issuecomment-5649487182)
+said OAuth worked and the same token connected through Claude Code, but
+claude.ai failed. Public read-only checks found the MCP challenge,
+path-specific protected-resource metadata, and authorization-server metadata
+reachable and internally consistent. The reply therefore focused on the real
+network split: Anthropic documents that remote connectors call from its cloud,
+whose current outbound range is `160.79.104.0/21`, rather than from the local
+Claude Code machine. It asked the maintainer to correlate that range with CDN
+and origin logs before changing OAuth. No offer or LazyingArt link was added;
+this is a helpful interaction, not a lead or revenue.
+
 ## Owned-channel conversion check
 
 A read-only 30-day Postiz pass does not justify more publishing volume. X

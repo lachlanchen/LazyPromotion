@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Monitor one submitted Freelancer bid without opening messages or replying."""
+"""Monitor submitted Freelancer bids without opening messages or replying."""
 
 from __future__ import annotations
 
@@ -26,21 +26,44 @@ LOG_PATH = RUNTIME / "freelancer-inbound-monitor.jsonl"
 LOCK_PATH = RUNTIME / "freelancer-inbound-monitor.lock"
 DEFAULT_CDP = "http://127.0.0.1:9436"
 HOST = "www.freelancer.com"
-PROJECT_SLUG = "Playwright-Python-Regression-Suite"
-PROJECT_PATH_SUFFIX = f"/{PROJECT_SLUG}/proposals"
-PROJECT_CANONICAL_SUFFIX = f"/{PROJECT_SLUG}"
 EXPECTED_USERNAME = "@lachlanchen"
 RANK_PATTERN = re.compile(r"You are ranked\s+(\d+)\s+out of\s+(\d+)\s+proposals", re.I)
+TRACKED_PROJECTS = (
+    {
+        "campaign_id": "playwright-regression-contract",
+        "slug": "playwright-python-regression-suite",
+        "url": (
+            "https://www.freelancer.com/projects/automation/"
+            "Playwright-Python-Regression-Suite/proposals"
+        ),
+    },
+    {
+        "campaign_id": "android-apk-delivery-freelancer",
+        "slug": "provide-android-apk-download-link",
+        "url": (
+            "https://www.freelancer.com/projects/kotlin/"
+            "Provide-Android-APK-Download-Link/proposals"
+        ),
+    },
+)
+PROJECT_BY_ID = {item["campaign_id"]: item for item in TRACKED_PROJECTS}
+PROJECT_ID_BY_SLUG = {item["slug"]: item["campaign_id"] for item in TRACKED_PROJECTS}
+
+
+def project_id_for_url(url: str) -> str | None:
+    """Return the tracked campaign represented by a Freelancer project URL."""
+    parsed = urlsplit(url)
+    if parsed.hostname != HOST:
+        return None
+    parts = [part.casefold() for part in parsed.path.split("/") if part]
+    if len(parts) < 3 or parts[0] != "projects":
+        return None
+    return PROJECT_ID_BY_SLUG.get(parts[2])
 
 
 def is_project_page(url: str) -> bool:
-    """Accept Freelancer's submitted-proposal and canonical project URLs."""
-    parsed = urlsplit(url)
-    path = parsed.path.rstrip("/")
-    return parsed.hostname == HOST and (
-        path.endswith(PROJECT_CANONICAL_SUFFIX)
-        or path.endswith(PROJECT_PATH_SUFFIX)
-    )
+    """Accept canonical, details, and proposal URLs for tracked bids."""
+    return project_id_for_url(url) is not None
 
 
 def utc_now() -> str:
@@ -146,10 +169,146 @@ def summarize_observation(
     return status, state
 
 
+def summarize_portfolio_observation(
+    *,
+    authenticated: bool,
+    projects: dict[str, dict],
+    message_badge_count: int,
+    previous: dict | None,
+    checked_at: str,
+) -> tuple[dict, dict]:
+    """Summarize several submitted bids while keeping message content unopened."""
+    if message_badge_count < 0:
+        raise ValueError("message badge count must be non-negative")
+    unknown = sorted(set(projects) - set(PROJECT_BY_ID))
+    if unknown:
+        raise ValueError(f"unknown tracked project: {unknown[0]}")
+
+    compatible_previous = (
+        previous
+        if isinstance(previous, dict) and previous.get("version") == 2
+        else None
+    )
+    previous_projects = (compatible_previous or {}).get("projects", {})
+    if not isinstance(previous_projects, dict):
+        previous_projects = {}
+    baseline_created = compatible_previous is None
+    previous_count = int((compatible_previous or {}).get("message_badge_count", 0))
+    new_message_signal = not baseline_created and message_badge_count > previous_count
+
+    project_statuses: dict[str, dict] = {}
+    project_states: dict[str, dict] = {}
+    review_project_ids: list[str] = []
+    for campaign_id, observation in projects.items():
+        current_state = str(observation.get("bid_state") or "")
+        if current_state not in {
+            "active_submitted",
+            "awarded_review_required",
+            "closed",
+            "unknown",
+        }:
+            raise ValueError("invalid bid state")
+        rank = observation.get("rank")
+        proposal_count = observation.get("proposal_count")
+        if (rank is None) != (proposal_count is None):
+            raise ValueError("rank and proposal count must be present together")
+        prior = previous_projects.get(campaign_id)
+        if not isinstance(prior, dict):
+            prior = None
+        prior_state = (prior or {}).get("bid_state")
+        state_changed = (
+            prior is not None
+            and isinstance(prior_state, str)
+            and current_state != prior_state
+        )
+        needs_review = state_changed or current_state in {
+            "awarded_review_required",
+            "unknown",
+        }
+        if needs_review:
+            review_project_ids.append(campaign_id)
+        project_statuses[campaign_id] = {
+            "bid_state": current_state,
+            "rank": rank,
+            "proposal_count": proposal_count,
+            "baseline_created": prior is None,
+            "bid_state_changed": state_changed,
+            "review_required": needs_review,
+        }
+        project_states[campaign_id] = {
+            "bid_state": current_state,
+            "rank": rank,
+            "proposal_count": proposal_count,
+        }
+
+    review_required = new_message_signal or bool(review_project_ids)
+    status = {
+        "version": 2,
+        "checked_at": checked_at,
+        "available": True,
+        "authenticated": authenticated,
+        "tracked_bid_count": len(project_statuses),
+        "projects": project_statuses,
+        "message_badge_count": message_badge_count,
+        "new_message_signal": new_message_signal,
+        "baseline_created": baseline_created,
+        "review_project_ids": review_project_ids,
+        "review_required": review_required,
+        "message_opened": False,
+        "automatic_reply": False,
+        "action": (
+            "Review Freelancer visibly; do not reply or accept automatically."
+            if review_required
+            else "No Freelancer review is required."
+        ),
+    }
+    state = {
+        "version": 2,
+        "checked_at": checked_at,
+        "message_badge_count": message_badge_count,
+        "projects": project_states,
+    }
+    return status, state
+
+
+def page_observation(page) -> dict:
+    observed = page.evaluate(
+        r"""() => {
+          const bodyText = document.body ? document.body.innerText : '';
+          const buttons = Array.from(document.querySelectorAll('button[aria-label="Messages"]'))
+            .filter((button) => {
+              const style = getComputedStyle(button);
+              const rect = button.getBoundingClientRect();
+              return style.visibility !== 'hidden' && style.display !== 'none' &&
+                rect.width > 0 && rect.height > 0;
+            });
+          const digits = buttons.flatMap((button) =>
+            ((button.innerText || '').match(/\d+/g) || []).map(Number));
+          return {
+            bodyText,
+            messageBadgeCount: digits.length ? Math.max(...digits) : 0,
+            authenticated: bodyText.includes('@lachlanchen') &&
+              !document.querySelector('input[type="password"]')
+          };
+        }"""
+    )
+    if not isinstance(observed, dict):
+        raise RuntimeError("Freelancer exposed an invalid proposal state")
+    body_text = str(observed.get("bodyText") or "")
+    rank_match = RANK_PATTERN.search(body_text)
+    return {
+        "authenticated": bool(observed.get("authenticated")),
+        "bid_state": bid_state(body_text),
+        "message_badge_count": int(observed.get("messageBadgeCount") or 0),
+        "rank": int(rank_match.group(1)) if rank_match else None,
+        "proposal_count": int(rank_match.group(2)) if rank_match else None,
+    }
+
+
 def collect_visible_status(*, cdp: str) -> dict:
     with browser_tools.browser_operation_lock():
         with sync_playwright() as playwright:
-            connected = playwright.chromium.connect_over_cdp(cdp)
+            connected = playwright.chromium.connect_over_cdp(cdp, no_defaults=True)
             candidates = []
             for context in connected.contexts:
                 for page in context.pages:
@@ -157,42 +316,31 @@ def collect_visible_status(*, cdp: str) -> dict:
                         candidates.append(page)
             if len(candidates) != 1:
                 raise RuntimeError(
-                    "exactly one authenticated Freelancer project tab must be open"
+                    "exactly one Freelancer project tab must be open"
                 )
             page = candidates[0]
-            page.bring_to_front()
-            page.wait_for_load_state("domcontentloaded")
-            page.wait_for_timeout(800)
-            observed = page.evaluate(
-                """() => {
-                  const bodyText = document.body ? document.body.innerText : '';
-                  const buttons = Array.from(document.querySelectorAll('button[aria-label="Messages"]'))
-                    .filter((button) => {
-                      const style = getComputedStyle(button);
-                      const rect = button.getBoundingClientRect();
-                      return style.visibility !== 'hidden' && style.display !== 'none' &&
-                        rect.width > 0 && rect.height > 0;
-                    });
-                  const digits = buttons.flatMap((button) =>
-                    ((button.innerText || '').match(/\\d+/g) || []).map(Number));
-                  return {
-                    bodyText,
-                    messageBadgeCount: digits.length ? Math.max(...digits) : 0,
-                    authenticated: bodyText.includes('@lachlanchen') &&
-                      !document.querySelector('input[type="password"]')
-                  };
-                }"""
-            )
-            if not isinstance(observed, dict):
-                raise RuntimeError("Freelancer exposed an invalid proposal state")
-            body_text = str(observed.get("bodyText") or "")
-            rank_match = RANK_PATTERN.search(body_text)
+            projects = {}
+            message_badge_count = 0
+            authenticated = True
+            for tracked in TRACKED_PROJECTS:
+                page.bring_to_front()
+                page.goto(tracked["url"], wait_until="domcontentloaded", timeout=45000)
+                # Freelancer paints the proposal card after the document event;
+                # an immediate read sees only the shell and misclassifies a live
+                # submitted bid as an unknown layout.
+                page.wait_for_timeout(3000)
+                current = page_observation(page)
+                authenticated = authenticated and current.pop("authenticated")
+                message_badge_count = max(
+                    message_badge_count, current.pop("message_badge_count")
+                )
+                projects[tracked["campaign_id"]] = current
+                if not authenticated:
+                    break
             return {
-                "authenticated": bool(observed.get("authenticated")),
-                "bid_state": bid_state(body_text),
-                "message_badge_count": int(observed.get("messageBadgeCount") or 0),
-                "rank": int(rank_match.group(1)) if rank_match else None,
-                "proposal_count": int(rank_match.group(2)) if rank_match else None,
+                "authenticated": authenticated,
+                "message_badge_count": message_badge_count,
+                "projects": projects,
             }
 
 
@@ -213,12 +361,10 @@ def monitor_once(
             previous = json.loads(state_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError, TypeError) as exc:
             raise RuntimeError("the private Freelancer monitor state is invalid") from exc
-    status, state = summarize_observation(
+    status, state = summarize_portfolio_observation(
         authenticated=observed["authenticated"],
-        current_bid_state=observed["bid_state"],
+        projects=observed["projects"],
         message_badge_count=observed["message_badge_count"],
-        rank=observed["rank"],
-        proposal_count=observed["proposal_count"],
         previous=previous,
         checked_at=checked_at,
     )
@@ -226,13 +372,21 @@ def monitor_once(
         evidence = RUNTIME / "evidence" / f"{checked_at.replace(':', '')}-freelancer-bid.png"
         with browser_tools.browser_operation_lock():
             with sync_playwright() as playwright:
-                connected = playwright.chromium.connect_over_cdp(cdp)
+                connected = playwright.chromium.connect_over_cdp(cdp, no_defaults=True)
                 pages = [page for context in connected.contexts for page in context.pages]
                 target = next(
                     page
                     for page in pages
                     if is_project_page(page.url)
                 )
+                review_ids = status["review_project_ids"]
+                if review_ids:
+                    target.goto(
+                        PROJECT_BY_ID[review_ids[0]]["url"],
+                        wait_until="domcontentloaded",
+                        timeout=45000,
+                    )
+                    target.wait_for_timeout(800)
                 evidence.parent.mkdir(parents=True, exist_ok=True)
                 target.screenshot(path=str(evidence), full_page=False)
                 os.chmod(evidence, 0o600)

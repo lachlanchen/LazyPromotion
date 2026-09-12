@@ -150,7 +150,9 @@ def pending_candidate_ids(db, preferred_ids: list[str], limit: int) -> list[str]
             continue
         if promotion.compact(candidate["author"]).casefold() in promotion.BOT_AUTHORS:
             continue
-        if promotion.is_stale(candidate["published_at"]):
+        if promotion.candidate_is_stale(
+            candidate["published_at"], candidate["body"]
+        ):
             continue
         if not promotion.is_triageable_request(
             candidate["platform"], candidate["source_url"], candidate["body"]

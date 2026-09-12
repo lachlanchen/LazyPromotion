@@ -19,6 +19,7 @@ BOOKSHOP_AFFILIATE_URL="https://bookshop.org/affiliates/profile/introduction"
 POSTIZ_AFFILIATE_URL="https://partners.dub.co/postiz/apply"
 THREADS_REPLIES_URL="https://www.threads.com/activity/replies"
 THREADS_PROFILE_URL="https://www.threads.com/@lazying.art"
+FREELANCER_WORKSPACE_URL="https://www.freelancer.com/projects/kotlin/Provide-Android-APK-Download-Link/proposals"
 VIEWER_DISPLAY="${LAZYPROMOTION_VIEWER_DISPLAY:-:11}"
 REFRESH_REGISTERED_VIEWER="${LAZYPROMOTION_REFRESH_REGISTERED_VIEWER:-0}"
 NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=0"
@@ -105,7 +106,8 @@ workspace_url_allowed() {
     https://hn.algolia.com/*|https://search.google.com/*|https://platform.postiz.com/*|\
     https://www.icloud.com/*|https://www.lingq.com/*|https://bookshop.org/*|\
     https://partners.dub.co/*|https://contra.com/*|https://www.datacamp.com/*|\
-    https://github.com/*|https://www.upwork.com/freelance-jobs/*|\
+    https://github.com/*|https://www.freelancer.com/projects/*|\
+    https://www.upwork.com/freelance-jobs/*|\
     https://www.upwork.com/jobs/*|https://www.upwork.com/nx/search/jobs/*)
       return 0
       ;;
@@ -120,7 +122,7 @@ workspace_url_is_baseline() {
     "$START_URL"|https://www.reddit.com/|https://www.icloud.com/mail/*|\
     https://platform.postiz.com/launches*|https://www.lingq.com/*|\
     https://bookshop.org/affiliates/profile/*|https://partners.dub.co/postiz/*|\
-    "$THREADS_REPLIES_URL"|"$THREADS_PROFILE_URL")
+    "$THREADS_REPLIES_URL"|"$THREADS_PROFILE_URL"|https://www.freelancer.com/projects/*)
       return 0
       ;;
     *)
@@ -208,6 +210,7 @@ restore_browser_workspace() {
   cdp_has_url 'partners.dub.co/postiz' || missing_urls+=("$POSTIZ_AFFILIATE_URL")
   cdp_has_exact_url "$THREADS_REPLIES_URL" || missing_urls+=("$THREADS_REPLIES_URL")
   cdp_has_exact_url "$THREADS_PROFILE_URL" || missing_urls+=("$THREADS_PROFILE_URL")
+  cdp_has_url 'www.freelancer.com/projects/' || missing_urls+=("$FREELANCER_WORKSPACE_URL")
   if [[ -f "$RUNTIME_DIR/workspace.urls" ]]; then
     while IFS= read -r url; do
       workspace_url_allowed "$url" || continue

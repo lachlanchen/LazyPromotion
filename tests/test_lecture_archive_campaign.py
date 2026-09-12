@@ -55,13 +55,25 @@ class LectureArchiveCampaignTests(unittest.TestCase):
         )
         route = campaign["channels"]["github"]["rights_cleared_service_path"]
 
-        self.assertEqual(campaign["version"], 3)
+        self.assertEqual(campaign["version"], 4)
         self.assertEqual(route["state"], "published")
         self.assertEqual(route["readme_languages"], 11)
         self.assertEqual(len(route["repository_commit"]), 40)
         self.assertIn("utm_campaign=leonard_susskind_archive", route["url"])
         self.assertIn("archive free", route["policy"])
         self.assertFalse(campaign["channels"]["github"]["lead_or_sale_observed"])
+
+    def test_top_quark_reply_is_recorded_as_help_not_a_lead(self):
+        campaign = json.loads(
+            (ROOT / "campaigns" / "lecture-archive-provenance.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        reply = campaign["channels"]["reddit"]["top_quark_biography_reply"]
+
+        self.assertEqual(reply["state"], "published_standalone_help")
+        self.assertIn("comment/p99eb4q/", reply["comment_url"])
+        self.assertFalse(reply["lead_or_sale_observed"])
 
 
 if __name__ == "__main__":

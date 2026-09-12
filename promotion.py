@@ -1550,7 +1550,9 @@ def triage_candidate(db: sqlite3.Connection, candidate: dict[str, Any]) -> dict[
         raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     if not is_help_request(candidate["body"]):
         raise ValueError("candidate is not shaped like a genuine help request")
-    if is_stale(candidate.get("published_at") or ""):
+    if candidate_is_stale(
+        candidate.get("published_at") or "", candidate.get("body") or ""
+    ):
         raise ValueError("candidate is stale")
     result = run_codex_triage(candidate, load_catalog()["projects"])
     return save_triage(db, candidate["id"], result)

@@ -7,13 +7,14 @@ on acceptance, available work, completed delivery, and payment.
 
 | Rank | Current route | Advertised pay | Portfolio fit | Gate |
 |---|---|---:|---|---|
-| 1 | [Playwright Python regression suite](https://www.freelancer.com/projects/automation/playwright-python-regression-suite) | INR 37,500–75,000 fixed, approximately USD 392–785 | LazyTravel now has a Page Object/pytest/JUnit case on its real 11-chapter trilingual site with three clean CI runs; LazyPromotion adds the MCP-aware browser implementation and compact fixture | The buyer's “every manual step” is unbounded until the checklist, roles, test-data reset, environments, and credential model are disclosed. Bid only as a capped funded first milestone. |
-| 2 | [English lecture audio transcription](https://www.freelancer.com/projects/academic-writing/english-lecture-audio-transcription-40703433) | INR 12,500–37,500 fixed, approximately USD 131–392 | Susskind, Video2Book, and the bilingual lecture-pack sample show transcript and source-map work | Confirm total audio hours, quality, deadline, timestamp granularity, terminology, speakers, confidentiality, and acceptance before bidding. |
-| 3 | [Meridial infrastructure specialist](https://job-boards.eu.greenhouse.io/agency/jobs/4745191101) | USD 80–150/hour | LazyEdge and LazyTunnel show default-deny ingress, Caddy, OpenSSH, systemd, private relays, isolation, and verification | Do not claim unverified professional cloud, IaC, or JavaScript experience. Applying sends a CV and personal data under the employer's privacy terms. |
-| 4 | [DataAnnotation software engineer](https://www.dataannotation.tech/job-board/software-engineer) | Coding work is advertised from USD 50–100+/hour, with the role page describing up to USD 75–150+/hour | The Python/Linux repositories, reproducible debugging, tests, and technical explanations are directly relevant | Hong Kong eligibility and task availability are not established. Signup includes a one-attempt assessment and may later require identity verification. |
-| 5 | [Meridial AI-assisted developer-workflow auditor](https://job-boards.greenhouse.io/agency/jobs/4969250101) | USD 60/hour | LazyPromotion provides review gates, regression tests, browser/tool integration, and reproducible failure capture | There is no public proof of paid enterprise telemetry or IDE-integration auditing. |
-| 6 | [Meridial SWE-Bench task auditor](https://job-boards.greenhouse.io/agency/jobs/4969230101) | USD 60/hour | Multi-repository debugging, Python/Linux verification, tests, and OpenHI reproducibility evidence fit the work | There is no explicit SWE-Bench audit case study; professional-year claims must remain factual. |
-| 7 | [Meridial coding specialist, fluent in Chinese](https://job-boards.greenhouse.io/agency/jobs/4663149101) | USD 8–65/hour | Coding, multilingual documentation, LKT, book pipelines, and provenance-oriented writing form a coherent match | Exact language proficiency and professional history must be stated without inference. |
+| 1 | [Android APK build and delivery](https://www.freelancer.com/projects/kotlin/provide-android-apk-download-link) | USD 30–250 fixed | L & N supplies an executed Android Studio/JDK 21 release, signed artifacts, emulator installation, a direct first-party APK, and a published checksum | The buyer repository, branch, variant, dependencies, configuration, and signing boundary must be agreed before work. The USD 100 bid covers build and delivery, not code repair or secret recovery. |
+| 2 | [Playwright Python regression suite](https://www.freelancer.com/projects/automation/playwright-python-regression-suite) | INR 37,500–75,000 fixed, approximately USD 392–785 | LazyTravel now has a Page Object/pytest/JUnit case on its real 11-chapter trilingual site with three clean CI runs; LazyPromotion adds the MCP-aware browser implementation and compact fixture | The buyer's “every manual step” is unbounded until the checklist, roles, test-data reset, environments, and credential model are disclosed. Bid only as a capped funded first milestone. |
+| 3 | [English lecture audio transcription](https://www.freelancer.com/projects/academic-writing/english-lecture-audio-transcription-40703433) | INR 12,500–37,500 fixed, approximately USD 131–392 | Susskind, Video2Book, and the bilingual lecture-pack sample show transcript and source-map work | Confirm total audio hours, quality, deadline, timestamp granularity, terminology, speakers, confidentiality, and acceptance before bidding. |
+| 4 | [Meridial infrastructure specialist](https://job-boards.eu.greenhouse.io/agency/jobs/4745191101) | USD 80–150/hour | LazyEdge and LazyTunnel show default-deny ingress, Caddy, OpenSSH, systemd, private relays, isolation, and verification | Do not claim unverified professional cloud, IaC, or JavaScript experience. Applying sends a CV and personal data under the employer's privacy terms. |
+| 5 | [DataAnnotation software engineer](https://www.dataannotation.tech/job-board/software-engineer) | Coding work is advertised from USD 50–100+/hour, with the role page describing up to USD 75–150+/hour | The Python/Linux repositories, reproducible debugging, tests, and technical explanations are directly relevant | Hong Kong eligibility and task availability are not established. Signup includes a one-attempt assessment and may later require identity verification. |
+| 6 | [Meridial AI-assisted developer-workflow auditor](https://job-boards.greenhouse.io/agency/jobs/4969250101) | USD 60/hour | LazyPromotion provides review gates, regression tests, browser/tool integration, and reproducible failure capture | There is no public proof of paid enterprise telemetry or IDE-integration auditing. |
+| 7 | [Meridial SWE-Bench task auditor](https://job-boards.greenhouse.io/agency/jobs/4969230101) | USD 60/hour | Multi-repository debugging, Python/Linux verification, tests, and OpenHI reproducibility evidence fit the work | There is no explicit SWE-Bench audit case study; professional-year claims must remain factual. |
+| 8 | [Meridial coding specialist, fluent in Chinese](https://job-boards.greenhouse.io/agency/jobs/4663149101) | USD 8–65/hour | Coding, multilingual documentation, LKT, book pipelines, and provenance-oriented writing form a coherent match | Exact language proficiency and professional history must be stated without inference. |
 
 No open-source bounty passed the live-state gate. Two visible ProjectDiscovery
 listings, for example, pointed to already-closed GitHub issues. A closed,
@@ -47,6 +48,15 @@ map controls, browser-error gates, and JUnit. GitHub Actions run `34646905819`
 passed three consecutive suites, and the existing proposal was updated once to
 include it without changing price, delivery, milestones, or upgrades. This is
 an application, not a buyer reply, funded milestone, contract, or revenue.
+
+The smaller Android task is now the most bounded current route. One ordinary
+free bid was submitted at USD 100 for a one-day delivery, with a single USD 100
+milestone for a built, install-checked APK, direct link, and SHA-256. The site
+confirmed the bid; no sponsored, sealed, highlighted, video, membership, or
+other paid upgrade was selected. Four free bids remain. The proposal keeps work
+and payment on Freelancer and stops if the supplied repository needs code
+repair, missing secrets, or an unagreed signing obligation. This is an
+application, not a buyer reply, funded milestone, contract, or revenue.
 
 The same proof now supports a smaller direct engagement: the
 [USD 250 Browser Regression Baseline](https://lazying.art/browser-regression/)
@@ -90,7 +100,10 @@ A separate LazyRemote and LazyTunnel buyer scan also found no qualified new
 route. The only low-competition WireGuard, Caddy, and CGNAT request paid USD
 100; the USD 250-or-higher alternatives required live calls, unsupported VPN
 or incident-response experience, abusive account automation, or faced 76–158
-competitors. The five free Freelancer bids remain reserved for a bounded match.
+competitors. The Simplified-Chinese LazyRemote page now links a complete
+Chinese synthetic sample report covering topology, exposure, identity,
+findings, acceptance, rollback, and the software-only USD 250 boundary. It
+reduces evaluation friction but is not a customer result, inquiry, or revenue.
 
 ## Decision
 

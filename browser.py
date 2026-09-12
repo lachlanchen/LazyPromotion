@@ -762,7 +762,10 @@ def hydrate_candidates(page: Page, candidates: list[dict], limit: int) -> list[d
     for candidate in candidates:
         if len(hydrated) >= limit:
             break
-        if candidate.get("status") != "discovered" or promotion.is_stale(str(candidate.get("published_at") or "")):
+        if candidate.get("status") != "discovered" or promotion.candidate_is_stale(
+            str(candidate.get("published_at") or ""),
+            str(candidate.get("body") or ""),
+        ):
             continue
         try:
             result = inspect_candidate(page, str(candidate["id"]))
@@ -848,7 +851,10 @@ def run_discovery_cycle(
                 if candidate.get("status") == "discovered"
                 and int(candidate.get("score") or 0) >= 5
                 and candidate.get("suggested_tool") == project_id
-                and not promotion.is_stale(str(candidate.get("published_at") or ""))
+                and not promotion.candidate_is_stale(
+                    str(candidate.get("published_at") or ""),
+                    str(candidate.get("body") or ""),
+                )
             ]
             triageable = [
                 str(candidate["id"])
@@ -860,7 +866,10 @@ def run_discovery_cycle(
                     str(candidate.get("body") or ""),
                 )
                 and promotion.compact(str(candidate.get("author") or "")).casefold() not in promotion.BOT_AUTHORS
-                and not promotion.is_stale(str(candidate.get("published_at") or ""))
+                and not promotion.candidate_is_stale(
+                    str(candidate.get("published_at") or ""),
+                    str(candidate.get("body") or ""),
+                )
             ]
             promotion.mark_triage_requested(db, triageable)
             eligible_ids.extend(candidate_id for candidate_id in matching if candidate_id not in eligible_ids)

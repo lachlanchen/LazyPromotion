@@ -1,0 +1,82 @@
+{
+  "version": 2,
+  "id": "android-apk-delivery-freelancer",
+  "objective": "Win one bounded Android build-and-delivery task using the executed L & N release as proof, without accepting code repair, missing-secret recovery, or an unbounded signing obligation.",
+  "source_need": {
+    "captured_at": "2026-09-11T23:40:00Z",
+    "url": "https://www.freelancer.com/projects/kotlin/provide-android-apk-download-link",
+    "project_id": 40705956,
+    "title": "Provide Android APK Download Link",
+    "state": "active_open",
+    "published_budget": "USD 30–250 fixed",
+    "requested_delivery": "Clone one supplied Android repository, run a clean Android Studio build, export and upload the APK, verify installation, and provide one working link within a stated two-hour task boundary.",
+    "activity_when_checked": "86 bids with an average bid of USD 116.68; five free bids remained on the existing account.",
+    "buyer_state": "The visible listing shows a payment-verified US buyer with one 5.0 review and a funded deposit indicator.",
+    "scope_unknowns": [
+      "branch or tag",
+      "build variant",
+      "debug versus release APK",
+      "availability of required Gradle dependencies and configuration",
+      "availability and authorized use of any requested signing material"
+    ]
+  },
+  "fit": {
+    "projects": [
+      "L-and-N"
+    ],
+    "public_evidence": [
+      "https://github.com/lachlanchen/L-and-N",
+      "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk"
+    ],
+    "executed_proof": {
+      "state": "project_owned_android_release_verified",
+      "build_environment": "Android Studio with JDK 21",
+      "checks": [
+        "Gradle clean test and APK build",
+        "signed APK and AAB release artifacts",
+        "API 36.1 emulator install and launch",
+        "public first-party APK download returning HTTP 200",
+        "published SHA-256 for the downloadable APK"
+      ],
+      "apk_sha256": "89867c73d2ae3f3023a1e402e7c7fd21dd4337a409262aff3832f3c30efd1fb7",
+      "boundary": "This proves an Android release for the project-owned Capacitor application, not a successful build of the buyer's undisclosed Kotlin repository."
+    },
+    "not_proven": [
+      "the buyer repository builds without changes",
+      "the buyer supplies all dependencies, configuration, and authorized signing material",
+      "successful installation of the buyer APK",
+      "a paid customer delivery"
+    ]
+  },
+  "application": {
+    "state": "submitted_awaiting_buyer_reply",
+    "submitted_at": "2026-09-11T23:53:02Z",
+    "review_after": "2026-09-14",
+    "confirmation_url": "https://www.freelancer.com/projects/kotlin/Provide-Android-APK-Download-Link/proposals?bidCreated=true",
+    "visible_confirmation": "You've successfully placed a bid",
+    "rank_when_confirmed": "87 of 88 proposals",
+    "proposed_bid_usd": 100,
+    "proposed_delivery_days": 1,
+    "platform_fee_usd": 10,
+    "proposed_net_before_tax_usd": 90,
+    "milestone_request_usd": 100,
+    "milestone_description": "APK built, install-checked, uploaded, and direct link plus SHA-256 delivered",
+    "proposal": ".local/private/applications/android-apk-delivery-freelancer.md",
+    "free_bid_required": true,
+    "paid_upgrade_selected": false,
+    "free_bids_remaining_after_submission": 4,
+    "bid_submitted": true,
+    "policy": "Submit at most once with no paid upgrade. Keep files, communication, funded milestone, and payment on Freelancer. Do not begin work until the branch, build variant, signing boundary, repository access, and funded milestone are agreed. Stop rather than silently expanding into code fixes or secret recovery."
+  },
+  "funnel": {
+    "state": "application_submitted_awaiting_buyer",
+    "application_submitted": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

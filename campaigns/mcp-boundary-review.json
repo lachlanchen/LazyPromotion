@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 24,
+  "version": 25,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -143,11 +143,18 @@
     "boundary": "Project-owned evidence, not a customer result, penetration test, security certification, or promise of production fitness."
   },
   "owned_delivery": {
-    "website_commit": "e44f4287a1bc5f24229f775c5487b4807c83d9f0",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34698033524",
+    "website_commit": "4261258e0540fe1aaec740609bc22464191e6bbf",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34701884027",
     "deployment_state": "success",
     "homepage": "The six-route chooser replaces the lower-priority Story Clip card with this current software-first offer in thirteen locales.",
-    "verification": "All 33 website contract tests passed. The live offer now makes large-result handoff explicit: output bounds, pagination or resource handoff, and client-resolvable locators are checked inside the existing ten-case scope. GitHub Pages deployment 34698033524 succeeded, and the deployed HTML returned both exact result-handoff checks."
+    "social_preview": {
+      "state": "live_verified",
+      "url": "https://lazying.art/mcp-boundary-review/assets/mcp-boundary-review-social.png",
+      "dimensions": "1200x630",
+      "sha256": "6f6b8ca7345589ccf8cd98b37708f3f133cd057933423c17f8e1073429722a25",
+      "boundary": "The card uses exact project-owned sample counts and the fixed offer terms; it contains no customer claim or unrelated generated media."
+    },
+    "verification": "All 29 website contract entrypoints passed. The live offer retains the exact result-handoff checks and now uses a dedicated 1200x630 MCP evidence card instead of the generic LKT screenshot. GitHub Pages deployment 34701884027 succeeded; the deployed image dimensions, SHA-256, Open Graph tags, and X card tag matched the reviewed files."
   },
   "intake": {
     "state": "live_verified",

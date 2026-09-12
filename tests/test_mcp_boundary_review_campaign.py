@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 24)
+        self.assertEqual(self.payload["version"], 25)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -272,11 +272,16 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         delivery = self.payload["owned_delivery"]
         self.assertEqual(
             delivery["website_commit"],
-            "e44f4287a1bc5f24229f775c5487b4807c83d9f0",
+            "4261258e0540fe1aaec740609bc22464191e6bbf",
         )
-        self.assertIn("actions/runs/34698033524", delivery["deployment_run"])
-        self.assertIn("pagination or resource handoff", delivery["verification"])
-        self.assertIn("deployed HTML returned", delivery["verification"])
+        self.assertIn("actions/runs/34701884027", delivery["deployment_run"])
+        preview = delivery["social_preview"]
+        self.assertEqual(preview["state"], "live_verified")
+        self.assertEqual(preview["dimensions"], "1200x630")
+        self.assertRegex(preview["sha256"], r"^[0-9a-f]{64}$")
+        self.assertIn("no customer claim", preview["boundary"])
+        self.assertIn("result-handoff checks", delivery["verification"])
+        self.assertIn("Open Graph tags", delivery["verification"])
 
     def test_lkt_readmes_route_mcp_interest_to_exact_proof(self):
         github = self.payload["channels"]["github"]

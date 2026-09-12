@@ -30,6 +30,19 @@ class MiniMaxH3VoiceReferenceDiagnosticTests(unittest.TestCase):
         self.assertIn("not a guarantee", evidence["claim_boundary"])
         self.assertIn("not linked", evidence["claim_boundary"])
 
+    def test_open_source_reply_names_the_full_code_path_without_claiming_a_patch(self):
+        need = self.data["related_open_source_need"]
+        github = self.data["channels"]["github"]
+
+        self.assertIn("2294", need["url"])
+        self.assertEqual(github["state"], "technical_reply_published")
+        self.assertTrue(github["linked_owned_asset"])
+        self.assertFalse(github["product_or_price_mentioned"])
+        self.assertIn("handler", github["content"])
+        self.assertIn("pipeline", github["content"])
+        self.assertIn("Do not add another comment", github["policy"])
+        self.assertNotIn("implemented", github["policy"].lower())
+
     def test_helpful_interaction_does_not_inflate_the_revenue_funnel(self):
         funnel = self.data["funnel"]
 

@@ -1,6 +1,6 @@
 {
   "id": "minimax-h3-voice-reference-diagnostic",
-  "version": 1,
+  "version": 2,
   "objective": "Help local MiniMax H3 users isolate voice-reference assignment failures with a small, reproducible test before changing sampling settings.",
   "source_need": {
     "captured_at": "2026-09-12T02:18:00Z",
@@ -13,6 +13,14 @@
     "project": "https://github.com/lachlanchen/LocalVideoGen",
     "project_owned_result": "One local Ref2VA render used three separately supplied voice references; offline speaker comparisons matched each generated speaker most strongly to the intended reference.",
     "claim_boundary": "This is evidence from one project-owned run, not a guarantee across prompts, seeds, models, or hardware. The generated video is not linked or used as selling proof because it does not meet the current promotion quality bar."
+  },
+  "related_open_source_need": {
+    "captured_at": "2026-09-12T02:34:00Z",
+    "url": "https://github.com/deepbeepmeep/Wan2GP/issues/2294",
+    "problem": "Wan2GP exposes two MiniMax H3 audio references even though the native Ref2VA input supports three.",
+    "live_state": "Open, unlocked, unassigned, and without a prior comment when reviewed.",
+    "source_commit": "362c3467a70e1136ceb52eec95907205a8f88543",
+    "code_findings": "The two-reference boundary appeared independently in the handler choices, input collection and validation, and in the pipeline signature, reference construction and final aggregate guard."
   },
   "channels": {
     "reddit": {
@@ -30,6 +38,22 @@
         "evidence": "ignored_private_screenshot"
       },
       "policy": "The reply gives a bounded diagnostic from project-owned evidence and asks for no click, private message, purchase, or follow-up. Do not add another reply unless the author asks a concrete question."
+    },
+    "github": {
+      "state": "technical_reply_published",
+      "published_at": "2026-09-12T02:37:55Z",
+      "source_url": "https://github.com/deepbeepmeep/Wan2GP/issues/2294",
+      "reply_url": "https://github.com/deepbeepmeep/Wan2GP/issues/2294#issuecomment-5642915256",
+      "content": "The two-audio limit is duplicated, so this needs more than adding one UI field. In `minimax_h3_handler.py`, the Ref2VA choices stop at A/AB, only `audio_guide` and `audio_guide2` are appended, and validation rejects `audio_count > 2`. In `pipeline.py`, `generate()` accepts only those two guides, builds only those two reference sources, and the final refs guard rejects audio/video-audio references above two again.\n\nI would thread `audio_guide3` and a C selection through the shared UI → handler → `generate()`, change only the audio cap to three, and leave the 12-file, 9-image, 2-video, and audio ≤ visual checks in place. The regression matrix should cover 0/1/2/3 standalone audios plus reference-video soundtrack combinations, because those soundtracks consume audio-reference slots too.\n\nI maintain this [LocalVideoGen H3 workflow](https://github.com/lachlanchen/LocalVideoGen/blob/main/workflows/preview/h3_r2v_int8_turbo.json#L117-L123); its embedded note and graph show the native three-audio-reference contract and connection-order `<Audio N>` tags.",
+      "content_sha256": "db891f80ee8ba2adae4322598ae4c8c653c269075ea59129304ae6154a60bd68",
+      "linked_owned_asset": true,
+      "product_or_price_mentioned": false,
+      "verification": {
+        "public_body_visible": true,
+        "author": "lachlanchen",
+        "duplicate_retry": false
+      },
+      "policy": "The linked workflow is a directly relevant implementation example with a maintainer disclosure. It contains no offer, price, private-message request, or claim of a completed Wan2GP patch. Do not add another comment unless the maintainer asks a concrete question."
     }
   },
   "funnel": {

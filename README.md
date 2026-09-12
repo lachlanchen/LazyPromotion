@@ -144,8 +144,10 @@ python mcp_public_preflight.py https://github.com/owner/repository
 
 The generated report is private and ignored by Git. It pins a revision and
 maps static surface clues without cloning, running code, submitting a form, or
-claiming a security result. See
-[`docs/mcp-public-preflight.md`](docs/mcp-public-preflight.md).
+claiming a security result. Inspect the project-owned
+[live output sample](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs),
+then see [`docs/mcp-public-preflight.md`](docs/mcp-public-preflight.md) to run it
+locally.
 
 The project-owned Bounty agent feed can also be watched without commenting,
 claiming, messaging, downloading attachments, or submitting work:

@@ -8,6 +8,11 @@ Pre-Deployment Review.
 python mcp_public_preflight.py https://github.com/owner/repository
 ```
 
+Before running it, inspect the project-owned
+[browser sample](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs)
+or download its exact generated Markdown. The sample is the static first step;
+the separate executed report shows what the paid review adds.
+
 The preflight pins the default-branch commit and tree, reads a bounded set of
 public text blobs through explicit GitHub API GET requests, and records likely
 tools, resources, prompts, transports, configuration names, external hosts,

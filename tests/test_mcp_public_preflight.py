@@ -106,6 +106,22 @@ def summarize():
 
 
 class McpPublicPreflightTests(unittest.TestCase):
+    def test_public_docs_route_to_one_live_generated_output_sample(self):
+        root = Path(__file__).resolve().parents[1]
+        expected = (
+            "https://lazying.art/mcp-boundary-review/preflight-sample/"
+            "?utm_source=github&utm_medium=repository"
+            "&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs"
+        )
+        readme = (root / "README.md").read_text(encoding="utf-8")
+        guide = (root / "docs" / "mcp-public-preflight.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertEqual(readme.count(expected), 1)
+        self.assertEqual(guide.count(expected), 1)
+        self.assertIn("exact generated Markdown", guide)
+        self.assertIn("separate executed report", guide)
+
     def test_repository_url_accepts_only_clean_github_root(self):
         self.assertEqual(
             preflight.parse_repository_url("https://github.com/Example/Server.git/"),

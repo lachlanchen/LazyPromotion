@@ -229,7 +229,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         self.assertEqual(demand["public_stars"], 14)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 10)
         explicit_need = demand["current_explicit_need"]
@@ -239,9 +239,16 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(explicit_need["outreach_state"], "no_agent_reply")
         contributor = demand["contributor_signal"]
-        self.assertEqual(contributor["state"], "changes_requested")
-        self.assertEqual(len(contributor["blocking_findings"]), 5)
-        self.assertIn("not adoption", contributor["boundary"])
+        self.assertEqual(
+            contributor["state"], "merged_with_original_contributor_attribution"
+        )
+        self.assertEqual(len(contributor["resolved_findings"]), 6)
+        self.assertEqual(
+            contributor["merge_commit"],
+            "af87e773679e7c4c7ef34e3bdeb1f66975c9949d",
+        )
+        self.assertIn("34721298363", contributor["verification"])
+        self.assertIn("not a customer deployment", contributor["boundary"])
         self.assertEqual(
             demand["owner_visible_traffic"]["top_referrer"]["name"], "Google"
         )

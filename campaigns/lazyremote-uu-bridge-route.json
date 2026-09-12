@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 13,
+  "version": 14,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-12T16:32:17Z",
@@ -30,18 +30,22 @@
     "contributor_signal": {
       "source_url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge/pull/11",
       "opened_at": "2026-09-05T15:45:02Z",
-      "head_sha": "ddad980d00cf8482e1149b71529d417e587583e4",
+      "head_sha": "9f90ae82845ce993aa1677d82c18348d39ddabcc",
       "need": "An outside contributor proposed a one-way GameViewer-to-X11 clipboard bridge for a Wine/VNC compatibility gap.",
       "reviewed_at": "2026-09-09T12:37:33Z",
-      "state": "changes_requested",
-      "blocking_findings": [
-        "pre-existing clipboard text can be replayed on companion startup",
-        "GameViewer ownership is checked before the clipboard is locked and read",
-        "background xclip launcher PIDs are tracked instead of the selection owners",
-        "delivery can be acknowledged without proving X11 selection ownership",
-        "both long-lived helpers remain outside critical-process supervision"
+      "resolved_at": "2026-09-12T21:57:03Z",
+      "state": "merged_with_original_contributor_attribution",
+      "merge_commit": "af87e773679e7c4c7ef34e3bdeb1f66975c9949d",
+      "resolved_findings": [
+        "the companion baselines the clipboard sequence and does not replay pre-start content",
+        "the sequence and exact GameViewer owner are checked before and after the locked read",
+        "xclip stays in the foreground and both X11 selections must acquire a new non-None owner before acknowledgement",
+        "loopback client reads and writes have one-second deadlines",
+        "the path is limited to the VNC/X11 fallback and both helpers participate in critical-process supervision",
+        "the isolated Wine/Xvfb test covers startup, non-GameViewer ownership, CLIPBOARD and PRIMARY, xclip failure, a stalled client, and child cleanup"
       ],
-      "boundary": "The contribution is relevant product evidence, but an open or revised pull request is not adoption, buyer intent, a lead, or revenue. Do not merge until the requested lifecycle, ownership, gating, and regression work passes review."
+      "verification": "All 152 repository unit and documentation tests passed locally with one existing opt-in systemd test skipped. The real isolated Wine/Xvfb test passed all seven reported boundaries locally, and GitHub Actions run 34721298363 passed the same functional test before approval and merge. The contributor's original commit remains separately attributed to robbie194.",
+      "boundary": "The merged contribution is third-party engagement and stronger project-owned maintenance proof. It is not a customer deployment, qualified buyer, paid support request, sale, donation, or received revenue."
     },
     "owner_visible_traffic": {
       "window": "The GitHub traffic API's current rolling window from 2026-08-29 through 2026-09-11",

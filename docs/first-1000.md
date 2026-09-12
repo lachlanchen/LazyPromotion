@@ -104,6 +104,17 @@ charge, or payout was created. This closes an operational gap on the portfolio's
 strongest current need-shaped traffic path without turning it into an open
 self-serve checkout.
 
+The strongest acquisition repository also gained real outside contribution
+evidence. Pull request 11 from `robbie194` added a missing one-way GameViewer
+clipboard route for the VNC/X11 fallback. The maintained revision prevents
+startup replay, binds the locked read to the exact GameViewer owner and
+sequence, confirms both X11 selections, bounds stalled clients, and supervises
+the helper lifecycle. The original contributor commit remains attributed, and
+the full isolated Wine/Xvfb regression passed locally and in GitHub Actions
+before merge commit `af87e773679e7c4c7ef34e3bdeb1f66975c9949d`. This is
+stronger open-source maintenance proof for the adjacent LazyRemote review; it
+is not a customer deployment, buyer inquiry, sale, donation, or revenue.
+
 The Story Clip route has a protected payment handoff. The AI Clip Assembly
 payment plan remains technically recorded but is paused with the offer: no
 Stripe object, public checkout, source transfer, or buyer request may proceed

@@ -44,6 +44,17 @@
         "purpose": "Self-hosters asking for a bounded private-document search or knowledge workflow"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "subreddit:mcp (\"my MCP server\" OR \"our MCP server\" OR \"building an MCP server\") (production OR deploy OR remote OR authentication OR security OR review) (help OR advice OR feedback OR recommend)",
+        "purpose": "MCP-server owner buyer intent: a maintainer asking for a bounded review before remote or production deployment",
+        "required_body_groups": [
+          ["my mcp server", "our mcp server", "mcp server i'm building", "mcp server i am building", "building an mcp server", "we built an mcp server", "i built an mcp server"],
+          ["production", "deploy", "deployment", "remote", "authentication", "authorization", "security", "trust boundary", "review", "audit"],
+          ["help", "advice", "feedback", "recommend", "review", "audit", "how should", "what should", "can anyone"]
+        ],
+        "excluded_body_any": ["try my mcp server", "use my mcp server", "launching my mcp server", "now available", "submit your mcp server", "mcp directory", "for hire", "available for work"]
+      },
+      {
         "project_id": "github-lazytunnel",
         "query": "subreddit:selfhosted (\"my home pc\" OR \"my private server\" OR \"my workstation\") (\"remote access\" OR \"remote desktop\" OR SSH OR noVNC) (CGNAT OR NAT OR relay OR \"self-hosted\") (help OR recommend OR \"looking for\")",
         "purpose": "Owners asking how to reach a named private computer through a self-hosted route without publishing desktop ports",
@@ -257,6 +268,17 @@
         "purpose": "Explicit requests for private knowledge or offline retrieval workflows"
       },
       {
+        "project_id": "localknowledgeterminal",
+        "query": "(\"my MCP server\" OR \"our MCP server\" OR \"building an MCP server\") (production OR deploy OR remote OR authentication OR security OR review) (help OR advice OR feedback OR recommend) -filter:retweets",
+        "purpose": "MCP-server owner buyer intent: a maintainer asking for a bounded review before remote or production deployment",
+        "required_body_groups": [
+          ["my mcp server", "our mcp server", "mcp server i'm building", "mcp server i am building", "building an mcp server", "we built an mcp server", "i built an mcp server"],
+          ["production", "deploy", "deployment", "remote", "authentication", "authorization", "security", "trust boundary", "review", "audit"],
+          ["help", "advice", "feedback", "recommend", "review", "audit", "how should", "what should", "can anyone"]
+        ],
+        "excluded_body_any": ["try my mcp server", "use my mcp server", "launching my mcp server", "now available", "submit your mcp server", "mcp directory", "for hire", "available for work"]
+      },
+      {
         "project_id": "github-lazytunnel",
         "query": "(\"my home pc\" OR \"my private server\" OR \"my workstation\") (\"remote access\" OR SSH OR noVNC) (CGNAT OR relay OR \"self-hosted\") (help OR recommend OR \"looking for\") -filter:retweets",
         "purpose": "Owners asking how to reach a named private computer through a self-hosted route without publishing desktop ports",
@@ -438,6 +460,12 @@
         "query": "Ask HN local knowledge base",
         "comment_query": "knowledge base",
         "purpose": "People asking how to build a private or local knowledge workflow"
+      },
+      {
+        "project_id": "localknowledgeterminal",
+        "query": "Ask HN MCP server production review",
+        "comment_query": "MCP server production security review",
+        "purpose": "Research-only evidence for MCP maintainers asking how to review a server before remote or production deployment"
       },
       {
         "project_id": "localknowledgeterminal",

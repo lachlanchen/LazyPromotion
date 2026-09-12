@@ -282,7 +282,7 @@
       "homepage": "https://lazying.art/lkt/",
       "reply_url": "https://lazying.art/lkt/fit-check/",
       "summary": "Local-first multilingual knowledge cards and rebuildable Markdown search with exact source provenance.",
-      "reply_context": "The current public offer is a private-by-design collection-fit service, not a finished RAG application or ready-to-ship device. The free fit check at https://lazying.art/lkt/fit-check/ covers one customer-provided collection, one language goal, intended readers, source rights, privacy needs, sample format, and the customer's existing machine. If the collection is suitable and both sides accept the boundary, the fixed USD 250 founding sprint delivers a written data/privacy/citation map, evaluates an agreed sample capped at 12 source units and 20 test questions, builds up to two cited browser cards when usable, gives a go/no-go recommendation, and includes one factual correction pass. A concrete project-owned sample report is public at https://lazying.art/lkt/sample-report/; its measured source report remains at https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md. The read-only Markdown proof at https://lazying.art/lkt/markdown-vault/ shows two project-owned multilingual notes, a disposable local lexical index, exact file/heading/line/excerpt/SHA-256 provenance, and one explicit wikilink. It is not a customer result, benchmark, or paid-engagement claim. It is not native Obsidian integration, semantic or vector search, automatic concept discovery, write-back, or whole-vault question answering. Hardware, shipping, custom OCR, bulk conversion, production deployment, and ongoing support are excluded. Give useful low-resource technical guidance first; mention the closest proof or fit check only when the person is genuinely deciding how to handle a bounded private PDF, book, Markdown, document, or text collection. Never imply that LocalKnowledgeTerminal already provides an off-the-shelf RAG system.",
+      "reply_context": "The current public offer is a private-by-design collection-fit service, not a finished RAG application or ready-to-ship device. The free fit check at https://lazying.art/lkt/fit-check/ covers one customer-provided collection, one language goal, intended readers, source rights, privacy needs, sample format, and the customer's existing machine. If the collection is suitable and both sides accept the boundary, the fixed USD 250 founding sprint delivers a written data/privacy/citation map, evaluates an agreed sample capped at 12 source units and 20 test questions, builds up to two cited browser cards when usable, gives a go/no-go recommendation, and includes one factual correction pass. A concrete project-owned sample report is public at https://lazying.art/lkt/sample-report/; its measured source report remains at https://github.com/lachlanchen/LocalKnowledgeTerminal/blob/main/docs/sample-fit-report.md. The read-only Markdown proof at https://lazying.art/lkt/markdown-vault/ shows two project-owned multilingual notes, a disposable local lexical index, exact file/heading/line/excerpt/SHA-256 provenance, and one explicit wikilink. It is not a customer result, benchmark, or paid-engagement claim. It is not native Obsidian integration, semantic or vector search, automatic concept discovery, write-back, or whole-vault question answering. Hardware, shipping, custom OCR, bulk conversion, production deployment, and ongoing support are excluded. For a maintainer explicitly deciding whether one MCP server is ready for remote or production deployment, use the separate fixed USD 500 pre-deployment review at https://lazying.art/mcp-boundary-review/. It covers one pinned revision with up to eight tools and resources, an authority map, a sanitized ten-check protocol packet, a narrow go/no-go report, and one limited recheck. It excludes implementation, penetration testing, certification, and any guarantee that the server is secure or production-ready. Its public packet is project-owned evidence, not a customer result. Give a useful technical answer first; mention the closest proof or fit check only when the person is genuinely choosing this bounded review. For all other private-document needs, keep using the collection-fit boundary. Never imply that LocalKnowledgeTerminal already provides an off-the-shelf RAG system.",
       "keyword_context_any": {
         "local rag": [
           "llm", "retrieval", "embedding", "vector database", "document", "pdf",
@@ -300,6 +300,14 @@
         ],
         "markdown source of truth": [
           "local", "private", "search", "provenance", "rebuildable", "index"
+        ],
+        "mcp server": [
+          "production", "deploy", "deployment", "remote", "authentication",
+          "authorization", "security", "trust boundary", "review", "audit"
+        ],
+        "model context protocol server": [
+          "production", "deploy", "deployment", "remote", "authentication",
+          "authorization", "security", "trust boundary", "review", "audit"
         ]
       },
       "keywords": [
@@ -311,7 +319,9 @@
         "markdown source of truth", "local markdown search", "rebuildable markdown",
         "disposable search index", "rebuildable index",
         "knowledge provenance", "source provenance",
-        "document search", "pdf collection", "book collection", "text collection"
+        "document search", "pdf collection", "book collection", "text collection",
+        "mcp server", "model context protocol server", "mcp deployment",
+        "mcp security review", "mcp pre-deployment review"
       ]
     },
     {

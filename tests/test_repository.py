@@ -760,6 +760,59 @@ class RepositoryTests(unittest.TestCase):
                     route,
                 ))
 
+    def test_mcp_review_routes_require_server_owner_and_deployment_intent(self):
+        for platform in ("reddit", "x"):
+            routes = [
+                route for route in browser.discovery_query_lanes(platform)["core"]
+                if route["purpose"].startswith("MCP-server owner buyer intent")
+            ]
+            with self.subTest(platform=platform):
+                self.assertEqual(len(routes), 1)
+                route = routes[0]
+                self.assertEqual(route["project_id"], "localknowledgeterminal")
+                self.assertEqual(len(route["required_body_groups"]), 3)
+                self.assertTrue(browser.route_body_qualified(
+                    "We built an MCP server and need advice reviewing authentication "
+                    "before a remote production deployment.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "Try my MCP server, now available in our MCP directory.",
+                    route,
+                ))
+                self.assertFalse(browser.route_body_qualified(
+                    "I need help connecting an MCP server to Claude Desktop.",
+                    route,
+                ))
+
+        hackernews = [
+            route for route in browser.discovery_query_lanes("hackernews")["core"]
+            if route["query"] == "Ask HN MCP server production review"
+        ]
+        self.assertEqual(len(hackernews), 1)
+        self.assertIn("Research-only", hackernews[0]["purpose"])
+
+    def test_mcp_review_need_matches_the_bounded_lkt_route(self):
+        ranked = promotion.rank_projects(
+            "We built an MCP server and need help with a security review before "
+            "remote production deployment. How should we test its authentication "
+            "and tool boundaries?"
+        )
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["project"]["id"], "localknowledgeterminal")
+        context = ranked[0]["project"]["reply_context"]
+        self.assertIn("fixed USD 500 pre-deployment review", context)
+        self.assertIn("https://lazying.art/mcp-boundary-review/", context)
+        self.assertIn("excludes implementation", context)
+
+        unrelated = promotion.rank_projects(
+            "I need help connecting an MCP server to Claude Desktop."
+        )
+        self.assertFalse(any(
+            item["project"]["id"] == "localknowledgeterminal"
+            for item in unrelated
+        ))
+
     def test_meeting_knowledge_routes_require_owned_source_and_explicit_need(self):
         for platform in ("reddit", "x"):
             routes = [

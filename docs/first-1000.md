@@ -1538,6 +1538,16 @@ request was made. The WordPress sitemap remains successful but was last read on
 September 7, before the guide was published. A crawl request is discovery work,
 not a ranking, visit, inquiry, or sale.
 
+The discovery engine now has a dedicated MCP-server-owner lane on Reddit and X,
+plus a research-only Hacker News lane. The public routes require an owner-built
+server, a remote/production review concern, and an explicit request for help;
+launches, directories, and service pitches are rejected. The matcher exposes
+the fixed USD 500 review boundary only for that context and keeps ordinary MCP
+setup questions away from the offer. A live Reddit cycle on September 12 found
+16 posts or comments, rejected nine after route checks, deferred five without
+enough source context, and produced zero eligible candidates. No reply, link,
+lead, application, or revenue was created from that scan.
+
 GitHub Sponsors was already active on the repositories, but its public profile
 had no preset tiers. Three restrained choices are now published and publicly
 verified: USD 5 monthly, USD 25 one-time, and USD 100 one-time. Their copy funds

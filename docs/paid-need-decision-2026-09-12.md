@@ -13,7 +13,7 @@ on acceptance, available work, completed delivery, and payment.
 | 4 | [English lecture audio transcription](https://www.freelancer.com/projects/academic-writing/english-lecture-audio-transcription-40703433) | INR 12,500–37,500 fixed, approximately USD 131–392 | Susskind, Video2Book, and the bilingual lecture-pack sample show transcript and source-map work | Confirm total audio hours, quality, deadline, timestamp granularity, terminology, speakers, confidentiality, and acceptance before bidding. |
 | 5 | [Meridial infrastructure specialist](https://job-boards.greenhouse.io/agency/jobs/4745191101) | USD 80–150/hour | LazyEdge and LazyTunnel show default-deny ingress, Caddy, OpenSSH, systemd, private relays, isolation, and verification | One truthful application is now awaiting reply. Do not claim unverified professional cloud, IaC, or TypeScript fluency. |
 | 6 | [DataAnnotation software engineer](https://www.dataannotation.tech/job-board/software-engineer) | Coding work is advertised from USD 50–100+/hour, with the role page describing up to USD 75–150+/hour | The Python/Linux repositories, reproducible debugging, tests, and technical explanations are directly relevant | Hong Kong eligibility and task availability are not established. Signup includes a one-attempt assessment and may later require identity verification. |
-| 7 | [Meridial AI-assisted developer-workflow auditor](https://job-boards.greenhouse.io/agency/jobs/4969250101) | USD 60/hour | LazyPromotion provides review gates, regression tests, browser/tool integration, and reproducible failure capture | There is no public proof of paid enterprise telemetry or IDE-integration auditing. |
+| 7 | [Meridial AI-assisted developer-workflow auditor](https://job-boards.greenhouse.io/agency/jobs/4969250101) | USD 60/hour | LazyPromotion provides review gates, regression tests, browser/tool integration, and reproducible failure capture | One truthful application is now awaiting reply. Do not claim paid enterprise telemetry or commercial IDE-integration auditing. |
 | 8 | [Meridial SWE-Bench task auditor](https://job-boards.greenhouse.io/agency/jobs/4969230101) | USD 60/hour | Multi-repository debugging, Python/Linux verification, tests, and OpenHI reproducibility evidence fit the work | There is no explicit SWE-Bench audit case study; professional-year claims must remain factual. |
 | 9 | [Meridial coding specialist, fluent in Chinese](https://job-boards.greenhouse.io/agency/jobs/4663149101) | USD 8–65/hour | Coding, multilingual documentation, LKT, book pipelines, and provenance-oriented writing form a coherent match | Exact language proficiency and professional history must be stated without inference. |
 
@@ -28,6 +28,15 @@ was submitted with a focused one-page resume and the current LazyingArt
 LinkedIn profile. Greenhouse displayed its confirmation page without a
 verification challenge. No assessment or identity check was started; the
 application is awaiting reply and is not a lead, contract, payment, or revenue.
+
+The separate Meridial developer-workflow auditor listing is also worldwide,
+no-fee, and closely aligned with the executed review-gate, browser-regression,
+state-recovery, MCP, and reproducibility work. One application was submitted
+with a focused one-page resume and the same current LinkedIn profile. Its
+Greenhouse confirmation page was visibly reviewed without a verification
+challenge. The resume does not claim paid enterprise telemetry or commercial
+IDE-integration auditing. This is awaiting reply and is not a lead, contract,
+accepted USD 60 rate, payment, or revenue.
 
 A fresh index result also described a USD 300 guidebook-to-training-manual
 redesign that fit the Book Specimen workflow. The exact Upwork page was checked

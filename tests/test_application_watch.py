@@ -132,7 +132,7 @@ class ApplicationWatchTests(unittest.TestCase):
 
     def test_current_campaigns_have_no_automatic_follow_up(self):
         report = application_watch.build_report(on=date(2026, 9, 9))
-        self.assertEqual(report["summary"]["awaiting_human_reply"], 36)
+        self.assertEqual(report["summary"]["awaiting_human_reply"], 37)
         self.assertEqual(report["summary"]["missing_review_schedule"], 0)
         self.assertIn(
             "manicule-technical-writer-opportunity",
@@ -156,6 +156,10 @@ class ApplicationWatchTests(unittest.TestCase):
         )
         self.assertIn(
             "meridial-infrastructure-specialist",
+            [item["campaign_id"] for item in report["applications"]],
+        )
+        self.assertIn(
+            "meridial-developer-workflows-auditor",
             [item["campaign_id"] for item in report["applications"]],
         )
         self.assertIn(

@@ -1316,6 +1316,17 @@ figures are attention signals, not buyer intent or revenue.
 Visits, likes, replies, GitHub stars, and positive comments are not revenue.
 Verified received gross revenue for this goal remains **USD 0**.
 
+Meridial's worldwide AI-assisted developer-workflow auditor listing publishes
+USD 60 per hour and asks for correctness, realism, solvability,
+reproducibility, test, and tool-integration review. One no-fee application was
+submitted with a focused one-page resume grounded in LazyPromotion's review
+gates, the executed browser-regression and state-recovery specimens, MCP work,
+and multi-repository debugging. The Greenhouse confirmation page was visibly
+reviewed, and no verification challenge, assessment, or identity check was
+started. The application does not claim paid enterprise telemetry or
+commercial IDE-integration auditing. It is awaiting reply, not an interview,
+contract, accepted USD 60 rate, payment, or revenue.
+
 Technically's current contributor page publishes USD 500 per contribution and
 says the first contribution is paid even if it does not reach publication. On
 September 11, its official form accepted one application built from three live

@@ -1723,3 +1723,13 @@ distinguishes a direct “help me” request from phrases such as “this helped
 and treats an explicitly Codex-summarized benchmark as an existing solution
 unless it also contains a direct unresolved request. The complete suite passes
 764 tests. The dedicated browser/noVNC stack was stopped after evidence capture.
+
+A primary-source paid-work check rejected three attractive but non-viable
+listings before any claim or application: Arrow's USD 750 attachment guide needs
+established community presence and an accountable-human CLA and already has five
+applicants plus a competing pull request; osModa's 1 SOL demo requires a human
+to film two real servers and is first-valid-submission work; and G2i's indexed
+USD 100–200/hour Python reviewer role now resolves to `Job not found`, with its
+remaining comparable contracts restricted to United States applicants. A sample
+of 100 recent GitHub `bounty` results was too noisy to justify a new persistent
+source. These checks created no claim, application, lead, payment, or revenue.

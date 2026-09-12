@@ -14,3 +14,27 @@ A separate Freelancer RAG implementation brief matched Local Knowledge Terminal 
 2. Review any technical exercise rules before starting; do not represent agent-assisted work as unaided work.
 3. Keep the USD 500 MCP review as the primary owned offer and the existing no-fee applications as secondary acquisition routes.
 4. Count nothing until accepted work, delivery, and payment are independently evidenced.
+
+## Rejected bounty and contract routes
+
+A current GitHub bounty search produced one legitimate-looking USD 750 Quiver
+attachment-guide task, but it is not a clean claim. Arrow previously closed a
+claim for the same funding line because contributors must first establish a real
+Discord presence and have the accountable human sign its CLA. The reopened task
+already has five applicants and a 546-line competing pull request. Repeating the
+claim would neither satisfy the community gate nor create a likely paid outcome.
+
+A separate 1 SOL osModa demonstration requires two real servers, advance proof
+of the installations, a human filming physical screens, a public YouTube upload,
+and first-valid-submission competition. It conflicts with the low-involvement
+route and was not claimed. The indexed G2i USD 100–200/hour Python code-review
+role also failed a live application check: the official Ashby page now says
+`Job not found`, while the remaining comparable contracts on G2i's current board
+are explicitly United States-only.
+
+Broad GitHub bounty discovery is currently too noisy to automate into the
+persistent monitor. The latest 100 open `bounty`-label results were dominated by
+mirrors, engagement-for-token schemes, stale items, tasks already assigned or in
+pull-request review, and hardware-specific work. Keep using primary-source,
+one-candidate validation instead of treating an open issue or advertised amount
+as claimable paid work.

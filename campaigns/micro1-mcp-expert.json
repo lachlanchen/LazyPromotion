@@ -1,0 +1,76 @@
+{
+  "id": "micro1-mcp-expert",
+  "version": 1,
+  "objective": "Preserve one unusually strong paid MCP-evaluation match while keeping the operator's personal interview and assessment outside agent control.",
+  "source_need": {
+    "captured_at": "2026-09-12",
+    "official_url": "https://jobs.micro1.ai/post/ca549605-be95-4fe1-b995-40794422b4a5",
+    "provider": "micro1",
+    "role": "MCP Expert",
+    "state": "current_official_listing",
+    "location": "Remote; no narrower geography was published on the role page",
+    "schedule": "Approximately 15 hours per week with flexible hours",
+    "published_rate_usd_per_hour": {
+      "minimum": 60,
+      "maximum": 120
+    },
+    "compensation_boundary": "The listing says compensation is output-based, accepted tasks are paid per specification, and minimum weekly submissions apply. The displayed hourly range is not a guaranteed hourly wage, assignment, payment, or revenue.",
+    "scope": [
+      "Create reinforcement-learning environments that test software-engineering work through real Model Context Protocol tools",
+      "Build reproducible environments, deterministic verification, and golden reference solutions",
+      "Cover bug fixing, feature implementation, refactoring, and performance optimization"
+    ],
+    "process": [
+      "Screening questions",
+      "Approximately 30-minute AI interview",
+      "Possible technical assessment",
+      "Hiring-manager review"
+    ]
+  },
+  "fit": {
+    "projects": [
+      "LazyPromotion",
+      "LocalKnowledgeTerminal",
+      "AAPS",
+      "AgInTiFlow"
+    ],
+    "supported_now": [
+      "MCP tools and servers with explicit read/write authority boundaries",
+      "Reproducible test fixtures, deterministic validation, regression suites, and failure ledgers",
+      "Python and TypeScript implementation, debugging, refactoring, packaging, and technical documentation",
+      "Agent workflows that separate proposed, reviewed, executed, and verified states"
+    ],
+    "not_claimed": [
+      "Selection, task availability, accepted output, a guaranteed hourly rate, payment, or revenue",
+      "Permission to use third-party assistance during an interview or assessment",
+      "A geographic or work-authorization state not published by the provider"
+    ]
+  },
+  "platform_boundary": {
+    "candidate_terms_url": "https://www.micro1.ai/legal/terms-candidates",
+    "candidate_privacy_url": "https://www.micro1.ai/legal/privacy-notice-candidates",
+    "terms_checked_at": "2026-09-12",
+    "agent_restrictions": [
+      "The platform terms prohibit automated scripts and require original interview answers without third-party assistance unless explicitly permitted",
+      "Interview content is confidential and must not be copied or captured",
+      "The privacy notice permits audio, video, screen, transcript, assessment, behavioral, and possible government-ID processing"
+    ],
+    "decision": "Do not automate registration, screening, interview, or assessment. Keep the role as a high-fit secondary route that the operator may enter personally if willing to spend the one-time interview effort."
+  },
+  "application": {
+    "state": "not_applied_user_personal_action_required",
+    "submission_count": 0,
+    "submission_fee_usd": 0,
+    "automatic_follow_up": false
+  },
+  "funnel": {
+    "outbound_application_count": 0,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "interview_observed": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

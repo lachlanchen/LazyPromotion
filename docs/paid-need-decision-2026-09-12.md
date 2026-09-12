@@ -106,6 +106,14 @@ Chinese synthetic sample report covering topology, exposure, identity,
 findings, acceptance, rollback, and the software-only USD 250 boundary. It
 reduces evaluation friction but is not a customer result, inquiry, or revenue.
 
+The closest no-cost asynchronous bounty was [Dozer issue
+1690](https://github.com/getdozer/dozer/issues/1690), a USD 250 Dozer, LLM,
+vector-database, and LangChain example that fits the LKT direction. It was not
+claimed: the live route already had two claims, 36 issue comments, and four
+open competing implementation pull requests. Other exact-fit checks were
+assigned, heavily contested, expired, or account and identity gated. No
+application, message, registration, or account change was made.
+
 ## Decision
 
 1. Keep technical verification and infrastructure work ahead of social volume.

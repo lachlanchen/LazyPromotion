@@ -134,6 +134,7 @@ class OwnedMonitorTests(unittest.TestCase):
         threads_path = self.root / "threads-status-summary.json"
         application_inbox_path = self.root / "application-inbox-status-summary.json"
         reddit_reply_path = self.root / "reddit-reply-status-summary.json"
+        social_inbox_path = self.root / "social-inbox-status-summary.json"
         status_path.write_text(
             json.dumps(
                 {
@@ -199,12 +200,47 @@ class OwnedMonitorTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        social_inbox_path.write_text(
+            json.dumps(
+                {
+                    "available": True,
+                    "checked_at": "2026-09-13T00:00:00Z",
+                    "baseline_created": True,
+                    "campaigns": [
+                        {
+                            "campaign_id": "private-campaign",
+                            "platform": "instagram",
+                            "known_participant_present": False,
+                        }
+                    ],
+                    "platforms": {
+                        "instagram": {
+                            "authenticated": True,
+                            "navigation_available": True,
+                            "unread_badge_total": 1,
+                            "layout_unknown": False,
+                        },
+                        "reddit": {
+                            "authenticated": True,
+                            "navigation_available": True,
+                            "unread_badge_total": 0,
+                            "layout_unknown": False,
+                        },
+                    },
+                    "alerts": [],
+                    "review_required": False,
+                    "policy": {"automatic_reply": False},
+                }
+            ),
+            encoding="utf-8",
+        )
 
         summary = owned_monitor.status_summary(
             status_path,
             threads_path=threads_path,
             application_inbox_path=application_inbox_path,
             reddit_reply_path=reddit_reply_path,
+            social_inbox_path=social_inbox_path,
         )
 
         self.assertTrue(summary["available"])
@@ -225,6 +261,14 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(summary["reddit_reply"]["new_direct_reply_count"], 1)
         self.assertTrue(summary["reddit_reply"]["review_required"])
         self.assertFalse(summary["reddit_reply"]["automatic_reply"])
+        self.assertEqual(summary["social_inbox"]["campaign_count"], 1)
+        self.assertEqual(
+            summary["social_inbox"]["platforms"]["instagram"]["unread_badge_total"],
+            1,
+        )
+        self.assertFalse(summary["social_inbox"]["review_required"])
+        self.assertFalse(summary["social_inbox"]["automatic_reply"])
+        self.assertNotIn("private-campaign", json.dumps(summary["social_inbox"]))
         self.assertNotIn("private-target", json.dumps(summary))
         self.assertNotIn("private-reply-key", json.dumps(summary))
 

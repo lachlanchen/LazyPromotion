@@ -229,7 +229,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 14)
+        self.assertEqual(campaign["version"], 15)
         self.assertEqual(demand["public_stars"], 14)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 10)
         explicit_need = demand["current_explicit_need"]
@@ -323,6 +323,12 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(guide_handoff["source_commit"].startswith("419bc3f"))
         self.assertIn("150 repository tests", guide_handoff["verification"])
         self.assertIn("answers the UU-on-Ubuntu question first", guide_handoff["boundary"])
+        proof_refresh = guide_handoff["contributor_proof_refresh"]
+        self.assertEqual(proof_refresh["state"], "live_verified_after_merge")
+        self.assertTrue(proof_refresh["blog_commit"].startswith("1991e2e"))
+        self.assertTrue(proof_refresh["merge_commit"].startswith("af87e77"))
+        self.assertIn("outside contributor", proof_refresh["reader_value"])
+        self.assertIn("not a visitor", proof_refresh["boundary"])
         capture = campaign["owned_route"]["compatibility_need_capture"]
         self.assertEqual(capture["state"], "live_bilingual_public_form")
         self.assertEqual(len(capture["placements"]), 2)
@@ -343,6 +349,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(download_safety["state"], "live_verified")
         self.assertEqual(download_safety["official_domain"], "https://uuyc.163.com/")
         self.assertTrue(download_safety["repository_commit"].startswith("9e7163a"))
+        post_proof_refresh = uu_post["contributor_proof_refresh"]
+        self.assertTrue(post_proof_refresh["blog_commit"].startswith("1991e2e"))
+        self.assertIn("outside contributor", post_proof_refresh["reader_value"])
+        self.assertIn("not a lead", post_proof_refresh["boundary"])
         self.assertIn("look-alike", download_safety["observed_problem"])
         self.assertIn("not an accusation", download_safety["boundary"])
         indexing = uu_post["search_indexing"]

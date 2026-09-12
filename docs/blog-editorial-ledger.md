@@ -1,12 +1,12 @@
 # LazyBlog editorial polish ledger
 
-Last verified: 2026-09-11 (Asia/Hong_Kong)
+Last verified: 2026-09-13 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `07ca7f1dfe5bebb8801919d8a053241b498946ef`
+Verified BLOG commit: `1991e2e6dd3d1cd15a27852f4c7ff479e5c1743c`
 
-Campaign range: `3b45351^..07ca7f1dfe5bebb8801919d8a053241b498946ef`
+Campaign range: `3b45351^..1991e2e6dd3d1cd15a27852f4c7ff479e5c1743c`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -74,6 +74,16 @@ Posts: `281, 936, 1562, 2936, 3125`.
   This source-only repair is not added to the 155-post multilingual completion
   count. The X guide post is queued for September 19; neither action is a lead
   or revenue event.
+
+- Post `3818` now includes the merged one-way GameViewer-to-X11 clipboard
+  route, the startup, ownership, timeout, delivery-confirmation, and cleanup
+  boundaries tested in Wine/Xvfb, and the original `robbie194` contribution
+  credit. The source-only push completed after the tracked LazyBlog
+  Translations v0.4.17 files were restored following the reboot. The public
+  article rendered the merged pull-request link and the existing separate,
+  tracked LazyRemote review route. This source-only repair is not added to the
+  155-post multilingual completion count, and publication is not an inquiry,
+  payment, or revenue event.
 
 - Post `3788` now answers the relationship-loss problem that plain PDF text
   extraction hides. Its English, Chinese, and Japanese editions separate
@@ -245,6 +255,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 | BLOG commit | Post | Outcome |
 | --- | ---: | --- |
+| `1991e2e` | 3818 | Added the merged clipboard contribution, tested boundaries, and original contributor credit to the live Chinese UU guide |
 | `ac81173` | 3810 | Published a durable chat-archive and reviewed-current-state guide in English, Traditional Chinese, and Japanese |
 | `a424976` | 3808 | Published a chapter-first print PDF and reflowable EPUB guide in English, Traditional Chinese, and Japanese |
 | `16f9709` | 271 | Unknown `.fzip` triage and safe archive/plugin handling |

@@ -442,11 +442,11 @@ and the listed range is not a contracted rate, allocated project, payment, or
 revenue.
 
 The UU Remote Ubuntu bridge now supplies a separate product-discovery signal.
-Its public repository had ten stars and three forks when checked on September
-9, including five stars since September 3. The owner-visible rolling traffic
-report showed 929 views from 428 visitors and 411 clones from 162 cloners;
-Google supplied 593 views, and the Simplified Chinese README was the leading
-path with 461 views. The bridge README and all ten translations now offer one
+Its public repository had fourteen stars and three forks when checked on
+September 12, including ten stars since August 29. The owner-visible rolling
+traffic report showed 1,140 views from 494 visitors and 472 clones from 192
+cloners; Google supplied 746 views, and the Simplified Chinese README was the
+leading path with 549 views. The bridge README and all ten translations now offer one
 tracked, clearly separate path to LazyRemote and its open-source LazyTunnel
 core. The repository's website metadata now also points directly to the exact
 LazyRemote page instead of the generic portfolio. The public GitHub profile's
@@ -458,12 +458,13 @@ thread also asks exactly whether UU can be used on Ubuntu, alongside requests
 for Linux control, remote agent-CLI access without a public address, and
 Tailscale-like networking. That community forbids directly posting
 AI-generated or AI-polished text, so no agent reply or private message was
-made. A separate outside contribution confirms a real Wine/VNC clipboard gap,
-but its current implementation can replay stale text, race clipboard ownership,
-mis-track background selection owners, acknowledge unverified delivery, and
-leave helpers unsupervised. A concise changes-requested review was submitted on
-September 9; the patch was not merged. This is product evidence, not a buyer or
-sale. The resulting
+made. A separate outside contribution confirms a real Wine/VNC clipboard gap.
+The maintained revision prevents startup replay, binds the locked read to the
+exact GameViewer owner and sequence, confirms both X11 selections, bounds
+stalled clients, and supervises helper cleanup. The original contributor commit
+remains attributed to `robbie194`; the isolated Wine/Xvfb regression passed
+locally and in GitHub Actions before merge commit `af87e77` on September 12.
+This is product evidence, not a buyer or sale. The resulting
 [bilingual compatibility form](https://github.com/lachlanchen/uu-remote-ubuntu-bridge/issues/new?template=compatibility.yml)
 lets English and Simplified-Chinese readers report one exact host/controller
 need publicly. It refuses proprietary binaries, credentials, identifiers, raw
@@ -500,6 +501,11 @@ is also live. It explains the Wine/RDP/input path, the exact verified host and
 UU boundary, safe install route, update discipline, bilingual compatibility
 form, and the separate LazyRemote option before one quiet paid-review paragraph.
 BLOG commit `6763eff`; publication is not a lead or sale.
+BLOG commit `1991e2e` now adds the merged clipboard route, its tested boundaries,
+and the original contributor credit to that guide. The public page and separate
+tracked LazyRemote route were verified after restoring the tracked translation
+plugin files lost during the reboot. This is maintenance proof, not traffic, an
+inquiry, payment, or revenue.
 One read-only GitHub monitor now watches public issue and pull-request metadata
 across fifteen high-attention or offer repositories in a single GraphQL query.
 It records no issue, pull-request, comment, or review body and cannot comment,

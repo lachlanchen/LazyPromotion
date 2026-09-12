@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 14,
+  "version": 15,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-12T16:32:17Z",
@@ -174,6 +174,15 @@
       "source_commit": "419bc3fa7b92d4e592e4e7a8734143c1ad62afe0",
       "reason": "The highest-traffic repository page now offers one natural route to the complete Chinese architecture, boundary, installation, and update-review guide before any commercial option.",
       "verification": "All 150 repository tests passed with one opt-in live-systemd test skipped, and the pushed main branch contains the exact tracked owned-guide URL.",
+      "contributor_proof_refresh": {
+        "state": "live_verified_after_merge",
+        "blog_commit": "1991e2e6dd3d1cd15a27852f4c7ff479e5c1743c",
+        "merge_commit": "af87e773679e7c4c7ef34e3bdeb1f66975c9949d",
+        "reader_value": "The Chinese guide now explains the one-way GameViewer-to-X11 clipboard path, its startup, ownership, timeout, delivery-confirmation, and cleanup boundaries, and credits the outside contributor before linking the merged review record.",
+        "production_recovery": "The reboot left the live LazyBlog Translations directory without its plugin file. The tracked v0.4.17 plugin was restored as a unit, passed its local UTM test and remote PHP syntax check, was confirmed active, and served the translation status route before the idempotent source-only push.",
+        "verification": "The public article returned HTTP 200 with the contributor credit, pull-request link, clipboard explanation, and separate tracked LazyRemote route. The source-only sync completed without error and BLOG commit 1991e2e was pushed.",
+        "boundary": "This is project-owned maintenance and publication evidence. It is not a visitor, inquiry, qualified buyer, payment, donation, or received revenue."
+      },
       "boundary": "The guide answers the UU-on-Ubuntu question first. Its final exact-fit LazyRemote review paragraph remains separate; a view or click is not an inquiry, lead, payment, or revenue."
     },
     "placements": [
@@ -368,7 +377,7 @@
     },
     "owned_blog": {
       "state": "live_exact_fit_routes",
-      "repository_commit": "7ac47cd",
+    "repository_commit": "1991e2e6dd3d1cd15a27852f4c7ff479e5c1743c",
       "placements": [
         {
           "post_id": 1133,
@@ -398,16 +407,24 @@
             "zh"
           ],
           "fit": "Simplified-Chinese readers asking specifically whether and how the official UU client can control an Ubuntu GNOME desktop",
-          "official_download_safety": {
+        "official_download_safety": {
             "state": "live_verified",
             "official_domain": "https://uuyc.163.com/",
             "repository_commit": "9e7163a909617447f0c6dbb9750ff0f20d1cac64",
             "observed_problem": "Current search results include look-alike download sites that call themselves official and advertise unverified Linux packages.",
             "reader_value": "The article plus the English and highest-traffic Simplified-Chinese repository pages now tell readers to verify the NetEase domain before downloading, note the platforms currently listed by the canonical product page, and explain that the bridge uses the official Windows client through a reviewed hash-pinned manifest rather than third-party Linux packages.",
             "verification": "The production article returned HTTP 200 with the new domain-verification section, exact official link, existing compatibility intake, and one final LazyRemote review route. The live repository pages contain the same concise warning; all 149 tests passed with one opt-in live-systemd test skipped.",
-            "boundary": "This is a download-safety and source-verification improvement, not an accusation about a named third party, a visitor, an inquiry, or a sale."
-          },
-          "search_indexing": {
+          "boundary": "This is a download-safety and source-verification improvement, not an accusation about a named third party, a visitor, an inquiry, or a sale."
+        },
+        "contributor_proof_refresh": {
+          "state": "live_verified_after_merge",
+          "blog_commit": "1991e2e6dd3d1cd15a27852f4c7ff479e5c1743c",
+          "merge_commit": "af87e773679e7c4c7ef34e3bdeb1f66975c9949d",
+          "reader_value": "The article now documents the merged one-way clipboard bridge, its tested safety boundaries, and the original outside contributor's attribution before the existing separate LazyRemote review route.",
+          "verification": "The source-only push completed, the public page rendered the credit and merged pull-request link, and the restored LazyBlog Translations v0.4.17 status route reported the source language correctly.",
+          "boundary": "Publication and outside contribution are trust signals, not a lead, customer result, payment, or received revenue."
+        },
+        "search_indexing": {
             "checked_at": "2026-09-11T16:33:51Z",
             "initial_state": "discovered_currently_not_indexed",
             "sitemap": "https://blog.lazying.art/wp-sitemap.xml",
@@ -449,7 +466,7 @@
         }
       ],
       "copy_boundary": "Each edition or guide finishes the relevant technical answer first, uses at most one first-person offer paragraph, and states the fixed price, metadata-only first contact, and the deployment and hardware exclusions.",
-      "verification": "The established remote-desktop, DDNS, UU, role-matrix, and Japanese XRDP keyboard routes remain live. Post 3586 now supplies the current session-scoped XKB diagnosis and rollback before one larger-network offer. Latest BLOG commit 7ac47cd."
+    "verification": "The established remote-desktop, DDNS, UU, role-matrix, and Japanese XRDP keyboard routes remain live. Post 3818 now includes the merged clipboard contribution with original attribution and a verified separate LazyRemote route. Latest BLOG commit 1991e2e."
     },
     "postiz": {
       "state": "technical_guide_queued",

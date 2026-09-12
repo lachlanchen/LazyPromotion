@@ -48,6 +48,7 @@ EXTERNAL_ISSUES = (
     ("arjun-techjays", "bos", 18),
     ("pilotariak", "azkena", 14),
     ("hivtools", "hivtools-mcp", 10),
+    ("punkpeye", "mcp-remote", 361),
 )
 ISSUES_PER_REPOSITORY = 100
 PULL_REQUESTS_PER_REPOSITORY = 100

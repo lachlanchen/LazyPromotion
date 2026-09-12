@@ -1618,3 +1618,14 @@ stated explicitly. Greenhouse visibly confirmed receipt without a verification
 challenge. The advertised task-equivalent rate is not an accepted rate or
 approved workload; no exercise, selection, contract, payment, or revenue is
 inferred.
+
+A current mcp-remote user reported that its new `client_credentials` path could
+not reach a known token endpoint when the authorization server published no
+discovery metadata. A bounded upstream fix is now under review in
+[punkpeye/mcp-remote pull request 362](https://github.com/punkpeye/mcp-remote/pull/362).
+It adds an explicit endpoint only for the machine-to-machine flow, validates
+the endpoint, skips discovery, and keeps token caches isolated. All 469 unit
+tests and 16 end-to-end tests passed. The contribution contains no LazyingArt
+link or offer. Its source issue is now baselined in the metadata-only inbound
+monitor, which cannot read bodies or reply. This is useful public proof, not a
+lead, merge, sale, or revenue.

@@ -177,6 +177,7 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertIn("issue(number: 18)", query)
         self.assertIn("issue(number: 14)", query)
         self.assertIn("issue(number: 10)", query)
+        self.assertIn("issue(number: 361)", query)
         self.assertNotIn("comments { nodes", query)
         for name in monitor.REPOSITORIES:
             self.assertIn(json.dumps(name), query)

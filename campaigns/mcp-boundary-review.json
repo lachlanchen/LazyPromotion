@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 37,
+  "version": 38,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -49,8 +49,53 @@
       "provider": "GitHub",
       "need": "A current open-source MCP maintainer asked what authentication Claude needs across local and remote use, and what is appropriate for a public demo.",
       "boundary": "This is direct implementation evidence, not a buyer inquiry. The response used the pinned public source and current primary documentation to separate public demo, local-only, and OAuth-protected remote boundaries."
+    },
+    {
+      "captured_at": "2026-09-13",
+      "source": "https://github.com/punkpeye/mcp-remote/issues/361",
+      "provider": "GitHub",
+      "need": "A current mcp-remote user needs client_credentials authentication against a known token endpoint when the authorization server publishes no OAuth discovery metadata.",
+      "boundary": "This is direct open-source implementation evidence, not a buyer inquiry. A tested upstream patch was submitted without an owned link, offer, or commercial claim."
     }
   ],
+  "upstream_contribution": {
+    "state": "submitted_awaiting_review",
+    "submitted_at": "2026-09-13",
+    "repository": "https://github.com/punkpeye/mcp-remote",
+    "issue": "https://github.com/punkpeye/mcp-remote/issues/361",
+    "pull_request": "https://github.com/punkpeye/mcp-remote/pull/362",
+    "upstream_base_revision": "1dd81a1b7068a1771ea0edc577194722a84b09d6",
+    "head_revision": "8af623814f79b9d40f3a40ac2dccdbbcf28ae593",
+    "branch": "feat/explicit-client-credentials-token-endpoint",
+    "problem": "Machine-to-machine MCP deployments may know the OAuth token endpoint while exposing neither protected-resource nor authorization-server discovery metadata.",
+    "implementation": [
+      "adds an explicit token-endpoint option only for the client_credentials grant",
+      "requires HTTPS except for loopback development endpoints and rejects embedded credentials or fragments",
+      "skips OAuth discovery when the endpoint is explicit",
+      "isolates cached credentials when the endpoint changes",
+      "documents the bounded usage and adds focused regression coverage"
+    ],
+    "verification": {
+      "lint": true,
+      "knip": true,
+      "build": true,
+      "unit_tests_passed": 469,
+      "end_to_end_tests_passed": 16
+    },
+    "reply_monitor": {
+      "state": "active_and_baselined",
+      "thread": "punkpeye/mcp-remote#361",
+      "checked_at": "2026-09-12T19:16:08Z",
+      "baseline_comment_count": 0,
+      "alerts_after_baseline": 0,
+      "body_or_comment_text_requested": false,
+      "automatic_reply": false
+    },
+    "owned_link_or_offer_included": false,
+    "lead_or_sale_observed": false,
+    "verified_received_gross_usd": 0,
+    "boundary": "The open pull request is reviewable proof of relevant MCP authentication work. It is not an acceptance, merge, customer result, lead, payment, or revenue."
+  },
   "market_validation": {
     "decision": "Keep USD 500 during the initial validation window and sell reproducible pre-deployment evidence, not an automated scan or security audit.",
     "checked_at": "2026-09-12",

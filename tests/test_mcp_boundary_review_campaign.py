@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 37)
+        self.assertEqual(self.payload["version"], 38)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -90,7 +90,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(proof["packet"]["live_byte_identical"])
 
     def test_demand_is_separate_from_selection_or_sales(self):
-        self.assertEqual(len(self.payload["demand_evidence"]), 6)
+        self.assertEqual(len(self.payload["demand_evidence"]), 7)
         self.assertTrue(
             all(item["source"].startswith("https://") for item in self.payload["demand_evidence"])
         )
@@ -98,9 +98,37 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(self.payload["funnel"]["qualified_lead_observed"])
         self.assertFalse(self.payload["funnel"]["payment_confirmed"])
         latest = self.payload["demand_evidence"][-1]
-        self.assertIn("hivtools-mcp/issues/10", latest["source"])
-        self.assertIn("authentication Claude needs", latest["need"])
+        self.assertIn("mcp-remote/issues/361", latest["source"])
+        self.assertIn("client_credentials authentication", latest["need"])
         self.assertIn("not a buyer inquiry", latest["boundary"])
+
+    def test_upstream_contribution_is_reviewable_proof_not_revenue(self):
+        contribution = self.payload["upstream_contribution"]
+        self.assertEqual(contribution["state"], "submitted_awaiting_review")
+        self.assertEqual(
+            contribution["pull_request"],
+            "https://github.com/punkpeye/mcp-remote/pull/362",
+        )
+        self.assertEqual(len(contribution["upstream_base_revision"]), 40)
+        self.assertEqual(len(contribution["head_revision"]), 40)
+        self.assertEqual(contribution["verification"]["unit_tests_passed"], 469)
+        self.assertEqual(contribution["verification"]["end_to_end_tests_passed"], 16)
+        self.assertEqual(
+            contribution["reply_monitor"]["thread"],
+            "punkpeye/mcp-remote#361",
+        )
+        self.assertEqual(
+            contribution["reply_monitor"]["state"],
+            "active_and_baselined",
+        )
+        self.assertEqual(contribution["reply_monitor"]["baseline_comment_count"], 0)
+        self.assertEqual(contribution["reply_monitor"]["alerts_after_baseline"], 0)
+        self.assertFalse(contribution["reply_monitor"]["body_or_comment_text_requested"])
+        self.assertFalse(contribution["reply_monitor"]["automatic_reply"])
+        self.assertFalse(contribution["owned_link_or_offer_included"])
+        self.assertFalse(contribution["lead_or_sale_observed"])
+        self.assertEqual(contribution["verified_received_gross_usd"], 0)
+        self.assertIn("not an acceptance", contribution["boundary"])
 
     def test_upwork_mcp_role_is_not_mistaken_for_an_autonomous_route(self):
         route = self.payload["channels"]["upwork_mcp_expert"]

@@ -224,7 +224,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 9)
+        self.assertEqual(campaign["version"], 10)
         self.assertEqual(demand["public_stars"], 13)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 8)
         explicit_need = demand["current_explicit_need"]
@@ -246,6 +246,11 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertEqual(demand["owner_visible_traffic"]["unique_visitors"], 490)
         self.assertEqual(demand["owner_visible_traffic"]["unique_cloners"], 191)
+        search_signal = demand["owned_search_signal"]
+        self.assertEqual(search_signal["impressions"], 437)
+        self.assertEqual(search_signal["clicks"], 0)
+        self.assertEqual(search_signal["average_position"], 8.9)
+        self.assertIn("not identify visitors", search_signal["boundary"])
         recheck = demand["conversion_path_recheck"]
         self.assertEqual(recheck["state"], "live_rechecked_no_new_pitch_needed")
         self.assertIn("encrypted metadata-only fit check", recheck["simplified_chinese_path"])
@@ -296,10 +301,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("credentials", capture["privacy_boundary"])
         self.assertIn("free", capture["commercial_boundary"])
         blog_routes = campaign["channels"]["owned_blog"]["placements"]
-        self.assertEqual(len(blog_routes), 4)
-        self.assertEqual(blog_routes[-1]["post_id"], 3819)
-        self.assertIn("Small Team", blog_routes[-1]["subject"])
-        self.assertEqual(blog_routes[-1]["locales"], ["en", "zh", "ja"])
+        self.assertEqual(len(blog_routes), 5)
+        role_matrix = next(route for route in blog_routes if route["post_id"] == 3819)
+        self.assertIn("Small Team", role_matrix["subject"])
+        self.assertEqual(role_matrix["locales"], ["en", "zh", "ja"])
+        keyboard_guide = next(route for route in blog_routes if route["post_id"] == 3586)
+        self.assertEqual(keyboard_guide["locales"], ["en"])
+        self.assertIn("session-scoped", keyboard_guide["search_repair"])
+        self.assertEqual(len(keyboard_guide["sources"]), 4)
+        self.assertIn("not a lead", keyboard_guide["boundary"])
         uu_post = next(route for route in blog_routes if route["post_id"] == 3818)
         download_safety = uu_post["official_download_safety"]
         self.assertEqual(download_safety["state"], "live_verified")
@@ -324,6 +334,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(reddit["mentioned_project_or_offer"])
         self.assertFalse(reddit["lead_or_sale_observed"])
         self.assertNotIn("lazying.art", reddit["content"].casefold())
+        postiz = campaign["channels"]["postiz"]
+        self.assertEqual(postiz["state"], "technical_guide_queued")
+        self.assertEqual(postiz["post_id"], "cmtxool5n0v4glm0y6n9iyjn0")
+        self.assertEqual(postiz["publish_at"], "2026-09-19T02:00:00Z")
+        self.assertNotIn("USD 250", postiz["content"])
+        self.assertNotIn("review", postiz["content"].casefold())
+        self.assertIn("not leads or revenue", postiz["policy"])
         self.assertEqual(campaign["possible_offer"]["state"], "live_fit_first")
         self.assertEqual(campaign["possible_offer"]["price"], "USD 250")
         self.assertIn("metadata-only", campaign["possible_offer"]["intake"])

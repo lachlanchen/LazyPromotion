@@ -64,6 +64,17 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
 
+- Search Console showed post `3586` at 437 impressions, zero clicks, and average
+  position 8.9 for the three months ending September 9. BLOG commit `7ac47cd`
+  gives the English source a shorter exact title and excerpt, current upstream
+  XRDP keyboard mapping, a log-first Apple JIS/XKB diagnosis, an X11 boundary,
+  XRDP-only persistence, rollback, and primary references before one tracked
+  LazyRemote review link. The source-only dry run and live publication passed;
+  the rendered title, references, rollback section, and destination were checked.
+  This source-only repair is not added to the 155-post multilingual completion
+  count. The X guide post is queued for September 19; neither action is a lead
+  or revenue event.
+
 - Post `3788` now answers the relationship-loss problem that plain PDF text
   extraction hides. Its English, Chinese, and Japanese editions separate
   born-digital table parsers from chart-to-data models, preserve cell geometry,

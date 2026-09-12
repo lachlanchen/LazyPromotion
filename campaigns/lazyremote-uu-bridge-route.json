@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 9,
+  "version": 10,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-11T10:59:46Z",
@@ -59,6 +59,17 @@
         "views": 549,
         "unique_visitors": 414
       }
+    },
+    "owned_search_signal": {
+      "checked_at": "2026-09-12T00:54:00Z",
+      "period": "three months ending 2026-09-09",
+      "url": "https://blog.lazying.art/html/computer_internet/hardware_system/3586/japanese-mac-keyboard-through-windows-rdp-ubuntu-xrdp.html",
+      "impressions": 437,
+      "clicks": 0,
+      "average_position": 8.9,
+      "source": "Google Search Console visible Performance report",
+      "decision": "Repair the exact result and guide around the observed Mac-to-Windows-to-Ubuntu XRDP problem, then use one tracked technical post rather than broad LazyRemote promotion.",
+      "boundary": "The search report is prioritization evidence. It does not identify visitors or establish an inquiry, lead, payment, or revenue."
     },
     "conversion_path_recheck": {
       "state": "live_rechecked_no_new_pitch_needed",
@@ -330,7 +341,7 @@
     },
     "owned_blog": {
       "state": "live_exact_fit_routes",
-      "repository_commit": "edb47c3",
+      "repository_commit": "7ac47cd",
       "placements": [
         {
           "post_id": 1133,
@@ -390,14 +401,44 @@
             "ja"
           ],
           "fit": "Small teams deciding between shared files, one web application, SSH, and full remote desktops while preserving individual identity, offboarding, and recovery"
+        },
+        {
+          "post_id": 3586,
+          "subject": "Japanese Mac Keyboard over Windows RDP to Ubuntu XRDP",
+          "url": "https://blog.lazying.art/html/computer_internet/hardware_system/3586/japanese-mac-keyboard-through-windows-rdp-ubuntu-xrdp.html",
+          "locales": [
+            "en"
+          ],
+          "fit": "People whose Japanese Apple JIS keyboard is reported as a PC US layout after a nested Windows-to-Ubuntu XRDP hop",
+          "search_repair": "The title and excerpt now match the actual path; the guide inspects negotiated XRDP state, tests the installed Apple JIS XKB model, separates IBus composition, keeps persistence session-scoped, names the Wayland boundary, and supplies rollback before one larger-network review link.",
+          "sources": [
+            "https://github.com/neutrinolabs/xrdp/blob/devel/xrdp/xrdp_keyboard.toml",
+            "https://github.com/neutrinolabs/xrdp/blob/devel/sesman/startwm.sh",
+            "https://manpages.ubuntu.com/manpages/noble/man1/setxkbmap.1.html",
+            "https://support.microsoft.com/en-us/windows/hardware/input-devices/microsoft-japanese-ime"
+          ],
+          "verification": "LazyBlog source-only dry run passed, the production source was published once, the public page rendered the new title, references, rollback section, and one tracked LazyRemote link, and all five public destinations returned HTTP 200.",
+          "boundary": "The post solves the keyboard problem before offering the separate software-only network review. Search impressions and publication are not a lead, payment, or revenue."
         }
       ],
       "copy_boundary": "Each edition or guide finishes the relevant technical answer first, uses at most one first-person offer paragraph, and states the fixed price, metadata-only first contact, and the deployment and hardware exclusions.",
-      "verification": "The established remote-desktop, DDNS, and UU routes remain live. Post 3818 now answers the look-alike-download risk with NetEase's canonical domain before the compatibility steps and one final exact-fit offer. The role-matrix guide and its reviewed Simplified-Chinese and Japanese editions remain live. Latest BLOG commit edb47c3."
+      "verification": "The established remote-desktop, DDNS, UU, role-matrix, and Japanese XRDP keyboard routes remain live. Post 3586 now supplies the current session-scoped XKB diagnosis and rollback before one larger-network offer. Latest BLOG commit 7ac47cd."
     },
     "postiz": {
-      "state": "not_queued",
-      "policy": "Do not add a broad promotional post while the current queue is full and the cross-project route has no measured qualified inquiry."
+      "state": "technical_guide_queued",
+      "post_id": "cmtxool5n0v4glm0y6n9iyjn0",
+      "provider": "x",
+      "publish_at": "2026-09-19T02:00:00Z",
+      "content": "A Japanese Mac keyboard can arrive in Ubuntu XRDP as a US PC layout after passing through Windows. I wrote down the diagnosis, Apple JIS XKB test, session-only fix, and rollback: blog.lazying.art/?p=3586&utm_source=x&utm_campaign=lazyremote",
+      "destination": "https://blog.lazying.art/?p=3586&utm_source=x&utm_campaign=lazyremote",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "verification": "Postiz stored the exact shorter copy, X integration, provider settings, queue state, and UTC time after rejecting an earlier over-length request without creating a post.",
+      "policy": "The post shares a complete owned troubleshooting guide and does not mention the service or price. Its single tracked page contains the full answer before the exact-fit network review. Queueing, publication, views, and clicks are not leads or revenue."
     },
     "reddit": {
       "state": "one_value_only_reply_live",

@@ -6,8 +6,9 @@ has an executed project-owned sample, a fixed ten-check boundary, a metadata-onl
 fit check, guarded payment readiness, and a live Contra service. Its first
 evidence-led LinkedIn acquisition test is queued for September 16; the three
 lower-priority LinkedIn items on September 15, 17, and 18 were moved to drafts
-so the result can be observed without adding more posts. Queue state is not a
-lead or revenue.
+so the result can be observed without adding more posts. The existing September
+16 X passage-graph slot was also replaced by a concise version of the same MCP
+test, leaving X volume unchanged. Queue state is not a lead or revenue.
 
 A current Upwork MCP Expert role is a close technical match at a published USD
 60–120 per hour and seeks many contributors, but it requires a personal

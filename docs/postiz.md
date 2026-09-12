@@ -277,6 +277,13 @@ September 15, 17, and 18 were moved to `DRAFT`. A provider recheck left the MCP
 item as the only queued LinkedIn publication in that four-day window. Drafted
 items remain reusable; no public post was deleted.
 
+The same acquisition test now occupies the existing September 16 X slot. The
+lower-intent passage-graph item moved to `DRAFT`, and a provider recheck returned
+the exact 251-character MCP evidence, first-party sample route, AI label,
+intended account, settings, time, and `QUEUE` state. A first create lost its
+terminal URL during provider transformation; it was replaced and the malformed
+record was deleted before publication. X volume did not increase.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

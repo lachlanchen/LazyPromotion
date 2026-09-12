@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 20)
+        self.assertEqual(self.payload["version"], 21)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -164,9 +164,9 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
 
-    def test_linkedin_queue_replaces_overlapping_volume(self):
+    def test_linkedin_and_x_queue_replace_overlapping_volume(self):
         postiz = self.payload["channels"]["postiz"]
-        self.assertEqual(postiz["state"], "linkedin_queue_verified")
+        self.assertEqual(postiz["state"], "linkedin_and_x_queue_verified")
         self.assertEqual(postiz["publish_at"], "2026-09-16T02:00:00.000Z")
         self.assertIn("14 focused tests", postiz["content"])
         self.assertIn("fixed USD 500 pre-deployment review", postiz["content"])
@@ -175,6 +175,16 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("September 14 PubMed", postiz["verification"])
         self.assertIn("September 15 lecture-pack", postiz["verification"])
         self.assertIn("only queued LinkedIn publication", postiz["verification"])
+        x_post = postiz["x"]
+        self.assertEqual(x_post["state"], "queue_verified")
+        self.assertEqual(x_post["publish_at"], "2026-09-16T02:00:00.000Z")
+        self.assertEqual(x_post["profile"], "lazyingart")
+        self.assertEqual(len(x_post["content"]), 251)
+        self.assertIn("fixed $500 review", x_post["content"])
+        self.assertIn("lazying.art/mcp-boundary-review/sample-report/", x_post["content"])
+        self.assertTrue(x_post["settings"]["made_with_ai"])
+        self.assertIn("volume did not increase", x_post["replaced_post"])
+        self.assertIn("malformed queued record was deleted", x_post["verification"])
         self.assertFalse(postiz["lead_or_sale_observed"])
 
     def test_contra_listing_preserves_scope_and_revenue_boundaries(self):

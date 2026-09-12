@@ -10,7 +10,7 @@
 
 LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 도우미입니다. 하나의 보이는 Chrome 프로필에서 Reddit, X, Instagram, Hacker News의 실제 웹 인터페이스를 검색하고, 가능한 연결점을 SQLite에 기록하며, 로그인한 계정에 권장되는 Codex 모델을 낮은 추론 강도로 사용해 근거 있는 답글을 작성합니다. 그러나 공개 전송 직전에는 반드시 멈춥니다. 커뮤니티를 영업 목록으로 바꾸지 않으면서 관련 오픈 소스 작업으로 사람을 돕고 싶은 유지보수자를 위한 도구입니다.
 
-이 저장소에는 보관 처리되지 않은 `lachlanchen` 공개 소스 저장소 108개의 목록도 있습니다. 코드, 책, 지식 그래프, 연구, 미디어, 언어 학습, 로컬 AI를 서로 결합하되, 구매자가 실제로 이해할 수 있고 공개 증거로 뒷받침되는 기회만 제시합니다. 첫 번째로 검증된 매출 USD 1,000을 향한 고정 범위 서비스 경로는 아홉 가지입니다. 클릭, 별, 지원서, 예약 게시물은 매출로 계산하지 않습니다.
+이 저장소에는 보관 처리되지 않은 `lachlanchen` 공개 소스 저장소 108개의 목록도 있습니다. 코드, 책, 지식 그래프, 연구, 미디어, 언어 학습, 로컬 AI를 서로 결합하되, 구매자가 실제로 이해할 수 있고 공개 증거로 뒷받침되는 기회만 제시합니다. 첫 번째로 검증된 매출 USD 1,000을 향해 USD 500 MCP 검토를 주 경로로 두고, 고정 범위의 인접 서비스 아홉 가지를 운영합니다. 클릭, 별, 지원서, 예약 게시물은 매출로 계산하지 않습니다.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -38,12 +38,13 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 | [`worker.py`](../worker.py) | 전송 기능 없이, 유한한 검색과 대기 시간을 적용하는 비공개 검토 대기열 |
 | [`catalog.json`](../catalog.json) 및 [`github-repos.json`](../github-repos.json) | 선별된 필요 매칭과 공개 저장소 108개의 목록 |
 | [`github_portfolio_audit.py`](../github_portfolio_audit.py) | 현재 모든 공개 소스 저장소에 대한 비공개 읽기 전용 관심도 감사. GitHub 트래픽은 리드나 매출로 계산하지 않음 |
+| [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 공개 GitHub 저장소를 특정 리비전에 고정해 정적으로 사전 점검하는 MCP 검토 도구. 코드를 복제하거나 실행하지 않음 |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | 코드, 책, 지식 시스템, 미디어를 구매자 문제 중심으로 결합한 기회 |
 | [`bounties.py`](../bounties.py) | 공개 바운티를 GitHub 실시간 상태와 대조하고 안전하지 않거나 이미 경쟁 중인 작업을 제외 |
 | [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 프로젝트 소유 Bounty agent feed를 읽기 전용으로 확인하고 새 ID나 버전만 비공개 검토 알림으로 전환 |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 실제 문제 영역별로 정리한 공개 작업 전체 지도 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 증거와 납품 조건을 포함한 우선순위별 기회 계약 |
-| [`docs/first-1000.md`](../docs/first-1000.md) | 범위가 정해진 USD 250·USD 400·USD 500 서비스 아홉 가지와 정직한 목표 계산 |
+| [`docs/first-1000.md`](../docs/first-1000.md) | USD 500 MCP 주 경로, 범위가 정해진 인접 서비스 아홉 가지, 정직한 목표 계산 |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | 현재 포트폴리오의 매출 전환 결정, 등록 관문, 외부 기회 증거 |
 | [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | 인프라, 코드 감사, 다국어 작업, 자격 관문을 대상으로 한 최신 전 세계 유료 경로 검토 |
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 검증, 에이전트 작업 설계, 발음, 지역 지식 작업에 대한 실시간 구매자 수요 순위 |
@@ -161,7 +162,7 @@ scripts/desktop.sh stop
 
 핵심 구성은 의도적으로 작게 유지합니다. 보이는 브라우저에는 Playwright, 지속 가능한 로컬 상태에는 SQLite, 구조화된 분류와 초안에는 로그인 계정이 지원하는 Codex 모델을 사용합니다. Postiz는 검토를 마친 자사 채널 예약 발행에만 사용합니다. MCP 연결은 선택 사항이며 버전을 고정합니다. 모델 하위 프로세스에는 브라우저, 예약 발행기, 자격 증명, 결제 권한을 넘기지 않습니다.
 
-포트폴리오 계층은 저장소를 한꺼번에 홍보하는 대신 공개 프로젝트를 명시적인 기회 계약으로 바꿉니다. 현재 아홉 가지 경로는 로컬 자료 컬렉션 적합성 진단, 논문 수정본 대조, 이중 언어 강의 자료 납품, 스토리 클립, 책 샘플 제작, KiCad 플러그인 평가, OpenHI 재현, LazyRemote 토폴로지 검토, 발음 미니 레슨입니다. AI 클립 조립은 더 강한 근거가 사람의 검토를 통과할 때까지 중단합니다. 재현 가능한 [KiCad 플러그인 평가 픽스처](../examples/kicad-plugin-evaluation/)가 새로운 범위 제한 경로를 뒷받침합니다. 짧은 [출처 제한 교육 프롬프트](../examples/source-bounded-educational-prompt/)는 학습자 대상 작업에서도 같은 입력, 제약, 증거, 평가 규율을 보여 줍니다. 어휘 데이터 수집은 재사용 가능한 LKT 전문 영역이지만, 종료된 외부 마켓플레이스 공고가 아직 열려 있다는 주장은 하지 않습니다. 선택 근거는 [전체 오픈 소스 및 MCP 평가](../docs/open-source-evaluation.md)에서 확인할 수 있습니다.
+포트폴리오 계층은 저장소를 한꺼번에 홍보하는 대신 공개 프로젝트를 명시적인 기회 계약으로 바꿉니다. 주 경로는 USD 500 MCP Server Pre-Deployment Review입니다. 인접 경로 아홉 가지는 로컬 자료 컬렉션 적합성 진단, 논문 수정본 대조, 이중 언어 강의 자료 납품, 스토리 클립, 책 샘플 제작, KiCad 플러그인 평가, OpenHI 재현, LazyRemote 토폴로지 검토, 발음 미니 레슨입니다. AI 클립 조립은 더 강한 근거가 사람의 검토를 통과할 때까지 중단합니다. 재현 가능한 [KiCad 플러그인 평가 픽스처](../examples/kicad-plugin-evaluation/)가 새로운 범위 제한 경로를 뒷받침합니다. 짧은 [출처 제한 교육 프롬프트](../examples/source-bounded-educational-prompt/)는 학습자 대상 작업에서도 같은 입력, 제약, 증거, 평가 규율을 보여 줍니다. 어휘 데이터 수집은 재사용 가능한 LKT 전문 영역이지만, 종료된 외부 마켓플레이스 공고가 아직 열려 있다는 주장은 하지 않습니다. 선택 근거는 [전체 오픈 소스 및 MCP 평가](../docs/open-source-evaluation.md)에서 확인할 수 있습니다.
 
 ## 검증
 

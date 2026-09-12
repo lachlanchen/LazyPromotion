@@ -18,9 +18,9 @@ with relevant open-source work without turning communities into a sales queue.
 The repository also keeps a public inventory of 108 non-archived
 `lachlanchen` source repositories and combines them into buyer-shaped,
 evidence-gated opportunities across code, books, knowledge graphs, research,
-media, language learning, and local AI. Nine fixed-scope service routes support
-the first verified USD 1,000 goal; clicks, stars, applications, and queued posts
-never count as revenue.
+media, language learning, and local AI. The primary USD 500 MCP review and nine
+adjacent fixed-scope routes support the first verified USD 1,000 goal; clicks,
+stars, applications, and queued posts never count as revenue.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -57,12 +57,13 @@ never count as revenue.
 | [`worker.py`](worker.py) | Finite, cooldown-based discovery and private review queue; never sends |
 | [`catalog.json`](catalog.json) and [`github-repos.json`](github-repos.json) | Curated need matching plus the public repository inventory |
 | [`github_portfolio_audit.py`](github_portfolio_audit.py) | Private, read-only attention audit across every current public source repository; GitHub traffic is never counted as a lead or revenue |
+| [`mcp_public_preflight.py`](mcp_public_preflight.py) | Static, revision-pinned public GitHub preflight for the USD 500 MCP review; never clones or executes repository code |
 | [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of code, books, knowledge systems, and media |
 | [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
 | [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls the authenticated Bounty feed and TaskBounty's keyless public JSON Feed read-only; only new or changed work becomes a private review alert |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
-| [`docs/first-1000.md`](docs/first-1000.md) | Nine bounded USD 250/USD 400/USD 500 service routes and truthful milestone math |
+| [`docs/first-1000.md`](docs/first-1000.md) | Primary USD 500 MCP route, nine adjacent bounded services, and truthful milestone math |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](docs/portfolio-paid-opportunity-research-2026-09-10.md) | Current portfolio-to-revenue decision, registration gates, and external-opportunity evidence |
 | [`docs/paid-need-decision-2026-09-12.md`](docs/paid-need-decision-2026-09-12.md) | Fresh worldwide paid-route screen for infrastructure, code auditing, multilingual work, and qualification gates |
 | [`docs/paid-need-decision-2026-09-11.md`](docs/paid-need-decision-2026-09-11.md) | Ranked live buyer needs for verification, agent task engineering, pronunciation, and local knowledge work |
@@ -133,6 +134,18 @@ python bounties.py
 The board is discovery only. The auditor verifies live issue state and existing
 solution pull requests, rejects unsafe instruction requests, and writes its
 private report under `.local/`.
+
+A clean public MCP repository can be preflighted before asking a maintainer for
+anything beyond its URL:
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+The generated report is private and ignored by Git. It pins a revision and
+maps static surface clues without cloning, running code, submitting a form, or
+claiming a security result. See
+[`docs/mcp-public-preflight.md`](docs/mcp-public-preflight.md).
 
 The project-owned Bounty agent feed can also be watched without commenting,
 claiming, messaging, downloading attachments, or submitting work:
@@ -231,7 +244,7 @@ claim that a closed marketplace listing is still open.
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

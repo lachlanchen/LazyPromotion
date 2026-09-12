@@ -51,7 +51,23 @@ class InventoryTests(unittest.TestCase):
             "USD 250 collection-fit sprint after a free fit check; existing hardware only",
             priority,
         )
-        self.assertIn("confirmed payments totalling USD 1,000 across nine bounded services", priority)
+        self.assertIn(
+            "first-USD-1,000 route is two confirmed USD 500 MCP Server Pre-Deployment Reviews",
+            priority,
+        )
+        self.assertIn(
+            "confirmed payments totalling USD 1,000 across nine adjacent bounded services",
+            priority,
+        )
+        self.assertIn("free static public-repository preflight", priority)
+        self.assertLess(
+            priority.index("[LazyRemote + LazyTunnel]"),
+            priority.index("[MCP Server Pre-Deployment Review]"),
+        )
+        self.assertLess(
+            priority.index("[MCP Server Pre-Deployment Review]"),
+            priority.index("[OpenHI]"),
+        )
         self.assertIn("[LazyEdit + LocalVideoGen + Musia](https://lazying.art/story-clip/)", priority)
         self.assertIn(
             "USD 250 Story Clip Pilot after a metadata-only free fit check",

@@ -10,7 +10,7 @@
 
 LazyPromotion は、ローカルで動くレビュー優先のソーシャル需要発見アシスタントです。一つの可視 Chrome プロファイルで Reddit、X、Instagram、Hacker News の実際の Web UI を検索し、候補を SQLite に記録します。ログイン中のアカウントに推奨される Codex モデルを低い推論強度で使い、根拠に沿った返信案を作りますが、公開送信の直前で必ず停止します。コミュニティを販売先の一覧に変えず、関連するオープンソース成果で困っている人を助けたい保守者のための道具です。
 
-このリポジトリは、アーカイブされていない `lachlanchen` の公開ソースリポジトリ 108 件も一覧化し、コード、書籍、知識グラフ、研究、メディア、語学学習、ローカル AI を、買い手の課題を起点とした根拠付きの機会へ組み合わせます。最初の検証済み売上 USD 1,000 に向けて、範囲を限定した九つのサービス経路を用意しています。クリック、スター、応募、返信、予約投稿は売上として数えません。
+このリポジトリは、アーカイブされていない `lachlanchen` の公開ソースリポジトリ 108 件も一覧化し、コード、書籍、知識グラフ、研究、メディア、語学学習、ローカル AI を、買い手の課題を起点とした根拠付きの機会へ組み合わせます。最初の検証済み売上 USD 1,000 に向けて、USD 500 の MCP レビューを主経路とし、範囲を限定した九つの隣接サービス経路を用意しています。クリック、スター、応募、返信、予約投稿は売上として数えません。
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -38,12 +38,13 @@ LazyPromotion は、ローカルで動くレビュー優先のソーシャル需
 | [`worker.py`](../worker.py) | 回数制限とクールダウンを備えた発見処理と非公開レビュー待ち行列。送信はしない |
 | [`catalog.json`](../catalog.json) と [`github-repos.json`](../github-repos.json) | ニーズとの精選された対応表と、公開リポジトリの一覧 |
 | [`github_portfolio_audit.py`](../github_portfolio_audit.py) | 現在の全公開ソースリポジトリを対象にした非公開・読み取り専用の注目度監査。GitHub トラフィックをリードや売上には数えない |
+| [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 公開 GitHub リポジトリをリビジョン固定で静的に事前確認する MCP レビュー用ツール。コードを clone せず実行もしない |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | コード、書籍、知識システム、メディアを買い手の課題に沿って組み合わせた機会 |
 | [`bounties.py`](../bounties.py) | 公開バウンティを GitHub のライブ状態と照合し、安全でない仕事や既に競合する仕事を除外 |
 | [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | プロジェクト所有の Bounty agent feed を読み取り専用で確認し、新しい ID またはバージョンだけを非公開レビュー通知へ変換 |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 実際の問題領域ごとに整理した公開成果の全体図 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 根拠と納品条件を含む、優先順位付きの機会契約 |
-| [`docs/first-1000.md`](../docs/first-1000.md) | USD 250／USD 400／USD 500 の範囲限定サービス九経路と、誇張しない節目の計算 |
+| [`docs/first-1000.md`](../docs/first-1000.md) | USD 500 の MCP 主経路、九つの範囲限定隣接サービス、誇張しない節目の計算 |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | 現在のポートフォリオから売上への判断、登録条件、外部機会の根拠 |
 | [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | インフラ、コード監査、多言語作業、応募条件を対象にした最新の世界規模の有償経路調査 |
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 検証、エージェント課題設計、発音、ローカル知識作業に関する現行の買い手ニーズ順位 |
@@ -161,7 +162,7 @@ scripts/desktop.sh stop
 
 中核は意図的に小さく保っています。可視ブラウザには Playwright、永続するローカル状態には SQLite、構造化された判定と下書きにはアカウントで利用可能な Codex モデルを使います。Postiz はレビュー済みのファーストパーティ予約投稿にだけ使用します。MCP 接続は任意でバージョンを固定し、モデルの子プロセスにはブラウザ、スケジューラ、認証情報、決済へのアクセスを与えません。検出回避、未承諾の自動反応、無差別投稿はこの基盤に含めません。
 
-ポートフォリオ層は、108 件すべてを一度に宣伝するのではなく、公開プロジェクトを明示的な機会契約へ変換します。現在の九経路は、ローカル資料コレクションの適合診断、論文原稿の赤入れ、二言語講義資料の納品、物語クリップ制作、書籍見本制作、KiCad プラグイン評価、OpenHI 再現、LazyRemote 構成レビュー、発音ミニレッスンです。AI クリップ組み立ては、より強い根拠が人間のレビューを通過するまで停止します。再現可能な [KiCad プラグイン評価フィクスチャ](../examples/kicad-plugin-evaluation/)が新しい範囲限定経路を支えます。小さな[出典制約付き教育プロンプト](../examples/source-bounded-educational-prompt/)は、学習者向け作業でも同じ入力、制約、根拠、評価の規律を示します。語彙データの取り込みは再利用できる LKT の専門領域ですが、終了した非公開マーケット案件が今も募集中だとは主張しません。詳しい評価は [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) を参照してください。
+ポートフォリオ層は、108 件すべてを一度に宣伝するのではなく、公開プロジェクトを明示的な機会契約へ変換します。主経路は USD 500 の MCP Server Pre-Deployment Review です。九つの隣接経路は、ローカル資料コレクションの適合診断、論文原稿の赤入れ、二言語講義資料の納品、物語クリップ制作、書籍見本制作、KiCad プラグイン評価、OpenHI 再現、LazyRemote 構成レビュー、発音ミニレッスンです。AI クリップ組み立ては、より強い根拠が人間のレビューを通過するまで停止します。再現可能な [KiCad プラグイン評価フィクスチャ](../examples/kicad-plugin-evaluation/)が新しい範囲限定経路を支えます。小さな[出典制約付き教育プロンプト](../examples/source-bounded-educational-prompt/)は、学習者向け作業でも同じ入力、制約、根拠、評価の規律を示します。語彙データの取り込みは再利用できる LKT の専門領域ですが、終了した非公開マーケット案件が今も募集中だとは主張しません。詳しい評価は [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) を参照してください。
 
 ## 検証
 

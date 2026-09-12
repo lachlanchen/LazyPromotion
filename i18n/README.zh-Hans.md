@@ -10,7 +10,7 @@
 
 LazyPromotion 是一款本地运行、先审后发的社交需求发现助手。它通过一个可见的专用 Chrome 配置文件操作 Reddit、X、Instagram 和 Hacker News 的真实网页，把可能匹配的内容记录到 SQLite，使用登录账户所支持并推荐的 Codex 模型和低推理强度起草有依据的回复，并在公开发送前停止。它面向希望以相关开源成果帮助真实用户的维护者，而不是把社区变成销售队列。
 
-仓库还维护 `lachlanchen` 名下 108 个未归档公开源码仓库的清单，并把代码、书籍、知识图谱、研究、媒体、语言学习和本地 AI 组合成以买方问题为中心、受证据门槛约束的机会。九条范围固定的服务路线用于支持第一个经核实的 1,000 美元目标；点击、Star、申请和排队中的帖子都不算收入。
+仓库还维护 `lachlanchen` 名下 108 个未归档公开源码仓库的清单，并把代码、书籍、知识图谱、研究、媒体、语言学习和本地 AI 组合成以买方问题为中心、受证据门槛约束的机会。500 美元 MCP 审查主路线和九条相邻的固定范围服务路线共同支持第一个经核实的 1,000 美元目标；点击、Star、申请和排队中的帖子都不算收入。
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -38,12 +38,13 @@ LazyPromotion 是一款本地运行、先审后发的社交需求发现助手。
 | [`worker.py`](../worker.py) | 有限次数、带冷却的发现任务和私密审阅队列；永不自行发送 |
 | [`catalog.json`](../catalog.json) 与 [`github-repos.json`](../github-repos.json) | 人工整理的需求匹配规则与公开仓库清单 |
 | [`github_portfolio_audit.py`](../github_portfolio_audit.py) | 对所有当前公开源码仓库进行私密、只读的关注度审计；GitHub 流量永远不计作潜在线索或收入 |
+| [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 对公开 GitHub 仓库进行固定版本的静态预检，用于 MCP 审查；不克隆或执行仓库代码 |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | 面向买方问题组合代码、书籍、知识系统与媒体的机会清单 |
 | [`bounties.py`](../bounties.py) | 将公开赏金与 GitHub 实时状态核对，并拒绝不安全或已有争议的工作 |
 | [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 只读轮询项目自有的 Bounty agent feed，仅将新的 ID 或版本转为私密审阅提醒 |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 按真实问题领域整理的完整公开作品地图 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 带证明要求和交付门槛的机会排序与服务约定 |
-| [`docs/first-1000.md`](../docs/first-1000.md) | 九条有边界的 250/400/500 美元服务路线和不夸大的里程碑计算 |
+| [`docs/first-1000.md`](../docs/first-1000.md) | 500 美元 MCP 主路线、九条相邻的有边界服务和不夸大的里程碑计算 |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | 当前从作品集到收入的决策、注册门槛与外部机会证据 |
 | [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | 面向基础设施、代码审计、多语言工作和资格门槛的最新全球付费路线筛查 |
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 针对验证、agent 任务设计、发音和本地知识工作的实时买方需求排序 |
@@ -161,7 +162,7 @@ scripts/desktop.sh stop
 
 核心刻意保持精简：Playwright 负责可见浏览器，SQLite 保存耐久的本地状态，账户支持的 Codex 模型负责结构化分流与起草。Postiz 只用于经过审阅的第一方排期。MCP 接入是可选且锁定版本的；模型子进程不会获得浏览器、排程器、凭据或支付权限。详见[完整评估](../docs/open-source-evaluation.md)。
 
-作品集层不会一次推广全部 108 个仓库，而是把公开项目整理成明确的机会约定。目前九条有界路线包括：本地资料集适配、论文修订红线、双语讲座交付、故事短片、书籍样稿、KiCad 插件评估、OpenHI 复现、LazyRemote 拓扑审查和发音微课。AI 短片组装继续暂停，直到更有说服力的证明通过人工审阅。可复现的 [KiCad 插件评估样例](../examples/kicad-plugin-evaluation/)为这条新路线提供支持；精简的[受来源约束的教学提示样例](../examples/source-bounded-educational-prompt/)则在面向学习者的工作中体现同样的输入、约束、证据和评估规范。词汇数据导入是可复用的 LKT 专项能力，并不表示某个已经关闭的市场需求仍然有效。
+作品集层不会一次推广全部 108 个仓库，而是把公开项目整理成明确的机会约定。主路线是 500 美元 MCP Server Pre-Deployment Review；九条相邻路线包括本地资料集适配、论文修订红线、双语讲座交付、故事短片、书籍样稿、KiCad 插件评估、OpenHI 复现、LazyRemote 拓扑审查和发音微课。AI 短片组装继续暂停，直到更有说服力的证明通过人工审阅。可复现的 [KiCad 插件评估样例](../examples/kicad-plugin-evaluation/)为这条新路线提供支持；精简的[受来源约束的教学提示样例](../examples/source-bounded-educational-prompt/)则在面向学习者的工作中体现同样的输入、约束、证据和评估规范。词汇数据导入是可复用的 LKT 专项能力，并不表示某个已经关闭的市场需求仍然有效。
 
 ## 验证
 

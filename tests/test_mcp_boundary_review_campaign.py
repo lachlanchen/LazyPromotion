@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 31)
+        self.assertEqual(self.payload["version"], 32)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -38,6 +38,18 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("up to three checks", offer["follow_up_recheck"])
         self.assertEqual(sum(offer["deliverable_allocation_usd"].values()), 500)
         self.assertEqual(self.payload["funnel"]["received_revenue_usd"], 0)
+
+    def test_public_repository_preflight_is_static_private_and_not_a_sale(self):
+        preflight = self.payload["public_repository_preflight_generator"]
+        self.assertEqual(preflight["state"], "live_local_verified")
+        self.assertEqual(preflight["script"], "mcp_public_preflight.py")
+        self.assertIn("explicit GitHub API GET", preflight["method"])
+        self.assertIn("owner-only", preflight["output"].casefold())
+        self.assertFalse(preflight["live_sample"]["repository_code_executed"])
+        self.assertEqual(preflight["live_sample"]["detected_tools"], 2)
+        self.assertEqual(preflight["live_sample"]["detected_resources"], 1)
+        self.assertIn("free scoping aid", preflight["boundary"])
+        self.assertFalse(self.payload["funnel"]["payment_confirmed"])
 
     def test_offer_preserves_security_and_data_boundaries(self):
         offer = self.payload["offer"]

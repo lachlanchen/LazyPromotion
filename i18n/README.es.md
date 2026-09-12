@@ -10,7 +10,7 @@
 
 LazyPromotion es un asistente local de descubrimiento social con revisión previa. Busca en la interfaz web real de Reddit, X o Instagram mediante un perfil persistente y visible de Chrome, guarda posibles coincidencias en SQLite, redacta una respuesta fundamentada con el modelo Codex recomendado para la cuenta y esfuerzo bajo, y se detiene antes del envío público. Está pensado para ayudar con proyectos de código abierto pertinentes, no para hacer marketing masivo.
 
-El repositorio también mantiene un inventario público de 108 repositorios fuente no archivados y convierte código, libros, grafos de conocimiento, investigación, medios, aprendizaje de idiomas e IA local en oportunidades concretas y sujetas a evidencia. Nueve servicios de alcance fijo apoyan la meta de los primeros USD 1.000 verificados; clics, estrellas, solicitudes y publicaciones en cola nunca cuentan como ingresos.
+El repositorio también mantiene un inventario público de 108 repositorios fuente no archivados y convierte código, libros, grafos de conocimiento, investigación, medios, aprendizaje de idiomas e IA local en oportunidades concretas y sujetas a evidencia. La revisión MCP principal de USD 500 y nueve servicios adyacentes de alcance fijo apoyan la meta de los primeros USD 1.000 verificados; clics, estrellas, solicitudes y publicaciones en cola nunca cuentan como ingresos.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -39,12 +39,13 @@ El repositorio también mantiene un inventario público de 108 repositorios fuen
 | [`worker.py`](../worker.py) | Descubrimiento acotado y cola privada de revisión; nunca envía |
 | [`catalog.json`](../catalog.json) y [`github-repos.json`](../github-repos.json) | Mapa fundamentado de necesidades e inventario público de repositorios |
 | [`github_portfolio_audit.py`](../github_portfolio_audit.py) | Auditoría privada y de solo lectura de la atención en todos los repositorios fuente públicos actuales; el tráfico de GitHub nunca se cuenta como contacto ni ingreso |
+| [`mcp_public_preflight.py`](../mcp_public_preflight.py) | Preflight estático y fijado a una revisión de un repositorio público de GitHub para la revisión MCP; nunca clona ni ejecuta su código |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Combinaciones de código, libros, conocimiento y medios orientadas al comprador |
 | [`bounties.py`](../bounties.py) | Concilia recompensas públicas con el estado en vivo de GitHub y rechaza tareas inseguras o ya disputadas |
 | [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Consulta en modo lectura el feed de Bounty del proyecto y convierte solo ID o versiones nuevas en alertas privadas de revisión |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Mapa completo del trabajo público por área de problema |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Contratos de oportunidad priorizados con puertas de prueba y entrega |
-| [`docs/first-1000.md`](../docs/first-1000.md) | Nueve servicios acotados de USD 250/400/500 y cálculo honesto de la meta |
+| [`docs/first-1000.md`](../docs/first-1000.md) | Ruta MCP principal de USD 500, nueve servicios adyacentes acotados y cálculo honesto de la meta |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | Decisión vigente de cartera a ingresos, puertas de registro y evidencia de oportunidades externas |
 | [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | Revisión mundial reciente de rutas pagadas para infraestructura, auditoría de código, trabajo multilingüe y requisitos de acceso |
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Necesidades vivas priorizadas de verificación, diseño de tareas para agentes, pronunciación y conocimiento local |
@@ -162,7 +163,7 @@ scripts/desktop.sh stop
 
 La primera versión elige Playwright y SQLite en vez de un programador grande o un marco de antidetección. Postiz y Mixpost pueden servir para campañas planificadas; las funciones de evasión o interacción automática de otros proyectos no pertenecen a este flujo con revisión humana. Consulta la [evaluación completa](../docs/open-source-evaluation.md).
 
-Las conexiones MCP son opcionales y están fijadas; los subprocesos del modelo no reciben acceso al navegador, al programador, a credenciales ni a pagos. Las nueve rutas actuales cubren colecciones locales, redline LaTeX, clases bilingües, clips narrativos, especímenes de libro, evaluación de plugins de KiCad, reproducción de OpenHI, revisión de topologías de LazyRemote y microlecciones de pronunciación. El montaje de clips de IA sigue en pausa hasta que una prueba más sólida supere la revisión humana. El [ejemplo reproducible de evaluación de plugins de KiCad](../examples/kicad-plugin-evaluation/) sustenta la nueva ruta acotada. Un [prompt educativo limitado por fuentes](../examples/source-bounded-educational-prompt/) aplica la misma disciplina de entradas, restricciones, evidencia y evaluación al trabajo para estudiantes. La ingesta léxica es una especialización reutilizable, no la afirmación de que una oferta cerrada sigue abierta.
+Las conexiones MCP son opcionales y están fijadas; los subprocesos del modelo no reciben acceso al navegador, al programador, a credenciales ni a pagos. La ruta principal es la revisión previa al despliegue de un servidor MCP por USD 500; las nueve rutas adyacentes cubren colecciones locales, redline LaTeX, clases bilingües, clips narrativos, especímenes de libro, evaluación de plugins de KiCad, reproducción de OpenHI, revisión de topologías de LazyRemote y microlecciones de pronunciación. El montaje de clips de IA sigue en pausa hasta que una prueba más sólida supere la revisión humana. El [ejemplo reproducible de evaluación de plugins de KiCad](../examples/kicad-plugin-evaluation/) sustenta la nueva ruta acotada. Un [prompt educativo limitado por fuentes](../examples/source-bounded-educational-prompt/) aplica la misma disciplina de entradas, restricciones, evidencia y evaluación al trabajo para estudiantes. La ingesta léxica es una especialización reutilizable, no la afirmación de que una oferta cerrada sigue abierta.
 
 ## Validación
 

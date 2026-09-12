@@ -10,7 +10,7 @@
 
 LazyPromotion là trợ lý cục bộ, ưu tiên duyệt trước khi gửi để tìm nhu cầu trên mạng xã hội. Công cụ làm việc với giao diện web thật của Reddit, X, Instagram và Hacker News trong một hồ sơ Chrome chuyên dụng có thể quan sát, lưu các kết quả có thể phù hợp vào SQLite, soạn câu trả lời có căn cứ bằng mô hình Codex được tài khoản hỗ trợ và đề xuất ở mức suy luận thấp, rồi dừng trước khi gửi công khai. Công cụ dành cho người duy trì muốn giúp người khác bằng sản phẩm nguồn mở phù hợp, chứ không biến cộng đồng thành hàng chờ bán hàng.
 
-Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` chưa lưu trữ. Mã nguồn, sách, đồ thị tri thức, nghiên cứu, nội dung đa phương tiện, học ngôn ngữ và AI cục bộ được kết hợp thành các cơ hội xuất phát từ bài toán của người mua và chịu ràng buộc bởi bằng chứng. Chín tuyến dịch vụ có phạm vi cố định hướng đến cột mốc 1.000 USD đầu tiên đã được xác nhận; lượt nhấp, sao, đơn ứng tuyển và bài đang xếp lịch không được tính là doanh thu.
+Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` chưa lưu trữ. Mã nguồn, sách, đồ thị tri thức, nghiên cứu, nội dung đa phương tiện, học ngôn ngữ và AI cục bộ được kết hợp thành các cơ hội xuất phát từ bài toán của người mua và chịu ràng buộc bởi bằng chứng. Tuyến chính là dịch vụ rà soát MCP trị giá 500 USD, cùng chín tuyến dịch vụ liền kề có phạm vi cố định hướng đến cột mốc 1.000 USD đầu tiên đã được xác nhận; lượt nhấp, sao, đơn ứng tuyển và bài đang xếp lịch không được tính là doanh thu.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -38,12 +38,13 @@ Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` 
 | [`worker.py`](../worker.py) | Khám phá hữu hạn có thời gian chờ và hàng đợi duyệt riêng tư; không bao giờ tự gửi |
 | [`catalog.json`](../catalog.json) và [`github-repos.json`](../github-repos.json) | Quy tắc đối sánh được tuyển chọn và danh mục kho mã công khai |
 | [`github_portfolio_audit.py`](../github_portfolio_audit.py) | Kiểm toán mức độ chú ý riêng tư, chỉ đọc trên mọi kho mã nguồn công khai hiện tại; lưu lượng GitHub không bao giờ được tính là khách hàng tiềm năng hay doanh thu |
+| [`mcp_public_preflight.py`](../mcp_public_preflight.py) | Kiểm tra tĩnh kho GitHub công khai, ghim theo bản sửa đổi, cho dịch vụ rà soát MCP; không sao chép hay chạy mã của kho |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Kết hợp mã, sách, hệ thống tri thức và nội dung đa phương tiện quanh bài toán người mua |
 | [`bounties.py`](../bounties.py) | Đối chiếu bounty công khai với trạng thái GitHub trực tiếp và loại công việc không an toàn hoặc đã có tranh chấp |
 | [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Thăm dò luồng Bounty thuộc dự án ở chế độ chỉ đọc và chỉ chuyển ID hoặc phiên bản mới thành cảnh báo duyệt riêng tư |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Bản đồ đầy đủ các sản phẩm công khai, nhóm theo vấn đề thực tế |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Các hợp đồng cơ hội được xếp hạng, có cổng bằng chứng và giao hàng |
-| [`docs/first-1000.md`](../docs/first-1000.md) | Chín dịch vụ giới hạn ở mức 250/400/500 USD và phép tính cột mốc trung thực |
+| [`docs/first-1000.md`](../docs/first-1000.md) | Tuyến MCP chính 500 USD, chín dịch vụ liền kề có giới hạn và phép tính cột mốc trung thực |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | Quyết định hiện tại từ danh mục sang doanh thu, cổng đăng ký và bằng chứng cơ hội bên ngoài |
 | [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | Đợt rà soát toàn cầu mới về tuyến trả phí cho hạ tầng, kiểm toán mã, công việc đa ngôn ngữ và cổng đủ điều kiện |
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Nhu cầu người mua trực tiếp được xếp hạng cho xác minh, thiết kế tác vụ agent, phát âm và tri thức địa phương |
@@ -161,7 +162,7 @@ scripts/desktop.sh stop
 
 Phần lõi được giữ nhỏ có chủ đích: Playwright điều khiển trình duyệt hiển thị, SQLite lưu trạng thái cục bộ bền vững, còn mô hình Codex được tài khoản hỗ trợ thực hiện phân loại có cấu trúc và soạn bản nháp. Postiz chỉ dùng để lên lịch nội dung bên thứ nhất đã được duyệt. Kết nối MCP là tùy chọn và được ghim phiên bản; tiến trình con của mô hình không được quyền truy cập trình duyệt, bộ lập lịch, thông tin đăng nhập hay thanh toán. Xem [đánh giá đầy đủ](../docs/open-source-evaluation.md).
 
-Lớp danh mục biến dự án công khai thành hợp đồng cơ hội rõ ràng thay vì quảng bá mọi kho mã cùng lúc. Chín tuyến hiện tại gồm đánh giá độ phù hợp của bộ sưu tập cục bộ, bản sửa đổi có redline cho bản thảo, chuyển giao bài giảng song ngữ, clip kể chuyện, mẫu sách, đánh giá plugin KiCad, tái hiện OpenHI, rà soát cấu trúc LazyRemote và bài học phát âm ngắn. Việc lắp ráp clip AI vẫn tạm dừng cho đến khi bằng chứng tốt hơn vượt qua khâu duyệt của con người. [Mẫu đánh giá plugin KiCad có thể tái lập](../examples/kicad-plugin-evaluation/) hỗ trợ tuyến giới hạn mới. Một [prompt giáo dục bị ràng buộc bởi nguồn](../examples/source-bounded-educational-prompt/) thể hiện cùng kỷ luật về đầu vào, ràng buộc, bằng chứng và đánh giá trong công việc hướng tới người học. Nhập dữ liệu từ vựng là một chuyên môn LKT có thể tái sử dụng, không phải tuyên bố rằng một tin tuyển trên thị trường đã đóng vẫn còn mở.
+Lớp danh mục biến dự án công khai thành hợp đồng cơ hội rõ ràng thay vì quảng bá mọi kho mã cùng lúc. Tuyến chính là MCP Server Pre-Deployment Review trị giá 500 USD; chín tuyến liền kề gồm đánh giá độ phù hợp của bộ sưu tập cục bộ, bản sửa đổi có redline cho bản thảo, chuyển giao bài giảng song ngữ, clip kể chuyện, mẫu sách, đánh giá plugin KiCad, tái hiện OpenHI, rà soát cấu trúc LazyRemote và bài học phát âm ngắn. Việc lắp ráp clip AI vẫn tạm dừng cho đến khi bằng chứng tốt hơn vượt qua khâu duyệt của con người. [Mẫu đánh giá plugin KiCad có thể tái lập](../examples/kicad-plugin-evaluation/) hỗ trợ tuyến giới hạn mới. Một [prompt giáo dục bị ràng buộc bởi nguồn](../examples/source-bounded-educational-prompt/) thể hiện cùng kỷ luật về đầu vào, ràng buộc, bằng chứng và đánh giá trong công việc hướng tới người học. Nhập dữ liệu từ vựng là một chuyên môn LKT có thể tái sử dụng, không phải tuyên bố rằng một tin tuyển trên thị trường đã đóng vẫn còn mở.
 
 ## Xác thực
 

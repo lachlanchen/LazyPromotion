@@ -10,7 +10,7 @@
 
 LazyPromotion 是一款在本機執行、先審後發的社交需求探索助手。它透過一個可見的專用 Chrome 設定檔操作 Reddit、X、Instagram 與 Hacker News 的真實網頁，把可能的配對記錄到 SQLite，使用登入帳戶所支援並建議的 Codex 模型與低推理強度起草有依據的回覆，並在公開送出前停止。它適合希望以相關開源成果幫助真實使用者的維護者，而不是把社群變成銷售隊列。
 
-儲存庫也維護 `lachlanchen` 名下 108 個未封存公開原始碼儲存庫的清單，並把程式碼、書籍、知識圖譜、研究、媒體、語言學習與本地 AI 組合成以買方問題為中心、受證據門檻約束的機會。九條範圍固定的服務路線用來支持第一個經核實的 1,000 美元目標；點擊、Star、申請與排程中的貼文一律不算收入。
+儲存庫也維護 `lachlanchen` 名下 108 個未封存公開原始碼儲存庫的清單，並把程式碼、書籍、知識圖譜、研究、媒體、語言學習與本地 AI 組合成以買方問題為中心、受證據門檻約束的機會。500 美元 MCP 審查主路線與九條相鄰的固定範圍服務路線共同支持第一個經核實的 1,000 美元目標；點擊、Star、申請與排程中的貼文一律不算收入。
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -38,12 +38,13 @@ LazyPromotion 是一款在本機執行、先審後發的社交需求探索助手
 | [`worker.py`](../worker.py) | 有限次數、帶冷卻的探索工作與私密審閱佇列；絕不自行送出 |
 | [`catalog.json`](../catalog.json) 與 [`github-repos.json`](../github-repos.json) | 人工整理的需求配對規則與公開儲存庫清單 |
 | [`github_portfolio_audit.py`](../github_portfolio_audit.py) | 對所有目前公開原始碼儲存庫進行私密、唯讀的關注度稽核；GitHub 流量永遠不計作潛在線索或收入 |
+| [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 對公開 GitHub 儲存庫進行固定版本的靜態預檢，用於 MCP 審查；不複製或執行儲存庫程式碼 |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | 針對買方問題組合程式碼、書籍、知識系統與媒體的機會清單 |
 | [`bounties.py`](../bounties.py) | 將公開懸賞與 GitHub 即時狀態核對，並拒絕不安全或已有爭議的工作 |
 | [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 唯讀輪詢專案自有的 Bounty agent feed，僅將新的 ID 或版本轉成私密審閱提醒 |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 依真實問題領域整理的完整公開作品地圖 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 帶證明要求與交付門檻的機會排序與服務約定 |
-| [`docs/first-1000.md`](../docs/first-1000.md) | 九條有邊界的 250/400/500 美元服務路線與不誇大的里程碑計算 |
+| [`docs/first-1000.md`](../docs/first-1000.md) | 500 美元 MCP 主路線、九條相鄰的有邊界服務與不誇大的里程碑計算 |
 | [`docs/portfolio-paid-opportunity-research-2026-09-10.md`](../docs/portfolio-paid-opportunity-research-2026-09-10.md) | 目前從作品集到收入的決策、註冊門檻與外部機會證據 |
 | [`docs/paid-need-decision-2026-09-12.md`](../docs/paid-need-decision-2026-09-12.md) | 面向基礎設施、程式碼稽核、多語工作與資格門檻的最新全球付費路線篩查 |
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 針對驗證、agent 任務設計、發音與本地知識工作的即時買方需求排序 |
@@ -161,7 +162,7 @@ scripts/desktop.sh stop
 
 核心刻意保持精簡：Playwright 負責可見瀏覽器，SQLite 保存耐久的本地狀態，帳戶支援的 Codex 模型負責結構化分流與起草。Postiz 只用於經過審閱的第一方排程。MCP 接入為可選並鎖定版本；模型子程序不會取得瀏覽器、排程器、憑證或付款權限。請見[完整評估](../docs/open-source-evaluation.md)。
 
-作品集層不會一次推廣全部 108 個儲存庫，而是把公開專案整理成明確的機會約定。目前九條有界路線包括：本地資料集適配、論文修訂紅線、雙語講座交付、故事短片、書籍樣稿、KiCad 外掛評估、OpenHI 復現、LazyRemote 拓撲審查與發音微課。AI 短片組裝繼續暫停，直到更有說服力的證明通過人工審閱。可重現的 [KiCad 外掛評估樣例](../examples/kicad-plugin-evaluation/)為這條新路線提供支持；精簡的[受來源約束的教學提示樣例](../examples/source-bounded-educational-prompt/)則在面向學習者的工作中體現同樣的輸入、約束、證據與評估規範。詞彙資料匯入是可重用的 LKT 專項能力，並不表示某個已經關閉的市場需求仍然有效。
+作品集層不會一次推廣全部 108 個儲存庫，而是把公開專案整理成明確的機會約定。主路線是 500 美元 MCP Server Pre-Deployment Review；九條相鄰路線包括本地資料集適配、論文修訂紅線、雙語講座交付、故事短片、書籍樣稿、KiCad 外掛評估、OpenHI 復現、LazyRemote 拓撲審查與發音微課。AI 短片組裝繼續暫停，直到更有說服力的證明通過人工審閱。可重現的 [KiCad 外掛評估樣例](../examples/kicad-plugin-evaluation/)為這條新路線提供支持；精簡的[受來源約束的教學提示樣例](../examples/source-bounded-educational-prompt/)則在面向學習者的工作中體現同樣的輸入、約束、證據與評估規範。詞彙資料匯入是可重用的 LKT 專項能力，並不表示某個已經關閉的市場需求仍然有效。
 
 ## 驗證
 

@@ -100,6 +100,13 @@ CATEGORIES = OrderedDict(
 
 PRIORITIES = [
     {
+        "work": "MCP Server Pre-Deployment Review",
+        "need": "Decide whether one exact MCP server revision can be enabled for one client and transport without crossing its intended authority boundary",
+        "audience": "MCP maintainers, small AI teams, agencies, and engineering teams preparing a deployment decision",
+        "route": "USD 500 manual boundary review after a free static public-repository preflight; up to eight tools and resources, ten agreed checks, and no certification claim",
+        "url": "https://lazying.art/mcp-boundary-review/",
+    },
+    {
         "work": "LazyingArt eInk",
         "need": "A dedicated multilingual reader without giving up a free Kindle/KOReader path",
         "audience": "Language learners and e-paper readers",
@@ -156,7 +163,7 @@ PRIORITIES = [
         "url": "https://lazying.art/lecture-pack/",
     },
     {
-        "work": "PocketPolyglot + LinguaLeaf",
+        "work": "PocketPolyglot Book Specimen",
         "need": "Test one final, rights-cleared chapter as both print layout and reflowable EPUB before committing a whole book",
         "audience": "Independent authors and small publishers with a defined production problem",
         "route": "USD 250 Book Specimen Sprint after a free fit check; translation and complete-book production excluded",
@@ -212,6 +219,34 @@ PRIORITIES = [
         "url": "https://fun.lazying.art",
     },
 ]
+
+
+PRIORITY_WORK_ORDER = (
+    "LazyRemote + LazyTunnel",
+    "MCP Server Pre-Deployment Review",
+    "OpenHI",
+    "Local Knowledge Terminal",
+    "Video2Book + LazyEdit + PocketPolyglot",
+    "PocketPolyglot + LinguaLeaf",
+    "PocketPolyglot Book Specimen",
+    "Susskind archive + LazyLearn",
+    "PaperAgent + paper-revision-skill",
+    "HybridImager + CustomSensor",
+    "L & N",
+    "LazyEdit + AutoPublish",
+    "LazyEdit + LocalVideoGen + Musia",
+    "Musia + LocalVideoGen",
+    "LazyingArt eInk",
+    "Figurine",
+    "LazyEdit + LocalVideoGen + LalaStudio",
+)
+
+
+def ordered_priorities() -> list[dict[str, str]]:
+    by_work = {item["work"]: item for item in PRIORITIES}
+    if len(by_work) != len(PRIORITIES) or set(by_work) != set(PRIORITY_WORK_ORDER):
+        raise ValueError("priority work order must contain every route exactly once")
+    return [by_work[work] for work in PRIORITY_WORK_ORDER]
 
 
 def escape_cell(value: str) -> str:
@@ -275,15 +310,16 @@ def render(payload: dict) -> str:
         "## Where promotion should start",
         "",
         (
-            "These are priority paths, not a license to force a mention. LazyPromotion should "
-            "first establish a specific need, answer it usefully, and mention one relevant work "
-            "only when the connection improves the answer."
+            "These paths are ordered by current acquisition evidence and transaction readiness; "
+            "supporting proof and gated offers follow. The order is not a license to force a "
+            "mention. LazyPromotion should first establish a specific need, answer it usefully, "
+            "and mention one relevant work only when the connection improves the answer."
         ),
         "",
         "| Work | Real need | Best-fit audience | Honest conversion route |",
         "|---|---|---|---|",
     ]
-    for item in PRIORITIES:
+    for item in ordered_priorities():
         work = f"[{escape_cell(item['work'])}]({item['url']})"
         lines.append(
             f"| {work} | {escape_cell(item['need'])} | {escape_cell(item['audience'])} | "
@@ -293,8 +329,10 @@ def render(payload: dict) -> str:
     lines.extend(
         [
             "",
-            "The first-USD-1,000 route is confirmed payments totalling USD 1,000 across nine "
-            "bounded services: Local Knowledge Terminal collection-fit, Manuscript Build & "
+            "The first-USD-1,000 route is two confirmed USD 500 MCP Server Pre-Deployment "
+            "Reviews. The same milestone can also be reached with confirmed payments totalling "
+            "USD 1,000 across nine adjacent bounded services: Local Knowledge Terminal "
+            "collection-fit, Manuscript Build & "
             "Redline, the Bilingual Lecture Pack, the Story Clip Pilot, the Book Specimen "
             "Sprint, the KiCad Plugin Evaluation, the OpenHI software reproducibility sprint, the "
             "LazyRemote Network Fit Review, and the Custom Bilingual Pronunciation Mini-Lesson. "

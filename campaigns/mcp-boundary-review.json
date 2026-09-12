@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 31,
+  "version": 32,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -110,6 +110,25 @@
     "cancellation": "Cancel before private access or execution begins for a full refund. Once work starts, refund only undelivered items using the fixed deliverable allocation.",
     "data_policy": "For a public-repository preflight, collect only contact email, a public GitHub repository URL, and authorization confirmation; derive the pinned revision, first surface inventory, and proposed checks for the fit reply. A private-repository request must also provide the intended client and transport plus the deployment decision or concern, without source or credentials. Both paths collect metadata only. Agree private access, fixtures, network behavior, credentials handling, confidentiality, retention, and permitted automation before work. Customer material never becomes public proof without separate written permission.",
     "payment_policy": "After a positive fit check and accepted written scope, direct-site clients receive one reviewed Stripe request. Marketplace-origin contracts and payments stay on that marketplace. This is not a public self-serve checkout."
+  },
+  "public_repository_preflight_generator": {
+    "state": "live_local_verified",
+    "script": "mcp_public_preflight.py",
+    "documentation": "docs/mcp-public-preflight.md",
+    "input": "One clean public GitHub repository-root URL.",
+    "method": "Pins the default-branch commit and tree, reads a bounded set of public text blobs through explicit GitHub API GET requests, and detects static surface clues without cloning or executing repository code.",
+    "output": "Owner-only Markdown under the Git-ignored .local/mcp-preflight directory.",
+    "live_sample": {
+      "repository": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "revision": "625a8d6e4c9ed1e1047ccacff32f982fea959d81",
+      "detected_tools": 2,
+      "detected_resources": 1,
+      "detected_prompts": 0,
+      "selected_files": 16,
+      "readable_files": 16,
+      "repository_code_executed": false
+    },
+    "boundary": "The generator is a free scoping aid. It does not read private repositories, submit a fit check, create a payment, establish a vulnerability, or replace the paid executed review."
   },
   "public_proof": {
     "state": "live_verified",

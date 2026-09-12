@@ -1693,3 +1693,8 @@ pull request 362. The pull request entered the allowlist as a quiet baseline at
 zero comments and zero reviews; future count or state changes create a manual
 review alert without fetching body, comment, or review text. This monitoring is
 not a reply, acceptance, buyer inquiry, payment, or revenue.
+
+Search Console initially reported the new diagnostic URL as unknown to Google,
+then confirmed one priority-crawl request. Do not repeat the request merely to
+seek priority: the queue does not guarantee indexing, ranking, traffic, an
+inquiry, payment, or revenue.

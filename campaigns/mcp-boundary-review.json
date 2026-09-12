@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 43,
+  "version": 44,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -456,6 +456,15 @@
         "role": "A current machine-authentication failure becomes a durable guide that separates the MCP resource, authorization-server issuer, token endpoint, and authentication method; it preserves standards discovery as the server-side repair and treats an explicit endpoint as a narrow compatibility fallback.",
         "release_boundary": "At publication time, npm latest was mcp-remote 0.13.5 and pull request 362 remained open. The guide tells readers to check installed help and release notes instead of using an unreleased flag.",
         "verification": "One live REST record and canonical HTML contain the exact title, slug, three-address diagnostic, standards and compatibility boundaries, token-reacquisition checks, and two unshortened first-party UTM routes. All ten cited and conversion destinations returned HTTP 200. An isolated visible browser verified the 1440 by 900 desktop render, 390 by 844 mobile render without horizontal overflow, and a visible click to the executed sample. LazyBlog commit 0049e94 records the publication with all 38 tests passing.",
+        "search_console": {
+          "state": "priority_crawl_requested_once",
+          "inspected_at": "2026-09-12T20:39:26Z",
+          "property": "sc-domain:lazying.art",
+          "prior_state": "URL is unknown to Google",
+          "confirmation": "Indexing requested; URL was added to a priority crawl queue",
+          "repeat_request_allowed": false,
+          "boundary": "A crawl request does not guarantee indexing, ranking, traffic, an inquiry, payment, or revenue."
+        },
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0
       },

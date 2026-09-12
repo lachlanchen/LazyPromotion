@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 43)
+        self.assertEqual(self.payload["version"], 44)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -480,6 +480,13 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("All ten", discovery["verification"])
         self.assertIn("390 by 844", discovery["verification"])
         self.assertIn("LazyBlog commit 0049e94", discovery["verification"])
+        search_console = discovery["search_console"]
+        self.assertEqual(search_console["state"], "priority_crawl_requested_once")
+        self.assertEqual(search_console["property"], "sc-domain:lazying.art")
+        self.assertIn("unknown to Google", search_console["prior_state"])
+        self.assertIn("priority crawl queue", search_console["confirmation"])
+        self.assertFalse(search_console["repeat_request_allowed"])
+        self.assertIn("does not guarantee indexing", search_console["boundary"])
         self.assertFalse(discovery["lead_or_sale_observed"])
         self.assertEqual(discovery["verified_received_gross_usd"], 0)
         self.assertFalse(lazyblog["lead_or_sale_observed"])

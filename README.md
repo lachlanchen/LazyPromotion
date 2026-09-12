@@ -217,9 +217,11 @@ The portfolio layer turns public projects into explicit opportunity contracts
 rather than promoting all repositories at once. Current routes include local
 collection fit, manuscript redline, bilingual lecture delivery, story clips,
 book specimens, AI clip assembly, and a reproducible
-[KiCad plugin-evaluation fixture](examples/kicad-plugin-evaluation/). Lexical
-ingestion is a reusable LKT specialization, not a claim that a closed
-marketplace listing is still open.
+[KiCad plugin-evaluation fixture](examples/kicad-plugin-evaluation/). A compact
+[source-bounded educational prompt](examples/source-bounded-educational-prompt/)
+shows the same inputs, constraints, evidence, and evaluation discipline in
+learner-facing work. Lexical ingestion is a reusable LKT specialization, not a
+claim that a closed marketplace listing is still open.
 
 ## Validation
 

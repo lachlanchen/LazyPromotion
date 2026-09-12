@@ -1608,3 +1608,13 @@ allowlist of offer-classification metadata under `.local/`; it does not retain
 customer or payment details, mutate Stripe, or update revenue automatically.
 A new receipt, refund, or dispute must be matched to its real commercial
 context before the funnel changes.
+
+Vetto's current [Senior Software Code Reviewer](https://job-boards.greenhouse.io/vetto/jobs/4112754009)
+project is a no-fee asynchronous route that directly matches the portfolio's
+code-review, negative-test, browser-regression, and false-success evidence. One
+factual application was submitted with a checked one-page resume, only Python
+and JavaScript/TypeScript selected, and the agent-assisted nature of the work
+stated explicitly. Greenhouse visibly confirmed receipt without a verification
+challenge. The advertised task-equivalent rate is not an accepted rate or
+approved workload; no exercise, selection, contract, payment, or revenue is
+inferred.

@@ -1,6 +1,6 @@
 {
   "id": "steinke-python-maintainer",
-  "version": 1,
+  "version": 2,
   "objective": "Use the strongest public Python API, package, testing, and Linux evidence for one current maintenance contract without inventing tenure, availability, client work, or protocol experience.",
   "source_need": {
     "captured_at": "2026-09-12T05:30:00Z",
@@ -26,10 +26,18 @@
       "Profiling and performance work"
     ],
     "compensation": "Not published",
-    "geography": "Remote was published; worldwide or Hong Kong eligibility was not stated",
+    "geography": "The recruiter post described the role as remote but omitted geography. A later exact-content match on Attacan's official careers site says the role is based in Vietnam with CET overlap, so Hong Kong eligibility must not be inferred.",
     "application_route": "One CV by email to the address published in the recruiting post",
-    "verification": "The public recruiting address matches the company website and legal-imprint domain.",
-    "boundary": "The post is current demand evidence, not confirmation of geographic eligibility, an interview, contract, accepted workload, payment, or revenue."
+    "verification": "The public recruiting address matches the company website and legal-imprint domain. Attacan's official role reproduces the distinctive scope, duration, schedule, reference ATT-PY-2026-01, and technical requirements.",
+    "likely_underlying_listing": {
+      "official_url": "https://attacan.com/en/careers/freelance-python-developer-connector-libraries/",
+      "relationship_state": "exact_content_match_but_client_relationship_unconfirmed",
+      "reference": "ATT-PY-2026-01",
+      "published_location": "Remote, based in Vietnam, with CET overlap",
+      "correction_recorded_at": "2026-09-12",
+      "policy": "Treat the geography as a material eligibility risk. Do not identify Attacan as the recruiter's client without confirmation, submit a duplicate application, or pursue the route unless the employer explicitly confirms Hong Kong eligibility."
+    },
+    "boundary": "The recruiter post and matching official listing are demand evidence, not confirmation that a Hong Kong applicant is eligible, an interview, contract, accepted workload, payment, or revenue."
   },
   "fit": {
     "projects": [
@@ -52,9 +60,8 @@
     ]
   },
   "application": {
-    "state": "email_sent_awaiting_human_reply",
+    "state": "email_sent_closed_unless_employer_confirms_hong_kong_eligibility",
     "submitted_at": "2026-09-12T14:03:00+08:00",
-    "follow_up_not_before": "2026-09-19",
     "method": "One concise email from the LazyingArt business alias to the address published in the recruiting post",
     "packet": "A checked one-page Python API and library maintenance CV",
     "verified_public_linkedin": "https://www.linkedin.com/in/lazyingart",
@@ -63,7 +70,8 @@
     "submission_fee_usd": 0,
     "sent_folder_verified": true,
     "automatic_follow_up": false,
-    "policy": "The email states Hong Kong location and interest in the approximate schedule while explicitly reserving exact availability and start date for confirmation before acceptance. It does not claim the unpublished tenure threshold, a rate, selection, a contract, payment, or revenue."
+    "review_policy": "No proactive follow-up or direct application to the likely matching official listing. Reopen only if the employer explicitly confirms Hong Kong eligibility.",
+    "policy": "The email states Hong Kong location and interest in the approximate schedule while explicitly reserving exact availability and start date for confirmation before acceptance. It does not claim the unpublished tenure threshold, a rate, selection, a contract, payment, or revenue. The later official exact-content match created a material Vietnam-based eligibility risk, so this route is closed unless the employer confirms otherwise."
   },
   "funnel": {
     "outbound_application_count": 1,

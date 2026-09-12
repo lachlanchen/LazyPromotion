@@ -14,12 +14,19 @@ class SteinkePythonMaintainerCampaignTests(unittest.TestCase):
         self.serialized = CAMPAIGN.read_text(encoding="utf-8")
         self.payload = json.loads(self.serialized)
 
-    def test_source_is_verified_without_inventing_rate_or_geography(self):
+    def test_source_correction_records_matching_official_geography(self):
         source = self.payload["source_need"]
+        match = source["likely_underlying_listing"]
 
-        self.assertEqual(self.payload["version"], 1)
+        self.assertEqual(self.payload["version"], 2)
         self.assertEqual(source["compensation"], "Not published")
-        self.assertIn("Hong Kong eligibility was not stated", source["geography"])
+        self.assertIn("Vietnam", source["geography"])
+        self.assertEqual(
+            match["official_url"],
+            "https://attacan.com/en/careers/freelance-python-developer-connector-libraries/",
+        )
+        self.assertIn("unconfirmed", match["relationship_state"])
+        self.assertIn("Vietnam", match["published_location"])
         self.assertIn("not confirmation", source["boundary"])
         self.assertIn("company website", source["verification"])
 
@@ -37,7 +44,10 @@ class SteinkePythonMaintainerCampaignTests(unittest.TestCase):
         application = self.payload["application"]
         funnel = self.payload["funnel"]
 
-        self.assertEqual(application["state"], "email_sent_awaiting_human_reply")
+        self.assertEqual(
+            application["state"],
+            "email_sent_closed_unless_employer_confirms_hong_kong_eligibility",
+        )
         self.assertTrue(application["resume_attached"])
         self.assertTrue(application["sent_folder_verified"])
         self.assertEqual(application["submission_count"], 1)
@@ -49,16 +59,16 @@ class SteinkePythonMaintainerCampaignTests(unittest.TestCase):
         self.assertFalse(funnel["payment_confirmed"])
         self.assertEqual(funnel["received_revenue_usd"], 0)
 
-    def test_application_watch_waits_one_week(self):
+    def test_application_watch_excludes_closed_geography_risk(self):
         watched = application_watch.application_record(
             self.payload,
             source_file=CAMPAIGN,
             on=application_watch.parse_day("2026-09-12"),
         )
 
-        self.assertIsNotNone(watched)
-        self.assertEqual(watched["review_after"], "2026-09-19")
-        self.assertFalse(watched["due_for_human_review"])
+        self.assertIsNone(watched)
+        self.assertNotIn("follow_up_not_before", self.payload["application"])
+        self.assertIn("No proactive follow-up", self.payload["application"]["review_policy"])
 
     def test_public_record_contains_no_private_application_values(self):
         serialized = self.serialized.casefold()

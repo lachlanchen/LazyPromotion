@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 26,
+  "version": 27,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -268,7 +268,7 @@
       "verification": "The profile README checker passed English plus ten translations, all 267 repository tests and 18 subtests passed under Python 3.12, and the default branch returned the exact routes in English, Simplified Chinese, and Japanese after push."
     },
     "postiz": {
-      "state": "linkedin_and_x_queue_verified",
+      "state": "linkedin_x_and_instagram_queue_verified",
       "provider": "linkedin",
       "post_id": "cmty7dcko17ftqk0yxthwp24w",
       "publish_at": "2026-09-16T02:00:00.000Z",
@@ -297,8 +297,32 @@
         "replaced_post": "The lower-intent passage-graph X item in the same September 16 slot was moved to DRAFT, so X publication volume did not increase.",
         "verification": "A fresh provider read returned the exact 251-character evidence-led copy, intended X profile, September 16 time, QUEUE state, and provider settings. One first attempt lost its terminal URL during provider transformation; the corrected bare first-party route was verified and the malformed queued record was deleted before publication."
       },
+      "instagram": {
+        "state": "queue_verified",
+        "provider": "instagram-standalone",
+        "post_id": "cmtyjgy2m1bhsqk0yx7q3qosf",
+        "publish_at": "2026-09-16T04:00:00.000Z",
+        "profile": "LazyingArt Lachlan Chen",
+        "content": "“Read-only” is not the same as private.\n\nI tested one MCP server at a pinned revision: 2 tools, 1 resource, 14 focused tests. The recorded local boundary passed. Direct remote exposure did not, because client authentication was missing.\n\nThe packet is public and reproducible. I’m using the same method for a fixed USD 500 review of one server and ten agreed checks. Fit check first; no source upload or payment before scope.\n\nlazying.art/mcp-boundary-review/sample-report/\n\n#ModelContextProtocol #MCP #AISecurity #OpenSource #DeveloperTools",
+        "content_sha256": "90979074d4b9417c35865eaddf4f84ba341d97618ed9130be75712bdeb97cece",
+        "settings": {
+          "post_type": "post",
+          "__type": "instagram-standalone"
+        },
+        "media": {
+          "postiz_upload_id": "b90e748a-e4f9-4df3-a168-7933aafa9a41",
+          "postiz_url": "https://uploads.postiz.com/95Ml0gNafr.png",
+          "source_url": "https://lazying.art/mcp-boundary-review/assets/mcp-boundary-review-social.png",
+          "dimensions": "1200x630",
+          "source_sha256": "6f6b8ca7345589ccf8cd98b37708f3f133cd057933423c17f8e1073429722a25",
+          "postiz_sha256": "6f6b8ca7345589ccf8cd98b37708f3f133cd057933423c17f8e1073429722a25"
+        },
+        "analytics_context": "The preceding thirty-day Instagram aggregate showed 362 views, 10 likes, 1 share, and no comments, saves, or replies. Those are attention signals only; they justify one concrete evidence-card test, not increased posting volume or a sales claim.",
+        "verification": "The provider rules were read before creation. The exact caption, intended Instagram profile, September 16 time, DRAFT review state, required standalone-post settings, and empty missing-content response were verified before scheduling. After the reviewed draft moved to QUEUE, a fresh provider read returned the same caption, time, profile, settings, and another empty missing-content response. The hosted PNG is byte-identical to the reviewed live first-party 1200x630 card.",
+        "replaced_or_added_volume": "This is the first Instagram test for the MCP offer. It is separated by thirty-two hours from the already queued September 17 passage-graph item and remains within the public posting cap."
+      },
       "lead_or_sale_observed": false,
-      "role": "One evidence-led first-party post uses the same September 16 slot on LinkedIn and X while lower-intent items move to drafts. Queueing is not publication, a fit inquiry, a sale, or revenue."
+      "role": "One evidence-led first-party post uses the same September 16 slot on LinkedIn and X, followed two hours later by one image-led Instagram test using the exact reviewed proof card. Lower-intent overlapping items remain drafts. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
       "state": "two_github_reviews_and_three_reddit_architecture_replies",

@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 26)
+        self.assertEqual(self.payload["version"], 27)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -199,9 +199,9 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
 
-    def test_linkedin_and_x_queue_replace_overlapping_volume(self):
+    def test_linkedin_x_and_instagram_queues_preserve_reviewed_evidence(self):
         postiz = self.payload["channels"]["postiz"]
-        self.assertEqual(postiz["state"], "linkedin_and_x_queue_verified")
+        self.assertEqual(postiz["state"], "linkedin_x_and_instagram_queue_verified")
         self.assertEqual(postiz["publish_at"], "2026-09-16T02:00:00.000Z")
         self.assertIn("14 focused tests", postiz["content"])
         self.assertIn("fixed USD 500 pre-deployment review", postiz["content"])
@@ -220,6 +220,25 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(x_post["settings"]["made_with_ai"])
         self.assertIn("volume did not increase", x_post["replaced_post"])
         self.assertIn("malformed queued record was deleted", x_post["verification"])
+        instagram = postiz["instagram"]
+        self.assertEqual(instagram["state"], "queue_verified")
+        self.assertEqual(instagram["provider"], "instagram-standalone")
+        self.assertEqual(instagram["publish_at"], "2026-09-16T04:00:00.000Z")
+        self.assertEqual(instagram["profile"], "LazyingArt Lachlan Chen")
+        self.assertIn("not the same as private", instagram["content"])
+        self.assertIn("fixed USD 500 review", instagram["content"])
+        self.assertEqual(
+            instagram["content_sha256"],
+            hashlib.sha256(instagram["content"].encode("utf-8")).hexdigest(),
+        )
+        self.assertEqual(instagram["settings"]["post_type"], "post")
+        self.assertEqual(instagram["media"]["dimensions"], "1200x630")
+        self.assertEqual(
+            instagram["media"]["source_sha256"],
+            instagram["media"]["postiz_sha256"],
+        )
+        self.assertIn("thirty-two hours", instagram["replaced_or_added_volume"])
+        self.assertIn("attention signals only", instagram["analytics_context"])
         self.assertFalse(postiz["lead_or_sale_observed"])
 
     def test_contra_listing_preserves_scope_and_revenue_boundaries(self):

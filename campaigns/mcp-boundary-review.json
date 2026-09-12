@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 36,
+  "version": 37,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -330,6 +330,30 @@
       "published_post_id": 3829,
       "published_at": "2026-09-12T11:09:01Z",
       "verification": "The live article now explains bounded large-result handoff through opaque list cursors, resource links or client-resolvable references, and the limits of raw server-local paths. It cites the official MCP tools, resources, and pagination specifications, retains the complete ten-check guide, sample-report route, and metadata-first fit check, and was updated in place as WordPress post 3829 without duplication. BLOG publication receipt commit 516e753 records the update.",
+      "claude_authentication_guide": {
+        "state": "published_live_verified",
+        "source": "articles/claude-mcp-authentication-public-local-remote/post.md",
+        "title": "Claude MCP Authentication: Public, Local, or Remote?",
+        "slug": "claude-mcp-authentication-public-local-remote",
+        "published_url": "https://blog.lazying.art/html/computer_internet/3832/claude-mcp-authentication-public-local-remote.html",
+        "published_post_id": 3832,
+        "published_at": "2026-09-12T18:46:50Z",
+        "categories": [
+          "Artificial Intelligence",
+          "Computer & Internet"
+        ],
+        "tags": [
+          "MCP",
+          "Model Context Protocol",
+          "OAuth",
+          "Claude Code",
+          "FastMCP"
+        ],
+        "role": "A current maintainer question becomes a durable guide that separates a deliberately public demo, local process boundary, and OAuth-protected remote connector before offering one quiet path to the executed sample and fit check.",
+        "verification": "The live REST record and canonical HTML both return the exact title and slug, the intended two categories and five tags, the public/local/private decision table, token-failure checks, and both unshortened first-party UTM routes. Only one post exists for the slug. The initial post creation exposed a missing optional translation endpoint; post 3832 was recovered in place without duplication, and LazyBlog commit bdc7638 now makes monolingual publication skip that optional route. All 38 LazyBlog tests and five subtests pass.",
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0
+      },
       "lead_or_sale_observed": false
     },
     "github": {

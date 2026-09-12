@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 36)
+        self.assertEqual(self.payload["version"], 37)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -371,6 +371,20 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("server-local paths", lazyblog["verification"])
         self.assertIn("BLOG publication receipt commit 516e753", lazyblog["verification"])
         self.assertIn("without duplication", lazyblog["verification"])
+        auth = lazyblog["claude_authentication_guide"]
+        self.assertEqual(auth["state"], "published_live_verified")
+        self.assertEqual(
+            auth["source"],
+            "articles/claude-mcp-authentication-public-local-remote/post.md",
+        )
+        self.assertEqual(auth["published_post_id"], 3832)
+        self.assertIn("/3832/", auth["published_url"])
+        self.assertEqual(len(auth["categories"]), 2)
+        self.assertEqual(len(auth["tags"]), 5)
+        self.assertIn("without duplication", auth["verification"])
+        self.assertIn("LazyBlog commit bdc7638", auth["verification"])
+        self.assertFalse(auth["lead_or_sale_observed"])
+        self.assertEqual(auth["verified_received_gross_usd"], 0)
         self.assertFalse(lazyblog["lead_or_sale_observed"])
 
     def test_owned_offer_links_the_guide_with_one_exact_boundary(self):

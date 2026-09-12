@@ -1629,3 +1629,14 @@ tests and 16 end-to-end tests passed. The contribution contains no LazyingArt
 link or offer. Its source issue is now baselined in the metadata-only inbound
 monitor, which cannot read bodies or reply. This is useful public proof, not a
 lead, merge, sale, or revenue.
+
+A Docker Sandboxes user then reported that Copilot CLI's built-in GitHub MCP
+server required authentication despite following the default setup, and asked
+how to enable write-capable tools without relying on dynamic OAuth. The concise
+[reply](https://github.com/docker/sbx-releases/issues/583#issuecomment-5648138190)
+uses current Docker and GitHub documentation to separate an existing
+sandbox's secret scope, a same-name workspace override, the built-in server,
+and the supported write-tool flag. It contains no LazyingArt link or offer and
+is baselined in the metadata-only GitHub monitor, which cannot read bodies or
+reply. It is a helpful interaction, not buyer intent, a lead, payment, or
+revenue.

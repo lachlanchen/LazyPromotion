@@ -27,7 +27,8 @@ The fixed external-thread allowlist currently contains
 `arjun-techjays/bos#18`, `pilotariak/azkena#14`, and
 `hivtools/hivtools-mcp#10`, where `lachlanchen` posted reviewed,
 issue-specific answers, plus `punkpeye/mcp-remote#361`, which is linked to a
-submitted upstream fix. For these threads the same GraphQL query requests only repository
+submitted upstream fix, and `docker/sbx-releases#583`, where a current
+sandbox-authentication question received a reviewed answer. For these threads the same GraphQL query requests only repository
 visibility, issue number, title, URL, state, update time, and aggregate comment
 count. It requests neither the issue body nor any comment body. A newly added
 external thread is baselined once; a later metadata or comment-count change

@@ -49,6 +49,7 @@ EXTERNAL_ISSUES = (
     ("pilotariak", "azkena", 14),
     ("hivtools", "hivtools-mcp", 10),
     ("punkpeye", "mcp-remote", 361),
+    ("docker", "sbx-releases", 583),
 )
 ISSUES_PER_REPOSITORY = 100
 PULL_REQUESTS_PER_REPOSITORY = 100

@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 38)
+        self.assertEqual(self.payload["version"], 39)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -90,7 +90,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(proof["packet"]["live_byte_identical"])
 
     def test_demand_is_separate_from_selection_or_sales(self):
-        self.assertEqual(len(self.payload["demand_evidence"]), 7)
+        self.assertEqual(len(self.payload["demand_evidence"]), 8)
         self.assertTrue(
             all(item["source"].startswith("https://") for item in self.payload["demand_evidence"])
         )
@@ -98,8 +98,8 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(self.payload["funnel"]["qualified_lead_observed"])
         self.assertFalse(self.payload["funnel"]["payment_confirmed"])
         latest = self.payload["demand_evidence"][-1]
-        self.assertIn("mcp-remote/issues/361", latest["source"])
-        self.assertIn("client_credentials authentication", latest["need"])
+        self.assertIn("docker/sbx-releases/issues/583", latest["source"])
+        self.assertIn("built-in GitHub MCP server", latest["need"])
         self.assertIn("not a buyer inquiry", latest["boundary"])
 
     def test_upstream_contribution_is_reviewable_proof_not_revenue(self):
@@ -143,7 +143,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         replies = self.payload["channels"]["community_replies"]
         self.assertEqual(
             replies["state"],
-            "three_github_reviews_and_three_reddit_architecture_replies",
+            "four_github_reviews_and_three_reddit_architecture_replies",
         )
         item = replies["github_bos_egress_decision"]
         self.assertIn("#issuecomment-", item["public_reply"])
@@ -202,6 +202,30 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(hivtools["reply_received"])
         self.assertFalse(hivtools["lead_or_sale_observed"])
         self.assertEqual(hivtools["verified_received_gross_usd"], 0)
+        docker_sbx = replies["github_docker_sbx_auth_scope"]
+        self.assertIn("#issuecomment-", docker_sbx["public_reply"])
+        self.assertEqual(
+            docker_sbx["reviewed_body_sha256"],
+            docker_sbx["live_body_sha256"],
+        )
+        self.assertTrue(docker_sbx["exact_body_verified"])
+        self.assertFalse(docker_sbx["owned_link_included"])
+        self.assertFalse(docker_sbx["project_or_offer_named"])
+        self.assertEqual(
+            docker_sbx["reply_monitor"]["thread"],
+            "docker/sbx-releases#583",
+        )
+        self.assertEqual(
+            docker_sbx["reply_monitor"]["state"],
+            "active_and_baselined",
+        )
+        self.assertEqual(docker_sbx["reply_monitor"]["baseline_comment_count"], 1)
+        self.assertEqual(docker_sbx["reply_monitor"]["alerts_after_baseline"], 0)
+        self.assertFalse(docker_sbx["reply_monitor"]["body_or_comment_text_requested"])
+        self.assertFalse(docker_sbx["reply_monitor"]["automatic_reply"])
+        self.assertFalse(docker_sbx["reply_received"])
+        self.assertFalse(docker_sbx["lead_or_sale_observed"])
+        self.assertEqual(docker_sbx["verified_received_gross_usd"], 0)
         third = replies["reddit_kin_graph_design"]
         self.assertIn("/r/mcp/", third["public_reply"])
         self.assertEqual(third["reviewed_body_sha256"], third["live_body_sha256"])

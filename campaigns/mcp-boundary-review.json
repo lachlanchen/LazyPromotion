@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 38,
+  "version": 39,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -56,6 +56,13 @@
       "provider": "GitHub",
       "need": "A current mcp-remote user needs client_credentials authentication against a known token endpoint when the authorization server publishes no OAuth discovery metadata.",
       "boundary": "This is direct open-source implementation evidence, not a buyer inquiry. A tested upstream patch was submitted without an owned link, offer, or commercial claim."
+    },
+    {
+      "captured_at": "2026-09-13",
+      "source": "https://github.com/docker/sbx-releases/issues/583",
+      "provider": "GitHub",
+      "need": "A current Docker Sandboxes user cannot authenticate Copilot CLI's built-in GitHub MCP server and wants write-capable tools without an unsafe token-bearing repository configuration.",
+      "boundary": "This is a direct troubleshooting need, not a buyer inquiry. The reply separates sandbox secret scope, built-in-server shadowing, and write-tool enablement using current Docker and GitHub documentation, with no owned link or offer."
     }
   ],
   "upstream_contribution": {
@@ -496,7 +503,7 @@
       "role": "One low-volume owned Reddit profile checklist gives recent helpful architecture replies a quiet proof surface. One evidence-led first-party post then uses the same September 16 slot on LinkedIn and X, followed two hours later by one image-led Instagram test using the exact reviewed proof card. Lower-intent overlapping items remain drafts. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
-      "state": "three_github_reviews_and_three_reddit_architecture_replies",
+      "state": "four_github_reviews_and_three_reddit_architecture_replies",
       "role": "Answer explicit needs only when platform rules permit and the answer is complete without the link.",
       "github_bos_egress_decision": {
         "source": "https://github.com/arjun-techjays/bos/issues/18",
@@ -586,6 +593,37 @@
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
         "policy": "The maintainer asked a current, concrete implementation question. The response is complete without a LazyingArt link, service mention, contact invitation, or automated follow-up. It is a helpful interaction, not a lead, contract, payment, or revenue."
+      },
+      "github_docker_sbx_auth_scope": {
+        "source": "https://github.com/docker/sbx-releases/issues/583",
+        "source_state_at_review": "open_explicit_authentication_question_no_existing_replies",
+        "public_reply": "https://github.com/docker/sbx-releases/issues/583#issuecomment-5648138190",
+        "published_at": "2026-09-12T19:22:25Z",
+        "reviewed_body_sha256": "e5862bc10ca9db5a3a9b82a0af934a5b646d7bf0f46531b8b3ed475bb198ba99",
+        "live_body_sha256": "e5862bc10ca9db5a3a9b82a0af934a5b646d7bf0f46531b8b3ed475bb198ba99",
+        "exact_body_verified": true,
+        "answer": "Bind the GitHub secret directly when the sandbox already exists, test Copilot's built-in GitHub MCP server without a same-name workspace override, enable write-capable tools with the supported CLI flag, and use the gh-versus-MCP result to isolate secret scope from kit wiring.",
+        "owned_link_included": false,
+        "project_or_offer_named": false,
+        "primary_references": [
+          "https://docs.docker.com/ai/sandboxes/agents/copilot/",
+          "https://docs.docker.com/ai/sandboxes/configuration/credentials/",
+          "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers",
+          "https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-copilot-cli.md"
+        ],
+        "reply_monitor": {
+          "state": "active_and_baselined",
+          "thread": "docker/sbx-releases#583",
+          "checked_at": "2026-09-12T19:24:03Z",
+          "baseline_comment_count": 1,
+          "alerts_after_baseline": 0,
+          "body_or_comment_text_requested": false,
+          "automatic_reply": false
+        },
+        "reply_received": false,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The author asked a current, concrete setup question. The response is complete without a LazyingArt link, service mention, contact invitation, or automated follow-up. It is a helpful interaction, not buyer intent, a lead, contract, payment, or revenue."
       },
       "reddit_kin_graph_design": {
         "source": "https://www.reddit.com/r/mcp/comments/1we4buv/kin_an_mcp_server_that_answers_code_questions/",

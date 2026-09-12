@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 45)
+        self.assertEqual(self.payload["version"], 46)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -247,13 +247,23 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(third["project_or_offer_named"])
         self.assertEqual(
             third["reply_monitor"]["state"],
-            "visible_baseline_no_direct_reply",
+            "visible_one_direct_reply_reviewed",
         )
-        self.assertFalse(third["reply_monitor"]["body_or_comment_text_requested"])
+        self.assertTrue(third["reply_monitor"]["body_or_comment_text_requested"])
+        self.assertFalse(third["reply_monitor"]["body_or_comment_text_persisted"])
         self.assertFalse(third["reply_monitor"]["automatic_reply"])
         self.assertTrue(third["reply_monitor"]["baseline_created"])
-        self.assertEqual(third["reply_monitor"]["current_direct_reply_count"], 0)
-        self.assertFalse(third["reply_received"])
+        self.assertEqual(third["reply_monitor"]["current_direct_reply_count"], 1)
+        self.assertTrue(third["reply_received"])
+        self.assertIn("catalog review", third["reply_summary"])
+        acknowledgement = third["acknowledgement"]
+        self.assertEqual(acknowledgement["state"], "published_once_and_verified")
+        self.assertTrue(acknowledgement["public_reply"].endswith("/p9frij5/"))
+        self.assertFalse(acknowledgement["owned_link_included"])
+        self.assertFalse(acknowledgement["project_or_offer_named"])
+        self.assertEqual(acknowledgement["submission_count"], 1)
+        self.assertTrue(acknowledgement["exact_body_verified"])
+        self.assertIn("not buyer intent", acknowledgement["boundary"])
         self.assertFalse(third["lead_or_sale_observed"])
         self.assertEqual(third["verified_received_gross_usd"], 0)
         fourth = replies["reddit_cross_client_memory"]

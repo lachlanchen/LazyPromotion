@@ -1551,14 +1551,23 @@ tokens. One concise [link-free answer](https://www.reddit.com/r/mcp/comments/1we
 recommended splitting on authority, cost, and failure mode, while keeping a
 small machine-stable revision, source commit, indexing time, and completeness
 envelope. The exact body was visibly delivered and re-read at its permalink.
-It names no project or offer and is a helpful interaction, not buyer intent, a
-lead, payment, or revenue.
+The maintainer later said the empty-result distinction was useful, described
+the graph-state, freshness, and completeness fields already present in v2, and
+said the tool split had been carried into catalog review. One short
+[acknowledgement](https://www.reddit.com/r/mcp/comments/1we4buv/comment/p9frij5/)
+kept missing source-commit and indexing-time markers explicitly unknown and
+thanked them for showing where the suggestion landed. Neither reply names a
+LazyingArt project, link, offer, or follow-up invitation. This is real outside
+feedback and relationship evidence, not buyer intent, a lead, payment, or
+revenue.
 
 A privacy-minimal direct-reply monitor is implemented for that exact permalink.
 It can retain only hashed reply identifiers and aggregate counts, never bodies,
-authors, cookies, or login state, and it cannot reply. Its first public-HTML
-bootstrap omitted the target comment, so it failed closed and remains stopped;
-there was no retry, alternate scraper, browser session, or inferred reply.
+authors, cookies, or login state, and it cannot reply. The public-HTML reader
+omitted the target and preserved prior state. One finite visible review found
+the direct reply, persisted only its hashed identifier, and cleared the alert
+after the acknowledgement was verified. The isolated browser stack was then
+stopped.
 
 A second current r/mcp question asked whether memory should be portable across
 Claude, ChatGPT, Cursor, and other clients. One concise

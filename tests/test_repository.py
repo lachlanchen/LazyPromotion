@@ -1935,7 +1935,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 46)
+        self.assertEqual(campaign["version"], 47)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -2353,8 +2353,9 @@ class RepositoryTests(unittest.TestCase):
         )
         self.assertIn("not a production second-brain", markdown["policy"])
         mcp_post = campaign["channels"]["linkedin"]["mcp_bridge_post"]
-        self.assertEqual(mcp_post["state"], "postiz_queue")
+        self.assertEqual(mcp_post["state"], "superseded_deleted")
         self.assertEqual(mcp_post["publish_at"], "2026-10-02T02:00:00Z")
+        self.assertEqual(mcp_post["replacement_campaign"], "mcp-boundary-review")
         self.assertEqual(
             mcp_post["content_sha256"],
             "68aa2361f6200a812e890d9baa580fe9cd2d71954c8813dfa65932772667094a",
@@ -2363,11 +2364,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_campaign=lkt_mcp_bridge", mcp_post["destination"])
         self.assertFalse(mcp_post["shortlink"])
         self.assertTrue(mcp_post["verification"]["original_urls_preserved"])
-        self.assertTrue(mcp_post["verification"]["queue_state_verified"])
+        self.assertFalse(mcp_post["verification"]["queue_state_verified"])
         self.assertIsNone(mcp_post["verification"]["release_url"])
         self.assertFalse(mcp_post["lead_or_sale_observed"])
         self.assertEqual(mcp_post["verified_received_gross_usd"], 0)
-        self.assertIn("not publication", mcp_post["policy"])
+        self.assertIn("never published", mcp_post["policy"])
         demand = campaign["source_evidence"]["textbook_graph_demand_signal"]
         self.assertEqual(demand["state"], "research_only")
         self.assertEqual(demand["community_state"], "restricted")

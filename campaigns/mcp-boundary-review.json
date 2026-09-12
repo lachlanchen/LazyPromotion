@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 2,
+  "version": 3,
   "objective": "Sell and deliver two bounded USD 500 MCP boundary reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -123,8 +123,19 @@
       "role": "The pinned LKT revision supplies the proof; unrelated repositories are not promotional surfaces."
     },
     "postiz": {
-      "state": "ready_for_one_evidence_post",
-      "role": "Use one concise first-party evidence post only after the live intake round trip passes; replace lower-priority queue volume rather than adding duplicate promotion."
+      "state": "linkedin_queue_verified",
+      "post_id": "cmty7dcko17ftqk0yxthwp24w",
+      "publish_at": "2026-10-02T02:00:00.000Z",
+      "profile": "Lachlan Chen",
+      "content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample\n\nThe same method is now available as a fixed USD 500 review of one server, one revision, and ten agreed checks. Fit check first; no source upload or payment before scope.",
+      "postiz_content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://dub.sh/qxGT5aT\n\nThe same method is now available as a fixed USD 500 review of one server, one revision, and ten agreed checks. Fit check first; no source upload or payment before scope.",
+      "destination": "https://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample",
+      "content_sha256": "5b8ae087cfa3761f251af285116a73dad61922aa39c30e77359d8fc5a5db04ab",
+      "shortlink": "https://dub.sh/qxGT5aT",
+      "verification": "The intended LinkedIn profile, exact UTC schedule, QUEUE state, wording, and shortlink destination were verified after one creation. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page.",
+      "superseded_post_removed": "The older overlapping LKT MCP announcement cmtvr7tck0gqiqk0yqev5vlog was moved to draft and deleted after this replacement entered QUEUE, so queue volume did not increase.",
+      "lead_or_sale_observed": false,
+      "role": "One evidence-led first-party post replaces the overlapping release announcement. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
       "state": "automatic_outreach_disabled",

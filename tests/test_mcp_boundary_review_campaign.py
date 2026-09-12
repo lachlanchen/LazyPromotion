@@ -20,7 +20,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 2)
+        self.assertEqual(self.payload["version"], 3)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -80,6 +80,16 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(intake["remote_spool_empty"])
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
+
+    def test_linkedin_queue_replaces_overlapping_volume(self):
+        postiz = self.payload["channels"]["postiz"]
+        self.assertEqual(postiz["state"], "linkedin_queue_verified")
+        self.assertEqual(postiz["publish_at"], "2026-10-02T02:00:00.000Z")
+        self.assertIn("14 focused tests", postiz["content"])
+        self.assertIn("fixed USD 500 review", postiz["content"])
+        self.assertIn("utm_source=linkedin", postiz["destination"])
+        self.assertIn("queue volume did not increase", postiz["superseded_post_removed"])
+        self.assertFalse(postiz["lead_or_sale_observed"])
 
 
 if __name__ == "__main__":

@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CAMPAIGN = ROOT / "campaigns" / "mcp-boundary-review.json"
+SCOPE_TEMPLATE = ROOT / "docs" / "mcp-review-scope-template.md"
 PACKET = (
     ROOT
     / "examples"
@@ -21,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 23)
+        self.assertEqual(self.payload["version"], 24)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -126,11 +127,12 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(third["project_or_offer_named"])
         self.assertEqual(
             third["reply_monitor"]["state"],
-            "stopped_bootstrap_failed_closed",
+            "visible_baseline_no_direct_reply",
         )
         self.assertFalse(third["reply_monitor"]["body_or_comment_text_requested"])
         self.assertFalse(third["reply_monitor"]["automatic_reply"])
-        self.assertFalse(third["reply_monitor"]["baseline_created"])
+        self.assertTrue(third["reply_monitor"]["baseline_created"])
+        self.assertEqual(third["reply_monitor"]["current_direct_reply_count"], 0)
         self.assertFalse(third["reply_received"])
         self.assertFalse(third["lead_or_sale_observed"])
         self.assertEqual(third["verified_received_gross_usd"], 0)
@@ -167,7 +169,25 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(payment["quantity"], 1)
         self.assertEqual(payment["fulfillment_review_notes"], 9)
         self.assertFalse(payment["public_payment_link"])
+        self.assertEqual(payment["scope_template"], "docs/mcp-review-scope-template.md")
         self.assertIn("No Product", payment["read_only_account_check"])
+
+    def test_scope_template_is_customer_ready_without_weakening_the_offer(self):
+        text = SCOPE_TEMPLATE.read_text(encoding="utf-8")
+        offer = self.payload["offer"]
+        self.assertIn("**USD 500**", text)
+        self.assertIn("no more than eight tools and resources", text)
+        self.assertIn("## Ten agreed checks", text)
+        self.assertIn("within seven business days", text.casefold())
+        self.assertIn("Within fourteen calendar days", text)
+        self.assertIn("up to three checks", text)
+        self.assertIn("not a guarantee", text)
+        self.assertIn("no public\nself-serve checkout", text)
+        allocations = offer["deliverable_allocation_usd"]
+        self.assertEqual(sum(allocations.values()), 500)
+        for amount in allocations.values():
+            self.assertIn(f"USD {amount}", text)
+        self.assertIn("[scope ID and version]", text)
 
     def test_live_intake_round_trip_is_verified_without_claiming_a_lead(self):
         intake = self.payload["intake"]

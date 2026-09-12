@@ -9,6 +9,10 @@ lower-priority LinkedIn items on September 15, 17, and 18 were moved to drafts
 so the result can be observed without adding more posts. The existing September
 16 X passage-graph slot was also replaced by a concise version of the same MCP
 test, leaving X volume unchanged. Queue state is not a lead or revenue.
+After a positive fit check, the [scope record template](mcp-review-scope-template.md)
+now fixes the revision, surface, ten checks, handling, delivery, recheck,
+exclusions, USD 500 allocation, and written acceptance before the guarded
+Stripe request. It contains no customer data until copied into private work.
 
 A current Upwork MCP Expert role is a close technical match at a published USD
 60–120 per hour and seeks many contributors, but it requires a personal

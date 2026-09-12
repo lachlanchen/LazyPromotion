@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 23,
+  "version": 24,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -225,6 +225,7 @@
     "quantity": 1,
     "fulfillment_review_notes": 9,
     "public_payment_link": false,
+    "scope_template": "docs/mcp-review-scope-template.md",
     "read_only_account_check": "Authenticated; charges, payouts, and submitted details reported enabled. No Product, Price, Payment Link, charge, or payout was created."
   },
   "channels": {
@@ -363,13 +364,15 @@
         "owned_link_included": false,
         "project_or_offer_named": false,
         "reply_monitor": {
-          "state": "stopped_bootstrap_failed_closed",
-          "transport": "One unauthenticated GET of the exact public permalink, no more often than once per hour.",
+          "state": "visible_baseline_no_direct_reply",
+          "transport": "The hourly unauthenticated reader failed closed on changed public markup. One isolated visible-browser recovery read only thingid, postid, and depth attributes from the exact already-open comment tab.",
           "body_or_comment_text_requested": false,
           "automatic_reply": false,
-          "baseline_created": false,
+          "baseline_created": true,
+          "current_direct_reply_count": 0,
           "live_bootstrap_checked_at": "2026-09-12T13:30:22Z",
-          "live_bootstrap_result": "Reddit returned HTTP 200 HTML without the target comment. Previous state was preserved; no retry, alternate scraper, browser session, or monitor process was started."
+          "visible_recovery_checked_at": "2026-09-12T15:07:33Z",
+          "live_bootstrap_result": "Reddit returned HTTP 200 HTML without the target comment, so prior state was preserved. The later visible recovery found the exact target and zero direct replies, created an aggregate baseline without persisting content or browser authentication, and closed the project browser stack."
         },
         "reply_received": false,
         "lead_or_sale_observed": false,

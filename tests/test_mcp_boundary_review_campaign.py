@@ -20,7 +20,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 3)
+        self.assertEqual(self.payload["version"], 4)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -90,6 +90,20 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("utm_source=linkedin", postiz["destination"])
         self.assertIn("queue volume did not increase", postiz["superseded_post_removed"])
         self.assertFalse(postiz["lead_or_sale_observed"])
+
+    def test_contra_listing_preserves_scope_and_revenue_boundaries(self):
+        contra = self.payload["contra_marketplace"]
+        self.assertEqual(contra["state"], "published_live_verified_identity_and_payout_pending")
+        self.assertEqual(contra["price"], "USD 500 one-time")
+        self.assertEqual(contra["duration"], "2 weeks")
+        self.assertEqual(contra["faq_count"], 3)
+        self.assertEqual(len(contra["tags"]), 6)
+        self.assertIn("stay on Contra", contra["payment_policy"])
+        self.assertFalse(contra["identity_verified"])
+        self.assertFalse(contra["payout_configured"])
+        self.assertFalse(contra["buyer_inquiry_observed"])
+        self.assertFalse(contra["payment_observed"])
+        self.assertEqual(contra["received_gross_usd"], 0)
 
 
 if __name__ == "__main__":

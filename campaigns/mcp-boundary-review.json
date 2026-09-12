@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 3,
+  "version": 4,
   "objective": "Sell and deliver two bounded USD 500 MCP boundary reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -103,6 +103,34 @@
     "remote_spool_empty": true,
     "live_round_trip": "On 2026-09-12, the live form made no endpoint request during local review, then one explicitly confirmed synthetic request was encrypted, accepted, authenticated, decrypted, validated, saved locally with mode 0600, and deleted unchanged from the remote spool. A second receiver pass returned no_pending. The exact local synthetic inquiry and envelope were removed after verification; sanitized receipt evidence was retained.",
     "lead_or_sale_observed": false
+  },
+  "contra_marketplace": {
+    "state": "published_live_verified_identity_and_payout_pending",
+    "published_at": "2026-09-12T10:13:09Z",
+    "url": "https://contra.com/s/RRE6r7v7-review-one-mcp-server-boundary",
+    "title": "Review One MCP Server Boundary",
+    "price": "USD 500 one-time",
+    "duration": "2 weeks",
+    "tags": [
+      "Artificial Intelligence",
+      "Software Consultant",
+      "Python",
+      "API Development",
+      "Software Testing",
+      "Computer Software"
+    ],
+    "faq_count": 3,
+    "linked_example": "Local Knowledge Terminal: Collection-Fit Sample Report",
+    "cover": "A four-by-three crop of the live project-owned MCP Boundary Review offer, visually checked before publication.",
+    "payment_policy": "Contra-origin inquiry, contract, payment, revisions, and delivery stay on Contra. Do not accept work until the exact ten checks and handling rules are accepted and identity and payout setup are complete.",
+    "profile_completion": "89%",
+    "identity_verified": false,
+    "payout_configured": false,
+    "buyer_inquiry_observed": false,
+    "contract_observed": false,
+    "payment_observed": false,
+    "received_gross_usd": 0,
+    "verification": "After publication, the canonical service URL returned HTTP 200 and visibly showed the exact title, USD 500 starting price, two-week duration, six tags, complete description and exclusions, three FAQs, linked LKT example, fit-check link, and executed-sample link."
   },
   "payment_readiness": {
     "state": "ready_for_reviewed_live_request",

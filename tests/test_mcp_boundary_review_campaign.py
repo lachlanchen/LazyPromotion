@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 9)
+        self.assertEqual(self.payload["version"], 10)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -158,6 +158,16 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("actions/runs/34691551784", delivery["deployment_run"])
         self.assertIn("same server, transport, and reviewed surface", delivery["verification"])
         self.assertIn("practical ten-check guide", delivery["verification"])
+
+    def test_lkt_readmes_route_mcp_interest_to_exact_proof(self):
+        github = self.payload["channels"]["github"]
+        self.assertEqual(github["state"], "proof_and_tracked_reader_route")
+        self.assertEqual(
+            github["readme_route_commit"],
+            "625a8d6e4c9ed1e1047ccacff32f982fea959d81",
+        )
+        self.assertIn("eleven README editions", github["role"])
+        self.assertIn("267 repository tests", github["verification"])
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 9,
+  "version": 10,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -231,8 +231,10 @@
       "lead_or_sale_observed": false
     },
     "github": {
-      "state": "proof_source_only",
-      "role": "The pinned LKT revision supplies the proof; unrelated repositories are not promotional surfaces."
+      "state": "proof_and_tracked_reader_route",
+      "role": "The pinned LKT revision supplies the proof. Each of the eleven README editions now offers one quiet, tracked path from the released MCP section to the executed sample and metadata-only fit check; unrelated repositories remain non-promotional surfaces.",
+      "readme_route_commit": "625a8d6e4c9ed1e1047ccacff32f982fea959d81",
+      "verification": "The profile README checker passed English plus ten translations, all 267 repository tests and 18 subtests passed under Python 3.12, and the default branch returned the exact routes in English, Simplified Chinese, and Japanese after push."
     },
     "postiz": {
       "state": "linkedin_queue_verified",

@@ -1676,3 +1676,14 @@ All 13 homepage locales include the new card. An isolated browser verified the
 English, Simplified-Chinese, and 390 × 844 mobile render, then followed the
 tracked action to the live scope and complete sample. This is conversion-path
 readiness, not a visit, inquiry, qualified lead, payment, or revenue.
+
+The open `mcp-remote` client-credentials issue now also has a durable owned
+[diagnostic guide](https://blog.lazying.art/html/computer_internet/3835/mcp-client-credentials-oauth-discovery-missing.html).
+It distinguishes the MCP resource, authorization-server issuer, token endpoint,
+and token-endpoint authentication method; keeps standards discovery as the
+durable server repair; and treats an explicit endpoint as a narrow compatibility
+fallback. The article tells readers that pull request 362 was still under review
+at publication rather than documenting its flag as released. One canonical post,
+all ten public links, desktop and mobile rendering, and the visible sample handoff
+were verified. LazyBlog commit `0049e94` records the publication. This is an
+owned conversion asset, not attention, a lead, payment, or revenue.

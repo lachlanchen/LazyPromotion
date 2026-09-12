@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 41)
+        self.assertEqual(self.payload["version"], 42)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -452,6 +452,23 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("LazyBlog commit 620de8e", docker["verification"])
         self.assertFalse(docker["lead_or_sale_observed"])
         self.assertEqual(docker["verified_received_gross_usd"], 0)
+        discovery = lazyblog["client_credentials_discovery_guide"]
+        self.assertEqual(discovery["state"], "published_live_verified")
+        self.assertEqual(
+            discovery["source"],
+            "articles/mcp-client-credentials-oauth-discovery-missing/post.md",
+        )
+        self.assertEqual(discovery["published_post_id"], 3835)
+        self.assertIn("/3835/", discovery["published_url"])
+        self.assertEqual(len(discovery["categories"]), 2)
+        self.assertEqual(len(discovery["tags"]), 5)
+        self.assertIn("mcp-remote 0.13.5", discovery["release_boundary"])
+        self.assertIn("pull request 362 remained open", discovery["release_boundary"])
+        self.assertIn("All ten", discovery["verification"])
+        self.assertIn("390 by 844", discovery["verification"])
+        self.assertIn("LazyBlog commit 0049e94", discovery["verification"])
+        self.assertFalse(discovery["lead_or_sale_observed"])
+        self.assertEqual(discovery["verified_received_gross_usd"], 0)
         self.assertFalse(lazyblog["lead_or_sale_observed"])
 
     def test_owned_offer_links_the_guide_with_one_exact_boundary(self):

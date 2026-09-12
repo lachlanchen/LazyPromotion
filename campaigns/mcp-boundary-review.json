@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 22,
+  "version": 23,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -241,7 +241,7 @@
       "published_url": "https://blog.lazying.art/html/computer_internet/3829/review-mcp-server-before-deployment.html",
       "published_post_id": 3829,
       "published_at": "2026-09-12T11:09:01Z",
-      "verification": "The WordPress post and public REST record both returned the exact title, published status, slug, categories, tags, ten numbered checks, primary technical references, sample-report route, and metadata-first fit-check route. A source-only LazyPub failure after post creation was traced to an optional translation-metadata call; the helper was corrected, tested, and the existing post was updated without duplication.",
+      "verification": "The live article now explains bounded large-result handoff through opaque list cursors, resource links or client-resolvable references, and the limits of raw server-local paths. It cites the official MCP tools, resources, and pagination specifications, retains the complete ten-check guide, sample-report route, and metadata-first fit check, and was updated in place as WordPress post 3829 without duplication. BLOG publication receipt commit 516e753 records the update.",
       "lead_or_sale_observed": false
     },
     "github": {

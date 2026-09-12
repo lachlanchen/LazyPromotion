@@ -204,6 +204,12 @@ Posts: `281, 936, 1562, 2936, 3125`.
   leads quietly to the relevant lecture-pack sample. Post `2972` still has no
   commercial CTA because no LazyingArt offer or verified affiliate is a
   truthful match for its payment-failure search intent.
+- Post `3829` now answers a current MCP maintainer question about large result
+  handoff. The existing ten-check guide explains when to use opaque list
+  cursors, resource links, or another client-resolvable reference, and why a
+  raw server-local path may be unusable or disclose host layout. The live
+  article retains one sample-report route and one metadata-first fit check;
+  this update is useful demand evidence, not a buyer inquiry or sale.
 - A later 2026-09-11 report showed 152 clicks and 6.58K impressions. Post `3114`
   had 13 clicks. BLOG commit `114fde0` replaced its retired AI Clip Assembly
   route with the current project-owned Story Clip delivery sample in English,
@@ -379,6 +385,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `f6f0803` | 3819 | Published a role-first small-team remote-access guide in English, Simplified Chinese, and Japanese, with offboarding and recovery tests before one exact-fit review path |
 | `cc305e7` | 3820 | Published a practical research-code reproducibility guide in English, Simplified Chinese, and Japanese, with a verified OpenHI sample and one tracked fit-check path |
 | `07ca7f1` | 3825 | Published a compatibility-first Kindle/KOReader guide in English, Simplified Chinese, and Japanese, with the current wizard, free sender, LinguaLeaf shelf, and one quiet support path |
+| `516e753` | 3829 | Added bounded large-result handoff, resource-link, client-resolvable locator, and raw server-path checks to the live MCP review guide |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

@@ -49,6 +49,10 @@ Tools and resources are different surfaces, so test both when both exist. Resolv
 
 A resource read should not silently expand into a directory traversal, fetch a neighboring record, or return an entire private object when the client asked for one bounded unit. If the server builds the result from a database, index, filesystem, or network request, record that dependency in the authority map.
 
+Large results need a handoff test of their own. Keep list operations bounded with opaque cursors. For a large tool result, return a short summary plus a resource link or another client-resolvable reference instead of dumping everything into context. Record the media type, byte size, source revision, and expiry or cleanup behavior.
+
+A raw server-local path is not a portable handoff. It is useful only when the intended client shares that filesystem and has permission to read it; otherwise it is dead output that may also disclose host layout. Whatever reference is returned should preserve the same access boundary as the source data.
+
 ## 5. Send unknown names and malformed input
 
 Happy-path demos say little about how a server fails. Try an unknown tool or resource, a missing required field, a wrong type, an oversized but still safe value, and one malformed request appropriate to the protocol era.
@@ -112,6 +116,8 @@ The [complete sample report and protocol packet](https://lazying.art/mcp-boundar
 - [MCP TypeScript SDK protocol versions](https://ts.sdk.modelcontextprotocol.io/v2/protocol-versions)
 - [MCP TypeScript SDK migration guide for 2026-07-28](https://ts.sdk.modelcontextprotocol.io/v2/migration/support-2026-07-28)
 - [MCP tool annotations: what hints can and cannot do](https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/)
+- [MCP tool results and resource links](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
+- [MCP resources and URI handling](https://modelcontextprotocol.io/specification/2025-11-25/server/resources)
+- [MCP opaque-cursor pagination](https://modelcontextprotocol.io/specification/2025-11-25/server/utilities/pagination)
 - [MCP transport requirements](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports)
 - [MCP authorization requirements](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
-

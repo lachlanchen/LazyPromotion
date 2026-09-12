@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 22)
+        self.assertEqual(self.payload["version"], 23)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -234,6 +234,8 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         )
         self.assertIn("/3829/", lazyblog["published_url"])
         self.assertEqual(lazyblog["published_post_id"], 3829)
+        self.assertIn("server-local paths", lazyblog["verification"])
+        self.assertIn("BLOG publication receipt commit 516e753", lazyblog["verification"])
         self.assertIn("without duplication", lazyblog["verification"])
         self.assertFalse(lazyblog["lead_or_sale_observed"])
 

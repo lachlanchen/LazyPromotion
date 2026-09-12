@@ -554,7 +554,7 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(instagram_route["route"], "unmatched_owned_post")
 
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["state"], "postiz_draft")
         self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")
         self.assertFalse(linkedin["shortlink"])
         self.assertEqual(

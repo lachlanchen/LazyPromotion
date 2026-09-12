@@ -1,7 +1,16 @@
-# First USD 1,000: nine active service routes
+# First USD 1,000: one primary acquisition test, ten active service routes
 
-The primary offer remains the **Local Knowledge Terminal collection-fit sprint**
-at **USD 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
+The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:
+two confirmed and delivered reviews reach the first USD 1,000 gross target. It
+has an executed project-owned sample, a fixed ten-check boundary, a metadata-only
+fit check, guarded payment readiness, and a live Contra service. Its first
+evidence-led LinkedIn acquisition test is queued for September 16; the three
+lower-priority LinkedIn items on September 15, 17, and 18 were moved to drafts
+so the result can be observed without adding more posts. Queue state is not a
+lead or revenue.
+
+The **Local Knowledge Terminal collection-fit sprint** remains active at **USD
+250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
 Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one
 customer-owned recording. The former **AI Clip Assembly Pilot** is paused: its
 old sample is an archived technical record, not current selling proof. The **Book
@@ -15,7 +24,7 @@ existing customer-owned computers. The **KiCad Plugin Evaluation** adds a fixed
 **USD 400** route for one authorized plugin version, one KiCad 10/Linux
 environment, and up to four setting presets on a project-owned geometry fixture.
 The milestone can be two USD 500 sprints, four USD 250 sprints, or any confirmed
-combination of payments across these nine routes
+combination of payments across these ten routes
 totalling USD 1,000 gross before fees, tax, refunds, and
 delivery costs. It is a target, not a revenue promise.
 
@@ -28,7 +37,7 @@ production installation, redistribution, guarantees, and ongoing support. The
 current Freelancer bid is one submitted application; it is not an inquiry,
 accepted scope, customer result, payment, or revenue.
 
-The ninth route uses the finished L & N `light/night` lesson as direct proof for
+The tenth route uses the finished L & N `light/night` lesson as direct proof for
 a **USD 250 Custom Bilingual Pronunciation Mini-Lesson** for tutors and small
 language schools. It covers one sound contrast, one learner group, English plus
 Simplified or Traditional Chinese, two model prompts, original teaching

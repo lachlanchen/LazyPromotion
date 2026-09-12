@@ -42,7 +42,7 @@ class LexicalDatabaseIngestionCampaignTests(unittest.TestCase):
     def test_marketplace_and_revenue_states_do_not_overclaim(self):
         upwork = self.campaign["channels"]["upwork"]
         funnel = self.campaign["funnel"]
-        self.assertEqual(self.campaign["version"], 5)
+        self.assertEqual(self.campaign["version"], 6)
         self.assertEqual(self.campaign["source_need"]["state"], "closed_public_listing")
         self.assertIn("no longer available", self.campaign["source_need"]["latest_status"])
         self.assertEqual(upwork["state"], "listing_closed_application_not_submitted")
@@ -58,18 +58,20 @@ class LexicalDatabaseIngestionCampaignTests(unittest.TestCase):
         funnel = self.campaign["funnel"]
         serialized = json.dumps(channels, ensure_ascii=False).casefold()
         self.assertNotIn("post_id", serialized)
+        self.assertEqual(channels["x"]["state"], "postiz_queue")
+        self.assertIn("QUEUE", channels["x"]["verification"])
+        self.assertEqual(channels["linkedin"]["state"], "postiz_draft")
+        self.assertIn("DRAFT", channels["linkedin"]["verification"])
         for platform in ("x", "linkedin"):
             item = channels[platform]
             with self.subTest(platform=platform):
-                self.assertEqual(item["state"], "postiz_queue")
                 self.assertFalse(item["shortener_used"])
-                self.assertIn("QUEUE", item["verification"])
                 self.assertNotIn("outofpapua", item["content"].casefold())
                 self.assertRegex(item["content_sha256"], r"^[0-9a-f]{64}$")
         self.assertIn("lazying.art/lkt/lexical-ingest/", channels["x"]["content"])
         self.assertIn("https://lazying.art/lkt/lexical-ingest/", channels["linkedin"]["content"])
         self.assertEqual(funnel["social_drafts_created"], 2)
-        self.assertEqual(funnel["social_posts_queued"], 2)
+        self.assertEqual(funnel["social_posts_queued"], 1)
         self.assertEqual(funnel["social_posts_published"], 0)
 
 

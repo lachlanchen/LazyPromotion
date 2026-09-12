@@ -270,6 +270,13 @@ the public release route; that route returned HTTP 200. Initial Postiz metrics
 were all zero. This is verified owned distribution, not a lead, sale, or
 revenue result.
 
+The September 16 LinkedIn slot is the primary USD 500 MCP review acquisition
+test. To make its result interpretable without adding posts, the lower-priority
+lecture-pack, lexical-ingestion, and passage-graph items formerly queued for
+September 15, 17, and 18 were moved to `DRAFT`. A provider recheck left the MCP
+item as the only queued LinkedIn publication in that four-day window. Drafted
+items remain reusable; no public post was deleted.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

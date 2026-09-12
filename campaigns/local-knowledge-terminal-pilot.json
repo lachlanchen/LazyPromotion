@@ -1,5 +1,5 @@
 {
-  "version": 47,
+  "version": 48,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -1002,7 +1002,7 @@
         "policy": "Value-first first-party distribution for the complete practical guide. The exact 253-character copy, protocol-less Postiz-safe tracked URL, account, time, AI flag, open-reply setting, and queue state were visibly reviewed."
       },
       "passage_provenance_post": {
-        "state": "postiz_queue",
+        "state": "postiz_draft",
         "publish_at": "2026-09-16T02:00:00Z",
         "content": "Most knowledge-graph demos show the graph and hide the evidence. I made a tiny one from a single Chinese passage: 8 nodes, 8 hand-reviewed relations, and every edge opens the exact source unit and hash. Inspect it: lazying.art/lkt/passage-graph/",
         "destination": "https://lazying.art/lkt/passage-graph/",
@@ -1118,7 +1118,7 @@
         "destination": "https://lazying.art/lkt/passage-graph/?utm_source=linkedin&utm_medium=social&utm_campaign=lkt_provenance&utm_content=graph_proof",
         "visual": "https://lazying.art/lkt/assets/lkt-passage-graph-social-4x5.png",
         "reviewed_on": "2026-09-04",
-        "policy": "The LinkedIn-specific copy leads with the trust problem, shows the bounded evidence chain, states the exact service price and existing-machine boundary, and links to the interactive proof. The visible preview, image, destination, settings, time, and QUEUE state were verified before scheduling."
+        "policy": "The LinkedIn-specific copy leads with the trust problem, shows the bounded evidence chain, states the exact service price and existing-machine boundary, and links to the interactive proof. The exact reviewed item was moved from QUEUE to DRAFT on 2026-09-12 to keep the primary September 16 MCP acquisition test isolated. It has no release and is not a lead or revenue."
       },
       "mcp_bridge_post": {
         "state": "superseded_deleted",

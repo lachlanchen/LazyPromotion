@@ -1,6 +1,6 @@
 {
   "id": "lexical-database-ingestion",
-  "version": 5,
+  "version": 6,
   "objective": "Reuse the source-preserving lexical-ingestion proof for the next explicit dictionary, glossary, or language-archive need; the original USD 1,200 OUTOFPAPUA listing is closed.",
   "source_need": {
     "state": "closed_public_listing",
@@ -85,13 +85,13 @@
       "policy": "The reviewed item gives one first-party workflow result and a readable owned route. It is queued, not published, and does not mention the buyer."
     },
     "linkedin": {
-      "state": "postiz_queue",
+      "state": "postiz_draft",
       "nominal_publish_at": "2026-09-17T02:00:00Z",
       "content": "Lexical data is rarely just “put these rows in a database.”\n\nThe risky part is what happens when source files disagree: fields drift, glosses mix languages, some entries are incomplete, and a convenient cleanup can erase where a reading came from.\n\nI built a small synthetic proof that keeps raw fields, locators and hashes, stores gloss normalization separately, quarantines incomplete records, and makes zero writes on an identical replay. An injected failure leaves every ingestion table empty.\n\nThe page explains the design and links the runnable Python/SQLite sample:\nhttps://lazying.art/lkt/lexical-ingest/?utm_source=linkedin&utm_medium=social&utm_campaign=lexical_data_carpentry&utm_content=proof\n\nIt is a workflow sample, not a compatibility or linguistic-accuracy claim.",
       "content_sha256": "40a41d03cc34e0b4e972055f4aaa38f36261ab8240f9a285a44e7c3f4df28fc4",
       "shortener_used": false,
-      "verification": "Postiz returned QUEUE for 2026-09-17T02:00:00Z with the original tracked owned URL preserved, the no-carousel setting intact, and no release ID or release URL. The visible Scheduled view showed the correct LinkedIn card at 10:00 HKT. The superseded two-link draft was deleted only after this replacement was verified.",
-      "policy": "The reviewed item explains one first-party proof and its limits, then routes readers to the owned explanation. It is queued, not published, and does not mention the marketplace buyer."
+      "verification": "The exact reviewed item was moved from QUEUE to DRAFT on 2026-09-12. A fresh provider read returned DRAFT with the original copy and nominal 2026-09-17T02:00:00Z time retained. No release ID or release URL exists.",
+      "policy": "The reviewed item explains one first-party proof and its limits, then routes readers to the owned explanation. It was removed from the September 17 queue to keep the primary MCP acquisition test isolated; it is not published and does not mention the marketplace buyer."
     },
     "reddit": {
       "state": "not_planned",
@@ -101,7 +101,7 @@
   "funnel": {
     "state": "listing_closed_without_application",
     "social_drafts_created": 2,
-    "social_posts_queued": 2,
+    "social_posts_queued": 1,
     "social_posts_published": 0,
     "application_submitted": false,
     "interview_observed": false,

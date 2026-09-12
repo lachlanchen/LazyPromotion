@@ -30,10 +30,14 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_first_thousand_plan_names_nine_active_routes_and_paused_ai_clip(self):
+    def test_first_thousand_plan_names_primary_mcp_and_ten_routes(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
-        self.assertIn("# First USD 1,000: nine active service routes", body)
+        self.assertIn(
+            "# First USD 1,000: one primary acquisition test, ten active service routes",
+            body,
+        )
         for offer in (
+            "MCP Server Pre-Deployment Review",
             "Local Knowledge Terminal collection-fit sprint",
             "Manuscript Build & Redline Sprint",
             "Bilingual Lecture Pack",
@@ -45,7 +49,7 @@ class RepositoryTests(unittest.TestCase):
             "Custom Bilingual Pronunciation Mini-Lesson",
         ):
             self.assertIn(offer, body)
-        self.assertIn("payments across these nine routes", body)
+        self.assertIn("payments across these ten routes", body)
         self.assertIn("AI Clip Assembly Pilot", body)
         self.assertIn("archived technical record, not current selling proof", body)
 
@@ -1946,7 +1950,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 47)
+        self.assertEqual(campaign["version"], 48)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -3307,7 +3311,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 35)
+        self.assertEqual(campaign["version"], 36)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -3393,7 +3397,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(sermon["payment_observed"])
         self.assertIn("not a lead, contract, sale, or revenue", sermon["policy"])
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["state"], "postiz_draft")
         self.assertEqual(linkedin["publish_at"], "2026-09-15T02:00:00Z")
         self.assertEqual(linkedin["content"], linkedin["postiz_content"])
         self.assertIn("fixed USD 250 pack", linkedin["content"])
@@ -3401,7 +3405,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("utm_source=linkedin", linkedin["destination"])
         self.assertFalse(linkedin["shortlink"])
         self.assertTrue(linkedin["verification"]["stored_text_exact"])
-        self.assertIn("not leads or revenue", linkedin["policy"])
+        self.assertEqual(linkedin["verification"]["stored_state"], "DRAFT")
+        self.assertIn("not publication, a lead, or revenue", linkedin["policy"])
 
         search_page = campaign["channels"]["lazyblog"]["search_demand_page"]
         self.assertEqual(search_page["state"], "live_verified")

@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 10,
+  "version": 11,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -246,10 +246,10 @@
       "destination": "https://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample",
       "content_sha256": "8a772c2793655bcf6bf7f5f35daadb44c0c96388951c5d8293183939976333eb",
       "shortlink": "https://dub.sh/qxGT5aT",
-      "verification": "The intended LinkedIn profile, revised 2026-09-16T02:00:00Z schedule, QUEUE state, exact pre-deployment wording, provider settings, and shortlink destination were verified after the exact proof became the Contra service example. The earlier slot was obtained by moving one existing lower-priority LinkedIn item to 2026-09-21T02:00:00Z, so queue volume did not increase. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page.",
+      "verification": "The intended LinkedIn profile, revised 2026-09-16T02:00:00Z schedule, QUEUE state, exact pre-deployment wording, provider settings, and shortlink destination were verified after the exact proof became the Contra service example. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page. On 2026-09-12 the lower-priority September 15 lecture-pack, September 17 lexical-ingestion, and September 18 passage-graph LinkedIn items were moved to DRAFT; fresh provider reads left this MCP item as the only queued LinkedIn publication from September 15 through September 18.",
       "superseded_post_removed": "The older overlapping LKT MCP announcement cmtvr7tck0gqiqk0yqev5vlog was moved to draft and deleted after this replacement entered QUEUE, so queue volume did not increase.",
       "lead_or_sale_observed": false,
-      "role": "One evidence-led first-party post replaces the overlapping release announcement. Queueing is not publication, a fit inquiry, a sale, or revenue."
+      "role": "One evidence-led first-party post replaces the overlapping release announcement and receives a clean four-day LinkedIn observation window. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
       "state": "automatic_outreach_disabled",

@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 19,
+  "version": 20,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -268,7 +268,7 @@
       "role": "One evidence-led first-party post replaces the overlapping release announcement and receives a clean six-day LinkedIn observation window. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
-      "state": "two_github_reviews_and_one_reddit_graph_design_reply",
+      "state": "two_github_reviews_and_two_reddit_architecture_replies",
       "role": "Answer explicit needs only when platform rules permit and the answer is complete without the link.",
       "github_bos_egress_decision": {
         "source": "https://github.com/arjun-techjays/bos/issues/18",
@@ -350,6 +350,22 @@
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
         "policy": "The author explicitly requested feedback from MCP operators. The reply applies the maintained provenance-graph boundary without naming a project, link, offer, or follow-up invitation. It is a helpful interaction, not buyer intent, a lead, contract, payment, or revenue."
+      },
+      "reddit_cross_client_memory": {
+        "source": "https://www.reddit.com/r/mcp/comments/1we9hqz/could_mcp_become_the_missing_layer_for_shared_ai/",
+        "source_state_at_review": "current_explicit_architecture_question",
+        "public_reply": "https://www.reddit.com/r/mcp/comments/1we9hqz/comment/p9ckw8e/",
+        "published_at": "2026-09-12T13:36:49Z",
+        "reviewed_body_sha256": "6de0269bc0e6e87f523d2a65ccd220fa559165c22b6300472627cd56c107a9e7",
+        "live_body_sha256": "6de0269bc0e6e87f523d2a65ccd220fa559165c22b6300472627cd56c107a9e7",
+        "exact_body_verified": true,
+        "answer": "Keep cross-client memory independent at the data layer rather than as one shared prompt; separate sources, summaries, corrections, and preferences, then retrieve the smallest provenance- and scope-aware view.",
+        "owned_link_included": false,
+        "project_or_offer_named": false,
+        "reply_received": false,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The author asked a current cross-client memory architecture question. The answer adds provenance, freshness, permissions, and deletion boundaries without naming a project, link, offer, or invitation. It is a helpful interaction, not buyer intent, a lead, contract, payment, or revenue."
       }
     },
     "upwork_mcp_expert": {

@@ -1513,6 +1513,14 @@ authors, cookies, or login state, and it cannot reply. Its first public-HTML
 bootstrap omitted the target comment, so it failed closed and remains stopped;
 there was no retry, alternate scraper, browser session, or inferred reply.
 
+A second current r/mcp question asked whether memory should be portable across
+Claude, ChatGPT, Cursor, and other clients. One concise
+[link-free answer](https://www.reddit.com/r/mcp/comments/1we9hqz/comment/p9ckw8e/)
+separated source facts, model summaries, user corrections, and preferences,
+then added provenance, timestamps, project scope, permissions, and deletion as
+the boundaries MCP transport does not solve. The exact public body was verified
+after one send. It is a helpful interaction, not a lead or revenue.
+
 GitHub Sponsors was already active on the repositories, but its public profile
 had no preset tiers. Three restrained choices are now published and publicly
 verified: USD 5 monthly, USD 25 one-time, and USD 100 one-time. Their copy funds

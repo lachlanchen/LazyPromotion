@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 27)
+        self.assertEqual(self.payload["version"], 28)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -291,16 +291,24 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         delivery = self.payload["owned_delivery"]
         self.assertEqual(
             delivery["website_commit"],
-            "8462d0c0852dffba70736b187fe6ad357fe4e959",
+            "7b0d2c540a9fad4451524948e911b5de36a2ce04",
         )
-        self.assertIn("actions/runs/34702067898", delivery["deployment_run"])
+        self.assertIn("actions/runs/34703197107", delivery["deployment_run"])
         preview = delivery["social_preview"]
         self.assertEqual(preview["state"], "live_verified")
         self.assertEqual(preview["dimensions"], "1200x630")
         self.assertRegex(preview["sha256"], r"^[0-9a-f]{64}$")
         self.assertIn("no customer claim", preview["boundary"])
+        conversion = delivery["sample_conversion"]
+        self.assertEqual(conversion["state"], "live_verified")
+        self.assertEqual(conversion["hero_action"], "Check my server")
+        self.assertIn("utm_content=sample_hero", conversion["destination"])
+        self.assertEqual(conversion["mobile_viewport"], "390x844")
+        self.assertTrue(conversion["above_fold"])
+        self.assertFalse(conversion["horizontal_overflow"])
+        self.assertIn("metadata-only fit check", conversion["boundary"])
         self.assertIn("result-handoff checks", delivery["verification"])
-        self.assertIn("both pages", delivery["verification"])
+        self.assertIn("above the fold", delivery["verification"])
 
     def test_lkt_readmes_route_mcp_interest_to_exact_proof(self):
         github = self.payload["channels"]["github"]

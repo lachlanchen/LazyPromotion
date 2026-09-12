@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 27,
+  "version": 28,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -143,8 +143,8 @@
     "boundary": "Project-owned evidence, not a customer result, penetration test, security certification, or promise of production fitness."
   },
   "owned_delivery": {
-    "website_commit": "8462d0c0852dffba70736b187fe6ad357fe4e959",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34702067898",
+    "website_commit": "7b0d2c540a9fad4451524948e911b5de36a2ce04",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34703197107",
     "deployment_state": "success",
     "homepage": "The six-route chooser replaces the lower-priority Story Clip card with this current software-first offer in thirteen locales.",
     "social_preview": {
@@ -154,7 +154,16 @@
       "sha256": "6f6b8ca7345589ccf8cd98b37708f3f133cd057933423c17f8e1073429722a25",
       "boundary": "The card uses exact project-owned sample counts and the fixed offer terms; it contains no customer claim or unrelated generated media."
     },
-    "verification": "All 29 website contract entrypoints passed and the result-handoff checks remain intact. The live offer and the exact sample-report URL queued on LinkedIn and X now use the same dedicated 1200x630 MCP evidence card instead of the generic LKT screenshot. GitHub Pages deployment 34702067898 succeeded; direct live reads returned the reviewed image dimensions and SHA-256 plus exact Open Graph and X card tags on both pages."
+    "sample_conversion": {
+      "state": "live_verified",
+      "hero_action": "Check my server",
+      "destination": "https://lazying.art/mcp-boundary-review/fit-check/?utm_source=mcp_sample_report&utm_medium=website&utm_campaign=mcp_boundary_review&utm_content=sample_hero",
+      "mobile_viewport": "390x844",
+      "above_fold": true,
+      "horizontal_overflow": false,
+      "boundary": "The proof download remains the primary action. The secondary action uses the existing metadata-only fit check and adds no checkout, claim, source upload, or payment request."
+    },
+    "verification": "All 29 website contract entrypoints passed and the result-handoff checks remain intact. The live offer and sample report use the dedicated 1200x630 MCP evidence card. The sample hero now exposes one tracked fit-check action on mobile as well as desktop; a visible 390x844 pass kept the full action above the fold with no horizontal overflow. GitHub Pages deployment 34703197107 succeeded, and a direct live read returned the exact action once."
   },
   "intake": {
     "state": "live_verified",

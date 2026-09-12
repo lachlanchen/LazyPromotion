@@ -8,7 +8,12 @@ evidence-led LinkedIn acquisition test is queued for September 16; the three
 lower-priority LinkedIn items on September 15, 17, and 18 were moved to drafts
 so the result can be observed without adding more posts. The existing September
 16 X passage-graph slot was also replaced by a concise version of the same MCP
-test, leaving X volume unchanged. Queue state is not a lead or revenue.
+test, leaving X volume unchanged. One image-led Instagram test using the exact
+reviewed evidence card is queued two hours later. Because mobile navigation is
+hidden, the sample hero now includes one tracked `Check my server` action beside
+the proof downloads; a visible 390×844 pass kept it above the fold without
+horizontal overflow. Queue state and a working conversion path are not a lead
+or revenue.
 After a positive fit check, the [scope record template](mcp-review-scope-template.md)
 now fixes the revision, surface, ten checks, handling, delivery, recheck,
 exclusions, USD 500 allocation, and written acceptance before the guarded

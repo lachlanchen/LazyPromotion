@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 14,
+  "version": 15,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -259,7 +259,7 @@
       "role": "One evidence-led first-party post replaces the overlapping release announcement and receives a clean four-day LinkedIn observation window. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
-      "state": "one_contextual_github_architecture_reply",
+      "state": "two_contextual_github_architecture_replies",
       "role": "Answer explicit needs only when platform rules permit and the answer is complete without the link.",
       "github_bos_egress_decision": {
         "source": "https://github.com/arjun-techjays/bos/issues/18",
@@ -293,6 +293,29 @@
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
         "policy": "This was one answer to an open decision-needed issue, not automated outreach. The answer resolves the architecture question before its one relevant disclosed sample link. Publication is a helpful interaction, not inbound attention, a lead, contract, payment, or revenue."
+      },
+      "github_azkena_auth_boundary": {
+        "source": "https://github.com/pilotariak/azkena/issues/14",
+        "source_state_at_review": "open_unassigned_status_available",
+        "public_reply": "https://github.com/pilotariak/azkena/issues/14#issuecomment-5645965428",
+        "published_at": "2026-09-12T12:45:19Z",
+        "reviewed_body_sha256": "edd92277d35a3df1835bad07dae99d47a7b4bdcf3f5519480218433651740a9a",
+        "live_body_sha256": "edd92277d35a3df1835bad07dae99d47a7b4bdcf3f5519480218433651740a9a",
+        "exact_body_verified": true,
+        "answer": "Current main handles public server/discover and protocol-specific initialize rejection before authentication, so the maintainer must choose a private indistinguishable MCP boundary or explicitly public discovery before implementing tests.",
+        "owned_link_included": false,
+        "reply_monitor": {
+          "state": "active_and_baselined",
+          "thread": "pilotariak/azkena#14",
+          "body_or_comment_text_requested": false,
+          "automatic_reply": false,
+          "baseline_comment_count": 1,
+          "alerts_after_baseline": 0
+        },
+        "reply_received": false,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "This was one exact code review response to an open audit issue. It includes no pitch or owned link and is a helpful interaction, not a lead, contract, payment, or revenue."
       }
     },
     "upwork_mcp_expert": {

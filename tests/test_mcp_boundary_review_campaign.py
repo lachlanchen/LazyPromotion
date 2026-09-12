@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 14)
+        self.assertEqual(self.payload["version"], 15)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -79,7 +79,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
 
     def test_contextual_github_reply_is_exact_and_not_a_lead(self):
         replies = self.payload["channels"]["community_replies"]
-        self.assertEqual(replies["state"], "one_contextual_github_architecture_reply")
+        self.assertEqual(replies["state"], "two_contextual_github_architecture_replies")
         item = replies["github_bos_egress_decision"]
         self.assertIn("#issuecomment-", item["public_reply"])
         self.assertEqual(item["reviewed_body_sha256"], item["live_body_sha256"])
@@ -96,6 +96,19 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(item["lead_or_sale_observed"])
         self.assertEqual(item["verified_received_gross_usd"], 0)
         self.assertIn("not automated outreach", item["policy"])
+        second = replies["github_azkena_auth_boundary"]
+        self.assertIn("#issuecomment-", second["public_reply"])
+        self.assertEqual(second["reviewed_body_sha256"], second["live_body_sha256"])
+        self.assertTrue(second["exact_body_verified"])
+        self.assertFalse(second["owned_link_included"])
+        self.assertEqual(second["reply_monitor"]["state"], "active_and_baselined")
+        self.assertFalse(second["reply_monitor"]["body_or_comment_text_requested"])
+        self.assertFalse(second["reply_monitor"]["automatic_reply"])
+        self.assertEqual(second["reply_monitor"]["baseline_comment_count"], 1)
+        self.assertEqual(second["reply_monitor"]["alerts_after_baseline"], 0)
+        self.assertFalse(second["reply_received"])
+        self.assertFalse(second["lead_or_sale_observed"])
+        self.assertEqual(second["verified_received_gross_usd"], 0)
 
     def test_price_is_validated_without_becoming_a_security_claim(self):
         validation = self.payload["market_validation"]

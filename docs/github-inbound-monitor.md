@@ -23,9 +23,9 @@
 authenticated private-repository data rather than copying it into the shared
 promotion workflow.
 
-The fixed external-thread allowlist currently contains only
-`arjun-techjays/bos#18`, where `lachlanchen` posted one reviewed architecture
-answer. For this thread the same GraphQL query requests only repository
+The fixed external-thread allowlist currently contains
+`arjun-techjays/bos#18` and `pilotariak/azkena#14`, where `lachlanchen` posted
+reviewed, issue-specific answers. For these threads the same GraphQL query requests only repository
 visibility, issue number, title, URL, state, update time, and aggregate comment
 count. It requests neither the issue body nor any comment body. A newly added
 external thread is baselined once; a later metadata or comment-count change

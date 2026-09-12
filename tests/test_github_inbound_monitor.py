@@ -175,6 +175,7 @@ class GitHubInboundMonitorTests(unittest.TestCase):
         self.assertIn("comments { totalCount }", query)
         self.assertIn("reviews { totalCount }", query)
         self.assertIn("issue(number: 18)", query)
+        self.assertIn("issue(number: 14)", query)
         self.assertNotIn("comments { nodes", query)
         for name in monitor.REPOSITORIES:
             self.assertIn(json.dumps(name), query)
@@ -203,8 +204,14 @@ class GitHubInboundMonitorTests(unittest.TestCase):
             checked_at="2026-09-12T12:30:00Z",
         )
         self.assertEqual(first["alerts"], [])
-        self.assertEqual(first["external_thread_allowlist"], [key])
-        self.assertEqual(first["summary"]["external_threads_checked"], 1)
+        self.assertEqual(
+            first["external_thread_allowlist"],
+            [monitor.external_thread_key(*item) for item in monitor.EXTERNAL_ISSUES],
+        )
+        self.assertEqual(
+            first["summary"]["external_threads_checked"],
+            len(monitor.EXTERNAL_ISSUES),
+        )
 
         second = monitor.monitor_once(
             state_path=self.state,

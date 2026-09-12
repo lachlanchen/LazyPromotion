@@ -12,8 +12,11 @@ test, leaving X volume unchanged. One image-led Instagram test using the exact
 reviewed evidence card is queued two hours later. Because mobile navigation is
 hidden, the sample hero now includes one tracked `Check my server` action beside
 the proof downloads; a visible 390×844 pass kept it above the fold without
-horizontal overflow. Queue state and a working conversion path are not a lead
-or revenue.
+horizontal overflow. A same-origin bridge preserves valid source, medium,
+campaign, and content tags from the social sample URL into the fit check while
+keeping the sample-page fallback when no upstream tags exist. The complete
+production flow was reviewed without enabling or sending the request. Queue
+state and a working conversion path are not a lead or revenue.
 After a positive fit check, the [scope record template](mcp-review-scope-template.md)
 now fixes the revision, surface, ten checks, handling, delivery, recheck,
 exclusions, USD 500 allocation, and written acceptance before the guarded

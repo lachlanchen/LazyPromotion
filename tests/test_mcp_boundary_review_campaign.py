@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 28)
+        self.assertEqual(self.payload["version"], 29)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -291,9 +291,9 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         delivery = self.payload["owned_delivery"]
         self.assertEqual(
             delivery["website_commit"],
-            "7b0d2c540a9fad4451524948e911b5de36a2ce04",
+            "58aa2cca5775217825548d620a823060bb30670a",
         )
-        self.assertIn("actions/runs/34703197107", delivery["deployment_run"])
+        self.assertIn("actions/runs/34703455276", delivery["deployment_run"])
         preview = delivery["social_preview"]
         self.assertEqual(preview["state"], "live_verified")
         self.assertEqual(preview["dimensions"], "1200x630")
@@ -306,9 +306,15 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(conversion["mobile_viewport"], "390x844")
         self.assertTrue(conversion["above_fold"])
         self.assertFalse(conversion["horizontal_overflow"])
+        self.assertEqual(
+            conversion["upstream_attribution_preserved"],
+            ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
+        )
+        self.assertRegex(conversion["attribution_bridge_sha256"], r"^[0-9a-f]{64}$")
         self.assertIn("metadata-only fit check", conversion["boundary"])
         self.assertIn("result-handoff checks", delivery["verification"])
         self.assertIn("above the fold", delivery["verification"])
+        self.assertIn("all four LinkedIn campaign tags", delivery["verification"])
 
     def test_lkt_readmes_route_mcp_interest_to_exact_proof(self):
         github = self.payload["channels"]["github"]

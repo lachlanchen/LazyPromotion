@@ -38,3 +38,30 @@ mirrors, engagement-for-token schemes, stale items, tasks already assigned or in
 pull-request review, and hardware-specific work. Keep using primary-source,
 one-candidate validation instead of treating an open issue or advertised amount
 as claimable paid work.
+
+## Current marketplace screening
+
+A newly indexed Freelancer brief, project `40700578`, repeats the same Rounder
+for Tracks v3.2 trial that is already covered by the submitted KiCad application
+on project `40700587`. Its title and category differ, but the plugin version,
+angled-track test, setting sweep, screenshots, feedback, and long-term-trial
+language describe the same buying intent. A second bid would spend a scarce bid
+to duplicate our existing application, so none was placed.
+
+The current [RailCall milestone
+listing](https://www.freelancer.com/projects/git/railcall-ongoing-paid-milestone-tasks)
+fits the review-first and MCP portfolio but offers only USD 10–50 per milestone
+and already has heavy competition. The separate [Node.js local/cloud
+integration](https://www.freelancer.com/projects/amazon-web-services/node-cloud-frontend-with-local)
+listing is closed with 187 proposals. Neither improves the probability of the
+first USD 1,000.
+
+Two current Upwork MCP briefs also fail the low-involvement or evidence gate.
+The [USD 500 Windows debugging
+session](https://www.upwork.com/freelance-jobs/apply/Debug-Claude-Desktop-Windows-shell-tool-denied-MCP-server-not-loading_~022095287339135647309/)
+requires a same-day live call and direct remote control while the buyer watches.
+The [USD 250 Microsoft Graph
+consultation](https://www.upwork.com/freelance-jobs/apply/MCP-Microsoft-Graph-Consultant_~022094549772905537691/)
+combines architecture, a multi-tenant Entra design, gateway deployment, and an
+implementation POC, while asking for specific prior Graph and Entra evidence the
+public portfolio does not establish. No unsupported claim or proposal was made.

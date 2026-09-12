@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 15,
+  "version": 16,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -241,6 +241,15 @@
       "state": "proof_and_tracked_reader_route",
       "role": "The pinned LKT revision supplies the proof. Each of the eleven README editions now offers one quiet, tracked path from the released MCP section to the executed sample and metadata-only fit check; unrelated repositories remain non-promotional surfaces.",
       "readme_route_commit": "625a8d6e4c9ed1e1047ccacff32f982fea959d81",
+      "profile_route": {
+        "repository": "https://github.com/lachlanchen/lachlanchen",
+        "commit": "0b0080c",
+        "position": "first service row",
+        "destination": "https://lazying.art/mcp-boundary-review/?utm_source=github&utm_medium=profile&utm_campaign=mcp_boundary_review&utm_content=service_chooser",
+        "scope": "One pinned MCP server revision with up to eight tools and resources; authority map, sanitized ten-check packet, narrow go/no-go report, and one limited recheck.",
+        "verification": "The pushed default branch returned the exact USD 500 row and tracked live offer route. The profile repository's local policy limits this conversion edit to README.md.",
+        "attention_or_sale_observed": false
+      },
       "verification": "The profile README checker passed English plus ten translations, all 267 repository tests and 18 subtests passed under Python 3.12, and the default branch returned the exact routes in English, Simplified Chinese, and Japanese after push."
     },
     "postiz": {

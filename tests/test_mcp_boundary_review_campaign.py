@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 15)
+        self.assertEqual(self.payload["version"], 16)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -211,6 +211,12 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         )
         self.assertIn("eleven README editions", github["role"])
         self.assertIn("267 repository tests", github["verification"])
+        profile = github["profile_route"]
+        self.assertEqual(profile["commit"], "0b0080c")
+        self.assertEqual(profile["position"], "first service row")
+        self.assertIn("utm_campaign=mcp_boundary_review", profile["destination"])
+        self.assertIn("up to eight tools and resources", profile["scope"])
+        self.assertFalse(profile["attention_or_sale_observed"])
 
 
 if __name__ == "__main__":

@@ -308,6 +308,16 @@ cycle; a new state transition can alert again.
 The wrapper keeps exactly one `lazypromotion-owned-monitor` tmux session and a
 private sanitized log. It does not start Chrome, noVNC, or Firefox.
 
+The monitor permits only `auth:status`, integration and post listing, and
+platform/post analytics. A transient CLI failure receives one bounded retry;
+mutation commands are rejected before the CLI runs. If both reads fail, the
+error status retains only the last successful aggregate counts and their time,
+never raw posts or integration IDs. On September 13, the existing session
+recovered from one failed integration read on its next ordinary poll with 55
+posts observed and zero alerts. The session was then replaced once to load the
+tested retry behavior and returned the same healthy aggregate state. No post,
+setting, connection, or schedule changed during recovery.
+
 Threads is not connected to the current Postiz account. When the dedicated
 project browser is already open, `python threads_inbound_monitor.py once`
 checks the visible Replies activity page and aggregate reply counts on owned

@@ -42,6 +42,17 @@ SOCIAL_INBOX_STATUS_PATH = RUNTIME / "social-inbox-monitor-status.json"
 PENDING_STATES = frozenset({"DRAFT", "QUEUE"})
 FAILED_STATES = frozenset({"ERROR", "FAILED"})
 PROVIDERS = frozenset({"x", "instagram-standalone", "linkedin", "youtube", "reddit"})
+POSTIZ_READ_ACTIONS = frozenset(
+    {
+        "auth:status",
+        "integrations:list",
+        "posts:list",
+        "analytics:platform",
+        "analytics:post",
+    }
+)
+POSTIZ_READ_ATTEMPTS = 2
+POSTIZ_RETRY_DELAY_SECONDS = 1.0
 Runner = Callable[[list[str]], Any]
 
 
@@ -95,19 +106,75 @@ def extract_json(output: str) -> Any:
 
 
 def default_runner(command: list[str]) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(command, text=True, capture_output=True, check=False)
+    return subprocess.run(
+        command,
+        text=True,
+        capture_output=True,
+        check=False,
+        timeout=60,
+    )
 
 
 def run_postiz(
-    args: list[str], *, runner: Runner = default_runner, expect_json: bool = True
+    args: list[str],
+    *,
+    runner: Runner = default_runner,
+    expect_json: bool = True,
+    attempts: int = POSTIZ_READ_ATTEMPTS,
+    retry_delay_seconds: float = POSTIZ_RETRY_DELAY_SECONDS,
 ) -> Any:
-    result = runner(["postiz", *args])
-    if int(result.returncode) != 0:
+    if not args or args[0] not in POSTIZ_READ_ACTIONS:
+        raise ValueError("owned monitor permits only fixed read-only Postiz actions")
+    if attempts < 1 or attempts > POSTIZ_READ_ATTEMPTS:
+        raise ValueError("Postiz read attempts must be one or two")
+    if retry_delay_seconds < 0 or retry_delay_seconds > 5:
+        raise ValueError("Postiz retry delay must be between zero and five seconds")
+    result = None
+    for attempt in range(attempts):
+        try:
+            candidate = runner(["postiz", *args])
+        except (OSError, subprocess.SubprocessError):
+            candidate = None
+        if candidate is not None and int(candidate.returncode) == 0:
+            result = candidate
+            break
+        if attempt + 1 < attempts:
+            time.sleep(retry_delay_seconds)
+    if result is None:
         # CLI stderr can contain account-specific context. Keep errors sanitized.
         raise RuntimeError(f"Postiz command failed: {' '.join(args[:2])}")
     if not expect_json:
         return str(result.stdout or "")
     return extract_json(str(result.stdout or ""))
+
+
+def failure_status(path: Path, error: Exception, *, checked_at: str | None = None) -> dict:
+    """Keep the last successful aggregates while reporting a failed poll."""
+    try:
+        previous = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        previous = {}
+    if not isinstance(previous, dict):
+        previous = {}
+    summary = previous.get("summary")
+    application_watch = previous.get("application_watch")
+    if not isinstance(summary, dict):
+        summary = {}
+    if not isinstance(application_watch, dict):
+        application_watch = {}
+    last_successful_checked_at = str(
+        previous.get("last_successful_checked_at")
+        or (previous.get("checked_at") if summary else "")
+        or ""
+    )
+    return {
+        "checked_at": checked_at or utc_now(),
+        "last_successful_checked_at": last_successful_checked_at,
+        "last_successful_state_preserved": bool(summary),
+        "error": str(error),
+        "summary": summary,
+        "application_watch": application_watch,
+    }
 
 
 def verify_auth(*, runner: Runner = default_runner) -> None:
@@ -595,7 +662,7 @@ def loop(interval_minutes: int) -> None:
                 report = monitor_once()
                 append_log(LOG_PATH, report)
             except Exception as exc:  # keep the monitor alive; status is sanitized
-                failure = {"checked_at": utc_now(), "error": str(exc)}
+                failure = failure_status(STATUS_PATH, exc)
                 atomic_write_json(STATUS_PATH, failure)
                 append_log(LOG_PATH, failure)
             time.sleep(interval_minutes * 60)
@@ -732,6 +799,12 @@ def status_summary(
     return {
         "available": True,
         "checked_at": str(payload.get("checked_at") or ""),
+        "last_successful_checked_at": str(
+            payload.get("last_successful_checked_at") or ""
+        ),
+        "last_successful_state_preserved": bool(
+            payload.get("last_successful_state_preserved")
+        ),
         "monitor_error": "error" in payload,
         "postiz": dict(payload.get("summary") or {}),
         "threads": threads_status_summary(threads_path),

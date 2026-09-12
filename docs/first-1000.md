@@ -1704,3 +1704,11 @@ Search Console initially reported the new diagnostic URL as unknown to Google,
 then confirmed one priority-crawl request. Do not repeat the request merely to
 seek priority: the queue does not guarantee indexing, ranking, traffic, an
 inquiry, payment, or revenue.
+
+The running owned-Postiz monitor recovered from one transient integration-list
+failure on its next scheduled poll, without a restart or duplicate process. It
+then reported 55 observed posts, 22 queued, 19 published, and zero alerts. The
+monitor now makes at most two attempts for a fixed read-only CLI allowlist and
+preserves only the last successful aggregate state if both fail; every Postiz
+mutation is rejected. The exact session was rotated once to load the tested
+code and returned the same healthy state. No post or revenue state changed.

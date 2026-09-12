@@ -79,6 +79,91 @@ class OwnedMonitorTests(unittest.TestCase):
             now=self.now,
         )
 
+    def test_postiz_read_retries_once_and_never_exposes_cli_error(self):
+        responses = iter(
+            [
+                SimpleNamespace(
+                    returncode=1,
+                    stdout="",
+                    stderr="private token and account diagnostic",
+                ),
+                SimpleNamespace(
+                    returncode=0,
+                    stdout='result\n[{"identifier":"x"}]',
+                    stderr="",
+                ),
+            ]
+        )
+        commands = []
+
+        def runner(command):
+            commands.append(command)
+            return next(responses)
+
+        with patch.object(owned_monitor.time, "sleep") as sleep:
+            payload = owned_monitor.run_postiz(
+                ["integrations:list"], runner=runner, retry_delay_seconds=0
+            )
+
+        self.assertEqual(payload, [{"identifier": "x"}])
+        self.assertEqual(commands, [["postiz", "integrations:list"]] * 2)
+        sleep.assert_called_once_with(0)
+
+        def failed_runner(command):
+            return SimpleNamespace(
+                returncode=1,
+                stdout="",
+                stderr="private token and account diagnostic",
+            )
+
+        with patch.object(owned_monitor.time, "sleep"):
+            with self.assertRaisesRegex(
+                RuntimeError, "Postiz command failed: integrations:list"
+            ) as raised:
+                owned_monitor.run_postiz(
+                    ["integrations:list"],
+                    runner=failed_runner,
+                    retry_delay_seconds=0,
+                )
+        self.assertNotIn("token", str(raised.exception).casefold())
+        self.assertNotIn("account", str(raised.exception).casefold())
+
+    def test_owned_monitor_refuses_postiz_mutations(self):
+        def runner(command):
+            raise AssertionError("runner must not be called")
+
+        with self.assertRaisesRegex(ValueError, "read-only Postiz actions"):
+            owned_monitor.run_postiz(["posts:create"], runner=runner)
+
+    def test_failed_poll_preserves_only_last_successful_aggregates(self):
+        self.status_path.write_text(
+            json.dumps(
+                {
+                    "checked_at": "2026-09-01T00:45:00Z",
+                    "summary": {"queued": 2, "published": 3, "alerts": 0},
+                    "application_watch": {
+                        "summary": {"awaiting_human_reply": 4},
+                        "due_campaign_ids": [],
+                    },
+                    "posts": [{"private": "do-not-copy"}],
+                }
+            ),
+            encoding="utf-8",
+        )
+        failure = owned_monitor.failure_status(
+            self.status_path,
+            RuntimeError("Postiz command failed: integrations:list"),
+            checked_at="2026-09-01T01:00:00Z",
+        )
+        self.assertEqual(failure["checked_at"], "2026-09-01T01:00:00Z")
+        self.assertEqual(
+            failure["last_successful_checked_at"], "2026-09-01T00:45:00Z"
+        )
+        self.assertTrue(failure["last_successful_state_preserved"])
+        self.assertEqual(failure["summary"]["queued"], 2)
+        self.assertNotIn("posts", failure)
+        self.assertNotIn("do-not-copy", json.dumps(failure))
+
     def test_metric_snapshot_normalizes_postiz_numeric_strings(self):
         snapshot = owned_monitor.metric_snapshot(
             [

@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 17)
+        self.assertEqual(self.payload["version"], 18)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -79,7 +79,10 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
 
     def test_contextual_github_reply_is_exact_and_not_a_lead(self):
         replies = self.payload["channels"]["community_replies"]
-        self.assertEqual(replies["state"], "two_contextual_github_architecture_replies")
+        self.assertEqual(
+            replies["state"],
+            "two_github_reviews_and_one_reddit_graph_design_reply",
+        )
         item = replies["github_bos_egress_decision"]
         self.assertIn("#issuecomment-", item["public_reply"])
         self.assertEqual(item["reviewed_body_sha256"], item["live_body_sha256"])
@@ -109,6 +112,15 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(second["reply_received"])
         self.assertFalse(second["lead_or_sale_observed"])
         self.assertEqual(second["verified_received_gross_usd"], 0)
+        third = replies["reddit_kin_graph_design"]
+        self.assertIn("/r/mcp/", third["public_reply"])
+        self.assertEqual(third["reviewed_body_sha256"], third["live_body_sha256"])
+        self.assertTrue(third["exact_body_verified"])
+        self.assertFalse(third["owned_link_included"])
+        self.assertFalse(third["project_or_offer_named"])
+        self.assertFalse(third["reply_received"])
+        self.assertFalse(third["lead_or_sale_observed"])
+        self.assertEqual(third["verified_received_gross_usd"], 0)
 
     def test_price_is_validated_without_becoming_a_security_claim(self):
         validation = self.payload["market_validation"]

@@ -1498,6 +1498,15 @@ the route is closed without an assignment or revenue. Proton also declined its
 affiliate application without issuing a link, so no Proton placement will be
 made from the current application.
 
+A current MCP graph maintainer asked whether graph operations should be one
+wide tool or several narrow tools, and whether a freshness verdict earns its
+tokens. One concise [link-free answer](https://www.reddit.com/r/mcp/comments/1we4buv/comment/p9cgosi/)
+recommended splitting on authority, cost, and failure mode, while keeping a
+small machine-stable revision, source commit, indexing time, and completeness
+envelope. The exact body was visibly delivered and re-read at its permalink.
+It names no project or offer and is a helpful interaction, not buyer intent, a
+lead, payment, or revenue.
+
 GitHub Sponsors was already active on the repositories, but its public profile
 had no preset tiers. Three restrained choices are now published and publicly
 verified: USD 5 monthly, USD 25 one-time, and USD 100 one-time. Their copy funds

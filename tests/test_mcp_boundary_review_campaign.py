@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 29)
+        self.assertEqual(self.payload["version"], 30)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -199,9 +199,12 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
 
-    def test_linkedin_x_and_instagram_queues_preserve_reviewed_evidence(self):
+    def test_linkedin_x_instagram_and_reddit_queues_preserve_reviewed_evidence(self):
         postiz = self.payload["channels"]["postiz"]
-        self.assertEqual(postiz["state"], "linkedin_x_and_instagram_queue_verified")
+        self.assertEqual(
+            postiz["state"],
+            "linkedin_x_instagram_and_reddit_profile_queue_verified",
+        )
         self.assertEqual(postiz["publish_at"], "2026-09-16T02:00:00.000Z")
         self.assertIn("14 focused tests", postiz["content"])
         self.assertIn("fixed USD 500 pre-deployment review", postiz["content"])
@@ -239,6 +242,26 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         )
         self.assertIn("thirty-two hours", instagram["replaced_or_added_volume"])
         self.assertIn("attention signals only", instagram["analytics_context"])
+        reddit = postiz["reddit_profile"]
+        self.assertEqual(reddit["state"], "queue_verified")
+        self.assertEqual(reddit["provider"], "reddit")
+        self.assertEqual(reddit["publish_at"], "2026-09-13T04:00:00.000Z")
+        self.assertEqual(reddit["profile"], "Ok-Perception1122")
+        self.assertEqual(reddit["settings"]["subreddit"], "/r/u_Ok-Perception1122")
+        self.assertEqual(reddit["settings"]["type"], "self")
+        self.assertIn("seven small things", reddit["content"])
+        self.assertEqual(reddit["content"], reddit["postiz_content"])
+        self.assertEqual(
+            reddit["content_sha256"],
+            hashlib.sha256(reddit["content"].encode("utf-8")).hexdigest(),
+        )
+        self.assertIn("utm_source=reddit", reddit["destination"])
+        self.assertFalse(reddit["shortlink"])
+        self.assertIn("owned Reddit profile", reddit["volume_boundary"])
+        self.assertIn("not another r/mcp reply", reddit["volume_boundary"])
+        self.assertIn("visible Postiz calendar", reddit["verification"])
+        self.assertFalse(reddit["lead_or_sale_observed"])
+        self.assertEqual(reddit["verified_received_gross_usd"], 0)
         self.assertFalse(postiz["lead_or_sale_observed"])
 
     def test_contra_listing_preserves_scope_and_revenue_boundaries(self):

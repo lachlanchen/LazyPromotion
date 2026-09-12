@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 29,
+  "version": 30,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -284,7 +284,7 @@
       "verification": "The profile README checker passed English plus ten translations, all 267 repository tests and 18 subtests passed under Python 3.12, and the default branch returned the exact routes in English, Simplified Chinese, and Japanese after push."
     },
     "postiz": {
-      "state": "linkedin_x_and_instagram_queue_verified",
+      "state": "linkedin_x_instagram_and_reddit_profile_queue_verified",
       "provider": "linkedin",
       "post_id": "cmty7dcko17ftqk0yxthwp24w",
       "publish_at": "2026-09-16T02:00:00.000Z",
@@ -337,8 +337,30 @@
         "verification": "The provider rules were read before creation. The exact caption, intended Instagram profile, September 16 time, DRAFT review state, required standalone-post settings, and empty missing-content response were verified before scheduling. After the reviewed draft moved to QUEUE, a fresh provider read returned the same caption, time, profile, settings, and another empty missing-content response. The hosted PNG is byte-identical to the reviewed live first-party 1200x630 card.",
         "replaced_or_added_volume": "This is the first Instagram test for the MCP offer. It is separated by thirty-two hours from the already queued September 17 passage-graph item and remains within the public posting cap."
       },
+      "reddit_profile": {
+        "state": "queue_verified",
+        "provider": "reddit",
+        "post_id": "cmtykn0k114g4lm0yuk3tqrpp",
+        "publish_at": "2026-09-13T04:00:00.000Z",
+        "profile": "Ok-Perception1122",
+        "title": "“Read-only” is not the same as private: a small MCP check before deployment",
+        "content": "“Read-only” does not mean private.\n\nA tool can make no writes and still disclose a source excerpt, local path, or token to the wrong client. Before I expose an MCP server, I now do seven small things:\n\n1. Pin the repository revision, SDK/protocol, client, and transport.\n2. Capture the live tools and resources; compare them with the docs and code.\n3. Run one valid tool call and one resource read.\n4. Try unknown names, malformed input, and one safe timeout.\n5. Trace the real files, databases, network calls, credentials, and approval gates.\n6. Inspect client output and logs for paths, tokens, and private context.\n7. Write a narrow GO/NO-GO for the exact deployment, not the whole product.\n\nI ran that process on a project-owned Local Knowledge Terminal server: 2 tools, 1 resource, 14 focused tests. The recorded local boundary passed. Direct remote exposure did not, because client authentication was missing.\n\nThe report and small evidence packet are public:\nhttps://lazying.art/mcp-boundary-review/sample-report/?utm_source=reddit&utm_medium=profile&utm_campaign=mcp_boundary_review&utm_content=executed_sample\n\nI maintain the sample and offer the same method as a fixed USD 500 review of one pinned server and ten agreed checks. The fit check comes before source access or payment.",
+        "postiz_content": "“Read-only” does not mean private.\n\nA tool can make no writes and still disclose a source excerpt, local path, or token to the wrong client. Before I expose an MCP server, I now do seven small things:\n\n1. Pin the repository revision, SDK/protocol, client, and transport.\n2. Capture the live tools and resources; compare them with the docs and code.\n3. Run one valid tool call and one resource read.\n4. Try unknown names, malformed input, and one safe timeout.\n5. Trace the real files, databases, network calls, credentials, and approval gates.\n6. Inspect client output and logs for paths, tokens, and private context.\n7. Write a narrow GO/NO-GO for the exact deployment, not the whole product.\n\nI ran that process on a project-owned Local Knowledge Terminal server: 2 tools, 1 resource, 14 focused tests. The recorded local boundary passed. Direct remote exposure did not, because client authentication was missing.\n\nThe report and small evidence packet are public:\nhttps://lazying.art/mcp-boundary-review/sample-report/?utm_source=reddit&utm_medium=profile&utm_campaign=mcp_boundary_review&utm_content=executed_sample\n\nI maintain the sample and offer the same method as a fixed USD 500 review of one pinned server and ten agreed checks. The fit check comes before source access or payment.",
+        "destination": "https://lazying.art/mcp-boundary-review/sample-report/?utm_source=reddit&utm_medium=profile&utm_campaign=mcp_boundary_review&utm_content=executed_sample",
+        "content_sha256": "136b25be88072d93be7d34eafe0da59f802d31b869e1e728642650feb8ff89f5",
+        "shortlink": false,
+        "settings": {
+          "subreddit": "/r/u_Ok-Perception1122",
+          "type": "self",
+          "is_flair_required": false
+        },
+        "verification": "The Reddit provider schema was read before creation. Postiz returned the exact title, body, unshortened first-party tracked destination, owned profile, September 13 time, self-post settings, and QUEUE state. The visible Postiz calendar showed the owned-profile item at 12:00 HKT. The unusable shortlinked draft was deleted before publication, and a final provider read left only the unshortened queued record.",
+        "volume_boundary": "This is one low-volume post on the owned Reddit profile, not another r/mcp reply or a subreddit submission. It adds a quiet proof surface after three standalone architecture answers and does not authorize automated replies or direct messages.",
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0
+      },
       "lead_or_sale_observed": false,
-      "role": "One evidence-led first-party post uses the same September 16 slot on LinkedIn and X, followed two hours later by one image-led Instagram test using the exact reviewed proof card. Lower-intent overlapping items remain drafts. Queueing is not publication, a fit inquiry, a sale, or revenue."
+      "role": "One low-volume owned Reddit profile checklist gives recent helpful architecture replies a quiet proof surface. One evidence-led first-party post then uses the same September 16 slot on LinkedIn and X, followed two hours later by one image-led Instagram test using the exact reviewed proof card. Lower-intent overlapping items remain drafts. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
       "state": "two_github_reviews_and_three_reddit_architecture_replies",

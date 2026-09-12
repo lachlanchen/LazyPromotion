@@ -487,12 +487,17 @@ class OwnedMonitorTests(unittest.TestCase):
         instagram_route = owned_monitor.route_for_post(
             "instagram-standalone", channel["instagram"]["content"], routes
         )
+        reddit_route = owned_monitor.route_for_post(
+            "reddit", channel["reddit_profile"]["postiz_content"], routes
+        )
         self.assertEqual(linkedin_route["campaign_id"], "mcp-boundary-review")
         self.assertEqual(linkedin_route["route"], "product")
         self.assertEqual(x_route["campaign_id"], "mcp-boundary-review")
         self.assertEqual(x_route["route"], "x")
         self.assertEqual(instagram_route["campaign_id"], "mcp-boundary-review")
         self.assertEqual(instagram_route["route"], "instagram")
+        self.assertEqual(reddit_route["campaign_id"], "mcp-boundary-review")
+        self.assertEqual(reddit_route["route"], "reddit_profile")
 
     def test_landn_video_queues_match_instagram_and_youtube_routes(self):
         campaign = json.loads(

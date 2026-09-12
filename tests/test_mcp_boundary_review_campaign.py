@@ -20,7 +20,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 5)
+        self.assertEqual(self.payload["version"], 6)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -118,6 +118,18 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(contra["buyer_inquiry_observed"])
         self.assertFalse(contra["payment_observed"])
         self.assertEqual(contra["received_gross_usd"], 0)
+
+    def test_lazyblog_guide_is_live_without_claiming_attention(self):
+        lazyblog = self.payload["channels"]["lazyblog"]
+        self.assertEqual(lazyblog["state"], "published_live_verified")
+        self.assertEqual(
+            lazyblog["source"],
+            "articles/review-mcp-server-before-deployment/post.md",
+        )
+        self.assertIn("/3829/", lazyblog["published_url"])
+        self.assertEqual(lazyblog["published_post_id"], 3829)
+        self.assertIn("without duplication", lazyblog["verification"])
+        self.assertFalse(lazyblog["lead_or_sale_observed"])
 
 
 if __name__ == "__main__":

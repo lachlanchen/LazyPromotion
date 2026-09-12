@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 5,
+  "version": 6,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -199,6 +199,18 @@
     "owned_website": {
       "state": "live_verified",
       "role": "The offer, executed sample, and metadata-only fit check are published on the first-party website."
+    },
+    "lazyblog": {
+      "state": "published_live_verified",
+      "source": "articles/review-mcp-server-before-deployment/post.md",
+      "title": "Ten Checks Before You Deploy an MCP Server",
+      "slug": "review-mcp-server-before-deployment",
+      "role": "A practical primary-source guide turns the executed sample into a complete answer, then offers one quiet route to the report and metadata-only fit check.",
+      "published_url": "https://blog.lazying.art/html/computer_internet/3829/review-mcp-server-before-deployment.html",
+      "published_post_id": 3829,
+      "published_at": "2026-09-12T11:09:01Z",
+      "verification": "The WordPress post and public REST record both returned the exact title, published status, slug, categories, tags, ten numbered checks, primary technical references, sample-report route, and metadata-first fit-check route. A source-only LazyPub failure after post creation was traced to an optional translation-metadata call; the helper was corrected, tested, and the existing post was updated without duplication.",
+      "lead_or_sale_observed": false
     },
     "github": {
       "state": "proof_source_only",

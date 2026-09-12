@@ -1522,6 +1522,22 @@ then added provenance, timestamps, project scope, permissions, and deletion as
 the boundaries MCP transport does not solve. The exact public body was verified
 after one send. It is a helpful interaction, not a lead or revenue.
 
+A current KNX MCP maintainer then asked whether large results should stay
+paginated or be written to a server-local file. One concise
+[link-free answer](https://www.reddit.com/r/mcp/comments/1we4kb2/comment/p9ctdpb/)
+kept stable cursor pagination as the default and reserved a resource or
+short-lived client-resolvable URI—with size, hash, and expiry—for an explicit
+full export. The exact public body was verified after one send. It is useful
+technical context, not buyer intent, a lead, payment, or revenue.
+
+Search Console showed both the matching practical guide and the fixed USD 500
+offer as unknown to Google even though the live domain sitemap contained the
+offer and reported a successful read on September 12. Each URL was submitted
+once to Google's priority crawl queue and visibly confirmed; no duplicate
+request was made. The WordPress sitemap remains successful but was last read on
+September 7, before the guide was published. A crawl request is discovery work,
+not a ranking, visit, inquiry, or sale.
+
 GitHub Sponsors was already active on the repositories, but its public profile
 had no preset tiers. Three restrained choices are now published and publicly
 verified: USD 5 monthly, USD 25 one-time, and USD 100 one-time. Their copy funds

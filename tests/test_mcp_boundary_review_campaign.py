@@ -20,7 +20,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 1)
+        self.assertEqual(self.payload["version"], 2)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -71,6 +71,15 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(payment["fulfillment_review_notes"], 9)
         self.assertFalse(payment["public_payment_link"])
         self.assertIn("No Product", payment["read_only_account_check"])
+
+    def test_live_intake_round_trip_is_verified_without_claiming_a_lead(self):
+        intake = self.payload["intake"]
+        self.assertEqual(intake["state"], "live_verified")
+        self.assertTrue(intake["review_before_send"])
+        self.assertTrue(intake["receiver_authenticated_decrypted_and_saved"])
+        self.assertTrue(intake["remote_spool_empty"])
+        self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
+        self.assertFalse(intake["lead_or_sale_observed"])
 
 
 if __name__ == "__main__":

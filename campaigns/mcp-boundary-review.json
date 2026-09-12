@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 1,
+  "version": 2,
   "objective": "Sell and deliver two bounded USD 500 MCP boundary reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -91,7 +91,7 @@
     "verification": "All 29 website contract tests passed. Desktop and mobile renders had no horizontal overflow. The offer, sample, fit check, archive, checksum, and tracked homepage route returned HTTP 200; the live archive was byte-identical to the committed packet."
   },
   "intake": {
-    "state": "backend_deployed_receiver_code_ready_live_round_trip_pending",
+    "state": "live_verified",
     "offer_route": "mcp_boundary_review",
     "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
     "backend_commit": "817de749",
@@ -99,8 +99,9 @@
     "encrypted_storage": true,
     "source_upload_requested": false,
     "automatic_reply": false,
-    "receiver_authenticated_decrypted_and_saved": false,
-    "remote_spool_empty": null,
+    "receiver_authenticated_decrypted_and_saved": true,
+    "remote_spool_empty": true,
+    "live_round_trip": "On 2026-09-12, the live form made no endpoint request during local review, then one explicitly confirmed synthetic request was encrypted, accepted, authenticated, decrypted, validated, saved locally with mode 0600, and deleted unchanged from the remote spool. A second receiver pass returned no_pending. The exact local synthetic inquiry and envelope were removed after verification; sanitized receipt evidence was retained.",
     "lead_or_sale_observed": false
   },
   "payment_readiness": {
@@ -122,7 +123,7 @@
       "role": "The pinned LKT revision supplies the proof; unrelated repositories are not promotional surfaces."
     },
     "postiz": {
-      "state": "held_until_intake_verified",
+      "state": "ready_for_one_evidence_post",
       "role": "Use one concise first-party evidence post only after the live intake round trip passes; replace lower-priority queue volume rather than adding duplicate promotion."
     },
     "community_replies": {

@@ -3,11 +3,10 @@
 ## Current status
 
 Direct web submission is live for the LKT, manuscript, lecture, Story Clip,
-OpenHI, LazyRemote, Book Specimen, Pronunciation Mini-Lesson, and Browser
-Regression routes. Each of those nine routes, the pinned public-key fingerprint,
-mode-`0600` private key, receiver, and remote spool completed an explicitly
-confirmed synthetic round trip. MCP Boundary Review is deployed and accepted by
-the receiver, with its live synthetic round trip still pending. Each page reviews
+OpenHI, MCP Boundary Review, LazyRemote, Book Specimen, Pronunciation
+Mini-Lesson, and Browser Regression routes as of 2026-09-12. Each route, the
+pinned public-key fingerprint, mode-`0600` private key, receiver, and remote
+spool completed an explicitly confirmed synthetic round trip. Each page reviews
 locally before any network request and keeps an email or copy fallback.
 
 `lkt_inbox.py` is the operator-side receiver for those ten fit checks accepted

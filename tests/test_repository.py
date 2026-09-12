@@ -1205,7 +1205,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "wenyan-history.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8")
-        self.assertEqual(campaign["version"], 5)
+        self.assertEqual(campaign["version"], 6)
         bridge = campaign["channels"]["owned_conversion_bridge"]
         self.assertEqual(bridge["state"], "live_verified")
         self.assertEqual(
@@ -1229,7 +1229,18 @@ class RepositoryTests(unittest.TestCase):
             "PUBLISHED",
         )
         self.assertTrue(x_channel["visible_review"]["tracked_destination_preserved"])
-        self.assertEqual(campaign["channels"]["instagram"]["state"], "postiz_queue")
+        instagram = campaign["channels"]["instagram"]
+        self.assertEqual(instagram["state"], "postiz_published")
+        self.assertEqual(
+            instagram["release_url"],
+            "https://www.instagram.com/p/DdL78xymx_R/",
+        )
+        self.assertEqual(
+            instagram["visible_review"]["state_rechecked_after_schedule"],
+            "PUBLISHED",
+        )
+        self.assertTrue(instagram["visible_review"]["release_present"])
+        self.assertEqual(instagram["visible_review"]["release_url_http_status"], 200)
         self.assertLessEqual(len(campaign["channels"]["x"]["content"]), 280)
         self.assertLessEqual(len(campaign["channels"]["instagram"]["content"]), 2200)
         self.assertIn("six black-and-white parts", campaign["channels"]["x"]["content"])

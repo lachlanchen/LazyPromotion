@@ -263,6 +263,13 @@ unavailable, and the matching Postiz record was deleted after the provider
 removal. Do not recreate or reuse that scene. The complete project-owned
 lecture-pack delivery packet is the current proof instead.
 
+The reviewed Wenyan/Chinese-history shelf note published on Instagram at
+<https://www.instagram.com/p/DdL78xymx_R/> on September 12. A fresh provider
+read returned the exact caption, the intended account, `PUBLISHED` state, and
+the public release route; that route returned HTTP 200. Initial Postiz metrics
+were all zero. This is verified owned distribution, not a lead, sale, or
+revenue result.
+
 ## Owned-post observation
 
 The read-only owned-post monitor uses the official CLI to notice publication

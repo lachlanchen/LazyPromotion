@@ -128,8 +128,12 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
         payload = json.loads(path.read_text(encoding="utf-8"))
         campaign_id = str(payload.get("id") or "")
         for channel_name, channel in (payload.get("channels") or {}).items():
-            provider = providers.get(channel_name)
-            if not provider or not isinstance(channel, dict):
+            if not isinstance(channel, dict):
+                continue
+            provider = providers.get(channel_name) or providers.get(
+                str(channel.get("provider") or "")
+            )
+            if not provider:
                 continue
             if str(channel.get("state") or "").casefold().startswith(
                 ("deleted", "retired")
@@ -149,9 +153,12 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
                 if isinstance(value, dict) and value.get("postiz_content")
             )
             for route, content, record in candidates:
+                record_provider = providers.get(
+                    str(record.get("provider") or "")
+                ) or provider
                 normalized = canonical_text(str(content or ""))
                 if normalized:
-                    routes[(provider, normalized)] = {
+                    routes[(record_provider, normalized)] = {
                         "campaign_id": campaign_id,
                         "route": route,
                         "known_owned_replies": max(

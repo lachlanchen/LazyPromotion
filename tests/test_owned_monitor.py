@@ -472,6 +472,23 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertIn("lazying.art/openhi-reproducibility", linkedin["destination"])
         self.assertIn("sample-report", instagram["destination"])
 
+    def test_postiz_umbrella_routes_mcp_linkedin_and_x_to_their_providers(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "mcp-boundary-review.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        channel = campaign["channels"]["postiz"]
+        routes = owned_monitor.route_index()
+        linkedin_route = owned_monitor.route_for_post(
+            "linkedin", channel["postiz_content"], routes
+        )
+        x_route = owned_monitor.route_for_post("x", channel["x"]["content"], routes)
+        self.assertEqual(linkedin_route["campaign_id"], "mcp-boundary-review")
+        self.assertEqual(linkedin_route["route"], "product")
+        self.assertEqual(x_route["campaign_id"], "mcp-boundary-review")
+        self.assertEqual(x_route["route"], "x")
+
     def test_landn_video_queues_match_instagram_and_youtube_routes(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "l-and-n-pronunciation-launch.json").read_text(

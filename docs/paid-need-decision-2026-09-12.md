@@ -70,6 +70,15 @@ version, license, and test-boundary gates. Freelancer confirmed the bid at rank
 20 of 20, leaving three free bids. This is an application, not a buyer reply,
 contract, payment, customer result, or revenue.
 
+A second exact brief asks for one neutral educational prompt with explicit
+inputs, outputs, constraints, evaluation criteria, and section annotations.
+The authenticated page shows a fully verified but new buyer, 12 proposals, and
+an INR 12,500–37,500 range. A topic-neutral, source-bounded specimen is now
+public and ready to adapt. The listing nevertheless requires a USD 20 account
+balance before bidding, so no funds were added and no application was sent.
+Recheck the no-cost gate once while the listing remains active; the proof is
+useful independently of this buyer.
+
 The same proof now supports a smaller direct engagement: the
 [USD 250 Browser Regression Baseline](https://lazying.art/browser-regression/)
 covers one public site, three agreed flows and twelve checkpoints, Chromium at

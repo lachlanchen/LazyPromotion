@@ -611,6 +611,16 @@
       "url": ""
     },
     {
+      "id": "campaign:source-bounded-educational-prompt",
+      "kind": "campaign",
+      "label": "source-bounded-educational-prompt",
+      "metadata": {
+        "objective": "Use LazyingArt's source and provenance discipline to deliver one concise, neutral educational prompt when a verified buyer can be reached without paid bidding or unsupported experience claims.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:technically-contributor-program",
       "kind": "campaign",
       "label": "technically-contributor-program",
@@ -6801,6 +6811,13 @@
       "url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback"
     },
     {
+      "id": "url:b543081fe02aaeaf",
+      "kind": "web_resource",
+      "label": "buyer need",
+      "metadata": {},
+      "url": "https://www.freelancer.com/projects/content-development/Educational-Technical-Prompt-Creation"
+    },
+    {
       "id": "url:d0115d5f19663878",
       "kind": "web_resource",
       "label": "buyer need",
@@ -6939,6 +6956,13 @@
       "label": "dub partner terms",
       "metadata": {},
       "url": "https://dub.co/legal/partners"
+    },
+    {
+      "id": "url:b5905affb9e9343e",
+      "kind": "web_resource",
+      "label": "education archive",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
       "id": "url:4b618c054e4e0cdd",
@@ -7107,13 +7131,6 @@
       "label": "fit check explanation contract routes 3",
       "metadata": {},
       "url": "https://lazying.art/lkt/fit-check/"
-    },
-    {
-      "id": "url:b5905affb9e9343e",
-      "kind": "web_resource",
-      "label": "format example",
-      "metadata": {},
-      "url": "https://github.com/lachlanchen/leonardsusskind"
     },
     {
       "id": "url:0a22d3dea25aca44",
@@ -7781,11 +7798,11 @@
       "url": "https://github.com/lachlanchen/LazyGame"
     },
     {
-      "id": "url:d9c92d269df40406",
+      "id": "url:62570d77ed4f62f0",
       "kind": "web_resource",
-      "label": "project",
+      "label": "prompt specimen",
       "metadata": {},
-      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/d863a41/examples/source-bounded-educational-prompt"
     },
     {
       "id": "url:6cdf73f241d7eb49",
@@ -7793,6 +7810,13 @@
       "label": "prototype",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LazyPromotion/blob/a062c7110d3c814b66ae9732f88eb891fe32b973/proofline.py"
+    },
+    {
+      "id": "url:d9c92d269df40406",
+      "kind": "web_resource",
+      "label": "provenance project",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
     {
       "id": "url:43d56bb572f1ca4a",
@@ -10972,6 +10996,54 @@
       "relation": "uses_evidence",
       "source": "campaign:soft-event-frame-code-release",
       "target": "url:fe79107d9d9adb58"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:source-bounded-educational-prompt",
+      "target": "project:leonardsusskind"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:source-bounded-educational-prompt",
+      "target": "project:localknowledgeterminal"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/d863a41/examples/source-bounded-educational-prompt",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:source-bounded-educational-prompt",
+      "target": "url:62570d77ed4f62f0"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.freelancer.com/projects/content-development/Educational-Technical-Prompt-Creation",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:source-bounded-educational-prompt",
+      "target": "url:b543081fe02aaeaf"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/leonardsusskind",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:source-bounded-educational-prompt",
+      "target": "url:b5905affb9e9343e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:source-bounded-educational-prompt",
+      "target": "url:d9c92d269df40406"
     },
     {
       "confidence": 1.0,

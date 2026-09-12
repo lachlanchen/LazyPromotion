@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "id": "source-bounded-educational-prompt",
+  "objective": "Use LazyingArt's source and provenance discipline to deliver one concise, neutral educational prompt when a verified buyer can be reached without paid bidding or unsupported experience claims.",
+  "source_need": {
+    "captured_at": "2026-09-12T02:40:00Z",
+    "url": "https://www.freelancer.com/projects/content-development/Educational-Technical-Prompt-Creation",
+    "project_id": 40703686,
+    "title": "Educational Technical Prompt Creation",
+    "state": "active_open_bidding_gated",
+    "published_budget": "INR 12,500–37,500 fixed, approximately USD 131–392 at the platform exchange rate when checked",
+    "activity_when_checked": "12 proposals with an average bid of INR 18,055; bidding ends in about five days",
+    "buyer_state": "The authenticated page shows a new Siliguri, India buyer with identity, payment, deposit, email, profile, and phone verification and no reviews.",
+    "requested_work": [
+      "One reusable technical prompt for educational content",
+      "Explicit inputs, outputs, constraints, and evaluation criteria",
+      "Neutral, objective, concise, jargon-light wording",
+      "A short explanation of how each section supports the learning goal"
+    ],
+    "scope_unknowns": [
+      "subject and learning objective",
+      "learner level and prerequisites",
+      "reference material and rights",
+      "target model or tool, output length, notation, and citation style"
+    ]
+  },
+  "fit": {
+    "projects": [
+      "LazyPromotion",
+      "LocalKnowledgeTerminal",
+      "leonardsusskind"
+    ],
+    "public_evidence": [
+      "https://github.com/lachlanchen/LazyPromotion/tree/d863a41/examples/source-bounded-educational-prompt",
+      "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+      "https://github.com/lachlanchen/leonardsusskind"
+    ],
+    "executed_specimen": {
+      "state": "project_owned_prompt_contract_published",
+      "repository_commit": "d863a41",
+      "sections": [
+        "Inputs",
+        "Work",
+        "Output",
+        "Constraints",
+        "Evaluation",
+        "Section annotation"
+      ],
+      "boundary": "Topic-neutral project-owned structure only; it has not been adapted to the buyer's undisclosed objectives or reference material and is not a customer result."
+    },
+    "not_proven": [
+      "the buyer's source material is suitable or rights-cleared",
+      "acceptance by the buyer or a target model",
+      "paid educational-prompt delivery"
+    ]
+  },
+  "source_evidence": {
+    "buyer_need": "https://www.freelancer.com/projects/content-development/Educational-Technical-Prompt-Creation",
+    "prompt_specimen": "https://github.com/lachlanchen/LazyPromotion/tree/d863a41/examples/source-bounded-educational-prompt",
+    "provenance_project": "https://github.com/lachlanchen/LocalKnowledgeTerminal",
+    "education_archive": "https://github.com/lachlanchen/leonardsusskind"
+  },
+  "marketplace_check": {
+    "checked_at": "2026-09-12T02:40:00Z",
+    "state": "not_submitted_minimum_balance_gate",
+    "visible_gate": "The authenticated page requires a minimum USD 20 account balance before bidding.",
+    "free_bids_remaining": 3,
+    "wallet_balance_hkd": 0,
+    "funds_added": false,
+    "paid_upgrade_selected": false,
+    "application_submitted": false,
+    "next_review": "Recheck no earlier than 2026-09-13 only if the listing remains active; do not add funds merely to unlock it.",
+    "policy": "Do not fund the wallet, buy verification, or purchase a membership or bid upgrade for this route."
+  },
+  "funnel": {
+    "state": "proof_ready_no_application",
+    "application_submitted": false,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

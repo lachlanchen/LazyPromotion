@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 40)
+        self.assertEqual(self.payload["version"], 41)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -437,6 +437,21 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("LazyBlog commit bdc7638", auth["verification"])
         self.assertFalse(auth["lead_or_sale_observed"])
         self.assertEqual(auth["verified_received_gross_usd"], 0)
+        docker = lazyblog["docker_sbx_authentication_guide"]
+        self.assertEqual(docker["state"], "published_live_verified")
+        self.assertEqual(
+            docker["source"],
+            "articles/github-mcp-requires-authentication-docker-sandboxes/post.md",
+        )
+        self.assertEqual(docker["published_post_id"], 3834)
+        self.assertIn("/3834/", docker["published_url"])
+        self.assertEqual(len(docker["categories"]), 2)
+        self.assertEqual(len(docker["tags"]), 5)
+        self.assertIn("Only one published post", docker["verification"])
+        self.assertIn("all seven", docker["verification"])
+        self.assertIn("LazyBlog commit 620de8e", docker["verification"])
+        self.assertFalse(docker["lead_or_sale_observed"])
+        self.assertEqual(docker["verified_received_gross_usd"], 0)
         self.assertFalse(lazyblog["lead_or_sale_observed"])
 
     def test_owned_offer_links_the_guide_with_one_exact_boundary(self):

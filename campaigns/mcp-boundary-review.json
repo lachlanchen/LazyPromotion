@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 40,
+  "version": 41,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -403,6 +403,30 @@
         ],
         "role": "A current maintainer question becomes a durable guide that separates a deliberately public demo, local process boundary, and OAuth-protected remote connector before offering one quiet path to the executed sample and fit check.",
         "verification": "The live REST record and canonical HTML both return the exact title and slug, the intended two categories and five tags, the public/local/private decision table, token-failure checks, and both unshortened first-party UTM routes. Only one post exists for the slug. The initial post creation exposed a missing optional translation endpoint; post 3832 was recovered in place without duplication, and LazyBlog commit bdc7638 now makes monolingual publication skip that optional route. All 38 LazyBlog tests and five subtests pass.",
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0
+      },
+      "docker_sbx_authentication_guide": {
+        "state": "published_live_verified",
+        "source": "articles/github-mcp-requires-authentication-docker-sandboxes/post.md",
+        "title": "Fix GitHub MCP ‘Requires Authentication’ in Docker Sandboxes",
+        "slug": "github-mcp-requires-authentication-docker-sandboxes",
+        "published_url": "https://blog.lazying.art/html/computer_internet/3834/github-mcp-requires-authentication-docker-sandboxes.html",
+        "published_post_id": 3834,
+        "published_at": "2026-09-12T19:31:30Z",
+        "categories": [
+          "Artificial Intelligence",
+          "Computer & Internet"
+        ],
+        "tags": [
+          "Developer Tools",
+          "MCP",
+          "Docker Sandboxes",
+          "GitHub Copilot",
+          "Authentication"
+        ],
+        "role": "A current Docker/Copilot error becomes a concise guide that separates sandbox secret scope, the built-in GitHub MCP server, workspace overrides, and write-tool enablement before offering one quiet path to the executed sample and fit check.",
+        "verification": "The live REST record and canonical HTML contain the exact title, slug, commands, decision table, and two unshortened first-party UTM routes. Only one published post exists for the slug, all seven cited and conversion links return HTTP 200, and LazyBlog commit 620de8e records the publication with all 38 tests passing.",
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0
       },

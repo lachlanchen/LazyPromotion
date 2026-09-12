@@ -1648,3 +1648,12 @@ preflight, and the metadata-only fit check, each with a distinct campaign
 marker. The pushed default branch returned the exact three links and every
 destination returned HTTP 200. This is conversion-path readiness, not a visit,
 inquiry, payment, or revenue.
+
+That exact Docker/Copilot authentication problem now also has a durable owned
+[guide](https://blog.lazying.art/html/computer_internet/3834/github-mcp-requires-authentication-docker-sandboxes.html).
+It separates sandbox-scoped secrets, the built-in server, workspace overrides,
+and write-tool enablement, then provides one quiet route to the executed sample
+and fit check. The canonical page and REST record were verified once without a
+duplicate slug, and all seven cited and conversion links returned HTTP 200.
+LazyBlog commit `620de8e` records the publication. This is an owned conversion
+asset, not attention, a lead, payment, or revenue.

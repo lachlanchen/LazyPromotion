@@ -197,6 +197,35 @@ class RedditReplyMonitorTests(unittest.TestCase):
         self.assertEqual(observed["direct_reply_count"], 1)
         self.assertEqual(len(observed["direct_reply_fingerprints"]), 1)
 
+    def test_visible_depth_metadata_counts_only_direct_children(self):
+        target = monitor.parse_target_url(TARGET_URL)
+        observed = monitor.parse_visible_comment_metadata(
+            [
+                {"thingid": "t1_p9cgosi", "postid": "t3_1we4buv", "depth": "0"},
+                {"thingid": "t1_direct", "postid": "t3_1we4buv", "depth": "1"},
+                {"thingid": "t1_grandchild", "postid": "t3_1we4buv", "depth": "2"},
+                {"thingid": "t1_sibling", "postid": "t3_1we4buv", "depth": "0"},
+                {"thingid": "t1_notours", "postid": "t3_1we4buv", "depth": "1"},
+            ],
+            target=target,
+        )
+        self.assertEqual(observed["direct_reply_count"], 1)
+        self.assertEqual(len(observed["direct_reply_fingerprints"]), 1)
+
+    def test_visible_depth_metadata_fails_closed_on_unknown_layout(self):
+        target = monitor.parse_target_url(TARGET_URL)
+        cases = [
+            [],
+            [{"thingid": "bad", "postid": "t3_1we4buv", "depth": "0"}],
+            [{"thingid": "t1_p9cgosi", "postid": "t3_wrong", "depth": "0"}],
+            [{"thingid": "t1_p9cgosi", "postid": "t3_1we4buv", "depth": "x"}],
+        ]
+        for records in cases:
+            with self.subTest(records=records), self.assertRaises(
+                monitor.RedditMonitorError
+            ):
+                monitor.parse_visible_comment_metadata(records, target=target)
+
     def test_missing_duplicate_and_malformed_markup_fail_closed(self):
         target = monitor.parse_target_url(TARGET_URL)
         cases = [
@@ -251,7 +280,9 @@ class RedditReplyMonitorTests(unittest.TestCase):
         self.run_once(
             self.html(comment("t1_rawreply", "t1_p9cgosi", "DO-NOT-PERSIST"))
         )
-        persisted = self.state.read_text() + self.status.read_text() + self.log.read_text()
+        persisted = (
+            self.state.read_text() + self.status.read_text() + self.log.read_text()
+        )
         self.assertNotIn("DO-NOT-PERSIST", persisted)
         self.assertNotIn("private-author", persisted)
         self.assertNotIn("rawreply", persisted)
@@ -332,6 +363,68 @@ class RedditReplyMonitorTests(unittest.TestCase):
         self.assertNotIn("fingerprint", serialized)
         self.assertNotIn("rawreply", serialized)
         self.assertNotIn(TARGET_URL, serialized)
+
+    def test_visible_recovery_records_only_aggregate_relationship_state(self):
+        observation = {
+            "target_url": TARGET_URL,
+            "post_id": "1we4buv",
+            "comment_id": "p9cgosi",
+            "direct_reply_count": 1,
+            "direct_reply_fingerprints": ["a" * 64],
+        }
+        calls = []
+
+        def collector(*, target, cdp):
+            calls.append((target, cdp))
+            return observation
+
+        report = monitor.visible_monitor_once(
+            campaign_path=self.campaign,
+            state_path=self.state,
+            status_path=self.status,
+            log_path=self.log,
+            root=self.root,
+            cdp="http://127.0.0.1:9999",
+            checked_at="2026-09-12T23:00:00Z",
+            collector=collector,
+        )
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(calls[0][0]["url"], TARGET_URL)
+        self.assertEqual(calls[0][1], "http://127.0.0.1:9999")
+        self.assertEqual(report["source"], "visible_browser")
+        self.assertTrue(report["baseline_created"])
+        self.assertEqual(report["current_direct_reply_count"], 1)
+        self.assertFalse(report["review_required"])
+        self.assertTrue(report["policy"]["browser_session_used"])
+        self.assertFalse(report["policy"]["authentication_data_persisted"])
+        persisted = (
+            self.state.read_text() + self.status.read_text() + self.log.read_text()
+        )
+        self.assertNotIn("private-author", persisted)
+        self.assertNotIn("rawreply", persisted)
+
+    def test_visible_recovery_uses_prior_seen_fingerprints_for_new_alerts(self):
+        self.run_once(self.html(comment("t1_old", "t1_p9cgosi")))
+        old = json.loads(self.state.read_text())["seen_reply_fingerprints"][0]
+        observation = {
+            "target_url": TARGET_URL,
+            "post_id": "1we4buv",
+            "comment_id": "p9cgosi",
+            "direct_reply_count": 2,
+            "direct_reply_fingerprints": [old, "b" * 64],
+        }
+        report = monitor.visible_monitor_once(
+            campaign_path=self.campaign,
+            state_path=self.state,
+            status_path=self.status,
+            log_path=self.log,
+            root=self.root,
+            collector=lambda **_kwargs: observation,
+        )
+        self.assertFalse(report["baseline_created"])
+        self.assertEqual(report["new_direct_reply_count"], 1)
+        self.assertTrue(report["review_required"])
+        self.assertNotIn("fingerprint", json.dumps(report))
 
     def test_loop_has_hourly_floor_single_lock_and_one_sleep_per_pass(self):
         with self.assertRaisesRegex(ValueError, "at least 60"):

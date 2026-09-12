@@ -6,6 +6,7 @@ login, browser cookies, Chrome, Xvfb, or noVNC.
 
 ```bash
 python reddit_reply_monitor.py once
+python reddit_reply_monitor.py visible-once
 scripts/reddit-reply-monitor.sh start
 scripts/reddit-reply-monitor.sh status
 scripts/reddit-reply-monitor.sh stop
@@ -31,3 +32,11 @@ alert means the exact public comment should be inspected visibly on demand.
 
 Reply activity is not a lead, customer, payment, or revenue event. The monitor
 cannot compose, send, vote, follow, message, or otherwise mutate Reddit.
+
+If Reddit returns a successful page without the target metadata, `once` fails
+closed and preserves prior state. Open the exact allowlisted comment in the
+isolated LazyPromotion browser and run `visible-once`. That recovery reads only
+the `thingid`, `postid`, and `depth` DOM attributes from the already-visible
+tab, then writes the same aggregate private state. It does not navigate, open
+reply content, or retain browser authentication, cookies, authors, or comment
+bodies.

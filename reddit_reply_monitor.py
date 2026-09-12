@@ -36,6 +36,7 @@ DEFAULT_STATE = ROOT / ".local" / "reddit-reply-monitor-state.json"
 DEFAULT_STATUS = ROOT / ".local" / "reddit-reply-monitor-status.json"
 DEFAULT_LOG = ROOT / ".local" / "reddit-reply-monitor.jsonl"
 DEFAULT_LOCK = ROOT / ".local" / "reddit-reply-monitor.lock"
+DEFAULT_CDP = "http://127.0.0.1:9436"
 MINIMUM_INTERVAL_MINUTES = 60
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
 READ_CHUNK_BYTES = 64 * 1024
@@ -422,6 +423,7 @@ def build_success(
     previous: dict[str, Any] | None,
     *,
     checked_at: str,
+    source: str = "public_html",
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     current = list(observation["direct_reply_fingerprints"])
     previous_seen = set(previous["seen_reply_fingerprints"]) if previous else set()
@@ -441,10 +443,15 @@ def build_success(
         "review_required": bool(new),
         "layout_unknown": False,
         "available": True,
+        "source": source,
         "policy": {
-            "http_method": "GET",
-            "authentication_used": False,
-            "cookies_sent": False,
+            "http_method": "GET" if source == "public_html" else None,
+            "authentication_used": False if source == "public_html" else None,
+            "cookies_sent": False if source == "public_html" else None,
+            "public_http_method": "GET" if source == "public_html" else None,
+            "browser_session_used": source == "visible_browser",
+            "authentication_data_persisted": False,
+            "cookies_persisted": False,
             "comment_bodies_persisted": False,
             "authors_persisted": False,
             "automatic_reply": False,
@@ -467,6 +474,130 @@ def build_success(
         ),
     }
     return state, status
+
+
+def parse_visible_comment_metadata(
+    records: list[dict[str, str]], *, target: dict[str, str]
+) -> dict[str, Any]:
+    """Resolve direct children from Reddit's ordered visible depth metadata."""
+    normalized: list[tuple[str, int]] = []
+    expected_post = f"t3_{target['post_id']}"
+    for record in records:
+        thing_id = str(record.get("thingid") or "")
+        post_id = str(record.get("postid") or "")
+        depth = str(record.get("depth") or "")
+        if (
+            not re.fullmatch(r"t1_[a-z0-9]+", thing_id)
+            or post_id != expected_post
+            or not depth.isdigit()
+        ):
+            raise RedditMonitorError(
+                "Reddit visible comment markup changed", layout_unknown=True
+            )
+        normalized.append((thing_id, int(depth)))
+    expected_target = f"t1_{target['comment_id']}"
+    target_indexes = [
+        index for index, (thing_id, _depth) in enumerate(normalized)
+        if thing_id == expected_target
+    ]
+    if len(target_indexes) != 1:
+        raise RedditMonitorError(
+            "Reddit target comment was not present in the visible page",
+            layout_unknown=True,
+        )
+    target_index = target_indexes[0]
+    target_depth = normalized[target_index][1]
+    replies: list[str] = []
+    for thing_id, depth in normalized[target_index + 1:]:
+        if depth <= target_depth:
+            break
+        if depth == target_depth + 1:
+            replies.append(thing_id.removeprefix("t1_"))
+    fingerprints = [
+        reply_fingerprint(
+            post_id=target["post_id"],
+            comment_id=target["comment_id"],
+            reply_id=reply_id,
+        )
+        for reply_id in replies
+    ]
+    return {
+        "target_url": target["url"],
+        "post_id": target["post_id"],
+        "comment_id": target["comment_id"],
+        "direct_reply_count": len(fingerprints),
+        "direct_reply_fingerprints": fingerprints,
+    }
+
+
+def collect_visible_comment(*, target: dict[str, str], cdp: str) -> dict[str, Any]:
+    """Read hierarchy attributes from one already-open visible Reddit tab."""
+    from playwright.sync_api import sync_playwright
+
+    import browser as browser_tools
+
+    with browser_tools.browser_operation_lock():
+        with sync_playwright() as playwright:
+            connected = playwright.chromium.connect_over_cdp(cdp)
+            candidates = []
+            for context in connected.contexts:
+                for page in context.pages:
+                    try:
+                        page_target = parse_target_url(page.url)
+                    except ValueError:
+                        continue
+                    if page_target == target:
+                        candidates.append(page)
+            if len(candidates) != 1:
+                raise RuntimeError(
+                    "exactly one allowlisted Reddit comment tab must be open"
+                )
+            page = candidates[0]
+            page.bring_to_front()
+            page.wait_for_load_state("domcontentloaded")
+            page.wait_for_timeout(1000)
+            records = page.locator("shreddit-comment").evaluate_all(
+                """elements => elements.map(element => ({
+                    thingid: element.getAttribute('thingid') || '',
+                    postid: element.getAttribute('postid') || '',
+                    depth: element.getAttribute('depth') || ''
+                }))"""
+            )
+    return parse_visible_comment_metadata(records, target=target)
+
+
+def visible_monitor_once(
+    *,
+    campaign_path: Path = CAMPAIGN_PATH,
+    state_path: Path = DEFAULT_STATE,
+    status_path: Path = DEFAULT_STATUS,
+    log_path: Path = DEFAULT_LOG,
+    root: Path = ROOT,
+    cdp: str = DEFAULT_CDP,
+    checked_at: str | None = None,
+    collector: Callable[..., dict[str, Any]] = collect_visible_comment,
+) -> dict[str, Any]:
+    """Clear a layout alert through one visible, read-only browser inspection."""
+    checked_at = checked_at or utc_now()
+    state_path = validate_runtime_path(state_path, root=root, suffix=".json")
+    status_path = validate_runtime_path(status_path, root=root, suffix=".json")
+    log_path = validate_runtime_path(log_path, root=root, suffix=".jsonl")
+    target = load_allowlisted_target(campaign_path)
+    previous = validate_previous_state(read_private_json(state_path), target=target)
+    observation = collector(target=target, cdp=cdp)
+    state, status = build_success(
+        observation,
+        previous,
+        checked_at=checked_at,
+        source="visible_browser",
+    )
+    state_path = validate_runtime_path(state_path, root=root, suffix=".json")
+    status_path = validate_runtime_path(status_path, root=root, suffix=".json")
+    log_path = validate_runtime_path(log_path, root=root, suffix=".jsonl")
+    write_private_json(state_path, state)
+    write_private_json(status_path, status)
+    append_private_log(log_path, status)
+    return status
 
 
 def failure_status(
@@ -594,6 +725,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("once", help="Run one unauthenticated public read.")
+    visible = subparsers.add_parser(
+        "visible-once", help="Recover one layout alert from the isolated browser."
+    )
+    visible.add_argument("--cdp", default=DEFAULT_CDP)
     subparsers.add_parser("status", help="Print aggregate local status.")
     continuous = subparsers.add_parser("loop", help="Repeat conservative reads.")
     continuous.add_argument(
@@ -607,6 +742,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command == "once":
             report = monitor_once()
+        elif args.command == "visible-once":
+            report = visible_monitor_once(cdp=args.cdp)
         elif args.command == "status":
             report = status_summary()
         else:

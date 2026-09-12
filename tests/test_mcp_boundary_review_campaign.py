@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 11)
+        self.assertEqual(self.payload["version"], 12)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -60,13 +60,22 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(proof["packet"]["live_byte_identical"])
 
     def test_demand_is_separate_from_selection_or_sales(self):
-        self.assertEqual(len(self.payload["demand_evidence"]), 3)
+        self.assertEqual(len(self.payload["demand_evidence"]), 4)
         self.assertTrue(
             all(item["source"].startswith("https://") for item in self.payload["demand_evidence"])
         )
         self.assertFalse(self.payload["intake"]["lead_or_sale_observed"])
         self.assertFalse(self.payload["funnel"]["qualified_lead_observed"])
         self.assertFalse(self.payload["funnel"]["payment_confirmed"])
+
+    def test_upwork_mcp_role_is_not_mistaken_for_an_autonomous_route(self):
+        route = self.payload["channels"]["upwork_mcp_expert"]
+        self.assertIn("personal_interview", route["state"])
+        self.assertEqual(route["published_rate"], "USD 60–120 per hour")
+        self.assertFalse(route["low_involvement_fit"])
+        self.assertFalse(route["application_submitted"])
+        self.assertEqual(route["connects_spent"], 0)
+        self.assertIn("Do not guess personal experience", route["policy"])
 
     def test_price_is_validated_without_becoming_a_security_claim(self):
         validation = self.payload["market_validation"]

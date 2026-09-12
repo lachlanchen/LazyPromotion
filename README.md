@@ -214,11 +214,12 @@ MCP attachments are optional and pinned; model subprocesses do not receive
 browser, scheduler, credential, or payment access.
 
 The portfolio layer turns public projects into explicit opportunity contracts
-rather than promoting all repositories at once. The nine current paid routes
-cover local collection fit, manuscript redline, bilingual lecture delivery,
-story clips, book specimens, KiCad plugin evaluation, OpenHI reproduction,
-LazyRemote topology review, and pronunciation mini-lessons. AI clip assembly
-remains paused until stronger proof passes human review. The reproducible
+rather than promoting all repositories at once. The primary route is the USD
+500 MCP Server Pre-Deployment Review; the nine secondary routes cover local
+collection fit, manuscript redline, bilingual lecture delivery, story clips,
+book specimens, KiCad plugin evaluation, OpenHI reproduction, LazyRemote
+topology review, and pronunciation mini-lessons. AI clip assembly remains
+paused until stronger proof passes human review. The reproducible
 [KiCad plugin-evaluation fixture](examples/kicad-plugin-evaluation/) supports
 the new bounded route. A compact
 [source-bounded educational prompt](examples/source-bounded-educational-prompt/)

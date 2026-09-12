@@ -9,6 +9,13 @@ lower-priority LinkedIn items on September 15, 17, and 18 were moved to drafts
 so the result can be observed without adding more posts. Queue state is not a
 lead or revenue.
 
+A current Upwork MCP Expert role is a close technical match at a published USD
+60–120 per hour and seeks many contributors, but it requires a personal
+thirty-minute AI interview and a proposal whose credit cost could not be
+verified because the dedicated browser reached a Cloudflare hold. No proposal,
+credits, interview, or assessment were attempted. It remains demand evidence,
+not the low-involvement primary route.
+
 The **Local Knowledge Terminal collection-fit sprint** remains active at **USD
 250**. The **Manuscript Build & Redline Sprint** and **Bilingual Lecture
 Pack** are also active at **USD 250**, alongside the **Story Clip Pilot** for one

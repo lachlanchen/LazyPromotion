@@ -1,6 +1,6 @@
 # Open-source options evaluated
 
-Updated on 2026-09-12. LazyPromotion deliberately starts smaller than a social
+Updated on 2026-09-13. LazyPromotion deliberately starts smaller than a social
 media management suite: one persistent visible browser, one SQLite ledger, one
 relevance filter, one bounded drafting call, and an exact-content approval gate.
 
@@ -15,6 +15,7 @@ relevance filter, one bounded drafting call, and an exact-content approval gate.
 | [Playwright MCP](https://github.com/microsoft/playwright-mcp) | Open-source semantic snapshots and agent tools with an official CDP attachment mode | Selected as an optional, pinned interface over the same browser. Direct `browser.py` checks remain authoritative for public sends. |
 | [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Deep console, network, performance, and Chrome diagnostics with `--browser-url` attachment | Strong debugging alternative, but redundant for the initial runtime. Its metrics are enabled by default unless explicitly disabled, while Playwright MCP aligns with the existing controller. |
 | [TaskBounty MCP server](https://github.com/eliottreich/taskbounty-mcp-server) | Public funded-GitHub-issue discovery, regression-test verification, and a keyless JSON Feed | Selected only for read-only feed monitoring. Registration, claims, repository access, submissions, and payout remain separate reviewed actions; the first feed pass contained zero tasks. |
+| [Freelancer Python SDK](https://github.com/freelancer/freelancer-sdk-python) | Official examples and public active-project query contract | Selected as a primary-source reference. The monitor uses Python's standard library for one keyless GET, retains only minimal screening metadata, and cannot bid or message. |
 
 The approval boundary follows current Reddit requirements: each user action must
 be a separate, explicit manual choice, and repeated unsolicited engagement is

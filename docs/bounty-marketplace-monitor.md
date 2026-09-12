@@ -1,19 +1,21 @@
 # Bounty marketplace monitor
 
-`bounty_marketplace_monitor.py` polls three distinct sources: Bounty's
-authenticated agent endpoint, TaskBounty's public JSON Feed, and Agent
-Bounties' keyless canonical Base-mainnet feed with `claimable_only=true`. Every
-path is deliberately read-only. The monitor can retain minimal IDs, versions
-or fingerprints, public titles and timestamps, and canonical contract, terms,
-reward, and gross-margin fields. It cannot comment, claim, register, fork,
-message, download attachments, store a solver wallet, sign, approve, fund,
-broadcast a transaction, configure payout, or submit work.
+`bounty_marketplace_monitor.py` polls four distinct sources: Bounty's
+authenticated agent endpoint, TaskBounty's public JSON Feed, Agent Bounties'
+keyless canonical Base-mainnet feed with `claimable_only=true`, and
+Freelancer's official public active-project API. Every path is deliberately
+read-only. The monitor can retain minimal IDs, versions or fingerprints,
+public titles and timestamps, and bounded budget, competition, contract,
+terms, reward, and gross-margin fields. It cannot comment, claim, bid,
+register, fork, message, download attachments, store a solver wallet, sign,
+approve, fund, broadcast a transaction, configure payout, or submit work.
 
-The Bounty API key stays in the ignored, mode-0600 credential vault. TaskBounty
-and Agent Bounties require no key for these public feeds. A synchronized
-encrypted copy is maintained in the private LazyingArt area in Nutstore. The
-monitor state and log also stay under `.local/` with mode 0600; neither contains
-the credential or requester attachments.
+The Bounty API key stays in the ignored, mode-0600 credential vault.
+TaskBounty, Agent Bounties, and Freelancer require no key for these public
+reads. A synchronized encrypted copy is maintained in the private LazyingArt
+area in Nutstore. The monitor state and log also stay under `.local/` with mode
+0600; neither contains the credential, requester attachments, or raw project
+descriptions.
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -25,12 +27,16 @@ scripts/bounty-marketplace-monitor.sh stop
 Each source gets an independent first-pass baseline without an alert. Later
 passes alert only when an available Bounty ID is new or its version increases,
 when a TaskBounty JSON Feed item is new or changes, or when a canonical Agent
-Bounties item with positive gross cash margin is new or changes. An alert is a
-private review prompt, not a claim, profit calculation, lead, contract,
-payment, or revenue event. The public issue, reward, active competition,
-controlling terms, bond, gas, deadline, wallet policy, and payout eligibility
-must be inspected before deciding whether work fits; external writes remain
-outside this monitor.
+Bounties item with positive gross cash margin is new or changes. Freelancer
+gets its own first-pass baseline; later new or changed rows alert only after a
+strong portfolio-term match, a USD 250 fixed or USD 25/hour ceiling, no more
+than 25 bids, and removal of preferred-only, KYC-gated, commission/recruiting,
+ongoing-employment, onsite, or live-remote-control work. An alert is a private
+review prompt, not a claim, profit calculation, lead, contract, payment, or
+revenue event. The public issue, reward or budget, actual scope, active
+competition, controlling terms, client history, platform fee, bond, gas,
+deadline, account gate, and payout eligibility must be inspected before
+deciding whether work fits; external writes remain outside this monitor.
 
 The five-minute floor is intentionally quieter than Bounty's example polling
 interval while the agent is unverified. It can be reconsidered only after the
@@ -77,6 +83,22 @@ implementation and canonical claimable-work endpoint:
   still require separate review;
 - public terms and event bodies are fingerprinted but not retained. Only a
   confirmed canonical settlement can later support a payment claim.
+
+Freelancer was added on September 13 through its official public active-project
+API:
+
+- one keyless GET asks only for current work matching MCP, Playwright, KiCad,
+  local-AI/OCR, or SSH proof already present in the portfolio;
+- broad Android, media, and imaging keywords were deliberately excluded after
+  a live sample produced unrelated support and data-entry work;
+- missing or malformed budgets, closed/private/local projects, low ceilings,
+  crowded listings, preferred-only work, KYC-gated work, and obvious live or
+  employment commitments are rejected before alerting;
+- descriptions are used transiently for matching and fingerprinting but are
+  never persisted. A candidate row keeps only the public title, URL, budget,
+  bid count, matched capability, timestamp, and fingerprint;
+- the monitor never authenticates, changes the account, spends a bid, sends a
+  message, accepts terms, or starts delivery.
 
 The private application-inbox configuration also contains an exact
 sender-and-subject rule for that support thread. An explicit visible-browser

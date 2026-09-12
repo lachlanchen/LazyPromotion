@@ -65,3 +65,13 @@ consultation](https://www.upwork.com/freelance-jobs/apply/MCP-Microsoft-Graph-Co
 combines architecture, a multi-tenant Entra design, gateway deployment, and an
 implementation POC, while asking for specific prior Graph and Entra evidence the
 public portfolio does not establish. No unsupported claim or proposal was made.
+
+Freelancer's official public active-project API now supplies a narrow,
+keyless acquisition feed without using the signed-in account or spending bids.
+The first live screen rejected three superficially relevant projects after
+scope review: project `40706086` requires a watched AnyDesk session, project
+`40707348` promises exact PDF-to-Word reproduction without stating page count
+or font availability, and project `40707742` requires DDR2 length matching plus
+dual-band RF loss acceptance beyond the current KiCad evaluation proof. None
+is a bounded asynchronous delivery with a defensible acceptance test, so no bid
+was placed. This is screening evidence, not a lead or revenue event.

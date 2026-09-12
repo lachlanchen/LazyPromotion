@@ -60,7 +60,7 @@ stars, applications, and queued posts never count as revenue.
 | [`mcp_public_preflight.py`](mcp_public_preflight.py) | Static, revision-pinned public GitHub preflight for the USD 500 MCP review; never clones or executes repository code |
 | [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of code, books, knowledge systems, and media |
 | [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
-| [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls the authenticated Bounty feed and TaskBounty's keyless public JSON Feed read-only; only new or changed work becomes a private review alert |
+| [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls four official authenticated or public work feeds read-only, including a narrow Freelancer screen; only new or changed bounded work becomes a private review alert |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
 | [`docs/first-1000.md`](docs/first-1000.md) | Primary USD 500 MCP route, nine adjacent bounded services, and truthful milestone math |

@@ -45,6 +45,14 @@ TRACKED_PROJECTS = (
             "Provide-Android-APK-Download-Link/proposals"
         ),
     },
+    {
+        "campaign_id": "kicad-plugin-testing-freelancer",
+        "slug": "kicad-plugin-testing-feedback",
+        "url": (
+            "https://www.freelancer.com/projects/virtual-assistant/"
+            "KiCad-Plugin-Testing-Feedback/proposals"
+        ),
+    },
 )
 PROJECT_BY_ID = {item["campaign_id"]: item for item in TRACKED_PROJECTS}
 PROJECT_ID_BY_SLUG = {item["slug"]: item["campaign_id"] for item in TRACKED_PROJECTS}

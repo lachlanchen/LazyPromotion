@@ -261,6 +261,16 @@
       "url": ""
     },
     {
+      "id": "campaign:kicad-plugin-testing-freelancer",
+      "kind": "campaign",
+      "label": "kicad-plugin-testing-freelancer",
+      "metadata": {
+        "objective": "Win one bounded KiCad plugin evaluation by pairing a purpose-built geometry fixture with larger project-owned board evidence, without claiming the buyer's plugin was tested before authorized delivery.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:kikudoku-pronunciation-ux",
       "kind": "campaign",
       "label": "kikudoku-pronunciation-ux",
@@ -6679,6 +6689,13 @@
       "url": "https://play.google.com/apps/internaltest/4701251861700553150"
     },
     {
+      "id": "url:9a3c31df6a78d883",
+      "kind": "web_resource",
+      "label": "angled route board",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/CustomSensor"
+    },
+    {
       "id": "url:ebcdbdd3fa4acc0b",
       "kind": "web_resource",
       "label": "application page",
@@ -6775,6 +6792,13 @@
       "label": "buyer need",
       "metadata": {},
       "url": "https://www.upwork.com/freelance-jobs/apply/Turning-Enterprise-Conversations-into-Living-Knowledge_~022094326181614592437/"
+    },
+    {
+      "id": "url:3c65cc0d164d290c",
+      "kind": "web_resource",
+      "label": "buyer need",
+      "metadata": {},
+      "url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback"
     },
     {
       "id": "url:d0115d5f19663878",
@@ -6999,6 +7023,13 @@
       "label": "enterprise meeting intelligence mission public proof 8",
       "metadata": {},
       "url": "https://text-and-speech-api.lazying.art/healthz"
+    },
+    {
+      "id": "url:b8678d5dcdc616b7",
+      "kind": "web_resource",
+      "label": "evaluation fixture",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/LazyPromotion/tree/d97f76e/examples/kicad-plugin-evaluation"
     },
     {
       "id": "url:dba6608e8adae973",
@@ -7363,6 +7394,13 @@
       "label": "lala studio",
       "metadata": {},
       "url": "https://github.com/lachlanchen/LalaStudio"
+    },
+    {
+      "id": "url:82bc3d3dd3a4322e",
+      "kind": "web_resource",
+      "label": "larger board",
+      "metadata": {},
+      "url": "https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32"
     },
     {
       "id": "url:eb728a227ca5d7ea",
@@ -8972,6 +9010,46 @@
       "relation": "uses_evidence",
       "source": "campaign:hacker-initiative-proofline-grant",
       "target": "url:f4189f4afa7eb5d6"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/CustomSensor",
+      "metadata": {},
+      "relation": "promotes",
+      "source": "campaign:kicad-plugin-testing-freelancer",
+      "target": "project:github-customsensor"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:kicad-plugin-testing-freelancer",
+      "target": "url:3c65cc0d164d290c"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:kicad-plugin-testing-freelancer",
+      "target": "url:82bc3d3dd3a4322e"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/CustomSensor",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:kicad-plugin-testing-freelancer",
+      "target": "url:9a3c31df6a78d883"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://github.com/lachlanchen/LazyPromotion/tree/d97f76e/examples/kicad-plugin-evaluation",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:kicad-plugin-testing-freelancer",
+      "target": "url:b8678d5dcdc616b7"
     },
     {
       "confidence": 1.0,

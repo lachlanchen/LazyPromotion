@@ -27,6 +27,13 @@ class FreelancerInboundMonitorTests(unittest.TestCase):
             ),
             "android-apk-delivery-freelancer",
         )
+        self.assertEqual(
+            monitor.project_id_for_url(
+                "https://www.freelancer.com/projects/virtual-assistant/"
+                "KiCad-Plugin-Testing-Feedback/proposals?bidCreated=true"
+            ),
+            "kicad-plugin-testing-freelancer",
+        )
         self.assertFalse(
             monitor.is_project_page(
                 "https://example.com/projects/automation/"
@@ -125,6 +132,48 @@ class FreelancerInboundMonitorTests(unittest.TestCase):
         self.assertFalse(status["review_required"])
         self.assertFalse(status["message_opened"])
         self.assertEqual(state["version"], 2)
+
+    def test_portfolio_adds_new_kicad_bid_as_quiet_project_baseline(self):
+        projects = {
+            "playwright-regression-contract": {
+                "bid_state": "active_submitted",
+                "rank": 57,
+                "proposal_count": 58,
+            },
+            "android-apk-delivery-freelancer": {
+                "bid_state": "active_submitted",
+                "rank": 90,
+                "proposal_count": 91,
+            },
+            "kicad-plugin-testing-freelancer": {
+                "bid_state": "active_submitted",
+                "rank": 20,
+                "proposal_count": 20,
+            },
+        }
+        previous = {
+            "version": 2,
+            "message_badge_count": 0,
+            "projects": {
+                key: value
+                for key, value in projects.items()
+                if key != "kicad-plugin-testing-freelancer"
+            },
+        }
+        status, _ = monitor.summarize_portfolio_observation(
+            authenticated=True,
+            projects=projects,
+            message_badge_count=0,
+            previous=previous,
+            checked_at="2026-09-12T01:50:00Z",
+        )
+        self.assertEqual(status["tracked_bid_count"], 3)
+        self.assertTrue(
+            status["projects"]["kicad-plugin-testing-freelancer"][
+                "baseline_created"
+            ]
+        )
+        self.assertFalse(status["review_required"])
 
     def test_portfolio_bid_change_names_only_the_changed_campaign(self):
         projects = {

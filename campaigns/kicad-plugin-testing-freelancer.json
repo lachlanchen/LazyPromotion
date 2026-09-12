@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "id": "kicad-plugin-testing-freelancer",
+  "objective": "Win one bounded KiCad plugin evaluation by pairing a purpose-built geometry fixture with larger project-owned board evidence, without claiming the buyer's plugin was tested before authorized delivery.",
+  "source_need": {
+    "captured_at": "2026-09-12T01:20:00Z",
+    "url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback",
+    "project_id": 40700587,
+    "title": "KiCad Plugin Testing & Feedback",
+    "state": "active_open",
+    "published_budget": "USD 250–750 fixed",
+    "activity_when_submitted": "The listing header showed 19 bids; the submitted proposal was then ranked 20 of 20.",
+    "buyer_state": "The visible listing showed a Navoiy, Uzbekistan buyer with identity, payment, deposit, email, profile, and phone verification plus two 5.0 reviews.",
+    "requested_work": [
+      "Install the buyer-supplied Rounder for Tracks v3.2 package",
+      "Exercise its settings on angled traces",
+      "Provide high-resolution before-and-after screenshots",
+      "Report bugs, usability issues, and enhancement ideas"
+    ],
+    "scope_unknowns": [
+      "authorized plugin package or download",
+      "supported KiCad version and operating system",
+      "expected behavior for infeasible corner radii",
+      "fixture-only versus buyer-board testing"
+    ],
+    "policy": "Do not download or run an untrusted package until the buyer supplies an authorized source and the funded scope is accepted. Keep contract, files, communication, and payment on Freelancer."
+  },
+  "fit": {
+    "projects": [
+      "LazyPromotion",
+      "HybridImager",
+      "CustomSensor"
+    ],
+    "public_evidence": [
+      "https://github.com/lachlanchen/LazyPromotion/tree/d97f76e/examples/kicad-plugin-evaluation",
+      "https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32",
+      "https://github.com/lachlanchen/CustomSensor"
+    ],
+    "executed_fixture": {
+      "state": "project_owned_fixture_verified",
+      "kicad_version": "10.0.3",
+      "cases": 7,
+      "track_segments": 34,
+      "angles_degrees": [
+        0,
+        45,
+        90,
+        135
+      ],
+      "widths_mm": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "drc_violations": 0,
+      "unconnected_items": 0,
+      "repository_commit": "d97f76e",
+      "boundary": "Project-owned synthetic fixture only; the buyer's plugin, package, settings, board, and acceptance result have not been tested."
+    },
+    "larger_board_evidence": {
+      "repository": "HybridImager",
+      "board_size_mm": "156.15 × 128.15",
+      "footprints": 1033,
+      "track_segments": 2144,
+      "vias": 1024,
+      "nets": 78,
+      "drc_violations": 0,
+      "boundary": "Project-owned public board evidence, not a customer result or a run of Rounder for Tracks."
+    },
+    "not_proven": [
+      "installation or behavior of Rounder for Tracks v3.2",
+      "compatibility with the buyer's KiCad and OS combination",
+      "results on a buyer-supplied board",
+      "a paid customer delivery"
+    ]
+  },
+  "source_evidence": {
+    "buyer_need": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback",
+    "evaluation_fixture": "https://github.com/lachlanchen/LazyPromotion/tree/d97f76e/examples/kicad-plugin-evaluation",
+    "larger_board": "https://github.com/lachlanchen/HybridImager/tree/master/hardware/v2-als-pt19-32x32",
+    "angled_route_board": "https://github.com/lachlanchen/CustomSensor"
+  },
+  "application": {
+    "state": "submitted_awaiting_buyer_reply",
+    "submitted_at": "2026-09-12T01:46:49Z",
+    "review_after": "2026-09-15",
+    "confirmation_url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback/proposals?bidCreated=true",
+    "visible_confirmation": "You've successfully placed a bid",
+    "rank_when_confirmed": "20 of 20 proposals",
+    "proposed_bid_usd": 400,
+    "proposed_delivery_days": 2,
+    "platform_fee_usd": 40,
+    "proposed_net_before_tax_usd": 360,
+    "milestone_request_usd": 400,
+    "milestone_description": "KiCad settings sweep, screenshots, DRC comparison, and report",
+    "proposal": ".local/private/applications/kicad-plugin-testing-freelancer.md",
+    "free_bid_required": true,
+    "paid_upgrade_selected": false,
+    "free_bids_remaining_after_submission": 3,
+    "bid_submitted": true,
+    "policy": "Submit at most once with no paid upgrade. Do not begin until the package source, license, supported environment, test-board boundary, acceptance criteria, and funded milestone are agreed."
+  },
+  "funnel": {
+    "state": "application_submitted_awaiting_buyer",
+    "application_submitted": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

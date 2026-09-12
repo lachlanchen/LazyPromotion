@@ -1,6 +1,6 @@
 {
   "id": "manuscript-sprint-pilot",
-  "version": 16,
+  "version": 17,
   "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
   "source_needs": [
     {
@@ -115,10 +115,10 @@
     },
     "paperagent_landing": {
       "state": "live_and_verified",
-      "checked_on": "2026-09-11",
-      "source_commit": "aa99484e7a238c90ef9f8ddefa20bf500babb434",
-      "deployment_run": "https://github.com/lachlanchen/PaperAgent/actions/runs/34569459683",
-      "destination": "https://lazying.art/manuscript-sprint/?utm_source=paperagent&utm_medium=website&utm_campaign=manuscript_sprint_pilot&utm_content=final_cta",
+      "checked_on": "2026-09-12",
+      "source_commit": "81130c3874a10793e18cd68e4036b32af3e0def3",
+      "deployment_run": "https://github.com/lachlanchen/PaperAgent/actions/runs/34672804601",
+      "destination": "https://lazying.art/manuscript-sprint/?utm_source=paperagent&utm_medium=website&utm_campaign=manuscript_sprint_pilot&utm_content=redline_sample#example",
       "search_signal": {
         "period": "last_28_days_ending_2026-09-08",
         "query": "paperagent",
@@ -135,8 +135,9 @@
         "position": "Immediately after the product summary in the English README and all ten localized variants",
         "boundary": "The copy keeps self-service first and names the fixed price, one-manuscript scope, sample, exclusions, and free fit check."
       },
-      "role": "The exact PaperAgent result now has a descriptive canonical title and gives visitors an equal choice between the public source repository and the already-live bounded manuscript sprint.",
-      "policy": "Search impressions triggered a result-page repair, not a retargeting claim. The service link leads to public scope and proof before the free fit check; impressions and future clicks are not leads or sales."
+      "role": "The exact PaperAgent result keeps the public repository primary and gives owners of one existing LaTeX manuscript a proof-first path to the complete redline sample, fixed USD 250 scope, and free fit check.",
+      "verification": "The Pages run completed successfully, and the live page contained the reviewed proof-first copy, exact tracked sample anchor, and unchanged primary repository action.",
+      "policy": "Search impressions triggered a proof-first handoff, not a retargeting claim. The service link leads to the complete project-owned sample before the free fit check; impressions and future clicks are not leads or sales."
     },
     "lazyblog": {
       "state": "published",

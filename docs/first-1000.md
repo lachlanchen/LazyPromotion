@@ -1209,11 +1209,13 @@ query impressions justified the test, but no inquiry or revenue is inferred.
 The same report exposed an owned conversion gap: the exact `paperagent` query
 had 15 impressions, zero clicks, and an average position of 6.7, all for
 `paper.lazying.art`. The landing page now has a descriptive canonical title and
-gives readers two honest paths—use PaperAgent from GitHub or inspect the bounded
-USD 250 manuscript sprint. The deployment was verified at PaperAgent commit
-`aa99484`. The main README and all ten localized variants now carry the same
-self-service-first choice at commit `f056279`. The small search sample and the
-published routes are prioritization evidence, not a lead or sale.
+keeps the repository as its primary action. Its secondary path now asks owners
+of one existing LaTeX manuscript to inspect the complete redline sample before
+the free fit check, using a distinct tracked sample anchor. PaperAgent commit
+`81130c3` deployed successfully in Pages run `34672804601`. The main README and
+all ten localized variants retain the same self-service-first choice at commit
+`f056279`. The small search sample and published routes are prioritization
+evidence, not a lead or sale.
 
 The exact `aginti` query had the same 15-impression, zero-click shape across the
 AgInTiFlow landing page and its owned build story. Inspection found a more basic

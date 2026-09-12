@@ -3028,7 +3028,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
 
-        self.assertEqual(campaign["version"], 16)
+        self.assertEqual(campaign["version"], 17)
         offer = campaign["offer"]
         self.assertEqual(offer["state"], "live")
         self.assertEqual(offer["price"], "USD 250")
@@ -3102,8 +3102,11 @@ class RepositoryTests(unittest.TestCase):
 
         paperagent = campaign["channels"]["paperagent_landing"]
         self.assertEqual(paperagent["state"], "live_and_verified")
-        self.assertIn("aa99484", paperagent["source_commit"])
+        self.assertIn("81130c3", paperagent["source_commit"])
+        self.assertIn("34672804601", paperagent["deployment_run"])
         self.assertIn("utm_source=paperagent", paperagent["destination"])
+        self.assertIn("utm_content=redline_sample", paperagent["destination"])
+        self.assertTrue(paperagent["destination"].endswith("#example"))
         self.assertEqual(paperagent["search_signal"]["query"], "paperagent")
         self.assertEqual(paperagent["search_signal"]["impressions"], 15)
         self.assertEqual(paperagent["search_signal"]["clicks"], 0)
@@ -3113,6 +3116,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("f056279", repository_route["commit"])
         self.assertIn("utm_source=github", repository_route["destination"])
         self.assertIn("self-service first", repository_route["boundary"])
+        self.assertIn("proof-first", paperagent["role"])
+        self.assertIn("live page", paperagent["verification"])
         self.assertIn("not leads or sales", paperagent["policy"].casefold())
 
         routing = campaign["intake_routing"]

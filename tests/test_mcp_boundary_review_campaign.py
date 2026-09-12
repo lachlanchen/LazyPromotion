@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 16)
+        self.assertEqual(self.payload["version"], 17)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -144,6 +144,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("fixed USD 500 pre-deployment review", postiz["content"])
         self.assertIn("utm_source=linkedin", postiz["destination"])
         self.assertIn("queue volume did not increase", postiz["superseded_post_removed"])
+        self.assertIn("September 14 PubMed", postiz["verification"])
         self.assertIn("September 15 lecture-pack", postiz["verification"])
         self.assertIn("only queued LinkedIn publication", postiz["verification"])
         self.assertFalse(postiz["lead_or_sale_observed"])

@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 18,
+  "version": 19,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -337,6 +337,15 @@
         "answer": "Split tools when authority, cost, or failure mode changes; keep graph freshness machine-stable with revision, source commit, indexing time, and an explicit completeness state.",
         "owned_link_included": false,
         "project_or_offer_named": false,
+        "reply_monitor": {
+          "state": "stopped_bootstrap_failed_closed",
+          "transport": "One unauthenticated GET of the exact public permalink, no more often than once per hour.",
+          "body_or_comment_text_requested": false,
+          "automatic_reply": false,
+          "baseline_created": false,
+          "live_bootstrap_checked_at": "2026-09-12T13:30:22Z",
+          "live_bootstrap_result": "Reddit returned HTTP 200 HTML without the target comment. Previous state was preserved; no retry, alternate scraper, browser session, or monitor process was started."
+        },
         "reply_received": false,
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,

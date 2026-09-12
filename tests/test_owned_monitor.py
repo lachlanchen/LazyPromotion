@@ -133,6 +133,7 @@ class OwnedMonitorTests(unittest.TestCase):
         status_path = self.root / "status-summary.json"
         threads_path = self.root / "threads-status-summary.json"
         application_inbox_path = self.root / "application-inbox-status-summary.json"
+        reddit_reply_path = self.root / "reddit-reply-status-summary.json"
         status_path.write_text(
             json.dumps(
                 {
@@ -182,11 +183,28 @@ class OwnedMonitorTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        reddit_reply_path.write_text(
+            json.dumps(
+                {
+                    "checked_at": "2026-09-12T14:00:00Z",
+                    "available": True,
+                    "current_direct_reply_count": 1,
+                    "new_direct_reply_count": 1,
+                    "review_required": True,
+                    "layout_unknown": False,
+                    "target_url": "private-target",
+                    "seen_reply_fingerprints": ["private-reply-key"],
+                    "policy": {"automatic_reply": False},
+                }
+            ),
+            encoding="utf-8",
+        )
 
         summary = owned_monitor.status_summary(
             status_path,
             threads_path=threads_path,
             application_inbox_path=application_inbox_path,
+            reddit_reply_path=reddit_reply_path,
         )
 
         self.assertTrue(summary["available"])
@@ -203,6 +221,12 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertNotIn("private-post-id", json.dumps(summary))
         self.assertNotIn("private-thread-key", json.dumps(summary))
         self.assertNotIn("private-campaign", json.dumps(summary))
+        self.assertEqual(summary["reddit_reply"]["current_direct_reply_count"], 1)
+        self.assertEqual(summary["reddit_reply"]["new_direct_reply_count"], 1)
+        self.assertTrue(summary["reddit_reply"]["review_required"])
+        self.assertFalse(summary["reddit_reply"]["automatic_reply"])
+        self.assertNotIn("private-target", json.dumps(summary))
+        self.assertNotIn("private-reply-key", json.dumps(summary))
 
     def test_status_snapshot_is_owner_readable_only(self):
         self.run_monitor(FakePostiz(posts=[]))

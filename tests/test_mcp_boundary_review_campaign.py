@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 18)
+        self.assertEqual(self.payload["version"], 19)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -118,6 +118,13 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(third["exact_body_verified"])
         self.assertFalse(third["owned_link_included"])
         self.assertFalse(third["project_or_offer_named"])
+        self.assertEqual(
+            third["reply_monitor"]["state"],
+            "stopped_bootstrap_failed_closed",
+        )
+        self.assertFalse(third["reply_monitor"]["body_or_comment_text_requested"])
+        self.assertFalse(third["reply_monitor"]["automatic_reply"])
+        self.assertFalse(third["reply_monitor"]["baseline_created"])
         self.assertFalse(third["reply_received"])
         self.assertFalse(third["lead_or_sale_observed"])
         self.assertEqual(third["verified_received_gross_usd"], 0)

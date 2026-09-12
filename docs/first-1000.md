@@ -1507,6 +1507,12 @@ envelope. The exact body was visibly delivered and re-read at its permalink.
 It names no project or offer and is a helpful interaction, not buyer intent, a
 lead, payment, or revenue.
 
+A privacy-minimal direct-reply monitor is implemented for that exact permalink.
+It can retain only hashed reply identifiers and aggregate counts, never bodies,
+authors, cookies, or login state, and it cannot reply. Its first public-HTML
+bootstrap omitted the target comment, so it failed closed and remains stopped;
+there was no retry, alternate scraper, browser session, or inferred reply.
+
 GitHub Sponsors was already active on the repositories, but its public profile
 had no preset tiers. Three restrained choices are now published and publicly
 verified: USD 5 monthly, USD 25 one-time, and USD 100 one-time. Their copy funds

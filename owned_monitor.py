@@ -36,6 +36,7 @@ LOG_PATH = RUNTIME / "owned-monitor.jsonl"
 LOCK_PATH = RUNTIME / "owned-monitor.lock"
 THREADS_STATUS_PATH = RUNTIME / "threads-inbound-monitor-status.json"
 APPLICATION_INBOX_STATUS_PATH = RUNTIME / "application-inbox-monitor-status.json"
+REDDIT_REPLY_STATUS_PATH = RUNTIME / "reddit-reply-monitor-status.json"
 
 PENDING_STATES = frozenset({"DRAFT", "QUEUE"})
 FAILED_STATES = frozenset({"ERROR", "FAILED"})
@@ -643,11 +644,35 @@ def application_inbox_status_summary(
     }
 
 
+def reddit_reply_status_summary(path: Path = REDDIT_REPLY_STATUS_PATH) -> dict:
+    """Return only aggregate state from the independent public Reddit monitor."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"available": False}
+    allowed = {
+        "checked_at",
+        "available",
+        "baseline_created",
+        "current_direct_reply_count",
+        "new_direct_reply_count",
+        "review_required",
+        "layout_unknown",
+        "prior_state_preserved",
+    }
+    result = {key: payload[key] for key in allowed if key in payload}
+    policy = payload.get("policy")
+    if isinstance(policy, dict):
+        result["automatic_reply"] = bool(policy.get("automatic_reply"))
+    return result
+
+
 def status_summary(
     path: Path = STATUS_PATH,
     *,
     threads_path: Path = THREADS_STATUS_PATH,
     application_inbox_path: Path = APPLICATION_INBOX_STATUS_PATH,
+    reddit_reply_path: Path = REDDIT_REPLY_STATUS_PATH,
 ) -> dict:
     """Read the last private status without exposing post or integration details."""
     try:
@@ -669,6 +694,7 @@ def status_summary(
         "application_inbox": application_inbox_status_summary(
             application_inbox_path
         ),
+        "reddit_reply": reddit_reply_status_summary(reddit_reply_path),
         "applications": dict(application.get("summary") or {}),
         "due_campaign_ids": [str(item) for item in due_ids],
     }

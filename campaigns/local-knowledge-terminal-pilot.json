@@ -1,5 +1,5 @@
 {
-  "version": 44,
+  "version": 45,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -901,6 +901,26 @@
         },
         "lead_or_sale_observed": false,
         "policy": "The answer was reviewed in the visible isolated browser before one guarded submission and then verified at its public permalink. It cites an NCBI model card but contains no LazyingArt name, owned link, service, price, call to action, or private message. The positive acknowledgement is a verified reply, not a lead, customer result, payment, or revenue, and it does not justify a second pitch."
+      },
+      "airgapped_scanned_reports_reply": {
+        "state": "sent_once_and_visibly_verified",
+        "checked_at": "2026-09-12T04:46:00Z",
+        "thread": "https://www.reddit.com/r/LocalLLM/comments/1wcnx46/800_pages_of_scanned_reports_will_a_local_llm_do/",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1wcnx46/comment/p9am08t/",
+        "need": "Leaf through roughly 800 scanned PDF pages containing highly confidential information on an air-gapped device.",
+        "action": "Separated conversion from search; recommended a representative page sample, text-layer inspection, selective OCR, field-level and reading-order checks, local full-text indexing with file and page provenance, embeddings only for demonstrated paraphrase misses, and a complete disconnected-system test.",
+        "community_rules": {
+          "checked_live": true,
+          "llm_topic_required": true,
+          "self_promotion_guideline": "no more than 10 percent of content",
+          "duplicate_posts_forbidden": true
+        },
+        "visible_submission_count": 1,
+        "linked_owned_asset": false,
+        "profile_only_context": true,
+        "automatic_follow_up": false,
+        "lead_or_sale_observed": false,
+        "policy": "The current thread, signed-in account, exact draft, and live subreddit rules were reviewed in the visible isolated browser before one submission, then the full answer was verified at its public permalink. It contains no project name, owned link, service, price, call to action, or private-message invitation. This is a helpful interaction, not buyer intent, a lead, customer result, payment, or revenue."
       },
       "chat_archive_reply": {
         "state": "sent_and_visibly_verified",

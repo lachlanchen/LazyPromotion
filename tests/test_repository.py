@@ -1935,7 +1935,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 44)
+        self.assertEqual(campaign["version"], 45)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -1993,6 +1993,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(biomedical_reply["lead_or_sale_observed"])
         self.assertIn("MedCPT-Query-Encoder", biomedical_reply["primary_source"])
         self.assertIn("not a PMC-specific system", biomedical_reply["qualification_boundary"])
+        airgapped_reply = campaign["channels"]["reddit"][
+            "airgapped_scanned_reports_reply"
+        ]
+        self.assertEqual(
+            airgapped_reply["state"], "sent_once_and_visibly_verified"
+        )
+        self.assertEqual(
+            airgapped_reply["url"],
+            "https://www.reddit.com/r/LocalLLM/comments/1wcnx46/comment/p9am08t/",
+        )
+        self.assertEqual(airgapped_reply["visible_submission_count"], 1)
+        self.assertTrue(airgapped_reply["community_rules"]["checked_live"])
+        self.assertFalse(airgapped_reply["linked_owned_asset"])
+        self.assertTrue(airgapped_reply["profile_only_context"])
+        self.assertFalse(airgapped_reply["automatic_follow_up"])
+        self.assertFalse(airgapped_reply["lead_or_sale_observed"])
         biomedical_guide = campaign["channels"]["lazyblog"][
             "biomedical_local_search_guide"
         ]

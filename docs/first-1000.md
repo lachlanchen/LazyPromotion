@@ -1422,6 +1422,18 @@ upgrade. The subreddit rules and exact live thread were checked before one
 submission, and the delivered text was verified at its permalink. This is the
 third recorded helpful interaction; it is not a lead or revenue.
 
+A current air-gapped OCR question asked how to leaf through 800 scanned pages
+of highly confidential reports. One
+[link-free answer](https://www.reddit.com/r/LocalLLM/comments/1wcnx46/comment/p9am08t/)
+separated conversion from search: sample representative page classes, inspect
+existing text layers, OCR only where needed, test names, dates, numbers,
+tables, and reading order, index locally with file and page provenance, and add
+embeddings or an LLM only for demonstrated misses. The live subreddit rules,
+current thread, signed-in account, and exact draft were checked before one
+submission, and the public body was then verified at its permalink. The answer
+contains no owned link, project name, offer, or follow-up invitation. It is a
+helpful interaction, not buyer intent, a lead, payment, or revenue.
+
 Run `python metrics.py report` for the private aggregate. After a verified USD
 250 payment, record it under the campaign and project that actually produced
 the sale; never put the raw Stripe receipt in Git.

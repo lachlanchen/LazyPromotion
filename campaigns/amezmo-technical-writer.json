@@ -1,0 +1,70 @@
+{
+  "id": "amezmo-technical-writer",
+  "version": 1,
+  "objective": "Pitch one original, reproducible deployment tutorial only after Amezmo's official form is reachable and the editor confirms topic fit and commercial terms.",
+  "source_need": {
+    "captured_at": "2026-09-12T04:38:00Z",
+    "url": "https://www.amezmo.com/write-for-amemzo",
+    "title": "Write for Amezmo",
+    "state": "official_current_call_for_technical_writers",
+    "published_pay": "USD 300 per 2,000-word article",
+    "requested_topics": [
+      "PHP hosting",
+      "deployment",
+      "general web development"
+    ],
+    "quality_requirements": [
+      "high-quality screenshots",
+      "strong grammar",
+      "technical proficiency",
+      "original content"
+    ],
+    "competition": "Not published",
+    "geographic_restriction": "None stated on the official page",
+    "boundary": "The current call and published pay are demand evidence, not topic acceptance, an assignment, publication, payment, or revenue."
+  },
+  "fit": {
+    "projects": [
+      "LazyEdge",
+      "LazyTunnel"
+    ],
+    "public_evidence": [
+      "https://github.com/lachlanchen/LazyEdge",
+      "https://github.com/lachlanchen/LazyTunnel"
+    ],
+    "proposed_topic": "Safely expose a private Node.js service through outbound SSH and Caddy with explicit route allowlists",
+    "supported_now": [
+      "Public Node.js CLI and templates for Caddy, outbound OpenSSH reverse tunnels, systemd, default-deny route allowlists, staged rollout, and recovery checks",
+      "Original deployment commands, tests, diagrams, and screenshots can be produced from project-owned infrastructure"
+    ],
+    "not_proven": [
+      "Amezmo-specific delivery experience",
+      "Amezmo or PHP runtime behavior for the proposed Node.js topic",
+      "Topic acceptance, payment timing or method, rights or license terms, revision policy, or acceptable AI assistance"
+    ]
+  },
+  "application": {
+    "state": "not_submitted_official_form_access_blocked",
+    "checked_at": "2026-09-12T04:39:00Z",
+    "official_form_observed": "The public page exposes required name, email, and subject fields.",
+    "visible_browser_result": "The dedicated project browser received an Amezmo Cloudflare HTTP 403 page before the form could be reviewed.",
+    "application_submitted": false,
+    "submission_fee_usd": 0,
+    "bypass_attempted": false,
+    "alternate_contact_used": false,
+    "full_article_drafted": false,
+    "next_review_not_before": "2026-09-19",
+    "policy": "Do not bypass Cloudflare, route the pitch to an unrelated address, claim PHP or Amezmo experience, or draft the full article before the topic and commercial terms are accepted."
+  },
+  "funnel": {
+    "state": "qualified_source_no_application",
+    "application_submitted": false,
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "topic_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "published": false,
+    "received_revenue_usd": 0
+  }
+}

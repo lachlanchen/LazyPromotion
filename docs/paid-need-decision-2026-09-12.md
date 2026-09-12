@@ -16,11 +16,22 @@ on acceptance, available work, completed delivery, and payment.
 | 7 | [Meridial AI-assisted developer-workflow auditor](https://job-boards.greenhouse.io/agency/jobs/4969250101) | USD 60/hour | LazyPromotion provides review gates, regression tests, browser/tool integration, and reproducible failure capture | One truthful application is now awaiting reply. Do not claim paid enterprise telemetry or commercial IDE-integration auditing. |
 | 8 | [Meridial SWE-Bench task auditor](https://job-boards.greenhouse.io/agency/jobs/4969230101) | USD 60/hour | Multi-repository debugging, Python/Linux verification, tests, and OpenHI reproducibility evidence fit the work | There is no explicit SWE-Bench audit case study; professional-year claims must remain factual. |
 | 9 | [Meridial coding specialist, fluent in Chinese](https://job-boards.greenhouse.io/agency/jobs/4663149101) | USD 8–65/hour | Coding, multilingual documentation, LKT, book pipelines, and provenance-oriented writing form a coherent match | Exact language proficiency and professional history must be stated without inference. |
+| 10 | [Amezmo technical writer](https://www.amezmo.com/write-for-amemzo) | USD 300 per accepted 2,000-word article | LazyEdge provides public Node.js, Caddy, outbound-SSH, systemd, default-deny, rollout, and recovery proof for one deployment tutorial | The official form returned a Cloudflare HTTP 403 in the project browser. Do not bypass it or draft before topic and commercial-term acceptance. |
 
 No open-source bounty passed the live-state gate. Two visible ProjectDiscovery
 listings, for example, pointed to already-closed GitHub issues. A closed,
 stale, geographically ineligible, or acceptance-free task is not counted as an
 opportunity.
+
+Amezmo's current official call publishes USD 300 per 2,000-word deployment,
+PHP-hosting, or general web-development article. LazyEdge supports one original
+topic about exposing a private Node.js service through outbound SSH and Caddy
+with explicit route allowlists. The dedicated visible browser received
+Cloudflare HTTP 403 before its live pitch form could be reviewed, so no bypass,
+alternate contact, application, or unpaid article was attempted. Recheck once
+after September 19; require topic acceptance plus payment, rights, revision,
+and AI-assistance terms before drafting. The listing is demand evidence, not an
+assignment or revenue.
 
 The worldwide Meridial infrastructure listing is the clearest no-fee route to
 cross the USD 1,000 target in a small number of accepted hours. One application

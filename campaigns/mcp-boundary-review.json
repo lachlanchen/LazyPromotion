@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 30,
+  "version": 31,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -108,7 +108,7 @@
       "production secrets, private data, destructive live operations, or external writes unless separately authorized and scoped"
     ],
     "cancellation": "Cancel before private access or execution begins for a full refund. Once work starts, refund only undelivered items using the fixed deliverable allocation.",
-    "data_policy": "Collect metadata only during the fit check: contact email, repository and revision, intended client and transport, the deployment decision, and authorization confirmation. The first surface inventory and proposed checks can be derived from a public repository; for private source, the first reply requests a metadata-only surface manifest. Agree private access, fixtures, network behavior, credentials handling, confidentiality, retention, and permitted automation before work. Customer material never becomes public proof without separate written permission.",
+    "data_policy": "For a public-repository preflight, collect only contact email, a public GitHub repository URL, and authorization confirmation; derive the pinned revision, first surface inventory, and proposed checks for the fit reply. A private-repository request must also provide the intended client and transport plus the deployment decision or concern, without source or credentials. Both paths collect metadata only. Agree private access, fixtures, network behavior, credentials handling, confidentiality, retention, and permitted automation before work. Customer material never becomes public proof without separate written permission.",
     "payment_policy": "After a positive fit check and accepted written scope, direct-site clients receive one reviewed Stripe request. Marketplace-origin contracts and payments stay on that marketplace. This is not a public self-serve checkout."
   },
   "public_proof": {
@@ -143,8 +143,8 @@
     "boundary": "Project-owned evidence, not a customer result, penetration test, security certification, or promise of production fitness."
   },
   "owned_delivery": {
-    "website_commit": "58aa2cca5775217825548d620a823060bb30670a",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34703455276",
+    "website_commit": "3fe0f03a6cb39ba05001c7b28a2fa3fa20f2717f",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34704612577",
     "deployment_state": "success",
     "homepage": "The six-route chooser replaces the lower-priority Story Clip card with this current software-first offer in thirteen locales.",
     "social_preview": {
@@ -168,30 +168,42 @@
         "utm_content"
       ],
       "attribution_bridge_sha256": "dc2a3aa096f1595f70eeb3c4efe1561170b439190e0663feb10f7992d3281b62",
+      "public_preflight_required_inputs": [
+        "contact email",
+        "public GitHub repository URL",
+        "authorization confirmation"
+      ],
+      "private_repository_additional_inputs": [
+        "intended client and transport",
+        "deployment decision or concern"
+      ],
+      "public_preflight_live_review": "At 390x844, the live form accepted only a synthetic email, the public LocalKnowledgeTerminal URL, and authorization into the review panel. It labeled the request as a public GitHub repository preflight, preserved all four Reddit attribution fields, left the send action disabled, and made zero endpoint requests.",
       "boundary": "The proof download remains the primary action. The secondary action uses the existing metadata-only fit check and adds no checkout, claim, source upload, or payment request."
     },
-    "verification": "All 30 website contract entrypoints passed and the result-handoff checks remain intact. The live offer and sample report use the dedicated 1200x630 MCP evidence card. The sample hero exposes one tracked fit-check action on mobile as well as desktop; a visible 390x844 pass kept the full action above the fold with no horizontal overflow. GitHub Pages deployment 34703455276 succeeded. The live bridge was byte-identical to the reviewed source, and a non-submitting production flow preserved all four LinkedIn campaign tags into the reviewed fit-check payload while leaving the send action disabled."
+    "verification": "All 30 website contract entrypoints passed and the result-handoff checks remain intact. GitHub Pages deployment 34704612577 succeeded, and the live fit page and script were byte-identical to commit 3fe0f03. The sample hero exposes one tracked fit-check action above the fold on mobile as well as desktop. A visible 390x844 public-preflight review required only email, public GitHub URL, and authorization, preserved all four Reddit campaign tags, left sending disabled, and made no endpoint request. The private path made client/transport and decision fields required and rejected a blank review locally."
   },
   "intake": {
     "state": "live_verified",
     "offer_route": "mcp_boundary_review",
     "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
-    "backend_commit": "af8f5ddfe1fb0bc519aabba32f31a71ffa3765ad",
+    "backend_commit": "df140bfbccc035ec05eabc076af25b0557983c66",
     "review_before_send": true,
     "encrypted_storage": true,
     "source_upload_requested": false,
     "required_buyer_inputs": [
       "contact email",
-      "repository and exact revision",
-      "intended client and transport",
-      "deployment decision or concern",
+      "public GitHub repository URL",
       "authorization confirmation"
+    ],
+    "private_repository_additional_inputs": [
+      "intended client and transport",
+      "deployment decision or concern"
     ],
     "automatic_reply": false,
     "receiver_authenticated_decrypted_and_saved": true,
     "remote_spool_empty": true,
     "live_round_trip": "On 2026-09-12, the live form made no endpoint request during local review, then one explicitly confirmed synthetic request was encrypted, accepted, authenticated, decrypted, validated, saved locally with mode 0600, and deleted unchanged from the remote spool. A second receiver pass returned no_pending. The exact local synthetic inquiry and envelope were removed after verification; sanitized receipt evidence was retained.",
-    "deployment_verification": "The simplified optional-field backend was deployed from committed revision af8f5ddfe1fb0bc519aabba32f31a71ffa3765ad with PHP lint and the focused contract suite passing. The live plugin matched the local SHA-256 b2c0e84f562d0be71973d15798e1b95b1428a28d917e2af144961a423fa991f2, and the REST route remained available without submitting another test inquiry.",
+    "deployment_verification": "The public-preflight backend was deployed from committed revision df140bfbccc035ec05eabc076af25b0557983c66 with PHP lint and the focused contract suite passing in PHP 8.2. The live plugin matched the local SHA-256 14a0f18dcb0704fd23043fd77cf14d80f3319154c4f05dcc89a9a4a235430368. It accepts the low-friction shape only for a clean public github.com repository URL; private requests remain gated on client/transport and decision metadata. No additional synthetic inquiry was submitted.",
     "lead_or_sale_observed": false
   },
   "contra_marketplace": {

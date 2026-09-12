@@ -151,6 +151,15 @@ def mcp_boundary_review_payload():
     }
 
 
+def mcp_public_preflight_payload():
+    payload = mcp_boundary_review_payload()
+    payload["repository"] = "https://github.com/lachlanchen/LocalKnowledgeTerminal"
+    payload["surface"] = lkt_inbox.MCP_PUBLIC_PREFLIGHT_MARKER
+    payload["client_transport"] = ""
+    payload["risk"] = ""
+    return payload
+
+
 def lazyremote_payload():
     return {
         "offer": "lazyremote",
@@ -677,15 +686,14 @@ class EnvelopeTests(ReceiverFixture):
                 "repository": (900, True, True),
                 "surface": (1200, False, True),
                 "environment": (700, False, True),
-                "client_transport": (700, True, True),
-                "risk": (900, True, True),
+                "client_transport": (700, False, True),
+                "risk": (900, False, True),
                 "constraints": (800, False, True),
             },
         )
 
-        optional_fields = mcp_boundary_review_payload()
+        optional_fields = mcp_public_preflight_payload()
         optional_fields["role"] = ""
-        optional_fields["surface"] = ""
         optional_fields["environment"] = ""
         optional_fields["constraints"] = ""
         _, raw = encrypted_envelope(
@@ -695,6 +703,21 @@ class EnvelopeTests(ReceiverFixture):
         )
         _, record = self.validate(raw=raw)
         self.assertEqual(record["payload"], optional_fields)
+
+    def test_mcp_public_preflight_rejects_non_github_or_private_metadata_gaps(self):
+        invalid_public = mcp_public_preflight_payload()
+        invalid_public["repository"] = "https://example.com/private/server"
+        incomplete_private = mcp_boundary_review_payload()
+        incomplete_private["client_transport"] = ""
+        for payload in (invalid_public, incomplete_private):
+            with self.subTest(repository=payload["repository"]):
+                _, raw = encrypted_envelope(
+                    self.key,
+                    self.receipt,
+                    record=sample_record(payload),
+                )
+                with self.assertRaises(lkt_inbox.InboxError):
+                    self.validate(raw=raw)
 
     def test_email_validation_matches_wordpress_endpoint_contract(self):
         accepted = sample_payload()

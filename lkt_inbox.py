@@ -163,8 +163,8 @@ OFFER_FIELD_RULES = {
         "repository": (900, True, True),
         "surface": (1200, False, True),
         "environment": (700, False, True),
-        "client_transport": (700, True, True),
-        "risk": (900, True, True),
+        "client_transport": (700, False, True),
+        "risk": (900, False, True),
         "constraints": (800, False, True),
     },
     "browser_regression": {
@@ -202,6 +202,12 @@ OFFER_FIELD_RULES = {
         "constraints": (800, False, True),
     },
 }
+
+MCP_PUBLIC_PREFLIGHT_MARKER = "Public GitHub repository preflight requested."
+MCP_PUBLIC_GITHUB_RE = re.compile(
+    r"https://github\.com/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/"
+    r"[A-Za-z0-9][A-Za-z0-9_.-]{0,99}(?:\.git)?/?\Z"
+)
 
 
 class InboxError(RuntimeError):
@@ -663,6 +669,14 @@ def validate_payload(payload: object, *, version: str = RECORD_VERSION) -> dict:
             required=required,
             allow_lines=allow_lines,
         )
+
+    if offer == "mcp_boundary_review":
+        public_preflight = payload["surface"] == MCP_PUBLIC_PREFLIGHT_MARKER
+        if public_preflight:
+            if not MCP_PUBLIC_GITHUB_RE.fullmatch(payload["repository"]):
+                raise InboxError("encrypted inbox public repository is invalid")
+        elif not payload["client_transport"] or not payload["risk"]:
+            raise InboxError("encrypted inbox private repository metadata is incomplete")
 
     for key in ("utm_source", "utm_medium", "utm_campaign", "utm_content"):
         value = _validate_text(

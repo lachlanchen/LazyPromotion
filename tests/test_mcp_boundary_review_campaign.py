@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 30)
+        self.assertEqual(self.payload["version"], 31)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -195,7 +195,15 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(intake["review_before_send"])
         self.assertTrue(intake["receiver_authenticated_decrypted_and_saved"])
         self.assertTrue(intake["remote_spool_empty"])
-        self.assertEqual(len(intake["required_buyer_inputs"]), 5)
+        self.assertEqual(len(intake["required_buyer_inputs"]), 3)
+        self.assertIn("public GitHub repository URL", intake["required_buyer_inputs"])
+        self.assertEqual(len(intake["private_repository_additional_inputs"]), 2)
+        self.assertIn("client and transport", intake["private_repository_additional_inputs"][0])
+        self.assertEqual(
+            intake["backend_commit"],
+            "df140bfbccc035ec05eabc076af25b0557983c66",
+        )
+        self.assertIn("PHP 8.2", intake["deployment_verification"])
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
 
@@ -314,9 +322,9 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         delivery = self.payload["owned_delivery"]
         self.assertEqual(
             delivery["website_commit"],
-            "58aa2cca5775217825548d620a823060bb30670a",
+            "3fe0f03a6cb39ba05001c7b28a2fa3fa20f2717f",
         )
-        self.assertIn("actions/runs/34703455276", delivery["deployment_run"])
+        self.assertIn("actions/runs/34704612577", delivery["deployment_run"])
         preview = delivery["social_preview"]
         self.assertEqual(preview["state"], "live_verified")
         self.assertEqual(preview["dimensions"], "1200x630")
@@ -334,10 +342,13 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
             ["utm_source", "utm_medium", "utm_campaign", "utm_content"],
         )
         self.assertRegex(conversion["attribution_bridge_sha256"], r"^[0-9a-f]{64}$")
+        self.assertEqual(len(conversion["public_preflight_required_inputs"]), 3)
+        self.assertEqual(len(conversion["private_repository_additional_inputs"]), 2)
+        self.assertIn("zero endpoint requests", conversion["public_preflight_live_review"])
         self.assertIn("metadata-only fit check", conversion["boundary"])
         self.assertIn("result-handoff checks", delivery["verification"])
         self.assertIn("above the fold", delivery["verification"])
-        self.assertIn("all four LinkedIn campaign tags", delivery["verification"])
+        self.assertIn("all four Reddit campaign tags", delivery["verification"])
 
     def test_lkt_readmes_route_mcp_interest_to_exact_proof(self):
         github = self.payload["channels"]["github"]

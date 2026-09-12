@@ -19,6 +19,11 @@ production flow was reviewed without enabling or sending the request. Queue
 state and a working conversion path are not a lead or revenue. One practical
 seven-point checklist is also queued on the owned Reddit profile for September
 13. It uses the original tracked sample URL and is not another subreddit reply.
+The public-repository fit check now needs only an email, a public GitHub URL,
+and authorization; LazyingArt derives the pinned surface and proposed checks
+for the reply. Private-repository requests still require the intended client,
+transport, and decision metadata. A live mobile review preserved the Reddit
+attribution and made no submission.
 After a positive fit check, the [scope record template](mcp-review-scope-template.md)
 now fixes the revision, surface, ten checks, handling, delivery, recheck,
 exclusions, USD 500 allocation, and written acceptance before the guarded

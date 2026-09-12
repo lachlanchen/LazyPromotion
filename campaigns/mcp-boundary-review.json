@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 6,
+  "version": 8,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -174,7 +174,25 @@
       "Computer Software"
     ],
     "faq_count": 3,
-    "linked_example": "Local Knowledge Terminal: Collection-Fit Sample Report",
+    "linked_example": "MCP Server Pre-Deployment Review: Executed Sample",
+    "portfolio_case": {
+      "state": "published_live_verified",
+      "url": "https://contra.com/p/om7mm3NN-mcp-server-pre-deployment-review-executed-sample",
+      "title": "MCP Server Pre-Deployment Review: Executed Sample",
+      "description": "Reviewed a pinned Local Knowledge Terminal MCP revision: 2 tools, 1 resource, and 14 focused tests. GO locally; NO-GO remotely without client authentication.",
+      "cover_asset": "assets/contra-mcp-boundary-review-cover-v1.png",
+      "cover_sha256": "4cf88fca2a64837618eb3f9965b3c11b7629924f1e3b54128a49286836692add",
+      "cover_dimensions": "1600x1200",
+      "role": "Software Engineer",
+      "tools": [
+        "Git",
+        "GitHub",
+        "Python"
+      ],
+      "industry": "Artificial Intelligence",
+      "completed_work_link": "https://lazying.art/mcp-boundary-review/sample-report/",
+      "boundary": "Project-owned executed evidence, not verified customer work, a security certification, a buyer result, or revenue."
+    },
     "cover": "A four-by-three crop of the live project-owned MCP Server Pre-Deployment Review offer, visually checked before publication.",
     "payment_policy": "Contra-origin inquiry, contract, payment, revisions, and delivery stay on Contra. The published listing includes the same fourteen-day, one-successor-revision, up-to-three-failed-check recheck. Do not accept work until the exact ten checks and handling rules are accepted and identity and payout setup are complete.",
     "profile_completion": "89%",
@@ -184,7 +202,7 @@
     "contract_observed": false,
     "payment_observed": false,
     "received_gross_usd": 0,
-    "verification": "After publication, the canonical service URL returned HTTP 200 and visibly showed the exact title, USD 500 starting price, two-week duration, six tags, complete description and exclusions, three FAQs, linked LKT example, fit-check link, and executed-sample link."
+    "verification": "The dedicated executed-sample case was saved privately, reloaded field by field, and published once. The service then replaced its mismatched collection-fit example with that exact case. A fresh visible reload and unauthenticated HTML both showed the new title and canonical case URL; the old example was absent. The service still showed the exact title, USD 500 starting price, two-week duration, six tags, complete description and exclusions, three FAQs, fit-check link, and executed-sample link."
   },
   "payment_readiness": {
     "state": "ready_for_reviewed_live_request",
@@ -219,14 +237,14 @@
     "postiz": {
       "state": "linkedin_queue_verified",
       "post_id": "cmty7dcko17ftqk0yxthwp24w",
-      "publish_at": "2026-09-21T02:00:00.000Z",
+      "publish_at": "2026-09-16T02:00:00.000Z",
       "profile": "Lachlan Chen",
       "content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample\n\nThe same method is now available as a fixed USD 500 pre-deployment review of one server, one base revision, and ten agreed checks, with a limited recheck. Fit check first; no source upload or payment before scope.",
       "postiz_content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://dub.sh/qxGT5aT\n\nThe same method is now available as a fixed USD 500 pre-deployment review of one server, one base revision, and ten agreed checks, with a limited recheck. Fit check first; no source upload or payment before scope.",
       "destination": "https://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample",
       "content_sha256": "8a772c2793655bcf6bf7f5f35daadb44c0c96388951c5d8293183939976333eb",
       "shortlink": "https://dub.sh/qxGT5aT",
-      "verification": "The intended LinkedIn profile, revised 2026-09-21T02:00:00Z schedule, QUEUE state, revised pre-deployment wording, and shortlink destination were verified after one visible update. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page.",
+      "verification": "The intended LinkedIn profile, revised 2026-09-16T02:00:00Z schedule, QUEUE state, exact pre-deployment wording, provider settings, and shortlink destination were verified after the exact proof became the Contra service example. The earlier slot was obtained by moving one existing lower-priority LinkedIn item to 2026-09-21T02:00:00Z, so queue volume did not increase. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page.",
       "superseded_post_removed": "The older overlapping LKT MCP announcement cmtvr7tck0gqiqk0yqev5vlog was moved to draft and deleted after this replacement entered QUEUE, so queue volume did not increase.",
       "lead_or_sale_observed": false,
       "role": "One evidence-led first-party post replaces the overlapping release announcement. Queueing is not publication, a fit inquiry, a sale, or revenue."

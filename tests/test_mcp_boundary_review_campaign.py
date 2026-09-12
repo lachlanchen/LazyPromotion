@@ -13,6 +13,7 @@ PACKET = (
     / "artifacts"
     / "lkt-mcp-boundary-review-sample.zip"
 )
+COVER = ROOT / "assets" / "contra-mcp-boundary-review-cover-v1.png"
 
 
 class McpBoundaryReviewCampaignTests(unittest.TestCase):
@@ -20,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 6)
+        self.assertEqual(self.payload["version"], 8)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -96,11 +97,12 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
     def test_linkedin_queue_replaces_overlapping_volume(self):
         postiz = self.payload["channels"]["postiz"]
         self.assertEqual(postiz["state"], "linkedin_queue_verified")
-        self.assertEqual(postiz["publish_at"], "2026-09-21T02:00:00.000Z")
+        self.assertEqual(postiz["publish_at"], "2026-09-16T02:00:00.000Z")
         self.assertIn("14 focused tests", postiz["content"])
         self.assertIn("fixed USD 500 pre-deployment review", postiz["content"])
         self.assertIn("utm_source=linkedin", postiz["destination"])
         self.assertIn("queue volume did not increase", postiz["superseded_post_removed"])
+        self.assertIn("lower-priority LinkedIn item", postiz["verification"])
         self.assertFalse(postiz["lead_or_sale_observed"])
 
     def test_contra_listing_preserves_scope_and_revenue_boundaries(self):
@@ -111,6 +113,10 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(contra["faq_count"], 3)
         self.assertEqual(len(contra["tags"]), 6)
         self.assertEqual(contra["title"], "MCP Server Pre-Deployment Review")
+        self.assertEqual(
+            contra["linked_example"],
+            "MCP Server Pre-Deployment Review: Executed Sample",
+        )
         self.assertIn("up-to-three-failed-check", contra["payment_policy"])
         self.assertIn("stay on Contra", contra["payment_policy"])
         self.assertFalse(contra["identity_verified"])
@@ -118,6 +124,18 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(contra["buyer_inquiry_observed"])
         self.assertFalse(contra["payment_observed"])
         self.assertEqual(contra["received_gross_usd"], 0)
+
+    def test_contra_case_is_exact_project_owned_proof(self):
+        case = self.payload["contra_marketplace"]["portfolio_case"]
+        self.assertEqual(case["state"], "published_live_verified")
+        self.assertIn("/p/om7mm3NN-", case["url"])
+        self.assertEqual(case["cover_dimensions"], "1600x1200")
+        self.assertEqual(
+            case["cover_sha256"],
+            hashlib.sha256(COVER.read_bytes()).hexdigest(),
+        )
+        self.assertEqual(case["tools"], ["Git", "GitHub", "Python"])
+        self.assertIn("not verified customer work", case["boundary"])
 
     def test_lazyblog_guide_is_live_without_claiming_attention(self):
         lazyblog = self.payload["channels"]["lazyblog"]

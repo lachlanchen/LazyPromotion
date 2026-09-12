@@ -1,5 +1,5 @@
 {
-  "version": 24,
+  "version": 25,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -443,7 +443,7 @@
         "youtube": "https://www.youtube.com/@pbsxmr/streams",
         "instagram": "https://www.instagram.com/komicsim/"
       },
-      "application_state": "sent_awaiting_reply",
+      "application_state": "closed_no_reply",
       "sent_at": "2026-09-06T20:14:00Z",
       "method": "Instagram message requested by the public hiring post",
       "delivery_evidence": "The visible project-only Instagram conversation contained the reviewed application and one playable 14.9-second private edit test after upload",
@@ -466,6 +466,16 @@
       "payment_confirmed": false,
       "received_revenue_usd": 0,
       "follow_up_not_before": "2026-09-13",
+      "last_review": {
+        "checked_at": "2026-09-13T02:16:47+08:00",
+        "authenticated_lazyingart_account": true,
+        "aggregate_unread_badge_count": 1,
+        "known_campaign_handle_in_loaded_inbox": false,
+        "conversation_opened": false,
+        "unrelated_message_opened": false,
+        "human_reply_observed": false,
+        "decision": "Close without a follow-up. The one unread item did not match the known campaign handle, so no unrelated conversation was opened."
+      },
       "automatic_follow_up": false,
       "future_agent_contact": false,
       "community_policy": "Current r/forhire Rule 10 prohibits bot contact; any future message is manual-operator only."
@@ -478,7 +488,7 @@
       "need": "Select compelling story moments from supplied AI short-drama footage, edit vertical clips, write captions, and publish through TikTok, Instagram, YouTube, and X",
       "published_compensation": "USD 1,000 per month for an estimated one to two hours per day",
       "poster_check": "The Reddit account was three months old with 186 combined karma and several prior creator-recruitment posts. The company and product were not named, so identity, scope, access, and payment terms still require verification.",
-      "application_state": "sent_awaiting_reply",
+      "application_state": "closed_no_reply",
       "sent_at": "2026-09-06T20:36:00Z",
       "method": "One Reddit private message requested by the public hiring post",
       "delivery_evidence": "The visible project-only Reddit compose form accepted one submit, cleared the recipient, title, and message fields, and displayed no submission error. No retry was made.",
@@ -501,6 +511,16 @@
       "scope_accepted": false,
       "payment_confirmed": false,
       "received_revenue_usd": 0,
+      "last_review": {
+        "checked_at": "2026-09-13T02:16:26+08:00",
+        "aggregate_unread_badge_count": 0,
+        "source_author_resolved_from_public_post": true,
+        "known_campaign_author_in_loaded_inbox": false,
+        "conversation_opened": false,
+        "message_body_collected": false,
+        "human_reply_observed": false,
+        "decision": "Close without a follow-up. No unread item or exact hiring-post-author match was present."
+      },
       "automatic_follow_up": false,
       "future_agent_contact": false,
       "community_policy": "Current r/forhire Rule 10 prohibits bot contact; any future message is manual-operator only."

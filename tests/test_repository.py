@@ -1529,7 +1529,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 24)
+        self.assertEqual(campaign["version"], 25)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -1618,7 +1618,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 24)
+        self.assertEqual(campaign["version"], 25)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -1790,7 +1790,7 @@ class RepositoryTests(unittest.TestCase):
             komicsim["source_url"],
             "https://www.reddit.com/r/forhire/comments/1w96dkr/hiring_video_editor_ongoing_work/",
         )
-        self.assertEqual(komicsim["application_state"], "sent_awaiting_reply")
+        self.assertEqual(komicsim["application_state"], "closed_no_reply")
         self.assertIn("USD 75", komicsim["proposal"])
         self.assertEqual(komicsim["private_test"]["duration_seconds"], 14.9)
         self.assertEqual(len(komicsim["private_test"]["video_sha256"]), 64)
@@ -1803,6 +1803,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(komicsim["automatic_follow_up"])
         self.assertFalse(komicsim["future_agent_contact"])
         self.assertIn("Rule 10", komicsim["community_policy"])
+        self.assertTrue(komicsim["last_review"]["authenticated_lazyingart_account"])
+        self.assertEqual(komicsim["last_review"]["aggregate_unread_badge_count"], 1)
+        self.assertFalse(komicsim["last_review"]["known_campaign_handle_in_loaded_inbox"])
+        self.assertFalse(komicsim["last_review"]["unrelated_message_opened"])
+        self.assertFalse(komicsim["last_review"]["human_reply_observed"])
         funnel = campaign["funnel"]
         self.assertEqual(funnel["state"], "applications_sent_awaiting_reply")
         self.assertEqual(funnel["outbound_application_count"], 5)
@@ -4049,8 +4054,8 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 24)
-        self.assertEqual(opportunity["application_state"], "sent_awaiting_reply")
+        self.assertEqual(campaign["version"], 25)
+        self.assertEqual(opportunity["application_state"], "closed_no_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])
         self.assertIn("Do not connect a channel", opportunity["trial_boundary"])
@@ -4059,6 +4064,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(opportunity["received_revenue_usd"], 0)
         self.assertFalse(opportunity["future_agent_contact"])
         self.assertIn("Rule 10", opportunity["community_policy"])
+        self.assertEqual(opportunity["last_review"]["aggregate_unread_badge_count"], 0)
+        self.assertTrue(opportunity["last_review"]["source_author_resolved_from_public_post"])
+        self.assertFalse(opportunity["last_review"]["known_campaign_author_in_loaded_inbox"])
+        self.assertFalse(opportunity["last_review"]["message_body_collected"])
+        self.assertFalse(opportunity["last_review"]["human_reply_observed"])
         self.assertEqual(campaign["funnel"]["outbound_application_count"], 5)
 
 

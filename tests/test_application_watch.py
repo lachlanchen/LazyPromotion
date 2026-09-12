@@ -132,7 +132,7 @@ class ApplicationWatchTests(unittest.TestCase):
 
     def test_current_campaigns_have_no_automatic_follow_up(self):
         report = application_watch.build_report(on=date(2026, 9, 9))
-        self.assertEqual(report["summary"]["awaiting_human_reply"], 38)
+        self.assertEqual(report["summary"]["awaiting_human_reply"], 36)
         self.assertEqual(report["summary"]["missing_review_schedule"], 0)
         self.assertIn(
             "vetto-code-reviewer",
@@ -214,10 +214,21 @@ class ApplicationWatchTests(unittest.TestCase):
                     if item.get("parent_campaign_id") == "content-repurposing-pilot"
                 ]
             ),
-            3,
+            1,
         )
         for item in report["applications"]:
             self.assertFalse(item["due_for_human_review"])
+
+        current = application_watch.build_report(on=date(2026, 9, 13))
+        self.assertEqual(current["summary"]["due_for_human_review"], 0)
+        self.assertNotIn(
+            "content-repurposing-pilot:additional_outreach:3",
+            [item["campaign_id"] for item in current["applications"]],
+        )
+        self.assertNotIn(
+            "content-repurposing-pilot:additional_outreach:4",
+            [item["campaign_id"] for item in current["applications"]],
+        )
 
 
 if __name__ == "__main__":

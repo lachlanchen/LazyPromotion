@@ -1,0 +1,129 @@
+{
+  "artifacts": {
+    "drc.json": {
+      "bytes": 1100,
+      "sha256": "621fc60ce762533a9bac53444083e19b9081e89844dfe8e4273a20ed1834775c"
+    },
+    "track-rounding-fixture-3d.png": {
+      "bytes": 586807,
+      "sha256": "87933ef13396be0767ef50d081f05c4ded5a03f47fdf4ab9eb6e33dd9a93828f"
+    },
+    "track-rounding-fixture-top.png": {
+      "bytes": 603439,
+      "sha256": "d5a778df6ec44c8c3291b51d733e039ef650dae5eca3d32862800d4b1f730119"
+    },
+    "track-rounding-fixture-top.svg": {
+      "bytes": 70168,
+      "sha256": "4a669b841c98f0c1104dbca3d5bcfc2fa6d93fc4d68c214fe5ee76a1e69600a8"
+    },
+    "track-rounding-fixture.kicad_pcb": {
+      "bytes": 31468,
+      "sha256": "2653d2509a2a07f4554a6e8b6968f8be52e04de817ccc9d833e0aa9a23bdb9da"
+    }
+  },
+  "boundaries": [
+    "The baseline does not include or evaluate a third-party plugin.",
+    "A plugin result requires separate before/after files, screenshots, DRC, and settings evidence.",
+    "Physical fabrication and electrical fitness are outside this software test fixture."
+  ],
+  "cases": [
+    {
+      "id": "C1",
+      "layers": [
+        "F.Cu"
+      ],
+      "net": "ORTHOGONAL_025",
+      "segment_count": 5,
+      "via_count": 0,
+      "width_mm": 0.25
+    },
+    {
+      "id": "C2",
+      "layers": [
+        "F.Cu"
+      ],
+      "net": "DOGLEG_045_025",
+      "segment_count": 5,
+      "via_count": 0,
+      "width_mm": 0.25
+    },
+    {
+      "id": "C3",
+      "layers": [
+        "F.Cu"
+      ],
+      "net": "MIXED_045_050",
+      "segment_count": 6,
+      "via_count": 0,
+      "width_mm": 0.5
+    },
+    {
+      "id": "C4",
+      "layers": [
+        "F.Cu"
+      ],
+      "net": "SHORT_NOTCH_100",
+      "segment_count": 4,
+      "via_count": 0,
+      "width_mm": 1.0
+    },
+    {
+      "id": "C5",
+      "layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "net": "VIA_TRANSITION_050",
+      "segment_count": 4,
+      "via_count": 1,
+      "width_mm": 0.5
+    },
+    {
+      "id": "C6",
+      "layers": [
+        "F.Cu"
+      ],
+      "net": "CLEARANCE_A_025",
+      "segment_count": 5,
+      "via_count": 0,
+      "width_mm": 0.25
+    },
+    {
+      "id": "C7",
+      "layers": [
+        "F.Cu"
+      ],
+      "net": "CLEARANCE_B_025",
+      "segment_count": 5,
+      "via_count": 0,
+      "width_mm": 0.25
+    }
+  ],
+  "drc": {
+    "unconnected_items": 0,
+    "violations": 0
+  },
+  "fixture": "track-rounding-fixture.kicad_pcb",
+  "geometry": {
+    "angle_counts_degrees": {
+      "0": 19,
+      "135": 6,
+      "45": 7,
+      "90": 2
+    },
+    "layer_segment_counts": {
+      "B.Cu": 2,
+      "F.Cu": 32
+    },
+    "segment_count": 34,
+    "via_count": 1,
+    "width_segment_counts_mm": {
+      "0.25": 20,
+      "0.5": 10,
+      "1": 4
+    }
+  },
+  "kicad_version": "10.0.3",
+  "scope": "Project-owned baseline for evaluating track-geometry plugins; no third-party plugin result.",
+  "version": 1
+}

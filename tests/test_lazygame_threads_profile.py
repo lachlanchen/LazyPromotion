@@ -20,7 +20,7 @@ class LazyGameThreadsProfileTests(unittest.TestCase):
         threads = self.campaign["channels"]["threads"]
         profile = threads["profile_context"]
 
-        self.assertEqual(self.campaign["version"], 3)
+        self.assertEqual(self.campaign["version"], 4)
         self.assertEqual(threads["state"], "one_direct_answer_sent")
         self.assertFalse(threads["linked_project"])
         self.assertEqual(profile["state"], "live_verified")
@@ -34,6 +34,9 @@ class LazyGameThreadsProfileTests(unittest.TestCase):
         self.assertIn("attention only", profile["boundary"])
         self.assertFalse(threads["follow_up_check"]["new_reply_observed"])
         self.assertEqual(threads["follow_up_check"]["visible_owned_posts_checked"], 4)
+        self.assertEqual(threads["follow_up_check"]["public_thread_views"], 287)
+        self.assertEqual(threads["follow_up_check"]["visible_reply_count"], 2)
+        self.assertEqual(threads["follow_up_check"]["known_owned_reply_count"], 1)
         self.assertEqual(threads["follow_up_check"]["unanswered_reply_count"], 0)
         self.assertEqual(threads["follow_up_check"]["response_action"], "none")
 

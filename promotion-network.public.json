@@ -326,7 +326,7 @@
       "label": "lazygame-teaching-explainer",
       "metadata": {
         "objective": "Answer concrete questions about how LazyGame separates exact game rules, game-specific analysis, and optional language-model explanations.",
-        "version": 3
+        "version": 4
       },
       "url": ""
     },

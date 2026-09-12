@@ -1,6 +1,6 @@
 {
   "id": "lazygame-teaching-explainer",
-  "version": 3,
+  "version": 4,
   "objective": "Answer concrete questions about how LazyGame separates exact game rules, game-specific analysis, and optional language-model explanations.",
   "source_evidence": {
     "project": "https://github.com/lachlanchen/LazyGame",
@@ -19,9 +19,12 @@
       "reply_summary": "Explained that deterministic code validates legal moves, game-specific engines can rank candidates, and an optional LLM explains the evidence without owning the rules.",
       "policy": "The reply answers the exact product question without a new link, offer, private message, or sales claim. It is a helpful interaction, not a qualified lead or revenue.",
       "follow_up_check": {
-        "checked_at": "2026-09-11T22:45:00Z",
+        "checked_at": "2026-09-12T01:18:03Z",
         "new_reply_observed": false,
         "visible_owned_posts_checked": 4,
+        "public_thread_views": 287,
+        "visible_reply_count": 2,
+        "known_owned_reply_count": 1,
         "unanswered_reply_count": 0,
         "response_action": "none",
         "policy": "Do not add a second message unless the reader asks another concrete question."

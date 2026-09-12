@@ -229,7 +229,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
         self.assertEqual(demand["public_stars"], 14)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 10)
         explicit_need = demand["current_explicit_need"]
@@ -277,6 +277,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(profile_route["editions"], 11)
         self.assertEqual(len(profile_route["links"]), 3)
         self.assertIn("not a lead or sale", profile_route["boundary"])
+        homepage = campaign["owned_route"]["homepage_conversion_handoff"]
+        self.assertEqual(homepage["state"], "live_and_verified")
+        self.assertEqual(homepage["languages"], 13)
+        self.assertEqual(homepage["mobile_width_checked"], 390)
+        self.assertFalse(homepage["horizontal_overflow"])
+        self.assertIn("67a5d90", homepage["website_commit"])
+        self.assertIn("utm_campaign=lazyremote_network_review", homepage["destination_url"])
+        self.assertIn("utm_content=service_chooser", homepage["destination_url"])
+        self.assertIn("one of six", homepage["role"].casefold())
+        self.assertIn("not a visit", homepage["boundary"])
         inbound = campaign["channels"]["github"]["inbound_monitor"]
         self.assertEqual(inbound["repository_allowlist_size"], 15)
         self.assertEqual(

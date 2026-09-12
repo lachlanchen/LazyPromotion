@@ -1667,3 +1667,12 @@ and fit check. The canonical page and REST record were verified once without a
 duplicate slug, and all seven cited and conversion links returned HTTP 200.
 LazyBlog commit `620de8e` records the publication. This is an owned conversion
 asset, not attention, a lead, payment, or revenue.
+
+The LazyingArt homepage now gives the portfolio's strongest owner-visible
+acquisition signal a direct bounded route. Website commit `67a5d90` replaces
+the lower-evidence Book Specimen chooser card with the separate USD 250
+LazyRemote Network Fit Review while leaving the book offer live at its own URL.
+All 13 homepage locales include the new card. An isolated browser verified the
+English, Simplified-Chinese, and 390 × 844 mobile render, then followed the
+tracked action to the live scope and complete sample. This is conversion-path
+readiness, not a visit, inquiry, qualified lead, payment, or revenue.

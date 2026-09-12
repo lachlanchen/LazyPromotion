@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 12,
+  "version": 13,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-12T16:32:17Z",
@@ -130,6 +130,20 @@
         "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
       ],
       "boundary": "The profile presents LazyRemote, the open-source core, and the UU compatibility bridge as related but distinct projects. A profile view or click is attention, not a lead or sale."
+    },
+    "homepage_conversion_handoff": {
+      "state": "live_and_verified",
+      "source_url": "https://lazying.art/#services",
+      "destination_url": "https://remote.lazying.art/?utm_source=lazyingart&utm_medium=website&utm_campaign=lazyremote_network_review&utm_content=service_chooser#review",
+      "website_commit": "67a5d90afb04c4ea233b9d86f4c532459313e280",
+      "pages_build_id": 1211283347,
+      "languages": 13,
+      "mobile_width_checked": 390,
+      "horizontal_overflow": false,
+      "role": "One of six bounded service choices on the LazyingArt homepage, replacing the lower-evidence Book Specimen card while the separate book route remains live.",
+      "reason": "The UU Remote Ubuntu bridge has the portfolio's strongest owner-visible acquisition signal, and its separate vendor-independent LazyRemote review already has a complete public sample, metadata-only fit check, exact USD 250 scope, and reviewed payment readiness.",
+      "verification": "GitHub Pages built the exact website commit. The live homepage returned the 13-locale LazyRemote card and tracked review link; an isolated visible browser rendered English, Simplified Chinese, and a 390 by 844 mobile card, then followed the visible action to the live USD 250 review and complete sample.",
+      "boundary": "Homepage publication and route availability are conversion readiness, not a visit, inquiry, qualified lead, payment, sale, or received revenue."
     },
     "simplified_chinese_conversion_handoff": {
       "state": "live_direct_review_anchor",

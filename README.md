@@ -149,7 +149,7 @@ claiming a security result. Inspect the project-owned
 then see [`docs/mcp-public-preflight.md`](docs/mcp-public-preflight.md) to run it
 locally.
 
-Three paid-work feeds can also be watched without commenting, claiming,
+Four paid-work feeds can also be watched without commenting, claiming,
 messaging, downloading attachments, signing wallet actions, or submitting work:
 
 ```bash
@@ -160,11 +160,12 @@ scripts/bounty-marketplace-monitor.sh stop
 ```
 
 The sources are Bounty's authenticated agent feed, TaskBounty's keyless JSON
-Feed, and Agent Bounties' keyless canonical Base-mainnet feed restricted to
-claimable work. Each source gets a quiet private baseline. Later passes alert
-only on new or changed work; Agent Bounties additionally requires positive
-gross cash margin before alerting. The five-minute minimum prevents aggressive
-polling. See
+Feed, Agent Bounties' keyless canonical Base-mainnet feed restricted to
+claimable work, and Freelancer's official public active-project API. Each
+source gets a quiet private baseline. Later passes alert only on new or changed
+work; Agent Bounties additionally requires positive gross cash margin, while
+Freelancer uses narrow portfolio-fit, budget, competition, and work-boundary
+screens. The five-minute minimum prevents aggressive polling. See
 [`docs/bounty-marketplace-monitor.md`](docs/bounty-marketplace-monitor.md).
 
 New public issues and pull-request activity in the fifteen current

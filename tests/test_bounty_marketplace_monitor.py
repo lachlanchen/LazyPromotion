@@ -303,6 +303,23 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
             ),
         )
         manual_retyping["jobs"] = [{"name": "OCR"}, {"name": "Copy Typing"}]
+        lecture = self.freelancer_project(
+            40710008,
+            title="English lecture audio transcription",
+            description=(
+                "Transcribe one academic lecture and return a polished transcript."
+            ),
+        )
+        lecture["jobs"] = [{"name": "Transcription"}, {"name": "Academic Writing"}]
+        unsupported_lecture = self.freelancer_project(
+            40710009,
+            title="Amharic lecture verbatim transcript",
+            description="Transcribe one academic lecture fully in Amharic.",
+        )
+        unsupported_lecture["jobs"] = [
+            {"name": "Transcription"},
+            {"name": "English (US) Translator"},
+        ]
         report = monitor.fetch_freelancer_candidate_projects(
             opener=self.opener(
                 [
@@ -316,16 +333,20 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                             live_access,
                             manual_retyping,
                         ]
-                    )
+                    ),
+                    self.freelancer_feed(
+                        [lecture, unsupported_lecture, qualified]
+                    ),
                 ],
                 requests,
             )
         )
 
-        self.assertEqual(report["pages_read"], 1)
-        self.assertEqual(report["projects_considered"], 7)
+        self.assertEqual(report["pages_read"], 2)
+        self.assertEqual(report["projects_considered"], 9)
         self.assertEqual(
-            [row["project_id"] for row in report["projects"]], [40710001]
+            [row["project_id"] for row in report["projects"]],
+            [40710001, 40710008],
         )
         row = report["projects"][0]
         self.assertEqual(row["matched_terms"], ["kicad"])
@@ -341,15 +362,26 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         self.assertEqual(query["limit"], ["100"])
         self.assertEqual(query["or_search_query"], ["true"])
         self.assertIn("playwright", query["query"][0])
+        media_query = parse_qs(urlparse(requests[1]["url"]).query)
+        self.assertEqual(media_query["query"], ["lecture transcription"])
+        self.assertEqual(media_query["or_search_query"], ["false"])
+        self.assertEqual(
+            report["projects"][1]["matched_terms"], ["lecture_transcription"]
+        )
+        self.assertTrue(all(row["method"] == "GET" for row in requests))
+        self.assertTrue(all(row["authorization"] is None for row in requests))
         serialized = json.dumps(report)
         self.assertNotIn("return a tested report", serialized)
+        self.assertNotIn("return a polished transcript", serialized)
         self.assertRegex(row["fingerprint"], r"^[0-9a-f]{64}$")
 
-        invalid = self.freelancer_project(40710008)
+        invalid = self.freelancer_project(40710010)
         invalid["currency"]["exchange_rate"] = 0
         with self.assertRaisesRegex(RuntimeError, "exchange rate"):
             monitor.fetch_freelancer_candidate_projects(
-                opener=self.opener([self.freelancer_feed([invalid])], [])
+                opener=self.opener(
+                    [self.freelancer_feed([invalid]), self.freelancer_feed()], []
+                )
             )
 
     def test_baseline_then_new_and_updated_versions_raise_private_review_alerts(self):
@@ -363,6 +395,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                     self.page([{"id": "alpha", "version": 1}]),
                     self.taskbounty_feed(),
                     [],
+                    self.freelancer_feed(),
                     self.freelancer_feed(),
                 ],
                 requests,
@@ -386,6 +419,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                     ),
                     self.taskbounty_feed(),
                     [],
+                    self.freelancer_feed(),
                     self.freelancer_feed(),
                 ],
                 requests,
@@ -503,7 +537,9 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
     def test_freelancer_baseline_then_new_project_is_review_only(self):
         first_project = self.freelancer_project(40710001)
         first_rows = monitor.fetch_freelancer_candidate_projects(
-            opener=self.opener([self.freelancer_feed([first_project])], [])
+            opener=self.opener(
+                [self.freelancer_feed([first_project]), self.freelancer_feed()], []
+            )
         )
         first = monitor.build_state(
             {"bounties": [], "pages_read": 1},
@@ -522,7 +558,9 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         )
         new["jobs"] = [{"name": "Test Automation"}]
         second_rows = monitor.fetch_freelancer_candidate_projects(
-            opener=self.opener([self.freelancer_feed([changed, new])], [])
+            opener=self.opener(
+                [self.freelancer_feed([changed, new]), self.freelancer_feed()], []
+            )
         )
         second = monitor.build_state(
             {"bounties": [], "pages_read": 1},

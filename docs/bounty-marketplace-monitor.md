@@ -88,10 +88,14 @@ implementation and canonical claimable-work endpoint:
 Freelancer was added on September 13 through its official public active-project
 API:
 
-- one keyless GET asks only for current work matching MCP, Playwright, KiCad,
-  local-AI/OCR, or SSH proof already present in the portfolio;
-- broad Android, media, and imaging keywords were deliberately excluded after
-  a live sample produced unrelated support and data-entry work;
+- narrow keyless GET searches ask only for current work matching MCP,
+  Playwright, KiCad, local-AI/OCR, SSH, or the exact `lecture transcription`
+  lane already supported by the portfolio;
+- lecture-transcription rows are retained only when the public title or
+  description explicitly says English; marketplace language-category tags do
+  not establish delivery competence;
+- broad Android, generic media, and imaging keywords remain excluded after a
+  live sample produced unrelated support and data-entry work;
 - missing or malformed budgets, closed/private/local projects, low ceilings,
   crowded listings, preferred-only work, KYC-gated work, sales/recruiting,
   manual retyping, and obvious live or employment commitments are rejected

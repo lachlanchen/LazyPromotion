@@ -31,6 +31,10 @@ AGENTBOUNTIES_FEED_URL = (
 )
 FREELANCER_ACTIVE_URL = "https://www.freelancer.com/api/projects/0.1/projects/active/"
 FREELANCER_QUERY = "mcp playwright kicad rag llm ocr ssh"
+FREELANCER_SEARCHES = (
+    (FREELANCER_QUERY, True),
+    ("lecture transcription", False),
+)
 FREELANCER_MATCH_PATTERNS = {
     "kicad": re.compile(r"\bkicad\b", re.IGNORECASE),
     "local_ai": re.compile(
@@ -39,6 +43,13 @@ FREELANCER_MATCH_PATTERNS = {
     "mcp": re.compile(r"\bmcp\b|model context protocol", re.IGNORECASE),
     "playwright": re.compile(r"\bplaywright\b", re.IGNORECASE),
     "remote_access": re.compile(r"\bssh\b|remote desktop|reverse tunnel", re.IGNORECASE),
+    "lecture_transcription": re.compile(
+        r"\b(?:lecture|academic|instructional)\b[\s\S]{0,120}"
+        r"\btranscri(?:be|bed|bing|ption|ptions|pt)\b|"
+        r"\btranscri(?:be|bed|bing|ption|ptions|pt)\b[\s\S]{0,120}"
+        r"\b(?:lecture|academic|instructional)\b",
+        re.IGNORECASE,
+    ),
 }
 FREELANCER_EXCLUSION_PATTERNS = {
     "commission_or_recruiting": re.compile(
@@ -317,42 +328,58 @@ def _freelancer_number(value: Any, label: str) -> float:
 
 def fetch_freelancer_candidate_projects(*, opener: Opener = urlopen) -> dict[str, Any]:
     """Read recent active projects from Freelancer's official public API."""
-    url = FREELANCER_ACTIVE_URL + "?" + urlencode(
-        {
-            "query": FREELANCER_QUERY,
-            "or_search_query": "true",
-            "limit": 100,
-            "compact": "true",
-            "job_details": "true",
-            "full_description": "true",
-            "sort_field": "time_updated",
-        }
-    )
-    request = Request(
-        url,
-        headers={"Accept": "application/json"},
-        method="GET",
-    )
-    try:
-        with opener(request, timeout=30) as response:
-            payload = json.load(response)
-    except HTTPError as exc:
-        raise RuntimeError(
-            f"Freelancer public project read failed with HTTP {exc.code}"
-        ) from exc
-    except (OSError, URLError, json.JSONDecodeError) as exc:
-        raise RuntimeError(
-            "Freelancer public project read did not return valid JSON"
-        ) from exc
-    if not isinstance(payload, dict) or payload.get("status") != "success":
-        raise RuntimeError("Freelancer returned an invalid public project feed")
-    result = payload.get("result")
-    if not isinstance(result, dict) or not isinstance(result.get("projects"), list):
-        raise RuntimeError("Freelancer returned an invalid public project feed")
+    raw_projects: list[dict[str, Any]] = []
+    api_seen_ids: set[int] = set()
+    for query, or_search in FREELANCER_SEARCHES:
+        url = (
+            FREELANCER_ACTIVE_URL
+            + "?"
+            + urlencode(
+                {
+                    "query": query,
+                    "or_search_query": "true" if or_search else "false",
+                    "limit": 100,
+                    "compact": "true",
+                    "job_details": "true",
+                    "full_description": "true",
+                    "sort_field": "time_updated",
+                }
+            )
+        )
+        request = Request(
+            url,
+            headers={"Accept": "application/json"},
+            method="GET",
+        )
+        try:
+            with opener(request, timeout=30) as response:
+                payload = json.load(response)
+        except HTTPError as exc:
+            raise RuntimeError(
+                f"Freelancer public project read failed with HTTP {exc.code}"
+            ) from exc
+        except (OSError, URLError, json.JSONDecodeError) as exc:
+            raise RuntimeError(
+                "Freelancer public project read did not return valid JSON"
+            ) from exc
+        if not isinstance(payload, dict) or payload.get("status") != "success":
+            raise RuntimeError("Freelancer returned an invalid public project feed")
+        result = payload.get("result")
+        if not isinstance(result, dict) or not isinstance(result.get("projects"), list):
+            raise RuntimeError("Freelancer returned an invalid public project feed")
+        for raw in result["projects"]:
+            if not isinstance(raw, dict):
+                raise RuntimeError("Freelancer returned an invalid project summary")
+            project_id = raw.get("id")
+            if isinstance(project_id, int) and not isinstance(project_id, bool):
+                if project_id in api_seen_ids:
+                    continue
+                api_seen_ids.add(project_id)
+            raw_projects.append(raw)
 
     rows: list[dict[str, Any]] = []
     seen_ids: set[int] = set()
-    for raw in result["projects"]:
+    for raw in raw_projects:
         if not isinstance(raw, dict):
             raise RuntimeError("Freelancer returned an invalid project summary")
         project_id = raw.get("id")
@@ -428,11 +455,16 @@ def fetch_freelancer_candidate_projects(*, opener: Opener = urlopen) -> dict[str
             or raw.get("local") is not False
         ):
             continue
-        searchable = " ".join([title, description, *job_names])
+        listing_text = " ".join([title, description])
+        searchable = " ".join([listing_text, *job_names])
         matched_terms = sorted(
             name
             for name, pattern in FREELANCER_MATCH_PATTERNS.items()
             if pattern.search(searchable)
+            and (
+                name != "lecture_transcription"
+                or re.search(r"\bEnglish\b", listing_text, re.IGNORECASE)
+            )
         )
         excluded_terms = sorted(
             name
@@ -500,8 +532,8 @@ def fetch_freelancer_candidate_projects(*, opener: Opener = urlopen) -> dict[str
     rows.sort(key=lambda row: row["project_id"])
     return {
         "projects": rows,
-        "pages_read": 1,
-        "projects_considered": len(result["projects"]),
+        "pages_read": len(FREELANCER_SEARCHES),
+        "projects_considered": len(raw_projects),
     }
 
 
@@ -697,7 +729,7 @@ def build_state(
     )
     freelancer_observation = freelancer_observation or {
         "projects": [],
-        "pages_read": 1,
+        "pages_read": len(FREELANCER_SEARCHES),
         "projects_considered": 0,
     }
     freelancer_rows = freelancer_observation.get("projects")
@@ -705,7 +737,7 @@ def build_state(
     freelancer_considered = freelancer_observation.get("projects_considered")
     if (
         not isinstance(freelancer_rows, list)
-        or freelancer_pages != 1
+        or freelancer_pages != len(FREELANCER_SEARCHES)
         or isinstance(freelancer_considered, bool)
         or not isinstance(freelancer_considered, int)
         or freelancer_considered < len(freelancer_rows)

@@ -84,6 +84,23 @@ supported by current language proof, so no bid was placed. The monitor now
 suppresses manual-retyping listings while retaining bounded OCR and document
 pipeline work.
 
+The [English lecture transcription
+brief](https://www.freelancer.com/projects/academic-writing/English-Lecture-Audio-Transcription-40703433)
+is a genuine match for the existing Susskind, Video2Book, and local
+transcription evidence. Visible authenticated review also showed identity,
+payment, deposit, email, profile, and phone verification. It still did not pass
+the commercial gate: “several recordings” has no total audio duration, and the
+project is restricted to accounts maintaining at least USD 20 on Freelancer.
+The account currently shows three free bids remaining. No funds were added and
+no bid was placed for an unbounded batch.
+
+The persistent public-feed monitor now checks this media lane separately from
+its code queries. It retains only lecture-transcription rows whose public title
+or description explicitly states English, so an Amharic brief tagged with
+English marketplace categories does not become a false capability match. The
+live two-query pass considered 167 unique public rows and raised no unresolved
+alert after the reviewed English listing entered the seen state.
+
 The public Docker sandbox authentication thread produced a genuine follow-up
 after the first technical answer. The reporter confirmed that the write-tools
 flag solved GitHub MCP access and showed that Copilot login was not surviving

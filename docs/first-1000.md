@@ -1718,6 +1718,16 @@ duplicate slug, and all seven cited and conversion links returned HTTP 200.
 LazyBlog commit `620de8e` records the publication. This is an owned conversion
 asset, not attention, a lead, payment, or revenue.
 
+The reporter's follow-up exposed one missing diagnostic: Copilot `/login`
+worked for the process but disappeared after exit because the WSL sandbox had
+no system vault and the visible plaintext-storage prompt had not saved account
+state. The existing guide now distinguishes that login-storage boundary from
+GitHub MCP access, recommends a sandbox-scoped Copilot-supported token first,
+and documents `~/.copilot/config.json` only as a trusted-sandbox fallback.
+LazyBlog commit `0697deb` updated the same post ID and live canonical URL; no
+duplicate article or social item was created. This is stronger owned evidence,
+not a lead, payment, or revenue.
+
 The LazyingArt homepage now gives the portfolio's strongest owner-visible
 acquisition signal a direct bounded route. Website commit `67a5d90` replaces
 the lower-evidence Book Specimen chooser card with the separate USD 250

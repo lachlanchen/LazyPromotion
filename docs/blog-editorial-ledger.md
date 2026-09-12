@@ -4,9 +4,9 @@ Last verified: 2026-09-13 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `d2b87408375bf07dc8357c0affd38cc64ad422c4`
+Verified BLOG commit: `0697deb619f59294b0fc36622150c53f03435dce`
 
-Campaign range: `3b45351^..d2b87408375bf07dc8357c0affd38cc64ad422c4`
+Campaign range: `3b45351^..0697deb619f59294b0fc36622150c53f03435dce`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -255,6 +255,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 | BLOG commit | Post | Outcome |
 | --- | ---: | --- |
+| `0697deb` | 3834 | Added the WSL no-vault login-persistence diagnosis, a sandbox-scoped Copilot-token route, and the bounded plaintext fallback to the existing Docker MCP guide |
 | `d2b8740` | — | Preflight the translation route before any source-post write, preventing missing-plugin partial updates |
 | `1991e2e` | 3818 | Added the merged clipboard contribution, tested boundaries, and original contributor credit to the live Chinese UU guide |
 | `ac81173` | 3810 | Published a durable chat-archive and reviewed-current-state guide in English, Traditional Chinese, and Japanese |

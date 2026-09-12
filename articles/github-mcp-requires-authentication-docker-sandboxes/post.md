@@ -13,7 +13,7 @@ tags:
   - "MCP"
   - "Authentication"
   - "Developer Tools"
-excerpt: "Separate the Docker sandbox secret, Copilot CLI's built-in GitHub MCP server, and workspace overrides when GitHub MCP still says it requires authentication."
+excerpt: "Separate the Docker sandbox secret, Copilot CLI login storage, the built-in GitHub MCP server, and workspace overrides when authentication fails or disappears after exit."
 ---
 
 When Copilot CLI reports `MCP server 'github-mcp-server' requires authentication` inside Docker Sandboxes, adding another token to another JSON file is rarely the best first move.
@@ -43,6 +43,22 @@ sbx secret set github --command 'gh auth token'
 ```
 
 The selected GitHub account must have Copilot access. A global secret added after a sandbox starts will not repair that existing sandbox; either use the sandbox-scoped form or recreate it.
+
+## When `/login` works only until you exit
+
+This is usually a different boundary from the GitHub MCP server.
+
+Copilot CLI normally saves its OAuth login in the operating system's credential vault. A headless Linux or WSL sandbox may not have a usable keyring. In that case Copilot asks whether it may store the token as plain text. Choosing **No** cancels the sign-in without saving account state, so the next Copilot process asks you to log in again.
+
+The safer route is to fix the Docker-managed credential rather than copy an OAuth token into the sandbox. If the host token returned by `gh auth token` lets `gh` work but Copilot still asks for login, bind a Copilot-supported token to the existing sandbox interactively:
+
+```bash
+sbx secret set github --sandbox <sandbox-name>
+```
+
+For a personal fine-grained token, GitHub requires the **Copilot Requests** account permission. Add only the repository permissions needed by the GitHub MCP tools. Copilot CLI does not accept classic personal access tokens. Enter the token at the prompt; do not place it in a shell command, repository file, or screenshot.
+
+The fallback is to run `/login` again and accept Copilot's plain-text option. When no vault is available, Copilot uses `~/.copilot/config.json`; the same persistent sandbox can reuse it after the process exits. This is less isolated than Docker's host-side secret store, so use it only in a trusted sandbox and never commit or copy that file.
 
 ## Test the built-in server before adding another one
 
@@ -96,4 +112,6 @@ For a different remote MCP server, the same habit applies: identify the client, 
 - [Docker Sandboxes: manage credentials](https://docs.docker.com/ai/sandboxes/configuration/credentials/)
 - [Docker Sandboxes: run commands inside a sandbox](https://docs.docker.com/ai/sandboxes/usage/)
 - [GitHub Copilot CLI: add MCP servers](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers)
+- [GitHub Copilot CLI: authenticate](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/authenticate-copilot-cli)
+- [GitHub Copilot CLI: troubleshoot authentication](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/troubleshoot-copilot-cli-auth)
 - [GitHub MCP Server: Copilot CLI installation](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-copilot-cli.md)

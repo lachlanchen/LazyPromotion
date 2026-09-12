@@ -94,3 +94,23 @@ sandbox-scoped Docker secret carrying a Copilot-supported token, and kept the
 plaintext `~/.copilot/config.json` fallback explicit. It included no offer or
 LazyingArt link. This is a helpful interaction, not an inquiry, lead, contract,
 payment, or revenue event.
+
+The new persistence diagnosis was also added to the existing owned Docker MCP
+guide rather than published as a duplicate article. The live post now explains
+the no-vault prompt, Copilot-supported token boundary, sandbox-scoped secret,
+and plaintext fallback while preserving the same post ID and quiet executed-
+sample path. LazyBlog commit `0697deb` records the in-place update. Publication
+is conversion readiness, not traffic, a lead, payment, or revenue.
+
+## Owned-channel conversion check
+
+A read-only 30-day Postiz pass does not justify more publishing volume. X
+reported 96 impressions and one reply; visible review showed that reply was the
+account's own sample-card continuation, not an external response. The three
+published Instagram items each reported only 24–34 views, 11–13 reach, zero
+saves, zero comments, and at most two likes. Account-level Instagram totals
+were 362 views, ten likes, one share, and zero comments. YouTube reported three
+subscriber gains during the window, but no inquiry or payment evidence;
+LinkedIn and Reddit returned no platform metrics through Postiz. The existing
+22-item queue was left unchanged, and the isolated review browser was stopped.
+These are attention signals, not leads or revenue.

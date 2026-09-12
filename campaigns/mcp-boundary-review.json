@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 32,
+  "version": 33,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -112,9 +112,10 @@
     "payment_policy": "After a positive fit check and accepted written scope, direct-site clients receive one reviewed Stripe request. Marketplace-origin contracts and payments stay on that marketplace. This is not a public self-serve checkout."
   },
   "public_repository_preflight_generator": {
-    "state": "live_local_verified",
+    "state": "live_public_offer_exposed_verified",
     "script": "mcp_public_preflight.py",
     "documentation": "docs/mcp-public-preflight.md",
+    "source_revision": "8b06e0bfb6485dc30fa15f425c37394bb1dd223c",
     "input": "One clean public GitHub repository-root URL.",
     "method": "Pins the default-branch commit and tree, reads a bounded set of public text blobs through explicit GitHub API GET requests, and detects static surface clues without cloning or executing repository code.",
     "output": "Owner-only Markdown under the Git-ignored .local/mcp-preflight directory.",
@@ -127,6 +128,17 @@
       "selected_files": 16,
       "readable_files": 16,
       "repository_code_executed": false
+    },
+    "landing_exposure": {
+      "state": "live_verified",
+      "url": "https://lazying.art/mcp-boundary-review/#preflight",
+      "website_commit": "e858369d35353f81216722554bbd2c9099a86fa2",
+      "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34707424829",
+      "paths": [
+        "revision-pinned source",
+        "revision-pinned local-run guide"
+      ],
+      "verification": "All 30 website contract entrypoints passed. GitHub Pages deployment succeeded, the live page was byte-identical to the committed HTML, and both pinned public GitHub destinations returned HTTP 200."
     },
     "boundary": "The generator is a free scoping aid. It does not read private repositories, submit a fit check, create a payment, establish a vulnerability, or replace the paid executed review."
   },

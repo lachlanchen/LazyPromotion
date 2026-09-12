@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 8,
+  "version": 9,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -129,11 +129,11 @@
     "boundary": "Project-owned evidence, not a customer result, penetration test, security certification, or promise of production fitness."
   },
   "owned_delivery": {
-    "website_commit": "6d6b9501fa5561bbf675aaf04aaa76ec0afde840",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34689172167",
+    "website_commit": "3c361c125478b5e15e786d8487c5bc2d538bc320",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34691551784",
     "deployment_state": "success",
     "homepage": "The six-route chooser replaces the lower-priority Story Clip card with this current software-first offer in thirteen locales.",
-    "verification": "All 33 website contract tests passed. Desktop and mobile renders had no horizontal overflow. The revised offer, five-input fit check, sample, packet, checksum, and printable PDF returned HTTP 200. The live PDF matched SHA-256 0c2c62e9d31df6451bc91c0abbc2ae631bb5baf3d4c2e65a58d4656034144aad."
+    "verification": "All 33 website contract tests passed. The live offer now uses one base revision and the same server, transport, and reviewed surface consistently, and links to the practical ten-check guide with campaign attribution. GitHub Pages deployment 34691551784 succeeded and the deployed HTML returned the exact revised contract and guide route."
   },
   "intake": {
     "state": "live_verified",

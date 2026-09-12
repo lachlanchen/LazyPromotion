@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 8)
+        self.assertEqual(self.payload["version"], 9)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -148,6 +148,16 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(lazyblog["published_post_id"], 3829)
         self.assertIn("without duplication", lazyblog["verification"])
         self.assertFalse(lazyblog["lead_or_sale_observed"])
+
+    def test_owned_offer_links_the_guide_with_one_exact_boundary(self):
+        delivery = self.payload["owned_delivery"]
+        self.assertEqual(
+            delivery["website_commit"],
+            "3c361c125478b5e15e786d8487c5bc2d538bc320",
+        )
+        self.assertIn("actions/runs/34691551784", delivery["deployment_run"])
+        self.assertIn("same server, transport, and reviewed surface", delivery["verification"])
+        self.assertIn("practical ten-check guide", delivery["verification"])
 
 
 if __name__ == "__main__":

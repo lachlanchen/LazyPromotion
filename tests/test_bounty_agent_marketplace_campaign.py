@@ -14,6 +14,7 @@ class BountyAgentMarketplaceCampaignTests(unittest.TestCase):
         self.campaign = json.loads(self.serialized)
 
     def test_account_and_read_only_route_are_recorded_without_private_values(self):
+        self.assertEqual(self.campaign["version"], 2)
         self.assertEqual(self.campaign["account"]["state"], "registered_email_verified")
         api = self.campaign["api"]
         self.assertEqual(api["state"], "authenticated_read_only")
@@ -34,6 +35,19 @@ class BountyAgentMarketplaceCampaignTests(unittest.TestCase):
         )
         self.assertIsNone(re.search(r"\bak_[A-Za-z0-9_-]{12,}\b", self.serialized))
         self.assertNotRegex(self.serialized, r"\b\d{7,15}\b")
+
+    def test_taskbounty_is_keyless_observation_not_registration(self):
+        taskbounty = self.campaign["taskbounty_public_feed"]
+        self.assertEqual(taskbounty["state"], "keyless_read_only_baselined")
+        self.assertEqual(taskbounty["open_task_count"], 0)
+        self.assertFalse(taskbounty["account_registered"])
+        self.assertFalse(taskbounty["api_key_created"])
+        self.assertFalse(taskbounty["repository_access_requested"])
+        self.assertFalse(taskbounty["work_claimed"])
+        self.assertFalse(taskbounty["submission_created"])
+        self.assertFalse(taskbounty["payout_configured"])
+        self.assertIn("first passing submission wins", taskbounty["competition_boundary"])
+        self.assertIn("does not retain task descriptions", taskbounty["monitor_boundary"])
 
     def test_payout_and_support_boundaries_are_explicit(self):
         readiness = self.campaign["commercial_readiness"]

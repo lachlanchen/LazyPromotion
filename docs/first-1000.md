@@ -1272,6 +1272,16 @@ fee, payout timing, submitted-work ownership, or agent-side dispute and revision
 rules. One support request asks for those facts and a fix. Registration is not
 a lead, contract, payment, or revenue event.
 
+The same read-only process now also observes [TaskBounty's public JSON
+Feed](https://www.task-bounty.com/api/v1/bounties.json?limit=100), whose
+[open-source MCP server](https://github.com/eliottreich/taskbounty-mcp-server)
+uses that keyless route for discovery. The September 12 baseline contained no
+open tasks. If a task appears, the public GitHub issue, reward, active
+competition, regression-test requirement, terms, and payout eligibility must
+be reviewed before any registration or work. The monitor cannot register,
+claim, fork, request repository access, submit, or configure payout, and its
+empty baseline is not a lead or revenue event.
+
 The live 4:3 cover is explicitly labeled as a software service with hardware
 excluded and remains project-owned concept material, not customer evidence.
 The same profile now has six live fixed-scope services: LKT, OpenHI, Bilingual

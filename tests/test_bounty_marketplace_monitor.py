@@ -65,6 +65,14 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
             "next_cursor": cursor,
         }
 
+    @staticmethod
+    def taskbounty_feed(rows=None):
+        return {
+            "version": "https://jsonfeed.org/version/1.1",
+            "title": "TaskBounty · Open Bounties",
+            "items": rows or [],
+        }
+
     def test_credentials_must_be_private_regular_singly_linked_and_valid(self):
         self.assertEqual(monitor.load_api_key(self.credentials), self.api_key)
 
@@ -143,13 +151,53 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                 self.api_key, opener=self.opener([stalled], [])
             )
 
+    def test_taskbounty_public_feed_is_get_only_keyless_and_minimal(self):
+        requests = []
+        report = monitor.fetch_taskbounty_open_tasks(
+            opener=self.opener(
+                [
+                    self.taskbounty_feed(
+                        [
+                            {
+                                "id": "tb-two",
+                                "title": "Fix the second regression",
+                                "date_modified": "2026-09-12T12:00:00Z",
+                                "content_text": "Untrusted task details stay out of state.",
+                            },
+                            {"id": "tb-one", "title": "Fix the first regression"},
+                        ]
+                    )
+                ],
+                requests,
+            )
+        )
+        self.assertEqual([row["task_id"] for row in report["tasks"]], ["tb-one", "tb-two"])
+        self.assertEqual(requests[0]["method"], "GET")
+        self.assertIsNone(requests[0]["authorization"])
+        self.assertEqual(requests[0]["timeout"], 30)
+        serialized = json.dumps(report)
+        self.assertNotIn("Untrusted task details", serialized)
+        self.assertRegex(report["tasks"][0]["fingerprint"], r"^[0-9a-f]{64}$")
+
+        invalid = self.taskbounty_feed([{"title": "missing id"}])
+        with self.assertRaisesRegex(RuntimeError, "no ID"):
+            monitor.fetch_taskbounty_open_tasks(
+                opener=self.opener([invalid], [])
+            )
+
     def test_baseline_then_new_and_updated_versions_raise_private_review_alerts(self):
         requests = []
         first = monitor.monitor_once(
             credentials_path=self.credentials,
             state_path=self.state,
             root=self.root,
-            opener=self.opener([self.page([{"id": "alpha", "version": 1}])], requests),
+            opener=self.opener(
+                [
+                    self.page([{"id": "alpha", "version": 1}]),
+                    self.taskbounty_feed(),
+                ],
+                requests,
+            ),
             checked_at="2026-09-11T12:00:00Z",
         )
         self.assertTrue(first["baseline_created"])
@@ -166,7 +214,8 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                             {"id": "alpha", "version": 2},
                             {"id": "beta", "version": 1},
                         ]
-                    )
+                    ),
+                    self.taskbounty_feed(),
                 ],
                 requests,
             ),
@@ -188,8 +237,58 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         self.assertFalse(second["policy"]["comments_or_messages_written"])
         self.assertFalse(second["policy"]["claims_created"])
         self.assertFalse(second["policy"]["submissions_created"])
+        self.assertFalse(second["policy"]["accounts_registered"])
+        self.assertFalse(second["policy"]["payout_methods_configured"])
         self.assertTrue(second["policy"]["available_work_is_not_a_lead"])
         self.assertTrue(second["policy"]["available_work_is_not_revenue"])
+
+    def test_taskbounty_baseline_then_change_raises_review_only_alerts(self):
+        first_task = {
+            "id": "tb-one",
+            "title": "Fix one Python regression",
+            "date_published": "2026-09-12T12:00:00Z",
+        }
+        first = monitor.build_state(
+            {"bounties": [], "pages_read": 1},
+            None,
+            taskbounty_observation={
+                "tasks": monitor.fetch_taskbounty_open_tasks(
+                    opener=self.opener([self.taskbounty_feed([first_task])], [])
+                )["tasks"],
+                "pages_read": 1,
+            },
+            checked_at="2026-09-12T12:01:00Z",
+        )
+        self.assertTrue(first["taskbounty_baseline_created"])
+        self.assertEqual(first["alerts"], [])
+
+        changed_task = {**first_task, "title": "Fix one Python parser regression"}
+        new_task = {"id": "tb-two", "title": "Repair a TypeScript test"}
+        second = monitor.build_state(
+            {"bounties": [], "pages_read": 1},
+            first,
+            taskbounty_observation={
+                "tasks": monitor.fetch_taskbounty_open_tasks(
+                    opener=self.opener(
+                        [self.taskbounty_feed([changed_task, new_task])], []
+                    )
+                )["tasks"],
+                "pages_read": 1,
+            },
+            checked_at="2026-09-12T12:06:00Z",
+        )
+        self.assertFalse(second["taskbounty_baseline_created"])
+        self.assertEqual(
+            [(row["kind"], row["task_id"]) for row in second["alerts"]],
+            [
+                ("taskbounty_task_changed", "tb-one"),
+                ("new_taskbounty_task", "tb-two"),
+            ],
+        )
+        self.assertTrue(all(row["provider"] == "taskbounty" for row in second["alerts"]))
+        self.assertTrue(
+            all("do not register" in row["action"] for row in second["alerts"])
+        )
 
     def test_seen_versions_survive_work_leaving_the_available_feed(self):
         previous = {

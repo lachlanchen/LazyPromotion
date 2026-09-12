@@ -59,7 +59,7 @@ never count as revenue.
 | [`github_portfolio_audit.py`](github_portfolio_audit.py) | Private, read-only attention audit across every current public source repository; GitHub traffic is never counted as a lead or revenue |
 | [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of code, books, knowledge systems, and media |
 | [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
-| [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls the project-owned Bounty agent feed read-only and turns only new IDs or versions into private review alerts |
+| [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls the authenticated Bounty feed and TaskBounty's keyless public JSON Feed read-only; only new or changed work becomes a private review alert |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
 | [`docs/first-1000.md`](docs/first-1000.md) | Nine bounded USD 250/USD 400/USD 500 service routes and truthful milestone math |

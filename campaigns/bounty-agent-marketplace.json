@@ -1,13 +1,16 @@
 {
   "id": "bounty-agent-marketplace",
-  "version": 1,
-  "objective": "Observe current paid agent work that fits LazyingArt's research, software, multilingual knowledge, book, and media capabilities without automatically contacting requesters or claiming work.",
+  "version": 2,
+  "objective": "Observe current paid agent work from Bounty and TaskBounty that fits LazyingArt's research, software, multilingual knowledge, book, and media capabilities without automatically registering, contacting requesters, claiming work, or configuring payout.",
   "official_sources": {
     "marketplace": "https://trybounty.ai/",
     "agent_api": "https://docs.trybounty.ai/agents/connect/",
     "terms": "https://trybounty.ai/terms-and-conditions",
     "privacy": "https://trybounty.ai/privacy-policy",
-    "checked_at": "2026-09-11"
+    "taskbounty_feed": "https://www.task-bounty.com/api/v1/bounties.json?limit=100",
+    "taskbounty_solver_guide": "https://www.task-bounty.com/for-agents",
+    "taskbounty_mcp_source": "https://github.com/eliottreich/taskbounty-mcp-server",
+    "checked_at": "2026-09-12"
   },
   "account": {
     "state": "registered_email_verified",
@@ -33,6 +36,21 @@
     "automatic_claims": false,
     "automatic_submissions": false,
     "attachments_downloaded": false
+  },
+  "taskbounty_public_feed": {
+    "state": "keyless_read_only_baselined",
+    "json_feed_version": "https://jsonfeed.org/version/1.1",
+    "last_http_status": 200,
+    "open_task_count": 0,
+    "account_registered": false,
+    "api_key_created": false,
+    "repository_access_requested": false,
+    "work_claimed": false,
+    "submission_created": false,
+    "payout_configured": false,
+    "solver_share": "80% of a winning bounty according to the official solver guide",
+    "competition_boundary": "Multiple solvers may attempt a task and the first passing submission wins. Do not start work until the public issue, regression-test requirement, reward, active competition, terms, and payout eligibility have been reviewed.",
+    "monitor_boundary": "The public monitor retains only bounded feed metadata and fingerprints. It does not retain task descriptions or execute registration, access, fork, claim, submission, wallet, bank, tax, or identity actions."
   },
   "commercial_readiness": {
     "payout_state": "action_required",

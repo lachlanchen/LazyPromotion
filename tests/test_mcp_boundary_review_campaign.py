@@ -87,7 +87,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         replies = self.payload["channels"]["community_replies"]
         self.assertEqual(
             replies["state"],
-            "two_github_reviews_and_two_reddit_architecture_replies",
+            "two_github_reviews_and_three_reddit_architecture_replies",
         )
         item = replies["github_bos_egress_decision"]
         self.assertIn("#issuecomment-", item["public_reply"])
@@ -143,6 +143,15 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(fourth["reply_received"])
         self.assertFalse(fourth["lead_or_sale_observed"])
         self.assertEqual(fourth["verified_received_gross_usd"], 0)
+        fifth = replies["reddit_knx_result_handoff"]
+        self.assertIn("/r/mcp/", fifth["public_reply"])
+        self.assertEqual(fifth["reviewed_body_sha256"], fifth["live_body_sha256"])
+        self.assertTrue(fifth["exact_body_verified"])
+        self.assertFalse(fifth["owned_link_included"])
+        self.assertFalse(fifth["project_or_offer_named"])
+        self.assertFalse(fifth["reply_received"])
+        self.assertFalse(fifth["lead_or_sale_observed"])
+        self.assertEqual(fifth["verified_received_gross_usd"], 0)
 
     def test_price_is_validated_without_becoming_a_security_claim(self):
         validation = self.payload["market_validation"]

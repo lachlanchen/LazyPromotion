@@ -293,7 +293,7 @@
       "role": "One evidence-led first-party post uses the same September 16 slot on LinkedIn and X while lower-intent items move to drafts. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
-      "state": "two_github_reviews_and_two_reddit_architecture_replies",
+      "state": "two_github_reviews_and_three_reddit_architecture_replies",
       "role": "Answer explicit needs only when platform rules permit and the answer is complete without the link.",
       "github_bos_egress_decision": {
         "source": "https://github.com/arjun-techjays/bos/issues/18",
@@ -391,6 +391,22 @@
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
         "policy": "The author asked a current cross-client memory architecture question. The answer adds provenance, freshness, permissions, and deletion boundaries without naming a project, link, offer, or invitation. It is a helpful interaction, not buyer intent, a lead, contract, payment, or revenue."
+      },
+      "reddit_knx_result_handoff": {
+        "source": "https://www.reddit.com/r/mcp/comments/1we4kb2/mcp_server_over_etsknx_building_projects_the/",
+        "source_state_at_review": "current_explicit_result_handoff_question",
+        "public_reply": "https://www.reddit.com/r/mcp/comments/1we4kb2/comment/p9ctdpb/",
+        "published_at": "2026-09-12T14:20:00Z",
+        "reviewed_body_sha256": "9628eb009ddb2f35d66b8f0792157067e3ef4f16bb8feb390ffa6087acd4a0b9",
+        "live_body_sha256": "9628eb009ddb2f35d66b8f0792157067e3ef4f16bb8feb390ffa6087acd4a0b9",
+        "exact_body_verified": true,
+        "answer": "Keep cursor pagination stable and bounded by default; use an explicit resource or short-lived downloadable URI with size, hash, expiry, and client-resolution checks for full exports.",
+        "owned_link_included": false,
+        "project_or_offer_named": false,
+        "reply_received": false,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The maintainer asked a current implementation question and the existing comment did not answer it. The reply gives the decision boundary without naming a project, linking an offer, inviting contact, or automating follow-up. It is a helpful interaction, not buyer intent, a lead, contract, payment, or revenue."
       }
     },
     "upwork_mcp_expert": {

@@ -36,6 +36,8 @@ EFFORT = os.environ.get("LAZYPROMOTION_CODEX_EFFORT", "low").strip()
 MAX_CANDIDATE_AGE_DAYS = 7
 MAX_PAID_OPPORTUNITY_AGE_DAYS = 30
 AI_COMMENT_BLOCKED_PLATFORMS = {"hackernews"}
+PUBLIC_REPLY_WINDOW_HOURS = 24
+PUBLIC_REPLY_MAX_PER_SCOPE = 2
 
 HELP_SIGNALS = {
     "how", "help", "need", "needs", "looking", "recommend", "recommendation",
@@ -501,6 +503,66 @@ def parse_source_time(value: str) -> datetime | None:
     if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=timezone.utc)
     return parsed.astimezone(timezone.utc)
+
+
+def public_reply_scope(platform: str, source_url: str) -> str:
+    """Return the smallest durable scope used to limit public reply volume."""
+    platform = normalized(platform).strip()
+    parsed = urlparse(source_url)
+    if platform == "reddit":
+        parts = [part for part in parsed.path.split("/") if part]
+        if len(parts) >= 2 and parts[0].casefold() == "r":
+            return f"reddit:r/{parts[1].casefold()}"
+    return platform
+
+
+def recent_public_reply_count(
+    db: sqlite3.Connection,
+    platform: str,
+    source_url: str,
+    *,
+    now: datetime | None = None,
+    window_hours: int = PUBLIC_REPLY_WINDOW_HOURS,
+) -> int:
+    """Count still-delivered ledger replies in the same rolling community scope."""
+    if window_hours <= 0:
+        raise ValueError("public reply window must be positive")
+    now = now or datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=window_hours)
+    scope = public_reply_scope(platform, source_url)
+    rows = db.execute(
+        """
+        SELECT DISTINCT e.draft_id, e.created_at, c.platform, c.source_url
+        FROM events e
+        JOIN candidates c ON c.id=e.candidate_id
+        JOIN drafts d ON d.id=e.draft_id
+        WHERE e.kind='reply_sent' AND d.status='sent'
+        """
+    ).fetchall()
+    return sum(
+        1
+        for row in rows
+        if public_reply_scope(str(row["platform"]), str(row["source_url"])) == scope
+        and (created := parse_source_time(str(row["created_at"]))) is not None
+        and cutoff <= created <= now
+    )
+
+
+def enforce_public_reply_cap(
+    db: sqlite3.Connection,
+    platform: str,
+    source_url: str,
+    *,
+    now: datetime | None = None,
+) -> None:
+    """Fail closed when a community already received enough recent replies."""
+    scope = public_reply_scope(platform, source_url)
+    count = recent_public_reply_count(db, platform, source_url, now=now)
+    if count >= PUBLIC_REPLY_MAX_PER_SCOPE:
+        raise ValueError(
+            f"public reply cap reached for {scope}: {count} sent replies in the "
+            f"rolling {PUBLIC_REPLY_WINDOW_HOURS}-hour window"
+        )
 
 
 def is_stale(
@@ -1690,6 +1752,7 @@ def approve_draft(db: sqlite3.Connection, draft_id: str, ttl_minutes: int) -> di
         raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     if draft["status"] not in {"draft", "prepared"}:
         raise ValueError(f"draft status is {draft['status']}; approval is not allowed")
+    enforce_public_reply_cap(db, draft["platform"], draft["source_url"])
     token = f"approve_{secrets.token_urlsafe(18)}"
     now_dt = datetime.now(timezone.utc).replace(microsecond=0)
     expires = now_dt + timedelta(minutes=ttl_minutes)

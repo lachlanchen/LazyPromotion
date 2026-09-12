@@ -5,6 +5,14 @@ trust by solving the stated problem; a campaign can present a real offer only
 when the audience and channel permit it. Visits, leads, orders, and revenue must
 be reported separately—none may be inferred from impressions or clicks.
 
+Public replies also have a hard rolling-volume gate: at most two verified sends
+per Reddit community, or per other reply platform, in 24 hours. The check runs
+before composer preparation and approval, then again immediately before the
+visible submit action. A send that is reopened because delivery could not be
+verified no longer consumes the cap; drafts, prepared composers, owned posts,
+and Postiz schedules never count. This is a brand-safety ceiling, not a posting
+target.
+
 ## First USD 1,000 path
 
 The primary offer remains the

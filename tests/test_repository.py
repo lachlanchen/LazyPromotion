@@ -813,6 +813,64 @@ class RepositoryTests(unittest.TestCase):
             for item in unrelated
         ))
 
+    def test_visible_send_rechecks_public_reply_cap_before_click(self):
+        candidate = {
+            "platform": "reddit",
+            "source_url": "https://www.reddit.com/r/mcp/comments/example/review/",
+        }
+        with mock.patch.object(
+            browser,
+            "load_candidate_and_draft",
+            return_value=(candidate, {"body": "Reviewed reply."}),
+        ), mock.patch.object(
+            promotion, "agent_contact_block_reason", return_value=""
+        ), mock.patch.object(
+            promotion, "open_db", return_value=object()
+        ), mock.patch.object(
+            promotion,
+            "enforce_public_reply_cap",
+            side_effect=ValueError("public reply cap reached"),
+        ) as cap:
+            with self.assertRaisesRegex(ValueError, "public reply cap reached"):
+                browser.send_reply(
+                    None,
+                    "candidate",
+                    "draft",
+                    "approval",
+                    True,
+                )
+        cap.assert_called_once_with(
+            mock.ANY,
+            "reddit",
+            candidate["source_url"],
+        )
+
+    def test_prepare_reply_checks_cap_before_opening_the_destination(self):
+        candidate = {
+            "platform": "reddit",
+            "source_url": "https://www.reddit.com/r/mcp/comments/example/review/",
+        }
+        with mock.patch.object(
+            browser,
+            "load_candidate_and_draft",
+            return_value=(candidate, {"body": "Reviewed reply."}),
+        ), mock.patch.object(
+            promotion, "agent_contact_block_reason", return_value=""
+        ), mock.patch.object(
+            promotion, "open_db", return_value=object()
+        ), mock.patch.object(
+            promotion,
+            "enforce_public_reply_cap",
+            side_effect=ValueError("public reply cap reached"),
+        ) as cap:
+            with self.assertRaisesRegex(ValueError, "public reply cap reached"):
+                browser.prepare_reply(None, "candidate", "draft")
+        cap.assert_called_once_with(
+            mock.ANY,
+            "reddit",
+            candidate["source_url"],
+        )
+
     def test_meeting_knowledge_routes_require_owned_source_and_explicit_need(self):
         for platform in ("reddit", "x"):
             routes = [

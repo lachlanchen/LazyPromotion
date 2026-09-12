@@ -1287,6 +1287,113 @@ class PromotionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "candidate context changed"):
             promotion.validate_approval(self.db, draft["id"], approval["approval_token"])
 
+    def test_public_reply_cap_is_per_community_and_ignores_reopened_sends(self):
+        self.assertEqual(
+            promotion.public_reply_scope(
+                "reddit", "https://www.reddit.com/r/MCP/comments/abc/example/"
+            ),
+            "reddit:r/mcp",
+        )
+        sent_drafts = []
+        for index in range(2):
+            candidate = promotion.ingest_candidate(
+                self.db,
+                platform="reddit",
+                source_url=f"https://www.reddit.com/r/mcp/comments/post{index}/help/",
+                author=f"reader{index}",
+                body=(
+                    "How can I add accurate subtitles to my video? "
+                    f"This is request {index}."
+                ),
+            )
+            draft = promotion.save_draft(
+                self.db,
+                candidate["id"],
+                {
+                    "reply": f"Start from a clean transcript for example {index}.",
+                    "why": "Direct answer.",
+                    "confidence": "high",
+                    "include_link": False,
+                },
+            )
+            approval = promotion.approve_draft(self.db, draft["id"], 30)
+            promotion.mark_sent(
+                self.db,
+                draft["id"],
+                approval["approval_token"],
+                {"screenshot": f"sent-{index}.png"},
+            )
+            sent_drafts.append(draft)
+
+        self.assertEqual(
+            promotion.recent_public_reply_count(
+                self.db,
+                "reddit",
+                "https://www.reddit.com/r/mcp/comments/another/help/",
+            ),
+            2,
+        )
+        third = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/mcp/comments/third/help/",
+            author="reader3",
+            body="How can I add accurate subtitles to my video? This is request 3.",
+        )
+        third_draft = promotion.save_draft(
+            self.db,
+            third["id"],
+            {
+                "reply": "Start from the source-language transcript.",
+                "why": "Direct answer.",
+                "confidence": "high",
+                "include_link": False,
+            },
+        )
+        with self.assertRaisesRegex(ValueError, "public reply cap reached"):
+            promotion.approve_draft(self.db, third_draft["id"], 30)
+
+        other = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/selfhosted/comments/other/help/",
+            author="other-reader",
+            body="How can I add accurate subtitles to my video? This is another community.",
+        )
+        other_draft = promotion.save_draft(
+            self.db,
+            other["id"],
+            {
+                "reply": "Begin with a reviewed transcript.",
+                "why": "Direct answer.",
+                "confidence": "high",
+                "include_link": False,
+            },
+        )
+        self.assertIn(
+            "approval_token",
+            promotion.approve_draft(self.db, other_draft["id"], 30),
+        )
+
+        promotion.reopen_unverified_send(
+            self.db,
+            sent_drafts[0]["id"],
+            reason="visible delivery could not be verified",
+            evidence="manual-review.png",
+        )
+        self.assertEqual(
+            promotion.recent_public_reply_count(
+                self.db,
+                "reddit",
+                "https://www.reddit.com/r/mcp/comments/another/help/",
+            ),
+            1,
+        )
+        self.assertIn(
+            "approval_token",
+            promotion.approve_draft(self.db, third_draft["id"], 30),
+        )
+
     def test_unverified_send_can_be_reopened_without_reusing_approval(self):
         candidate = promotion.ingest_candidate(
             self.db,

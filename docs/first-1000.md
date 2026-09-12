@@ -1548,6 +1548,14 @@ setup questions away from the offer. A live Reddit cycle on September 12 found
 enough source context, and produced zero eligible candidates. No reply, link,
 lead, application, or revenue was created from that scan.
 
+A second low-spam gate now limits verified public replies to two per Reddit
+community—or two across another reply platform—in any rolling 24-hour window.
+It runs before composer preparation and approval, then again before the visible
+submit click. The current private ledger already places `r/mcp` at that ceiling,
+so another reply there is blocked even if a future candidate otherwise
+qualifies. This is a ceiling, not a posting target, and it changes no lead or
+revenue state.
+
 GitHub Sponsors was already active on the repositories, but its public profile
 had no preset tiers. Three restrained choices are now published and publicly
 verified: USD 5 monthly, USD 25 one-time, and USD 100 one-time. Their copy funds

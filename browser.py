@@ -1006,6 +1006,10 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
     )
     if blocked:
         raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
+    db = promotion.open_db()
+    promotion.enforce_public_reply_cap(
+        db, candidate["platform"], candidate["source_url"]
+    )
     page.goto(candidate["source_url"], wait_until="domcontentloaded", timeout=45000)
     wait_ready(page)
     comment_id = reddit_comment_id(candidate["source_url"]) if candidate["platform"] == "reddit" else ""
@@ -1039,7 +1043,6 @@ def prepare_reply(page: Page, candidate_id: str, draft_id: str) -> dict[str, obj
     if composer_text(target) != promotion.compact(draft["body"]):
         raise RuntimeError("visible composer text does not match the reviewed draft")
     screenshot = evidence(page, f"prepared-{candidate['platform']}-{candidate_id}")
-    db = promotion.open_db()
     now = promotion.utc_now()
     db.execute("UPDATE drafts SET status='prepared', updated_at=? WHERE id=?", (now, draft_id))
     db.execute(
@@ -1200,6 +1203,9 @@ def send_reply(page: Page, candidate_id: str, draft_id: str, token: str, confirm
     if blocked:
         raise ValueError(f"agent-authored public reply is prohibited: {blocked}")
     db = promotion.open_db()
+    promotion.enforce_public_reply_cap(
+        db, candidate["platform"], candidate["source_url"]
+    )
     promotion.validate_approval(db, draft_id, token)
     if not destination_matches(candidate["source_url"], page.url, candidate["platform"]):
         raise RuntimeError("the active tab is not the approved candidate page; run prepare again")

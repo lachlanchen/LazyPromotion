@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 35,
+  "version": 36,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -42,6 +42,13 @@
       "provider": "Reddit",
       "need": "A current MCP maintainer asked whether a large read-only result should be paginated or written to a file and returned as a path.",
       "boundary": "This is product-design evidence, not a buyer inquiry. It exposed a concrete review question: whether result handoff is bounded, portable, authorized, and resolvable by the intended client without leaking a server-local path."
+    },
+    {
+      "captured_at": "2026-09-13",
+      "source": "https://github.com/hivtools/hivtools-mcp/issues/10",
+      "provider": "GitHub",
+      "need": "A current open-source MCP maintainer asked what authentication Claude needs across local and remote use, and what is appropriate for a public demo.",
+      "boundary": "This is direct implementation evidence, not a buyer inquiry. The response used the pinned public source and current primary documentation to separate public demo, local-only, and OAuth-protected remote boundaries."
     }
   ],
   "market_validation": {
@@ -420,7 +427,7 @@
       "role": "One low-volume owned Reddit profile checklist gives recent helpful architecture replies a quiet proof surface. One evidence-led first-party post then uses the same September 16 slot on LinkedIn and X, followed two hours later by one image-led Instagram test using the exact reviewed proof card. Lower-intent overlapping items remain drafts. Queueing is not publication, a fit inquiry, a sale, or revenue."
     },
     "community_replies": {
-      "state": "two_github_reviews_and_three_reddit_architecture_replies",
+      "state": "three_github_reviews_and_three_reddit_architecture_replies",
       "role": "Answer explicit needs only when platform rules permit and the answer is complete without the link.",
       "github_bos_egress_decision": {
         "source": "https://github.com/arjun-techjays/bos/issues/18",
@@ -477,6 +484,39 @@
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0,
         "policy": "This was one exact code review response to an open audit issue. It includes no pitch or owned link and is a helpful interaction, not a lead, contract, payment, or revenue."
+      },
+      "github_hivtools_claude_auth_decision": {
+        "source": "https://github.com/hivtools/hivtools-mcp/issues/10",
+        "source_state_at_review": "open_explicit_authentication_question_no_existing_replies",
+        "source_revision": "ddef1e211a3cee2469f4b622bdcde61dae94a32f",
+        "public_reply": "https://github.com/hivtools/hivtools-mcp/issues/10#issuecomment-5647889567",
+        "published_at": "2026-09-12T18:37:03Z",
+        "reviewed_body_sha256": "1f71d9eb8168d5a3c7ef3168d29375f6168e825c557096b26f96be05927221e9",
+        "live_body_sha256": "1f71d9eb8168d5a3c7ef3168d29375f6168e825c557096b26f96be05927221e9",
+        "exact_body_verified": true,
+        "answer": "Treat the baked public-data demo, a loopback developer demo, and a private remote deployment as different boundaries; use deliberate public access for the first, the local process boundary for the second, and standards-discoverable OAuth with issuer, scope, and audience validation for the third.",
+        "repo_specific_findings": "At the pinned revision, FastMCP mounts unauthenticated Streamable HTTP at /mcp; an empty Azure CIDR allowlist permits public ingress; and the two managed identities cover image pull and deployment rather than Claude client authentication.",
+        "repository_code_executed": false,
+        "owned_link_included": false,
+        "project_or_offer_named": false,
+        "primary_references": [
+          "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+          "https://code.claude.com/docs/en/mcp#authenticate-with-remote-mcp-servers",
+          "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+          "https://gofastmcp.com/servers/auth/authentication"
+        ],
+        "reply_monitor": {
+          "state": "active_and_baselined",
+          "thread": "hivtools/hivtools-mcp#10",
+          "body_or_comment_text_requested": false,
+          "automatic_reply": false,
+          "baseline_comment_count": 1,
+          "alerts_after_baseline": 0
+        },
+        "reply_received": false,
+        "lead_or_sale_observed": false,
+        "verified_received_gross_usd": 0,
+        "policy": "The maintainer asked a current, concrete implementation question. The response is complete without a LazyingArt link, service mention, contact invitation, or automated follow-up. It is a helpful interaction, not a lead, contract, payment, or revenue."
       },
       "reddit_kin_graph_design": {
         "source": "https://www.reddit.com/r/mcp/comments/1we4buv/kin_an_mcp_server_that_answers_code_questions/",

@@ -24,8 +24,9 @@ authenticated private-repository data rather than copying it into the shared
 promotion workflow.
 
 The fixed external-thread allowlist currently contains
-`arjun-techjays/bos#18` and `pilotariak/azkena#14`, where `lachlanchen` posted
-reviewed, issue-specific answers. For these threads the same GraphQL query requests only repository
+`arjun-techjays/bos#18`, `pilotariak/azkena#14`, and
+`hivtools/hivtools-mcp#10`, where `lachlanchen` posted reviewed,
+issue-specific answers. For these threads the same GraphQL query requests only repository
 visibility, issue number, title, URL, state, update time, and aggregate comment
 count. It requests neither the issue body nor any comment body. A newly added
 external thread is baselined once; a later metadata or comment-count change
@@ -61,7 +62,7 @@ baselines current pull requests once, avoiding a false alert storm. When a new
 public repository is appended to the fixed allowlist, its existing activity is
 baselined while previously watched repositories keep their seen history.
 Later passes alert for a new issue, a new pull request, or a changed public
-pull-request activity timestamp. The explicit external thread also alerts when
+pull-request activity timestamp. An explicit external thread also alerts when
 its state, update time, or aggregate comment count changes. Seen keys and the
 last activity summaries are retained when an item leaves a bounded current
 window. An API or validation failure leaves the last complete state untouched.

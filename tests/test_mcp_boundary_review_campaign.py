@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 35)
+        self.assertEqual(self.payload["version"], 36)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -90,7 +90,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(proof["packet"]["live_byte_identical"])
 
     def test_demand_is_separate_from_selection_or_sales(self):
-        self.assertEqual(len(self.payload["demand_evidence"]), 5)
+        self.assertEqual(len(self.payload["demand_evidence"]), 6)
         self.assertTrue(
             all(item["source"].startswith("https://") for item in self.payload["demand_evidence"])
         )
@@ -98,8 +98,8 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(self.payload["funnel"]["qualified_lead_observed"])
         self.assertFalse(self.payload["funnel"]["payment_confirmed"])
         latest = self.payload["demand_evidence"][-1]
-        self.assertIn("/r/mcp/", latest["source"])
-        self.assertIn("large read-only result", latest["need"])
+        self.assertIn("hivtools-mcp/issues/10", latest["source"])
+        self.assertIn("authentication Claude needs", latest["need"])
         self.assertIn("not a buyer inquiry", latest["boundary"])
 
     def test_upwork_mcp_role_is_not_mistaken_for_an_autonomous_route(self):
@@ -115,7 +115,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         replies = self.payload["channels"]["community_replies"]
         self.assertEqual(
             replies["state"],
-            "two_github_reviews_and_three_reddit_architecture_replies",
+            "three_github_reviews_and_three_reddit_architecture_replies",
         )
         item = replies["github_bos_egress_decision"]
         self.assertIn("#issuecomment-", item["public_reply"])
@@ -146,6 +146,34 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(second["reply_received"])
         self.assertFalse(second["lead_or_sale_observed"])
         self.assertEqual(second["verified_received_gross_usd"], 0)
+        hivtools = replies["github_hivtools_claude_auth_decision"]
+        self.assertIn("#issuecomment-", hivtools["public_reply"])
+        self.assertEqual(
+            hivtools["reviewed_body_sha256"],
+            hivtools["live_body_sha256"],
+        )
+        self.assertTrue(hivtools["exact_body_verified"])
+        self.assertEqual(len(hivtools["source_revision"]), 40)
+        self.assertFalse(hivtools["repository_code_executed"])
+        self.assertFalse(hivtools["owned_link_included"])
+        self.assertFalse(hivtools["project_or_offer_named"])
+        self.assertEqual(
+            hivtools["reply_monitor"]["state"],
+            "active_and_baselined",
+        )
+        self.assertEqual(
+            hivtools["reply_monitor"]["thread"],
+            "hivtools/hivtools-mcp#10",
+        )
+        self.assertFalse(
+            hivtools["reply_monitor"]["body_or_comment_text_requested"]
+        )
+        self.assertFalse(hivtools["reply_monitor"]["automatic_reply"])
+        self.assertEqual(hivtools["reply_monitor"]["baseline_comment_count"], 1)
+        self.assertEqual(hivtools["reply_monitor"]["alerts_after_baseline"], 0)
+        self.assertFalse(hivtools["reply_received"])
+        self.assertFalse(hivtools["lead_or_sale_observed"])
+        self.assertEqual(hivtools["verified_received_gross_usd"], 0)
         third = replies["reddit_kin_graph_design"]
         self.assertIn("/r/mcp/", third["public_reply"])
         self.assertEqual(third["reviewed_body_sha256"], third["live_body_sha256"])

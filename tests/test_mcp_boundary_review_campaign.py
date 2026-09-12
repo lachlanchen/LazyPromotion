@@ -20,14 +20,18 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 4)
+        self.assertEqual(self.payload["version"], 5)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
-        self.assertEqual(offer["repository_revision_limit"], 1)
+        self.assertEqual(offer["base_repository_revision_limit"], 1)
+        self.assertEqual(offer["follow_up_successor_revision_limit"], 1)
+        self.assertEqual(offer["follow_up_failed_check_limit"], 3)
         self.assertEqual(offer["mcp_server_limit"], 1)
         self.assertEqual(offer["tool_and_resource_limit"], 8)
         self.assertEqual(offer["protocol_check_limit"], 10)
+        self.assertEqual(len(offer["default_check_set"]), 10)
+        self.assertIn("up to three checks", offer["follow_up_recheck"])
         self.assertEqual(sum(offer["deliverable_allocation_usd"].values()), 500)
         self.assertEqual(self.payload["funnel"]["received_revenue_usd"], 0)
 
@@ -55,13 +59,20 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(proof["packet"]["live_byte_identical"])
 
     def test_demand_is_separate_from_selection_or_sales(self):
-        self.assertEqual(len(self.payload["demand_evidence"]), 2)
+        self.assertEqual(len(self.payload["demand_evidence"]), 3)
         self.assertTrue(
             all(item["source"].startswith("https://") for item in self.payload["demand_evidence"])
         )
         self.assertFalse(self.payload["intake"]["lead_or_sale_observed"])
         self.assertFalse(self.payload["funnel"]["qualified_lead_observed"])
         self.assertFalse(self.payload["funnel"]["payment_confirmed"])
+
+    def test_price_is_validated_without_becoming_a_security_claim(self):
+        validation = self.payload["market_validation"]
+        self.assertIn("Keep USD 500", validation["decision"])
+        self.assertEqual(len(validation["benchmarks"]), 3)
+        self.assertTrue(all(item["source"].startswith("https://") for item in validation["benchmarks"]))
+        self.assertIn("pre-deployment evidence", validation["decision"])
 
     def test_payment_path_is_guarded_and_non_mutating(self):
         payment = self.payload["payment_readiness"]
@@ -78,15 +89,16 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(intake["review_before_send"])
         self.assertTrue(intake["receiver_authenticated_decrypted_and_saved"])
         self.assertTrue(intake["remote_spool_empty"])
+        self.assertEqual(len(intake["required_buyer_inputs"]), 5)
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
 
     def test_linkedin_queue_replaces_overlapping_volume(self):
         postiz = self.payload["channels"]["postiz"]
         self.assertEqual(postiz["state"], "linkedin_queue_verified")
-        self.assertEqual(postiz["publish_at"], "2026-10-02T02:00:00.000Z")
+        self.assertEqual(postiz["publish_at"], "2026-09-21T02:00:00.000Z")
         self.assertIn("14 focused tests", postiz["content"])
-        self.assertIn("fixed USD 500 review", postiz["content"])
+        self.assertIn("fixed USD 500 pre-deployment review", postiz["content"])
         self.assertIn("utm_source=linkedin", postiz["destination"])
         self.assertIn("queue volume did not increase", postiz["superseded_post_removed"])
         self.assertFalse(postiz["lead_or_sale_observed"])
@@ -98,6 +110,8 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(contra["duration"], "2 weeks")
         self.assertEqual(contra["faq_count"], 3)
         self.assertEqual(len(contra["tags"]), 6)
+        self.assertEqual(contra["title"], "MCP Server Pre-Deployment Review")
+        self.assertIn("up-to-three-failed-check", contra["payment_policy"])
         self.assertIn("stay on Contra", contra["payment_policy"])
         self.assertFalse(contra["identity_verified"])
         self.assertFalse(contra["payout_configured"])

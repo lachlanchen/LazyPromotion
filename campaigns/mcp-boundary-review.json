@@ -1,7 +1,7 @@
 {
   "id": "mcp-boundary-review",
-  "version": 4,
-  "objective": "Sell and deliver two bounded USD 500 MCP boundary reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
+  "version": 5,
+  "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
     "why_now": "Current paid listings ask for real MCP servers, reproducible environments, deterministic verification, authentication and scoping controls, auditability, and failure handling. The owned LKT server supplies inspectable first-party proof for a smaller fixed offer.",
@@ -21,20 +21,64 @@
       "provider": "Upwork",
       "need": "A current worldwide listing asks for real MCP integrations with authentication, scoping, audit controls, least privilege, logs, and documentation.",
       "boundary": "The listing requires unsupported conventional tenure and full-time overlap, so it is demand evidence only and was not applied to."
+    },
+    {
+      "captured_at": "2026-09-12",
+      "source": "https://www.upwork.com/freelance-jobs/apply/Procore-MCP-Server-for-Claude_~022097169149304020892/",
+      "provider": "Upwork",
+      "need": "A current USD 1,500 fixed brief asks for a production read-first MCP server with OAuth 2.0, allowlisted tools, logs, bounded error handling, and streamable HTTP.",
+      "boundary": "This is evidence of the deployment-boundary problem, not an exact review buyer. Procore-specific production work is unproven, competition is already high, and no application was sent."
     }
   ],
+  "market_validation": {
+    "decision": "Keep USD 500 during the initial validation window and sell reproducible pre-deployment evidence, not an automated scan or security audit.",
+    "checked_at": "2026-09-12",
+    "benchmarks": [
+      {
+        "source": "https://mcpaudit.io/",
+        "observed": "A directly comparable manually reviewed MCP audit is publicly priced at USD 499.",
+        "boundary": "Its broader security language and commercial trust are not claims LazyingArt can inherit."
+      },
+      {
+        "source": "https://checkmcp.dev/pricing",
+        "observed": "Low-cost scanners already cover public-repository checks.",
+        "boundary": "The offer must therefore return executed protocol evidence and a deployment decision rather than a scan score."
+      },
+      {
+        "source": "https://appsecco.com/pricing",
+        "observed": "Professional penetration-testing engagements begin far above this bounded review price.",
+        "boundary": "The USD 500 offer remains explicitly outside penetration testing and certification."
+      }
+    ]
+  },
   "offer": {
     "state": "live_verified",
+    "public_name": "MCP Server Pre-Deployment Review",
+    "method": "MCP boundary review",
     "url": "https://lazying.art/mcp-boundary-review/",
     "fit_check": "https://lazying.art/mcp-boundary-review/fit-check/",
     "sample_report": "https://lazying.art/mcp-boundary-review/sample-report/",
     "price": "USD 500",
     "software_only": true,
-    "repository_revision_limit": 1,
+    "base_repository_revision_limit": 1,
+    "follow_up_successor_revision_limit": 1,
+    "follow_up_failed_check_limit": 3,
     "mcp_server_limit": 1,
     "tool_and_resource_limit": 8,
     "protocol_check_limit": 10,
-    "correction_passes": 1,
+    "default_check_set": [
+      "protocol version negotiation",
+      "advertised versus live tool and resource discovery",
+      "one agreed valid tool call",
+      "one agreed valid resource read",
+      "unknown tool or resource rejection",
+      "malformed or missing input rejection",
+      "actual reads, writes, external calls, and approval gates",
+      "credential, path, and private-context disclosure in agreed outputs and logs",
+      "one safe failure or timeout case",
+      "client and transport authentication and isolation boundary"
+    ],
+    "follow_up_recheck": "Within fourteen calendar days, one successor revision of the same server, transport, and reviewed surface may re-run up to three checks that failed in the original report.",
     "delivery": "Within seven business days after secured payment, repository access, working setup instructions, and every agreed test dependency are available. Only one MCP review is active at a time.",
     "scope": "Map the reviewed MCP surface to real reads, writes, external calls, credentials, approval points, and failure impact; run ten agreed checks in one disposable environment; deliver a frozen inventory, sanitized protocol packet, failure ledger, and go/no-go report.",
     "deliverable_allocation_usd": {
@@ -44,13 +88,13 @@
       "go_no_go_report": 100
     },
     "excluded": [
-      "fix implementation or a second server, revision, transport, tool, resource, or test set",
+      "fix implementation or a second server, transport, added tool or resource, or test set beyond the included limited recheck",
       "penetration testing, security certification, or a guarantee that the server is secure or production-ready",
       "OAuth or authentication implementation, production deployment, SLA, performance guarantee, or ongoing monitoring",
       "production secrets, private data, destructive live operations, or external writes unless separately authorized and scoped"
     ],
     "cancellation": "Cancel before private access or execution begins for a full refund. Once work starts, refund only undelivered items using the fixed deliverable allocation.",
-    "data_policy": "Collect metadata only during the fit check. Agree repository access, fixtures, network behavior, credentials handling, confidentiality, retention, and permitted automation before work. Customer material never becomes public proof without separate written permission.",
+    "data_policy": "Collect metadata only during the fit check: contact email, repository and revision, intended client and transport, the deployment decision, and authorization confirmation. The first surface inventory and proposed checks can be derived from a public repository; for private source, the first reply requests a metadata-only surface manifest. Agree private access, fixtures, network behavior, credentials handling, confidentiality, retention, and permitted automation before work. Customer material never becomes public proof without separate written permission.",
     "payment_policy": "After a positive fit check and accepted written scope, direct-site clients receive one reviewed Stripe request. Marketplace-origin contracts and payments stay on that marketplace. This is not a public self-serve checkout."
   },
   "public_proof": {
@@ -81,34 +125,44 @@
       "deterministic_timestamp": "2026-09-12T00:00:00Z",
       "live_byte_identical": true
     },
+    "printable_pdf": "https://lazying.art/mcp-boundary-review/sample-report/assets/report.pdf",
     "boundary": "Project-owned evidence, not a customer result, penetration test, security certification, or promise of production fitness."
   },
   "owned_delivery": {
-    "website_commit": "22829dcb43c78e4558723c48d5d6f5a3129763ee",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34685586758",
+    "website_commit": "6d6b9501fa5561bbf675aaf04aaa76ec0afde840",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34689172167",
     "deployment_state": "success",
     "homepage": "The six-route chooser replaces the lower-priority Story Clip card with this current software-first offer in thirteen locales.",
-    "verification": "All 29 website contract tests passed. Desktop and mobile renders had no horizontal overflow. The offer, sample, fit check, archive, checksum, and tracked homepage route returned HTTP 200; the live archive was byte-identical to the committed packet."
+    "verification": "All 33 website contract tests passed. Desktop and mobile renders had no horizontal overflow. The revised offer, five-input fit check, sample, packet, checksum, and printable PDF returned HTTP 200. The live PDF matched SHA-256 0c2c62e9d31df6451bc91c0abbc2ae631bb5baf3d4c2e65a58d4656034144aad."
   },
   "intake": {
     "state": "live_verified",
     "offer_route": "mcp_boundary_review",
     "endpoint": "https://blog.lazying.art/wp-json/lazyingart/v1/lkt-fit-check",
-    "backend_commit": "817de749",
+    "backend_commit": "af8f5ddfe1fb0bc519aabba32f31a71ffa3765ad",
     "review_before_send": true,
     "encrypted_storage": true,
     "source_upload_requested": false,
+    "required_buyer_inputs": [
+      "contact email",
+      "repository and exact revision",
+      "intended client and transport",
+      "deployment decision or concern",
+      "authorization confirmation"
+    ],
     "automatic_reply": false,
     "receiver_authenticated_decrypted_and_saved": true,
     "remote_spool_empty": true,
     "live_round_trip": "On 2026-09-12, the live form made no endpoint request during local review, then one explicitly confirmed synthetic request was encrypted, accepted, authenticated, decrypted, validated, saved locally with mode 0600, and deleted unchanged from the remote spool. A second receiver pass returned no_pending. The exact local synthetic inquiry and envelope were removed after verification; sanitized receipt evidence was retained.",
+    "deployment_verification": "The simplified optional-field backend was deployed from committed revision af8f5ddfe1fb0bc519aabba32f31a71ffa3765ad with PHP lint and the focused contract suite passing. The live plugin matched the local SHA-256 b2c0e84f562d0be71973d15798e1b95b1428a28d917e2af144961a423fa991f2, and the REST route remained available without submitting another test inquiry.",
     "lead_or_sale_observed": false
   },
   "contra_marketplace": {
     "state": "published_live_verified_identity_and_payout_pending",
     "published_at": "2026-09-12T10:13:09Z",
-    "url": "https://contra.com/s/RRE6r7v7-review-one-mcp-server-boundary",
-    "title": "Review One MCP Server Boundary",
+    "url": "https://contra.com/s/RRE6r7v7-mcp-server-pre-deployment-review",
+    "title": "MCP Server Pre-Deployment Review",
+    "contract_updated_at": "2026-09-12T10:50:54Z",
     "price": "USD 500 one-time",
     "duration": "2 weeks",
     "tags": [
@@ -121,8 +175,8 @@
     ],
     "faq_count": 3,
     "linked_example": "Local Knowledge Terminal: Collection-Fit Sample Report",
-    "cover": "A four-by-three crop of the live project-owned MCP Boundary Review offer, visually checked before publication.",
-    "payment_policy": "Contra-origin inquiry, contract, payment, revisions, and delivery stay on Contra. Do not accept work until the exact ten checks and handling rules are accepted and identity and payout setup are complete.",
+    "cover": "A four-by-three crop of the live project-owned MCP Server Pre-Deployment Review offer, visually checked before publication.",
+    "payment_policy": "Contra-origin inquiry, contract, payment, revisions, and delivery stay on Contra. The published listing includes the same fourteen-day, one-successor-revision, up-to-three-failed-check recheck. Do not accept work until the exact ten checks and handling rules are accepted and identity and payout setup are complete.",
     "profile_completion": "89%",
     "identity_verified": false,
     "payout_configured": false,
@@ -153,14 +207,14 @@
     "postiz": {
       "state": "linkedin_queue_verified",
       "post_id": "cmty7dcko17ftqk0yxthwp24w",
-      "publish_at": "2026-10-02T02:00:00.000Z",
+      "publish_at": "2026-09-21T02:00:00.000Z",
       "profile": "Lachlan Chen",
-      "content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample\n\nThe same method is now available as a fixed USD 500 review of one server, one revision, and ten agreed checks. Fit check first; no source upload or payment before scope.",
-      "postiz_content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://dub.sh/qxGT5aT\n\nThe same method is now available as a fixed USD 500 review of one server, one revision, and ten agreed checks. Fit check first; no source upload or payment before scope.",
+      "content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample\n\nThe same method is now available as a fixed USD 500 pre-deployment review of one server, one base revision, and ten agreed checks, with a limited recheck. Fit check first; no source upload or payment before scope.",
+      "postiz_content": "An MCP server can be described as “read-only” and still expose private context through its outputs.\n\nI tested that boundary in Local Knowledge Terminal with the official Python MCP SDK: two tools, one resource, 14 focused tests, and one frozen protocol packet. The result is deliberately narrow: GO for the recorded local read-only setup; NO-GO for direct remote exposure until client authentication is added.\n\nThe report and downloadable packet are here:\nhttps://dub.sh/qxGT5aT\n\nThe same method is now available as a fixed USD 500 pre-deployment review of one server, one base revision, and ten agreed checks, with a limited recheck. Fit check first; no source upload or payment before scope.",
       "destination": "https://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample",
-      "content_sha256": "5b8ae087cfa3761f251af285116a73dad61922aa39c30e77359d8fc5a5db04ab",
+      "content_sha256": "8a772c2793655bcf6bf7f5f35daadb44c0c96388951c5d8293183939976333eb",
       "shortlink": "https://dub.sh/qxGT5aT",
-      "verification": "The intended LinkedIn profile, exact UTC schedule, QUEUE state, wording, and shortlink destination were verified after one creation. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page.",
+      "verification": "The intended LinkedIn profile, revised 2026-09-21T02:00:00Z schedule, QUEUE state, revised pre-deployment wording, and shortlink destination were verified after one visible update. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page.",
       "superseded_post_removed": "The older overlapping LKT MCP announcement cmtvr7tck0gqiqk0yqev5vlog was moved to draft and deleted after this replacement entered QUEUE, so queue volume did not increase.",
       "lead_or_sale_observed": false,
       "role": "One evidence-led first-party post replaces the overlapping release announcement. Queueing is not publication, a fit inquiry, a sale, or revenue."

@@ -10,6 +10,7 @@ SAMPLE = ROOT / "examples" / "mcp-boundary-review"
 ARTIFACTS = SAMPLE / "artifacts"
 PACKET = ARTIFACTS / "lkt-mcp-boundary-review-sample.zip"
 CHECKSUM = ARTIFACTS / "lkt-mcp-boundary-review-sample.zip.sha256"
+REPORT_PDF = ARTIFACTS / "report.pdf"
 MEMBERS = [
     "environment.json",
     "tool-inventory.json",
@@ -101,6 +102,11 @@ class McpBoundaryReviewProofTests(unittest.TestCase):
         for value in (report, log):
             self.assertNotIn("/home/", value)
             self.assertNotIn("/tmp/", value)
+
+    def test_printable_report_is_present_but_outside_deterministic_packet(self):
+        self.assertGreater(REPORT_PDF.stat().st_size, 10_000)
+        self.assertTrue(REPORT_PDF.read_bytes().startswith(b"%PDF-1."))
+        self.assertNotIn("report.pdf", MEMBERS)
 
     def test_download_packet_is_exact_safe_and_has_matching_checksum(self):
         with zipfile.ZipFile(PACKET) as archive:

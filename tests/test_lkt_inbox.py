@@ -673,10 +673,10 @@ class EnvelopeTests(ReceiverFixture):
         self.assertEqual(
             lkt_inbox.OFFER_FIELD_RULES["mcp_boundary_review"],
             {
-                "role": (700, True, True),
+                "role": (700, False, True),
                 "repository": (900, True, True),
-                "surface": (1200, True, True),
-                "environment": (700, True, True),
+                "surface": (1200, False, True),
+                "environment": (700, False, True),
                 "client_transport": (700, True, True),
                 "risk": (900, True, True),
                 "constraints": (800, False, True),
@@ -684,6 +684,9 @@ class EnvelopeTests(ReceiverFixture):
         )
 
         optional_fields = mcp_boundary_review_payload()
+        optional_fields["role"] = ""
+        optional_fields["surface"] = ""
+        optional_fields["environment"] = ""
         optional_fields["constraints"] = ""
         _, raw = encrypted_envelope(
             self.key,

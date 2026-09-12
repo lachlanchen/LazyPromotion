@@ -1640,3 +1640,11 @@ and the supported write-tool flag. It contains no LazyingArt link or offer and
 is baselined in the metadata-only GitHub monitor, which cannot read bodies or
 reply. It is a helpful interaction, not buyer intent, a lead, payment, or
 revenue.
+
+The GitHub profile's first service row now removes one layer of navigation for
+people arriving from those technical discussions. Profile commit `2995b52`
+links directly to the executed MCP sample, the free public-repository
+preflight, and the metadata-only fit check, each with a distinct campaign
+marker. The pushed default branch returned the exact three links and every
+destination returned HTTP 200. This is conversion-path readiness, not a visit,
+inquiry, payment, or revenue.

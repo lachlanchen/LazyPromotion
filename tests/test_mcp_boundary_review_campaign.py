@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 39)
+        self.assertEqual(self.payload["version"], 40)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -481,10 +481,21 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("eleven README editions", github["role"])
         self.assertIn("267 repository tests", github["verification"])
         profile = github["profile_route"]
-        self.assertEqual(profile["commit"], "0b0080c")
+        self.assertEqual(profile["state"], "direct_proof_preflight_and_fit_routes")
+        self.assertEqual(profile["commit"], "2995b52")
         self.assertEqual(profile["position"], "first service row")
-        self.assertIn("utm_campaign=mcp_boundary_review", profile["destination"])
+        self.assertEqual(len(profile["destinations"]), 3)
+        self.assertIn("sample-report", profile["destinations"]["executed_sample"])
+        self.assertIn("#preflight", profile["destinations"]["public_repository_preflight"])
+        self.assertIn("fit-check", profile["destinations"]["fit_check"])
+        self.assertTrue(
+            all(
+                "utm_campaign=mcp_boundary_review" in destination
+                for destination in profile["destinations"].values()
+            )
+        )
         self.assertIn("up to eight tools and resources", profile["scope"])
+        self.assertIn("HTTP 200", profile["verification"])
         self.assertFalse(profile["attention_or_sale_observed"])
 
 

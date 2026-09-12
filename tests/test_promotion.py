@@ -748,6 +748,25 @@ class PromotionTests(unittest.TestCase):
         body = "With a friend's help I added subtitles in the editor. Not bad."
         self.assertFalse(promotion.is_help_request(body))
 
+    def test_help_me_as_a_benefit_is_not_a_request(self):
+        body = (
+            "A structured course really helped me with pronunciation, and clear "
+            "HSK goals help me with the study plan. Immersion is useful too."
+        )
+        self.assertFalse(promotion.is_help_request(body))
+
+    def test_direct_help_me_request_is_kept(self):
+        self.assertTrue(
+            promotion.is_help_request(
+                "Help me configure local document search with citations"
+            )
+        )
+        self.assertTrue(
+            promotion.is_help_request(
+                "Could someone help me configure local document search with citations"
+            )
+        )
+
     def test_promotional_caption_is_not_a_help_request(self):
         body = "Need a video editor? I got you. DM me and follow for more."
         self.assertFalse(promotion.is_help_request(body))
@@ -831,6 +850,15 @@ class PromotionTests(unittest.TestCase):
             "Here is my Qwen setup; hope it helps. I chose this quant after "
             "testing it. Why not Docker? What should you change for less VRAM? "
             "The complete configuration and benchmark are below."
+        )
+        self.assertFalse(promotion.is_help_request(body))
+        self.assertEqual(promotion.rank_projects(body), [])
+
+    def test_codex_summarized_benchmark_with_rhetorical_question_is_not_a_request(self):
+        body = (
+            "I asked Codex to summarize my dual-GPU benchmark. Why not try the "
+            "F16 cache? I did, and it improved MTP acceptance. My production "
+            "configuration and results are below."
         )
         self.assertFalse(promotion.is_help_request(body))
         self.assertEqual(promotion.rank_projects(body), [])

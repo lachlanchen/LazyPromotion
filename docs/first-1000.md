@@ -1712,3 +1712,14 @@ monitor now makes at most two attempts for a fixed read-only CLI allowlist and
 preserves only the last successful aggregate state if both fail; every Postiz
 mutation is rejected. The exact session was rotated once to load the tested
 code and returned the same healthy state. No post or revenue state changed.
+
+A finite September 13 discovery pass ran 33 reviewed search routes across
+Reddit, X, and Hacker News in the isolated project browser. It produced no paid
+opportunity, draft, reply, or post. Model review rejected the three remaining
+Reddit candidates: one genuine graphics-career question had no evidence-backed
+project fit, while a Chinese-study comment and a dual-GPU benchmark were advice
+or showcase material rather than requests. The deterministic request gate now
+distinguishes a direct “help me” request from phrases such as “this helped me,”
+and treats an explicitly Codex-summarized benchmark as an existing solution
+unless it also contains a direct unresolved request. The complete suite passes
+764 tests. The dedicated browser/noVNC stack was stopped after evidence capture.

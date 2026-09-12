@@ -47,7 +47,7 @@ HELP_SIGNALS = {
 HELP_PHRASES = {
     "any way", "can anyone", "can someone", "could anyone", "could someone",
     "does anyone", "how can i", "how do i", "is there", "looking for",
-    "help me", "help needed", "need a", "need an", "please help",
+    "help needed", "need a", "need an", "please help",
     "what should i", "where can i", "would anyone",
     "怎么", "怎麼", "如何", "有没有", "有沒有", "哪里", "哪裡", "求助",
     "推荐", "推薦", "想学", "想學", "需要", "看不懂", "读不懂", "讀不懂",
@@ -101,7 +101,7 @@ INSTRUCTION_EXFILTRATION_PHRASES = {
 COMMENT_REQUEST_PHRASES = {
     "any advice", "any recommendations", "any recommendation", "any suggestions",
     "can anyone", "can someone", "could anyone", "could someone", "does anyone",
-    "does anyone know", "has anyone", "help me", "help needed", "how can i",
+    "does anyone know", "has anyone", "help needed", "how can i",
     "how do i", "i can't", "i cannot", "i need", "i'm looking", "i am looking",
     "is there a tool", "is there an app", "is there a way", "looking for",
     "my issue", "my problem", "need help", "please help", "what can i",
@@ -114,10 +114,16 @@ FIRST_PERSON_NEED_RE = re.compile(
     r"\b(?:i|we)\s+need\b|\b(?:i|we)\b[^.!?\n]{0,180}\b(?:and|but)\s+need\b",
     flags=re.I,
 )
+DIRECT_HELP_ME_RE = re.compile(
+    r"(?:^|[.!?\n]\s*)(?:please\s+)?help\s+me\b|"
+    r"\b(?:can|could|would|will)\s+(?:anyone|someone|you)\s+"
+    r"(?:please\s+)?help\s+me\b",
+    flags=re.I,
+)
 SELF_SOLUTION_PHRASES = {
     "i built", "i created", "i launched", "i tested", "my new tool", "my new app",
     "we built", "we created", "we launched", "we tested", "our new tool", "our new app",
-    "free tutoring is available", "hope it helps", "i think i'd share",
+    "i asked codex", "free tutoring is available", "hope it helps", "i think i'd share",
     "resource list",
 }
 BOT_AUTHORS = {"automoderator"}
@@ -607,6 +613,8 @@ def help_request_signals(body: str) -> dict[str, list[str]]:
     )
     if FIRST_PERSON_NEED_RE.search(body):
         direct_request_hits.append("first-person need")
+    if DIRECT_HELP_ME_RE.search(body):
+        direct_request_hits.append("direct help-me request")
     self_solution_hits = sorted(
         phrase for phrase in SELF_SOLUTION_PHRASES
         if keyword_present(normalized(phrase).strip(), haystack)
@@ -634,7 +642,7 @@ def is_help_request(body: str) -> bool:
     direct_request = any(
         keyword_present(normalized(phrase).strip(), haystack)
         for phrase in COMMENT_REQUEST_PHRASES
-    ) or bool(FIRST_PERSON_NEED_RE.search(body))
+    ) or bool(FIRST_PERSON_NEED_RE.search(body) or DIRECT_HELP_ME_RE.search(body))
     explicit = (
         "?" in body
         or ask_hn

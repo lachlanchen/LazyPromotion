@@ -131,6 +131,14 @@ Claude Code machine. It asked the maintainer to correlate that range with CDN
 and origin logs before changing OAuth. No offer or LazyingArt link was added;
 this is a helpful interaction, not a lead or revenue.
 
+That diagnostic now strengthens the existing public/local/remote MCP article
+instead of creating another post. WordPress post 3832 was updated in place with
+a short trace from UTC-correlated edge and origin evidence through the exact
+resource and token audience. The live page still has one quiet sample-and-fit
+route; no social item was added. LazyBlog commit `f51d204` records the verified
+update. This is owned conversion readiness, not an inquiry, payment, or
+revenue.
+
 ## Owned-channel conversion check
 
 A read-only 30-day Postiz pass does not justify more publishing volume. X

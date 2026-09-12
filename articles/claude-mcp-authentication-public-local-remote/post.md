@@ -75,6 +75,21 @@ Claude's remote custom connectors behave differently from a local process. Anthr
 
 For a private remote connector, combine that reachability with OAuth. Public reachability is not the same thing as public access.
 
+## If Claude Code works but claude.ai does not
+
+That split is useful evidence. Claude Code can reach the server from the developer's network, while a remote custom connector reaches it from Anthropic's network. A successful local login therefore does not prove the cloud route is open.
+
+Test one layer at a time:
+
+1. Start a connector attempt and record its UTC time.
+2. Check the CDN or WAF log, then the origin log, for that same minute. Anthropic currently publishes `160.79.104.0/21` as its outbound IPv4 range for MCP connector and other tool calls. Check the [current IP-address page](https://platform.claude.com/docs/en/api/ip-addresses) before changing a firewall rule rather than treating a copied range as permanent.
+3. If no request from that path reaches the edge, leave OAuth alone for the moment. Check DNS, TLS, firewall allowlists, geographic rules, and bot or WAF policy first.
+4. If the edge receives a request but the origin does not, trace the edge decision and forwarded host and path.
+5. If the MCP challenge and browser login complete but the connector still fails, compare the exact MCP resource at every step. The protected-resource metadata, authorization request, token request, token audience, and connector URL should agree on the canonical scheme, host, port, and path.
+6. If an authenticated MCP request reaches the origin and receives `401` or `403`, inspect token validation and scope. Do not weaken the firewall and OAuth policy at the same time.
+
+For an intermittent failure, keep the request ID, UTC time, source range, edge status, origin status, and OAuth result together. That short trace usually shows whether the break is before the CDN, between the CDN and origin, or after token issuance.
+
 ## Fit authentication into FastMCP without mixing the APIs
 
 FastMCP accepts an authentication provider when the server is created. A FastAPI-derived MCP server can keep its existing route conversion and pass the provider through:
@@ -118,5 +133,6 @@ The [executed MCP boundary sample](https://lazying.art/mcp-boundary-review/sampl
 - [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 - [Claude Code: connect to tools with MCP](https://code.claude.com/docs/en/mcp)
 - [Claude remote custom connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+- [Anthropic IP addresses](https://platform.claude.com/docs/en/api/ip-addresses)
 - [FastMCP authentication](https://gofastmcp.com/servers/auth/authentication)
 - [FastMCP authorization](https://gofastmcp.com/servers/authorization)

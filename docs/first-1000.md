@@ -513,7 +513,8 @@ READMEs now also offer a short sample-first route: inspect the complete report,
 then use the free metadata-only fit check only if the fixed USD 250 software
 review fits. Commit `8ec250b` keeps the free UU answer and vendor boundary first,
 limits the review to one relay and three computers, and excludes deployment,
-hardware, and ongoing support. All 153 repository tests pass. No additional
+hardware, and ongoing support. All 153 repository tests and GitHub Actions run
+`34723321930` pass; the tracked samples and fit check return HTTP 200. No additional
 Postiz item was added; the clearer route is readiness, not a click, inquiry, or
 revenue.
 One read-only GitHub monitor now watches public issue and pull-request metadata

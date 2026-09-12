@@ -296,6 +296,8 @@ class RepositoryTests(unittest.TestCase):
         for route in sample_first["paths"].values():
             self.assertIn("utm_campaign=uu_remote_bridge", route)
         self.assertIn("no deployment", sample_first["copy_boundary"])
+        self.assertIn("34723321930", sample_first["verification"])
+        self.assertIn("HTTP 200", sample_first["verification"])
         self.assertIn("do not establish a click", sample_first["boundary"])
         homepage = campaign["owned_route"]["homepage_conversion_handoff"]
         self.assertEqual(homepage["state"], "live_and_verified")

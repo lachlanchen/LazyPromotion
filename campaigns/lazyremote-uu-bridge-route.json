@@ -174,7 +174,7 @@
         "simplified_chinese_fit_check": "https://lazying.art/lazyremote/fit-check/?utm_source=github&utm_medium=readme&utm_campaign=uu_remote_bridge&utm_content=network_review_fit_check_zh_hans"
       },
       "copy_boundary": "One reachable relay, up to three computers, USD 250, metadata-only fit check first, and no deployment, hardware, or ongoing support. The free bridge and vendor separation remain ahead of the offer.",
-      "verification": "All 153 repository tests passed locally with the existing opt-in systemd test skipped, and the exact English and Simplified-Chinese routes were pushed to main.",
+      "verification": "All 153 repository tests passed locally with the existing opt-in systemd test skipped. GitHub Actions run 34723321930 passed on the exact pushed commit, and the English sample, Simplified-Chinese sample, and fit-check destinations each returned HTTP 200 with their campaign tags intact.",
       "postiz_action": "none",
       "lead_or_sale_observed": false,
       "boundary": "The improved paths are conversion readiness. They do not establish a click, inquiry, qualified lead, payment, or received revenue."

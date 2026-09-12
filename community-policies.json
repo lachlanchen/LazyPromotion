@@ -10,6 +10,16 @@
       "agent_private_contact_allowed": false,
       "manual_operator_contact_allowed": true,
       "reason": "Current r/forhire Rule 10 prohibits bots from contacting members for any purpose. Agent-authored applications, replies, and follow-ups are therefore manual-operator only."
+    },
+    {
+      "platform": "reddit",
+      "community": "selfhosted",
+      "observed_at": "2026-09-12T13:55:14Z",
+      "source_url": "https://old.reddit.com/r/selfhosted/about/rules/",
+      "agent_public_reply_allowed": true,
+      "agent_private_contact_allowed": false,
+      "manual_operator_contact_allowed": true,
+      "reason": "Current r/selfhosted rules allow relevant, useful project mentions in comments but prohibit spam and excessive self-promotion. Public replies must solve the self-hosting question first, use at most one disclosed project reference, and never initiate private contact."
     }
   ]
 }

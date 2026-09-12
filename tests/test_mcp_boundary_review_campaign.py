@@ -21,7 +21,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 21)
+        self.assertEqual(self.payload["version"], 22)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -32,6 +32,8 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(offer["tool_and_resource_limit"], 8)
         self.assertEqual(offer["protocol_check_limit"], 10)
         self.assertEqual(len(offer["default_check_set"]), 10)
+        self.assertIn("result handoff", offer["default_check_set"][2])
+        self.assertIn("intended client", offer["default_check_set"][3])
         self.assertIn("up to three checks", offer["follow_up_recheck"])
         self.assertEqual(sum(offer["deliverable_allocation_usd"].values()), 500)
         self.assertEqual(self.payload["funnel"]["received_revenue_usd"], 0)
@@ -60,13 +62,17 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertTrue(proof["packet"]["live_byte_identical"])
 
     def test_demand_is_separate_from_selection_or_sales(self):
-        self.assertEqual(len(self.payload["demand_evidence"]), 4)
+        self.assertEqual(len(self.payload["demand_evidence"]), 5)
         self.assertTrue(
             all(item["source"].startswith("https://") for item in self.payload["demand_evidence"])
         )
         self.assertFalse(self.payload["intake"]["lead_or_sale_observed"])
         self.assertFalse(self.payload["funnel"]["qualified_lead_observed"])
         self.assertFalse(self.payload["funnel"]["payment_confirmed"])
+        latest = self.payload["demand_evidence"][-1]
+        self.assertIn("/r/mcp/", latest["source"])
+        self.assertIn("large read-only result", latest["need"])
+        self.assertIn("not a buyer inquiry", latest["boundary"])
 
     def test_upwork_mcp_role_is_not_mistaken_for_an_autonomous_route(self):
         route = self.payload["channels"]["upwork_mcp_expert"]
@@ -235,11 +241,11 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         delivery = self.payload["owned_delivery"]
         self.assertEqual(
             delivery["website_commit"],
-            "3c361c125478b5e15e786d8487c5bc2d538bc320",
+            "e44f4287a1bc5f24229f775c5487b4807c83d9f0",
         )
-        self.assertIn("actions/runs/34691551784", delivery["deployment_run"])
-        self.assertIn("same server, transport, and reviewed surface", delivery["verification"])
-        self.assertIn("practical ten-check guide", delivery["verification"])
+        self.assertIn("actions/runs/34698033524", delivery["deployment_run"])
+        self.assertIn("pagination or resource handoff", delivery["verification"])
+        self.assertIn("deployed HTML returned", delivery["verification"])
 
     def test_lkt_readmes_route_mcp_interest_to_exact_proof(self):
         github = self.payload["channels"]["github"]

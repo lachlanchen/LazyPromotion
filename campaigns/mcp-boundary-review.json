@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 21,
+  "version": 22,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -35,6 +35,13 @@
       "provider": "Upwork",
       "need": "A current USD 60–120 per hour role seeks many contributors who can build and evaluate real MCP servers, reproducible environments, deterministic verification, bugs, features, refactoring, and performance.",
       "boundary": "The technical fit is exact, but the route requires an Upwork proposal plus a thirty-minute personal AI interview and possible assessment. The dedicated browser reached a Cloudflare hold before proposal-credit cost and application controls could be verified, so no proposal, credit spend, interview, or assessment was attempted."
+    },
+    {
+      "captured_at": "2026-09-12",
+      "source": "https://www.reddit.com/r/mcp/comments/1we4kb2/mcp_server_over_etsknx_building_projects_the/",
+      "provider": "Reddit",
+      "need": "A current MCP maintainer asked whether a large read-only result should be paginated or written to a file and returned as a path.",
+      "boundary": "This is product-design evidence, not a buyer inquiry. It exposed a concrete review question: whether result handoff is bounded, portable, authorized, and resolvable by the intended client without leaking a server-local path."
     }
   ],
   "market_validation": {
@@ -76,8 +83,8 @@
     "default_check_set": [
       "protocol version negotiation",
       "advertised versus live tool and resource discovery",
-      "one agreed valid tool call",
-      "one agreed valid resource read",
+      "one agreed valid tool call, including output bounds and result handoff",
+      "one agreed valid resource read, including locator resolution by the intended client",
       "unknown tool or resource rejection",
       "malformed or missing input rejection",
       "actual reads, writes, external calls, and approval gates",
@@ -136,11 +143,11 @@
     "boundary": "Project-owned evidence, not a customer result, penetration test, security certification, or promise of production fitness."
   },
   "owned_delivery": {
-    "website_commit": "3c361c125478b5e15e786d8487c5bc2d538bc320",
-    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34691551784",
+    "website_commit": "e44f4287a1bc5f24229f775c5487b4807c83d9f0",
+    "deployment_run": "https://github.com/lachlanchen/LazyingArtWebsite/actions/runs/34698033524",
     "deployment_state": "success",
     "homepage": "The six-route chooser replaces the lower-priority Story Clip card with this current software-first offer in thirteen locales.",
-    "verification": "All 33 website contract tests passed. The live offer now uses one base revision and the same server, transport, and reviewed surface consistently, and links to the practical ten-check guide with campaign attribution. GitHub Pages deployment 34691551784 succeeded and the deployed HTML returned the exact revised contract and guide route."
+    "verification": "All 33 website contract tests passed. The live offer now makes large-result handoff explicit: output bounds, pagination or resource handoff, and client-resolvable locators are checked inside the existing ten-case scope. GitHub Pages deployment 34698033524 succeeded, and the deployed HTML returned both exact result-handoff checks."
   },
   "intake": {
     "state": "live_verified",

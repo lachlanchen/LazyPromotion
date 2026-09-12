@@ -702,6 +702,21 @@ class PromotionTests(unittest.TestCase):
             "",
         )
 
+    def test_selfhosted_policy_allows_public_value_but_blocks_private_contact(self):
+        url = "https://www.reddit.com/r/selfhosted/comments/example/request/"
+        self.assertEqual(
+            promotion.agent_contact_block_reason(
+                "reddit", url, action="public_reply"
+            ),
+            "",
+        )
+        self.assertIn(
+            "never initiate private contact",
+            promotion.agent_contact_block_reason(
+                "reddit", url, action="private_contact"
+            ),
+        )
+
     def test_forhire_opportunity_contact_remains_blocked_if_status_is_stale(self):
         candidate = promotion.ingest_candidate(
             self.db,

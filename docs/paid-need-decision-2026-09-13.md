@@ -75,3 +75,11 @@ or font availability, and project `40707742` requires DDR2 length matching plus
 dual-band RF loss acceptance beyond the current KiCad evaluation proof. None
 is a bounded asynchronous delivery with a defensible acceptance test, so no bid
 was placed. This is screening evidence, not a lead or revenue event.
+
+Project `40700012` also resembles the book pipeline at first glance, but its
+collection has no stated book or page count and every line must be manually
+proofread in Hindi within a month. The client is new and unrated, and several
+near-duplicate retyping listings are active. The work is neither bounded nor
+supported by current language proof, so no bid was placed. The monitor now
+suppresses manual-retyping listings while retaining bounded OCR and document
+pipeline work.

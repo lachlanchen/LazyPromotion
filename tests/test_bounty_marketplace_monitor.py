@@ -295,6 +295,14 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
             description="Join one live AnyDesk session to change the router.",
         )
         live_access["jobs"] = [{"name": "Network Administration"}]
+        manual_retyping = self.freelancer_project(
+            40710007,
+            title="Hindi PDF Books to Text",
+            description=(
+                "Use OCR, but every line needs human proofreading and retyping."
+            ),
+        )
+        manual_retyping["jobs"] = [{"name": "OCR"}, {"name": "Copy Typing"}]
         report = monitor.fetch_freelancer_candidate_projects(
             opener=self.opener(
                 [
@@ -306,6 +314,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                             preferred,
                             unrelated,
                             live_access,
+                            manual_retyping,
                         ]
                     )
                 ],
@@ -314,7 +323,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         )
 
         self.assertEqual(report["pages_read"], 1)
-        self.assertEqual(report["projects_considered"], 6)
+        self.assertEqual(report["projects_considered"], 7)
         self.assertEqual(
             [row["project_id"] for row in report["projects"]], [40710001]
         )
@@ -336,7 +345,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         self.assertNotIn("return a tested report", serialized)
         self.assertRegex(row["fingerprint"], r"^[0-9a-f]{64}$")
 
-        invalid = self.freelancer_project(40710007)
+        invalid = self.freelancer_project(40710008)
         invalid["currency"]["exchange_rate"] = 0
         with self.assertRaisesRegex(RuntimeError, "exchange rate"):
             monitor.fetch_freelancer_candidate_projects(

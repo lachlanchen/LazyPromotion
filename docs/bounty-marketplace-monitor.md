@@ -31,12 +31,13 @@ Bounties item with positive gross cash margin is new or changes. Freelancer
 gets its own first-pass baseline; later new or changed rows alert only after a
 strong portfolio-term match, a USD 250 fixed or USD 25/hour ceiling, no more
 than 25 bids, and removal of preferred-only, KYC-gated, commission/recruiting,
-ongoing-employment, onsite, or live-remote-control work. An alert is a private
-review prompt, not a claim, profit calculation, lead, contract, payment, or
-revenue event. The public issue, reward or budget, actual scope, active
-competition, controlling terms, client history, platform fee, bond, gas,
-deadline, account gate, and payout eligibility must be inspected before
-deciding whether work fits; external writes remain outside this monitor.
+sales, unbounded manual-retyping, ongoing-employment, onsite, or
+live-remote-control work. An alert is a private review prompt, not a claim,
+profit calculation, lead, contract, payment, or revenue event. The public
+issue, reward or budget, actual scope, active competition, controlling terms,
+client history, platform fee, bond, gas, deadline, account gate, and payout
+eligibility must be inspected before deciding whether work fits; external
+writes remain outside this monitor.
 
 The five-minute floor is intentionally quieter than Bounty's example polling
 interval while the agent is unverified. It can be reconsidered only after the
@@ -92,8 +93,9 @@ API:
 - broad Android, media, and imaging keywords were deliberately excluded after
   a live sample produced unrelated support and data-entry work;
 - missing or malformed budgets, closed/private/local projects, low ceilings,
-  crowded listings, preferred-only work, KYC-gated work, and obvious live or
-  employment commitments are rejected before alerting;
+  crowded listings, preferred-only work, KYC-gated work, sales/recruiting,
+  manual retyping, and obvious live or employment commitments are rejected
+  before alerting;
 - descriptions are used transiently for matching and fingerprinting but are
   never persisted. A candidate row keeps only the public title, URL, budget,
   bid count, matched capability, timestamp, and fingerprint;

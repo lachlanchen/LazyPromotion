@@ -53,6 +53,11 @@ FREELANCER_EXCLUSION_PATTERNS = {
         r"\b(?:full[- ]time|40\s*hours?\s*(?:a|per)\s*week)\b",
         re.IGNORECASE,
     ),
+    "sales_or_manual_retyping": re.compile(
+        r"\b(?:business development executive|bde|copy[- ]?typing|re[- ]?typing|"
+        r"re[- ]?typed|sales executive)\b|every line needs human proofreading",
+        re.IGNORECASE,
+    ),
 }
 DEFAULT_CREDENTIALS = ROOT / ".local" / "private" / "CREDENTIALS.md"
 DEFAULT_STATE = ROOT / ".local" / "bounty-marketplace-monitor-status.json"

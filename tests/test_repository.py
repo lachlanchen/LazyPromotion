@@ -229,7 +229,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 17)
+        self.assertEqual(campaign["version"], 18)
         self.assertEqual(demand["public_stars"], 14)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 10)
         explicit_need = demand["current_explicit_need"]
@@ -298,6 +298,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("no deployment", sample_first["copy_boundary"])
         self.assertIn("34723321930", sample_first["verification"])
         self.assertIn("HTTP 200", sample_first["verification"])
+        attribution = sample_first["sample_to_fit_attribution"]
+        self.assertEqual(attribution["state"], "live_verified")
+        self.assertEqual(attribution["source_commit"][:7], "d99ff47")
+        self.assertIn("34723735646", attribution["deployment_run"])
+        self.assertIn("15 Node tests", attribution["verification"])
+        self.assertIn("discarding a token", attribution["verification"])
+        self.assertIn("Only four", attribution["privacy_boundary"])
+        self.assertIn("not an inquiry", attribution["conversion_boundary"])
         self.assertIn("do not establish a click", sample_first["boundary"])
         homepage = campaign["owned_route"]["homepage_conversion_handoff"]
         self.assertEqual(homepage["state"], "live_and_verified")

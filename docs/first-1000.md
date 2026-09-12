@@ -517,6 +517,13 @@ hardware, and ongoing support. All 153 repository tests and GitHub Actions run
 `34723321930` pass; the tracked samples and fit check return HTTP 200. No additional
 Postiz item was added; the clearer route is readiness, not a click, inquiry, or
 revenue.
+The sample-to-fit step no longer sends those readers back through a generic
+landing-page attribution. LazyTunnel commit `d99ff47` links both complete
+samples directly to the free fit check and forwards only four validated UTM
+fields; arbitrary query data is dropped. All 87 Python and 15 Node tests pass,
+Pages run `34723735646` deployed, and a fresh browser preserved the exact UU
+GitHub source while discarding a test token. This improves attribution only; a
+page load remains neither an inquiry nor revenue.
 One read-only GitHub monitor now watches public issue and pull-request metadata
 across fifteen high-attention or offer repositories in a single GraphQL query.
 It records no issue, pull-request, comment, or review body and cannot comment,

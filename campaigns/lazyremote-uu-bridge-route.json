@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 17,
+  "version": 18,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-12T16:32:17Z",
@@ -175,6 +175,16 @@
       },
       "copy_boundary": "One reachable relay, up to three computers, USD 250, metadata-only fit check first, and no deployment, hardware, or ongoing support. The free bridge and vendor separation remain ahead of the offer.",
       "verification": "All 153 repository tests passed locally with the existing opt-in systemd test skipped. GitHub Actions run 34723321930 passed on the exact pushed commit, and the English sample, Simplified-Chinese sample, and fit-check destinations each returned HTTP 200 with their campaign tags intact.",
+      "sample_to_fit_attribution": {
+        "state": "live_verified",
+        "source_commit": "d99ff47d77fb68fa2032c549488b4faf4b18615b",
+        "deployment_run": "https://github.com/lachlanchen/LazyTunnel/actions/runs/34723735646",
+        "path": "README attribution -> complete sample -> free fit check",
+        "behavior": "The complete English and Simplified-Chinese samples now link directly to the free fit check. When an inbound page has valid campaign fields, the sample carries only utm_source, utm_medium, utm_campaign, and utm_content forward; unrelated query data is discarded. Without valid inbound attribution, the owned sample-report defaults remain.",
+        "verification": "All 87 Python and 15 Node tests passed. The Pages deployment succeeded, both live samples and the module returned HTTP 200, and a fresh headless browser resolved the English CTA to github/readme/uu_remote_bridge/network_review_sample_en while discarding a token parameter.",
+        "privacy_boundary": "Only four bounded marketing fields are forwarded. Contact details, tokens, arbitrary query fields, browser storage, and customer content are not copied.",
+        "conversion_boundary": "Attribution is recorded only if a visitor explicitly submits a reviewed fit check. A page load or rewritten link is not an inquiry, lead, payment, or revenue."
+      },
       "postiz_action": "none",
       "lead_or_sale_observed": false,
       "boundary": "The improved paths are conversion readiness. They do not establish a click, inquiry, qualified lead, payment, or received revenue."

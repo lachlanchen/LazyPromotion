@@ -1,10 +1,10 @@
 {
   "id": "meridial-infrastructure-specialist",
-  "version": 1,
+  "version": 2,
   "objective": "Use the strongest public Linux, networking, deployment-safety, and failure-verification evidence for a current infrastructure contract without inventing cloud-scale or TypeScript experience.",
   "source_need": {
     "captured_at": "2026-09-11T16:20:00Z",
-    "url": "https://job-boards.eu.greenhouse.io/agency/jobs/4745191101",
+    "url": "https://job-boards.greenhouse.io/agency/jobs/4745191101",
     "title": "SWE Infrastructure Specialist (JS/TS/Python)",
     "state": "official_current_worldwide_remote_contract_listing",
     "advertised_rate": "USD 80–150 per hour, adjusted for experience and geography",
@@ -33,8 +33,10 @@
     ]
   },
   "application": {
-    "state": "private_packet_prepared_not_submitted",
-    "packet": "ignored private application packet",
+    "state": "submitted_awaiting_reply",
+    "submitted_at": "2026-09-12T12:13:00+08:00",
+    "follow_up_not_before": "2026-09-19",
+    "packet": "ignored private application packet with a one-page infrastructure resume",
     "required_fields_observed": [
       "identity-consistent first and last name",
       "operator-controlled email",
@@ -45,18 +47,27 @@
       "exact LinkedIn profile URL",
       "privacy acknowledgement"
     ],
-    "verified_public_linkedin": "https://www.linkedin.com/in/lachlan-chen-a68486341/",
-    "privacy_acknowledgement_selected": false,
-    "form_filled": false,
-    "resume_uploaded": false,
-    "application_submitted": false,
+    "verified_public_linkedin": "https://www.linkedin.com/in/lazyingart",
+    "privacy_acknowledgement_selected": true,
+    "form_filled": true,
+    "resume_uploaded": true,
+    "application_submitted": true,
+    "submission_count": 1,
+    "submission_fee_usd": 0,
+    "confirmation": {
+      "url": "https://job-boards.greenhouse.io/agency/jobs/4745191101/confirmation",
+      "page_state": "application_submitted_contact_expected_next_few_business_days",
+      "visible_reviewed": true,
+      "verification_challenge_present": false,
+      "private_evidence_retained": true
+    },
     "assessment_started": false,
     "identity_verification_started": false,
     "automatic_follow_up": false,
-    "policy": "The packet can be completed from verified facts, but the application must not submit guessed personal data, accept the privacy terms by proxy, or complete a personal assessment or identity check as the applicant."
+    "policy": "One user-authorized application used verified personal, education, LinkedIn, and project facts. No assessment or identity check was completed; submission is not a reply, interview, contract, accepted rate, payment, or revenue."
   },
   "funnel": {
-    "outbound_application_count": 0,
+    "outbound_application_count": 1,
     "human_reply_observed": false,
     "qualified_lead_observed": false,
     "interview_observed": false,

@@ -194,11 +194,15 @@ readiness were verified, the same reviewed note was moved forward from
 2026-09-30T02:00:00Z to the open 2026-09-12T02:00:00Z slot. It explains why a
 representative chapter should be tested as both a fixed print page and a
 reflowable EPUB, then links to the live project-owned packet and the bounded
-USD 250 fit-check route. The
-visible editor showed the first-party page capture, correct account, revised
-time, scope, and original tracked URL. A provider read returned one matching
-`QUEUE` record with no shortlink and no release. Queueing is not publication, a
-lead, sale, or revenue.
+USD 250 fit-check route. The visible editor showed the first-party page capture,
+correct account, revised time, scope, and original tracked URL. A provider read
+returned one matching `QUEUE` record with no shortlink and no release. At
+2026-09-12T02:00:00Z Postiz published the item at
+<https://www.linkedin.com/feed/update/urn:li:share:7504358454258630656/>. A
+fresh public-page review confirmed the exact copy, image, author profile, and
+global visibility. The early visible state was two impressions with no reaction
+or comment, while Postiz analytics still returned no rows. Publication and
+impressions are attention, not a lead, sale, or revenue.
 
 On 2026-09-11, one LinkedIn release note for LKT's read-only MCP bridge was
 visibly reviewed and queued for 2026-10-02T02:00:00Z, after the existing

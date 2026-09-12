@@ -1,5 +1,5 @@
 {
-  "version": 34,
+  "version": 35,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -503,8 +503,29 @@
           "ja",
           "zh"
         ],
-        "commit": "368a843",
-        "route": "The archive article keeps its study value first, removes unrelated notebook and LKT pitches, and offers one concise lecture-specific next step after the public Video2Book workflow."
+        "commit": "cc85962",
+        "publish_sync_commit": "d51fa52",
+        "state": "live_verified",
+        "checked_at": "2026-09-12T11:58:22+08:00",
+        "destination": "https://lazying.art/lecture-pack/?utm_source=blog&utm_medium=referral&utm_campaign=bilingual_lecture_pack_pilot&utm_content=susskind_archive_sample#example",
+        "route": "The archive article keeps its free study value first, then sends rights-holding visitors to the complete project-owned sample before a fixed USD 250 scope and free fit check.",
+        "search_signal": {
+          "window": "last 28 days",
+          "archive_article_clicks": 25,
+          "classical_mechanics_reader_clicks": 27,
+          "relevant_query_rows": 50,
+          "relevant_query_impressions": 387,
+          "boundary": "Most observed queries seek free PDFs or notes, so the commercial paragraph remains secondary and self-qualifying."
+        },
+        "verification": {
+          "english_live": true,
+          "japanese_live": true,
+          "simplified_chinese_live": true,
+          "exact_tracked_destination_per_language": true,
+          "fixed_price_usd": 250,
+          "lead_or_sale_observed": false
+        },
+        "policy": "Search clicks and the live proof-first route are attention and conversion-path evidence, not a fit inquiry, lead, sale, or revenue."
       },
       "practical_workflow_guide": {
         "post_id": 3792,

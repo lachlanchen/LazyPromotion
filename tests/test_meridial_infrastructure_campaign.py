@@ -14,6 +14,7 @@ class MeridialInfrastructureCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_current_rate_is_not_a_contract_or_revenue_claim(self):
+        self.assertEqual(self.payload["version"], 2)
         source = self.payload["source_need"]
         self.assertEqual(
             source["advertised_rate"],
@@ -32,19 +33,26 @@ class MeridialInfrastructureCampaignTests(unittest.TestCase):
         self.assertIn("Terraform", gaps)
         self.assertIn("Hyperscale", gaps)
 
-    def test_personal_and_legal_gates_are_not_crossed(self):
+    def test_single_application_is_submitted_without_assessment_or_identity_claim(self):
         application = self.payload["application"]
 
-        self.assertEqual(application["state"], "private_packet_prepared_not_submitted")
-        self.assertTrue(application["verified_public_linkedin"].startswith("https://www.linkedin.com/in/"))
-        self.assertFalse(application["privacy_acknowledgement_selected"])
-        self.assertFalse(application["form_filled"])
-        self.assertFalse(application["resume_uploaded"])
-        self.assertFalse(application["application_submitted"])
+        self.assertEqual(application["state"], "submitted_awaiting_reply")
+        self.assertEqual(
+            application["verified_public_linkedin"],
+            "https://www.linkedin.com/in/lazyingart",
+        )
+        self.assertTrue(application["privacy_acknowledgement_selected"])
+        self.assertTrue(application["form_filled"])
+        self.assertTrue(application["resume_uploaded"])
+        self.assertTrue(application["application_submitted"])
+        self.assertEqual(application["submission_count"], 1)
+        self.assertEqual(application["submission_fee_usd"], 0)
+        self.assertTrue(application["confirmation"]["visible_reviewed"])
+        self.assertFalse(application["confirmation"]["verification_challenge_present"])
         self.assertFalse(application["assessment_started"])
         self.assertFalse(application["identity_verification_started"])
 
-    def test_prepared_packet_does_not_enter_application_watch_or_funnel(self):
+    def test_submitted_application_enters_watch_without_becoming_a_lead(self):
         watched = application_watch.application_record(
             self.payload,
             source_file=CAMPAIGN,
@@ -52,8 +60,10 @@ class MeridialInfrastructureCampaignTests(unittest.TestCase):
         )
         funnel = self.payload["funnel"]
 
-        self.assertIsNone(watched)
-        self.assertEqual(funnel["outbound_application_count"], 0)
+        self.assertIsNotNone(watched)
+        self.assertEqual(watched["review_after"], "2026-09-19")
+        self.assertFalse(watched["due_for_human_review"])
+        self.assertEqual(funnel["outbound_application_count"], 1)
         self.assertFalse(funnel["qualified_lead_observed"])
         self.assertFalse(funnel["payment_confirmed"])
         self.assertEqual(funnel["received_revenue_usd"], 0)

@@ -1200,6 +1200,12 @@ payment guide remains unmonetized because neither an owned offer nor a verified
 affiliate is a natural answer to a declined-card search. Traffic alone is not
 a reason to add an unrelated link.
 
+The Susskind archive article now uses the same proof-first path in English,
+Japanese, and Simplified Chinese. A rights-holding visitor sees the complete
+project-owned sample before the exact USD 250 boundary and free fit check. The
+change is live from BLOG commit `cc85962`; 25 archive clicks and 387 relevant
+query impressions justified the test, but no inquiry or revenue is inferred.
+
 The same report exposed an owned conversion gap: the exact `paperagent` query
 had 15 impressions, zero clicks, and an average position of 6.7, all for
 `paper.lazying.art`. The landing page now has a descriptive canonical title and

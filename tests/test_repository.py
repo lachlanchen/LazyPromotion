@@ -3259,7 +3259,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 34)
+        self.assertEqual(campaign["version"], 35)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -3354,6 +3354,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(linkedin["shortlink"])
         self.assertTrue(linkedin["verification"]["stored_text_exact"])
         self.assertIn("not leads or revenue", linkedin["policy"])
+
+        search_page = campaign["channels"]["lazyblog"]["search_demand_page"]
+        self.assertEqual(search_page["state"], "live_verified")
+        self.assertEqual(search_page["commit"], "cc85962")
+        self.assertEqual(search_page["publish_sync_commit"], "d51fa52")
+        self.assertIn("susskind_archive_sample", search_page["destination"])
+        self.assertTrue(search_page["verification"]["english_live"])
+        self.assertTrue(search_page["verification"]["japanese_live"])
+        self.assertTrue(search_page["verification"]["simplified_chinese_live"])
+        self.assertEqual(search_page["verification"]["fixed_price_usd"], 250)
+        self.assertFalse(search_page["verification"]["lead_or_sale_observed"])
+        self.assertEqual(search_page["search_signal"]["archive_article_clicks"], 25)
+        self.assertIn("not a fit inquiry", search_page["policy"])
 
         x_analytics = campaign["channels"]["x"]["analytics_observation"]
         self.assertEqual(x_analytics["impressions"], 2)
@@ -3762,7 +3775,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(path.read_text(encoding="utf-8"))
         reddit = campaign["channels"]["reddit"]
 
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         self.assertEqual(reddit["state"], "helpful_reply_acknowledged")
         self.assertIn("/comment/p87e9yd/", reddit["acknowledgement_url"])
         self.assertFalse(reddit["linked_owned_asset"])
@@ -3818,16 +3831,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(payment["stripe_objects_created"])
         self.assertFalse(payment["public_payment_link"])
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["state"], "published")
         self.assertEqual(linkedin["publish_at"], "2026-09-12T02:00:00Z")
+        self.assertIn("linkedin.com/feed/update/", linkedin["public_url"])
         self.assertEqual(
             linkedin["verification"]["rescheduled_from"],
             "2026-09-30T02:00:00Z",
         )
-        self.assertEqual(linkedin["verification"]["stored_state"], "QUEUE")
+        self.assertEqual(linkedin["verification"]["stored_state"], "PUBLISHED")
         self.assertTrue(linkedin["verification"]["media_visible"])
-        self.assertFalse(linkedin["verification"]["release_present"])
-        self.assertIn("not publication", linkedin["policy"])
+        self.assertTrue(linkedin["verification"]["release_present"])
+        self.assertTrue(linkedin["verification"]["public_post_loaded"])
+        self.assertTrue(linkedin["verification"]["public_copy_exact"])
+        self.assertEqual(linkedin["verification"]["visible_impressions"], 2)
+        self.assertEqual(linkedin["verification"]["visible_comments"], 0)
+        self.assertIn("not a lead", linkedin["policy"])
         blog = campaign["channels"]["blog"]
         self.assertEqual(blog["state"], "published")
         self.assertEqual(blog["post_id"], 3808)

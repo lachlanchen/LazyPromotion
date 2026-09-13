@@ -1,4 +1,6 @@
+import json
 import re
+import shlex
 import unittest
 from pathlib import Path
 
@@ -45,10 +47,33 @@ class McpClientCredentialsDiscoveryArticleTests(unittest.TestCase):
             "does not make the server conform",
             "work only with the non-interactive `client_credentials` grant",
             "keep cached tokens separate",
-            "That pull request is still under review",
+            "It does not add missing server metadata",
         )
         for phrase in required:
             self.assertIn(phrase, self.text)
+
+    def test_released_configuration_keeps_credentials_as_literal_placeholders(self):
+        blocks = re.findall(r"```bash\n(.*?)```", self.text, re.DOTALL)
+        command = next(block for block in blocks if "npx mcp-remote@" in block)
+        args = shlex.split(command.replace("\\\n", ""))
+        self.assertEqual(args[:3], ["npx", "mcp-remote@0.14.0", "https://mcp.example.com/mcp"])
+        self.assertIn("--client-credentials", args)
+        self.assertEqual(
+            args[args.index("--token-endpoint") + 1],
+            "https://auth.example.com/oauth/token",
+        )
+        client = json.loads(args[args.index("--static-oauth-client-info") + 1])
+        self.assertEqual(client, {
+            "client_id": "${MCP_CLIENT_ID}",
+            "client_secret": "${MCP_CLIENT_SECRET}",
+        })
+        metadata = json.loads(args[args.index("--static-oauth-client-metadata") + 1])
+        self.assertEqual(metadata["scope"], "mcp.read")
+        self.assertEqual(metadata["token_endpoint_auth_method"], "client_secret_basic")
+        self.assertIn("Keep the JSON single-quoted", self.text)
+        self.assertIn("Version 0.13.5 does not include it", self.text)
+        self.assertIn("https://github.com/punkpeye/mcp-remote/releases/tag/v0.14.0", self.text)
+        self.assertNotIn("That pull request is still under review", self.text)
 
     def test_article_checks_reacquisition_negative_cases_and_log_safety(self):
         required = (

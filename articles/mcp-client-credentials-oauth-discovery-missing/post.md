@@ -96,7 +96,19 @@ A safe client-side fallback should:
 - keep the client secret outside source files and process arguments; and
 - continue sending the canonical MCP resource in the token request when the authorization server supports the MCP flow.
 
-As of 13 September 2026, the npm release of `mcp-remote` is 0.13.5 and does not document an explicit token-endpoint option. [Issue 361](https://github.com/punkpeye/mcp-remote/issues/361) records the no-discovery case, while [pull request 362](https://github.com/punkpeye/mcp-remote/pull/362) proposes a guarded `--token-endpoint` option. That pull request is still under review, so check the installed command's `--help` output and the release notes instead of copying an unreleased flag into production.
+`mcp-remote` [0.14.0](https://github.com/punkpeye/mcp-remote/releases/tag/v0.14.0), released on 13 September 2026, includes the guarded `--token-endpoint` option from [pull request 362](https://github.com/punkpeye/mcp-remote/pull/362). Version 0.13.5 does not include it. For a server with a known endpoint but no discovery metadata, the released configuration is:
+
+```bash
+npx mcp-remote@0.14.0 https://mcp.example.com/mcp \
+  --client-credentials \
+  --token-endpoint https://auth.example.com/oauth/token \
+  --static-oauth-client-info '{"client_id":"${MCP_CLIENT_ID}","client_secret":"${MCP_CLIENT_SECRET}"}' \
+  --static-oauth-client-metadata '{"scope":"mcp.read","token_endpoint_auth_method":"client_secret_basic"}'
+```
+
+Set `MCP_CLIENT_ID` and `MCP_CLIENT_SECRET` in the launcher's protected environment. Keep the JSON single-quoted: `mcp-remote` expands those placeholders itself, so the shell does not put the secret into the command arguments. Replace the example URLs, scope, and authentication method with the values agreed with the server operator.
+
+The [version-pinned usage documentation](https://github.com/punkpeye/mcp-remote/blob/v0.14.0/README.md#signing-in-without-a-user) covers this fallback. It still applies only to `client_credentials`, validates the endpoint URL, and selects a separate token cache when the endpoint changes. It does not add missing server metadata or widen the token's permissions.
 
 ## Test the second token, not only the first
 

@@ -98,8 +98,20 @@ The persistent public-feed monitor now checks this media lane separately from
 its code queries. It retains only lecture-transcription rows whose public title
 or description explicitly states English, so an Amharic brief tagged with
 English marketplace categories does not become a false capability match. The
-live two-query pass considered 167 unique public rows and raised no unresolved
-alert after the reviewed English listing entered the seen state.
+matching gate now also requires every capability to appear in the buyer's
+title or description, and rejects manual PDF-to-Word, PDF-to-Excel, and data
+entry even when an OCR category is attached. The live two-query pass considered
+167 unique public rows, reduced the retained set from ten to seven, and raised
+no unresolved alert after the reviewed listings entered the seen state.
+
+Two remaining hardware listings were inspected against public scope. Project
+`40702601` combines an unspecified regulator substitution, power-integrity
+review, manufacturing files, tested boot firmware, and OS drivers without
+naming the silicon or test setup. Project `40707656` asks for an automotive
+buzzer that survives temperature, vibration, reverse polarity, and load dump,
+plus acoustic tuning and comparable past automotive work. The portfolio does
+not establish that automotive validation history, and neither brief is a
+bounded asynchronous first delivery. No bid was placed.
 
 The public Docker sandbox authentication thread produced a genuine follow-up
 after the first technical answer. The reporter confirmed that the write-tools

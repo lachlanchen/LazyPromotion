@@ -69,6 +69,12 @@ FREELANCER_EXCLUSION_PATTERNS = {
         r"re[- ]?typed|sales executive)\b|every line needs human proofreading",
         re.IGNORECASE,
     ),
+    "manual_document_conversion": re.compile(
+        r"\b(?:data entry|input data pdf|pdf[- ]to[- ](?:word|excel)|"
+        r"pdf to (?:word|excel)|fully editable \.docx|"
+        r"text perfectly replicated)\b",
+        re.IGNORECASE,
+    ),
 }
 DEFAULT_CREDENTIALS = ROOT / ".local" / "private" / "CREDENTIALS.md"
 DEFAULT_STATE = ROOT / ".local" / "bounty-marketplace-monitor-status.json"
@@ -460,7 +466,7 @@ def fetch_freelancer_candidate_projects(*, opener: Opener = urlopen) -> dict[str
         matched_terms = sorted(
             name
             for name, pattern in FREELANCER_MATCH_PATTERNS.items()
-            if pattern.search(searchable)
+            if pattern.search(listing_text)
             and (
                 name != "lecture_transcription"
                 or re.search(r"\bEnglish\b", listing_text, re.IGNORECASE)

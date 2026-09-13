@@ -320,6 +320,18 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
             {"name": "Transcription"},
             {"name": "English (US) Translator"},
         ]
+        broad_tag_only = self.freelancer_project(
+            40710010,
+            title="Move supplied rows into a spreadsheet",
+            description="Enter the supplied rows into the provided workbook.",
+        )
+        broad_tag_only["jobs"] = [{"name": "OCR"}, {"name": "Data Entry"}]
+        manual_conversion = self.freelancer_project(
+            40710011,
+            title="PDF-to-Word text conversion",
+            description="Use OCR and return one fully editable .docx.",
+        )
+        manual_conversion["jobs"] = [{"name": "OCR"}, {"name": "Word"}]
         report = monitor.fetch_freelancer_candidate_projects(
             opener=self.opener(
                 [
@@ -332,6 +344,8 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
                             unrelated,
                             live_access,
                             manual_retyping,
+                            broad_tag_only,
+                            manual_conversion,
                         ]
                     ),
                     self.freelancer_feed(
@@ -343,7 +357,7 @@ class BountyMarketplaceMonitorTests(unittest.TestCase):
         )
 
         self.assertEqual(report["pages_read"], 2)
-        self.assertEqual(report["projects_considered"], 9)
+        self.assertEqual(report["projects_considered"], 11)
         self.assertEqual(
             [row["project_id"] for row in report["projects"]],
             [40710001, 40710008],

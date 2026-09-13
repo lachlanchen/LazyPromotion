@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 49)
+        self.assertEqual(self.payload["version"], 50)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -104,7 +104,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
 
     def test_upstream_contribution_is_reviewable_proof_not_revenue(self):
         contribution = self.payload["upstream_contribution"]
-        self.assertEqual(contribution["state"], "submitted_awaiting_review")
+        self.assertEqual(contribution["state"], "merged_and_released")
         self.assertEqual(
             contribution["pull_request"],
             "https://github.com/punkpeye/mcp-remote/pull/362",
@@ -141,7 +141,14 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(contribution["owned_link_or_offer_included"])
         self.assertFalse(contribution["lead_or_sale_observed"])
         self.assertEqual(contribution["verified_received_gross_usd"], 0)
-        self.assertIn("not an acceptance", contribution["boundary"])
+        self.assertIn("not a customer result", contribution["boundary"])
+        self.assertIn("original submitted revision", contribution["boundary"])
+        release = contribution["release_verification"]
+        self.assertEqual(release["version"], "0.14.0")
+        self.assertEqual(release["registry_git_head"], contribution["merge_revision"])
+        self.assertRegex(contribution["merge_revision"], r"^[0-9a-f]{40}$")
+        self.assertEqual(release["release_url"], "https://github.com/punkpeye/mcp-remote/releases/tag/v0.14.0")
+        self.assertFalse(release["npm_package_executed_in_this_review"])
 
     def test_upwork_mcp_role_is_not_mistaken_for_an_autonomous_route(self):
         route = self.payload["channels"]["upwork_mcp_expert"]
@@ -516,6 +523,17 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(len(discovery["tags"]), 5)
         self.assertIn("mcp-remote 0.13.5", discovery["release_boundary"])
         self.assertIn("pull request 362 remained open", discovery["release_boundary"])
+        self.assertIn("npm released 0.14.0", discovery["release_boundary"])
+        release_update = discovery["release_update"]
+        self.assertEqual(release_update["state"], "published_live_verified")
+        self.assertEqual(len(release_update["source_commit"]), 40)
+        self.assertEqual(len(release_update["archive_commit"]), 40)
+        self.assertTrue(release_update["stored_source_matches_reviewed_markdown"])
+        self.assertTrue(release_update["desktop_and_390px_mobile_reviewed"])
+        self.assertFalse(release_update["horizontal_overflow"])
+        self.assertFalse(release_update["commercial_links_changed"])
+        self.assertFalse(release_update["new_post_created"])
+        self.assertFalse(release_update["translation_published"])
         self.assertIn("All ten", discovery["verification"])
         self.assertIn("390 by 844", discovery["verification"])
         self.assertIn("LazyBlog commit 0049e94", discovery["verification"])

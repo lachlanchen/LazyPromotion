@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 49,
+  "version": 50,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -66,7 +66,7 @@
     }
   ],
   "upstream_contribution": {
-    "state": "submitted_awaiting_review",
+    "state": "merged_and_released",
     "submitted_at": "2026-09-13",
     "repository": "https://github.com/punkpeye/mcp-remote",
     "issue": "https://github.com/punkpeye/mcp-remote/issues/361",
@@ -74,6 +74,19 @@
     "upstream_base_revision": "1dd81a1b7068a1771ea0edc577194722a84b09d6",
     "head_revision": "8af623814f79b9d40f3a40ac2dccdbbcf28ae593",
     "branch": "feat/explicit-client-credentials-token-endpoint",
+    "merged_at": "2026-09-13T06:31:12Z",
+    "merge_revision": "0a47c0240991156cf6eb85ead96dd94491057816",
+    "release_verification": {
+      "checked_at": "2026-09-13T06:47:11Z",
+      "version": "0.14.0",
+      "published_at": "2026-09-13T06:32:31Z",
+      "release_url": "https://github.com/punkpeye/mcp-remote/releases/tag/v0.14.0",
+      "registry_url": "https://registry.npmjs.org/mcp-remote/latest",
+      "registry_git_head": "0a47c0240991156cf6eb85ead96dd94491057816",
+      "version_pinned_usage": "https://github.com/punkpeye/mcp-remote/blob/v0.14.0/README.md#signing-in-without-a-user",
+      "method": "Owner merge metadata, GitHub release notes, npm latest metadata and version-pinned README agree on the released option.",
+      "npm_package_executed_in_this_review": false
+    },
     "problem": "Machine-to-machine MCP deployments may know the OAuth token endpoint while exposing neither protected-resource nor authorization-server discovery metadata.",
     "implementation": [
       "adds an explicit token-endpoint option only for the client_credentials grant",
@@ -105,7 +118,7 @@
     "owned_link_or_offer_included": false,
     "lead_or_sale_observed": false,
     "verified_received_gross_usd": 0,
-    "boundary": "The open pull request is reviewable proof of relevant MCP authentication work. It is not an acceptance, merge, customer result, lead, payment, or revenue."
+    "boundary": "The maintainer merged the contribution and the package release includes it. This is independently accepted open-source work, not a customer result, lead, payment, or revenue. The recorded 469 unit and 16 end-to-end tests belong to the original submitted revision; this release review checked publication metadata and documentation, not a fresh package execution."
   },
   "market_validation": {
     "decision": "Keep USD 500 during the initial validation window and sell reproducible pre-deployment evidence, not an automated scan or security audit.",
@@ -469,7 +482,20 @@
           "Developer Tools"
         ],
         "role": "A current machine-authentication failure becomes a durable guide that separates the MCP resource, authorization-server issuer, token endpoint, and authentication method; it preserves standards discovery as the server-side repair and treats an explicit endpoint as a narrow compatibility fallback.",
-        "release_boundary": "At publication time, npm latest was mcp-remote 0.13.5 and pull request 362 remained open. The guide tells readers to check installed help and release notes instead of using an unreleased flag.",
+        "release_boundary": "At initial publication, npm latest was mcp-remote 0.13.5 and pull request 362 remained open. On September 13 the maintainer merged it and npm released 0.14.0. The existing guide now documents a version-pinned command with literal credential placeholders while preserving the discovery and client-credentials-only boundaries.",
+        "release_update": {
+          "state": "published_live_verified",
+          "source_commit": "3a056d2c7733763a7d0b3de587dadc69a68cb954",
+          "archive_commit": "a7240b59a2c0015c7579322d5f546fd5a0eb20c0",
+          "wordpress_modified_gmt": "2026-09-13T06:45:17",
+          "stored_source_matches_reviewed_markdown": true,
+          "stored_html_sha256": "62d1f248217902ae58d9f9dada2748508fca4ceed1cf1ab17b7da3dd1353e43c",
+          "desktop_and_390px_mobile_reviewed": true,
+          "horizontal_overflow": false,
+          "commercial_links_changed": false,
+          "new_post_created": false,
+          "translation_published": false
+        },
         "verification": "One live REST record and canonical HTML contain the exact title, slug, three-address diagnostic, standards and compatibility boundaries, token-reacquisition checks, and two unshortened first-party UTM routes. All ten cited and conversion destinations returned HTTP 200. An isolated visible browser verified the 1440 by 900 desktop render, 390 by 844 mobile render without horizontal overflow, and a visible click to the executed sample. LazyBlog commit 0049e94 records the publication with all 38 tests passing.",
         "search_console": {
           "state": "priority_crawl_requested_once",

@@ -1754,6 +1754,18 @@ zero comments and zero reviews; future count or state changes create a manual
 review alert without fetching body, comment, or review text. This monitoring is
 not a reply, acceptance, buyer inquiry, payment, or revenue.
 
+On September 13, the monitor surfaced a real change: the maintainer merged
+[pull request 362](https://github.com/punkpeye/mcp-remote/pull/362) and released
+the explicit client-credentials token endpoint in
+[mcp-remote 0.14.0](https://github.com/punkpeye/mcp-remote/releases/tag/v0.14.0).
+The npm registry's source revision matches the merge. The existing diagnostic
+guide now includes the released, version-pinned command with literal environment
+placeholders, replacing the earlier under-review warning. Its WordPress source
+matches the reviewed Markdown; desktop and mobile checks found no page overflow.
+LazyBlog commit `a7240b5` records the in-place update. This is independently
+accepted open-source proof, not a buyer inquiry or revenue; no extra promotional
+reply was sent to the upstream thread.
+
 Search Console initially reported the new diagnostic URL as unknown to Google,
 then confirmed one priority-crawl request. Do not repeat the request merely to
 seek priority: the queue does not guarantee indexing, ranking, traffic, an

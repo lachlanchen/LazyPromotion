@@ -4,9 +4,9 @@ Last verified: 2026-09-13 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `cb5da1f2c6fa49fad68e203861924a17d3937c6a`
+Verified BLOG commit: `7d539f7d8bafeb9ff5b12b56b4cdb1b3c1dc77e4`
 
-Campaign range: `3b45351^..cb5da1f2c6fa49fad68e203861924a17d3937c6a`
+Campaign range: `3b45351^..7d539f7d8bafeb9ff5b12b56b4cdb1b3c1dc77e4`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -20,9 +20,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
-As of the verified commit, **155 posts** have completed this protocol:
+As of the verified commit, **156 posts** have completed this protocol:
 
-`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772, 3788, 3791, 3792, 3803, 3808, 3810, 3819, 3820, 3825`
+`7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1701, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772, 3788, 3791, 3792, 3803, 3808, 3810, 3819, 3820, 3825`
 
 ### Safety and historical corrections
 
@@ -45,7 +45,7 @@ Posts: `690, 1371, 1407, 1412, 1418, 1422, 1438, 1632, 1635`.
 - Rebuilt old TensorFlow, FFmpeg, MQL5, Linux display, WordPress media, unknown-file, PyQt, Vim, Git, Raspberry Pi GPIO, native-extension, and table-of-contents notes around current diagnostics, official sources, executable checks, rollback, electrical safety, and security boundaries.
 - Clearly distinguished X11, Wayland/Xwayland, virtual machines, and remote desktops in the BackTrack-resolution archive.
 
-Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 472, 476, 484, 488, 527, 560, 573, 697, 701, 717, 724, 731, 736, 740, 754, 944, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1526, 1565, 1635, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 2013, 2996, 3087, 3096, 3114, 3803, 3819, 3820, 3825`.
+Posts: `7, 9, 10, 26, 29, 31, 107, 113, 143, 164, 184, 206, 208, 211, 214, 221, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 472, 476, 484, 488, 527, 560, 573, 697, 701, 717, 724, 731, 736, 740, 754, 944, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1526, 1565, 1635, 1701, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1968, 1972, 1982, 2013, 2996, 3087, 3096, 3114, 3803, 3819, 3820, 3825`.
 
 ### Literary and learning resources
 
@@ -63,6 +63,19 @@ Posts: `933, 1498, 1562, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1
 Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
+
+- Post `1701`, [Using LaTeX in WordPress](https://blog.lazying.art/html/latex/1701/using-latex-in-wordpress.html),
+  corrects the wp-latex versus single-dollar syntax distinction and the
+  MathJax-LaTeX page-wide disable behavior. It replaces the unsupported
+  four-example rendering promise with literal syntax examples and one live
+  equation, retains the original title, URL and screenshot, and cites current
+  primary documentation. The English, Chinese and Japanese stored content
+  matches the reviewed sources exactly. All six desktop/mobile checks show
+  three literal code blocks, one rendered equation, the loaded image and no
+  horizontal overflow. BLOG commit `7d539f7` contains only this four-file bundle
+  and is verified on `origin/main`. The September 11 Search Console capture
+  recorded two clicks to this page; that guided a concrete correction, not a
+  buyer-intent or revenue claim. No new promotion, offer or affiliate was added.
 
 - New source-only post `3841`, [Why Your Chinese Document Becomes One Giant
   RAG Chunk](https://blog.lazying.art/html/computer_internet/3841/chinese-rag-whitespace-chunking-source-offsets.html),
@@ -413,6 +426,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | `cc305e7` | 3820 | Published a practical research-code reproducibility guide in English, Simplified Chinese, and Japanese, with a verified OpenHI sample and one tracked fit-check path |
 | `07ca7f1` | 3825 | Published a compatibility-first Kindle/KOReader guide in English, Simplified Chinese, and Japanese, with the current wizard, free sender, LinguaLeaf shelf, and one quiet support path |
 | `516e753` | 3829 | Added bounded large-result handoff, resource-link, client-resolvable locator, and raw server-path checks to the live MCP review guide |
+| `7d539f7` | 1701 | Corrected MathJax loading and delimiter guidance in English, Chinese and Japanese; verified literal examples and live equation rendering |
 
 The complete earlier trail is the BLOG repository history in the campaign range above; the commit messages name each post's principal correction.
 

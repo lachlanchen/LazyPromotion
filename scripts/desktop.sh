@@ -25,6 +25,26 @@ REFRESH_REGISTERED_VIEWER="${LAZYPROMOTION_REFRESH_REGISTERED_VIEWER:-0}"
 NOVNC_URL="http://127.0.0.1:$NOVNC_PORT/vnc.html?host=127.0.0.1&port=$NOVNC_PORT&autoconnect=1&resize=scale&view_only=0&shared=0&reconnect=0"
 TMUX_SESSION="lazypromotion-browser"
 
+# Every public lifecycle action shares the finite-check lease. The Python
+# parent owns it; close this shell's verified copy before launching tmux so a
+# long-running supervisor cannot retain the lock after the action finishes.
+case "${1:-status}" in
+  start|stop|restart)
+    if [[ -z "${LAZYPROMOTION_DESKTOP_LEASE_FD:-}" ]]; then
+      exec python "$PROJECT_ROOT/desktop_lease.py" "$1"
+    fi
+    lease_fd="$LAZYPROMOTION_DESKTOP_LEASE_FD"
+    if [[ ! "$lease_fd" =~ ^[0-9]+$ ]] || (( lease_fd < 3 )) \
+      || [[ "$(readlink "/proc/$$/fd/$lease_fd")" != "$RUNTIME_DIR/desktop-lifecycle.lock" ]] \
+      || ! flock -n "$lease_fd"; then
+      printf 'Refusing an invalid desktop lifecycle lease.\n' >&2
+      exit 2
+    fi
+    exec {lease_fd}>&-
+    unset LAZYPROMOTION_DESKTOP_LEASE_FD
+    ;;
+esac
+
 pid_alive() {
   local file="$1"
   local marker="$2"

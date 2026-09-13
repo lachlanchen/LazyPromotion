@@ -240,43 +240,48 @@ def read_folder_counts(
 ) -> tuple[int, int]:
     """Read only the selected folder's aggregate status without changing the UI."""
     with browser.browser_operation_lock():
-        target = icloud_mail_target(load_cdp_targets(cdp))
-        with open_cdp_target(str(target["webSocketDebuggerUrl"])) as connection:
-            tree = connection.command("Page.getFrameTree").get("frameTree")
-            if not isinstance(tree, dict):
-                raise RuntimeError("the iCloud Mail frame tree is unavailable")
-            frame = find_mail_app_frame(tree)
-            frame_id = frame.get("id")
-            if not frame_id:
-                raise RuntimeError("the iCloud Mail application frame is unavailable")
-            isolated = connection.command(
-                "Page.createIsolatedWorld",
-                {
-                    "frameId": frame_id,
-                    "worldName": "lazypromotion-inbound-counts",
-                    "grantUniveralAccess": False,
-                },
-            )
-            context_id = isolated.get("executionContextId")
-            if not context_id:
-                raise RuntimeError("the aggregate-count context is unavailable")
-            evaluated = connection.command(
-                "Runtime.evaluate",
-                {
-                    "contextId": context_id,
-                    "expression": aggregate_status_expression(folder_name),
-                    "returnByValue": True,
-                    "awaitPromise": False,
-                },
-            )
-        if evaluated.get("exceptionDetails"):
-            raise RuntimeError("iCloud did not expose the folder aggregate status")
-        payload = evaluated.get("result", {}).get("value")
-        if not isinstance(payload, dict) or not payload.get("folderFound"):
-            raise RuntimeError("the dedicated intake folder is unavailable")
-        if not payload.get("folderSelected"):
-            raise RuntimeError("the dedicated intake folder is not selected")
-        return parse_folder_status(payload.get("status"))
+        return _read_folder_counts_locked(cdp=cdp, folder_name=folder_name)
+
+
+def _read_folder_counts_locked(*, cdp: str, folder_name: str) -> tuple[int, int]:
+    """Internal reader; the caller must own browser_operation_lock throughout."""
+    target = icloud_mail_target(load_cdp_targets(cdp))
+    with open_cdp_target(str(target["webSocketDebuggerUrl"])) as connection:
+        tree = connection.command("Page.getFrameTree").get("frameTree")
+        if not isinstance(tree, dict):
+            raise RuntimeError("the iCloud Mail frame tree is unavailable")
+        frame = find_mail_app_frame(tree)
+        frame_id = frame.get("id")
+        if not frame_id:
+            raise RuntimeError("the iCloud Mail application frame is unavailable")
+        isolated = connection.command(
+            "Page.createIsolatedWorld",
+            {
+                "frameId": frame_id,
+                "worldName": "lazypromotion-inbound-counts",
+                "grantUniveralAccess": False,
+            },
+        )
+        context_id = isolated.get("executionContextId")
+        if not context_id:
+            raise RuntimeError("the aggregate-count context is unavailable")
+        evaluated = connection.command(
+            "Runtime.evaluate",
+            {
+                "contextId": context_id,
+                "expression": aggregate_status_expression(folder_name),
+                "returnByValue": True,
+                "awaitPromise": False,
+            },
+        )
+    if evaluated.get("exceptionDetails"):
+        raise RuntimeError("iCloud did not expose the folder aggregate status")
+    payload = evaluated.get("result", {}).get("value")
+    if not isinstance(payload, dict) or not payload.get("folderFound"):
+        raise RuntimeError("the dedicated intake folder is unavailable")
+    if not payload.get("folderSelected"):
+        raise RuntimeError("the dedicated intake folder is not selected")
+    return parse_folder_status(payload.get("status"))
 
 
 def record_observation(

@@ -53,6 +53,7 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 | [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py), [`lkt_inbox.py`](../lkt_inbox.py) | 읽기 전용 게시 상태 감시, Threads 답글 및 공개 issue 알림, 비공개 적합성 문의 수신 |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 집계된 비공개 상태로 실제 결제를 읽기 전용 감지. Stripe 객체를 만들거나 매출을 자동 기록하지 않음 |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | 프로젝트 전용 Xvfb/x11vnc/noVNC/Chrome 검토 데스크톱 하나 |
+| [`mail_inbound_check.py`](../mail_inbound_check.py) 및 [`desktop_lease.py`](../desktop_lease.py) | 매시간 제한된 시간 동안 메일 건수를 확인합니다. 검토 중이면 건너뛰고 자신이 시작한 데스크톱만 종료하며, 메일 본문을 읽거나 답장하지 않습니다. [운영 및 확인 범위](../docs/application-inbox-monitoring.md) |
 | [`application_watch.py`](../application_watch.py) 및 [`application_inbox_monitor.py`](../application_inbox_monitor.py) | 직접·그룹 신청의 검토 기한과 알려진 신청 스레드의 읽기 전용 집계 매칭. 실행 중인 모니터는 개인정보 제한 기한 요약만 포함하며 이메일을 열거나 후속 연락하지 않음 |
 | [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | 재사용하는 프로젝트 탭 하나에서 제출한 Freelancer 입찰의 집계 메시지 배지 또는 상태 변경을 감시하며 메시지를 열거나 답장하지 않음 |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | 감사 가능한 오픈 소스 및 MCP 도구 선택 근거 |

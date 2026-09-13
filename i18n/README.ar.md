@@ -53,7 +53,8 @@ LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجت
 | [`metrics.py`](../metrics.py) و[`network.py`](../network.py) و[`signals.py`](../signals.py) | طلبات ومسار إيراد ببوابات دليل، ورسم عام، وإشارات طلب من قنوات مملوكة |
 | [`owned_monitor.py`](../owned_monitor.py) و[`threads_inbound_monitor.py`](../threads_inbound_monitor.py) و[`github_inbound_monitor.py`](../github_inbound_monitor.py) و[`lkt_inbox.py`](../lkt_inbox.py) | مراقبة نشر للقراءة فقط، وتنبيهات ردود Threads والمسائل العامة، واستقبال خاص لفحص الملاءمة |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | كشف للدفعات الحقيقية بالقراءة فقط وحالة خاصة مجمعة؛ لا ينشئ عناصر Stripe ولا يسجل الإيراد تلقائيًا |
-| [`scripts/desktop.sh`](../scripts/desktop.sh) | سطح مكتب واحد دائم من Xvfb/x11vnc/noVNC/Chrome |
+| [`scripts/desktop.sh`](../scripts/desktop.sh) | سطح مكتب مراجعة واحد خاص بالمشروع من Xvfb/x11vnc/noVNC/Chrome |
+| [`mail_inbound_check.py`](../mail_inbound_check.py) و[`desktop_lease.py`](../desktop_lease.py) | فحوص محدودة المدة كل ساعة لأعداد البريد؛ تتجاوز المراجعات النشطة وتغلق فقط سطح المكتب الذي بدأتْه، من دون قراءة محتوى الرسائل أو الرد عليها. [التشغيل وحدود التغطية](../docs/application-inbox-monitoring.md) |
 | [`application_watch.py`](../application_watch.py) و[`application_inbox_monitor.py`](../application_inbox_monitor.py) | جدول مراجعة مستحقة للتقديمات المباشرة والمجمعة مع مطابقة مجمعة للقراءة فقط للمحادثات المعروفة؛ ولا يضم المراقب الجاري إلا ملخص الاستحقاق المحدود للخصوصية من دون فتح البريد أو المتابعة |
 | [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | يراقب عروض Freelancer المقدمة عبر علامة تبويب واحدة معاد استخدامها بحثًا عن شارة رسائل مجمعة أو تغير حالة، من دون فتح الرسائل أو الرد |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | تقييم البدائل مفتوحة المصدر |

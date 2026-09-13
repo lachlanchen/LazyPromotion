@@ -52,7 +52,8 @@ LazyPromotion 是一款本地运行、先审后发的社交需求发现助手。
 | [`metrics.py`](../metrics.py)、[`network.py`](../network.py) 与 [`signals.py`](../signals.py) | 有证据门槛的漏斗、公开关系图与第一方需求信号 |
 | [`owned_monitor.py`](../owned_monitor.py)、[`threads_inbound_monitor.py`](../threads_inbound_monitor.py)、[`github_inbound_monitor.py`](../github_inbound_monitor.py) 与 [`lkt_inbox.py`](../lkt_inbox.py) | 只读发布监测、Threads 回复提醒、公开 issue 提醒与私密适配咨询收件 |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 以汇总私密状态只读检测真实入账；绝不创建 Stripe 对象或自动记账收入 |
-| [`scripts/desktop.sh`](../scripts/desktop.sh) | 单一持久化 Xvfb/x11vnc/noVNC/Chrome 桌面 |
+| [`scripts/desktop.sh`](../scripts/desktop.sh) | 项目专用的单一 Xvfb/x11vnc/noVNC/Chrome 审阅桌面 |
+| [`mail_inbound_check.py`](../mail_inbound_check.py) 与 [`desktop_lease.py`](../desktop_lease.py) | 每小时限时检查邮件计数；遇到正在进行的审阅则跳过，只关闭本次启动的桌面，不读取正文或自动回复。[操作与覆盖范围](../docs/application-inbox-monitoring.md) |
 | [`application_watch.py`](../application_watch.py) 与 [`application_inbox_monitor.py`](../application_inbox_monitor.py) | 直接与分组申请的到期审阅日程，加上对已知申请线程的只读汇总匹配；运行中的监控器只嵌入隐私受限的到期摘要，绝不打开邮件或跟进 |
 | [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | 通过一个复用的项目标签页监测已提交 Freelancer 出价的汇总消息徽标或状态变化，不打开消息也不回复 |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | 可审计的开源与 MCP 工具选择 |

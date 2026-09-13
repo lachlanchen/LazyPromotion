@@ -456,22 +456,27 @@ def validate_campaign_summaries(value: object, *, campaign_ids: list[str]) -> li
 
 def read_application_counts(*, cdp: str, config: object) -> list[dict]:
     """Read aggregates from exactly one tab with the exact folder selected."""
+    with browser.browser_operation_lock():
+        return _read_application_counts_locked(cdp=cdp, config=config)
+
+
+def _read_application_counts_locked(*, cdp: str, config: object) -> list[dict]:
+    """Internal reader; the caller must own browser_operation_lock throughout."""
     validated = validate_config(config)
     campaign_ids = [item["campaign_id"] for item in validated["campaigns"]]
-    with browser.browser_operation_lock():
-        targets = icloud_mail_targets(inbound_monitor.load_cdp_targets(cdp))
-        selected = []
-        for index, target in enumerate(targets):
-            with inbound_monitor.open_cdp_target(
-                str(target["webSocketDebuggerUrl"])
-            ) as connection:
-                payload = read_tab_summary(
-                    connection,
-                    config=validated,
-                    world_number=index,
-                )
-            if payload.get("folderSelected"):
-                selected.append(payload)
+    targets = icloud_mail_targets(inbound_monitor.load_cdp_targets(cdp))
+    selected = []
+    for index, target in enumerate(targets):
+        with inbound_monitor.open_cdp_target(
+            str(target["webSocketDebuggerUrl"])
+        ) as connection:
+            payload = read_tab_summary(
+                connection,
+                config=validated,
+                world_number=index,
+            )
+        if payload.get("folderSelected"):
+            selected.append(payload)
 
     if len(selected) != 1:
         raise RuntimeError(

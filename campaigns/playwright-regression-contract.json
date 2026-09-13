@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "id": "playwright-regression-contract",
   "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
   "source_need": {
@@ -168,13 +168,25 @@
   "channels": {
     "linkedin": {
       "state": "postiz_queue",
-      "publish_at": "2026-09-16T02:00:00Z",
+      "publish_at": "2026-09-21T02:00:00Z",
       "post_id": "cmtxgwsi310swqk0yf6ir7ymi",
       "content": "Browser tests become useful when they survive the second and third run.\n\nI just added a Playwright/pytest baseline to our trilingual Lanzhou guide. It checks all eleven chapters against the source data, desktop and 390px-wide navigation, ruby controls, map reset, console errors, and failed requests. GitHub Actions builds the site and runs the same suite three times, keeping JUnit results and failure screenshots.\n\nThe code and successful run are public:\nhttps://lazying.art/browser-regression/?utm_source=linkedin&utm_medium=social&utm_campaign=browser_regression_baseline&utm_content=lazytravel_proof\n\nFor another small public web app, I can provide the same starting point as a fixed USD 250 baseline: up to three journeys and twelve checkpoints, Chromium at desktop and mobile width, with the runnable suite and handoff. Fit check before payment.",
-      "postiz_content": "Browser tests become useful when they survive the second and third run.\n\nI just added a Playwright/pytest baseline to our trilingual Lanzhou guide. It checks all eleven chapters against the source data, desktop and 390px-wide navigation, ruby controls, map reset, console errors, and failed requests. GitHub Actions builds the site and runs the same suite three times, keeping JUnit results and failure screenshots.\n\nThe code and successful run are public:\nhttps://dub.sh/JcVjOwy\n\nFor another small public web app, I can provide the same starting point as a fixed USD 250 baseline: up to three journeys and twelve checkpoints, Chromium at desktop and mobile width, with the runnable suite and handoff. Fit check before payment.",
-      "shortlink": "https://dub.sh/JcVjOwy",
+      "postiz_content": "Browser tests become useful when they survive the second and third run.\n\nI just added a Playwright/pytest baseline to our trilingual Lanzhou guide. It checks all eleven chapters against the source data, desktop and 390px-wide navigation, ruby controls, map reset, console errors, and failed requests. GitHub Actions builds the site and runs the same suite three times, keeping JUnit results and failure screenshots.\n\nThe code and successful run are public:\nhttps://lazying.art/browser-regression/?utm_source=linkedin&utm_medium=social&utm_campaign=browser_regression_baseline&utm_content=lazytravel_proof\n\nFor another small public web app, I can provide the same starting point as a fixed USD 250 baseline: up to three journeys and twelve checkpoints, Chromium at desktop and mobile width, with the runnable suite and handoff. Fit check before payment.",
+      "shortlink": null,
       "destination": "https://lazying.art/browser-regression/?utm_source=linkedin&utm_medium=social&utm_campaign=browser_regression_baseline&utm_content=lazytravel_proof",
-      "role": "One concise first-party post leads with the executed LazyTravel proof, then offers the same bounded baseline for another public site."
+      "role": "One concise first-party post leads with the executed LazyTravel proof, then offers the same bounded baseline for another public site.",
+      "content_sha256": "a87e5ff0dfbdb0cf712ef6022602d20e1c584111de99d27ab0402174ee8e54f8",
+      "direct_link_review": {
+        "checked_at": "2026-09-13T07:35:27Z",
+        "prior_shortlink": "https://dub.sh/JcVjOwy",
+        "shortlink_observation": "Normal project browser returned HTTP 403 and a Vercel Security Checkpoint; no bypass attempted. This does not establish that all visitors were blocked.",
+        "destination_http_status": 200,
+        "prose_price_scope_date_and_account_unchanged": true,
+        "media_controls_not_used": true,
+        "postiz_state": "QUEUE",
+        "new_item_created": false,
+        "lead_or_sale_observed": false
+      }
     }
   },
   "marketplace_account": {

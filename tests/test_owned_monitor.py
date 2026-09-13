@@ -621,6 +621,80 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertIn("lazying.art/openhi-reproducibility", linkedin["destination"])
         self.assertIn("sample-report", instagram["destination"])
 
+    def test_legacy_owned_offer_instagram_routes_without_inventing_engagement(self):
+        campaign = json.loads(
+            (owned_monitor.CAMPAIGNS / "content-repurposing-pilot.json").read_text()
+        )
+        channel = campaign["owned_offer"]["postiz_instagram"]
+        route = owned_monitor.route_for_post(
+            "instagram-standalone", channel["postiz_content"], owned_monitor.route_index()
+        )
+        self.assertEqual(route["campaign_id"], campaign["id"])
+        self.assertEqual(route["route"], "product")
+        self.assertEqual(route["known_owned_replies"], 0)
+        self.assertEqual(channel["state"], "draft_image_layout_review_required")
+
+    def test_explicit_channel_wins_over_legacy_offer_and_unrelated_drafts_are_ignored(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            payload = {
+                "id": "precedence",
+                "channels": {"instagram": {"content": "Canonical post"}},
+                "owned_offer": {"postiz_instagram": {"content": "Legacy post"}},
+                "application": {"instagram": {"content": "Private draft"}},
+            }
+            (root / "campaign.json").write_text(json.dumps(payload))
+            routes = owned_monitor.route_index(root)
+            self.assertEqual(
+                owned_monitor.route_for_post("instagram-standalone", "Canonical post", routes)["campaign_id"],
+                "precedence",
+            )
+            for text in ("Legacy post", "Private draft"):
+                self.assertEqual(
+                    owned_monitor.route_for_post("instagram-standalone", text, routes)["route"],
+                    "unmatched_owned_post",
+                )
+
+    def test_malformed_legacy_offer_is_not_a_channel(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for value in (None, [], "not an offer", {"postiz_instagram": []}):
+                with self.subTest(value=value):
+                    (root / "campaign.json").write_text(
+                        json.dumps({"id": "malformed", "owned_offer": value})
+                    )
+                    self.assertEqual(owned_monitor.route_index(root), {})
+
+    def test_reviewed_offer_links_are_direct_and_hash_matched(self):
+        cases = (
+            ("playwright-regression-contract", ("channels", "linkedin"), "QUEUE"),
+            ("openhi-reproducibility-sprint", ("channels", "linkedin"), "QUEUE"),
+            ("openhi-reproducibility-sprint", ("channels", "instagram"), "DRAFT"),
+            ("content-repurposing-pilot", ("owned_offer", "postiz_instagram"), "DRAFT"),
+        )
+        for campaign_id, path, state in cases:
+            with self.subTest(campaign_id=campaign_id, path=path):
+                channel = json.loads((owned_monitor.CAMPAIGNS / f"{campaign_id}.json").read_text())
+                for key in path:
+                    channel = channel[key]
+                self.assertEqual(channel["content"], channel["postiz_content"])
+                self.assertEqual(channel["content"].count("https://"), 1)
+                self.assertIn(channel["destination"], channel["content"])
+                self.assertNotIn("dub.sh/", channel["content"])
+                self.assertIsNone(channel["shortlink"])
+                self.assertEqual(channel["content_sha256"], owned_monitor.content_hash(channel["content"]))
+                review = channel["direct_link_review"]
+                self.assertEqual(review["postiz_state"], state)
+                self.assertEqual(review["destination_http_status"], 200)
+                self.assertTrue(review["prose_price_scope_date_and_account_unchanged"])
+                self.assertTrue(review["media_controls_not_used"])
+                self.assertFalse(review["new_item_created"])
+                self.assertFalse(review["lead_or_sale_observed"])
+                if state == "DRAFT":
+                    self.assertEqual(channel["state"], "draft_image_layout_review_required")
+                    self.assertEqual(channel["visual_review"]["state"], "paused_before_publication")
+                    self.assertIn("preview", channel["visual_review"]["boundary"])
+
     def test_postiz_umbrella_routes_mcp_posts_to_their_providers(self):
         campaign = json.loads(
             (owned_monitor.CAMPAIGNS / "mcp-boundary-review.json").read_text(

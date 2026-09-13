@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 16,
+  "version": 17,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -245,20 +245,54 @@
       "post_id": "cmttmyk5e07rcqk0yugmerpdl",
       "publish_at": "2026-09-26T02:00:00Z",
       "content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The delivery includes the environment record, pinned commands and parameters, any generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://lazying.art/openhi-reproducibility/?utm_source=linkedin&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=research_software",
-      "postiz_content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The delivery includes the environment record, pinned commands and parameters, any generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://dub.sh/6YSLjj3",
+      "postiz_content": "A research codebase can be public and still be difficult to reproduce on a new workstation. The failure is often earlier than the algorithm: an environment that has drifted, an implicit parameter, a vendor dependency, or a run that cannot be reconstructed from its logs.\n\nFor OpenHI, I have made that boundary explicit. A fixed USD 500 software sprint tests one named pipeline stage on one existing workstation with one rights-cleared dataset or public sample. The delivery includes the environment record, pinned commands and parameters, any generated outputs and logs, a failure ledger, and a go/no-go report.\n\nIt does not include cameras, optics, acquisition, vendor credentials, custom algorithm work, or a scientific-result guarantee. Fit check first; no data upload or payment before scope.\n\nhttps://lazying.art/openhi-reproducibility/?utm_source=linkedin&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=research_software",
       "claim_correction_verified_at": "2026-09-10T02:54:15Z",
       "destination": "https://lazying.art/openhi-reproducibility/?utm_source=linkedin&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=research_software",
-      "role": "A first-party research-software post explains the deliverable and exclusions before linking to the fit check."
+      "role": "A first-party research-software post explains the deliverable and exclusions before linking to the fit check.",
+      "content_sha256": "dfe2c8b90258994aaac32f1ee32adb169e1983fb0b7b61362988f1d8bc3e1141",
+      "shortlink": null,
+      "direct_link_review": {
+        "checked_at": "2026-09-13T07:35:27Z",
+        "prior_shortlink": "https://dub.sh/6YSLjj3",
+        "shortlink_observation": "Normal project browser returned HTTP 403 and a Vercel Security Checkpoint; no bypass attempted. This does not establish that all visitors were blocked.",
+        "destination_http_status": 200,
+        "prose_price_scope_date_and_account_unchanged": true,
+        "media_controls_not_used": true,
+        "postiz_state": "QUEUE",
+        "new_item_created": false,
+        "lead_or_sale_observed": false
+      }
     },
     "instagram": {
-      "state": "queued_verified",
+      "state": "draft_image_layout_review_required",
       "post_id": "cmttnw2i207zoqk0ya9t0udyt",
       "publish_at": "2026-09-23T12:00:00Z",
       "content": "A reproducibility report should contain more than “it ran.”\n\nThis is the exact output from one public OpenHI visualization stage using a deterministic 4,096-event fixture. The report keeps the repository revision, environment, command, log, fixture, output, and hashes together—and states what was not tested.\n\nhttps://lazying.art/openhi-reproducibility/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=executed_sample\n\n#ResearchSoftware #ScientificPython #OpenScience #Reproducibility #OpenHI",
-      "postiz_content": "A reproducibility report should contain more than “it ran.”\n\nThis is the exact output from one public OpenHI visualization stage using a deterministic 4,096-event fixture. The report keeps the repository revision, environment, command, log, fixture, output, and hashes together—and states what was not tested.\n\nhttps://dub.sh/mni9E26\n\n#ResearchSoftware #ScientificPython #OpenScience #Reproducibility #OpenHI",
+      "postiz_content": "A reproducibility report should contain more than “it ran.”\n\nThis is the exact output from one public OpenHI visualization stage using a deterministic 4,096-event fixture. The report keeps the repository revision, environment, command, log, fixture, output, and hashes together—and states what was not tested.\n\nhttps://lazying.art/openhi-reproducibility/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=executed_sample\n\n#ResearchSoftware #ScientificPython #OpenScience #Reproducibility #OpenHI",
       "destination": "https://lazying.art/openhi-reproducibility/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=executed_sample",
       "media": "Project-owned exact OpenHI stage output from the frozen synthetic proof; uploaded through Postiz before scheduling.",
-      "role": "An evidence-led post shows the exact executed plot and points to the complete public packet."
+      "role": "An evidence-led post shows the exact executed plot and points to the complete public packet.",
+      "content_sha256": "ab55e91caadcf5585eccab7f5d7c79f420be89b5704a265ec4efae58139f2f9c",
+      "shortlink": null,
+      "direct_link_review": {
+        "checked_at": "2026-09-13T07:35:27Z",
+        "prior_shortlink": "https://dub.sh/mni9E26",
+        "shortlink_observation": "Normal project browser returned HTTP 403 and a Vercel Security Checkpoint; no bypass attempted. This does not establish that all visitors were blocked.",
+        "destination_http_status": 200,
+        "prose_price_scope_date_and_account_unchanged": true,
+        "media_controls_not_used": true,
+        "postiz_state": "DRAFT",
+        "new_item_created": false,
+        "lead_or_sale_observed": false
+      },
+      "visual_review": {
+        "state": "paused_before_publication",
+        "observed_issue": "The Instagram editor preview crops the chart title and axis detail.",
+        "boundary": "This is a preview-quality concern, not proof that Instagram published a cropped image. No new image was generated or uploaded in this pass.",
+        "resume_gate": "Inspect the original asset and provider rendering, then use a reviewed mobile-readable layout that preserves the entire heading or chart before rescheduling this same item.",
+        "media_retained": true,
+        "original_requested_publish_at": "2026-09-23T12:00:00Z"
+      }
     },
     "automatic_community_outreach": {
       "state": "disabled",

@@ -1,5 +1,5 @@
 {
-  "version": 25,
+  "version": 26,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -277,9 +277,9 @@
       "received_revenue_usd": 0
     },
     "postiz_instagram": {
-      "state": "postiz_queue",
+      "state": "draft_image_layout_review_required",
       "publish_at": "2026-09-20T12:00:00Z",
-      "content": "Choosing the clip is often harder than editing it.\n\nI made a small, checkable workflow: mark two moments from one recording, explain why each works, then finish the one selected. The handoff includes corrected captions, an editable SRT, and a source ledger.\n\nThe sample uses our own footage, so you can inspect the process before sharing yours.\n\nhttps://dub.sh/lXCEV7O\n\nI’m opening this as a fixed USD 250 pilot for one rights-cleared recording up to 30 minutes.\n\n#VideoEditing #Reels #ShortFormVideo #Captions",
+      "content": "Choosing the clip is often harder than editing it.\n\nI made a small, checkable workflow: mark two moments from one recording, explain why each works, then finish the one selected. The handoff includes corrected captions, an editable SRT, and a source ledger.\n\nThe sample uses our own footage, so you can inspect the process before sharing yours.\n\nhttps://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample\n\nI’m opening this as a fixed USD 250 pilot for one rights-cleared recording up to 30 minutes.\n\n#VideoEditing #Reels #ShortFormVideo #Captions",
       "destination": "https://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample",
       "media_asset": "assets/contra-story-clip-service-cover-v1.png",
       "media_sha256": "5c20c5fd7f99c89aeecb3b211c58294c3827849b286bb954b4b7b635fb6ccf55",
@@ -290,10 +290,32 @@
       "verification": {
         "stored_content_exact": true,
         "matching_posts": 1,
-        "verified_state": "QUEUE",
+        "verified_state": "DRAFT",
         "release_present": false,
         "integration_settings_checked": true,
         "media_uploaded_before_scheduling": true
+      },
+      "postiz_content": "Choosing the clip is often harder than editing it.\n\nI made a small, checkable workflow: mark two moments from one recording, explain why each works, then finish the one selected. The handoff includes corrected captions, an editable SRT, and a source ledger.\n\nThe sample uses our own footage, so you can inspect the process before sharing yours.\n\nhttps://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample\n\nI’m opening this as a fixed USD 250 pilot for one rights-cleared recording up to 30 minutes.\n\n#VideoEditing #Reels #ShortFormVideo #Captions",
+      "content_sha256": "e3459875d981f4cf12646fca5f8d2ef6e7eb2be9b9a9d883c70d872d7e00995a",
+      "shortlink": null,
+      "direct_link_review": {
+        "checked_at": "2026-09-13T07:35:27Z",
+        "prior_shortlink": "https://dub.sh/lXCEV7O",
+        "shortlink_observation": "Normal project browser returned HTTP 403 and a Vercel Security Checkpoint; no bypass attempted. This does not establish that all visitors were blocked.",
+        "destination_http_status": 200,
+        "prose_price_scope_date_and_account_unchanged": true,
+        "media_controls_not_used": true,
+        "postiz_state": "DRAFT",
+        "new_item_created": false,
+        "lead_or_sale_observed": false
+      },
+      "visual_review": {
+        "state": "paused_before_publication",
+        "observed_issue": "The Instagram editor preview crops the main heading of the dense website screenshot.",
+        "boundary": "This is a preview-quality concern, not proof that Instagram published a cropped image. No new image was generated or uploaded in this pass.",
+        "resume_gate": "Inspect the original asset and provider rendering, then use a reviewed mobile-readable layout that preserves the entire heading or chart before rescheduling this same item.",
+        "media_retained": true,
+        "original_requested_publish_at": "2026-09-20T12:00:00Z"
       }
     },
     "encrypted_intake": {

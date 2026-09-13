@@ -197,7 +197,15 @@ def route_index(campaign_dir: Path = CAMPAIGNS) -> dict[tuple[str, str], dict]:
     for path in sorted(campaign_dir.glob("*.json")):
         payload = json.loads(path.read_text(encoding="utf-8"))
         campaign_id = str(payload.get("id") or "")
-        for channel_name, channel in (payload.get("channels") or {}).items():
+        channels = dict(payload.get("channels") or {})
+        owned_offer = payload.get("owned_offer")
+        if isinstance(owned_offer, dict):
+            # Older offer records store this one reviewed channel beside the
+            # offer. Do not recursively index application or private drafts.
+            legacy_instagram = owned_offer.get("postiz_instagram")
+            if isinstance(legacy_instagram, dict):
+                channels.setdefault("instagram", legacy_instagram)
+        for channel_name, channel in channels.items():
             if not isinstance(channel, dict):
                 continue
             provider = providers.get(channel_name) or providers.get(

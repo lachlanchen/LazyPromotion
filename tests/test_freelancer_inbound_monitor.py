@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from unittest.mock import Mock, patch
 
 import freelancer_inbound_monitor as monitor
 
@@ -51,6 +52,90 @@ class FreelancerInboundMonitorTests(unittest.TestCase):
             monitor.bid_state("Your Proposal\nLachlan\nRetract\nEdit"),
             "active_submitted",
         )
+
+    def observe_sequence(self, observations, *, timeout_ms=1000):
+        elapsed = [0.0]
+        page = Mock()
+
+        def advance(ms):
+            elapsed[0] += ms / 1000
+
+        page.wait_for_timeout.side_effect = advance
+        pending = iter(observations)
+        current = observations[0]
+
+        def read(_page):
+            nonlocal current
+            self.assertIs(_page, page)
+            current = next(pending, current)
+            return dict(current)
+
+        with (
+            patch.object(monitor.time, "monotonic", side_effect=lambda: elapsed[0]),
+            patch.object(monitor, "page_observation", side_effect=read) as reader,
+        ):
+            result = monitor.settled_page_observation(page, timeout_ms=timeout_ms)
+        return result, page, reader.call_count, elapsed[0]
+
+    def observation(self, state="unknown", *, authenticated=True):
+        return {
+            "authenticated": authenticated,
+            "bid_state": state,
+            "message_badge_count": 0,
+            "rank": None,
+            "proposal_count": None,
+        }
+
+    def test_late_proposal_uses_fresh_state_without_navigating(self):
+        active = self.observation("active_submitted")
+        active["message_badge_count"] = 1
+        result, page, reads, elapsed = self.observe_sequence(
+            [self.observation(), self.observation(), active]
+        )
+        self.assertEqual(result, active)
+        self.assertEqual(reads, 3)
+        self.assertEqual(elapsed, 0.5)
+        self.assertEqual(
+            [call[0] for call in page.mock_calls],
+            ["wait_for_timeout", "wait_for_timeout"],
+        )
+
+    def test_persistent_unknown_remains_unknown_at_finite_deadline(self):
+        unknown = self.observation()
+        result, page, reads, elapsed = self.observe_sequence([unknown], timeout_ms=600)
+        self.assertEqual(result, unknown)
+        self.assertEqual(reads, 4)
+        self.assertAlmostEqual(elapsed, 0.6)
+        self.assertEqual(page.wait_for_timeout.call_count, 3)
+        page.goto.assert_not_called()
+        page.reload.assert_not_called()
+
+    def test_late_account_header_is_not_immediately_called_signed_out(self):
+        active = self.observation("active_submitted")
+        result, _, reads, _ = self.observe_sequence(
+            [self.observation(authenticated=False), active]
+        )
+        self.assertEqual(result, active)
+        self.assertEqual(reads, 2)
+
+    def test_persistent_signed_out_state_is_not_replaced_with_active(self):
+        signed_out = self.observation(authenticated=False)
+        result, _, _, elapsed = self.observe_sequence([signed_out], timeout_ms=500)
+        self.assertFalse(result["authenticated"])
+        self.assertEqual(result["bid_state"], "unknown")
+        self.assertEqual(elapsed, 0.5)
+
+    def test_terminal_states_are_returned_without_waiting_for_active_card(self):
+        for state in ("closed", "awarded_review_required", "active_submitted"):
+            with self.subTest(state=state):
+                result, page, reads, _ = self.observe_sequence([self.observation(state)])
+                self.assertEqual(result["bid_state"], state)
+                self.assertEqual(reads, 1)
+                page.wait_for_timeout.assert_not_called()
+
+    def test_observation_deadline_is_validated(self):
+        with self.assertRaises(ValueError):
+            monitor.settled_page_observation(Mock(), timeout_ms=-1)
 
     def test_initial_observation_creates_quiet_baseline(self):
         status, state = monitor.summarize_observation(

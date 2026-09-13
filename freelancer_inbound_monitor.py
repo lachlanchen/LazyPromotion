@@ -313,6 +313,23 @@ def page_observation(page) -> dict:
     }
 
 
+def settled_page_observation(page, *, timeout_ms: int = 12_000) -> dict:
+    """Allow late proposal markup to settle without hiding a persistent unknown."""
+    if timeout_ms < 0:
+        raise ValueError("observation timeout must be non-negative")
+    deadline = time.monotonic() + timeout_ms / 1000
+    while True:
+        observed = page_observation(page)
+        if observed["authenticated"] and observed["bid_state"] != "unknown":
+            return observed
+        remaining_ms = (deadline - time.monotonic()) * 1000
+        if remaining_ms <= 0:
+            # Preserve unknown/authentication failure for review. Never replace
+            # it with the previous active state or reload/submit anything.
+            return observed
+        page.wait_for_timeout(min(250, remaining_ms))
+
+
 def collect_visible_status(*, cdp: str) -> dict:
     with browser_tools.browser_operation_lock():
         with sync_playwright() as playwright:
@@ -333,11 +350,10 @@ def collect_visible_status(*, cdp: str) -> dict:
             for tracked in TRACKED_PROJECTS:
                 page.bring_to_front()
                 page.goto(tracked["url"], wait_until="domcontentloaded", timeout=45000)
-                # Freelancer paints the proposal card after the document event;
-                # an immediate read sees only the shell and misclassifies a live
-                # submitted bid as an unknown layout.
+                # Keep the initial header/card settling interval, then allow
+                # slower proposal markup a bounded retry on the same page.
                 page.wait_for_timeout(3000)
-                current = page_observation(page)
+                current = settled_page_observation(page)
                 authenticated = authenticated and current.pop("authenticated")
                 message_badge_count = max(
                     message_badge_count, current.pop("message_badge_count")

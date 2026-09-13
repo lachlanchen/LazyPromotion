@@ -1,6 +1,6 @@
 {
   "id": "wetheflywheel-agentic-engineer",
-  "version": 2,
+  "version": 3,
   "objective": "Earn a paid, bounded agentic-engineering engagement by showing the exact review-first browser-agent and deployment work in LazyPromotion and LazyEdge without claiming unverified client delivery or commercial terms.",
   "source_need": {
     "captured_at": "2026-09-07T01:05:53Z",
@@ -45,10 +45,22 @@
       "checked_on": "2026-09-13",
       "reason": "The published role is an ongoing three-to-six-month hourly engagement with a weekly sync and personal engineering responsibilities, not a bounded LazyingArt delivery.",
       "cv_sent": false,
-      "follow_up_sent": false,
+      "follow_up_sent": true,
       "time_committed": false,
       "commercial_terms_accepted": false,
-      "resume_gate": "Resume only if a separately reviewed bounded engagement is compatible with delivery capacity; do not commit the operator to recurring work."
+      "resume_gate": "Resume only if a separately reviewed bounded engagement is compatible with delivery capacity; do not commit the operator to recurring work.",
+      "project_only_qualification": {
+        "state": "question_sent_awaiting_reply",
+        "send_clicked_at": "2026-09-13T10:45:47Z",
+        "sender_side_verified_at": "2026-09-13T10:47:27Z",
+        "message_count": 1,
+        "attachment_count": 0,
+        "automatic_follow_up": false,
+        "new_application": false,
+        "scope_offered_by_buyer": false,
+        "rate_agreed": false,
+        "work_accepted": false
+      }
     },
     "prepared_at": "2026-09-07T01:09:46Z",
     "sent_at": "2026-09-07T01:11:42Z",

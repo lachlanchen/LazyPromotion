@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class FeaturedMediaQualityTests(unittest.TestCase):
-    def test_landn_rejected_source_stays_out_while_reviewed_replacement_is_queued(self):
+    def test_landn_rejected_video_stays_out_of_the_text_only_x_release(self):
         campaign = json.loads(
             (ROOT / "campaigns" / "l-and-n-pronunciation-launch.json").read_text(
                 encoding="utf-8"
@@ -38,7 +38,8 @@ class FeaturedMediaQualityTests(unittest.TestCase):
                 campaign["channels"][channel]["media_sha256"],
                 quality["replacement"]["sha256"],
             )
-        self.assertEqual(campaign["channels"]["x"]["state"], "postiz_queue")
+        self.assertEqual(campaign["channels"]["x"]["state"], "published")
+        self.assertNotIn("media_sha256", campaign["channels"]["x"])
 
     def test_ai_clip_proof_requires_human_quality_review(self):
         campaign = json.loads(

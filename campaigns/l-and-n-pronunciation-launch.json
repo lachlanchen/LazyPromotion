@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -275,7 +275,7 @@
       "policy": "The monthly resource thread explicitly permits creator-made resources. The one comment discloses authorship, links only the free no-account PWA, asks for product feedback, and contains no service, price, donation request, affiliate link, or private-message invitation. Do not repeat it within six months or add a follow-up pitch."
     },
     "x": {
-      "state": "postiz_queue",
+      "state": "published",
       "publish_at": "2026-09-13T02:00:00Z",
       "content": "My L/N drill shows the waveform and recognized word before the score. If speech is unclear, it does not score it; you can retry with the tongue and airflow cue.\n\nFree, open source, no account:\nl-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_pronunciation_launch",
       "destination": "https://l-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_pronunciation_launch",
@@ -297,7 +297,19 @@
         "verified_state": "QUEUE",
         "release_present": false
       },
-      "policy": "This uses the app's evidence-first scoring boundary rather than repeating the LinkedIn story. It is queued, not published, and is not a tester, feedback event, lead, sale, or store-release claim."
+      "publication": {
+        "url": "https://x.com/lazyingart/status/2098955109963297094",
+        "published_at": "2026-09-13T02:01:09Z",
+        "verified_on": "2026-09-13",
+        "provider_state": "PUBLISHED",
+        "visible_text_verified": true,
+        "destination_after_visible_click": "https://l-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_pronunciation_launch",
+        "destination_title": "L-and-N pronunciation coach",
+        "operator_link_checks": 1,
+        "organic_visit_claimed": false,
+        "evidence_storage": "ignored private browser screenshots"
+      },
+      "policy": "This uses the app's evidence-first scoring boundary rather than repeating the LinkedIn story. Publication and the operator's link check are verified, not a tester, feedback event, lead, sale, or store-release claim. The earlier queue verification is retained as historical evidence."
     },
     "hackernews": {
       "state": "research_only",

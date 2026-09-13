@@ -1478,11 +1478,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("integration_id", serialized.casefold())
         self.assertNotIn("post_id", serialized.casefold())
 
-    def test_landn_campaign_keeps_scheduled_pwa_story_truthful_and_unpublished(self):
+    def test_landn_campaign_separates_verified_publication_from_revenue(self):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 10)
+        self.assertEqual(campaign["version"], 11)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1577,13 +1577,21 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(queue_review["release_present"])
         self.assertEqual(queue_review["destination_http_status"], 200)
         x_channel = campaign["channels"]["x"]
-        self.assertEqual(x_channel["state"], "postiz_queue")
+        self.assertEqual(x_channel["state"], "published")
         self.assertEqual(x_channel["publish_at"], "2026-09-13T02:00:00Z")
         self.assertLessEqual(len(x_channel["content"]), 280)
         self.assertIn("utm_campaign=l_and_n_pronunciation_launch", x_channel["content"])
         self.assertTrue(x_channel["verification"]["stored_content_exact"])
         self.assertEqual(x_channel["verification"]["matching_posts"], 1)
         self.assertFalse(x_channel["verification"]["release_present"])
+        publication = x_channel["publication"]
+        self.assertEqual(publication["url"], "https://x.com/lazyingart/status/2098955109963297094")
+        self.assertEqual(publication["published_at"], "2026-09-13T02:01:09Z")
+        self.assertEqual(publication["provider_state"], "PUBLISHED")
+        self.assertTrue(publication["visible_text_verified"])
+        self.assertEqual(publication["destination_after_visible_click"], x_channel["destination"])
+        self.assertEqual(publication["operator_link_checks"], 1)
+        self.assertFalse(publication["organic_visit_claimed"])
         self.assertEqual(len(campaign["need_research"]["observations"]), 2)
         self.assertIn("No new reply", campaign["need_research"]["observations"][0]["decision"])
         self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)

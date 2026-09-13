@@ -10,6 +10,7 @@ import json
 import os
 import re
 import stat
+from datetime import datetime, timezone
 from pathlib import Path
 
 import lkt_inbox
@@ -17,6 +18,8 @@ import lkt_inbox
 
 INBOX_DIR = lkt_inbox.INBOX_DIR
 LEDGER_PATH = INBOX_DIR.parent / "intake-review.json"
+RECEIVER_STATUS_PATH = lkt_inbox.STATUS_PATH
+RECEIVER_STALE_SECONDS = 30 * 60
 RECEIPT_RE = re.compile(r"[a-f0-9]{32}\Z")
 HASH_RE = re.compile(r"[a-f0-9]{64}\Z")
 NAME_RE = re.compile(r"lkt-([a-f0-9]{32})\.inquiry\.json\Z")
@@ -121,6 +124,44 @@ def status_summary(directory: Path = INBOX_DIR, ledger_path: Path = LEDGER_PATH)
         **counts,
         "review_required": bool(counts["pending_review"] or counts["needs_action"]),
         "automatic_reply": False,
+    }
+
+
+def receiver_status_summary(
+    path: Path = RECEIVER_STATUS_PATH, *, now: datetime | None = None,
+) -> dict:
+    """Summarize the last recorded collection check, not process liveness."""
+    try:
+        payload = lkt_inbox.strict_json_object(read_private(path, 1024 * 1024), maximum=1024 * 1024)
+        state = payload["state"]
+        if not isinstance(state, str) or state not in {"no_pending", "complete", "partial", "unavailable"}:
+            raise ValueError("invalid receiver state")
+        checked_at = lkt_inbox.validate_utc_seconds(payload["checked_at"])
+        checked = datetime.strptime(checked_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        current = now or datetime.now(timezone.utc)
+        if current.tzinfo is None or current.utcoffset() is None:
+            raise ValueError("timezone required")
+        age = (current - checked).total_seconds()
+        if age < 0:
+            raise ValueError("future receiver check")
+    except (OSError, ValueError, TypeError, KeyError, lkt_inbox.InboxError):
+        return {
+            "status_available": False,
+            "state": "unknown",
+            "checked_at": None,
+            "stale": True,
+            "last_check_succeeded": None,
+            "review_required": True,
+        }
+    stale = age >= RECEIVER_STALE_SECONDS
+    succeeded = state in {"no_pending", "complete"}
+    return {
+        "status_available": True,
+        "state": state,
+        "checked_at": checked_at,
+        "stale": stale,
+        "last_check_succeeded": succeeded,
+        "review_required": stale or not succeeded,
     }
 
 

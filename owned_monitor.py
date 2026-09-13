@@ -810,14 +810,19 @@ def status_summary(
     social_inbox_path: Path = SOCIAL_INBOX_STATUS_PATH,
     intake_directory: Path = intake_review.INBOX_DIR,
     intake_ledger_path: Path = intake_review.LEDGER_PATH,
+    intake_receiver_path: Path = intake_review.RECEIVER_STATUS_PATH,
+    now: datetime | None = None,
 ) -> dict:
     """Read the last private status without exposing post or integration details."""
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+        if not isinstance(payload, dict):
+            raise ValueError("invalid monitor status")
+    except (OSError, ValueError):
         return {
             "available": False,
             "fit_intake": intake_review.status_summary(intake_directory, intake_ledger_path),
+            "fit_receiver": intake_review.receiver_status_summary(intake_receiver_path, now=now),
         }
     application = payload.get("application_watch")
     if not isinstance(application, dict):
@@ -843,6 +848,7 @@ def status_summary(
         "reddit_reply": reddit_reply_status_summary(reddit_reply_path),
         "social_inbox": social_inbox_status_summary(social_inbox_path),
         "fit_intake": intake_review.status_summary(intake_directory, intake_ledger_path),
+        "fit_receiver": intake_review.receiver_status_summary(intake_receiver_path, now=now),
         "applications": dict(application.get("summary") or {}),
         "due_campaign_ids": [str(item) for item in due_ids],
     }

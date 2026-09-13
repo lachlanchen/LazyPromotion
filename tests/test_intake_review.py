@@ -2,6 +2,7 @@ import hashlib
 import json
 import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import intake_review
@@ -168,3 +169,118 @@ class IntakeReviewTests(unittest.TestCase):
         self.assertTrue(result["available"])
         self.assertEqual(result["retained_requests"], 0)
         self.assertFalse(result["review_required"])
+
+
+class ReceiverStatusTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.path = self.root / "receiver.json"
+        self.now = datetime(2026, 9, 13, 9, 0, tzinfo=timezone.utc)
+
+    def save(self, state="no_pending", **extra):
+        payload = {"state": state, "checked_at": "2026-09-13T09:00:00Z", **extra}
+        lkt_inbox.private_atomic_write(self.path, lkt_inbox.canonical_json(payload), replace=True)
+
+    def summary(self, now=None):
+        return intake_review.receiver_status_summary(self.path, now=now or self.now)
+
+    def test_fresh_collection_states_are_separate_from_queue_counts(self):
+        for state, succeeded in (("no_pending", True), ("complete", True), ("partial", False), ("unavailable", False)):
+            with self.subTest(state=state):
+                self.save(state)
+                result = self.summary()
+                self.assertTrue(result["status_available"])
+                self.assertEqual(result["state"], state)
+                self.assertEqual(result["last_check_succeeded"], succeeded)
+                self.assertEqual(result["review_required"], not succeeded)
+                self.assertFalse(result["stale"])
+                self.assertNotIn("pending_review", result)
+                self.assertNotIn("retained_requests", result)
+
+    def test_successful_but_stale_check_requires_review(self):
+        self.save()
+        self.assertFalse(self.summary(self.now + timedelta(seconds=1799))["stale"])
+        result = self.summary(self.now + timedelta(seconds=1800))
+        self.assertTrue(result["last_check_succeeded"])
+        self.assertTrue(result["stale"])
+        self.assertTrue(result["review_required"])
+
+    def test_missing_or_malformed_state_is_unknown_not_healthy(self):
+        self.assertFalse(self.summary()["status_available"])
+        for raw in (b"{", b"[]", b"{}", b"\xff", b'{"state":"no_pending","state":"complete"}'):
+            with self.subTest(raw=raw):
+                lkt_inbox.private_atomic_write(self.path, raw, replace=True)
+                result = self.summary()
+                self.assertEqual(result["state"], "unknown")
+                self.assertIsNone(result["last_check_succeeded"])
+                self.assertTrue(result["review_required"])
+        for fields in (
+            {"state": "private diagnostic"}, {"state": []},
+            {"checked_at": "not a timestamp"}, {"checked_at": "2026-02-30T09:00:00Z"},
+            {"checked_at": "2026-09-13T09:00:01Z"}, {"checked_at": None},
+        ):
+            with self.subTest(fields=fields):
+                self.save(**fields)
+                self.assertFalse(self.summary()["status_available"])
+
+    def test_permissions_and_symlinks_fail_closed(self):
+        self.save()
+        self.path.chmod(0o644)
+        self.assertFalse(self.summary()["status_available"])
+        self.path.chmod(0o600)
+        self.root.chmod(0o755)
+        self.assertFalse(self.summary()["status_available"])
+        self.root.chmod(0o700)
+        target = self.root / "original.json"
+        self.path.rename(target)
+        self.path.symlink_to(target)
+        self.assertFalse(self.summary()["status_available"])
+
+    def test_only_allowlisted_metadata_is_returned_without_writes(self):
+        self.save("complete", receipts=[{"receipt": "a" * 32}], error="secret diagnostic", email="private@example.com")
+        original = self.path.read_bytes()
+        result = self.summary()
+        self.assertEqual(set(result), {
+            "status_available", "state", "checked_at", "stale", "last_check_succeeded", "review_required",
+        })
+        for private in ("a" * 32, "secret diagnostic", "private@example.com"):
+            self.assertNotIn(private, json.dumps(result))
+        self.assertEqual(self.path.read_bytes(), original)
+        self.assertEqual(list(self.root.iterdir()), [self.path])
+
+    def test_owned_status_refreshes_receiver_even_when_postiz_missing_or_failed(self):
+        self.save("unavailable")
+        directory = self.root / "inquiries"
+        directory.mkdir(mode=0o700)
+        status = self.root / "owned.json"
+        for saved in (None, {"summary": {"queued": 2}}, {"error": "failed", "summary": {"queued": 2}}):
+            with self.subTest(saved=saved):
+                if saved is not None:
+                    # An old embedded healthy receiver report must not mask the current check.
+                    status.write_text(json.dumps({**saved, "fit_receiver": {"state": "no_pending"}}))
+                result = owned_monitor.status_summary(
+                    status, intake_directory=directory, intake_ledger_path=self.root / "review.json",
+                    intake_receiver_path=self.path, now=self.now,
+                    threads_path=self.root / "none-threads", application_inbox_path=self.root / "none-applications",
+                    reddit_reply_path=self.root / "none-reddit", social_inbox_path=self.root / "none-social",
+                )
+                self.assertEqual(result["fit_intake"]["retained_requests"], 0)
+                self.assertFalse(result["fit_intake"]["review_required"])
+                self.assertEqual(result["fit_receiver"]["state"], "unavailable")
+                self.assertTrue(result["fit_receiver"]["review_required"])
+
+    def test_malformed_owned_status_does_not_hide_receiver_warning(self):
+        self.save("unavailable")
+        status = self.root / "owned.json"
+        for raw in (b"[]", b"null", b"{", b"\xff"):
+            with self.subTest(raw=raw):
+                status.write_bytes(raw)
+                result = owned_monitor.status_summary(
+                    status, intake_receiver_path=self.path, now=self.now,
+                    intake_directory=self.root / "missing", intake_ledger_path=self.root / "review.json",
+                )
+                self.assertFalse(result["available"])
+                self.assertEqual(result["fit_receiver"]["state"], "unavailable")
+                self.assertTrue(result["fit_receiver"]["review_required"])

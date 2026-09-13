@@ -164,6 +164,16 @@ the same `fit_intake` summary even if the Postiz status is unavailable. An empty
 receiver poll cannot clear this queue. Missing, malformed, or unsafe private
 files produce an unavailable/review-required state, not a reassuring zero.
 
+The same status command also reads `fit_receiver` separately from the queue.
+It reports only the last recorded collection state, its time, and whether it
+needs review. `partial` or `unavailable` collection, a check at least 30 minutes
+old, or missing/invalid/unsafe status requires review even when the local queue
+is empty. A stale successful check remains historical success, not current
+delivery proof. Future timestamps are treated as unknown. This receiver summary
+is a local-only read: it does not contact the server, open inquiry contents, or
+prove that the receiver process is currently running. Receipt lists and diagnostics are not
+included. The 30-minute freshness limit is for the normal 15-minute receiver.
+
 For deliberate local review, `python intake_review.py inspect` lists only
 receipt, content hash, time, offer, and review state. Keep this output private.
 After privately reading the actual request, record the exact reviewed hash:

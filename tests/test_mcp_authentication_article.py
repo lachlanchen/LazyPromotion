@@ -18,6 +18,7 @@ class McpAuthenticationArticleTests(unittest.TestCase):
         cls.text = ARTICLE.read_text(encoding="utf-8")
 
     def test_article_has_publishable_metadata_and_bounded_offer_route(self):
+        self.assertIn("\nid: 3832\n", self.text)
         self.assertIn('status: "publish"', self.text)
         self.assertIn(
             'slug: "claude-mcp-authentication-public-local-remote"',
@@ -66,6 +67,27 @@ class McpAuthenticationArticleTests(unittest.TestCase):
         lowered = self.text.casefold()
         self.assertNotIn("your-token-here", lowered)
         self.assertNotIn("client_secret=", lowered)
+
+    def test_initialize_response_diagnostic_separates_wire_evidence_from_logs(self):
+        section = self.text.split("## If initialize returns 200 but the connector stops\n", 1)[1].split("\n## ", 1)[0]
+        for phrase in (
+            "response after the proxy or CDN",
+            "`Content-Type`",
+            "`application/json`",
+            "`text/event-stream`",
+            "terminating blank line",
+            "remaining buffered",
+            "does not show a version mismatch",
+            "`notifications/initialized`",
+            "not which side is at fault",
+            "session identifiers out of public reports",
+        ):
+            self.assertIn(phrase, section)
+        self.assertIn("/basic/transports#sending-messages-to-the-server", section)
+        self.assertIn("/basic/lifecycle#initialization", section)
+        self.assertIn("html.spec.whatwg.org/", section)
+        for private_marker in ("smartchart.vn", "ofid_", "cf-ray", "hoandc88"):
+            self.assertNotIn(private_marker, section)
 
 
 if __name__ == "__main__":

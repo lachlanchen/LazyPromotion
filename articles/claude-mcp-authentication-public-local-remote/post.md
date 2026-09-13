@@ -1,4 +1,5 @@
 ---
+id: 3832
 title: "Claude MCP Authentication: Public, Local, or Remote?"
 slug: "claude-mcp-authentication-public-local-remote"
 status: "publish"
@@ -89,6 +90,21 @@ Test one layer at a time:
 6. If an authenticated MCP request reaches the origin and receives `401` or `403`, inspect token validation and scope. Do not weaken the firewall and OAuth policy at the same time.
 
 For an intermittent failure, keep the request ID, UTC time, source range, edge status, origin status, and OAuth result together. That short trace usually shows whether the break is before the CDN, between the CDN and origin, or after token issuance.
+
+## If initialize returns 200 but the connector stops
+
+A valid token and an application log containing an `initialize` result narrow the problem. They do not prove that the connector received and parsed that result. Inspect the response after the proxy or CDN, including its `Content-Type` and how the body ends.
+
+[Streamable HTTP](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports#sending-messages-to-the-server) permits two response forms for a JSON-RPC request:
+
+- `application/json`: one complete JSON response object.
+- `text/event-stream`: the JSON response inside an SSE event, with `data:` fields and a terminating blank line.
+
+For SSE, bare JSON is not an event. Nor does a final line of data become an event merely because the connection closes: the [SSE parser needs the blank line](https://html.spec.whatwg.org/multipage/server-sent-events.html#event-stream-interpretation). Check that the framed event actually leaves the proxy rather than remaining buffered there.
+
+Also compare the requested and returned `protocolVersion`. If both are `2025-11-25`, that exchange alone does not show a version mismatch. After successful initialization, the client sends `notifications/initialized`; its absence tells you where the exchange stopped, not which side is at fault. The [lifecycle specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle#initialization) defines that sequence.
+
+If the client-facing response checks out, take the UTC timestamp and a redacted trace to the connector provider's private support channel. Keep tokens, cookies and session identifiers out of public reports. Changing OAuth again would not test this failure point.
 
 ## Fit authentication into FastMCP without mixing the APIs
 

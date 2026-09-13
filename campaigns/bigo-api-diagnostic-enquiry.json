@@ -1,0 +1,68 @@
+{
+  "id": "bigo-api-diagnostic-enquiry",
+  "version": 1,
+  "objective": "Ask whether an advertised WooCommerce integration can begin with a separately paid, isolated signing diagnostic, without accepting live recharge handling.",
+  "source_need": {
+    "captured_on": "2026-09-13",
+    "url": "https://jobs.wordpress.net/job/director-4/",
+    "title": "Director",
+    "company": "AussieJessRS Pty Ltd",
+    "published_on": "2026-09-05",
+    "state": "listed_on_current_first_party_board_availability_unconfirmed",
+    "project_type": "Project",
+    "budget": "$500-$1500 advertised; currency unspecified, no price quoted or agreed",
+    "location": "Central Coast, Australia; remote contractor eligibility unconfirmed",
+    "scope": "The full listing requests WooCommerce/BIGO API authentication and RSA-signing repair, IP checks, post-payment recharge fulfillment, retries, logging and vendor liaison.",
+    "application_invitation": "The listing explicitly invites applications by email.",
+    "qualification_gap": "Its claimed reseller authorization and the availability of a non-billable signature test are not independently verified."
+  },
+  "fit": {
+    "projects": ["BLOG / LazyBlog", "mcp-remote contribution"],
+    "public_proof": [
+      "https://blog.lazying.art/",
+      "https://github.com/punkpeye/mcp-remote/pull/362"
+    ],
+    "supported_now": "First-party WordPress publishing work and an independently merged explicit client-credentials endpoint contribution.",
+    "not_claimed": [
+      "Previous BIGO integration delivery",
+      "Proven WooCommerce payment automation or RSA integration experience",
+      "Verified reseller authorization, API specifications or a safe free test endpoint",
+      "Ability to fulfill the complete production brief for its advertised budget"
+    ]
+  },
+  "application": {
+    "state": "sent_awaiting_reply",
+    "sent_at": "2026-09-13T15:14:55Z",
+    "verified_at": "2026-09-13T15:19:17Z",
+    "method": "One individually reviewed email responding to the explicit application invitation.",
+    "submission_count": 1,
+    "resume_attached": false,
+    "attachment_count": 0,
+    "submission_fee_usd": 0,
+    "sent_folder_verified": true,
+    "delivery_evidence": "The business sender, advertised recipient, subject and complete body were reviewed before one Send action and matched in Sent afterward. This is sender-side evidence, not recipient acknowledgement.",
+    "message_storage": "ignored private evidence",
+    "development_method_disclosed": "AI-assisted development with code review and tests",
+    "review_after": "2026-09-20",
+    "automatic_follow_up": false,
+    "follow_up_policy": "Review inbound only; no additional message without a relevant reply."
+  },
+  "scope_gate": [
+    "Confirm project availability and remote eligibility",
+    "Confirm willingness to buy a separate diagnostic before quoting; it does not fulfill the advertised implementation",
+    "Establish the employer's authorization and rights-cleared API documentation",
+    "Verify an isolated staging copy and non-billable test route before handling secrets or running requests",
+    "Agree bounded checks, deliverables, currency, price, timeline, revisions and data handling before work",
+    "No live recharges, production order handling, key transfer or direct vendor-support obligation through this inquiry"
+  ],
+  "funnel": {
+    "outbound_application_count": 1,
+    "sender_side_sent_verified": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -32,6 +32,15 @@ and repository attention, but no fit inquiry or sale. Keep that lane useful and
 sample-first; do not imply that LazyRemote is NetEase software or that bridge
 traffic proves paid demand.
 
+The [Simplified Chinese fit check](https://lazying.art/lazyremote/fit-check/zh-Hans/)
+now completes that localized route: questions, request preview, confirmation,
+copy fallback, and status messages are in Chinese. The high-attention Chinese
+README, landing page, and complete sample link to it directly. Both landing
+languages retain the four validated campaign fields through the sample or
+direct fit action; the fit form also preserves them when switching language.
+Desktop/mobile browser checks and both live paths passed without submitting a
+production request. The USD 250 scope and payment sequence remain unchanged.
+
 The [Local Knowledge Terminal collection-fit
 sprint](https://lazying.art/lkt/) remains an active adjacent route: a fixed USD
 250 service for one customer-provided collection, one language goal, and one

@@ -1,6 +1,6 @@
 {
   "id": "lazyremote-uu-bridge-route",
-  "version": 19,
+  "version": 20,
   "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
   "demand_evidence": {
     "captured_at": "2026-09-13T00:53:15Z",
@@ -114,6 +114,20 @@
   },
   "owned_route": {
     "state": "live_committed",
+    "localized_intake_handoff": {
+      "state": "live_verified",
+      "checked_on": "2026-09-13",
+      "url": "https://lazying.art/lazyremote/fit-check/zh-Hans/",
+      "website_commit": "249dd520edad0a29ec30a698dd9c056b55acc3c6",
+      "website_deployment_run": 34730167401,
+      "remote_commit": "d9997acadf687bdd2e6846fecc42254fcde01a51",
+      "remote_deployment_run": 34730260452,
+      "readme_commit": "90c8a1862c632481c18a0a5c923c4c0b102ff430",
+      "reason": "The highest-attention Simplified Chinese README and localized sample previously ended at an English-heavy intake. The form, request preview, confirmation, copy fallback, and status messages now have a complete Simplified Chinese path.",
+      "attribution": "English and Chinese landing pages carry only the four validated campaign fields into the sample and direct fit links. The sample retains the locale-specific destination. Switching the fit form's language preserves those same fields without forwarding unrelated query data.",
+      "verification": "Both Pages deployments succeeded. The live Chinese form and landing HTML matched their committed hashes. Visible production checks followed both English and Chinese landing-to-sample-to-fit paths with preserved attribution and no console errors. Local browser checks covered desktop and mobile, review-before-send, a disabled send control before confirmation, and two intercepted mock acceptances; no production request was sent.",
+      "boundary": "The USD 250 scope, backend payload fields, private intake, and payment sequence are unchanged. This is conversion readiness; no buyer inquiry or received revenue was created."
+    },
     "repository_commit": "57ce7e6543d10362b182d15754ebf1625af2c407",
     "source": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge",
     "destination": "https://remote.lazying.art/",

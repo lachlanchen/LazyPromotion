@@ -238,7 +238,13 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         demand = campaign["demand_evidence"]
-        self.assertEqual(campaign["version"], 19)
+        self.assertEqual(campaign["version"], 20)
+        localized = campaign["owned_route"]["localized_intake_handoff"]
+        self.assertEqual(localized["state"], "live_verified")
+        self.assertEqual(
+            localized["url"],
+            "https://lazying.art/lazyremote/fit-check/zh-Hans/",
+        )
         self.assertEqual(demand["public_stars"], 15)
         self.assertEqual(demand["recent_star_window"]["new_stars"], 11)
         explicit_need = demand["current_explicit_need"]

@@ -41,7 +41,7 @@ Le dépôt tient aussi l’inventaire public de 108 dépôts sources `lachlanche
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | Pré-analyse statique d’un dépôt GitHub public, figée sur une révision, pour la revue MCP ; ne clone ni n’exécute le code |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Combinaisons de code, livres, systèmes de connaissances et médias adaptées aux acheteurs |
 | [`bounties.py`](../bounties.py) | Rapproche les primes publiques de l’état GitHub en direct et rejette les travaux dangereux ou déjà disputés |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Interroge en lecture seule le flux Bounty du projet et ne transforme que les nouveaux identifiants ou versions en alertes de révision privées |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Consulte quatre sources officielles authentifiées ou publiques en lecture seule, dont un filtrage ciblé de Freelancer ; les correspondances possibles nouvelles ou modifiées déclenchent des alertes privées |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Carte complète des travaux publics, regroupés par problème réel |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Contrats d’opportunité classés, avec preuves et conditions de livraison |
 | [`docs/first-1000.md`](../docs/first-1000.md) | Parcours MCP principal à USD 500, neuf prestations adjacentes bornées et calcul honnête de l’objectif |
@@ -107,7 +107,15 @@ python bounties.py
 
 Le tableau sert uniquement à la découverte. L’auditeur vérifie l’état du ticket et les pull requests de solution existantes, rejette les demandes d’instructions dangereuses et écrit son rapport privé sous `.local/`.
 
-Le flux Bounty appartenant au projet peut aussi être surveillé sans commenter, revendiquer, envoyer de message, télécharger de pièce jointe ou soumettre un travail :
+Avec GitHub CLI (`gh`) installé et authentifié, une première analyse d’un dépôt MCP public peut partir de sa seule URL GitHub, avant de demander d’autres informations à son mainteneur :
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+Le rapport reste privé et exclu de Git. Il fige une révision et relève des indices statiques sans cloner ni exécuter le code, envoyer de formulaire ou annoncer un résultat de sécurité. Consultez l’[exemple de résultat](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs), puis [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md) pour l’exécuter localement.
+
+Quatre sources de missions rémunérées peuvent être surveillées sans commenter, réclamer une tâche, envoyer de message, télécharger de pièce jointe, signer de transaction de portefeuille ou remettre un travail :
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -116,7 +124,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-Le premier passage établit silencieusement une référence privée. Les suivants n’alertent que pour un nouvel identifiant Bounty disponible ou une version supérieure, et le minimum de cinq minutes empêche les interrogations agressives. Voir [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
+Les sources sont le flux authentifié de Bounty, le flux JSON public de TaskBounty, le flux canonique public d’Agent Bounties sur Base-mainnet limité aux tâches disponibles, et l’API publique des projets actifs de Freelancer. Chaque source établit une référence privée. Les alertes portent ensuite uniquement sur les missions nouvelles ou modifiées ; Agent Bounties exige aussi une marge brute positive, tandis que Freelancer filtre selon le portfolio, le budget, la concurrence et le périmètre. L’intervalle minimal est de cinq minutes. Voir [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
 
 Les nouveaux tickets publics et l’activité des pull requests dans les quinze dépôts actuels à forte attention ou offre peuvent être observés sans lire les corps ni écrire sur GitHub :
 
@@ -168,7 +176,7 @@ La couche portefeuille transforme les projets publics en contrats d’opportunit
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

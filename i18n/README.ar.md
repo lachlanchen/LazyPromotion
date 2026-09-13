@@ -42,7 +42,7 @@ LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجت
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | فحص ثابت ومثبت بالمراجعة لمستودع GitHub عام قبل مراجعة MCP بسعر 500 دولار؛ لا يستنسخ الشفرة ولا يشغلها |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | فرص تجمع البرمجيات والكتب وأنظمة المعرفة والوسائط حسب حاجة المشتري |
 | [`bounties.py`](../bounties.py) | يطابق المكافآت العامة مع حالة GitHub المباشرة ويرفض العمل غير الآمن أو الذي يجري التنافس عليه بالفعل |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | يستطلع موجز Bounty المملوك للمشروع للقراءة فقط، ويحوّل المعرّفات أو الإصدارات الجديدة وحدها إلى تنبيهات مراجعة خاصة |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | يراقب أربعة مصادر رسمية مصادقًا عليها أو عامة بوضع القراءة فقط، مع ترشيح محدد لـ Freelancer؛ والمطابقات المحتملة الجديدة أو المتغيرة تُنشئ تنبيهات مراجعة خاصة فقط |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | خريطة الأعمال العامة الكاملة حسب مجال المشكلة |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | عقود فرص مرتبة ببوابات للإثبات والتسليم |
 | [`docs/first-1000.md`](../docs/first-1000.md) | مسار MCP أساسي بسعر 500 دولار وتسع خدمات مجاورة محدودة وحساب الهدف بصدق |
@@ -108,7 +108,15 @@ python bounties.py
 
 اللوحة للاكتشاف فقط. يتحقق المدقق من حالة المسألة المباشرة وطلبات السحب التي تقدم حلولًا قائمة، ويرفض طلبات التعليمات غير الآمنة، ويكتب تقريره الخاص تحت `.local/`.
 
-يمكن أيضًا مراقبة موجز Bounty المملوك للمشروع من دون تعليق أو مطالبة أو مراسلة أو تنزيل مرفقات أو تسليم عمل:
+بعد تثبيت GitHub CLI (`gh`) وتسجيل الدخول إليه، يمكن إجراء فحص أولي لمستودع MCP عام باستخدام رابط المستودع فقط، قبل طلب أي معلومات إضافية من المسؤول عنه:
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+يبقى التقرير خاصًا ومستبعدًا من Git. يثبّت مراجعة محددة ويعرض مؤشرات ثابتة دون استنساخ الشفرة أو تشغيلها أو إرسال نموذج أو الادعاء بإجراء تدقيق أمني. اطلع على [عينة النتائج](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs)، ثم راجع [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md) لتشغيله محليًا.
+
+يمكن مراقبة أربعة مصادر للعمل المدفوع دون تعليق أو مطالبة بمهمة أو مراسلة أو تنزيل مرفقات أو توقيع معاملات محفظة أو تسليم عمل:
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -117,7 +125,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-تنشئ الجولة الأولى خط أساس خاصًا بهدوء. ولا تنبه الجولات اللاحقة إلا إلى معرّف Bounty جديد متاح أو إصدار أعلى، ويمنع الحد الأدنى البالغ خمس دقائق الاستطلاع المكثف. راجع [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
+المصادر هي موجز Bounty المصادق عليه، وموجز JSON العام من TaskBounty، وموجز Agent Bounties العام على Base-mainnet للمهام القابلة للمطالبة فقط، وواجهة المشاريع العامة النشطة من Freelancer. لكل مصدر خط أساس خاص. تقتصر التنبيهات اللاحقة على العمل الجديد أو المتغير؛ ويشترط Agent Bounties هامشًا نقديًا إجماليًا موجبًا، بينما يرشّح Freelancer النتائج حسب ملاءمتها للأعمال السابقة والميزانية والمنافسة وحدود العمل. الحد الأدنى للاستطلاع خمس دقائق. راجع [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
 
 يمكن رصد المسائل العامة الجديدة ونشاط طلبات السحب في المستودعات الخمسة عشر الحالية ذات الانتباه أو العروض المرتفعة، من دون قراءة المحتوى أو الكتابة إلى GitHub:
 
@@ -169,7 +177,7 @@ scripts/desktop.sh stop
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

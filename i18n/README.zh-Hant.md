@@ -41,7 +41,7 @@ LazyPromotion 是一款在本機執行、先審後發的社交需求探索助手
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 對公開 GitHub 儲存庫進行固定版本的靜態預檢，用於 MCP 審查；不複製或執行儲存庫程式碼 |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | 針對買方問題組合程式碼、書籍、知識系統與媒體的機會清單 |
 | [`bounties.py`](../bounties.py) | 將公開懸賞與 GitHub 即時狀態核對，並拒絕不安全或已有爭議的工作 |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 唯讀輪詢專案自有的 Bounty agent feed，僅將新的 ID 或版本轉成私密審閱提醒 |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 唯讀輪詢四個官方認證或公開工作來源，並對 Freelancer 做限定篩選；可能匹配的新任務或變更會成為私密審閱提醒 |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 依真實問題領域整理的完整公開作品地圖 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 帶證明要求與交付門檻的機會排序與服務約定 |
 | [`docs/first-1000.md`](../docs/first-1000.md) | 500 美元 MCP 主路線、九條相鄰的有邊界服務與不誇大的里程碑計算 |
@@ -107,7 +107,15 @@ python bounties.py
 
 此看板僅用於探索。稽核器會核驗 issue 即時狀態和現有解決方案 pull request，拒絕不安全的指令要求，並將私密報告寫入 `.local/`。
 
-也可以監控專案自有的 Bounty agent feed，而不留言、認領、傳訊息、下載附件或提交工作：
+安裝 GitHub CLI (`gh`) 並登入後，公開 MCP 儲存庫的預檢只需要完整的 GitHub 儲存庫連結，不必先向維護者索取其他資料：
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+報告保存在本機私密目錄，並由 Git 忽略。預檢會固定一個版本、整理靜態線索，不複製或執行程式碼、不提交表單，也不把結果當作安全結論。可以先看[輸出範例](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs)，再按 [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md) 在本機執行。
+
+可以唯讀監控四個付費工作來源，不留言、認領、傳訊息、下載附件、簽署錢包交易或提交工作：
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -116,7 +124,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-首次執行只會靜默建立私密基線。之後僅在出現新的可用 Bounty ID 或更高版本時提醒；五分鐘的最短間隔可防止過於頻繁的輪詢。詳見 [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md)。
+來源包括 Bounty 的認證 feed、TaskBounty 的公開 JSON Feed、Agent Bounties 在 Base-mainnet 上僅含可認領任務的官方公開 feed，以及 Freelancer 的公開活躍專案 API。每個來源先建立私密基線，之後只提醒新任務或內容變化。Agent Bounties 還要求帳面毛現金收益為正；Freelancer 則按作品適配、預算、競爭及工作範圍篩選。最短輪詢間隔為五分鐘。詳見 [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md)。
 
 可以觀察目前十五個高關注度或有服務路線儲存庫中的新公開 issue 和 pull request 活動，而不讀取正文或寫入 GitHub：
 
@@ -168,7 +176,7 @@ scripts/desktop.sh stop
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

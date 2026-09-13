@@ -41,7 +41,7 @@ LazyPromotion は、ローカルで動くレビュー優先のソーシャル需
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 公開 GitHub リポジトリをリビジョン固定で静的に事前確認する MCP レビュー用ツール。コードを clone せず実行もしない |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | コード、書籍、知識システム、メディアを買い手の課題に沿って組み合わせた機会 |
 | [`bounties.py`](../bounties.py) | 公開バウンティを GitHub のライブ状態と照合し、安全でない仕事や既に競合する仕事を除外 |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | プロジェクト所有の Bounty agent feed を読み取り専用で確認し、新しい ID またはバージョンだけを非公開レビュー通知へ変換 |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 4 つの公式の認証付き・公開案件フィードを読み取り専用で監視し、Freelancer も限定的に検索。条件に合う可能性のある新規・変更案件を非公開の確認通知にする |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 実際の問題領域ごとに整理した公開成果の全体図 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 根拠と納品条件を含む、優先順位付きの機会契約 |
 | [`docs/first-1000.md`](../docs/first-1000.md) | USD 500 の MCP 主経路、九つの範囲限定隣接サービス、誇張しない節目の計算 |
@@ -107,7 +107,15 @@ python bounties.py
 
 ボードは発見専用です。監査処理は issue のライブ状態と既存の解決 pull request を確認し、安全でない指示要求を除外して、非公開レポートを `.local/` に書きます。
 
-プロジェクト所有の Bounty agent feed も、コメント、要求、メッセージ送信、添付取得、成果物提出を行わずに監視できます。
+GitHub CLI (`gh`) をインストールして認証しておけば、公開 MCP リポジトリの事前確認は、管理者に追加情報を求める前に、GitHub リポジトリの URL だけで始められます。
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+レポートは非公開で、Git の追跡対象から除外されます。特定のリビジョンを固定して静的な手掛かりを整理しますが、コードのクローンや実行、フォーム送信、安全性の判定は行いません。[出力サンプル](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs)を確認し、ローカルでの実行方法は [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md) を参照してください。
+
+4 つの有償案件フィードを、コメント、案件の獲得申請、メッセージ送信、添付ファイル取得、ウォレット取引への署名、成果物提出を行わずに監視できます。
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -116,7 +124,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-初回は非公開の基準状態だけを静かに作成します。以後は利用可能な新しい Bounty ID または上位バージョンだけを通知し、最短 5 分の間隔で過度なポーリングを防ぎます。詳細は [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md) を参照してください。
+対象は Bounty の認証付きフィード、TaskBounty の公開 JSON フィード、Agent Bounties の Base-mainnet 上の獲得可能な案件に限定した公開フィード、Freelancer の公開アクティブ案件 API です。各フィードで非公開の基準状態を作り、以後は新規・変更案件だけを通知します。Agent Bounties では正の粗利益も条件とし、Freelancer では作品との適合性、予算、競争状況、作業範囲を絞り込みます。最短間隔は 5 分です。詳細は [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md) を参照してください。
 
 現在注目度またはオファーが高い 15 リポジトリの新しい公開 issue と pull request 活動は、本文を読まず GitHub に書き込まずに監視できます。
 
@@ -168,7 +176,7 @@ scripts/desktop.sh stop
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

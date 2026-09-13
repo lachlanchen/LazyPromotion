@@ -41,7 +41,7 @@ LazyPromotion — локальный помощник для поиска зап
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | Статическая предварительная проверка публичного GitHub-репозитория с фиксацией ревизии для MCP-аудита; код не клонируется и не запускается |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Сочетания кода, книг, систем знаний и медиа, сформированные вокруг задач покупателей |
 | [`bounties.py`](../bounties.py) | Сверяет публичные вознаграждения с текущим состоянием GitHub и отклоняет небезопасную или уже оспариваемую работу |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Опрашивает принадлежащий проекту поток Bounty только для чтения и создаёт приватные уведомления лишь для новых ID или версий |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Читает четыре официальных аутентифицированных или публичных источника задач, включая узкую выборку Freelancer; новые или изменённые потенциальные совпадения создают приватные уведомления для проверки |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Полная карта открытых работ, сгруппированная по реальным проблемам |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Ранжированные контракты возможностей с требованиями к доказательствам и поставке |
 | [`docs/first-1000.md`](../docs/first-1000.md) | Основной MCP-маршрут за 500 долларов, девять смежных ограниченных услуг и честный расчёт этапа |
@@ -107,7 +107,15 @@ python bounties.py
 
 Доска служит только для обнаружения. Аудитор проверяет актуальное состояние issue и существующие pull requests с решениями, отклоняет опасные запросы инструкций и записывает приватный отчёт в `.local/`.
 
-Принадлежащий проекту поток Bounty тоже можно наблюдать, не комментируя, не заявляя права, не отправляя сообщения, не загружая вложения и не представляя работу:
+После установки GitHub CLI (`gh`) и входа в учётную запись предварительную проверку публичного MCP-репозитория можно выполнить по его URL на GitHub, прежде чем запрашивать у сопровождающего дополнительные сведения:
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+Отчёт остаётся приватным и исключён из Git. Он фиксирует ревизию и собирает статические признаки, не клонируя и не запуская код, не отправляя формы и не заявляя о результатах проверки безопасности. Посмотрите [пример результата](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs), а инструкции по локальному запуску — в [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md).
+
+Можно наблюдать за четырьмя источниками оплачиваемых задач без комментариев, заявок на задачи, сообщений, скачивания вложений, подписания транзакций кошелька или сдачи работы:
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -116,7 +124,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-Первый проход тихо создаёт приватную исходную точку. Последующие проходы сообщают только о новом доступном ID Bounty или более высокой версии, а пятиминутный минимум предотвращает агрессивный опрос. См. [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
+Источники — аутентифицированная лента Bounty, публичная JSON-лента TaskBounty, каноническая публичная лента Agent Bounties в Base-mainnet только с доступными задачами и публичный API активных проектов Freelancer. Для каждого источника создаётся приватная исходная точка. Затем уведомления касаются только новых или изменённых задач; Agent Bounties также требует положительной валовой денежной маржи, а Freelancer фильтруется по соответствию портфолио, бюджету, конкуренции и объёму работ. Минимальный интервал — пять минут. См. [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
 
 Новые публичные issues и активность pull requests в пятнадцати текущих репозиториях с высоким вниманием или предложениями можно наблюдать, не читая содержимое и не записывая ничего в GitHub:
 
@@ -168,7 +176,7 @@ scripts/desktop.sh stop
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

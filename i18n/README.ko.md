@@ -41,7 +41,7 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 공개 GitHub 저장소를 특정 리비전에 고정해 정적으로 사전 점검하는 MCP 검토 도구. 코드를 복제하거나 실행하지 않음 |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | 코드, 책, 지식 시스템, 미디어를 구매자 문제 중심으로 결합한 기회 |
 | [`bounties.py`](../bounties.py) | 공개 바운티를 GitHub 실시간 상태와 대조하고 안전하지 않거나 이미 경쟁 중인 작업을 제외 |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | 프로젝트 소유 Bounty agent feed를 읽기 전용으로 확인하고 새 ID나 버전만 비공개 검토 알림으로 전환 |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Freelancer의 제한된 검색을 포함해 네 가지 공식 인증·공개 작업 피드를 읽기 전용으로 확인하며, 조건에 맞을 가능성이 있는 새 작업이나 변경 사항을 비공개 검토 알림으로 전달 |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | 실제 문제 영역별로 정리한 공개 작업 전체 지도 |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | 증거와 납품 조건을 포함한 우선순위별 기회 계약 |
 | [`docs/first-1000.md`](../docs/first-1000.md) | USD 500 MCP 주 경로, 범위가 정해진 인접 서비스 아홉 가지, 정직한 목표 계산 |
@@ -107,7 +107,15 @@ python bounties.py
 
 보드는 탐색 전용입니다. 감사기는 issue 실시간 상태와 기존 해결 pull request를 확인하고 안전하지 않은 지시 요청을 거부하며 비공개 보고서를 `.local/` 아래에 씁니다.
 
-프로젝트 소유 Bounty agent feed도 댓글, 작업 차지, 메시지 전송, 첨부 다운로드, 결과 제출 없이 감시할 수 있습니다.
+GitHub CLI (`gh`)를 설치하고 로그인하면, 관리 담당자에게 추가 정보를 요청하기 전에 GitHub 저장소 URL만으로 공개 MCP 저장소를 사전 확인할 수 있습니다.
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+보고서는 비공개로 저장되며 Git 추적에서 제외됩니다. 특정 리비전을 고정해 정적 단서를 정리하지만, 코드를 복제하거나 실행하지 않고 양식을 제출하거나 보안 결과를 주장하지도 않습니다. [출력 예시](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs)를 먼저 보고, 로컬 실행 방법은 [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md)를 참고하세요.
+
+댓글, 작업 신청, 메시지 전송, 첨부 다운로드, 지갑 거래 서명 또는 결과 제출 없이 네 가지 유료 작업 피드를 모니터링할 수 있습니다.
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -116,7 +124,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-첫 실행은 비공개 기준 상태만 조용히 만듭니다. 이후에는 사용 가능한 새 Bounty ID 또는 상위 버전만 알리며, 최소 5분 간격으로 과도한 폴링을 방지합니다. 자세한 내용은 [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md)를 참조하세요.
+대상은 Bounty의 인증된 피드, TaskBounty의 공개 JSON 피드, 신청 가능한 작업만 포함하는 Agent Bounties의 공개 Base-mainnet 피드, Freelancer의 공개 활성 프로젝트 API입니다. 각 소스는 비공개 기준 상태를 만들고 이후 새 작업이나 변경된 작업만 알립니다. Agent Bounties는 양의 총현금마진도 요구하며, Freelancer는 포트폴리오 적합성, 예산, 경쟁 및 작업 범위를 기준으로 필터링합니다. 최소 간격은 5분입니다. [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md)를 참고하세요.
 
 현재 관심도 또는 오퍼가 높은 15개 저장소의 새 공개 issue와 pull request 활동은 본문을 읽거나 GitHub에 쓰지 않고 관찰할 수 있습니다.
 
@@ -168,7 +176,7 @@ scripts/desktop.sh stop
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

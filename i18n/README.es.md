@@ -42,7 +42,7 @@ El repositorio también mantiene un inventario público de 108 repositorios fuen
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | Preflight estático y fijado a una revisión de un repositorio público de GitHub para la revisión MCP; nunca clona ni ejecuta su código |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Combinaciones de código, libros, conocimiento y medios orientadas al comprador |
 | [`bounties.py`](../bounties.py) | Concilia recompensas públicas con el estado en vivo de GitHub y rechaza tareas inseguras o ya disputadas |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Consulta en modo lectura el feed de Bounty del proyecto y convierte solo ID o versiones nuevas en alertas privadas de revisión |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Consulta cuatro fuentes oficiales autenticadas o públicas, con un filtro específico para Freelancer; las nuevas coincidencias posibles o sus cambios generan alertas privadas de revisión |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Mapa completo del trabajo público por área de problema |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Contratos de oportunidad priorizados con puertas de prueba y entrega |
 | [`docs/first-1000.md`](../docs/first-1000.md) | Ruta MCP principal de USD 500, nueve servicios adyacentes acotados y cálculo honesto de la meta |
@@ -108,7 +108,15 @@ python bounties.py
 
 El tablero sirve solo para descubrir. El auditor comprueba el estado en vivo de la incidencia y las solicitudes de cambios que ya ofrecen soluciones, rechaza instrucciones inseguras y escribe su informe privado en `.local/`.
 
-El feed de Bounty propiedad del proyecto también se puede vigilar sin comentar, reclamar, enviar mensajes, descargar adjuntos ni presentar trabajo:
+Con GitHub CLI (`gh`) instalado y la sesión iniciada, puedes hacer una comprobación previa de un repositorio MCP público con su URL de GitHub, antes de pedir más datos a quien lo mantiene:
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+El informe es privado y queda excluido de Git. Fija una revisión y recoge indicios estáticos sin clonar ni ejecutar código, enviar formularios ni afirmar resultados de seguridad. Consulta la [muestra de resultados](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs) y [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md) para ejecutarlo localmente.
+
+También puedes vigilar cuatro fuentes de trabajo remunerado sin comentar, reclamar tareas, enviar mensajes, descargar adjuntos, firmar transacciones de una cartera ni entregar trabajo:
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -117,7 +125,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-La primera pasada crea en silencio una referencia privada. Las siguientes solo alertan de un ID de Bounty disponible nuevo o de una versión superior, y el mínimo de cinco minutos evita consultas agresivas. Consulta [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
+Las fuentes son el feed autenticado de Bounty, el feed JSON público de TaskBounty, el feed canónico público de Agent Bounties en Base-mainnet limitado a tareas disponibles para reclamar y la API pública de proyectos activos de Freelancer. Cada fuente crea una referencia privada. Después solo se avisa de trabajos nuevos o modificados; Agent Bounties exige además un margen bruto positivo, y Freelancer filtra por ajuste al portafolio, presupuesto, competencia y alcance. El intervalo mínimo es de cinco minutos. Consulta [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
 
 Se pueden observar incidencias públicas nuevas y actividad de solicitudes de cambios en los quince repositorios actuales de mayor atención u oferta, sin leer cuerpos ni escribir en GitHub:
 
@@ -169,7 +177,7 @@ Las conexiones MCP son opcionales y están fijadas; los subprocesos del modelo n
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

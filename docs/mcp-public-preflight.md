@@ -4,6 +4,9 @@
 private, review-ready scope report for the fixed USD 500 MCP Server
 Pre-Deployment Review.
 
+Requires GitHub CLI (`gh`) installed and authenticated. The reader still rejects
+non-public repositories; authentication does not widen its public-data boundary.
+
 ```bash
 python mcp_public_preflight.py https://github.com/owner/repository
 ```

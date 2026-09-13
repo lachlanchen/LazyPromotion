@@ -41,7 +41,7 @@ Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` 
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | Kiểm tra tĩnh kho GitHub công khai, ghim theo bản sửa đổi, cho dịch vụ rà soát MCP; không sao chép hay chạy mã của kho |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Kết hợp mã, sách, hệ thống tri thức và nội dung đa phương tiện quanh bài toán người mua |
 | [`bounties.py`](../bounties.py) | Đối chiếu bounty công khai với trạng thái GitHub trực tiếp và loại công việc không an toàn hoặc đã có tranh chấp |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Thăm dò luồng Bounty thuộc dự án ở chế độ chỉ đọc và chỉ chuyển ID hoặc phiên bản mới thành cảnh báo duyệt riêng tư |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Đọc bốn nguồn việc chính thức có xác thực hoặc công khai, gồm bộ lọc hẹp cho Freelancer; các việc mới hoặc thay đổi có khả năng phù hợp tạo cảnh báo xem xét riêng tư |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Bản đồ đầy đủ các sản phẩm công khai, nhóm theo vấn đề thực tế |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Các hợp đồng cơ hội được xếp hạng, có cổng bằng chứng và giao hàng |
 | [`docs/first-1000.md`](../docs/first-1000.md) | Tuyến MCP chính 500 USD, chín dịch vụ liền kề có giới hạn và phép tính cột mốc trung thực |
@@ -107,7 +107,15 @@ python bounties.py
 
 Bảng chỉ dùng để khám phá. Trình kiểm toán xác minh trạng thái issue trực tiếp và các pull request giải pháp hiện có, từ chối yêu cầu hướng dẫn không an toàn và ghi báo cáo riêng tư dưới `.local/`.
 
-Cũng có thể theo dõi luồng Bounty thuộc dự án mà không bình luận, nhận việc, nhắn tin, tải tệp đính kèm hay nộp sản phẩm:
+Sau khi cài GitHub CLI (`gh`) và đăng nhập, có thể kiểm tra sơ bộ một kho MCP công khai chỉ bằng URL kho GitHub, trước khi hỏi người duy trì thêm thông tin:
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+Báo cáo được giữ riêng tư và loại khỏi Git. Công cụ ghim một bản sửa đổi và thu thập dấu hiệu tĩnh, không sao chép hay chạy mã, gửi biểu mẫu hoặc tuyên bố kết quả bảo mật. Xem [báo cáo mẫu](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs), rồi đọc [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md) để chạy cục bộ.
+
+Có thể theo dõi bốn nguồn việc trả phí mà không bình luận, nhận nhiệm vụ, nhắn tin, tải tệp đính kèm, ký giao dịch ví hay nộp sản phẩm:
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -116,7 +124,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-Lượt đầu âm thầm tạo mốc riêng tư. Các lượt sau chỉ cảnh báo ID Bounty mới khả dụng hoặc phiên bản cao hơn, và mức tối thiểu năm phút ngăn thăm dò quá dày. Xem [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
+Các nguồn gồm luồng Bounty có xác thực, luồng JSON công khai của TaskBounty, luồng chính thức công khai của Agent Bounties trên Base-mainnet chỉ chứa việc có thể nhận, và API dự án đang hoạt động công khai của Freelancer. Mỗi nguồn có một mốc riêng tư; sau đó chỉ cảnh báo việc mới hoặc thay đổi. Agent Bounties còn yêu cầu biên tiền mặt gộp dương; Freelancer được lọc theo độ phù hợp với danh mục dự án, ngân sách, cạnh tranh và phạm vi. Khoảng thời gian tối thiểu là năm phút. Xem [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
 
 Có thể quan sát issue công khai mới và hoạt động pull request trong mười lăm kho mã có mức chú ý hoặc đề nghị cao hiện tại mà không đọc phần nội dung hay ghi lên GitHub:
 
@@ -168,7 +176,7 @@ Lớp danh mục biến dự án công khai thành hợp đồng cơ hội rõ r
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

@@ -30,6 +30,23 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
+    def test_all_eleven_readmes_share_commands_and_preflight_entry(self):
+        canonical = (ROOT / "README.md").read_text(encoding="utf-8")
+        commands = re.findall(r"```(?:bash|bibtex)\n(.*?)```", canonical, re.S)
+        self.assertEqual(len(commands), 13)
+        for path in READMES:
+            with self.subTest(path=path.name):
+                body = path.read_text(encoding="utf-8")
+                self.assertEqual(
+                    re.findall(r"```(?:bash|bibtex)\n(.*?)```", body, re.S),
+                    commands,
+                )
+                self.assertIn("mcp-boundary-review/preflight-sample/", body)
+                self.assertIn("docs/mcp-public-preflight.md", body)
+                self.assertIn("`gh`", body)
+                for provider in ("Bounty", "TaskBounty", "Agent Bounties", "Freelancer"):
+                    self.assertIn(provider, body)
+
     def test_conversion_guide_matches_the_current_primary_route(self):
         guide = (ROOT / "docs" / "conversion.md").read_text(encoding="utf-8")
 

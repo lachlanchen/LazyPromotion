@@ -41,7 +41,7 @@ Das Repository enthält außerdem ein öffentliches Inventar von 108 nicht archi
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | Statische, revisionsgebundene Vorprüfung eines öffentlichen GitHub-Repositories für den MCP-Review; klont und führt keinen Repository-Code aus |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | Käuferbezogene Kombinationen aus Code, Büchern, Wissenssystemen und Medien |
 | [`bounties.py`](../bounties.py) | Gleicht öffentliche Bounty-Angebote mit dem Live-Zustand auf GitHub ab und verwirft unsichere oder bereits umkämpfte Aufgaben |
-| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Fragt den projekteigenen Bounty-Agent-Feed nur lesend ab und erzeugt private Review-Hinweise ausschließlich für neue IDs oder Versionen |
+| [`bounty_marketplace_monitor.py`](../bounty_marketplace_monitor.py) | Liest vier offizielle authentifizierte oder öffentliche Aufgabenquellen, einschließlich einer engen Freelancer-Auswahl; neue oder geänderte mögliche Treffer erzeugen private Prüfhinweise |
 | [`docs/portfolio-inventory.md`](../docs/portfolio-inventory.md) | Vollständige öffentliche Arbeitsübersicht nach realen Problembereichen |
 | [`docs/compound-opportunities.md`](../docs/compound-opportunities.md) | Priorisierte Angebotsverträge mit Nachweis- und Lieferbedingungen |
 | [`docs/first-1000.md`](../docs/first-1000.md) | Primärer MCP-Weg für 500 USD, neun angrenzende begrenzte Services und ehrliche Zielrechnung |
@@ -107,7 +107,15 @@ python bounties.py
 
 Das Board dient nur der Suche. Der Auditor prüft den aktuellen Issue-Zustand und vorhandene Lösungs-Pull-Requests, weist unsichere Anweisungen zurück und schreibt seinen privaten Bericht nach `.local/`.
 
-Auch der projekteigene Bounty-Agent-Feed kann beobachtet werden, ohne zu kommentieren, Aufgaben zu beanspruchen, Nachrichten zu senden, Anhänge herunterzuladen oder Arbeit einzureichen:
+Mit installiertem und angemeldetem GitHub CLI (`gh`) benötigt eine erste Prüfung eines öffentlichen MCP-Repositories nur dessen vollständige GitHub-Repository-URL, noch keine weiteren Angaben des Maintainers:
+
+```bash
+python mcp_public_preflight.py https://github.com/owner/repository
+```
+
+Der Bericht bleibt privat und von Git ausgeschlossen. Er fixiert eine Revision und erfasst statische Hinweise, ohne Code zu klonen oder auszuführen, ein Formular abzusenden oder ein Sicherheitsergebnis zu behaupten. Sieh dir das [Ausgabebeispiel](https://lazying.art/mcp-boundary-review/preflight-sample/?utm_source=github&utm_medium=repository&utm_campaign=mcp_boundary_review&utm_content=preflight_tool_docs) an; die lokale Nutzung erklärt [`docs/mcp-public-preflight.md`](../docs/mcp-public-preflight.md).
+
+Vier Quellen für bezahlte Aufgaben lassen sich beobachten, ohne zu kommentieren, Aufgaben zu beanspruchen, Nachrichten zu senden, Anhänge herunterzuladen, Wallet-Transaktionen zu signieren oder Arbeit einzureichen:
 
 ```bash
 python bounty_marketplace_monitor.py once
@@ -116,7 +124,7 @@ scripts/bounty-marketplace-monitor.sh status
 scripts/bounty-marketplace-monitor.sh stop
 ```
 
-Der erste Durchlauf legt still eine private Ausgangsbasis an. Spätere Durchläufe melden nur neue verfügbare Bounty-IDs oder höhere Versionen; das Fünf-Minuten-Minimum verhindert aggressives Abfragen. Siehe [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
+Die Quellen sind der authentifizierte Bounty-Feed, der öffentliche JSON-Feed von TaskBounty, der öffentliche kanonische Base-mainnet-Feed von Agent Bounties für beanspruchbare Aufgaben und Freelancers öffentliche API für aktive Projekte. Jede Quelle erhält eine private Ausgangsbasis. Danach werden nur neue oder geänderte Aufgaben gemeldet; Agent Bounties verlangt zusätzlich eine positive Bruttomarge, Freelancer prüft Portfolio-Passung, Budget, Konkurrenz und Arbeitsumfang. Das Mindestintervall beträgt fünf Minuten. Siehe [`docs/bounty-marketplace-monitor.md`](../docs/bounty-marketplace-monitor.md).
 
 Neue öffentliche Issues und Pull-Request-Aktivitäten in den fünfzehn aktuellen aufmerksamkeits- oder angebotsstarken Repositories lassen sich beobachten, ohne Inhaltskörper zu lesen oder auf GitHub zu schreiben:
 
@@ -168,7 +176,7 @@ Die Portfolio-Ebene macht aus öffentlichen Projekten klar abgegrenzte Angebotsv
 
 ```bash
 python -m unittest discover -s tests -v
-python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
+python -m py_compile promotion.py browser.py bounties.py bounty_marketplace_monitor.py github_inbound_monitor.py github_portfolio_audit.py mcp_public_preflight.py threads_inbound_monitor.py stripe_revenue_monitor.py freelancer_inbound_monitor.py
 bash -n scripts/desktop.sh scripts/bounty-marketplace-monitor.sh scripts/github-inbound-monitor.sh scripts/stripe-revenue-monitor.sh
 git diff --check
 ```

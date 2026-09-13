@@ -63,7 +63,7 @@ stars, applications, and queued posts never count as revenue.
 | [`mcp_public_preflight.py`](mcp_public_preflight.py) | Static, revision-pinned public GitHub preflight for the USD 500 MCP review; never clones or executes repository code |
 | [`portfolio-opportunities.json`](portfolio-opportunities.json) | Buyer-shaped combinations of code, books, knowledge systems, and media |
 | [`bounties.py`](bounties.py) | Reconciles public bounty listings with live GitHub state and rejects unsafe or already-contested work |
-| [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls four official authenticated or public work feeds read-only, including a narrow Freelancer screen; only new or changed bounded work becomes a private review alert |
+| [`bounty_marketplace_monitor.py`](bounty_marketplace_monitor.py) | Polls four official authenticated or public work feeds read-only, including a narrow Freelancer screen; new or changed potential matches become private review alerts |
 | [`docs/portfolio-inventory.md`](docs/portfolio-inventory.md) | Complete public work map grouped by real problem area |
 | [`docs/compound-opportunities.md`](docs/compound-opportunities.md) | Ranked opportunity contracts with proof and delivery gates |
 | [`docs/first-1000.md`](docs/first-1000.md) | Primary USD 500 MCP route, nine adjacent bounded services, and truthful milestone math |
@@ -138,8 +138,9 @@ The board is discovery only. The auditor verifies live issue state and existing
 solution pull requests, rejects unsafe instruction requests, and writes its
 private report under `.local/`.
 
-A clean public MCP repository can be preflighted before asking a maintainer for
-anything beyond its URL:
+With GitHub CLI (`gh`) installed and authenticated, a clean public MCP
+repository can be preflighted before asking a maintainer for anything beyond
+its URL:
 
 ```bash
 python mcp_public_preflight.py https://github.com/owner/repository

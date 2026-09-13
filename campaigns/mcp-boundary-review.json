@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 46,
+  "version": 47,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -500,7 +500,7 @@
       "verification": "The profile README checker passed English plus ten translations, all 267 repository tests and 18 subtests passed under Python 3.12, and the default branch returned the exact routes in English, Simplified Chinese, and Japanese after push."
     },
     "postiz": {
-      "state": "linkedin_x_instagram_and_reddit_profile_queue_verified",
+      "state": "reddit_profile_published_linkedin_x_instagram_queued",
       "provider": "linkedin",
       "post_id": "cmty7dcko17ftqk0yxthwp24w",
       "publish_at": "2026-09-16T02:00:00.000Z",
@@ -554,10 +554,13 @@
         "replaced_or_added_volume": "This is the first Instagram test for the MCP offer. It is separated by thirty-two hours from the already queued September 17 passage-graph item and remains within the public posting cap."
       },
       "reddit_profile": {
-        "state": "queue_verified",
+        "state": "published_live_verified",
         "provider": "reddit",
         "post_id": "cmtykn0k114g4lm0yuk3tqrpp",
         "publish_at": "2026-09-13T04:00:00.000Z",
+        "published_at": "2026-09-13T04:00:18.894Z",
+        "published_url": "https://www.reddit.com/user/Ok-Perception1122/comments/1wex83u/readonly_is_not_the_same_as_private_a_small_mcp/",
+        "postiz_release_url": "https://www.reddit.com/r/u_Ok-Perception1122/comments/1wex83u/readonly_is_not_the_same_as_private_a_small_mcp/",
         "profile": "Ok-Perception1122",
         "title": "“Read-only” is not the same as private: a small MCP check before deployment",
         "content": "“Read-only” does not mean private.\n\nA tool can make no writes and still disclose a source excerpt, local path, or token to the wrong client. Before I expose an MCP server, I now do seven small things:\n\n1. Pin the repository revision, SDK/protocol, client, and transport.\n2. Capture the live tools and resources; compare them with the docs and code.\n3. Run one valid tool call and one resource read.\n4. Try unknown names, malformed input, and one safe timeout.\n5. Trace the real files, databases, network calls, credentials, and approval gates.\n6. Inspect client output and logs for paths, tokens, and private context.\n7. Write a narrow GO/NO-GO for the exact deployment, not the whole product.\n\nI ran that process on a project-owned Local Knowledge Terminal server: 2 tools, 1 resource, 14 focused tests. The recorded local boundary passed. Direct remote exposure did not, because client authentication was missing.\n\nThe report and small evidence packet are public:\nhttps://lazying.art/mcp-boundary-review/sample-report/?utm_source=reddit&utm_medium=profile&utm_campaign=mcp_boundary_review&utm_content=executed_sample\n\nI maintain the sample and offer the same method as a fixed USD 500 review of one pinned server and ten agreed checks. The fit check comes before source access or payment.",
@@ -571,6 +574,19 @@
           "is_flair_required": false
         },
         "verification": "The Reddit provider schema was read before creation. Postiz returned the exact title, body, unshortened first-party tracked destination, owned profile, September 13 time, self-post settings, and QUEUE state. The visible Postiz calendar showed the owned-profile item at 12:00 HKT. The unusable shortlinked draft was deleted before publication, and a final provider read left only the unshortened queued record.",
+        "live_verification": {
+          "checked_at": "2026-09-13T04:03:14Z",
+          "postiz_state": "PUBLISHED",
+          "postiz_content_matches_reviewed_hash": true,
+          "public_author_title_and_body_reviewed": true,
+          "sample_link_opened_from_live_post": true,
+          "sample_preserves_reddit_attribution": true,
+          "fit_links_preserve_reddit_attribution": 4,
+          "sample_horizontal_overflow": false,
+          "fit_request_submitted": false,
+          "organic_engagement_claimed": false,
+          "boundary": "The original scheduled item published once. Visible review confirmed the owned profile, checklist, pinned project-owned proof, fixed USD 500 offer, and exact sample link. Clicking that link opened the tracked sample, whose four fit links retained the same attribution. The operator's verification view and click are not organic engagement, an inquiry, or revenue."
+        },
         "volume_boundary": "This is one low-volume post on the owned Reddit profile, not another r/mcp reply or a subreddit submission. It adds a quiet proof surface after three standalone architecture answers and does not authorize automated replies or direct messages.",
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0

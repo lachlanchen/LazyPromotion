@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 46)
+        self.assertEqual(self.payload["version"], 47)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -337,11 +337,11 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
 
-    def test_linkedin_x_instagram_and_reddit_queues_preserve_reviewed_evidence(self):
+    def test_queued_channels_and_live_reddit_preserve_reviewed_evidence(self):
         postiz = self.payload["channels"]["postiz"]
         self.assertEqual(
             postiz["state"],
-            "linkedin_x_instagram_and_reddit_profile_queue_verified",
+            "reddit_profile_published_linkedin_x_instagram_queued",
         )
         self.assertEqual(postiz["publish_at"], "2026-09-16T02:00:00.000Z")
         self.assertIn("14 focused tests", postiz["content"])
@@ -381,9 +381,22 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("thirty-two hours", instagram["replaced_or_added_volume"])
         self.assertIn("attention signals only", instagram["analytics_context"])
         reddit = postiz["reddit_profile"]
-        self.assertEqual(reddit["state"], "queue_verified")
+        self.assertEqual(reddit["state"], "published_live_verified")
         self.assertEqual(reddit["provider"], "reddit")
         self.assertEqual(reddit["publish_at"], "2026-09-13T04:00:00.000Z")
+        self.assertEqual(reddit["published_at"], "2026-09-13T04:00:18.894Z")
+        self.assertIn("/user/Ok-Perception1122/comments/1wex83u/", reddit["published_url"])
+        self.assertIn("/r/u_Ok-Perception1122/comments/1wex83u/", reddit["postiz_release_url"])
+        live = reddit["live_verification"]
+        self.assertEqual(live["postiz_state"], "PUBLISHED")
+        self.assertTrue(live["postiz_content_matches_reviewed_hash"])
+        self.assertTrue(live["public_author_title_and_body_reviewed"])
+        self.assertTrue(live["sample_link_opened_from_live_post"])
+        self.assertTrue(live["sample_preserves_reddit_attribution"])
+        self.assertEqual(live["fit_links_preserve_reddit_attribution"], 4)
+        self.assertFalse(live["sample_horizontal_overflow"])
+        self.assertFalse(live["fit_request_submitted"])
+        self.assertFalse(live["organic_engagement_claimed"])
         self.assertEqual(reddit["profile"], "Ok-Perception1122")
         self.assertEqual(reddit["settings"]["subreddit"], "/r/u_Ok-Perception1122")
         self.assertEqual(reddit["settings"]["type"], "self")

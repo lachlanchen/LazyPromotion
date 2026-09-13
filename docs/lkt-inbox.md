@@ -154,3 +154,30 @@ accepted HTTP 202 request. It authenticated and decrypted, persisted with mode
 check returned `no_pending`; the exact synthetic payload files were removed and
 the normal monitor restarted. This verifies the path, not a buyer inquiry,
 qualified lead, payment, delivery, or revenue.
+
+## Durable local review queue
+
+`no_pending` describes the **remote spool**, not whether received requests have
+been handled. `python intake_review.py status` scans retained private inquiries
+and reports aggregate review counts; `python owned_monitor.py status` includes
+the same `fit_intake` summary even if the Postiz status is unavailable. An empty
+receiver poll cannot clear this queue. Missing, malformed, or unsafe private
+files produce an unavailable/review-required state, not a reassuring zero.
+
+For deliberate local review, `python intake_review.py inspect` lists only
+receipt, content hash, time, offer, and review state. Keep this output private.
+After privately reading the actual request, record the exact reviewed hash:
+
+```bash
+python intake_review.py review RECEIPT --sha256 SHA256 --state needs_action --confirm-reviewed
+```
+
+`needs_action` remains visible until the next action is handled. Use `closed`
+only after recording a disposition or handoff in the private activity ledger;
+reading or answering a message alone does not settle unfinished work.
+`synthetic_test` is only for an individually verified operator test, never a
+keyword-based exclusion. The mode-`0600`, gitignored review ledger stores only
+receipt, hash, state, and time. It sends nothing, deletes nothing, and makes no
+lead or revenue transition. Changed inquiry content reopens review. If a
+reviewed inquiry disappears, investigate the missing file before changing its
+ledger entry.

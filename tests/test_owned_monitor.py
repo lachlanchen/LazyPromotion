@@ -335,9 +335,13 @@ class OwnedMonitorTests(unittest.TestCase):
             application_inbox_path=application_inbox_path,
             reddit_reply_path=reddit_reply_path,
             social_inbox_path=social_inbox_path,
+            intake_directory=self.root / "isolated-intake",
+            intake_ledger_path=self.root / "isolated-review.json",
         )
 
         self.assertTrue(summary["available"])
+        self.assertFalse(summary["fit_intake"]["available"])
+        self.assertTrue(summary["fit_intake"]["review_required"])
         self.assertFalse(summary["monitor_error"])
         self.assertEqual(summary["postiz"]["queued"], 2)
         self.assertEqual(summary["applications"]["due_for_human_review"], 1)

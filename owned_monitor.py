@@ -25,6 +25,7 @@ from pathlib import Path
 from typing import Any
 
 import application_watch
+import intake_review
 
 
 ROOT = Path(__file__).resolve().parent
@@ -799,12 +800,17 @@ def status_summary(
     application_inbox_path: Path = APPLICATION_INBOX_STATUS_PATH,
     reddit_reply_path: Path = REDDIT_REPLY_STATUS_PATH,
     social_inbox_path: Path = SOCIAL_INBOX_STATUS_PATH,
+    intake_directory: Path = intake_review.INBOX_DIR,
+    intake_ledger_path: Path = intake_review.LEDGER_PATH,
 ) -> dict:
     """Read the last private status without exposing post or integration details."""
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
-        return {"available": False}
+        return {
+            "available": False,
+            "fit_intake": intake_review.status_summary(intake_directory, intake_ledger_path),
+        }
     application = payload.get("application_watch")
     if not isinstance(application, dict):
         application = {}
@@ -828,6 +834,7 @@ def status_summary(
         ),
         "reddit_reply": reddit_reply_status_summary(reddit_reply_path),
         "social_inbox": social_inbox_status_summary(social_inbox_path),
+        "fit_intake": intake_review.status_summary(intake_directory, intake_ledger_path),
         "applications": dict(application.get("summary") or {}),
         "due_campaign_ids": [str(item) for item in due_ids],
     }

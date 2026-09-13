@@ -708,10 +708,21 @@ def application_inbox_status_summary(
         "matching_thread_count",
         "unread_matching_thread_count",
     }
+    policy = payload.get("policy") or {}
+    coverage = {}
+    if isinstance(policy, dict) and policy.get("coverage") == "newest_bounded_thread_window_in_configured_folder":
+        limit = policy.get("maximum_thread_positions")
+        if isinstance(limit, int) and not isinstance(limit, bool) and limit > 0:
+            coverage = {
+                "coverage": "newest_bounded_thread_window_in_configured_folder",
+                "maximum_thread_positions": limit,
+                "complete_mailbox_claimed": False,
+            }
     return {
         "available": True,
         "checked_at": str(payload.get("checked_at") or ""),
         "alert_count": len(payload.get("alerts") or []),
+        **coverage,
         **{
             key: payload["summary"][key]
             for key in allowed_counts

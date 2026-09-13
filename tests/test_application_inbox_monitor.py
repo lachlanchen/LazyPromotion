@@ -1,6 +1,8 @@
 import contextlib
 import json
 import sqlite3
+import shutil
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -24,6 +26,10 @@ class FakeMailConnection:
             "folderSelected": folder_selected,
             "treeFound": tree_found,
             "campaigns": campaigns or [],
+            "coverage": (
+                {"rowLimit": 50, "rowsScanned": 50, "totalRows": 50}
+                if folder_selected and tree_found else None
+            ),
         }
 
     def command(self, method, params=None):
@@ -274,7 +280,7 @@ class ApplicationInboxMonitorTests(unittest.TestCase):
         ):
             self.assertNotIn(forbidden, expression.casefold())
 
-    def test_selects_exactly_one_configured_folder_without_ui_actions(self):
+    def test_selects_exactly_one_configured_folder_without_opening_mail(self):
         first = FakeMailConnection(folder_selected=False)
         second = FakeMailConnection(
             folder_selected=True,
@@ -298,16 +304,53 @@ class ApplicationInboxMonitorTests(unittest.TestCase):
             methods = [method for method, _ in connection.calls]
             self.assertEqual(
                 methods,
-                ["Page.getFrameTree", "Page.createIsolatedWorld", "Runtime.evaluate"],
+                ["Page.getFrameTree", "Page.createIsolatedWorld", "Page.bringToFront", "Runtime.evaluate"],
             )
             self.assertFalse(
                 {
-                    "Page.bringToFront",
                     "Page.navigate",
                     "Input.dispatchMouseEvent",
                 }
                 & set(methods)
             )
+            self.assertTrue(connection.calls[-1][1]["awaitPromise"])
+
+    def test_incomplete_or_untrusted_window_coverage_fails_closed(self):
+        for coverage in (
+            None,
+            {"rowLimit": 50, "rowsScanned": 49, "totalRows": 50},
+            {"rowLimit": 50, "rowsScanned": 0, "totalRows": 0},
+            {"rowLimit": 50, "rowsScanned": True, "totalRows": 1},
+            {"rowLimit": 500, "rowsScanned": 50, "totalRows": 50},
+            {"rowLimit": 50, "rowsScanned": 50, "totalRows": 50, "subject": "private"},
+        ):
+            with self.subTest(coverage=coverage), self.assertRaises(RuntimeError):
+                connection = FakeMailConnection(folder_selected=True)
+                connection.payload["coverage"] = coverage
+                self.read_with([self.mail_target("ws://mail")], {"ws://mail": connection})
+
+    @unittest.skipUnless(shutil.which("node"), "Node is required for the DOM fixture")
+    def test_executed_dom_scan_handles_virtualization_and_fails_on_gaps(self):
+        fixture = Path(__file__).parent / "fixtures" / "application-mail-window.cjs"
+        for scenario in ("normal", "short", "growing", "stuck", "missing", "shifted", "folder-change"):
+            with self.subTest(scenario=scenario):
+                result = subprocess.run(
+                    ["node", str(fixture), scenario],
+                    input=application_inbox_monitor.application_rows_expression(self.config),
+                    text=True, capture_output=True, check=True, timeout=5,
+                )
+                payload = json.loads(result.stdout)
+                self.assertEqual(payload["restoredTop"], 70)
+                if scenario in {"stuck", "missing", "shifted", "folder-change"}:
+                    self.assertIn("error", payload)
+                    self.assertNotIn("campaigns", payload)
+                    continue
+                self.assertEqual(payload["campaigns"][0]["matchingThreadCount"], 1)
+                self.assertEqual(payload["campaigns"][0]["unreadMatchingThreadCount"], 1)
+                self.assertEqual(payload["campaigns"][1]["matchingThreadCount"], 0)
+                self.assertEqual(payload["coverage"]["rowsScanned"], 8 if scenario == "short" else 50)
+                for forbidden in ("Hiring Team", "Alpha role", "Other Person"):
+                    self.assertNotIn(forbidden, result.stdout)
 
     def test_zero_multiple_or_missing_tree_states_fail_closed(self):
         scenarios = {
@@ -397,6 +440,8 @@ class ApplicationInboxMonitorTests(unittest.TestCase):
         self.assertFalse(second["policy"]["sender_or_subject_persisted"])
         self.assertTrue(second["policy"]["automatic_reply_is_not_human_reply"])
         self.assertTrue(second["policy"]["match_is_not_human_reply"])
+        self.assertEqual(second["policy"]["maximum_thread_positions"], 50)
+        self.assertFalse(second["policy"]["complete_mailbox_claimed"])
         self.assertEqual(
             second["policy"]["transient_dom_drop_debounce_observations"], 2
         )

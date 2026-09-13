@@ -1482,7 +1482,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 11)
+        self.assertEqual(campaign["version"], 12)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1541,7 +1541,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(schedule["schedule_clicked"])
         for name in ("instagram", "youtube"):
             channel = campaign["channels"][name]
-            self.assertEqual(channel["state"], "postiz_queue")
+            self.assertEqual(channel["state"], "published" if name == "youtube" else "postiz_queue")
             self.assertEqual(
                 channel["media_sha256"],
                 campaign["source_evidence"]["media_quality_review"]["replacement"]["sha256"],
@@ -1555,6 +1555,13 @@ class RepositoryTests(unittest.TestCase):
             self.assertEqual(channel["verification"]["verified_state"], "QUEUE")
             self.assertFalse(channel["verification"]["release_present"])
             self.assertIn("hard-cut v5", channel["quality_decision"])
+        youtube = campaign["channels"]["youtube"]["publication"]
+        self.assertEqual(youtube["url"], "https://www.youtube.com/watch?v=vb65C4gDHm0")
+        self.assertEqual(youtube["provider_state"], "PUBLISHED")
+        self.assertTrue(youtube["visible_title_and_channel_verified"])
+        self.assertTrue(youtube["description_app_target_verified"])
+        self.assertTrue(youtube["playable_video_observed"])
+        self.assertFalse(youtube["organic_view_claimed"])
         quality = campaign["source_evidence"]["media_quality_review"]
         self.assertEqual(
             quality["decision"],

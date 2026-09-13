@@ -30,6 +30,8 @@ MAX_TERMS_PER_FIELD = 20
 MAX_FOLDER_LENGTH = 160
 MAX_TERM_LENGTH = 500
 RECENT_BASELINE_OBSERVATIONS = 2
+MAX_SCAN_ROWS = 50
+MAX_SCAN_STEPS = 20
 
 
 def _safe_string(
@@ -207,7 +209,7 @@ def icloud_mail_targets(targets: list[dict]) -> list[dict]:
 
 
 def application_rows_expression(config: object) -> str:
-    """Build read-only JS that returns aggregates, never visible metadata text."""
+    """Scan a bounded list window without activating mail or returning metadata."""
     validated = validate_config(config)
     browser_config = {
         "folderName": validated["folder_name"],
@@ -221,7 +223,7 @@ def application_rows_expression(config: object) -> str:
         ],
     }
     encoded = json.dumps(browser_config, ensure_ascii=False).replace("</", "<\\/")
-    return f"""(() => {{
+    return f"""(async () => {{
       'use strict';
       const config = {encoded};
       const normalize = (value) => String(value || '')
@@ -235,28 +237,95 @@ def application_rows_expression(config: object) -> str:
       const tree = document.querySelector('[role="tree"][aria-label="Messages"]');
       const treeFound = Boolean(tree);
       if (!folderSelected || !treeFound) {{
-        return {{folderFound, folderSelected, treeFound, campaigns: []}};
+        return {{folderFound, folderSelected, treeFound, campaigns: [], coverage: null}};
       }}
-
-      const rows = Array.from(document.querySelectorAll(
-        '[role="tree"][aria-label="Messages"] [role="treeitem"]'
-      )).map((row) => {{
+      const scrollers = document.querySelectorAll('.thread-list-actual');
+      if (scrollers.length !== 1 || scrollers[0].clientHeight <= 0) {{
+        throw new Error('Mail list is unavailable');
+      }}
+      const scroller = scrollers[0];
+      const originalTop = scroller.scrollTop;
+      const pause = () => new Promise(resolve => setTimeout(resolve, 400));
+      const seen = new Map();
+      let totalRows = null;
+      let expected = null;
+      const readRow = (row) => {{
         const participants = row.querySelector('.thread-participants');
         const subject = row.querySelector('.thread-subject');
         const timestamp = row.querySelector('.thread-timestamp');
         const unread = row.querySelector('.adornment-unread');
+        const positionText = row.getAttribute('aria-posinset');
+        const sizeText = row.getAttribute('aria-setsize');
+        if (!participants || !subject || !timestamp ||
+            !/^\\d+$/.test(positionText || '') || !/^\\d+$/.test(sizeText || '')) {{
+          throw new Error('Mail list metadata is incomplete');
+        }}
+        const position = Number(positionText);
+        const size = Number(sizeText);
+        if (!Number.isSafeInteger(position) || !Number.isSafeInteger(size) ||
+            size <= 0 || position >= size) {{
+          throw new Error('Mail list positions are invalid');
+        }}
+        if (totalRows === null) {{
+          totalRows = size;
+          expected = Math.min(size, {MAX_SCAN_ROWS});
+        }} else if (size !== totalRows &&
+                   !(size >= {MAX_SCAN_ROWS} && totalRows >= {MAX_SCAN_ROWS})) {{
+          throw new Error('Mail list changed during observation');
+        }}
+        totalRows = size;
         return {{
-          participants: participants ? normalize(participants.textContent) : '',
-          subject: subject ? normalize(subject.textContent) : '',
-          metadataComplete: Boolean(participants && subject && timestamp),
+          position,
+          participants: normalize(participants.textContent),
+          subject: normalize(subject.textContent),
           unread: Boolean(unread),
         }};
-      }});
+      }};
+      try {{
+        scroller.scrollTop = 0;
+        for (let step = 0; step < {MAX_SCAN_STEPS}; step++) {{
+          await pause();
+          if (!tree.isConnected || !scroller.isConnected ||
+              folders[0].getAttribute('aria-selected') !== 'true') {{
+            throw new Error('Mail folder changed during observation');
+          }}
+          const visible = Array.from(document.querySelectorAll(
+            '[role="tree"][aria-label="Messages"] [role="treeitem"]'
+          )).map(readRow);
+          for (const row of visible) {{
+            if (row.position >= expected) continue;
+            const previous = seen.get(row.position);
+            if (previous && JSON.stringify(previous) !== JSON.stringify(row)) {{
+              throw new Error('Mail list changed during observation');
+            }}
+            seen.set(row.position, row);
+          }}
+          if (expected && Array.from({{length: expected}}, (_, i) => i)
+              .every(i => seen.has(i))) break;
+          scroller.scrollTop += scroller.clientHeight * 0.8;
+        }}
+        if (!expected || seen.size !== expected) {{
+          throw new Error('Mail list window is incomplete');
+        }}
+        // Recheck the head after scrolling: new arrivals can shift every rank.
+        scroller.scrollTop = 0;
+        await pause();
+        if (!tree.isConnected || folders[0].getAttribute('aria-selected') !== 'true') {{
+          throw new Error('Mail folder changed during observation');
+        }}
+        const first = tree.querySelector('[role="treeitem"][aria-posinset="0"]');
+        if (!first || JSON.stringify(readRow(first)) !== JSON.stringify(seen.get(0))) {{
+          throw new Error('Mail list changed during observation');
+        }}
+      }} finally {{
+        if (scroller.isConnected) scroller.scrollTop = originalTop;
+      }}
+      const rows = Array.from(seen.values());
 
       const campaigns = config.campaigns.map((campaign) => {{
         const participantTerms = campaign.participantTerms.map(normalize);
         const subjectTerms = campaign.subjectTerms.map(normalize);
-        const matches = rows.filter((row) => row.metadataComplete &&
+        const matches = rows.filter((row) =>
           participantTerms.some((term) => row.participants.includes(term)) &&
           subjectTerms.some((term) => row.subject.includes(term)));
         const unreadCount = matches.filter((row) => row.unread).length;
@@ -268,7 +337,8 @@ def application_rows_expression(config: object) -> str:
           hasUnreadMatchingThread: unreadCount > 0,
         }};
       }});
-      return {{folderFound, folderSelected, treeFound, campaigns}};
+      return {{folderFound, folderSelected, treeFound, campaigns,
+        coverage: {{rowLimit: {MAX_SCAN_ROWS}, rowsScanned: seen.size, totalRows}}}};
     }})()"""
 
 
@@ -292,13 +362,14 @@ def read_tab_summary(connection, *, config: dict, world_number: int) -> dict:
     context_id = isolated.get("executionContextId")
     if not context_id:
         raise RuntimeError("the application inbox context is unavailable")
+    connection.command("Page.bringToFront")
     evaluated = connection.command(
         "Runtime.evaluate",
         {
             "contextId": context_id,
             "expression": application_rows_expression(config),
             "returnByValue": True,
-            "awaitPromise": False,
+            "awaitPromise": True,
         },
     )
     if evaluated.get("exceptionDetails"):
@@ -311,6 +382,7 @@ def read_tab_summary(connection, *, config: dict, world_number: int) -> dict:
         "folderSelected",
         "treeFound",
         "campaigns",
+        "coverage",
     } or not all(
         isinstance(payload[field], bool)
         for field in ("folderFound", "folderSelected", "treeFound")
@@ -320,6 +392,19 @@ def read_tab_summary(connection, *, config: dict, world_number: int) -> dict:
         raise RuntimeError("iCloud exposed an inconsistent application inbox folder")
     if not payload["folderSelected"] and payload["campaigns"] != []:
         raise RuntimeError("iCloud exposed application data from an unselected folder")
+    if payload["folderSelected"] and payload["treeFound"]:
+        coverage = payload["coverage"]
+        if not isinstance(coverage, dict) or set(coverage) != {
+            "rowLimit", "rowsScanned", "totalRows"
+        }:
+            raise RuntimeError("iCloud exposed invalid application inbox coverage")
+        limit = _nonnegative_integer(coverage["rowLimit"])
+        scanned = _nonnegative_integer(coverage["rowsScanned"])
+        total = _nonnegative_integer(coverage["totalRows"])
+        if limit != MAX_SCAN_ROWS or total == 0 or scanned != min(limit, total):
+            raise RuntimeError("iCloud exposed incomplete application inbox coverage")
+    elif payload["coverage"] is not None:
+        raise RuntimeError("iCloud exposed coverage from an unavailable folder")
     return payload
 
 
@@ -576,6 +661,10 @@ def record_observation(
         },
         "alerts": alerts,
         "policy": {
+            "coverage": "newest_bounded_thread_window_in_configured_folder",
+            "maximum_thread_positions": MAX_SCAN_ROWS,
+            "complete_mailbox_claimed": False,
+            "list_scrolled_without_activating_rows": True,
             "mail_opened": False,
             "row_activated": False,
             "message_preview_read": False,

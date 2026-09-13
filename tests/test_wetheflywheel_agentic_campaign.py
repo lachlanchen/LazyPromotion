@@ -18,7 +18,7 @@ class WeTheFlywheelCampaignTests(unittest.TestCase):
         self.assertEqual(campaign["fit"]["projects"], ["LazyPromotion", "LazyEdge"])
         application = campaign["application"]
         self.assertEqual(
-            application["state"], "email_fallback_sent_awaiting_human_reply"
+            application["state"], "paused_operator_dependency"
         )
         self.assertEqual(application["official_form"]["submit_attempts"], 1)
         self.assertFalse(application["official_form"]["accepted"])
@@ -26,6 +26,9 @@ class WeTheFlywheelCampaignTests(unittest.TestCase):
         self.assertFalse(application["resume_attached"])
         self.assertFalse(application["whatsapp_supplied"])
         self.assertFalse(application["fallback"]["automatic_follow_up"])
+        self.assertFalse(application["route_review"]["cv_sent"])
+        self.assertFalse(application["route_review"]["time_committed"])
+        self.assertFalse(application["route_review"]["commercial_terms_accepted"])
 
     def test_outbound_application_is_not_revenue(self):
         campaign = json.loads(
@@ -38,7 +41,7 @@ class WeTheFlywheelCampaignTests(unittest.TestCase):
         funnel = campaign["funnel"]
         self.assertEqual(funnel["outbound_application_count"], 1)
         self.assertTrue(funnel["sender_side_sent_evidence_observed"])
-        self.assertFalse(funnel["human_reply_observed"])
+        self.assertTrue(funnel["human_reply_observed"])
         self.assertFalse(funnel["qualified_lead_observed"])
         self.assertFalse(funnel["contract_observed"])
         self.assertFalse(funnel["payment_confirmed"])

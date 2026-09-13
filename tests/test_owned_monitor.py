@@ -265,6 +265,11 @@ class OwnedMonitorTests(unittest.TestCase):
                     },
                     "alerts": [{"campaign_id": "private-campaign"}],
                     "campaigns": [{"campaign_id": "private-campaign"}],
+                    "policy": {
+                        "coverage": "newest_bounded_thread_window_in_configured_folder",
+                        "maximum_thread_positions": 50,
+                        "private_subject": "do not expose",
+                    },
                 }
             ),
             encoding="utf-8",
@@ -338,6 +343,9 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertTrue(summary["threads"]["review_required"])
         self.assertNotIn("fingerprints", summary["threads"])
         self.assertEqual(summary["application_inbox"]["alert_count"], 1)
+        self.assertEqual(summary["application_inbox"]["maximum_thread_positions"], 50)
+        self.assertFalse(summary["application_inbox"]["complete_mailbox_claimed"])
+        self.assertNotIn("private_subject", summary["application_inbox"])
         self.assertEqual(
             summary["application_inbox"]["unread_matching_thread_count"], 1
         )

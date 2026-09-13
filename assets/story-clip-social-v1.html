@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story Clip — LazyingArt</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1080px; height: 1350px; background: #f6f2e8; }
+  body { color: #163d35; font-family: Arial, sans-serif; }
+  main { width: 1080px; height: 1350px; padding: 96px 88px 84px; }
+  header { display: flex; justify-content: space-between; font-size: 25px; letter-spacing: 3px; }
+  h1 { font-family: Georgia, serif; font-weight: normal; font-size: 94px; line-height: 1.04; letter-spacing: -3px; margin: 60px 0 48px; }
+  .flow { height: 340px; display: grid; grid-template-columns: 1fr 64px 236px; align-items: center; gap: 26px; }
+  .choices { display: grid; gap: 22px; }
+  .moment { height: 118px; padding: 25px 28px; border: 2px solid #9baca3; border-radius: 12px; font-size: 30px; display: flex; align-items: center; gap: 24px; }
+  .moment.selected { background: #163d35; color: #f6f2e8; border-color: #163d35; }
+  .mark { font-family: Georgia, serif; font-size: 44px; }
+  .arrow { font-size: 58px; text-align: center; }
+  .clip { height: 330px; border: 3px solid #163d35; border-radius: 20px; padding: 32px 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+  .play { width: 0; height: 0; border-top: 23px solid transparent; border-bottom: 23px solid transparent; border-left: 34px solid #163d35; margin: 16px 0 0 10px; }
+  .clip strong { font-size: 32px; line-height: 1.1; text-align: center; font-weight: normal; }
+  .caption { width: 166px; padding: 12px 0; border-top: 2px solid #9baca3; text-align: center; font-size: 24px; }
+  .method { margin: 24px 0 44px; font-size: 31px; }
+  .scope { border-top: 1px solid #9baca3; padding-top: 34px; font-size: 30px; line-height: 1.55; }
+  .scope p { margin: 0; }
+  footer { margin-top: 48px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .price { font-family: Georgia, serif; font-size: 58px; }
+  .price small { font-family: Arial, sans-serif; font-size: 25px; }
+  .action { text-align: right; font-size: 25px; line-height: 1.5; }
+  .action strong { font-size: 32px; font-weight: normal; }
+</style>
+<main aria-label="Story Clip service overview">
+  <header><span>LAZYINGART</span><span>STORY CLIP</span></header>
+  <h1>Find the story.<br>Then cut the clip.</h1>
+  <div class="flow" aria-label="Two candidate moments become one selected captioned clip">
+    <div class="choices">
+      <div class="moment selected"><span class="mark">01</span><span>First moment</span></div>
+      <div class="moment"><span class="mark">02</span><span>Second moment</span></div>
+    </div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="clip"><div class="play" aria-hidden="true"></div><strong>One<br>chosen clip</strong><div class="caption">+ captions</div></div>
+  </div>
+  <p class="method">Two candidates. You choose. I finish the cut.</p>
+  <section class="scope" aria-label="Scope">
+    <p>One rights-cleared recording · Up to 30 minutes</p>
+    <p>A vertical clip · Editable SRT · Source notes</p>
+  </section>
+  <footer>
+    <div class="price">$250 <small>pilot</small></div>
+    <div class="action"><strong>See the sample first</strong><br>lazying.art/story-clip</div>
+  </footer>
+</main>
+</html>

@@ -1,6 +1,6 @@
 {
   "id": "openhi-reproducibility-sprint",
-  "version": 17,
+  "version": 18,
   "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
   "demand_evidence": {
     "captured_at": "2026-09-09T04:23:00Z",
@@ -264,7 +264,7 @@
       }
     },
     "instagram": {
-      "state": "draft_image_layout_review_required",
+      "state": "scheduled",
       "post_id": "cmttnw2i207zoqk0ya9t0udyt",
       "publish_at": "2026-09-23T12:00:00Z",
       "content": "A reproducibility report should contain more than “it ran.”\n\nThis is the exact output from one public OpenHI visualization stage using a deterministic 4,096-event fixture. The report keeps the repository revision, environment, command, log, fixture, output, and hashes together—and states what was not tested.\n\nhttps://lazying.art/openhi-reproducibility/sample-report/?utm_source=instagram&utm_medium=social&utm_campaign=openhi_reproducibility&utm_content=executed_sample\n\n#ResearchSoftware #ScientificPython #OpenScience #Reproducibility #OpenHI",
@@ -286,11 +286,20 @@
         "lead_or_sale_observed": false
       },
       "visual_review": {
-        "state": "paused_before_publication",
-        "observed_issue": "The Instagram editor preview crops the chart title and axis detail.",
-        "boundary": "This is a preview-quality concern, not proof that Instagram published a cropped image. No new image was generated or uploaded in this pass.",
-        "resume_gate": "Inspect the original asset and provider rendering, then use a reviewed mobile-readable layout that preserves the entire heading or chart before rescheduling this same item.",
+        "state": "reviewed_scheduled",
+        "checked_at": "2026-09-13T08:00:47Z",
+        "postiz_state": "QUEUE",
+        "observed_issue": "The editor places the 1280 by 701 source into a 493 by 585 object-cover preview, clipping title and axis detail in that preview only.",
+        "resolution": "The full uploaded image was opened and visually inspected. Its SHA-256 matches the frozen original exactly. The original 1.826:1 chart was retained and the same item restored to its requested date; no chart redraw, crop, or replacement upload was made.",
+        "source_asset": "examples/openhi-reproducibility/artifacts/weighted-cumulative.png",
+        "source_sha256": "c102567ccb113689d0cc787f6178586329cb17e62d41682d0e37b64e2bc06722",
+        "uploaded_source_hash_matches": true,
+        "preview_source": "https://github.com/gitroomhq/postiz-app/blob/3cbe20b86bf3b2243843d51bb63dcec8773babf7/apps/frontend/src/components/new-launch/providers/instagram/instagram.preview.tsx",
+        "boundary": "The observed clipping is explained by preview CSS, not by a damaged upload. Upstream provider code passes the media URL and supports PNG-to-JPEG conversion without resizing; hosted deployment and final Instagram rendering remain unverified until publication. This remains synthetic workflow evidence, not a scientific or customer result.",
         "media_retained": true,
+        "saved_editor_reopened": true,
+        "copy_date_account_and_settings_unchanged": true,
+        "new_item_created": false,
         "original_requested_publish_at": "2026-09-23T12:00:00Z"
       }
     },

@@ -1,5 +1,5 @@
 {
-  "version": 26,
+  "version": 27,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -277,12 +277,13 @@
       "received_revenue_usd": 0
     },
     "postiz_instagram": {
-      "state": "draft_image_layout_review_required",
+      "state": "scheduled",
       "publish_at": "2026-09-20T12:00:00Z",
       "content": "Choosing the clip is often harder than editing it.\n\nI made a small, checkable workflow: mark two moments from one recording, explain why each works, then finish the one selected. The handoff includes corrected captions, an editable SRT, and a source ledger.\n\nThe sample uses our own footage, so you can inspect the process before sharing yours.\n\nhttps://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample\n\nI’m opening this as a fixed USD 250 pilot for one rights-cleared recording up to 30 minutes.\n\n#VideoEditing #Reels #ShortFormVideo #Captions",
       "destination": "https://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample",
-      "media_asset": "assets/contra-story-clip-service-cover-v1.png",
-      "media_sha256": "5c20c5fd7f99c89aeecb3b211c58294c3827849b286bb954b4b7b635fb6ccf55",
+      "media_asset": "assets/story-clip-social-v1.jpg",
+      "media_sha256": "c7a1c2cbd9787cfa7f93598ce3c4582d2d8d5aeecc98c675436e071cf6ddacfa",
+      "media_source": "assets/story-clip-social-v1.html",
       "settings": {
         "post_type": "post"
       },
@@ -290,7 +291,7 @@
       "verification": {
         "stored_content_exact": true,
         "matching_posts": 1,
-        "verified_state": "DRAFT",
+        "verified_state": "QUEUE",
         "release_present": false,
         "integration_settings_checked": true,
         "media_uploaded_before_scheduling": true
@@ -310,11 +311,18 @@
         "lead_or_sale_observed": false
       },
       "visual_review": {
-        "state": "paused_before_publication",
-        "observed_issue": "The Instagram editor preview crops the main heading of the dense website screenshot.",
-        "boundary": "This is a preview-quality concern, not proof that Instagram published a cropped image. No new image was generated or uploaded in this pass.",
-        "resume_gate": "Inspect the original asset and provider rendering, then use a reviewed mobile-readable layout that preserves the entire heading or chart before rescheduling this same item.",
-        "media_retained": true,
+        "state": "reviewed_scheduled",
+        "checked_at": "2026-09-13T08:00:47Z",
+        "postiz_state": "QUEUE",
+        "observed_issue": "The fixed-height Instagram editor preview uses object-cover and crops landscape source images. The old website screenshot was also too dense for a small feed image.",
+        "resolution": "A new project-owned HTML/CSS service card was rendered as a 1080 by 1350 JPEG, visually reviewed, uploaded through Postiz, selected in the media library, and saved on the same post. The complete headline, workflow, scope, price, and sample route remain visible in the saved editor preview.",
+        "boundary": "This is a service diagram, not footage, a customer result, or a conversion claim. Preview review does not prove future platform rendering or publication success.",
+        "previous_media_asset": "assets/contra-story-clip-service-cover-v1.png",
+        "previous_media_preserved": true,
+        "media_retained": false,
+        "saved_editor_reopened": true,
+        "copy_date_account_and_settings_unchanged": true,
+        "new_item_created": false,
         "original_requested_publish_at": "2026-09-20T12:00:00Z"
       }
     },

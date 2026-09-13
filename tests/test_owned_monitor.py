@@ -632,7 +632,7 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], campaign["id"])
         self.assertEqual(route["route"], "product")
         self.assertEqual(route["known_owned_replies"], 0)
-        self.assertEqual(channel["state"], "draft_image_layout_review_required")
+        self.assertEqual(channel["state"], "scheduled")
 
     def test_explicit_channel_wins_over_legacy_offer_and_unrelated_drafts_are_ignored(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -691,9 +691,14 @@ class OwnedMonitorTests(unittest.TestCase):
                 self.assertFalse(review["new_item_created"])
                 self.assertFalse(review["lead_or_sale_observed"])
                 if state == "DRAFT":
-                    self.assertEqual(channel["state"], "draft_image_layout_review_required")
-                    self.assertEqual(channel["visual_review"]["state"], "paused_before_publication")
-                    self.assertIn("preview", channel["visual_review"]["boundary"])
+                    # The direct-link review is historical; a later image review
+                    # restored these same items without changing their captions.
+                    self.assertEqual(channel["state"], "scheduled")
+                    self.assertEqual(channel["visual_review"]["state"], "reviewed_scheduled")
+                    self.assertEqual(channel["visual_review"]["postiz_state"], "QUEUE")
+                    self.assertTrue(channel["visual_review"]["saved_editor_reopened"])
+                    self.assertFalse(channel["visual_review"]["new_item_created"])
+                    self.assertIn("preview", channel["visual_review"]["boundary"].casefold())
 
     def test_postiz_umbrella_routes_mcp_posts_to_their_providers(self):
         campaign = json.loads(

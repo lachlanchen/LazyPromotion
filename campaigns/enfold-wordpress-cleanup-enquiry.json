@@ -1,0 +1,66 @@
+{
+  "id": "enfold-wordpress-cleanup-enquiry",
+  "version": 1,
+  "objective": "Qualify one advertised WordPress cleanup using existing first-party publishing work, without accepting ongoing maintenance.",
+  "source_need": {
+    "captured_on": "2026-09-13",
+    "url": "https://jobs.wordpress.net/job/enfold-css-help-neeed/",
+    "title": "Enfold CSS Help Neeed",
+    "company": "DeliberateCatalyst",
+    "published_on": "2026-08-25",
+    "state": "listed_on_current_first_party_board_availability_unconfirmed",
+    "project_type": "Project",
+    "budget": "TBD; no amount offered or agreed",
+    "location": "East Coast, USA; remote contractor eligibility unconfirmed",
+    "scope": "Magazine subheads, Team plugin display, Contextual Related Posts, stray footer shortcode and other CSS cleanup.",
+    "application_invitation": "The listing explicitly invites applications by email.",
+    "rules_checked": [
+      "https://jobs.wordpress.net/faq/"
+    ]
+  },
+  "fit": {
+    "project": "BLOG / LazyBlog",
+    "public_proof": "https://blog.lazying.art/",
+    "supported_now": "An existing first-party WordPress publication maintained by LazyingArt.",
+    "not_claimed": [
+      "Prior paid Enfold delivery or experience with the unspecified Team plugin",
+      "Site-specific diagnosis before receiving the website URL",
+      "US residence, confirmed availability or ongoing maintenance capacity",
+      "A fixed price before inspecting the proposed scope"
+    ]
+  },
+  "application": {
+    "state": "sent_awaiting_reply",
+    "sent_at": "2026-09-13T14:06:03Z",
+    "verified_at": "2026-09-13T14:12:47Z",
+    "method": "One individually reviewed email responding to the advertised application invitation.",
+    "submission_count": 1,
+    "resume_attached": false,
+    "attachment_count": 0,
+    "submission_fee_usd": 0,
+    "sent_folder_verified": true,
+    "delivery_evidence": "The sender, recipient, subject and complete body were reviewed before one Send action and verified in Sent afterward; this is sender-side evidence, not recipient acknowledgement.",
+    "message_storage": "ignored private evidence",
+    "development_method_disclosed": "AI-assisted development with changes checked on staging before release",
+    "review_after": "2026-09-20",
+    "automatic_follow_up": false,
+    "follow_up_policy": "Review inbound only; do not send another message unless the recipient replies."
+  },
+  "scope_gate": [
+    "Confirm availability, remote eligibility, site URL and exact plugin names",
+    "Assess the requested changes before quoting; do not infer a small job from a short listing",
+    "Agree a bounded fixed price, acceptance checks, revision limit and delivery terms before access or work",
+    "Use an authorized staging copy and an agreed backup and release plan; no production access requested in this inquiry",
+    "Do not accept recurring maintenance or personal availability obligations through an initial reply"
+  ],
+  "funnel": {
+    "outbound_application_count": 1,
+    "sender_side_sent_verified": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 47,
+  "version": 48,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -394,7 +394,7 @@
         "published_url": "https://blog.lazying.art/html/computer_internet/3832/claude-mcp-authentication-public-local-remote.html",
         "published_post_id": 3832,
         "published_at": "2026-09-12T18:46:50Z",
-        "updated_at": "2026-09-12T23:56:21Z",
+        "updated_at": "2026-09-13T04:15:27Z",
         "categories": [
           "Artificial Intelligence",
           "Computer & Internet"
@@ -408,6 +408,19 @@
         ],
         "role": "A current maintainer question becomes a durable guide that separates a deliberately public demo, local process boundary, and OAuth-protected remote connector before offering one quiet path to the executed sample and fit check.",
         "verification": "The live canonical HTML returns the exact title and slug, the intended public/local/private decision table, token-failure checks, and both unshortened first-party UTM routes. It now also traces the real Claude Code versus claude.ai network split through UTC-correlated CDN/WAF and origin evidence, Anthropic's current outbound range, and exact resource/audience checks before an OAuth change. Post 3832 was updated in place without duplication; the primary source remains the current Anthropic IP-address page rather than a copied range. LazyBlog commit bdc7638 preserves reliable monolingual publication, and commit f51d204 records the verified current archive.",
+        "initialize_response_update": {
+          "state": "published_live_verified",
+          "source_commit": "cf120fc90e3fb1f22d437052f62225807a16935e",
+          "archive_commit": "dd8ab0177985b3b20d46c07de81c8e80a0a7566b",
+          "method": "Separate an application-level initialize log from the client-facing HTTP response: verify JSON versus SSE Content-Type and framing, proxy delivery, negotiated version, and the initialized notification before attributing a failure.",
+          "stored_source_matches_reviewed_markdown": true,
+          "desktop_and_390px_mobile_reviewed": true,
+          "horizontal_overflow": false,
+          "commercial_links_changed": false,
+          "new_post_created": false,
+          "translation_published": false,
+          "boundary": "This is an in-place source-language guide improvement with primary specification links, not a diagnosis or customer fix. No reporter identity or raw trace is reproduced in the article, and no extra social item or reply was sent."
+        },
         "lead_or_sale_observed": false,
         "verified_received_gross_usd": 0
       },

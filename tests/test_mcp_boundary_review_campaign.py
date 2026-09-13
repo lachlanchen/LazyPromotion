@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 47)
+        self.assertEqual(self.payload["version"], 48)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -472,6 +472,16 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertEqual(len(auth["tags"]), 5)
         self.assertIn("without duplication", auth["verification"])
         self.assertIn("LazyBlog commit bdc7638", auth["verification"])
+        update = auth["initialize_response_update"]
+        self.assertEqual(update["state"], "published_live_verified")
+        self.assertEqual(len(update["source_commit"]), 40)
+        self.assertEqual(len(update["archive_commit"]), 40)
+        self.assertTrue(update["stored_source_matches_reviewed_markdown"])
+        self.assertTrue(update["desktop_and_390px_mobile_reviewed"])
+        self.assertFalse(update["horizontal_overflow"])
+        self.assertFalse(update["commercial_links_changed"])
+        self.assertFalse(update["new_post_created"])
+        self.assertFalse(update["translation_published"])
         self.assertFalse(auth["lead_or_sale_observed"])
         self.assertEqual(auth["verified_received_gross_usd"], 0)
         docker = lazyblog["docker_sbx_authentication_guide"]

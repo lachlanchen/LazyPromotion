@@ -134,15 +134,30 @@ REDDIT_NOTIFICATION_COUNTER_SCRIPT = r"""element => {
   return /^\d{1,6}$/.test(initial || '') ? Number(initial) : null;
 }"""
 
+REDDIT_NOTIFICATION_EMPTY_SCRIPT = r"""navigation => {
+  // A fresh server render omits the badge when this explicit count is zero.
+  const tracker = navigation.closest('faceplate-tracker[noun="inbox"]');
+  try {
+    const context = JSON.parse(tracker?.getAttribute('data-faceplate-tracking-context') || 'null');
+    const count = context?.inbox?.badgeCount;
+    return count === 0 || count === '0' ? 0 : null;
+  } catch (_) {
+    return null;
+  }
+}"""
+
 
 def reddit_notification_badge_count(page: Page) -> int | None:
     """Read the bell's sibling badge, without opening notification content."""
     badge = page.locator('dynamic-badge[data-id="notification-count-element"]')
-    if badge.count() != 1:
+    count = badge.count()
+    if count > 1:
         return None
     navigation = page.locator("#notifications-inbox-button")
     if navigation.count() != 1 or not navigation.is_visible():
         return None
+    if count == 0:
+        return navigation.evaluate(REDDIT_NOTIFICATION_EMPTY_SCRIPT)
     # The badge itself has a zero-size box at count=0; that is not a failure.
     return badge.evaluate(REDDIT_NOTIFICATION_COUNTER_SCRIPT)
 

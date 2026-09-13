@@ -270,6 +270,7 @@ class SocialInboxMonitorTests(unittest.TestCase):
                 badge.count.return_value = count
                 navigation.count.return_value = nav_count
                 navigation.is_visible.return_value = visible
+                navigation.evaluate.return_value = None
                 self.assertIsNone(monitor.reddit_notification_badge_count(page))
                 badge.evaluate.assert_not_called()
 
@@ -285,10 +286,23 @@ class SocialInboxMonitorTests(unittest.TestCase):
         self.assertEqual(monitor.reddit_notification_badge_count(page), 0)
         badge.is_visible.assert_not_called()
 
+    def test_absent_badge_requires_explicit_empty_navigation_metadata(self):
+        page = Mock()
+        badge, navigation = Mock(), Mock()
+        page.locator.side_effect = [badge, navigation]
+        badge.count.return_value = 0
+        navigation.count.return_value = 1
+        navigation.is_visible.return_value = True
+        navigation.evaluate.return_value = 0
+        self.assertEqual(monitor.reddit_notification_badge_count(page), 0)
+        navigation.evaluate.assert_called_once_with(monitor.REDDIT_NOTIFICATION_EMPTY_SCRIPT)
+        badge.evaluate.assert_not_called()
+
     @unittest.skipUnless(shutil.which("node"), "Node is required for the component-state fixture")
     def test_notification_component_script_with_live_and_initial_state(self):
         script = "const assert = require('node:assert/strict');\n"
         script += "const read = (" + monitor.REDDIT_NOTIFICATION_COUNTER_SCRIPT + ");\n"
+        script += "const readEmpty = (" + monitor.REDDIT_NOTIFICATION_EMPTY_SCRIPT + ");\n"
         script += r"""
           const element = (count, initial) => ({count, getAttribute: () => initial});
           assert.equal(read(element(1, '0')), 1);
@@ -302,6 +316,21 @@ class SocialInboxMonitorTests(unittest.TestCase):
           for (const initial of [null, '', 'unavailable', '-1', '1000000']) {
             assert.equal(read(element(undefined, initial)), null);
           }
+          const nav = raw => ({closest: selector => {
+            assert.equal(selector, 'faceplate-tracker[noun="inbox"]');
+            return {getAttribute: name => {
+              assert.equal(name, 'data-faceplate-tracking-context');
+              return raw;
+            }};
+          }});
+          assert.equal(readEmpty(nav('{"inbox":{"badgeCount":"0"}}')), 0);
+          assert.equal(readEmpty(nav('{"inbox":{"badgeCount":0}}')), 0);
+          for (const raw of [null, '', 'broken', '{}', 'null',
+              '{"inbox":{"badgeCount":1}}', '{"inbox":{"badgeCount":false}}',
+              '{"inbox":{"badgeCount":null}}', '{"chat":{"badgeCount":0}}']) {
+            assert.equal(readEmpty(nav(raw)), null);
+          }
+          assert.equal(readEmpty({closest: () => null}), null);
         """
         subprocess.run(["node", "-e", script], check=True, capture_output=True, text=True)
 

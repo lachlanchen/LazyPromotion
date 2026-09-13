@@ -18,7 +18,9 @@ link can report zero while the bell visibly shows an unread item. The monitor
 reads the exact notification badge's numeric component state, falling back to
 its initial count only before hydration. A new nonzero count requests review;
 an absent, duplicate or invalid counter, or hidden navigation, is unknown, not
-zero. A hydrated zero remains valid when the badge itself collapses. The last
+zero. A fresh page may omit the badge when the exact inbox navigation metadata
+explicitly says zero; only that confirmed empty state is accepted without a
+badge. A hydrated zero remains valid when the badge itself collapses. The last
 known count is retained across an unknown observation. The observer never opens
 the notification list or copies its contents. A notification may be a system
 notice or recommendation, not a reply or buying signal.

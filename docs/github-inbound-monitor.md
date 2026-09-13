@@ -50,8 +50,8 @@ repository's visibility and at most the latest 100 issues and 100 pull
 requests. For issues it records number, title, URL, state, timestamps, and
 author login. Pull requests add draft state plus comment and review counts.
 It requests no issue, pull-request, comment, or review body. Every repository
-must identify itself as `PUBLIC` in the same response before any result is
-accepted. The query contains no mutation, and the monitor has no comment,
+returned with metadata must identify itself as `PUBLIC` in the same response
+before any result is accepted. The query contains no mutation, and the monitor has no comment,
 reply, merge, close, label, or other write operation.
 
 ## State and alerts
@@ -63,7 +63,7 @@ symbolic-link path components, non-regular files, and multiply linked state
 files. State replacement is atomic and the resulting file mode is `0600`.
 
 The first successful pass records existing issue and pull-request keys as a
-baseline and emits no alerts. Upgrading an older issue-only state also
+baseline and emits no activity alerts. Upgrading an older issue-only state also
 baselines current pull requests once, avoiding a false alert storm. When a new
 public repository is appended to the fixed allowlist, its existing activity is
 baselined while previously watched repositories keep their seen history.
@@ -71,9 +71,28 @@ Later passes alert for a new issue, a new pull request, or a changed public
 pull-request activity timestamp. An explicit external thread also alerts when
 its state, update time, or aggregate comment count changes. Seen keys and the
 last activity summaries are retained when an item leaves a bounded current
-window. An API or validation failure leaves the last complete state untouched.
+window. An API or validation failure leaves the last accepted state untouched.
 An alert asks for manual relevance review; it is not a lead, customer, sale, or
 revenue classification, and it never triggers a GitHub response or merge.
+
+One narrowly recognized partial response does not stop unrelated monitoring:
+GitHub may return `NOT_FOUND` for a now-unavailable external repository while
+still returning the owned repositories. The monitor accepts this only when the
+error path identifies exactly one allowlisted external repository field and
+that field is explicitly null. The CLI's partial-response exit code is handled
+without copying raw provider errors or stderr. Missing owned repositories,
+unexplained nulls, private metadata, authorization errors, rate limits and other
+partial errors still fail closed.
+
+The state labels this result `coverage: partial`, lists
+`unavailable_external_threads`, and reports checked and unavailable counts
+separately. The prior public activity is retained but is not presented as a
+fresh observation. A coverage alert appears once when a repository becomes
+unavailable (including during initial baseline), and once when it returns as
+public and readable. Ordinary polling continues at the same interval, without
+repeated warnings, access attempts through other identities, or extra replies.
+Unavailable does not establish whether a repository was deleted, renamed, or
+made private. No reason is guessed.
 
 ## Operation
 

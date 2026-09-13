@@ -191,6 +191,126 @@ class GitHubInboundMonitorTests(unittest.TestCase):
     def tearDown(self):
         self.temporary.cleanup()
 
+    def test_missing_external_repository_keeps_owned_activity_and_reports_coverage(
+        self,
+    ):
+        repository = monitor.REPOSITORIES[0]
+        baseline = monitor.build_state(
+            monitor.fetch_public_issues(runner=FakeRunner([graphql_payload()])), None
+        )
+        payload = graphql_payload({repository: [issue(repository, 1)]})
+        payload["data"]["external0"] = None
+        payload["errors"] = [
+            {
+                "type": "NOT_FOUND",
+                "path": ["external0"],
+                "message": "Do not retain raw provider diagnostics",
+            }
+        ]
+
+        # gh returns 1 even when a field-level GraphQL error has partial data.
+        def runner(*args, **kwargs):
+            return FakeRunner.result(payload, returncode=1)
+
+        observation = monitor.fetch_public_issues(runner=runner)
+        key = monitor.external_thread_allowlist()[0]
+        report = monitor.build_state(observation, baseline)
+        self.assertEqual(report["coverage"], "partial")
+        self.assertEqual(report["unavailable_external_threads"], [key])
+        self.assertEqual(
+            report["summary"]["repositories_checked"], len(monitor.REPOSITORIES)
+        )
+        self.assertEqual(report["summary"]["external_threads_unavailable"], 1)
+        self.assertEqual(
+            report["summary"]["external_threads_checked"],
+            len(monitor.external_thread_allowlist()) - 1,
+        )
+        self.assertEqual(
+            report["external_thread_activity"][key],
+            baseline["external_thread_activity"][key],
+        )
+        self.assertEqual(
+            {a["kind"] for a in report["alerts"]},
+            {
+                "new_public_issue_observed",
+                "external_thread_unavailable",
+            },
+        )
+        self.assertNotIn("raw provider diagnostics", json.dumps(report))
+        monitor.write_private_json(self.state, report, root=self.root)
+        self.assertEqual(
+            monitor.load_state(self.state)["unavailable_external_threads"], [key]
+        )
+        self.assertEqual(monitor.build_state(observation, report)["alerts"], [])
+        restored = monitor.fetch_public_issues(
+            runner=FakeRunner(
+                [
+                    graphql_payload({repository: [issue(repository, 1)]}),
+                ]
+            )
+        )
+        recovery = monitor.build_state(restored, report)
+        self.assertEqual(recovery["coverage"], "complete")
+        self.assertEqual(recovery["unavailable_external_threads"], [])
+        self.assertEqual(
+            [a["kind"] for a in recovery["alerts"]], ["external_thread_available_again"]
+        )
+        self.assertEqual(monitor.build_state(restored, recovery)["alerts"], [])
+
+    def test_missing_external_pull_request_repository_is_explicit(self):
+        payload = graphql_payload()
+        payload["data"]["externalPullRequest0"] = None
+        payload["errors"] = [{"type": "NOT_FOUND", "path": ["externalPullRequest0"]}]
+        observed = monitor.fetch_public_issues(runner=FakeRunner([payload]))
+        report = monitor.build_state(observed, None)
+        self.assertEqual(
+            report["unavailable_external_threads"],
+            [
+                monitor.external_pull_request_key(*monitor.EXTERNAL_PULL_REQUESTS[0]),
+            ],
+        )
+        self.assertEqual(report["alerts"][0]["kind"], "external_thread_unavailable")
+
+    def test_partial_errors_fail_closed_except_exact_missing_external_repository(self):
+        cases = [
+            ("NOT_FOUND", ["repo0"], "repo0"),
+            ("FORBIDDEN", ["external0"], "external0"),
+            ("RATE_LIMITED", ["external0"], "external0"),
+            ("NOT_FOUND", ["external0", "issue"], "external0"),
+            ("NOT_FOUND", ["unexpected"], "unexpected"),
+            ("NOT_FOUND", ["external0"], None),
+        ]
+        for error_type, path, null_field in cases:
+            with self.subTest(error_type=error_type, path=path, null_field=null_field):
+                payload = graphql_payload()
+                if null_field:
+                    payload["data"][null_field] = None
+                payload["errors"] = [{"type": error_type, "path": path}]
+                with self.assertRaises(RuntimeError):
+                    monitor.fetch_public_issues(runner=FakeRunner([payload]))
+        payload = graphql_payload()
+        payload["data"]["external0"] = None
+        with self.assertRaises(ValueError):
+            monitor.fetch_public_issues(runner=FakeRunner([payload]))
+
+    def test_partial_response_still_rejects_authenticated_private_data(self):
+        payload = graphql_payload(
+            visibility_by_repository={monitor.REPOSITORIES[0]: "PRIVATE"}
+        )
+        payload["data"]["external0"] = None
+        payload["errors"] = [{"type": "NOT_FOUND", "path": ["external0"]}]
+        with self.assertRaisesRegex(ValueError, "non-public"):
+            monitor.fetch_public_issues(runner=FakeRunner([payload]))
+
+    def test_unavailable_keys_cannot_hide_missing_or_nonallowlisted_threads(self):
+        observed = monitor.fetch_public_issues(runner=FakeRunner([graphql_payload()]))
+        key = monitor.external_thread_allowlist()[0]
+        for keys in [[key], [key, key], ["unknown/repository#99"], None]:
+            with self.subTest(keys=keys):
+                changed = dict(observed, unavailable_external_threads=keys)
+                with self.assertRaises(ValueError):
+                    monitor.build_state(changed, None)
+
     def test_one_fixed_graphql_query_has_no_bodies_or_mutation(self):
         fake = FakeRunner([graphql_payload()])
         observation = monitor.fetch_public_issues(runner=fake)

@@ -204,21 +204,69 @@ def _run_read_only_query(
         raise RuntimeError("GitHub GraphQL query did not complete") from exc
 
 
+def _unavailable_external_keys(value: Any) -> list[str]:
+    allowed = external_thread_allowlist()
+    if (
+        not isinstance(value, list)
+        or any(not isinstance(key, str) for key in value)
+        or value != [key for key in allowed if key in value]
+    ):
+        raise ValueError("unavailable external threads must match the fixed allowlist")
+    return value
+
+
 def fetch_public_issues(*, runner: Runner = default_runner) -> dict[str, Any]:
     """Fetch and validate all allowlisted repositories in one GraphQL call."""
     completed = _run_read_only_query(runner=runner)
-    if completed.returncode != 0:
-        # gh stderr can contain account-specific diagnostics, so never relay it.
-        raise RuntimeError("GitHub GraphQL query failed")
     try:
         payload = json.loads(str(completed.stdout or ""))
     except json.JSONDecodeError as exc:
+        if completed.returncode:
+            raise RuntimeError("GitHub GraphQL query failed") from exc
         raise RuntimeError("GitHub GraphQL returned invalid JSON") from exc
-    if not isinstance(payload, dict) or payload.get("errors"):
+    # gh exits 1 for partial GraphQL data as well as transport/auth failures.
+    # Only exact NOT_FOUND errors on null, allowlisted external repositories
+    # may be isolated. Never relay raw provider diagnostics or CLI stderr.
+    if completed.returncode and (
+        completed.returncode != 1
+        or not isinstance(payload, dict)
+        or not isinstance(payload.get("data"), dict)
+        or not payload.get("errors")
+    ):
+        raise RuntimeError("GitHub GraphQL query failed")
+    if not isinstance(payload, dict):
         raise RuntimeError("GitHub GraphQL query returned an error")
     data = payload.get("data")
     if not isinstance(data, dict):
         raise RuntimeError("GitHub GraphQL response did not contain data")
+    aliases = {
+        **{
+            f"external{i}": external_thread_key(*item)
+            for i, item in enumerate(EXTERNAL_ISSUES)
+        },
+        **{
+            f"externalPullRequest{i}": external_pull_request_key(*item)
+            for i, item in enumerate(EXTERNAL_PULL_REQUESTS)
+        },
+    }
+    errors = payload.get("errors", [])
+    if not isinstance(errors, list):
+        raise RuntimeError("GitHub GraphQL query returned an error")
+    unavailable_aliases: set[str] = set()
+    for error in errors:
+        path = error.get("path") if isinstance(error, dict) else None
+        if (
+            not isinstance(path, list)
+            or len(path) != 1
+            or not isinstance(path[0], str)
+            or path[0] not in aliases
+            or error.get("type") != "NOT_FOUND"
+            or path[0] not in data
+            or data[path[0]] is not None
+            or path[0] in unavailable_aliases
+        ):
+            raise RuntimeError("GitHub GraphQL query returned an error")
+        unavailable_aliases.add(path[0])
 
     # Validate the entire visibility boundary before accepting issue data from
     # any repository.  An authenticated token may otherwise expose private data.
@@ -240,19 +288,22 @@ def fetch_public_issues(*, runner: Runner = default_runner) -> dict[str, Any]:
         repositories.append(_parse_repository(name, raw))
     external_threads = []
     for index, (owner, name, number) in enumerate(EXTERNAL_ISSUES):
+        if f"external{index}" in unavailable_aliases:
+            continue
         raw = data.get(f"external{index}")
-        external_threads.append(
-            _parse_external_thread(owner, name, number, raw)
-        )
+        external_threads.append(_parse_external_thread(owner, name, number, raw))
     for index, (owner, name, number) in enumerate(EXTERNAL_PULL_REQUESTS):
+        if f"externalPullRequest{index}" in unavailable_aliases:
+            continue
         raw = data.get(f"externalPullRequest{index}")
-        external_threads.append(
-            _parse_external_pull_request(owner, name, number, raw)
-        )
+        external_threads.append(_parse_external_pull_request(owner, name, number, raw))
     return {
         "owner": OWNER,
         "repositories": repositories,
         "external_threads": external_threads,
+        "unavailable_external_threads": [
+            key for alias, key in aliases.items() if alias in unavailable_aliases
+        ],
     }
 
 
@@ -796,6 +847,11 @@ def load_state(path: Path) -> dict[str, Any] | None:
         raise ValueError(
             "existing monitor state has an invalid external thread allowlist"
         )
+    unavailable = _unavailable_external_keys(
+        payload.get("unavailable_external_threads", [])
+    )
+    if set(unavailable) - set(stored_external_allowlist):
+        raise ValueError("unavailable external threads are outside the stored allowlist")
     external_thread_activity = payload.get("external_thread_activity", {})
     if not isinstance(external_thread_activity, dict):
         raise ValueError("existing monitor state has invalid external thread activity")
@@ -882,9 +938,12 @@ def build_state(
     ):
         raise ValueError("issue observation is invalid")
     current_external_allowlist = external_thread_allowlist()
+    unavailable = _unavailable_external_keys(
+        observation.get("unavailable_external_threads", [])
+    )
     if (
         [thread.get("key") for thread in external_threads]
-        != current_external_allowlist
+        != [key for key in current_external_allowlist if key not in unavailable]
     ):
         raise ValueError(
             "external thread observation does not match the fixed allowlist"
@@ -1002,6 +1061,29 @@ def build_state(
                 ),
             }
         )
+    previous_unavailable = set(
+        _unavailable_external_keys(
+            previous.get("unavailable_external_threads", []) if previous else []
+        )
+    )
+    for key in current_external_allowlist:
+        missing = key in unavailable
+        if missing == (key in previous_unavailable):
+            continue
+        alerts.append(
+            {
+                "kind": "external_thread_unavailable"
+                if missing
+                else "external_thread_available_again",
+                "key": key,
+                "action": (
+                    "External repository unavailable; reason unknown. Retain prior public "
+                    "activity, report partial coverage, and check again on the normal cycle."
+                    if missing
+                    else "External repository is public and readable again; resume metadata-only monitoring."
+                ),
+            }
+        )
     seen_keys = sorted(previous_keys | current_keys, key=_split_issue_key)
     seen_pull_request_keys = sorted(
         previous_pull_request_keys | current_pull_request_keys,
@@ -1034,6 +1116,8 @@ def build_state(
         "owner": OWNER,
         "repository_allowlist": list(REPOSITORIES),
         "external_thread_allowlist": current_external_allowlist,
+        "coverage": "partial" if unavailable else "complete",
+        "unavailable_external_threads": unavailable,
         "policy": {
             "graphql_operation": "query",
             "issue_bodies_requested": False,
@@ -1072,6 +1156,15 @@ def build_state(
                 "pull_request" in alert["kind"] for alert in alerts
             ),
             "external_threads_checked": len(external_threads),
+            "external_threads_unavailable": len(unavailable),
+            "external_thread_coverage_alerts": sum(
+                alert["kind"]
+                in {
+                    "external_thread_unavailable",
+                    "external_thread_available_again",
+                }
+                for alert in alerts
+            ),
             "external_thread_alerts": sum(
                 alert["kind"]
                 in {

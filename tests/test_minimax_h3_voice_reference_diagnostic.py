@@ -35,7 +35,10 @@ class MiniMaxH3VoiceReferenceDiagnosticTests(unittest.TestCase):
         github = self.data["channels"]["github"]
 
         self.assertIn("2294", need["url"])
-        self.assertEqual(github["state"], "technical_reply_published")
+        self.assertEqual(
+            github["state"],
+            "technical_reply_and_one_clarification_published",
+        )
         self.assertTrue(github["linked_owned_asset"])
         self.assertFalse(github["product_or_price_mentioned"])
         self.assertIn("handler", github["content"])
@@ -43,11 +46,18 @@ class MiniMaxH3VoiceReferenceDiagnosticTests(unittest.TestCase):
         self.assertIn("Do not add another comment", github["policy"])
         self.assertNotIn("implemented", github["policy"].lower())
 
+        clarification = github["clarification"]
+        self.assertIn("issue author", clarification["trigger"])
+        self.assertIn("feasible", clarification["content"].lower())
+        self.assertFalse(clarification["product_or_price_mentioned"])
+        self.assertFalse(clarification["implementation_offered"])
+        self.assertIn("Do not add another comment", github["policy"])
+
     def test_helpful_interaction_does_not_inflate_the_revenue_funnel(self):
         funnel = self.data["funnel"]
 
         self.assertEqual(funnel["state"], "helpful_interaction")
-        self.assertFalse(funnel["reply_received"])
+        self.assertTrue(funnel["reply_received"])
         self.assertFalse(funnel["qualified_lead_observed"])
         self.assertFalse(funnel["scope_accepted"])
         self.assertFalse(funnel["payment_confirmed"])

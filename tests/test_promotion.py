@@ -18,6 +18,26 @@ class PromotionTests(unittest.TestCase):
         self.db.close()
         self.tmp.cleanup()
 
+    def test_reply_prompt_defaults_to_short_natural_prose(self):
+        candidate = {
+            "platform": "reddit",
+            "author": "reader",
+            "source_url": "https://www.reddit.com/r/example/comments/abc/help/",
+            "body": "How do I verify this result?",
+        }
+        project = {
+            "name": "Example",
+            "url": "https://example.com/source",
+            "summary": "A reproducible example.",
+        }
+
+        prompt = promotion.draft_prompt(candidate, project)
+
+        self.assertIn("two to four sentences", prompt)
+        self.assertIn("one short paragraph", prompt)
+        self.assertIn("Stop after resolving the question", prompt)
+        self.assertIn("Use bullets only", prompt)
+
     def test_subtitle_need_matches_lazyedit(self):
         ranked = promotion.rank_projects("I can't understand this Instagram video. How can I add English subtitles?")
         self.assertEqual(ranked[0]["project"]["id"], "lazyedit")
@@ -227,6 +247,8 @@ class PromotionTests(unittest.TestCase):
         self.assertIn("https://lazying.art/lkt/sample-report/", prompt)
         self.assertIn("docs/sample-fit-report.md", prompt)
         self.assertIn("not a customer result", prompt)
+        self.assertIn("agreement, praise, a restatement", prompt)
+        self.assertIn("specific diagnosis, correction, decision", prompt)
 
     def test_structured_model_check_uses_an_mcp_free_temporary_workdir(self):
         observed = {}

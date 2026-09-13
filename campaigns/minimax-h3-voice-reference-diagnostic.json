@@ -1,6 +1,6 @@
 {
   "id": "minimax-h3-voice-reference-diagnostic",
-  "version": 2,
+  "version": 3,
   "objective": "Help local MiniMax H3 users isolate voice-reference assignment failures with a small, reproducible test before changing sampling settings.",
   "source_need": {
     "captured_at": "2026-09-12T02:18:00Z",
@@ -40,7 +40,7 @@
       "policy": "The reply gives a bounded diagnostic from project-owned evidence and asks for no click, private message, purchase, or follow-up. Do not add another reply unless the author asks a concrete question."
     },
     "github": {
-      "state": "technical_reply_published",
+      "state": "technical_reply_and_one_clarification_published",
       "published_at": "2026-09-12T02:37:55Z",
       "source_url": "https://github.com/deepbeepmeep/Wan2GP/issues/2294",
       "reply_url": "https://github.com/deepbeepmeep/Wan2GP/issues/2294#issuecomment-5642915256",
@@ -53,12 +53,21 @@
         "author": "lachlanchen",
         "duplicate_retry": false
       },
-      "policy": "The linked workflow is a directly relevant implementation example with a maintainer disclosure. It contains no offer, price, private-message request, or claim of a completed Wan2GP patch. Do not add another comment unless the maintainer asks a concrete question."
+      "clarification": {
+        "trigger": "The issue author asked whether the change could be done easily.",
+        "published_at": "2026-09-13T00:40:00Z",
+        "reply_url": "https://github.com/deepbeepmeep/Wan2GP/issues/2294#issuecomment-5649728895",
+        "content": "It can be done. It is a fairly contained change, but not just one UI line: the third audio input has to be passed through the handler and generation pipeline, and the validation limit has to change from two to three. A few tests should cover combinations with reference-video audio. So: feasible, just slightly broader than adding a third upload box.",
+        "content_sha256": "b1984b3c398520d77312ead99319fabe69e81f8cc8631e531fcfb336d75af3b8",
+        "product_or_price_mentioned": false,
+        "implementation_offered": false
+      },
+      "policy": "The linked workflow is a directly relevant implementation example with a maintainer disclosure. The one follow-up only resolves the issue author's narrow feasibility question and contains no offer, price, private-message request, issue claim, or implementation promise. Do not add another comment or take ownership of the patch."
     }
   },
   "funnel": {
     "state": "helpful_interaction",
-    "reply_received": false,
+    "reply_received": true,
     "qualified_lead_observed": false,
     "scope_accepted": false,
     "payment_confirmed": false,

@@ -38,7 +38,10 @@ stars, applications, and queued posts never count as revenue.
 - Evidence before offer: a route needs inspectable public proof, written scope,
   exclusions, and a fit check before it can become commercial.
 - One person, one decision: no mass replies, unsolicited DMs, automated votes,
-  follows, repeated outreach, or engagement loops.
+  follows, repeated outreach, or engagement loops. An outside-repository answer
+  may receive one narrow factual clarification; then disengage unless a paid,
+  bounded scope is separately accepted. Never claim the issue or imply
+  implementation, security, or maintenance ownership through a comment.
 - Exact approval: editing a draft invalidates its short-lived, hash-bound
   approval; a send must match the reviewed destination and content.
 - Visible operation: browser work uses the dedicated noVNC Chrome profile.

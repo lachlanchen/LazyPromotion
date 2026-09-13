@@ -1411,6 +1411,11 @@ Requirements:
 - Do not repeat the post back to its author or use generic praise.
 - Prefer plain sentences and concrete advice. Avoid headings, slogan-like
   fragments, canned marketing rhythm, and excessive colons or em dashes.
+- Default to one short paragraph of two to four sentences. Use bullets only
+  when the author explicitly asks for steps or the answer would be unsafe or
+  ambiguous without an exact sequence.
+- Stop after resolving the question. Do not append a summary, reassurance,
+  broad background lesson, or extra offer to continue helping.
 - If a term in the post is ambiguous or may be a typo, do not silently assign it a specific meaning.
 - If the match is weak, the community discourages self-promotion, or the profile
   is enough context, omit the link and say so through include_link=false.
@@ -1461,9 +1466,13 @@ useful, set eligible=false and project_id to an empty string.
 Reject announcements, hiring posts, resolved or saturated discussions, generic
 keyword overlap, unrelated product categories, opportunities that would feel
 like unsolicited advertising, and posts where an affiliation link would not
-add genuine value. A useful answer must be possible before mentioning the
-project, and affiliation must be disclosed. Do not browse, draft a reply,
-navigate, post, vote, follow, or message anyone.
+add genuine value. Also reject a candidate when the only possible response is
+agreement, praise, a restatement, generic reassurance, or advice the existing
+discussion already contains. An eligible response must add at least one
+specific diagnosis, correction, decision, or actionable next step. A useful
+answer must be possible before mentioning the project, and affiliation must be
+disclosed. Do not browse, draft a reply, navigate, post, vote, follow, or
+message anyone.
 """
 
 

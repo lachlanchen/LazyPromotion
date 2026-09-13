@@ -316,6 +316,8 @@ class OwnedMonitorTests(unittest.TestCase):
                             "unread_badge_total": 0,
                             "chat_navigation_available": True,
                             "chat_unread_badge_total": 0,
+                            "notification_navigation_available": True,
+                            "notification_unread_badge_total": 0,
                             "layout_unknown": False,
                         },
                     },
@@ -365,6 +367,8 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertFalse(summary["social_inbox"]["automatic_reply"])
         self.assertTrue(summary["social_inbox"]["platforms"]["reddit"]["chat_navigation_available"])
         self.assertEqual(summary["social_inbox"]["platforms"]["reddit"]["chat_unread_badge_total"], 0)
+        self.assertTrue(summary["social_inbox"]["platforms"]["reddit"]["notification_navigation_available"])
+        self.assertEqual(summary["social_inbox"]["platforms"]["reddit"]["notification_unread_badge_total"], 0)
         self.assertNotIn("private-campaign", json.dumps(summary["social_inbox"]))
         self.assertNotIn("private-target", json.dumps(summary))
         self.assertNotIn("private-reply-key", json.dumps(summary))

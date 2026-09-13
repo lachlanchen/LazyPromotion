@@ -124,6 +124,29 @@ def reddit_chat_badge_count(page: Page) -> int | None:
     return max(numbers) if numbers else None
 
 
+REDDIT_NOTIFICATION_COUNTER_SCRIPT = r"""element => {
+  // The hydrated count can differ from the original HTML attribute.
+  if (element.count !== undefined) {
+    return Number.isSafeInteger(element.count) && element.count >= 0
+      ? element.count : null;
+  }
+  const initial = element.getAttribute('initial-count');
+  return /^\d{1,6}$/.test(initial || '') ? Number(initial) : null;
+}"""
+
+
+def reddit_notification_badge_count(page: Page) -> int | None:
+    """Read the bell's sibling badge, without opening notification content."""
+    badge = page.locator('dynamic-badge[data-id="notification-count-element"]')
+    if badge.count() != 1:
+        return None
+    navigation = page.locator("#notifications-inbox-button")
+    if navigation.count() != 1 or not navigation.is_visible():
+        return None
+    # The badge itself has a zero-size box at count=0; that is not a failure.
+    return badge.evaluate(REDDIT_NOTIFICATION_COUNTER_SCRIPT)
+
+
 def exact_term_present(page: Page, term: str) -> bool:
     pattern = re.compile(re.escape(term), re.IGNORECASE)
     locator = page.get_by_text(pattern)
@@ -208,6 +231,10 @@ def collect_observation(config: dict, *, cdp: str = DEFAULT_CDP) -> dict:
                 "#header-action-item-chat-button"
             ).count() == 1,
             "chat_unread_badge_total": reddit_chat_badge_count(reddit_page),
+            "notification_navigation_available": reddit_page.locator(
+                "#notifications-inbox-button"
+            ).count() == 1,
+            "notification_unread_badge_total": reddit_notification_badge_count(reddit_page),
         }
         reddit_page.goto(
             "https://www.reddit.com/message/inbox/",
@@ -279,35 +306,39 @@ def summarize_observation(observed: dict, previous: dict | None) -> tuple[dict, 
             "layout_unknown": authenticated and not navigation,
         }
         state_platforms[platform] = {"unread_badge_total": unread}
-        if platform == "reddit" and "chat_unread_badge_total" in item:
-            chat_unread = item["chat_unread_badge_total"]
-            if chat_unread is not None and (
-                isinstance(chat_unread, bool)
-                or not isinstance(chat_unread, int)
-                or chat_unread < 0
+        for counter in ("chat", "notification") if platform == "reddit" else ():
+            count_key = f"{counter}_unread_badge_total"
+            navigation_key = f"{counter}_navigation_available"
+            if count_key not in item:
+                continue
+            count = item[count_key]
+            if count is not None and (
+                isinstance(count, bool)
+                or not isinstance(count, int)
+                or count < 0
             ):
-                raise ValueError("the Reddit chat unread count is invalid")
-            chat_navigation = bool(item.get("chat_navigation_available"))
-            prior_chat = prior_platforms.get(platform, {}).get("chat_unread_badge_total")
-            if isinstance(chat_unread, int) and chat_unread > 0 and (
-                not isinstance(prior_chat, int) or chat_unread > prior_chat
+                raise ValueError(f"the Reddit {counter} unread count is invalid")
+            counter_navigation = bool(item.get(navigation_key))
+            prior_count = prior_platforms.get(platform, {}).get(count_key)
+            if isinstance(count, int) and count > 0 and (
+                not isinstance(prior_count, int) or count > prior_count
             ):
                 alerts.append(
                     {
-                        "kind": "reddit_chat_unread_detected",
+                        "kind": f"reddit_{counter}_unread_detected",
                         "platform": "reddit",
-                        "unread_badge_total": chat_unread,
+                        "unread_badge_total": count,
                     }
                 )
-            safe_platforms[platform].update(
-                chat_navigation_available=chat_navigation,
-                chat_unread_badge_total=chat_unread,
-                layout_unknown=safe_platforms[platform]["layout_unknown"]
-                or (authenticated and (not chat_navigation or chat_unread is None)),
-            )
+            safe_platforms[platform].update({
+                navigation_key: counter_navigation,
+                count_key: count,
+                "layout_unknown": safe_platforms[platform]["layout_unknown"]
+                or (authenticated and (not counter_navigation or count is None)),
+            })
             # An unavailable badge is not evidence that the inbox became empty.
-            state_platforms[platform]["chat_unread_badge_total"] = (
-                chat_unread if chat_unread is not None else prior_chat
+            state_platforms[platform][count_key] = (
+                count if count is not None else prior_count
             )
 
     safe_campaigns = []

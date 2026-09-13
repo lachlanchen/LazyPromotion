@@ -772,6 +772,8 @@ def social_inbox_status_summary(path: Path = SOCIAL_INBOX_STATUS_PATH) -> dict:
                 "unread_badge_total",
                 "chat_navigation_available",
                 "chat_unread_badge_total",
+                "notification_navigation_available",
+                "notification_unread_badge_total",
                 "layout_unknown",
             )
             if key in item

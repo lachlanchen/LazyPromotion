@@ -12,6 +12,17 @@ controls request review; they are not treated as zero unread chats. A newly
 observed nonzero chat counter also requests review, including the first check.
 No chat conversation or preview is opened to obtain the counter.
 
+The notification bell has its own counter as well. Reddit renders that badge
+beside the navigation link, not inside it; checking only numbers within the
+link can report zero while the bell visibly shows an unread item. The monitor
+reads the exact notification badge's numeric component state, falling back to
+its initial count only before hydration. A new nonzero count requests review;
+an absent, duplicate or invalid counter, or hidden navigation, is unknown, not
+zero. A hydrated zero remains valid when the badge itself collapses. The last
+known count is retained across an unknown observation. The observer never opens
+the notification list or copies its contents. A notification may be a system
+notice or recommendation, not a reply or buying signal.
+
 Unread counters cannot discover replies that have already been marked read.
 Scheduled application reviews remain necessary. The legacy-inbox participant
 match is not evidence of coverage of Reddit Chat conversations.

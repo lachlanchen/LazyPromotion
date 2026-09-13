@@ -1,4 +1,6 @@
 import json
+import shutil
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -193,6 +195,115 @@ class SocialInboxMonitorTests(unittest.TestCase):
         self.assertEqual(summary["alert_count"], 0)
         self.assertNotIn("known.handle", json.dumps(summary))
         self.assertFalse(summary["policy"]["participant_persisted"])
+
+    def notification_observation(self, count, navigation=True):
+        observed = self.chat_observation(0)
+        observed["platforms"]["reddit"].update(
+            notification_navigation_available=navigation,
+            notification_unread_badge_total=count,
+        )
+        return observed
+
+    def test_notification_counter_is_independent_of_messages_and_chat(self):
+        _, previous = monitor.summarize_observation(self.notification_observation(0), None)
+        status, state = monitor.summarize_observation(self.notification_observation(1), previous)
+        self.assertEqual(status["alerts"], [{
+            "kind": "reddit_notification_unread_detected",
+            "platform": "reddit",
+            "unread_badge_total": 1,
+        }])
+        self.assertEqual(state["platforms"]["reddit"]["notification_unread_badge_total"], 1)
+        self.assertEqual(status["platforms"]["reddit"]["chat_unread_badge_total"], 0)
+        self.assertFalse(status["policy"]["conversation_opened"])
+
+    def test_new_notification_surface_does_not_silence_existing_unread(self):
+        _, old_state = monitor.summarize_observation(self.chat_observation(0), None)
+        for previous in (None, old_state):
+            with self.subTest(previous=previous):
+                status, _ = monitor.summarize_observation(self.notification_observation(1), previous)
+                self.assertTrue(status["review_required"])
+                self.assertEqual(status["alerts"][0]["kind"], "reddit_notification_unread_detected")
+
+    def test_unknown_notification_count_preserves_last_known_count(self):
+        _, previous = monitor.summarize_observation(self.notification_observation(2), None)
+        status, state = monitor.summarize_observation(self.notification_observation(None), previous)
+        self.assertTrue(status["review_required"])
+        self.assertTrue(status["platforms"]["reddit"]["layout_unknown"])
+        self.assertIsNone(status["platforms"]["reddit"]["notification_unread_badge_total"])
+        self.assertEqual(state["platforms"]["reddit"]["notification_unread_badge_total"], 2)
+
+    def test_unchanged_or_decreased_notifications_do_not_repeat_alert(self):
+        _, previous = monitor.summarize_observation(self.notification_observation(2), None)
+        for count in (2, 1, 0):
+            with self.subTest(count=count):
+                status, _ = monitor.summarize_observation(self.notification_observation(count), previous)
+                self.assertFalse(status["review_required"])
+
+    def test_notification_navigation_and_count_validation(self):
+        status, _ = monitor.summarize_observation(self.notification_observation(0, False), None)
+        self.assertTrue(status["review_required"])
+        for count in (True, -1, "1"):
+            with self.subTest(count=count), self.assertRaises(ValueError):
+                monitor.summarize_observation(self.notification_observation(count), None)
+
+    def test_notification_reader_is_scoped_to_the_sibling_badge(self):
+        page = Mock()
+        badge, navigation = Mock(), Mock()
+        page.locator.side_effect = [badge, navigation]
+        badge.count.return_value = 1
+        navigation.count.return_value = 1
+        navigation.is_visible.return_value = True
+        badge.evaluate.return_value = 1
+        self.assertEqual(monitor.reddit_notification_badge_count(page), 1)
+        self.assertEqual([call.args[0] for call in page.locator.call_args_list], [
+            'dynamic-badge[data-id="notification-count-element"]',
+            '#notifications-inbox-button',
+        ])
+        badge.evaluate.assert_called_once_with(monitor.REDDIT_NOTIFICATION_COUNTER_SCRIPT)
+
+    def test_missing_duplicate_badges_and_unknown_navigation_are_unknown(self):
+        for count, nav_count, visible in ((0, 1, True), (2, 1, True), (1, 0, True), (1, 2, True), (1, 1, False)):
+            with self.subTest(count=count, nav_count=nav_count, visible=visible):
+                page = Mock()
+                badge, navigation = Mock(), Mock()
+                page.locator.side_effect = [badge, navigation]
+                badge.count.return_value = count
+                navigation.count.return_value = nav_count
+                navigation.is_visible.return_value = visible
+                self.assertIsNone(monitor.reddit_notification_badge_count(page))
+                badge.evaluate.assert_not_called()
+
+    def test_collapsed_zero_badge_is_valid_when_navigation_is_visible(self):
+        page = Mock()
+        badge, navigation = Mock(), Mock()
+        page.locator.side_effect = [badge, navigation]
+        badge.count.return_value = 1
+        badge.is_visible.return_value = False
+        badge.evaluate.return_value = 0
+        navigation.count.return_value = 1
+        navigation.is_visible.return_value = True
+        self.assertEqual(monitor.reddit_notification_badge_count(page), 0)
+        badge.is_visible.assert_not_called()
+
+    @unittest.skipUnless(shutil.which("node"), "Node is required for the component-state fixture")
+    def test_notification_component_script_with_live_and_initial_state(self):
+        script = "const assert = require('node:assert/strict');\n"
+        script += "const read = (" + monitor.REDDIT_NOTIFICATION_COUNTER_SCRIPT + ");\n"
+        script += r"""
+          const element = (count, initial) => ({count, getAttribute: () => initial});
+          assert.equal(read(element(1, '0')), 1);
+          assert.equal(read(element(0, '1')), 0); // hydrated state beats stale markup
+          assert.equal(read(element(27, '1')), 27);
+          assert.equal(read(element(undefined, '0')), 0);
+          assert.equal(read(element(undefined, '12')), 12);
+          for (const value of [true, '2', -1, 1.5, null, Infinity, NaN]) {
+            assert.equal(read(element(value, '1')), null);
+          }
+          for (const initial of [null, '', 'unavailable', '-1', '1000000']) {
+            assert.equal(read(element(undefined, initial)), null);
+          }
+        """
+        subprocess.run(["node", "-e", script], check=True, capture_output=True, text=True)
 
 
 if __name__ == "__main__":

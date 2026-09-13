@@ -74,6 +74,9 @@ require a new scope.
 
 ## Handling and support
 
+The fit check and review happen in writing. No call required. Questions, scope
+acceptance, delivery, and the limited follow-up use the agreed written channel.
+
 - Private transfer method: `[method agreed after scope acceptance]`
 - Permitted automation: `[exact tools or local-only requirement]`
 - Confidentiality constraints: `[terms]`

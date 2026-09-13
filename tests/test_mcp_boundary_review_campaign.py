@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 48)
+        self.assertEqual(self.payload["version"], 49)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -306,6 +306,11 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         text = SCOPE_TEMPLATE.read_text(encoding="utf-8")
         offer = self.payload["offer"]
         self.assertIn("**USD 500**", text)
+        self.assertEqual(
+            offer["communication"],
+            "The fit check and review happen in writing. No call required.",
+        )
+        self.assertIn(offer["communication"], text)
         self.assertIn("no more than eight tools and resources", text)
         self.assertIn("## Ten agreed checks", text)
         self.assertIn("within seven business days", text.casefold())

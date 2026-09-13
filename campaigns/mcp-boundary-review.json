@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 48,
+  "version": 49,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -137,6 +137,7 @@
     "sample_report": "https://lazying.art/mcp-boundary-review/sample-report/",
     "price": "USD 500",
     "software_only": true,
+    "communication": "The fit check and review happen in writing. No call required.",
     "base_repository_revision_limit": 1,
     "follow_up_successor_revision_limit": 1,
     "follow_up_failed_check_limit": 3,

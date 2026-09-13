@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 50)
+        self.assertEqual(self.payload["version"], 51)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -348,6 +348,39 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("PHP 8.2", intake["deployment_verification"])
         self.assertIn("second receiver pass returned no_pending", intake["live_round_trip"])
         self.assertFalse(intake["lead_or_sale_observed"])
+
+    def test_linkedin_release_copy_preserves_scope_and_a_direct_conversion_path(self):
+        from owned_monitor import content_hash
+
+        post = self.payload["channels"]["postiz"]
+        review = post["release_copy_review"]
+        release = self.payload["upstream_contribution"]["release_verification"]
+        self.assertEqual(review["state"], "queue_verified")
+        self.assertEqual(review["release_version"], release["version"])
+        self.assertEqual(review["release_url"], release["release_url"])
+        self.assertIn(f"mcp-remote {release['version']}", post["content"])
+        self.assertIn("no call required", post["content"])
+        self.assertIn("Scope comes before source access or payment", post["content"])
+        self.assertEqual(post["content"], post["postiz_content"])
+        self.assertEqual(post["content"].count("https://"), 1)
+        self.assertIn(post["destination"], post["postiz_content"])
+        self.assertNotIn("dub.sh", post["postiz_content"])
+        self.assertIsNone(post["shortlink"])
+        self.assertEqual(post["content_sha256"], content_hash(post["postiz_content"]))
+        self.assertEqual(review["after_content_sha256"], post["content_sha256"])
+        self.assertEqual(review["character_count"], len(post["postiz_content"]))
+        self.assertLess(review["character_count"], 3000)
+        self.assertEqual(review["direct_destination_status"], 200)
+        self.assertEqual(review["fit_links_with_preserved_attribution"], 4)
+        self.assertTrue(review["exact_visible_copy_and_reopened_editor_verified"])
+        self.assertTrue(review["same_post_id_account_schedule_and_settings"])
+        self.assertEqual(review["records_observed"], 15)
+        self.assertEqual(review["unchanged_other_records"], 14)
+        self.assertEqual(review["states_before_and_after"], {"QUEUE": 7, "DRAFT": 5, "PUBLISHED": 3})
+        self.assertEqual(review["new_posts"], 0)
+        self.assertEqual(review["deleted_posts"], 0)
+        self.assertFalse(review["fit_request_submitted"])
+        self.assertFalse(review["lead_or_sale_observed"])
 
     def test_queued_channels_and_live_reddit_preserve_reviewed_evidence(self):
         postiz = self.payload["channels"]["postiz"]

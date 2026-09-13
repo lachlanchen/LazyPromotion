@@ -15,18 +15,33 @@ target.
 
 ## First USD 1,000 path
 
-The primary offer remains the
-[Local Knowledge Terminal collection-fit sprint](https://lazying.art/lkt/): a
-fixed USD 250 service for one customer-provided collection, one language goal,
-and one existing machine. It includes a written data/privacy/citation map, an
-agreed sample capped at 12 source units and 20 test questions, up to two cited
-browser cards when the material is usable, a go/no-go recommendation, and one
-factual correction pass. The written scope defines the source unit—for example,
-a passage, record, or representative page—before payment. Hardware, shipping,
-custom OCR, bulk conversion,
-production deployment, and ongoing support are excluded. Four confirmed USD
-250 payments would be USD 1,000 gross. That is a milestone calculation, not a
-forecast, and excludes payment fees, tax, refunds, and delivery costs.
+The primary offer is the [MCP Server Pre-Deployment
+Review](https://lazying.art/mcp-boundary-review/): a fixed USD 500 software
+review of one pinned repository revision, one MCP server, and up to eight tools
+and resources. It maps the real authority boundary, runs ten agreed checks in a
+disposable environment, and returns a frozen inventory, sanitized protocol
+packet, failure ledger, and go/no-go report. It is not penetration testing,
+security certification, deployment, or a promise that a server is safe. Two
+confirmed, delivered, unreversed reviews would reach USD 1,000 gross before
+fees, tax, refunds, and delivery costs. That is milestone math, not a forecast.
+
+The strongest current acquisition signal is separate: the free UU Remote
+Ubuntu bridge routes exact-fit readers to the USD 250 [LazyRemote Network Fit
+Review](https://remote.lazying.art/#review). It has current owner-visible search
+and repository attention, but no fit inquiry or sale. Keep that lane useful and
+sample-first; do not imply that LazyRemote is NetEase software or that bridge
+traffic proves paid demand.
+
+The [Local Knowledge Terminal collection-fit
+sprint](https://lazying.art/lkt/) remains an active adjacent route: a fixed USD
+250 service for one customer-provided collection, one language goal, and one
+existing machine. It includes a written data/privacy/citation map, an agreed
+sample capped at 12 source units and 20 test questions, up to two cited browser
+cards when the material is usable, a go/no-go recommendation, and one factual
+correction pass. The written scope defines the source unit—for example, a
+passage, record, or representative page—before payment. Hardware, shipping,
+custom OCR, bulk conversion, production deployment, and ongoing support are
+excluded.
 
 The active secondary route is the [Manuscript Build & Redline
 Sprint](https://lazying.art/manuscript-sprint/): USD 250 for one LaTeX
@@ -80,23 +95,22 @@ The manuscript landing page was unknown to Google when inspected on September
 later visible URL Inspection check on September 5 reported that the page is on
 Google. That proves neither ranking, traffic, a lead, nor revenue.
 
-## One homepage, seven focused routes
+## One homepage, six focused routes
 
-The LazyingArt homepage now presents seven active service routes directly below
-its main banner. The USD 500 OpenHI reproducibility sprint is the first,
-full-width card, followed by collection fit, book specimen, manuscript build
-and redline, bilingual lecture, story clip, and USD 500 AI clip assembly. Each
-tracked link leads to the full offer and public proof before any free fit check.
-The chooser is available in all 13 homepage languages and states the shared
-boundary in one sentence: no source upload or payment before both sides accept
-the scope.
+The LazyingArt homepage presents six focused service routes directly below its
+main banner: OpenHI reproducibility, LKT collection fit, LazyRemote network fit,
+manuscript build and redline, bilingual lecture, and MCP pre-deployment review.
+Each tracked link leads to the full offer and public proof before any free fit
+check. The chooser is available in all 13 homepage languages and states the
+shared boundary in one sentence: no source upload or payment before both sides
+accept the scope.
 
-The seven-route chooser is deployed at LazyingArtWebsite commit
-`7decf259173850f6d5bf6a8b93b44a5cec3ebb5e`. All 25 website contract tests
-passed, the deployment workflow completed successfully, and the live localized
-page was checked after deployment. Separate `utm_campaign` values use the
-common `service_chooser` content marker. This fixes owned-site discoverability;
-it does not establish a visit, fit inquiry, qualified buyer, or sale.
+The six-route chooser is deployed at LazyingArtWebsite commit
+`3fe0f03a6cb39ba05001c7b28a2fa3fa20f2717f`. Its deployment and website
+contracts passed, and the live page exposes the same six routes. Separate
+`utm_campaign` values use the common `service_chooser` content marker. This
+fixes owned-site discoverability; it does not establish a visit, fit inquiry,
+qualified buyer, or sale.
 
 The public GitHub profile at commit
 `198c5444fe7e6aef2e0ee04649070207e6d51cca` presents five exact service routes

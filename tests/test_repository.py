@@ -30,6 +30,15 @@ READMES = [
 
 
 class RepositoryTests(unittest.TestCase):
+    def test_conversion_guide_matches_the_current_primary_route(self):
+        guide = (ROOT / "docs" / "conversion.md").read_text(encoding="utf-8")
+
+        self.assertIn("The primary offer is the [MCP Server Pre-Deployment", guide)
+        self.assertIn("Two\nconfirmed, delivered, unreversed reviews", guide)
+        self.assertIn("## One homepage, six focused routes", guide)
+        self.assertNotIn("The primary offer remains the\n[Local Knowledge Terminal", guide)
+        self.assertNotIn("## One homepage, seven focused routes", guide)
+
     def test_first_thousand_plan_names_primary_mcp_and_ten_routes(self):
         body = (ROOT / "docs" / "first-1000.md").read_text(encoding="utf-8")
         self.assertIn(

@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -193,7 +193,7 @@
       "policy": "This first-party product demonstration is queued, not yet public, and is not an engagement, lead, or sale."
     },
     "instagram": {
-      "state": "postiz_queue",
+      "state": "published",
       "publish_at": "2026-09-13T12:00:00Z",
       "content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
       "postiz_content": "I mix up L and N, so I built the four-minute practice loop I wanted.\n\nHear the contrast, see the mouth and airflow cue, record one word, then inspect the waveform and feedback. It works in English, Mandarin, and Cantonese, free in the browser with no account.\n\nhttps://l-and-n.lazying.art/?utm_source=instagram&utm_medium=social&utm_campaign=l_and_n_pronunciation_launch&utm_content=short_demo\n\nDoes the mouth view make the difference easier to hear?\n\n#PronunciationPractice #EnglishLearning #Mandarin #Cantonese #OpenSource",
@@ -216,8 +216,39 @@
         "original_urls_preserved_after_save": true,
         "schedule_clicked": true
       },
-      "quality_decision": "The cross-faded source remains rejected. The hard-cut v5 replacement passed a fresh media and provider recheck and is queued for the recorded future time.",
-      "policy": "A first-party vertical demonstration of the live free browser app. It is queued, not published, and makes no store-availability, clinical, recognition-accuracy, tester, lead, or revenue claim."
+      "quality_decision": "The cross-faded source remains rejected. The hard-cut v5 replacement is published; the live caption, account, playback and cut-boundary frames have been verified.",
+      "publication": {
+        "url": "https://www.instagram.com/reel/DdOg9nfDGhu/",
+        "verified_at": "2026-09-13T12:07:31Z",
+        "provider_state": "PUBLISHED",
+        "provider_observed_at": "2026-09-13T12:04:40Z",
+        "public_account": "lazying.art",
+        "release_http_status": 200,
+        "stored_content_sha256": "ceb7c4f6036c1f34f781dcb88d537cbf94e335f78ed51b181c22496015ea1347",
+        "stored_html_normalizes_to_reviewed_text": true,
+        "visible_caption_matches_reviewed_text": true,
+        "tracked_app_destination_visible": true,
+        "tracked_app_destination_http_status": 200,
+        "playable_video_observed": true,
+        "player_duration_seconds": 19.44,
+        "player_dimensions": "720x1280",
+        "cut_boundary_frames_reviewed_seconds": [
+          3.7,
+          3.9,
+          9.5,
+          9.72,
+          12.8,
+          13.04,
+          16.1,
+          16.36
+        ],
+        "closing_app_address_frame_reviewed_seconds": 18.3,
+        "hard_cut_replacement_visually_verified": true,
+        "operator_review_sessions": 1,
+        "organic_engagement_claimed": false,
+        "verification": "The original scheduled item published once on the intended account. The live caption preserves the reviewed text and tracked app address. Playback and paired frames around all four transitions show the hard-cut replacement, without blended headings or cropped mouth-model regions. Instagram served a 720x1280 rendition; this visual match does not imply a byte-identical transcode. The earlier queue verification remains historical evidence."
+      },
+      "policy": "A published first-party demonstration of the free browser app. The operator review is distribution verification, not organic engagement, a tester, a lead, or revenue. No store-availability, clinical, or recognition-accuracy claim is made."
     },
     "youtube": {
       "state": "published",

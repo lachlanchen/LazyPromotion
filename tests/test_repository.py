@@ -1499,7 +1499,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 12)
+        self.assertEqual(campaign["version"], 13)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1558,7 +1558,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertTrue(schedule["schedule_clicked"])
         for name in ("instagram", "youtube"):
             channel = campaign["channels"][name]
-            self.assertEqual(channel["state"], "published" if name == "youtube" else "postiz_queue")
+            self.assertEqual(channel["state"], "published")
+            self.assertEqual(channel["publication"]["provider_state"], "PUBLISHED")
             self.assertEqual(
                 channel["media_sha256"],
                 campaign["source_evidence"]["media_quality_review"]["replacement"]["sha256"],

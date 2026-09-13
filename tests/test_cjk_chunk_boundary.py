@@ -12,6 +12,17 @@ EXAMPLE = ROOT / "examples" / "cjk-chunk-boundary"
 
 @unittest.skipUnless(shutil.which("node"), "Node is required for the JavaScript example")
 class CjkChunkBoundaryTests(unittest.TestCase):
+    def test_owned_guide_does_not_turn_an_issue_into_a_buyer(self):
+        campaign = json.loads((ROOT / "campaigns/cjk-chunk-boundary.json").read_text())
+        self.assertFalse(campaign["source_need"]["buyer_intent_observed"])
+        self.assertFalse(campaign["source_need"]["budget_observed"])
+        self.assertEqual(campaign["owned_article"]["state"], "published_live_verified")
+        self.assertFalse(campaign["owned_article"]["live_verification"]["form_submitted"])
+        self.assertFalse(campaign["owned_article"]["live_verification"]["organic_visits_claimed"])
+        self.assertEqual(campaign["commercial_route"]["social_items_created"], 0)
+        self.assertEqual(campaign["funnel"]["qualified_leads"], 0)
+        self.assertEqual(campaign["funnel"]["verified_received_gross_usd"], 0)
+
     def test_javascript_regressions(self):
         subprocess.run(
             ["node", "--test", str(EXAMPLE / "test.cjs")],

@@ -1,7 +1,8 @@
 ---
+id: 3841
 title: "Why Your Chinese Document Becomes One Giant RAG Chunk"
 slug: "chinese-rag-whitespace-chunking-source-offsets"
-status: "draft"
+status: "publish"
 source_language: "en"
 categories:
   - "Computer & Internet"
@@ -49,7 +50,9 @@ A sentence or paragraph splitter can choose useful boundaries. It still needs a 
 
 ```js
 function splitWithOffsets(text, maxCodePoints = 200) {
-  if (typeof text !== 'string') throw new TypeError('text must be a string');
+  if (typeof text !== 'string') {
+    throw new TypeError('text must be a string');
+  }
   if (!Number.isSafeInteger(maxCodePoints) || maxCodePoints < 1) {
     throw new RangeError('maxCodePoints must be a positive safe integer');
   }
@@ -65,7 +68,9 @@ function splitWithOffsets(text, maxCodePoints = 200) {
       count = 0;
     }
   }
-  if (count) chunks.push({start, end, text: text.slice(start, end)});
+  if (count) {
+    chunks.push({start, end, text: text.slice(start, end)});
+  }
   return chunks;
 }
 ```

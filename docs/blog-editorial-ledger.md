@@ -4,9 +4,9 @@ Last verified: 2026-09-13 (Asia/Hong_Kong)
 
 BLOG repository: `lachlanchen/LazyBlog`
 
-Verified BLOG commit: `0697deb619f59294b0fc36622150c53f03435dce`
+Verified BLOG commit: `cb5da1f2c6fa49fad68e203861924a17d3937c6a`
 
-Campaign range: `3b45351^..0697deb619f59294b0fc36622150c53f03435dce`
+Campaign range: `3b45351^..cb5da1f2c6fa49fad68e203861924a17d3937c6a`
 
 This ledger records the current evidence-led cleanup of `blog.lazying.art`. A post is counted only after all of the following have completed:
 
@@ -63,6 +63,19 @@ Posts: `933, 1498, 1562, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1
 Posts: `281, 936, 1562, 2936, 3125`.
 
 ### Evidence-led conversion and presentation follow-up
+
+- New source-only post `3841`, [Why Your Chinese Document Becomes One Giant
+  RAG Chunk](https://blog.lazying.art/html/computer_internet/3841/chinese-rag-whitespace-chunking-source-offsets.html),
+  includes an executed JavaScript fixture, a code-point hard cap, exact UTF-16
+  source locators, and the separate tokenizer and grapheme boundaries. The
+  complete article passes copy-and-run tests. Its live desktop and mobile
+  rendering, three code blocks, and one tracked sample-report link were checked;
+  the actual sample-to-fit-check route retained the campaign parameters without
+  submitting a form. LazyBlog commit `cb5da1f` archives the published source and
+  manifest and is verified on `origin/main`. No translation was published, so
+  this is not added to the 155-post multilingual completion count. The upstream
+  issue is technical evidence, not a buyer or paid brief; no external reply,
+  issue claim, new social item, inquiry or revenue event was created.
 
 - Search Console showed post `3586` at 437 impressions, zero clicks, and average
   position 8.9 for the three months ending September 9. BLOG commit `7ac47cd`
@@ -256,6 +269,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 | BLOG commit | Post | Outcome |
 | --- | ---: | --- |
 | `0697deb` | 3834 | Added the WSL no-vault login-persistence diagnosis, a sandbox-scoped Copilot-token route, and the bounded plaintext fallback to the existing Docker MCP guide |
+| `cb5da1f` | 3841 | Published an executed CJK chunking and source-offset guide in English with verified mobile rendering and one tracked LKT sample-to-fit route |
 | `d2b8740` | — | Preflight the translation route before any source-post write, preventing missing-plugin partial updates |
 | `1991e2e` | 3818 | Added the merged clipboard contribution, tested boundaries, and original contributor credit to the live Chinese UU guide |
 | `ac81173` | 3810 | Published a durable chat-archive and reviewed-current-state guide in English, Traditional Chinese, and Japanese |

@@ -1,0 +1,69 @@
+{
+  "id": "cjk-chunk-boundary",
+  "version": 1,
+  "objective": "Help developers diagnose whitespace-free multilingual document ingestion and connect exact-fit collection work to the existing LKT sample and USD 250 service.",
+  "source_need": {
+    "url": "https://github.com/RunanywhereAI/runanywhere-sdks/issues/922",
+    "title": "Web SDK RAG chunker makes a whitespace-free CJK document one unbounded chunk",
+    "created_at": "2026-09-11T07:55:34Z",
+    "checked_on": "2026-09-13",
+    "state_when_reviewed": "OPEN",
+    "problem": "A TypeScript ingestion path sizes chunks from non-whitespace regex matches, leaving a long whitespace-free CJK passage as one unbounded unit.",
+    "buyer_intent_observed": false,
+    "budget_observed": false,
+    "engagement": "Research only. No comment, issue claim, private message, pull request or implementation commitment."
+  },
+  "fit": {
+    "projects": ["LocalKnowledgeTerminal", "PocketPolyglot"],
+    "supported_value": "A tested language-independent hard-cap example with exact source locators, plus clear distinctions between whitespace units, Unicode code points, UTF-16 offsets, grapheme clusters and embedding tokens.",
+    "example": "https://github.com/lachlanchen/LazyPromotion/tree/f5638a3ee82baa7473285db46514a4f280e869d8/examples/cjk-chunk-boundary",
+    "example_state": "executed_project_owned_synthetic_fixture",
+    "observed_result": {
+      "source_code_points": 1000,
+      "whitespace_matches": 1,
+      "bounded_chunks": 5,
+      "maximum_chunk_code_points": 200,
+      "source_round_trip_exact": true,
+      "embedding_token_limit_verified": false
+    },
+    "exclusions": "Not an upstream SDK patch, semantic chunker, embedding benchmark, tokenizer implementation, full-book ingestion result or customer delivery."
+  },
+  "owned_article": {
+    "state": "published_live_verified",
+    "published_on": "2026-09-13",
+    "url": "https://blog.lazying.art/html/computer_internet/3841/chinese-rag-whitespace-chunking-source-offsets.html",
+    "source": "articles/chinese-rag-whitespace-chunks/post.md",
+    "language": "en",
+    "title": "Why Your Chinese Document Becomes One Giant RAG Chunk",
+    "live_verification": {
+      "http_status": 200,
+      "code_blocks": 3,
+      "regex_preserved": true,
+      "supplementary_cjk_and_emoji_preserved": true,
+      "mobile_viewport_width": 390,
+      "mobile_document_width": 375,
+      "sample_links_in_article": 1,
+      "sample_target": "https://lazying.art/lkt/sample-report/?utm_source=lazyblog&utm_medium=article&utm_campaign=cjk_chunk_boundary&utm_content=sample_report",
+      "fit_target": "https://lazying.art/lkt/fit-check/?utm_source=lazyblog&utm_medium=article&utm_campaign=cjk_chunk_boundary&utm_content=sample_report",
+      "form_submitted": false,
+      "operator_route_checks": 1,
+      "organic_visits_claimed": false
+    }
+  },
+  "commercial_route": {
+    "offer": "Local Knowledge Terminal collection-fit sprint",
+    "price_usd": 250,
+    "sequence": "Useful standalone article, public sample, free fit check, accepted written scope, reviewed payment request, confirmed payment, delivery.",
+    "new_offer_created": false,
+    "social_items_created": 0
+  },
+  "funnel": {
+    "useful_owned_articles_published": 1,
+    "buyer_inquiries": 0,
+    "qualified_leads": 0,
+    "accepted_scopes": 0,
+    "payments_confirmed": 0,
+    "customer_deliveries": 0,
+    "verified_received_gross_usd": 0
+  }
+}

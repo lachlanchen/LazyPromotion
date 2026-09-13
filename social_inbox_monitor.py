@@ -109,6 +109,21 @@ def platform_page(context, hosts: set[str]) -> Page:
     return candidates[0] if candidates else context.new_page()
 
 
+def reddit_chat_badge_count(page: Page) -> int | None:
+    """Read the homepage chat counter, never the chat list or its previews."""
+    badge = page.locator("#header-action-item-chat-button-badge")
+    if badge.count() != 1:
+        return None
+    numbers = [
+        *badge_numbers(badge),
+        *badge_numbers(badge.locator("span, [aria-label]")),
+    ]
+    initial = badge.get_attribute("initial-count") or ""
+    if re.fullmatch(r"\d{1,6}", initial):
+        numbers.append(int(initial))
+    return max(numbers) if numbers else None
+
+
 def exact_term_present(page: Page, term: str) -> bool:
     pattern = re.compile(re.escape(term), re.IGNORECASE)
     locator = page.get_by_text(pattern)
@@ -189,6 +204,10 @@ def collect_observation(config: dict, *, cdp: str = DEFAULT_CDP) -> dict:
             "authenticated": reddit_login.count() == 0 and reddit_nav.count() > 0,
             "navigation_available": reddit_nav.count() > 0,
             "unread_badge_total": max(reddit_numbers, default=0),
+            "chat_navigation_available": reddit_page.locator(
+                "#header-action-item-chat-button"
+            ).count() == 1,
+            "chat_unread_badge_total": reddit_chat_badge_count(reddit_page),
         }
         reddit_page.goto(
             "https://www.reddit.com/message/inbox/",
@@ -260,6 +279,36 @@ def summarize_observation(observed: dict, previous: dict | None) -> tuple[dict, 
             "layout_unknown": authenticated and not navigation,
         }
         state_platforms[platform] = {"unread_badge_total": unread}
+        if platform == "reddit" and "chat_unread_badge_total" in item:
+            chat_unread = item["chat_unread_badge_total"]
+            if chat_unread is not None and (
+                isinstance(chat_unread, bool)
+                or not isinstance(chat_unread, int)
+                or chat_unread < 0
+            ):
+                raise ValueError("the Reddit chat unread count is invalid")
+            chat_navigation = bool(item.get("chat_navigation_available"))
+            prior_chat = prior_platforms.get(platform, {}).get("chat_unread_badge_total")
+            if isinstance(chat_unread, int) and chat_unread > 0 and (
+                not isinstance(prior_chat, int) or chat_unread > prior_chat
+            ):
+                alerts.append(
+                    {
+                        "kind": "reddit_chat_unread_detected",
+                        "platform": "reddit",
+                        "unread_badge_total": chat_unread,
+                    }
+                )
+            safe_platforms[platform].update(
+                chat_navigation_available=chat_navigation,
+                chat_unread_badge_total=chat_unread,
+                layout_unknown=safe_platforms[platform]["layout_unknown"]
+                or (authenticated and (not chat_navigation or chat_unread is None)),
+            )
+            # An unavailable badge is not evidence that the inbox became empty.
+            state_platforms[platform]["chat_unread_badge_total"] = (
+                chat_unread if chat_unread is not None else prior_chat
+            )
 
     safe_campaigns = []
     state_campaigns = []

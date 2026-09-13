@@ -134,6 +134,9 @@ class ApplicationWatchTests(unittest.TestCase):
         report = application_watch.build_report(on=date(2026, 9, 9))
         self.assertEqual(report["summary"]["awaiting_human_reply"], 36)
         self.assertEqual(report["summary"]["missing_review_schedule"], 0)
+        current_ids = [item["campaign_id"] for item in report["applications"]]
+        self.assertNotIn("latex-package-rewrite", current_ids)
+        self.assertIn("pythonjobs-pipeline-enquiry", current_ids)
         self.assertIn(
             "vetto-code-reviewer",
             [item["campaign_id"] for item in report["applications"]],

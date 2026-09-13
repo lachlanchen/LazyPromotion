@@ -5,6 +5,17 @@ allowlisted campaign participant is present in the loaded Instagram or Reddit
 inbox. It never opens a conversation, reads a preview or body, sends a reply,
 or turns activity into a lead or revenue event.
 
+Reddit Chat has a separate homepage counter from legacy messages and
+notifications. The monitor reads that counter independently, so a new chat is
+not hidden by an unchanged notification count. Missing or unrecognized chat
+controls request review; they are not treated as zero unread chats. A newly
+observed nonzero chat counter also requests review, including the first check.
+No chat conversation or preview is opened to obtain the counter.
+
+Unread counters cannot discover replies that have already been marked read.
+Scheduled application reviews remain necessary. The legacy-inbox participant
+match is not evidence of coverage of Reddit Chat conversations.
+
 The ignored owner-readable configuration is `.local/private/social-inbox-monitor.json`:
 
 ```json

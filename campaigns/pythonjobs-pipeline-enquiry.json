@@ -1,0 +1,55 @@
+{
+  "id": "pythonjobs-pipeline-enquiry",
+  "version": 1,
+  "objective": "Qualify one explicitly invited paid Python pipeline request against existing MicroQuant ingestion work.",
+  "source_need": {
+    "captured_at": "2026-09-13T01:43:00Z",
+    "url": "https://www.reddit.com/r/PythonJobs/comments/1w6v84j/looking_for_a_softwaredata_engineer_for_a_small/",
+    "title": "Looking for a software/data engineer for a small paid projects.",
+    "published_at": "2026-09-04T05:24:38.193Z",
+    "state": "public_paid_request_inviting_private_applications",
+    "scope": "Python data-analytics pipeline; detailed specifications, budget and deadline not published.",
+    "rules_checked": [
+      "https://www.reddit.com/r/PythonJobs/about/rules/",
+      "https://www.reddit.com/r/PythonJobs/about/rules.json",
+      "https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam"
+    ]
+  },
+  "fit": {
+    "project": "MicroQuant",
+    "public_proof": "https://github.com/lachlanchen/MicroQuant/blob/10fb3047cbd44609945a8e8b4617e7c002e230f6/app/db.py",
+    "supported_now": "Python and PostgreSQL ingestion using parameterized asyncpg writes and an upsert keyed by symbol, timeframe and timestamp.",
+    "not_claimed": [
+      "Production reliability or trading performance",
+      "Prior paid pipeline delivery",
+      "Fit for unpublished requirements"
+    ]
+  },
+  "application": {
+    "state": "sent_awaiting_reply",
+    "sent_at": "2026-09-13T01:46:18Z",
+    "method": "One individually reviewed Reddit Chat enquiry responding to the author's explicit invitation.",
+    "delivery_evidence": "The exact recipient and full composer were visibly reviewed before one Send action. The composer cleared, one matching message appeared, and it remained visible after a page reload.",
+    "message_storage": "ignored private evidence",
+    "development_method_disclosed": "AI-assisted development with code review and tests",
+    "review_after": "2026-09-20",
+    "automatic_follow_up": false,
+    "follow_up_policy": "Review inbound only; do not send another message unless the recipient replies."
+  },
+  "scope_gate": [
+    "Confirm that the work is still available",
+    "Review rights-cleared input and output specifications without production secrets",
+    "Agree budget, deadline, acceptance checks and permitted development methods",
+    "Accept only a bounded paid scope; no speculative implementation or ongoing support commitment"
+  ],
+  "funnel": {
+    "outbound_application_count": 1,
+    "delivery_observed": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

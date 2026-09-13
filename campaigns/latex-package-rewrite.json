@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "id": "latex-package-rewrite",
   "objective": "Win one bounded paid LaTeX package rewrite without overstating prior package work or accepting an undefined compatibility surface.",
   "source_need": {
@@ -30,13 +30,14 @@
     ]
   },
   "application": {
-    "state": "sent_awaiting_reply",
+    "state": "closed_not_selected",
     "sent_at": "2026-09-06T23:59:04Z",
     "method": "One Reddit direct message invited by the public hiring post",
     "delivery_evidence": "The visible project-only compose form displayed Message sent and cleared all fields after one submit.",
     "message_storage": "ignored private storage",
     "automatic_follow_up": false,
-    "follow_up_not_before": "2026-09-14",
+    "closed_at": "2026-09-13T01:48:00Z",
+    "closure_evidence": "An existing buyer response was reviewed in the signed-in project browser. This application is no longer awaiting a decision; exact correspondence remains private.",
     "future_agent_contact": false,
     "community_policy_observation": {
       "checked_at": "2026-09-07T00:08:58Z",
@@ -53,7 +54,7 @@
   ],
   "funnel": {
     "outbound_application_count": 1,
-    "buyer_reply_observed": false,
+    "buyer_reply_observed": true,
     "qualified_lead_observed": false,
     "scope_accepted": false,
     "payment_confirmed": false,

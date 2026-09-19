@@ -137,6 +137,14 @@ class ApplicationWatchTests(unittest.TestCase):
         current_ids = [item["campaign_id"] for item in report["applications"]]
         self.assertNotIn("latex-package-rewrite", current_ids)
         self.assertNotIn("wetheflywheel-agentic-engineer", current_ids)
+        self.assertNotIn("playwright-regression-contract", current_ids)
+        self.assertIn("seamo-solutions-freelancer", current_ids)
+        seamo = next(
+            item for item in report["applications"]
+            if item["campaign_id"] == "seamo-solutions-freelancer"
+        )
+        self.assertEqual(seamo["review_after"], "2026-09-22")
+        self.assertFalse(seamo["due_for_human_review"])
         self.assertIn("pythonjobs-pipeline-enquiry", current_ids)
         self.assertIn("enfold-wordpress-cleanup-enquiry", current_ids)
         self.assertIn("bigo-api-diagnostic-enquiry", current_ids)
@@ -176,7 +184,7 @@ class ApplicationWatchTests(unittest.TestCase):
             "steinke-python-maintainer",
             [item["campaign_id"] for item in report["applications"]],
         )
-        self.assertIn(
+        self.assertNotIn(
             "kicad-plugin-testing-freelancer",
             [item["campaign_id"] for item in report["applications"]],
         )

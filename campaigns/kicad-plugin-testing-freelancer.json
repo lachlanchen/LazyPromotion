@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "id": "kicad-plugin-testing-freelancer",
   "objective": "Win one bounded KiCad plugin evaluation by pairing a purpose-built geometry fixture with larger project-owned board evidence, without claiming the buyer's plugin was tested before authorized delivery.",
   "source_need": {
@@ -7,7 +7,7 @@
     "url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback",
     "project_id": 40700587,
     "title": "KiCad Plugin Testing & Feedback",
-    "state": "active_open",
+    "state": "bidding_expired_no_selection",
     "published_budget": "USD 250–750 fixed",
     "activity_when_submitted": "The listing header showed 19 bids; the submitted proposal was then ranked 20 of 20.",
     "buyer_state": "The visible listing showed a Navoiy, Uzbekistan buyer with identity, payment, deposit, email, profile, and phone verification plus two 5.0 reviews.",
@@ -115,7 +115,14 @@
     "policy": "Direct clients receive a written scope for acceptance before any payment request. Work originating on Freelancer stays on Freelancer. The live page is an offer, not evidence of an inquiry, customer result, or revenue."
   },
   "application": {
-    "state": "submitted_awaiting_buyer_reply",
+    "state": "submitted_bidding_expired_no_selection",
+    "last_review": {
+      "checked_at": "2026-09-19T15:21:00Z",
+      "visible_state": "No Freelancer Selected",
+      "public_api_status": "frozen",
+      "public_api_sub_status": "frozen_timeout",
+      "decision": "Remove from the active application queue; keep the submission history. Reassess only if a real inbound or reopening occurs. No withdrawal, follow-up, or award acceptance."
+    },
     "submitted_at": "2026-09-12T01:46:49Z",
     "review_after": "2026-09-15",
     "confirmation_url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback/proposals?bidCreated=true",
@@ -162,7 +169,7 @@
     }
   },
   "funnel": {
-    "state": "application_submitted_awaiting_buyer",
+    "state": "bidding_expired_no_selection",
     "application_submitted": true,
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,

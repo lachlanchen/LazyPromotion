@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "id": "seamo-solutions-freelancer",
+  "objective": "Test a bounded paid educational-writing delivery using existing mathematical TeX work, without inventing Olympiad experience or accepting an unseen question set.",
+  "source_need": {
+    "captured_at": "2026-09-19T15:07:00Z",
+    "url": "https://www.freelancer.com/projects/technical-writing/SEAMO-Step-Step-Solutions",
+    "project_id": 40716582,
+    "title": "SEAMO 2025 Step-by-Step Solutions",
+    "state": "active_open_at_submission",
+    "published_budget": "INR 12,500–37,500 fixed",
+    "requested_delivery": "Worked solutions for one past mathematics paper, numbered PDF or Word, useful diagrams, cited named results, and an Insight sentence per solution; first draft within one week after receiving the questions.",
+    "scope_unknowns": [
+      "exact paper and level",
+      "number and difficulty of questions",
+      "authorized source and intended use",
+      "answer key availability",
+      "permitted AI-assisted workflow"
+    ]
+  },
+  "fit": {
+    "projects": ["leonardsusskind"],
+    "public_evidence": ["https://github.com/lachlanchen/leonardsusskind"],
+    "supported_now": ["Editable mathematical TeX and compiled educational PDFs"],
+    "not_proven": [
+      "A prior paid Olympiad solutions project",
+      "Feasibility of the buyer's undisclosed question set",
+      "A funded client milestone or customer delivery"
+    ],
+    "boundary": "The existing archive is typesetting and educational-work evidence, not an Olympiad credential or an endorsement by its lecturer."
+  },
+  "application": {
+    "state": "submitted_awaiting_buyer_reply",
+    "submitted_at": "2026-09-19T15:15:21Z",
+    "review_after": "2026-09-22",
+    "confirmation_url": "https://www.freelancer.com/projects/technical-writing/SEAMO-Step-Step-Solutions/proposals?bidCreated=true",
+    "visible_confirmation": "You've successfully placed a bid",
+    "rank_when_confirmed": "9 of 9 proposals",
+    "proposed_bid_inr": 25000,
+    "platform_fee_at_proposed_bid_inr": 2500,
+    "proposed_net_before_other_deductions_inr": 22500,
+    "proposed_delivery_days": 10,
+    "first_draft_days": 7,
+    "proposed_question_cap": 25,
+    "proposed_revision_rounds": 1,
+    "milestones_inr": [5000, 17500, 2500],
+    "proposal": ".local/private/applications/seamo-solutions-freelancer.md",
+    "proposal_sha256": "72c383b0e8e2470872381aa88e65ebe372ace1c10f2ec9a39904072b2f097447",
+    "bid_submitted": true,
+    "paid_upgrade_selected": false,
+    "automatic_follow_up": false,
+    "policy": "One ordinary free bid only. Inspect the actual paper and agree scope, rights, assistance policy, timetable, and funded milestones before accepting an award. Keep communication, files, and payment on Freelancer; do not perform an unpaid custom solution set or accept a live assessment."
+  },
+  "funnel": {
+    "state": "application_submitted_awaiting_buyer",
+    "application_submitted": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

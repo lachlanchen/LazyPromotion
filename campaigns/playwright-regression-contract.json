@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "id": "playwright-regression-contract",
   "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
   "source_need": {
@@ -7,7 +7,7 @@
     "url": "https://www.freelancer.com/projects/automation/Playwright-Python-Regression-Suite/details",
     "project_id": 40704383,
     "title": "Playwright Python Regression Suite",
-    "state": "active_open",
+    "state": "bidding_expired_no_selection",
     "published_budget": "INR 37,500–75,000 fixed, approximately USD 392–785 at the platform exchange rate when checked",
     "activity_when_checked": "56 bids with an average bid of INR 51,010; bidding ends in about six days",
     "buyer_state": "The public page shows a Chennai client, member since 2020, with no public rating or completed-review history on the listing.",
@@ -210,7 +210,14 @@
     "policy": "Do not start a trial, purchase a membership, fund the wallet, buy bid upgrades, or submit identity documents automatically. Keep project communication, milestones, files, and payment on Freelancer."
   },
   "application": {
-    "state": "submitted_once_proof_updated_once",
+    "state": "submitted_bidding_expired_no_selection",
+    "last_review": {
+      "checked_at": "2026-09-19T15:21:00Z",
+      "visible_state": "No Freelancer Selected",
+      "public_api_status": "frozen",
+      "public_api_sub_status": "frozen_timeout",
+      "decision": "Remove from the active application queue; keep the submission history. Reassess only if a real inbound or reopening occurs. No withdrawal, follow-up, or award acceptance."
+    },
     "submitted_at": "2026-09-11T20:19:00Z",
     "confirmation_url": "https://www.freelancer.com/projects/automation/Playwright-Python-Regression-Suite/proposals?bidCreated=true",
     "visible_confirmation": "You've successfully placed a bid",
@@ -240,7 +247,7 @@
     "policy": "The ordinary free bid was submitted once with no upgrades after the public specimen was pushed. Keep all communication, files, funded milestones, and payment on Freelancer; do not send an unsolicited follow-up or start work before the checklist and first milestone are agreed."
   },
   "funnel": {
-    "state": "application_submitted_awaiting_buyer",
+    "state": "bidding_expired_no_selection",
     "application_submitted": true,
     "buyer_reply_observed": false,
     "qualified_lead_observed": false,

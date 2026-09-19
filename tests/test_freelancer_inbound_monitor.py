@@ -7,6 +7,50 @@ import freelancer_inbound_monitor as monitor
 
 
 class FreelancerInboundMonitorTests(unittest.TestCase):
+    def test_seamo_project_urls_use_existing_review_only_monitor(self):
+        base = (
+            "https://www.freelancer.com/projects/technical-writing/"
+            "SEAMO-Step-Step-Solutions"
+        )
+        for suffix in ("", "/details", "/proposals?bidCreated=true"):
+            with self.subTest(suffix=suffix):
+                self.assertEqual(
+                    monitor.project_id_for_url(base + suffix),
+                    "seamo-solutions-freelancer",
+                )
+
+    def test_new_seamo_bid_adds_quiet_baseline_without_opening_messages(self):
+        projects = {
+            item["campaign_id"]: {
+                "bid_state": "active_submitted",
+                "rank": 9,
+                "proposal_count": 9,
+            }
+            for item in monitor.TRACKED_PROJECTS
+        }
+        previous = {
+            "version": 2,
+            "message_badge_count": 1,
+            "projects": {
+                key: value for key, value in projects.items()
+                if key != "seamo-solutions-freelancer"
+            },
+        }
+        status, state = monitor.summarize_portfolio_observation(
+            authenticated=True,
+            projects=projects,
+            message_badge_count=1,
+            previous=previous,
+            checked_at="2026-09-19T15:20:00Z",
+        )
+        self.assertEqual(status["tracked_bid_count"], 4)
+        self.assertTrue(
+            status["projects"]["seamo-solutions-freelancer"]["baseline_created"]
+        )
+        self.assertFalse(status["review_required"])
+        self.assertFalse(status["message_opened"])
+        self.assertIn("seamo-solutions-freelancer", state["projects"])
+
     def test_project_page_accepts_canonical_and_proposal_urls(self):
         canonical = (
             "https://www.freelancer.com/projects/automation/"
@@ -50,6 +94,25 @@ class FreelancerInboundMonitorTests(unittest.TestCase):
     def test_bid_state_recognizes_active_proposal(self):
         self.assertEqual(
             monitor.bid_state("Your Proposal\nLachlan\nRetract\nEdit"),
+            "active_submitted",
+        )
+
+    def test_expired_listing_header_without_selection_is_closed(self):
+        self.assertEqual(
+            monitor.bid_state(
+                "Project title\nNo Freelancer Selected\nBids\n89\n"
+                "Average bid\nINR 25000\nDetails\nProposals\nYour Proposal"
+            ),
+            "closed",
+        )
+
+    def test_proposal_mention_of_no_selection_does_not_close_listing(self):
+        self.assertEqual(
+            monitor.bid_state(
+                "Project title\nOpen\nBids\n9\nDetails\nProposals\n"
+                "Your Proposal\nRetract\nEdit\n"
+                "An old listing said No Freelancer Selected Bids 89."
+            ),
             "active_submitted",
         )
 

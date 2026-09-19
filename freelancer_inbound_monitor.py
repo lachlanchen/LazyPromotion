@@ -53,6 +53,14 @@ TRACKED_PROJECTS = (
             "KiCad-Plugin-Testing-Feedback/proposals"
         ),
     },
+    {
+        "campaign_id": "seamo-solutions-freelancer",
+        "slug": "seamo-step-step-solutions",
+        "url": (
+            "https://www.freelancer.com/projects/technical-writing/"
+            "SEAMO-Step-Step-Solutions/proposals"
+        ),
+    },
 )
 PROJECT_BY_ID = {item["campaign_id"]: item for item in TRACKED_PROJECTS}
 PROJECT_ID_BY_SLUG = {item["slug"]: item["campaign_id"] for item in TRACKED_PROJECTS}
@@ -103,6 +111,9 @@ def append_log(path: Path, payload: dict) -> None:
 
 def bid_state(body_text: str) -> str:
     normalized = " ".join(body_text.split()).casefold()
+    header, separator, _ = normalized.partition("details proposals")
+    if separator and re.search(r"\bno freelancer selected bids \d+\b", header):
+        return "closed"
     if "project has been awarded" in normalized or "you have been awarded" in normalized:
         return "awarded_review_required"
     if "project is closed" in normalized or "bidding has ended" in normalized:

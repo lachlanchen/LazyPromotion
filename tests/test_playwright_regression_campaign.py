@@ -17,9 +17,12 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
             )
         )
 
-    def test_live_need_and_scope_boundary_are_explicit(self):
+    def test_expired_need_retains_its_original_scope_boundary(self):
         need = self.campaign["source_need"]
-        self.assertEqual(need["state"], "active_open")
+        self.assertEqual(need["state"], "bidding_expired_no_selection")
+        review = self.campaign["application"]["last_review"]
+        self.assertEqual(review["visible_state"], "No Freelancer Selected")
+        self.assertEqual(review["public_api_sub_status"], "frozen_timeout")
         self.assertEqual(need["project_id"], 40704383)
         self.assertIn("manual checklist and application size", need["scope_unknowns"])
         self.assertIn("funded first milestone", need["policy"])
@@ -99,7 +102,7 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
     def test_bid_has_no_paid_upgrade_or_revenue_claim(self):
         application = self.campaign["application"]
         funnel = self.campaign["funnel"]
-        self.assertEqual(application["state"], "submitted_once_proof_updated_once")
+        self.assertEqual(application["state"], "submitted_bidding_expired_no_selection")
         self.assertTrue(application["bid_submitted"])
         self.assertFalse(application["paid_upgrade_selected"])
         self.assertFalse(application["proof_update"]["new_bid_created"])

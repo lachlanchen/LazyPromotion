@@ -18,9 +18,12 @@ class KiCadPluginCampaignTests(unittest.TestCase):
             )
         )
 
-    def test_need_is_current_and_bounded(self):
+    def test_expired_marketplace_need_preserves_scope_and_evidence(self):
         need = self.campaign["source_need"]
-        self.assertEqual(need["state"], "active_open")
+        self.assertEqual(need["state"], "bidding_expired_no_selection")
+        review = self.campaign["application"]["last_review"]
+        self.assertEqual(review["visible_state"], "No Freelancer Selected")
+        self.assertEqual(review["public_api_sub_status"], "frozen_timeout")
         self.assertEqual(need["project_id"], 40700587)
         self.assertEqual(need["published_budget"], "USD 250–750 fixed")
         self.assertIn("authorized plugin package", need["scope_unknowns"][0])
@@ -50,7 +53,7 @@ class KiCadPluginCampaignTests(unittest.TestCase):
 
     def test_owned_offer_is_live_bounded_and_separate_from_marketplace(self):
         offer = self.campaign["owned_offer"]
-        self.assertEqual(self.campaign["version"], 3)
+        self.assertEqual(self.campaign["version"], 4)
         self.assertEqual(offer["state"], "live_verified")
         self.assertEqual(offer["price_usd"], 400)
         self.assertEqual(

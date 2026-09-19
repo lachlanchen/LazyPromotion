@@ -13,6 +13,16 @@ browser demonstration remains queued for September 20; do not duplicate it.
 Current private intake/payment observations are recorded outside Git, with
 unavailable or stale channels kept explicitly unknown.
 
+One adjacent paid-delivery test now uses the existing Susskind TeX archive:
+the [SEAMO solutions proposal](../campaigns/seamo-solutions-freelancer.json)
+was submitted once on September 19 for INR 25,000, with three proposed funded
+milestones and no paid upgrade. The actual paper must pass scope review before
+award acceptance. This is one application, not a buyer reply, contract, or sale;
+it does not create another public service page or replace the primary offer.
+The earlier Playwright and KiCad marketplace listings now show `No Freelancer
+Selected`, with the public API confirming a bidding timeout. Their application
+records are inactive; the independent owned services remain available.
+
 ## Primary offer and acquisition record
 
 The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:
@@ -85,8 +95,9 @@ are live. The evaluation includes before-and-after evidence, a DRC comparison,
 an issue ledger, enhancement notes, and one correction pass. It excludes
 customer boards, plugin repair, security or electrical certification,
 production installation, redistribution, guarantees, and ongoing support. The
-current Freelancer bid is one submitted application; it is not an inquiry,
-accepted scope, customer result, payment, or revenue.
+Freelancer application is retained as history after its bidding window expired
+without a selection; it produced no accepted scope, customer result, payment,
+or revenue at the September 19 check.
 
 The tenth route uses the finished L & N `light/night` lesson as direct proof for
 a **USD 250 Custom Bilingual Pronunciation Mini-Lesson** for tutors and small

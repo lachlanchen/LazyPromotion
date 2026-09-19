@@ -1499,7 +1499,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 13)
+        self.assertEqual(campaign["version"], 14)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1509,13 +1509,18 @@ class RepositoryTests(unittest.TestCase):
             releases["google_play_public_url"],
             "https://play.google.com/store/apps/details?id=art.lazying.landn",
         )
-        self.assertEqual(releases["testflight_internal"], "testing_build_2")
-        self.assertEqual(releases["testflight_external"], "testing_build_2")
+        self.assertEqual(releases["testflight_internal"], "operator_reported_testing_build_6")
+        self.assertEqual(releases["testflight_external"], "operator_reported_testing_build_3")
         self.assertEqual(
             releases["testflight_public_url"],
             "https://testflight.apple.com/join/CpkT8m9C",
         )
-        self.assertEqual(releases["apple_app_store"], "waiting_for_review")
+        self.assertEqual(releases["apple_app_store"], "public_listing_live")
+        self.assertEqual(releases["apple_public_version"], "1.0.1")
+        self.assertEqual(releases["apple_usd_price_us_storefront"], 0.99)
+        self.assertEqual(releases["google_play_us_storefront_price"], 0)
+        self.assertEqual(releases["public_storefronts_checked_on"], "2026-09-19")
+        self.assertEqual(releases["apple_app_store_public_url"], "https://apps.apple.com/app/l-n-speech-practice/id6808872450")
         public_store = campaign["source_evidence"]["public_store_fix"]
         self.assertEqual(public_store["state"], "published")
         self.assertEqual(public_store["verified_http_status"], 200)
@@ -1542,6 +1547,9 @@ class RepositoryTests(unittest.TestCase):
         linkedin = campaign["channels"]["linkedin"]
         self.assertEqual(linkedin["state"], "postiz_queue")
         self.assertEqual(linkedin["scheduled_for"], "2026-09-20T02:00:00Z")
+        self.assertEqual(linkedin["provider_recheck"]["verified_state"], "QUEUE")
+        self.assertFalse(linkedin["provider_recheck"]["new_post_created"])
+        self.assertFalse(linkedin["provider_recheck"]["release_present"])
         self.assertIn("I have trouble pronouncing L and N", linkedin["content"])
         self.assertIn("English, Mandarin, and Cantonese", linkedin["content"])
         self.assertEqual(linkedin["destination"], campaign["source_evidence"]["pwa"])

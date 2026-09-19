@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -21,12 +21,18 @@
       "google_play_internal_test": "available_to_internal_testers",
       "google_play_production": "public_listing_live",
       "google_play_public_url": "https://play.google.com/store/apps/details?id=art.lazying.landn",
-      "testflight_internal": "testing_build_2",
-      "testflight_external": "testing_build_2",
+      "testflight_internal": "operator_reported_testing_build_6",
+      "testflight_external": "operator_reported_testing_build_3",
       "testflight_public_url": "https://testflight.apple.com/join/CpkT8m9C",
-      "apple_app_store": "waiting_for_review",
-      "operator_handoff_updated_on": "2026-09-11",
-      "policy": "The Google Play production listing is independently public. TestFlight remains a beta route, and no public Apple App Store listing has been verified. Store availability is not evidence of a download, retained learner, lead, or revenue."
+      "apple_app_store": "public_listing_live",
+      "apple_app_store_public_url": "https://apps.apple.com/app/l-n-speech-practice/id6808872450",
+      "public_storefronts_checked_on": "2026-09-19",
+      "apple_public_version": "1.0.1",
+      "apple_usd_price_us_storefront": 0.99,
+      "google_play_us_storefront_price": 0,
+      "operator_handoff_updated_on": "2026-09-19",
+      "production_update_boundary": "The operator reports production Android 1.0.1 (4); the 3/5/7 exam update is live on the web and internal Android 7/iOS 6, not yet verified in both production stores.",
+      "policy": "Both production store pages are independently public. The US App Store is paid; the browser is free. TestFlight remains a beta route. Store availability is not evidence of a download, retained learner, lead, or revenue."
     },
     "owned_discovery": {
       "url": "https://lazying.art/work/",
@@ -156,6 +162,14 @@
     "linkedin": {
       "state": "postiz_queue",
       "scheduled_for": "2026-09-20T02:00:00Z",
+      "provider_recheck": {
+        "checked_on": "2026-09-19",
+        "verified_state": "QUEUE",
+        "matching_posts": 1,
+        "release_present": false,
+        "reviewed_browser_copy_unchanged": true,
+        "new_post_created": false
+      },
       "content": "I have trouble pronouncing L and N, so I built the practice tool I wanted.\n\nHear a pair, see the mouth and airflow cue, record one word, and get feedback you can inspect. The same four-minute drill works in English, Mandarin, and Cantonese.\n\nIt’s free and open source, and runs in the browser without an account:\nhttps://l-and-n.lazying.art/\n\nIf you try it, tell me whether the mouth view actually makes the difference clearer.",
       "content_sha256": "4976b657ef333e7e2aa1104c28326e16317c2166c2ae51eaad0362b25f0c6898",
       "destination": "https://l-and-n.lazying.art/",

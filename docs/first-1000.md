@@ -1,5 +1,20 @@
 # First USD 1,000: one primary acquisition test, ten active service routes
 
+## September 19 focus
+
+The target remains verified money, not repository stars, post counts, or indexed
+pages. Keep the existing USD 500 MCP review as the primary sales test and return
+to current buyer qualification before creating another offer. The bounded app
+install/discovery repair is deployed in LazyingArtWebsite `a1376cc`: ordinary
+Android visitors reach EchoMind's public store, L & N has both production-store
+links, and duplicate homepage URLs have one canonical destination. It is a
+conversion-path repair, not evidence of a buyer or revenue. The L & N LinkedIn
+browser demonstration remains queued for September 20; do not duplicate it.
+Current private intake/payment observations are recorded outside Git, with
+unavailable or stale channels kept explicitly unknown.
+
+## Primary offer and acquisition record
+
 The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:
 two confirmed and delivered reviews reach the first USD 1,000 gross target. It
 has an executed project-owned sample, a fixed ten-check boundary, a metadata-only

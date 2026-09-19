@@ -724,6 +724,41 @@ class PromotionTests(unittest.TestCase):
             "",
         )
 
+    def test_hiring_policy_blocks_public_and_private_agent_contact(self):
+        for action in ("public_reply", "private_contact"):
+            with self.subTest(action=action):
+                reason = promotion.agent_contact_block_reason(
+                    "reddit",
+                    "https://www.reddit.com/r/Hiring/comments/example/request/",
+                    action=action,
+                )
+                self.assertIn("Rule 8", reason)
+                self.assertIn("prohibits bots", reason)
+        self.assertEqual(
+            promotion.agent_contact_block_reason(
+                "reddit",
+                "https://www.reddit.com/r/hiringadvice/comments/example/request/",
+                action="public_reply",
+            ),
+            "",
+        )
+
+    def test_hiring_paid_candidate_is_manual_only_before_drafting(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/hiring/comments/paid/latex/",
+            author="buyer",
+            body="[Hiring] LaTeX package rewrite for a one-time contract. Budget USD 100.",
+        )
+        promotion.reconcile_discovered_candidates(self.db)
+        row = self.db.execute(
+            "SELECT status, triage_reason FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(row["status"], "manual_only")
+        self.assertIn("Rule 8", row["triage_reason"])
+
     def test_selfhosted_policy_allows_public_value_but_blocks_private_contact(self):
         url = "https://www.reddit.com/r/selfhosted/comments/example/request/"
         self.assertEqual(

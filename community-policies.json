@@ -13,6 +13,16 @@
     },
     {
       "platform": "reddit",
+      "community": "hiring",
+      "observed_at": "2026-09-19T20:37:10Z",
+      "source_url": "https://www.reddit.com/r/hiring/new/",
+      "agent_public_reply_allowed": false,
+      "agent_private_contact_allowed": false,
+      "manual_operator_contact_allowed": true,
+      "reason": "Current r/hiring Rule 8 prohibits bots from contacting members for any purpose. Agent-authored applications, replies, and follow-ups are therefore manual-operator only."
+    },
+    {
+      "platform": "reddit",
       "community": "selfhosted",
       "observed_at": "2026-09-12T13:55:14Z",
       "source_url": "https://old.reddit.com/r/selfhosted/about/rules/",

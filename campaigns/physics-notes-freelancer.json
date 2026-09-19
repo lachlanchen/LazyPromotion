@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "id": "physics-notes-freelancer",
+  "objective": "Use the existing Susskind notes workflow as relevant evidence for a bounded paid physics-note editing job, without selling the archive or promising an unseen collection.",
+  "source_need": {
+    "captured_at": "2026-09-19",
+    "url": "https://www.freelancer.com/projects/article-writing/Physics-Notes-Transcribed-into-Articles/details",
+    "project_id": 40721639,
+    "title": "Physics Notes Transcribed into Articles",
+    "state": "active_open_at_submission",
+    "published_budget": "INR 12,500–37,500",
+    "requested_delivery": "Turn handwritten physics notes into readable articles, preserving equations and source meaning, with one editable article per note set and a change-log.",
+    "scope_unknowns": [
+      "total page count and number of note sets",
+      "representative handwriting, language and equation legibility",
+      "source rights and agreed AI-assisted data handling",
+      "the first funded milestone"
+    ]
+  },
+  "fit": {
+    "projects": ["leonardsusskind"],
+    "public_evidence": ["https://github.com/lachlanchen/leonardsusskind"],
+    "supported_now": ["Maintained archive of AI-assisted companion notes, editable TeX and PDFs"],
+    "boundary": "The archive is process evidence, not customer work, lecturer endorsement, proof that all handwriting can be read, or a commercial license to the underlying lectures. Only the buyer's authorized notes are in scope."
+  },
+  "application": {
+    "state": "submitted_awaiting_buyer_reply",
+    "submitted_at": "2026-09-19T18:53:11Z",
+    "confirmed_at": "2026-09-19T18:53:39Z",
+    "review_after": "2026-09-23",
+    "confirmation_url": "https://www.freelancer.com/projects/article-writing/Physics-Notes-Transcribed-into-Articles/proposals?bidCreated=true",
+    "visible_confirmation": "You've successfully placed a bid",
+    "rank_when_confirmed": "5 of 5 proposals",
+    "proposed_gross_inr": 15000,
+    "platform_fee_preview_inr": 1500,
+    "proposed_net_before_other_deductions_inr": 13500,
+    "proposed_days": 5,
+    "schedule_starts_after": "Source, scope and first funded milestone are ready",
+    "scope_caps": {"handwritten_pages": 15, "final_words": 4000, "equations": 30, "article_files": 3, "correction_passes": 1},
+    "deliverables": ["DOCX articles with editable equations", "Equation TeX", "Change-log and unresolved-symbol query list"],
+    "milestones": [
+      {"amount_inr": 3000, "description": "First agreed article and style check"},
+      {"amount_inr": 12000, "description": "Remaining agreed articles, source checks and handover"}
+    ],
+    "proposal": ".local/private/physics-notes-proposal-20260919.md",
+    "proposal_sha256": "e2f49f4cc611877334632067e0077a8ead03d2c45ed7316dd64bc31bf0e05037",
+    "live_body_verified": true,
+    "bid_submitted": true,
+    "paid_upgrade_selected": false,
+    "automatic_follow_up": false,
+    "policy": "One ordinary free bid, submitted once. Review legibility, source rights, handling and exact scope before accepting work; require the first funded milestone before implementation. Keep files, communication and payment on Freelancer. Flag possible physics errors for the buyer rather than inventing corrections. No unpaid custom sample, larger collection, research claims or ongoing availability commitment."
+  },
+  "funnel": {
+    "state": "application_submitted_awaiting_buyer",
+    "application_submitted": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

@@ -77,6 +77,14 @@ TRACKED_PROJECTS = (
             "Ultrasound-Receiver-Protection-Design/proposals"
         ),
     },
+    {
+        "campaign_id": "physics-notes-freelancer",
+        "slug": "physics-notes-transcribed-into-articles",
+        "url": (
+            "https://www.freelancer.com/projects/article-writing/"
+            "Physics-Notes-Transcribed-into-Articles/proposals"
+        ),
+    },
 )
 PROJECT_BY_ID = {item["campaign_id"]: item for item in TRACKED_PROJECTS}
 PROJECT_ID_BY_SLUG = {item["slug"]: item["campaign_id"] for item in TRACKED_PROJECTS}

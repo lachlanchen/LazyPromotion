@@ -7,6 +7,42 @@ import freelancer_inbound_monitor as monitor
 
 
 class FreelancerInboundMonitorTests(unittest.TestCase):
+    def test_physics_notes_urls_use_existing_review_only_monitor(self):
+        base = (
+            "https://www.freelancer.com/projects/article-writing/"
+            "Physics-Notes-Transcribed-into-Articles"
+        )
+        for suffix in ("", "/details", "/proposals?bidCreated=true"):
+            with self.subTest(suffix=suffix):
+                self.assertEqual(
+                    monitor.project_id_for_url(base + suffix),
+                    "physics-notes-freelancer",
+                )
+
+    def test_physics_notes_creates_quiet_baseline(self):
+        projects = {
+            item["campaign_id"]: {
+                "bid_state": "active_submitted", "rank": 5, "proposal_count": 5
+            }
+            for item in monitor.TRACKED_PROJECTS
+        }
+        previous = {
+            "version": 2, "message_badge_count": 1,
+            "projects": {
+                key: dict(value) for key, value in projects.items()
+                if key != "physics-notes-freelancer"
+            },
+        }
+        status, state = monitor.summarize_portfolio_observation(
+            authenticated=True, projects=projects, message_badge_count=1,
+            previous=previous, checked_at="2026-09-19T18:53:39Z",
+        )
+        self.assertTrue(status["projects"]["physics-notes-freelancer"]["baseline_created"])
+        self.assertFalse(status["review_required"])
+        self.assertFalse(status["message_opened"])
+        self.assertEqual(status["tracked_bid_count"], len(monitor.TRACKED_PROJECTS))
+        self.assertEqual(state["projects"]["ad3-acquisition-freelancer"]["rank"], 5)
+
     def test_ad3_project_urls_use_existing_review_only_monitor(self):
         base = (
             "https://www.freelancer.com/projects/matlab/"

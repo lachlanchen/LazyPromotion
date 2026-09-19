@@ -58,7 +58,9 @@ class WeTheFlywheelCampaignTests(unittest.TestCase):
         question = review["project_only_qualification"]
         self.assertEqual(application["state"], "paused_operator_dependency")
         self.assertTrue(review["follow_up_sent"])
-        self.assertEqual(question["state"], "question_sent_awaiting_reply")
+        self.assertEqual(question["state"], "response_reviewed_route_remains_paused")
+        self.assertEqual(question["inbound_reviewed_on"], "2026-09-19")
+        self.assertFalse(question["new_follow_up_sent"])
         self.assertEqual(question["message_count"], 1)
         self.assertEqual(question["attachment_count"], 0)
         for field in (

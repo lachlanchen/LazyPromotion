@@ -7,6 +7,46 @@ import freelancer_inbound_monitor as monitor
 
 
 class FreelancerInboundMonitorTests(unittest.TestCase):
+    def test_ad3_project_urls_use_existing_review_only_monitor(self):
+        base = (
+            "https://www.freelancer.com/projects/matlab/"
+            "Ultrasound-Receiver-Protection-Design"
+        )
+        for suffix in ("", "/details", "/proposals?bidCreated=true"):
+            with self.subTest(suffix=suffix):
+                self.assertEqual(
+                    monitor.project_id_for_url(base + suffix),
+                    "ad3-acquisition-freelancer",
+                )
+
+    def test_new_ad3_bid_preserves_existing_baselines_without_alert(self):
+        projects = {
+            item["campaign_id"]: {
+                "bid_state": "active_submitted", "rank": 17, "proposal_count": 17
+            }
+            for item in monitor.TRACKED_PROJECTS
+        }
+        projects["playwright-regression-contract"]["bid_state"] = "closed"
+        previous = {
+            "version": 2,
+            "message_badge_count": 1,
+            "projects": {
+                key: dict(value) for key, value in projects.items()
+                if key != "ad3-acquisition-freelancer"
+            },
+        }
+        status, state = monitor.summarize_portfolio_observation(
+            authenticated=True, projects=projects, message_badge_count=1,
+            previous=previous, checked_at="2026-09-19T18:43:07Z",
+        )
+        self.assertEqual(status["tracked_bid_count"], len(monitor.TRACKED_PROJECTS))
+        self.assertTrue(status["projects"]["ad3-acquisition-freelancer"]["baseline_created"])
+        self.assertFalse(status["review_required"])
+        self.assertFalse(status["message_opened"])
+        for campaign_id, old in previous["projects"].items():
+            for key, value in old.items():
+                self.assertEqual(state["projects"][campaign_id][key], value)
+
     def test_poetry_project_urls_use_existing_review_only_monitor(self):
         base = (
             "https://www.freelancer.com/projects/print-design/"
@@ -38,7 +78,7 @@ class FreelancerInboundMonitorTests(unittest.TestCase):
             authenticated=True, projects=projects, message_badge_count=1,
             previous=previous, checked_at="2026-09-19T17:15:00Z",
         )
-        self.assertEqual(status["tracked_bid_count"], 5)
+        self.assertEqual(status["tracked_bid_count"], len(monitor.TRACKED_PROJECTS))
         self.assertTrue(status["projects"]["bilingual-poetry-freelancer"]["baseline_created"])
         self.assertFalse(status["review_required"])
         self.assertFalse(status["message_opened"])

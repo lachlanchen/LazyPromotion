@@ -69,6 +69,14 @@ TRACKED_PROJECTS = (
             "Bilingual-Poetry-PDF-Formatting-Expert/proposals"
         ),
     },
+    {
+        "campaign_id": "ad3-acquisition-freelancer",
+        "slug": "ultrasound-receiver-protection-design",
+        "url": (
+            "https://www.freelancer.com/projects/matlab/"
+            "Ultrasound-Receiver-Protection-Design/proposals"
+        ),
+    },
 )
 PROJECT_BY_ID = {item["campaign_id"]: item for item in TRACKED_PROJECTS}
 PROJECT_ID_BY_SLUG = {item["slug"]: item["campaign_id"] for item in TRACKED_PROJECTS}

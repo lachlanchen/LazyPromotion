@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "id": "ad3-acquisition-freelancer",
+  "objective": "Offer a bounded paid acquisition-software implementation using OpenHI evidence, without promising a new ultrasound instrument or requiring the operator to build hardware.",
+  "source_need": {
+    "captured_at": "2026-09-19",
+    "url": "https://www.freelancer.com/projects/matlab/Ultrasound-Receiver-Protection-Design/details",
+    "project_id": 40718011,
+    "title": "a single-channel pulse-echo A-scan ultrasound",
+    "state": "active_open_at_submission",
+    "published_budget": "INR 37,500–75,000",
+    "requested_delivery": "Python or MATLAB software to control Digilent Analog Discovery 3 acquisition, save raw ultrasound RF/echo data and display an A-scan waveform.",
+    "scope_unknowns": [
+      "whether a working protected pulser/receiver already feeds the AD3",
+      "representative WaveForms trace and trigger timing",
+      "one agreed PC/OS and available client-side test access",
+      "capture acceptance criteria and client-code/data handling",
+      "first milestone funding"
+    ]
+  },
+  "fit": {
+    "projects": ["OpenHI"],
+    "public_evidence": [
+      "https://github.com/lachlanchen/OpenHI/tree/main/ImagingGUI",
+      "https://github.com/lachlanchen/OpenHI/tree/main/firmware"
+    ],
+    "supported_now": [
+      "Public Python scientific-camera acquisition, configuration, preview and recording code",
+      "Public embedded rotor-control firmware supporting the Embedded Software profile skill"
+    ],
+    "boundary": "OpenHI is relevant acquisition-software evidence, not a validated AD3 or ultrasound bench. Hardware validation must run on the client's instrument. No pulser/receiver circuit design, hardware purchase or clinical validation is offered."
+  },
+  "application": {
+    "state": "submitted_awaiting_buyer_reply",
+    "submitted_on": "2026-09-19",
+    "confirmed_at": "2026-09-19T18:43:07Z",
+    "timestamp_note": "The date records submission; confirmed_at is the later full live-proposal readback, not an invented exact click time.",
+    "review_after": "2026-09-23",
+    "confirmation_url": "https://www.freelancer.com/projects/matlab/Ultrasound-Receiver-Protection-Design/proposals?bidCreated=true",
+    "visible_confirmation": "You've successfully placed a bid",
+    "rank_when_confirmed": "17 of 17 proposals",
+    "proposed_gross_inr": 50000,
+    "platform_fee_preview_inr": 5000,
+    "proposed_net_before_other_deductions_inr": 45000,
+    "proposed_days": 14,
+    "schedule_starts_after": "Agreed scope, test access and first funded milestone",
+    "milestones": [
+      {"amount_inr": 10000, "description": "Agreed capture/configuration test on the client AD3"},
+      {"amount_inr": 30000, "description": "Python acquisition, raw export and A-scan display"},
+      {"amount_inr": 10000, "description": "Agreed hardware validation and source handover"}
+    ],
+    "proposal": ".local/private/ad3-acquisition-proposal-20260919.md",
+    "proposal_sha256": "0d67f29e9871ed1a4a72f9325592f4450c309cbd2a9c15ab73479e74e3ce2513",
+    "live_body_verified": true,
+    "bid_submitted": true,
+    "paid_upgrade_selected": false,
+    "automatic_follow_up": false,
+    "policy": "One ordinary free bid, submitted once. Review scope, client hardware access, AI-assisted handling and funded milestones before accepting work. Keep communication, files and payment on Freelancer. One correction pass for agreed requirements; no ongoing availability commitment or unpaid custom prototype."
+  },
+  "funnel": {
+    "state": "application_submitted_awaiting_buyer",
+    "application_submitted": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

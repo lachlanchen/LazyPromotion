@@ -22,7 +22,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.payload = json.loads(CAMPAIGN.read_text(encoding="utf-8"))
 
     def test_two_bounded_reviews_reach_target_without_inventing_revenue(self):
-        self.assertEqual(self.payload["version"], 51)
+        self.assertEqual(self.payload["version"], 52)
         self.assertIn("2 paid reviews x USD 500", self.payload["strategy"]["target_math"])
         offer = self.payload["offer"]
         self.assertEqual(offer["price"], "USD 500")
@@ -382,11 +382,42 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertFalse(review["fit_request_submitted"])
         self.assertFalse(review["lead_or_sale_observed"])
 
-    def test_queued_channels_and_live_reddit_preserve_reviewed_evidence(self):
+    def test_publication_review_does_not_infer_sales_or_zero_missing_metrics(self):
+        postiz = self.payload["channels"]["postiz"]
+        review = postiz["publication_review"]
+        self.assertEqual(review["checked_at"], "2026-09-19T15:49:22Z")
+        for channel in ("linkedin", "x", "instagram"):
+            self.assertEqual(review[channel]["postiz_state"], "PUBLISHED")
+            self.assertTrue(review[channel]["reviewed_content_hash_matches"])
+        self.assertEqual(
+            review["linkedin"]["analytics_state"],
+            "unavailable_empty_provider_response",
+        )
+        self.assertIn("not a new direct review", review["method"])
+        self.assertIn("unknown, not zero", review["decision"])
+        self.assertEqual(set(review["conversion_destinations"].values()), {200})
+        self.assertEqual(review["new_posts"], 0)
+        self.assertEqual(review["existing_posts_modified"], 0)
+        self.assertFalse(review["fit_request_submitted"])
+        self.assertFalse(review["lead_or_sale_inferred"])
+        self.assertEqual(
+            postiz["published_url"],
+            "https://www.linkedin.com/feed/update/urn:li:share:7505808228048424960",
+        )
+        self.assertEqual(
+            postiz["x"]["published_url"],
+            "https://twitter.com/lazyingart/status/2100042180480139590",
+        )
+        self.assertEqual(
+            postiz["instagram"]["published_url"],
+            "https://www.instagram.com/p/DdVZhcLG62W/",
+        )
+
+    def test_published_channels_preserve_reviewed_evidence(self):
         postiz = self.payload["channels"]["postiz"]
         self.assertEqual(
             postiz["state"],
-            "reddit_profile_published_linkedin_x_instagram_queued",
+            "reddit_linkedin_x_instagram_published",
         )
         self.assertEqual(postiz["publish_at"], "2026-09-16T02:00:00.000Z")
         self.assertIn("14 focused tests", postiz["content"])
@@ -397,7 +428,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("September 15 lecture-pack", postiz["verification"])
         self.assertIn("only queued LinkedIn publication", postiz["verification"])
         x_post = postiz["x"]
-        self.assertEqual(x_post["state"], "queue_verified")
+        self.assertEqual(x_post["state"], "published_provider_verified")
         self.assertEqual(x_post["publish_at"], "2026-09-16T02:00:00.000Z")
         self.assertEqual(x_post["profile"], "lazyingart")
         self.assertEqual(len(x_post["content"]), 251)
@@ -407,7 +438,7 @@ class McpBoundaryReviewCampaignTests(unittest.TestCase):
         self.assertIn("volume did not increase", x_post["replaced_post"])
         self.assertIn("malformed queued record was deleted", x_post["verification"])
         instagram = postiz["instagram"]
-        self.assertEqual(instagram["state"], "queue_verified")
+        self.assertEqual(instagram["state"], "published_provider_verified")
         self.assertEqual(instagram["provider"], "instagram-standalone")
         self.assertEqual(instagram["publish_at"], "2026-09-16T04:00:00.000Z")
         self.assertEqual(instagram["profile"], "LazyingArt Lachlan Chen")

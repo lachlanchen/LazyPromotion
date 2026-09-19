@@ -1,6 +1,6 @@
 {
   "id": "mcp-boundary-review",
-  "version": 51,
+  "version": 52,
   "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
   "strategy": {
     "target_math": "2 paid reviews x USD 500 = USD 1,000 gross before fees, tax, refunds, and delivery costs",
@@ -540,7 +540,7 @@
       "verification": "The profile README checker passed English plus ten translations, all 267 repository tests and 18 subtests passed under Python 3.12, and the default branch returned the exact routes in English, Simplified Chinese, and Japanese after push."
     },
     "postiz": {
-      "state": "reddit_profile_published_linkedin_x_instagram_queued",
+      "state": "reddit_linkedin_x_instagram_published",
       "provider": "linkedin",
       "post_id": "cmty7dcko17ftqk0yxthwp24w",
       "publish_at": "2026-09-16T02:00:00.000Z",
@@ -550,6 +550,36 @@
       "destination": "https://lazying.art/mcp-boundary-review/sample-report/?utm_source=linkedin&utm_medium=social&utm_campaign=mcp_boundary_review&utm_content=executed_sample",
       "content_sha256": "ffce0790c04a80ae240e3c958358d3cd990663ae918558bd0a28cf1ebdf4b191",
       "shortlink": null,
+      "published_url": "https://www.linkedin.com/feed/update/urn:li:share:7505808228048424960",
+      "publication_review": {
+        "checked_at": "2026-09-19T15:49:22Z",
+        "method": "Read-only official Postiz CLI records matched the reviewed post IDs, content hashes, providers, and scheduled times. Provider publication is not a new direct review of each platform's rendered page.",
+        "linkedin": {
+          "postiz_state": "PUBLISHED",
+          "reviewed_content_hash_matches": true,
+          "analytics_state": "unavailable_empty_provider_response"
+        },
+        "x": {
+          "postiz_state": "PUBLISHED",
+          "reviewed_content_hash_matches": true,
+          "analytics_state": "provider_observation_available"
+        },
+        "instagram": {
+          "postiz_state": "PUBLISHED",
+          "reviewed_content_hash_matches": true,
+          "analytics_state": "provider_observation_available"
+        },
+        "conversion_destinations": {
+          "linkedin_tracked_sample_status": 200,
+          "untracked_sample_status": 200,
+          "fit_check_status": 200
+        },
+        "new_posts": 0,
+        "existing_posts_modified": 0,
+        "fit_request_submitted": false,
+        "lead_or_sale_inferred": false,
+        "decision": "Publication succeeded, but observed reach is too small to judge buyer demand or price. Keep the reviewed offer and existing publications; prioritize accessible, specific paid requests instead of increasing posting volume. Empty LinkedIn analytics are unknown, not zero. Detailed metrics remain private."
+      },
       "release_copy_review": {
         "checked_at": "2026-09-13T07:11:31Z",
         "state": "queue_verified",
@@ -582,9 +612,10 @@
       "verification": "On 2026-09-13 the existing item was updated once with released upstream proof, written/no-call wording, and the original tracked LazyingArt URL after the former shortlink displayed a security checkpoint. The same post ID, LinkedIn profile, QUEUE state, September 16 schedule, provider settings, and all fourteen other records in the September 13–18 read window were preserved. Earlier schedule review: The intended LinkedIn profile, revised 2026-09-16T02:00:00Z schedule, QUEUE state, exact pre-deployment wording, provider settings, and shortlink destination were verified after the exact proof became the Contra service example. Opening the shortlink in the isolated browser reached the exact tracked first-party sample page. On 2026-09-12 the lower-priority September 14 PubMed guide, September 15 lecture-pack, September 17 lexical-ingestion, and September 18 passage-graph LinkedIn items were moved to DRAFT; a fresh provider read left this MCP item as the only queued LinkedIn publication from September 13 through September 18.",
       "superseded_post_removed": "The older overlapping LKT MCP announcement cmtvr7tck0gqiqk0yqev5vlog was moved to draft and deleted after this replacement entered QUEUE, so queue volume did not increase.",
       "x": {
-        "state": "queue_verified",
+        "state": "published_provider_verified",
         "provider": "x",
         "post_id": "cmtyfp88y1a0bqk0yamq0r6ph",
+        "published_url": "https://twitter.com/lazyingart/status/2100042180480139590",
         "publish_at": "2026-09-16T02:00:00.000Z",
         "profile": "lazyingart",
         "content": "“Read-only” MCP can still leak private context through outputs. I tested one pinned server: 2 tools, 1 resource, 14 checks. Local GO; remote NO-GO without client auth. Executed packet + fixed $500 review: lazying.art/mcp-boundary-review/sample-report/",
@@ -599,9 +630,10 @@
         "verification": "A fresh provider read returned the exact 251-character evidence-led copy, intended X profile, September 16 time, QUEUE state, and provider settings. One first attempt lost its terminal URL during provider transformation; the corrected bare first-party route was verified and the malformed queued record was deleted before publication."
       },
       "instagram": {
-        "state": "queue_verified",
+        "state": "published_provider_verified",
         "provider": "instagram-standalone",
         "post_id": "cmtyjgy2m1bhsqk0yx7q3qosf",
+        "published_url": "https://www.instagram.com/p/DdVZhcLG62W/",
         "publish_at": "2026-09-16T04:00:00.000Z",
         "profile": "LazyingArt Lachlan Chen",
         "content": "“Read-only” is not the same as private.\n\nI tested one MCP server at a pinned revision: 2 tools, 1 resource, 14 focused tests. The recorded local boundary passed. Direct remote exposure did not, because client authentication was missing.\n\nThe packet is public and reproducible. I’m using the same method for a fixed USD 500 review of one server and ten agreed checks. Fit check first; no source upload or payment before scope.\n\nlazying.art/mcp-boundary-review/sample-report/\n\n#ModelContextProtocol #MCP #AISecurity #OpenSource #DeveloperTools",

@@ -23,27 +23,37 @@ The earlier Playwright and KiCad marketplace listings now show `No Freelancer
 Selected`, with the public API confirming a bidding timeout. Their application
 records are inactive; the independent owned services remain available.
 
+The September 19 Postiz read confirms that the primary LinkedIn, X, and
+Instagram items were published with their reviewed copy unchanged. The observed
+reach is too small to judge demand or price; LinkedIn analytics are unavailable,
+not zero. Keep these publications and spend the next acquisition effort on
+accessible paid requests, not extra posts, new offer pages, or marketplace
+upgrades. A listed budget alone does not establish buyer qualification.
+
 ## Primary offer and acquisition record
 
 The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:
 two confirmed and delivered reviews reach the first USD 1,000 gross target. It
 has an executed project-owned sample, a fixed ten-check boundary, a metadata-only
 fit check, guarded payment readiness, and a live Contra service. Its first
-evidence-led LinkedIn acquisition test is queued for September 16; the three
+evidence-led LinkedIn acquisition test was published on September 16; the three
 lower-priority LinkedIn items on September 15, 17, and 18 were moved to drafts
 so the result can be observed without adding more posts. The existing September
 16 X passage-graph slot was also replaced by a concise version of the same MCP
 test, leaving X volume unchanged. One image-led Instagram test using the exact
-reviewed evidence card is queued two hours later. Because mobile navigation is
+reviewed evidence card was published two hours later. A September 19 provider
+read verified all three published records against their reviewed copy and
+recorded their release URLs in the campaign. Because mobile navigation is
 hidden, the sample hero now includes one tracked `Check my server` action beside
 the proof downloads; a visible 390×844 pass kept it above the fold without
 horizontal overflow. A same-origin bridge preserves valid source, medium,
 campaign, and content tags from the social sample URL into the fit check while
 keeping the sample-page fallback when no upstream tags exist. The complete
 production flow was reviewed without enabling or sending the request. Queue
-state and a working conversion path are not a lead or revenue. One practical
-seven-point checklist is also queued on the owned Reddit profile for September
-13. It uses the original tracked sample URL and is not another subreddit reply.
+state, publication, and a working conversion path are not a lead or revenue.
+One practical seven-point checklist was also published on the owned Reddit
+profile on September 13. It uses the original tracked sample URL and is not
+another subreddit reply.
 The public-repository fit check now needs only an email, a public GitHub URL,
 and authorization; LazyingArt derives the pinned surface and proposed checks
 for the reply. Private-repository requests still require the intended client,

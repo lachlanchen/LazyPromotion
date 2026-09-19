@@ -1,0 +1,58 @@
+{
+  "id": "smashing-audio-writer-pitch",
+  "version": 1,
+  "objective": "Win one paid technical article assignment using L & N's existing browser-audio implementation and tests, without creating speculative full content or implying a commissioned article.",
+  "source_need": {
+    "captured_at": "2026-09-19T16:11:21Z",
+    "url": "https://www.smashingmagazine.com/write-for-us/",
+    "application_url": "https://www.smashingmagazine.com/contact/",
+    "editorial_process": "https://www.smashingmagazine.com/editorial-process/",
+    "publishing_policy": "https://www.smashingmagazine.com/publishing-policy/",
+    "title": "Writing A Smashing Article",
+    "state": "official_author_call_and_working_contact_form",
+    "published_compensation": "Honorarium paid on publication; no numerical fee is published in the reviewed guidelines.",
+    "published_process": "Pitch an original article with audience, takeaway, relevant experience, writing samples, and a 200–300-word outline. An editor decides topic fit before the full draft.",
+    "editorial_boundary": "Individual authors and practical technical lessons, not product tours, hidden advertising, affiliate promotion, or a corporate press release. Assistance policy and exact commercial terms still need confirmation."
+  },
+  "fit": {
+    "projects": ["L-and-N", "BLOG"],
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "revision_checked": "9348aa2abfe794ce96c3f354d8143d743b6f199b",
+    "proposed_title": "When Play Does Nothing: Building Cancellable Audio in a React PWA",
+    "audience": "JavaScript and React developers adding short audio sequences or microphone practice to web applications",
+    "supported_now": [
+      "Web Audio playback with bounded startup and a reusable media-element fallback",
+      "Whole-file word clips, decoded-buffer reuse, and longer spacing between identical words",
+      "Cancellation and microphone-resource cleanup",
+      "Twenty passing focused tests across word-audio, audio-capture, and speech"
+    ],
+    "writing_sample": "https://blog.lazying.art/html/computer_internet/3619/search-confidential-pdfs-locally-without-overbuilding-rag.html",
+    "claim_boundary": "Project-owned source and focused mocked tests support the pitch. They do not establish all-device compatibility, clinical accuracy, reader outcomes, customer delivery, or prior Smashing publication."
+  },
+  "application": {
+    "state": "submitted_awaiting_editorial_reply",
+    "submitted_at": "2026-09-19T16:10:45Z",
+    "method": "One reviewed submission through the ordinary official contact form under Become an author, using the maintainer name, business reply address, two public proof links, and a 242-word outline.",
+    "delivery_evidence": "After one Send action, the same page displayed Thank you! and confirmed receipt of the form submission. A separate read verified the confirmation without resubmission; navigation response status was 200.",
+    "content_sha256": "038090e837871122e950f25aa29d2a57daf8f2cea44f188561bdeb2b9784b28a",
+    "exact_content_storage": "Ignored private application note and screenshots",
+    "ai_assistance_disclosed": true,
+    "account_created": false,
+    "identity_document_submitted": false,
+    "paid_action_taken": false,
+    "full_article_drafted": false,
+    "automatic_follow_up": false,
+    "review_after": "2026-09-28",
+    "acceptance_gate": "Before drafting or accepting work, confirm topic, author and assistance eligibility, exact fee and currency, payment route and timing, length, deadline, rights, revision limit, and acceptance terms."
+  },
+  "funnel": {
+    "state": "application_submitted",
+    "human_reply_observed": false,
+    "qualified_lead_observed": false,
+    "topic_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "published": false,
+    "received_revenue_usd": 0
+  }
+}

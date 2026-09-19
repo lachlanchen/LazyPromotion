@@ -30,6 +30,14 @@ not zero. Keep these publications and spend the next acquisition effort on
 accessible paid requests, not extra posts, new offer pages, or marketplace
 upgrades. A listed budget alone does not establish buyer qualification.
 
+On September 20 HKT, one [Smashing Magazine article pitch](../campaigns/smashing-audio-writer-pitch.json)
+was received through its official author form. It uses L & N's existing audio
+playback, fallback, cancellation, and microphone-cleanup code; twenty focused
+tests passed before the reviewed outline was submitted. The publication promises
+an honorarium but states no amount. The pitch disclosed AI assistance and asks
+for policy, topic, and fee agreement before drafting. No new product, full
+article, contract, or revenue is implied; no automatic follow-up is enabled.
+
 ## Primary offer and acquisition record
 
 The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:

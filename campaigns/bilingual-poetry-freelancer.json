@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "id": "bilingual-poetry-freelancer",
+  "objective": "Test a bounded paid bilingual layout stage using the existing book specimen, without committing to an unseen complete manuscript or ongoing work.",
+  "source_need": {
+    "captured_at": "2026-09-19T17:07:00Z",
+    "url": "https://www.freelancer.com/projects/print-design/Bilingual-Poetry-PDF-Formatting-Expert/details",
+    "project_id": 40720689,
+    "title": "Bilingual Poetry PDF Formatting Expert",
+    "state": "active_open_at_submission",
+    "published_budget": "INR 750–1,250 per hour",
+    "requested_delivery": "An English–French poetry PDF with editable layout source, commercial-use fonts, preserved line structure and printer-specific export checks.",
+    "scope_unknowns": [
+      "manuscript length and representative poems",
+      "source rights and final text",
+      "required relationship between original and translated line counts",
+      "trim size and target printer specification",
+      "funding and acceptable billing process"
+    ]
+  },
+  "fit": {
+    "projects": ["PocketPolyglot", "source-aware-book-specimen"],
+    "public_evidence": [
+      "https://github.com/lachlanchen/LazyPromotion/tree/e8512197cabe988ee597291364c0dab373e261ed/examples/source-aware-book-specimen"
+    ],
+    "supported_now": [
+      "Project-owned English–Traditional Chinese source, PDF variants, style sheet and validation record",
+      "All eleven recorded source/artifact hashes verified before bidding"
+    ],
+    "boundary": "The specimen is not French poetry client work or printer approval. Formatting only; no translation or substantive proofreading is offered."
+  },
+  "application": {
+    "state": "submitted_awaiting_buyer_reply",
+    "submitted_at": "2026-09-19T17:11:40Z",
+    "review_after": "2026-09-23",
+    "confirmation_url": "https://www.freelancer.com/projects/print-design/Bilingual-Poetry-PDF-Formatting-Expert/proposals?bidCreated=true",
+    "visible_confirmation": "You've successfully placed a bid",
+    "rank_when_confirmed": "9 of 9 proposals",
+    "proposed_hourly_rate_inr": 1250,
+    "platform_hourly_fee_inr": 125,
+    "proposed_hourly_net_before_other_deductions_inr": 1125,
+    "proposed_weekly_limit_hours": 4,
+    "proposed_initial_stage_gross_cap_inr": 5000,
+    "initial_stage": "One representative bilingual spread, LaTeX working files, font/license notes and export checks against an agreed printer specification; remaining book scoped separately.",
+    "proposal": ".local/private/applications/bilingual-poetry-freelancer.md",
+    "proposal_sha256": "7145e434b3991ef61f4b30e8368f8bf2c18facfb4d30a8958fc16c0bebfc0c47",
+    "live_body_verified": true,
+    "bid_submitted": true,
+    "paid_upgrade_selected": false,
+    "automatic_follow_up": false,
+    "policy": "One ordinary free bid. Review source, rights, scope, printer requirements, AI-assisted handling and funded billing before accepting work. Keep files, communication and payment on Freelancer. Any hours must reflect actual work, not automatic billing of the cap. No unpaid custom specimen, off-platform contact, interview or ongoing availability commitment."
+  },
+  "funnel": {
+    "state": "application_submitted_awaiting_buyer",
+    "application_submitted": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "contract_observed": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

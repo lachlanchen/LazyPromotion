@@ -132,7 +132,7 @@ class ApplicationWatchTests(unittest.TestCase):
 
     def test_current_campaigns_have_no_automatic_follow_up(self):
         report = application_watch.build_report(on=date(2026, 9, 9))
-        self.assertEqual(report["summary"]["awaiting_human_reply"], 38)
+        self.assertEqual(report["summary"]["awaiting_human_reply"], 39)
         self.assertEqual(report["summary"]["missing_review_schedule"], 0)
         current_ids = [item["campaign_id"] for item in report["applications"]]
         self.assertNotIn("latex-package-rewrite", current_ids)
@@ -145,6 +145,12 @@ class ApplicationWatchTests(unittest.TestCase):
         )
         self.assertEqual(seamo["review_after"], "2026-09-22")
         self.assertFalse(seamo["due_for_human_review"])
+        poetry = next(
+            item for item in report["applications"]
+            if item["campaign_id"] == "bilingual-poetry-freelancer"
+        )
+        self.assertEqual(poetry["review_after"], "2026-09-23")
+        self.assertFalse(poetry["due_for_human_review"])
         smashing = next(
             item for item in report["applications"]
             if item["campaign_id"] == "smashing-audio-writer-pitch"

@@ -61,6 +61,14 @@ TRACKED_PROJECTS = (
             "SEAMO-Step-Step-Solutions/proposals"
         ),
     },
+    {
+        "campaign_id": "bilingual-poetry-freelancer",
+        "slug": "bilingual-poetry-pdf-formatting-expert",
+        "url": (
+            "https://www.freelancer.com/projects/print-design/"
+            "Bilingual-Poetry-PDF-Formatting-Expert/proposals"
+        ),
+    },
 )
 PROJECT_BY_ID = {item["campaign_id"]: item for item in TRACKED_PROJECTS}
 PROJECT_ID_BY_SLUG = {item["slug"]: item["campaign_id"] for item in TRACKED_PROJECTS}

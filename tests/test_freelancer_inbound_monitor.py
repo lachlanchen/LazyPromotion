@@ -7,6 +7,43 @@ import freelancer_inbound_monitor as monitor
 
 
 class FreelancerInboundMonitorTests(unittest.TestCase):
+    def test_poetry_project_urls_use_existing_review_only_monitor(self):
+        base = (
+            "https://www.freelancer.com/projects/print-design/"
+            "Bilingual-Poetry-PDF-Formatting-Expert"
+        )
+        for suffix in ("", "/details", "/proposals?bidCreated=true"):
+            with self.subTest(suffix=suffix):
+                self.assertEqual(
+                    monitor.project_id_for_url(base + suffix),
+                    "bilingual-poetry-freelancer",
+                )
+
+    def test_new_poetry_bid_preserves_existing_baselines(self):
+        projects = {
+            item["campaign_id"]: {
+                "bid_state": "active_submitted", "rank": 9, "proposal_count": 9
+            }
+            for item in monitor.TRACKED_PROJECTS
+        }
+        previous = {
+            "version": 2,
+            "message_badge_count": 1,
+            "projects": {
+                key: value for key, value in projects.items()
+                if key != "bilingual-poetry-freelancer"
+            },
+        }
+        status, state = monitor.summarize_portfolio_observation(
+            authenticated=True, projects=projects, message_badge_count=1,
+            previous=previous, checked_at="2026-09-19T17:15:00Z",
+        )
+        self.assertEqual(status["tracked_bid_count"], 5)
+        self.assertTrue(status["projects"]["bilingual-poetry-freelancer"]["baseline_created"])
+        self.assertFalse(status["review_required"])
+        self.assertFalse(status["message_opened"])
+        self.assertEqual(state["projects"]["seamo-solutions-freelancer"]["rank"], 9)
+
     def test_seamo_project_urls_use_existing_review_only_monitor(self):
         base = (
             "https://www.freelancer.com/projects/technical-writing/"
@@ -43,7 +80,7 @@ class FreelancerInboundMonitorTests(unittest.TestCase):
             previous=previous,
             checked_at="2026-09-19T15:20:00Z",
         )
-        self.assertEqual(status["tracked_bid_count"], 4)
+        self.assertEqual(status["tracked_bid_count"], len(monitor.TRACKED_PROJECTS))
         self.assertTrue(
             status["projects"]["seamo-solutions-freelancer"]["baseline_created"]
         )

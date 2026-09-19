@@ -46,6 +46,16 @@ toward recurring weekly work; it is not an assignment we can accept without
 operator involvement. No such commitment was made. This remains one
 application awaiting a reply, not a second prospect or a sale.
 
+One [bilingual poetry layout bid](../campaigns/bilingual-poetry-freelancer.json)
+was also submitted on September 20 HKT using the existing English–Chinese book
+specimen. It proposes INR 1,250/hour with a four-hour initial-stage cap, not a
+complete-book commitment. The live fee preview is INR 125/hour. A representative
+spread, editable LaTeX, font notes and agreed printer checks come before any
+separately scoped full volume. No translation or proofreading is offered.
+The exact live proposal was verified, no paid upgrade was selected, and the
+existing read-only bid monitor now includes it. Manuscript review and funding
+remain prerequisites; this is an application, not a lead or earned revenue.
+
 ## Primary offer and acquisition record
 
 The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:

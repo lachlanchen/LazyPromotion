@@ -1,9 +1,9 @@
 # Freelancer inbound monitor
 
 This read-only monitor watches the submitted Playwright regression, Android
-APK-delivery, KiCad plugin-testing, and SEAMO solutions bids without opening
+APK-delivery, KiCad plugin-testing, SEAMO solutions, and bilingual poetry bids without opening
 buyer messages or responding. It reuses exactly one authenticated Freelancer project tab in the
-dedicated LazyPromotion browser and visits the four owned proposal pages
+dedicated LazyPromotion browser and visits the five owned proposal pages
 sequentially.
 Canonical, details, and submitted-proposal URLs are recognized. A logged-out
 page fails the authentication gate instead of being mistaken for a missing

@@ -10,7 +10,7 @@
 
 LazyPromotion là trợ lý cục bộ, ưu tiên duyệt trước khi gửi để tìm nhu cầu trên mạng xã hội. Công cụ làm việc với giao diện web thật của Reddit, X, Instagram và Hacker News trong một hồ sơ Chrome chuyên dụng có thể quan sát, lưu các kết quả có thể phù hợp vào SQLite, soạn câu trả lời có căn cứ bằng mô hình Codex được tài khoản hỗ trợ và đề xuất ở mức suy luận thấp, rồi dừng trước khi gửi công khai. Công cụ dành cho người duy trì muốn giúp người khác bằng sản phẩm nguồn mở phù hợp, chứ không biến cộng đồng thành hàng chờ bán hàng.
 
-Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` chưa lưu trữ. Mã nguồn, sách, đồ thị tri thức, nghiên cứu, nội dung đa phương tiện, học ngôn ngữ và AI cục bộ được kết hợp thành các cơ hội xuất phát từ bài toán của người mua và chịu ràng buộc bởi bằng chứng. Tuyến chính là dịch vụ rà soát MCP trị giá 500 USD, cùng chín tuyến dịch vụ liền kề có phạm vi cố định hướng đến cột mốc 1.000 USD đầu tiên đã được xác nhận; lượt nhấp, sao, đơn ứng tuyển và bài đang xếp lịch không được tính là doanh thu.
+Kho mã còn lưu danh mục công khai gồm 109 kho mã nguồn `lachlanchen` chưa lưu trữ. Mã nguồn, sách, đồ thị tri thức, nghiên cứu, nội dung đa phương tiện, học ngôn ngữ và AI cục bộ được kết hợp thành các cơ hội xuất phát từ bài toán của người mua và chịu ràng buộc bởi bằng chứng. Tuyến chính là dịch vụ rà soát MCP trị giá 500 USD, cùng chín tuyến dịch vụ liền kề có phạm vi cố định hướng đến cột mốc 1.000 USD đầu tiên đã được xác nhận; lượt nhấp, sao, đơn ứng tuyển và bài đang xếp lịch không được tính là doanh thu.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

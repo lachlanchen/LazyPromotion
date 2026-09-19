@@ -95,6 +95,14 @@ class NetworkTests(unittest.TestCase):
         ).fetchone()[0]
         self.assertEqual(count, 1)
 
+    def test_inventory_only_identity_remains_a_public_repository_not_a_product(self):
+        network.sync_graph(self.db)
+        entities = network.public_snapshot(self.db)["entities"]
+        matching = [item for item in entities
+                    if item["url"] == "https://github.com/lachlanchen/lachlanchen.github.io"]
+        self.assertTrue(matching)
+        self.assertEqual({item["kind"] for item in matching}, {"repository"})
+
     def test_public_projects_exactly_follow_current_catalog(self):
         network.upsert_entity(
             self.db,

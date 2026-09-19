@@ -10,7 +10,7 @@
 
 LazyPromotion es un asistente local de descubrimiento social con revisión previa. Busca en la interfaz web real de Reddit, X o Instagram mediante un perfil persistente y visible de Chrome, guarda posibles coincidencias en SQLite, redacta una respuesta fundamentada con el modelo Codex recomendado para la cuenta y esfuerzo bajo, y se detiene antes del envío público. Está pensado para ayudar con proyectos de código abierto pertinentes, no para hacer marketing masivo.
 
-El repositorio también mantiene un inventario público de 108 repositorios fuente no archivados y convierte código, libros, grafos de conocimiento, investigación, medios, aprendizaje de idiomas e IA local en oportunidades concretas y sujetas a evidencia. La revisión MCP principal de USD 500 y nueve servicios adyacentes de alcance fijo apoyan la meta de los primeros USD 1.000 verificados; clics, estrellas, solicitudes y publicaciones en cola nunca cuentan como ingresos.
+El repositorio también mantiene un inventario público de 109 repositorios fuente no archivados y convierte código, libros, grafos de conocimiento, investigación, medios, aprendizaje de idiomas e IA local en oportunidades concretas y sujetas a evidencia. La revisión MCP principal de USD 500 y nueve servicios adyacentes de alcance fijo apoyan la meta de los primeros USD 1.000 verificados; clics, estrellas, solicitudes y publicaciones en cola nunca cuentan como ingresos.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

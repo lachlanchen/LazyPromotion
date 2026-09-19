@@ -15,7 +15,7 @@ with the signed-in account's recommended Codex model at low reasoning effort,
 and stops before public send. It is for maintainers who want to help people
 with relevant open-source work without turning communities into a sales queue.
 
-The repository also keeps a public inventory of 108 non-archived
+The repository also keeps a public inventory of 109 non-archived
 `lachlanchen` source repositories and combines them into buyer-shaped,
 evidence-gated opportunities across code, books, knowledge graphs, research,
 media, language learning, and local AI. The primary USD 500 MCP review and nine

@@ -92,7 +92,7 @@ CATEGORIES = OrderedDict(
         ),
         (
             "LazyingArt identity and public web surfaces",
-            {"lachlanchen", "LazyingArtWebsite"},
+            {"lachlanchen", "lachlanchen.github.io", "LazyingArtWebsite"},
         ),
     ]
 )
@@ -304,7 +304,9 @@ def render(payload: dict) -> str:
             f"owned by [`{payload['owner']}`](https://github.com/{payload['owner']}) as of "
             f"{date.today().isoformat()}. It is generated from GitHub metadata, not a claim "
             "that every repository has received a deep product or security audit. Local-only "
-            "checkouts, forks, credentials, people, messages, and promotion drafts are excluded."
+            "checkouts, forks, credentials, people, messages, and promotion drafts are excluded. "
+            "Identity-only websites remain in this inventory but are not automatically treated "
+            "as products or need-discovery routes."
         ),
         "",
         "## Where promotion should start",

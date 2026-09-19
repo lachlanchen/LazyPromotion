@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **108 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-13. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded.
+This is a public-only map of **109 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-20. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded. Identity-only websites remain in this inventory but are not automatically treated as products or need-discovery routes.
 
 ## Where promotion should start
 
@@ -40,7 +40,7 @@ The first-USD-1,000 route is two confirmed USD 500 MCP Server Pre-Deployment Rev
 | [Games and interactive learning](#games-and-interactive-learning) | 7 |
 | [Finance, business, commerce, and creator platforms](#finance-business-commerce-and-creator-platforms) | 8 |
 | [Infrastructure, networking, and workstation operations](#infrastructure-networking-and-workstation-operations) | 10 |
-| [LazyingArt identity and public web surfaces](#lazyingart-identity-and-public-web-surfaces) | 2 |
+| [LazyingArt identity and public web surfaces](#lazyingart-identity-and-public-web-surfaces) | 3 |
 
 ## Recently pushed
 
@@ -48,16 +48,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-12 16:18:48 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-12 16:14:18 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
-| [lachlanchen](https://github.com/lachlanchen/lachlanchen) | 2026-09-12 12:50:43 | Config files for my GitHub profile. |
-| [LocalKnowledgeTerminal](https://github.com/lachlanchen/LocalKnowledgeTerminal) | 2026-09-12 11:47:02 | Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware. |
-| [PaperAgent](https://github.com/lachlanchen/PaperAgent) | 2026-09-12 04:21:51 | PaperAgent is a local-first web workspace for academic writing. It lets you edit LaTeX and code in the browser, run Python or R and compile LaTeX on the backend, and preview PDFs with build logs—all in one place. |
-| [LazyTravel](https://github.com/lachlanchen/LazyTravel) | 2026-09-12 00:29:58 | Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON |
-| [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | 2026-09-12 00:00:49 | LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps. |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-11 16:59:05 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
-| [LazyEdge](https://github.com/lachlanchen/LazyEdge) | 2026-09-11 14:35:21 | A lightweight, default-deny reverse edge for safely connecting private compute to public domains. |
-| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-11 11:25:43 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-19 23:33:21 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-19 20:22:45 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
+| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-19 17:25:18 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
+| [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | 2026-09-19 14:58:47 | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. |
+| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-19 14:58:17 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-19 14:58:16 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [lachlanchen.github.io](https://github.com/lachlanchen/lachlanchen.github.io) | 2026-09-19 14:24:23 | Personal site and CV of Lachlan (Rongzhou) Chen 陈荣周 — lachlanchen.lazying.art |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-19 03:09:33 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
+| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-17 04:18:30 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
+| [LazySkills](https://github.com/lachlanchen/LazySkills) | 2026-09-16 08:52:23 | Portable LazyingArt agent skills for AgInTiFlow, Codex, Claude, Gemini, Copilot, LazyEdit, AutoPublish, browser automation, books, and publishing workflows. |
 
 ## Complete public repository inventory
 
@@ -212,6 +212,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | Repository | What its public metadata says | Language | Public surface |
 |---|---|---|---|
 | [lachlanchen](https://github.com/lachlanchen/lachlanchen) | Config files for my GitHub profile. | HTML | [Open](https://lazying.art) |
+| [lachlanchen.github.io](https://github.com/lachlanchen/lachlanchen.github.io) | Personal site and CV of Lachlan (Rongzhou) Chen 陈荣周 — lachlanchen.lazying.art | HTML | Repository only |
 | [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. | HTML | [Open](https://lazying.art) |
 
 ## Maintenance and interpretation

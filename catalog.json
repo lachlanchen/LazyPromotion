@@ -1,4 +1,7 @@
 {
+  "inventory_only": {
+    "https://github.com/lachlanchen/lachlanchen.github.io": "Public personal website and CV: identity/context evidence, not a product or automatic need-discovery route."
+  },
   "projects": [
     {
       "id": "lazyedit",

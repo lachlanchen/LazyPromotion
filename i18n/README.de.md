@@ -10,7 +10,7 @@
 
 LazyPromotion ist ein lokaler Social-Discovery-Assistent mit Review-Pflicht. Er durchsucht die echten Weboberflächen von Reddit, X, Instagram und Hacker News in einem sichtbaren Chrome-Profil, speichert mögliche Treffer in SQLite, erstellt mit dem für das angemeldete Konto empfohlenen Codex-Modell bei niedriger Reasoning-Stufe belegbare Antwortentwürfe und hält vor dem öffentlichen Senden an. Das Werkzeug richtet sich an Maintainer, die Menschen mit passender Open-Source-Arbeit helfen wollen, ohne Communities in eine Vertriebsliste zu verwandeln.
 
-Das Repository enthält außerdem ein öffentliches Inventar von 108 nicht archivierten `lachlanchen`-Quellcode-Repositories. Daraus entstehen käuferbezogene, nachweisgebundene Angebote aus Code, Büchern, Wissensgraphen, Forschung, Medien, Sprachlernen und lokaler KI. Der primäre MCP-Review für 500 USD und neun angrenzende, klar begrenzte Servicewege dienen dem Ziel der ersten verifizierten 1.000 USD Umsatz. Klicks, Sterne, Bewerbungen und eingeplante Beiträge zählen niemals als Umsatz.
+Das Repository enthält außerdem ein öffentliches Inventar von 109 nicht archivierten `lachlanchen`-Quellcode-Repositories. Daraus entstehen käuferbezogene, nachweisgebundene Angebote aus Code, Büchern, Wissensgraphen, Forschung, Medien, Sprachlernen und lokaler KI. Der primäre MCP-Review für 500 USD und neun angrenzende, klar begrenzte Servicewege dienen dem Ziel der ersten verifizierten 1.000 USD Umsatz. Klicks, Sterne, Bewerbungen und eingeplante Beiträge zählen niemals als Umsatz.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |

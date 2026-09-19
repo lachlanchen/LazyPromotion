@@ -18,6 +18,26 @@ class PromotionTests(unittest.TestCase):
         self.db.close()
         self.tmp.cleanup()
 
+    def test_inventory_only_site_stays_in_index_but_not_need_matching(self):
+        url = "https://github.com/lachlanchen/lachlanchen.github.io"
+        indexed = json.loads(promotion.GITHUB_CATALOG_PATH.read_text(encoding="utf-8"))
+        self.assertIn(url, {repo["url"] for repo in indexed["repositories"]})
+        catalog = promotion.load_catalog()
+        self.assertIn(url, catalog["inventory_only"])
+        self.assertNotIn(url, {project["url"] for project in catalog["projects"]})
+
+    def test_inventory_only_requires_reason_and_cannot_conflict_with_curated_project(self):
+        url = "https://github.com/example/identity"
+        for rules, projects in (
+            ([url], []), ({url: ""}, []),
+            ({url: "Identity only"}, [{"url": url + "/"}]),
+        ):
+            path = Path(self.tmp.name) / "catalog.json"
+            path.write_text(json.dumps({"inventory_only": rules, "projects": projects}), encoding="utf-8")
+            with self.subTest(rules=rules), patch.object(promotion, "CATALOG_PATH", path):
+                with self.assertRaises(ValueError):
+                    promotion.load_catalog()
+
     def test_reply_prompt_defaults_to_short_natural_prose(self):
         candidate = {
             "platform": "reddit",

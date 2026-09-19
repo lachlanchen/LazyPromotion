@@ -1,6 +1,16 @@
 {
   "entities": [
     {
+      "id": "campaign:ad3-acquisition-freelancer",
+      "kind": "campaign",
+      "label": "ad3-acquisition-freelancer",
+      "metadata": {
+        "objective": "Offer a bounded paid acquisition-software implementation using OpenHI evidence, without promising a new ultrasound instrument or requiring the operator to build hardware.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:agentspace-devops-freelance",
       "kind": "campaign",
       "label": "agentspace-devops-freelance",
@@ -31,6 +41,16 @@
       "url": ""
     },
     {
+      "id": "campaign:amezmo-technical-writer",
+      "kind": "campaign",
+      "label": "amezmo-technical-writer",
+      "metadata": {
+        "objective": "Pitch one original, reproducible deployment tutorial only after Amezmo's official form is reachable and the editor confirms topic fit and commercial terms.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:android-apk-delivery-freelancer",
       "kind": "campaign",
       "label": "android-apk-delivery-freelancer",
@@ -46,7 +66,7 @@
       "label": "apify-content-writer-opportunity",
       "metadata": {
         "objective": "Earn one USD 500 Apify article by building and documenting a bounded Actor that gives Codex live public-web evidence through the Apify MCP server.",
-        "version": 1
+        "version": 2
       },
       "url": ""
     },
@@ -71,12 +91,22 @@
       "url": ""
     },
     {
+      "id": "campaign:bigo-api-diagnostic-enquiry",
+      "kind": "campaign",
+      "label": "bigo-api-diagnostic-enquiry",
+      "metadata": {
+        "objective": "Ask whether an advertised WooCommerce integration can begin with a separately paid, isolated signing diagnostic, without accepting live recharge handling.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:bilingual-lecture-pack-pilot",
       "kind": "campaign",
       "label": "bilingual-lecture-pack-pilot",
       "metadata": {
         "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
-        "version": 34
+        "version": 36
       },
       "url": ""
     },
@@ -86,7 +116,17 @@
       "label": "bilingual-pocket-editions",
       "metadata": {
         "objective": "Help rights-holding independent creators make bilingual books readable, traceable, and maintainable across print-like PDF and reflowable e-book formats.",
-        "version": 13
+        "version": 14
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:bilingual-poetry-freelancer",
+      "kind": "campaign",
+      "label": "bilingual-poetry-freelancer",
+      "metadata": {
+        "objective": "Test a bounded paid bilingual layout stage using the existing book specimen, without committing to an unseen complete manuscript or ongoing work.",
+        "version": 1
       },
       "url": ""
     },
@@ -95,8 +135,8 @@
       "kind": "campaign",
       "label": "bounty-agent-marketplace",
       "metadata": {
-        "objective": "Observe current paid agent work that fits LazyingArt's research, software, multilingual knowledge, book, and media capabilities without automatically contacting requesters or claiming work.",
-        "version": 1
+        "objective": "Observe current paid agent work from Bounty, TaskBounty, and Agent Bounties that fits LazyingArt's research, software, multilingual knowledge, book, and media capabilities without automatically registering, contacting requesters, claiming work, signing wallet actions, or configuring payout.",
+        "version": 3
       },
       "url": ""
     },
@@ -131,12 +171,22 @@
       "url": ""
     },
     {
+      "id": "campaign:cjk-chunk-boundary",
+      "kind": "campaign",
+      "label": "cjk-chunk-boundary",
+      "metadata": {
+        "objective": "Help developers diagnose whitespace-free multilingual document ingestion and connect exact-fit collection work to the existing LKT sample and USD 250 service.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:content-repurposing-pilot",
       "kind": "campaign",
       "label": "content-repurposing-pilot",
       "metadata": {
         "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
-        "version": 24
+        "version": 27
       },
       "url": ""
     },
@@ -166,7 +216,7 @@
       "label": "digitalocean-ripple-writer-pitch",
       "metadata": {
         "objective": "Win one USD 500 Ripple Writers article by pitching a measured DigitalOcean implementation grounded in the existing AgInTiFlow, LazyEdge, and LazySkills work.",
-        "version": 1
+        "version": 3
       },
       "url": ""
     },
@@ -197,6 +247,16 @@
       "metadata": {
         "objective": "Earn qualified multilingual-reader visits and pre-order conversations by proving useful free paths before presenting the optional LazyingArt eInk hardware.",
         "version": 2
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:enfold-wordpress-cleanup-enquiry",
+      "kind": "campaign",
+      "label": "enfold-wordpress-cleanup-enquiry",
+      "metadata": {
+        "objective": "Qualify one advertised WordPress cleanup using existing first-party publishing work, without accepting ongoing maintenance.",
+        "version": 1
       },
       "url": ""
     },
@@ -266,7 +326,7 @@
       "label": "kicad-plugin-testing-freelancer",
       "metadata": {
         "objective": "Win one bounded KiCad plugin evaluation by pairing a purpose-built geometry fixture with larger project-owned board evidence, without claiming the buyer's plugin was tested before authorized delivery.",
-        "version": 2
+        "version": 4
       },
       "url": ""
     },
@@ -296,7 +356,7 @@
       "label": "l-and-n-pronunciation-launch",
       "metadata": {
         "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
-        "version": 10
+        "version": 14
       },
       "url": ""
     },
@@ -306,7 +366,7 @@
       "label": "latex-package-rewrite",
       "metadata": {
         "objective": "Win one bounded paid LaTeX package rewrite without overstating prior package work or accepting an undefined compatibility surface.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -346,7 +406,7 @@
       "label": "lazyremote-uu-bridge-route",
       "metadata": {
         "objective": "Let people already using the UU Remote Ubuntu compatibility bridge discover the separate vendor-independent LazyRemote path, with an optional fit-first software review for a specific network topology.",
-        "version": 10
+        "version": 20
       },
       "url": ""
     },
@@ -356,7 +416,7 @@
       "label": "lecture-archive-provenance",
       "metadata": {
         "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
-        "version": 4
+        "version": 5
       },
       "url": ""
     },
@@ -376,7 +436,7 @@
       "label": "lexical-database-ingestion",
       "metadata": {
         "objective": "Reuse the source-preserving lexical-ingestion proof for the next explicit dictionary, glossary, or language-archive need; the original USD 1,200 OUTOFPAPUA listing is closed.",
-        "version": 5
+        "version": 6
       },
       "url": ""
     },
@@ -396,7 +456,7 @@
       "label": "local-knowledge-terminal-pilot",
       "metadata": {
         "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
-        "version": 44
+        "version": 48
       },
       "url": ""
     },
@@ -436,7 +496,7 @@
       "label": "manuscript-sprint-pilot",
       "metadata": {
         "objective": "Sell and deliver a bounded USD 250 LaTeX manuscript build and redline sprint without ghostwriting, handling source before agreement, or promising publication.",
-        "version": 16
+        "version": 17
       },
       "url": ""
     },
@@ -451,6 +511,16 @@
       "url": ""
     },
     {
+      "id": "campaign:mcp-boundary-review",
+      "kind": "campaign",
+      "label": "mcp-boundary-review",
+      "metadata": {
+        "objective": "Sell and deliver two bounded USD 500 MCP server pre-deployment reviews using executed first-party proof, review-first intake, and agent-run fulfillment.",
+        "version": 52
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:meeting-intelligence-mission",
       "kind": "campaign",
       "label": "meeting-intelligence-mission",
@@ -461,11 +531,31 @@
       "url": ""
     },
     {
+      "id": "campaign:meridial-developer-workflows-auditor",
+      "kind": "campaign",
+      "label": "meridial-developer-workflows-auditor",
+      "metadata": {
+        "objective": "Use the strongest public review-gate, browser-regression, reproducibility, and developer-tooling evidence for one current AI-assisted workflow-auditing contract without inventing enterprise telemetry experience.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:meridial-infrastructure-specialist",
       "kind": "campaign",
       "label": "meridial-infrastructure-specialist",
       "metadata": {
         "objective": "Use the strongest public Linux, networking, deployment-safety, and failure-verification evidence for a current infrastructure contract without inventing cloud-scale or TypeScript experience.",
+        "version": 2
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:micro1-mcp-expert",
+      "kind": "campaign",
+      "label": "micro1-mcp-expert",
+      "metadata": {
+        "objective": "Preserve one unusually strong paid MCP-evaluation match while keeping the operator's personal interview and assessment outside agent control.",
         "version": 1
       },
       "url": ""
@@ -476,7 +566,7 @@
       "label": "minimax-h3-voice-reference-diagnostic",
       "metadata": {
         "objective": "Help local MiniMax H3 users isolate voice-reference assignment failures with a small, reproducible test before changing sampling settings.",
-        "version": 2
+        "version": 3
       },
       "url": ""
     },
@@ -495,8 +585,8 @@
       "kind": "campaign",
       "label": "namecoach-voice-ai-contract",
       "metadata": {
-        "objective": "Earn a paid NameCoach/Euphonia voice-AI take-home or trial by presenting the strongest public pronunciation and multilingual-ASR work without claiming production G2P experience.",
-        "version": 1
+        "objective": "Explore a separately scoped paid pronunciation-evaluation or ASR-integration project with NameCoach using the shipped L & N proof, without claiming production G2P experience or committing the operator to an ongoing role.",
+        "version": 2
       },
       "url": ""
     },
@@ -526,7 +616,7 @@
       "label": "openhi-reproducibility-sprint",
       "metadata": {
         "objective": "Sell and deliver two bounded USD 500 OpenHI software reproducibility sprints without selling unreviewed hardware, mishandling laboratory data, or promising scientific results.",
-        "version": 16
+        "version": 18
       },
       "url": ""
     },
@@ -541,12 +631,22 @@
       "url": ""
     },
     {
+      "id": "campaign:physics-notes-freelancer",
+      "kind": "campaign",
+      "label": "physics-notes-freelancer",
+      "metadata": {
+        "objective": "Use the existing Susskind notes workflow as relevant evidence for a bounded paid physics-note editing job, without selling the archive or promising an unseen collection.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:playwright-regression-contract",
       "kind": "campaign",
       "label": "playwright-regression-contract",
       "metadata": {
         "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
-        "version": 7
+        "version": 9
       },
       "url": ""
     },
@@ -591,6 +691,16 @@
       "url": ""
     },
     {
+      "id": "campaign:pythonjobs-pipeline-enquiry",
+      "kind": "campaign",
+      "label": "pythonjobs-pipeline-enquiry",
+      "metadata": {
+        "objective": "Qualify one explicitly invited paid Python pipeline request against existing MicroQuant ingestion work.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:scientific-pdf-integrity",
       "kind": "campaign",
       "label": "scientific-pdf-integrity",
@@ -601,12 +711,32 @@
       "url": ""
     },
     {
+      "id": "campaign:seamo-solutions-freelancer",
+      "kind": "campaign",
+      "label": "seamo-solutions-freelancer",
+      "metadata": {
+        "objective": "Test a bounded paid educational-writing delivery using existing mathematical TeX work, without inventing Olympiad experience or accepting an unseen question set.",
+        "version": 1
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:signoz-technical-writer-program",
       "kind": "campaign",
       "label": "signoz-technical-writer-program",
       "metadata": {
         "objective": "Win one paid observability tutorial assignment by proposing a reproducible Python reverse-SSH relay demonstration, without writing a speculative full article or claiming prior SigNoz work.",
         "version": 2
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:smashing-audio-writer-pitch",
+      "kind": "campaign",
+      "label": "smashing-audio-writer-pitch",
+      "metadata": {
+        "objective": "Win one paid technical article assignment using L & N's existing browser-audio implementation and tests, without creating speculative full content or implying a commissioned article.",
+        "version": 1
       },
       "url": ""
     },
@@ -631,12 +761,32 @@
       "url": ""
     },
     {
+      "id": "campaign:steinke-python-maintainer",
+      "kind": "campaign",
+      "label": "steinke-python-maintainer",
+      "metadata": {
+        "objective": "Use the strongest public Python API, package, testing, and Linux evidence for one current maintenance contract without inventing tenure, availability, client work, or protocol experience.",
+        "version": 2
+      },
+      "url": ""
+    },
+    {
       "id": "campaign:technically-contributor-program",
       "kind": "campaign",
       "label": "technically-contributor-program",
       "metadata": {
         "objective": "Win one USD 500 paid technical explainer by turning an inspectable MCP implementation into a clear account of permissions and agent power, without writing a speculative full article or claiming an ongoing assignment.",
         "version": 3
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:vetto-code-reviewer",
+      "kind": "campaign",
+      "label": "vetto-code-reviewer",
+      "metadata": {
+        "objective": "Use the strongest public code-review, test-validation, and false-success evidence for one current asynchronous paid reviewer route without inventing tenure, language breadth, or unaided authorship.",
+        "version": 1
       },
       "url": ""
     },
@@ -666,7 +816,7 @@
       "label": "wenyan-history",
       "metadata": {
         "objective": "Earn qualified visits from readers of Classical Chinese and Chinese history by showing a real multilingual edition before asking for attention.",
-        "version": 5
+        "version": 6
       },
       "url": ""
     },
@@ -676,6 +826,16 @@
       "label": "wetheflywheel-agentic-engineer",
       "metadata": {
         "objective": "Earn a paid, bounded agentic-engineering engagement by showing the exact review-first browser-agent and deployment work in LazyPromotion and LazyEdge without claiming unverified client delivery or commercial terms.",
+        "version": 4
+      },
+      "url": ""
+    },
+    {
+      "id": "campaign:wordpress-teaching-site-updates",
+      "kind": "campaign",
+      "label": "wordpress-teaching-site-updates",
+      "metadata": {
+        "objective": "Qualify one paid WordPress theme/plugin update pass using existing LazyingArt publishing work, before considering any recurring maintenance.",
         "version": 1
       },
       "url": ""
@@ -880,6 +1040,13 @@
       "id": "channel:upwork",
       "kind": "channel",
       "label": "upwork",
+      "metadata": {},
+      "url": ""
+    },
+    {
+      "id": "channel:upwork_mcp_expert",
+      "kind": "channel",
+      "label": "upwork_mcp_expert",
       "metadata": {},
       "url": ""
     },
@@ -2846,7 +3013,12 @@
           "document search",
           "pdf collection",
           "book collection",
-          "text collection"
+          "text collection",
+          "mcp server",
+          "model context protocol server",
+          "mcp deployment",
+          "mcp security review",
+          "mcp pre-deployment review"
         ],
         "summary": "Local-first multilingual knowledge cards and rebuildable Markdown search with exact source provenance."
       },
@@ -4044,7 +4216,7 @@
       "metadata": {
         "description": "AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-07T12:57:39Z",
+        "pushed_at": "2026-09-17T04:18:30Z",
         "topics": [
           "aginti",
           "agintiflow",
@@ -4065,7 +4237,7 @@
           "unity",
           "unreal-engine"
         ],
-        "updated_at": "2026-09-07T12:58:03Z"
+        "updated_at": "2026-09-17T04:18:34Z"
       },
       "url": "https://github.com/lachlanchen/AgInTi-LabCanvas"
     },
@@ -4102,7 +4274,7 @@
       "metadata": {
         "description": "AgentShell: named AI CLI accounts and isolated Linux Codex desktops. Reuse account logins, share working trees, and choose private or shared Codex history.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-10T09:56:31Z",
+        "pushed_at": "2026-09-13T12:18:09Z",
         "topics": [
           "account-isolation",
           "account-management",
@@ -4125,7 +4297,7 @@
           "terminal",
           "workflow-automation"
         ],
-        "updated_at": "2026-09-10T09:57:31Z"
+        "updated_at": "2026-09-13T12:18:12Z"
       },
       "url": "https://github.com/lachlanchen/AgentShell"
     },
@@ -4228,7 +4400,7 @@
       "metadata": {
         "description": "Script-first browser automation for publishing short video through a local watcher or queue to Chinese and international creator platforms.",
         "homepage": "https://studio.lazying.art",
-        "pushed_at": "2026-09-04T17:56:24Z",
+        "pushed_at": "2026-09-14T13:26:57Z",
         "topics": [
           "autopublish",
           "browser-automation",
@@ -4239,7 +4411,7 @@
           "short-video",
           "workflow"
         ],
-        "updated_at": "2026-09-04T20:50:28Z"
+        "updated_at": "2026-09-16T07:51:27Z"
       },
       "url": "https://github.com/lachlanchen/AutoPublish"
     },
@@ -4474,7 +4646,7 @@
           "source-traceability",
           "wealth"
         ],
-        "updated_at": "2026-08-26T10:40:28Z"
+        "updated_at": "2026-09-16T07:56:41Z"
       },
       "url": "https://github.com/lachlanchen/HowYouGotRich"
     },
@@ -4624,7 +4796,7 @@
       "metadata": {
         "description": "Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS.",
         "homepage": "https://l-and-n.lazying.art",
-        "pushed_at": "2026-09-11T11:25:43Z",
+        "pushed_at": "2026-09-19T03:09:33Z",
         "topics": [
           "android",
           "cantonese",
@@ -4646,7 +4818,7 @@
           "watchos",
           "whisper"
         ],
-        "updated_at": "2026-09-11T11:25:47Z"
+        "updated_at": "2026-09-19T03:09:37Z"
       },
       "url": "https://github.com/lachlanchen/L-and-N"
     },
@@ -4785,7 +4957,7 @@
       "metadata": {
         "description": "Local-first AI-assisted video workflow for transcription, multilingual subtitles, captions, metadata, generation, and reviewed publishing.",
         "homepage": "https://studio.lazying.art/",
-        "pushed_at": "2026-09-04T17:56:39Z",
+        "pushed_at": "2026-09-14T13:33:04Z",
         "topics": [
           "ai-video-editing",
           "automatic-subtitles",
@@ -4806,7 +4978,7 @@
           "whisper",
           "youtube"
         ],
-        "updated_at": "2026-09-04T20:48:31Z"
+        "updated_at": "2026-09-14T13:33:12Z"
       },
       "url": "https://github.com/lachlanchen/LazyEdit"
     },
@@ -4945,7 +5117,7 @@
       "metadata": {
         "description": "LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance.",
         "homepage": "http://learn.lazying.art/",
-        "pushed_at": "2026-09-10T12:07:47Z",
+        "pushed_at": "2026-09-19T20:22:45Z",
         "topics": [
           "chapter",
           "edition",
@@ -4958,7 +5130,7 @@
           "read",
           "root"
         ],
-        "updated_at": "2026-09-10T12:09:17Z"
+        "updated_at": "2026-09-19T20:22:49Z"
       },
       "url": "https://github.com/lachlanchen/LazyLearn"
     },
@@ -5022,7 +5194,7 @@
       "metadata": {
         "description": "Review-first social discovery and visible browser assistant for helpful, transparent open-source replies",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-11T22:07:30Z",
+        "pushed_at": "2026-09-19T23:33:21Z",
         "topics": [
           "anti-spam",
           "browser-automation",
@@ -5042,7 +5214,7 @@
           "sqlite",
           "x"
         ],
-        "updated_at": "2026-09-11T22:07:34Z"
+        "updated_at": "2026-09-19T23:33:25Z"
       },
       "url": "https://github.com/lachlanchen/LazyPromotion"
     },
@@ -5077,7 +5249,7 @@
       "metadata": {
         "description": "Portable LazyingArt agent skills for AgInTiFlow, Codex, Claude, Gemini, Copilot, LazyEdit, AutoPublish, browser automation, books, and publishing workflows.",
         "homepage": "https://lachlanchen.github.io/LazySkills/",
-        "pushed_at": "2026-09-05T15:26:52Z",
+        "pushed_at": "2026-09-16T08:52:23Z",
         "topics": [
           "aginti",
           "ai-agents",
@@ -5100,7 +5272,7 @@
           "workflow-automation",
           "xiaoyunque"
         ],
-        "updated_at": "2026-09-05T15:26:56Z"
+        "updated_at": "2026-09-16T08:52:28Z"
       },
       "url": "https://github.com/lachlanchen/LazySkills"
     },
@@ -5111,7 +5283,7 @@
       "metadata": {
         "description": "Multilingual pocket travel books and website from aligned Chinese, Japanese, and English editorial JSON",
         "homepage": "https://lachlanchen.github.io/LazyTravel/",
-        "pushed_at": "2026-09-11T20:57:17Z",
+        "pushed_at": "2026-09-12T00:29:58Z",
         "topics": [
           "chinese",
           "digital-publishing",
@@ -5124,7 +5296,7 @@
           "travel-guide",
           "xian"
         ],
-        "updated_at": "2026-09-11T20:57:28Z"
+        "updated_at": "2026-09-12T00:30:01Z"
       },
       "url": "https://github.com/lachlanchen/LazyTravel"
     },
@@ -5135,7 +5307,7 @@
       "metadata": {
         "description": "LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps.",
         "homepage": "https://remote.lazying.art",
-        "pushed_at": "2026-09-09T16:22:53Z",
+        "pushed_at": "2026-09-13T01:19:53Z",
         "topics": [
           "android",
           "cloud-relay",
@@ -5158,7 +5330,7 @@
           "web-gui",
           "windows"
         ],
-        "updated_at": "2026-09-09T16:24:18Z"
+        "updated_at": "2026-09-14T14:47:08Z"
       },
       "url": "https://github.com/lachlanchen/LazyTunnel"
     },
@@ -5274,7 +5446,7 @@
       "metadata": {
         "description": "Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-11T22:02:28Z",
+        "pushed_at": "2026-09-19T17:25:18Z",
         "topics": [
           "ai-tools",
           "ecosystem",
@@ -5290,7 +5462,7 @@
           "static-site",
           "website"
         ],
-        "updated_at": "2026-09-11T22:02:32Z"
+        "updated_at": "2026-09-19T17:25:22Z"
       },
       "url": "https://github.com/lachlanchen/LazyingArtWebsite"
     },
@@ -5400,7 +5572,7 @@
       "metadata": {
         "description": "Local-first, privacy-preserving multilingual knowledge cards grounded in cited books on your own hardware.",
         "homepage": "https://lazying.art/lkt/",
-        "pushed_at": "2026-09-10T16:20:14Z",
+        "pushed_at": "2026-09-12T11:47:02Z",
         "topics": [
           "citations",
           "e-ink",
@@ -5423,7 +5595,7 @@
           "raspberry-pi",
           "sqlite"
         ],
-        "updated_at": "2026-09-10T16:22:17Z"
+        "updated_at": "2026-09-12T11:47:05Z"
       },
       "url": "https://github.com/lachlanchen/LocalKnowledgeTerminal"
     },
@@ -5483,7 +5655,7 @@
           "webapp",
           "world-travel"
         ],
-        "updated_at": "2026-09-11T09:55:52Z"
+        "updated_at": "2026-09-12T18:20:56Z"
       },
       "url": "https://github.com/lachlanchen/LocalVideoGen"
     },
@@ -5566,7 +5738,7 @@
       "metadata": {
         "description": "Musia: local-first AI song localization, stem separation, lyrics, beats, chords, and creative music workflows",
         "homepage": "https://fun.lazying.art",
-        "pushed_at": "2026-08-01T14:48:12Z",
+        "pushed_at": "2026-09-14T00:30:34Z",
         "topics": [
           "ai-music",
           "audio-analysis",
@@ -5583,7 +5755,7 @@
           "source-separation",
           "whisper"
         ],
-        "updated_at": "2026-08-01T14:48:17Z"
+        "updated_at": "2026-09-14T00:30:37Z"
       },
       "url": "https://github.com/lachlanchen/Musia"
     },
@@ -5605,7 +5777,7 @@
           "python",
           "pytorch"
         ],
-        "updated_at": "2026-09-11T04:13:57Z"
+        "updated_at": "2026-09-16T12:00:16Z"
       },
       "url": "https://github.com/lachlanchen/OpenHI"
     },
@@ -5691,7 +5863,7 @@
       "metadata": {
         "description": "PaperAgent is a local-first web workspace for academic writing. It lets you edit LaTeX and code in the browser, run Python or R and compile LaTeX on the backend, and preview PDFs with build logs—all in one place.",
         "homepage": "https://paper.lazying.art/",
-        "pushed_at": "2026-09-11T06:29:29Z",
+        "pushed_at": "2026-09-12T04:21:51Z",
         "topics": [
           "academic-writing",
           "codex",
@@ -5708,7 +5880,7 @@
           "web-ide",
           "websocket"
         ],
-        "updated_at": "2026-09-11T06:29:33Z"
+        "updated_at": "2026-09-12T04:21:55Z"
       },
       "url": "https://github.com/lachlanchen/PaperAgent"
     },
@@ -5799,7 +5971,7 @@
       "metadata": {
         "description": "Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun.",
         "homepage": "https://lachlanchen.github.io/LalaMedias/",
-        "pushed_at": "2026-09-05T14:39:28Z",
+        "pushed_at": "2026-09-14T05:28:08Z",
         "topics": [
           "ai-video",
           "animation-prompts",
@@ -5813,7 +5985,7 @@
           "storytelling",
           "xiaoyunque"
         ],
-        "updated_at": "2026-09-05T14:39:35Z"
+        "updated_at": "2026-09-14T05:28:13Z"
       },
       "url": "https://github.com/lachlanchen/RaraXiaAndAyaChan"
     },
@@ -6000,7 +6172,7 @@
       "metadata": {
         "description": "Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-06T17:13:27Z",
+        "pushed_at": "2026-09-19T14:58:47Z",
         "topics": [
           "dnsmasq",
           "ethernet",
@@ -6015,7 +6187,7 @@
           "vnc",
           "wifi"
         ],
-        "updated_at": "2026-09-06T17:13:37Z"
+        "updated_at": "2026-09-19T14:58:50Z"
       },
       "url": "https://github.com/lachlanchen/WIFI2LAN"
     },
@@ -6382,7 +6554,7 @@
       "metadata": {
         "description": "Config files for my GitHub profile.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-10T10:18:49Z",
+        "pushed_at": "2026-09-12T19:26:29Z",
         "topics": [
           "automation",
           "config",
@@ -6395,9 +6567,22 @@
           "systems",
           "workflows"
         ],
-        "updated_at": "2026-09-10T10:18:55Z"
+        "updated_at": "2026-09-12T19:26:32Z"
       },
       "url": "https://github.com/lachlanchen/lachlanchen"
+    },
+    {
+      "id": "repository:lachlanchen/lachlanchen.github.io",
+      "kind": "repository",
+      "label": "lachlanchen.github.io",
+      "metadata": {
+        "description": "Personal site and CV of Lachlan (Rongzhou) Chen 陈荣周 — lachlanchen.lazying.art",
+        "homepage": "",
+        "pushed_at": "2026-09-19T14:24:23Z",
+        "topics": [],
+        "updated_at": "2026-09-19T14:24:26Z"
+      },
+      "url": "https://github.com/lachlanchen/lachlanchen.github.io"
     },
     {
       "id": "repository:lachlanchen/lazealoptix",
@@ -6444,7 +6629,7 @@
           "theoretical-minimum",
           "transcripts"
         ],
-        "updated_at": "2026-09-11T01:41:11Z"
+        "updated_at": "2026-09-16T13:14:42Z"
       },
       "url": "https://github.com/lachlanchen/leonardsusskind"
     },
@@ -6648,7 +6833,7 @@
       "metadata": {
         "description": "Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows.",
         "homepage": "https://lazying.art",
-        "pushed_at": "2026-09-10T09:56:39Z",
+        "pushed_at": "2026-09-19T14:58:17Z",
         "topics": [
           "automation",
           "language",
@@ -6661,7 +6846,7 @@
           "strategic",
           "workflows"
         ],
-        "updated_at": "2026-09-10T09:58:20Z"
+        "updated_at": "2026-09-19T14:58:20Z"
       },
       "url": "https://github.com/lachlanchen/the-art-of-lazying"
     },
@@ -6672,7 +6857,7 @@
       "metadata": {
         "description": "Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge.",
         "homepage": "https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html",
-        "pushed_at": "2026-09-11T16:59:05Z",
+        "pushed_at": "2026-09-19T14:58:16Z",
         "topics": [
           "automation",
           "binary-patching",
@@ -6690,7 +6875,7 @@
           "wine",
           "xvfb"
         ],
-        "updated_at": "2026-09-11T17:31:13Z"
+        "updated_at": "2026-09-19T19:00:11Z"
       },
       "url": "https://github.com/lachlanchen/uu-remote-ubuntu-bridge"
     },
@@ -7913,6 +8098,13 @@
       "url": "https://github.com/lachlanchen/SoftEventFrameAlignment/commit/b82aec90bcb4694d1de2e8495fb0b3b3c563a5e5"
     },
     {
+      "id": "url:44eba46328d3ebcd",
+      "kind": "web_resource",
+      "label": "release state apple app store public url",
+      "metadata": {},
+      "url": "https://apps.apple.com/app/l-n-speech-practice/id6808872450"
+    },
+    {
       "id": "url:d4333582120f1591",
       "kind": "web_resource",
       "label": "release state testflight public url",
@@ -8491,7 +8683,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "postiz_draft"
       },
       "relation": "targets",
       "source": "campaign:bilingual-lecture-pack-pilot",
@@ -8723,7 +8915,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "published"
       },
       "relation": "targets",
       "source": "campaign:bilingual-pocket-editions",
@@ -8886,6 +9078,16 @@
       "relation": "uses_evidence",
       "source": "campaign:cross-source-card-dedup",
       "target": "url:cda7d5ffff95cf24"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "application_and_one_follow_up_sent"
+      },
+      "relation": "targets",
+      "source": "campaign:digitalocean-ripple-writer-pitch",
+      "target": "channel:direct_email"
     },
     {
       "confidence": 1.0,
@@ -9097,6 +9299,16 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "postiz_queue"
+      },
+      "relation": "targets",
+      "source": "campaign:kicad-plugin-testing-freelancer",
+      "target": "channel:linkedin"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://www.freelancer.com/projects/virtual-assistant/KiCad-Plugin-Testing-Feedback",
       "metadata": {},
       "relation": "uses_evidence",
@@ -9191,7 +9403,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "published"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -9221,7 +9433,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "published"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
@@ -9231,11 +9443,19 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "published"
       },
       "relation": "targets",
       "source": "campaign:l-and-n-pronunciation-launch",
       "target": "channel:youtube"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "https://apps.apple.com/app/l-n-speech-practice/id6808872450",
+      "metadata": {},
+      "relation": "uses_evidence",
+      "source": "campaign:l-and-n-pronunciation-launch",
+      "target": "url:44eba46328d3ebcd"
     },
     {
       "confidence": 1.0,
@@ -9527,7 +9747,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "two_helpful_replies_one_acknowledged"
+        "state": "two_helpful_replies_two_acknowledged"
       },
       "relation": "targets",
       "source": "campaign:lecture-archive-provenance",
@@ -9597,7 +9817,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "postiz_draft"
       },
       "relation": "targets",
       "source": "campaign:lexical-database-ingestion",
@@ -10443,6 +10663,66 @@
     },
     {
       "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "four_github_reviews_and_three_reddit_architecture_replies"
+      },
+      "relation": "targets",
+      "source": "campaign:mcp-boundary-review",
+      "target": "channel:community_replies"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "proof_and_tracked_reader_route"
+      },
+      "relation": "targets",
+      "source": "campaign:mcp-boundary-review",
+      "target": "channel:github"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "published_live_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:mcp-boundary-review",
+      "target": "channel:lazyblog"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "live_verified"
+      },
+      "relation": "targets",
+      "source": "campaign:mcp-boundary-review",
+      "target": "channel:owned_website"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "reddit_linkedin_x_instagram_published"
+      },
+      "relation": "targets",
+      "source": "campaign:mcp-boundary-review",
+      "target": "channel:postiz"
+    },
+    {
+      "confidence": 1.0,
+      "evidence_url": "",
+      "metadata": {
+        "state": "high_fit_not_submitted_personal_interview_and_credit_gate"
+      },
+      "relation": "targets",
+      "source": "campaign:mcp-boundary-review",
+      "target": "channel:upwork_mcp_expert"
+    },
+    {
+      "confidence": 1.0,
       "evidence_url": "https://github.com/lachlanchen/LazyEdge",
       "metadata": {},
       "relation": "promotes",
@@ -10547,7 +10827,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "technical_reply_published"
+        "state": "technical_reply_and_one_clarification_published"
       },
       "relation": "targets",
       "source": "campaign:minimax-h3-voice-reference-diagnostic",
@@ -10575,7 +10855,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "sent_once"
+        "state": "application_and_one_follow_up_sent"
       },
       "relation": "targets",
       "source": "campaign:namecoach-voice-ai-contract",
@@ -10615,7 +10895,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "queued_verified"
+        "state": "scheduled"
       },
       "relation": "targets",
       "source": "campaign:openhi-reproducibility-sprint",
@@ -11203,7 +11483,7 @@
       "confidence": 1.0,
       "evidence_url": "",
       "metadata": {
-        "state": "postiz_queue"
+        "state": "postiz_published"
       },
       "relation": "targets",
       "source": "campaign:wenyan-history",

@@ -441,14 +441,24 @@ def agent_contact_block_reason(
 def load_catalog() -> dict[str, Any]:
     catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     projects = list(catalog["projects"])
+    inventory_only = catalog.get("inventory_only", {})
+    if not isinstance(inventory_only, dict) or any(
+        not isinstance(url, str) or not url.startswith("https://github.com/")
+        or not isinstance(reason, str) or not reason.strip()
+        for url, reason in inventory_only.items()
+    ):
+        raise ValueError("inventory_only must map GitHub repository URLs to explicit reasons")
+    inventory_only_urls = {url.rstrip("/").casefold() for url in inventory_only}
+    known_urls = {project["url"].rstrip("/").casefold() for project in projects}
+    if known_urls & inventory_only_urls:
+        raise ValueError("An inventory-only repository cannot also be a curated promotion project")
     if not GITHUB_CATALOG_PATH.exists():
         return {**catalog, "projects": projects}
     indexed = json.loads(GITHUB_CATALOG_PATH.read_text(encoding="utf-8"))
-    known_urls = {project["url"].rstrip("/").casefold() for project in projects}
     for repo in indexed.get("repositories", []):
         url = str(repo.get("url") or "").rstrip("/")
         description = compact(str(repo.get("description") or ""))
-        if not url or not description or url.casefold() in known_urls:
+        if not url or not description or url.casefold() in known_urls | inventory_only_urls:
             continue
         topics = []
         for value in repo.get("topics", []):

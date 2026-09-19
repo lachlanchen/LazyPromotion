@@ -10,7 +10,7 @@
 
 LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 도우미입니다. 하나의 보이는 Chrome 프로필에서 Reddit, X, Instagram, Hacker News의 실제 웹 인터페이스를 검색하고, 가능한 연결점을 SQLite에 기록하며, 로그인한 계정에 권장되는 Codex 모델을 낮은 추론 강도로 사용해 근거 있는 답글을 작성합니다. 그러나 공개 전송 직전에는 반드시 멈춥니다. 커뮤니티를 영업 목록으로 바꾸지 않으면서 관련 오픈 소스 작업으로 사람을 돕고 싶은 유지보수자를 위한 도구입니다.
 
-이 저장소에는 보관 처리되지 않은 `lachlanchen` 공개 소스 저장소 108개의 목록도 있습니다. 코드, 책, 지식 그래프, 연구, 미디어, 언어 학습, 로컬 AI를 서로 결합하되, 구매자가 실제로 이해할 수 있고 공개 증거로 뒷받침되는 기회만 제시합니다. 첫 번째로 검증된 매출 USD 1,000을 향해 USD 500 MCP 검토를 주 경로로 두고, 고정 범위의 인접 서비스 아홉 가지를 운영합니다. 클릭, 별, 지원서, 예약 게시물은 매출로 계산하지 않습니다.
+이 저장소에는 보관 처리되지 않은 `lachlanchen` 공개 소스 저장소 109개의 목록도 있습니다. 코드, 책, 지식 그래프, 연구, 미디어, 언어 학습, 로컬 AI를 서로 결합하되, 구매자가 실제로 이해할 수 있고 공개 증거로 뒷받침되는 기회만 제시합니다. 첫 번째로 검증된 매출 USD 1,000을 향해 USD 500 MCP 검토를 주 경로로 두고, 고정 범위의 인접 서비스 아홉 가지를 운영합니다. 클릭, 별, 지원서, 예약 게시물은 매출로 계산하지 않습니다.
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
@@ -36,7 +36,7 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 | [`promotion.py`](../promotion.py) | SQLite 원장, 매칭, Codex 분류·초안, 해시에 연결된 승인 |
 | [`browser.py`](../browser.py) | Playwright/CDP 탐색, 검사, 작성창 준비, 보호된 전송 |
 | [`worker.py`](../worker.py) | 전송 기능 없이, 유한한 검색과 대기 시간을 적용하는 비공개 검토 대기열 |
-| [`catalog.json`](../catalog.json) 및 [`github-repos.json`](../github-repos.json) | 선별된 필요 매칭과 공개 저장소 108개의 목록 |
+| [`catalog.json`](../catalog.json) 및 [`github-repos.json`](../github-repos.json) | 선별된 필요 매칭과 공개 저장소 109개의 목록 |
 | [`github_portfolio_audit.py`](../github_portfolio_audit.py) | 현재 모든 공개 소스 저장소에 대한 비공개 읽기 전용 관심도 감사. GitHub 트래픽은 리드나 매출로 계산하지 않음 |
 | [`mcp_public_preflight.py`](../mcp_public_preflight.py) | 공개 GitHub 저장소를 특정 리비전에 고정해 정적으로 사전 점검하는 MCP 검토 도구. 코드를 복제하거나 실행하지 않음 |
 | [`portfolio-opportunities.json`](../portfolio-opportunities.json) | 코드, 책, 지식 시스템, 미디어를 구매자 문제 중심으로 결합한 기회 |

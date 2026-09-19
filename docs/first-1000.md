@@ -38,6 +38,14 @@ an honorarium but states no amount. The pitch disclosed AI assistance and asks
 for policy, topic, and fee agreement before drafting. No new product, full
 article, contract, or revenue is implied; no automatic follow-up is enabled.
 
+One September 20 HKT follow-up to the existing
+[NameCoach application](../campaigns/namecoach-voice-ai-contract.json) uses
+L & N's new store releases as proof and asks about a separately scoped paid
+project. The current job's USD 400 exercise requires interviews and leads
+toward recurring weekly work; it is not an assignment we can accept without
+operator involvement. No such commitment was made. This remains one
+application awaiting a reply, not a second prospect or a sale.
+
 ## Primary offer and acquisition record
 
 The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:

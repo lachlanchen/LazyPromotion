@@ -151,6 +151,12 @@ class ApplicationWatchTests(unittest.TestCase):
         )
         self.assertEqual(smashing["review_after"], "2026-09-28")
         self.assertFalse(smashing["due_for_human_review"])
+        namecoach = next(
+            item for item in report["applications"]
+            if item["campaign_id"] == "namecoach-voice-ai-contract"
+        )
+        self.assertEqual(namecoach["review_after"], "2026-09-27")
+        self.assertEqual(current_ids.count("namecoach-voice-ai-contract"), 1)
         self.assertIn("pythonjobs-pipeline-enquiry", current_ids)
         self.assertIn("enfold-wordpress-cleanup-enquiry", current_ids)
         self.assertIn("bigo-api-diagnostic-enquiry", current_ids)

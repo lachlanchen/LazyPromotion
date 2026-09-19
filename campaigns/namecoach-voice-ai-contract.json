@@ -1,7 +1,7 @@
 {
   "id": "namecoach-voice-ai-contract",
-  "version": 1,
-  "objective": "Earn a paid NameCoach/Euphonia voice-AI take-home or trial by presenting the strongest public pronunciation and multilingual-ASR work without claiming production G2P experience.",
+  "version": 2,
+  "objective": "Explore a separately scoped paid pronunciation-evaluation or ASR-integration project with NameCoach using the shipped L & N proof, without claiming production G2P experience or committing the operator to an ongoing role.",
   "source_need": {
     "captured_at": "2026-09-07T00:51:00Z",
     "url": "https://news.ycombinator.com/item?id=48900749",
@@ -14,6 +14,16 @@
     "published_process": "paid take-home followed by a paid trial month before any longer engagement",
     "requested_depth": "Grapheme-to-phoneme, IPA, ASR/TTS internals, and model building and evaluation, especially recognition and G2P.",
     "policy": "The employer-authored post remained public and invited a short email, but no closing date or independent current-status confirmation was available. The rate and process are not an offer, contract, payment, or revenue."
+  },
+  "source_recheck": {
+    "checked_on": "2026-09-19",
+    "url": "https://wellfound.com/jobs/4218443-founding-voice-ai-engineer-part-time-potential-path-to-chief-ai-officer",
+    "state": "employer_listing_public_with_application_action",
+    "paid_exercise": "The listing describes a USD 400, approximately four-to-six-hour take-home paid on submission, after a thirty-minute introductory call, followed by a forty-five-to-sixty-minute defense round.",
+    "ongoing_capacity": "Approximately twenty-to-thirty hours per week; the subsequent paid trial is about twenty hours per week.",
+    "decision": "The role is not an autonomous low-involvement purchase route. Ask once whether the employer also commissions a separate bounded asynchronous project. Do not assume that such a project exists or that the USD 400 exercise price applies to it.",
+    "qualification_process_accepted": false,
+    "operator_time_committed": false
   },
   "fit": {
     "projects": [
@@ -47,13 +57,28 @@
     "production_g2p_claimed": false,
     "paid_take_home_requested": true,
     "automatic_follow_up": false,
-    "review_after": "2026-09-14",
+    "review_after": "2026-09-27",
+    "follow_up": {
+      "state": "sent_awaiting_human_reply",
+      "sent_at": "2026-09-19T16:51:35Z",
+      "method": "One reviewed reply to the existing September 7 application from the existing LazyingArt business alias, with no attachments.",
+      "reason": "L & N now has independently visible production listings on both stores; the current role's interview and recurring-time requirements warrant asking about a separate bounded project instead.",
+      "delivery_evidence": "One send action closed the composer. After refreshing Sent, the new reply appeared alongside the original application; its stored body matched the reviewed text after paragraph-whitespace normalization.",
+      "message_storage": "ignored private evidence",
+      "ai_assistance_disclosed": true,
+      "interview_committed": false,
+      "ongoing_role_accepted": false,
+      "unpaid_work_accepted": false,
+      "automatic_follow_up": false,
+      "policy": "Do not send another follow-up without a human response. Any separately commissioned task requires an agreed scope, fee, acceptance checks, and payment terms before work."
+    },
     "policy": "Do not infer interest from delivery. Any reply, take-home scope, overlap requirement, rate, trial, contract, payment, or source transfer must be reviewed on its own evidence."
   },
   "channels": {
     "direct_email": {
-      "state": "sent_once",
-      "outbound_messages": 1,
+      "state": "application_and_one_follow_up_sent",
+      "outbound_messages": 2,
+      "unique_applications": 1,
       "fees_spent_usd": 0
     }
   },

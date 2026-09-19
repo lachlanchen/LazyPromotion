@@ -50,6 +50,7 @@ LazyPromotion は、ローカルで動くレビュー優先のソーシャル需
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 検証、エージェント課題設計、発音、ローカル知識作業に関する現行の買い手ニーズ順位 |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | 現在の直接経路調査、根拠の不足、応募条件 |
 | [`metrics.py`](../metrics.py)、[`network.py`](../network.py)、[`signals.py`](../signals.py) | 根拠が必要なファネル、公開グラフ、ファーストパーティ需要シグナル |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | 情報源を再確認する前に、過去の非公開の選別判断を参照。ページ取得・同期・送信は行いません |
 | [`owned_monitor.py`](../owned_monitor.py)、[`threads_inbound_monitor.py`](../threads_inbound_monitor.py)、[`github_inbound_monitor.py`](../github_inbound_monitor.py)、[`lkt_inbox.py`](../lkt_inbox.py) | 公開状況の読み取り専用監視、Threads 返信と公開 issue の通知、非公開の適合確認受付 |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 集約した非公開状態で実際の入金を読み取り専用検出。Stripe オブジェクトの作成や売上の自動記録はしない |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | プロジェクト専用の Xvfb/x11vnc/noVNC/Chrome レビューデスクトップ一式 |

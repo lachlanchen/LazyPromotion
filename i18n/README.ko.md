@@ -50,6 +50,7 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 검증, 에이전트 작업 설계, 발음, 지역 지식 작업에 대한 실시간 구매자 수요 순위 |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | 현재 직접 경로 검토, 증거 공백, 제출 관문 |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py), [`signals.py`](../signals.py) | 증거 기반 퍼널, 공개 관계 그래프, 자사 채널 수요 신호 |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | 출처를 다시 검토하기 전에 이전 비공개 선별 판단을 조회하며, 페이지 가져오기·동기화·전송은 수행하지 않음 |
 | [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py), [`lkt_inbox.py`](../lkt_inbox.py) | 읽기 전용 게시 상태 감시, Threads 답글 및 공개 issue 알림, 비공개 적합성 문의 수신 |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 집계된 비공개 상태로 실제 결제를 읽기 전용 감지. Stripe 객체를 만들거나 매출을 자동 기록하지 않음 |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | 프로젝트 전용 Xvfb/x11vnc/noVNC/Chrome 검토 데스크톱 하나 |

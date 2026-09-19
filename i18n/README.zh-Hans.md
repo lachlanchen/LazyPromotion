@@ -50,6 +50,7 @@ LazyPromotion 是一款本地运行、先审后发的社交需求发现助手。
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 针对验证、agent 任务设计、发音和本地知识工作的实时买方需求排序 |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | 当前直接路线筛查、证据缺口与提交门槛 |
 | [`metrics.py`](../metrics.py)、[`network.py`](../network.py) 与 [`signals.py`](../signals.py) | 有证据门槛的漏斗、公开关系图与第一方需求信号 |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | 重新查看来源前查询已有的私密筛选结论；不抓取页面、同步数据或发送消息 |
 | [`owned_monitor.py`](../owned_monitor.py)、[`threads_inbound_monitor.py`](../threads_inbound_monitor.py)、[`github_inbound_monitor.py`](../github_inbound_monitor.py) 与 [`lkt_inbox.py`](../lkt_inbox.py) | 只读发布监测、Threads 回复提醒、公开 issue 提醒与私密适配咨询收件 |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 以汇总私密状态只读检测真实入账；绝不创建 Stripe 对象或自动记账收入 |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | 项目专用的单一 Xvfb/x11vnc/noVNC/Chrome 审阅桌面 |

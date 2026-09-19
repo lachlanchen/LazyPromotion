@@ -6,10 +6,12 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sqlite3
 import subprocess
 from collections import Counter
+from contextlib import closing
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qsl, urlencode, urlparse, urlsplit, urlunsplit
 
 import promotion
 import opportunities
@@ -18,6 +20,72 @@ import opportunities
 ROOT = Path(__file__).resolve().parent
 CAMPAIGNS = ROOT / "campaigns"
 PUBLIC_SNAPSHOT = ROOT / "promotion-network.public.json"
+SCREENING_FIELDS = (
+    "state", "status", "decision", "checked_at", "checked_on",
+    "next_routine_review_not_before", "next_review_not_before",
+    "earlier_review_trigger", "next_trigger", "evidence_path", "evidence_file",
+)
+
+
+def screening_url_key(url: str) -> str:
+    """Match stored context, not authorization: retain meaningful query/fragment."""
+    parsed = urlsplit(url)
+    if (
+        parsed.scheme.lower() not in {"http", "https"}
+        or not parsed.hostname or parsed.username is not None
+        or parsed.password is not None or any(char.isspace() for char in url)
+    ):
+        raise ValueError("Use an absolute HTTP(S) source URL without credentials or whitespace")
+    # Validate the port, too; urlsplit otherwise permits malformed authorities.
+    parsed.port
+    query = [
+        (key, value) for key, value in parse_qsl(parsed.query, keep_blank_values=True)
+        if not key.casefold().startswith("utm_")
+    ]
+    return urlunsplit((
+        parsed.scheme.lower(), parsed.netloc.lower(), parsed.path or "/",
+        urlencode(query), parsed.fragment,
+    ))
+
+
+def lookup_sources(db, urls: list[str]) -> dict:
+    """Read existing graph decisions without syncing, fetching or contacting."""
+    if not 1 <= len(urls) <= 20:
+        raise ValueError("Look up between one and twenty source URLs")
+    keys = {screening_url_key(url): [] for url in urls}
+    for row in db.execute("SELECT * FROM entities WHERE url <> '' ORDER BY id"):
+        try:
+            key = screening_url_key(row["url"])
+        except ValueError:
+            continue
+        if key not in keys:
+            continue
+        try:
+            metadata = json.loads(row["metadata_json"])
+            if not isinstance(metadata, dict):
+                raise ValueError("Metadata is not an object")
+        except (TypeError, ValueError):
+            metadata = None
+        keys[key].append({
+            "id": row["id"], "kind": row["kind"],
+            "visibility": row["visibility"],
+            "graph_last_seen_at": row["last_seen_at"],
+            "metadata_state": "available" if metadata is not None else "unreadable",
+            "screening": {
+                field: metadata[field] for field in SCREENING_FIELDS
+                if field in metadata and isinstance(metadata[field], (str, bool, int, float))
+            } if metadata is not None else {},
+        })
+    return {
+        "private_context": True,
+        "read_only": True,
+        "notice": "Stored context only; no match is not eligibility, and timestamps do not prove live availability.",
+        "sources": [
+            {"url": url, "state": "recorded" if keys[screening_url_key(url)] else "not_recorded",
+             "matches": keys[screening_url_key(url)]}
+            for url in urls
+        ],
+    }
 
 
 def graph_id(prefix: str, value: str) -> str:
@@ -570,7 +638,20 @@ def main() -> int:
     sub.add_parser("report")
     export = sub.add_parser("export-public")
     export.add_argument("--output", type=Path, default=PUBLIC_SNAPSHOT)
+    lookup = sub.add_parser("lookup", help="Read private screening context before revisiting source URLs")
+    lookup.add_argument("urls", nargs="+")
+    lookup.add_argument("--db", type=Path, default=promotion.DEFAULT_DB)
     args = parser.parse_args()
+    if args.command == "lookup":
+        try:
+            # mode=ro also fails closed when the database does not exist.
+            with closing(sqlite3.connect(args.db.resolve().as_uri() + "?mode=ro", uri=True)) as db:
+                db.row_factory = sqlite3.Row
+                result = lookup_sources(db, args.urls)
+        except (ValueError, sqlite3.Error) as exc:
+            parser.error(f"Screening lookup unavailable; no database created or synchronized: {exc}")
+        print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+        return 0
     db = promotion.open_db()
     if args.command == "sync":
         result = sync_graph(db, include_workspace=args.workspace)

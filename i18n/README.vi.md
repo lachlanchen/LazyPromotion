@@ -50,6 +50,7 @@ Kho mã còn lưu danh mục công khai gồm 108 kho mã nguồn `lachlanchen` 
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Nhu cầu người mua trực tiếp được xếp hạng cho xác minh, thiết kế tác vụ agent, phát âm và tri thức địa phương |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | Đợt rà soát hiện tại cho tuyến trực tiếp, lỗ hổng bằng chứng và cổng nộp hồ sơ |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py) và [`signals.py`](../signals.py) | Phễu có cổng bằng chứng, đồ thị quan hệ công khai và tín hiệu nhu cầu bên thứ nhất |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | Tra cứu quyết định sàng lọc riêng tư trước khi xem lại một nguồn; không tải trang, đồng bộ hay gửi tin |
 | [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py) và [`lkt_inbox.py`](../lkt_inbox.py) | Giám sát xuất bản chỉ đọc, cảnh báo phản hồi Threads và issue công khai, cùng hộp nhận riêng tư để kiểm tra độ phù hợp |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | Phát hiện khoản thu trực tiếp ở chế độ chỉ đọc với trạng thái riêng tư tổng hợp; không tạo đối tượng Stripe hay tự động ghi nhận doanh thu |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | Một desktop Xvfb/x11vnc/noVNC/Chrome riêng của dự án để duyệt |

@@ -51,6 +51,7 @@ El repositorio también mantiene un inventario público de 108 repositorios fuen
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Necesidades vivas priorizadas de verificación, diseño de tareas para agentes, pronunciación y conocimiento local |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | Revisión vigente de rutas directas, carencias de prueba y puertas de presentación |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py) y [`signals.py`](../signals.py) | Solicitudes y embudo de ingresos sujetos a evidencia, grafo público y señales de demanda propias |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | Consulta decisiones privadas previas antes de volver a revisar una fuente; no descarga páginas, sincroniza ni envía mensajes |
 | [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py) y [`lkt_inbox.py`](../lkt_inbox.py) | Seguimiento de publicaciones en modo lectura, alertas de respuestas en Threads y de incidencias públicas, y entrada privada para comprobar ajuste |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | Detecta cobros reales en modo lectura con estado privado agregado; nunca crea objetos de Stripe ni registra ingresos automáticamente |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | Un único escritorio de revisión Xvfb/x11vnc/noVNC/Chrome propio del proyecto |

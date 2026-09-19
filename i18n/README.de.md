@@ -50,6 +50,7 @@ Das Repository enthält außerdem ein öffentliches Inventar von 108 nicht archi
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Rangliste aktueller Käuferbedürfnisse für Verifikation, Agenten-Aufgabenentwicklung, Aussprache und lokales Wissensmanagement |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | Aktuelle Prüfung direkter Wege, Nachweislücken und Einreichungshürden |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py) und [`signals.py`](../signals.py) | Nachweisgebundener Funnel, öffentlicher Graph und Signale aus eigenen Kanälen |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | Frühere private Prüfergebnisse vor einer erneuten Quellenprüfung nachschlagen; kein Seitenabruf, keine Synchronisierung und kein Versand |
 | [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py) und [`lkt_inbox.py`](../lkt_inbox.py) | Nur lesende Veröffentlichungsüberwachung, Hinweise auf Threads-Antworten und öffentliche Issues sowie private Erfassung von Eignungsanfragen |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | Nur lesende Erkennung echter Zahlungen mit aggregiertem privatem Zustand; erstellt keine Stripe-Objekte und verbucht nie automatisch Umsatz |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | Ein projekteigener Xvfb/x11vnc/noVNC/Chrome-Desktop für Reviews |

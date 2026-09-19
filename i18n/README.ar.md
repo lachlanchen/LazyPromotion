@@ -51,6 +51,7 @@ LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجت
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | احتياجات مشترين مباشرة ومرتبة للتحقق وهندسة مهام الوكلاء والنطق والعمل المعرفي المحلي |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | فحص المسارات المباشرة الحالي وفجوات الإثبات وبوابات التقديم |
 | [`metrics.py`](../metrics.py) و[`network.py`](../network.py) و[`signals.py`](../signals.py) | طلبات ومسار إيراد ببوابات دليل، ورسم عام، وإشارات طلب من قنوات مملوكة |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | قراءة قرارات الفرز الخاصة السابقة قبل مراجعة المصدر مجددًا، دون جلب صفحات أو مزامنة أو إرسال |
 | [`owned_monitor.py`](../owned_monitor.py) و[`threads_inbound_monitor.py`](../threads_inbound_monitor.py) و[`github_inbound_monitor.py`](../github_inbound_monitor.py) و[`lkt_inbox.py`](../lkt_inbox.py) | مراقبة نشر للقراءة فقط، وتنبيهات ردود Threads والمسائل العامة، واستقبال خاص لفحص الملاءمة |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | كشف للدفعات الحقيقية بالقراءة فقط وحالة خاصة مجمعة؛ لا ينشئ عناصر Stripe ولا يسجل الإيراد تلقائيًا |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | سطح مكتب مراجعة واحد خاص بالمشروع من Xvfb/x11vnc/noVNC/Chrome |

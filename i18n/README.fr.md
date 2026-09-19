@@ -50,6 +50,7 @@ Le dépôt tient aussi l’inventaire public de 108 dépôts sources `lachlanche
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Besoins acheteurs actuels classés pour la vérification, la conception de tâches d’agent, la prononciation et les connaissances locales |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | Analyse actuelle des voies directes, lacunes de preuve et conditions de soumission |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py) et [`signals.py`](../signals.py) | Entonnoir fondé sur des preuves, graphe public et signaux de demande propriétaires |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | Consulte les décisions privées antérieures avant de réexaminer une source, sans récupération de pages, synchronisation ni envoi |
 | [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py) et [`lkt_inbox.py`](../lkt_inbox.py) | Suivi des publications en lecture seule, alertes de réponses Threads et de tickets publics, et réception privée des demandes d’adéquation |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | Détection en lecture seule des paiements réels avec état privé agrégé ; ne crée jamais d’objet Stripe et ne comptabilise aucun revenu automatiquement |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | Bureau de révision unique Xvfb/x11vnc/noVNC/Chrome appartenant au projet |

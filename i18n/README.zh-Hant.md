@@ -50,6 +50,7 @@ LazyPromotion 是一款在本機執行、先審後發的社交需求探索助手
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | 針對驗證、agent 任務設計、發音與本地知識工作的即時買方需求排序 |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | 目前直接路線篩查、證據缺口與提交門檻 |
 | [`metrics.py`](../metrics.py)、[`network.py`](../network.py) 與 [`signals.py`](../signals.py) | 有證據門檻的漏斗、公開關係圖與第一方需求訊號 |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | 重新查看來源前查詢既有的私密篩選結論；不擷取頁面、同步資料或傳送訊息 |
 | [`owned_monitor.py`](../owned_monitor.py)、[`threads_inbound_monitor.py`](../threads_inbound_monitor.py)、[`github_inbound_monitor.py`](../github_inbound_monitor.py) 與 [`lkt_inbox.py`](../lkt_inbox.py) | 唯讀發布監測、Threads 回覆提醒、公開 issue 提醒與私密適配詢問收件 |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 以彙總私密狀態唯讀偵測真實入帳；絕不建立 Stripe 物件或自動記帳收入 |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | 專供此專案使用的單一 Xvfb/x11vnc/noVNC/Chrome 審閱桌面 |

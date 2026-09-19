@@ -50,6 +50,7 @@ LazyPromotion — локальный помощник для поиска зап
 | [`docs/paid-need-decision-2026-09-11.md`](../docs/paid-need-decision-2026-09-11.md) | Ранжированные актуальные задачи покупателей в проверке, проектировании заданий для агентов, произношении и локальных знаниях |
 | [`docs/paid-need-decision-2026-09-09.md`](../docs/paid-need-decision-2026-09-09.md) | Текущая проверка прямых маршрутов, пробелов в доказательствах и условий подачи |
 | [`metrics.py`](../metrics.py), [`network.py`](../network.py) и [`signals.py`](../signals.py) | Воронка с доказательствами, открытый граф связей и собственные сигналы спроса |
+| [`network.py lookup`](../docs/source-screening-lookup.md) | Поиск прежних приватных решений перед повторной проверкой источника; без загрузки страниц, синхронизации и отправки сообщений |
 | [`owned_monitor.py`](../owned_monitor.py), [`threads_inbound_monitor.py`](../threads_inbound_monitor.py), [`github_inbound_monitor.py`](../github_inbound_monitor.py) и [`lkt_inbox.py`](../lkt_inbox.py) | Мониторинг публикаций только для чтения, уведомления об ответах Threads и публичных issues, а также приватный приём запросов на проверку соответствия |
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | Обнаруживает реальные платежи только для чтения с агрегированным приватным состоянием; не создаёт объекты Stripe и не записывает доход автоматически |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | Один рабочий стол Xvfb/x11vnc/noVNC/Chrome для проверок в этом проекте |

@@ -111,6 +111,17 @@ Posts: `281, 936, 1562, 2936, 3125`.
   155-post multilingual completion count, and publication is not an inquiry,
   payment, or revenue event.
 
+- On September 20, post `3818` received a focused Chinese-source follow-up
+  explaining the Wine 11 startup stall and linking to the exact reviewed
+  Bluetooth-driver fix. It distinguishes the reproducible 4.33 baseline from
+  newer canary evidence and host checks from real controller acceptance.
+  The source-only dry run, six sync tests, live REST checks, and 1440/390-pixel
+  browser review passed. The original contributor credit and single USD 250
+  LazyRemote review link remain; its Chinese fit-check destination preserves
+  the article attribution. BLOG commit `e694ae4` is on `origin/main`. This
+  does not change the 156-post multilingual completion count or record a lead
+  or sale.
+
 - Post `3788` now answers the relationship-loss problem that plain PDF text
   extraction hides. Its English, Chinese, and Japanese editions separate
   born-digital table parsers from chart-to-data models, preserve cell geometry,
@@ -281,6 +292,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 | BLOG commit | Post | Outcome |
 | --- | ---: | --- |
+| `e694ae4` | 3818 | Explain the Wine 11 startup stall, distinguish tested version boundaries, and verify the existing Chinese review route |
 | `0697deb` | 3834 | Added the WSL no-vault login-persistence diagnosis, a sandbox-scoped Copilot-token route, and the bounded plaintext fallback to the existing Docker MCP guide |
 | `cb5da1f` | 3841 | Published an executed CJK chunking and source-offset guide in English with verified mobile rendering and one tracked LKT sample-to-fit route |
 | `d2b8740` | — | Preflight the translation route before any source-post write, preventing missing-plugin partial updates |

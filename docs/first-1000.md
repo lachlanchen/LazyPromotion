@@ -73,6 +73,16 @@ remain prerequisites; this is an application, not a lead or earned revenue.
 
 ## Primary offer and acquisition record
 
+One September 20 HKT [WordPress update enquiry](../campaigns/wordpress-teaching-site-updates.json)
+responds to a teaching-site owner's explicit paid request on WordPress Jobs.
+It uses the existing LazyingArt blog as proof and asks whether a fixed-price
+first update pass would be useful, with backup, staging and page/form checks
+before an agreed release. The sent body and routing were verified. Site and
+plugin inventory still need confirmation before a quote; regular maintenance
+has not been accepted. No credentials, payment request, new service page or
+customer outcome was created. The existing hourly mail watcher has one narrow
+reply rule; no automatic follow-up is enabled.
+
 The primary offer is the **MCP Server Pre-Deployment Review** at **USD 500**:
 two confirmed and delivered reviews reach the first USD 1,000 gross target. It
 has an executed project-owned sample, a fixed ten-check boundary, a metadata-only

@@ -1,0 +1,66 @@
+{
+  "id": "wordpress-teaching-site-updates",
+  "version": 1,
+  "objective": "Qualify one paid WordPress theme/plugin update pass using existing LazyingArt publishing work, before considering any recurring maintenance.",
+  "source_need": {
+    "captured_at": "2026-09-19T20:03:12Z",
+    "url": "https://jobs.wordpress.net/job/wordpress-site-updates-2/",
+    "title": "WordPress site updates",
+    "company": "Eddie Bazil",
+    "published_on": "2026-09-13",
+    "state": "listed_on_current_first_party_board_availability_unconfirmed",
+    "project_type": "Part Time",
+    "budget": "Not stated; the requester explicitly offers payment for theme/plugin updates and regular maintenance.",
+    "scope": "A personal teaching-service site needs theme and plugin updates after repeated security-update notices.",
+    "application_invitation": "The listing explicitly supplies an Apply via Email route.",
+    "rules_checked": ["https://jobs.wordpress.net/faq/"],
+    "public_site_observation": "The advertised contact domain redirects to an active music-teaching website. The requester has not confirmed which installation or plugin inventory is in scope."
+  },
+  "fit": {
+    "project": "BLOG / LazyBlog",
+    "public_proof": "https://blog.lazying.art/",
+    "supported_now": "An existing first-party WordPress publication maintained by LazyingArt; its public homepage returned HTTP 200 during preparation.",
+    "decision": "The earlier recurring-maintenance exclusion remains for an open-ended obligation. This inquiry instead asks whether one separately quoted update pass is useful, without creating a new service page or accepting ongoing support.",
+    "not_claimed": [
+      "A customer WordPress maintenance case study",
+      "Diagnosis of this site's plugins or security state",
+      "A guaranteed safe upgrade before compatibility and backup checks",
+      "A fixed price, delivery date or ongoing support availability before scope review"
+    ]
+  },
+  "application": {
+    "state": "sent_awaiting_reply",
+    "sent_at": "2026-09-19T20:03:12Z",
+    "verified_at": "2026-09-19T20:05:57Z",
+    "method": "One visibly reviewed response to the advertised email application invitation.",
+    "submission_count": 1,
+    "attachment_count": 0,
+    "submission_fee_usd": 0,
+    "sent_folder_verified": true,
+    "delivery_evidence": "One Send action closed the reviewed composer. The complete normalized body, subject and recipient matched in Sent; the sender address was separately opened and visually checked.",
+    "message_storage": "ignored private evidence",
+    "development_method_disclosed": "AI-assisted tools, with changes tested before release",
+    "review_after": "2026-09-27",
+    "automatic_follow_up": false,
+    "follow_up_policy": "Watch for a relevant reply; do not send another message without one. Metadata signals are not proof of buyer qualification.",
+    "inbound_coverage": "One sender-and-subject rule added to the existing hourly iCloud checker; changed subjects or participant names can require separate scoped review."
+  },
+  "scope_gate": [
+    "Confirm the request remains open, remote eligibility and the exact site",
+    "Obtain theme/plugin names and versions plus hosting and licensing details before quoting; no credentials requested in the inquiry",
+    "Agree a fixed first-pass scope, price, acceptance checks, revision limit and delivery terms before access or work",
+    "Require an authorized staging copy, complete recoverable backup and explicit release approval; test tuition pages and the enquiry form with approved test data",
+    "Separate paid-license renewals, malware recovery, abandoned-plugin replacement, migrations and custom repairs from ordinary updates",
+    "No recurring support, emergency availability or automatic renewal without a separate accepted agreement"
+  ],
+  "funnel": {
+    "outbound_application_count": 1,
+    "sender_side_sent_verified": true,
+    "buyer_reply_observed": false,
+    "qualified_lead_observed": false,
+    "scope_accepted": false,
+    "payment_confirmed": false,
+    "delivered": false,
+    "received_revenue_usd": 0
+  }
+}

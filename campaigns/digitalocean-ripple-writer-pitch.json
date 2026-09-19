@@ -1,6 +1,6 @@
 {
   "id": "digitalocean-ripple-writer-pitch",
-  "version": 2,
+  "version": 3,
   "objective": "Win one USD 500 Ripple Writers article by pitching a measured DigitalOcean implementation grounded in the existing AgInTiFlow, LazyEdge, and LazySkills work.",
   "source_need": {
     "captured_at": "2026-09-09T11:43:00Z",
@@ -91,11 +91,11 @@
     },
     "inbound_coverage": {
       "provider": "gmail",
-      "checked_at": "2026-09-19T19:16:33Z",
-      "scope": "Exact original application conversation, including the verified follow-up",
+      "checked_at": "2026-09-19T19:52:48Z",
+      "scope": "Metadata-only Gmail search bounded by the original application subject, official sender domain, and application date; zero matching incoming threads at this check",
       "human_reply_observed": false,
-      "automatic_check_enabled": false,
-      "policy": "This conversation is outside the existing iCloud hourly collector. A quiet iCloud observation does not establish Gmail reply state; the next due review must inspect the scoped Gmail conversation."
+      "automatic_check_enabled": true,
+      "policy": "The hourly coordinator now runs a separate bounded Gmail check in the same temporary desktop. Gmail account or result failures remain unknown, never zero; iCloud success alone does not establish Gmail reply state. Changed-subject or outside-domain replies require separate review. No message body is opened and no automatic follow-up is enabled."
     },
     "policy": "Do not build the DigitalOcean-specific implementation, accept vendor terms, spend money, or promise publication until a human confirms the topic, current round, Hong Kong onboarding, payment method, platform credits, disclosure, review, and publication terms."
   },

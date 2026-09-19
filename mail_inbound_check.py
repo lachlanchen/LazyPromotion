@@ -15,11 +15,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import TimeoutError as BrowserTimeout, sync_playwright
 
 import application_inbox_monitor as applications
 import browser
 import desktop_lease
+import gmail_application_monitor as gmail
 import inbound_monitor as intake
 
 
@@ -35,6 +36,7 @@ POLICY = {
     "message_bodies_read": False,
     "sender_or_subject_persisted": False,
     "automatic_reply": False,
+    "gmail_coverage_reported_separately": True,
 }
 SUMMARY_FIELDS = {
     "campaign_count", "campaigns_with_matching_threads",
@@ -45,6 +47,23 @@ SUMMARY_FIELDS = {
 
 class MailSessionUnavailable(RuntimeError):
     pass
+
+
+def failure_reason(error: Exception) -> str:
+    """Classify failures without persisting browser logs or mailbox text."""
+    if isinstance(error, BrowserTimeout):
+        return "browser_timeout"
+    return {
+        "iCloud did not expose the application inbox summary": "application_summary_unavailable",
+        "iCloud exposed incomplete application inbox coverage": "application_coverage_incomplete",
+        "iCloud did not expose the expected folder count status": "folder_count_unavailable",
+        "the dedicated intake folder is unavailable": "intake_folder_unavailable",
+        "the dedicated intake folder is not selected": "intake_folder_not_selected",
+        "the iCloud Mail application frame is unavailable": "mail_frame_unavailable",
+        "the project mail session needs review": "mail_session_unavailable",
+        "exactly one project mail tab is required": "mail_tab_ambiguous",
+        "CDP command did not complete: Runtime.evaluate": "mail_evaluation_timeout",
+    }.get(str(error), "unavailable_or_incomplete")
 
 
 def private_json(path: Path, value: dict) -> None:
@@ -87,7 +106,7 @@ def timestamp(value) -> str | None:
 
 def validated_observation(value: dict, run_id: str) -> dict:
     """Whitelist the child's aggregate schema; never forward arbitrary fields."""
-    required = {"run_id", "checked_at", "ok", "applications", "fit_folder", "alerts", "policy"}
+    required = {"run_id", "checked_at", "ok", "applications", "fit_folder", "gmail", "alerts", "policy"}
     if set(value) != required or value["run_id"] != run_id or value["ok"] is not True:
         raise ValueError("invalid mail observation")
     checked_at = timestamp(value["checked_at"])
@@ -111,6 +130,7 @@ def validated_observation(value: dict, run_id: str) -> dict:
         raise ValueError("inconsistent observation counts")
     if not isinstance(value["alerts"], list):
         raise ValueError("invalid observation alerts")
+    gmail_summary = gmail.validated_summary(value["gmail"])
     for alert in value["alerts"]:
         if not isinstance(alert, dict):
             raise ValueError("invalid observation alert")
@@ -124,11 +144,18 @@ def validated_observation(value: dict, run_id: str) -> dict:
         elif alert.get("kind") == "inbound_count_increased":
             if set(alert) != {"kind", "message_delta"} or type(alert["message_delta"]) is not int or alert["message_delta"] < 1:
                 raise ValueError("invalid fit-folder alert")
+        elif alert.get("kind") == "gmail_application_activity_pending":
+            if set(alert) != {"kind"} or gmail_summary.get("review_required") is not True:
+                raise ValueError("invalid Gmail activity alert")
         else:
             raise ValueError("unknown observation alert")
+    pending_gmail = sum(alert["kind"] == "gmail_application_activity_pending" for alert in value["alerts"])
+    if pending_gmail != int(gmail_summary.get("review_required") is True):
+        raise ValueError("inconsistent Gmail activity alert")
     return {
         "checked_at": checked_at, "ok": True,
         "applications": summary, "fit_folder": fit,
+        "gmail": gmail_summary,
         "alerts": value["alerts"], "policy": dict(POLICY),
     }
 
@@ -213,16 +240,24 @@ def collect_once(run_id: str, *, capture_evidence: bool = False) -> dict:
     summaries, (message_count, unread_count) = collect_counts(config, capture_evidence=capture_evidence)
     application_report = applications.record_observation(summaries)
     intake_report = intake.record_observation(message_count, unread_count)
+    # This optional provider has independent status and failure handling. A
+    # Gmail session failure must not pause or erase healthy iCloud coverage.
+    try:
+        gmail_report = gmail.check_optional()
+    except Exception:
+        gmail_report = {"state": "observation_failed"}
     return {
         "run_id": run_id,
         "checked_at": intake.utc_now(),
         "ok": True,
         "applications": application_report["summary"],
         "fit_folder": {"message_count": message_count, "unread_count": unread_count},
+        "gmail": gmail_report,
         "alerts": [
             {"kind": "application_mail_count_changed", **alert}
             for alert in application_report["alerts"]
-        ] + [{"kind": alert["kind"], "message_delta": alert["message_delta"]} for alert in intake_report["alerts"]],
+        ] + [{"kind": alert["kind"], "message_delta": alert["message_delta"]} for alert in intake_report["alerts"]]
+        + ([{"kind": "gmail_application_activity_pending"}] if gmail_report.get("review_required") is True else []),
         "policy": dict(POLICY),
     }
 
@@ -327,6 +362,7 @@ def main() -> None:
                     "run_id": args.run_id, "checked_at": intake.utc_now(), "ok": False,
                     "needs_mail_review": isinstance(error, MailSessionUnavailable),
                     "error": "mail observation failed closed",
+                    "failure_reason": failure_reason(error),
                 }
             private_json(OBSERVATION_PATH, report)
             raise SystemExit(0 if report["ok"] else 1)

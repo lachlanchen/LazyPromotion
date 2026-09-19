@@ -19,6 +19,15 @@ class ApifyContentWriterCampaignTests(unittest.TestCase):
         self.assertIn("working code", source["published_rate"])
         self.assertIn("reviewed", source["published_rate"])
 
+    def test_bounded_gmail_coverage_is_not_whole_mailbox_or_reply(self):
+        coverage = self.payload["application"]["inbound_coverage"]
+        self.assertEqual(coverage["provider"], "gmail")
+        self.assertTrue(coverage["automatic_check_enabled"])
+        self.assertFalse(coverage["human_reply_observed"])
+        self.assertIn("unknown, never zero", coverage["policy"])
+        self.assertIn("outside-domain", coverage["policy"])
+        self.assertFalse(self.payload["application"]["automatic_follow_up"])
+
     def test_account_gate_was_not_bypassed(self):
         application = self.payload["application"]
         self.assertFalse(application["discord_joined"])

@@ -54,6 +54,7 @@ LazyPromotion 是一款本地运行、先审后发的社交需求发现助手。
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 以汇总私密状态只读检测真实入账；绝不创建 Stripe 对象或自动记账收入 |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | 项目专用的单一 Xvfb/x11vnc/noVNC/Chrome 审阅桌面 |
 | [`mail_inbound_check.py`](../mail_inbound_check.py) 与 [`desktop_lease.py`](../desktop_lease.py) | 每小时限时检查邮件计数；遇到正在进行的审阅则跳过，只关闭本次启动的桌面，不读取正文或自动回复。[操作与覆盖范围](../docs/application-inbox-monitoring.md) |
+| [`gmail_application_monitor.py`](../gmail_application_monitor.py) | 可选 Gmail 检查，仅针对已配置的申请邮件主题与发件域名；核对账号并独立记录状态，不打开邮件或发送回复 |
 | [`application_watch.py`](../application_watch.py) 与 [`application_inbox_monitor.py`](../application_inbox_monitor.py) | 直接与分组申请的到期审阅日程，加上对已知申请线程的只读汇总匹配；运行中的监控器只嵌入隐私受限的到期摘要，绝不打开邮件或跟进 |
 | [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | 通过一个复用的项目标签页监测已提交 Freelancer 出价的汇总消息徽标或状态变化，不打开消息也不回复 |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | 可审计的开源与 MCP 工具选择 |

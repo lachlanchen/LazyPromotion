@@ -92,3 +92,72 @@ The loop does not take screenshots. Optional validation screenshots are cropped
 to the known Inbox folder option and replace the previous before/after images;
 they never capture the message list or message content. Private evidence and
 browser profiles must not be committed.
+
+## Optional scoped Gmail coverage
+
+Some earlier applications were sent through Gmail, not iCloud. The iCloud
+counts do not cover those conversations. `gmail_application_monitor.py` adds
+separate, opt-in checks inside the same finite hourly desktop session; it does
+not start another browser or worker.
+
+Configure an ignored, owned mode-0600 file at
+`.local/private/gmail-application-monitor.json`:
+
+```json
+{
+  "account_email": "operator@example.net",
+  "campaigns": [
+    {
+      "campaign_id": "example-application",
+      "subject": "The exact existing application subject",
+      "sender_domain": "example.org",
+      "after": "2026-09-08"
+    }
+  ]
+}
+```
+
+Use only existing, reviewed application subjects and their known sender
+domains. Up to four rules are supported, within a 60-second provider budget.
+The collector checks the visible Google-account marker and page title, then
+uses incoming-domain, exact-subject and date-constrained Gmail searches across
+folders. It reloads the document to avoid accepting cached results from the
+previous search and requires three matching observations. Zero requires the
+explicit visible empty-result marker; positive results must have complete
+pagination and matching subject metadata. Ambiguous or changed UI fails the
+observation, not the account login.
+
+It never opens a message, reads a preview, sends mail, marks a message read,
+changes forwarding, logs in or handles MFA. Only campaign IDs, counts, times
+and opaque snapshot/configuration digests are saved. A changed last-message
+identity can signal activity even when the thread count stays constant; the
+identity itself is not retained. Positive first observations also require
+review. Signals remain pending until a scoped review clears the private
+`alerts` list; they are not automatically acknowledged on the next poll.
+Pending activity is also surfaced as one `gmail_application_activity_pending`
+entry in the coordinator's aggregate alerts, without any message metadata.
+
+The coordinator's `gmail` field reports `not_configured`, `checked`,
+`session_unavailable` or `observation_failed`. Failed checks have no zero
+counts. The detailed private status at
+`.local/gmail-application-monitor-status.json` retains the last successful
+observation separately, including its original timestamp. A Gmail failure
+does not stop healthy iCloud/fit-folder observations: the coordinator's `ok`
+still describes those observations and owned-desktop cleanup, while Gmail's
+state must be checked separately.
+
+Transient iCloud startup failures remain possible. A failed child check keeps
+only a fixed diagnostic category, never the browser exception text, and the
+worker retains the last successful observation time. Do not treat that old
+timestamp as a fresh check or weaken list-completeness checks to get a zero.
+
+This covers only the configured incoming domains and subject lines, not all
+mail. Replies from another domain, changed subjects, or outside the date range
+still require a scoped manual review. A matching result is an activity signal,
+not proof of an authentic human reply, accepted assignment or revenue.
+
+Tests execute the collector against a synthetic browser DOM with unread and
+read results, incomplete pagination, mismatched duplicate links, open messages,
+missing/hidden empty markers, and preview access traps. Live validation uses
+the actual empty reply searches and one existing operator-sent application as
+a positive metadata probe; that probe is not stored as a buyer response.

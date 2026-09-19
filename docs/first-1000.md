@@ -36,9 +36,14 @@ asks whether a narrower, reproducible hybrid deployment article fits the
 current round and its AI-assistance policy. The original conversation was
 still unanswered after its stated review window. The sent reply was verified
 after reload; no deployment, spending, onboarding, full article, or accepted
-fee is implied. This is still one application. Its Gmail conversation is
-outside the hourly iCloud check and requires a separate scoped review; no
-further follow-up is scheduled.
+fee is implied. This is still one application. The hourly coordinator now
+checks bounded Gmail reply metadata for this pitch and the existing Apify
+question, separately from iCloud. The September 20 HKT cold-start validation
+found no matching incoming threads and shut down its temporary desktop.
+These searches cover the original subjects and official sender domains, not
+the entire mailbox. Failures remain unknown, and activity requires review;
+no further outbound follow-up is scheduled. This closes an inbound-coverage
+gap, not a sale.
 
 On September 20 HKT, one [Smashing Magazine article pitch](../campaigns/smashing-audio-writer-pitch.json)
 was received through its official author form. It uses L & N's existing audio

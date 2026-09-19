@@ -1,6 +1,6 @@
 {
   "id": "apify-content-writer-opportunity",
-  "version": 1,
+  "version": 2,
   "objective": "Earn one USD 500 Apify article by building and documenting a bounded Actor that gives Codex live public-web evidence through the Apify MCP server.",
   "source_need": {
     "captured_at": "2026-09-09T11:55:00Z",
@@ -57,6 +57,14 @@
     "delivery_evidence": "The exact message was visibly reviewed in the isolated project browser. One Send control was activated and Gmail displayed ‘Message sent’; no inbox message was opened.",
     "automatic_follow_up": false,
     "review_after": "2026-09-16",
+    "inbound_coverage": {
+      "provider": "gmail",
+      "checked_at": "2026-09-19T19:52:48Z",
+      "scope": "Metadata-only Gmail search bounded by the original application subject, official sender domain, and application date; zero matching incoming threads at this check",
+      "human_reply_observed": false,
+      "automatic_check_enabled": true,
+      "policy": "The hourly coordinator runs a separate bounded Gmail check in the same temporary desktop. Gmail failures remain unknown, never zero; iCloud success alone does not establish Gmail reply state. Changed-subject or outside-domain replies require separate review. No message body is opened and no automatic follow-up is enabled."
+    },
     "policy": "Do not build the speculative full submission, create an account, or accept onboarding terms until a human confirms the topic, Hong Kong payout support, current deadline, code and article ownership, review terms, and acceptable AI assistance."
   },
   "funnel": {

@@ -80,9 +80,11 @@ class DigitalOceanRippleWriterCampaignTests(unittest.TestCase):
     def test_gmail_thread_is_not_reported_as_covered_by_icloud(self):
         coverage = self.payload["application"]["inbound_coverage"]
         self.assertEqual(coverage["provider"], "gmail")
-        self.assertFalse(coverage["automatic_check_enabled"])
+        self.assertTrue(coverage["automatic_check_enabled"])
         self.assertFalse(coverage["human_reply_observed"])
-        self.assertIn("outside the existing iCloud", coverage["policy"])
+        self.assertIn("separate bounded Gmail", coverage["policy"])
+        self.assertIn("unknown, never zero", coverage["policy"])
+        self.assertIn("outside-domain", coverage["policy"])
 
 
 if __name__ == "__main__":

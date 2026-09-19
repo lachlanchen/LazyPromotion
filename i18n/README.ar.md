@@ -55,6 +55,7 @@ LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجت
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | كشف للدفعات الحقيقية بالقراءة فقط وحالة خاصة مجمعة؛ لا ينشئ عناصر Stripe ولا يسجل الإيراد تلقائيًا |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | سطح مكتب مراجعة واحد خاص بالمشروع من Xvfb/x11vnc/noVNC/Chrome |
 | [`mail_inbound_check.py`](../mail_inbound_check.py) و[`desktop_lease.py`](../desktop_lease.py) | فحوص محدودة المدة كل ساعة لأعداد البريد؛ تتجاوز المراجعات النشطة وتغلق فقط سطح المكتب الذي بدأتْه، من دون قراءة محتوى الرسائل أو الرد عليها. [التشغيل وحدود التغطية](../docs/application-inbox-monitoring.md) |
+| [`gmail_application_monitor.py`](../gmail_application_monitor.py) | فحوص Gmail اختيارية لمواضيع الطلبات ونطاقات المرسلين المحددة، مع التحقق من الحساب وحالة مستقلة؛ لا تفتح الرسائل ولا ترسل ردودًا |
 | [`application_watch.py`](../application_watch.py) و[`application_inbox_monitor.py`](../application_inbox_monitor.py) | جدول مراجعة مستحقة للتقديمات المباشرة والمجمعة مع مطابقة مجمعة للقراءة فقط للمحادثات المعروفة؛ ولا يضم المراقب الجاري إلا ملخص الاستحقاق المحدود للخصوصية من دون فتح البريد أو المتابعة |
 | [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | يراقب عروض Freelancer المقدمة عبر علامة تبويب واحدة معاد استخدامها بحثًا عن شارة رسائل مجمعة أو تغير حالة، من دون فتح الرسائل أو الرد |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | تقييم البدائل مفتوحة المصدر |

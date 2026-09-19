@@ -23,11 +23,31 @@ def observation():
             "matching_thread_count": 1, "unread_matching_thread_count": 0,
         },
         "fit_folder": {"message_count": 2, "unread_count": 0},
+        "gmail": {"state": "not_configured"},
         "alerts": [], "policy": dict(mail.POLICY),
     }
 
 
 class ObservationTests(unittest.TestCase):
+    def test_failure_reasons_never_echo_private_browser_errors(self):
+        self.assertEqual(mail.failure_reason(RuntimeError("subject: private example")), "unavailable_or_incomplete")
+        self.assertEqual(mail.failure_reason(mail.BrowserTimeout("private URL")), "browser_timeout")
+        self.assertEqual(mail.failure_reason(RuntimeError("iCloud exposed incomplete application inbox coverage")), "application_coverage_incomplete")
+
+    def test_pending_gmail_activity_requires_one_aggregate_alert(self):
+        good = observation()
+        good["gmail"] = {"state": "checked", "campaign_count": 2,
+                         "matching_thread_count": 1, "unread_matching_thread_count": 0,
+                         "review_required": True}
+        alert = {"kind": "gmail_application_activity_pending"}
+        good["alerts"] = [alert]
+        mail.validated_observation(good, "test-run")
+        for alerts in ([], [alert, alert], [{**alert, "subject": "private"}]):
+            with self.subTest(alerts=alerts), self.assertRaises(ValueError):
+                mail.validated_observation({**good, "alerts": alerts}, "test-run")
+        with self.assertRaises(ValueError):
+            mail.validated_observation({**observation(), "alerts": [alert]}, "test-run")
+
     def test_only_aggregate_schema_is_accepted(self):
         result = mail.validated_observation(observation(), "test-run")
         self.assertNotIn("run_id", result)
@@ -39,6 +59,8 @@ class ObservationTests(unittest.TestCase):
             {"fit_folder": {"message_count": 2, "unread_count": 3}},
             {"fit_folder": {"message_count": True, "unread_count": 0}},
             {"alerts": [{"kind": "unknown", "subject": "private"}]},
+            {"gmail": {"state": "checked", "subject": "private"}},
+            {"gmail": {"state": "session_unavailable", "matching_thread_count": 0}},
         ):
             with self.subTest(change=change), self.assertRaises(ValueError):
                 mail.validated_observation({**observation(), **change}, "test-run")
@@ -136,6 +158,33 @@ class RunOnceTests(unittest.TestCase):
 
 
 class CollectionTests(unittest.TestCase):
+    def test_gmail_pending_activity_is_visible_to_root_alert_consumers(self):
+        with contextlib.ExitStack() as stack:
+            stack.enter_context(patch.object(mail.applications, "load_config", return_value={}))
+            stack.enter_context(patch.object(mail, "collect_counts", return_value=([], (2, 0))))
+            stack.enter_context(patch.object(mail.applications, "record_observation", return_value={"summary": observation()["applications"], "alerts": []}))
+            stack.enter_context(patch.object(mail.intake, "record_observation", return_value={"alerts": []}))
+            stack.enter_context(patch.object(mail.gmail, "check_optional", return_value={
+                "state": "checked", "campaign_count": 2, "matching_thread_count": 1,
+                "unread_matching_thread_count": 0, "review_required": True}))
+            result = mail.collect_once("test-run")
+        self.assertEqual(result["alerts"], [{"kind": "gmail_application_activity_pending"}])
+        mail.validated_observation(result, "test-run")
+
+    def test_gmail_failure_preserves_icloud_observation_without_zero_claim(self):
+        with contextlib.ExitStack() as stack:
+            stack.enter_context(patch.object(mail.applications, "load_config", return_value={}))
+            stack.enter_context(patch.object(mail, "collect_counts", return_value=([], (2, 0))))
+            stack.enter_context(patch.object(mail.applications, "record_observation", return_value={"summary": observation()["applications"], "alerts": []}))
+            stack.enter_context(patch.object(mail.intake, "record_observation", return_value={"alerts": []}))
+            stack.enter_context(patch.object(mail.gmail, "check_optional", side_effect=RuntimeError("private error")))
+            result = mail.collect_once("test-run")
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["fit_folder"], {"message_count": 2, "unread_count": 0})
+        self.assertEqual(result["gmail"], {"state": "observation_failed"})
+        self.assertNotIn("private error", json.dumps(result))
+        mail.validated_observation(result, "test-run")
+
     def test_single_lock_covers_both_folders_and_restoration_on_failure(self):
         for fail in (False, True):
             with self.subTest(fail=fail), contextlib.ExitStack() as stack:

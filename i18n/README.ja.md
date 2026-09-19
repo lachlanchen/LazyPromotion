@@ -54,6 +54,7 @@ LazyPromotion は、ローカルで動くレビュー優先のソーシャル需
 | [`stripe_revenue_monitor.py`](../stripe_revenue_monitor.py) | 集約した非公開状態で実際の入金を読み取り専用検出。Stripe オブジェクトの作成や売上の自動記録はしない |
 | [`scripts/desktop.sh`](../scripts/desktop.sh) | プロジェクト専用の Xvfb/x11vnc/noVNC/Chrome レビューデスクトップ一式 |
 | [`mail_inbound_check.py`](../mail_inbound_check.py) と [`desktop_lease.py`](../desktop_lease.py) | メール件数を毎時、制限時間内で確認。レビュー中はスキップし、自分で起動したデスクトップだけを終了します。本文の読み取りや返信は行いません。[操作方法と確認範囲](../docs/application-inbox-monitoring.md) |
+| [`gmail_application_monitor.py`](../gmail_application_monitor.py) | 設定済みの応募件名と送信元ドメインを対象とする任意の Gmail 確認。アカウントを照合し、状態を個別に記録します。メールを開いたり返信したりしません |
 | [`application_watch.py`](../application_watch.py) と [`application_inbox_monitor.py`](../application_inbox_monitor.py) | 直接・グループ応募の要レビュー日程と既知の応募スレッドの読み取り専用集約照合。稼働中の監視はプライバシー制限付き期限要約だけを含み、メールを開かず追跡連絡もしない |
 | [`freelancer_inbound_monitor.py`](../freelancer_inbound_monitor.py) | 再利用する単一タブで提出済み Freelancer 入札の集約メッセージバッジや状態変更を監視し、メッセージを開かず返信もしない |
 | [`docs/open-source-evaluation.md`](../docs/open-source-evaluation.md) | 監査可能なオープンソースおよび MCP ツールの選定記録 |

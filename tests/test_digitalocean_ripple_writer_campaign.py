@@ -61,7 +61,28 @@ class DigitalOceanRippleWriterCampaignTests(unittest.TestCase):
         )
         self.assertIsNotNone(record)
         self.assertFalse(record["due_for_human_review"])
-        self.assertEqual(record["review_after"], "2026-09-18")
+        self.assertEqual(self.payload["application"]["initial_review_after"], "2026-09-18")
+        self.assertEqual(record["review_after"], "2026-09-27")
+
+    def test_one_follow_up_is_not_a_second_application_or_assignment(self):
+        follow_up = self.payload["application"]["follow_up"]
+        self.assertEqual(follow_up["state"], "sent_once_awaiting_human_reply")
+        self.assertFalse(follow_up["automatic_follow_up"])
+        self.assertTrue(follow_up["ai_assistance_disclosed"])
+        self.assertIn("not an accepted fee", follow_up["policy"])
+        channel = self.payload["channels"]["direct_email"]
+        self.assertEqual(channel["outbound_messages"], 2)
+        self.assertEqual(channel["unique_applications"], 1)
+        self.assertEqual(channel["fees_spent_usd"], 0)
+        self.assertEqual(self.payload["funnel"]["outbound_application_count"], 1)
+        self.assertFalse(self.payload["funnel"]["pitch_accepted"])
+
+    def test_gmail_thread_is_not_reported_as_covered_by_icloud(self):
+        coverage = self.payload["application"]["inbound_coverage"]
+        self.assertEqual(coverage["provider"], "gmail")
+        self.assertFalse(coverage["automatic_check_enabled"])
+        self.assertFalse(coverage["human_reply_observed"])
+        self.assertIn("outside the existing iCloud", coverage["policy"])
 
 
 if __name__ == "__main__":

@@ -30,6 +30,16 @@ not zero. Keep these publications and spend the next acquisition effort on
 accessible paid requests, not extra posts, new offer pages, or marketplace
 upgrades. A listed budget alone does not establish buyer qualification.
 
+One September 20 HKT follow-up to the existing
+[DigitalOcean Ripple pitch](../campaigns/digitalocean-ripple-writer-pitch.json)
+asks whether a narrower, reproducible hybrid deployment article fits the
+current round and its AI-assistance policy. The original conversation was
+still unanswered after its stated review window. The sent reply was verified
+after reload; no deployment, spending, onboarding, full article, or accepted
+fee is implied. This is still one application. Its Gmail conversation is
+outside the hourly iCloud check and requires a separate scoped review; no
+further follow-up is scheduled.
+
 On September 20 HKT, one [Smashing Magazine article pitch](../campaigns/smashing-audio-writer-pitch.json)
 was received through its official author form. It uses L & N's existing audio
 playback, fallback, cancellation, and microphone-cleanup code; twenty focused

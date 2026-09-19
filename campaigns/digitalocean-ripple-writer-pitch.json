@@ -1,6 +1,6 @@
 {
   "id": "digitalocean-ripple-writer-pitch",
-  "version": 1,
+  "version": 2,
   "objective": "Win one USD 500 Ripple Writers article by pitching a measured DigitalOcean implementation grounded in the existing AgInTiFlow, LazyEdge, and LazySkills work.",
   "source_need": {
     "captured_at": "2026-09-09T11:43:00Z",
@@ -74,8 +74,38 @@
     "complete_article_sent": false,
     "delivery_evidence": "The exact prepared message was visibly reviewed in the isolated project browser. One Send control was activated and Gmail displayed ‘Message sent’; the task-created empty compose window was discarded without opening inbox messages.",
     "automatic_follow_up": false,
-    "review_after": "2026-09-18",
+    "initial_review_after": "2026-09-18",
+    "review_after": "2026-09-27",
+    "follow_up": {
+      "state": "sent_once_awaiting_human_reply",
+      "sent_at": "2026-09-19T19:16:04Z",
+      "verified_at": "2026-09-19T19:16:33Z",
+      "method": "One visibly reviewed reply in the original application thread after its review window passed",
+      "reason": "The original pitch remained unanswered. Ask whether a smaller reproducible deployment article fits the current round and contributor policy before starting work.",
+      "delivery_evidence": "The composer closed after one dispatched Send action. Reloading the same conversation showed exactly one stored follow-up whose body matched the reviewed text after paragraph-whitespace normalization.",
+      "message_storage": "ignored private evidence",
+      "ai_assistance_disclosed": true,
+      "fees_spent_usd": 0,
+      "automatic_follow_up": false,
+      "policy": "No further follow-up without an editor response. The previously advertised rate is not an accepted fee; confirm topic, assistance policy, scope, credits, rights, revisions, and payout before delivery work."
+    },
+    "inbound_coverage": {
+      "provider": "gmail",
+      "checked_at": "2026-09-19T19:16:33Z",
+      "scope": "Exact original application conversation, including the verified follow-up",
+      "human_reply_observed": false,
+      "automatic_check_enabled": false,
+      "policy": "This conversation is outside the existing iCloud hourly collector. A quiet iCloud observation does not establish Gmail reply state; the next due review must inspect the scoped Gmail conversation."
+    },
     "policy": "Do not build the DigitalOcean-specific implementation, accept vendor terms, spend money, or promise publication until a human confirms the topic, current round, Hong Kong onboarding, payment method, platform credits, disclosure, review, and publication terms."
+  },
+  "channels": {
+    "direct_email": {
+      "state": "application_and_one_follow_up_sent",
+      "outbound_messages": 2,
+      "unique_applications": 1,
+      "fees_spent_usd": 0
+    }
   },
   "funnel": {
     "outbound_application_count": 1,

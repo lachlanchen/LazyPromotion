@@ -382,12 +382,14 @@
         "single_offer_link_per_edition": true,
         "open_ended_email_pitch_removed": true,
         "sample_opened": true,
-        "fit_check_clickthrough_verified": false,
-        "fit_check_verification_note": "Article and sample were reached. The initial helper used a relative-href selector after the site's attribution script made it absolute; the corrected route-only check then failed to attach to the browser. No form was submitted; this is not evidence that the fit check is broken.",
+        "fit_check_clickthrough_verified": true,
+        "fit_check_verified_at": "2026-09-20T07:06:29Z",
+        "article_attribution_preserved": true,
+        "fit_check_verification_note": "After the normal browser check recovered, a finite mobile review followed the article to its sample and then the visible fit-check form. All four article attribution parameters were preserved. No form was filled or submitted; the review desktop was stopped.",
         "form_submitted": false
       },
       "lead_or_sale_observed": false,
-      "policy": "Publication and sample navigation are not a lead or sale. Do not claim this pass verified the final fit-check navigation or submit a test request as a customer."
+      "policy": "Publication and a verified article-to-fit-check path are not a lead or sale. Do not submit a test request as a customer or repeat a completed check merely to create activity."
     },
     "checkout_created": false,
     "social_post_created": true,

@@ -159,9 +159,10 @@ Posts: `281, 936, 1562, 2936, 3125`.
   subtitles for an entire recording. The tutorial source stays unchanged;
   republishing also restored five lost shell continuation characters in each
   translated edition. All stored editions match source; six mobile/desktop
-  checks passed and the sample was reached. The final fit-check click-through
-  was not verified in this pass because of review-helper/browser failures; no
-  form was submitted. LazyBlog `af2ba59` records the publication. This completes
+  checks passed. After the browser recovered, a finite mobile review at 07:06
+  UTC followed the article through the sample to the visible fit-check form,
+  preserving all four article attribution parameters without submitting a
+  request. LazyBlog `af2ba59` records the publication. This completes
   an existing conversion link, not a new offer, lead or sale.
 
 - Post `3803` is a complete English, Traditional Chinese, and Japanese guide

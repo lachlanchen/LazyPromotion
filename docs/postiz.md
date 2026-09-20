@@ -22,6 +22,22 @@ integration.
 
 ## Safe operator use
 
+`owned_monitor.py` distinguishes unavailable engagement analytics from an
+observed zero. A post's missing or invalid comment/reply count is `null` in
+the private status, and `engagement_status` is `unavailable` when no usable
+count was supplied (`not_requested` for unpublished items). A valid count for
+one metric does not establish the other. The summary reports how many published
+items lack engagement coverage; no alert is not proof of no response.
+
+The existing SQLite count columns retain comparison baselines through missing
+data; `metrics_json` records what was actually observed in each check. Do not
+read a carried baseline as a fresh provider count. When data returns unchanged,
+the gap does not create a duplicate engagement alert. First positive evidence,
+or positive evidence after an observation gap, is `engagement_observed` rather
+than a claimed verified increase; unavailable deltas are `null`. These remain
+review signals, never automatic replies or revenue. A provider's reporting
+window is not a complete review of every comment on the platform.
+
 The six future LinkedIn items were moved to drafts on September 20 for channel
 account review. Their campaign `publication_hold` records supersede the older
 queue verifications. Do not automatically requeue them using their stored dates;

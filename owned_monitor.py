@@ -304,12 +304,23 @@ def numeric_metric(value: Any) -> int | float | None:
     return int(number) if number.is_integer() else number
 
 
-def metric_value(metrics: dict[str, dict], label: str) -> int:
+def metric_value(metrics: dict[str, dict], label: str) -> int | None:
+    """Return an observed count; missing or malformed analytics are not zero."""
     for name, value in metrics.items():
         if name.casefold() == label.casefold():
+            if not isinstance(value, dict):
+                return None
             latest = value.get("latest")
-            return int(latest) if isinstance(latest, (int, float)) else 0
-    return 0
+            if (
+                isinstance(latest, bool)
+                or not isinstance(latest, (int, float))
+                or not math.isfinite(latest)
+                or latest < 0
+                or int(latest) != latest
+            ):
+                return None
+            return int(latest)
+    return None
 
 
 def open_db(path: Path = DB_PATH) -> sqlite3.Connection:
@@ -496,8 +507,11 @@ def monitor_once(
             provider_replies = metric_value(metrics, "Replies")
             known_owned_replies = min(
                 provider_replies, int(route.get("known_owned_replies") or 0)
+            ) if provider_replies is not None else None
+            replies = (
+                max(0, provider_replies - known_owned_replies)
+                if provider_replies is not None else None
             )
-            replies = max(0, provider_replies - known_owned_replies)
             previous = previous_observation(db, key)
             previous_state = (
                 str(previous.get("state") or "").upper() if previous else ""
@@ -509,6 +523,16 @@ def monitor_once(
             )
             previous_comments = int(previous["comments"]) if previous else 0
             previous_replies = int(previous["replies"]) if previous else 0
+            try:
+                previous_metrics = json.loads(previous["metrics_json"]) if previous else {}
+                if not isinstance(previous_metrics, dict):
+                    previous_metrics = {}
+            except (TypeError, ValueError):
+                previous_metrics = {}
+            previous_comments_observed = metric_value(previous_metrics, "Comments") is not None
+            previous_replies_observed = metric_value(previous_metrics, "Replies") is not None
+
+            engagement_observed = comments is not None or replies is not None
 
             public_summary = {
                 "post_key": key,
@@ -524,6 +548,10 @@ def monitor_once(
                 "provider_replies": provider_replies,
                 "known_owned_replies": known_owned_replies,
                 "needs_release_connection": needs_connection,
+                "engagement_status": (
+                    "reported" if engagement_observed else
+                    "unavailable" if is_published else "not_requested"
+                ),
             }
             observed.append(public_summary)
 
@@ -591,13 +619,26 @@ def monitor_once(
                         ),
                     }
                 )
-            if comments > previous_comments or replies > previous_replies:
+            comments_increased = comments is not None and comments > previous_comments
+            replies_increased = replies is not None and replies > previous_replies
+            if comments_increased or replies_increased:
                 alerts.append(
                     {
-                        "kind": "engagement_increased",
+                        "kind": (
+                            "engagement_increased"
+                            if (comments_increased and previous_comments_observed)
+                            or (replies_increased and previous_replies_observed)
+                            else "engagement_observed"
+                        ),
                         **public_summary,
-                        "comment_delta": comments - previous_comments,
-                        "reply_delta": replies - previous_replies,
+                        "comment_delta": (
+                            comments - previous_comments
+                            if comments is not None and previous_comments_observed else None
+                        ),
+                        "reply_delta": (
+                            replies - previous_replies
+                            if replies is not None and previous_replies_observed else None
+                        ),
                         "action": "Inspect public responses in the visible browser; do not reply automatically or record a lead.",
                     }
                 )
@@ -620,8 +661,11 @@ def monitor_once(
                     state,
                     content_hash(content),
                     release_url,
-                    comments,
-                    replies,
+                    # Preserve comparison baselines during analytics gaps. The
+                    # current observation is metrics_json; these legacy NOT
+                    # NULL columns must not turn a missing count into a reset.
+                    comments if comments is not None else previous_comments,
+                    replies if replies is not None else previous_replies,
                     json.dumps(metrics, ensure_ascii=False, sort_keys=True),
                     int(needs_connection),
                 ),
@@ -637,6 +681,7 @@ def monitor_once(
             "automatic_public_reply": False,
             "raw_postiz_ids_persisted": False,
             "known_owned_replies_subtracted_before_alerts": True,
+            "missing_engagement_is_not_zero": True,
         },
         "posts": observed,
         "alerts": alerts,
@@ -650,6 +695,9 @@ def monitor_once(
             "published": sum(
                 post["state"] not in PENDING_STATES | FAILED_STATES | {"UNKNOWN"}
                 for post in observed
+            ),
+            "engagement_unavailable": sum(
+                post["engagement_status"] == "unavailable" for post in observed
             ),
         },
     }

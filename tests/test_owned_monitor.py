@@ -395,7 +395,8 @@ class OwnedMonitorTests(unittest.TestCase):
         report = self.run_monitor(fake)
 
         self.assertEqual(report["posts"][0]["replies"], 1)
-        self.assertEqual(report["alerts"][0]["kind"], "engagement_increased")
+        self.assertEqual(report["alerts"][0]["kind"], "engagement_observed")
+        self.assertIsNone(report["alerts"][0]["reply_delta"])
         self.assertIn("do not reply automatically", report["alerts"][0]["action"])
 
     def test_recorded_owned_reply_is_not_external_engagement(self):
@@ -459,7 +460,8 @@ class OwnedMonitorTests(unittest.TestCase):
             ],
         )
         report = self.run_monitor(first)
-        self.assertEqual(report["alerts"][0]["kind"], "engagement_increased")
+        self.assertEqual(report["alerts"][0]["kind"], "engagement_observed")
+        self.assertIsNone(report["alerts"][0]["comment_delta"])
         self.assertNotIn("lead", report["alerts"][0]["kind"])
 
         second = FakePostiz(
@@ -473,11 +475,87 @@ class OwnedMonitorTests(unittest.TestCase):
         )
         report = self.run_monitor(second)
         alert = report["alerts"][0]
+        self.assertEqual(alert["kind"], "engagement_increased")
         self.assertEqual(alert["comment_delta"], 1)
-        self.assertEqual(alert["reply_delta"], 1)
+        self.assertIsNone(alert["reply_delta"])
         self.assertIn("visible browser", alert["action"])
         self.assertTrue(report["policy"]["engagement_is_not_a_lead"])
         self.assertFalse(report["policy"]["automatic_public_reply"])
+
+    def test_empty_analytics_is_unavailable_not_zero(self):
+        published = post(state="PUBLISHED")
+        published["releaseURL"] = "https://example.test/post"
+        report = self.run_monitor(FakePostiz(posts=[published], post_metrics=[[]]))
+        observed = report["posts"][0]
+        self.assertEqual(observed["engagement_status"], "unavailable")
+        for key in ("comments", "replies", "provider_replies", "known_owned_replies"):
+            self.assertIsNone(observed[key])
+        self.assertEqual(report["summary"]["engagement_unavailable"], 1)
+        self.assertEqual(report["alerts"], [])
+        self.assertTrue(report["policy"]["missing_engagement_is_not_zero"])
+
+    def test_explicit_zero_is_observed_but_absent_metric_is_unknown(self):
+        published = post(state="PUBLISHED")
+        published["releaseURL"] = "https://example.test/post"
+        report = self.run_monitor(FakePostiz(posts=[published], post_metrics=[[
+            {"label": "Replies", "data": [{"total": 0}]},
+        ]]))
+        observed = report["posts"][0]
+        self.assertEqual(observed["engagement_status"], "reported")
+        self.assertEqual(observed["replies"], 0)
+        self.assertIsNone(observed["comments"])
+        self.assertEqual(report["summary"]["engagement_unavailable"], 0)
+
+    def test_missing_analytics_preserves_baseline_without_repeat_alert_on_recovery(self):
+        published = post(state="PUBLISHED")
+        published["releaseURL"] = "https://example.test/post"
+        metric = [{"label": "Comments", "data": [{"total": 2}]}]
+        first = self.run_monitor(FakePostiz(posts=[published], post_metrics=[metric]))
+        self.assertEqual(first["alerts"][0]["kind"], "engagement_observed")
+        missing = self.run_monitor(FakePostiz(posts=[published], post_metrics=[[]]))
+        self.assertIsNone(missing["posts"][0]["comments"])
+        self.assertEqual(missing["alerts"], [])
+        db = owned_monitor.open_db(self.db_path)
+        try:
+            baseline = owned_monitor.previous_observation(db, missing["posts"][0]["post_key"])
+            self.assertEqual(baseline["comments"], 2)
+            self.assertEqual(json.loads(baseline["metrics_json"]), {})
+        finally:
+            db.close()
+        recovered = self.run_monitor(FakePostiz(posts=[published], post_metrics=[metric]))
+        self.assertEqual(recovered["posts"][0]["comments"], 2)
+        self.assertEqual(recovered["alerts"], [])
+
+    def test_positive_count_after_gap_is_review_signal_not_verified_delta(self):
+        published = post(state="PUBLISHED")
+        published["releaseURL"] = "https://example.test/post"
+        self.run_monitor(FakePostiz(posts=[published], post_metrics=[[
+            {"label": "Replies", "data": [{"total": 1}]},
+        ]]))
+        self.run_monitor(FakePostiz(posts=[published], post_metrics=[[]]))
+        report = self.run_monitor(FakePostiz(posts=[published], post_metrics=[[
+            {"label": "Replies", "data": [{"total": 2}]},
+        ]]))
+        self.assertEqual(report["alerts"][0]["kind"], "engagement_observed")
+        self.assertIsNone(report["alerts"][0]["reply_delta"])
+        self.assertEqual(report["posts"][0]["replies"], 2)
+
+    def test_invalid_count_and_empty_series_are_unknown(self):
+        for value in (None, True, False, -1, 0.5, float("inf"), float("nan"), "N/A"):
+            with self.subTest(value=value):
+                self.assertIsNone(owned_monitor.metric_value({"Comments": {"latest": value}}, "Comments"))
+        self.assertIsNone(owned_monitor.metric_value({"Comments": None}, "Comments"))
+        empty = owned_monitor.metric_snapshot([{"label": "Comments", "data": []}])
+        self.assertIsNone(owned_monitor.metric_value(empty, "Comments"))
+        self.assertEqual(owned_monitor.metric_value({"comments": {"latest": 0.0}}, "Comments"), 0)
+
+    def test_queue_does_not_claim_zero_engagement(self):
+        fake = FakePostiz(posts=[post()])
+        report = self.run_monitor(fake)
+        self.assertEqual(report["posts"][0]["engagement_status"], "not_requested")
+        self.assertIsNone(report["posts"][0]["comments"])
+        self.assertEqual(report["summary"]["engagement_unavailable"], 0)
+        self.assertFalse(any(command[1] == "analytics:post" for command in fake.commands))
 
     def test_overdue_queue_requires_review_without_retry(self):
         fake = FakePostiz(posts=[post(publish_at="2026-08-31T23:00:00Z")])

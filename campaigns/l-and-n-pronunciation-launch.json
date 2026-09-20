@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -186,17 +186,17 @@
   },
   "channels": {
     "linkedin": {
-      "state": "postiz_queue",
+      "state": "published",
       "scheduled_for": "2026-09-20T02:00:00Z",
       "provider_recheck": {
         "checked_on": "2026-09-20",
-        "checked_at": "2026-09-20T02:12:53Z",
-        "verified_state": "QUEUE",
+        "checked_at": "2026-09-20T02:23:57Z",
+        "verified_state": "PUBLISHED",
         "matching_posts": 1,
-        "release_present": false,
+        "release_present": true,
         "reviewed_browser_copy_unchanged": true,
         "new_post_created": false,
-        "policy": "The original item remains queued after its scheduled time; publication is unresolved, not a terminal failure. Do not create a replacement."
+        "policy": "The original scheduled item has published. No duplicate, retry, reschedule or content mutation was needed."
       },
       "content": "I have trouble pronouncing L and N, so I built the practice tool I wanted.\n\nHear a pair, see the mouth and airflow cue, record one word, and get feedback you can inspect. The same four-minute drill works in English, Mandarin, and Cantonese.\n\nIt’s free and open source, and runs in the browser without an account:\nhttps://l-and-n.lazying.art/\n\nIf you try it, tell me whether the mouth view actually makes the difference clearer.",
       "content_sha256": "4976b657ef333e7e2aa1104c28326e16317c2166c2ae51eaad0362b25f0c6898",
@@ -231,8 +231,31 @@
         "replacement_media_visible": true,
         "original_urls_preserved_after_save": true
       },
-      "quality_decision": "The cross-faded source remains rejected. The hard-cut v5 replacement passed a fresh media and provider recheck and is queued for the recorded future time.",
-      "policy": "This first-party product demonstration is queued, not yet public, and is not an engagement, lead, or sale."
+      "quality_decision": "The cross-faded source remains rejected. The approved hard-cut v5 demonstration is published; the live text, five slides, playback and app destination have been reviewed.",
+      "publication": {
+        "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7507260594853482496",
+        "verified_at": "2026-09-20T02:30:30Z",
+        "provider_observed_at": "2026-09-20T02:20:48Z",
+        "provider_state": "PUBLISHED",
+        "public_account": "Lachlan Chen",
+        "visible_copy_matches_except_platform_shortening": true,
+        "platform_shortlink": "https://lnkd.in/gqWDrmAX",
+        "external_link_confirmation_observed": true,
+        "destination_after_visible_confirmation": "https://l-and-n.lazying.art/",
+        "destination_app_root_verified": true,
+        "destination_entry_asset": "/assets/index-zHLbJcBO.js",
+        "playable_video_observed": true,
+        "player_duration_seconds": 19.44,
+        "served_video_dimensions": "720x1280",
+        "visually_reviewed_frame_times_seconds": [3.575808, 4.114501, 10.073081, 13.385668, 18.584636],
+        "operator_review_attempts": 3,
+        "rendered_post_review_sessions": 2,
+        "operator_playback_sessions": 1,
+        "operator_link_checks": 3,
+        "organic_engagement_claimed": false,
+        "verification": "The original job published on the intended account. Live text matches the approved copy apart from LinkedIn's own shortened link. The visible external-link confirmation leads to the current app bundle. Playback advanced through the closing slide without a video error, and one frame from each of the five slides was visually reviewed. This is a provider transcode, not a byte-identical copy; the earlier source-audio review remains historical. Operator checks are not organic attention or customer evidence."
+      },
+      "policy": "A published first-party demonstration of the free browser app, not a tester, qualified buyer, payment or revenue. Earlier draft and queue checks remain historical evidence; no extra post or promotional reply was created."
     },
     "instagram": {
       "state": "published",

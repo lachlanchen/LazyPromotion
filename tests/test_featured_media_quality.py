@@ -32,7 +32,7 @@ class FeaturedMediaQualityTests(unittest.TestCase):
         for channel in ("instagram", "youtube", "linkedin"):
             self.assertEqual(
                 campaign["channels"][channel]["state"],
-                "published" if channel in ("instagram", "youtube") else "postiz_queue",
+                "published",
             )
             self.assertEqual(
                 campaign["channels"][channel]["media_sha256"],

@@ -1499,7 +1499,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 15)
+        self.assertEqual(campaign["version"], 16)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1545,11 +1545,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("not a learner result", lesson["policy"])
         self.assertEqual(len(test_build["sha256"]), 64)
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["state"], "published")
         self.assertEqual(linkedin["scheduled_for"], "2026-09-20T02:00:00Z")
-        self.assertEqual(linkedin["provider_recheck"]["verified_state"], "QUEUE")
+        self.assertEqual(linkedin["provider_recheck"]["verified_state"], "PUBLISHED")
         self.assertFalse(linkedin["provider_recheck"]["new_post_created"])
-        self.assertFalse(linkedin["provider_recheck"]["release_present"])
+        self.assertTrue(linkedin["provider_recheck"]["release_present"])
         self.assertIn("I have trouble pronouncing L and N", linkedin["content"])
         self.assertIn("English, Mandarin, and Cantonese", linkedin["content"])
         self.assertEqual(linkedin["destination"], campaign["source_evidence"]["pwa"])

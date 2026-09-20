@@ -65,6 +65,36 @@ class LandnStoreContinuationTests(unittest.TestCase):
         self.assertNotIn("App Store", channel["content"])
         self.assertFalse(channel["provider_recheck"]["new_post_created"])
 
+    def test_published_linkedin_demo_reaches_current_app_without_counting_review_as_demand(self):
+        channel = self.campaign["channels"]["linkedin"]
+        publication = channel["publication"]
+        self.assertEqual(channel["state"], "published")
+        self.assertEqual(publication["provider_state"], "PUBLISHED")
+        self.assertEqual(
+            publication["url"],
+            "https://www.linkedin.com/feed/update/urn:li:ugcPost:7507260594853482496",
+        )
+        self.assertTrue(publication["visible_copy_matches_except_platform_shortening"])
+        self.assertTrue(publication["external_link_confirmation_observed"])
+        self.assertEqual(
+            publication["destination_after_visible_confirmation"],
+            self.continuation["url"],
+        )
+        self.assertTrue(publication["destination_app_root_verified"])
+        self.assertEqual(
+            publication["destination_entry_asset"], self.continuation["entry_asset"]
+        )
+        self.assertTrue(publication["playable_video_observed"])
+        self.assertEqual(len(publication["visually_reviewed_frame_times_seconds"]), 5)
+        self.assertEqual(publication["operator_playback_sessions"], 1)
+        self.assertFalse(publication["organic_engagement_claimed"])
+        self.assertFalse(channel["schedule_verification"]["release_present"])
+        self.assertEqual(channel["schedule_verification"]["verified_state"], "QUEUE")
+        self.assertEqual(self.campaign["funnel"]["qualified_leads"], 0)
+        self.assertEqual(self.campaign["funnel"]["verified_received_gross_usd"], 0)
+        self.assertNotIn("integrationId", publication)
+        self.assertNotIn("releaseId", publication)
+
 
 if __name__ == "__main__":
     unittest.main()

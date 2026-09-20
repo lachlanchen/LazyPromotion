@@ -8,8 +8,12 @@ to current buyer qualification before creating another offer. The bounded app
 install/discovery repair is deployed in LazyingArtWebsite `a1376cc`: ordinary
 Android visitors reach EchoMind's public store, L & N has both production-store
 links, and duplicate homepage URLs have one canonical destination. It is a
-conversion-path repair, not evidence of a buyer or revenue. The L & N LinkedIn
-browser demonstration remains queued for September 20; do not duplicate it.
+conversion-path repair, not evidence of a buyer or revenue. The original L & N
+[LinkedIn browser demonstration](https://www.linkedin.com/feed/update/urn:li:ugcPost:7507260594853482496)
+published on September 20; its text, playback and app destination were verified
+without a retry or duplicate. The free PWA also now offers quiet web-only links
+to its existing store listings in Progress. Neither change establishes a buyer
+or increased conversion.
 Current private intake/payment observations are recorded outside Git, with
 unavailable or stale channels kept explicitly unknown.
 

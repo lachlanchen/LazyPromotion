@@ -121,6 +121,14 @@ contracts passed, and the live page exposes the same six routes. Separate
 fixes owned-site discoverability; it does not establish a visit, fit inquiry,
 qualified buyer, or sale.
 
+A thirteen-language “More examples and services” link now continues from this
+chooser to the existing [Work services](https://lazying.art/work/#services),
+including Story Clip. The six highlighted cards and all commercial terms stay
+unchanged. The continuation uses readable theme text, an underline, and visible
+keyboard focus; its translations have a content-versioned asset URL so returning
+visitors do not keep an older dictionary. Tests retain the six-card boundary and
+check the destination, translations, and cache revision.
+
 The public GitHub profile at commit
 `198c5444fe7e6aef2e0ee04649070207e6d51cca` presents five exact service routes
 with separate `github/profile` attribution. OpenHI appears first at USD 500;

@@ -53,6 +53,16 @@ class LandnListeningCampaignTests(unittest.TestCase):
         route = owned_monitor.route_for_post('x', post['content'], routes)
         self.assertEqual(route['campaign_id'], self.campaign['id'])
 
+    def test_android_purchase_test_is_not_a_public_release_or_payment(self):
+        launch = json.loads((ROOT / 'campaigns/l-and-n-pronunciation-launch.json').read_text())
+        internal = launch['source_evidence']['release_state']['android_internal_iap']
+        self.assertEqual(internal['state'], 'shipping_reported_internal_only')
+        self.assertEqual(internal['version_code'], 10)
+        self.assertEqual(internal['usd_base_price'], 0.99)
+        self.assertFalse(internal['public_production_verified'])
+        self.assertFalse(internal['payment_or_revenue_verified'])
+        self.assertNotIn('free on Android', self.campaign['channels']['x']['content'])
+
 
 if __name__ == '__main__':
     unittest.main()

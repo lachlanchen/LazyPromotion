@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -31,7 +31,22 @@
       "apple_usd_price_us_storefront": 0.99,
       "google_play_us_storefront_price": 0,
       "operator_handoff_updated_on": "2026-09-20",
-      "production_update_boundary": "The shipping handoff reports Android production 1.0.1 (4), with 1.0.2 (8) in review and on the internal track. The US Apple storefront visibly shows 1.0.2 and its listening-test release notes on September 20; the public lookup API still returns 1.0.1, so this is not a claim about every region or device. The web listening round is independently verified.",
+      "production_update_boundary": "The shipping handoff reports Android production 1.0.1 (4), with 1.0.2 (8) in review. The internal track has subsequently advanced to build 10 with an Android purchase test; this is not a public production release. The US Apple storefront visibly shows 1.0.2 and its listening-test release notes on September 20; the public lookup API still returns 1.0.1, so this is not a claim about every region or device. The web listening round is independently verified.",
+      "android_internal_iap": {
+        "state": "shipping_reported_internal_only",
+        "version_code": 10,
+        "version_name": "1.0.2",
+        "source_commit": "7d4ee90",
+        "shipping_evidence_commit": "89e4949",
+        "evidence_path": "store/artifacts/native-release-1.0.2.json#iapRelease",
+        "observed_on": "2026-09-20",
+        "product_id": "full_access",
+        "usd_base_price": 0.99,
+        "free_scope": "First three pairs per language in this internal build; the one-time purchase unlocks all 31 pairs.",
+        "public_production_verified": false,
+        "payment_or_revenue_verified": false,
+        "policy": "Do not promote an internal purchase as publicly available or call every future Android feature free. Recheck the shipping state and public offering before a new Android-specific post. Web practice remains free; iPhone remains paid up front."
+      },
       "google_play_version_verification": "Public listing and zero-price offer verified; its visible page does not expose a production version. Retain the shipping handoff's production state until stronger evidence changes it.",
       "apple_storefront_verification": {
         "checked_at": "2026-09-20T08:05:00Z",

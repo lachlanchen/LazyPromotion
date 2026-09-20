@@ -12,9 +12,11 @@ Shared release and promotion reference for [L & N](https://github.com/lachlanche
 - A visible five-word web round reached five result rows. Its predefined operator answers are not learner outcomes. Only the unedited setup screenshot is selected for promotion.
 - Existing launch posts are intact. One reviewed X listening update is **queued for September 22, 02:00 UTC / 10:00 HKT**, with the real setup screenshot and clear USD 0.99 iPhone wording. The LinkedIn launch already published today. Do not repeat the Reddit resource comment or post to Hacker News.
 
+Shipping update checked at 08:34 UTC: L & N main `89e4949` records **Android internal build 10** with a one-time USD 0.99 full-curriculum purchase. Its first three pairs per language remain free. This purchase build is internal-only; production build 8 remains in review. Web and iPhone pricing are unchanged. Do not describe the internal purchase as a public launch or change the scheduled web-link post.
+
 ## 1. What the product is, in one paragraph
 
-L & N: Speech Practice is a pronunciation coach for one confusable contrast, the consonants **l** and **n**, for learners of English, Mandarin (普通话) and Cantonese (廣東話). It is built by the maintainer because they mix the two sounds up themselves. A learner sees the target letter or character inside a word, hears a studio model, records one word, and gets a score that shows its evidence (what the recognizer heard, whether the onset was nasal or lateral, recording quality, and for Chinese the tone shape). A Listen tab trains the ear: it plays a random run of one minimal pair ("light night light light night") and the learner taps what they heard in order. There is an interactive 3D mouth cutaway for airflow, a live waveform, and no account, ads or tracking. The same curriculum runs as a free web app, a free Android app, a paid iPhone/iPad app and a small Apple Watch drill.
+L & N: Speech Practice is a pronunciation coach for one confusable contrast, the consonants **l** and **n**, for learners of English, Mandarin (普通话) and Cantonese (廣東話). It is built by the maintainer because they mix the two sounds up themselves. A learner sees the target letter or character inside a word, hears a studio model, records one word, and gets a score that shows its evidence (what the recognizer heard, whether the onset was nasal or lateral, recording quality, and for Chinese the tone shape). A Listen tab trains the ear: it plays a random run of one minimal pair ("light night light light night") and the learner taps what they heard in order. There is an interactive 3D mouth cutaway for airflow, a live waveform, and no account, ads or tracking. It runs as a free web app, a free-to-download Android app, a paid iPhone/iPad app and a small Apple Watch drill. Feature and purchase availability differ by release; see below.
 
 ## 2. Canonical links (all returned HTTP 200 on 2026-09-20)
 
@@ -40,10 +42,10 @@ Use the store pages and the web app for ordinary visitors. TestFlight, the inter
 | Channel | Price |
 | --- | --- |
 | Web app | Free |
-| Google Play | Free (Play does not allow a published free app to become paid) |
+| Google Play | Public download is free; the internal build tests a USD 0.99 full-curriculum unlock, not yet verified in production |
 | App Store | USD 0.99 tier (CNY 8, HKD 8; Apple's tier mapping), available in all 175 territories |
 
-Never describe the iOS app as free. "Free on the web and Android, US$0.99 on iPhone" is accurate.
+Never describe the iOS app as free. Prefer "Free in the browser, US$0.99 on iPhone" for the current campaign. For a future Android-specific post, distinguish the free download from any paid content after rechecking the release.
 
 ## 4. Release state on 2026-09-20 and what may be claimed
 
@@ -53,7 +55,7 @@ Never describe the iOS app as free. "Free on the web and Android, US$0.99 on iPh
 | Google Play production | `4 (1.0.1)`: practice, 3D mouth, scoring, auto-stop; **no Listen tab** | `8 (1.0.2)` sent for review 2026-09-20 (Google says up to 7 days) | Only 1.0.1 features until the listing shows 1.0.2 |
 | App Store | US page visibly shows 1.0.2 at USD 0.99 | Earlier shipping note said waiting for review; lookup API still shows 1.0.1 | US listing's listening-test release notes verified; no global rollout claim |
 | TestFlight public link | Build 7 (1.0.2), beta-approved 2026-09-20 | | Full 1.0.2 feature set, to testers only |
-| Play internal test | `8 (1.0.2)` | | Full 1.0.2 feature set, to testers only |
+| Play internal test | Shipping-reported `10 (1.0.2)` | | Android purchase testing only: first three pairs per language free, one-time unlock for all 31; not a public purchase claim |
 
 Concrete rule: a post that links the store pages must not promise the Listen tab or the 31 pairs until you have re-read the store page and it shows version 1.0.2. A post that links the web app may describe everything. When the reviews clear, the shipping session updates `store/release.yaml`, `store/apple/submission.md` and `store/google-play/submission.md` in the L & N repo; check those files (or the store pages) rather than assuming.
 
@@ -109,7 +111,7 @@ English, web link:
 
 > 我自己都成日撈亂 n 同 l（你/理、男/藍），所以整咗個小練習：聽一對字、錄一個字、睇下辨識器真係聽到乜，唔係淨係俾個分。新加咗聽辨測試：隨機播「男 藍 男 男 藍」，你按次序㩒返聽到嘅字。網頁版免費，唔使登記。我係作者，想知聽辨測試公唔公平。https://l-and-n.lazying.art/
 
-Store-page variant (only after the listing shows 1.0.2): replace the last sentence with the store link and "US$0.99 on iPhone, free on Android".
+Store-page variant (only after checking the relevant release and price): use one store link and that store's current price. Do not copy an unconditional "free on Android" claim into a release that gates paid content.
 
 ## 9. Assets you may use
 

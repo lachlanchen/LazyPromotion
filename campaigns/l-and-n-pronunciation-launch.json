@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -67,18 +67,26 @@
       "media_sha256": "418beff568cf11cf26555d7812a86fd777d3fbd4a427ec834cf7a52988abc91c",
       "verification": "WordPress raw content exactly matches the reviewed Markdown rendering; public page, canonical, four headings, one app call to action and the original screenshot verified at 390px and 1280px without horizontal overflow.",
       "medium": {
-        "state": "draft_saved",
+        "state": "scheduled",
         "profile": "@lazyingart",
         "verified_on": "2026-09-20",
-        "method": "Official browser importer, followed by visible editor review and reload.",
+        "method": "Official browser importer; reviewed free-post dialog; one Schedule to publish action; saved schedule and unchecked paywall verified after reload.",
+        "scheduled_at_utc": "2026-09-21T02:00:00Z",
+        "scheduled_at_local": "2026-09-21T10:00:00+08:00",
+        "schedule_timezone": "Asia/Hong_Kong",
+        "paywall_enabled": false,
+        "canonical_setting_verified": true,
+        "canonical_url": "https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html",
+        "topics": ["Language Learning", "Programming"],
+        "normalized_text_preserved_after_spacing_cleanup": true,
         "image_and_alt_text_verified": true,
         "source_links_retained": true,
         "app_destination_uses_medium_attribution": true,
         "brief_ai_assistance_label_present": true,
         "published": false,
-        "publication_gate": "Keep this AI-assisted story outside the paywall. Recheck final preview, imported canonical setting and public canonical at publication; the editor's own canonical URL is not the story's public canonical. Publish as a later, separate distribution action, not a same-day extra post."
+        "publication_gate": "Keep this AI-assisted story outside the paywall. The saved schedule, free-post setting and original-source canonical are verified; check anonymous public access and canonical after the scheduled time. Do not reimport or reschedule it, or claim that scheduling is publication or revenue."
       },
-      "policy": "First-party development experience, not an independent learner study or revenue evidence. Medium syndication remains a separate unpublished workflow."
+      "policy": "First-party development experience, not an independent learner study or revenue evidence. One free Medium syndication is scheduled for the following day; publication remains unverified."
     },
     "homepage_discovery": {
       "state": "live",

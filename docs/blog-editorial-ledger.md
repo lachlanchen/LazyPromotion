@@ -24,7 +24,9 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 New English source-only post `3849`, [I Mix Up L and N, So I Built a Practice App](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html), explains recognizer/onset feedback, short listening rounds, same-voice clips and repeated-word playback. The real Listen setup screenshot retains its verified SHA-256 after WordPress media migration. One free-web practice link is the call to action; no tutor, donation or affiliate pitch was added.
 
-Source: `articles/l-and-n-listening-practice/post.md` in LazyPromotion. LazyPub archive: `content/lazypub/20260920-l-and-n-listening-practice/` in BLOG, commit `fac7abf`. Draft review and publish dry run passed; live raw content matches the source rendering exactly. Mobile 390px and desktop 1280px checks passed, with the expected canonical, image and source-code links. This English addition is separate from the trilingual polish count below. Medium is not yet published; no traffic, learner or income result is claimed.
+Source: `articles/l-and-n-listening-practice/post.md` in LazyPromotion. LazyPub archive: `content/lazypub/20260920-l-and-n-listening-practice/` in BLOG, commit `fac7abf`. Draft review and publish dry run passed; live raw content matches the source rendering exactly. Mobile 390px and desktop 1280px checks passed, with the expected canonical, image and source-code links. This English addition is separate from the trilingual polish count below.
+
+One free Medium edition is scheduled for September 21, 02:00 UTC / 10:00 HKT. The native scheduling dialog was reviewed and submitted once; the saved schedule, disabled paywall, two topics and original-blog canonical setting were verified after reload. Six empty imported heading/quote blocks were removed without changing normalized article text. Anonymous publication and its final canonical remain later checks. No traffic, learner or income result is claimed.
 
 As of the verified commit, **156 posts** have completed this protocol:
 

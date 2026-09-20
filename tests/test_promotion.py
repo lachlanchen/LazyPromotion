@@ -797,6 +797,64 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(row["status"], "manual_only")
         self.assertIn("Rule 8", row["triage_reason"])
 
+    def test_3dprinting_policy_blocks_agent_content_without_blocking_other_communities(self):
+        for host in ("www.reddit.com", "old.reddit.com", "new.reddit.com"):
+            for action in ("public_reply", "private_contact"):
+                with self.subTest(host=host, action=action):
+                    reason = promotion.agent_contact_block_reason(
+                        "reddit",
+                        f"https://{host}/r/3Dprinting/comments/example/request/",
+                        action=action,
+                    )
+                    self.assertIn("prohibit AI-generated content", reason)
+        for community in ("3dprintingadvice", "3drequests"):
+            with self.subTest(community=community):
+                self.assertEqual(
+                    promotion.agent_contact_block_reason(
+                        "reddit",
+                        f"https://www.reddit.com/r/{community}/comments/example/request/",
+                        action="public_reply",
+                    ),
+                    "",
+                )
+
+    def test_3dprinting_paid_request_is_manual_only_before_drafting(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/3Dprinting/comments/paid/holder/",
+            author="buyer",
+            body="[Hiring] Custom 3D-printable display holder. Budget USD 100.",
+        )
+        promotion.reconcile_discovered_candidates(self.db)
+        row = self.db.execute(
+            "SELECT status, triage_reason FROM candidates WHERE id=?",
+            (candidate["id"],),
+        ).fetchone()
+        self.assertEqual(row["status"], "manual_only")
+        self.assertIn("prohibit AI-generated content", row["triage_reason"])
+
+    def test_3dprinting_contact_stays_blocked_despite_stale_opportunity_status(self):
+        candidate = promotion.ingest_candidate(
+            self.db,
+            platform="reddit",
+            source_url="https://www.reddit.com/r/3Dprinting/comments/paid/stale/",
+            author="buyer",
+            body="[Hiring] Custom 3D-printable display holder. Budget USD 100.",
+        )
+        self.db.execute(
+            "UPDATE candidates SET status='opportunity' WHERE id=?",
+            (candidate["id"],),
+        )
+        self.db.commit()
+        with self.assertRaisesRegex(ValueError, "prohibited.*AI-generated"):
+            promotion.mark_opportunity_contacted(
+                self.db,
+                candidate["id"],
+                method="Reddit message requested in post",
+                evidence="must remain unsent",
+            )
+
     def test_selfhosted_policy_allows_public_value_but_blocks_private_contact(self):
         url = "https://www.reddit.com/r/selfhosted/comments/example/request/"
         self.assertEqual(

@@ -23,6 +23,16 @@
     },
     {
       "platform": "reddit",
+      "community": "3dprinting",
+      "observed_at": "2026-09-20T11:07:32Z",
+      "source_url": "https://www.reddit.com/r/3Dprinting/wiki/communityrules/",
+      "agent_public_reply_allowed": false,
+      "agent_private_contact_allowed": false,
+      "manual_operator_contact_allowed": true,
+      "reason": "Current r/3Dprinting community rules prohibit AI-generated content in any shape. Agent public replies are disabled. Agent private outreach from these requests is also disabled to avoid routing around the community restriction; human operator participation remains subject to its rules."
+    },
+    {
+      "platform": "reddit",
       "community": "selfhosted",
       "observed_at": "2026-09-12T13:55:14Z",
       "source_url": "https://old.reddit.com/r/selfhosted/about/rules/",

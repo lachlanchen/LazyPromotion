@@ -88,6 +88,16 @@ with private permissions:
 - `mail-inbound-monitor.jsonl`: aggregate history, including change alerts;
 - the existing application and fit-folder databases: counts only.
 
+Failed child observations include a fixed `failure_stage` label for connection,
+tab/frame readiness, application or fit-folder selection/counting, restoration,
+or evidence capture. No folder name, locator, URL, subject, or browser exception
+text is copied into this field. It identifies the failed operation, not the
+cause or login state, and does not change timeouts, retries, or pause rules.
+An already-running loop starts a fresh collector subprocess each cycle, so the
+next normal child can record these labels without restarting the worker. Older
+parent processes may omit the label from their status file; inspect the matching
+run-bound child observation rather than forcing an early check.
+
 The loop does not take screenshots. Optional validation screenshots are cropped
 to the known Inbox folder option and replace the previous before/after images;
 they never capture the message list or message content. Private evidence and

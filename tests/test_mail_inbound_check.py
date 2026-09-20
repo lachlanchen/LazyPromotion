@@ -29,6 +29,45 @@ def observation():
 
 
 class ObservationTests(unittest.TestCase):
+    def test_stage_annotation_preserves_exception_and_inner_operation(self):
+        for error in (mail.BrowserTimeout("private locator"), mail.MailSessionUnavailable("private account")):
+            with self.subTest(error_type=type(error)), self.assertRaises(type(error)) as raised:
+                with mail.observation_stage("application_count_read"):
+                    with mail.observation_stage("mail_connection"):
+                        raise error
+            self.assertIs(raised.exception, error)
+            self.assertEqual(mail.failure_stage(error), "mail_connection")
+        with self.assertRaises(ValueError):
+            with mail.observation_stage("private folder name"):
+                self.fail("invalid stage must not run")
+
+    def test_untrusted_stage_values_never_become_output(self):
+        error = RuntimeError("private browser text")
+        for value in (None, "private browser URL", ["private"], {"subject": "private"}):
+            with self.subTest(value=value):
+                error._mail_observation_stage = value
+                self.assertEqual(mail.failure_stage(error), "unclassified")
+
+    def test_child_failure_emits_only_fixed_diagnostics(self):
+        error = mail.BrowserTimeout("private subject, account and URL")
+        error._mail_observation_stage = "application_folder_selection"
+        with contextlib.ExitStack() as stack:
+            stack.enter_context(patch.object(mail.sys, "argv", ["mail", "_collect", "--run-id", "test-run"]))
+            stack.enter_context(patch.object(mail.os, "umask"))
+            stack.enter_context(patch.object(mail.signal, "signal"))
+            stack.enter_context(patch.object(mail, "collect_once", side_effect=error))
+            save = stack.enter_context(patch.object(mail, "private_json"))
+            with self.assertRaises(SystemExit) as raised:
+                mail.main()
+        self.assertEqual(raised.exception.code, 1)
+        save.assert_called_once()
+        result = save.call_args.args[1]
+        self.assertFalse(result["ok"])
+        self.assertFalse(result["needs_mail_review"])
+        self.assertEqual(result["failure_reason"], "browser_timeout")
+        self.assertEqual(result["failure_stage"], "application_folder_selection")
+        self.assertNotIn("private", json.dumps(result))
+
     def test_failure_reasons_never_echo_private_browser_errors(self):
         self.assertEqual(mail.failure_reason(RuntimeError("subject: private example")), "unavailable_or_incomplete")
         self.assertEqual(mail.failure_reason(mail.BrowserTimeout("private URL")), "browser_timeout")
@@ -148,6 +187,35 @@ class RunOnceTests(unittest.TestCase):
         self.assertNotIn("applications", result)
         self.assertNotIn("private", self.status.read_text())
 
+    def test_child_failure_stage_is_whitelisted_without_changing_lifecycle(self):
+        self.lifecycle.return_value["state"] = "check_failed"
+        for stage in ("application_folder_selection", "private URL", ["private"], None):
+            with self.subTest(stage=stage):
+                mail.private_json(self.observation, {
+                    "run_id": "test-run", "ok": False, "needs_mail_review": False,
+                    "failure_stage": stage, "error": "private mailbox content",
+                })
+                result = self.run_check()
+                self.assertFalse(result["ok"])
+                self.assertEqual(result["state"], "check_failed")
+                self.assertNotIn("applications", result)
+                self.assertNotIn("private", self.status.read_text())
+                if stage == "application_folder_selection":
+                    self.assertEqual(result["failure_stage"], stage)
+                else:
+                    self.assertNotIn("failure_stage", result)
+
+    def test_legacy_child_review_signal_is_preserved(self):
+        self.lifecycle.return_value["state"] = "check_failed"
+        mail.private_json(self.observation, {
+            "run_id": "test-run", "needs_mail_review": True,
+            "failure_stage": "mail_tab_selection",
+        })
+        result = self.run_check()
+        self.assertTrue(result["needs_mail_review"])
+        self.assertFalse(result["ok"])
+        self.assertNotIn("failure_stage", result)
+
     def test_cleanup_failure_cannot_be_overwritten_by_successful_collection(self):
         mail.private_json(self.observation, observation())
         self.lifecycle.return_value.update(state="desktop_cleanup_failed", desktop_stopped=False)
@@ -158,6 +226,55 @@ class RunOnceTests(unittest.TestCase):
 
 
 class CollectionTests(unittest.TestCase):
+    def test_failure_stage_identifies_existing_operation_without_retries(self):
+        for stage in sorted(mail.FAILURE_STAGES):
+            with self.subTest(stage=stage), contextlib.ExitStack() as stack:
+                error = mail.BrowserTimeout("private browser diagnostic")
+                frame = SimpleNamespace(url="https://mail.example/applications/mail2/en-us/")
+                page = MagicMock(url="https://www.icloud.com/mail/")
+                page.frames = [frame]
+                pw = MagicMock()
+                connect = pw.chromium.connect_over_cdp
+                connect.return_value = SimpleNamespace(contexts=[SimpleNamespace(pages=[page])])
+                stack.enter_context(patch.object(mail, "sync_playwright", return_value=contextlib.nullcontext(pw)))
+                stack.enter_context(patch.object(mail.browser, "browser_operation_lock", return_value=contextlib.nullcontext()))
+                select = stack.enter_context(patch.object(mail, "select_folder"))
+                apps = stack.enter_context(patch.object(mail.applications, "_read_application_counts_locked", return_value=[{}]))
+                fits = stack.enter_context(patch.object(mail.intake, "_read_folder_counts_locked", return_value=(2, 0)))
+                evidence = stack.enter_context(patch.object(mail, "folder_evidence"))
+                expected = error
+                if stage == "mail_connection":
+                    connect.side_effect = error
+                elif stage == "mail_tab_selection":
+                    page.bring_to_front.side_effect = error
+                elif stage == "mail_frame_readiness":
+                    page.frames = []
+                    stack.enter_context(patch.object(mail.time, "monotonic", side_effect=[0, 16]))
+                    expected = None
+                elif stage == "application_folder_selection":
+                    select.side_effect = error
+                elif stage == "application_count_read":
+                    apps.side_effect = error
+                elif stage == "fit_folder_selection":
+                    select.side_effect = [None, error, None]
+                elif stage == "fit_count_read":
+                    fits.side_effect = error
+                elif stage == "application_folder_restore":
+                    select.side_effect = [None, None, error]
+                elif stage == "evidence_capture":
+                    evidence.side_effect = error
+                with self.assertRaises(Exception) as raised:
+                    mail.collect_counts({"folder_name": "Inbox"}, capture_evidence=True)
+                self.assertEqual(mail.failure_stage(raised.exception), stage)
+                if expected is not None:
+                    self.assertIs(raised.exception, expected)
+                else:
+                    self.assertIsInstance(raised.exception, mail.MailSessionUnavailable)
+                connect.assert_called_once()
+                self.assertLessEqual(apps.call_count, 1)
+                self.assertLessEqual(fits.call_count, 1)
+                self.assertLessEqual(select.call_count, 3)
+
     def test_gmail_pending_activity_is_visible_to_root_alert_consumers(self):
         with contextlib.ExitStack() as stack:
             stack.enter_context(patch.object(mail.applications, "load_config", return_value={}))

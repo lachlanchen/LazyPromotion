@@ -11,6 +11,7 @@ import signal
 import sys
 import tempfile
 import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -43,10 +44,36 @@ SUMMARY_FIELDS = {
     "campaigns_with_unread_matching_threads", "matching_thread_count",
     "unread_matching_thread_count",
 }
+FAILURE_STAGES = frozenset({
+    "mail_connection", "mail_tab_selection", "mail_frame_readiness",
+    "application_folder_selection", "application_count_read",
+    "fit_folder_selection", "fit_count_read", "application_folder_restore",
+    "evidence_capture",
+})
 
 
 class MailSessionUnavailable(RuntimeError):
     pass
+
+
+def failure_stage(error: Exception) -> str:
+    """Return a fixed operation label, never a locator or mailbox value."""
+    stage = getattr(error, "_mail_observation_stage", None)
+    return stage if isinstance(stage, str) and stage in FAILURE_STAGES else "unclassified"
+
+
+@contextmanager
+def observation_stage(stage: str):
+    if stage not in FAILURE_STAGES:
+        raise ValueError("invalid mail observation stage")
+    try:
+        yield
+    except Exception as error:
+        # Keep the original type so timeout and session-review handling do not
+        # change. An enclosing stage must not overwrite a more specific one.
+        if failure_stage(error) == "unclassified":
+            error._mail_observation_stage = stage
+        raise
 
 
 def failure_reason(error: Exception) -> str:
@@ -194,44 +221,54 @@ def folder_evidence(frame, folder: str, stage: str) -> None:
 
 def collect_counts(config: dict, *, capture_evidence: bool = False) -> tuple[list[dict], tuple[int, int]]:
     with browser.browser_operation_lock(timeout_seconds=5), sync_playwright() as pw:
-        connected = pw.chromium.connect_over_cdp(browser.DEFAULT_CDP, no_defaults=True)
-        pages = [
-            page for context in connected.contexts for page in context.pages
-            if urlsplit(page.url).hostname == "www.icloud.com"
-            and urlsplit(page.url).path.rstrip("/") == "/mail"
-        ]
-        if len(pages) != 1:
-            raise MailSessionUnavailable("exactly one project mail tab is required")
-        page = pages[0]
-        page.bring_to_front()
-        deadline = time.monotonic() + 15
-        frames = []
-        while time.monotonic() < deadline:
-            frames = [
-                frame for frame in page.frames
-                if urlsplit(frame.url).path.startswith(intake.MAIL_APP_FRAME_PATH)
+        with observation_stage("mail_connection"):
+            connected = pw.chromium.connect_over_cdp(browser.DEFAULT_CDP, no_defaults=True)
+        with observation_stage("mail_tab_selection"):
+            pages = [
+                page for context in connected.contexts for page in context.pages
+                if urlsplit(page.url).hostname == "www.icloud.com"
+                and urlsplit(page.url).path.rstrip("/") == "/mail"
             ]
-            if len(frames) == 1:
-                break
-            page.wait_for_timeout(250)
-        if len(frames) != 1:
-            raise MailSessionUnavailable("the project mail session needs review")
-        frame = frames[0]
-        select_folder(frame, config["folder_name"])
-        if capture_evidence:
-            folder_evidence(frame, config["folder_name"], "before")
-        summaries = applications._read_application_counts_locked(
-            cdp=browser.DEFAULT_CDP, config=config,
-        )
-        try:
-            select_folder(frame, intake.FOLDER_NAME)
-            counts = intake._read_folder_counts_locked(
-                cdp=browser.DEFAULT_CDP, folder_name=intake.FOLDER_NAME,
-            )
-        finally:
+            if len(pages) != 1:
+                raise MailSessionUnavailable("exactly one project mail tab is required")
+            page = pages[0]
+            page.bring_to_front()
+        with observation_stage("mail_frame_readiness"):
+            deadline = time.monotonic() + 15
+            frames = []
+            while time.monotonic() < deadline:
+                frames = [
+                    frame for frame in page.frames
+                    if urlsplit(frame.url).path.startswith(intake.MAIL_APP_FRAME_PATH)
+                ]
+                if len(frames) == 1:
+                    break
+                page.wait_for_timeout(250)
+            if len(frames) != 1:
+                raise MailSessionUnavailable("the project mail session needs review")
+            frame = frames[0]
+        with observation_stage("application_folder_selection"):
             select_folder(frame, config["folder_name"])
         if capture_evidence:
-            folder_evidence(frame, config["folder_name"], "after")
+            with observation_stage("evidence_capture"):
+                folder_evidence(frame, config["folder_name"], "before")
+        with observation_stage("application_count_read"):
+            summaries = applications._read_application_counts_locked(
+                cdp=browser.DEFAULT_CDP, config=config,
+            )
+        try:
+            with observation_stage("fit_folder_selection"):
+                select_folder(frame, intake.FOLDER_NAME)
+            with observation_stage("fit_count_read"):
+                counts = intake._read_folder_counts_locked(
+                    cdp=browser.DEFAULT_CDP, folder_name=intake.FOLDER_NAME,
+                )
+        finally:
+            with observation_stage("application_folder_restore"):
+                select_folder(frame, config["folder_name"])
+        if capture_evidence:
+            with observation_stage("evidence_capture"):
+                folder_evidence(frame, config["folder_name"], "after")
         return summaries, counts
 
 
@@ -288,8 +325,13 @@ def run_once(*, status_path: Path = STATUS_PATH, observation_path: Path = OBSERV
                     report["last_successful_checked_at"] = report["checked_at"]
                 except (ValueError, TypeError, KeyError):
                     report["state"] = "observation_invalid"
-            elif observation.get("needs_mail_review") is True:
-                report["needs_mail_review"] = True
+            else:
+                if observation.get("ok") is False:
+                    stage = observation.get("failure_stage")
+                    if isinstance(stage, str) and stage in FAILURE_STAGES:
+                        report["failure_stage"] = stage
+                if observation.get("needs_mail_review") is True:
+                    report["needs_mail_review"] = True
         elif lifecycle["state"] == "checked":
             report["state"] = "observation_missing_or_stale"
     private_json(status_path, report)
@@ -363,6 +405,7 @@ def main() -> None:
                     "needs_mail_review": isinstance(error, MailSessionUnavailable),
                     "error": "mail observation failed closed",
                     "failure_reason": failure_reason(error),
+                    "failure_stage": failure_stage(error),
                 }
             private_json(OBSERVATION_PATH, report)
             raise SystemExit(0 if report["ok"] else 1)

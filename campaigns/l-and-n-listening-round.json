@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "id": "l-and-n-listening-round",
+  "objective": "Show one real listening round, invite free browser practice, and make the existing paid iPhone option clear without implying a learner result or sale.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "pwa": "https://l-and-n.lazying.art/",
+    "source_commit": "cfe8efe169acd18da13f0c6908eedbaab4496d76",
+    "checked_on": "2026-09-20",
+    "entry_asset": "/assets/index-zHLbJcBO.js",
+    "entry_asset_sha256": "5c0b1ef00a906b57604cf3fe36774e64c21ba6e3d67293389466f0018c65c3a0",
+    "capture": "assets/landn-listen-web-20260920.png",
+    "capture_sha256": "418beff568cf11cf26555d7812a86fd777d3fbd4a427ec834cf7a52988abc91c",
+    "capture_kind": "Unedited live browser screenshot of the five-word setup, not a learner result.",
+    "functional_check": "Visible Play sequence, five predefined operator choices, Submit, and five result rows. The synthetic operator score is private and is not promotional proof of learning or accuracy.",
+    "apple_us_storefront": "Version 1.0.2 and USD 0.99 visibly checked; public lookup API still reports 1.0.1. No global rollout or installation claim.",
+    "release_note": "The later store-link web release supersedes the bundle cited in the incoming handoff; both source ancestry and the served asset hash confirm it is not a rollback."
+  },
+  "channels": {
+    "x": {
+      "state": "queued",
+      "publish_at": "2026-09-22T02:00:00Z",
+      "content": "I mix up L and N, so I built this. Hear five words; tap light or night in order.\n\nEnglish, Mandarin and Cantonese. Free in the browser; iPhone app US$0.99.\nl-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_listening",
+      "content_sha256": "ac7d242a0542cb0505e7abd30d0236f738273d7d283774439b332af849824443",
+      "destination": "https://l-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_listening",
+      "media": "assets/landn-listen-web-20260920.png",
+      "settings": {
+        "who_can_reply_post": "everyone",
+        "post_type": "post",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "verification": {
+        "checked_at": "2026-09-20T08:12:47Z",
+        "verified_state": "QUEUE",
+        "matching_posts": 1,
+        "release_present": false,
+        "visible_account": "lazyingart",
+        "visible_local_time": "09/22/2026 10:00 AM",
+        "visible_copy_reviewed": true,
+        "uploaded_image_and_preview_reviewed": true,
+        "stored_html_normalizes_to_reviewed_text": true,
+        "stored_content_sha256": "fe523d05a876b1da3c67d0ebd96c387a8ba90bbfba5b873a62a13c3391f98a33",
+        "original_campaign_url_preserved": true,
+        "provider_contract_checked": true,
+        "schedule_clicked_once": true,
+        "destination_and_store_continuation_verified": true,
+        "policy": "One uploaded screenshot, one draft and one scheduling action. Queue state is not publication, a learner, a buyer, or revenue."
+      },
+      "policy": "One spaced first-party update, not a community reply or an extra LinkedIn post. Requires visible exact-copy, image, account and timing review before scheduling. No automatic second pitch."
+    }
+  },
+  "funnel": {
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "Distribution and operator checks are not buyer or revenue evidence. Apple sales reports remain separate from the Stripe ledger."
+  }
+}

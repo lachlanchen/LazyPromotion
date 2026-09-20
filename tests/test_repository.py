@@ -1499,7 +1499,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "l-and-n-pronunciation-launch.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 16)
+        self.assertEqual(campaign["version"], 17)
         self.assertEqual(campaign["source_evidence"]["pwa"], "https://l-and-n.lazying.art/")
         releases = campaign["source_evidence"]["release_state"]
         self.assertEqual(releases["pwa"], "live")
@@ -1509,17 +1509,19 @@ class RepositoryTests(unittest.TestCase):
             releases["google_play_public_url"],
             "https://play.google.com/store/apps/details?id=art.lazying.landn",
         )
-        self.assertEqual(releases["testflight_internal"], "operator_reported_testing_build_6")
-        self.assertEqual(releases["testflight_external"], "operator_reported_testing_build_3")
+        self.assertEqual(releases["testflight_internal"], "operator_reported_testing_build_7")
+        self.assertEqual(releases["testflight_external"], "operator_reported_testing_build_7")
         self.assertEqual(
             releases["testflight_public_url"],
             "https://testflight.apple.com/join/CpkT8m9C",
         )
         self.assertEqual(releases["apple_app_store"], "public_listing_live")
-        self.assertEqual(releases["apple_public_version"], "1.0.1")
+        self.assertEqual(releases["apple_public_version"], "1.0.2")
         self.assertEqual(releases["apple_usd_price_us_storefront"], 0.99)
         self.assertEqual(releases["google_play_us_storefront_price"], 0)
-        self.assertEqual(releases["public_storefronts_checked_on"], "2026-09-19")
+        self.assertEqual(releases["public_storefronts_checked_on"], "2026-09-20")
+        self.assertEqual(releases["apple_storefront_verification"]["lookup_api_version"], "1.0.1")
+        self.assertFalse(releases["apple_storefront_verification"]["regional_rollout_claimed"])
         self.assertEqual(releases["apple_app_store_public_url"], "https://apps.apple.com/app/l-n-speech-practice/id6808872450")
         public_store = campaign["source_evidence"]["public_store_fix"]
         self.assertEqual(public_store["state"], "published")

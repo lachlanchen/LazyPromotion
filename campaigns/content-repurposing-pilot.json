@@ -1,5 +1,5 @@
 {
-  "version": 27,
+  "version": 28,
   "id": "content-repurposing-pilot",
   "objective": "Win and deliver one paid, story-first long-form-to-short-form pilot using project-owned media proof, reviewed captions, and a rights ledger without implying prior travel-client work.",
   "source_need": {
@@ -277,7 +277,7 @@
       "received_revenue_usd": 0
     },
     "postiz_instagram": {
-      "state": "scheduled",
+      "state": "published",
       "publish_at": "2026-09-20T12:00:00Z",
       "content": "Choosing the clip is often harder than editing it.\n\nI made a small, checkable workflow: mark two moments from one recording, explain why each works, then finish the one selected. The handoff includes corrected captions, an editable SRT, and a source ledger.\n\nThe sample uses our own footage, so you can inspect the process before sharing yours.\n\nhttps://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample\n\nI’m opening this as a fixed USD 250 pilot for one rights-cleared recording up to 30 minutes.\n\n#VideoEditing #Reels #ShortFormVideo #Captions",
       "destination": "https://lazying.art/story-clip/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample",
@@ -324,6 +324,29 @@
         "copy_date_account_and_settings_unchanged": true,
         "new_item_created": false,
         "original_requested_publish_at": "2026-09-20T12:00:00Z"
+      },
+      "publication": {
+        "checked_at": "2026-09-20T12:12:12Z",
+        "postiz_state": "PUBLISHED",
+        "url": "https://www.instagram.com/p/DdgiXPdG-rI/",
+        "author": "lazying.art",
+        "caption_exact_after_whitespace_normalization": true,
+        "image_dimensions": [1080, 1350],
+        "complete_service_card_visually_verified": true,
+        "image_identity_boundary": "The displayed Instagram image matches the reviewed service card visually; platform transcoding means this is not a byte-for-byte hash check.",
+        "visible_comment_state": "No comments yet",
+        "caption_link_clickable": false,
+        "destination_opened_from_displayed_address": true,
+        "sample_present": true,
+        "fit_check_visible_link_followed": true,
+        "fit_check_url": "https://lazying.art/story-clip/fit-check/?utm_source=instagram&utm_medium=social&utm_campaign=story_clip_pilot&utm_content=two_moment_sample",
+        "all_four_attribution_parameters_preserved": true,
+        "form_visually_verified": true,
+        "form_submitted": false,
+        "new_post_created": false,
+        "customer_interaction_observed": false,
+        "revenue_claimed": false,
+        "boundary": "This records the existing scheduled post and an operator's visible buyer-path check. The caption address was opened manually because Instagram did not expose a clickable caption link. It is not a customer visit, fit inquiry, delivery, or sale."
       }
     },
     "encrypted_intake": {
@@ -349,7 +372,7 @@
       "received_revenue_usd": 0,
       "policy": "The September 9 labeled synthetic metadata request passed the live review and explicit confirmation gates, authenticated and decrypted as the Story Clip route, persisted in mode 0600, and deleted only the unchanged remote envelope. A second receiver check found no pending envelope, and the exact local synthetic payload copies were removed. This is operational evidence, not a customer inquiry, qualification, sale, delivery, or revenue."
     },
-    "inquiry_monitor": "Direct encrypted intake is disabled during key rotation; prospective buyers review locally and continue through the prepared email or copy route",
+    "inquiry_monitor": "Use the existing encrypted-intake receiver and scoped email monitor; inspect their current status and private review queue before opening customer material. The recorded September 9 intake round trip is historical operational evidence, not a new customer inquiry.",
     "homepage": {
       "state": "live_and_verified",
       "checked_on": "2026-09-07",

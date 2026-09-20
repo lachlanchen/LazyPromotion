@@ -1640,7 +1640,7 @@ class RepositoryTests(unittest.TestCase):
         campaign = json.loads(serialized)
         sample = campaign["fit"]["delivery_sample"]
 
-        self.assertEqual(campaign["version"], 27)
+        self.assertEqual(campaign["version"], 28)
         self.assertEqual(sample["state"], "public_project_owned_synthetic_process_evidence")
         self.assertIn(sample["commit"], sample["url"])
         self.assertIn(sample["commit"], sample["download"])
@@ -1729,7 +1729,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "content-repurposing-pilot.json"
         serialized = path.read_text(encoding="utf-8")
         campaign = json.loads(serialized)
-        self.assertEqual(campaign["version"], 27)
+        self.assertEqual(campaign["version"], 28)
         self.assertEqual(campaign["id"], "content-repurposing-pilot")
         source = campaign["source_need"]
         self.assertEqual(source["state"], "public_explicit_hiring_post")
@@ -1782,7 +1782,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(marketplace["payment_observed"])
         self.assertEqual(marketplace["received_revenue_usd"], 0)
         instagram = offer["postiz_instagram"]
-        self.assertEqual(instagram["state"], "scheduled")
+        self.assertEqual(instagram["state"], "published")
         self.assertEqual(instagram["publish_at"], "2026-09-20T12:00:00Z")
         self.assertEqual(instagram["settings"]["post_type"], "post")
         self.assertIn("USD 250", instagram["content"])
@@ -4177,7 +4177,7 @@ class RepositoryTests(unittest.TestCase):
             if item["company"] == "Undisclosed AI drama platform"
         )
 
-        self.assertEqual(campaign["version"], 27)
+        self.assertEqual(campaign["version"], 28)
         self.assertEqual(opportunity["application_state"], "closed_no_reply")
         self.assertIn("USD 1,000 per month", opportunity["published_compensation"])
         self.assertIn("paid pilot", opportunity["proposal"])

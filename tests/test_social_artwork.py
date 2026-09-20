@@ -4,6 +4,7 @@ import hashlib
 import json
 import unittest
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,6 +31,42 @@ class SocialArtworkTests(unittest.TestCase):
         self.assertNotEqual(channel["media_asset"], campaign["owned_offer"]["contra_marketplace"]["cover_asset"])
         self.assertTrue(channel["visual_review"]["previous_media_preserved"])
         self.assertTrue(channel["visual_review"]["copy_date_account_and_settings_unchanged"])
+
+    def test_story_publication_keeps_operator_review_separate_from_conversion(self):
+        campaign = json.loads((ROOT / "campaigns/content-repurposing-pilot.json").read_text())
+        channel = campaign["owned_offer"]["postiz_instagram"]
+        release = channel["publication"]
+        self.assertEqual(channel["state"], "published")
+        self.assertEqual(release["postiz_state"], "PUBLISHED")
+        self.assertEqual(release["url"], "https://www.instagram.com/p/DdgiXPdG-rI/")
+        self.assertEqual(release["author"], "lazying.art")
+        self.assertTrue(release["caption_exact_after_whitespace_normalization"])
+        self.assertEqual(release["image_dimensions"], [1080, 1350])
+        self.assertTrue(release["complete_service_card_visually_verified"])
+        self.assertFalse(release["caption_link_clickable"])
+        for key in (
+            "destination_opened_from_displayed_address", "sample_present",
+            "fit_check_visible_link_followed", "form_visually_verified",
+            "all_four_attribution_parameters_preserved",
+        ):
+            self.assertTrue(release[key], key)
+        target = urlsplit(release["fit_check_url"])
+        self.assertEqual(target.netloc, "lazying.art")
+        self.assertEqual(target.path, "/story-clip/fit-check/")
+        attribution = parse_qs(target.query)
+        self.assertEqual(len(attribution), 4)
+        self.assertEqual(attribution, parse_qs(urlsplit(channel["destination"]).query))
+        for key in (
+            "form_submitted", "new_post_created", "customer_interaction_observed",
+            "revenue_claimed",
+        ):
+            self.assertFalse(release[key], key)
+        # Keep the original queue check as history, not current publication state.
+        self.assertEqual(channel["verification"]["verified_state"], "QUEUE")
+        self.assertFalse(channel["verification"]["release_present"])
+        self.assertIn("not a customer visit", release["boundary"])
+        self.assertNotIn(".local/", json.dumps(release))
+        self.assertNotIn("target_id", release)
 
     def test_openhi_preview_review_preserves_exact_scientific_artifact(self):
         campaign = json.loads((ROOT / "campaigns/openhi-reproducibility-sprint.json").read_text())

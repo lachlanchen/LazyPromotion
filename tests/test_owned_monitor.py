@@ -710,7 +710,7 @@ class OwnedMonitorTests(unittest.TestCase):
         self.assertEqual(route["campaign_id"], campaign["id"])
         self.assertEqual(route["route"], "product")
         self.assertEqual(route["known_owned_replies"], 0)
-        self.assertEqual(channel["state"], "scheduled")
+        self.assertEqual(channel["state"], "published")
 
     def test_explicit_channel_wins_over_legacy_offer_and_unrelated_drafts_are_ignored(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -745,12 +745,12 @@ class OwnedMonitorTests(unittest.TestCase):
 
     def test_reviewed_offer_links_are_direct_and_hash_matched(self):
         cases = (
-            ("playwright-regression-contract", ("channels", "linkedin"), "QUEUE"),
-            ("openhi-reproducibility-sprint", ("channels", "linkedin"), "QUEUE"),
-            ("openhi-reproducibility-sprint", ("channels", "instagram"), "DRAFT"),
-            ("content-repurposing-pilot", ("owned_offer", "postiz_instagram"), "DRAFT"),
+            ("playwright-regression-contract", ("channels", "linkedin"), "QUEUE", None),
+            ("openhi-reproducibility-sprint", ("channels", "linkedin"), "QUEUE", None),
+            ("openhi-reproducibility-sprint", ("channels", "instagram"), "DRAFT", "scheduled"),
+            ("content-repurposing-pilot", ("owned_offer", "postiz_instagram"), "DRAFT", "published"),
         )
-        for campaign_id, path, state in cases:
+        for campaign_id, path, state, current_state in cases:
             with self.subTest(campaign_id=campaign_id, path=path):
                 channel = json.loads((owned_monitor.CAMPAIGNS / f"{campaign_id}.json").read_text())
                 for key in path:
@@ -771,7 +771,8 @@ class OwnedMonitorTests(unittest.TestCase):
                 if state == "DRAFT":
                     # The direct-link review is historical; a later image review
                     # restored these same items without changing their captions.
-                    self.assertEqual(channel["state"], "scheduled")
+                    # Story Clip has since reached its original publication time.
+                    self.assertEqual(channel["state"], current_state)
                     self.assertEqual(channel["visual_review"]["state"], "reviewed_scheduled")
                     self.assertEqual(channel["visual_review"]["postiz_state"], "QUEUE")
                     self.assertTrue(channel["visual_review"]["saved_editor_reopened"])

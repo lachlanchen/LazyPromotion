@@ -5,6 +5,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import sqlite3
+from contextlib import closing
+from copy import deepcopy
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -12,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CAMPAIGNS_DIR = ROOT / "campaigns"
 DEFAULT_REVIEW_DAYS = 7
+SOURCE_REVIEWS_DB = ROOT / ".local" / "lazypromotion.sqlite3"
 
 
 def parse_day(value: str) -> date:
@@ -160,13 +164,81 @@ def build_report(
     }
 
 
+def attach_source_reviews(report: dict, *, db_path: Path = SOURCE_REVIEWS_DB) -> dict:
+    """Add stored private context, never reschedule or infer a provider result."""
+    # Keep the default report and the running publication monitor independent
+    # of the private graph. Import only for an explicitly requested review.
+    import network
+
+    result = deepcopy(report)
+    urls = []
+    for item in result["applications"]:
+        url = item["source_url"]
+        context = {"state": "source_url_missing", "matches": []}
+        if url:
+            try:
+                network.screening_url_key(url)
+            except ValueError:
+                context["state"] = "source_url_invalid"
+            else:
+                if url not in urls:
+                    urls.append(url)
+                context["state"] = "not_recorded"
+        item["stored_source_review"] = context
+
+    # Do not call promotion.open_db: even a missing file must not be created or
+    # migrated by an operator's read-only review command.
+    with closing(sqlite3.connect(db_path.resolve().as_uri() + "?mode=ro", uri=True)) as db:
+        db.row_factory = sqlite3.Row
+        by_url = {}
+        for start in range(0, len(urls), 20):
+            lookup = network.lookup_sources(db, urls[start:start + 20])
+            by_url.update({item["url"]: item for item in lookup["sources"]})
+        for item in result["applications"]:
+            stored = by_url.get(item["source_url"])
+            if stored is not None:
+                item["stored_source_review"] = {
+                    "state": stored["state"], "matches": stored["matches"],
+                }
+
+    result["private_context"] = True
+    result["source_review_policy"] = {
+        "read_only": True,
+        "provider_checked": False,
+        "campaign_dates_unchanged": True,
+        "automatic_follow_up": False,
+        "notice": (
+            "Campaign due dates are not new activity or permission to recheck. "
+            "Read stored source decisions and their evidence before acting. "
+            "URL matches may concern another application to the same source; "
+            "missing, conflicting or unreadable records need review, not an "
+            "eligibility inference. Graph timestamps are not provider checks. "
+            "This private output must not be committed or published."
+        ),
+    }
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--on", type=parse_day, help="Evaluate against an ISO date.")
+    parser.add_argument(
+        "--with-source-reviews", action="store_true",
+        help="Include private stored source decisions; never opens a provider or changes due dates.",
+    )
+    parser.add_argument("--db", type=Path, help="Existing private graph; requires --with-source-reviews.")
     args = parser.parse_args()
+    if args.db is not None and not args.with_source_reviews:
+        parser.error("--db requires --with-source-reviews")
+    report = build_report(on=args.on)
+    if args.with_source_reviews:
+        try:
+            report = attach_source_reviews(report, db_path=args.db or SOURCE_REVIEWS_DB)
+        except (OSError, sqlite3.Error, ValueError):
+            parser.error("stored source reviews could not be read; no provider state is inferred")
     print(
         json.dumps(
-            build_report(on=args.on), ensure_ascii=False, indent=2, sort_keys=True
+            report, ensure_ascii=False, indent=2, sort_keys=True
         )
     )
 

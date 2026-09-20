@@ -16,7 +16,7 @@ class MeridialDeveloperWorkflowsCampaignTests(unittest.TestCase):
     def test_advertised_rate_is_not_a_contract_or_revenue_claim(self):
         source = self.payload["source_need"]
 
-        self.assertEqual(self.payload["version"], 1)
+        self.assertEqual(self.payload["version"], 2)
         self.assertEqual(source["advertised_rate"], "USD 60 per hour")
         self.assertIn("not an interview", source["boundary"])
         self.assertIn("not", source["boundary"])
@@ -33,7 +33,7 @@ class MeridialDeveloperWorkflowsCampaignTests(unittest.TestCase):
     def test_single_application_is_confirmed_without_assessment_or_identity_claim(self):
         application = self.payload["application"]
 
-        self.assertEqual(application["state"], "submitted_awaiting_reply")
+        self.assertEqual(application["state"], "paused_eligibility_review")
         self.assertEqual(
             application["verified_public_linkedin"],
             "https://www.linkedin.com/in/lazyingart",
@@ -49,17 +49,20 @@ class MeridialDeveloperWorkflowsCampaignTests(unittest.TestCase):
         self.assertFalse(application["assessment_started"])
         self.assertFalse(application["identity_verification_started"])
 
-    def test_submitted_application_enters_watch_without_becoming_a_lead(self):
+    def test_paused_application_leaves_routine_watch_without_becoming_a_lead(self):
         watched = application_watch.application_record(
             self.payload,
             source_file=CAMPAIGN,
-            on=application_watch.parse_day("2026-09-12"),
+            on=application_watch.parse_day("2026-09-20"),
         )
         funnel = self.payload["funnel"]
 
-        self.assertIsNotNone(watched)
-        self.assertEqual(watched["review_after"], "2026-09-19")
-        self.assertFalse(watched["due_for_human_review"])
+        self.assertIsNone(watched)
+        review = self.payload["application"]["eligibility_review"]
+        self.assertFalse(review["role_specific_decision_verified"])
+        self.assertTrue(review["private_evidence_retained"])
+        self.assertTrue(review["reopen_trigger"])
+        self.assertFalse(self.payload["application"]["automatic_follow_up"])
         self.assertEqual(funnel["outbound_application_count"], 1)
         self.assertFalse(funnel["qualified_lead_observed"])
         self.assertFalse(funnel["payment_confirmed"])

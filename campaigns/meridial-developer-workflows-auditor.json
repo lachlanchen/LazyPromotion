@@ -1,6 +1,6 @@
 {
   "id": "meridial-developer-workflows-auditor",
-  "version": 1,
+  "version": 2,
   "objective": "Use the strongest public review-gate, browser-regression, reproducibility, and developer-tooling evidence for one current AI-assisted workflow-auditing contract without inventing enterprise telemetry experience.",
   "source_need": {
     "captured_at": "2026-09-12T04:18:00Z",
@@ -33,7 +33,15 @@
     ]
   },
   "application": {
-    "state": "submitted_awaiting_reply",
+    "state": "paused_eligibility_review",
+    "eligibility_review": {
+      "checked_on": "2026-09-20",
+      "state": "provider_route_paused",
+      "role_specific_decision_verified": false,
+      "private_evidence_retained": true,
+      "reopen_trigger": "A provider invitation or verified change establishing eligibility for this specific role.",
+      "boundary": "A reviewed provider-level acknowledgement warrants pausing acquisition. It does not establish a separate decision on this role; no rejection, interview, contract, or payment is inferred."
+    },
     "submitted_at": "2026-09-12T12:31:00+08:00",
     "follow_up_not_before": "2026-09-19",
     "packet": "ignored private application packet with a one-page developer-workflows resume",

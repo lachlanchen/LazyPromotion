@@ -14,6 +14,8 @@ Shared release and promotion reference for [L & N](https://github.com/lachlanche
 
 Shipping update checked at 08:34 UTC: L & N main `89e4949` records **Android internal build 10** with a one-time USD 0.99 full-curriculum purchase. Its first three pairs per language remain free. This purchase build is internal-only; production build 8 remains in review. Web and iPhone pricing are unchanged. Do not describe the internal purchase as a public launch or change the scheduled web-link post.
 
+Shipping update checked at 10:26 UTC supersedes that Android submission state: commit `0198717` records **production build 10 submitted for review**, replacing queued build 8. Commit `94da8d3` records a separate **L & N Pro** package (`art.lazying.landn.pro`), paid up front at a configured USD 0.99, also submitted for review. The Pro public store URL returned **404**; neither a public Pro release nor a completed Android purchase is verified. Hold Pro-specific posts and purchase links. The original free-download app and its proposed in-app unlock are distinct from Pro. The live homepage still serves `index-DZiUdOSI.js` and its previously verified HTML hash; older PWA fields in `store/release.yaml` do not override the live deployment evidence. Existing web-link campaigns remain unchanged.
+
 Web discovery update at 08:49 UTC: source `75883a4`, evidence `16c162a`, and entry `index-DZiUdOSI.js` supersede the earlier web bundle above. Canonical/social-preview metadata and a no-JavaScript lesson/store fallback are live. The owner passed 86 tests; promotion independently matched all four public file hashes. No indexing or conversion result is claimed. See `store/artifacts/pwa-homepage-discovery-release.json`; dated screenshots from the earlier bundle remain valid historical captures.
 
 The English developer story [I Mix Up L and N, So I Built a Practice App](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html) is now published. It explains the scoring and listening design, includes the real setup screenshot, and has one free-web call to action. One Medium edition on `@lazyingart` is scheduled for **September 21, 02:00 UTC / 10:00 HKT**, with the image, source links, Medium-specific app attribution and a brief AI-assistance label. The saved schedule, disabled paywall and original-blog canonical setting passed a reload check. Anonymous access and the final public canonical are due after publication; no Medium publication or income is claimed yet. Do not reimport or recreate the scheduled story.
@@ -46,7 +48,8 @@ Use the store pages and the web app for ordinary visitors. TestFlight, the inter
 | Channel | Price |
 | --- | --- |
 | Web app | Free |
-| Google Play | Public download is free; the internal build tests a USD 0.99 full-curriculum unlock, not yet verified in production |
+| Google Play, original app | Public download is free; build 10's USD 0.99 full-curriculum unlock is available internally and submitted for production review, not verified live |
+| Google Play, separate Pro app | USD 0.99 configured by shipping; submitted for review, public listing not available in this check. Do not advertise as released |
 | App Store | USD 0.99 tier (CNY 8, HKD 8; Apple's tier mapping), available in all 175 territories |
 
 Never describe the iOS app as free. Prefer "Free in the browser, US$0.99 on iPhone" for the current campaign. For a future Android-specific post, distinguish the free download from any paid content after rechecking the release.
@@ -56,7 +59,8 @@ Never describe the iOS app as free. Prefer "Free in the browser, US$0.99 on iPho
 | Channel | Public today | In review | Claimable now |
 | --- | --- | --- | --- |
 | Web | 1.0.2 feature set plus web store links (source `cfe8efe`, release manifest above) | n/a | Observed web features in section 5, with their evidence limits |
-| Google Play production | `4 (1.0.1)`: practice, 3D mouth, scoring, auto-stop; **no Listen tab** | `8 (1.0.2)` sent for review 2026-09-20 (Google says up to 7 days) | Only 1.0.1 features until the listing shows 1.0.2 |
+| Google Play production, original app | Shipping-reported `4 (1.0.1)`: practice, 3D mouth, scoring, auto-stop; **no Listen tab** | `10 (1.0.2)` with full-curriculum purchase, replacing build 8's submission | Do not claim the new features or purchase are public until independently verified |
+| Google Play Pro | Public package URL returned 404 | Separate paid-up-front `10 (1.0.2)` submitted for review | No released-app claim, purchase link or Pro-specific post yet |
 | App Store | US page visibly shows 1.0.2 at USD 0.99 | Earlier shipping note said waiting for review; lookup API still shows 1.0.1 | US listing's listening-test release notes verified; no global rollout claim |
 | TestFlight public link | Build 7 (1.0.2), beta-approved 2026-09-20 | | Full 1.0.2 feature set, to testers only |
 | Play internal test | Shipping-reported `10 (1.0.2)` | | Android purchase testing only: first three pairs per language free, one-time unlock for all 31; not a public purchase claim |

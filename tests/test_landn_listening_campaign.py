@@ -63,6 +63,41 @@ class LandnListeningCampaignTests(unittest.TestCase):
         self.assertFalse(internal['payment_or_revenue_verified'])
         self.assertNotIn('free on Android', self.campaign['channels']['x']['content'])
 
+    def test_android_submissions_do_not_become_public_purchase_claims(self):
+        launch = json.loads((ROOT / 'campaigns/l-and-n-pronunciation-launch.json').read_text())
+        releases = launch['source_evidence']['release_state']
+        iap = releases['android_production_iap_submission']
+        pro = releases['android_pro_submission']
+        self.assertEqual(iap['state'], 'shipping_reported_in_review')
+        self.assertEqual(iap['version_code'], 10)
+        self.assertEqual(iap['replaces_queued_version_code'], 8)
+        self.assertFalse(iap['public_production_verified'])
+        self.assertFalse(iap['payment_or_revenue_verified'])
+        self.assertEqual(pro['state'], 'shipping_reported_in_review')
+        self.assertNotEqual(pro['package_id'], iap['package_id'])
+        self.assertEqual(pro['public_listing_http_status'], 404)
+        self.assertFalse(pro['public_listing_verified'])
+        self.assertFalse(pro['payment_or_revenue_verified'])
+        self.assertEqual(pro['usd_base_price'], 0.99)
+        self.assertIn('Hold Pro-specific posts', pro['policy'])
+        self.assertIn('paid-up-front', pro['purchase_model'])
+        self.assertNotIn('landn.pro', json.dumps(launch['channels']))
+        self.assertNotIn('landn.pro', json.dumps(self.campaign['channels']))
+        for item in (iap, pro):
+            self.assertEqual(len(item['shipping_evidence_commit']), 40)
+            self.assertNotIn('merchant', json.dumps(item))
+            self.assertNotIn('paymentsProfile', json.dumps(item))
+
+    def test_catalog_preserves_pending_android_purchase_boundary(self):
+        catalog = json.loads((ROOT / 'catalog.json').read_text())
+        context = next(p['reply_context'] for p in catalog['projects'] if p['id'] == 'l-and-n')
+        self.assertIn('submitted for production review', context)
+        self.assertIn('replacing queued build 8', context)
+        self.assertIn('public listing returned 404', context)
+        self.assertIn('Do not promote Pro', context)
+        self.assertIn('free no-signup PWA', context)
+        self.assertNotIn('details?id=art.lazying.landn.pro', context)
+
 
 if __name__ == '__main__':
     unittest.main()

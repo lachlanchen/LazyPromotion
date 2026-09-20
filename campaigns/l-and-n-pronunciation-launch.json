@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 21,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -31,7 +31,35 @@
       "apple_usd_price_us_storefront": 0.99,
       "google_play_us_storefront_price": 0,
       "operator_handoff_updated_on": "2026-09-20",
-      "production_update_boundary": "The shipping handoff reports Android production 1.0.1 (4), with 1.0.2 (8) in review. The internal track has subsequently advanced to build 10 with an Android purchase test; this is not a public production release. The US Apple storefront visibly shows 1.0.2 and its listening-test release notes on September 20; the public lookup API still returns 1.0.1, so this is not a claim about every region or device. The web listening round is independently verified.",
+      "production_update_boundary": "Shipping commit 0198717 records Android production build 10 (1.0.2) with the full-curriculum purchase submitted for review, replacing queued build 8; the last shipping-reported live build remains 4 (1.0.1). Commit 94da8d3 records a separate paid L & N Pro build 10 submitted for review. Neither Android purchase route is independently verified as public; the Pro package's public store URL returned 404 in the September 20 check. The US Apple storefront visibly showed 1.0.2 and its listening-test release notes earlier today while the lookup API returned 1.0.1; no global rollout is claimed. The live web app remains the independently verified free build.",
+      "android_production_iap_submission": {
+        "state": "shipping_reported_in_review",
+        "package_id": "art.lazying.landn",
+        "version_code": 10,
+        "version_name": "1.0.2",
+        "replaces_queued_version_code": 8,
+        "shipping_evidence_commit": "01987179399d4b0378e11b7fddbd6dbbf22aa6b3",
+        "evidence_path": "store/artifacts/native-release-1.0.2.json#iapRelease.android",
+        "observed_on": "2026-09-20",
+        "public_production_verified": false,
+        "payment_or_revenue_verified": false
+      },
+      "android_pro_submission": {
+        "state": "shipping_reported_in_review",
+        "package_id": "art.lazying.landn.pro",
+        "name": "L & N Pro: Speech Practice",
+        "version_code": 10,
+        "version_name": "1.0.2",
+        "usd_base_price": 0.99,
+        "purchase_model": "Separate paid-up-front edition with the full curriculum; not the free-download app's in-app purchase.",
+        "shipping_evidence_commit": "94da8d3f32fe43b49ab7c90fb8772e13cc89bb11",
+        "evidence_path": "store/artifacts/native-release-1.0.2.json#proRelease.release",
+        "observed_on": "2026-09-20",
+        "public_listing_http_status": 404,
+        "public_listing_verified": false,
+        "payment_or_revenue_verified": false,
+        "policy": "Hold Pro-specific posts and purchase links until its public listing, actual price and availability are verified. A submitted listing and configured price are not a released app, completed purchase or revenue. Keep existing campaigns pointed at the free web app."
+      },
       "android_internal_iap": {
         "state": "shipping_reported_internal_only",
         "version_code": 10,

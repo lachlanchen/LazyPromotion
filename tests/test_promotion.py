@@ -102,6 +102,22 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertIn("free no-signup PWA", ranked[0]["project"]["reply_context"])
 
+    def test_pronunciation_context_distinguishes_paid_store_free_web_and_tutor_service(self):
+        ranked = promotion.rank_projects(
+            "I confuse L and N and need an L and N pronunciation app with minimal pairs."
+        )
+        project = ranked[0]["project"]
+        context = project["reply_context"]
+        self.assertIn("English, Mandarin, and Cantonese", project["summary"])
+        self.assertIn("https://apps.apple.com/us/app/l-n-speech-practice/id6808872450", context)
+        self.assertIn("USD 0.99", context)
+        self.assertIn("do not call the iPhone app free", context)
+        self.assertIn("free Google Play production listing", context)
+        self.assertIn("only for explicit testing invitations", context)
+        self.assertIn("Do not insert the tutor service into a learner's free-practice request", context)
+        self.assertNotIn("TestFlight build 2", context)
+        self.assertNotIn("rather than a verified Apple App Store release", context)
+
     def test_private_cgnat_remote_access_matches_curated_lazyremote(self):
         ranked = promotion.rank_projects(
             "I need help reaching my home PC with SSH and a noVNC viewer behind "

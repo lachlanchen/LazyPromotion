@@ -74,9 +74,13 @@ class OpportunityTests(unittest.TestCase):
         )
         self.assertIn("not spoken-word, sermon, customer", body)
         self.assertIn(
-            "https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk",
+            "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
             body,
         )
+        self.assertIn("https://play.google.com/store/apps/details?id=art.lazying.landn", body)
+        self.assertIn("Keep the separate USD 250 tutor service distinct from the learner app", body)
+        self.assertNotIn("https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk", body)
+        self.assertNotIn("Apple build as a release candidate", body)
         self.assertIn("### Durable AI conversation and voice memory", body)
         self.assertIn(
             "https://www.reddit.com/r/ChatGPT/comments/1vygqua/has_anyone_figured_out_a_sane_way_to_archive/",
@@ -101,8 +105,8 @@ class OpportunityTests(unittest.TestCase):
         self.assertIn("https://lazying.art/kicad-plugin-evaluation/", body)
         self.assertIn("https://lazying.art/kicad-plugin-evaluation/fit-check/", body)
         self.assertIn("project-owned synthetic fixture", body)
-        self.assertIn("Google Play production listing is independently public", body)
-        self.assertIn("Treat TestFlight as a beta route", body)
+        self.assertIn("Web and Google Play are free", body)
+        self.assertIn("public production stores, not test APKs, TestFlight or internal tracks", body)
         self.assertIn("are nine priced service routes", body)
         self.assertIn("AI clip assembly is gated", body)
         self.assertIn("listing closed before submission", body)

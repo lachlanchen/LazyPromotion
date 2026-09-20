@@ -174,7 +174,8 @@ Evidence:
 - <https://l-and-n.lazying.art/>
 - <https://l-and-n.lazying.art/lessons/light-vs-night/>
 - <https://l-and-n.lazying.art/for-tutors/>
-- <https://l-and-n.lazying.art/downloads/L-and-N-1.0-build3-test.apk>
+- <https://apps.apple.com/us/app/l-n-speech-practice/id6808872450>
+- <https://play.google.com/store/apps/details?id=art.lazying.landn>
 - <https://github.com/lachlanchen/L-and-N>
 - <https://github.com/lachlanchen/L-and-N/blob/main/store/artifacts/pwa-release.json>
 - <https://github.com/lachlanchen/PocketPolyglot>
@@ -188,8 +189,8 @@ Gates:
 - Recheck the live privacy route and speech flow before linking; do not imply that browser or operating-system recognition is always on-device
 - Do not call the score diagnostic, clinically validated, or scientifically accurate without an expert-rated cross-device evaluation corpus
 - Record provenance, consent, and redistribution rights for every bundled voice and lesson asset
-- Call the direct APK a test build. The Google Play production listing is independently public, but availability is not evidence of a download, retained learner, customer, or revenue
-- Treat TestFlight as a beta route and the Apple build as a release candidate until a public Apple App Store listing is independently verified
+- Ordinary visitors use the free browser app or the public production stores, not test APKs, TestFlight or internal tracks; availability is not evidence of a download, retained learner, customer, or revenue
+- Web and Google Play are free. The US App Store visibly showed 1.0.2 at USD 0.99 on September 20, 2026; recheck each storefront before quoting a current price or release feature. Keep the separate USD 250 tutor service distinct from the learner app
 
 ### KiCad geometry-plugin evaluation
 

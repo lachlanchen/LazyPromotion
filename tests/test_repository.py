@@ -627,7 +627,8 @@ class RepositoryTests(unittest.TestCase):
             by_id["l-and-n"]["homepage"],
             "https://l-and-n.lazying.art/",
         )
-        self.assertIn("test builds", by_id["l-and-n"]["reply_context"])
+        self.assertIn("only for explicit testing invitations", by_id["l-and-n"]["reply_context"])
+        self.assertIn("do not call the iPhone app free", by_id["l-and-n"]["reply_context"])
         self.assertIn("https://l-and-n.lazying.art/for-tutors/", by_id["l-and-n"]["reply_context"])
         self.assertIn("USD 250", by_id["l-and-n"]["reply_context"])
         self.assertEqual(

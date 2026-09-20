@@ -17,7 +17,7 @@ class AppSignalTechnicalWriterCampaignTests(unittest.TestCase):
 
     def test_application_is_submitted_without_inflating_outcome(self):
         campaign = self.campaign
-        self.assertEqual(campaign["version"], 2)
+        self.assertEqual(campaign["version"], 3)
         self.assertEqual(campaign["fit"]["selected_language"], "Node.js")
         self.assertEqual(campaign["fit"]["selected_topic"], "Observability")
         self.assertEqual(len(campaign["fit"]["public_samples"]), 3)
@@ -51,6 +51,20 @@ class AppSignalTechnicalWriterCampaignTests(unittest.TestCase):
         self.assertIsNotNone(record)
         self.assertEqual(record["review_after"], "2026-09-18")
         self.assertFalse(record["due_for_human_review"])
+
+    def test_follow_up_retains_delivery_uncertainty_and_no_retry(self):
+        follow_up = self.campaign["application"]["follow_up"]
+        self.assertEqual(follow_up["state"], "send_attempted_delivery_unverified")
+        self.assertEqual(follow_up["send_attempts"], 1)
+        self.assertFalse(follow_up["sent_copy_verified"])
+        self.assertFalse(follow_up["automatic_retry"])
+        self.assertIn("not confirmed delivery", follow_up["verification_policy"])
+        proof = self.campaign["fit"]["bounded_article_angle"]
+        self.assertEqual(proof["focused_tests_run"], 2)
+        self.assertEqual(proof["focused_tests_passed"], 2)
+        self.assertIn(proof["proof_revision"], proof["proof_url"])
+        self.assertTrue(proof["public_remote_revision_verified"])
+        self.assertFalse(proof["article_or_outline_written"])
 
 
 if __name__ == "__main__":

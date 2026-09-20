@@ -17,6 +17,17 @@ or increased conversion.
 Current private intake/payment observations are recorded outside Git, with
 unavailable or stale channels kept explicitly unknown.
 
+The September 20 [AppSignal follow-up](../campaigns/appsignal-technical-writer-program.json)
+proposes one article on testing Node.js streaming-proxy cancellation, backed by
+two rerun LazyEdge tests at a public pinned revision. One send was attempted,
+but its stored Sent copy is not yet verified. Do not count confirmed delivery
+or repeat the send. Topic, assistance policy and fee remain unagreed; no article
+or outline has been written. This is still the original application.
+
+The [Buddy writer-program URL](https://buddy.works/share-your-knowledge) now
+redirects to its homepage. Its earlier application remains intact, but the old
+programme terms are historical, not proof of a currently available commission.
+
 On September 20, six future LinkedIn items returned to drafts for channel
 account review. Their stored text, dates and settings are unchanged. Existing
 publications and other channels were not changed. Resume only after the account

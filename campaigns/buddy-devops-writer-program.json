@@ -1,12 +1,24 @@
 {
   "id": "buddy-devops-writer-program",
-  "version": 2,
+  "version": 3,
   "objective": "Win one paid CI/CD tutorial assignment by proposing a tested Python reverse-SSH relay deployment and rollback workflow grounded in LazyTunnel and LazyEdge.",
   "source_need": {
     "captured_at": "2026-09-10T06:25:00Z",
     "url": "https://buddy.works/share-your-knowledge",
     "title": "Share your knowledge",
-    "state": "official_current_program_with_embedded_application_form",
+    "state": "program_page_redirects_current_availability_unverified",
+    "availability_review": {
+      "checked_on": "2026-09-20",
+      "requested_url": "https://buddy.works/share-your-knowledge",
+      "resolved_url": "https://buddy.works/",
+      "resolved_http_status": 200,
+      "methods": ["Official page fetch", "Ordinary HTTP GET following redirects"],
+      "program_content_observed": false,
+      "previous_terms_are_historical": true,
+      "next_review_on": "2026-09-27",
+      "decision": "Keep the existing application and its reply watch, but do not resubmit, follow up, or write against historical programme terms without a current official invitation.",
+      "boundary": "A redirected page is not proof that the programme closed or that the submitted application was rejected. No assignment, fee or payment is established."
+    },
     "published_scope": "Practical, reproducible CI/CD and DevOps articles or videos covering web development, testing, automation, best practices, and Buddy pipelines.",
     "published_process": "Apply with experience, stack, a proposed topic, and writing samples. If the portfolio is accepted, an editor helps approve the topic and outline before creation; reviewed and accepted work is paid and published.",
     "compensation_boundary": "The official page says payment depends on length and uniqueness but publishes no amount. Buddy-specific work may receive an additional 20 percent for canonical republication. Confirm the base fee and eligibility before writing.",

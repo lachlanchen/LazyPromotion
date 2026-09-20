@@ -1,6 +1,6 @@
 {
   "id": "appsignal-technical-writer-program",
-  "version": 2,
+  "version": 3,
   "objective": "Win one paid Node.js observability article by matching current public JavaScript tooling and deep technical writing to AppSignal's open author program without inventing a rate, assignment, or professional tenure.",
   "source_need": {
     "captured_at": "2026-09-11T01:24:00Z",
@@ -23,6 +23,19 @@
     ],
     "selected_language": "Node.js",
     "selected_topic": "Observability",
+    "bounded_article_angle": {
+      "reviewed_on": "2026-09-20",
+      "title": "Testing cancellation in a Node.js SSE proxy",
+      "reader_problem": "Prove that client disconnects, upstream timeouts and shutdown stop upstream work and release request capacity.",
+      "proof_url": "https://github.com/lachlanchen/LazyEdge/blob/1e57a903972dcc89f3f7dd91b7f2d58b6e018705/test/private-service-listeners.test.js#L829",
+      "proof_revision": "1e57a903972dcc89f3f7dd91b7f2d58b6e018705",
+      "proof_branch": "integration/echomind-image-transport-20260911",
+      "public_remote_revision_verified": true,
+      "focused_tests_run": 2,
+      "focused_tests_passed": 2,
+      "article_or_outline_written": false,
+      "boundary": "Project-owned tests support the proposed subject, not an AppSignal integration, editorial acceptance, customer outcome or agreed fee. The pinned proof is on the named public integration branch, not a claim about main."
+    },
     "public_samples": [
       "https://blog.lazying.art/html/computer_internet/unix_linux/command_shell_software/3772/postiz-cli-mcp-review-first-social-scheduling.html",
       "https://github.com/lachlanchen/LazyEdge",
@@ -53,6 +66,19 @@
     "rate_claimed": false,
     "automatic_follow_up": false,
     "review_after": "2026-09-18",
+    "follow_up": {
+      "state": "send_attempted_delivery_unverified",
+      "attempted_at": "2026-09-20T03:22:47Z",
+      "send_attempts": 1,
+      "purpose": "Ask whether one tested SSE-cancellation article fits the editorial plan and agree assistance policy, fee and scope before an outline.",
+      "official_contact_invitation_verified_on": "2026-09-20",
+      "visible_composer_reviewed": true,
+      "copy_sha256": "2ebdc979a2beb43588aba2bd0e12a1fac700dd8e8d9ee0cd2e1dd8e52b38be76",
+      "sent_copy_verified": false,
+      "automatic_retry": false,
+      "verification_policy": "Verify the exact stored Sent copy after the mailbox is available. An attempted send is not confirmed delivery; do not resend automatically.",
+      "boundary": "This remains the existing application. No additional application, commissioned topic, agreed fee, article, payment or revenue is recorded."
+    },
     "inbound_monitor": {
       "state": "baseline_initialized",
       "checked_at": "2026-09-11T01:35:40Z",

@@ -87,7 +87,7 @@ class PlaywrightRegressionCampaignTests(unittest.TestCase):
 
     def test_linkedin_post_leads_with_proof_and_uses_one_owned_offer(self):
         post = self.campaign["channels"]["linkedin"]
-        self.assertEqual(post["state"], "postiz_queue")
+        self.assertEqual(post["state"], "postiz_draft_account_review")
         self.assertEqual(post["publish_at"], "2026-09-21T02:00:00Z")
         self.assertEqual(post["content"], post["postiz_content"])
         self.assertIsNone(post["shortlink"])

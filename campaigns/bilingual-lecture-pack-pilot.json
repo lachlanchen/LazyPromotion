@@ -1,5 +1,5 @@
 {
-  "version": 36,
+  "version": 37,
   "id": "bilingual-lecture-pack-pilot",
   "objective": "Sell and deliver bounded USD 250 bilingual study packs for customer-owned or clearly licensed lectures, using public transcript, book, subtitle, and provenance workflows without implying customer proof or rights to third-party recordings.",
   "source_evidence": {
@@ -657,7 +657,7 @@
       },
       "policy": "The reviewed post teaches the timestamp-first workflow, links to project-owned proof, and states the fixed rights-cleared scope. It was moved from the September 15 queue to DRAFT to give the primary September 16 MCP acquisition test a clean LinkedIn observation window. Draft state is not publication, a lead, or revenue.",
       "practical_guide": {
-        "state": "postiz_queue",
+        "state": "postiz_draft_account_review",
         "publish_at": "2026-09-24T02:00:00Z",
         "content": "A lecture can have accurate words and still make a poor study resource if its transcript, translation, subtitles, and notes each become a separate copy.\n\nA safer workflow is to correct the timed source once, preserve stable segment IDs, derive the subtitle and pocket-book formats from it, then test a translated term by seeking back to the exact second.\n\nI wrote out the full method with a small, working three-language example:\nhttps://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html?utm_source=linkedin&utm_medium=social&utm_campaign=bilingual_lecture_pack_pilot&utm_content=source_first_guide",
         "postiz_content": "A lecture can have accurate words and still make a poor study resource if its transcript, translation, subtitles, and notes each become a separate copy.\n\nA safer workflow is to correct the timed source once, preserve stable segment IDs, derive the subtitle and pocket-book formats from it, then test a translated term by seeking back to the exact second.\n\nI wrote out the full method with a small, working three-language example:\nhttps://blog.lazying.art/html/computer_internet/3792/turn-lecture-into-bilingual-subtitles-study-guide.html?utm_source=linkedin&utm_medium=social&utm_campaign=bilingual_lecture_pack_pilot&utm_content=source_first_guide",
@@ -670,7 +670,20 @@
           "stored_text_exact_after_html_normalization": true,
           "visible_editor_reviewed": true
         },
-        "policy": "The article provides the complete source-first method before its single bounded offer link. The queue was placed after the existing campaign calendar; queueing, views, clicks, and replies are not leads or revenue."
+        "policy": "The article provides the complete source-first method before its single bounded offer link. The queue was placed after the existing campaign calendar; queueing, views, clicks, and replies are not leads or revenue.",
+        "publication_hold": {
+          "checked_at": "2026-09-20T02:46:08Z",
+          "reason": "Channel account review",
+          "previous_campaign_state": "postiz_queue",
+          "provider_state": "DRAFT",
+          "stored_publish_at": "2026-09-24T02:00:00.000Z",
+          "normalized_content_sha256": "9db1562bc482fac48b0735cc45d8ef152edbd1fe9f58f402c27019bb4e982a8d",
+          "listed_nonstate_fields_unchanged": true,
+          "status_only_change": true,
+          "other_posts_unchanged": true,
+          "resume_requires": "Confirmed channel account and fresh content/date review; never automatically requeue an old date.",
+          "boundary": "A saved draft is not publication, a lead, a payment, or revenue."
+        }
       },
       "cantonese_caption_workflow": {
         "state": "postiz_queue",

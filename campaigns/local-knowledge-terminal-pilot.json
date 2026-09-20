@@ -1,5 +1,5 @@
 {
-  "version": 48,
+  "version": 49,
   "id": "local-knowledge-terminal-pilot",
   "objective": "Sell and deliver the first four USD 250 collection-fit sprints to qualified customers with bounded private-knowledge needs, without implying an off-the-shelf hardware product.",
   "source_evidence": {
@@ -1064,7 +1064,7 @@
       "policy": "The reviewed 4:5 service card and bounded caption were published at the scheduled time and connected to the public release URL. The card says USD 250, software service, one existing machine, and hardware not included. Publication is attention evidence, not a fit inquiry or revenue."
     },
     "linkedin": {
-      "state": "published_offer_with_follow_on_queue",
+      "state": "published_offer_with_follow_on_draft_hold",
       "collection_fit_offer_post": {
         "state": "published_and_release_connected",
         "publish_at": "2026-09-09T01:00:00Z",
@@ -1103,13 +1103,26 @@
         "policy": "The complete LinkedIn preview was visibly reviewed with the intended account, original first-party URL, uploaded concept cover, exact USD 250 scope, existing-machine boundary, exclusions, and September 9 09:00 HKT schedule. The final media sentence accurately identifies the asset as a concept visual based on the browser prototype. The reviewed record was then published and connected to its public release. It is an owned offer post, not a lead, customer result, sale, or revenue."
       },
       "multilingual_ocr_guide_post": {
-        "state": "postiz_queue",
+        "state": "postiz_draft_account_review",
         "publish_at": "2026-09-22T02:00:00Z",
         "content": "Before running OCR across 1,000 multilingual books, test 60 pages that represent the real archive: clean English, Arabic, Urdu or Nastaliq, mixed RTL/LTR text, damaged scans, tables, and parallel text.\n\nScore character accuracy and reading order separately. Keep every result tied to its source page. Route each page class to the workflow that actually works, then decide whether the collection is ready for RAG.\n\nThe test set, manifest, and go/no-go checklist:\nhttps://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html?utm_source=linkedin&utm_medium=social&utm_campaign=multilingual_ocr\n\nThe guide also explains the boundary of my optional USD 250 collection-fit sprint: representative-sample evaluation, not full-library OCR or ingestion.",
         "destination": "https://blog.lazying.art/html/computer_internet/3791/evaluate-multilingual-ocr-book-archive-before-rag.html?utm_source=linkedin&utm_medium=social&utm_campaign=multilingual_ocr",
         "reviewed_on": "2026-09-05",
         "shortlink": false,
-        "policy": "A first-party, value-led LinkedIn post for collection owners. The visible Postiz preview retained the full original URL, exact USD 250 boundary, representative-sample scope, LinkedIn account, and September 22 10:00 HKT schedule before queuing. It is not a full-library OCR offer, customer result, lead, sale, or revenue."
+        "policy": "A first-party, value-led LinkedIn post for collection owners. The visible Postiz preview retained the full original URL, exact USD 250 boundary, representative-sample scope, LinkedIn account, and September 22 10:00 HKT schedule before queuing. It is not a full-library OCR offer, customer result, lead, sale, or revenue.",
+        "publication_hold": {
+          "checked_at": "2026-09-20T02:46:07Z",
+          "reason": "Channel account review",
+          "previous_campaign_state": "postiz_queue",
+          "provider_state": "DRAFT",
+          "stored_publish_at": "2026-09-22T02:00:00.000Z",
+          "normalized_content_sha256": "c6b45bb56dc81c9597b1916a623461aa4e842c0d02cf51d2d78b339b744b051c",
+          "listed_nonstate_fields_unchanged": true,
+          "status_only_change": true,
+          "other_posts_unchanged": true,
+          "resume_requires": "Confirmed channel account and fresh content/date review; never automatically requeue an old date.",
+          "boundary": "A saved draft is not publication, a lead, a payment, or revenue."
+        }
       },
       "passage_provenance_post": {
         "state": "postiz_queue",

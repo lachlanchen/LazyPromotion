@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "id": "kicad-plugin-testing-freelancer",
   "objective": "Win one bounded KiCad plugin evaluation by pairing a purpose-built geometry fixture with larger project-owned board evidence, without claiming the buyer's plugin was tested before authorized delivery.",
   "source_need": {
@@ -143,7 +143,7 @@
   },
   "channels": {
     "linkedin": {
-      "state": "postiz_queue",
+      "state": "postiz_draft_account_review",
       "publish_at": "2026-09-29T02:00:00Z",
       "account_role": "Current personal technical profile",
       "content": "Plugin screenshots are easy to overread.\n\nBefore trying a routing plugin on a real board, I prefer a small fixture that makes failure cases visible: 0°, 45°, 90°, and 135° corners, three track widths, both copper layers, and a via. Run DRC before and after, and keep the exact settings beside the images.\n\nI built that fixture for KiCad 10 and made the board, manifest, renders, and clean baseline public. It does not prove that any third-party plugin works; it gives maintainers a repeatable place to test one.\n\nFor a maintainer who wants the sweep done, I’m also offering one fixed USD 400 evaluation for one authorized plugin version and up to four presets. No customer board or code repair; fit check and written scope first.\n\nhttps://lazying.art/kicad-plugin-evaluation/?utm_source=linkedin&utm_medium=social&utm_campaign=kicad_plugin_evaluation&utm_content=fixture_method",
@@ -165,7 +165,20 @@
         "verified_state": "QUEUE",
         "release_present": false
       },
-      "policy": "One reviewed first-party technical note uses project-owned evidence and a bounded offer. Queueing, impressions, clicks, and replies are not leads or revenue. Do not duplicate it from another LinkedIn or Reddit identity."
+      "policy": "One reviewed first-party technical note uses project-owned evidence and a bounded offer. Queueing, impressions, clicks, and replies are not leads or revenue. Do not duplicate it from another LinkedIn or Reddit identity.",
+      "publication_hold": {
+        "checked_at": "2026-09-20T02:46:04Z",
+        "reason": "Channel account review",
+        "previous_campaign_state": "postiz_queue",
+        "provider_state": "DRAFT",
+        "stored_publish_at": "2026-09-29T02:00:00.000Z",
+        "normalized_content_sha256": "d8252892385388d94edd2b4a6a876ece293ffef6bef19fef338a29c3d473abf6",
+        "listed_nonstate_fields_unchanged": true,
+        "status_only_change": true,
+        "other_posts_unchanged": true,
+        "resume_requires": "Confirmed channel account and fresh content/date review; never automatically requeue an old date.",
+        "boundary": "A saved draft is not publication, a lead, a payment, or revenue."
+      }
     }
   },
   "funnel": {

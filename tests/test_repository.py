@@ -86,7 +86,7 @@ class RepositoryTests(unittest.TestCase):
             )
         )
         offer = campaign["offer"]
-        self.assertEqual(campaign["version"], 18)
+        self.assertEqual(campaign["version"], 19)
         self.assertEqual(offer["price"], "USD 500")
         self.assertEqual(offer["stage_limit"], 1)
         self.assertEqual(offer["dataset_limit"], 1)
@@ -217,7 +217,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(campaign["payment"]["public_checkout"])
         self.assertFalse(campaign["payment"]["payment_object_created"])
         linkedin = campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "queued_verified")
+        self.assertEqual(linkedin["state"], "postiz_draft_account_review")
         self.assertEqual(linkedin["verification"]["provider_state"], "QUEUE")
         self.assertTrue(linkedin["verification"]["content_exact_after_html_normalization"])
         self.assertTrue(linkedin["verification"]["original_owned_url_retained"])
@@ -2180,7 +2180,7 @@ class RepositoryTests(unittest.TestCase):
         path = ROOT / "campaigns" / "local-knowledge-terminal-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
         serialized = path.read_text(encoding="utf-8").casefold()
-        self.assertEqual(campaign["version"], 48)
+        self.assertEqual(campaign["version"], 49)
         self.assertEqual(
             campaign["source_evidence"]["offer_stage"],
             "founding collection-fit sprint",
@@ -2953,7 +2953,7 @@ class RepositoryTests(unittest.TestCase):
             linkedin_offer["publication_verification"]["lead_or_sale_observed"]
         )
         self.assertFalse(linkedin_offer["lead_or_sale_observed"])
-        self.assertEqual(linkedin_ocr["state"], "postiz_queue")
+        self.assertEqual(linkedin_ocr["state"], "postiz_draft_account_review")
         self.assertEqual(linkedin_ocr["publish_at"], "2026-09-22T02:00:00Z")
         self.assertFalse(linkedin_ocr["shortlink"])
         self.assertIn("not full-library OCR", linkedin_ocr["content"])
@@ -3541,7 +3541,7 @@ class RepositoryTests(unittest.TestCase):
     def test_bilingual_lecture_linkedin_queue_has_exact_bounded_offer(self):
         path = ROOT / "campaigns" / "bilingual-lecture-pack-pilot.json"
         campaign = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual(campaign["version"], 36)
+        self.assertEqual(campaign["version"], 37)
         discovery = campaign["search_discovery"]
         self.assertEqual(
             discovery["initial_state"],
@@ -3657,7 +3657,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertFalse(x_analytics["lead_or_sale_observed"])
 
         guide = linkedin["practical_guide"]
-        self.assertEqual(guide["state"], "postiz_queue")
+        self.assertEqual(guide["state"], "postiz_draft_account_review")
         self.assertEqual(guide["publish_at"], "2026-09-24T02:00:00Z")
         self.assertEqual(guide["content"], guide["postiz_content"])
         self.assertIn("turn-lecture-into-bilingual-subtitles-study-guide", guide["destination"])

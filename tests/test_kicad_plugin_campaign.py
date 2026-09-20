@@ -53,7 +53,7 @@ class KiCadPluginCampaignTests(unittest.TestCase):
 
     def test_owned_offer_is_live_bounded_and_separate_from_marketplace(self):
         offer = self.campaign["owned_offer"]
-        self.assertEqual(self.campaign["version"], 4)
+        self.assertEqual(self.campaign["version"], 5)
         self.assertEqual(offer["state"], "live_verified")
         self.assertEqual(offer["price_usd"], 400)
         self.assertEqual(
@@ -72,7 +72,7 @@ class KiCadPluginCampaignTests(unittest.TestCase):
 
     def test_linkedin_distribution_is_reviewed_and_not_a_sale(self):
         linkedin = self.campaign["channels"]["linkedin"]
-        self.assertEqual(linkedin["state"], "postiz_queue")
+        self.assertEqual(linkedin["state"], "postiz_draft_account_review")
         self.assertEqual(linkedin["publish_at"], "2026-09-29T02:00:00Z")
         self.assertEqual(linkedin["account_role"], "Current personal technical profile")
         self.assertFalse(linkedin["shortlink"])

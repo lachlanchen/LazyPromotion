@@ -22,6 +22,12 @@ integration.
 
 ## Safe operator use
 
+The six future LinkedIn items were moved to drafts on September 20 for channel
+account review. Their campaign `publication_hold` records supersede the older
+queue verifications. Do not automatically requeue them using their stored dates;
+confirm the account and review content and timing first. Published posts and
+non-LinkedIn items are unaffected.
+
 Verify the official CLI connection without exposing a token:
 
 ```bash

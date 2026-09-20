@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "id": "playwright-regression-contract",
   "objective": "Win a bounded paid Python Playwright milestone by pairing LazyPromotion's browser automation with a CI-verified Page Object, pytest, and JUnit regression case on the real trilingual LazyTravel site, without claiming coverage of an undisclosed application.",
   "source_need": {
@@ -167,9 +167,8 @@
   },
   "channels": {
     "linkedin": {
-      "state": "postiz_queue",
+      "state": "postiz_draft_account_review",
       "publish_at": "2026-09-21T02:00:00Z",
-      "post_id": "cmtxgwsi310swqk0yf6ir7ymi",
       "content": "Browser tests become useful when they survive the second and third run.\n\nI just added a Playwright/pytest baseline to our trilingual Lanzhou guide. It checks all eleven chapters against the source data, desktop and 390px-wide navigation, ruby controls, map reset, console errors, and failed requests. GitHub Actions builds the site and runs the same suite three times, keeping JUnit results and failure screenshots.\n\nThe code and successful run are public:\nhttps://lazying.art/browser-regression/?utm_source=linkedin&utm_medium=social&utm_campaign=browser_regression_baseline&utm_content=lazytravel_proof\n\nFor another small public web app, I can provide the same starting point as a fixed USD 250 baseline: up to three journeys and twelve checkpoints, Chromium at desktop and mobile width, with the runnable suite and handoff. Fit check before payment.",
       "postiz_content": "Browser tests become useful when they survive the second and third run.\n\nI just added a Playwright/pytest baseline to our trilingual Lanzhou guide. It checks all eleven chapters against the source data, desktop and 390px-wide navigation, ruby controls, map reset, console errors, and failed requests. GitHub Actions builds the site and runs the same suite three times, keeping JUnit results and failure screenshots.\n\nThe code and successful run are public:\nhttps://lazying.art/browser-regression/?utm_source=linkedin&utm_medium=social&utm_campaign=browser_regression_baseline&utm_content=lazytravel_proof\n\nFor another small public web app, I can provide the same starting point as a fixed USD 250 baseline: up to three journeys and twelve checkpoints, Chromium at desktop and mobile width, with the runnable suite and handoff. Fit check before payment.",
       "shortlink": null,
@@ -186,6 +185,19 @@
         "postiz_state": "QUEUE",
         "new_item_created": false,
         "lead_or_sale_observed": false
+      },
+      "publication_hold": {
+        "checked_at": "2026-09-20T02:46:05Z",
+        "reason": "Channel account review",
+        "previous_campaign_state": "postiz_queue",
+        "provider_state": "DRAFT",
+        "stored_publish_at": "2026-09-21T02:00:00.000Z",
+        "normalized_content_sha256": "a87e5ff0dfbdb0cf712ef6022602d20e1c584111de99d27ab0402174ee8e54f8",
+        "listed_nonstate_fields_unchanged": true,
+        "status_only_change": true,
+        "other_posts_unchanged": true,
+        "resume_requires": "Confirmed channel account and fresh content/date review; never automatically requeue an old date.",
+        "boundary": "A saved draft is not publication, a lead, a payment, or revenue."
       }
     }
   },

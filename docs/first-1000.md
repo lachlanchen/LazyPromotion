@@ -17,6 +17,11 @@ or increased conversion.
 Current private intake/payment observations are recorded outside Git, with
 unavailable or stale channels kept explicitly unknown.
 
+On September 20, six future LinkedIn items returned to drafts for channel
+account review. Their stored text, dates and settings are unchanged. Existing
+publications and other channels were not changed. Resume only after the account
+is confirmed and each item's content and new date are reviewed.
+
 One adjacent paid-delivery test now uses the existing Susskind TeX archive:
 the [SEAMO solutions proposal](../campaigns/seamo-solutions-freelancer.json)
 was submitted once on September 19 for INR 25,000, with three proposed funded

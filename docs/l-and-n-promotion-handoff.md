@@ -14,6 +14,10 @@ Shared release and promotion reference for [L & N](https://github.com/lachlanche
 
 Shipping update checked at 08:34 UTC: L & N main `89e4949` records **Android internal build 10** with a one-time USD 0.99 full-curriculum purchase. Its first three pairs per language remain free. This purchase build is internal-only; production build 8 remains in review. Web and iPhone pricing are unchanged. Do not describe the internal purchase as a public launch or change the scheduled web-link post.
 
+Web discovery update at 08:49 UTC: source `75883a4`, evidence `16c162a`, and entry `index-DZiUdOSI.js` supersede the earlier web bundle above. Canonical/social-preview metadata and a no-JavaScript lesson/store fallback are live. The owner passed 86 tests; promotion independently matched all four public file hashes. No indexing or conversion result is claimed. See `store/artifacts/pwa-homepage-discovery-release.json`; dated screenshots from the earlier bundle remain valid historical captures.
+
+The English developer story [I Mix Up L and N, So I Built a Practice App](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html) is now published. It explains the scoring and listening design, includes the real setup screenshot, and has one free-web call to action. The official importer created one saved Medium draft on `@lazyingart`, with the image, source links, Medium-specific app attribution and a brief AI-assistance label verified after reload. Keep it outside the paywall and check the original-source canonical before later publication. No Medium publication is claimed here.
+
 ## 1. What the product is, in one paragraph
 
 L & N: Speech Practice is a pronunciation coach for one confusable contrast, the consonants **l** and **n**, for learners of English, Mandarin (普通话) and Cantonese (廣東話). It is built by the maintainer because they mix the two sounds up themselves. A learner sees the target letter or character inside a word, hears a studio model, records one word, and gets a score that shows its evidence (what the recognizer heard, whether the onset was nasal or lateral, recording quality, and for Chinese the tone shape). A Listen tab trains the ear: it plays a random run of one minimal pair ("light night light light night") and the learner taps what they heard in order. There is an interactive 3D mouth cutaway for airflow, a live waveform, and no account, ads or tracking. It runs as a free web app, a free-to-download Android app, a paid iPhone/iPad app and a small Apple Watch drill. Feature and purchase availability differ by release; see below.
@@ -62,7 +66,7 @@ Concrete rule: a post that links the store pages must not promise the Listen tab
 How to check quickly without any login:
 
 ```bash
-curl -s https://l-and-n.lazying.art/ | grep -o 'index-[A-Za-z0-9_-]*\.js'   # verified current asset: zHLbJcBO
+curl -s https://l-and-n.lazying.art/ | grep -o 'index-[A-Za-z0-9_-]*\.js'   # verified current asset: DZiUdOSI
 curl -s https://apps.apple.com/us/app/l-n-speech-practice/id6808872450 | grep -o 'Version [0-9.]*' | head -1
 curl -s 'https://play.google.com/store/apps/details?id=art.lazying.landn&hl=en' | grep -o '"[0-9]\.[0-9]\.[0-9]"' | head -1
 ```

@@ -1,12 +1,12 @@
 {
-  "version": 18,
+  "version": 19,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
     "repository": "https://github.com/lachlanchen/L-and-N",
     "pwa": "https://l-and-n.lazying.art/",
-    "deployed_source_commit": "cfe8efe169acd18da13f0c6908eedbaab4496d76",
-    "current_evidence_commit": "bcbc6cb97a411496d44df57ba6849b745e31f553",
+    "deployed_source_commit": "75883a49157c02fd5e87a76022bafa52647e1e9b",
+    "current_evidence_commit": "16c162a4baa84baf596df44fdb81478946799cff",
     "verified_on": "2026-09-20",
     "supported_capabilities": [
       "Hear an L/N contrast and record one word",
@@ -55,6 +55,41 @@
         "regional_rollout_claimed": false
       },
       "policy": "Both production store pages are independently public. The US App Store is paid; the browser is free. TestFlight remains a beta route. Store availability is not evidence of a download, retained learner, lead, or revenue."
+    },
+    "owned_developer_story": {
+      "state": "published",
+      "article_id": 3849,
+      "url": "https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html",
+      "source": "articles/l-and-n-listening-practice/post.md",
+      "language": "en",
+      "verified_on": "2026-09-20",
+      "tracked_destination": "https://l-and-n.lazying.art/?utm_source=blog&utm_medium=article&utm_campaign=l_and_n_listening",
+      "media_sha256": "418beff568cf11cf26555d7812a86fd777d3fbd4a427ec834cf7a52988abc91c",
+      "verification": "WordPress raw content exactly matches the reviewed Markdown rendering; public page, canonical, four headings, one app call to action and the original screenshot verified at 390px and 1280px without horizontal overflow.",
+      "medium": {
+        "state": "draft_saved",
+        "profile": "@lazyingart",
+        "verified_on": "2026-09-20",
+        "method": "Official browser importer, followed by visible editor review and reload.",
+        "image_and_alt_text_verified": true,
+        "source_links_retained": true,
+        "app_destination_uses_medium_attribution": true,
+        "brief_ai_assistance_label_present": true,
+        "published": false,
+        "publication_gate": "Keep this AI-assisted story outside the paywall. Recheck final preview, imported canonical setting and public canonical at publication; the editor's own canonical URL is not the story's public canonical. Publish as a later, separate distribution action, not a same-day extra post."
+      },
+      "policy": "First-party development experience, not an independent learner study or revenue evidence. Medium syndication remains a separate unpublished workflow."
+    },
+    "homepage_discovery": {
+      "state": "live",
+      "verified_on": "2026-09-20",
+      "evidence_path": "store/artifacts/pwa-homepage-discovery-release.json",
+      "html_sha256": "20d0756f6fbaedddb25cdfb5491c4fec324357c00fd8829d97e06a4c091d5158",
+      "entry_asset": "/assets/index-DZiUdOSI.js",
+      "entry_asset_sha256": "400cf0775460bc233a53058706def0a0c12a334b1f750f5a282abeda483d5e7b",
+      "changes": "Canonical and social-preview metadata using the existing icon, plus a no-JavaScript fallback to the free static lesson and existing stores.",
+      "verification": "Release owner passed 86 tests and local/live checks at 320, 390 and 1280px. Promotion independently matched the public HTML, JS, fallback CSS and icon hashes. Web practice, campaign query parameters and store continuation remain intact.",
+      "policy": "Implementation evidence only: no indexing, ranking, refreshed social cache, learner or revenue result. Historical store-link verification below remains its original dated evidence."
     },
     "owned_store_continuation": {
       "url": "https://l-and-n.lazying.art/",

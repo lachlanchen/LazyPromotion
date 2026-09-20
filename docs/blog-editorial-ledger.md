@@ -20,6 +20,12 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 20 addition — L & N developer story
+
+New English source-only post `3849`, [I Mix Up L and N, So I Built a Practice App](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html), explains recognizer/onset feedback, short listening rounds, same-voice clips and repeated-word playback. The real Listen setup screenshot retains its verified SHA-256 after WordPress media migration. One free-web practice link is the call to action; no tutor, donation or affiliate pitch was added.
+
+Source: `articles/l-and-n-listening-practice/post.md` in LazyPromotion. LazyPub archive: `content/lazypub/20260920-l-and-n-listening-practice/` in BLOG, commit `fac7abf`. Draft review and publish dry run passed; live raw content matches the source rendering exactly. Mobile 390px and desktop 1280px checks passed, with the expected canonical, image and source-code links. This English addition is separate from the trilingual polish count below. Medium is not yet published; no traffic, learner or income result is claimed.
+
 As of the verified commit, **156 posts** have completed this protocol:
 
 `7, 9, 10, 26, 29, 31, 56, 89, 95, 99, 107, 109, 113, 143, 150, 164, 184, 202, 206, 208, 211, 214, 221, 236, 247, 251, 265, 271, 274, 281, 351, 390, 396, 401, 414, 429, 433, 443, 454, 466, 472, 476, 484, 488, 527, 560, 573, 690, 697, 701, 717, 724, 731, 736, 740, 754, 933, 936, 944, 946, 949, 951, 963, 1081, 1086, 1093, 1098, 1106, 1109, 1113, 1133, 1141, 1143, 1148, 1276, 1371, 1379, 1407, 1412, 1418, 1422, 1438, 1498, 1526, 1562, 1565, 1582, 1632, 1635, 1701, 1752, 1764, 1768, 1775, 1778, 1781, 1788, 1798, 1799, 1801, 1805, 1811, 1814, 1822, 1832, 1835, 1842, 1849, 1852, 1865, 1868, 1870, 1876, 1881, 1887, 1898, 1900, 1909, 1912, 1922, 1925, 1929, 1933, 1943, 1947, 1959, 1968, 1972, 1982, 1986, 1994, 2002, 2010, 2013, 2180, 2670, 2922, 2936, 2972, 2996, 3087, 3096, 3114, 3125, 3167, 3616, 3772, 3788, 3791, 3792, 3803, 3808, 3810, 3819, 3820, 3825`

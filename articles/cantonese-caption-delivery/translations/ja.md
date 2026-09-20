@@ -86,4 +86,4 @@ ffmpeg -i source.mp4 \
 
 繁体字・簡体字SRT、字幕焼き込み済みH.264/AACプレビュー、確認フレーム、元データのハッシュ、再生成スクリプトを含む[23.52秒の広東語字幕パケット](https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery)を公開した。すべての入力を共有して確認できるよう、自分たちの短い広東語楽曲を使っている。これは工程の例であり、顧客動画でも、未知の音声に対する精度証明でもない。
 
-権利を確認できる広東語の講義、インタビュー、講座がある場合は、長さ、音質、方言、既存の文字起こし、指定用語、対象字体、必要な動画形式を `contact@lazying.art` へ送ってほしい。全体を見積もる前に、最初の1分がこの工程に合うか確認できる。
+録画全体の字幕ではなく、短いクリップを一つ作りたい場合は、私の[250米ドルのストーリークリップ・パイロット](https://lazying.art/story-clip/?utm_source=lazyblog&utm_medium=article&utm_campaign=story_clip_pilot&utm_content=cantonese_caption_delivery#sample)を利用できる。利用権を持つ30分以内の録画からタイムコード付き候補を二つ選び、そのうち選んでもらった一つを60秒以内の縦型クリップに仕上げる。元の言語の字幕と編集可能なSRTも含む。まずサンプルを見て、無料の適合チェックへ。録画を送るのは、作業範囲に合意してからでよい。

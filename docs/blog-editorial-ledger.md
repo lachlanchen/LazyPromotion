@@ -152,16 +152,17 @@ Posts: `281, 936, 1562, 2936, 3125`.
   accepted one priority crawl request; it must not be resubmitted merely to seek
   priority. Publication and crawl-queue state are not a lead or sale.
 
-- Post `3803` has a prepared, not-yet-live bridge from the complete Cantonese
-  caption guide to the fixed USD 250 Story Clip Pilot for readers who need one
-  short vertical clip rather than a full subtitle set. English, Traditional
-  Chinese, and Japanese source copies passed a complete LazyPub update dry run
-  and are committed at LazyBlog `53fda6c`. As rechecked on 2026-09-06, the
-  application-password fields are empty, the project-only WordPress browser
-  session is signed out, and remote SSH times out. The public article still
-  lacks the new link, so this is not counted as a published conversion route,
-  lead, or sale. Do not repeat the same publish probes without an access-state
-  change.
+- Post `3803` now has its previously prepared Story Clip route live in English,
+  Traditional Chinese and Japanese. After publishing access recovered, the
+  September 20 update replaced the open-ended email invitation with one
+  sample-first USD 250 offer for readers who want one short clip rather than
+  subtitles for an entire recording. The tutorial source stays unchanged;
+  republishing also restored five lost shell continuation characters in each
+  translated edition. All stored editions match source; six mobile/desktop
+  checks passed and the sample was reached. The final fit-check click-through
+  was not verified in this pass because of review-helper/browser failures; no
+  form was submitted. LazyBlog `af2ba59` records the publication. This completes
+  an existing conversion link, not a new offer, lead or sale.
 
 - Post `3803` is a complete English, Traditional Chinese, and Japanese guide
   to delivering Cantonese captions as one checked timeline, two editable SRT
@@ -292,6 +293,7 @@ Posts: `281, 936, 1562, 2936, 3125`.
 
 | BLOG commit | Post | Outcome |
 | --- | ---: | --- |
+| `af2ba59` | 3803 | Published the existing sample-first Story Clip route in three languages, removed the open-ended email pitch and restored translated shell continuations |
 | `e694ae4` | 3818 | Explain the Wine 11 startup stall, distinguish tested version boundaries, and verify the existing Chinese review route |
 | `0697deb` | 3834 | Added the WSL no-vault login-persistence diagnosis, a sandbox-scoped Copilot-token route, and the bounded plaintext fallback to the existing Docker MCP guide |
 | `cb5da1f` | 3841 | Published an executed CJK chunking and source-offset guide in English with verified mobile rendering and one tracked LKT sample-to-fit route |

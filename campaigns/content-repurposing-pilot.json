@@ -360,23 +360,34 @@
       "policy": "The homepage asks for one recording the buyer controls and does not ask for source transfer or payment before scope acceptance. Publication is not a lead or sale."
     },
     "blog_bridge": {
-      "state": "repository_prepared_remote_publish_pending",
+      "state": "live_three_languages",
       "wordpress_article": 3803,
       "live_url": "https://blog.lazying.art/html/computer_internet/3803/cantonese-subtitles-traditional-simplified-srt.html",
-      "lazyblog_commit": "53fda6ce33fa41d317fb3a18f49fcf0f833ca6bb",
+      "lazyblog_commit": "af2ba592dc55a984a081556848336a3da50fea5c",
       "languages": ["en", "zh-hant", "ja"],
-      "destination": "https://lazying.art/story-clip/?utm_source=lazyblog&utm_medium=article&utm_campaign=story_clip_pilot&utm_content=cantonese_caption_delivery",
-      "validation": "A complete LazyPub update dry run passed for the source post and both translations.",
-      "last_publish_probe": {
+      "destination": "https://lazying.art/story-clip/?utm_source=lazyblog&utm_medium=article&utm_campaign=story_clip_pilot&utm_content=cantonese_caption_delivery#sample",
+      "validation": "Published once on September 20. Source and both stored translations match the reviewed Markdown exactly. Six live language/width cases preserve four code blocks and one sample-first Story Clip link. The translated editions also recover five shell continuation characters each.",
+      "historical_publish_probe": {
         "checked_at": "2026-09-05T20:19:16Z",
         "wordpress_application_password": "not_configured",
         "project_browser_wordpress_session": "signed_out",
         "remote_ssh": "connection_timed_out",
         "live_story_clip_link": false
       },
-      "blocker": "No working reviewed write route is available: the WordPress application-password fields are empty, the project-only browser session is signed out, and remote SSH timed out. The public post still lacks the Story Clip link.",
+      "live_verification": {
+        "checked_on": "2026-09-20",
+        "source_and_translations_exact": true,
+        "desktop_mobile_cases_passed": 6,
+        "code_blocks_per_edition": 4,
+        "single_offer_link_per_edition": true,
+        "open_ended_email_pitch_removed": true,
+        "sample_opened": true,
+        "fit_check_clickthrough_verified": false,
+        "fit_check_verification_note": "Article and sample were reached. The initial helper used a relative-href selector after the site's attribution script made it absolute; the corrected route-only check then failed to attach to the browser. No form was submitted; this is not evidence that the fit check is broken.",
+        "form_submitted": false
+      },
       "lead_or_sale_observed": false,
-      "policy": "Do not call this bridge published until WordPress update and live source/translation checks succeed."
+      "policy": "Publication and sample navigation are not a lead or sale. Do not claim this pass verified the final fit-check navigation or submit a test request as a customer."
     },
     "checkout_created": false,
     "social_post_created": true,

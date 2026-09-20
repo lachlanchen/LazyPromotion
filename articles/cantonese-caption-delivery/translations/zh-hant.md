@@ -86,4 +86,4 @@ ffmpeg -i source.mp4 \
 
 我公開了一份 [23.52 秒粵語字幕交付包](https://github.com/lachlanchen/LazyPromotion/tree/8db8e1722c85c626296f1306e7dca662439a6a6e/examples/cantonese-caption-delivery)，內含兩個 SRT、內嵌字幕的 H.264/AAC 預覽片、核對畫面、來源雜湊和重建腳本。它使用我們自己的短粵語歌曲片段，因此所有輸入都可以公開檢查。這是一份工作流程範例，不是客戶影片，也不代表對陌生語音的準確率。
 
-如果你有一段權利清楚的粵語講座、訪談或課程，可以把時長、音質、方言、現有逐字稿、指定術語、目標字體和成片格式寄到 `contact@lazying.art`。我可以先看第一分鐘是否適合這套流程，再為完整工作報價。
+只想剪出一段短片，而不是替整段錄影製作字幕？我的 [250 美元故事短片試作](https://lazying.art/story-clip/?utm_source=lazyblog&utm_medium=article&utm_campaign=story_clip_pilot&utm_content=cantonese_caption_delivery#sample) 會先從一段不超過 30 分鐘、且你有權使用的錄影中挑出兩個附時間碼的候選片段，再把你選的一段剪成不超過 60 秒的直式短片，附原語言字幕和可編輯的 SRT。先看樣例，再做免費適配檢查；確認工作範圍後才傳送錄影。

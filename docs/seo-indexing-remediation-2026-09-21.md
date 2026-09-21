@@ -11,9 +11,10 @@ every page or that every exclusion should disappear.
    preserving WordPress routing and authorization-header forwarding.
 2. Blog home and archive pages lacked explicit canonicals. A small MU-plugin
    now adds them, preserves pagination, and redirects existing legacy English/
-   Chinese archives to their current URLs. A database dry run identified
-   **238 valid destinations among 257 observed archive-path candidates**.
-   This count spans several reports; it is not 238 confirmed new indexed pages.
+   Chinese archives to their current URLs. A full live check confirmed
+   **238 HTTP 301 redirects among 257 observed archive-path candidates**.
+   Thirteen feed/pagination variants still return 200; six deleted diary-category
+   paths correctly return 404. This spans several reports, not 238 newly indexed pages.
 3. The old numbered-post redirect constructed doubled/mistaken paths. It now
    resolves published posts through WordPress, preserving actual translations.
 4. The main website's 404 page redirected **every unknown URL to the homepage**.
@@ -69,6 +70,8 @@ the baseline, not a measurement of today's results.
 - **47 PHP policy checks** passed; Apache configuration test passed.
 - **45 website tests** passed, including generated redirects, unknown-ID safety,
   sitemap consistency, private-URL exclusions, and navigation behavior.
+- The moved book's redirect page is live after its Pages deployment. Production
+  WordPress plugin and Apache-rule hashes match the committed source exactly.
 - Mobile product-directory review passed without horizontal overflow. Its six
   guide links are ordinary HTML links, available without JavaScript.
 - The five remaining submitted sitemaps showed **Success**. The removed coin

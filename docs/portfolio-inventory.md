@@ -1,6 +1,6 @@
 # Lachlan Chen / LazyingArt public work inventory
 
-This is a public-only map of **109 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-20. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded. Identity-only websites remain in this inventory but are not automatically treated as products or need-discovery routes.
+This is a public-only map of **112 non-archived source repositories** owned by [`lachlanchen`](https://github.com/lachlanchen) as of 2026-09-23. It is generated from GitHub metadata, not a claim that every repository has received a deep product or security audit. Local-only checkouts, forks, credentials, people, messages, and promotion drafts are excluded. Identity-only websites remain in this inventory but are not automatically treated as products or need-discovery routes.
 
 ## Where promotion should start
 
@@ -34,10 +34,11 @@ The first-USD-1,000 route is two confirmed USD 500 MCP Server Pre-Deployment Rev
 |---|---:|
 | [Agentic automation and developer tools](#agentic-automation-and-developer-tools) | 20 |
 | [Media, music, storytelling, and publishing](#media-music-storytelling-and-publishing) | 14 |
-| [Languages, books, reading, and learning](#languages-books-reading-and-learning) | 17 |
+| [Languages, books, reading, and learning](#languages-books-reading-and-learning) | 19 |
 | [Scientific imaging, optics, and research](#scientific-imaging-optics-and-research) | 23 |
 | [Hardware, wearables, and robotics](#hardware-wearables-and-robotics) | 7 |
 | [Games and interactive learning](#games-and-interactive-learning) | 7 |
+| [Culture and reflective tools](#culture-and-reflective-tools) | 1 |
 | [Finance, business, commerce, and creator platforms](#finance-business-commerce-and-creator-platforms) | 8 |
 | [Infrastructure, networking, and workstation operations](#infrastructure-networking-and-workstation-operations) | 10 |
 | [LazyingArt identity and public web surfaces](#lazyingart-identity-and-public-web-surfaces) | 3 |
@@ -48,16 +49,16 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 
 | Repository | Last source push (UTC) | What it is |
 |---|---|---|
-| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-19 23:33:21 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
-| [LazyLearn](https://github.com/lachlanchen/LazyLearn) | 2026-09-19 20:22:45 | LazyLearn—my intentionally slow learning log for physics, chemistry, biomedicine and finance. |
-| [LazyingArtWebsite](https://github.com/lachlanchen/LazyingArtWebsite) | 2026-09-19 17:25:18 | Official multilingual LazyingArt website for EchoMind, Local Knowledge Terminal, open-source tools, and research prototypes. |
-| [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | 2026-09-19 14:58:47 | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. |
-| [the-art-of-lazying](https://github.com/lachlanchen/the-art-of-lazying) | 2026-09-19 14:58:17 | Practical notes and working examples for strategic laziness: AI agents, language learning, automation, and real-world workflows. |
-| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-19 14:58:16 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
-| [lachlanchen.github.io](https://github.com/lachlanchen/lachlanchen.github.io) | 2026-09-19 14:24:23 | Personal site and CV of Lachlan (Rongzhou) Chen 陈荣周 — lachlanchen.lazying.art |
-| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-19 03:09:33 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
-| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-17 04:18:30 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
-| [LazySkills](https://github.com/lachlanchen/LazySkills) | 2026-09-16 08:52:23 | Portable LazyingArt agent skills for AgInTiFlow, Codex, Claude, Gemini, Copilot, LazyEdit, AutoPublish, browser automation, books, and publishing workflows. |
+| [Bunko](https://github.com/lachlanchen/Bunko) | 2026-09-23 03:47:00 | Public-domain classics in English, Chinese and Japanese with ruby readings and a reading companion |
+| [L-and-N](https://github.com/lachlanchen/L-and-N) | 2026-09-23 03:42:00 | Evidence-aware L/N pronunciation coach for English, Mandarin, and Cantonese—PWA, iOS, Android, and watchOS. |
+| [bunko-books](https://github.com/lachlanchen/bunko-books) | 2026-09-23 03:09:16 | Public-domain classics as compact reader JSON for the Bunko app: English, Chinese and Japanese with readings on every character |
+| [AgInTi-LabCanvas](https://github.com/lachlanchen/AgInTi-LabCanvas) | 2026-09-22 23:31:58 | AgInTi LabCanvas: agentic studio for editable scientific figures, CAD devices, and experiment design. |
+| [LazyEdit](https://github.com/lachlanchen/LazyEdit) | 2026-09-22 17:19:54 | Local-first AI-assisted video workflow for transcription, multilingual subtitles, captions, metadata, generation, and reviewed publishing. |
+| [LazyOracle](https://github.com/lachlanchen/LazyOracle) | 2026-09-22 14:04:17 | Eight divination practices computed on your own device: tarot, BaZi, I Ching, astrology, feng shui, palmistry and face reading, narrated by a local model. |
+| [RaraXiaAndAyaChan](https://github.com/lachlanchen/RaraXiaAndAyaChan) | 2026-09-21 16:34:59 | Multilingual AI video story archive for Rara Xia, Aya Chan, and Sasa Kun. |
+| [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | 2026-09-21 11:57:55 | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. |
+| [LazyPromotion](https://github.com/lachlanchen/LazyPromotion) | 2026-09-21 01:47:22 | Review-first social discovery and visible browser assistant for helpful, transparent open-source replies |
+| [LazyEarn](https://github.com/lachlanchen/LazyEarn) | 2026-09-21 01:38:58 | Research-driven guide to money, wealth, business, finance, economics, and decision-making, with a living book, PDF, site, and refinery. |
 
 ## Complete public repository inventory
 
@@ -110,6 +111,8 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | Repository | What its public metadata says | Language | Public surface |
 |---|---|---|---|
 | [BigMe](https://github.com/lachlanchen/BigMe) | BigMe device connection and file sync workspace | Shell | [Open](https://learn.lazying.art) |
+| [Bunko](https://github.com/lachlanchen/Bunko) | Public-domain classics in English, Chinese and Japanese with ruby readings and a reading companion | TypeScript | Repository only |
+| [bunko-books](https://github.com/lachlanchen/bunko-books) | Public-domain classics as compact reader JSON for the Bunko app: English, Chinese and Japanese with readings on every character | Unspecified | Repository only |
 | [FujitsuQuaderno](https://github.com/lachlanchen/FujitsuQuaderno) | Fujitsu Quaderno research, firmware notes, and mount tooling | Shell | [Open](https://lazying.art) |
 | [ImagizedLanguageModel](https://github.com/lachlanchen/ImagizedLanguageModel) | Imagized Language Model (ILM) | Python | [Open](https://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=%E4%B8%AD) |
 | [Kindle](https://github.com/lachlanchen/Kindle) | Kindle Paperwhite 2 jailbreak and KOReader setup workspace | Python | [Open](https://lazying.art) |
@@ -140,7 +143,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [HybridImager](https://github.com/lachlanchen/HybridImager) | HybridImager: open hybrid single-pixel, event, frame, and spectral scientific imaging research workspace | Python | [Open](https://lazying.art) |
 | [IDEAS](https://github.com/lachlanchen/IDEAS) | Research notebook of optics, metasurfaces, computational physics, and tap‑and‑charge wireless power — Markdown ideas with LaTeX/PDF publications. | TeX | [Open](https://ideas.onlyideas.art) |
 | [kria-metavision-lab](https://github.com/lachlanchen/kria-metavision-lab) | GUI-first AMD Kria KV260 + Prophesee Metavision lab for event-camera bring-up, custom recording/viewing, PetaLinux tooling, and embedded vision experiments. | Python | [Open](https://flow.lazying.art) |
-| [lazealoptix](https://github.com/lachlanchen/lazealoptix) | "Development repository for Lazeal OptiX, a home-use diagnostic device using advanced microscopy and biochemical analysis." | Jupyter Notebook | [Open](https://lazealoptix.com) |
+| [lazealoptix](https://github.com/lachlanchen/lazealoptix) | "Development repository for Lazeal OptiX, a home-use diagnostic device using advanced microscopy and biochemical analysis." | Jupyter Notebook | Repository only |
 | [LifeReverseEngineering](https://github.com/lachlanchen/LifeReverseEngineering) | Reverse Engineering of Life. | HTML | [Open](http://lre.lazying.art/) |
 | [LightMind](https://github.com/lachlanchen/LightMind) | The website of LightMind Ltd. | HTML | [Open](https://github.com/LightMind) |
 | [lightmind-privacy](https://github.com/lachlanchen/lightmind-privacy) | Public privacy notice for the local-first LightMind companion test build for supported Rokid glasses. | HTML | [Open](https://lachlanchen.github.io/lightmind-privacy/) |
@@ -179,6 +182,12 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [LazyWeiqi](https://github.com/lachlanchen/LazyWeiqi) | Local-first 11-language Weiqi teacher with exact 5×5–19×19 play, game-native shape/influence/territory visualizations, bounded KataGo fast/deep analysis, and non-mutating AI study. | TypeScript | [Open](https://lazying.art) |
 | [ShiGame](https://github.com/lachlanchen/ShiGame) | SHI (势): a multilingual, historically grounded strategy narrative about the shape of power in late Qin China. | Python | [Open](https://lachlanchen.github.io/ShiGame/) |
 
+### Culture and reflective tools
+
+| Repository | What its public metadata says | Language | Public surface |
+|---|---|---|---|
+| [LazyOracle](https://github.com/lachlanchen/LazyOracle) | Eight divination practices computed on your own device: tarot, BaZi, I Ching, astrology, feng shui, palmistry and face reading, narrated by a local model. | TypeScript | [Open](https://oracle.lazying.art) |
+
 ### Finance, business, commerce, and creator platforms
 
 | Repository | What its public metadata says | Language | Public surface |
@@ -202,7 +211,7 @@ This view comes from GitHub's source-push timestamps and is refreshed with the c
 | [hackintosh](https://github.com/lachlanchen/hackintosh) | Sanitized Sequoia, OpenCore, recovery, and Xcode runbook for an owned development workstation | Shell | [Open](https://lazying.art) |
 | [kvm-qemu-workstation](https://github.com/lachlanchen/kvm-qemu-workstation) | Private-by-default KVM/QEMU orchestration for serviceable Windows Tiny11 and macOS guests on Linux workstations. | PowerShell | [Open](https://lazying.art) |
 | [LazyEdge](https://github.com/lachlanchen/LazyEdge) | A lightweight, default-deny reverse edge for safely connecting private compute to public domains. | JavaScript | [Open](https://lazying.art) |
-| [LazyRouter](https://github.com/lachlanchen/LazyRouter) | Private AI API gateway for user keys, credits, model routing, and upstream provider aggregation. | Go | [Open](https://router.lazying.art) |
+| [LazyRouter](https://github.com/lachlanchen/LazyRouter) | Private AI API gateway for user keys, credits, model routing, and upstream provider aggregation. | Go | Repository only |
 | [LazyTunnel](https://github.com/lachlanchen/LazyTunnel) | LazyRemote: self-hosted SSH and noVNC access with independent relay accounts, private device enrollment and optional cross-platform native apps. | Python | [Open](https://remote.lazying.art) |
 | [uu-remote-ubuntu-bridge](https://github.com/lachlanchen/uu-remote-ubuntu-bridge) | Control an Ubuntu GNOME desktop through NetEase UU Remote with a reproducible Wine, FreeRDP, and input-broker bridge. | Python | [Open](https://blog.lazying.art/html/computer_internet/3818/use-uu-remote-on-ubuntu-with-a-reproducible-bridge.html) |
 | [WIFI2LAN](https://github.com/lachlanchen/WIFI2LAN) | Turn Raspberry Pi Wi-Fi into Ethernet with safe cutover, rollback, DHCP, DNS, NAT, SSH, and VNC. | Shell | [Open](https://lazying.art) |

@@ -41,7 +41,7 @@ CATEGORIES = OrderedDict(
         (
             "Languages, books, reading, and learning",
             {
-                "BigMe", "FujitsuQuaderno", "ImagizedLanguageModel", "Kindle",
+                "BigMe", "Bunko", "bunko-books", "FujitsuQuaderno", "ImagizedLanguageModel", "Kindle",
                 "LazyLanguageLearner", "LazyLearn", "LazyTravel", "leonardsusskind",
                 "L-and-N", "LexiconAtlas", "LinguaLeaf", "LocalKnowledgeTerminal", "PocketPolyglot",
                 "the-art-of-lazying", "Video2Book", "WordOrigins", "WordsCardEink",
@@ -73,6 +73,10 @@ CATEGORIES = OrderedDict(
                 "LazyChess", "LazyGame", "LazyGameWeb", "LazyMahjong", "LazyPoker",
                 "LazyWeiqi", "ShiGame",
             },
+        ),
+        (
+            "Culture and reflective tools",
+            {"LazyOracle"},
         ),
         (
             "Finance, business, commerce, and creator platforms",

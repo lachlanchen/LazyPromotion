@@ -10,7 +10,7 @@ class InventoryTests(unittest.TestCase):
         payload = inventory.load_index()
         body = inventory.render(payload)
         complete_inventory = body.split("## Complete public repository inventory", 1)[1]
-        self.assertEqual(len(payload["repositories"]), 109)
+        self.assertEqual(len(payload["repositories"]), 112)
         for repo in payload["repositories"]:
             marker = f"]({repo['url']})"
             with self.subTest(repo=repo["name"]):
@@ -22,6 +22,13 @@ class InventoryTests(unittest.TestCase):
         names = [repo["name"] for repos in grouped.values() for repo in repos]
         self.assertEqual(len(names), len(set(names)))
         self.assertEqual(set(names), {repo["name"] for repo in payload["repositories"]})
+
+    def test_september_23_additions_have_distinct_roles(self):
+        grouped = inventory.categorized_repositories(inventory.load_index())
+        reading = {repo["name"] for repo in grouped["Languages, books, reading, and learning"]}
+        self.assertTrue({"Bunko", "bunko-books"}.issubset(reading))
+        reflection = {repo["name"] for repo in grouped["Culture and reflective tools"]}
+        self.assertEqual(reflection, {"LazyOracle"})
 
     def test_public_personal_site_is_identity_not_an_unreviewed_product(self):
         grouped = inventory.categorized_repositories(inventory.load_index())

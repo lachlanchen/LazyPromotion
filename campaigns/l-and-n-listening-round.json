@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "l-and-n-listening-round",
   "objective": "Show one real listening round, invite free browser practice, and make the existing paid iPhone option clear without implying a learner result or sale.",
   "source_evidence": {
@@ -18,8 +18,20 @@
   },
   "channels": {
     "x": {
-      "state": "queued",
+      "state": "published",
       "publish_at": "2026-09-22T02:00:00Z",
+      "release_url": "https://twitter.com/lazyingart/status/2102216744878432304",
+      "publication_verification": {
+        "checked_at": "2026-09-24T03:38:48Z",
+        "source": "Authenticated read-only Postiz posts listing",
+        "verified_state": "PUBLISHED",
+        "post_id": "cmu9jbo6p0e4ds40ycfj6kkgb",
+        "release_id": "2102216744878432304",
+        "stored_copy_matches_reviewed_text": true,
+        "original_campaign_url_preserved": true,
+        "live_page_reviewed": false,
+        "policy": "Provider-confirmed publication of the existing job, not a new send, app installation, customer result, or sale. Earlier visible scheduling review is retained below."
+      },
       "content": "I mix up L and N, so I built this. Hear five words; tap light or night in order.\n\nEnglish, Mandarin and Cantonese. Free in the browser; iPhone app US$0.99.\nl-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_listening",
       "content_sha256": "ac7d242a0542cb0505e7abd30d0236f738273d7d283774439b332af849824443",
       "destination": "https://l-and-n.lazying.art/?utm_source=x&utm_campaign=l_and_n_listening",

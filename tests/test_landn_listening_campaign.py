@@ -18,7 +18,7 @@ class LandnListeningCampaignTests(unittest.TestCase):
     def test_one_spaced_x_post_uses_exact_reviewed_copy(self):
         self.assertEqual(list(self.campaign['channels']), ['x'])
         post = self.campaign['channels']['x']
-        self.assertEqual(post['state'], 'queued')
+        self.assertEqual(post['state'], 'published')
         self.assertEqual(post['publish_at'], '2026-09-22T02:00:00Z')
         self.assertLessEqual(len(post['content']), 280)
         self.assertEqual(hashlib.sha256(post['content'].encode()).hexdigest(), post['content_sha256'])
@@ -36,7 +36,7 @@ class LandnListeningCampaignTests(unittest.TestCase):
         self.assertIn('synthetic', evidence['functional_check'])
         self.assertNotIn('/home/', json.dumps(self.campaign))
 
-    def test_queue_is_verified_without_inventing_publication_or_revenue(self):
+    def test_historical_queue_review_is_preserved_without_inventing_revenue(self):
         verified = self.campaign['channels']['x']['verification']
         self.assertEqual(verified['verified_state'], 'QUEUE')
         self.assertEqual(verified['matching_posts'], 1)
@@ -46,6 +46,18 @@ class LandnListeningCampaignTests(unittest.TestCase):
         self.assertTrue(verified['destination_and_store_continuation_verified'])
         self.assertEqual(self.campaign['funnel']['verified_received_gross_usd'], 0)
         self.assertEqual(self.campaign['funnel']['qualified_leads'], 0)
+
+    def test_provider_publication_is_distinct_from_live_review_and_sales(self):
+        post = self.campaign['channels']['x']
+        verified = post['publication_verification']
+        self.assertEqual(verified['verified_state'], 'PUBLISHED')
+        self.assertEqual(verified['post_id'], 'cmu9jbo6p0e4ds40ycfj6kkgb')
+        self.assertEqual(post['release_url'],
+                         'https://twitter.com/lazyingart/status/' + verified['release_id'])
+        self.assertTrue(verified['stored_copy_matches_reviewed_text'])
+        self.assertTrue(verified['original_campaign_url_preserved'])
+        self.assertFalse(verified['live_page_reviewed'])
+        self.assertEqual(self.campaign['funnel']['payments_confirmed'], 0)
 
     def test_original_publication_monitor_can_find_the_new_route(self):
         routes = owned_monitor.route_index()

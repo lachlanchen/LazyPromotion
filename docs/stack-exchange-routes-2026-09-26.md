@@ -39,9 +39,9 @@ disqualifies an answer, and old questions are not fresh customer leads.
 
 - [Traditional characters and pinyin together in an ebook](https://chinese.stackexchange.com/questions/21024/looking-for-pinyin-traditional-characters-ebooks),
   asked in 2016: a real layout and price concern potentially relevant to Bunko.
-  Before recommending it, verify the actual selected book's traditional-character
-  text, pinyin placement and device support. A Traditional Chinese interface
-  does not prove traditional-character book content. No answer is drafted yet.
+  Selected book data and the 1.0.1-era renderer now establish a partial format
+  match, but the pronunciation-focused recommendation is held for the content
+  issue below. No answer is drafted yet.
 - [Chinese, English and pinyin books for intermediate readers](https://chinese.stackexchange.com/questions/14195/chinese-english-pinyin-books-for-young-adult-readers),
   asked in 2015: the display format is relevant, but Bunko's unadapted classics
   must not be advertised as graded intermediate books.
@@ -57,6 +57,30 @@ The next useful research target is an open request whose required platform,
 language, text collection and practice scope actually match the shipping app.
 Account eligibility and current policy review remain unresolved; no registration
 is needed merely to research the public questions.
+
+### Bunko content check: traditional text is real; pronunciation fit is held
+
+The [Journey to the West bundle](https://github.com/lachlanchen/bunko-books/blob/09644d26513ad8cd447109f402cf0d0e8db6fe50/books/journey-to-the-west/c0001.json)
+contains traditional forms such as 聞, 數, 萬 and 歲, with pinyin tokens beside
+them in the data. The [1.0.1-era renderer](https://github.com/lachlanchen/Bunko/blob/286c8a3/src/components/Line.tsx)
+places supplied readings in HTML ruby, and that revision's CSS places them above
+the characters. This is source/data verification, not a new native-device test
+or a catalogue-wide script audit. Interface localization is not the evidence.
+
+However, chapter one's second paragraph supplies `wèi` for 為 in both
+`歲為一元` and `分為十二會`. The [Ministry of Education dictionary](https://dict.mini.moe.edu.tw/SearchIndex/word_detail?breadcrumbs=Search_&wordID=D0002104)
+assigns `wéi` to the being/becoming senses; applying those senses to these two
+sentences indicates a contextual annotation error. This limited check does not
+estimate the catalogue's overall error rate. The app displays the supplied
+reading, so layout support alone does not make this a reliable pronunciation
+exercise for the questioner's stated purpose.
+
+Hold this specific answer pending corrected, published data and a fresh sample
+check. Bunko is also an app, not an established Kindle/EPUB export; the reader's
+update considering an iPhone app makes that an explicit alternative, not an
+exact match to the original device requirement. No book data, sibling project,
+existing campaign or queue was changed. The broader reading-discovery route
+remains available without claiming pronunciation-reference accuracy.
 
 ## Community advertising is not currently an available shortcut
 

@@ -412,3 +412,32 @@ Its exact sent body was verified in the native modmail chat after reload.
 Permission is pending: there is no public post or scheduled introduction in
 this community. Do not resend the request or treat silence as approval. Private
 correspondence and routing identifiers remain outside the repository.
+
+## September 26: open-source route held for later review
+
+[r/BestGitHubRepos](https://www.reddit.com/r/BestGitHubRepos/) explicitly permits
+maintainers to share their own repositories with context and affiliation
+disclosure. Its seven expanded rules prohibit flooding and disguised unbiased
+recommendations. The pinned [welcome](https://www.reddit.com/r/BestGitHubRepos/comments/1w2xms8/welcome_to_rbestgithubrepos/)
+invites useful repositories, including learning resources, and asks what each
+does and why it is worth sharing. An account-restricted native search found no
+previous entry; that search is not a guarantee of exhaustive duplicate coverage.
+
+A short L & N introduction is prepared privately around one inspectable code
+detail: *light* and *night* are close under string similarity, so the scoring
+path explicitly handles recognition of the wrong paired word. The draft links
+to the repository and its research notes, not a generic portfolio or a claim
+of validated accuracy. The code was checked at commit
+[`7f0013b`](https://github.com/lachlanchen/L-and-N/blob/7f0013bf7160880c078f980dff75a6054d2d1b1e/src/lib/scoring.ts).
+
+This is a developer-facing reserve, **not published or scheduled**. Reconsider
+no earlier than September 29, after reviewing the existing spaced introductions.
+Rules, duplicates, current claims and exact copy still need a fresh review.
+r/IMadeThis remains unconfirmed: a maker-oriented feed alone did not establish
+explicit creator-promotion guidance.
+
+Additional searches for native-language L/N confusion and parallel Japanese
+classics returned old discussions and the existing owned Bunko introduction.
+Those are not fresh prospects. No ordinary-thread reply, private message or
+additional launch was sent. Existing queues remain unchanged; private store
+reports are tracked separately and are not inferred from Reddit activity.

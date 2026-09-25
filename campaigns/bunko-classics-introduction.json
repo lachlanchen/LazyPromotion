@@ -1,7 +1,7 @@
 {
   "id": "bunko-classics-introduction",
-  "version": 2,
-  "checked_on": "2026-09-25",
+  "version": 3,
+  "checked_on": "2026-09-26",
   "objective": "Introduce the shipping Bunko reader through a concrete Sanshirō reading example and a transparent creator post, with a clear route to the paid iPhone edition.",
   "source_evidence": {
     "repository": "https://github.com/lachlanchen/Bunko",
@@ -21,6 +21,36 @@
       "Chapter caching in IndexedDB in src/lib/library.ts"
     ]
   },
+  "subsequent_release_checks": [
+    {
+      "checked_at": "2026-09-25T22:10:51Z",
+      "storefront": "US",
+      "apple_store_url": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+      "apple_store_http_status": 200,
+      "apple_store_version": "1.0.1",
+      "apple_price_usd": 0.99,
+      "apple_store_response_sha256": "cf88fbeec03464650a10f470af0de35128cdd098d75c801d89b449e8978c2174",
+      "multi_app_lookup_url": "https://itunes.apple.com/lookup?id=6808872450,6815137919&country=us",
+      "multi_app_lookup_version": "1.0.1",
+      "lookup_release_at": "2026-09-25T18:03:18Z",
+      "single_app_lookup_url": "https://itunes.apple.com/lookup?id=6815137919&country=us",
+      "single_app_lookup_version": "1.0.0",
+      "lookup_disagreement_cause": "unverified",
+      "decision": "The public storefront and multi-app lookup establish the listed US iOS update. Preserve the original publication's 1.0.0 evidence; do not infer all-territory rollout, installation, Android or Mac availability.",
+      "release_note_features": [
+        "Illustrated book covers",
+        "Light, Dark and System theme controls",
+        "Automatic catalogue refresh",
+        "Offline-download and cached-book recovery improvements"
+      ],
+      "google_public_url": "https://play.google.com/store/apps/details?id=art.lazying.bunko&hl=en&gl=US",
+      "google_public_http_status": 404,
+      "google_public_launch_established": false,
+      "existing_posts_edited": false,
+      "queue_changes": false,
+      "acquisition_established": false
+    }
+  ],
   "channels": {
     "reddit": {
       "state": "published",

@@ -1,18 +1,27 @@
 # Bunko promotion handoff
 
-Checked 2026-09-25 UTC. This is a public-facts handoff for [Bunko](https://github.com/lachlanchen/Bunko), separate from the L & N campaign. It contains no tester links, private contacts, store credentials or browser state. Recheck store pages before any public post.
+Store facts checked 2026-09-25 at 22:10 UTC (September 26 Hong Kong). This is a public-facts handoff for [Bunko](https://github.com/lachlanchen/Bunko), separate from the L & N campaign. It contains no tester links, private contacts, store credentials or browser state. Recheck store pages before any public post.
 
 ## What is public now
 
 | Channel | Verified state | Visitor destination |
 | --- | --- | --- |
 | Web reader | Live, with a 183-edition downloadable catalogue | https://lachlan.lazying.art/Bunko/ |
-| US App Store | Version **1.0.0** is **Ready for Sale**; Apple's public lookup reports **USD 0.99** | https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919 |
-| Google Play | Production **1.0.0 (1)** is still in review; the public listing returned **404** in this check | Do not use a public Play call to action yet |
-| App Store update | Version **1.0.1 (2)**, with covers, visible Light/Dark/System controls and catalogue refresh, is **Waiting for Review** | Do not describe these as features of the approved iOS binary yet |
-| Play update | Version **1.0.1 (2)** is available only to internal testers | Do not advertise it as a public Android release |
+| US App Store | Public storefront now shows **1.0.1**, at **USD 0.99** | https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919 |
+| Google Play | The public US listing returned **404** at 22:09 UTC; the shipping record still reports production **1.0.0 (1)** in review | Do not use a public Play call to action yet |
+| Shipped Apple update | The 1.0.1 storefront release notes describe illustrated covers, Light/Dark/System controls, catalogue refresh and offline-download recovery improvements | These may be described for this iOS release; they do not establish 1.0.2 availability |
+| Play updates | The shipping record lists **1.0.1 (2)** and latest **1.0.2 (3)** on the internal track | Internal testing is not a public Android release |
 
 The app is paid up front on iOS, with no subscription or in-app purchase. The web reader is a separate free destination. The public [bunko-books](https://github.com/lachlanchen/bunko-books) repository carries the downloadable book bundles, not an additional app store. Adding approved book bundles can update the catalogue without a new binary.
+
+The public storefront's version history and a multi-app Apple lookup agree on
+1.0.1, with release time **September 25 at 18:03:18 UTC** in the lookup. A
+single-app lookup still returned 1.0.0 during the same check. The cause of that
+disagreement is unverified; do not let the older response or the original
+submission artifact overwrite the observed storefront release. This verification
+covers the US listing, not installation, every territory or private review state.
+The [campaign's subsequent release check](../campaigns/bunko-classics-introduction.json)
+keeps this evidence separate from its original 1.0.0 publication snapshot.
 
 ## Product and audience
 
@@ -22,7 +31,7 @@ Useful audiences include readers of Classical Chinese history and philosophy, Ja
 
 ## Safe launch angle
 
-An Apple-specific launch post can link the US App Store page now, with the current **USD 0.99** price and 1.0.0 feature set. A web-reading post may link the live web reader and show the expanded catalogue and covers. Keep those claims separate. Suggested draft for review:
+An Apple-specific post can link the US App Store page now, with the current **USD 0.99** price and verified 1.0.1 features. A web-reading post may link the live web reader and show the expanded catalogue. Keep later 1.0.2, native Mac and unverified Android claims separate. Suggested draft for review:
 
 > I built Bunko to make Chinese and Japanese classics easier to read without losing the original text. It puts pinyin or furigana above the characters, lets you compare languages, and saves chapters for offline reading. The web reader has a growing public-domain catalogue; Bunko is also available on the US App Store for $0.99. Which classic would you want to read this way?
 
@@ -33,14 +42,14 @@ Use one clear destination per post. Disclose that the maintainer built the app. 
 - Creator recording: [Bunko App: Read World Classics with Ruby Annotations](https://www.youtube.com/shorts/pSWnOwzyc-4), on [@lazyingart](https://www.youtube.com/@lazyingart). The native player and multilingual captions including English were checked September 25. The recording shows a TestFlight-installed version; verify demonstrated features against the public release before using it as store-specific proof. More material is indexed in the [product video library](product-video-library.md).
 - Reader source, screenshots and product contract: [Bunko repository](https://github.com/lachlanchen/Bunko), especially `store/assets/`, `BRIEF.md` and `store/release.yaml`.
 - Book rights audit and publishing workflow: [catalogue](https://github.com/lachlanchen/Bunko/blob/main/docs/catalogue.md) and [library guide](https://github.com/lachlanchen/Bunko/blob/main/docs/library-publishing.md).
-- Current 150-edition index: [bunko-books/reader-index.json](https://github.com/lachlanchen/bunko-books/blob/main/reader-index.json).
-- Apple 1.0.1 review record: [curated submission artifact](https://github.com/lachlanchen/Bunko/blob/main/store/artifacts/apple-submission-1.0.1.json).
+- Live catalogue index: [bunko-books/reader-index.json](https://github.com/lachlanchen/bunko-books/blob/main/reader-index.json).
+- Historical Apple 1.0.1 submission record: [curated artifact](https://github.com/lachlanchen/Bunko/blob/main/store/artifacts/apple-submission-1.0.1.json). Its original waiting-for-review state predates the public release verified above.
 
 Before an Apple post, reopen the public listing to confirm price, version, artwork and regional availability. Before any Google Play post, require a live public listing and a published production release. Store submission, tester access, public listing visibility, installs and sales are separate states; none implies revenue.
 
 ## Owned reading guide — September 25
 
-[Reading Chinese and Japanese Classics Without Constantly Switching Tabs](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html) is published on the blog. It uses the shipping reader's *Sanshirō* screenshot, explains a short original/parallel-text reading routine, and links to the US App Store at the verified USD 0.99 price. It identifies the AI-generated study renderings without presenting them as scholarly translations. No Google release, pending 1.0.1 feature, distinct-book count, learning result or revenue is claimed.
+[Reading Chinese and Japanese Classics Without Constantly Switching Tabs](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html) is published on the blog. It uses the shipping reader's *Sanshirō* screenshot, explains a short original/parallel-text reading routine, and links to the US App Store at the verified USD 0.99 price. It identifies the AI-generated study renderings without presenting them as scholarly translations. No Google release, then-pending 1.0.1 feature, distinct-book count, learning result or revenue was claimed in that publication.
 
 The source is `articles/bunko-reading-classics/post.md`; the LazyBlog archive is `content/lazypub/20260925-bunko-reading-classics/`. The live source content, image, canonical and store link were checked on desktop and mobile. This is a source-only English article, separate from the multilingual editorial completion count.
 
@@ -116,4 +125,4 @@ Later the same day, the downloadable catalogue grew to **183 editions** at `bunk
 
 Bunko **macOS 1.0.2 (4)** is **Waiting for Review** on the existing Apple app record, with automatic release after approval. The native Mac build is also available in the internal TestFlight group. This is not yet a public Mac launch. It includes a resizable reading window, native menus and keyboard controls, offline books, local dictionaries, and equations/figures. The universal binary supports Intel and Apple silicon with a macOS 12.0 deployment target. Native tests passed on the 3040 (12.7.6), 7050 iMac (15.7.7) and KVM Mac (15.7.9), all Intel; no physical Apple silicon test was performed.
 
-The existing [App Store URL](https://apps.apple.com/app/id6815137919) will serve the Mac edition after approval; recheck its Mac compatibility and public availability before announcing it. Use the [Mac submission record](https://github.com/lachlanchen/Bunko/blob/main/store/macos/submission.md) and actual Mac screenshots in `store/assets/macos-*.png` when preparing future material. No new promotional post is authorized by this handoff. iOS 1.0.1 remains in review and the Google Play production review was not changed.
+The existing [App Store URL](https://apps.apple.com/app/id6815137919) will serve the Mac edition after approval; recheck its Mac compatibility and public availability before announcing it. Use the [Mac submission record](https://github.com/lachlanchen/Bunko/blob/main/store/macos/submission.md) and actual Mac screenshots in `store/assets/macos-*.png` when preparing future material. No new promotional post is authorized by this handoff. At that submission checkpoint, iOS 1.0.1 was still in review; the later public iOS release is recorded above and does not establish Mac approval. The Google Play production review was not changed by this promotion work.

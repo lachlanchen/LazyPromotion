@@ -1,6 +1,6 @@
 # Public links for promotion
 
-Checked September 25, 2026. Keep each resource attached to its own product.
+Updated September 26, 2026 (Hong Kong). Keep each resource attached to its own product.
 
 Video channel: [@lazyingart](https://www.youtube.com/@lazyingart). The [product video library](product-video-library.md) maps app walkthroughs and editing/publishing material to their review status.
 
@@ -14,15 +14,17 @@ the [video library](product-video-library.md#store-path-added-september-26).
 
 | Destination | Link |
 | --- | --- |
-| US App Store, public version 1.0.0 | [Bunko: Classics with Ruby](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919) |
+| US App Store, public version 1.0.1 | [Bunko: Classics with Ruby](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919) |
 | Web reader and live book catalogue | [Bunko](https://lachlan.lazying.art/Bunko/) |
 | Creator walkthrough, with multilingual captions | [Bunko on YouTube](https://www.youtube.com/shorts/pSWnOwzyc-4) |
 | Promotion facts and claim boundaries | [Bunko promotion handoff](bunko-promotion-handoff.md) |
 
-Apple's US listing resolves at USD 0.99. The Google Play production release is
-still in review and its public listing returned 404; do not use it as a public
-destination. Apple 1.0.1 and Play internal 1.0.1 are update/test states, not
-proof that those features are in the approved iOS 1.0.0 binary.
+Apple's US storefront now shows **1.0.1 at USD 0.99**, including covers and
+Light/Dark/System controls in its release notes. Its single-app lookup still
+returned 1.0.0 while the storefront and multi-app lookup showed 1.0.1; the
+reconciliation is recorded in the handoff. The Google Play public listing still
+returned 404 in this check, so do not use it as a public destination. Internal
+1.0.2 builds and the separate native Mac submission are not public release proof.
 
 Creator introductions: [r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/)
 and the [r/Japaneselanguage personal-project thread](https://www.reddit.com/r/Japaneselanguage/comments/1sky7tt/comment/pc03ka1/).

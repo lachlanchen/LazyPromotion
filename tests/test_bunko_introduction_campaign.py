@@ -55,6 +55,25 @@ class BunkoIntroductionCampaignTests(unittest.TestCase):
             self.assertEqual(route["route"], "product")
             self.assertEqual(route["known_owned_replies"], 1 if provider == "reddit" else 0)
 
+    def test_later_store_release_does_not_rewrite_original_publication(self):
+        evidence = self.campaign["source_evidence"]
+        self.assertEqual(evidence["apple_version_verified"], "1.0.0")
+        check = self.campaign["subsequent_release_checks"][-1]
+        self.assertEqual(check["apple_store_version"], "1.0.1")
+        self.assertEqual(check["multi_app_lookup_version"], "1.0.1")
+        self.assertEqual(check["single_app_lookup_version"], "1.0.0")
+        self.assertEqual(check["lookup_disagreement_cause"], "unverified")
+        self.assertEqual(check["apple_price_usd"], 0.99)
+        self.assertEqual(check["google_public_http_status"], 404)
+        for key in ("google_public_launch_established", "existing_posts_edited",
+                    "queue_changes", "acquisition_established"):
+            self.assertFalse(check[key])
+        links = (ROOT / "docs/public-promotion-links.md").read_text()
+        self.assertIn("US App Store, public version 1.0.1", links)
+        handoff = (ROOT / "docs/bunko-promotion-handoff.md").read_text()
+        self.assertIn("Public storefront now shows **1.0.1**", handoff)
+        self.assertIn("not installation, every territory", handoff)
+
     def test_feedback_reply_is_recorded_without_claiming_a_shipped_feature(self):
         reddit = self.campaign["channels"]["reddit"]
         self.assertEqual(reddit["known_owned_replies"], len(reddit["owned_replies"]))

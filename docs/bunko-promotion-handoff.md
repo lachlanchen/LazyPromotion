@@ -61,6 +61,17 @@ A later [comment](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/
 
 Sentence-level reveal and optional aggregate book-open counts are proposals, not shipped features. Reading progress currently stays on the device. Adding collection would require an opt-in design and updated product, privacy and store declarations; an open must not be described as completed reading. No app code or data collection was changed by this feedback follow-up.
 
+### LanguageHub directory — September 26 (Hong Kong)
+
+One [Bunko entry](https://www.reddit.com/r/languagehub/comments/1sic66r/comment/pc0legb/)
+was submitted to LanguageHub's pinned tools thread, where the moderator explicitly
+invites developer introductions. It explains the Sanshirō reading layout and
+links to the free reader and paid iPhone/iPad edition. Apple's public lookup still
+reported 1.0.0 at US$0.99 immediately before submission. Exact text, author and both
+links survived reload; anonymous visibility remains unresolved after a cache miss
+and browser timeout. Do not repost. The [campaign receipt](../campaigns/bunko-languagehub-introduction.json)
+does not establish an install or purchase and has no automatic follow-up.
+
 ## Library expansion — September 25
 
 Bunko's downloadable catalogue now has **162 cleared editions**: the previous 150 classics plus 12 owner editions in separate Physics, Learning, Finance and Travel shelves. The additions include three trilingual travel guides, *How You Got Rich* in English, Japanese and Chinese, six independent Leonard Susskind lecture companion volumes in English, *How to Speak and Write* and *Wealth From First Principles*. The source and rights records are in [bunko-books](https://github.com/lachlanchen/bunko-books). Bunko 1.0.2 adds local equation rendering and mobile figure support; describe these app features publicly only after that binary reaches the relevant public store. The web reader can show them after its deployment passes. Do not call the companion notes Susskind-authored or endorsed, and do not imply every source work has all three languages. The existing Reddit, X, blog and Medium introductions describe the older public version and should remain as historical posts.

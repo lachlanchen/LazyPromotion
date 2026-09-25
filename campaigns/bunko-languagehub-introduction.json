@@ -1,0 +1,57 @@
+{
+  "id": "bunko-languagehub-introduction",
+  "version": 1,
+  "checked_on": "2026-09-26",
+  "objective": "Introduce the original-and-parallel reading workflow in LanguageHub's designated tools directory.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/Bunko",
+    "reader": "https://lachlan.lazying.art/Bunko/",
+    "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+    "apple_lookup": "https://itunes.apple.com/lookup?id=6815137919&country=us",
+    "apple_public_version": "1.0.0",
+    "apple_us_price": 0.99,
+    "apple_checked_at": "2026-09-25T17:50:27Z"
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "format": "top_level_comment_in_pinned_tools_thread",
+      "publication_method": "reviewed_native_browser_submit",
+      "community": "r/languagehub",
+      "source_url": "https://www.reddit.com/r/languagehub/comments/1sic66r/update_on_language_learning_tools_worth_trying/",
+      "rules_url": "https://www.reddit.com/r/languagehub/comments/1sic66r/update_on_language_learning_tools_worth_trying/",
+      "community_fit": "The currently pinned moderator thread explicitly invites developers to describe their language tools. Main-feed advertising is removed. This is an invited creator introduction, not a response to an individual learner's request.",
+      "content": "I built Bunko for readers who want to keep the original text, its readings and a parallel translation together. In Sanshirō, for example, you can see furigana above the Japanese and an English passage underneath, then switch back to Japanese alone.\n\nChinese books can show pinyin, and downloaded chapters work offline. These are unadapted classics, not beginner lessons. The parallel translations are AI-generated study aids and can make mistakes.\n\nFree browser reader: https://lachlan.lazying.art/Bunko/\n\niPhone/iPad: https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919 — US$0.99 once, no subscription.",
+      "content_sha256": "a1b44756616e525385efc73daa95654fd0a4758928261de1340a7ca912cc3405",
+      "publish_at": "2026-09-25T17:52:26Z",
+      "release_url": "https://www.reddit.com/r/languagehub/comments/1sic66r/comment/pc0legb/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "visible_copy_and_destination_reviewed": true,
+        "single_submit_click": true,
+        "exact_text_verified_after_reload": true,
+        "author_verified": true,
+        "original_links_preserved": true,
+        "expected_links_verified": 2,
+        "logged_out_visibility_verified": false,
+        "logged_out_check_state": "unresolved_web_fetch_cache_miss_and_anonymous_browser_timeout"
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review",
+    "postiz_managed": false,
+    "direct_comment_monitor_configured": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_action": "Review genuine responses when notified. Recheck anonymous visibility on a later review; do not resubmit because visibility is unresolved or duplicate this in the main feed."
+  },
+  "funnel": {
+    "state": "creator_introduction_verified_signed_in",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "The publication receipt proves delivery in the account view, not an installation, reader outcome or purchase."
+  }
+}

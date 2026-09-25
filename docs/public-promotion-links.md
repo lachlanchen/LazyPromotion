@@ -4,6 +4,12 @@ Checked September 25, 2026. Keep each resource attached to its own product.
 
 Video channel: [@lazyingart](https://www.youtube.com/@lazyingart). The [product video library](product-video-library.md) maps app walkthroughs and editing/publishing material to their review status.
 
+September 26 update: the channel's clickable profile links now lead directly to
+L & N on Apple and Google, and Bunko on Apple. The two English demo descriptions
+point viewers there with current pricing. Both descriptions were verified through
+anonymous public metadata; no videos were re-uploaded. Details and hashes are in
+the [video library](product-video-library.md#store-path-added-september-26).
+
 ## Bunko: Classics with Ruby
 
 | Destination | Link |

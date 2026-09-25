@@ -92,3 +92,33 @@ An additional native month-filtered comment search for n/l pronunciation found
 the existing L & N App Shelf comment and unrelated language discussions, not a
 new close-fit learner request. No ordinary-thread reply or private message was
 sent in this pass. No installations, customers or new revenue were verified.
+
+## September 26: LanguageHub tools directory
+
+The currently pinned [LanguageHub tools thread](https://www.reddit.com/r/languagehub/comments/1sic66r/update_on_language_learning_tools_worth_trying/)
+explicitly invites developers to explain their tools, supported languages and
+usefulness; standalone promotional posts are removed. It remains open for
+comments. One [Bunko introduction](https://www.reddit.com/r/languagehub/comments/1sic66r/comment/pc0legb/)
+was submitted at 17:52 UTC September 25 (September 26 in Hong Kong). It uses
+Sanshirō as a reading example, distinguishes unadapted classics from beginner
+lessons, and gives the free reader and verified US$0.99 Apple route. No Android
+availability, pending feature or learning outcome is claimed.
+
+Exact copy, author and both clickable original links were verified after reload.
+An anonymous fetch returned a cache miss and the anonymous browser check timed
+out; public visibility remains unresolved, not proven absent. Do not resubmit.
+The [campaign record](../campaigns/bunko-languagehub-introduction.json) retains
+the delivered copy and verification limits. This is not a Postiz-managed comment.
+
+[r/LanguageAppsHub](https://www.reddit.com/r/LanguageAppsHub/) is another explicit
+creator venue: its expanded rule 3 permits app sharing with useful context, while
+rules prohibit spam and fake reviews. It is very small, with the most recent
+visible post 16 days old during this check. Keep it as a possible later route,
+not a second immediate copy of the same launch. Nothing was posted there.
+
+Fresh searches for n/l pronunciation and parallel reading again included old
+results and our own launch posts. The September 6 Cantonese n/l discussion asks
+about colloquial usage, not a tool to correct the speaker; it was not contacted.
+No new close-fit, unanswered learner request was established by this pass.
+The two existing SideProject introductions were checked directly: their feedback
+was unchanged, so no further acknowledgements or promotional replies were sent.

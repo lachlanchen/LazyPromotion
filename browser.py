@@ -223,7 +223,7 @@ def automatic_query(platform: str, project: dict[str, object], topic_override: s
     if overridden:
         need = f'"{overridden}"' if " " in overridden else overridden
         if platform == "reddit":
-            return f"{need} (help OR advice OR recommend)"
+            return f"({need}) AND (help OR advice OR recommend)"
         if platform == "x":
             return f"{need} (help OR advice OR recommend) -filter:retweets"
         if platform == "hackernews":
@@ -248,7 +248,7 @@ def automatic_query(platform: str, project: dict[str, object], topic_override: s
     if not need:
         return ""
     if platform == "reddit":
-        return f"{need} (help OR advice OR recommend)"
+        return f"({need}) AND (help OR advice OR recommend)"
     if platform == "x":
         return f"{need} (help OR advice OR recommend) -filter:retweets"
     if platform == "hackernews":

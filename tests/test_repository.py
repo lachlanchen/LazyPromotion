@@ -741,6 +741,10 @@ class RepositoryTests(unittest.TestCase):
         for platform in ("reddit", "x", "hackernews"):
             routes = {route["project_id"]: route["query"] for route in browser.discovery_queries(platform)}
             for project_id, topic in expected.items():
+                if platform == "reddit" and project_id in {"l-and-n", "github-bunko"}:
+                    # These two apps now have reviewed, synonym-aware core routes.
+                    # Their automatic topic overrides still apply on X and HN.
+                    continue
                 with self.subTest(platform=platform, project=project_id):
                     self.assertIn(f'"{topic}"', routes[project_id])
 

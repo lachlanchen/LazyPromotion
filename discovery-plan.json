@@ -41,6 +41,29 @@
   "queries": {
     "reddit": [
       {
+        "project_id": "l-and-n",
+        "query": "(pronunciation OR pronounce OR listening) AND (\"n/l\" OR \"l/n\" OR \"l and n\" OR \"n and l\") AND (help OR practice OR confuse OR confused OR distinguish)",
+        "purpose": "Learners asking for L/N contrast practice; not R/L, dark-L assessment or general accent correction",
+        "required_body_groups": [
+          ["n/l", "l/n", "l and n", "n and l"],
+          ["pronunciation", "pronounce", "listening", "sounds"],
+          ["help", "practice", "confuse", "confused", "confusing", "distinguish", "mix up"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my app", "our app"]
+      },
+      {
+        "project_id": "github-bunko",
+        "query": "(Japanese OR Chinese) AND (\"parallel text\" OR \"bilingual reader\" OR furigana OR pinyin) AND (recommend OR \"looking for\" OR \"is there\" OR \"does anyone\" OR \"where can\")",
+        "purpose": "Readers requesting Chinese or Japanese reading aids; inspect collection, level and import requirements before treating Bunko as a fit",
+        "required_body_groups": [
+          ["japanese", "chinese"],
+          ["parallel text", "bilingual reader", "furigana", "pinyin"],
+          ["book", "books", "novel", "novels", "reading", "reader", "classics"],
+          ["recommend", "looking for", "is there", "does anyone", "where can"]
+        ],
+        "excluded_body_any": ["i built", "i created", "i launched", "we built", "we created", "we launched", "my app", "our app"]
+      },
+      {
         "project_id": "localknowledgeterminal",
         "query": "subreddit:selfhosted (\"private knowledge base\" OR \"document search\") (help OR recommend)",
         "purpose": "Self-hosters asking for a bounded private-document search or knowledge workflow"

@@ -301,3 +301,41 @@ classics with reading aids are not simplified N4 adaptations, so no introduction
 or private message was sent. The community targets N4 and below and has a
 "No AI Slop" rule; another developer's launch there does not establish permission
 for this campaign. The need is real, but the present offer does not meet it.
+
+## September 26: targeted search and full-rule checks
+
+Reddit post search can match only some query words. Its
+[official search documentation](https://support.reddithelp.com/hc/en-us/articles/19696541895316-Available-search-features)
+explains that explicit uppercase `AND` is needed to require both groups. The
+generated Reddit routes now join topic and help-seeking intent explicitly.
+L & N and Bunko also have dedicated core routes, covering natural variations of
+L/N confusion and Chinese/Japanese parallel reading instead of relying on one
+exact product-topic phrase. Hydrated text must still pass the independent need
+checks; a search hit is not a qualified learner.
+
+Live checks of both new queries found our own L & N posts, aggregate digests,
+unrelated input-method questions and previously screened reader requests. The
+N4 adaptation and Cantonese vocabulary requests remain unsuitable; no new
+close-fit learner was established from the loaded results. Dates are still
+checked individually because Reddit's requested time filter is not proof of
+freshness. Neither discovery nor these changes authorize sending a reply.
+
+Two initially plausible communities were ruled out for agent-written material:
+
+- [r/japaneseresources](https://www.reddit.com/r/japaneseresources/) is active,
+  but its current rule 1 excludes AI-generated resource posts at moderator
+  discretion, and rule 5 excludes mostly paid resource self-promotion. Older
+  creator posts do not override those rules. No introduction was prepared.
+- [r/languagelearning](https://www.reddit.com/r/languagelearning/wiki/rules_for_promotion/)
+  permits product introductions in its monthly Share Your Resources thread,
+  requires affiliation disclosure, and limits repeats to six months. However,
+  the [full moderation policy](https://www.reddit.com/r/languagelearning/wiki/moderation_policy/)
+  also disallows AI-composed content. The monthly exception does not waive that
+  restriction. The September thread is no longer pinned, and October is not an
+  authorized agent-publishing route. No draft, modmail or reminder to auto-post
+  was created; genuinely human-authored participation is a separate possibility.
+
+Both restrictions are recorded in the existing community-policy mechanism so
+future discovery cannot silently turn these sources into agent replies. The
+existing Bunko Instagram and L & N teacher-resource queues are unchanged, as is
+the September 27 earliest review of Bunko's general app-sharing introduction.

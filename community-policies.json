@@ -3,6 +3,26 @@
   "policies": [
     {
       "platform": "reddit",
+      "community": "japaneseresources",
+      "observed_at": "2026-09-25T20:11:00Z",
+      "source_url": "https://www.reddit.com/r/japaneseresources/",
+      "agent_public_reply_allowed": false,
+      "agent_private_contact_allowed": false,
+      "manual_operator_contact_allowed": true,
+      "reason": "Current Rule 1 excludes AI-generated resource posts and app content at moderator discretion. Rule 5 also excludes mostly paid resource self-promotion. Do not generate a creator introduction or route around these restrictions through private contact. Any human-authored participation must independently meet all current rules."
+    },
+    {
+      "platform": "reddit",
+      "community": "languagelearning",
+      "observed_at": "2026-09-25T20:13:00Z",
+      "source_url": "https://www.reddit.com/r/languagelearning/wiki/moderation_policy/",
+      "agent_public_reply_allowed": false,
+      "agent_private_contact_allowed": false,
+      "manual_operator_contact_allowed": true,
+      "reason": "The full moderation policy disallows AI-composed content. The monthly Share Your Resources exception permits self-promotion but does not waive that authorship rule; outside it, product mentions need permission. Agent drafts and sends stay disabled, including for the monthly thread. Human-authored participation remains subject to the current promotion policy and six-month repeat interval."
+    },
+    {
+      "platform": "reddit",
       "community": "forhire",
       "observed_at": "2026-09-07T00:08:58Z",
       "source_url": "https://www.reddit.com/r/forhire/about/rules/",

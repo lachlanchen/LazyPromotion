@@ -3,6 +3,16 @@
   "policies": [
     {
       "platform": "reddit",
+      "community": "chinesehistory",
+      "observed_at": "2026-09-25T22:05:06Z",
+      "source_url": "https://www.reddit.com/r/ChineseHistory/",
+      "agent_public_reply_allowed": false,
+      "agent_private_contact_allowed": false,
+      "manual_operator_contact_allowed": true,
+      "reason": "Current Rule 6 prohibits generative AI, with an exception only for disclosed translation of the contributor's own original writing. This does not permit an agent-written Bunko introduction, historical answer, or translation of another author's classic. Do not route around the restriction through private contact. Human-authored participation must independently satisfy all current rules."
+    },
+    {
+      "platform": "reddit",
       "community": "japaneseresources",
       "observed_at": "2026-09-25T20:11:00Z",
       "source_url": "https://www.reddit.com/r/japaneseresources/",

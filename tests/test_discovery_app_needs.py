@@ -56,7 +56,7 @@ class AppNeedDiscoveryTests(unittest.TestCase):
         self.assertEqual(browser.automatic_query("hackernews", project), 'Ask HN "local documents"')
 
     def test_authorship_restrictions_apply_to_exact_communities(self):
-        for community in ("JapaneseResources", "LanguageLearning"):
+        for community in ("JapaneseResources", "LanguageLearning", "ChineseHistory"):
             for action in ("public_reply", "private_contact"):
                 reason = promotion.agent_contact_block_reason(
                     "reddit", f"https://www.reddit.com/r/{community}/comments/example/request/",
@@ -69,6 +69,18 @@ class AppNeedDiscoveryTests(unittest.TestCase):
                 "reddit", f"https://www.reddit.com/r/{community}/comments/example/request/",
                 action="public_reply",
             ), "")
+
+    def test_chinese_history_translation_exception_is_not_agent_permission(self):
+        policy = promotion.community_policy(
+            "reddit", "https://www.reddit.com/r/ChineseHistory/comments/example/request/",
+        )
+        self.assertFalse(policy["agent_public_reply_allowed"])
+        self.assertFalse(policy["agent_private_contact_allowed"])
+        self.assertIn("own original writing", policy["reason"])
+        self.assertIn("another author's classic", policy["reason"])
+        self.assertEqual(promotion.community_policy(
+            "reddit", "https://www.reddit.com/r/ChineseHistoryBooks/comments/example/request/",
+        ), {})
 
 
 if __name__ == "__main__":

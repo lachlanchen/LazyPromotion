@@ -462,3 +462,27 @@ creator invitation established. r/AppsAndSites displayed a missing-community
 notice. Neither is a priority route. The two existing English app demos showed
 zero comments in their native YouTube views, with no viewer question to answer
 at this check. No channel edit, reply, extra queue or public launch followed.
+
+## September 26: distinguish history requests from parallel-reading needs
+
+A current [Chinese prehistory book request](https://www.reddit.com/r/ChineseHistory/comments/1wmtqa2/any_good_books_on_neolithic_and_palaeolithic_china/)
+asks for archaeology and the meaning of a Neolithic culture. Bunko's classics
+are not a substitute for those research sources. The native community's expanded
+rule 6 also prohibits generative AI, except disclosed translation of the
+contributor's own original writing. That exception does not admit an agent-written
+introduction or AI study translations of someone else's classic. The restriction
+is now recorded in the existing community-policy registry; no reply, private
+contact or moderator request was sent.
+
+[r/JapaneseLiterature](https://www.reddit.com/r/JapaneseLiterature/) looks relevant
+in search, but its native page is restricted and displays **Request to Post**.
+The newest item in the inspected New feed is dated February 12, 2020. It is not
+a current reader-acquisition route; no access request was sent. This does not
+describe other Japanese-reading communities, whose separate permissions remain
+unchanged.
+
+Fresh general-history and Chinese-fiction searches did surface actual reader
+questions, but not a verified new request for Bunko's particular reading aids.
+Neither those questions nor the existence of another developer's resource post
+is permission to insert our apps. Keep the three spaced introductions already
+queued, then evaluate their real responses before adding another broad launch.

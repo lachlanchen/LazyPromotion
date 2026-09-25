@@ -1,0 +1,57 @@
+{
+  "id": "l-and-n-edtech-introduction",
+  "version": 1,
+  "checked_on": "2026-09-26",
+  "objective": "Introduce a short L/N listening-and-speaking exercise to language tutors in the designated monthly developer thread.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+    "apple_public_version": "1.0.6",
+    "apple_us_price": 0.99,
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_public_version": "1.0.9",
+    "google_pricing": "Free download with in-app purchases; no exact unlock price advertised."
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "format": "top_level_comment_in_monthly_developer_thread",
+      "publication_method": "reviewed_native_browser_submit",
+      "community": "r/edtech",
+      "source_url": "https://www.reddit.com/r/edtech/comments/1w42eqz/monthly_developerssales_thread_for_september_2026/",
+      "rules_url": "https://www.reddit.com/r/edtech/about/rules/",
+      "community_fit": "The moderator-created September thread explicitly invites developer marketing and feedback. Main-feed self-promotion and developer market-research posts are prohibited. This is a creator introduction in that specific exception, not a reply to a learner requesting help.",
+      "content": "I made L & N for a problem I have myself: mixing up light/night and similar pairs.\n\nFor tutors working on this contrast, here's a short exercise you can try in the app. Listen to a random sequence of the two words and tap what you heard. Then switch to speaking practice, record one word, and compare the recognizer's result with what you intended. Keeping the listening and speaking tasks separate has been useful in my own practice.\n\nIt has English, Mandarin and Cantonese pairs, plus a 3D tongue/airflow view. No account is needed. The score is coaching feedback, not a classroom assessment.\n\niPhone/iPad — US$0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\n\nAndroid — free download, with in-app purchases: https://play.google.com/store/apps/details?id=art.lazying.landn",
+      "content_sha256": "283e7107013f4d3c52d97410c40673c097a4511ae31aea471682310a2fcc473a",
+      "publish_at": "2026-09-25T17:20:28Z",
+      "release_url": "https://www.reddit.com/r/edtech/comments/1w42eqz/comment/pc0du25/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "visible_copy_and_destination_reviewed": true,
+        "single_submit_click": true,
+        "exact_text_verified_after_reload": true,
+        "author_verified": true,
+        "original_links_preserved": true,
+        "expected_links_verified": 2,
+        "logged_out_visibility_verified": false,
+        "logged_out_check_state": "unresolved_web_fetch_and_anonymous_browser_failure"
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review",
+    "postiz_managed": false,
+    "direct_comment_monitor_configured": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_action": "Review genuine responses when notified. Do not resubmit after the anonymous check failure or duplicate this introduction in the main feed or next monthly thread."
+  },
+  "funnel": {
+    "state": "creator_introduction_verified_signed_in",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "Signed-in delivery is verified; anonymous visibility is unresolved. Neither establishes an installation, learning outcome or purchase."
+  }
+}

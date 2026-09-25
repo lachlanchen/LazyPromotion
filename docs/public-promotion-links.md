@@ -43,6 +43,11 @@ Live community introductions: [r/SideProject](https://www.reddit.com/r/SideProje
 and the [r/Cantonese creator ads thread](https://www.reddit.com/r/Cantonese/comments/1wo97ez/comment/pbytqan/).
 See the [checked community routes](app-community-routes-2026-09-25.md) before considering another placement.
 
+An additional [tutor-oriented exercise introduction](https://www.reddit.com/r/edtech/comments/1w42eqz/comment/pc0du25/)
+is in r/edtech's September developer thread. Its copy, author and both store links
+were checked after signed-in reload; anonymous visibility remains unresolved.
+It is not an independently verified user or tutor adoption.
+
 On September 26 (Hong Kong), the [maintainer's Reddit profile](https://www.reddit.com/user/Ok-Perception1122/)
 was given three direct store links: **L & N — App Store**, **L & N — Google Play**,
 and **Bunko — App Store**. All labels and exact destinations were checked after

@@ -1,0 +1,73 @@
+{
+  "id": "bunko-book-reading-introduction",
+  "version": 1,
+  "checked_on": "2026-09-26",
+  "objective": "Introduce Bunko to readers through one concrete Sanshirō reading routine in a community that explicitly welcomes creator contributions.",
+  "source_evidence": {
+    "community": "https://www.reddit.com/r/Recommend_A_Book/",
+    "pinned_promotion_policy": "https://www.reddit.com/r/Recommend_A_Book/comments/1qejtu0/regarding_self_promotion_and_ai_generated_content/",
+    "pinned_community_scope": "https://www.reddit.com/r/Recommend_A_Book/comments/1687wa9/about_this_group_please_read/",
+    "rules_checked_on": "2026-09-26",
+    "reader": "https://lachlan.lazying.art/Bunko/",
+    "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+    "apple_lookup": "https://itunes.apple.com/lookup?id=6815137919&country=us",
+    "apple_checked_on": "2026-09-26",
+    "apple_version_verified": "1.0.0",
+    "apple_price_usd_verified": 0.99
+  },
+  "channels": {
+    "reddit": {
+      "state": "queued_verified",
+      "format": "reader_resource_introduction",
+      "community": "r/Recommend_A_Book",
+      "account": "https://www.reddit.com/user/Ok-Perception1122/",
+      "title": "Bunko: reading Sanshirō with furigana and an English study translation",
+      "content": "One way to try Sōseki's Sanshirō in Japanese: read a short passage with furigana, compare the English, then reread the Japanese on its own.\n\nI built Bunko to keep those views together. It also includes Chinese classics with pinyin, and you can download chapters to read offline.\n\nThese are original texts, not simplified readers. The parallel translations are AI-generated study aids and can make mistakes.\n\nFree browser reader: https://lachlan.lazying.art/Bunko/\n\niPhone/iPad: https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919 — US$0.99 once, no subscription.",
+      "content_sha256": "f1ea287f95cf5c920407c612629205b2207f98eb72a562e6c2f6cbf73ac5e608",
+      "publish_at": "2026-09-28T12:00:00Z",
+      "known_owned_replies": 0,
+      "settings": {
+        "subreddit": "/r/Recommend_A_Book",
+        "type": "self",
+        "flair_required": false
+      },
+      "community_fit": "Both currently pinned moderator policies welcome creator promotion and AI-assisted work; the native composer repeats the broad invitation. This is a reader-facing introduction, not a reply to an individual need or evidence of buyer intent.",
+      "duplicate_check": "Native author-and-community search returned explicit no results. Provider reconciliation found exactly one matching draft and then one matching queued item. Broad product search produced unrelated matches and was not treated as an exhaustive absence check.",
+      "publication_verification": {
+        "verified_state": "QUEUE",
+        "saved_preview_reviewed": true,
+        "stored_copy_matches_reviewed_text": true,
+        "account_title_destination_time_reviewed": true,
+        "original_links_preserved": true,
+        "provider_settings_checked": true,
+        "no_flair_required_verified": true,
+        "single_matching_item": true,
+        "schedule_actions": 1,
+        "release_present": false,
+        "calendar_reloaded_after_scheduling": true
+      }
+    }
+  },
+  "claim_boundaries": [
+    "The original classics are not simplified or level-adapted readers.",
+    "The study translations are AI-generated and may be wrong; no learning result is promised.",
+    "The public US Apple listing was 1.0.0 at USD 0.99. No pending update, Android or Mac release is advertised.",
+    "Scheduling is not Reddit publication, moderation acceptance, an installation or a purchase."
+  ],
+  "follow_up": {
+    "mode": "read_only_monitor_then_review",
+    "postiz_managed": true,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-09-29",
+    "earlier_review_trigger": "Provider failure, moderation notice, or a genuine question after publication.",
+    "next_action": "Verify release and visibility when the provider reports publication; do not automatically post again or follow with another product."
+  },
+  "funnel": {
+    "state": "community_post_queued",
+    "verified_new_users": null,
+    "verified_received_gross_usd": null,
+    "measurement_state": "not_connected"
+  }
+}

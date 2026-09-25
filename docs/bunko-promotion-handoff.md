@@ -90,6 +90,22 @@ account hold was left unchanged. The [campaign record](../campaigns/bunko-instag
 and [reviewed image](../assets/bunko-sanshiro-reader-20260926.png) preserve the
 exact material; the existing read-only owned monitor recognizes the caption.
 
+## Reader community introduction — queued September 28
+
+A separate text introduction is queued for **September 28 at 12:00 UTC / 8:00 PM
+Hong Kong** in [r/Recommend_A_Book](https://www.reddit.com/r/Recommend_A_Book/).
+The currently pinned moderator policies explicitly welcome creator promotion
+and AI-assisted work. The post leads with a *Sanshirō* reading routine, links to
+the free reader and paid Apple edition, and keeps the study-translation
+limitation beside that claim. The saved copy, title, account, community and date
+were visibly reviewed before one scheduling action. A fresh provider read
+confirmed one unchanged `QUEUE` item, not publication. See the
+[exact campaign](../campaigns/bunko-book-reading-introduction.json).
+
+The earlier private general developer-community draft remains a reserve, not
+another scheduled launch. No automatic repost or follow-up reply is planned.
+This placement is a reader-discovery test, not evidence of an install or sale.
+
 ## Library expansion — September 25
 
 Bunko's downloadable catalogue now has **162 cleared editions**: the previous 150 classics plus 12 owner editions in separate Physics, Learning, Finance and Travel shelves. The additions include three trilingual travel guides, *How You Got Rich* in English, Japanese and Chinese, six independent Leonard Susskind lecture companion volumes in English, *How to Speak and Write* and *Wealth From First Principles*. The source and rights records are in [bunko-books](https://github.com/lachlanchen/bunko-books). Bunko 1.0.2 adds local equation rendering and mobile figure support; describe these app features publicly only after that binary reaches the relevant public store. The web reader can show them after its deployment passes. Do not call the companion notes Susskind-authored or endorsed, and do not imply every source work has all three languages. The existing Reddit, X, blog and Medium introductions describe the older public version and should remain as historical posts.

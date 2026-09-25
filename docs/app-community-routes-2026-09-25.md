@@ -339,3 +339,34 @@ Both restrictions are recorded in the existing community-policy mechanism so
 future discovery cannot silently turn these sources into agent replies. The
 existing Bunko Instagram and L & N teacher-resource queues are unchanged, as is
 the September 27 earliest review of Bunko's general app-sharing introduction.
+
+## September 26: Bunko reader introduction, queued for September 28
+
+[r/Recommend_A_Book](https://www.reddit.com/r/Recommend_A_Book/) offers a more
+relevant reader-facing test than another general developer launch. Its two
+currently pinned moderator posts explicitly welcome
+[creator promotion and AI-assisted work](https://www.reddit.com/r/Recommend_A_Book/comments/1qejtu0/regarding_self_promotion_and_ai_generated_content/)
+and [broad creative contributions](https://www.reddit.com/r/Recommend_A_Book/comments/1687wa9/about_this_group_please_read/).
+The native composer repeats the invitation; its visible rule is respect for
+other people. This establishes an appropriate place for an introduction, not
+an individual request, a qualified buyer or guaranteed moderation acceptance.
+
+One short Bunko post uses *Sanshirō* to explain an original/English/rereading
+routine. It identifies the maintainer, distinguishes original classics from
+simplified readers, and labels the AI study translations. It links to the free
+reader and the paid iPhone/iPad edition. Apple's current US lookup still reports
+1.0.0 at US$0.99. No pending Google, Mac or iOS-update feature is advertised.
+
+The account-restricted native community search returned no previous post.
+Postiz's live contract permits a text post without flair. One draft was created,
+its full copy, account, title, subreddit and time reviewed visibly, then scheduled
+once for **September 28, 2026 at 12:00 UTC / 8:00 PM Hong Kong**. A fresh read
+confirmed exactly one matching `QUEUE` item with unchanged original URLs and no
+release. The [campaign record](../campaigns/bunko-book-reading-introduction.json)
+allows the existing monitor to recognize it without exporting provider IDs.
+
+The earlier private general app-sharing draft is now held in reserve rather
+than treated as the next automatic launch. Existing posts and the two prior
+queues were not changed. No new learner request, installation or sale was
+established in this research pass; no unsolicited reply or private message was
+sent.

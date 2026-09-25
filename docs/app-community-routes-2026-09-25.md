@@ -2,6 +2,31 @@
 
 Checked September 25, 2026. A suitable audience, a permitted introduction and a verified user are different things. No installs, purchases or revenue are inferred below.
 
+## September 26: a current reading request, with a limited product fit
+
+A September 24 [self-study resource request](https://www.reddit.com/r/LearningLanguages/comments/1wpdnf9/books_and_resources_from_selflearning/)
+seeks English progress from B2 toward C1, plus future study of several languages.
+Bunko can supply English reading, not that whole curriculum. Its *Great Gatsby*
+bundle was inspected, and the live web reader successfully displayed the opening
+in English alone after the Japanese layer was deselected. This does not establish
+an installed iOS test, a CEFR level for the book, or a learning outcome.
+
+One private response draft leads with Cambridge's level-specific exercises,
+suggests a concrete reading routine and includes only a disclosed, limited Bunko
+mention, without an app link. It is not submitted or scheduled. The community's
+expanded rule requires genuine participation by real people; its pinned welcome
+does not expressly settle creator or agent-authored promotion. This is not being
+recorded as an explicit AI ban, nor as permission to publish. A visible developer
+post elsewhere in the feed is not clearance. Recheck the full thread and obtain
+the required review before any contact; omit the app mention if it adds no value.
+
+Additional checks found r/learnenglish restricted, with a request-to-post control
+and moderator recruitment notices, while r/languagelearningresources displayed
+“We couldn't find that community.” Neither received a request or post. A bounded
+native search inspected 25 recent pronunciation-confusion result cards; it did
+not establish a new L/N learner match. That is not exhaustive coverage. Existing
+launches and the three scheduled introductions are unchanged.
+
 ## Distribution decisions
 
 | Community | Fit and current decision |

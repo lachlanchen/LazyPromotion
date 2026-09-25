@@ -6,7 +6,7 @@ Checked 2026-09-25 UTC. This is a public-facts handoff for [Bunko](https://githu
 
 | Channel | Verified state | Visitor destination |
 | --- | --- | --- |
-| Web reader | Live, with a 150-edition downloadable catalogue | https://lachlan.lazying.art/Bunko/ |
+| Web reader | Live, with a 183-edition downloadable catalogue | https://lachlan.lazying.art/Bunko/ |
 | US App Store | Version **1.0.0** is **Ready for Sale**; Apple's public lookup reports **USD 0.99** | https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919 |
 | Google Play | Production **1.0.0 (1)** is still in review; the public listing returned **404** in this check | Do not use a public Play call to action yet |
 | App Store update | Version **1.0.1 (2)**, with covers, visible Light/Dark/System controls and catalogue refresh, is **Waiting for Review** | Do not describe these as features of the approved iOS binary yet |
@@ -16,7 +16,7 @@ The app is paid up front on iOS, with no subscription or in-app purchase. The we
 
 ## Product and audience
 
-Bunko is a pocket reader for public-domain Chinese, Japanese and English classics. Readers can choose displayed languages and layouts, see pinyin or furigana above characters, and save chapters for offline reading. The interface has English, Simplified Chinese, Traditional Chinese and Japanese. The catalogue has **150 cleared editions**, not necessarily 150 distinct original works. Study renderings are AI-generated and may contain errors; they are not scholarly editions. Public-domain status varies by territory. The app includes mature literary themes and must not be marketed as a children's app.
+Bunko is a pocket reader for public-domain Chinese, Japanese and English classics, alongside owner-edited study books. Readers can choose displayed languages and layouts, see pinyin or furigana above characters where available, and save chapters for offline reading. The interface has English, Simplified Chinese, Traditional Chinese and Japanese. The catalogue has **183 cleared editions**: 150 classics and 33 owner editions, not necessarily 183 distinct original works. Study renderings are AI-generated and may contain errors; they are not scholarly editions. Public-domain status varies by territory. The app includes mature literary themes and must not be marketed as a children's app.
 
 Useful audiences include readers of Classical Chinese history and philosophy, Japanese literature learners, bilingual readers, and teachers who want readable parallel passages. Lead with a specific reading problem: following a classical passage while keeping the original and its readings visible, or carrying a chapter offline. Avoid claiming that every classic has been acquired or that the companion tutor is already in the shipping app.
 
@@ -57,3 +57,5 @@ Exact published copy and public evidence are in [`campaigns/bunko-classics-intro
 ## Library expansion — September 25
 
 Bunko's downloadable catalogue now has **162 cleared editions**: the previous 150 classics plus 12 owner editions in separate Physics, Learning, Finance and Travel shelves. The additions include three trilingual travel guides, *How You Got Rich* in English, Japanese and Chinese, six independent Leonard Susskind lecture companion volumes in English, *How to Speak and Write* and *Wealth From First Principles*. The source and rights records are in [bunko-books](https://github.com/lachlanchen/bunko-books). Bunko 1.0.2 adds local equation rendering and mobile figure support; describe these app features publicly only after that binary reaches the relevant public store. The web reader can show them after its deployment passes. Do not call the companion notes Susskind-authored or endorsed, and do not imply every source work has all three languages. The existing Reddit, X, blog and Medium introductions describe the older public version and should remain as historical posts.
+
+Later the same day, the downloadable catalogue grew to **183 editions** at `bunko-books` commit `09644d2`: all nine supplementary Susskind companion courses, four additional core course runs, *Justice with Michael Sandel*, and seven more edited LazyEarn books. Physics now has 19 English companion editions, Learning has two English editions, Finance has nine editions (one trilingual), and Travel has three trilingual guides. The downloadable catalogue update requires no new binary; the existing 1.0.2 internal builds fetch it online. Do not imply the Jim Rohn transcript book or raw Hard Knocks interview corpus is in Bunko, or imply the supplementary notes are Susskind-authored.

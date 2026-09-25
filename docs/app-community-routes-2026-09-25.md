@@ -402,3 +402,13 @@ Two additional native rule checks narrowed the useful routes:
 The three existing scheduled introductions are unchanged. This pass improved
 discovery coverage and recorded new screening decisions; it did not establish
 new users, installations or revenue.
+
+## September 26: EnglishLearning permission request
+
+Following the community's explicit moderator-contact route, one request was
+submitted for an L/N listening exercise with a disclosed app note. The request
+included the proposed copy, current store pricing, and AI-assistance disclosure.
+Its exact sent body was verified in the native modmail chat after reload.
+Permission is pending: there is no public post or scheduled introduction in
+this community. Do not resend the request or treat silence as approval. Private
+correspondence and routing identifiers remain outside the repository.

@@ -1,0 +1,59 @@
+{
+  "id": "l-and-n-sideproject-introduction",
+  "version": 1,
+  "checked_on": "2026-09-25",
+  "objective": "Introduce L & N through the maintainer's own sound-confusion problem, a real English walkthrough, and the two production-store destinations.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "source_commit": "9a5b8a3aced7b7a69752d922cef0e5883116499e",
+    "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+    "apple_public_version": "1.0.6",
+    "apple_us_price": 0.99,
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_anonymous_public_version": "1.0.9",
+    "google_pricing": "Free download, with in-app purchases; no exact in-app price claimed in this post.",
+    "english_walkthrough": "https://www.youtube.com/shorts/Nlsx_5U6g6U",
+    "youtube_channel": "https://www.youtube.com/@lazyingart",
+    "video_review": "Correct channel, product title, English captions and app recording checked in the native player; not a complete audio or accessibility audit.",
+    "store_check_note": "The anonymous Google listing reports 1.0.9; older shipping notes still say in review. This post uses observed public features and does not quote a version number."
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "community": "r/SideProject",
+      "rules_url": "https://old.reddit.com/r/SideProject/about/rules/",
+      "community_fit": "Project introductions and constructive feedback are welcome; title follows project-name plus description format.",
+      "prior_submission_check": "No previous L & N submission found in community search or the current Postiz records. This is separate from the earlier Bunko introduction.",
+      "title": "L & N - I mix up L and N, so I built a pronunciation practice app",
+      "content": "I mix up L and N myself, so I built a small app to practise the difference. I've been using it, and the listening exercises have been especially useful to me.\n\nYou pick a pair like light/night, hear the examples, record yourself, and see what the speech recognizer heard alongside the score. There's also a listening test: hear a short sequence such as \"light, night, light, light, night\" and tap what you heard, then check each answer.\n\nIt covers English, Mandarin and Cantonese. A 3D mouth view shows the tongue position and airflow for each sound. No account or ads. The score is practice feedback, not a perfect judge of pronunciation.\n\nIt's built with React, TypeScript and Capacitor. The source and notes on how the scoring works are public.\n\nMy English walkthrough: https://www.youtube.com/shorts/Nlsx_5U6g6U\n\niPhone/iPad — US$0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\n\nAndroid — free download, with in-app purchases: https://play.google.com/store/apps/details?id=art.lazying.landn\n\nSource: https://github.com/lachlanchen/L-and-N\n\nIf you mix these sounds up too, is hearing the difference or saying it the harder part for you?",
+      "content_sha256": "e1bc1eda582207e1984602d9d678b220be847eaa85d6e94501d3f6baa1ed66d4",
+      "publish_at": "2026-09-25T12:58:00Z",
+      "release_url": "https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "verified_state": "PUBLISHED",
+        "saved_preview_reviewed": true,
+        "exact_destination_reviewed": true,
+        "stored_copy_matches_reviewed_text": true,
+        "original_links_preserved": true,
+        "live_page_reviewed": true,
+        "logged_out_visibility_verified": true,
+        "expected_links_verified": 4
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "read_only_monitor_then_review",
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_action": "Review a genuine learner question or product suggestion if one arrives. Keep any LazyEdit introduction separate, with its own evidence and community review."
+  },
+  "funnel": {
+    "state": "owned_introduction_published",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "An owner demonstration, publication or response is not a verified app purchase or learner outcome."
+  }
+}

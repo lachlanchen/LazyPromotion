@@ -30,6 +30,7 @@ Use one clear destination per post. Disclose that the maintainer built the app. 
 
 ## Assets and evidence
 
+- Creator recording: [Bunko App: Read World Classics with Ruby Annotations](https://www.youtube.com/shorts/pSWnOwzyc-4), on [@lazyingart](https://www.youtube.com/@lazyingart). The native player and multilingual captions including English were checked September 25. The recording shows a TestFlight-installed version; verify demonstrated features against the public release before using it as store-specific proof. More material is indexed in the [product video library](product-video-library.md).
 - Reader source, screenshots and product contract: [Bunko repository](https://github.com/lachlanchen/Bunko), especially `store/assets/`, `BRIEF.md` and `store/release.yaml`.
 - Book rights audit and publishing workflow: [catalogue](https://github.com/lachlanchen/Bunko/blob/main/docs/catalogue.md) and [library guide](https://github.com/lachlanchen/Bunko/blob/main/docs/library-publishing.md).
 - Current 150-edition index: [bunko-books/reader-index.json](https://github.com/lachlanchen/bunko-books/blob/main/reader-index.json).

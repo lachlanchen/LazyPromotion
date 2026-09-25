@@ -2,12 +2,15 @@
 
 Checked September 25, 2026. Keep each resource attached to its own product.
 
+Video channel: [@lazyingart](https://www.youtube.com/@lazyingart). The [product video library](product-video-library.md) maps app walkthroughs and editing/publishing material to their review status.
+
 ## Bunko: Classics with Ruby
 
 | Destination | Link |
 | --- | --- |
 | US App Store, public version 1.0.0 | [Bunko: Classics with Ruby](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919) |
 | Web reader and live book catalogue | [Bunko](https://lachlan.lazying.art/Bunko/) |
+| Creator walkthrough, with multilingual captions | [Bunko on YouTube](https://www.youtube.com/shorts/pSWnOwzyc-4) |
 | Promotion facts and claim boundaries | [Bunko promotion handoff](bunko-promotion-handoff.md) |
 
 Apple's US listing resolves at USD 0.99. The Google Play production release is
@@ -23,11 +26,12 @@ proof that those features are in the approved iOS 1.0.0 binary.
 | Google Play · 谷歌商店 | [L & N: Speech Practice](https://play.google.com/store/apps/details?id=art.lazying.landn) |
 | Repository and official-link record | [L-and-N](https://github.com/lachlanchen/L-and-N) · [Official links](https://github.com/lachlanchen/L-and-N/blob/main/docs/public-links.md) |
 | English app demo, burned-in subtitles | [Video](https://github.com/user-attachments/assets/036ebbdf-ab34-4761-875e-46470074aff8) |
+| English creator walkthrough on YouTube | [L & N on YouTube](https://www.youtube.com/shorts/Nlsx_5U6g6U) |
 | 中文应用演示，已烧录字幕 | [视频](https://github.com/user-attachments/assets/f13a2ea0-ca16-4d40-8f3b-478e5b5e7792) |
 
 The US App Store page currently shows USD 0.99 and version 1.0.6. Google Play
-shows a public installation route and in-app purchases; its exact production
-version was not exposed by this read. Use the two store links for the current
+shows a public installation route and in-app purchases; the September 25
+anonymous listing metadata reports version 1.0.9. Use the two store links for the current
 app promotion. These are production links, not beta invitations.
 
 The README videos use the finished LazyEdit subtitle-and-logo exports unchanged:

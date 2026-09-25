@@ -37,6 +37,13 @@ private and is not included here.
   signing material, provider permissions and release records project-specific.
 - Represent missing evidence as unknown, not as an invented result.
 
+Musia's own reference note names LazyOracle and AiMemo for native-app patterns;
+Bunko, L & N and EchoMind for store operations; and LazyEdit/LazyEdge for
+deployment. These are its documented sources, not a claim that every associated
+session has been independently reviewed here. For LazyPromotion, reuse the
+client/API separation and release discipline, not Musia's music-specific
+features or another app's signing configuration.
+
 Musia files and its live session were not modified. Its prices, permissions and
 release decisions do not set prices or grant store approval for LazyPromotion.
 
@@ -88,10 +95,23 @@ python app_workspace.py --project l-and-n
 python -m unittest discover -s tests -p 'test_app_workspace.py'
 ```
 
-This is an initial data adapter, **not** a deployed API, native binary, PWA or
-working automatic-promotion service. Its source files are curated public
+`app_api.py` now exposes this exact contract through a loopback-only, read-only
+development HTTP service, with project-scoped reads, generic errors and tests
+against a real local HTTP connection. It serves no filesystem or operator
+endpoints and installs no background service. See the
+[client API contract](promotion-app-api.md) for routes and client behavior.
+
+This is a data adapter and local API, **not** a deployed API, native binary, PWA
+or working automatic-promotion service. Its source files are curated public
 records, not arbitrary untrusted uploads; it is not a general-purpose secret
 redactor. Client implementations and authenticated action APIs remain to build.
+
+Rechecked the requested Musia session and its delivery files on September 26.
+The app implementation remains the `f740ae3` checkpoint; the later `f8605ef`
+commit records Musia-specific store preparation, not a completed public native
+release. No session was resumed, no extra Codex run was started, and no Musia
+files, account settings or runtime were changed. Those store decisions are not
+inherited by LazyPromotion.
 
 ## Delivery gates
 

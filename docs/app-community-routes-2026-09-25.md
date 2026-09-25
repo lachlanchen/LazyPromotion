@@ -122,3 +122,38 @@ about colloquial usage, not a tool to correct the speaker; it was not contacted.
 No new close-fit, unanswered learner request was established by this pass.
 The two existing SideProject introductions were checked directly: their feedback
 was unchanged, so no further acknowledgements or promotional replies were sent.
+
+## September 26: date extraction and additional route screening
+
+Reddit search cards can expose an absolute date in `faceplate-timeago[ts]`
+before their child `time[datetime]` renders. The discovery reader now accepts
+that fallback, scoped to the individual post or comment. It does not borrow a
+parent post's date for a comment, interpret relative labels or invent a date
+when neither absolute field exists. Seven synthetic browser tests cover these
+cases. The existing seven-day ordinary-reply window is unchanged.
+
+A live search for `"n/l" pronunciation`, with the month filter requested,
+returned seven post cards and eight comment cards. All fifteen had readable
+absolute dates; all were older than the reply window. This verifies extraction,
+not fresh demand. No reply was sent. Bunko and its book-data repository also now
+have need-oriented discovery topics (`parallel text reader` and
+`public domain book json`); their brand-only metadata had left them outside the
+automatically generated research routes. These routes do not authorize posting.
+
+Five further community checks did not establish a useful new introduction:
+
+- [r/EnglishPronunciation](https://www.reddit.com/r/EnglishPronunciation/)
+  displays a banned-community notice.
+- [r/Pronunciation](https://www.reddit.com/r/Pronunciation/) displays
+  **Request to Post**, with the most recent visible posts four months old.
+- [r/ChineseLearning](https://www.reddit.com/r/ChineseLearning/) displays
+  **Request to Post**, with the most recent visible discussion three years old.
+- [r/chinesebookclub](https://www.reddit.com/r/chinesebookclub/) has recent
+  book-finding requests, but no inspected request established a match to Bunko's
+  collection or permission for a creator introduction.
+- [r/readchinese](https://www.reddit.com/r/readchinese/) displays no posts yet.
+  It is not an established audience or a cleared creator venue.
+
+No posting requests, moderator messages or introductions were submitted to
+these communities. Preserve the screening evidence so the agent does not
+continually rediscover unsuitable routes.

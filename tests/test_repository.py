@@ -730,6 +730,8 @@ class RepositoryTests(unittest.TestCase):
 
     def test_brand_routes_use_need_oriented_topic_overrides(self):
         expected = {
+            "github-bunko": "parallel text reader",
+            "github-bunko-books": "public domain book json",
             "github-cellist": "python environment import verification",
             "github-glassagent-wearable-releases": "ai glasses setup",
             "l-and-n": "l n pronunciation",

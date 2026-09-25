@@ -343,7 +343,9 @@ def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
           return {
             url: title?.href || n.querySelector('[data-testid="post-title"]')?.href || '',
             author: context.profile?.name || '',
-            published_at: n.querySelector('time[datetime]')?.getAttribute('datetime') || '',
+            // Reddit exposes the absolute timestamp before the <time> child hydrates.
+            published_at: n.querySelector('time[datetime]')?.getAttribute('datetime') ||
+              n.querySelector('faceplate-timeago[ts]')?.getAttribute('ts') || '',
             source_score: counters[0] || '0',
             comment_count: counters[1] || '0',
             body: (title?.innerText || '').trim()
@@ -378,7 +380,8 @@ def extract_reddit_comments(page: Page, limit: int) -> list[dict[str, str]]:
           return {
             url: permalink?.href || '',
             author: (author?.innerText || '').trim(),
-            published_at: time?.getAttribute('datetime') || '',
+            published_at: time?.getAttribute('datetime') ||
+              contentBox?.querySelector('faceplate-timeago[ts]')?.getAttribute('ts') || '',
             comment_count: '0',
             source_score: score?.getAttribute('number') || '0',
             body: (content?.innerText || '').trim(),

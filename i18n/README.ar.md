@@ -35,7 +35,7 @@ LazyPromotion مساعد محلي لاكتشاف الاحتياجات الاجت
 | المسار | الغرض |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | سجل SQLite والمطابقة وصياغة Codex والموافقات |
-| [`app_preview.py`](../app_preview.py) و[`apps/`](../apps/README.md) | معاينة ويب/PWA محلية للقراءة فقط لحملات عامة مختارة، مع حفظ نسخ دون اتصال بطلب صريح؛ شغّل `python3 app_preview.py`. تطبيقات الهاتف الأصلية والنشر التلقائي غير منفّذين في هذه المعاينة. |
+| [`app_preview.py`](../app_preview.py) و[`apps/`](../apps/README.md) | معاينة ويب/PWA محلية للقراءة فقط؛ شغّل `python3 app_preview.py`. تتشارك معاينتا Android الأصلي وSwiftUI نسخة عامة مؤرخة. نجح بناء Android؛ لم يُتحقق من بناء iOS بعد. لا يوجد نشر تلقائي حتى الآن. |
 | [`browser.py`](../browser.py) | الاكتشاف والفحص والتحضير والإرسال المحمي عبر Playwright/CDP |
 | [`worker.py`](../worker.py) | اكتشاف محدود وطابور مراجعة خاص؛ لا يرسل أبدًا |
 | [`catalog.json`](../catalog.json) و[`github-repos.json`](../github-repos.json) | ربط منسق للاحتياجات مع فهرس المستودعات العامة |

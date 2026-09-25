@@ -34,7 +34,7 @@ LazyPromotion は、ローカルで動くレビュー優先のソーシャル需
 | パス | 役割 |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | SQLite 台帳、照合、Codex による判定と下書き、ハッシュに紐づく承認 |
-| [`app_preview.py`](../app_preview.py) と [`apps/`](../apps/README.md) | 選定した公開キャンペーンのローカル読み取り専用 Web/PWA プレビュー。明示的な操作でオフライン用コピーを保存できます。起動は `python3 app_preview.py`。ネイティブクライアントと自動投稿は、このプレビューには未実装です。 |
+| [`app_preview.py`](../app_preview.py) と [`apps/`](../apps/README.md) | ローカルの読み取り専用 Web/PWA プレビュー。起動は `python3 app_preview.py`。Android と SwiftUI のネイティブプレビューは取得日時付きの公開データを共有します。Android はビルド済み、iOS のビルドは未検証です。自動投稿は未実装です。 |
 | [`browser.py`](../browser.py) | Playwright/CDP による発見、確認、入力準備、保護された送信 |
 | [`worker.py`](../worker.py) | 回数制限とクールダウンを備えた発見処理と非公開レビュー待ち行列。送信はしない |
 | [`catalog.json`](../catalog.json) と [`github-repos.json`](../github-repos.json) | ニーズとの精選された対応表と、公開リポジトリの一覧 |

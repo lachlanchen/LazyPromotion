@@ -109,11 +109,44 @@ the service worker caches only the fixed app shell. Desktop/mobile layouts,
 offline reload, deletion and invalid-version recovery were checked through the
 dedicated project browser. Thirty Python tests and six JavaScript checks pass.
 
-This remains a local preview, **not** a deployed API, native binary or working
+This remains a local preview, **not** a deployed API or working
 automatic-promotion service. PWA installation on native devices is unqualified.
 Its source files are curated public
 records, not arbitrary untrusted uploads; it is not a general-purpose secret
-redactor. Native clients and authenticated action APIs remain to build.
+redactor. Authenticated action APIs remain to build.
+
+### Native checkpoint
+
+The requested Musia learning pass now also informs two native previews:
+`apps/android` uses Kotlin/Compose and `apps/ios` uses SwiftUI. They share one
+dated public snapshot of the existing version-one contract. Android compiles to
+a debug APK and passes five contract tests. The SwiftUI sources, checked-in Xcode
+project and XCTest suite are present; iOS compilation and device qualification
+remain unverified. The clients do not copy Musia's music implementation, signing
+configuration or public hostname.
+
+Both show products, exact published text, source links, visibility evidence and
+unconnected outcomes. Native sharing requires a user tap. Neither client has
+provider credentials, a live account connection or a send path. The fixture is
+a clearly labelled historical snapshot, not a dashboard presented as live data.
+The existing PWA continues using its local read-only API and explicit offline
+copies; no public endpoint was added.
+
+The intended customer experience is still **add an app → find a matching need
+→ prepare a useful campaign → review → publish → measure**. The phone is the
+review and control surface; long-running discovery belongs in an authenticated
+backend worker, not a promise that an iOS app runs indefinitely in the background.
+Approved first-party schedules can run automatically under a bounded account,
+channel and budget policy. Replies to strangers need their own contextual
+decision, not an indiscriminate auto-comment switch.
+
+The next implementation should complete product onboarding and one editable
+draft/approval flow before adding more presentation-only screens. L & N and
+Bunko remain the real campaign examples, but activity on their campaigns is not
+evidence of demand for selling this new app.
+
+Native implementation references: [SwiftUI navigation](https://developer.apple.com/documentation/swiftui/navigationstack)
+and [Compose state](https://developer.android.com/develop/ui/compose/state).
 
 Rechecked the requested Musia session and its delivery files on September 26.
 The app implementation remains the `f740ae3` checkpoint; the later `f8605ef`
@@ -124,9 +157,9 @@ inherited by LazyPromotion.
 
 ## Delivery gates
 
-- Render this shared contract in SwiftUI and Compose; the responsive web
-  preview is available. Qualify native-device PWA installation and accessibility,
-  and test loading, empty, error, offline and unverified-result states on each.
+- Compile and qualify the SwiftUI preview, then qualify native-device PWA installation and accessibility;
+  Android and responsive web previews are available. Test
+  loading, empty, error, offline and unverified-result states on each.
 - Complete the workflow with project-scoped drafts and approvals, reusing the
   existing exact-content safeguards. Test cross-account and cross-project denial.
 - Connect one reviewed first-party publishing integration with exact receipts,

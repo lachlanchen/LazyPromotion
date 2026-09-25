@@ -35,7 +35,7 @@ El repositorio también mantiene un inventario público de 109 repositorios fuen
 | Ruta | Función |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | Registro SQLite, emparejamiento, redacción con Codex y aprobaciones |
-| [`app_preview.py`](../app_preview.py) y [`apps/`](../apps/README.md) | Vista previa web/PWA local y de solo lectura de campañas públicas seleccionadas, con copias sin conexión guardadas explícitamente; ejecutar `python3 app_preview.py`. Los clientes nativos y la publicación automática no están implementados en esta vista previa. |
+| [`app_preview.py`](../app_preview.py) y [`apps/`](../apps/README.md) | Vista previa web/PWA local y de solo lectura; ejecutar `python3 app_preview.py`. Las vistas nativas de Android y SwiftUI comparten una copia pública fechada. Android compila; la compilación de iOS no está verificada. Aún no hay publicación automática. |
 | [`browser.py`](../browser.py) | Descubrimiento Playwright/CDP, inspección, preparación y envío protegido |
 | [`worker.py`](../worker.py) | Descubrimiento acotado y cola privada de revisión; nunca envía |
 | [`catalog.json`](../catalog.json) y [`github-repos.json`](../github-repos.json) | Mapa fundamentado de necesidades e inventario público de repositorios |

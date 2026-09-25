@@ -34,7 +34,7 @@ LazyPromotion은 로컬에서 실행되는 검토 우선 소셜 수요 탐색 �
 | 경로 | 목적 |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | SQLite 원장, 매칭, Codex 분류·초안, 해시에 연결된 승인 |
-| [`app_preview.py`](../app_preview.py) 및 [`apps/`](../apps/README.md) | 선택한 공개 캠페인의 로컬 읽기 전용 웹/PWA 미리보기입니다. 명시적으로 오프라인 사본을 저장할 수 있으며 `python3 app_preview.py`로 실행합니다. 네이티브 클라이언트와 자동 게시 기능은 이 미리보기에 구현되지 않았습니다. |
+| [`app_preview.py`](../app_preview.py) 및 [`apps/`](../apps/README.md) | 로컬 읽기 전용 웹/PWA 미리보기입니다. `python3 app_preview.py`로 실행합니다. Android 및 SwiftUI 네이티브 미리보기는 날짜가 표시된 공개 데이터 사본을 공유합니다. Android 빌드는 통과했으며 iOS 빌드는 아직 검증되지 않았습니다. 자동 게시는 아직 구현되지 않았습니다. |
 | [`browser.py`](../browser.py) | Playwright/CDP 탐색, 검사, 작성창 준비, 보호된 전송 |
 | [`worker.py`](../worker.py) | 전송 기능 없이, 유한한 검색과 대기 시간을 적용하는 비공개 검토 대기열 |
 | [`catalog.json`](../catalog.json) 및 [`github-repos.json`](../github-repos.json) | 선별된 필요 매칭과 공개 저장소 109개의 목록 |

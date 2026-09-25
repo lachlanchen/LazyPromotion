@@ -56,7 +56,7 @@ stars, applications, and queued posts never count as revenue.
 | Path | Purpose |
 | --- | --- |
 | [`promotion.py`](promotion.py) | SQLite ledger, matching, Codex triage/drafting, and hash-bound approval |
-| [`app_preview.py`](app_preview.py) and [`apps/`](apps/README.md) | Local read-only web/PWA preview of selected public campaigns, with explicit offline copies; run `python3 app_preview.py`. Native clients and automatic publishing are not implemented in this preview. |
+| [`app_preview.py`](app_preview.py) and [`apps/`](apps/README.md) | Local read-only web/PWA preview; run `python3 app_preview.py`. Native Android and SwiftUI previews share a dated public snapshot. Android compiles; iOS compilation is unverified. No automatic publishing yet. |
 | [`browser.py`](browser.py) | Playwright/CDP discovery, inspection, composer preparation, and guarded send |
 | [`worker.py`](worker.py) | Finite, cooldown-based discovery and private review queue; never sends |
 | [`catalog.json`](catalog.json) and [`github-repos.json`](github-repos.json) | Curated need matching plus the public repository inventory |

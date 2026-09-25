@@ -3,3 +3,11 @@
 handoff/
 __pycache__/
 *.pyc
+apps/android/.gradle/
+apps/android/**/build/
+apps/android/local.properties
+apps/android/.build.lock
+apps/ios/.build/
+apps/ios/build/
+apps/ios/**/xcuserdata/
+*.xcuserstate

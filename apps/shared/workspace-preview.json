@@ -1,0 +1,129 @@
+{
+  "fetchedAt": "2026-09-25T19:37:21Z",
+  "workspace": {
+    "version": 1,
+    "mode": "public_campaign_preview",
+    "capabilities": {
+      "readPublishedCampaigns": true,
+      "discover": false,
+      "draft": false,
+      "approve": false,
+      "publish": false,
+      "paymentAttribution": false
+    },
+    "projects": [
+      {
+        "id": "l-and-n",
+        "name": "L & N: Speech Practice",
+        "links": {
+          "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+          "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+          "video": "https://www.youtube.com/shorts/Nlsx_5U6g6U",
+          "repository": "https://github.com/lachlanchen/L-and-N"
+        },
+        "publications": [
+          {
+            "id": "l-and-n-sideproject-introduction:reddit",
+            "platform": "reddit",
+            "community": "r/SideProject",
+            "title": "L & N - I mix up L and N, so I built a pronunciation practice app",
+            "body": "I mix up L and N myself, so I built a small app to practise the difference. I've been using it, and the listening exercises have been especially useful to me.\n\nYou pick a pair like light/night, hear the examples, record yourself, and see what the speech recognizer heard alongside the score. There's also a listening test: hear a short sequence such as \"light, night, light, light, night\" and tap what you heard, then check each answer.\n\nIt covers English, Mandarin and Cantonese. A 3D mouth view shows the tongue position and airflow for each sound. No account or ads. The score is practice feedback, not a perfect judge of pronunciation.\n\nIt's built with React, TypeScript and Capacitor. The source and notes on how the scoring works are public.\n\nMy English walkthrough: https://www.youtube.com/shorts/Nlsx_5U6g6U\n\niPhone/iPad — US$0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\n\nAndroid — free download, with in-app purchases: https://play.google.com/store/apps/details?id=art.lazying.landn\n\nSource: https://github.com/lachlanchen/L-and-N\n\nIf you mix these sounds up too, is hearing the difference or saying it the harder part for you?",
+            "bodySha256": "e1bc1eda582207e1984602d9d678b220be847eaa85d6e94501d3f6baa1ed66d4",
+            "publishedAt": "2026-09-25T12:58:00Z",
+            "recordCheckedOn": "2026-09-25",
+            "url": "https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/",
+            "visibilityEvidence": "public_verified"
+          },
+          {
+            "id": "l-and-n-cantonese-introduction:reddit",
+            "platform": "reddit",
+            "community": "r/Cantonese",
+            "title": null,
+            "body": "I built L & N because I mix up these sounds myself. If you want to practise keeping n- and l- distinct, the Cantonese section has pairs such as 男 naam4 / 藍 laam4.\n\nYou can listen to each word, record yourself, then replay your take and see what the speech recognizer heard. There's also a listening round: hear a short sequence of the two words and tap which ones you heard. I find that part especially useful for my own practice.\n\nNo account or ads. It also has Mandarin and English exercises.\n\niPhone/iPad — US$0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\n\nAndroid — free download, with in-app purchases: https://play.google.com/store/apps/details?id=art.lazying.landn",
+            "bodySha256": "f301ed42c6fc586bcc7e945280ac5feeff259be8cde0caa03c476da41472bb7a",
+            "publishedAt": "2026-09-25T13:18:53Z",
+            "recordCheckedOn": "2026-09-25",
+            "url": "https://www.reddit.com/r/Cantonese/comments/1wo97ez/comment/pbytqan/",
+            "visibilityEvidence": "public_verified"
+          }
+        ],
+        "outcomes": {
+          "installs": {
+            "state": "not_connected",
+            "value": null
+          },
+          "customers": {
+            "state": "not_connected",
+            "value": null
+          },
+          "receivedGrossUsd": {
+            "state": "not_connected",
+            "value": null
+          }
+        }
+      },
+      {
+        "id": "bunko",
+        "name": "Bunko: Classics with Ruby",
+        "links": {
+          "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+          "reader": "https://lachlan.lazying.art/Bunko/",
+          "video": "https://www.youtube.com/shorts/pSWnOwzyc-4",
+          "repository": "https://github.com/lachlanchen/Bunko"
+        },
+        "publications": [
+          {
+            "id": "bunko-classics-introduction:reddit",
+            "platform": "reddit",
+            "community": "r/SideProject",
+            "title": "Bunko - a reader for Chinese and Japanese classics with pinyin, furigana and parallel text",
+            "body": "I built Bunko to keep the original text, pronunciation and a parallel translation on the same page. It is a reader for Chinese, Japanese and English classics.\n\nFor example, you can open Sanshiro, follow the Japanese with furigana above the characters, and compare an English passage below it. For Chinese texts, there is pinyin. You can change the displayed languages and layout, or go back to the original alone. Downloaded chapters remain readable offline; reading position and preferences stay on the device.\n\nThe implementation is deliberately small: React, native HTML ruby markup, and chapter-sized JSON files cached in IndexedDB. The book files live in a public GitHub repository; there is no reader account to create.\n\nThe study translations are AI-generated and can make mistakes. They are reading aids, not scholarly editions.\n\nFree browser reader: https://lachlan.lazying.art/Bunko/\n\niPhone edition: https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919 ($0.99 in the US, paid once, no subscription).",
+            "bodySha256": "7795846395a2745ec9f45c5dc0a8caf2750add7cacebc39785a2761ee3cf135d",
+            "publishedAt": "2026-09-25T10:00:00Z",
+            "recordCheckedOn": "2026-09-25",
+            "url": "https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/",
+            "visibilityEvidence": "public_verified"
+          },
+          {
+            "id": "bunko-classics-introduction:x",
+            "platform": "x",
+            "community": null,
+            "title": null,
+            "body": "I built Bunko to read classics with the original, pinyin/furigana and parallel text together. Here’s Sanshirō.\n\nSave chapters offline. AI study translations can make mistakes. iPhone $0.99; web free.\nblog.lazying.art/?p=3853",
+            "bodySha256": "14a423f74fb4f6f84bd9db0f75e61834448d756c1d1cd899b0b14b6380fdb9fe",
+            "publishedAt": "2026-09-25T10:04:00Z",
+            "recordCheckedOn": "2026-09-25",
+            "url": "https://x.com/lazyingart/status/2103425611532550326",
+            "visibilityEvidence": "account_verified"
+          },
+          {
+            "id": "bunko-japanese-reader-introduction:reddit",
+            "platform": "reddit",
+            "community": "r/Japaneselanguage",
+            "title": null,
+            "body": "I made Bunko: Classics with Ruby for reading Japanese classics with the original text, furigana and a parallel translation together. For example, Sanshirō can show the Japanese with readings above the kanji and an English passage underneath. You can switch back to Japanese alone and save chapters for offline reading.\n\nOne way to use it is to try a short passage in Japanese, compare the English, then reread the original. These are unadapted classics, not graded beginner stories. The study translations are AI-generated and can make mistakes; they aren't scholarly editions.\n\nSearch “Bunko: Classics with Ruby” on the App Store; the developer is LazyingArt LLC. It's US$0.99 once, with no subscription. There's also a free browser version, with no account needed.\n\nFor people already reading novels: does having furigana always visible help you keep reading, or do you prefer to reveal it only when stuck?",
+            "bodySha256": "279e8670051377b05025c27ed8af402eb30993c629894f493ec1295689a24a3f",
+            "publishedAt": "2026-09-25T16:37:44Z",
+            "recordCheckedOn": "2026-09-25",
+            "url": "https://www.reddit.com/r/Japaneselanguage/comments/1sky7tt/comment/pc03ka1/",
+            "visibilityEvidence": "account_verified"
+          }
+        ],
+        "outcomes": {
+          "installs": {
+            "state": "not_connected",
+            "value": null
+          },
+          "customers": {
+            "state": "not_connected",
+            "value": null
+          },
+          "receivedGrossUsd": {
+            "state": "not_connected",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

@@ -3,7 +3,7 @@
 2026-09-26. Read-only local development service; not deployed or store-ready.
 
 The first shared client contract renders the same reviewed public campaign
-history in the local web preview and future SwiftUI and Compose apps. It does not wrap the private
+history in the local web preview and the bundled-data SwiftUI and Compose previews. It does not wrap the private
 operator database in HTTP or give clients access to the workstation.
 
 ## Run
@@ -110,7 +110,9 @@ and API. This is not an arbitrary filesystem server; the standalone API's routes
 remain unchanged. Read the [client instructions](../apps/README.md) for offline
 behavior and browser checks.
 
-No iOS/Android UI, store listing, customer account, paid plan or automated
-publishing integration is delivered by this checkpoint. The local preview has
+Native UI source now exists for iOS and Android; Android's debug build is verified,
+while the iOS build remains unverified. Those previews decode a dated bundled
+snapshot of this contract, not a live network connection. No store listing,
+customer account, paid plan or automated publishing integration is delivered. The local web preview has
 PWA shell/offline support, not native-device installation qualification. The platform plan and
 verified Musia lessons are in [promotion-app-plan.md](promotion-app-plan.md).

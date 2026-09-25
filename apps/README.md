@@ -1,7 +1,20 @@
 # LazyPromotion clients
 
-The first client is a local, read-only web preview of selected public campaign
-records. It is not yet the automatic-promotion product or a public service.
+Local, read-only campaign previews for web/PWA, native Android and native iOS.
+They are not yet the automatic-promotion product or a public service.
+
+| Client | Current checkpoint |
+| --- | --- |
+| Web/PWA | Local API, responsive interface and explicit offline snapshots |
+| [Android](android/README.md) | Kotlin/Compose; debug build and five contract tests pass |
+| [iOS](ios/README.md) | SwiftUI source, Xcode project and tests; Xcode compilation not yet verified |
+
+The native clients use one [bundled public snapshot](shared/workspace-preview.json),
+labelled with its capture time. They do not connect to the operator's accounts or
+pretend their copy is live. Both provide product navigation, expandable published
+copy, separate visibility labels, unknown outcome states and a native share sheet
+for a user-selected public link. Android requests no network permission; iOS has
+no networking implementation. Sharing opens a system chooser, not an automatic send.
 
 ```bash
 python3 app_preview.py
@@ -49,8 +62,8 @@ HTTP listener. Its caller owns the desktop lifecycle. No public post is sent.
 
 ## Next
 
-Native SwiftUI and Kotlin/Compose clients should consume the same versioned
-contract. Neither native client is implemented here yet. Before customer-facing
+Native SwiftUI and Kotlin/Compose previews now consume the same versioned
+contract from the bundled snapshot. Before live customer-facing
 actions, complete authentication, project isolation, opportunity review, editable
 drafts, exact-revision approvals, a supported publisher and durable receipts.
 See [the app plan](../docs/promotion-app-plan.md) and

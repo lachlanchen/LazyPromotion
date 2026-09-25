@@ -2,6 +2,9 @@
 
 Checked September 25, 2026. A suitable audience, a permitted introduction and a verified user are different things. No installs, purchases or revenue are inferred below.
 
+For longer-lived app discovery outside Reddit, see the separately checked
+[directory route](app-directory-routes-2026-09-26.md). It is prepared, not submitted.
+
 ## September 26: a current reading request, with a limited product fit
 
 A September 24 [self-study resource request](https://www.reddit.com/r/LearningLanguages/comments/1wpdnf9/books_and_resources_from_selflearning/)

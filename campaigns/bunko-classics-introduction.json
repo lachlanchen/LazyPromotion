@@ -1,0 +1,89 @@
+{
+  "id": "bunko-classics-introduction",
+  "version": 1,
+  "checked_on": "2026-09-25",
+  "objective": "Introduce the shipping Bunko reader through a concrete Sanshirō reading example and a transparent creator post, with a clear route to the paid iPhone edition.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/Bunko",
+    "source_commit": "efc9077edb83be0fecfc42c2562e45972dfc1ccb",
+    "reader": "https://lachlan.lazying.art/Bunko/",
+    "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+    "apple_lookup": "https://itunes.apple.com/lookup?id=6815137919&country=us",
+    "apple_version_verified": "1.0.0",
+    "apple_price_usd_verified": 0.99,
+    "blog": "https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html",
+    "medium": "https://lazyingart.medium.com/reading-chinese-and-japanese-classics-without-constantly-switching-tabs-b21c8b1ed6d2",
+    "image": "https://github.com/lachlanchen/Bunko/blob/efc9077edb83be0fecfc42c2562e45972dfc1ccb/store/assets/ios-65-02.png",
+    "image_sha256": "599d99f7f0037e7d741b5c64e5fa13c3c3bff9e985cd54bfb16a3fbf3bd5ac9c",
+    "image_kind": "Project-owned Sanshirō reader screenshot, not a customer result or concept rendering.",
+    "implementation_checked": [
+      "Native HTML ruby markup in src/components/Line.tsx",
+      "Chapter caching in IndexedDB in src/lib/library.ts"
+    ]
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "community": "r/SideProject",
+      "rules_url": "https://www.reddit.com/r/SideProject/about/rules/",
+      "fit": "The community welcomes project introductions. This is a creator submission, not an unsolicited reply to a learner.",
+      "title": "Bunko - a reader for Chinese and Japanese classics with pinyin, furigana and parallel text",
+      "content": "I built Bunko to keep the original text, pronunciation and a parallel translation on the same page. It is a reader for Chinese, Japanese and English classics.\n\nFor example, you can open Sanshiro, follow the Japanese with furigana above the characters, and compare an English passage below it. For Chinese texts, there is pinyin. You can change the displayed languages and layout, or go back to the original alone. Downloaded chapters remain readable offline; reading position and preferences stay on the device.\n\nThe implementation is deliberately small: React, native HTML ruby markup, and chapter-sized JSON files cached in IndexedDB. The book files live in a public GitHub repository; there is no reader account to create.\n\nThe study translations are AI-generated and can make mistakes. They are reading aids, not scholarly editions.\n\nFree browser reader: https://lachlan.lazying.art/Bunko/\n\niPhone edition: https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919 ($0.99 in the US, paid once, no subscription).",
+      "content_sha256": "7795846395a2745ec9f45c5dc0a8caf2750add7cacebc39785a2761ee3cf135d",
+      "publish_at": "2026-09-25T10:00:00Z",
+      "release_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/",
+      "publication_verification": {
+        "verified_state": "PUBLISHED",
+        "saved_preview_reviewed": true,
+        "stored_copy_matches_reviewed_text": true,
+        "original_destination_links_preserved": true,
+        "live_page_reviewed": true,
+        "logged_out_visibility_verified": true
+      }
+    },
+    "x": {
+      "state": "published",
+      "content": "I built Bunko to read classics with the original, pinyin/furigana and parallel text together. Here’s Sanshirō.\n\nSave chapters offline. AI study translations can make mistakes. iPhone $0.99; web free.\nblog.lazying.art/?p=3853",
+      "content_sha256": "14a423f74fb4f6f84bd9db0f75e61834448d756c1d1cd899b0b14b6380fdb9fe",
+      "destination": "https://blog.lazying.art/?p=3853",
+      "publish_at": "2026-09-25T10:04:00Z",
+      "release_url": "https://x.com/lazyingart/status/2103425611532550326",
+      "settings": {
+        "post_type": "post",
+        "who_can_reply_post": "everyone",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "publication_verification": {
+        "verified_state": "PUBLISHED",
+        "saved_preview_reviewed": true,
+        "stored_copy_matches_reviewed_text": true,
+        "original_destination_link_preserved": true,
+        "uploaded_image_and_preview_reviewed": true,
+        "live_page_reviewed": true,
+        "live_image_loaded": true,
+        "logged_out_visibility_verified": false
+      }
+    }
+  },
+  "claim_boundaries": [
+    "The iPhone edition was USD 0.99 in the US when checked; the web reader is free.",
+    "AI-generated study translations can make mistakes and are not scholarly editions.",
+    "No Google Play launch or pending iOS 1.0.1 feature is advertised.",
+    "No distinct-book count, learning outcome, testimonial, install count or sale is inferred."
+  ],
+  "follow_up": {
+    "mode": "read_only_monitor_then_review",
+    "next_action": "Review a genuine question or reported problem if one arrives; answer only the specific point supported by the reader and source.",
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false
+  },
+  "funnel": {
+    "state": "owned_introductions_published",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "Publication is distribution evidence only. Record a sale only with separate payment evidence."
+  }
+}

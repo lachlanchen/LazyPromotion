@@ -44,3 +44,12 @@ Before an Apple post, reopen the public listing to confirm price, version, artwo
 The source is `articles/bunko-reading-classics/post.md`; the LazyBlog archive is `content/lazypub/20260925-bunko-reading-classics/`. The live source content, image, canonical and store link were checked on desktop and mobile. This is a source-only English article, separate from the multilingual editorial completion count.
 
 The [free Medium edition](https://lazyingart.medium.com/reading-chinese-and-japanese-classics-without-constantly-switching-tabs-b21c8b1ed6d2) is also published, under Language Learning and Books. Its original-source canonical points to the blog. All 15 expected text blocks, the screenshot and both destination links were verified in the published author view; the paywall was disabled before the one publication action. Medium blocked the separate unauthenticated HTTP check, so that check does not establish anonymous visibility. No duplicate import, additional social post or community reply was sent.
+
+## Creator introductions — September 25
+
+Two separate introductions were subsequently published through Postiz after reviewing the saved copy, links and previews:
+
+- [Reddit: Bunko on r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/). The community welcomes project introductions. The post explains the reading problem, shows how Sanshirō fits, describes the small React/ruby/IndexedDB implementation, and includes both the free reader and USD 0.99 US App Store route. The public post and original links were verified both signed in and logged out.
+- [X: the Sanshirō reading layout](https://x.com/lazyingart/status/2103425611532550326). A short introduction uses the real reader screenshot and links to the illustrated blog guide, which continues to the App Store. The published text, link and loaded image were verified in the signed-in view.
+
+Exact published copy and public evidence are in [`campaigns/bunko-classics-introduction.json`](../campaigns/bunko-classics-introduction.json). These records let the existing read-only owned-post monitor recognize the campaign. No community replies, private messages, votes or paid promotion were sent. A relevant incoming question can be reviewed on its own merits; neither post calls for an automatic second pitch. Publication is not a lead or sale.

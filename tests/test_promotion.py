@@ -100,7 +100,7 @@ class PromotionTests(unittest.TestCase):
             ranked[0]["project"]["homepage"],
             "https://l-and-n.lazying.art/",
         )
-        self.assertIn("free no-signup PWA", ranked[0]["project"]["reply_context"])
+        self.assertIn("Current promotion is store-first", ranked[0]["project"]["reply_context"])
 
     def test_pronunciation_context_distinguishes_paid_store_free_web_and_tutor_service(self):
         ranked = promotion.rank_projects(
@@ -113,8 +113,10 @@ class PromotionTests(unittest.TestCase):
         self.assertIn("USD 0.99", context)
         self.assertIn("do not call the iPhone app free", context)
         self.assertIn("free-to-download Google Play production listing", context)
-        self.assertIn("internal build 10", context)
-        self.assertIn("not verified in public production", context)
+        self.assertIn("version 1.0.6", context)
+        self.assertIn("version 1.0.9", context)
+        self.assertIn("shows in-app purchases", context)
+        self.assertIn("not a PWA or beta call to action", context)
         self.assertIn("only for explicit testing invitations", context)
         self.assertIn("Do not insert the tutor service into a learner's free-practice request", context)
         self.assertNotIn("TestFlight build 2", context)

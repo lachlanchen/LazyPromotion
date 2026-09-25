@@ -1,0 +1,56 @@
+{
+  "id": "l-and-n-cantonese-introduction",
+  "version": 1,
+  "checked_on": "2026-09-25",
+  "objective": "Introduce optional Cantonese n/l contrast practice in the community's designated creator ads thread.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "source_commit": "9a5b8a3aced7b7a69752d922cef0e5883116499e",
+    "curriculum_pair": "男 naam4 / 藍 laam4",
+    "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+    "apple_public_version": "1.0.6",
+    "apple_us_price": 0.99,
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_pricing": "Free download with in-app purchases; exact purchase price is not advertised."
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "format": "top_level_comment_in_creator_ads_thread",
+      "publication_method": "reviewed_native_browser_submit",
+      "community": "r/Cantonese",
+      "source_url": "https://www.reddit.com/r/Cantonese/comments/1wo97ez/stickied_post_for_ads_looking_for_a_speaking/",
+      "rules_url": "https://www.reddit.com/r/Cantonese/about/rules/",
+      "community_fit": "The moderator-created thread explicitly invites creators to introduce their own Cantonese teaching resources. Ordinary threads prohibit solicitation. The copy describes voluntary contrast practice without disparaging colloquial n/l merging.",
+      "content": "I built L & N because I mix up these sounds myself. If you want to practise keeping n- and l- distinct, the Cantonese section has pairs such as 男 naam4 / 藍 laam4.\n\nYou can listen to each word, record yourself, then replay your take and see what the speech recognizer heard. There's also a listening round: hear a short sequence of the two words and tap which ones you heard. I find that part especially useful for my own practice.\n\nNo account or ads. It also has Mandarin and English exercises.\n\niPhone/iPad — US$0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\n\nAndroid — free download, with in-app purchases: https://play.google.com/store/apps/details?id=art.lazying.landn",
+      "content_sha256": "f301ed42c6fc586bcc7e945280ac5feeff259be8cde0caa03c476da41472bb7a",
+      "publish_at": "2026-09-25T13:18:53Z",
+      "release_url": "https://www.reddit.com/r/Cantonese/comments/1wo97ez/comment/pbytqan/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "visible_copy_and_destination_reviewed": true,
+        "single_submit_click": true,
+        "exact_text_verified_after_reload": true,
+        "logged_out_visibility_verified": true,
+        "original_links_preserved": true,
+        "expected_links_verified": 2
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review",
+    "postiz_managed": false,
+    "direct_comment_monitor_configured": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_action": "Inspect a genuine response when notified. Do not repeat the introduction in other ads threads or insert a pitch into ordinary Cantonese questions."
+  },
+  "funnel": {
+    "state": "invited_resource_introduction_published",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "Public visibility is distribution evidence, not an installation, learning outcome or purchase."
+  }
+}

@@ -34,6 +34,10 @@ shows a public installation route and in-app purchases; the September 25
 anonymous listing metadata reports version 1.0.9. Use the two store links for the current
 app promotion. These are production links, not beta invitations.
 
+Live community introductions: [r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/)
+and the [r/Cantonese creator ads thread](https://www.reddit.com/r/Cantonese/comments/1wo97ez/comment/pbytqan/).
+See the [checked community routes](app-community-routes-2026-09-25.md) before considering another placement.
+
 The README videos use the finished LazyEdit subtitle-and-logo exports unchanged:
 English `2026-09-24_08-12-54_subtitles_logo.mp4` and Chinese
 `2026-09-24_08-03-39_subtitles_logo.mp4`. They are uploaded as GitHub video

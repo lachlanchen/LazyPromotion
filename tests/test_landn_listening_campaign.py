@@ -100,14 +100,15 @@ class LandnListeningCampaignTests(unittest.TestCase):
             self.assertNotIn('merchant', json.dumps(item))
             self.assertNotIn('paymentsProfile', json.dumps(item))
 
-    def test_catalog_preserves_pending_android_purchase_boundary(self):
+    def test_catalog_uses_current_store_evidence_without_inventing_purchase_terms(self):
         catalog = json.loads((ROOT / 'catalog.json').read_text())
         context = next(p['reply_context'] for p in catalog['projects'] if p['id'] == 'l-and-n')
-        self.assertIn('submitted for production review', context)
-        self.assertIn('replacing queued build 8', context)
-        self.assertIn('public listing returned 404', context)
+        self.assertIn('shows in-app purchases', context)
+        self.assertIn('anonymous public metadata reported version 1.0.9', context)
+        self.assertIn('infer the current in-app price from an old submission record', context)
         self.assertIn('Do not promote Pro', context)
-        self.assertIn('free no-signup PWA', context)
+        self.assertIn('Current promotion is store-first', context)
+        self.assertNotIn('mention the free no-signup PWA', context)
         self.assertNotIn('details?id=art.lazying.landn.pro', context)
 
 

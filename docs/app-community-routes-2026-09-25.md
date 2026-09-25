@@ -268,3 +268,36 @@ fallbacks. Twelve synthetic DOM checks pass, and twenty live feed records
 matched their native discussion permalinks. This is source-identity validation,
 not twenty prospective users. No new posts, installs or sales resulted from
 this pass.
+
+## September 26: a teacher-facing resource, spaced after the launch
+
+[r/ESL_Teachers](https://www.reddit.com/r/ESL_Teachers/) explicitly permits
+self-made teaching resources once a week. Its English-environment/remote-teaching
+scope fits an English L/N listening warm-up; it does not justify a foreign-country
+job post or teacher/student recruitment. The native account-restricted search
+returned no previous entry. One existing draft was reviewed and scheduled for
+**September 27 at 12:00 UTC**, not submitted immediately. The
+[campaign](../campaigns/l-and-n-esl-teacher-exercise.json) keeps the exact exercise,
+direct store links and single-action queue receipt. The exercise works on its
+own without installing the app. Provider queue state does not establish Reddit
+visibility or moderator approval.
+
+The neighbouring teacher routes are not interchangeable. r/TEFL explicitly
+prohibits AI-generated content and self-promotion; no reply was prepared there.
+r/OnlineESLTeaching's job-heavy feed did not establish a close L/N request or
+creator permission, and r/TeachingEnglish was restricted with old visible posts.
+Another developer's advertisement is not evidence of permission or learner demand.
+
+Fresh week-filtered native searches again surfaced our own posts, unrelated
+keyword matches and already-reviewed reading questions. L & N's SideProject
+search counter reached five, but the loaded thread still exposed the same two
+reader suggestions and one owned acknowledgement. No new body or question was
+verified, and no extra reply was sent. Search counters are not distinct readers,
+new users or a reason to repeatedly reopen a conversation.
+
+The current [N4 reader's Dazai question](https://www.reddit.com/r/LearnJapaneseNovice/comments/1wngk4c/do_easy_versions_of_famous_japanese_novels_like/)
+asks for simplified adaptations, preferably with furigana. Bunko's original
+classics with reading aids are not simplified N4 adaptations, so no introduction
+or private message was sent. The community targets N4 and below and has a
+"No AI Slop" rule; another developer's launch there does not establish permission
+for this campaign. The need is real, but the present offer does not meet it.

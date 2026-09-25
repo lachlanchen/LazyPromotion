@@ -185,3 +185,22 @@ Use only LazyPromotion's dedicated noVNC Chrome profile. The L & N store-console
 - `store/artifacts/native-release-1.0.2.json`: build hashes, delivery IDs, TestFlight and review states for 1.0.2.
 - `docs/research/listening-exam.md`: how the exam and the audio verification work, including the two excluded words.
 - `docs/roadmap.md`: what the maintainer wants next (on-device Whisper, sibling apps for R/L and H/F).
+
+## September 26: teacher-resource introduction queued
+
+One English L/N warm-up is scheduled through Postiz for **September 27, 12:00
+UTC / 20:00 Hong Kong**, in r/ESL_Teachers. It gives teachers a listening-and-
+speaking exercise before introducing the app and its original Apple/Google
+links. The community explicitly allows self-made resources once a week; the
+author-restricted search showed no previous entry there.
+
+The saved copy, account, title, destination and time were visibly reviewed.
+Current provider settings and the optional Helpful Materials flair were checked;
+the web editor did not populate its flair choices, so no web-editor save was
+made. One status action and a fresh provider read confirmed a single `QUEUE`
+item with unchanged copy, store URLs and settings. No Reddit release exists yet.
+See [campaign record](../campaigns/l-and-n-esl-teacher-exercise.json).
+
+The live US Apple lookup still reports 1.0.6 at USD 0.99. No learner assessment,
+new feature, installation or revenue claim was added. The read-only monitor can
+recognize the exact copy; no automatic follow-up or weekly repost is authorized.

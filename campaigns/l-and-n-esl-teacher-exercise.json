@@ -1,0 +1,77 @@
+{
+  "id": "l-and-n-esl-teacher-exercise",
+  "version": 1,
+  "checked_on": "2026-09-26",
+  "objective": "Offer English teachers a usable L/N listening warm-up and introduce the maintainer's optional practice app.",
+  "source_evidence": {
+    "community": "https://www.reddit.com/r/ESL_Teachers/",
+    "community_rules": "https://www.reddit.com/r/ESL_Teachers/about/rules/",
+    "rules_checked_on": "2026-09-26",
+    "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+    "apple_lookup": "https://itunes.apple.com/lookup?id=6808872450&country=us",
+    "apple_checked_on": "2026-09-26",
+    "apple_version_verified": "1.0.6",
+    "apple_price_usd_verified": 0.99,
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_public_state": "Free download with in-app purchases; listening feature verified in the current public-store handoff."
+  },
+  "channels": {
+    "reddit": {
+      "state": "queued_verified",
+      "format": "english_teacher_resource",
+      "community": "r/ESL_Teachers",
+      "account": "https://www.reddit.com/user/Ok-Perception1122/",
+      "title": "A light/night listening warm-up, plus the L/N practice app I built",
+      "content": "One small exercise for adult learners who mix up L and N: write \"light\" and \"night\" where both are visible, say a short random sequence, and have the learner point to each word they hear before trying to say it.\n\nThen swap roles: the learner says one of the words and you point to the one you heard. That gives you listening and speaking to work on separately.\n\nI built L & N: Speech Practice because I mix these sounds up myself. It has short listening rounds and single-word recording practice, with feedback showing what the recognizer heard. No account needed. The score is practice feedback, not something I'd use to grade a student.\n\niPhone/iPad — US$0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\n\nAndroid — free download, with in-app purchases: https://play.google.com/store/apps/details?id=art.lazying.landn",
+      "content_sha256": "fd8e23d840d750222979ac8d413c35cd7f260d556f294cd45bb6dbbe151f1549",
+      "publish_at": "2026-09-27T12:00:00Z",
+      "known_owned_replies": 0,
+      "settings": {
+        "subreddit": "/r/ESL_Teachers",
+        "type": "self",
+        "flair": "Helpful Materials",
+        "flair_required": false
+      },
+      "community_fit": "Rules allow self-made resources once a week. This is an English classroom exercise, not recruitment or a post about teaching in a non-English-speaking country.",
+      "duplicate_check": "Native author-and-community search returned explicit no results. Provider reads found exactly one matching draft, then one matching queued item.",
+      "publication_verification": {
+        "verified_state": "QUEUE",
+        "saved_preview_reviewed": true,
+        "stored_copy_matches_reviewed_text": true,
+        "account_title_destination_time_reviewed": true,
+        "original_store_links_preserved": true,
+        "provider_settings_checked": true,
+        "optional_flair_verified_against_live_provider": true,
+        "flair_dropdown_populated_in_web_editor": false,
+        "flair_note": "The web editor did not populate options. The optional saved flair was verified against current provider restrictions and remained unchanged after scheduling; no web-editor save was made.",
+        "single_matching_item": true,
+        "schedule_actions": 1,
+        "release_present": false,
+        "calendar_reloaded_after_scheduling": true
+      }
+    }
+  },
+  "claim_boundaries": [
+    "The exercise works without buying or installing the app.",
+    "The score is practice feedback, not a student assessment or clinical accuracy claim.",
+    "No PWA, beta, APK or unrelated product call to action.",
+    "Scheduling is not publication, moderator approval, an install or a purchase."
+  ],
+  "follow_up": {
+    "mode": "read_only_monitor_then_review",
+    "postiz_managed": true,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-09-28",
+    "earlier_review_trigger": "Provider failure, moderation notice, or a real question after publication.",
+    "repeat_not_before": "2026-10-04",
+    "next_action": "Verify the actual Reddit release and visibility when the provider reports publication. The weekly interval is a lower bound, not permission to repost."
+  },
+  "funnel": {
+    "state": "community_post_queued",
+    "verified_new_users": null,
+    "verified_received_gross_usd": null,
+    "measurement_state": "not_connected"
+  }
+}

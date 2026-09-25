@@ -36,3 +36,11 @@ Use one clear destination per post. Disclose that the maintainer built the app. 
 - Apple 1.0.1 review record: [curated submission artifact](https://github.com/lachlanchen/Bunko/blob/main/store/artifacts/apple-submission-1.0.1.json).
 
 Before an Apple post, reopen the public listing to confirm price, version, artwork and regional availability. Before any Google Play post, require a live public listing and a published production release. Store submission, tester access, public listing visibility, installs and sales are separate states; none implies revenue.
+
+## Owned reading guide — September 25
+
+[Reading Chinese and Japanese Classics Without Constantly Switching Tabs](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html) is published on the blog. It uses the shipping reader's *Sanshirō* screenshot, explains a short original/parallel-text reading routine, and links to the US App Store at the verified USD 0.99 price. It identifies the AI-generated study renderings without presenting them as scholarly translations. No Google release, pending 1.0.1 feature, distinct-book count, learning result or revenue is claimed.
+
+The source is `articles/bunko-reading-classics/post.md`; the LazyBlog archive is `content/lazypub/20260925-bunko-reading-classics/`. The live source content, image, canonical and store link were checked on desktop and mobile. This is a source-only English article, separate from the multilingual editorial completion count.
+
+The [free Medium edition](https://lazyingart.medium.com/reading-chinese-and-japanese-classics-without-constantly-switching-tabs-b21c8b1ed6d2) is also published, under Language Learning and Books. Its original-source canonical points to the blog. All 15 expected text blocks, the screenshot and both destination links were verified in the published author view; the paywall was disabled before the one publication action. Medium blocked the separate unauthenticated HTTP check, so that check does not establish anonymous visibility. No duplicate import, additional social post or community reply was sent.

@@ -20,6 +20,14 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 25 addition — Bunko reading guide
+
+New English source-only post `3853`, [Reading Chinese and Japanese Classics Without Constantly Switching Tabs](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html), shows Bunko's shipping *Sanshirō* reading view and suggests a small original/parallel-text reading routine. The article links to the verified USD 0.99 US Apple listing, not Google's pending release, and does not advertise pending 1.0.1 features. The AI study-rendering limitation sits beside the relevant claims.
+
+Source: `articles/bunko-reading-classics/post.md`. LazyPub archive: `content/lazypub/20260925-bunko-reading-classics/` in BLOG. Doctor, dry runs, exact stored-content comparison, original image hash, public canonical, loaded image, destination links and desktop/mobile checks passed. This source-only addition does not change the trilingual completion count and is publication evidence, not a sale.
+
+The [Medium edition](https://lazyingart.medium.com/reading-chinese-and-japanese-classics-without-constantly-switching-tabs-b21c8b1ed6d2) is published with its paywall disabled, a brief AI-writing label in the second paragraph, Language Learning and Books topics, and the original-blog canonical. The published author view retained all 15 expected text blocks, the image and both links. An unauthenticated HTTP check returned 403; independent anonymous visibility is not claimed from that check.
+
 ### September 20 addition — L & N developer story
 
 New English source-only post `3849`, [I Mix Up L and N, So I Built a Practice App](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html), explains recognizer/onset feedback, short listening rounds, same-voice clips and repeated-word playback. The real Listen setup screenshot retains its verified SHA-256 after WordPress media migration. One free-web practice link is the call to action; no tutor, donation or affiliate pitch was added.

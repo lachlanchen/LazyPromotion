@@ -1,6 +1,19 @@
 # Public links for promotion
 
-Checked September 24, 2026. Keep each resource attached to its own product.
+Checked September 25, 2026. Keep each resource attached to its own product.
+
+## Bunko: Classics with Ruby
+
+| Destination | Link |
+| --- | --- |
+| US App Store, public version 1.0.0 | [Bunko: Classics with Ruby](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919) |
+| Web reader and live book catalogue | [Bunko](https://lachlan.lazying.art/Bunko/) |
+| Promotion facts and claim boundaries | [Bunko promotion handoff](bunko-promotion-handoff.md) |
+
+Apple's US listing resolves at USD 0.99. The Google Play production release is
+still in review and its public listing returned 404; do not use it as a public
+destination. Apple 1.0.1 and Play internal 1.0.1 are update/test states, not
+proof that those features are in the approved iOS 1.0.0 binary.
 
 ## L & N: Speech Practice
 

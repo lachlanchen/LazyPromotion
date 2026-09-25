@@ -1,0 +1,65 @@
+{
+  "id": "l-and-n-apphunt-introduction",
+  "version": 1,
+  "checked_on": "2026-09-26",
+  "objective": "Introduce L & N to Android app discoverers in an explicitly app-sharing community.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_checked_at": "2026-09-25T18:50:02Z",
+    "google_public_state": "Install action visible; free download with in-app purchases; updated September 24, 2026",
+    "community": "https://www.reddit.com/r/AppHunt/",
+    "community_rules": "https://www.reddit.com/r/AppHunt/about/rules/"
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "format": "android_app_link_introduction",
+      "publication_method": "reviewed_native_browser_submit",
+      "community": "r/AppHunt",
+      "community_fit": "The community exists to discover and recommend apps. The native composer additionally says Android links only. A direct Google Play route meets that constraint; no Apple or Bunko cross-promotion is included.",
+      "duplicate_check": "A native community-restricted search for the package ID, L & N, Speech Practice and Lazying returned an explicit no-results notice. No matching app was visible in the recent feed.",
+      "duplicate_rule": "No repost of the same app within 30 days.",
+      "title": "[Android] L & N: practise hearing and saying L/N pairs in English, Mandarin and Cantonese",
+      "content": "I mix up L and N myself, so I made this for practising individual sound pairs rather than general conversation.\n\nChoose a pair like light/night, hear the examples, record one word, and see what the recognizer heard alongside the score. The listening drill plays a short sequence and asks which words you heard. English, Mandarin and Cantonese have separate practice sets, with a 3D tongue-and-airflow view.\n\nAndroid is free to download, with in-app purchases. No account is needed.",
+      "content_sha256": "f0d084545fbc5d6320382e2231a47232c30c35611956c09f345716cdbc29b9ef",
+      "title_sha256": "ada103e225c54ade47d19deec8830b0e451e3ec83b37aeac2d12e64135653777",
+      "link_url": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+      "flair": "Android APP",
+      "brand_affiliate_tag": true,
+      "publish_at": "2026-09-25T18:57:53Z",
+      "release_url": "https://www.reddit.com/r/AppHunt/comments/1wq4pd5/android_l_n_practise_hearing_and_saying_ln_pairs/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "visible_copy_and_destination_reviewed": true,
+        "single_submit_click": true,
+        "exact_text_verified_after_reload": true,
+        "exact_title_verified_after_reload": true,
+        "author_verified": true,
+        "original_links_preserved": true,
+        "flair_and_brand_tag_verified": true,
+        "signed_in_community_feed_visible": true,
+        "verified_at": "2026-09-25T19:00:31Z",
+        "logged_out_visibility_verified": false,
+        "logged_out_check_state": "unresolved; no further anonymous browser attempt after Reddit presented a humanity challenge during the Bunko visibility check"
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review",
+    "postiz_managed": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-09-27",
+    "repost_not_before": "2026-10-26",
+    "next_action": "Review actual questions if notified; no automatic follow-up, cross-post or repost. A date passing does not authorize another launch."
+  },
+  "funnel": {
+    "state": "creator_introduction_verified_signed_in",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "Publication is distribution evidence, not an installation or a purchase."
+  }
+}

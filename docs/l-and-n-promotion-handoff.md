@@ -4,6 +4,18 @@ Updated: 2026-09-20 (supersedes the 2026-09-19 note; earlier verified facts are 
 
 Shared release and promotion reference for [L & N](https://github.com/lachlanchen/L-and-N). This note contains no credentials, tester identities, private email addresses, signing material, or browser cookies. Shipping-reported states are distinguished from independent public checks below; repository paths are relative to L & N unless noted otherwise.
 
+## September 26 Android introduction
+
+One [L & N post on r/AppHunt](https://www.reddit.com/r/AppHunt/comments/1wq4pd5/android_l_n_practise_hearing_and_saying_ln_pairs/)
+is recorded in [the campaign receipt](../campaigns/l-and-n-apphunt-introduction.json).
+The community's native composer specifies Android links only and no same-app
+repost within 30 days. The introduction uses Google Play, clear free-download
+with in-app-purchases wording, Android APP flair and the Brand Affiliate tag.
+Its exact text, title, author and original link were verified after signed-in
+reload. Anonymous visibility is unresolved after Reddit's humanity challenge;
+no workaround, second submission or suggested cross-post was attempted. No new
+install or purchase is inferred. Review actual feedback, not a repeat launch.
+
 ## Promotion verification — September 20, 08:05 UTC
 
 **September 25 follow-up:** A [creator introduction on r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/) is published and verified both signed in and logged out. It includes the maintainer's [English walkthrough](https://www.youtube.com/shorts/Nlsx_5U6g6U), the original Apple and Google production links, and GitHub source. The US Apple listing now shows **1.0.6 at USD 0.99**; the anonymous Google listing reports **1.0.9**, free download with in-app purchases. These public checks supersede older review-state notes for this new introduction; historical campaign copy is unchanged. Exact published copy is in [`campaigns/l-and-n-sideproject-introduction.json`](../campaigns/l-and-n-sideproject-introduction.json). See the [product video library](product-video-library.md) for reusable recordings. No beta or PWA call to action, new accuracy claim, app-sale claim or automatic follow-up was added.

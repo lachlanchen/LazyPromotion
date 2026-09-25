@@ -33,6 +33,11 @@
         "exact_text_verified_after_reload": true,
         "author_verified": true,
         "logged_out_visibility_verified": false,
+        "later_anonymous_check": {
+          "checked_on": "2026-09-26",
+          "state": "humanity_challenge_not_bypassed",
+          "next_action": "Keep visibility unresolved; no repeated anonymous attempts or resubmission."
+        },
         "logged_out_check_state": "unresolved_fetch_and_anonymous_browser_failure",
         "links_in_comment": 0
       }

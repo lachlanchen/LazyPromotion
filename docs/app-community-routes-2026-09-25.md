@@ -185,3 +185,47 @@ example](../campaigns/bunko-instagram-reading-demo.json), scheduled for Septembe
 names the paid Apple app. No additional Reddit launch was duplicated. The
 LinkedIn account-review hold remains unchanged. Queueing does not establish
 publication, new users or revenue.
+
+## September 26: Android discovery route
+
+[r/AppHunt](https://www.reddit.com/r/AppHunt/) explicitly exists to discover and
+recommend apps. Its native posting screen additionally specifies **Android
+links only**, even though some iOS posts appear in its feed. The rules require a
+download link, exclude apps with five million or more downloads, and prohibit a
+repeat of the same app within 30 days. A community-restricted search for L & N's
+name, package ID, Speech Practice and Lazying showed an explicit no-results
+notice; no matching entry appeared in the recent feed. Google's live page showed
+the install action and in-app purchases, with a download band below that cutoff.
+That band is eligibility evidence, not a measured promotion outcome.
+
+One [L & N Android introduction](https://www.reddit.com/r/AppHunt/comments/1wq4pd5/android_l_n_practise_hearing_and_saying_ln_pairs/)
+was submitted at 18:57:53 UTC September 25. It explains the listening/speaking
+loop, discloses authorship and free-download-with-purchases pricing, and uses a
+direct Google Play link, Android APP flair and the Brand Affiliate tag. Title,
+copy, link, author and tags were checked in the account view after reload. Reddit
+offered a cross-post suggestion afterward; it was not used. No repeat is queued;
+October 26 is only the earliest reconsideration date, not an instruction to post.
+The [campaign record](../campaigns/l-and-n-apphunt-introduction.json) preserves
+the exact copy and limits of the receipt.
+
+Two other routes were closed:
+
+- [r/IPhoneApps](https://www.reddit.com/r/IPhoneApps/) now requires genuine
+  community participation and rejects drive-by promotion. Its pinned
+  [July policy update](https://www.reddit.com/r/IPhoneApps/comments/1uy20l2/an_update_on_selfpromotion/)
+  supersedes the older blanket developer invitation. No qualifying history was
+  established, and no post or token participation was added.
+- [r/LanguageLearningTech](https://www.reddit.com/r/LanguageLearningTech/)
+  displayed “We couldn't find that community.” No community was created.
+
+Fresh native L/N and annotated-reader searches produced our own launch, other
+creators' advertisements, unrelated topics and older requests—not a new,
+unanswered close-fit learner request. These are not prospective-user counts.
+The two SideProject discussions had the same feedback already recorded; the
+three later creator comments had no new direct replies in the loaded view.
+
+The Bunko Japanese-thread comment remains intact in the signed-in view. A fresh
+anonymous browser reached Reddit's humanity challenge, which was not completed
+or bypassed. Consequently, anonymous visibility remains unresolved, including
+for the new AppHunt post. Do not retry anonymously in a loop or infer removal.
+No new installs, customers or revenue were verified.

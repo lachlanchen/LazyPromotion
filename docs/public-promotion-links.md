@@ -43,6 +43,13 @@ Live community introductions: [r/SideProject](https://www.reddit.com/r/SideProje
 and the [r/Cantonese creator ads thread](https://www.reddit.com/r/Cantonese/comments/1wo97ez/comment/pbytqan/).
 See the [checked community routes](app-community-routes-2026-09-25.md) before considering another placement.
 
+On September 26 (Hong Kong), the [maintainer's Reddit profile](https://www.reddit.com/user/Ok-Perception1122/)
+was given three direct store links: **L & N — App Store**, **L & N — Google Play**,
+and **Bunko — App Store**. All labels and exact destinations were checked after
+reload. The existing LKT link and profile description were left unchanged. This
+provides a quiet continuation from community discussions without another comment
+or a new tracking parameter; it does not establish a click, install or purchase.
+
 The README videos use the finished LazyEdit subtitle-and-logo exports unchanged:
 English `2026-09-24_08-12-54_subtitles_logo.mp4` and Chinese
 `2026-09-24_08-03-39_subtitles_logo.mp4`. They are uploaded as GitHub video

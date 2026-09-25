@@ -29,6 +29,33 @@ For Bunko, the useful audience remains readers already approaching Chinese or Ja
 
 ## Next useful action
 
-Review genuine questions on the existing introductions and recheck anonymous visibility of the Bunko Japanese-reader comment. For the next new placement, prefer a complete Android-specific L & N showcase after checking billing and account eligibility; do not schedule it merely to fill a calendar. For Bunko, seek a specific parallel-reading request rather than sending generic beginner-language or history pitches. These are research decisions, not automatic posting instructions.
+Review genuine questions on the existing introductions and recheck anonymous visibility of the Bunko Japanese-reader comment. For Bunko, seek a specific parallel-reading request rather than sending generic beginner-language or history pitches. These are research decisions, not automatic posting instructions.
 
 Additional screening: r/languagelearningapps is banned for spam; r/bilingual is restricted with old visible discussions; r/learnmandarin disallows ads. The r/IndieApps load failure is unresolved, not evidence that the community is closed. Account searches did not establish the participation required for r/ChineseLanguage moderator approval. None received a post, message or application.
+
+## September 26 follow-up (Hong Kong)
+
+L & N received [two relevant testing suggestions](l-and-n-reader-feedback-2026-09-26.md).
+One concise acknowledgement was sent; neither comment proves that its author
+installed the app. Bunko's original feedback had already been answered, and no
+new reply was visible beneath the Japanese-project introduction.
+
+The Android showcase is **held, not queued**. Its live rules prohibit obvious
+promo-only accounts and cross-community spam. Although the current account meets
+the visible age/karma minimums, recent visible activity is predominantly promotion,
+and verified-email eligibility was not established. Do not post there now or add
+token comments just to manufacture eligibility.
+
+Two apparently recent Japanese-reading search results were inspected directly:
+
+- [Small print in manga](https://www.reddit.com/r/Japaneselanguage/comments/1vbcur1/small_print_makes_reading_hard_please_help/)
+  was posted July 31. It concerns small print in *One Piece*, not reading classics;
+  existing replies provide magnification and the official digital edition.
+- [Reader with vocabulary lookup](https://www.reddit.com/r/Japaneselanguage/comments/1v6we8t/recommendations_for_ereaders_physical_and_app/)
+  was posted July 26. The author already switched to a suggested reader and their
+  remaining issue is Anki integration. Bunko should not be presented as an arbitrary
+  EPUB/Anki replacement.
+
+Both appeared despite a recent-time search filter. No comment was sent. An
+additional native search for parallel text found no close, current learner request;
+our own Bunko post is not independent demand evidence.

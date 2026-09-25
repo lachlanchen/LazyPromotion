@@ -1,6 +1,6 @@
 {
   "id": "l-and-n-sideproject-introduction",
-  "version": 1,
+  "version": 2,
   "checked_on": "2026-09-25",
   "objective": "Introduce L & N through the maintainer's own sound-confusion problem, a real English walkthrough, and the two production-store destinations.",
   "source_evidence": {
@@ -29,7 +29,22 @@
       "content_sha256": "e1bc1eda582207e1984602d9d678b220be847eaa85d6e94501d3f6baa1ed66d4",
       "publish_at": "2026-09-25T12:58:00Z",
       "release_url": "https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/",
-      "known_owned_replies": 0,
+      "known_owned_replies": 1,
+      "owned_replies": [
+        {
+          "source_url": "https://www.reddit.com/r/SideProject/comments/1wpvosw/comment/pbyqq5i/",
+          "release_url": "https://www.reddit.com/r/SideProject/comments/1wpvosw/comment/pc07hq9/",
+          "published_at": "2026-09-25T16:53:57Z",
+          "state": "published",
+          "kind": "product_feedback_acknowledgement",
+          "content": "Thanks, I like the idea of keeping a few pairs out of practice for a later check. I've added that to the testing notes. Getting better at recognising new words would mean more than a higher score on the same examples.",
+          "new_promotional_link": false,
+          "verified_after_reload": true,
+          "correct_parent_verified": true,
+          "logged_out_visibility_verified": false,
+          "logged_out_check_state": "unresolved_fetch_failure"
+        }
+      ],
       "publication_verification": {
         "verified_state": "PUBLISHED",
         "saved_preview_reviewed": true,
@@ -48,6 +63,20 @@
     "automatic_reposts": false,
     "unsolicited_private_messages": false,
     "next_action": "Review a genuine learner question or product suggestion if one arrives. Keep any LazyEdit introduction separate, with its own evidence and community review."
+  },
+  "product_feedback": {
+    "sources": [
+      "https://www.reddit.com/r/SideProject/comments/1wpvosw/comment/pbyqq5i/",
+      "https://www.reddit.com/r/SideProject/comments/1wpvosw/comment/pbysjwx/"
+    ],
+    "suggestions": [
+      "Evaluate listening on unfamiliar pairs, separately from recognition scores.",
+      "Keep listening and pronunciation results distinct and make false recognition misses retryable."
+    ],
+    "notes": "docs/l-and-n-reader-feedback-2026-09-26.md",
+    "new_study_run": false,
+    "verified_app_users": null,
+    "app_code_changed_by_promotion": false
   },
   "funnel": {
     "state": "owned_introduction_published",

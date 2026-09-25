@@ -42,11 +42,27 @@ class LandnSideprojectCampaignTests(unittest.TestCase):
     def test_monitor_route_and_no_invented_revenue(self):
         route = owned_monitor.route_for_post("reddit", self.post["content"], owned_monitor.route_index())
         self.assertEqual(route["campaign_id"], self.campaign["id"])
-        self.assertEqual(route["known_owned_replies"], 0)
+        self.assertEqual(route["known_owned_replies"], 1)
         for key in ("qualified_leads", "payments_confirmed", "verified_received_gross_usd"):
             self.assertEqual(self.campaign["funnel"][key], 0)
         for key in ("automatic_replies", "automatic_reposts", "unsolicited_private_messages"):
             self.assertFalse(self.campaign["follow_up"][key])
+
+    def test_feedback_is_acknowledged_once_without_claiming_users_or_a_study(self):
+        replies = self.post["owned_replies"]
+        self.assertEqual(len(replies), 1)
+        reply = replies[0]
+        self.assertTrue(reply["verified_after_reload"])
+        self.assertTrue(reply["correct_parent_verified"])
+        self.assertFalse(reply["logged_out_visibility_verified"])
+        self.assertFalse(reply["new_promotional_link"])
+        self.assertNotIn("https://", reply["content"])
+        self.assertTrue(reply["release_url"].endswith("/comment/pc07hq9/"))
+        feedback = self.campaign["product_feedback"]
+        self.assertIsNone(feedback["verified_app_users"])
+        self.assertFalse(feedback["new_study_run"])
+        self.assertFalse(feedback["app_code_changed_by_promotion"])
+        self.assertTrue((ROOT / feedback["notes"]).is_file())
 
     def test_public_media_library_retains_review_boundaries(self):
         library = (ROOT / "docs/product-video-library.md").read_text()

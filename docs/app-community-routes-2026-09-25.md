@@ -370,3 +370,35 @@ than treated as the next automatic launch. Existing posts and the two prior
 queues were not changed. No new learner request, installation or sale was
 established in this research pass; no unsolicited reply or private message was
 sent.
+
+## September 26: inspect beyond the initial search batch
+
+Native Reddit search initially loaded only seven post cards in two inspected
+queries. Three visible scrolls exposed 28 cards. The discovery collector now
+loads a bounded number of additional batches when the requested limit has not
+been reached, deduplicates source URLs and records how it stopped. A timeout,
+short batch or requested limit never becomes a claim of exhaustive coverage.
+Live verification collected 20 posts from an initial seven and 20 comments from
+an initial ten. These are inspected search records, not 40 prospective users.
+
+The expanded search surfaced a current
+[Classical Chinese course request](https://www.reddit.com/r/PureLand/comments/1wlptbx/classical_chinese_classes/).
+It asks for structured instruction in reading original texts and grammar,
+explicitly not pronunciation. Bunko's reading aids do not constitute that
+course, and no app recommendation was inserted. Other newly exposed results
+were older threads, creator posts, broad advice or unrelated matches. Actual
+timestamps still override the requested search time filter.
+
+Two additional native rule checks narrowed the useful routes:
+
+- [r/EnglishLearning](https://www.reddit.com/r/EnglishLearning/) requires
+  moderator permission before promotion. Ordinary learner questions do not
+  supply that permission. No launch, promotional reply or modmail was sent.
+- [r/AskAChinese](https://www.reddit.com/r/AskAChinese/) focuses on substantive
+  China-related discussion and explicitly rejects ads disguised as questions.
+  Older visible reader-app advertisements do not establish a current invitation.
+  No relevant current app request was verified in the inspected feed.
+
+The three existing scheduled introductions are unchanged. This pass improved
+discovery coverage and recorded new screening decisions; it did not establish
+new users, installations or revenue.

@@ -14,7 +14,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, quote_plus, urlparse
 
-from playwright.sync_api import Locator, Page, sync_playwright
+from playwright.sync_api import (
+    Locator, Page, TimeoutError as PlaywrightTimeoutError, sync_playwright,
+)
 
 import promotion
 
@@ -611,6 +613,71 @@ def dedupe(rows: list[dict[str, str]], limit: int) -> list[dict[str, object]]:
     return result
 
 
+def collect_reddit_search(
+    page: Page, limit: int, content_kind: str = "posts", *, max_scrolls: int = 3,
+) -> tuple[list[dict[str, object]], dict[str, object]]:
+    """Read a bounded set of lazy-loaded search cards through visible scrolling.
+
+    Reddit initially exposes only a small batch. A short first batch is not the
+    end of the search. Neither a requested limit nor a stalled load establishes
+    exhaustive coverage; retain that distinction in the discovery receipt.
+    """
+    if limit < 1 or not 0 <= max_scrolls <= 5:
+        raise ValueError("positive limit and zero to five scrolls required")
+    if content_kind not in {"posts", "comments"}:
+        raise ValueError("unsupported Reddit search kind")
+    target = page.url
+    parsed = urlparse(target)
+    if (parsed.hostname not in PLATFORM_HOSTS["reddit"]
+            or not parsed.path.rstrip("/").endswith("/search")):
+        raise ValueError("Reddit search page required")
+    selector = (
+        '[data-testid="search-sdui-comment-unit"]' if content_kind == "comments"
+        else '[data-testid="search-post-unit"]'
+    )
+    extract = extract_reddit_comments if content_kind == "comments" else extract_reddit
+    rows = dedupe(extract(page, limit), limit)
+    initial_count = len(rows)
+    scrolls = 0
+    stop_reason = "scroll_limit"
+    while len(rows) < limit and scrolls < max_scrolls:
+        cards = page.locator(selector)
+        before_count = cards.count()
+        if not before_count or not rows:
+            stop_reason = "no_loaded_cards"
+            break
+        scrolls += 1
+        try:
+            cards.last.scroll_into_view_if_needed(timeout=5000)
+            page.mouse.wheel(0, 1000)
+            page.wait_for_function(
+                "([selector, count]) => document.querySelectorAll(selector).length > count",
+                arg=[selector, before_count], timeout=4000,
+            )
+        except PlaywrightTimeoutError:
+            stop_reason = "load_timeout"
+            break
+        if page.url != target:
+            stop_reason = "source_changed"
+            break
+        updated = dedupe([*rows, *extract(page, limit)], limit)
+        if len(updated) <= len(rows):
+            stop_reason = "no_new_unique_results"
+            break
+        rows = updated
+    if len(rows) >= limit:
+        stop_reason = "requested_limit"
+    return rows, {
+        "method": "bounded_visible_scroll",
+        "requested_limit": limit,
+        "initial_count": initial_count,
+        "collected_count": len(rows),
+        "scrolls": scrolls,
+        "stop_reason": stop_reason,
+        "exhaustive": False,
+    }
+
+
 def discover(
     page: Page,
     platform: str,
@@ -625,9 +692,11 @@ def discover(
     wait_ready(page)
     search_title = page.title()
     search_destination = page.url
-    screenshot = evidence(page, f"search-{platform}-{content_kind}")
+    screenshot = None if platform == "reddit" else evidence(page, f"search-{platform}-{content_kind}")
+    collection = None
     if platform == "reddit":
-        rows = extract_reddit_comments(page, limit) if content_kind == "comments" else extract_reddit(page, limit)
+        rows, collection = collect_reddit_search(page, limit, content_kind)
+        screenshot = evidence(page, f"search-{platform}-{content_kind}")
     elif platform == "x":
         rows = extract_x(page, limit)
     elif platform == "hackernews":
@@ -653,6 +722,7 @@ def discover(
         "url": search_destination,
         "title": search_title,
         "found": len(candidates),
+        "collection": collection,
         "found_by_source_kind": {
             kind: sum(1 for row in rows if row["source_kind"] == kind)
             for kind in sorted({str(row["source_kind"]) for row in rows})

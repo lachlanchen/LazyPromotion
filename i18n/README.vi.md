@@ -34,7 +34,7 @@ Kho mã còn lưu danh mục công khai gồm 109 kho mã nguồn `lachlanchen` 
 | Đường dẫn | Mục đích |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | Sổ cái SQLite, đối sánh nhu cầu, phân loại và soạn bằng Codex, phê duyệt gắn với hàm băm |
-| [`app_preview.py`](../app_preview.py) và [`apps/`](../apps/README.md) | Bản xem trước web/PWA cục bộ chỉ đọc; chạy `python3 app_preview.py`. Các bản xem trước gốc Android và SwiftUI dùng chung bản sao dữ liệu công khai có ngày ghi nhận. Android đã biên dịch thành công; bản dựng iOS chưa được xác minh. Chưa có đăng bài tự động. |
+| [`app_preview.py`](../app_preview.py) và [`apps/`](../apps/README.md) | Lịch sử web/PWA cục bộ và bản nháp chiến dịch có thể chỉnh sửa, lưu và xuất theo thao tác chủ động; chạy `python3 app_preview.py`. Các bản xem trước Android và SwiftUI vẫn dùng bản sao dữ liệu công khai có ngày ghi nhận. Android đã biên dịch thành công; bản dựng iOS chưa được xác minh. Chưa có đăng bài tự động. |
 | [`browser.py`](../browser.py) | Khám phá, kiểm tra, chuẩn bị ô soạn và gửi có bảo vệ qua Playwright/CDP |
 | [`worker.py`](../worker.py) | Khám phá hữu hạn có thời gian chờ và hàng đợi duyệt riêng tư; không bao giờ tự gửi |
 | [`catalog.json`](../catalog.json) và [`github-repos.json`](../github-repos.json) | Quy tắc đối sánh được tuyển chọn và danh mục kho mã công khai |

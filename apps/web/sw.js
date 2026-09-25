@@ -1,8 +1,13 @@
 // Only the fixed public client shell is cached. API data needs an explicit save.
-const CACHE = 'lazypromotion-preview-shell-v1';
-const SHELL = ['/', '/app.mjs', '/model.mjs', '/app.css', '/icon.svg', '/manifest.webmanifest'];
+const CACHE = 'lazypromotion-preview-shell-v2';
+const SHELL = ['/', '/app.mjs', '/model.mjs', '/draft-model.mjs', '/draft-ui.mjs', '/app.css', '/icon.svg', '/manifest.webmanifest'];
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)));
+  // The complete shell is available before taking over. There are no queued
+  // network actions to replay; in-progress drafts remain in the page's memory.
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+});
+self.addEventListener('message', event => {
+  if (event.data === 'shell-version' && event.ports[0]) event.ports[0].postMessage(CACHE);
 });
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {

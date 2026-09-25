@@ -109,7 +109,24 @@ $('clear').addEventListener('click', () => {
 });
 refresh();
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').catch(() => {
-    $('storage-state').textContent = 'Offline page support is unavailable. Online reading still works.';
+  function checkShell() {
+    const worker = navigator.serviceWorker.controller;
+    if (!worker) return;
+    const channel = new MessageChannel();
+    const timer = setTimeout(() => channel.port1.close(), 3000);
+    channel.port1.onmessage = event => {
+      clearTimeout(timer); channel.port1.close();
+      if (event.data === 'lazypromotion-preview-shell-v2') {
+        $('offline-shell').textContent = 'Offline app ready · save a history copy or draft separately.';
+        root.dataset.offlineShell = 'ready';
+      }
+    };
+    worker.postMessage('shell-version', [channel.port2]);
+  }
+  navigator.serviceWorker.addEventListener('controllerchange', checkShell);
+  navigator.serviceWorker.register('/sw.js').then(checkShell).catch(() => {
+    $('offline-shell').textContent = 'Offline page support is unavailable. Online drafting still works.';
   });
+} else {
+  $('offline-shell').textContent = 'Offline page support is unavailable in this browser.';
 }

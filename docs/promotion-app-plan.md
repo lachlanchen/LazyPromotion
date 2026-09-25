@@ -140,8 +140,12 @@ Approved first-party schedules can run automatically under a bounded account,
 channel and budget policy. Replies to strangers need their own contextual
 decision, not an indiscriminate auto-comment switch.
 
-The next implementation should complete product onboarding and one editable
-draft/approval flow before adding more presentation-only screens. L & N and
+The PWA now has a [local brief-to-draft flow](promotion-app-local-draft.md):
+public app facts, a useful example, exact destination/account, an editable
+starter, preview, explicit local persistence and JSON export. This is a
+deterministic template, not source research or a model-generated campaign.
+Preview/export does not approve or queue a publication. Native authoring parity
+and authenticated approval/publishing remain to build. L & N and
 Bunko remain the real campaign examples, but activity on their campaigns is not
 evidence of demand for selling this new app.
 

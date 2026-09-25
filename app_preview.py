@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local client preview: seven fixed assets and the read-only campaign API."""
+"""Local client: fixed assets, browser-only drafting and a read-only history API."""
 
 import argparse
 from pathlib import Path
@@ -12,6 +12,8 @@ ASSETS = {
     "/": ("index.html", "text/html; charset=utf-8"),
     "/app.mjs": ("app.mjs", "text/javascript; charset=utf-8"),
     "/model.mjs": ("model.mjs", "text/javascript; charset=utf-8"),
+    "/draft-model.mjs": ("draft-model.mjs", "text/javascript; charset=utf-8"),
+    "/draft-ui.mjs": ("draft-ui.mjs", "text/javascript; charset=utf-8"),
     "/app.css": ("app.css", "text/css; charset=utf-8"),
     "/manifest.webmanifest": ("manifest.webmanifest", "application/manifest+json"),
     "/icon.svg": ("icon.svg", "image/svg+xml"),

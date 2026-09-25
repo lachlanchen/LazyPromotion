@@ -34,7 +34,7 @@ Le dépôt tient aussi l’inventaire public de 109 dépôts sources `lachlanche
 | Chemin | Rôle |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | Registre SQLite, rapprochement, tri et rédaction Codex, approbation liée à l’empreinte |
-| [`app_preview.py`](../app_preview.py) et [`apps/`](../apps/README.md) | Aperçu web/PWA local en lecture seule ; lancer `python3 app_preview.py`. Les aperçus natifs Android et SwiftUI partagent une copie publique datée. Android compile ; la compilation iOS reste non vérifiée. Pas encore de publication automatique. |
+| [`app_preview.py`](../app_preview.py) et [`apps/`](../apps/README.md) | Historique web/PWA local et brouillons de campagne modifiables, avec enregistrement et export explicites ; lancer `python3 app_preview.py`. Les aperçus Android et SwiftUI utilisent toujours une copie publique datée. Android compile ; la compilation iOS reste non vérifiée. Pas encore de publication automatique. |
 | [`browser.py`](../browser.py) | Découverte Playwright/CDP, inspection, préparation du composeur et envoi protégé |
 | [`worker.py`](../worker.py) | Découverte finie avec délais de reprise et file privée de révision ; n’envoie jamais |
 | [`catalog.json`](../catalog.json) et [`github-repos.json`](../github-repos.json) | Correspondances sélectionnées avec les besoins et inventaire des dépôts publics |

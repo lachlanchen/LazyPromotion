@@ -103,12 +103,16 @@ idempotent sending, uncertain-delivery reconciliation, revocation and deletion.
 The existing operator checks in `promotion.py` inform that design; its database
 and local approval tokens must not be exposed directly.
 
-The optional `app_preview.py` server adds a fixed allowlist of seven web-client
-resources at `/`, `/app.mjs`, `/model.mjs`, `/app.css`, `/manifest.webmanifest`,
-`/icon.svg` and `/sw.js`. It reuses the same read-only host/origin/method boundary
+The optional `app_preview.py` server adds a fixed allowlist of nine web-client
+resources at `/`, `/app.mjs`, `/model.mjs`, `/draft-model.mjs`, `/draft-ui.mjs`,
+`/app.css`, `/manifest.webmanifest`, `/icon.svg` and `/sw.js`.
+It reuses the same read-only host/origin/method boundary
 and API. This is not an arbitrary filesystem server; the standalone API's routes
 remain unchanged. Read the [client instructions](../apps/README.md) for offline
 behavior and browser checks.
+The PWA's separate [local draft editor](promotion-app-local-draft.md) uses browser
+storage and user-initiated export only. It adds no mutation API and does not
+change this server's `draft: false`, `approve: false` or `publish: false` flags.
 
 Native UI source now exists for iOS and Android; Android's debug build is verified,
 while the iOS build remains unverified. Those previews decode a dated bundled

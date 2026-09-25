@@ -8,6 +8,10 @@
   private receipts, source transcripts or credentials.
 - Discovery, approvals, publishing and payments are not enabled in this preview.
   Do not add convincing-looking inactive send buttons or invented analytics.
+- Browser-local brief editing, explicit save/load and draft export are allowed.
+  They are separate from the read-only history API and native snapshots. A local
+  preview/export is not an operator approval or queued send. Never silently
+  synchronize or upload draft content.
 - Share public links only through a deliberate user action. No background sends.
 - Reuse installed SDKs. No app-store registration or signing is part of a debug
   build. Keep generated builds and runtime evidence outside Git.

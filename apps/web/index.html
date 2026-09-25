@@ -10,17 +10,19 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="stylesheet" href="/app.css">
   <script type="module" src="/app.mjs"></script>
+  <script type="module" src="/draft-ui.mjs"></script>
 </head>
 <body>
   <a href="#content" class="skip">Skip to campaign history</a>
   <header class="topbar">
     <div class="brand"><span class="monogram" aria-hidden="true">LP</span> LazyPromotion</div>
-    <span class="mode">Local preview · read-only</span>
+    <span class="mode">Local workspace · no connected publisher</span>
   </header>
   <div class="workspace" data-testid="workspace" data-status="loading">
     <aside>
       <p class="eyebrow">Workspace</p>
       <h1>Your products</h1>
+      <a class="draft-shortcut" href="#campaign-starter">Prepare a campaign ↓</a>
       <nav id="products" aria-label="Products"></nav>
       <div class="aside-note">Selected public records only. No social accounts are connected to this preview.</div>
     </aside>
@@ -34,7 +36,51 @@
         <button id="save" type="button" disabled>Save offline copy</button>
         <button id="clear" type="button">Remove saved copy</button>
         <p id="storage-state" role="status" aria-live="polite">Copies stay in this browser.</p>
+        <p id="offline-shell" role="status">Preparing offline page support…</p>
       </div>
+      <section id="campaign-starter" class="composer" aria-labelledby="starter-title">
+        <p class="eyebrow">Your next campaign</p>
+        <h2 id="starter-title">Start with something useful</h2>
+        <p>Describe your app and give the reader one useful tip. Build a starter, edit it, then preview the exact destination and copy.</p>
+        <p class="muted">Local template, not an AI research service. Use public details only—no passwords or customer information.</p>
+        <form id="brief-form" autocomplete="off">
+          <div class="form-grid">
+            <label>App name<input name="name" required maxlength="120"></label>
+            <label>Official app link<input name="productUrl" type="url" required maxlength="2048" placeholder="https://…"></label>
+            <label>Who it helps<input name="audience" required maxlength="300" placeholder="e.g. English learners who mix up L and N"></label>
+            <label>Problem it solves<input name="problem" required maxlength="600"></label>
+            <label class="wide">One shipping feature<textarea name="feature" required maxlength="1000" rows="2"></textarea></label>
+            <label class="wide">Useful tip or example, even without your app<textarea name="useful" required maxlength="3000" rows="4"></textarea></label>
+            <label>Current price and platform<input name="price" required maxlength="300" placeholder="e.g. iPhone: US$0.99"></label>
+            <label>Source for the feature and price<input name="evidenceUrl" type="url" required maxlength="2048" placeholder="https://…"></label>
+            <label class="wide">Relevant limitation (optional)<textarea name="limitation" maxlength="600" rows="2"></textarea></label>
+            <label>Intended destination link<input name="destinationUrl" type="url" required maxlength="2048" placeholder="Your profile or an allowed community"></label>
+            <label>Public posting name<input name="account" required maxlength="120" placeholder="e.g. @yourapp"></label>
+          </div>
+          <button type="submit">Build starter draft</button>
+        </form>
+        <div id="draft-editor" hidden>
+          <label>Draft title<input id="draft-title" maxlength="300"></label>
+          <label>Draft text<textarea id="draft-body" maxlength="12000" rows="12"></textarea></label>
+          <div class="draft-actions">
+            <button id="preview-draft" type="button">Preview draft</button>
+            <button id="save-draft" type="button">Save draft here</button>
+            <button id="export-draft" type="button">Export draft JSON</button>
+          </div>
+        </div>
+        <div class="draft-actions">
+          <button id="load-draft" type="button">Load saved draft</button>
+          <button id="delete-draft" type="button">Remove saved draft</button>
+        </div>
+        <p id="draft-status" class="muted" role="status" aria-live="polite">Nothing is saved until you choose Save. No account is connected and nothing will be posted.</p>
+        <article id="draft-preview" tabindex="-1" hidden aria-label="Exact draft preview">
+          <p class="eyebrow">Draft preview · not approved to send</p>
+          <p id="preview-destination"></p>
+          <h3 id="preview-title"></h3>
+          <p id="preview-body" class="post-body"></p>
+          <p id="preview-source" class="muted"></p>
+        </article>
+      </section>
     </main>
   </div>
   <noscript>This campaign preview needs JavaScript. It cannot publish posts.</noscript>

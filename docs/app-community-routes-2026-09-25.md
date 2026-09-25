@@ -486,3 +486,8 @@ questions, but not a verified new request for Bunko's particular reading aids.
 Neither those questions nor the existence of another developer's resource post
 is permission to insert our apps. Keep the three spaced introductions already
 queued, then evaluate their real responses before adding another broad launch.
+
+The user also suggested Stack Overflow and Stack Exchange. Their separate
+[site-by-site assessment](stack-exchange-routes-2026-09-26.md) identifies Chinese
+Language and Software Recommendations as conditional research priorities,
+not cleared launch venues. No Stack Exchange action or new queue was created.

@@ -18,6 +18,11 @@ still in review and its public listing returned 404; do not use it as a public
 destination. Apple 1.0.1 and Play internal 1.0.1 are update/test states, not
 proof that those features are in the approved iOS 1.0.0 binary.
 
+Creator introductions: [r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/)
+and the [r/Japaneselanguage personal-project thread](https://www.reddit.com/r/Japaneselanguage/comments/1sky7tt/comment/pc03ka1/).
+The latter is verified after signed-in reload; anonymous visibility is still
+unresolved. Its linkless copy follows that thread's rules.
+
 ## L & N: Speech Practice
 
 | Destination | Link |

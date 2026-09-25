@@ -1,0 +1,57 @@
+{
+  "id": "bunko-japanese-reader-introduction",
+  "version": 1,
+  "checked_on": "2026-09-25",
+  "objective": "Introduce Bunko to readers of Japanese classics in the community's designated personal-project thread.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/Bunko",
+    "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+    "apple_lookup": "https://itunes.apple.com/lookup?id=6815137919&country=us",
+    "apple_version_verified": "1.0.0",
+    "apple_price_usd_verified": 0.99,
+    "apple_search_name": "Bunko: Classics with Ruby",
+    "apple_search_seller": "LazyingArt LLC",
+    "reader_example": "Sanshirō with Japanese, furigana and parallel English"
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "format": "top_level_comment_in_creator_projects_thread",
+      "publication_method": "reviewed_native_browser_submit",
+      "community": "r/Japaneselanguage",
+      "source_url": "https://www.reddit.com/r/Japaneselanguage/comments/1sky7tt/megathread_personal_promotionprojects/",
+      "rules_url": "https://www.reddit.com/r/Japaneselanguage/about/rules/",
+      "community_fit": "The pinned thread explicitly invites app introductions with context, discoverable name, price and a feedback question. Main-feed project posts are prohibited. The stricter no-links instruction is followed.",
+      "content": "I made Bunko: Classics with Ruby for reading Japanese classics with the original text, furigana and a parallel translation together. For example, Sanshirō can show the Japanese with readings above the kanji and an English passage underneath. You can switch back to Japanese alone and save chapters for offline reading.\n\nOne way to use it is to try a short passage in Japanese, compare the English, then reread the original. These are unadapted classics, not graded beginner stories. The study translations are AI-generated and can make mistakes; they aren't scholarly editions.\n\nSearch “Bunko: Classics with Ruby” on the App Store; the developer is LazyingArt LLC. It's US$0.99 once, with no subscription. There's also a free browser version, with no account needed.\n\nFor people already reading novels: does having furigana always visible help you keep reading, or do you prefer to reveal it only when stuck?",
+      "content_sha256": "279e8670051377b05025c27ed8af402eb30993c629894f493ec1295689a24a3f",
+      "publish_at": "2026-09-25T16:37:44Z",
+      "release_url": "https://www.reddit.com/r/Japaneselanguage/comments/1sky7tt/comment/pc03ka1/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "visible_copy_and_destination_reviewed": true,
+        "single_submit_click": true,
+        "exact_text_verified_after_reload": true,
+        "author_verified": true,
+        "logged_out_visibility_verified": false,
+        "logged_out_check_state": "unresolved_fetch_and_anonymous_browser_failure",
+        "links_in_comment": 0
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review",
+    "postiz_managed": false,
+    "direct_comment_monitor_configured": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_action": "Check public visibility and genuine responses on a later review. Do not resubmit because the anonymous check failed, and do not duplicate the introduction in the main feed."
+  },
+  "funnel": {
+    "state": "creator_introduction_verified_signed_in",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "Signed-in delivery is verified. Anonymous visibility is unresolved. Neither is evidence of installation, completed reading or purchase."
+  }
+}

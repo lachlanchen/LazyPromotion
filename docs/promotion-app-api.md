@@ -3,7 +3,7 @@
 2026-09-26. Read-only local development service; not deployed or store-ready.
 
 The first shared client contract renders the same reviewed public campaign
-history in a future SwiftUI app, Compose app and PWA. It does not wrap the private
+history in the local web preview and future SwiftUI and Compose apps. It does not wrap the private
 operator database in HTTP or give clients access to the workstation.
 
 ## Run
@@ -103,6 +103,14 @@ idempotent sending, uncertain-delivery reconciliation, revocation and deletion.
 The existing operator checks in `promotion.py` inform that design; its database
 and local approval tokens must not be exposed directly.
 
-No iOS/Android UI, PWA, store listing, customer account, paid plan or automated
-publishing integration is delivered by this checkpoint. The platform plan and
+The optional `app_preview.py` server adds a fixed allowlist of seven web-client
+resources at `/`, `/app.mjs`, `/model.mjs`, `/app.css`, `/manifest.webmanifest`,
+`/icon.svg` and `/sw.js`. It reuses the same read-only host/origin/method boundary
+and API. This is not an arbitrary filesystem server; the standalone API's routes
+remain unchanged. Read the [client instructions](../apps/README.md) for offline
+behavior and browser checks.
+
+No iOS/Android UI, store listing, customer account, paid plan or automated
+publishing integration is delivered by this checkpoint. The local preview has
+PWA shell/offline support, not native-device installation qualification. The platform plan and
 verified Musia lessons are in [promotion-app-plan.md](promotion-app-plan.md).

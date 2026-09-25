@@ -101,10 +101,19 @@ against a real local HTTP connection. It serves no filesystem or operator
 endpoints and installs no background service. See the
 [client API contract](promotion-app-api.md) for routes and client behavior.
 
-This is a data adapter and local API, **not** a deployed API, native binary, PWA
-or working automatic-promotion service. Its source files are curated public
+The foundation now has a [local web client](../apps/README.md), served by
+`app_preview.py`. It shows the two products, five selected published posts,
+exact copy and public links, visibility evidence, and unconnected outcome data.
+An explicit save keeps a timestamped public snapshot for read-only offline use;
+the service worker caches only the fixed app shell. Desktop/mobile layouts,
+offline reload, deletion and invalid-version recovery were checked through the
+dedicated project browser. Thirty Python tests and six JavaScript checks pass.
+
+This remains a local preview, **not** a deployed API, native binary or working
+automatic-promotion service. PWA installation on native devices is unqualified.
+Its source files are curated public
 records, not arbitrary untrusted uploads; it is not a general-purpose secret
-redactor. Client implementations and authenticated action APIs remain to build.
+redactor. Native clients and authenticated action APIs remain to build.
 
 Rechecked the requested Musia session and its delivery files on September 26.
 The app implementation remains the `f740ae3` checkpoint; the later `f8605ef`
@@ -115,8 +124,9 @@ inherited by LazyPromotion.
 
 ## Delivery gates
 
-- Render this shared contract in SwiftUI, Compose and a responsive PWA; test
-  loading, empty, error, offline and unverified-result states.
+- Render this shared contract in SwiftUI and Compose; the responsive web
+  preview is available. Qualify native-device PWA installation and accessibility,
+  and test loading, empty, error, offline and unverified-result states on each.
 - Complete the workflow with project-scoped drafts and approvals, reusing the
   existing exact-content safeguards. Test cross-account and cross-project denial.
 - Connect one reviewed first-party publishing integration with exact receipts,

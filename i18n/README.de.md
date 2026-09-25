@@ -34,6 +34,7 @@ Das Repository enthält außerdem ein öffentliches Inventar von 109 nicht archi
 | Pfad | Zweck |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | SQLite-Ledger, Zuordnung, Codex-Prüfung und -Entwurf sowie hashgebundene Freigabe |
+| [`app_preview.py`](../app_preview.py) und [`apps/`](../apps/README.md) | Lokale, schreibgeschützte Web/PWA-Vorschau ausgewählter öffentlicher Kampagnen mit ausdrücklich gespeicherten Offline-Kopien; Start mit `python3 app_preview.py`. Native Clients und automatisches Veröffentlichen sind in dieser Vorschau nicht implementiert. |
 | [`browser.py`](../browser.py) | Playwright/CDP-Suche, Prüfung, Vorbereitung des Eingabefelds und geschütztes Senden |
 | [`worker.py`](../worker.py) | Endliche Suche mit Wartezeiten und privater Review-Warteschlange; sendet niemals |
 | [`catalog.json`](../catalog.json) und [`github-repos.json`](../github-repos.json) | Kuratierte Bedarfszuordnung und öffentliches Repository-Inventar |

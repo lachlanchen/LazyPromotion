@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#162240">
+  <meta name="robots" content="noindex,nofollow">
+  <title>LazyPromotion · Campaign workspace</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/app.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <a href="#content" class="skip">Skip to campaign history</a>
+  <header class="topbar">
+    <div class="brand"><span class="monogram" aria-hidden="true">LP</span> LazyPromotion</div>
+    <span class="mode">Local preview · read-only</span>
+  </header>
+  <div class="workspace" data-testid="workspace" data-status="loading">
+    <aside>
+      <p class="eyebrow">Workspace</p>
+      <h1>Your products</h1>
+      <nav id="products" aria-label="Products"></nav>
+      <div class="aside-note">Selected public records only. No social accounts are connected to this preview.</div>
+    </aside>
+    <main id="content" tabindex="-1">
+      <div class="toolbar">
+        <p id="sync-state" role="status" aria-live="polite">Loading campaign history…</p>
+        <button id="refresh" type="button">Refresh</button>
+      </div>
+      <div id="project"></div>
+      <div class="offline-tools">
+        <button id="save" type="button" disabled>Save offline copy</button>
+        <button id="clear" type="button">Remove saved copy</button>
+        <p id="storage-state" role="status" aria-live="polite">Copies stay in this browser.</p>
+      </div>
+    </main>
+  </div>
+  <noscript>This campaign preview needs JavaScript. It cannot publish posts.</noscript>
+</body>
+</html>

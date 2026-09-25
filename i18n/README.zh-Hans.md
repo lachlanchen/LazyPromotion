@@ -34,6 +34,7 @@ LazyPromotion 是一款本地运行、先审后发的社交需求发现助手。
 | 路径 | 用途 |
 | --- | --- |
 | [`promotion.py`](../promotion.py) | SQLite 台账、需求匹配、Codex 分流与起草，以及与哈希绑定的批准 |
+| [`app_preview.py`](../app_preview.py) 和 [`apps/`](../apps/README.md) | 所选公开推广记录的本地只读 Web/PWA 预览，可手动保存离线副本；运行 `python3 app_preview.py`。本预览尚未实现原生客户端和自动发布。 |
 | [`browser.py`](../browser.py) | Playwright/CDP 发现、检查、撰写框准备与受控发送 |
 | [`worker.py`](../worker.py) | 有限次数、带冷却的发现任务和私密审阅队列；永不自行发送 |
 | [`catalog.json`](../catalog.json) 与 [`github-repos.json`](../github-repos.json) | 人工整理的需求匹配规则与公开仓库清单 |

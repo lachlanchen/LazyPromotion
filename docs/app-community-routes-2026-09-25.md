@@ -17,6 +17,8 @@ Checked September 25, 2026. A suitable audience, a permitted introduction and a 
 | r/MandarinChinese and r/FluentEnglish | Live rules prohibit promotion. Do not place app links or disguised recommendations in learner replies. |
 | r/japanese | [Rule 4](https://www.reddit.com/r/japanese/about/rules/) prohibits paid-product advertising; other self-promotion requires an active member and moderator discretion. No Bunko pitch submitted. |
 | r/ebooks | The listed rules cover civility, piracy and referrals, but do not establish that a Bunko creator launch is welcome. Recent discussion includes concerns about AI-generated books. This is not a cleared promotion route; catalogue and translation provenance would matter to any future evaluation. |
+| r/apple | Its [detailed rule 9](https://www.reddit.com/r/apple/wiki/rules#wiki_9.__no_spam._no_surveys._self-promotion_is_allowed_on_sundays_only) permits developers' Sunday text posts, but requires at least five organic, unrelated contributions in that community during the past month and no more than 10% self-promotion. It rejects token participation and promotion-dedicated accounts. No qualifying history was established; no post, modmail or participation-manufacturing is planned. |
+| r/apps | Active app-sharing feed, but held for account-context review. The full seven-rule sidebar rejects accounts made to advertise and spam. Its still-pinned [download policy](https://www.reddit.com/r/apps/comments/lejc96/links_to_download_apps_on_any_site_other_than_the/) restricts app destinations to Apple/Google stores, with limited image-host exceptions. This is not permission for a portfolio, GitHub, blog or beta-link promotion. No introduction was prepared or submitted. |
 
 The native rules and exact destination were checked before the Cantonese comment. Its text and both original store links were verified after reload and from a logged-out page. It is a resource introduction, not a reply to a person requesting pronunciation help.
 
@@ -441,3 +443,22 @@ classics returned old discussions and the existing owned Bunko introduction.
 Those are not fresh prospects. No ordinary-thread reply, private message or
 additional launch was sent. Existing queues remain unchanged; private store
 reports are tracked separately and are not inferred from Reddit activity.
+
+## September 26: app-request search and full-sidebar review
+
+A bounded r/apps search combined pronunciation, language learning, reading and
+bilingual terms with the **Help me find** flair. Ten loaded results were all
+older than the ordinary-reply window; the newest was July 4 despite the requested
+month filter. They were not contacted. The collector stopped when further
+loading timed out, so this does not establish exhaustive coverage.
+
+Inspect the entire community-rules section, not only expandable `summary`
+elements: r/apps exposes only three of its seven rules that way. A store-link
+policy and visible creator posts do not override its account and spam rules.
+The Apple Sunday route likewise remains conditional, not a cleared launch slot.
+
+r/UsefulApps showed only old posts in the inspected feed, with no current
+creator invitation established. r/AppsAndSites displayed a missing-community
+notice. Neither is a priority route. The two existing English app demos showed
+zero comments in their native YouTube views, with no viewer question to answer
+at this check. No channel edit, reply, extra queue or public launch followed.

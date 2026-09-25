@@ -1,0 +1,64 @@
+{
+  "id": "bunko-instagram-reading-demo",
+  "version": 1,
+  "checked_on": "2026-09-26",
+  "objective": "Show one usable Japanese reading routine through an actual Bunko screen, with a clear route to the paid iPhone and iPad app.",
+  "source_evidence": {
+    "reader": "https://lachlan.lazying.art/Bunko/",
+    "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+    "apple_lookup": "https://itunes.apple.com/lookup?id=6815137919&country=us",
+    "apple_checked_at": "2026-09-25T18:14:00Z",
+    "apple_version_verified": "1.0.0",
+    "apple_price_usd_verified": 0.99,
+    "image": "assets/bunko-sanshiro-reader-20260926.png",
+    "image_sha256": "4dfeaa517c47916ff3a60f18bc6a40dec80ab9fe6fbe3db20ab91258c5f3b971",
+    "image_width": 720,
+    "image_height": 900,
+    "image_kind": "Actual browser-reader capture of the beginning of Sanshirō, using the app's reading and font controls. Not an iOS binary capture, generated illustration or customer result.",
+    "image_reviewed": true
+  },
+  "channels": {
+    "instagram": {
+      "state": "queued_verified",
+      "account": "https://www.instagram.com/lazying.art/",
+      "content": "Try one paragraph of a Japanese novel before looking at the English.\n\nThis is Sanshirō in Bunko’s browser reader. The small readings above the kanji help you sound out the text, with an English passage just below. Read the Japanese once, check what stopped you, then read it again.\n\nI built Bunko for this kind of reading. It also has Chinese classics with pinyin, and downloaded chapters work offline. These are unadapted classics, not beginner lessons. The study translations are AI-generated and can make mistakes.\n\nFind ‘Bunko: Classics with Ruby’ on the App Store for iPhone and iPad — US$0.99 once, no subscription.\n\n#JapaneseReading #LearnJapanese #Bunko",
+      "content_sha256": "392e6b4e8799e420ab18c5a308570f670cc58b4c354a453d6f9532cf7f739b1f",
+      "destination": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+      "destination_method": "Exact App Store name in caption; no claim that caption URLs or an unverified profile link are clickable.",
+      "publish_at": "2026-09-26T12:00:00Z",
+      "settings": {
+        "post_type": "post"
+      },
+      "publication_verification": {
+        "verified_state": "QUEUE",
+        "saved_preview_reviewed": true,
+        "stored_copy_matches_reviewed_text": true,
+        "image_preview_reviewed": true,
+        "account_and_time_verified": true,
+        "provider_settings_checked": true,
+        "single_matching_item": true,
+        "schedule_actions": 1,
+        "release_present": false
+      }
+    }
+  },
+  "claim_boundaries": [
+    "The image is a real browser reader, not proof of a pending iOS feature.",
+    "Apple's public US listing was 1.0.0 at USD 0.99 when checked.",
+    "No Android or Mac public release, automatic tutor, dictionary feature or book count is advertised.",
+    "The reading routine is a suggested use, not evidence of learning improvement.",
+    "A scheduled or published post is not an installation, customer or payment."
+  ],
+  "follow_up": {
+    "mode": "read_only_monitor_then_review",
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false
+  },
+  "funnel": {
+    "state": "owned_post_queued",
+    "verified_new_users": null,
+    "verified_received_gross_usd": null,
+    "measurement_state": "not_connected"
+  }
+}

@@ -72,6 +72,24 @@ links survived reload; anonymous visibility remains unresolved after a cache mis
 and browser timeout. Do not repost. The [campaign receipt](../campaigns/bunko-languagehub-introduction.json)
 does not establish an install or purchase and has no automatic follow-up.
 
+## Instagram reading example — queued September 26
+
+One Bunko post is scheduled through Postiz for **September 26, 2026 at 12:00 UTC
+(8:00 PM Hong Kong)** on [@lazying.art](https://www.instagram.com/lazying.art/).
+It shows an actual 4:5 capture of the browser reader at the start of *Sanshirō*,
+with furigana and English together. The caption suggests reading the Japanese,
+checking the difficult part, then rereading; it gives the exact App Store name
+and verified US$0.99 one-time price. It does not claim that Instagram caption
+links are clickable or direct people to an unverified profile link.
+
+The saved caption, loaded image, destination account, local time and provider
+settings were reviewed before one scheduling action. A fresh Postiz read
+confirmed one matching `QUEUE` item and no release. This is **scheduled, not
+published**, and no installation or purchase is inferred. LinkedIn's separate
+account hold was left unchanged. The [campaign record](../campaigns/bunko-instagram-reading-demo.json)
+and [reviewed image](../assets/bunko-sanshiro-reader-20260926.png) preserve the
+exact material; the existing read-only owned monitor recognizes the caption.
+
 ## Library expansion — September 25
 
 Bunko's downloadable catalogue now has **162 cleared editions**: the previous 150 classics plus 12 owner editions in separate Physics, Learning, Finance and Travel shelves. The additions include three trilingual travel guides, *How You Got Rich* in English, Japanese and Chinese, six independent Leonard Susskind lecture companion volumes in English, *How to Speak and Write* and *Wealth From First Principles*. The source and rights records are in [bunko-books](https://github.com/lachlanchen/bunko-books). Bunko 1.0.2 adds local equation rendering and mobile figure support; describe these app features publicly only after that binary reaches the relevant public store. The web reader can show them after its deployment passes. Do not call the companion notes Susskind-authored or endorsed, and do not imply every source work has all three languages. The existing Reddit, X, blog and Medium introductions describe the older public version and should remain as historical posts.

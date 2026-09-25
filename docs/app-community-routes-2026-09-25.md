@@ -157,3 +157,31 @@ Five further community checks did not establish a useful new introduction:
 No posting requests, moderator messages or introductions were submitted to
 these communities. Preserve the screening evidence so the agent does not
 continually rediscover unsuitable routes.
+
+## September 26: broader L-sound search and owned reading demo
+
+A broader search found a genuinely recent [dark-L practice question](https://www.reddit.com/r/ENGLISH/comments/1wndhcx/do_my_dark_ls_sound_right/)
+from September 22. The author asks about sounds in words such as *tell*, *feel*
+and *milk*, rather than L/N onset confusion, and has already received tailored
+feedback and responded to it. L & N's initial-consonant practice must not be
+presented as a dark-L assessment. The community also explicitly prohibits
+self-promotion and advertising. No reply, audio assessment or private message
+was sent; the EnglishLearning cross-post is not a second prospect.
+
+Additional native route checks:
+
+- [r/Chinese](https://www.reddit.com/r/Chinese/) centers cultural discussion,
+  redirects language posts to ChineseLanguage and prohibits irrelevant ads.
+  No creator invitation or current Bunko-specific need was established.
+- [r/Accents](https://www.reddit.com/r/Accents/) is active, but its recent
+  accent-identification and general shadowing requests are not specific L/N
+  needs. Another creator's visible post is not permission for a new app pitch.
+- [r/UsefulWebsites](https://www.reddit.com/r/UsefulWebsites/) is private;
+  no join request was sent.
+
+The next owned introduction is instead a [reviewed Bunko Instagram reading
+example](../campaigns/bunko-instagram-reading-demo.json), scheduled for September
+26 at 12:00 UTC. It gives a usable reading routine, shows the real reader and
+names the paid Apple app. No additional Reddit launch was duplicated. The
+LinkedIn account-review hold remains unchanged. Queueing does not establish
+publication, new users or revenue.

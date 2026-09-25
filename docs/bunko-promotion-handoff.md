@@ -54,6 +54,12 @@ Two separate introductions were subsequently published through Postiz after revi
 
 Exact published copy and public evidence are in [`campaigns/bunko-classics-introduction.json`](../campaigns/bunko-classics-introduction.json). These records let the existing read-only owned-post monitor recognize the campaign. No community replies, private messages, votes or paid promotion were sent. A relevant incoming question can be reviewed on its own merits; neither post calls for an automatic second pitch. Publication is not a lead or sale.
 
+### Incoming reader feedback
+
+A later [comment](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbxz0ky/) suggested hiding translations sentence by sentence and asked which books readers open first. A [short reply](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbympai/) acknowledged the idea and explained the current no-analytics behaviour; it was verified after reload and in the logged-out view. No additional promotional link was added. The monitor records one owned reply so it is not mistaken for another reader's response.
+
+Sentence-level reveal and optional aggregate book-open counts are proposals, not shipped features. Reading progress currently stays on the device. Adding collection would require an opt-in design and updated product, privacy and store declarations; an open must not be described as completed reading. No app code or data collection was changed by this feedback follow-up.
+
 ## Library expansion — September 25
 
 Bunko's downloadable catalogue now has **162 cleared editions**: the previous 150 classics plus 12 owner editions in separate Physics, Learning, Finance and Travel shelves. The additions include three trilingual travel guides, *How You Got Rich* in English, Japanese and Chinese, six independent Leonard Susskind lecture companion volumes in English, *How to Speak and Write* and *Wealth From First Principles*. The source and rights records are in [bunko-books](https://github.com/lachlanchen/bunko-books). Bunko 1.0.2 adds local equation rendering and mobile figure support; describe these app features publicly only after that binary reaches the relevant public store. The web reader can show them after its deployment passes. Do not call the companion notes Susskind-authored or endorsed, and do not imply every source work has all three languages. The existing Reddit, X, blog and Medium introductions describe the older public version and should remain as historical posts.

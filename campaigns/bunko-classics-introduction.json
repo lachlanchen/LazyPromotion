@@ -1,6 +1,6 @@
 {
   "id": "bunko-classics-introduction",
-  "version": 1,
+  "version": 2,
   "checked_on": "2026-09-25",
   "objective": "Introduce the shipping Bunko reader through a concrete Sanshirō reading example and a transparent creator post, with a clear route to the paid iPhone edition.",
   "source_evidence": {
@@ -32,6 +32,20 @@
       "content_sha256": "7795846395a2745ec9f45c5dc0a8caf2750add7cacebc39785a2761ee3cf135d",
       "publish_at": "2026-09-25T10:00:00Z",
       "release_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/",
+      "known_owned_replies": 1,
+      "owned_replies": [
+        {
+          "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbxz0ky/",
+          "release_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbympai/",
+          "published_at": "2026-09-25T12:44:34Z",
+          "state": "published",
+          "kind": "product_feedback_acknowledgement",
+          "summary": "Acknowledged sentence-level translation reveal and answered that book opens are not tracked. Optional aggregate counts were discussed as a possibility, not a shipping feature.",
+          "new_promotional_link": false,
+          "verified_after_reload": true,
+          "logged_out_visibility_verified": true
+        }
+      ],
       "publication_verification": {
         "verified_state": "PUBLISHED",
         "saved_preview_reviewed": true,
@@ -78,6 +92,14 @@
     "automatic_replies": false,
     "automatic_reposts": false,
     "unsolicited_private_messages": false
+  },
+  "product_feedback": {
+    "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbxz0ky/",
+    "sentence_level_translation_reveal": "proposed_not_implemented",
+    "book_open_measurement": "optional_aggregate_counts_proposed_not_enabled",
+    "source_checked_at_commit": "8543badf8cb48305a3413fea6b99e3fce7aa455a",
+    "current_privacy_contract": "No analytics; reading position remains on the device.",
+    "implementation_gate": "Any new collection needs an explicit opt-in design and matching product, privacy and store declarations before release. Book opens must not be labelled completed reading."
   },
   "funnel": {
     "state": "owned_introductions_published",

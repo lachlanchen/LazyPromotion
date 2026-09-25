@@ -53,7 +53,21 @@ class BunkoIntroductionCampaignTests(unittest.TestCase):
             route = owned_monitor.route_for_post(provider, channel["content"], routes)
             self.assertEqual(route["campaign_id"], self.campaign["id"])
             self.assertEqual(route["route"], "product")
-            self.assertEqual(route["known_owned_replies"], 0)
+            self.assertEqual(route["known_owned_replies"], 1 if provider == "reddit" else 0)
+
+    def test_feedback_reply_is_recorded_without_claiming_a_shipped_feature(self):
+        reddit = self.campaign["channels"]["reddit"]
+        self.assertEqual(reddit["known_owned_replies"], len(reddit["owned_replies"]))
+        reply = reddit["owned_replies"][0]
+        self.assertEqual(reply["state"], "published")
+        self.assertTrue(reply["verified_after_reload"])
+        self.assertTrue(reply["logged_out_visibility_verified"])
+        self.assertFalse(reply["new_promotional_link"])
+        feedback = self.campaign["product_feedback"]
+        self.assertEqual(feedback["source_url"], reply["source_url"])
+        self.assertEqual(feedback["sentence_level_translation_reveal"], "proposed_not_implemented")
+        self.assertEqual(feedback["book_open_measurement"], "optional_aggregate_counts_proposed_not_enabled")
+        self.assertIn("No analytics", feedback["current_privacy_contract"])
 
     def test_no_unapproved_release_claim_or_automatic_followup(self):
         for channel in self.campaign["channels"].values():

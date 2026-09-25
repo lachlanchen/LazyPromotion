@@ -113,6 +113,62 @@ class RedditSearchDateTests(unittest.TestCase):
         )
         self.assertEqual(browser.extract_reddit(self.page, 1)[0]["published_at"], STAMP)
 
+    def test_feed_media_and_store_links_keep_the_current_thread(self):
+        for external in (
+            "https://v.redd.it/example", "https://i.redd.it/example.png",
+            "https://play.google.com/store/apps/details?id=example",
+        ):
+            with self.subTest(external=external):
+                self.page.set_content(
+                    f'<shreddit-post permalink="/r/example/comments/abc123/test/" '
+                    f'content-href="{external}" created-timestamp="{STAMP}" '
+                    'author="maker" post-title="Question"></shreddit-post>',
+                )
+                row = browser.extract_reddit(self.page, 1)[0]
+                self.assertEqual(row["url"], POST_URL)
+                self.assertEqual(row["author"], "maker")
+                self.assertEqual(row["published_at"], STAMP)
+                self.assertEqual(browser.dedupe([row], 1)[0]["url"], POST_URL)
+
+    def test_crosspost_does_not_borrow_the_original_thread(self):
+        original = "https://www.reddit.com/r/elsewhere/comments/xyz987/original/"
+        self.page.set_content(
+            f'<shreddit-post permalink="{POST_URL}" content-href="{original}" '
+            f'created-timestamp="{STAMP}" author="current_author" post-title="Current">'
+            f'<a href="{original}">Original</a></shreddit-post>',
+        )
+        row = browser.extract_reddit(self.page, 1)[0]
+        self.assertEqual(row["url"], POST_URL)
+        self.assertEqual(row["author"], "current_author")
+
+    def test_feed_fallback_uses_visible_thread_link_not_media(self):
+        self.page.set_content(
+            '<shreddit-post content-href="https://v.redd.it/example" post-title="Question">'
+            '<a href="/r/example/comments/abc123/test/?utm_source=feed">Question</a>'
+            '</shreddit-post>',
+        )
+        self.assertEqual(browser.extract_reddit(self.page, 1)[0]["url"], POST_URL)
+
+    def test_media_only_and_invalid_destinations_are_not_candidates(self):
+        for invalid in (
+            "https://i.redd.it/example.png", "https://www.reddit.com/gallery/abc123",
+            "https://not-reddit.com/r/example/comments/abc123/test/",
+            "https://user:pass@www.reddit.com/r/example/comments/abc123/test/",
+            "javascript:alert(1)",
+        ):
+            with self.subTest(invalid=invalid):
+                self.page.set_content(
+                    f'<shreddit-post permalink="{invalid}" content-href="{invalid}" '
+                    'post-title="Question"></shreddit-post>',
+                )
+                self.assertEqual(browser.dedupe(browser.extract_reddit(self.page, 1), 1), [])
+
+    def test_self_post_content_link_still_works_without_permalink(self):
+        self.page.set_content(
+            f'<shreddit-post content-href="{POST_URL}" post-title="Question"></shreddit-post>',
+        )
+        self.assertEqual(browser.extract_reddit(self.page, 1)[0]["url"], POST_URL)
+
 
 if __name__ == "__main__":
     unittest.main()

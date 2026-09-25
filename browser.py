@@ -318,15 +318,30 @@ def candidate_context_ready(
 
 def extract_reddit(page: Page, limit: int) -> list[dict[str, str]]:
     rows = page.locator("shreddit-post").evaluate_all(
-        """(nodes, limit) => nodes.slice(0, limit).map((n) => ({
-          url: n.getAttribute('content-href') || n.getAttribute('permalink') ||
-            n.querySelector('a[href*="/comments/"]')?.href || '',
+        """(nodes, limit) => {
+          const postUrl = (raw) => {
+            if (!raw) return '';
+            try {
+              const u = new URL(raw, 'https://www.reddit.com');
+              if (u.protocol !== 'https:' || u.username || u.password || u.port ||
+                  !['www.reddit.com', 'reddit.com'].includes(u.hostname) ||
+                  !/^\\/r\\/[A-Za-z0-9_]+\\/comments\\/[a-z0-9]+\\//.test(u.pathname)) return '';
+              return u.origin + u.pathname;
+            } catch (_) { return ''; }
+          };
+          return nodes.slice(0, limit).map((n) => ({
+          // content-href can point to a video, image, store, or original cross-post.
+          // Keep the current thread's identity together with its author and date.
+          url: postUrl(n.getAttribute('permalink')) ||
+            [...n.querySelectorAll('a[href*="/comments/"]')]
+              .map(a => postUrl(a.getAttribute('href'))).find(Boolean) ||
+            postUrl(n.getAttribute('content-href')),
           author: n.getAttribute('author') || '',
           published_at: n.getAttribute('created-timestamp') || '',
           comment_count: n.getAttribute('comment-count') || '0',
           source_score: n.getAttribute('score') || '0',
           body: [n.getAttribute('post-title') || '', n.innerText || ''].join(' ').trim()
-        }))""",
+        })); }""",
         limit,
     )
     if rows:

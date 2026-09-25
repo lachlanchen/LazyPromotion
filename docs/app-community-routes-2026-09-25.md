@@ -229,3 +229,42 @@ anonymous browser reached Reddit's humanity challenge, which was not completed
 or bypassed. Consequently, anonymous visibility remains unresolved, including
 for the new AppHunt post. Do not retry anonymously in a loop or infer removal.
 No new installs, customers or revenue were verified.
+
+## September 26: next venues, without another launch burst
+
+The next general app introduction can be Bunko in
+[r/AppsWebappsFullstack](https://www.reddit.com/r/AppsWebappsFullstack/).
+Its moderator's [current invitation](https://www.reddit.com/r/AppsWebappsFullstack/comments/1wpygfd/your_home_for_selfpromo_your_showroom_let/)
+explicitly welcomes apps and web apps. The four expanded rules cover violence,
+discrimination, SFW content and respectful conduct. The native feed is active.
+A short reading-focused draft is kept privately for review **no earlier than
+September 27**; nothing was submitted or scheduled. Recheck the live rules,
+duplicates, Apple price/release and exact copy before sending. This is a general
+creator audience, not evidence of a reader seeking Bunko.
+
+Additional native checks changed these decisions:
+
+| Source | Decision |
+| --- | --- |
+| [r/promoteMyApp](https://www.reddit.com/r/promoteMyApp/) | Active app-sharing venue. Its pinned [Founders' Corner](https://www.reddit.com/r/promoteMyApp/comments/1ua69q9/founders_corner_drop_your_product_launch_here/) welcomes owned products but also asks contributors to engage with others and update, not repeatedly repost, their entries. Reserve route; no token comments or reciprocal reviews. |
+| [r/ShowMeYourApps](https://www.reddit.com/r/ShowMeYourApps/) | Current rule 3 says **No AI content**. The broad invitation in a search result does not override that rule. No generated introduction submitted. |
+| [r/AppRecommendations](https://www.reddit.com/r/AppRecommendations/) | Private community. No join request sent. |
+| [r/JapaneseLiterature](https://www.reddit.com/r/JapaneseLiterature/) | Restricted, with years-old visible discussions. No posting request or old-thread reply. |
+| [r/ChineseLiterature](https://www.reddit.com/r/ChineseLiterature/) | Sparse recent activity centered on Lin Yutang articles; no close current reader request or explicit app-sharing invitation established. No pitch. |
+| [App Scout](https://www.appscout.co/submit/) | Its current submission page requires **USD 1 per app per month**, despite the [Reddit invitation](https://www.reddit.com/r/ShowMeYourApps/comments/1wf9ivq/whats_your_app_lets_self_promote_and_get_more/) advertising a free submission. No account, terms acceptance or payment. Do not treat it as a free directory or assume its audience claims are verified. |
+
+A fresh [poetry-reading question](https://www.reddit.com/r/RSbookclub/comments/1wpsbt3/how_do_you_read_a_poetry_book/)
+mentions *Journey to the West*, but asks how people approach poetry and already
+has several substantive answers. It does not ask for a multilingual reader.
+Chinese-script L/N searches returned older or unrelated results. Neither search
+justified an ordinary-thread pitch. Bunko's SideProject search counter showed
+four comments, while the loaded thread still exposed only the original reader
+feedback and the existing acknowledgement; no new question was established.
+
+The native feed exposed a discovery defect: `content-href` may identify the
+image, video or original cross-post, not the displayed discussion. Discovery now
+prefers and normalizes the current post's permalink and rejects non-thread
+fallbacks. Twelve synthetic DOM checks pass, and twenty live feed records
+matched their native discussion permalinks. This is source-identity validation,
+not twenty prospective users. No new posts, installs or sales resulted from
+this pass.

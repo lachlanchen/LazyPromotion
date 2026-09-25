@@ -1,6 +1,6 @@
 # L & N promotion handoff
 
-Updated: 2026-09-20 (supersedes the 2026-09-19 note; earlier verified facts are kept where still true)
+Updated: 2026-09-26. Dated release checks below are historical; the September 25–26 follow-ups supersede older shipping and publication states.
 
 Shared release and promotion reference for [L & N](https://github.com/lachlanchen/L-and-N). This note contains no credentials, tester identities, private email addresses, signing material, or browser cookies. Shipping-reported states are distinguished from independent public checks below; repository paths are relative to L & N unless noted otherwise.
 
@@ -32,7 +32,7 @@ Shipping update checked at 10:26 UTC supersedes that Android submission state: c
 
 Web discovery update at 08:49 UTC: source `75883a4`, evidence `16c162a`, and entry `index-DZiUdOSI.js` supersede the earlier web bundle above. Canonical/social-preview metadata and a no-JavaScript lesson/store fallback are live. The owner passed 86 tests; promotion independently matched all four public file hashes. No indexing or conversion result is claimed. See `store/artifacts/pwa-homepage-discovery-release.json`; dated screenshots from the earlier bundle remain valid historical captures.
 
-The English developer story [I Mix Up L and N, So I Built a Practice App](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html) is now published. It explains the scoring and listening design, includes the real setup screenshot, and has one free-web call to action. One Medium edition on `@lazyingart` is scheduled for **September 21, 02:00 UTC / 10:00 HKT**, with the image, source links, Medium-specific app attribution and a brief AI-assistance label. The saved schedule, disabled paywall and original-blog canonical setting passed a reload check. Anonymous access and the final public canonical are due after publication; no Medium publication or income is claimed yet. Do not reimport or recreate the scheduled story.
+The English developer story [I Mix Up L and N, So I Built a Practice App](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html) is published. It explains the September 20 scoring and listening design, includes the real setup screenshot, and retains its original free-web call to action. The existing [Medium edition](https://lazyingart.medium.com/i-mix-up-l-and-n-so-i-built-a-practice-app-3de2c4b2a934) **published September 21 at 02:01 UTC**, confirmed September 26 from the Published list and article metadata. The full author-view article, four sections, image, source links, Medium-specific app attribution, brief AI-assistance label and original-blog canonical are intact. Structured metadata marks it accessible for free. A separate unauthenticated HTTP check returned 403, so independent anonymous visibility remains unresolved. Nothing was edited, imported or published again. This is distribution evidence, not a new user or income result; new app promotion should still use the current store routes.
 
 ## 1. What the product is, in one paragraph
 

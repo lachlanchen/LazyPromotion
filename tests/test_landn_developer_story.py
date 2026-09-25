@@ -21,8 +21,8 @@ class LandnDeveloperStoryTests(unittest.TestCase):
         self.assertNotIn('buy.stripe.com', source)
         self.assertNotIn('access_token', source)
         self.assertNotIn('/home/', source)
-        self.assertEqual(story['medium']['state'], 'scheduled')
-        self.assertFalse(story['medium']['published'])
+        self.assertEqual(story['medium']['state'], 'published')
+        self.assertTrue(story['medium']['published'])
         self.assertTrue(story['medium']['brief_ai_assistance_label_present'])
         self.assertIn('outside the paywall', story['medium']['publication_gate'])
 
@@ -41,11 +41,32 @@ class LandnDeveloperStoryTests(unittest.TestCase):
         self.assertEqual(medium['schedule_timezone'], 'Asia/Hong_Kong')
         self.assertGreater(medium['scheduled_at_local'][:10], medium['verified_on'])
         self.assertTrue(medium['normalized_text_preserved_after_spacing_cleanup'])
-        self.assertFalse(medium['published'])
+        self.assertTrue(medium['published'])
         self.assertIn('anonymous public access', medium['publication_gate'])
         self.assertNotIn('/p/', json.dumps(medium))
         self.assertNotIn('draft_url', medium)
         self.assertNotIn('editor_url', medium)
+
+    def test_medium_publication_does_not_invent_anonymous_visibility_or_users(self):
+        campaign = json.loads((ROOT / 'campaigns/l-and-n-pronunciation-launch.json').read_text())
+        medium = campaign['source_evidence']['owned_developer_story']['medium']
+        result = medium['publication_verification']
+        self.assertTrue(result['published_list_verified'])
+        self.assertTrue(result['full_article_author_view_verified'])
+        self.assertTrue(result['public_canonical_matches_original_blog'])
+        self.assertTrue(result['structured_is_accessible_for_free'])
+        self.assertEqual(result['section_headings_verified'], 4)
+        self.assertEqual(result['anonymous_visibility'], 'unresolved_http_403')
+        self.assertFalse(result['new_publication_action'])
+        self.assertGreater(
+            datetime.fromisoformat(result['provider_published_at'].replace('Z', '+00:00')),
+            datetime.fromisoformat(medium['scheduled_at_utc'].replace('Z', '+00:00')),
+        )
+        self.assertLess(result['imported_source_date'], result['provider_published_at'])
+        self.assertRegex(result['captured_article_text_sha256'], r'^[a-f0-9]{64}$')
+        self.assertIn('medium.com/i-mix-up-l-and-n-', medium['published_url'])
+        self.assertIn('not a new store-focused campaign',
+                      campaign['source_evidence']['owned_developer_story']['policy'])
 
     def test_current_homepage_evidence_keeps_capture_history_separate(self):
         evidence = json.loads((ROOT / 'campaigns/l-and-n-pronunciation-launch.json').read_text())['source_evidence']

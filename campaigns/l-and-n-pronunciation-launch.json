@@ -1,5 +1,5 @@
 {
-  "version": 21,
+  "version": 22,
   "id": "l-and-n-pronunciation-launch",
   "objective": "Invite specific feedback on a free L/N pronunciation drill through one authentic first-party story, without implying clinical accuracy or customer outcomes.",
   "source_evidence": {
@@ -95,7 +95,7 @@
       "media_sha256": "418beff568cf11cf26555d7812a86fd777d3fbd4a427ec834cf7a52988abc91c",
       "verification": "WordPress raw content exactly matches the reviewed Markdown rendering; public page, canonical, four headings, one app call to action and the original screenshot verified at 390px and 1280px without horizontal overflow.",
       "medium": {
-        "state": "scheduled",
+        "state": "published",
         "profile": "@lazyingart",
         "verified_on": "2026-09-20",
         "method": "Official browser importer; reviewed free-post dialog; one Schedule to publish action; saved schedule and unchecked paywall verified after reload.",
@@ -111,10 +111,27 @@
         "source_links_retained": true,
         "app_destination_uses_medium_attribution": true,
         "brief_ai_assistance_label_present": true,
-        "published": false,
-        "publication_gate": "Keep this AI-assisted story outside the paywall. The saved schedule, free-post setting and original-source canonical are verified; check anonymous public access and canonical after the scheduled time. Do not reimport or reschedule it, or claim that scheduling is publication or revenue."
+        "published": true,
+        "published_url": "https://lazyingart.medium.com/i-mix-up-l-and-n-so-i-built-a-practice-app-3de2c4b2a934",
+        "publication_verification": {
+          "checked_on": "2026-09-26",
+          "provider_published_at": "2026-09-21T02:01:03.324Z",
+          "imported_source_date": "2026-09-20T08:52:19Z",
+          "published_list_verified": true,
+          "full_article_author_view_verified": true,
+          "section_headings_verified": 4,
+          "source_links_and_medium_attribution_verified": true,
+          "image_loaded_and_alt_text_verified": true,
+          "public_canonical_matches_original_blog": true,
+          "structured_is_accessible_for_free": true,
+          "anonymous_visibility": "unresolved_http_403",
+          "captured_article_text_sha256": "2c1cfc7e9b4c0d2d6c48dbc918ba49df7200fdbb001dba71486c070835f6c2a9",
+          "new_publication_action": false,
+          "policy": "The saved story published on its original schedule. Author-view content and public metadata are verified; the independent unauthenticated HTTP check returned 403 and was not retried or bypassed. The imported source date is not the Medium publication time. No new post, edit, user acquisition or income is inferred."
+        },
+        "publication_gate": "Keep this AI-assisted story outside the paywall. Publication, the source canonical and free-access structured metadata are now verified in the signed-in view; independent anonymous public access remains unresolved after HTTP 403. Do not reimport, reschedule or republish it, or equate publication with app users or revenue."
       },
-      "policy": "First-party development experience, not an independent learner study or revenue evidence. One free Medium syndication is scheduled for the following day; publication remains unverified."
+      "policy": "First-party development experience, not an independent learner study or revenue evidence. The blog and existing free Medium syndication are published; Medium's independent anonymous visibility remains unresolved. The September 20 development snapshot and its original web call to action are historical copy, not a new store-focused campaign."
     },
     "homepage_discovery": {
       "state": "live",

@@ -34,7 +34,9 @@ New English source-only post `3849`, [I Mix Up L and N, So I Built a Practice Ap
 
 Source: `articles/l-and-n-listening-practice/post.md` in LazyPromotion. LazyPub archive: `content/lazypub/20260920-l-and-n-listening-practice/` in BLOG, commit `fac7abf`. Draft review and publish dry run passed; live raw content matches the source rendering exactly. Mobile 390px and desktop 1280px checks passed, with the expected canonical, image and source-code links. This English addition is separate from the trilingual polish count below.
 
-One free Medium edition is scheduled for September 21, 02:00 UTC / 10:00 HKT. The native scheduling dialog was reviewed and submitted once; the saved schedule, disabled paywall, two topics and original-blog canonical setting were verified after reload. Six empty imported heading/quote blocks were removed without changing normalized article text. Anonymous publication and its final canonical remain later checks. No traffic, learner or income result is claimed.
+The free Medium edition was scheduled once for September 21, 02:00 UTC / 10:00 HKT. The native scheduling dialog, disabled paywall, two topics and original-blog canonical setting were verified after reload. Six empty imported heading/quote blocks were removed without changing normalized article text.
+
+September 26 follow-up: the [existing story](https://lazyingart.medium.com/i-mix-up-l-and-n-so-i-built-a-practice-app-3de2c4b2a934) appears in Published, with `article:published_time` of September 21 at 02:01:03 UTC. Its full author-view text, four section headings, image, source links, Medium attribution and blog canonical were verified. Structured metadata marks it accessible for free; its September 20 source date is retained separately from publication time. An unauthenticated HTTP check returned 403, leaving independent anonymous visibility unresolved. No new edit, import, schedule or publication action occurred. No traffic, learner or income result is inferred.
 
 As of the verified commit, **156 posts** have completed this protocol:
 

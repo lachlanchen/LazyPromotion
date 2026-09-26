@@ -10,6 +10,15 @@ point viewers there with current pricing. Both descriptions were verified throug
 anonymous public metadata; no videos were re-uploaded. Details and hashes are in
 the [video library](product-video-library.md#store-path-added-september-26).
 
+The [LazyingArt homepage](https://lazying.art/#app-downloads) now puts L & N's
+Apple/Google downloads and Bunko's Apple download near the top, with descriptions
+in all 13 site languages. This shortens the existing Instagram bio-link route
+without a new post or another landing page. Desktop/mobile, light/dark and
+right-to-left layouts were checked, as were the three exact store destinations.
+The [published website change](https://github.com/lachlanchen/LazyingArtWebsite/commit/1ee9089422534246f433a7b3224af00db2385ba3)
+adds no analytics, account gate, beta download or unsupported Android Bunko link.
+It is a clearer download path, not evidence of an install or sale.
+
 ## Bunko: Classics with Ruby
 
 | Destination | Link |
@@ -17,6 +26,7 @@ the [video library](product-video-library.md#store-path-added-september-26).
 | US App Store, public version 1.0.1 | [Bunko: Classics with Ruby](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919) |
 | Web reader and live book catalogue | [Bunko](https://lachlan.lazying.art/Bunko/) |
 | Creator walkthrough, with multilingual captions | [Bunko on YouTube](https://www.youtube.com/shorts/pSWnOwzyc-4) |
+| Existing creator walkthrough on Instagram | [Bunko on @lazyingart](https://www.instagram.com/lazyingart/reel/DdsirAfOo1i/) |
 | Promotion facts and claim boundaries | [Bunko promotion handoff](bunko-promotion-handoff.md) |
 
 Apple's US storefront now shows **1.0.1 at USD 0.99**, including covers and
@@ -40,6 +50,7 @@ unresolved. Its linkless copy follows that thread's rules.
 | Repository and official-link record | [L-and-N](https://github.com/lachlanchen/L-and-N) · [Official links](https://github.com/lachlanchen/L-and-N/blob/main/docs/public-links.md) |
 | English app demo, burned-in subtitles | [Video](https://github.com/user-attachments/assets/036ebbdf-ab34-4761-875e-46470074aff8) |
 | English creator walkthrough on YouTube | [L & N on YouTube](https://www.youtube.com/shorts/Nlsx_5U6g6U) |
+| Existing English walkthrough on Instagram | [L & N on @lazyingart](https://www.instagram.com/lazyingart/reel/DdpyAmVu0So/) |
 | 中文应用演示，已烧录字幕 | [视频](https://github.com/user-attachments/assets/f13a2ea0-ca16-4d40-8f3b-478e5b5e7792) |
 
 The US App Store page currently shows USD 0.99 and version 1.0.6. Google Play

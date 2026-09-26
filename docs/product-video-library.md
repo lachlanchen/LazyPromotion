@@ -11,6 +11,24 @@ Checked September 26, 2026. Channel: [The Art of Lazying — @lazyingart](https:
 
 Both are existing creator recordings, not generated concept videos or customer testimonials. The visual check is not a full editorial/audio audit. Do not re-upload them merely to share a link. The older `jirylmFo5U8` link identifies a Local Knowledge Terminal video, not L & N.
 
+### Existing Instagram walkthroughs
+
+The creator recordings are already on [@lazyingart](https://www.instagram.com/lazyingart/),
+which is a different account from the [@lazying.art](https://www.instagram.com/lazying.art/)
+account used by the current Postiz campaigns. Both native posts were opened on
+September 26; account, caption, publication date and progressing playback were checked.
+
+| Recording | Existing Instagram post | Published (UTC) |
+| --- | --- | --- |
+| L & N, English introduction | [Watch the existing walkthrough](https://www.instagram.com/lazyingart/reel/DdpyAmVu0So/) | September 24, 02:12 |
+| Bunko, multilingual-caption walkthrough | [Watch the existing walkthrough](https://www.instagram.com/lazyingart/reel/DdsirAfOo1i/) | September 25, 03:55 |
+
+These are existing publications, not new uploads by this promotion pass. A
+completed publishing job alone did not establish which account held the video;
+the native pages resolved that. Do not upload a duplicate merely because it is
+absent from Postiz's calendar. Bunko's recording still shows a TestFlight install;
+retain the feature-parity check before reusing it for a new store campaign.
+
 ### Store path added September 26
 
 The two English demo descriptions lacked direct store destinations. YouTube's

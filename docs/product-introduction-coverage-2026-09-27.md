@@ -42,6 +42,12 @@ through pinned research notes rather than being presented as a new release.
 
 ## Distribution already in place
 
+- The existing PocketPolyglot *Snow Country* typesetting article now supplies
+  a relevant internal discovery route in its Chinese, English and Japanese
+  editions: one link to Bunko's *Sanshirō* walkthrough, then the guide's Apple
+  destination. The original rights notice and removed-download restriction
+  remain intact; no *Snow Country* availability is implied. This is an owned
+  reader path, not another launch or a measured conversion.
 - L & N, Bunko and LazyEdit already have free Medium editions. Do not import
   them again. Their canonical links and publication receipts are in the
   editorial ledger.

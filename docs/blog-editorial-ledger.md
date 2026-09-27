@@ -20,6 +20,23 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 27 — PocketPolyglot readers to Bunko
+
+Post `3616`, the existing *Snow Country* typesetting article, now ends with one
+[Bunko reading-walkthrough link](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html)
+in Chinese, English and Japanese. The added section explicitly uses a different
+book, *Sanshirō*, to demonstrate the layout. It does not offer *Snow Country*
+through Bunko or restore the withdrawn PDFs. Original text, rights notice,
+title, publication date, slug, categories, tags and image remain intact.
+
+The source/input archive and both translations are synchronized. Doctor,
+body-only dry review, exact stored-content checks, all three public HTTP 200
+responses, canonicals, headings, one guide link per edition and zero PDF links
+passed. The walkthrough still contains its Apple destination. The stored
+excerpt remains empty; WordPress's automatically generated excerpt changes
+with the body. No visual/layout retest, new Medium/social post, reader conversion
+or sale is claimed. BLOG commit: `77006dd`.
+
 ### September 27 correction — EchoMind buyer access
 
 The existing [EchoMind introduction](https://blog.lazying.art/html/computer_internet/3867/echomind-language-help-in-conversation.html)

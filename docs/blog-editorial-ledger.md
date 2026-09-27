@@ -20,6 +20,19 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 27 addition — platform and shared-account introduction
+
+English post `3873`, [A Home for the Tools, Without Another Login to Remember](https://blog.lazying.art/html/computer_internet/3873/lazyingart-platform-tools-shared-account.html), introduces the product hub and the planned shared account around EchoMind, Google, Apple, GitHub and email. It explicitly distinguishes the existing EchoMind login from inactive unified sign-in, and separates identity from private workspaces, app access, purchases and wallet permissions.
+
+Source: `articles/lazyingart-platform-shared-account/post.md`; BLOG archive
+`content/lazypub/20260927-platform-shared-account/`, pushed as `6b5a910`.
+Doctor, draft and publication dry runs passed. Stored content matches the source;
+live canonical, headings and no-overflow checks passed at 390/1280px. Platform's
+matching Account section is live at `78e50a8` with eleven content tests passing.
+The central service remains disabled; no new provider, account, payment or Coin
+operation occurred. Source-only addition, not a change to the trilingual count.
+No Medium or social publication was added for this article.
+
 ### September 27 addition — four product introductions
 
 Published English source editions for AiMemo (`3862`), OnlyIdeas (`3864`),

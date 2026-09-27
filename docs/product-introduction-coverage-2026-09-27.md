@@ -15,6 +15,7 @@ post, page visit or reply is not revenue.
 | OnlyIdeas | Keep an equation, its passage and a question together | [The Question Belongs Beside the Paper](https://blog.lazying.art/html/computer_internet/3864/onlyideas-read-papers-equations-questions.html) |
 | LazyOracle | Keep the computed draw separate from the generated interpretation | [Draw the Cards Before Writing the Story](https://blog.lazying.art/html/computer_internet/3866/lazyoracle-cards-rules-before-ai-story.html) |
 | EchoMind | Keep optional language help close to a text or voice conversation | [Keep the Language Help Inside the Conversation](https://blog.lazying.art/html/computer_internet/3867/echomind-language-help-in-conversation.html) |
+| LazyingArt Platform | Find the tools and understand the upcoming shared account | [A Home for the Tools, Without Another Login to Remember](https://blog.lazying.art/html/computer_internet/3873/lazyingart-platform-tools-shared-account.html) |
 
 The four new articles are English source editions, not new trilingual editions.
 L & N's existing article now leads directly to Apple and Google, with the
@@ -32,6 +33,10 @@ through pinned research notes rather than being presented as a new release.
   purchase, identity and Coin boundaries are unchanged.
 - Public source remains private where appropriate; neither AiMemo nor EchoMind
   gets a private GitHub source link.
+- The later Account section links to EchoMind's existing sign-in and the new
+  platform article. Shared EchoMind/Google/Apple/GitHub/email sign-in is clearly
+  labelled upcoming, not activated. Central discovery and Platform account
+  routes are still unavailable, matching the central owner's disabled state.
 
 ## Distribution already in place
 
@@ -87,6 +92,13 @@ the next external publication, not reasons to invent a release status.
 BLOG commit: `3f80cde14fd0b5526c69a343d274fa52c8a9ca31`.
 Apex source and Pages release: `cf2ba85ba5455595ee5a513c3ab00df91064a762`.
 Platform source and live public release: `343769c5afd96b8e8c62cb12ef02df447589bbfb`.
+
+Account-introduction follow-up: BLOG `6b5a91080c96ba3f59c05f6978618f6c70890c65`;
+current Platform release `78e50a810f379f32f9fd82d46e4827bc7da59206`. Eleven
+content tests and live 390/1280px checks passed. Post `3873` matches its reviewed
+source exactly. Existing EchoMind login page returned 200; no authentication
+round trip or provider activation was performed. No new Medium/social schedule
+was created for this framework introduction.
 
 Doctor, draft and publication dry runs passed. All four stored article bodies
 match their reviewed sources; public canonical pages, headings and images pass

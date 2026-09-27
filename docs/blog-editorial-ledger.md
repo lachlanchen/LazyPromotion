@@ -20,6 +20,21 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 27 addition — four product introductions
+
+Published English source editions for AiMemo (`3862`), OnlyIdeas (`3864`),
+LazyOracle (`3866`) and EchoMind (`3867`), plus direct Apple/Google and English
+walkthrough links in the existing L & N post `3849`. The
+[coverage record](product-introduction-coverage-2026-09-27.md) links each article
+and records the current release, account and privacy boundaries.
+
+BLOG commit `3f80cde` is pushed. Doctor, draft review and publication dry runs
+passed. All four raw bodies match the reviewed Markdown. Public canonical,
+section, image and no-overflow checks passed at 390/1280px. Three reviewed
+project-owned images accompany the new articles; EchoMind uses no screenshot
+of account or conversation data. Existing unrelated chat edits are untouched.
+These are source-only additions and do not change the trilingual count below.
+
 ### September 27 addition — LazyEdit app-demo workflow
 
 New English source-only post `3857`, [The App Demo Is Recorded. Now Come the Subtitles.](https://blog.lazying.art/html/computer_internet/3857/app-demo-subtitles-lazyedit-workflow.html), explains transcript correction before translation, keeping editable subtitle timings, phone-size caption review, and checking individual publication outcomes before retries. The examples are the creator's existing L & N and Bunko recordings. One commercial next step points to the existing USD 250 Story Clip Pilot sample and free fit check; translation and publishing are explicitly outside that fixed scope.

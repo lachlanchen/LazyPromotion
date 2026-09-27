@@ -53,4 +53,4 @@ The normal web path schedules the clips on the Web Audio clock. A fallback uses 
 
 Start with a three-word round. Replay a missed position, compare the two examples, then switch to speaking practice and record one word. There is no need to turn it into a long study session.
 
-[Try L & N in the browser](https://l-and-n.lazying.art/?utm_source=blog&utm_medium=article&utm_campaign=l_and_n_listening). It is free and needs no account. The app also links to the native versions; the US iPhone listing is US$0.99.
+[Get L & N on the App Store](https://apps.apple.com/us/app/l-n-speech-practice/id6808872450) or [Google Play](https://play.google.com/store/apps/details?id=art.lazying.landn). The US iPhone price is $0.99; check the store listing for your region. There is no account to create. The [short English walkthrough](https://www.youtube.com/shorts/Nlsx_5U6g6U) shows the app before you install it.

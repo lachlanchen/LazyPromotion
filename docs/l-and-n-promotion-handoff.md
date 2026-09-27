@@ -4,6 +4,26 @@ Updated: 2026-09-27. Dated release checks below are historical; the latest check
 
 Shared release and promotion reference for [L & N](https://github.com/lachlanchen/L-and-N). This note contains no credentials, tester identities, private email addresses, signing material, or browser cookies. Shipping-reported states are distinguished from independent public checks below; repository paths are relative to L & N unless noted otherwise.
 
+## September 27 — store-copy correction and search discovery
+
+The shipping owner's [metadata receipt](https://github.com/lachlanchen/L-and-N/blob/7a582fccfb26f8709fa27882a1729a653f1cec54/store/artifacts/store-copy-google-review-20260927.json)
+supersedes the older Android review state below: main-app production
+**1.0.11 (21) is Active**. A separate, English-only listing correction was
+submitted once and is **in review**. Its entire payload is the short and full
+descriptions; the binary, price, purchase settings and other locales are
+unchanged. Do not claim the revised public descriptions are already approved.
+
+Apple's English promotional text was saved and verified through provider
+readback. The independent public web check at 14:37 UTC did not show that new
+text yet. Apple subtitle and long-description revisions remain staged for a
+normal editable version; no additional app review was started for this copy.
+
+The scheduled Search Console review now confirms the
+[L & N homepage](https://l-and-n.lazying.art/) **is indexed**, with its declared
+canonical selected and its sitemap detected. This resolves the September 20
+homepage indexing concern, not a traffic or sales claim. No repeat indexing
+request was sent.
+
 ## September 27 — public playback update
 
 The native US App Store page and Apple's multi-app lookup now both show
@@ -14,13 +34,14 @@ observation that the public storefront was still 1.0.6 when release was requeste
 
 Google Play is publicly installable, with in-app purchases. Its September 26
 release notes also describe pair playback, navigation and recording-history
-improvements. Source `c9bf6b7` records Android production 1.0.10 (20), with
-1.0.11 (21) still in review. The visible page checked here did not expose an
-Android version number; do not promote build 21 as approved.
+improvements. The earlier `c9bf6b7` source review state was superseded by the
+fresh shipping-owner production check above. The public page inspected by
+promotion did not itself expose an Android version number.
 
 The Google long description still says raw recordings are not retained, while
 its current release notes refer to device-local recordings. Do not repeat that
-outdated sentence in promotion. No store metadata or shipping state was modified.
+outdated sentence in promotion. The later text-only correction above addresses
+it and remains in review; this initial playback check did not modify store state.
 The September 27 teacher-resource introduction was delivered once. Its native
 Reddit page says **awaiting moderator approval**, so public visibility is not
 established. Leave it unchanged; no duplicate introduction or moderator request.

@@ -76,6 +76,12 @@ is in r/edtech's September developer thread. Its copy, author and both store lin
 were checked after signed-in reload; anonymous visibility remains unresolved.
 It is not an independently verified user or tutor adoption.
 
+Postiz delivered the [light/night classroom warm-up](https://www.reddit.com/r/ESL_Teachers/comments/1wrig5z/a_lightnight_listening_warmup_plus_the_ln/)
+to r/ESL_Teachers on September 27. The native author view retains the reviewed
+copy, author, title, Helpful Materials flair and both store links, but explicitly
+says **awaiting moderator approval**. This is delivery, not verified public
+visibility. No repeat or moderator message was sent.
+
 On September 26 (Hong Kong), the [maintainer's Reddit profile](https://www.reddit.com/user/Ok-Perception1122/)
 was given three direct store links: **L & N — App Store**, **L & N — Google Play**,
 and **Bunko — App Store**. All labels and exact destinations were checked after

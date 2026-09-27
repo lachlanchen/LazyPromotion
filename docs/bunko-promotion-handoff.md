@@ -95,6 +95,12 @@ Exact published copy and public evidence are in [`campaigns/bunko-classics-intro
 
 ### Incoming reader feedback
 
+September 27 follow-up: the same reader [suggested first-chapter download counts](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pc57de2/)
+to help choose featured books and asked whether Chinese or Japanese readers
+predominate. That split is not known. The suggestion remains product feedback,
+not proof of an installation or permission to collect reading data; nothing was
+enabled and no additional pitch was sent.
+
 A later [comment](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbxz0ky/) suggested hiding translations sentence by sentence and asked which books readers open first. A [short reply](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbympai/) acknowledged the idea and explained the current no-analytics behaviour; it was verified after reload and in the logged-out view. No additional promotional link was added. The monitor records one owned reply so it is not mistaken for another reader's response.
 
 Sentence-level reveal and optional aggregate book-open counts are proposals, not shipped features. Reading progress currently stays on the device. Adding collection would require an opt-in design and updated product, privacy and store declarations; an open must not be described as completed reading. No app code or data collection was changed by this feedback follow-up.

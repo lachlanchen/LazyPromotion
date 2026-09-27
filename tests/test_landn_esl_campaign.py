@@ -26,15 +26,21 @@ class LandnTeacherCampaignTests(unittest.TestCase):
         self.assertNotIn('l-and-n.lazying.art', copy)
         self.assertNotIn('TestFlight', copy)
 
-    def test_one_future_queue_not_a_publication_or_sale(self):
-        self.assertEqual(self.post['state'], 'queued_verified')
+    def test_provider_delivery_is_not_moderator_approval_or_sale(self):
+        self.assertEqual(self.post['state'], 'delivered_pending_moderation')
         self.assertEqual(self.post['publish_at'], '2026-09-27T12:00:00Z')
-        self.assertNotIn('release_url', self.post)
+        self.assertIn('/r/ESL_Teachers/comments/1wrig5z/', self.post['release_url'])
         v = self.post['publication_verification']
-        self.assertEqual(v['verified_state'], 'QUEUE')
+        self.assertEqual(v['verified_state'], 'PUBLISHED')
         self.assertEqual(v['schedule_actions'], 1)
         self.assertTrue(v['single_matching_item'])
-        self.assertFalse(v['release_present'])
+        self.assertTrue(v['release_present'])
+        self.assertTrue(v['native_copy_author_title_and_links_verified'])
+        self.assertEqual(v['moderation_state'], 'awaiting_moderator_approval')
+        self.assertEqual(v['native_moderation_notice'], 'Post is awaiting moderator approval.')
+        self.assertFalse(v['public_visibility_verified'])
+        self.assertEqual(v['visible_reader_comments'], 0)
+        self.assertEqual(self.campaign['funnel']['state'], 'community_post_delivered_pending_moderation')
         self.assertIsNone(self.campaign['funnel']['verified_new_users'])
         self.assertIsNone(self.campaign['funnel']['verified_received_gross_usd'])
 

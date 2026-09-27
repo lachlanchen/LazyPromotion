@@ -25,16 +25,23 @@ Public browsing needs no account. No sample balance, active airdrop, new payment
 object or customer result is advertised. App availability and pricing should
 be rechecked before later campaigns.
 
-## Account integration — not live
+## Account integration — password flow live September 27
 
-Platform has a source-tested shared-account consumer and a separate source-tested
-Coin-summary validator/renderer. EchoMind owns the identity service and provider
-connections; Coin owns its resource authorization and personal-summary route.
-The shared issuer, registered app client, actual provider callbacks, delegated
-Coin-read consent and production qualification are still dependencies.
+Platform release `22572bb9408fdfcaacd8af2734687a32129dabc8` passed actual
+browser registration, password login, callback, dashboard, cancellation,
+restart persistence and logout. The public account configuration enables the
+password provider only. Google, Apple and GitHub shared sign-in remain disabled;
+this does not change any native app's separately supported login methods.
 
-Do not turn source tests into a working-login claim. Current public browsing
-continues through ordinary product links. Account credentials, customer data,
-deployment receipts and owner coordination stay outside this repository.
+Coin read permission is separate. Actual consent, summary access and withdrawal
+passed, while profile-only access does not authorize Coin data. Unmapped accounts
+show `link_required` with null quantities, not a zero balance. Account linking,
+mapped real balances, signing and distributions are not activated or claimed.
+
+Public browsing continues through ordinary product links without login. A shared
+identity does not merge private workspaces, app purchases or EchoMind access.
+Credentials, customer data, operational receipts and owner coordination stay
+outside this repository. No new account or financial operation was performed
+for the subsequent editorial update.
 
 Publication and new links are funnel infrastructure, not confirmed revenue.

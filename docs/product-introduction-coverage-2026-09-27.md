@@ -15,7 +15,7 @@ post, page visit or reply is not revenue.
 | OnlyIdeas | Keep an equation, its passage and a question together | [The Question Belongs Beside the Paper](https://blog.lazying.art/html/computer_internet/3864/onlyideas-read-papers-equations-questions.html) |
 | LazyOracle | Keep the computed draw separate from the generated interpretation | [Draw the Cards Before Writing the Story](https://blog.lazying.art/html/computer_internet/3866/lazyoracle-cards-rules-before-ai-story.html) |
 | EchoMind | Keep optional language help close to a text or voice conversation | [Keep the Language Help Inside the Conversation](https://blog.lazying.art/html/computer_internet/3867/echomind-language-help-in-conversation.html) |
-| LazyingArt Platform | Find the tools and understand the upcoming shared account | [A Home for the Tools, Without Another Login to Remember](https://blog.lazying.art/html/computer_internet/3873/lazyingart-platform-tools-shared-account.html) |
+| LazyingArt Platform | Find the tools without an account, or use the live shared password sign-in | [A Home for the Tools, Without Another Login to Remember](https://blog.lazying.art/html/computer_internet/3873/lazyingart-platform-tools-shared-account.html) |
 
 The four new articles are English source editions, not new trilingual editions.
 L & N's existing article now leads directly to Apple and Google, with the
@@ -33,10 +33,12 @@ through pinned research notes rather than being presented as a new release.
   purchase, identity and Coin boundaries are unchanged.
 - Public source remains private where appropriate; neither AiMemo nor EchoMind
   gets a private GitHub source link.
-- The later Account section links to EchoMind's existing sign-in and the new
-  platform article. Shared EchoMind/Google/Apple/GitHub/email sign-in is clearly
-  labelled upcoming, not activated. Central discovery and Platform account
-  routes are still unavailable, matching the central owner's disabled state.
+- Later September 27 activation supersedes the initial account preview:
+  Platform's password registration/login, callback, dashboard and logout are
+  live, as is separately consented Coin-summary read. Shared Google/Apple/GitHub
+  sign-in and Coin account linking remain unavailable. The existing blog
+  introduction has been updated to match; public product browsing still needs
+  no account. See [the hub record](platform-hub.md).
 
 ## Distribution already in place
 
@@ -48,9 +50,10 @@ through pinned research notes rather than being presented as a new release.
   and canonical points to the owned blog. After reload, Medium's Scheduled tab
   contains exactly one matching story. This is scheduled, not yet published;
   AiMemo, LazyOracle and EchoMind remain blog-first for now.
-- The current Postiz read confirms L & N's Reddit item queued for September 27,
-  12:00 UTC and Bunko's for September 28, 12:00 UTC. Preserve those reviewed
-  destinations and copy; no new community submissions were added in this pass.
+- The September 27 follow-up confirms that Postiz delivered L & N's Reddit
+  item, but its native r/ESL_Teachers page is **awaiting moderator approval**.
+  Bunko remains queued for September 28, 12:00 UTC. Preserve both items;
+  no repost or new community submission was added in this pass.
 - Bunko's [Instagram reading demonstration](https://www.instagram.com/p/Ddv_FYsGzyy/)
   is published. L & N's [X app post](https://x.com/lazyingart/status/2104002096811147621)
   is published; the earlier native Bunko X schedule remains separately recorded.
@@ -88,6 +91,11 @@ sign-in screen passed again. These are reasons to recheck destinations before
 the next external publication, not reasons to invent a release status.
 
 ## Evidence
+
+Latest account-article refresh: BLOG `fc7aec33a64fd836fbce4f3dc59357925353afea`,
+with exact stored-body and live 390/1280px checks. This follows the qualified
+Platform release `22572bb`; the earlier source/deployment entries below preserve
+the original publication history rather than current login availability.
 
 BLOG commit: `3f80cde14fd0b5526c69a343d274fa52c8a9ca31`.
 Apex source and Pages release: `cf2ba85ba5455595ee5a513c3ab00df91064a762`.

@@ -60,6 +60,14 @@ For Bunko, the useful audience remains readers already approaching Chinese or Ja
 
 ## Next useful action
 
+September 27 review: the existing L & N SideProject feedback is unchanged.
+Bunko has a new [follow-up about first-chapter downloads and audience languages](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pc57de2/);
+the language split remains unknown, and no tracking or further pitch was added.
+The separately scheduled [ESL teacher exercise](https://www.reddit.com/r/ESL_Teachers/comments/1wrig5z/a_lightnight_listening_warmup_plus_the_ln/)
+was delivered by Postiz, but the native author view says **awaiting moderator
+approval**. Leave it alone rather than reposting or treating provider delivery
+as moderation acceptance.
+
 Review genuine questions on the existing introductions and recheck anonymous visibility of the Bunko Japanese-reader comment. For Bunko, seek a specific parallel-reading request rather than sending generic beginner-language or history pitches. These are research decisions, not automatic posting instructions.
 
 Additional screening: r/languagelearningapps is banned for spam; r/bilingual is restricted with old visible discussions; r/learnmandarin disallows ads. The earlier r/IndieApps load failure was resolved on September 26: the native page displays **Request to Post**, with recent visible posts two months old. It is not an immediately available launch venue; no posting request was sent. Account searches did not establish the participation required for r/ChineseLanguage moderator approval. None received a post, message or application.

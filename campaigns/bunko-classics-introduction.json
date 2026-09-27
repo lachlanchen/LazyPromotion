@@ -124,6 +124,14 @@
     "unsolicited_private_messages": false
   },
   "product_feedback": {
+    "follow_up_review": {
+      "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pc57de2/",
+      "checked_at": "2026-09-27T14:03:49Z",
+      "summary": "The reader suggested optional aggregate first-chapter download counts to guide featured books and asked whether Chinese or Japanese readers predominate.",
+      "language_audience_split": "unknown",
+      "decision": "Retain the feedback for product prioritization. No measurement was enabled, no audience split inferred and no extra promotional reply sent.",
+      "reader_installation_verified": false
+    },
     "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbxz0ky/",
     "sentence_level_translation_reveal": "proposed_not_implemented",
     "book_open_measurement": "optional_aggregate_counts_proposed_not_enabled",

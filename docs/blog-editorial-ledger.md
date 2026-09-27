@@ -22,6 +22,17 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ### September 27 addition — platform and shared-account introduction
 
+Later September 27 update: post `3873` now describes the **live password
+signup/sign-in** and optional dashboard, following Platform's actual browser
+qualification at release `22572bb`. Google/Apple/GitHub shared sign-in and Coin
+account linking remain unavailable. The article keeps public app discovery
+account-free and separates permissions from purchases. The source body exactly
+matches WordPress; the existing canonical, account link, headings and mobile/
+desktop layout passed. This updated the existing post once, without creating a
+duplicate article, Medium edition, social schedule or account. The original
+publication snapshot below predates activation. The updated BLOG source/archive
+is pushed as `fc7aec33a64fd836fbce4f3dc59357925353afea`.
+
 English post `3873`, [A Home for the Tools, Without Another Login to Remember](https://blog.lazying.art/html/computer_internet/3873/lazyingart-platform-tools-shared-account.html), introduces the product hub and the planned shared account around EchoMind, Google, Apple, GitHub and email. It explicitly distinguishes the existing EchoMind login from inactive unified sign-in, and separates identity from private workspaces, app access, purchases and wallet permissions.
 
 Source: `articles/lazyingart-platform-shared-account/post.md`; BLOG archive
@@ -29,8 +40,9 @@ Source: `articles/lazyingart-platform-shared-account/post.md`; BLOG archive
 Doctor, draft and publication dry runs passed. Stored content matches the source;
 live canonical, headings and no-overflow checks passed at 390/1280px. Platform's
 matching Account section is live at `78e50a8` with eleven content tests passing.
-The central service remains disabled; no new provider, account, payment or Coin
-operation occurred. Source-only addition, not a change to the trilingual count.
+At that original publication the central service remained disabled; no new
+provider, account, payment or Coin operation occurred in that editorial action.
+Source-only addition, not a change to the trilingual count.
 No Medium or social publication was added for this article.
 
 ### September 27 addition — four product introductions

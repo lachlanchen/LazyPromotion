@@ -63,6 +63,11 @@ For Bunko, the useful audience remains readers already approaching Chinese or Ja
 September 27 review: the existing L & N SideProject feedback is unchanged.
 Bunko has a new [follow-up about first-chapter downloads and audience languages](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pc57de2/);
 the language split remains unknown, and no tracking or further pitch was added.
+September 28 (Hong Kong): [one short answer](https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pce85l5/)
+now explains that book origin and chosen reading language are different. Exact
+text, author and parent passed signed-in reload verification; anonymous
+visibility was not checked. No additional product link, audience claim or
+feature promise. Wait for a genuinely new question rather than following up again.
 The separately scheduled [ESL teacher exercise](https://www.reddit.com/r/ESL_Teachers/comments/1wrig5z/a_lightnight_listening_warmup_plus_the_ln/)
 was delivered by Postiz, but the native author view says **awaiting moderator
 approval**. Leave it alone rather than reposting or treating provider delivery

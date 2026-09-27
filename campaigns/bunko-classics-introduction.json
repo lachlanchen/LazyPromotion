@@ -1,6 +1,6 @@
 {
   "id": "bunko-classics-introduction",
-  "version": 3,
+  "version": 4,
   "checked_on": "2026-09-26",
   "objective": "Introduce the shipping Bunko reader through a concrete Sanshirō reading example and a transparent creator post, with a clear route to the paid iPhone edition.",
   "source_evidence": {
@@ -62,7 +62,7 @@
       "content_sha256": "7795846395a2745ec9f45c5dc0a8caf2750add7cacebc39785a2761ee3cf135d",
       "publish_at": "2026-09-25T10:00:00Z",
       "release_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/",
-      "known_owned_replies": 1,
+      "known_owned_replies": 2,
       "owned_replies": [
         {
           "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbxz0ky/",
@@ -74,6 +74,17 @@
           "new_promotional_link": false,
           "verified_after_reload": true,
           "logged_out_visibility_verified": true
+        },
+        {
+          "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pc57de2/",
+          "release_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pce85l5/",
+          "published_at": "2026-09-27T16:34:16Z",
+          "state": "published",
+          "kind": "audience_language_answer",
+          "summary": "Answered that the audience-language split is unknown: a Japanese book can be read through its English or Chinese layer, so book downloads alone would not establish reader language. No measurement or feature was promised.",
+          "new_promotional_link": false,
+          "verified_after_reload": true,
+          "logged_out_visibility_verified": false
         }
       ],
       "publication_verification": {
@@ -130,6 +141,15 @@
       "summary": "The reader suggested optional aggregate first-chapter download counts to guide featured books and asked whether Chinese or Japanese readers predominate.",
       "language_audience_split": "unknown",
       "decision": "Retain the feedback for product prioritization. No measurement was enabled, no audience split inferred and no extra promotional reply sent.",
+      "reader_installation_verified": false
+    },
+    "follow_up_answer": {
+      "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pc57de2/",
+      "release_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pce85l5/",
+      "verified_at": "2026-09-27T16:34:46Z",
+      "language_audience_split": "unknown",
+      "decision": "One concise answer to the existing question, with no new link or pitch. Exact text, author and parent verified once after reload; anonymous visibility not checked.",
+      "tracking_enabled": false,
       "reader_installation_verified": false
     },
     "source_url": "https://www.reddit.com/r/SideProject/comments/1wpsber/comment/pbxz0ky/",

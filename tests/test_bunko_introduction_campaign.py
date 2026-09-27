@@ -53,7 +53,7 @@ class BunkoIntroductionCampaignTests(unittest.TestCase):
             route = owned_monitor.route_for_post(provider, channel["content"], routes)
             self.assertEqual(route["campaign_id"], self.campaign["id"])
             self.assertEqual(route["route"], "product")
-            self.assertEqual(route["known_owned_replies"], 1 if provider == "reddit" else 0)
+            self.assertEqual(route["known_owned_replies"], 2 if provider == "reddit" else 0)
 
     def test_later_store_release_does_not_rewrite_original_publication(self):
         evidence = self.campaign["source_evidence"]
@@ -87,6 +87,26 @@ class BunkoIntroductionCampaignTests(unittest.TestCase):
         self.assertEqual(feedback["sentence_level_translation_reveal"], "proposed_not_implemented")
         self.assertEqual(feedback["book_open_measurement"], "optional_aggregate_counts_proposed_not_enabled")
         self.assertIn("No analytics", feedback["current_privacy_contract"])
+
+    def test_language_question_answer_does_not_invent_audience_or_tracking(self):
+        reddit = self.campaign["channels"]["reddit"]
+        reply = reddit["owned_replies"][1]
+        answer = self.campaign["product_feedback"]["follow_up_answer"]
+        self.assertEqual(reply["kind"], "audience_language_answer")
+        self.assertEqual(reply["state"], "published")
+        self.assertEqual(reply["source_url"], answer["source_url"])
+        self.assertEqual(reply["release_url"], answer["release_url"])
+        self.assertTrue(reply["verified_after_reload"])
+        self.assertFalse(reply["logged_out_visibility_verified"])
+        self.assertFalse(reply["new_promotional_link"])
+        self.assertEqual(answer["language_audience_split"], "unknown")
+        self.assertFalse(answer["tracking_enabled"])
+        self.assertFalse(answer["reader_installation_verified"])
+        # Preserve the earlier no-send review as history, not the current state.
+        self.assertLess(
+            self.campaign["product_feedback"]["follow_up_review"]["checked_at"],
+            answer["verified_at"],
+        )
 
     def test_no_unapproved_release_claim_or_automatic_followup(self):
         for channel in self.campaign["channels"].values():

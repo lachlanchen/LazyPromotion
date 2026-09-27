@@ -27,6 +27,7 @@ It is a clearer download path, not evidence of an install or sale.
 | Public native Mac edition | [Bunko for Mac](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919?platform=mac) |
 | Web reader and live book catalogue | [Bunko](https://lachlan.lazying.art/Bunko/) |
 | Creator walkthrough, with multilingual captions | [Bunko on YouTube](https://www.youtube.com/shorts/pSWnOwzyc-4) |
+| English creator walkthrough | [Bunko in English on YouTube](https://www.youtube.com/shorts/CcziX7FoW2M) |
 | Existing creator walkthrough on Instagram | [Bunko on @lazyingart](https://www.instagram.com/lazyingart/reel/DdsirAfOo1i/) |
 | Promotion facts and claim boundaries | [Bunko promotion handoff](bunko-promotion-handoff.md) |
 

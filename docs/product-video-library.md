@@ -70,6 +70,22 @@ Hashes use UTF-8 text with outer whitespace removed. They record this historical
 update, not permission to overwrite future edits. This improves the route from
 an existing demonstration to a store; no click, install or sale is inferred.
 
+### English Bunko walkthrough — September 27
+
+The existing [English walkthrough](https://www.youtube.com/shorts/CcziX7FoW2M)
+previously directed viewers only to the web reader. Its description now begins
+with the same short Apple-price and channel-profile directions shown above.
+The clickable **Bunko — App Store** profile destination was checked in the
+public channel interface; Apple's US lookup still returned 1.0.4 at US$0.99.
+
+Only this description prefix changed. The original body, web-reader link,
+title, video, visibility and LazyingArt playlist were retained. One save was
+verified after Studio reload and against anonymous public video metadata at
+15:42 UTC. The updated description SHA-256 is
+`6a29d296b73160fef6691152e33759b8e358362ea514f0f89190bcb49977cc07`.
+This was not a re-upload, new campaign or full audiovisual review, and does
+not establish a click, purchase or current-version feature parity.
+
 ## Editing and publishing — material to review
 
 The channel search surfaced these potentially relevant recordings. Titles and channel placement were checked; their full contents and current software relevance have **not** yet been reviewed for a new promotion.

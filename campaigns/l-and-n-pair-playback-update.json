@@ -1,0 +1,52 @@
+{
+  "id": "l-and-n-pair-playback-update",
+  "version": 1,
+  "checked_on": "2026-09-27",
+  "objective": "Introduce the shipped pair-playback practice loop with direct Apple and Google purchase/download routes.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "source_commit": "c9bf6b7ca42cb2910f0a3b041afb671e2bf38a7a",
+    "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+    "apple_public_version": "1.0.8",
+    "apple_price_usd": 0.99,
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_public_state": "Public install route and in-app purchases; September 26 release notes describe back-to-back pair playback. The visible page did not expose a version number."
+  },
+  "channels": {
+    "x": {
+      "state": "published",
+      "account": "https://x.com/lazyingart",
+      "publication_method": "reviewed_native_browser_submit",
+      "content": "Tap a pair to hear both words, then record your turn. I built L & N because I mix them up myself.\n\niPhone/iPad US$0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\nAndroid (free download + IAP): https://play.google.com/store/apps/details?id=art.lazying.landn",
+      "content_sha256": "79045272563d6b5349ea60fa76508ec911235efd8775bbb46e0cf3eea983a8bf",
+      "release_url": "https://x.com/lazyingart/status/2104002096811147621",
+      "publish_at": "2026-09-27T00:16:00Z",
+      "timestamp_precision": "minute, from native post timestamp",
+      "made_with_ai": true,
+      "paid_partnership": false,
+      "publication_verification": {
+        "visible_copy_account_and_destinations_reviewed": true,
+        "single_submit_click": true,
+        "permalink_reopened": true,
+        "both_store_redirects_verified_http_200": true,
+        "no_beta_or_pwa_destination": true,
+        "logged_out_visibility_verified": false
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review",
+    "postiz_managed": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-09-29",
+    "next_action": "Review genuine questions; do not send the separate unpublished Postiz draft whose store URLs were stripped."
+  },
+  "funnel": {
+    "state": "owned_post_published",
+    "verified_new_users": null,
+    "verified_received_gross_usd": null,
+    "measurement_state": "not_connected"
+  }
+}

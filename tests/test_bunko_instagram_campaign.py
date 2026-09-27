@@ -38,17 +38,18 @@ class BunkoInstagramCampaignTests(unittest.TestCase):
         self.assertTrue(source["image_reviewed"])
         self.assertIn("Not an iOS binary capture", source["image_kind"])
 
-    def test_queue_does_not_claim_publication_or_attribution(self):
+    def test_verified_publication_does_not_claim_attribution(self):
         self.assertEqual(set(self.campaign["channels"]), {"instagram"})
-        self.assertEqual(self.channel["state"], "queued_verified")
+        self.assertEqual(self.channel["state"], "published_verified")
         self.assertEqual(self.channel["publish_at"], "2026-09-26T12:00:00Z")
         self.assertEqual(self.channel["settings"], {"post_type": "post"})
         verification = self.channel["publication_verification"]
-        self.assertEqual(verification["verified_state"], "QUEUE")
+        self.assertEqual(verification["verified_state"], "PUBLISHED")
         self.assertEqual(verification["schedule_actions"], 1)
         self.assertTrue(verification["single_matching_item"])
-        self.assertFalse(verification["release_present"])
-        self.assertNotIn("release_url", self.channel)
+        self.assertTrue(verification["release_present"])
+        self.assertTrue(verification["native_caption_account_and_image_verified"])
+        self.assertEqual(self.channel["release_url"], "https://www.instagram.com/p/Ddv_FYsGzyy/")
         self.assertIsNone(self.campaign["funnel"]["verified_new_users"])
         self.assertIsNone(self.campaign["funnel"]["verified_received_gross_usd"])
 

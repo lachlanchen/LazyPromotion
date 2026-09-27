@@ -1,6 +1,6 @@
 # Public links for promotion
 
-Updated September 26, 2026 (Hong Kong). Keep each resource attached to its own product.
+Updated September 27, 2026 (Hong Kong). Keep each resource attached to its own product.
 
 Video channel: [@lazyingart](https://www.youtube.com/@lazyingart). The [product video library](product-video-library.md) maps app walkthroughs and editing/publishing material to their review status.
 
@@ -23,18 +23,22 @@ It is a clearer download path, not evidence of an install or sale.
 
 | Destination | Link |
 | --- | --- |
-| US App Store, public version 1.0.1 | [Bunko: Classics with Ruby](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919) |
+| US App Store, public iOS version 1.0.4 | [Bunko: Classics with Ruby](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919) |
+| Public native Mac edition | [Bunko for Mac](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919?platform=mac) |
 | Web reader and live book catalogue | [Bunko](https://lachlan.lazying.art/Bunko/) |
 | Creator walkthrough, with multilingual captions | [Bunko on YouTube](https://www.youtube.com/shorts/pSWnOwzyc-4) |
 | Existing creator walkthrough on Instagram | [Bunko on @lazyingart](https://www.instagram.com/lazyingart/reel/DdsirAfOo1i/) |
 | Promotion facts and claim boundaries | [Bunko promotion handoff](bunko-promotion-handoff.md) |
 
-Apple's US storefront now shows **1.0.1 at USD 0.99**, including covers and
-Light/Dark/System controls in its release notes. Its single-app lookup still
-returned 1.0.0 while the storefront and multi-app lookup showed 1.0.1; the
-reconciliation is recorded in the handoff. The Google Play public listing still
-returned 404 in this check, so do not use it as a public destination. Internal
-1.0.2 builds and the separate native Mac submission are not public release proof.
+Apple's US lookup now shows **iOS 1.0.4 at USD 0.99**, and the native Mac
+storefront is also public at USD 0.99. Google Play still returned 404 on
+September 27. Version 1.0.6 (8) is submitted, not a verified public native
+update. Shared login is not live. See the latest handoff checkpoint before
+describing new features.
+
+The reviewed [Instagram Sanshirō reading example](https://www.instagram.com/p/Ddv_FYsGzyy/)
+published September 26; native caption, account and image were verified
+September 27. It is separate from the creator walkthrough on @lazyingart.
 
 Creator introductions: [r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpsber/bunko_a_reader_for_chinese_and_japanese_classics/)
 and the [r/Japaneselanguage personal-project thread](https://www.reddit.com/r/Japaneselanguage/comments/1sky7tt/comment/pc03ka1/).
@@ -53,14 +57,19 @@ unresolved. Its linkless copy follows that thread's rules.
 | Existing English walkthrough on Instagram | [L & N on @lazyingart](https://www.instagram.com/lazyingart/reel/DdpyAmVu0So/) |
 | 中文应用演示，已烧录字幕 | [视频](https://github.com/user-attachments/assets/f13a2ea0-ca16-4d40-8f3b-478e5b5e7792) |
 
-The US App Store page currently shows USD 0.99 and version 1.0.6. Google Play
-shows a public installation route and in-app purchases; the September 25
-anonymous listing metadata reports version 1.0.9. Use the two store links for the current
-app promotion. These are production links, not beta invitations.
+The US App Store page and lookup now show **USD 0.99 and version 1.0.8**.
+Google Play has a public installation route, in-app purchases and September 26
+pair-playback release notes. The shipping record lists Android production
+1.0.10; build 21 is still in review. Use these production store links for app
+promotion, not beta invitations.
 
 Live community introductions: [r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/)
 and the [r/Cantonese creator ads thread](https://www.reddit.com/r/Cantonese/comments/1wo97ez/comment/pbytqan/).
 See the [checked community routes](app-community-routes-2026-09-25.md) before considering another placement.
+
+The [September 27 pair-playback post on X](https://x.com/lazyingart/status/2104002096811147621)
+links directly to both production stores. The native post and both final
+destinations were verified. It is outside the Postiz-managed publication list.
 
 An additional [tutor-oriented exercise introduction](https://www.reddit.com/r/edtech/comments/1w42eqz/comment/pc0du25/)
 is in r/edtech's September developer thread. Its copy, author and both store links

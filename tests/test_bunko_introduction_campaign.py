@@ -69,7 +69,7 @@ class BunkoIntroductionCampaignTests(unittest.TestCase):
                     "queue_changes", "acquisition_established"):
             self.assertFalse(check[key])
         links = (ROOT / "docs/public-promotion-links.md").read_text()
-        self.assertIn("US App Store, public version 1.0.1", links)
+        self.assertIn("US App Store, public iOS version 1.0.4", links)
         handoff = (ROOT / "docs/bunko-promotion-handoff.md").read_text()
         self.assertIn("Public storefront now shows **1.0.1**", handoff)
         self.assertIn("not installation, every territory", handoff)

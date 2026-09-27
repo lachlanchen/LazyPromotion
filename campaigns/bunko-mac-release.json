@@ -1,0 +1,63 @@
+{
+  "id": "bunko-mac-release",
+  "version": 1,
+  "checked_on": "2026-09-27",
+  "objective": "Introduce the now-public native Mac reader with a real screenshot and a direct paid App Store route.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/Bunko",
+    "source_commit": "826f304f33ce99a8ac0b4b86f8d27cd190858c00",
+    "mac_store": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919?platform=mac",
+    "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+    "apple_price_usd": 0.99,
+    "ios_public_version": "1.0.4",
+    "mac_public_state": "Public native Mac storefront at USD 0.99. Shipping identifies 1.0.4 (6); the inspected Mac page did not expose a version number.",
+    "google_public_state": "HTTP 404; no Android production call to action",
+    "image": "https://github.com/lachlanchen/Bunko/blob/826f304f33ce99a8ac0b4b86f8d27cd190858c00/store/assets/macos-02-reading.png",
+    "image_sha256": "ae2b9b54324a1050bb76b20c36fcd804e67ec3077c6d0b4876055b86c7f871ef",
+    "image_reviewed": true,
+    "image_kind": "Actual native Mac store screenshot from the app's shipping assets, not a generated mockup or customer result."
+  },
+  "channels": {
+    "x": {
+      "state": "queued_verified",
+      "account": "https://x.com/lazyingart",
+      "publication_method": "reviewed_native_browser_schedule",
+      "content": "Bunko is now on Mac too. I built it to read classics with furigana/pinyin and parallel text, then keep chapters offline. AI study translations can make mistakes.\n\nMac, iPhone and iPad — US$0.99, no subscription:\nhttps://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+      "content_sha256": "222fd381bcd03b4ac3001247f548571c63c77281721a384777d02525374be669",
+      "media_alt": "Bunko on Mac displaying Sanshirō: Japanese paragraphs with furigana above the kanji alternate with an English study translation on a cream reading page.",
+      "publish_at": "2026-09-28T02:00:00Z",
+      "publish_at_hong_kong": "2026-09-28 10:00",
+      "made_with_ai": true,
+      "paid_partnership": false,
+      "publication_verification": {
+        "visible_copy_account_image_and_time_reviewed": true,
+        "single_schedule_click": true,
+        "native_scheduled_list_verified_after_reload": true,
+        "single_matching_item": true,
+        "original_store_link_preserved": true,
+        "release_present": false
+      }
+    }
+  },
+  "claim_boundaries": [
+    "The public Mac release is distinct from the pending 1.0.6 submission.",
+    "Shared LazyingArt login and cross-app token credits are not live app features.",
+    "There is no Google production link or guaranteed learning result in this post.",
+    "Queueing is not publication, an installation or a sale."
+  ],
+  "follow_up": {
+    "mode": "manual_native_publication_check",
+    "postiz_managed": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-09-28T02:15:00Z",
+    "next_action": "Inspect X's native schedule and public profile after the due time; record the actual release URL. Do not recreate this item in Postiz."
+  },
+  "funnel": {
+    "state": "owned_post_queued",
+    "verified_new_users": null,
+    "verified_received_gross_usd": null,
+    "measurement_state": "not_connected"
+  }
+}

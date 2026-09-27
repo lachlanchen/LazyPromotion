@@ -1,6 +1,35 @@
 # Bunko promotion handoff
 
-Store facts checked 2026-09-25 at 22:10 UTC (September 26 Hong Kong). This is a public-facts handoff for [Bunko](https://github.com/lachlanchen/Bunko), separate from the L & N campaign. It contains no tester links, private contacts, store credentials or browser state. Recheck store pages before any public post.
+Latest check: September 27, 2026. This is a public-facts handoff for [Bunko](https://github.com/lachlanchen/Bunko), separate from the L & N campaign. It contains no tester links, private contacts, store credentials or browser state. Recheck store pages before any public post.
+
+## September 27 — current public release
+
+This checkpoint supersedes the older tables and submission notes below.
+
+- The US Apple lookup now reports **iOS 1.0.4, USD 0.99**. The public
+  [Mac storefront](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919?platform=mac)
+  is available at USD 0.99 and describes the native reader, downloaded books,
+  local dictionary packs, equations and keyboard controls. The shipping record
+  identifies public Mac 1.0.4 (6); the Mac page inspected here did not expose a
+  version number. Native Mac availability can now be promoted.
+- The Google Play US listing still returns **404**. Do not offer an Android
+  production download.
+- Source `826f304` records **1.0.6 (8)** submitted for iOS, Mac and Google review,
+  with automatic release after approval. Persistent sign-in and draft recovery
+  in that submission are not public native-release claims. Shared LazyingArt
+  login is future work, not live.
+- The earlier Instagram reading example is now
+  [published](https://www.instagram.com/p/Ddv_FYsGzyy/). The exact caption,
+  @lazying.art account and real Sanshirō image were checked on the native page.
+  The September 28 reader-community queue remains unchanged.
+- A separate [Mac announcement](../campaigns/bunko-mac-release.json), using the
+  actual Mac reading screenshot, is scheduled on X for **September 28, 10:00
+  Hong Kong / 02:00 UTC**. The native scheduled list retained the exact copy,
+  store link and time after reload. This is not published yet and is not a
+  Postiz queue item; do not recreate it there.
+
+The source repository and live storefront are separate evidence: no installation,
+paid download or revenue is inferred from either.
 
 ## What is public now
 

@@ -1,8 +1,34 @@
 # L & N promotion handoff
 
-Updated: 2026-09-26. Dated release checks below are historical; the September 25–26 follow-ups supersede older shipping and publication states.
+Updated: 2026-09-27. Dated release checks below are historical; the latest checkpoint supersedes older shipping and publication states.
 
 Shared release and promotion reference for [L & N](https://github.com/lachlanchen/L-and-N). This note contains no credentials, tester identities, private email addresses, signing material, or browser cookies. Shipping-reported states are distinguished from independent public checks below; repository paths are relative to L & N unless noted otherwise.
+
+## September 27 — public playback update
+
+The native US App Store page and Apple's multi-app lookup now both show
+**1.0.8 at USD 0.99**. Its release notes describe listening pairs played back to
+back, direct practice navigation, bundled Apple-audio playback corrections and
+recovery after interrupted playback. This resolves the earlier shipping record's
+observation that the public storefront was still 1.0.6 when release was requested.
+
+Google Play is publicly installable, with in-app purchases. Its September 26
+release notes also describe pair playback, navigation and recording-history
+improvements. Source `c9bf6b7` records Android production 1.0.10 (20), with
+1.0.11 (21) still in review. The visible page checked here did not expose an
+Android version number; do not promote build 21 as approved.
+
+The Google long description still says raw recordings are not retained, while
+its current release notes refer to device-local recordings. Do not repeat that
+outdated sentence in promotion. No store metadata or shipping state was modified.
+The September 27 teacher-resource introduction remains queued at its original
+time; no duplicate Reddit introduction was added.
+
+One [pair-playback update](https://x.com/lazyingart/status/2104002096811147621)
+was published through X's native composer. The post and its two production
+store destinations were verified. The [campaign receipt](../campaigns/l-and-n-pair-playback-update.json)
+keeps it separate from Postiz, whose unpublished draft removed store links
+when saved. Do not schedule that incomplete draft.
 
 ## September 26 Android introduction
 

@@ -1,6 +1,6 @@
 # Product video library
 
-Checked September 26, 2026. Channel: [The Art of Lazying — @lazyingart](https://www.youtube.com/@lazyingart). This is a reusable public-media index, not a posting queue.
+Checked September 26, with an English Bunko link added September 27, 2026. Channel: [The Art of Lazying — @lazyingart](https://www.youtube.com/@lazyingart). This is a reusable public-media index, not a posting queue.
 
 ## App walkthroughs
 
@@ -8,8 +8,9 @@ Checked September 26, 2026. Channel: [The Art of Lazying — @lazyingart](https:
 | --- | --- | --- |
 | L & N | [English walkthrough](https://www.youtube.com/shorts/Nlsx_5U6g6U) | Native player opened; correct channel, app and English captions checked. Used in the [r/SideProject introduction](https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/). |
 | Bunko | [Bunko App: Read World Classics with Ruby Annotations](https://www.youtube.com/shorts/pSWnOwzyc-4) | Native player opened; Bunko and multilingual burned-in captions including English checked. The recording shows a TestFlight-installed version, so check displayed features against the current public release before making store claims. |
+| Bunko, English | [Bunko: Read Classics with Ruby Annotations](https://www.youtube.com/shorts/CcziX7FoW2M) | Recovered from the creator's curated publication record. Public oEmbed title and @lazyingart ownership verified September 27. No new full audiovisual audit was performed in this pass; do not infer current store feature parity from the recording. |
 
-Both are existing creator recordings, not generated concept videos or customer testimonials. The visual check is not a full editorial/audio audit. Do not re-upload them merely to share a link. The older `jirylmFo5U8` link identifies a Local Knowledge Terminal video, not L & N.
+These are existing creator recordings, not generated concept videos or customer testimonials. The visual checks are not full editorial/audio audits. Do not re-upload them merely to share a link. The older `jirylmFo5U8` link identifies a Local Knowledge Terminal video, not L & N.
 
 ### Existing Instagram walkthroughs
 
@@ -88,3 +89,5 @@ The strongest concrete angle is **from one recorded product demo to corrected mu
 - [AutoPublication](https://github.com/lachlanchen/AutoPublication): the umbrella project; verify current structure before using it as an installation entry point.
 
 Lead with the repeated editing/publishing problem and an actual demonstrated workflow, not a promise of passive income or unattended publishing to every platform. Recheck setup requirements and platform support, and review the selected recording before composing a separate introduction. No LazyEdit or AutoPublish social post was published or scheduled in this session.
+
+September 27: this builder angle is now an English [blog article](https://blog.lazying.art/html/computer_internet/3857/app-demo-subtitles-lazyedit-workflow.html) and a free [Medium edition](https://lazyingart.medium.com/the-app-demo-is-recorded-now-come-the-subtitles-fa409244f1a1). They link to the existing L & N, English Bunko and Chinese Bunko videos; no video was re-uploaded. The existing bounded Story Clip Pilot is the sole commercial next step. See the editorial ledger for publication verification; no conversion is inferred.

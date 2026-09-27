@@ -20,6 +20,14 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 27 addition — LazyEdit app-demo workflow
+
+New English source-only post `3857`, [The App Demo Is Recorded. Now Come the Subtitles.](https://blog.lazying.art/html/computer_internet/3857/app-demo-subtitles-lazyedit-workflow.html), explains transcript correction before translation, keeping editable subtitle timings, phone-size caption review, and checking individual publication outcomes before retries. The examples are the creator's existing L & N and Bunko recordings. One commercial next step points to the existing USD 250 Story Clip Pilot sample and free fit check; translation and publishing are explicitly outside that fixed scope.
+
+Source: `articles/lazyedit-app-demo-subtitles/post.md`. The BLOG LazyPub archive is `content/lazypub/20260927-094753-the-app-demo-is-recorded-now-come-the-subtitles/`, committed and pushed as `0f43a0e`. Doctor, draft/publish dry runs, stored-content review, live WordPress REST status/canonical and public destination checks passed. This English-only addition does not change the trilingual completion count.
+
+The [Medium edition](https://lazyingart.medium.com/the-app-demo-is-recorded-now-come-the-subtitles-fa409244f1a1) was published once at September 27, 02:20:42 UTC, with paywall disabled, one Video Editing topic, a brief AI-assistance label, and the original-blog canonical. After reload, all 23 expected text blocks appeared in order (normalizing typographic apostrophes), all seven links were retained, and structured metadata marked the story accessible for free. An anonymous HTTP check returned 403; independent anonymous access was not verified. Publication is not evidence of a lead, sale, or Medium earnings.
+
 ### September 25 addition — Bunko reading guide
 
 New English source-only post `3853`, [Reading Chinese and Japanese Classics Without Constantly Switching Tabs](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html), shows Bunko's shipping *Sanshirō* reading view and suggests a small original/parallel-text reading routine. The article links to the verified USD 0.99 US Apple listing, not Google's pending release, and does not advertise pending 1.0.1 features. The AI study-rendering limitation sits beside the relevant claims.

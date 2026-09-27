@@ -1,6 +1,6 @@
 # Public links for promotion
 
-Updated September 27, 2026 (Hong Kong). Keep each resource attached to its own product.
+Updated September 28, 2026 (Hong Kong). Keep each resource attached to its own product.
 
 Video channel: [@lazyingart](https://www.youtube.com/@lazyingart). The [product video library](product-video-library.md) maps app walkthroughs and editing/publishing material to their review status.
 
@@ -52,6 +52,7 @@ unresolved. Its linkless copy follows that thread's rules.
 | --- | --- |
 | App Store · 苹果商店 | [L & N: Speech Practice](https://apps.apple.com/us/app/l-n-speech-practice/id6808872450) |
 | Google Play · 谷歌商店 | [L & N: Speech Practice](https://play.google.com/store/apps/details?id=art.lazying.landn) |
+| Founder story and listening exercise | [English](https://blog.lazying.art/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html) · [简体中文](https://blog.lazying.art/zh/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html) |
 | Repository and official-link record | [L-and-N](https://github.com/lachlanchen/L-and-N) · [Official links](https://github.com/lachlanchen/L-and-N/blob/main/docs/public-links.md) |
 | English app demo, burned-in subtitles | [Video](https://github.com/user-attachments/assets/036ebbdf-ab34-4761-875e-46470074aff8) |
 | English creator walkthrough on YouTube | [L & N on YouTube](https://www.youtube.com/shorts/Nlsx_5U6g6U) |
@@ -60,9 +61,11 @@ unresolved. Its linkless copy follows that thread's rules.
 
 The US App Store page and lookup now show **USD 0.99 and version 1.0.8**.
 Google Play has a public installation route, in-app purchases and September 26
-pair-playback release notes. The shipping record lists Android production
-1.0.10; build 21 is still in review. Use these production store links for app
-promotion, not beta invitations.
+pair-playback release notes. The September 27 shipping-owner receipt confirms
+Android production **1.0.11 (21) is Active**; the separate English listing-copy
+correction is in review. The independently inspected public page did not expose
+an Android version number. Use these production store links for app promotion,
+not beta invitations.
 
 Live community introductions: [r/SideProject](https://www.reddit.com/r/SideProject/comments/1wpvosw/l_n_i_mix_up_l_and_n_so_i_built_a_pronunciation/)
 and the [r/Cantonese creator ads thread](https://www.reddit.com/r/Cantonese/comments/1wo97ez/comment/pbytqan/).

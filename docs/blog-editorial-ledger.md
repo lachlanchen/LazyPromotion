@@ -20,6 +20,31 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 28 — L & N Chinese edition
+
+Post `3849` now has a reviewed [Simplified Chinese edition](https://blog.lazying.art/zh/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html).
+It preserves the founder's l/n practice story, the short listening exercise,
+four sections, original screenshot, two pinned development notes, English
+walkthrough and both native-store links. The original English edition now
+explicitly dates its engineering details to the September 20 listening build;
+old empty-transcript scoring and excluded-clip behavior are not current-release
+claims. The US iPhone price remains USD 0.99, checked against Apple's lookup.
+
+Source: `articles/l-and-n-listening-practice/` with `translations/zh.md`.
+BLOG archive: `content/lazypub/20260928-landn-chinese-edition/`. Publication
+occurred September 27 at 16:10 UTC / September 28 at 00:10 Hong Kong. Readback
+matches both reviewed bodies exactly; original post metadata and immediate
+predecessor revision are preserved. Both public URLs return 200 with their
+own canonicals, reciprocal `en`/`zh-Hans` alternates and all five destinations.
+The Chinese page was checked at 1280px and 390px with a loaded image and no
+horizontal overflow; the owned review desktop was stopped afterward.
+
+Twelve targeted tests and the existing 11-language profile check pass. A fresh
+SSH doctor attempt timed out after its initial host check; the successful
+publication and readback used WordPress REST, not WP-CLI. This adds one language
+to an existing article, not a new trilingual completion, social post or customer
+result. The Medium edition and existing publication queues are unchanged.
+
 ### September 27 — PocketPolyglot readers to Bunko
 
 Post `3616`, the existing *Snow Country* typesetting article, now ends with one

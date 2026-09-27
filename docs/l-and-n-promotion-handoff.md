@@ -1,8 +1,19 @@
 # L & N promotion handoff
 
-Updated: 2026-09-27. Dated release checks below are historical; the latest checkpoint supersedes older shipping and publication states.
+Updated: 2026-09-28. Dated release checks below are historical; the latest checkpoint supersedes older shipping and publication states.
 
 Shared release and promotion reference for [L & N](https://github.com/lachlanchen/L-and-N). This note contains no credentials, tester identities, private email addresses, signing material, or browser cookies. Shipping-reported states are distinguished from independent public checks below; repository paths are relative to L & N unless noted otherwise.
+
+## September 28 — Chinese founder story
+
+The existing blog introduction now has a reviewed [Simplified Chinese edition](https://blog.lazying.art/zh/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html).
+Both editions keep the Apple/Google production links and English walkthrough.
+Engineering details are explicitly historical to September 20, not a description
+of every current scoring path. The original post date, title, image and store
+destinations are preserved. The live stored bodies, public language/canonical
+links, image and desktop/mobile rendering were checked. No Medium edit, social
+post, queue change, new binary or customer outcome is claimed. Source and full
+publication record are in the [editorial ledger](blog-editorial-ledger.md#september-28--l--n-chinese-edition).
 
 ## September 27 — store-copy correction and search discovery
 

@@ -38,6 +38,11 @@ through pinned research notes rather than being presented as a new release.
 - L & N, Bunko and LazyEdit already have free Medium editions. Do not import
   them again. Their canonical links and publication receipts are in the
   editorial ledger.
+- OnlyIdeas' Medium edition, **The Question Belongs Beside the Paper**, is
+  scheduled for September 30 at 02:00 UTC / 10:00 HKT. Its paywall is disabled
+  and canonical points to the owned blog. After reload, Medium's Scheduled tab
+  contains exactly one matching story. This is scheduled, not yet published;
+  AiMemo, LazyOracle and EchoMind remain blog-first for now.
 - The current Postiz read confirms L & N's Reddit item queued for September 27,
   12:00 UTC and Bunko's for September 28, 12:00 UTC. Preserve those reviewed
   destinations and copy; no new community submissions were added in this pass.

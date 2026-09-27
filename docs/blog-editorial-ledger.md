@@ -35,6 +35,15 @@ project-owned images accompany the new articles; EchoMind uses no screenshot
 of account or conversation data. Existing unrelated chat edits are untouched.
 These are source-only additions and do not change the trilingual count below.
 
+OnlyIdeas' Medium edition, **The Question Belongs Beside the Paper**, was
+scheduled once for September 30, 02:00 UTC / 10:00 HKT. The final native dialog
+had its paywall disabled; the Scheduled tab retained exactly one matching item
+after reload. All 16 expected source text blocks remain in order, both source
+links and the project image are retained, and the preview's canonical points
+to blog post `3864`. A short AI-assistance label accompanies the free edition.
+No topics were added because the native selector did not retain its selection.
+This records a schedule, not publication, readership, a lead or income.
+
 ### September 27 addition — LazyEdit app-demo workflow
 
 New English source-only post `3857`, [The App Demo Is Recorded. Now Come the Subtitles.](https://blog.lazying.art/html/computer_internet/3857/app-demo-subtitles-lazyedit-workflow.html), explains transcript correction before translation, keeping editable subtitle timings, phone-size caption review, and checking individual publication outcomes before retries. The examples are the creator's existing L & N and Bunko recordings. One commercial next step points to the existing USD 250 Story Clip Pilot sample and free fit check; translation and publishing are explicitly outside that fixed scope.

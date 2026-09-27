@@ -83,14 +83,31 @@ prediction. Local chart calculation is distinguished from cloud narration.
 The Auspice catalogue description no longer calls it the native companion:
 the current product split gives Auspice the classic interface.
 
-EchoMind still describes invitation-based registration in both public store
-listings. The article says to check access before buying. Its temporary HTTP
-error cleared during checks; no reliability guarantee or server repair is
-claimed. AiMemo also had one transient upstream error before its visible
-sign-in screen passed again. These are reasons to recheck destinations before
-the next external publication, not reasons to invent a release status.
+EchoMind's buyer-path review confirms public Plaza reading without sign-in,
+but private/personalized features still require an EchoMind invitation. A
+general LazyingArt account or app download does not grant that access. The
+article now makes this clear before describing member workflows, removes the
+implication of generally available AI conversation, and distinguishes US$0.99
+on Apple from the free Google Play download. It directs new readers to the
+public preview and asks them to confirm an invitation before buying on iPhone.
+Broader full-feature acquisition remains held; no invitation, entitlement,
+billing, store metadata, social post or Medium edition was changed.
+
+Its temporary HTTP error cleared during checks; no reliability guarantee or
+server repair is claimed. AiMemo also had one transient upstream error before
+its visible sign-in screen passed again. Recheck destinations before the next
+external publication rather than inventing a release status.
 
 ## Evidence
+
+EchoMind post `3867` was corrected once at 15:19 UTC. WordPress's stored body
+matches the source and BLOG archive; public HTTP 200, canonical, headings,
+access/price wording and all three destination links passed. Title, original
+publication date, slug, excerpt, category, tags and featured media are unchanged.
+Six article/account checks passed. No new visual review is claimed: the shared
+workstation's swap gate prevented another browser launch; this correction
+changes no CSS, images or template.
+BLOG source/archive commit: `920c64494e9825e542502cd47d892c6740657de9`.
 
 Latest account-article refresh: BLOG `fc7aec33a64fd836fbce4f3dc59357925353afea`,
 with exact stored-body and live 390/1280px checks. This follows the qualified

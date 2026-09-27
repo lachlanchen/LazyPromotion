@@ -20,6 +20,23 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 27 correction — EchoMind buyer access
+
+The existing [EchoMind introduction](https://blog.lazying.art/html/computer_internet/3867/echomind-language-help-in-conversation.html)
+now separates invitation-free public Plaza reading from invitation-gated
+member features. It clarifies that a download or general account does not
+unlock those features, distinguishes Apple's US$0.99 price from the free
+Google Play download, and removes the implication of generally available AI
+conversation. No access policy, invitation, billing or store release changed.
+
+Doctor, publication dry run, six article/account tests, exact stored-body/archive
+comparison and public HTTP/canonical/heading/link checks passed. Original
+metadata is preserved. This is a source-only correction to post `3867`, not a
+new article, social/Medium publication, app activation or sale. No new visual
+check was performed because the shared-workstation resource gate was exceeded;
+the edit changes text only, not layout, media or CSS.
+BLOG source/archive commit: `920c64494e9825e542502cd47d892c6740657de9`.
+
 ### September 27 addition — platform and shared-account introduction
 
 Later September 27 update: post `3873` now describes the **live password

@@ -35,15 +35,17 @@ class BunkoBookCampaignTests(unittest.TestCase):
                     "original_links_preserved", "provider_settings_checked", "no_flair_required_verified"):
             self.assertTrue(verification[key])
 
-    def test_one_spaced_queue_is_not_publication_or_revenue(self):
-        self.assertEqual(self.post["state"], "queued_verified")
+    def test_verified_publication_is_not_revenue(self):
+        self.assertEqual(self.post["state"], "published_verified")
         self.assertEqual(self.post["publish_at"], "2026-09-28T12:00:00Z")
         verification = self.post["publication_verification"]
-        self.assertEqual(verification["verified_state"], "QUEUE")
+        self.assertEqual(verification["verified_state"], "PUBLISHED")
         self.assertEqual(verification["schedule_actions"], 1)
         self.assertTrue(verification["single_matching_item"])
-        self.assertFalse(verification["release_present"])
-        self.assertNotIn("release_url", self.post)
+        self.assertTrue(verification["release_present"])
+        self.assertIn('/comments/1wscr1k/', self.post['release_url'])
+        self.assertEqual(verification['visible_view_count'], 275)
+        self.assertEqual(verification['visible_reader_comments'], 0)
         for key in ("verified_new_users", "verified_received_gross_usd"):
             self.assertIsNone(self.campaign["funnel"][key])
 

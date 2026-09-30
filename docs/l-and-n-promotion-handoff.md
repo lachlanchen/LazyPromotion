@@ -1,5 +1,20 @@
 # L & N promotion handoff
 
+## September 30 — saved-take practice and public release
+
+The US Apple storefront now shows **1.0.9**, still **US$0.99**. The main Google
+listing is public, free to download with in-app purchases; its shipping record
+identifies production 1.0.11 (21). Main Android build22, the separate Android
+Pro package and native Mac remain review candidates, not new public releases.
+
+A [saved-take practice post](../campaigns/l-and-n-saved-take-practice.json)
+is scheduled on native X for **October 1, 02:00 UTC / 10:00 Hong Kong**. It
+suggests replaying the model and the saved recording before trying again and
+keeps both production-store URLs. The native scheduled list retains one exact
+item. Postiz's new X draft lost its URLs and was removed after its unpublished
+state was checked; older held drafts remain untouched. Do not duplicate the
+native post. No new scoring-accuracy claim is made.
+
 Updated: 2026-09-28. Dated release checks below are historical; the latest checkpoint supersedes older shipping and publication states.
 
 Shared release and promotion reference for [L & N](https://github.com/lachlanchen/L-and-N). This note contains no credentials, tester identities, private email addresses, signing material, or browser cookies. Shipping-reported states are distinguished from independent public checks below; repository paths are relative to L & N unless noted otherwise.

@@ -1,7 +1,7 @@
 {
   "id": "bunko-book-reading-introduction",
   "version": 1,
-  "checked_on": "2026-09-26",
+  "checked_on": "2026-09-30",
   "objective": "Introduce Bunko to readers through one concrete Sanshirō reading routine in a community that explicitly welcomes creator contributions.",
   "source_evidence": {
     "community": "https://www.reddit.com/r/Recommend_A_Book/",
@@ -17,7 +17,8 @@
   },
   "channels": {
     "reddit": {
-      "state": "queued_verified",
+      "state": "published_verified",
+      "release_url": "https://www.reddit.com/r/Recommend_A_Book/comments/1wscr1k/bunko_reading_sanshir%C5%8D_with_furigana_and_an/",
       "format": "reader_resource_introduction",
       "community": "r/Recommend_A_Book",
       "account": "https://www.reddit.com/user/Ok-Perception1122/",
@@ -34,7 +35,11 @@
       "community_fit": "Both currently pinned moderator policies welcome creator promotion and AI-assisted work; the native composer repeats the broad invitation. This is a reader-facing introduction, not a reply to an individual need or evidence of buyer intent.",
       "duplicate_check": "Native author-and-community search returned explicit no results. Provider reconciliation found exactly one matching draft and then one matching queued item. Broad product search produced unrelated matches and was not treated as an exhaustive absence check.",
       "publication_verification": {
-        "verified_state": "QUEUE",
+        "verified_state": "PUBLISHED",
+        "native_author_body_links_verified_on": "2026-09-30",
+        "visible_view_count": 275,
+        "visible_reader_comments": 0,
+        "anonymous_visibility_verified": false,
         "saved_preview_reviewed": true,
         "stored_copy_matches_reviewed_text": true,
         "account_title_destination_time_reviewed": true,
@@ -43,7 +48,7 @@
         "no_flair_required_verified": true,
         "single_matching_item": true,
         "schedule_actions": 1,
-        "release_present": false,
+        "release_present": true,
         "calendar_reloaded_after_scheduling": true
       }
     }
@@ -60,12 +65,12 @@
     "automatic_replies": false,
     "automatic_reposts": false,
     "unsolicited_private_messages": false,
-    "next_routine_review_not_before": "2026-09-29",
+    "next_routine_review_not_before": "2026-10-04",
     "earlier_review_trigger": "Provider failure, moderation notice, or a genuine question after publication.",
-    "next_action": "Verify release and visibility when the provider reports publication; do not automatically post again or follow with another product."
+    "next_action": "Native publication is verified. Review actual reader questions at the next normal interval; do not repost or treat views as customers."
   },
   "funnel": {
-    "state": "community_post_queued",
+    "state": "community_post_published",
     "verified_new_users": null,
     "verified_received_gross_usd": null,
     "measurement_state": "not_connected"

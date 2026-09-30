@@ -44,13 +44,13 @@ class AppReleaseUpdateCampaignTests(unittest.TestCase):
         self.assertIn("US$0.99", channel["content"])
         self.assertTrue(channel["publication_verification"]["both_store_redirects_verified_http_200"])
 
-    def test_bunko_scheduled_not_published_or_pending_release(self):
+    def test_bunko_native_publication_is_not_pending_app_release(self):
         campaign = self.load("bunko-mac-release")
         channel = campaign["channels"]["x"]
-        self.assertEqual(channel["state"], "queued_verified")
+        self.assertEqual(channel["state"], "published_verified")
         self.assertEqual(channel["publish_at"], "2026-09-28T02:00:00Z")
-        self.assertNotIn("release_url", channel)
-        self.assertFalse(channel["publication_verification"]["release_present"])
+        self.assertEqual(channel["release_url"], "https://x.com/lazyingart/status/2104390638531957108")
+        self.assertTrue(channel["publication_verification"]["release_present"])
         self.assertTrue(channel["publication_verification"]["native_scheduled_list_verified_after_reload"])
         self.assertIn("AI study translations can make mistakes", channel["content"])
         self.assertNotIn("1.0.6", channel["content"])

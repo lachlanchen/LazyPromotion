@@ -15,6 +15,7 @@ LazyingArt is the company brand; the platform has no personal founder byline.
 | --- | --- |
 | L & N pronunciation/listening | Official Apple and Google listings plus the existing English walkthrough |
 | Bunko classics | Official Apple and Mac listings plus the English walkthrough; no pending Google release claim |
+| OnlyIdeas research reading | Free native Mac App Store edition, original/translation/interlaced reading and the owned reading guide; mobile releases remain in review |
 | EchoMind conversations | Official Apple/Google listings and <https://chat.lazying.art/> |
 | Handmade notebooks, dolls and pendants | Existing product selectors at <https://buy.lazying.art/>; existing Stripe checkout remains independently owned |
 | Product stories | The existing blog, Medium and source repositories |
@@ -45,3 +46,13 @@ outside this repository. No new account or financial operation was performed
 for the subsequent editorial update.
 
 Publication and new links are funnel infrastructure, not confirmed revenue.
+
+## September 30 app refresh
+
+Static release `45adf3c369102f7df13fbd8f2edab7fa72370738` is live. It adds an
+OnlyIdeas Mac card, refreshes L & N saved-take practice and Bunko's explicit
+Watch-excerpt workflow, and retains EchoMind's invitation boundary. Twelve
+site tests pass. Public HTML and CSS match the committed source. The account
+runtime, credentials, ingress and NAT rules are unchanged; no shared provider,
+checkout or Coin activation is implied. Main-site release `76bba5a` adds matching
+OnlyIdeas/Mac download routes with 48 passing tests and verified live bytes.

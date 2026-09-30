@@ -1,5 +1,26 @@
 # Bunko promotion handoff
 
+## September 30 — current release and distribution
+
+This checkpoint supersedes the dated snapshots below. iPhone/iPad/Watch and
+native Mac **1.0.8 (10)** are public at **US$0.99**. Google's production review
+is still pending and its public listing returns 404; do not advertise an
+Android download. The newer 1.0.9 candidates are TestFlight builds, not a public
+release. The Watch companion receives an explicitly selected short excerpt
+from iPhone; it is not automatic full-library synchronization.
+
+The [reading guide](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html)
+now explains Mac and Watch use and includes separate native-store buttons.
+Both the main website and Platform feature those verified routes. A new
+[Watch demonstration](../campaigns/bunko-watch-reading.json) is queued on
+Instagram for September 30 at 00:42 UTC. Its real shipping screenshot, complete
+caption, account and time were reviewed in Postiz.
+
+The September 28 [Mac post](https://x.com/lazyingart/status/2104390638531957108)
+and [reader-community introduction](https://www.reddit.com/r/Recommend_A_Book/comments/1wscr1k/)
+are now independently verified on their native pages. The latter showed
+275 views and no reader comments; neither is an install or sale. Do not repost.
+
 Latest check: September 27, 2026. This is a public-facts handoff for [Bunko](https://github.com/lachlanchen/Bunko), separate from the L & N campaign. It contains no tester links, private contacts, store credentials or browser state. Recheck store pages before any public post.
 
 ## September 27 — current public release

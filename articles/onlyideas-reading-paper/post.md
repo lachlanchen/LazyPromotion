@@ -31,7 +31,7 @@ The import workflow can turn a PDF into Mathpix Markdown, keeping TeX equations 
 
 Conversion still needs checking. A missing minus sign, a figure detached from its caption or an incorrectly recognized subscript can change the meaning. For the first import, compare one equation, one figure and one ordinary paragraph with the PDF. Keep the source link so you can return to it.
 
-Bring a paper you are allowed to process. A PDF being freely readable on a website does not automatically permit republishing it. Personal imports and notes begin privately; publishing a paper bundle is a separate, rights-cleared action. PDF conversion and AI requests use external services, so private-library visibility does not mean that all processing happens on your device.
+Bring a paper you are allowed to process. A PDF being freely readable on a website does not automatically permit republishing it. Check the sharing choice before importing: choose **Only me** for a private library item. Publishing a paper bundle is a separate, rights-cleared action; private notes and agent conversations are not public paper discussions. PDF conversion and AI requests use external services, so private-library visibility does not mean that all processing happens on your device.
 
 ## Ask something you can come back to
 
@@ -39,6 +39,12 @@ The question worth saving may be very small: why a boundary condition was chosen
 
 OnlyIdeas also has a paper-search agent, but finding another PDF is not always the next step. Sometimes the better move is to finish the paragraph already open.
 
-The [web reading room](https://agent.onlyideas.art/?utm_source=lazyblog&utm_medium=article&utm_campaign=onlyideas_introduction) has an original sample you can open before signing in. Personal imports and saved work need an account. The iOS and Android versions are currently in internal testing, not a public store release.
+## Read on Mac, with the original beside the translation
+
+OnlyIdeas is now a [free Mac app](https://apps.apple.com/us/app/onlyideas/id6816392935?platform=mac), for Apple silicon and Intel. You can switch between the original, a translation and interlaced passages without leaving the reader. Equations and figures stay with the passage. Save a paper while connected if you want to return to it offline.
+
+Try this with one paragraph: read the original, compare the translation, then go back and explain the claim in your own words. If a term changes meaning between the two views, that is the part worth checking—not something to smooth over with another summary.
+
+The [web reading room](https://agent.onlyideas.art/?utm_source=lazyblog&utm_medium=article&utm_campaign=onlyideas_introduction) also has public papers you can open before signing in. Personal imports and saved work need an account. As of September 30, the iPhone and Android editions are still in review; general paid plans are not open.
 
 The [public project](https://github.com/lachlanchen/OnlyIdeasApp) documents the reader and its boundaries. Try the sample first, choose one passage, and see whether keeping the question beside the text makes it easier to stay with the paper.

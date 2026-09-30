@@ -35,8 +35,10 @@ This is a reading suggestion, not a tested learning programme. A troublesome wor
 
 ## Carry the passage with you
 
-Download a book while connected, then read the saved chapters offline. Your reading position and preferences stay on the device. There is no account to create, and the app has no ads or subscription.
+Download a book while connected, then read the saved chapters offline. Your reading position and preferences stay on the device. Basic reading does not need an account; community features are separate.
+
+The native Mac edition gives the same passage more room on a larger screen. On iPhone, you can also send a short excerpt to the Apple Watch companion. Think of it as a sentence to return to during a spare minute, not a whole book squeezed onto your wrist. It is an explicit transfer from the phone, not automatic library sync.
 
 The library draws on public-domain source works, with book bundles available in the project's public repository. The [Bunko source and catalogue notes](https://github.com/lachlanchen/Bunko) explain how the reader and library fit together. Public-domain status can differ by country, so check the source and local rights before reusing a text elsewhere.
 
-[Bunko: Classics with Ruby is on the App Store](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919). The US price is **$0.99 once**, with no in-app purchases. Choose one passage you actually want to read; the rest of the library can wait.
+[Bunko: Classics with Ruby is on the App Store for iPhone and iPad, with its Watch companion](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919), and in the [Mac App Store](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919?platform=mac). The US price is **$0.99 once**. Choose one passage you actually want to read; the rest of the library can wait.

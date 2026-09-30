@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-30",
+  "follow_up": {
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-10-01"
+  },
+  "funnel": {
+    "verified_new_users": null,
+    "verified_received_gross_usd": null
+  },
+  "id": "bunko-watch-reading",
+  "objective": "Demonstrate the bounded Watch reading companion with a real shipped screenshot and a paid-store route.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/Bunko",
+    "source_commit": "121fce93aed3bedda15f466a4d40b9f7cba49a2d",
+    "apple": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
+    "mac_store": "https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919?platform=mac",
+    "ios_public_version": "1.0.8",
+    "mac_public_version": "1.0.8",
+    "price_usd": 0.99,
+    "google_state": "Public listing HTTP 404; in review",
+    "image": "https://github.com/lachlanchen/Bunko/blob/121fce93aed3bedda15f466a4d40b9f7cba49a2d/store/assets/watch-02-reading.png",
+    "image_reviewed": true,
+    "image_kind": "Actual shipping Watch screenshot, not generated art."
+  },
+  "channels": {
+    "instagram": {
+      "state": "queued_verified",
+      "account": "https://www.instagram.com/lazying.art/",
+      "content": "A short passage to come back to during a spare minute.\n\nThis is the opening of the Tao Te Ching on Bunko’s Apple Watch companion. Choose an excerpt on your iPhone and send it to the Watch. It stays there to reread offline; this is a small companion, not a whole library on your wrist.\n\nI built Bunko for reading Chinese and Japanese classics with pronunciation guides and parallel text. Read the longer passage on iPhone, iPad or Mac. The AI study translations can make mistakes, so keep the original in view.\n\nFind ‘Bunko: Classics with Ruby’ on the App Store — US$0.99 once. The Bunko card at lazying.art has the iPhone and Mac links.\n\n#ChineseClassics #Reading #Bunko",
+      "content_sha256": "97c5f2ad2545f3531cbead26bcc5a6d16ccabf71d12690952c8d5c01a89c591c",
+      "settings": {
+        "post_type": "post"
+      },
+      "publish_at": "2026-09-30T00:42:00Z",
+      "publication_method": "postiz",
+      "loaded_media_preview_reviewed": true,
+      "caption_account_time_reviewed": true,
+      "destination_method": "Exact App Store name and verified profile website; no clickable caption claim."
+    }
+  },
+  "claim_boundaries": [
+    "An excerpt is explicitly sent from iPhone, not a whole synchronized library.",
+    "1.0.9 TestFlight candidates are not part of this public-release story.",
+    "AI study translations can make mistakes; no learning-outcome claim."
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "id": "bunko-mac-release",
   "version": 1,
-  "checked_on": "2026-09-27",
+  "checked_on": "2026-09-30",
   "objective": "Introduce the now-public native Mac reader with a real screenshot and a direct paid App Store route.",
   "source_evidence": {
     "repository": "https://github.com/lachlanchen/Bunko",
@@ -19,7 +19,8 @@
   },
   "channels": {
     "x": {
-      "state": "queued_verified",
+      "state": "published_verified",
+      "release_url": "https://x.com/lazyingart/status/2104390638531957108",
       "account": "https://x.com/lazyingart",
       "publication_method": "reviewed_native_browser_schedule",
       "content": "Bunko is now on Mac too. I built it to read classics with furigana/pinyin and parallel text, then keep chapters offline. AI study translations can make mistakes.\n\nMac, iPhone and iPad — US$0.99, no subscription:\nhttps://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919",
@@ -35,7 +36,8 @@
         "native_scheduled_list_verified_after_reload": true,
         "single_matching_item": true,
         "original_store_link_preserved": true,
-        "release_present": false
+        "release_present": true,
+        "native_public_profile_verified_on": "2026-09-30"
       }
     }
   },
@@ -51,11 +53,11 @@
     "automatic_replies": false,
     "automatic_reposts": false,
     "unsolicited_private_messages": false,
-    "next_routine_review_not_before": "2026-09-28T02:15:00Z",
-    "next_action": "Inspect X's native schedule and public profile after the due time; record the actual release URL. Do not recreate this item in Postiz."
+    "next_routine_review_not_before": "2026-10-04",
+    "next_action": "Review genuine replies at the normal interval. The native public post is verified; do not recreate it in Postiz."
   },
   "funnel": {
-    "state": "owned_post_queued",
+    "state": "owned_post_published",
     "verified_new_users": null,
     "verified_received_gross_usd": null,
     "measurement_state": "not_connected"

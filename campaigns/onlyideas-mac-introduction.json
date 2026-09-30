@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-30",
+  "follow_up": {
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-10-01"
+  },
+  "funnel": {
+    "verified_new_users": null,
+    "verified_received_gross_usd": null
+  },
+  "id": "onlyideas-mac-introduction",
+  "objective": "Introduce a usable research-reading workflow and the free public Mac release.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/OnlyIdeasApp",
+    "source_commit": "550b0f8b7b366ce94e4a5aa420092c58464e3e64",
+    "mac_store": "https://apps.apple.com/us/app/onlyideas/id6816392935?platform=mac",
+    "mac_public_version": "1.0.2",
+    "mac_price_usd": 0,
+    "ios_state": "In review, not independently public",
+    "google_state": "Public listing HTTP 404; in review",
+    "paid_plans": "Not generally activated",
+    "import_default": "Shared; choose Only me for private material"
+  },
+  "channels": {
+    "x": {
+      "state": "published_verified",
+      "account": "https://x.com/lazyingart",
+      "content": "I built OnlyIdeas to keep a paper, its translation and questions in one reader. Switch between original and interlaced text, with equations and figures intact. Now a free Mac app:\nhttps://apps.apple.com/us/app/onlyideas/id6816392935?platform=mac",
+      "content_sha256": "f1e98a2407d9849ff253e321154a178dd847a1dd68602253cecde3285bf5d6a0",
+      "settings": {
+        "post_type": "post",
+        "who_can_reply_post": "everyone",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "publish_at": "2026-09-30T00:26:04Z",
+      "release_url": "https://x.com/lazyingart/status/2105091777585938559",
+      "publication_method": "native_browser",
+      "visible_copy_and_link_reviewed": true,
+      "native_profile_verified": true
+    },
+    "reddit": {
+      "state": "queued_verified",
+      "account": "https://www.reddit.com/user/Ok-Perception1122/",
+      "content": "I built OnlyIdeas around a small reading problem: the paper is in one window, a translation is in another, and the question about a particular sentence has disappeared into a chat history.\n\nThe reader keeps the original, translated or interlaced passages together with equations and figures. You can ask about a selected passage and save papers for offline reading. I’ve just shipped the Mac app for Intel and Apple silicon; it’s free to download.\n\nPDF conversion is a reading aid, not a replacement for the source. I check an equation, a figure and a paragraph against the original before relying on an import. Imports and saved work need an account, and conversion/AI use external services. New imports default to Shared, so choose Only me for private material.\n\nMac App Store: https://apps.apple.com/us/app/onlyideas/id6816392935?platform=mac\n\nIf you read papers in a second language, I’d be interested in whether you prefer switching views or having the translation directly below each paragraph.",
+      "content_sha256": "c69cd26c6e5ccfedaac7bc3b3eae6221de68444c9ce71b78cf56cb2b9f44428a",
+      "settings": {
+        "subreddit": [
+          {
+            "value": {
+              "subreddit": "/r/SideProject",
+              "title": "I built a Mac paper reader that keeps the original, translation and passage-level questions together",
+              "type": "self",
+              "is_flair_required": false
+            }
+          }
+        ]
+      },
+      "publish_at": "2026-09-30T00:44:00Z",
+      "community": "r/SideProject",
+      "publication_method": "postiz",
+      "visible_copy_account_title_community_reviewed": true,
+      "original_store_link_preserved": true,
+      "flair_required": false
+    }
+  },
+  "claim_boundaries": [
+    "Mac release is not proof of iOS or Android approval.",
+    "Free download does not promise unlimited conversion or AI usage.",
+    "Imports and AI requests use external services; no blanket offline or private-default claim.",
+    "Publication and queues are not users, customers or money."
+  ]
+}

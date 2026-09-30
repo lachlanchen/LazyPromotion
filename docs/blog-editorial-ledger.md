@@ -20,6 +20,32 @@ This ledger records the current evidence-led cleanup of `blog.lazying.art`. A po
 
 ## Live and pushed posts
 
+### September 30 — Mac reading routes and Watch companion
+
+Existing posts `3864` (OnlyIdeas) and `3853` (Bunko) were updated once, not
+recreated. OnlyIdeas now includes its free native Mac release and a practical
+original/translation comparison. The outdated private-by-default import claim
+was removed: choose **Only me** for private material. Bunko adds a direct Mac
+link and explains explicit iPhone-to-Watch excerpt transfer.
+
+The saved source body and metadata matched the prior version before each
+write; dry runs passed. A first guard stopped before writing because WordPress
+rendered HTML varies dynamically. After independently confirming unchanged raw
+source, flags and metadata, the guard compared those stable fields. Both
+single updates passed exact stored-body, metadata, canonical, live-link and
+archive checks. No translations or publication dates were changed.
+
+OnlyIdeas' existing Medium story `d5026bc21dda` was refreshed in place. Its
+image and five headings are intact; the paywall remains off and the scheduled
+list still shows September 30 at 02:00 UTC. Its canonical remains the blog.
+No second Medium story, early publication or revenue is claimed.
+
+Source archives: `content/lazypub/20260930-onlyideas-reading-paper/` and
+`content/lazypub/20260930-bunko-reading-classics/`. Release and distribution
+receipts are in [the app refresh record](app-launch-refresh-2026-09-30.md).
+BLOG archive commit `81298e3` is pushed and remote main verified; the unrelated
+chat-session working edit was preserved.
+
 ### September 28 — L & N Chinese edition
 
 Post `3849` now has a reviewed [Simplified Chinese edition](https://blog.lazying.art/zh/html/computer_internet/3849/l-and-n-pronunciation-listening-practice.html).

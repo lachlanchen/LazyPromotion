@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-30",
+  "follow_up": {
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_routine_review_not_before": "2026-10-01"
+  },
+  "funnel": {
+    "verified_new_users": null,
+    "verified_received_gross_usd": null
+  },
+  "id": "l-and-n-saved-take-practice",
+  "objective": "Show a repeatable model-versus-saved-take practice step with the current production store routes.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/L-and-N",
+    "source_commit": "acc244600593dfb8af090a73932022369e94cd02",
+    "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+    "apple_public_version": "1.0.9",
+    "apple_price_usd": 0.99,
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_public_state": "Free install with in-app purchases; main production 1.0.11 per shipping record",
+    "native_mac": "Still in review",
+    "android_pro": "Separate package still in review"
+  },
+  "channels": {
+    "x": {
+      "state": "queued_verified",
+      "account": "https://x.com/lazyingart",
+      "content": "I built L & N for my l/n mix-ups. Replay the model, then your saved take, before trying again.\niPhone $0.99: https://apps.apple.com/us/app/l-n-speech-practice/id6808872450\nAndroid (free + IAP): https://play.google.com/store/apps/details?id=art.lazying.landn",
+      "content_sha256": "554660933c570adadd4521b53125c2e6483dad8da3e8c9c8ee41592bc1c7f383",
+      "settings": {
+        "post_type": "post",
+        "who_can_reply_post": "everyone",
+        "made_with_ai": true,
+        "paid_partnership": false
+      },
+      "publish_at": "2026-10-01T02:00:00Z",
+      "publication_method": "native_browser",
+      "native_schedule_verified": true,
+      "original_store_links_preserved": true
+    }
+  },
+  "claim_boundaries": [
+    "No native Mac or Pro release claim.",
+    "The score is practice feedback, not a clinical assessment or guaranteed accuracy.",
+    "No PWA or beta acquisition route."
+  ]
+}

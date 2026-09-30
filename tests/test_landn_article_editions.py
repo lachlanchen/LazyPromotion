@@ -25,6 +25,7 @@ class LandnArticleEditionsTests(unittest.TestCase):
             self.assertIn("https://apps.apple.com/us/app/l-n-speech-practice/id6808872450", document.body)
             self.assertIn("https://play.google.com/store/apps/details?id=art.lazying.landn", document.body)
             self.assertIn("https://www.youtube.com/shorts/Nlsx_5U6g6U", document.body)
+            self.assertEqual(document.body.count("https://l-and-n.lazying.art/lessons/light-vs-night/"), 1)
             self.assertNotIn("testflight.apple.com", document.body)
             self.assertNotIn("/downloads/", document.body)
 

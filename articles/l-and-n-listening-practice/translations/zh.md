@@ -49,6 +49,8 @@ excerpt: "因为自己分不清 L 和 N，我做了一个英语、普通话和�
 
 ## 先练一对词就好
 
+还不确定自己能不能听出区别？免费的 [light 与 night 音频小课](https://l-and-n.lazying.art/lessons/light-vs-night/)提供两个词的示范和一组简短练习，不用安装就能先试一试。
+
 可以从三个词的一轮开始。答错了就重听，比较两个示范音，再切到发音练习，录一个词。一次不用练很久。
 
 L & N 已上架 [App Store](https://apps.apple.com/us/app/l-n-speech-practice/id6808872450) 和 [Google Play](https://play.google.com/store/apps/details?id=art.lazying.landn)。美区 iPhone 版价格为 0.99 美元，其他地区以商店显示为准。使用时不用注册账号。安装前也可以先看看这段[英文演示](https://www.youtube.com/shorts/Nlsx_5U6g6U)。

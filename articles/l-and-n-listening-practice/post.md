@@ -53,6 +53,8 @@ The normal web path schedules the clips on the Web Audio clock. A fallback uses 
 
 ## Try one pair
 
+Not sure whether you hear the difference? The free [light and night audio lesson](https://l-and-n.lazying.art/lessons/light-vs-night/) has both examples and a short practice sequence you can try before installing anything.
+
 Start with a three-word round. Replay a missed position, compare the two examples, then switch to speaking practice and record one word. There is no need to turn it into a long study session.
 
 [Get L & N on the App Store](https://apps.apple.com/us/app/l-n-speech-practice/id6808872450) or [Google Play](https://play.google.com/store/apps/details?id=art.lazying.landn). The US iPhone price is $0.99; check the store listing for your region. There is no account to create. The [short English walkthrough](https://www.youtube.com/shorts/Nlsx_5U6g6U) shows the app before you install it.

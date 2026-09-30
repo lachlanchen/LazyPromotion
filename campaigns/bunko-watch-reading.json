@@ -28,7 +28,10 @@
   },
   "channels": {
     "instagram": {
-      "state": "queued_verified",
+      "state": "published_verified",
+      "release_url": "https://www.instagram.com/p/Dd5EmfqGZAA/",
+      "native_caption_account_verified_on": "2026-09-30",
+      "native_image_visually_verified": true,
       "account": "https://www.instagram.com/lazying.art/",
       "content": "A short passage to come back to during a spare minute.\n\nThis is the opening of the Tao Te Ching on Bunko’s Apple Watch companion. Choose an excerpt on your iPhone and send it to the Watch. It stays there to reread offline; this is a small companion, not a whole library on your wrist.\n\nI built Bunko for reading Chinese and Japanese classics with pronunciation guides and parallel text. Read the longer passage on iPhone, iPad or Mac. The AI study translations can make mistakes, so keep the original in view.\n\nFind ‘Bunko: Classics with Ruby’ on the App Store — US$0.99 once. The Bunko card at lazying.art has the iPhone and Mac links.\n\n#ChineseClassics #Reading #Bunko",
       "content_sha256": "97c5f2ad2545f3531cbead26bcc5a6d16ccabf71d12690952c8d5c01a89c591c",

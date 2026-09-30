@@ -43,7 +43,13 @@
       "native_profile_verified": true
     },
     "reddit": {
-      "state": "queued_verified",
+      "state": "submitted_filtered",
+      "submission_url": "https://www.reddit.com/r/SideProject/comments/1wtr5gy/i_built_a_mac_paper_reader_that_keeps_the/",
+      "provider_state": "PUBLISHED",
+      "native_state": "Removed by Reddit filters",
+      "native_checked_at": "2026-09-30T00:44:38Z",
+      "public_visibility_verified": false,
+      "next_action": "Leave the submission unchanged. No repost, alternate-account submission, unsolicited appeal or automatic follow-up. Revisit only if a material moderation signal arrives.",
       "account": "https://www.reddit.com/user/Ok-Perception1122/",
       "content": "I built OnlyIdeas around a small reading problem: the paper is in one window, a translation is in another, and the question about a particular sentence has disappeared into a chat history.\n\nThe reader keeps the original, translated or interlaced passages together with equations and figures. You can ask about a selected passage and save papers for offline reading. I’ve just shipped the Mac app for Intel and Apple silicon; it’s free to download.\n\nPDF conversion is a reading aid, not a replacement for the source. I check an equation, a figure and a paragraph against the original before relying on an import. Imports and saved work need an account, and conversion/AI use external services. New imports default to Shared, so choose Only me for private material.\n\nMac App Store: https://apps.apple.com/us/app/onlyideas/id6816392935?platform=mac\n\nIf you read papers in a second language, I’d be interested in whether you prefer switching views or having the translation directly below each paragraph.",
       "content_sha256": "c69cd26c6e5ccfedaac7bc3b3eae6221de68444c9ce71b78cf56cb2b9f44428a",

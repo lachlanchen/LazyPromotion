@@ -37,6 +37,9 @@ class AppLaunchRefreshTests(unittest.TestCase):
             self.assertIn('?platform=mac', p['content'])
             self.assertNotIn('play.google.com', p['content'])
         self.assertEqual(c['channels']['x']['state'], 'published_verified')
+        self.assertEqual(c['channels']['reddit']['state'], 'submitted_filtered')
+        self.assertFalse(c['channels']['reddit']['public_visibility_verified'])
+        self.assertIn('Removed by Reddit filters', c['channels']['reddit']['native_state'])
 
     def test_bunko_watch_scope_and_actual_media(self):
         c = self.load('bunko-watch-reading')
@@ -45,6 +48,8 @@ class AppLaunchRefreshTests(unittest.TestCase):
         self.assertIn('Choose an excerpt on your iPhone', c['channels']['instagram']['content'])
         self.assertIn('US$0.99 once', c['channels']['instagram']['content'])
         self.assertNotIn('Google Play', c['channels']['instagram']['content'])
+        self.assertEqual(c['channels']['instagram']['state'], 'published_verified')
+        self.assertTrue(c['channels']['instagram']['native_image_visually_verified'])
 
     def test_landn_future_queue_keeps_both_real_store_links(self):
         c = self.load('l-and-n-saved-take-practice')

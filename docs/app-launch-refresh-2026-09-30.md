@@ -43,13 +43,16 @@ BLOG archive commit `81298e3` is pushed; unrelated working edits were preserved.
 
 - [OnlyIdeas on X](https://x.com/lazyingart/status/2105091777585938559) is live.
   The native profile shows the complete text and original Mac App Store link.
-- A [Bunko Watch demonstration](../campaigns/bunko-watch-reading.json) is queued
-  through Postiz for September 30, 00:42 UTC. It uses the actual shipping Watch
-  screenshot, not a concept image, and directs readers to the paid app.
-- [OnlyIdeas on r/SideProject](../campaigns/onlyideas-mac-introduction.json)
-  is queued through Postiz for September 30, 00:44 UTC. Community scope and
-  current posting restrictions were checked; exact title, copy, author,
-  destination and original store URL were reviewed.
+- The [Bunko Watch demonstration](https://www.instagram.com/p/Dd5EmfqGZAA/) was
+  delivered through Postiz at September 30, 00:42 UTC. Its native caption and
+  account are verified. It uses the actual shipping Watch screenshot, not a
+  concept image, and directs readers to the paid app.
+- [OnlyIdeas on r/SideProject](https://www.reddit.com/r/SideProject/comments/1wtr5gy/)
+  was submitted through Postiz at September 30, 00:44 UTC, but its native page
+  says **removed by Reddit's filters**. This is not a qualified public placement,
+  despite Postiz's PUBLISHED label. Community scope, posting restrictions and
+  an exact-author duplicate search were checked before delivery. Do not repost,
+  switch accounts or send an automated appeal.
 - The [L & N recording-comparison post](../campaigns/l-and-n-saved-take-practice.json)
   is scheduled natively on X for October 1, 02:00 UTC. Both store links survived
   the native scheduled-list readback.
@@ -72,7 +75,8 @@ and [book-community post](https://www.reddit.com/r/Recommend_A_Book/comments/1ws
 were verified live rather than reposted. The book post showed 275 views and no
 reader comments. Views are not installations or sales.
 
-Verify queued items after their actual due times and review genuine questions
+The two Postiz items have completed delivery checks. Verify the remaining
+Medium and native-X queues after their due times; review genuine questions
 without a second pitch. Keep income null until qualified payment evidence
 exists. The first verified USD1,000 goal remains active and unachieved.
 

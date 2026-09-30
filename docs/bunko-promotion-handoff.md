@@ -12,9 +12,9 @@ from iPhone; it is not automatic full-library synchronization.
 The [reading guide](https://blog.lazying.art/html/books/3853/bunko-chinese-japanese-classics-pinyin-furigana.html)
 now explains Mac and Watch use and includes separate native-store buttons.
 Both the main website and Platform feature those verified routes. A new
-[Watch demonstration](../campaigns/bunko-watch-reading.json) is queued on
-Instagram for September 30 at 00:42 UTC. Its real shipping screenshot, complete
-caption, account and time were reviewed in Postiz.
+[Watch demonstration](https://www.instagram.com/p/Dd5EmfqGZAA/) was delivered on
+Instagram at September 30, 00:42 UTC. Its real shipping screenshot, complete
+caption, account and time were reviewed in Postiz; native publication is verified.
 
 The September 28 [Mac post](https://x.com/lazyingart/status/2104390638531957108)
 and [reader-community introduction](https://www.reddit.com/r/Recommend_A_Book/comments/1wscr1k/)

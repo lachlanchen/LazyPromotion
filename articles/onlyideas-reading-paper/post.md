@@ -41,10 +41,10 @@ OnlyIdeas also has a paper-search agent, but finding another PDF is not always t
 
 ## Read on Mac, with the original beside the translation
 
-OnlyIdeas is now a [free Mac app](https://apps.apple.com/us/app/onlyideas/id6816392935?platform=mac), for Apple silicon and Intel. You can switch between the original, a translation and interlaced passages without leaving the reader. Equations and figures stay with the passage. Save a paper while connected if you want to return to it offline.
+OnlyIdeas is available on the [Mac App Store](https://apps.apple.com/us/app/onlyideas/id6816392935?platform=mac) for US$0.99, for Apple silicon and Intel. You can switch between the original, a translation and interlaced passages without leaving the reader. Equations and figures stay with the passage. Save a paper while connected if you want to return to it offline.
 
 Try this with one paragraph: read the original, compare the translation, then go back and explain the claim in your own words. If a term changes meaning between the two views, that is the part worth checking—not something to smooth over with another summary.
 
-The [web reading room](https://agent.onlyideas.art/?utm_source=lazyblog&utm_medium=article&utm_campaign=onlyideas_introduction) also has public papers you can open before signing in. Personal imports and saved work need an account. As of September 30, the iPhone and Android editions are still in review; general paid plans are not open.
+The [web reading room](https://agent.onlyideas.art/?utm_source=lazyblog&utm_medium=article&utm_campaign=onlyideas_introduction) also has public papers you can open before signing in. Personal imports and saved work need an account. As of October 1, the iPhone and Android editions are still in review; general paid plans are not open.
 
 The [public project](https://github.com/lachlanchen/OnlyIdeasApp) documents the reader and its boundaries. Try the sample first, choose one passage, and see whether keeping the question beside the text makes it easier to stay with the paper.

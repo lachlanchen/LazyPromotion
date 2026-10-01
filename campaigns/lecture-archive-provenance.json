@@ -1,6 +1,6 @@
 {
   "id": "lecture-archive-provenance",
-  "version": 5,
+  "version": 6,
   "objective": "Find course creators and educators who need to turn a rights-cleared lecture archive into trustworthy notes, translations, books, or cited search without losing its source trail.",
   "channels": {
     "github": {
@@ -151,7 +151,7 @@
       "policy": "A useful first-party note about preserving provenance. The linked article documents a maintained archive format; it is not customer proof or an offer to resell lecture content."
     },
     "reddit": {
-      "state": "two_helpful_replies_two_acknowledged",
+      "state": "three_helpful_replies_two_acknowledged",
       "source_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/susskinds_lectures_and_books_prerequisites/",
       "helpful_comment_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/comment/p6y1teh/",
       "reader_acknowledgement_url": "https://www.reddit.com/r/learnphysics/comments/1w337gb/comment/p6z24h0/",
@@ -177,6 +177,20 @@
         },
         "lead_or_sale_observed": false,
         "policy": "The answer stands alone, cites a current Fermilab retrospective, and says I maintain the archive. Do not add a follow-up pitch or treat votes, replies, repository visits, or stars as a lead or revenue."
+      },
+      "cs_to_physics_trial_reply": {
+        "state": "published_native_reload_verified",
+        "published_at": "2026-10-01T01:21:21Z",
+        "verified_at": "2026-10-01T01:21:39Z",
+        "source_url": "https://www.reddit.com/r/learnphysics/comments/1wu5dos/how_can_i_selfstudy_undergraduate_level_physics/",
+        "comment_url": "https://www.reddit.com/r/learnphysics/comments/1wu5dos/comment/pd4eeht/",
+        "archive_url": "https://github.com/lachlanchen/leonardsusskind",
+        "need": "A computer-science student wants to try undergraduate physics before deciding whether to pursue a master's.",
+        "contribution": "Suggest a four-week problem-set trial rather than repeat the existing textbook lists, use numerical coding as a second check after derivation, and inspect the specific programme's entry requirements.",
+        "disclosure": "Maintainer affiliation and AI-assisted companion-note provenance are explicit; the archive remains free and optional.",
+        "acknowledgement_observed": false,
+        "lead_or_sale_observed": false,
+        "policy": "One reply to the actual need. Do not send a second pitch or imply admission, customer acquisition, or learning success. Current rule screen is documented in docs/reddit-history-physics-routes-2026-10-01.md."
       },
       "lead_or_sale_observed": false,
       "policy": "Treat the acknowledgement as evidence that the free archive is useful, not as a lead, testimonial licence, or permission for another pitch. Future replies still require a current exact need and a standalone useful answer."

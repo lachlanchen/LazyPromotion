@@ -1,5 +1,36 @@
 # Bunko promotion handoff
 
+## October 2 — current store destinations
+
+This checkpoint supersedes the release/availability snapshots below.
+
+- The public US [App Store listing](https://apps.apple.com/us/app/bunko-classics-with-ruby/id6815137919)
+  now shows **iOS/Watch 1.0.9**, priced **USD 0.99**. The release-owner record
+  independently identifies public build 14. The native Mac record remains
+  **1.0.8 (10)**; do not infer that Mac has the iOS update.
+- The public US [Google Play listing](https://play.google.com/store/apps/details?id=art.lazying.bunko&hl=en&gl=US)
+  loaded in the project browser at **02:48 UTC on October 2** with the correct
+  title, LazyingArt LLC developer, **USD 0.99 Buy** button, public description
+  and September 30 update date. An Android store link may now be shared. The
+  listing does not establish its exact installed binary, availability in every
+  territory or a completed purchase. The older local `IN_REVIEW` record must
+  not override this observed public listing; store-console reconciliation
+  remains with the release owner.
+- For new promotion, the owner's current preference is **Apple and Android
+  store destinations, not the PWA or tester routes**. Both US prices are paid
+  up front for the app. Do not imply unlimited cloud-processing allowances.
+
+The relevant shipped reading story is the original text alongside pinyin or
+furigana and available translation layers, with downloaded books for offline
+reading. Languages vary by edition. Chinese pinyin supplies modern Mandarin
+readings, not reconstructed ancient pronunciation. AI-assisted study layers
+can contain errors and are not scholarly editions. The Watch companion
+receives selected short excerpts from a paired iPhone, not the whole library.
+
+Use an actual passage and real product media, disclose that the creator built
+the app, and keep the next step small. Store visibility and community posts
+are not downloads, retained readers or revenue.
+
 ## September 30 — current release and distribution
 
 This checkpoint supersedes the dated snapshots below. iPhone/iPad/Watch and

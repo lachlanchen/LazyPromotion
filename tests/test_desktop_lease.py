@@ -12,6 +12,24 @@ import desktop_lease as lease
 
 
 class LifecycleLockTests(unittest.TestCase):
+    def test_runtime_endpoints_match_launcher_and_avoid_foreign_stack(self):
+        script = lease.SCRIPT.read_text()
+        self.assertEqual(lease.PORTS, (5937, 6137, 9437))
+        for name, port in zip(("VNC_PORT", "NOVNC_PORT", "CDP_PORT"), lease.PORTS):
+            self.assertIn(f"{name}={port}\n", script)
+        self.assertEqual(lease.COMPONENTS["x11vnc"], "-rfbport 5937")
+        self.assertEqual(lease.COMPONENTS["novnc"], "127.0.0.1:6137")
+        import browser
+        self.assertEqual(browser.DEFAULT_CDP, "http://127.0.0.1:9437")
+        import freelancer_inbound_monitor, reddit_reply_monitor
+        import social_inbox_monitor, threads_inbound_monitor
+        for monitor in (freelancer_inbound_monitor, reddit_reply_monitor,
+                        social_inbox_monitor, threads_inbound_monitor):
+            self.assertEqual(monitor.DEFAULT_CDP, browser.DEFAULT_CDP)
+        release = script.split("wait_reserved_runtime_release() {", 1)[1].split("\n}", 1)[0]
+        self.assertNotIn("5936", release)
+        self.assertNotIn("6136", release)
+
     def test_lock_is_exclusive_private_and_released(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / ".local" / "runtime" / "desktop-lifecycle.lock"

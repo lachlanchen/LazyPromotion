@@ -163,7 +163,7 @@ Monitor chỉ ghi ID chiến dịch, số huy hiệu tổng hợp, trạng thái
 
 ## Cách ly môi trường chạy
 
-Trình khởi chạy chỉ sở hữu một màn hình 1920×1080 (`:116`), cổng VNC `5936`, cổng noVNC `6136` và cổng CDP loopback `9436`. Nó dùng lại một hồ sơ Chrome bền vững dành riêng cho dự án, từ chối cổng do tiến trình lạ chiếm, ghi một bản bàn giao vận hành riêng tư và chỉ dọn tài nguyên cũ thuộc quyền sở hữu của nó. Trình xem trên máy chủ nên được phóng to trong vùng làm việc GNOME nhưng không bao giờ bật toàn màn hình; hãy dừng toàn bộ stack khi không có lượt duyệt hiển thị nào đang chờ. Firefox cá nhân không thuộc môi trường này, vì vậy không được đọc, di chuyển hay dùng lại thẻ và phiên đăng nhập của nó.
+Trình khởi chạy chỉ sở hữu một màn hình 1920×1080 (`:116`), cổng VNC `5937`, cổng noVNC `6137` và cổng CDP loopback `9437`. Nó dùng lại một hồ sơ Chrome bền vững dành riêng cho dự án, từ chối cổng do tiến trình lạ chiếm, ghi một bản bàn giao vận hành riêng tư và chỉ dọn tài nguyên cũ thuộc quyền sở hữu của nó. Trình xem trên máy chủ nên được phóng to trong vùng làm việc GNOME nhưng không bao giờ bật toàn màn hình; hãy dừng toàn bộ stack khi không có lượt duyệt hiển thị nào đang chờ. Firefox cá nhân không thuộc môi trường này, vì vậy không được đọc, di chuyển hay dùng lại thẻ và phiên đăng nhập của nó.
 
 ```bash
 scripts/desktop.sh status

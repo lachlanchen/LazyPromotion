@@ -164,7 +164,7 @@ El monitor guarda solo los ID de campaña, el recuento agregado del distintivo, 
 
 ## Aislamiento de ejecución
 
-La configuración predeterminada usa una pantalla de 1920×1080 (`:116`), un puerto VNC `5936` y un único noVNC en `6136`. Todas las pestañas de campañas y afiliados permanecen en el mismo perfil persistente de Chrome; cada ventana restaurada ocupa el escritorio completo y se puede alternar normalmente, sin zonas recortadas que interfieran. CDP permanece en `127.0.0.1:9436` y la sesión es `lazypromotion-browser`. Todo se enlaza a loopback; el lanzador rechaza puertos desconocidos ocupados y solo limpia bloqueos obsoletos propios. El entorno se detiene cuando no hay una revisión visible pendiente y nunca toca el navegador personal.
+La configuración predeterminada usa una pantalla de 1920×1080 (`:116`), un puerto VNC `5937` y un único noVNC en `6137`. Todas las pestañas de campañas y afiliados permanecen en el mismo perfil persistente de Chrome; cada ventana restaurada ocupa el escritorio completo y se puede alternar normalmente, sin zonas recortadas que interfieran. CDP permanece en `127.0.0.1:9437` y la sesión es `lazypromotion-browser`. Todo se enlaza a loopback; el lanzador rechaza puertos desconocidos ocupados y solo limpia bloqueos obsoletos propios. El entorno se detiene cuando no hay una revisión visible pendiente y nunca toca el navegador personal.
 
 ```bash
 scripts/desktop.sh status

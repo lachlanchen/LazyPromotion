@@ -220,8 +220,8 @@ and proposal count. It never opens a conversation or sends a reply. See
 
 ## Runtime isolation
 
-The launcher owns one 1920×1080 display (`:116`), VNC port `5936`, noVNC
-port `6136`, and loopback CDP port `9436`. It reuses one persistent Chrome
+The launcher owns one 1920×1080 display (`:116`), VNC port `5937`, noVNC
+port `6137`, and loopback CDP port `9437`. It reuses one persistent Chrome
 profile, refuses unknown occupied ports, records one private runtime handoff,
 and removes only stale resources that it owns. Keep the host viewer maximized
 inside the GNOME work area, never full-screen. Stop the stack when no visible

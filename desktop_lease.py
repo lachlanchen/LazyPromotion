@@ -20,11 +20,11 @@ RUNTIME = ROOT / ".local" / "runtime"
 LOCK_PATH = RUNTIME / "desktop-lifecycle.lock"
 SCRIPT = ROOT / "scripts" / "desktop.sh"
 LEASE_ENV = "LAZYPROMOTION_DESKTOP_LEASE_FD"
-PORTS = (5936, 6136, 9436)
+PORTS = (5937, 6137, 9437)
 COMPONENTS = {
     "xvfb": "Xvfb :116",
-    "x11vnc": "-rfbport 5936",
-    "novnc": "127.0.0.1:6136",
+    "x11vnc": "-rfbport 5937",
+    "novnc": "127.0.0.1:6137",
     "chrome": str(ROOT / ".local" / "browser" / "profile"),
     "fit": "fit_window_loop",
 }

@@ -8,9 +8,10 @@ DISPLAY_ID=116
 DISPLAY_NAME=":$DISPLAY_ID"
 DISPLAY_WIDTH=1920
 DISPLAY_HEIGHT=1080
-VNC_PORT=5936
-NOVNC_PORT=6136
-CDP_PORT=9436
+# Keep this project separate from the foreign workstation stack on 5936/6136/9436.
+VNC_PORT=5937
+NOVNC_PORT=6137
+CDP_PORT=9437
 START_URL="${LAZYPROMOTION_START_URL:-https://www.reddit.com/}"
 CAMPAIGN_HOME_URL="${LAZYPROMOTION_CAMPAIGN_HOME_URL:-https://platform.postiz.com/launches}"
 INBOX_URL="${LAZYPROMOTION_INBOX_URL:-https://www.icloud.com/mail/}"
@@ -121,7 +122,7 @@ wait_cdp_pages_stable() {
 workspace_url_allowed() {
   [[ ! "$1" =~ [\?\&](token|access_token|auth|authorization|session|key|secret|code|__cf_chl_tk|__cf_chl_rt_tk)= ]] || return 1
   case "$1" in
-    https://www.reddit.com/*|https://old.reddit.com/*|https://x.com/*|https://www.instagram.com/*|\
+    https://www.reddit.com/*|https://old.reddit.com/*|https://x.com/*|https://www.instagram.com/*|https://www.facebook.com/*|\
     https://www.threads.com/*|\
     https://hn.algolia.com/*|https://search.google.com/*|https://platform.postiz.com/*|\
     https://www.icloud.com/*|https://www.lingq.com/*|https://bookshop.org/*|\
@@ -536,7 +537,7 @@ wait_process_exit() {
 
 wait_reserved_runtime_release() {
   local tries=0
-  while ss -ltnH | grep -Eq ":($VNC_PORT|$NOVNC_PORT|$CDP_PORT|5937|5938|6137|6138)\\b" \
+  while ss -ltnH | grep -Eq ":($VNC_PORT|$NOVNC_PORT|$CDP_PORT)\\b" \
     || [[ -e "/tmp/.X${DISPLAY_ID}-lock" || -S "/tmp/.X11-unix/X${DISPLAY_ID}" ]]; do
     tries=$((tries + 1))
     (( tries < 80 )) || return 1

@@ -163,7 +163,7 @@ Der Monitor speichert nur Kampagnen-IDs, aggregierte Badge-Anzahl, Gebotsstatus,
 
 ## Laufzeit-Isolation
 
-Der Launcher verwaltet genau ein 1920×1080-Display (`:116`), VNC-Port `5936`, noVNC-Port `6136` und den nur lokal erreichbaren CDP-Port `9436`. Er verwendet ein dauerhaftes Chrome-Profil, verweigert den Start bei unbekannt belegten Ports, führt genau eine private Laufzeitübergabe und entfernt nur veraltete Ressourcen, die ihm nachweislich gehören. Der Viewer bleibt innerhalb des GNOME-Arbeitsbereichs maximiert, aber niemals im Vollbild. Ist kein sichtbares Review ausstehend, wird der Stack beendet. Persönliches Firefox wird weder geöffnet noch berührt.
+Der Launcher verwaltet genau ein 1920×1080-Display (`:116`), VNC-Port `5937`, noVNC-Port `6137` und den nur lokal erreichbaren CDP-Port `9437`. Er verwendet ein dauerhaftes Chrome-Profil, verweigert den Start bei unbekannt belegten Ports, führt genau eine private Laufzeitübergabe und entfernt nur veraltete Ressourcen, die ihm nachweislich gehören. Der Viewer bleibt innerhalb des GNOME-Arbeitsbereichs maximiert, aber niemals im Vollbild. Ist kein sichtbares Review ausstehend, wird der Stack beendet. Persönliches Firefox wird weder geöffnet noch berührt.
 
 ```bash
 scripts/desktop.sh status

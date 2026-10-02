@@ -22,7 +22,7 @@ import promotion
 
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_CDP = "http://127.0.0.1:9436"
+DEFAULT_CDP = "http://127.0.0.1:9437"
 EVIDENCE = ROOT / ".local" / "evidence"
 BROWSER_LOCK_PATH = ROOT / ".local" / "runtime" / "browser-operation.lock"
 DISCOVERY_PLAN = ROOT / "discovery-plan.json"

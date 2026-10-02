@@ -163,7 +163,7 @@ Le moniteur ne conserve que les identifiants de campagne, le nombre agrégé du 
 
 ## Isolation de l’exécution
 
-Le lanceur possède un seul écran 1920×1080 (`:116`), le port VNC `5936`, le port noVNC `6136` et le port CDP local `9436`. Il réutilise un unique profil Chrome persistant, refuse les ports occupés par un processus inconnu, conserve un seul relevé d’exécution privé et ne supprime que les ressources périmées dont il a confirmé la propriété. La visionneuse hôte doit être maximisée dans l’espace de travail GNOME, jamais en plein écran. La pile est arrêtée lorsqu’aucune révision visible n’est attendue. Elle ne se connecte ni à Firefox personnel, ni aux sessions de navigateur d’un autre projet.
+Le lanceur possède un seul écran 1920×1080 (`:116`), le port VNC `5937`, le port noVNC `6137` et le port CDP local `9437`. Il réutilise un unique profil Chrome persistant, refuse les ports occupés par un processus inconnu, conserve un seul relevé d’exécution privé et ne supprime que les ressources périmées dont il a confirmé la propriété. La visionneuse hôte doit être maximisée dans l’espace de travail GNOME, jamais en plein écran. La pile est arrêtée lorsqu’aucune révision visible n’est attendue. Elle ne se connecte ni à Firefox personnel, ni aux sessions de navigateur d’un autre projet.
 
 ```bash
 scripts/desktop.sh status

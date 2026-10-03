@@ -1,0 +1,60 @@
+{
+  "id": "bunko-android-showcase",
+  "version": 1,
+  "checked_on": "2026-10-04",
+  "objective": "Introduce the shipping Bunko Android reader in the developer showcase explicitly designated by r/androidapps, without duplicate launches or inferred sales.",
+  "source_evidence": {
+    "repository": "https://github.com/lachlanchen/Bunko",
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.bunko",
+    "google_public_listing_verified": true,
+    "google_price_usd_verified": 0.99,
+    "release_owner_android_version": "1.0.10",
+    "release_owner_android_build": 17,
+    "reader_example": "Daodejing with Classical Chinese, modern Chinese, English and modern Mandarin pinyin",
+    "claim_boundary": "Downloaded reading books work offline; this does not claim unlimited or offline access to the optional online private workspace. Editions vary; AI-assisted study translations may contain errors."
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "format": "native_creator_text_post",
+      "publication_method": "reviewed_native_browser_submit",
+      "community": "r/droidappshowcase",
+      "rules_url": "https://www.reddit.com/r/droidappshowcase/about/rules/",
+      "source_url": "https://www.reddit.com/r/droidappshowcase/",
+      "community_fit": "r/androidapps expressly redirects developer promotion here. Current rules welcome finished Android showcases, limit the account to one app post weekly and prohibit spam, affiliate links and unrelated iOS content. Native Bunko and author searches found no prior post in this community.",
+      "title": "Bunko: classics with pinyin and furigana",
+      "flair": "Showcase",
+      "content": "I built Bunko: Classics with Ruby to keep a book's original text in view while checking a translation.\n\nFor example, the Daodejing can show Classical Chinese, modern Chinese and English, sentence by sentence, with modern Mandarin pinyin above the characters. Japanese editions have furigana. You choose which language layers to show, rather than replacing the original with a translation.\n\nDownloaded books stay readable offline. These are unadapted classics, not graded beginner stories; the AI-assisted study translations can contain mistakes. The offline reading library doesn't require an account.\n\nIt's available on Google Play, US$0.99 once for the app:\nhttps://play.google.com/store/apps/details?id=art.lazying.bunko",
+      "content_sha256": "4459b4bbff6c635a4e4c935b6aaabf44c4c20b1c2692e4670821f721e92ab59e",
+      "publish_at": "2026-10-03T22:10:11.160000Z",
+      "release_url": "https://www.reddit.com/r/droidappshowcase/comments/1wwzfbj/bunko_classics_with_pinyin_and_furigana/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "visible_copy_and_destination_reviewed": true,
+        "single_submit_click": true,
+        "exact_title_author_text_verified_after_reload": true,
+        "original_link_preserved": true,
+        "logged_out_visibility_verified": true,
+        "automated_store_match_comment": true,
+        "human_reader_replies_at_verification": 0,
+        "automated_comments_are_reader_engagement": false
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review_of_material_reader_response",
+    "postiz_managed": false,
+    "direct_comment_monitor_configured": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_action": "Review a genuine incoming reader question if one arrives. Do not post another app in this community within seven days, cross-post this launch or add a second sales pitch."
+  },
+  "funnel": {
+    "state": "public_creator_introduction_verified",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "Publication and an automated store-link match establish neither a customer interaction nor an installation, purchase, retention outcome or payout."
+  }
+}

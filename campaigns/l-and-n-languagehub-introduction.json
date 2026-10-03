@@ -1,0 +1,58 @@
+{
+  "id": "l-and-n-languagehub-introduction",
+  "version": 1,
+  "checked_on": "2026-10-03",
+  "objective": "Introduce focused L/N practice in LanguageHub's moderator-designated tools directory, not in unrelated learner discussions.",
+  "source_evidence": {
+    "apple": "https://apps.apple.com/us/app/l-n-speech-practice/id6808872450",
+    "apple_us_price": 0.99,
+    "google": "https://play.google.com/store/apps/details?id=art.lazying.landn",
+    "google_pricing": "Free download with in-app purchases; no exact IAP or Pro price claimed.",
+    "verification": "Public US store facts checked October 3. The introduction makes no release-version, validated-accuracy or offline-recognition claim."
+  },
+  "channels": {
+    "reddit": {
+      "state": "published",
+      "format": "top_level_comment_in_creator_tools_thread",
+      "publication_method": "reviewed_native_browser_submit",
+      "community": "r/languagehub",
+      "source_url": "https://www.reddit.com/r/languagehub/comments/1sic66r/",
+      "community_fit": "The moderator explicitly invites developers to describe language-learning tools in this thread, while ordinary promotional posts are removed. Prior loaded comments contained the existing Bunko introduction but no L & N entry; Bunko was not repeated.",
+      "content": "Try separating listening from speaking: first identify a few light/night examples without repeating them, then practise the pair you keep mixing up.\n\nI built L & N because I confuse these sounds myself. It has short listening rounds and recording/replay practice in English, Mandarin and Cantonese. You can see what the recognizer heard rather than relying on a score alone. It’s practice feedback, not a speech assessment.\n\niPhone/iPad — US$0.99:\nhttps://apps.apple.com/us/app/l-n-speech-practice/id6808872450\n\nAndroid — free download, with in-app purchases:\nhttps://play.google.com/store/apps/details?id=art.lazying.landn",
+      "content_sha256": "4b0ea09a61f88cd0395bd230f59f74c4aea1f1d98cc332f938484fcf0625de3a",
+      "content_hash_format": "promotion.compact(content), UTF-8, SHA-256",
+      "publish_at": "2026-10-03T09:12:56Z",
+      "publish_time_basis": "Native delivery evidence captured at this time; not an exact provider creation timestamp.",
+      "release_url": "https://www.reddit.com/r/languagehub/comments/1sic66r/comment/pdkuafk/",
+      "known_owned_replies": 0,
+      "publication_verification": {
+        "owner_approved_exact_comment": true,
+        "visible_copy_and_destination_reviewed": true,
+        "single_submit_click": true,
+        "guarded_approval_consumed": true,
+        "exact_text_verified_after_reload": true,
+        "paragraphs_preserved": true,
+        "logged_out_visibility_verified": true,
+        "logged_out_verification_method": "Unauthenticated public permalink retrieval displayed the exact comment and both store links.",
+        "original_links_preserved": true,
+        "expected_links_verified": 2
+      }
+    }
+  },
+  "follow_up": {
+    "mode": "manual_review",
+    "postiz_managed": false,
+    "direct_comment_monitor_configured": false,
+    "automatic_replies": false,
+    "automatic_reposts": false,
+    "unsolicited_private_messages": false,
+    "next_action": "Review a genuine response when notified. No repeat introduction, second pitch after appreciation, or unsolicited follow-up."
+  },
+  "funnel": {
+    "state": "invited_resource_introduction_published",
+    "qualified_leads": 0,
+    "payments_confirmed": 0,
+    "verified_received_gross_usd": 0,
+    "policy": "This campaign records publication only, not an installation, retained learner, customer or sale."
+  }
+}
